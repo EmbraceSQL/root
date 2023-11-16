@@ -15,15 +15,6 @@ import * as prettier from "prettier";
  */
 export const generateSchemaDefinitions = async (context: Context) => {
   // a place to store all the types
-  const schemasFolder = path.join(context.generateInto, "schemas");
-  try {
-    await fs.promises.stat(schemasFolder);
-    // smoke em so we get a clean generation
-    await fs.promises.rm(schemasFolder, { recursive: true });
-  } catch {
-    // does not exist -- carry on
-  }
-  await fs.promises.mkdir(schemasFolder, { recursive: true });
   // buffer up generated code here
   const generationBuffer = [];
   generationBuffer.push(
@@ -31,7 +22,7 @@ export const generateSchemaDefinitions = async (context: Context) => {
       /* eslint-disable @typescript-eslint/no-empty-interface */
       /* eslint-disable @typescript-eslint/no-unused-vars */
       /* eslint-disable @typescript-eslint/no-namespace */
-      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "../types";
+      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "./types";
       `,
   );
   // each namespace gets a namespace
@@ -61,7 +52,7 @@ export const generateSchemaDefinitions = async (context: Context) => {
     }
   `,
   );
-  const writeTo = path.join(schemasFolder, `index.ts`);
+  const writeTo = path.join(context.generateInto, `schemas.ts`);
   await fs.promises.writeFile(
     writeTo,
     await prettier.format(generationBuffer.join("\n"), {

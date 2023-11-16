@@ -104,24 +104,6 @@ export class PGCatalogType {
   }
 
   /**
-   * Data coming back over HTTP in JSON is all JS primitives. Parse this into
-   * TS types.
-   *
-   * This is very similar to parsing PG query results that come back in all
-   * strings.
-   *
-   * This needs to generate code that is the body of a JSONTypecast. The default
-   * is to just echo what is passed, which will work great for numbers and strings.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  typescriptCastFromJSON(context: Context) {
-    console.assert(context);
-    return `
-    return o;
-    `;
-  }
-
-  /**
    * Build up the postgres type casting capability. This is used by the postgres
    * driver to go to and from the database.
    */

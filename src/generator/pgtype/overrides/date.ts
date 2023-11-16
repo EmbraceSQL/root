@@ -31,13 +31,6 @@ class PGDate extends PGCatalogType {
       return null;
     }
   }
-
-  typescriptCastFromJSON(context: Context) {
-    console.assert(context);
-    return `
-    return new Date(o.toString());
-    `;
-  }
 }
 
 registerOverride("timestamptz", PGDate);

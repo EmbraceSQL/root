@@ -25,12 +25,6 @@ class PGUUID extends PGCatalogType {
       return null;
     }
   }
-  typescriptCastFromJSON(context: Context) {
-    console.assert(context);
-    return `
-    return new UUID(o as unknown as UUID);
-    `;
-  }
 }
 
 registerOverride("uuid", PGUUID);

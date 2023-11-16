@@ -38,10 +38,4 @@ export class PGTypeDomain extends PGCatalogType {
       .resolveType(this.catalog.typbasetype)
       .serializeToPostgres(context, x);
   }
-  typescriptCastFromJSON(context: Context) {
-    // delegate to the base type
-    return context
-      .resolveType(this.catalog.typbasetype)
-      .typescriptCastFromJSON(context);
-  }
 }

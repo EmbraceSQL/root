@@ -149,23 +149,6 @@ export class PGProc implements PostgresProcTypecast {
     return seqObj<ObjectParser>(...args).tryParse(x);
   }
 
-  typescriptCastFromJSON(context: Context) {
-    // each attribute needs to had along to more more casts
-    const attributes = this.pseudoTypeAttributes(context).map((a) => {
-      return `${camelCase(a.name)}: casts["${
-        a.type.postgresName
-      }"](casts, t.${camelCase(a.name)} as unknown as JSONValue) `;
-    });
-    return `
-    const t = o as unknown as ${this.typescriptNameForPostgresResultsetRecord(
-      true,
-    )};
-    return {
-      ${attributes.join(",\n")}
-    };
-    `;
-  }
-
   /**
    * TypeScript source code for:
    * - request messages that encapsulates a proc's parameters

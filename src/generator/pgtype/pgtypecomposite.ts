@@ -88,22 +88,6 @@ export class PGTypeComposite extends PGCatalogType {
 
     return seqObj<ObjectParser>(...args).tryParse(x);
   }
-
-  typescriptCastFromJSON(context: Context) {
-    // each attribute needs to had along to more more casts
-    const attributes = this.catalog.attributes.map((a) => {
-      const attributeType = context.resolveType(a.atttypid);
-      return `${camelCase(a.attname)}: casts["${
-        attributeType.postgresName
-      }"](casts, t.${camelCase(a.attname)} as unknown as JSONValue) `;
-    });
-    return `
-    const t = o as unknown as ${this.typescriptNameWithNamespace(context)};
-    return {
-      ${attributes.join(",\n")}
-    };
-    `;
-  }
 }
 
 /**

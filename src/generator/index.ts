@@ -9,6 +9,14 @@ import * as path from "path";
  * - OpenAPI controller endpoints for each database procedure
  */
 export const regenerateFromDatabase = async (context: Context) => {
+  try {
+    await fs.stat(context.generateInto);
+    // smoke em so we get a clean generation
+    await fs.rm(context.generateInto, { recursive: true });
+  } catch {
+    // does not exist -- carry on
+  }
+  await fs.mkdir(context.generateInto, { recursive: true });
   await generateSchemaDefinitions(context);
   await generateProcCalls(context);
   // shared types are referenced in generated code

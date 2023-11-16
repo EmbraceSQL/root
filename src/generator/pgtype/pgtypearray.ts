@@ -62,14 +62,6 @@ export class PGTypeArray extends PGCatalogType {
       return null;
     }
   }
-
-  typescriptCastFromJSON(context: Context) {
-    const elementType = context.resolveType(this.catalog.typelem);
-    return `
-    const elementCast = casts["${elementType?.postgresName}"];
-    return (o as JSONValue[]).map(e => elementCast(casts, e));
-    `;
-  }
 }
 
 /**
