@@ -1,5 +1,6 @@
 import { Context, PostgresProcTypecast, ProcRow } from "../../../context";
 import { buildTypescriptParameterName } from "../../../util";
+import { PGNamespace } from "../pgnamespace";
 import {
   attributeSeperator,
   compositeAttribute,
@@ -21,12 +22,14 @@ import { Parser, seqObj } from "parsimmon";
  */
 export class PGProc implements PostgresProcTypecast {
   proc: ProcRow;
+  namespace: PGNamespace;
   /**
    * Base constructions picks out the name.
    *
    * @param catalog
    */
-  constructor(proc: ProcRow) {
+  constructor(namespace: PGNamespace, proc: ProcRow) {
+    this.namespace = namespace;
     this.proc = proc;
   }
 
@@ -41,67 +44,36 @@ export class PGProc implements PostgresProcTypecast {
     return pascalCase(this.proc.proname);
   }
 
-  get typescriptInvokeName() {
-    return `${this.proc.nspname}${this.typescriptName}`;
-  }
-
-  get typescriptNameWithNamespace() {
-    if (this.proc.nspname === "public") {
-      return this.typescriptName;
-    } else {
-      return `${this.proc.nspname}.${pascalCase(this.proc.proname)}`;
-    }
-  }
-
   get typescriptNameForDispatcher() {
     return `${this.proc.nspname}${pascalCase(this.proc.proname)}`;
   }
 
-  get typescriptNameForRoute() {
-    return `${this.proc.nspname}${pascalCase(this.proc.proname)}`;
-  }
-
-  typescriptNameForRequest(withNamespace = false) {
-    return (
-      (withNamespace ? `${this.proc.nspname}.` : "") +
-      `${this.typescriptName}Request`
-    );
-  }
-
   typescriptNameForResponse(withNamespace = false) {
     return (
-      (withNamespace ? `${this.proc.nspname}.` : "") +
+      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
       `${this.typescriptName}Response`
     );
   }
 
   typescriptNameForPostgresArguments(withNamespace = false) {
     return (
-      (withNamespace ? `${this.proc.nspname}.` : "") +
+      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
       `${this.typescriptName}Arguments`
     );
   }
 
   typescriptNameForPostgresResultsetRecord(withNamespace = false) {
     return (
-      (withNamespace ? `${this.proc.nspname}.` : "") +
+      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
       `${this.typescriptName}SingleResultsetRecord`
     );
   }
 
   typescriptNameForPostgresResultset(withNamespace = false) {
     return (
-      (withNamespace ? `${this.proc.nspname}.` : "") +
+      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
       `${this.typescriptName}Resultset`
     );
-  }
-
-  get brandName() {
-    return `${this.proc.nspname}_${this.proc.proname}`;
-  }
-
-  get controllerPath() {
-    return `/${this.proc.nspname}/${this.proc.proname}`;
   }
 
   get postgresName() {

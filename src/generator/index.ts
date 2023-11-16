@@ -1,10 +1,5 @@
 import { Context } from "../context";
-import {
-  generateRoutes,
-  generateProcCalls,
-  generateSchemaDefinitions,
-  generateRequestResponseDispatcher,
-} from "./typescript";
+import { generateProcCalls, generateSchemaDefinitions } from "./typescript";
 import * as fs from "fs/promises";
 import * as path from "path";
 
@@ -16,8 +11,6 @@ import * as path from "path";
 export const regenerateFromDatabase = async (context: Context) => {
   await generateSchemaDefinitions(context);
   await generateProcCalls(context);
-  await generateRoutes(context);
-  await generateRequestResponseDispatcher(context);
   // shared types are referenced in generated code
   await fs.cp(
     path.join(__dirname, "..", "types"),

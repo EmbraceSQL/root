@@ -34,7 +34,7 @@ export class PGNamespace {
   constructor(namespace: string, types: CatalogRow[], procs: ProcRow[]) {
     this.namespace = namespace;
     this.types = types.map((t) => PGType.factory(t)).filter((t) => t);
-    this.procs = procs.map((p) => new PGProc(p));
+    this.procs = procs.map((p) => new PGProc(this, p));
   }
 
   get typescriptName() {

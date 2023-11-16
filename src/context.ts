@@ -126,7 +126,6 @@ type PostgresConnectionProps = {
  */
 type Props = {
   connection: Partial<PostgresConnectionProps>;
-  fullTrace: boolean;
   generateInto: string;
 };
 
@@ -150,7 +149,6 @@ export const initializeContext = async (props?: Partial<Props>) => {
         : 5432,
       database: process.env["PGDATABASE"] ?? "postgres",
     },
-    fullTrace = false,
     generateInto = path.join(__dirname, "../tmp/generated"),
   } = props ?? {};
   // initial sql -- connect to the database and query the catalog
@@ -291,7 +289,6 @@ export const initializeContext = async (props?: Partial<Props>) => {
   // type resolvers
 
   const context = {
-    fullTrace,
     sql,
     types,
     procTypes,

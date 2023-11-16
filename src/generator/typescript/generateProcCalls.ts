@@ -51,7 +51,7 @@ export const generateProcCalls = async (context: Context) => {
             type Result = {
               ${
                 p.resultsetName
-              }: ${p.typescriptNameForPostgresResultsetRecord()}
+              }: schemas.${p.typescriptNameForPostgresResultsetRecord(true)}
             };
             type Resultset = Result[];
             `;
@@ -61,10 +61,14 @@ export const generateProcCalls = async (context: Context) => {
             ? `
             const parseResult = (context: ContextWithJwt,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              result: any) : ${p.typescriptNameForPostgresResultsetRecord()} => {
+              result: any) : schemas.${p.typescriptNameForPostgresResultsetRecord(
+                true,
+              )} => {
               return context.procTypes.${
                 p.postgresMarshallName
-              }.parseFromPostgresIfRecord(context, result) as unknown as ${p.typescriptNameForPostgresResultsetRecord()};
+              }.parseFromPostgresIfRecord(context, result) as unknown as schemas.${p.typescriptNameForPostgresResultsetRecord(
+                true,
+              )};
             } 
             `
             : "";
@@ -72,48 +76,29 @@ export const generateProcCalls = async (context: Context) => {
           // now the controller
           const source = `
         // generated - do not modify
-        import {
-          ${p.typescriptNameForPostgresArguments()},
-          ${p.typescriptNameForPostgresResultsetRecord()}
-        }  from "../../schemas/${n.namespace.namespace}";
-        import type { PostgresTypecasts } from "../../schemas/typecasts";
+        import * as schemas from "../../schemas/index";
+        import type { PostgresTypecasts } from "../../schemas/index";
         import { ContextWithJwt } from "../../../context";
-        import { undefinedIsNull } from "../../../types";
-        import Debug from "debug";
-        const debug = Debug("tumbleweed:api:${p.typescriptNameForDispatcher}")
+        import { undefinedIsNull } from "../../types";
+        import postgres from "postgres";
 
         ${resultsetSource}
         ${parseResult}
 
         export const ${
           p.typescriptNameForDispatcher
-        } = async (context: ContextWithJwt, request: ${p.typescriptNameForPostgresArguments()}) => {
+        } = async (context: ContextWithJwt, request: schemas.${p.typescriptNameForPostgresArguments(
+          true,
+        )}) => {
               const sql = context.sql;
               const typed = sql.typed as unknown as PostgresTypecasts;
-              const response = (await sql.begin(async sql => {
-                try {
-                  if (context.fullTrace) {
-                    debug("enable trace");
-                    await sql\`SELECT api.full_trace_on ()\`;
-                  }
-                  debug("set identity");
-                  await sql\`SELECT domain.set_identity_with_jwt (jwt => \${JSON.stringify(context.jwt)} )\`;
-                  debug("invoke function");
+              const response = (await sql.begin(async (sql: postgres.Sql) => {
                   return await sql\`
                   SELECT
                   ${p.postgresName}${p.typescriptProcedureCallArguments(
                     context,
                   )};
                   \`
-                } catch (e) {
-                  debug("failure", e);
-                  throw e;
-                } finally {
-                  if (context.fullTrace) {
-                    debug("disable trace");
-                    await sql\`SELECT api.full_trace_off ()\`;
-                  }
-                }
               }));
               const results = response as unknown as Resultset;
               const responseBody = ( ${(() => {
@@ -127,7 +112,9 @@ export const generateProcCalls = async (context: Context) => {
                 }
                 // pick out the scalar case
                 return `results?.[0].${p.resultsetName}`;
-              })()} ) as unknown as ${p.typescriptNameForPostgresResultsetRecord()};
+              })()} ) as unknown as schemas.${p.typescriptNameForPostgresResultsetRecord(
+                true,
+              )};
               return responseBody;
         };
         `;
