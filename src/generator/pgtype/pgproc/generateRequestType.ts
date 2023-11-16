@@ -1,6 +1,6 @@
-import { camelCase } from "change-case";
 import { PGProc } from ".";
 import { Context } from "../../../context";
+import { buildTypescriptParameterName } from "../../../util";
 
 /**
  * Generate request type TS code from PG catalog definitions.
@@ -15,7 +15,7 @@ export const generateRequestType = (proc: PGProc, context: Context) => {
     .map((oid, i) => {
       const type = context.resolveType(oid);
       return {
-        name: proc.proc.proargnames[i],
+        name: buildTypescriptParameterName(proc, i),
         type,
         hasDefault:
           i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
@@ -23,7 +23,7 @@ export const generateRequestType = (proc: PGProc, context: Context) => {
     });
   const argProps = args.map(
     (a) =>
-      `${camelCase(a.name)}${a.hasDefault ? "?:" : ":"} Nullable<${
+      `${a.name}${a.hasDefault ? "?:" : ":"} Nullable<${
         a.type?.typescriptNameWithNamespace(context) ?? ""
       }>;`
   );
@@ -34,8 +34,7 @@ export const generateRequestType = (proc: PGProc, context: Context) => {
 
   // build up the input getters
   const argGetters = args.map((a) => {
-    const argName = camelCase(a.name);
-    return `get ${argName}() { return this._args.${argName}}`;
+    return `get ${a.name}() { return this._args.${a.name}}`;
   });
 
   return `

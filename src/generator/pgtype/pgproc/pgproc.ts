@@ -3,6 +3,7 @@ import { Context, PostgresProcTypecast, ProcRow } from "../../../context";
 import { generateRequestType } from "./generateRequestType";
 import { generateResponseType } from "./generateResponseType";
 import { Parser, seqObj } from "parsimmon";
+import { buildTypescriptParameterName } from "../../../util";
 import {
   attributeSeperator,
   compositeAttribute,
@@ -219,15 +220,13 @@ export class PGProc implements PostgresProcTypecast {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const type = context.resolveType(oid)!;
         return {
-          name: this.proc.proargnames[i],
+          name: buildTypescriptParameterName(this, i),
           type,
         };
       })
       .map(
         (a) =>
-          `${a.name} => \${ typed.${
-            a.type.postgresMarshallName
-          }(undefinedIsNull(request.${camelCase(a.name)})) }`
+          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(request.${a.name})) }`
       );
     return `(${args.join(",")})`;
   }

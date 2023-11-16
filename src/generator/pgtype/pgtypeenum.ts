@@ -1,5 +1,6 @@
 import { CatalogRow, Context } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { cleanIdentifierForTypescript } from "../../util";
 
 /**
  * Enumerated types in PG are string-ish constants.
@@ -12,7 +13,7 @@ export class PGTypeEnum extends PGCatalogType {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     const namedValues = this.catalog.enums.map(
-      (a) => `${a.enumlabel} = "${a.enumlabel}"`
+      (a) => `${cleanIdentifierForTypescript(a.enumlabel)} = "${a.enumlabel}"`
     );
     return `
     export enum ${this.typescriptName} {
