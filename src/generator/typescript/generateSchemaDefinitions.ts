@@ -24,51 +24,47 @@ export const generateSchemaDefinitions = async (context: Context) => {
     // does not exist -- carry on
   }
   await fs.promises.mkdir(schemasFolder, { recursive: true });
-  // each namespace gets a module
-  await Promise.all(
-    context.namespaces.map(async (n) => {
-      const writeTo = path.join(schemasFolder, `${n.namespace}.ts`);
-      const staticImports = `
+  // buffer up generated code here
+  const generationBuffer = [];
+  generationBuffer.push(
+    `
       /* eslint-disable @typescript-eslint/no-empty-interface */
       /* eslint-disable @typescript-eslint/no-unused-vars */
-      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "../../types";
-      import {RequestMessage, ResponseMessage, JSONTypecastMap} from "../../client";
-      `;
-      const crossImports = context.namespaces
-        .map((n) => `import * as ${n.namespace} from "./${n.namespace}";`)
-        .join("\n");
-      await fs.promises.writeFile(
-        writeTo,
-        await prettier.format(
-          [
-            staticImports,
-            crossImports,
-            n.typescriptTypeDefinition(context),
-          ].join("\n"),
-          {
-            parser: "typescript",
-          },
-        ),
+      /* eslint-disable @typescript-eslint/no-namespace */
+      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "../types";
+      `,
+  );
+  // each namespace gets a namespace
+  await Promise.all(
+    context.namespaces.map((n) => {
+      generationBuffer.push(
+        n.typescriptTypeDefinition({
+          ...context,
+          currentNamespace: n.namespace,
+        }),
       );
     }),
   );
-  // an overall module interface for typecasts
-  const typecastSource = `
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  type ArgumentToPostgres = any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  type ArgumentFromPostgres = any;
-  type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-  export interface PostgresTypecasts {
-    ${context.namespaces
-      .flatMap((n) => n.types)
-      .map((t) => `${t.postgresMarshallName}: Typecast`)
-      .join(";\n")}
-  }
-  `;
+  // all typecasts collected into a single interface
+  generationBuffer.push(
+    `
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type ArgumentToPostgres = any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type ArgumentFromPostgres = any;
+    type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+    export interface PostgresTypecasts {
+      ${context.namespaces
+        .flatMap((n) => n.types)
+        .map((t) => `${t.postgresMarshallName}: Typecast`)
+        .join(";\n")}
+    }
+  `,
+  );
+  const writeTo = path.join(schemasFolder, `index.ts`);
   await fs.promises.writeFile(
-    path.join(schemasFolder, "typecasts.ts"),
-    await prettier.format([typecastSource].join("\n"), {
+    writeTo,
+    await prettier.format(generationBuffer.join("\n"), {
       parser: "typescript",
     }),
   );

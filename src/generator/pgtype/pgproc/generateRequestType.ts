@@ -25,42 +25,14 @@ export const generateRequestType = (proc: PGProc, context: Context) => {
     (a) =>
       `${a.name}${a.hasDefault ? "?:" : ":"} Nullable<${
         a.type?.typescriptNameWithNamespace(context) ?? ""
-      }>;`
+      }>;`,
   );
   // there may be no parameters...
   const argumentTypeString = argProps.length
     ? `{ ${argProps.join("\n")} } `
     : `{}`;
 
-  // build up the input getters
-  const argGetters = args.map((a) => {
-    return `get ${a.name}() { return this._args.${a.name}}`;
-  });
-
   return `
     export interface ${proc.typescriptNameForPostgresArguments()} ${argumentTypeString};
-
-    export class ${proc.typescriptNameForRequest()}
-    extends RequestMessage 
-    implements ${proc.typescriptNameForPostgresArguments()} {
-      _args: ${proc.typescriptNameForPostgresArguments()};
-      constructor(args: ${proc.typescriptNameForPostgresArguments()}) {
-        super("${proc.controllerPath}");
-        this._args = args;
-      }
-      ${argGetters.join("\n")}
-      // this exists to force disambiguate TS name resolution
-      get ${proc.brandName}() { return "${proc.brandName}";}
-
-      toJSON () {
-        return this._args as unknown as JSONObject;
-      }
-
-      castResponseJSON (casts: JSONTypecastMap, o: JSONObject) {
-        return new ${proc.typescriptNameForResponse()}(
-          ${proc.typescriptNameForResponse()}.castResponseJSON(casts, o)
-          );
-      }
-    }
   `;
 };

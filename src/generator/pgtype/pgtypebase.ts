@@ -81,7 +81,7 @@ export class PGTypeBase extends PGCatalogType {
             return new PGTypeText(catalog);
           default:
             throw new Error(
-              `${catalog.typname} did not resolve to a base type`
+              `${catalog.typname} did not resolve to a base type`,
             );
         }
     }

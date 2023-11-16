@@ -1,7 +1,7 @@
-import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
-import { camelCase } from "change-case";
 import { CatalogRow, Context } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { camelCase } from "change-case";
+import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
 
 export const interleave = <T, U>(arr: T[], separator: U) => {
   const ret = new Array<T | U>();
@@ -32,7 +32,7 @@ export class PGTypeComposite extends PGCatalogType {
           context
             .resolveType(a.atttypid)
             ?.typescriptNameWithNamespace(context) ?? "void"
-        }>;`
+        }>;`,
     );
     // all the fields -- and a partial type to allow filling out
     // partial objects to allow nulls to pass through to the database
@@ -52,7 +52,7 @@ export class PGTypeComposite extends PGCatalogType {
         const value = context.resolveType(a.atttypid).serializeToPostgres(
           context,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          x[camelCase(a.attname)]
+          x[camelCase(a.attname)],
         );
         // quick escape with regex
         return value ? escapeValue.tryParse(`${value}`) : "";
@@ -75,9 +75,9 @@ export class PGTypeComposite extends PGCatalogType {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             context
               .resolveType(a.atttypid)
-              .parseFromPostgres(context, parsedAttributeText)
+              .parseFromPostgres(context, parsedAttributeText),
           ),
-        ] as [string, Parser<string | null>]
+        ] as [string, Parser<string | null>],
     );
 
     const args = [

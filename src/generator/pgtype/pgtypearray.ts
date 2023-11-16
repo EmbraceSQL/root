@@ -1,6 +1,6 @@
-import { alt, noneOf, oneOf, string } from "parsimmon";
 import { CatalogRow, Context } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { alt, noneOf, oneOf, string } from "parsimmon";
 
 /**
  * Arrays of other types are somewhat simple to declare - it is just Array<...>.
@@ -56,7 +56,7 @@ export class PGTypeArray extends PGCatalogType {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return elements.map((e) =>
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        elementType.parseFromPostgres(context, e)
+        elementType.parseFromPostgres(context, e),
       );
     } else {
       return null;

@@ -3,6 +3,7 @@ import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGProc } from "./pgproc";
 import { PGType } from "./pgtype";
+import { pascalCase } from "change-case";
 
 /**
  * Namespace in the postgres catalog tables correspond to SCHEMA in SQL.
@@ -21,8 +22,8 @@ export class PGNamespace {
         new PGNamespace(
           namespace,
           typesByNamespace[namespace],
-          procsByNamespace[namespace] ?? []
-        )
+          procsByNamespace[namespace] ?? [],
+        ),
     );
   }
 
@@ -31,9 +32,13 @@ export class PGNamespace {
   procs: PGProc[];
 
   constructor(namespace: string, types: CatalogRow[], procs: ProcRow[]) {
-    this.namespace = namespace === "public" ? "public" : namespace;
+    this.namespace = namespace;
     this.types = types.map((t) => PGType.factory(t)).filter((t) => t);
     this.procs = procs.map((p) => new PGProc(p));
+  }
+
+  get typescriptName() {
+    return pascalCase(this.namespace);
   }
 
   /**
@@ -41,8 +46,10 @@ export class PGNamespace {
    */
   typescriptTypeDefinition(context: Context) {
     return `
+      export namespace ${this.typescriptName} {
       ${this.types.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
       ${this.procs.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
+      }
     `;
   }
 }

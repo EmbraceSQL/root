@@ -1,8 +1,4 @@
-import { camelCase, pascalCase } from "change-case";
 import { Context, PostgresProcTypecast, ProcRow } from "../../../context";
-import { generateRequestType } from "./generateRequestType";
-import { generateResponseType } from "./generateResponseType";
-import { Parser, seqObj } from "parsimmon";
 import { buildTypescriptParameterName } from "../../../util";
 import {
   attributeSeperator,
@@ -12,6 +8,10 @@ import {
   ObjectParser,
   startComposite,
 } from "../pgtypecomposite";
+import { generateRequestType } from "./generateRequestType";
+import { generateResponseType } from "./generateResponseType";
+import { camelCase, pascalCase } from "change-case";
+import { Parser, seqObj } from "parsimmon";
 
 /**
  * Procs -- which are different than types in the postgres catalog.
@@ -163,9 +163,9 @@ export class PGProc implements PostgresProcTypecast {
           camelCase(a.name),
           compositeAttribute.map((parsedAttributeText) =>
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-            a.type.parseFromPostgres(context, parsedAttributeText)
+            a.type.parseFromPostgres(context, parsedAttributeText),
           ),
-        ] as [string, Parser<string | null>]
+        ] as [string, Parser<string | null>],
     );
 
     const args = [
@@ -186,7 +186,7 @@ export class PGProc implements PostgresProcTypecast {
     });
     return `
     const t = o as unknown as ${this.typescriptNameForPostgresResultsetRecord(
-      true
+      true,
     )};
     return {
       ${attributes.join(",\n")}
@@ -226,7 +226,7 @@ export class PGProc implements PostgresProcTypecast {
       })
       .map(
         (a) =>
-          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(request.${a.name})) }`
+          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(request.${a.name})) }`,
       );
     return `(${args.join(",")})`;
   }

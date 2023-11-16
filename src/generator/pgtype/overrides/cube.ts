@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
+
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { registerOverride } from "./_overrides";
 import { Context } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
+import { registerOverride } from "./_overrides";
 
 class PGCube extends PGCatalogType {
   typescriptTypeDefinition(context: Context) {

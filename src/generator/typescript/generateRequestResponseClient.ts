@@ -77,7 +77,7 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
       import {
         JSONValue,
         UUID
-      } from "../../types";
+      } from "../types";
       `;
   const crossImports = context.namespaces
     .map(

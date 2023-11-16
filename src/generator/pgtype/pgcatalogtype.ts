@@ -1,5 +1,5 @@
-import { pascalCase } from "change-case";
 import { CatalogRow, Context, PostgresTypecast } from "../../context";
+import { pascalCase } from "change-case";
 
 /**
  * All types come from here.
@@ -30,13 +30,21 @@ export class PGCatalogType {
   }
 
   /**
+   * Convention is pascal case for TS. Excludes reserved words.
+   */
+  get typescriptNamespaceName() {
+    const formatted = pascalCase(this.catalog.nspname);
+    return formatted;
+  }
+
+  /**
    * Convention is pascal case. Public is a reserved word in TypeScript.
    */
   typescriptNameWithNamespace(context: Context) {
-    if (["public"].includes(this.catalog.nspname)) {
-      return `_${this.catalog.nspname}.${this.typescriptName}`;
+    if (this.catalog.nspname === context.currentNamespace) {
+      return this.typescriptName;
     } else {
-      return `${this.catalog.nspname}.${this.typescriptName}`;
+      return `${this.typescriptNamespaceName}.${this.typescriptName}`;
     }
   }
 

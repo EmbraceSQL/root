@@ -16,7 +16,7 @@ export class PGTypeRange extends PGCatalogType {
     const type = context.resolveType(this.catalog.rngsubtype)!;
     return `
     export type ${this.typescriptName} = [${type.typescriptNameWithNamespace(
-      context
+      context,
     )}, ${type.typescriptNameWithNamespace(context)}];
     `;
   }

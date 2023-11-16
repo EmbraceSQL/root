@@ -29,13 +29,13 @@ describe("The composite parser", () => {
   it("can parse a quoted field with escapes", () => {
     // this is a little tricky given that JS uses \ as escap
     expect(compositeAttribute.tryParse(String.raw`"\\\""`)).toBe(
-      String.raw`\"`
+      String.raw`\"`,
     );
   });
 
   it("can parse a bare string with complete escaping", () => {
     expect(compositeAttribute.tryParse(String.raw`\\\(\)\,\"`)).toBe(
-      String.raw`\(),"`
+      String.raw`\(),"`,
     );
   });
   it("can not parse a bare string with separators", () => {
@@ -47,7 +47,7 @@ describe("The composite parser", () => {
   it("can parse nested array", () => {
     const sample = String.raw`"{""(\\""howdy y'all\\"",\\""2022-07-02 10:13:05.840209+00\\"")""}"`;
     expect(compositeAttribute.tryParse(sample)).toEqual(
-      `{\"(\\\"howdy y'all\\\",\\\"2022-07-02 10:13:05.840209+00\\\")\"}`
+      `{\"(\\\"howdy y'all\\\",\\\"2022-07-02 10:13:05.840209+00\\\")\"}`,
     );
   });
 

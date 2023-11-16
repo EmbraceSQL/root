@@ -1,7 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { v4 } from "uuid";
-import { isString } from "../util";
+
+/**
+ * A fairly boring type guard for strings.
+ */
+const isString = (v: string | UUID): v is string => {
+  return typeof v === "string" || v instanceof String;
+};
 
 export class UUID {
   uuid: string;

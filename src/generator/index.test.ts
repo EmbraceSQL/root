@@ -1,5 +1,5 @@
-import { Context, initializeContext } from "../context";
 import { regenerateFromDatabase } from ".";
+import { Context, initializeContext } from "../context";
 
 /**
  * This is a pretty coarse test which exists to provide a place

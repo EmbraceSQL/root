@@ -1,7 +1,7 @@
-import { registerOverride } from "./_overrides";
 import { Context } from "../../../context";
 import { UUID } from "../../../types";
 import { PGCatalogType } from "../pgcatalogtype";
+import { registerOverride } from "./_overrides";
 
 class PGUUID extends PGCatalogType {
   typescriptTypeDefinition(context: Context) {

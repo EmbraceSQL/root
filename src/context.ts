@@ -299,6 +299,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
     resolveType: (oid: number) => typeMap.get(oid)!,
     namespaces,
     generateInto,
+    currentNamespace: "",
   };
 
   // expand out the type resolvers for all types
