@@ -1,8 +1,7 @@
+import { Context } from "../../context";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
-import { GenerateInto } from ".";
-import { Context } from "../../context";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -16,7 +15,7 @@ import { Context } from "../../context";
  */
 export const generateSchemaDefinitions = async (context: Context) => {
   // a place to store all the types
-  const schemasFolder = path.join(GenerateInto, "schemas");
+  const schemasFolder = path.join(context.generateInto, "schemas");
   try {
     await fs.promises.stat(schemasFolder);
     // smoke em so we get a clean generation
@@ -48,10 +47,10 @@ export const generateSchemaDefinitions = async (context: Context) => {
           ].join("\n"),
           {
             parser: "typescript",
-          }
-        )
+          },
+        ),
       );
-    })
+    }),
   );
   // an overall module interface for typecasts
   const typecastSource = `
@@ -71,6 +70,6 @@ export const generateSchemaDefinitions = async (context: Context) => {
     path.join(schemasFolder, "typecasts.ts"),
     await prettier.format([typecastSource].join("\n"), {
       parser: "typescript",
-    })
+    }),
   );
 };

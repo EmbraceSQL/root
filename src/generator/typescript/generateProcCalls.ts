@@ -1,8 +1,7 @@
+import { Context } from "../../context";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
-import { GenerateInto } from ".";
-import { Context } from "../../context";
 
 /**
  * Generate TypeScript SQL calls, marshalling from our arguments, into
@@ -18,7 +17,7 @@ import { Context } from "../../context";
  */
 export const generateProcCalls = async (context: Context) => {
   // keeping things tidy, folder per namespace, file per proc
-  const generationRoot = path.join(GenerateInto, "procs");
+  const generationRoot = path.join(context.generateInto, "procs");
   try {
     // smoke em so we get a clean generation
     await fs.promises.rm(generationRoot, { recursive: true });
@@ -36,7 +35,7 @@ export const generateProcCalls = async (context: Context) => {
         namespace,
         namespaceFolder,
       };
-    })
+    }),
   );
 
   // wheel through every namespace, and every proc and generate
@@ -103,7 +102,7 @@ export const generateProcCalls = async (context: Context) => {
                   return await sql\`
                   SELECT
                   ${p.postgresName}${p.typescriptProcedureCallArguments(
-                    context
+                    context,
                   )};
                   \`
                 } catch (e) {
@@ -136,10 +135,10 @@ export const generateProcCalls = async (context: Context) => {
             path.join(n.namespaceFolder, `${p.typescriptNameForDispatcher}.ts`),
             await prettier.format([source].join("\n"), {
               parser: "typescript",
-            })
+            }),
           );
-        })
+        }),
       );
-    })
+    }),
   );
 };

@@ -1,8 +1,7 @@
+import { Context } from "../../context";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
-import { GenerateInto } from ".";
-import { Context } from "../../context";
 
 /**
  * Generate TypeScript REST routes for each schema and stored function.
@@ -13,7 +12,7 @@ import { Context } from "../../context";
  */
 export const generateRoutes = async (context: Context) => {
   // keeping things tidy, folder per namespace, file per proc
-  const generationRoot = path.join(GenerateInto, "routes");
+  const generationRoot = path.join(context.generateInto, "routes");
   try {
     // smoke em so we get a clean generation
     await fs.promises.rm(generationRoot, { recursive: true });
@@ -31,7 +30,7 @@ export const generateRoutes = async (context: Context) => {
         namespace,
         namespaceFolder,
       };
-    })
+    }),
   );
 
   // wheel through every namespace, and every proc and generate a
@@ -89,9 +88,9 @@ export const generateRoutes = async (context: Context) => {
             path.join(n.namespaceFolder, `${p.typescriptNameForRoute}.ts`),
             await prettier.format([source].join("\n"), {
               parser: "typescript",
-            })
+            }),
           );
-        })
+        }),
       );
       const staticImports = `
       // generated - do not modify
@@ -100,7 +99,7 @@ export const generateRoutes = async (context: Context) => {
       `;
       const imports = n.namespace.procs.map(
         (p) =>
-          `import {${p.typescriptNameForRoute}} from "./${p.typescriptNameForRoute}";`
+          `import {${p.typescriptNameForRoute}} from "./${p.typescriptNameForRoute}";`,
       );
       const source = `
 
@@ -123,10 +122,10 @@ export const generateRoutes = async (context: Context) => {
           [staticImports, imports.join("\n"), source].join("\n"),
           {
             parser: "typescript",
-          }
-        )
+          },
+        ),
       );
-    })
+    }),
   );
   // and now an overall index file
   const staticImports = `
@@ -135,7 +134,7 @@ export const generateRoutes = async (context: Context) => {
     import { Context } from "../../context";
     `;
   const imports = context.namespaces.map(
-    (n) => `import {${n.namespace}Routes} from "./${n.namespace}";`
+    (n) => `import {${n.namespace}Routes} from "./${n.namespace}";`,
   );
   const source = `
 
@@ -153,7 +152,7 @@ export const generateRoutes = async (context: Context) => {
       [staticImports, imports.join("\n"), source].join("\n"),
       {
         parser: "typescript",
-      }
-    )
+      },
+    ),
   );
 };

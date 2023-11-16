@@ -1,6 +1,7 @@
-import postgres from "postgres";
-import { groupBy } from "./util";
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
+import { groupBy } from "./util";
+import * as path from "path";
+import postgres from "postgres";
 
 /**
  * Defines how to typecast types both to and from
@@ -126,6 +127,7 @@ type PostgresConnectionProps = {
 type Props = {
   connection: Partial<PostgresConnectionProps>;
   fullTrace: boolean;
+  generateInto: string;
 };
 
 /**
@@ -149,6 +151,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
       database: process.env["PGDATABASE"] ?? "postgres",
     },
     fullTrace = false,
+    generateInto = path.join(__dirname, "../tmp/generated"),
   } = props ?? {};
   // initial sql -- connect to the database and query the catalog
   let sql = postgres({ ...connection, prepare: false });
@@ -178,7 +181,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
     attnum > 0 
     AND atttypid > 0
   `) as unknown as AttributeRow[],
-    (r) => r.attrelid
+    (r) => r.attrelid,
   );
   /**
    * Enumerated values.
@@ -193,7 +196,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
     FROM 
       pg_enum
     `) as unknown as EnumRow[],
-    (r) => r.enumtypid
+    (r) => r.enumtypid,
   );
   /**
    * Need to look up the types in the database. The postgres catalog unfortunately
@@ -229,15 +232,15 @@ export const initializeContext = async (props?: Partial<Props>) => {
   typeCatalog.forEach(
     (t) =>
       (t.attributes = attributes[t.typrelid]?.sort(
-        (l, r) => l.attnum - r.attnum
-      ))
+        (l, r) => l.attnum - r.attnum,
+      )),
   );
   // join up enums with their values, this makes enum types real
   typeCatalog.forEach(
     (t) =>
       (t.enums = enums[t.oid]?.sort(
-        (l, r) => l.enumsortorder - r.enumsortorder
-      ))
+        (l, r) => l.enumsortorder - r.enumsortorder,
+      )),
   );
 
   /**
@@ -276,7 +279,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
   const namespaces = PGNamespace.factory(typeCatalog, procCatalog);
 
   const typeMap = new Map(
-    namespaces.flatMap((n) => n.types).map((t) => [t.oid, t])
+    namespaces.flatMap((n) => n.types).map((t) => [t.oid, t]),
   );
 
   // now we set up a new sql that can do type marshalling
@@ -295,13 +298,14 @@ export const initializeContext = async (props?: Partial<Props>) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     resolveType: (oid: number) => typeMap.get(oid)!,
     namespaces,
+    generateInto,
   };
 
   // expand out the type resolvers for all types
   namespaces
     .flatMap((n) => n.types)
     .forEach(
-      (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context))
+      (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context)),
     );
   namespaces
     .flatMap((n) => n.procs)

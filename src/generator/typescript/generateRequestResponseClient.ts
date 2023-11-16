@@ -1,8 +1,7 @@
+import { Context } from "../../context";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
-import { Context } from "../../context";
-import { GenerateInto } from ".";
 
 /**
  * Generate a TS dispatch map for a client. This allows a single generic
@@ -13,7 +12,7 @@ import { GenerateInto } from ".";
  */
 export const generateRequestResponseDispatcher = async (context: Context) => {
   // a place to store all the types
-  const clientFolder = path.join(GenerateInto, "client");
+  const clientFolder = path.join(context.generateInto, "client");
   try {
     await fs.promises.stat(clientFolder);
     // smoke em so we get a clean generation
@@ -38,7 +37,7 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
             request: ${proc.typescriptNameForRequest(true)};
             response: ${proc.typescriptNameForResponse(true)};
           };
-          `
+          `,
       );
       // union all request types -- this is the allow input to dispatch a request
       const requestResponseUnion = n.procs.length
@@ -58,10 +57,10 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
           ].join("\n"),
           {
             parser: "typescript",
-          }
-        )
+          },
+        ),
       );
-    })
+    }),
   );
   // dispatchers are generated -- now make an index that is an overall client
   const writeTo = path.join(clientFolder, `index.ts`);
@@ -86,7 +85,7 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
     import * as ${n.namespace} from "../schemas/${n.namespace}";
     export * as ${n.namespace} from "../schemas/${n.namespace}";
     import {RequestResponse as ${n.namespace}RequestResponse} from "./${n.namespace}";
-    `
+    `,
     )
     .join("\n");
   const crossExports = [
@@ -144,7 +143,7 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
         const response = await this.invoke(request as unknown as RequestMessage, abortWith);
         return response as RE;
       }
-    `
+    `,
     );
   const invokers = context.namespaces
     .filter((n) => n.procs.length)
@@ -155,11 +154,11 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
         p.typescriptInvokeName
       }(args: ${p.typescriptNameForPostgresArguments(true)}) {
         const response = await this.invoke(new ${p.typescriptNameForRequest(
-          true
+          true,
         )}(args));
         return response as ${p.typescriptNameForResponse(true)};
       }
-    `
+    `,
     );
   const client = `
   import { BaseClient, BaseClientProps } from "../../client";
@@ -188,7 +187,7 @@ export const generateRequestResponseDispatcher = async (context: Context) => {
       [staticImports, crossImports, crossExports, client].join("\n"),
       {
         parser: "typescript",
-      }
-    )
+      },
+    ),
   );
 };

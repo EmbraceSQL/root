@@ -16,6 +16,6 @@
     "noEmit": true,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./src/"],
+  "include": ["./src/", "./tmp/"],
   "exclude": ["node_modules", "dist"]
 }
