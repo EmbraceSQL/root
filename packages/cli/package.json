@@ -1,0 +1,22 @@
+{
+  "name": "@embracesql/cli",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "embracesql": "./embracesql.js"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "author": "Will Ballard <wballard@mailframe.net>",
+  "license": "ISC",
+  "dependencies": {
+    "@embracesql/core": "*",
+    "commander": "^11.1.0",
+    "figlet": "^1.7.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8"
+  }
+}
