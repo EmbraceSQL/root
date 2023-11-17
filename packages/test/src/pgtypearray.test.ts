@@ -1,4 +1,7 @@
-import { arrayAttribute, escaped } from "./pgtypearray";
+import {
+  arrayAttribute,
+  escaped,
+} from "@embracesql/core/src/generator/pgtype/pgtypearray";
 
 describe("The array parser", () => {
   it("can parse an escape", () => {
@@ -47,9 +50,9 @@ describe("The array parser", () => {
   });
 
   it.skip("can split a record array", () => {
-    const sample = String.raw`{"(\"howdy y'all\",\"2022-07-02 09:35:31.966868+00\")"}`;
     // TODO context free way to check this parse
     /*
+    const sample = String.raw`{"(\"howdy y'all\",\"2022-07-02 09:35:31.966868+00\")"}`;
     expect(context.types.api__echo_type.parse(sample)).toEqual([
       {
         echomessage: "howdy y'all",

@@ -22,7 +22,7 @@ export const generateSchemaDefinitions = async (context: Context) => {
       /* eslint-disable @typescript-eslint/no-empty-interface */
       /* eslint-disable @typescript-eslint/no-unused-vars */
       /* eslint-disable @typescript-eslint/no-namespace */
-      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "./types";
+      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "@embracesql/core/src/types";
       `,
   );
   // each namespace gets a namespace

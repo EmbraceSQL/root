@@ -129,7 +129,7 @@ class PGTypeBool extends PGTypeBase {
     export type ${this.typescriptName} = boolean;
     `;
   }
-  parseFromPostgres(context: Context, x: any) {
+  parseFromPostgres(context: Context, x: string | null) {
     // I've seen text encoding come back with t, f, true, false
     if (["t", "true"].includes(x as string)) return true;
     // false is the default

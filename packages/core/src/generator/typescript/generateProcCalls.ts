@@ -59,7 +59,7 @@ export const generateProcCalls = async (context: Context) => {
           // result parser for pseudo types
           const parseResult = p.returnsPseudoTypeRecord
             ? `
-            const parseResult = (context: ContextWithJwt,
+            const parseResult = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               result: any) : schemas.${p.typescriptNameForPostgresResultsetRecord(
                 true,
@@ -76,10 +76,11 @@ export const generateProcCalls = async (context: Context) => {
           // now the controller
           const source = `
         // generated - do not modify
-        import * as schemas from "../../schemas/index";
-        import type { PostgresTypecasts } from "../../schemas/index";
-        import { ContextWithJwt } from "../../../context";
-        import { undefinedIsNull } from "../../types";
+        import * as schemas from "../../schemas";
+        import type { PostgresTypecasts } from "../../schemas";
+        import { Context } from "@embracesql/core/src/context";
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        import { undefinedIsNull } from "@embracesql/core/src/types";
         import postgres from "postgres";
 
         ${resultsetSource}
@@ -87,10 +88,12 @@ export const generateProcCalls = async (context: Context) => {
 
         export const ${
           p.typescriptNameForDispatcher
-        } = async (context: ContextWithJwt, request: schemas.${p.typescriptNameForPostgresArguments(
+        } = async (context: Context, request: schemas.${p.typescriptNameForPostgresArguments(
           true,
         )}) => {
+              console.assert(request);
               const sql = context.sql;
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const typed = sql.typed as unknown as PostgresTypecasts;
               const response = (await sql.begin(async (sql: postgres.Sql) => {
                   return await sql\`
