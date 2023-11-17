@@ -1,5 +1,5 @@
 import { GenerationContext } from "..";
-import { GeneratedFromSqlScript } from "../../context";
+import { GeneratedFromSqlScript, SqlScript, isSqlScript } from "../../context";
 import { camelCase, pascalCase } from "change-case";
 import * as fs from "fs";
 import { glob } from "glob";
@@ -35,55 +35,92 @@ export const generateSqlScriptCalls = async (context: GenerationContext) => {
   ).map(async (scriptName) => {
     const metadata = await context.sql.file(scriptName).describe();
     const script = await fs.promises.readFile(scriptName, { encoding: "utf8" });
+    const tail = path.relative(context.sqlScriptsFrom, scriptName);
     return {
       scriptName,
       script,
       metadata,
-    };
-  });
-  const scripts = await Promise.all(allScriptDiscovery);
-  scripts.forEach((script) => {
-    // collect up metadata about the script and share it via context as a bloackboard
-    const tail = path.relative(context.sqlScriptsFrom, script.scriptName);
-    const generated: GeneratedFromSqlScript = {
       namespaceSegments: path
         .dirname(tail)
-        .split(path.delimiter)
+        .split(path.sep)
         .filter((p) => p !== ".")
         .map((s) => pascalCase(s)),
       name: camelCase(path.basename(tail, ".sql")),
     };
-    context.generatedFromSqlScripts.push(generated);
+  });
+  const scripts = await Promise.all(allScriptDiscovery);
 
-    // all the result pieces to create a return type
-    generationBuffer.push(`type ${pascalCase(generated.name)}Record = {`);
-    script.metadata.columns.forEach((column) => {
-      const type = context.resolveType(column.type);
-      generationBuffer.push(
-        `${camelCase(
-          column.name,
-        )}: Nullable<schemas.${type.typescriptNameWithNamespace(context)}>,`,
-      );
+  // ok -- group these things into trees
+  scripts
+    .sort((l, r) => l.scriptName.localeCompare(r.scriptName))
+    .forEach((script) => {
+      // @ts-expect-error trcking reduce to be a tree accumulator
+      const tail = script.namespaceSegments.reduce((previous, current) => {
+        if (previous[current] === undefined) {
+          previous[current] = {};
+        }
+        return previous[current];
+      }, context.generatedFromSqlScripts) as GeneratedFromSqlScript;
+      tail[script.name] = script;
     });
-    // close off that type
-    generationBuffer.push(`
+
+  const depthFirst = (v: GeneratedFromSqlScript) => {
+    Object.keys(v).forEach((key) => {
+      const value = v[key];
+      // this is the no fooling generation case -- pop into
+      // the generation buffer
+      if (isSqlScript(value)) {
+        generationBuffer.push(generateScript(context, value));
+      } else {
+        // and here is the depth first part, make a namespace and fill it
+        generationBuffer.push(`export namespace ${key} {`);
+        depthFirst(value);
+        generationBuffer.push(`}`);
+      }
+    });
+  };
+  // visit our entire script tree with some depth first search
+  depthFirst(context.generatedFromSqlScripts);
+
+  await fs.promises.writeFile(
+    path.join(context.generateInto, `sqlScripts.ts`),
+    await prettier.format(generationBuffer.join("\n"), {
+      parser: "typescript",
+    }),
+  );
+};
+
+const generateScript = (context: GenerationContext, script: SqlScript) => {
+  const generationBuffer = [];
+  // all the result pieces to create a return type
+  generationBuffer.push(`type ${pascalCase(script.name)}Record = {`);
+  script.metadata.columns.forEach((column) => {
+    const type = context.resolveType(column.type);
+    generationBuffer.push(
+      `${camelCase(
+        column.name,
+      )}: Nullable<schemas.${type.typescriptNameWithNamespace(context)}>,`,
+    );
+  });
+  // close off that type
+  generationBuffer.push(`
         };
-        type ${pascalCase(generated.name)}Resultset = ${pascalCase(
-          generated.name,
+        type ${pascalCase(script.name)}Resultset = ${pascalCase(
+          script.name,
         )}Record[];
       `);
 
-    // snippet will pick resultset fields to type map
-    const recordPieceBuilders = script.metadata.columns.map(
-      (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
-    );
+  // snippet will pick resultset fields to type map
+  const recordPieceBuilders = script.metadata.columns.map(
+    (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
+  );
 
-    // main call body
-    generationBuffer.push(`
+  // main call body
+  generationBuffer.push(`
         export const ${
-          generated.name
+          script.name
         } = async (context: Context) : Promise<${pascalCase(
-          generated.name,
+          script.name,
         )}Resultset> => {
             const response = (await context.sql.begin(async (sql: postgres.Sql) =>{
                 return await sql\`
@@ -95,12 +132,5 @@ ${script.script}
             )} }));
         }
     `);
-  });
-
-  await fs.promises.writeFile(
-    path.join(context.generateInto, `sqlScripts.ts`),
-    await prettier.format(generationBuffer.join("\n"), {
-      parser: "typescript",
-    }),
-  );
+  return generationBuffer.join("\n");
 };

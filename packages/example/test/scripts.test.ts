@@ -17,4 +17,8 @@ describe("The database can run scripts", () => {
     const value = await db.Scripts.tally();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
+  it("that have nested namespaces", async () => {
+    const value = await db.Scripts.Sample.Film.tally();
+    value.forEach((v) => expect(v.count).toBeGreaterThan(0));
+  });
 });

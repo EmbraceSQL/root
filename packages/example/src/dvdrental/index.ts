@@ -75,7 +75,19 @@ export class Database {
   })(this);
 
   public Scripts = new (class {
-    constructor(public superThis: Database) {}
+    constructor(private superThis: Database) {}
+
+    public Sample = new (class {
+      constructor(private superThis: Database) {}
+
+      public Film = new (class {
+        constructor(private superThis: Database) {}
+
+        async tally() {
+          return sqlScripts.Sample.Film.tally(this.superThis.context);
+        }
+      })(this.superThis);
+    })(this.superThis);
 
     async tally() {
       return sqlScripts.tally(this.superThis.context);

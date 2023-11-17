@@ -1,4 +1,5 @@
 import { GenerationContext } from "..";
+import { GeneratedFromSqlScript, isSqlScript } from "../../context";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
@@ -68,22 +69,38 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   // holder for all scripts provides a . separatio and a sql context
   generationBuffer.push(`
     public Scripts = new class {
-       		constructor(public superThis: Database) {}
+       		constructor(private superThis: Database) {}
         `);
 
   // and through all the generated sql scripts, each one of these
-  // gets a call wrapper -- namespaces will merge up.
-  context.generatedFromSqlScripts.forEach((script) => {
-    generationBuffer.push(`
-    async ${script.name}() {
-      return sqlScripts.${script.namespaceSegments.join(".")}${
-        script.namespaceSegments.length ? "." : ""
-      }${script.name}(this.superThis.context);
-    }
-    
+  // gets a call wrapper -- namespaces recursively tree up as nested classes
+  const depthFirst = (v: GeneratedFromSqlScript) => {
+    Object.keys(v).forEach((key) => {
+      const script = v[key];
+      // this is the no fooling generation case -- pop into
+      // the generation buffer
+      if (isSqlScript(script)) {
+        generationBuffer.push(`
+        async ${script.name}() {
+          return sqlScripts.${script.namespaceSegments.join(".")}${
+            script.namespaceSegments.length ? "." : ""
+          }${script.name}(this.superThis.context);
+        }
     `);
-  });
-  // close off scripts
+      } else {
+        // and here is the depth first part, make a namespace and fill it
+        generationBuffer.push(`
+          public ${key} = new class {
+       		  constructor(private superThis: Database) {}
+        `);
+        depthFirst(script);
+        generationBuffer.push(`}(this.superThis)`);
+      }
+    });
+  };
+  // visit our entire script tree with some depth first search
+  depthFirst(context.generatedFromSqlScripts);
+  // close off Scripts outer scope
   generationBuffer.push(`}(this)`);
 
   //class end
