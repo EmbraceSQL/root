@@ -110,22 +110,39 @@ const generateScript = (context: GenerationContext, script: SqlScript) => {
         )}Record[];
       `);
 
+  // snippet will build the ordered parameter list
+  const parameterBuilders = script.metadata.types.map(
+    (oid, i) =>
+      `_${i + 1}: schemas.PgCatalog.${context.resolveType(oid).typescriptName}`,
+  );
+  const parameterString = parameterBuilders.length
+    ? "," + parameterBuilders.join(",")
+    : "";
+  // and the passes
+  const parameterPasses = parameterBuilders.length
+    ? ", [" + script.metadata.types.map((oid, i) => `_${i + 1}`).join(",") + "]"
+    : "";
+
   // snippet will pick resultset fields to type map
   const recordPieceBuilders = script.metadata.columns.map(
     (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
   );
 
+  // just a bit of escaping of the passsed sql script
+  const preparedSql = script.script.replace("`", "\\`");
+
   // main call body
   generationBuffer.push(`
         export const ${
           script.name
-        } = async (context: Context) : Promise<${pascalCase(
+        } = async (context: Context ${parameterString}) : Promise<${pascalCase(
           script.name,
         )}Resultset> => {
             const response = (await context.sql.begin(async (sql: postgres.Sql) =>{
-                return await sql\`
-${script.script}
-                \`;
+                return await sql.unsafe(\`
+                ${preparedSql}
+                
+                \`${parameterPasses});
             }))
             return response.map(record => ({ ${recordPieceBuilders.join(
               ",",

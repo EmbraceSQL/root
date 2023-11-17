@@ -87,6 +87,10 @@ export class Database {
           return sqlScripts.Sample.Film.tally(this.superThis.context);
         }
       })(this.superThis);
+
+      async pick(_1: schemas.PgCatalog.Text) {
+        return sqlScripts.Sample.pick(this.superThis.context, _1);
+      }
     })(this.superThis);
 
     async tally() {

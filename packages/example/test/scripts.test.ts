@@ -21,4 +21,8 @@ describe("The database can run scripts", () => {
     const value = await db.Scripts.Sample.Film.tally();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
+  it("that have positional parameters", async () => {
+    const value = await db.Scripts.Sample.pick("Basic Easy");
+    expect(value.length).toEqual(1);
+  });
 });

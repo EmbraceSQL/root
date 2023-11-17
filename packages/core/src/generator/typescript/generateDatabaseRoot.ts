@@ -80,11 +80,25 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       // this is the no fooling generation case -- pop into
       // the generation buffer
       if (isSqlScript(script)) {
+        // snippet will build the ordered parameter list
+        const parameterBuilders = script.metadata.types.map(
+          (oid, i) =>
+            `_${i + 1}: schemas.PgCatalog.${
+              context.resolveType(oid).typescriptName
+            }`,
+        );
+        const parameterString = parameterBuilders.length
+          ? parameterBuilders.join(",")
+          : "";
+        // and the passes
+        const parameterPasses = parameterBuilders.length
+          ? "," + script.metadata.types.map((oid, i) => `_${i + 1}`).join(",")
+          : "";
         generationBuffer.push(`
-        async ${script.name}() {
+        async ${script.name}(${parameterString}) {
           return sqlScripts.${script.namespaceSegments.join(".")}${
             script.namespaceSegments.length ? "." : ""
-          }${script.name}(this.superThis.context);
+          }${script.name}(this.superThis.context${parameterPasses});
         }
     `);
       } else {
