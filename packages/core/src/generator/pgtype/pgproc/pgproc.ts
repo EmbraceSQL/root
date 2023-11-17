@@ -44,10 +44,6 @@ export class PGProc implements PostgresProcTypecast {
     return pascalCase(this.proc.proname);
   }
 
-  get typescriptNameForDispatcher() {
-    return `${this.proc.nspname}${pascalCase(this.proc.proname)}`;
-  }
-
   typescriptNameForResponse(withNamespace = false) {
     return (
       (withNamespace ? `${this.namespace.typescriptName}.` : "") +
@@ -181,7 +177,7 @@ export class PGProc implements PostgresProcTypecast {
       })
       .map(
         (a) =>
-          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(request.${a.name})) }`,
+          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
       );
     return `(${args.join(",")})`;
   }

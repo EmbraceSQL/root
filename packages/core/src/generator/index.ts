@@ -1,5 +1,9 @@
 import { Context } from "../context";
-import { generateProcCalls, generateSchemaDefinitions } from "./typescript";
+import {
+  generateProcCalls,
+  generateSchemaDefinitions,
+  generateDatabaseRoot,
+} from "./typescript";
 import * as fs from "fs/promises";
 
 /**
@@ -28,4 +32,5 @@ export const regenerateFromDatabase = async (context: GenerationContext) => {
   await fs.mkdir(context.generateInto, { recursive: true });
   await generateSchemaDefinitions(context);
   await generateProcCalls(context);
+  await generateDatabaseRoot(context);
 };

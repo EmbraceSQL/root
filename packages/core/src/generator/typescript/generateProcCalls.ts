@@ -4,7 +4,7 @@ import * as path from "path";
 import * as prettier from "prettier";
 
 /**
- * Generate TypeScript SQL calls, marshalling from our arguments, into
+ * Generate TypeScript SQL calls, marshalling from our parameters, into
  * a query, and out as records.
  *
  * These need to be generated as the postgres library uses a tagged
@@ -12,8 +12,6 @@ import * as prettier from "prettier";
  * to call variable parameters. So, the solution is to generate a tagged
  * template literal of the procedure call that ends up with only one
  * 'level' of template substituion.
- *
- * @param context
  */
 export const generateProcCalls = async (context: GenerationContext) => {
   // add everything we generate into this buffer
@@ -31,15 +29,14 @@ export const generateProcCalls = async (context: GenerationContext) => {
   ];
 
   // wheel through every namespace, and every proc and generate
-  await Promise.all(
-    context.namespaces.map((n) => {
-      generationBuffer.push(`export namespace ${n.typescriptName} {`);
-      n.procs.map((p) => {
-        // result types back from the database
-        // even functions that do not return a set -- return an array
-        // from the postgres driver
-        const resultsetSource = (() => {
-          return `
+  context.namespaces.map((n) => {
+    generationBuffer.push(`export namespace ${n.typescriptName} {`);
+    n.procs.map((p) => {
+      // result types back from the database
+      // even functions that do not return a set -- return an array
+      // from the postgres driver
+      const resultsetSource = (() => {
+        return `
             type ${p.typescriptName}Result = {
               ${
                 p.resultsetName
@@ -47,10 +44,10 @@ export const generateProcCalls = async (context: GenerationContext) => {
             };
             type ${p.typescriptName}Resultset = ${p.typescriptName}Result[];
             `;
-        })();
-        // result parser for pseudo types
-        const parseResult = p.returnsPseudoTypeRecord
-          ? `
+      })();
+      // result parser for pseudo types
+      const parseResult = p.returnsPseudoTypeRecord
+        ? `
             const parse${p.typescriptName}Result = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               result: any) : schemas.${p.typescriptNameForPostgresResultsetRecord(
@@ -63,20 +60,20 @@ export const generateProcCalls = async (context: GenerationContext) => {
               )};
             } 
             `
-          : "";
+        : "";
 
-        // now the controller
-        const source = `
+      // now the controller
+      const source = `
 
         ${resultsetSource}
         ${parseResult}
 
         export const ${
-          p.typescriptNameForDispatcher
-        } = async (context: Context, request: schemas.${p.typescriptNameForPostgresArguments(
+          p.typescriptName
+        } = async (context: Context, parameters: schemas.${p.typescriptNameForPostgresArguments(
           true,
         )}) => {
-              console.assert(request);
+              console.assert(parameters);
               const sql = context.sql;
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const typed = sql.typed as unknown as PostgresTypecasts;
@@ -108,15 +105,14 @@ export const generateProcCalls = async (context: GenerationContext) => {
               return responseBody;
         };
         `;
-        generationBuffer.push(source);
-      });
-      generationBuffer.push(`}`);
-    }),
-  );
-  await fs.promises.writeFile(
-    path.join(context.generateInto, `procs.ts`),
-    await prettier.format(generationBuffer.join("\n"), {
-      parser: "typescript",
-    }),
-  );
+      generationBuffer.push(source);
+    });
+    generationBuffer.push(`}`);
+  }),
+    await fs.promises.writeFile(
+      path.join(context.generateInto, `procs.ts`),
+      await prettier.format(generationBuffer.join("\n"), {
+        parser: "typescript",
+      }),
+    );
 };
