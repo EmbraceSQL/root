@@ -1,6 +1,7 @@
 // ⚠️ generated - do not modify ⚠️
 import * as schemas from "./schemas";
 import * as procs from "./procs";
+import * as sqlScripts from "./sqlScripts";
 import { Context, initializeContext } from "@embracesql/core/src/context";
 
 export class Database {
@@ -71,5 +72,13 @@ export class Database {
 
   public InformationSchema = new (class {
     constructor(public superThis: Database) {}
+  })(this);
+
+  public Scripts = new (class {
+    constructor(public superThis: Database) {}
+
+    async tally() {
+      return sqlScripts.tally(this.superThis.context);
+    }
   })(this);
 }

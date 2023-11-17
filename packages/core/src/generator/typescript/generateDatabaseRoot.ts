@@ -18,6 +18,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         // ⚠️ generated - do not modify ⚠️
         import * as schemas from "./schemas";
         import * as procs from "./procs";
+        import * as sqlScripts from "./sqlScripts";
         import { Context, initializeContext } from "@embracesql/core/src/context";
     `,
   ];
@@ -45,7 +46,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     
     `);
   // wheel through every namespace, and every proc and generate calls
-  context.namespaces.map((n) => {
+  context.namespaces.forEach((n) => {
     generationBuffer.push(`
     public ${n.typescriptName} = new class {
        		constructor(public superThis: Database) {}
@@ -57,12 +58,33 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       }(parameters : schemas.${p.typescriptNameForPostgresArguments(true)}){
         return procs.${n.typescriptName}.${
           p.typescriptName
-        }(this.superThis.context, parameters)
+        }(this.superThis.context, parameters);
 
       }`);
     });
     generationBuffer.push(`}(this)`);
   });
+
+  // holder for all scripts provides a . separatio and a sql context
+  generationBuffer.push(`
+    public Scripts = new class {
+       		constructor(public superThis: Database) {}
+        `);
+
+  // and through all the generated sql scripts, each one of these
+  // gets a call wrapper -- namespaces will merge up.
+  context.generatedFromSqlScripts.forEach((script) => {
+    generationBuffer.push(`
+    async ${script.name}() {
+      return sqlScripts.${script.namespaceSegments.join(".")}${
+        script.namespaceSegments.length ? "." : ""
+      }${script.name}(this.superThis.context);
+    }
+    
+    `);
+  });
+  // close off scripts
+  generationBuffer.push(`}(this)`);
 
   //class end
   generationBuffer.push(`}`);

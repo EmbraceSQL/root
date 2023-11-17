@@ -4,8 +4,8 @@ import * as path from "path";
 import * as prettier from "prettier";
 
 /**
- * Generate TypeScript SQL calls, marshalling from our parameters, into
- * a query, and out as records.
+ * Generate TypeScript calls for functions and procedures,
+ * marshalling from our parameters, into a query, and out as records.
  *
  * These need to be generated as the postgres library uses a tagged
  * template literal and you can't actually use a template literal dynamically

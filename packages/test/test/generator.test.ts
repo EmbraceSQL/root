@@ -20,6 +20,7 @@ describe("The generator can", () => {
     await regenerateFromDatabase({
       ...context,
       generateInto: path.join(__dirname, "..", "tmp", "generated"),
+      sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
     });
   });
 });

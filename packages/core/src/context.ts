@@ -4,6 +4,21 @@ import { parse, ConnectionOptions } from "pg-connection-string";
 import postgres from "postgres";
 
 /**
+ * Keep track of a single script that was used to generated a typed wrapper.
+ */
+export interface GeneratedFromSqlScript {
+  /**
+   * Array of namespaces to qualify.
+   */
+  namespaceSegments: string[];
+
+  /**
+   * The function name to call to run the script.
+   */
+  name: string;
+}
+
+/**
  * Defines how to typecast types both to and from
  * the wire protocol.
  *
@@ -286,6 +301,7 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     resolveType: (oid: number) => typeMap.get(oid)!,
     namespaces,
     currentNamespace: "",
+    generatedFromSqlScripts: [] as Array<GeneratedFromSqlScript>,
   };
 
   // expand out the type resolvers for all types

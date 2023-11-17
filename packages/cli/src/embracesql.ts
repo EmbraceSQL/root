@@ -17,16 +17,25 @@ const program = new Command()
     "Connect to this postgres for generation.",
     "postgres://postgres:postgres@localhost:5432/postgres",
   )
+  .option(
+    "--sqlScriptsFrom [value]",
+    "Look in this directory for loose SQL scripts.",
+    "",
+  )
   .parse(process.argv);
 
 async function main() {
   const options = program.opts();
   const context = await initializeContext(options.database);
-  console.log(`generating to: ${options.generateInto}`);
+  const start = Date.now();
+  console.log(`generating to ${options.generateInto}`);
   await regenerateFromDatabase({
     ...context,
     generateInto: options.generateInto,
+    sqlScriptsFrom: options.sqlScriptsFrom,
   });
+  console.log(`generated in ${Date.now() - start}ms`);
+  await context.sql.end();
 }
 
 void main();

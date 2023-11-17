@@ -3,6 +3,7 @@ import {
   generateProcCalls,
   generateSchemaDefinitions,
   generateDatabaseRoot,
+  generateSqlScriptCalls,
 } from "./typescript";
 import * as fs from "fs/promises";
 
@@ -14,6 +15,7 @@ import * as fs from "fs/promises";
  */
 export type GenerationContext = Context & {
   generateInto: string;
+  sqlScriptsFrom: string;
 };
 
 /**
@@ -32,5 +34,6 @@ export const regenerateFromDatabase = async (context: GenerationContext) => {
   await fs.mkdir(context.generateInto, { recursive: true });
   await generateSchemaDefinitions(context);
   await generateProcCalls(context);
+  await generateSqlScriptCalls(context);
   await generateDatabaseRoot(context);
 };
