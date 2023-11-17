@@ -9,11 +9,9 @@ import * as path from "path";
 describe("The generator can", () => {
   let context: Context;
   beforeEach(async () => {
-    context = await initializeContext({
-      connection: {
-        database: "dvdrental",
-      },
-    });
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/dvdrental",
+    );
   });
   afterEach(async () => {
     await context.sql.end();

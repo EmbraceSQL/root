@@ -1,5 +1,6 @@
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
 import { groupBy } from "./util";
+import { parse, ConnectionOptions } from "pg-connection-string";
 import postgres from "postgres";
 
 /**
@@ -109,22 +110,13 @@ export type ProcRow = {
   pronargdefaults: number;
 };
 
-/**
- * Props to control which postgres.
- */
-type PostgresConnectionProps = {
-  username: string;
-  password: string;
-  host: string;
-  port: number;
-  database: string;
-};
+const DEFAULT_POSTGRES_URL =
+  "postgres://postgres:postgres@localhost:5432/postgres";
 
-/**
- * Props to configure the generation context.
- */
-type Props = {
-  connection: Partial<PostgresConnectionProps>;
+type ConnectionProps = {
+  [Property in keyof ConnectionOptions]: NonNullable<
+    ConnectionOptions[Property]
+  >;
 };
 
 /**
@@ -136,20 +128,19 @@ type Props = {
  * PGHOST, PHPORT, PGDATABASE, PGUSERNAME, PGPASSWORD so -- chance are
  * this will 'just work'.
  */
-export const initializeContext = async (props?: Partial<Props>) => {
-  const {
-    connection = {
-      username: process.env["PGUSERNAME"] ?? "postgres",
-      password: process.env["PGPASSWORD"] ?? "postgres",
-      host: process.env["PGHOST"] ?? "localhost",
-      port: process.env["PGPORT"]
-        ? Number.parseInt(process.env["PGPORT"])
-        : 5432,
-      database: process.env["PGDATABASE"] ?? "postgres",
-    },
-  } = props ?? {};
+export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
+  const parsed = parse(postgresUrl) as ConnectionProps;
+  // little tweaks of types
+  const connection = {
+    ...parsed,
+    port: parsed.port ? Number.parseInt(parsed.port) : undefined,
+    ssl: parsed.ssl as boolean | object | undefined,
+  };
   // initial sql -- connect to the database and query the catalog
-  let sql = postgres({ ...connection, prepare: false });
+  let sql = postgres({
+    ...connection,
+    prepare: false,
+  });
   /**
    * Time to get that catalog -- this is the way we make sure our type
    * mappings represent the current OID space of the database.
