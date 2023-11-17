@@ -35,6 +35,13 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
     private constructor(private context: Context) {
     }
+
+    /**
+     * Clean up the connection.
+     */
+    async public disconnect() {
+      await this.context.sql.end()
+    }
     
     `);
   // wheel through every namespace, and every proc and generate calls

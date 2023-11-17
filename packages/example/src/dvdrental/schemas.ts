@@ -977,12 +977,6 @@ export namespace Public {
 
   export type LastDayResultset = LastDaySingleResultsetRecord[];
 
-  export interface LastUpdatedArguments {}
-
-  export type LastUpdatedSingleResultsetRecord = PgCatalog.Trigger;
-
-  export type LastUpdatedResultset = LastUpdatedSingleResultsetRecord[];
-
   export interface RewardsReportArguments {
     minMonthlyPurchases: Nullable<PgCatalog.Int4>;
     minDollarAmountPurchased: Nullable<PgCatalog.Numeric>;

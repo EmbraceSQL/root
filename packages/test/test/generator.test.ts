@@ -19,7 +19,7 @@ describe("The generator can", () => {
   it("create TypeScript definitions for database types", async () => {
     await regenerateFromDatabase({
       ...context,
-      generateInto: path.join(__dirname, "tmp", "generated"),
+      generateInto: path.join(__dirname, "..", "tmp", "generated"),
     });
   });
 });

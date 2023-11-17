@@ -260,6 +260,8 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     AND nspname NOT IN('pg_catalog')
     -- only functions and procs
     AND prokind IN ('f', 'p')
+    -- no triggers please
+    AND oid NOT IN (SELECT tgfoid FROM pg_trigger)
   `) as unknown as ProcRow[];
 
   const namespaces = PGNamespace.factory(typeCatalog, procCatalog);

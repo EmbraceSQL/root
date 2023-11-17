@@ -36,11 +36,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.film_in_stock(pFilmId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pFilmId),
-                  )},pStoreId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pStoreId),
-                  )});
+                  public.film_in_stock(pFilmId =>,pStoreId =>);
                   `;
     });
     const results = response as unknown as FilmInStockResultset;
@@ -77,11 +73,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.film_not_in_stock(pFilmId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pFilmId),
-                  )},pStoreId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pStoreId),
-                  )});
+                  public.film_not_in_stock(pFilmId =>,pStoreId =>);
                   `;
     });
     const results = response as unknown as FilmNotInStockResultset;
@@ -107,11 +99,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.get_customer_balance(pCustomerId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pCustomerId),
-                  )},pEffectiveDate => ${typed.pg_catalog_timestamp(
-                    undefinedIsNull(parameters.pEffectiveDate),
-                  )});
+                  public.get_customer_balance(pCustomerId =>,pEffectiveDate =>);
                   `;
     });
     const results = response as unknown as GetCustomerBalanceResultset;
@@ -136,9 +124,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.inventory_held_by_customer(pInventoryId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pInventoryId),
-                  )});
+                  public.inventory_held_by_customer(pInventoryId =>);
                   `;
     });
     const results = response as unknown as InventoryHeldByCustomerResultset;
@@ -163,9 +149,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.inventory_in_stock(pInventoryId => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.pInventoryId),
-                  )});
+                  public.inventory_in_stock(pInventoryId =>);
                   `;
     });
     const results = response as unknown as InventoryInStockResultset;
@@ -190,7 +174,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.last_day(_0 => ${typed.pg_catalog_timestamp(
+                  public.last_day( ${typed.pg_catalog_timestamp(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
@@ -198,31 +182,6 @@ export namespace Public {
     const results = response as unknown as LastDayResultset;
     const responseBody = results?.[0]
       .last_day as unknown as schemas.Public.LastDaySingleResultsetRecord;
-    return responseBody;
-  };
-
-  type LastUpdatedResult = {
-    last_updated: schemas.Public.LastUpdatedSingleResultsetRecord;
-  };
-  type LastUpdatedResultset = LastUpdatedResult[];
-
-  export const LastUpdated = async (
-    context: Context,
-    parameters: schemas.Public.LastUpdatedArguments,
-  ) => {
-    console.assert(parameters);
-    const sql = context.sql;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const typed = sql.typed as unknown as PostgresTypecasts;
-    const response = await sql.begin(async (sql: postgres.Sql) => {
-      return await sql`
-                  SELECT
-                  public.last_updated();
-                  `;
-    });
-    const results = response as unknown as LastUpdatedResultset;
-    const responseBody = results?.[0]
-      .last_updated as unknown as schemas.Public.LastUpdatedSingleResultsetRecord;
     return responseBody;
   };
 
@@ -242,11 +201,7 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.rewards_report(minMonthlyPurchases => ${typed.pg_catalog_int4(
-                    undefinedIsNull(parameters.minMonthlyPurchases),
-                  )},minDollarAmountPurchased => ${typed.pg_catalog_numeric(
-                    undefinedIsNull(parameters.minDollarAmountPurchased),
-                  )});
+                  public.rewards_report(minMonthlyPurchases =>,minDollarAmountPurchased =>);
                   `;
     });
     const results = response as unknown as RewardsReportResultset;

@@ -172,12 +172,15 @@ export class PGProc implements PostgresProcTypecast {
         const type = context.resolveType(oid)!;
         return {
           name: buildTypescriptParameterName(this, i),
+          namedParameter: this.proc.proargnames[i] !== undefined,
           type,
         };
       })
-      .map(
-        (a) =>
-          `${a.name} => \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
+      .map((a) =>
+        a.namedParameter
+          ? `${a.name} =>`
+          : `` +
+            ` \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
       );
     return `(${args.join(",")})`;
   }

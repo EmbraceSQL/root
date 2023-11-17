@@ -14,6 +14,13 @@ export class Database {
 
   private constructor(private context: Context) {}
 
+  /**
+   * Clean up the connection.
+   */
+  public async disconnect() {
+    await this.context.sql.end();
+  }
+
   public PgCatalog = new (class {
     constructor(public superThis: Database) {}
   })(this);
@@ -55,10 +62,6 @@ export class Database {
 
     async LastDay(parameters: schemas.Public.LastDayArguments) {
       return procs.Public.LastDay(this.superThis.context, parameters);
-    }
-
-    async LastUpdated(parameters: schemas.Public.LastUpdatedArguments) {
-      return procs.Public.LastUpdated(this.superThis.context, parameters);
     }
 
     async RewardsReport(parameters: schemas.Public.RewardsReportArguments) {

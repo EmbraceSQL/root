@@ -6,7 +6,7 @@
   "scripts": {
     "check": "tsc --noEmit",
     "generate": "embracesql --database postgres://postgres:postgres@localhost/dvdrental --generateInto ./src/dvdrental",
-    "test": "npm run generate && jest"
+    "test": "npm run generate && jest "
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
