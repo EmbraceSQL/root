@@ -16,50 +16,42 @@ import * as prettier from "prettier";
  * @param context
  */
 export const generateProcCalls = async (context: GenerationContext) => {
-  // keeping things tidy, folder per namespace, file per proc
-  const generationRoot = path.join(context.generateInto, "procs");
-  try {
-    // smoke em so we get a clean generation
-    await fs.promises.rm(generationRoot, { recursive: true });
-  } catch {
-    // does not exist -- carry on
-  }
-
-  // separate out namespaces by folders, this is just a little bit of
-  // visual organization and doesn't affect the actual doing
-  const namespacesInFolders = await Promise.all(
-    context.namespaces.map(async (namespace) => {
-      const namespaceFolder = path.join(generationRoot, namespace.namespace);
-      await fs.promises.mkdir(namespaceFolder, { recursive: true });
-      return {
-        namespace,
-        namespaceFolder,
-      };
-    }),
-  );
+  // add everything we generate into this buffer
+  const generationBuffer = [
+    `
+        // ⚠️ generated - do not modify ⚠️
+        /* eslint-disable @typescript-eslint/no-namespace */
+        import * as schemas from "./schemas";
+        import type { PostgresTypecasts } from "./schemas";
+        import { Context } from "@embracesql/core/src/context";
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        import { undefinedIsNull } from "@embracesql/core/src/types";
+        import postgres from "postgres";
+`,
+  ];
 
   // wheel through every namespace, and every proc and generate
   await Promise.all(
-    namespacesInFolders.map(async (n) => {
-      await Promise.all(
-        n.namespace.procs.map(async (p) => {
-          // result types back from the database
-          // even functions that do not return a set -- return an array
-          // from the postgres driver
-          const resultsetSource = (() => {
-            return `
-            type Result = {
+    context.namespaces.map((n) => {
+      generationBuffer.push(`export namespace ${n.typescriptName} {`);
+      n.procs.map((p) => {
+        // result types back from the database
+        // even functions that do not return a set -- return an array
+        // from the postgres driver
+        const resultsetSource = (() => {
+          return `
+            type ${p.typescriptName}Result = {
               ${
                 p.resultsetName
               }: schemas.${p.typescriptNameForPostgresResultsetRecord(true)}
             };
-            type Resultset = Result[];
+            type ${p.typescriptName}Resultset = ${p.typescriptName}Result[];
             `;
-          })();
-          // result parser for pseudo types
-          const parseResult = p.returnsPseudoTypeRecord
-            ? `
-            const parseResult = (context: Context,
+        })();
+        // result parser for pseudo types
+        const parseResult = p.returnsPseudoTypeRecord
+          ? `
+            const parse${p.typescriptName}Result = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               result: any) : schemas.${p.typescriptNameForPostgresResultsetRecord(
                 true,
@@ -71,17 +63,10 @@ export const generateProcCalls = async (context: GenerationContext) => {
               )};
             } 
             `
-            : "";
+          : "";
 
-          // now the controller
-          const source = `
-        // generated - do not modify
-        import * as schemas from "../../schemas";
-        import type { PostgresTypecasts } from "../../schemas";
-        import { Context } from "@embracesql/core/src/context";
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        import { undefinedIsNull } from "@embracesql/core/src/types";
-        import postgres from "postgres";
+        // now the controller
+        const source = `
 
         ${resultsetSource}
         ${parseResult}
@@ -103,11 +88,13 @@ export const generateProcCalls = async (context: GenerationContext) => {
                   )};
                   \`
               }));
-              const results = response as unknown as Resultset;
+              const results = response as unknown as ${
+                p.typescriptName
+              }Resultset;
               const responseBody = ( ${(() => {
                 // pseudo record -- which is always a table type but needs more parsing
                 if (p.returnsPseudoTypeRecord) {
-                  return `results.map(x => parseResult(context, x.${p.resultsetName}))`;
+                  return `results.map(x => parse${p.typescriptName}Result(context, x.${p.resultsetName}))`;
                 }
                 // table cast of a defined type
                 if (p.returnsSet) {
@@ -121,14 +108,15 @@ export const generateProcCalls = async (context: GenerationContext) => {
               return responseBody;
         };
         `;
-          await fs.promises.writeFile(
-            path.join(n.namespaceFolder, `${p.typescriptNameForDispatcher}.ts`),
-            await prettier.format([source].join("\n"), {
-              parser: "typescript",
-            }),
-          );
-        }),
-      );
+        generationBuffer.push(source);
+      });
+      generationBuffer.push(`}`);
+    }),
+  );
+  await fs.promises.writeFile(
+    path.join(context.generateInto, `procs.ts`),
+    await prettier.format(generationBuffer.join("\n"), {
+      parser: "typescript",
     }),
   );
 };
