@@ -10,7 +10,6 @@ describe("The generator can", () => {
   let context: Context;
   beforeEach(async () => {
     context = await initializeContext({
-      generateInto: path.join(__dirname, "tmp", "generated"),
       connection: {
         database: "dvdrental",
       },
@@ -20,6 +19,9 @@ describe("The generator can", () => {
     await context.sql.end();
   });
   it("create TypeScript definitions for database types", async () => {
-    await regenerateFromDatabase(context);
+    await regenerateFromDatabase({
+      ...context,
+      generateInto: path.join(__dirname, "tmp", "generated"),
+    });
   });
 });

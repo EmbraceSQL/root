@@ -1,6 +1,5 @@
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
 import { groupBy } from "./util";
-import * as path from "path";
 import postgres from "postgres";
 
 /**
@@ -126,7 +125,6 @@ type PostgresConnectionProps = {
  */
 type Props = {
   connection: Partial<PostgresConnectionProps>;
-  generateInto: string;
 };
 
 /**
@@ -149,7 +147,6 @@ export const initializeContext = async (props?: Partial<Props>) => {
         : 5432,
       database: process.env["PGDATABASE"] ?? "postgres",
     },
-    generateInto = path.join(__dirname, "../tmp/generated"),
   } = props ?? {};
   // initial sql -- connect to the database and query the catalog
   let sql = postgres({ ...connection, prepare: false });
@@ -284,10 +281,10 @@ export const initializeContext = async (props?: Partial<Props>) => {
   await sql.end();
   const types: PostgresTypecastMap = {};
   const procTypes: PostgresProcTypecastMap = {};
+
   // ok a little odd loading this up here -- we're going to modify it later before
   // we return which will allow the context being created to be passed to
-  // type resolvers
-
+  // type resolvers that can parse composite and RETURNS TABLE types at runtime
   const context = {
     sql,
     types,
@@ -295,7 +292,6 @@ export const initializeContext = async (props?: Partial<Props>) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     resolveType: (oid: number) => typeMap.get(oid)!,
     namespaces,
-    generateInto,
     currentNamespace: "",
   };
 
@@ -325,6 +321,7 @@ export const initializeContext = async (props?: Partial<Props>) => {
 
   return {
     ...context,
+    // this is the hook into 'actually running postgres'
     sql,
   };
 };

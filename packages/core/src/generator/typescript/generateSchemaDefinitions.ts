@@ -1,4 +1,4 @@
-import { Context } from "../../context";
+import { GenerationContext } from "..";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
@@ -13,7 +13,7 @@ import * as prettier from "prettier";
  * @param context
  * @param namespaces
  */
-export const generateSchemaDefinitions = async (context: Context) => {
+export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // a place to store all the types
   // buffer up generated code here
   const generationBuffer = [];

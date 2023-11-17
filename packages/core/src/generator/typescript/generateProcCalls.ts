@@ -1,4 +1,4 @@
-import { Context } from "../../context";
+import { GenerationContext } from "..";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
@@ -15,7 +15,7 @@ import * as prettier from "prettier";
  *
  * @param context
  */
-export const generateProcCalls = async (context: Context) => {
+export const generateProcCalls = async (context: GenerationContext) => {
   // keeping things tidy, folder per namespace, file per proc
   const generationRoot = path.join(context.generateInto, "procs");
   try {
