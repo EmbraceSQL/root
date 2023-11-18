@@ -46,7 +46,7 @@ export namespace Public {
     const results = response as unknown as FilmInStockResultset;
     const responseBody = results.map((x) =>
       parseFilmInStockResult(context, x.film_in_stock),
-    ) as unknown as schemas.Public.FilmInStockSingleResultsetRecord;
+    ) as unknown as schemas.Public.FilmInStockResultset;
     return responseBody;
   };
 
@@ -87,7 +87,7 @@ export namespace Public {
     const results = response as unknown as FilmNotInStockResultset;
     const responseBody = results.map((x) =>
       parseFilmNotInStockResult(context, x.film_not_in_stock),
-    ) as unknown as schemas.Public.FilmNotInStockSingleResultsetRecord;
+    ) as unknown as schemas.Public.FilmNotInStockResultset;
     return responseBody;
   };
 
@@ -227,7 +227,7 @@ export namespace Public {
     const results = response as unknown as RewardsReportResultset;
     const responseBody = results.map(
       (x) => x.rewards_report,
-    ) as unknown as schemas.Public.RewardsReportSingleResultsetRecord;
+    ) as unknown as schemas.Public.RewardsReportResultset;
     return responseBody;
   };
 }

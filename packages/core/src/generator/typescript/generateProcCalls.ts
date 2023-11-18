@@ -99,7 +99,7 @@ export const generateProcCalls = async (context: GenerationContext) => {
                 }
                 // pick out the scalar case
                 return `results?.[0].${p.resultsetName}`;
-              })()} ) as unknown as schemas.${p.typescriptNameForPostgresResultsetRecord(
+              })()} ) as unknown as schemas.${p.typescriptNameForPostgresResult(
                 true,
               )};
               return responseBody;

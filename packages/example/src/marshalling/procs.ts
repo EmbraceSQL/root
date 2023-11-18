@@ -61,7 +61,7 @@ export namespace Api {
     const results = response as unknown as EchoSetResultset;
     const responseBody = results.map(
       (x) => x.echo_set,
-    ) as unknown as schemas.Api.EchoSetSingleResultsetRecord;
+    ) as unknown as schemas.Api.EchoSetResultset;
     return responseBody;
   };
 
@@ -100,7 +100,7 @@ export namespace Api {
     const results = response as unknown as EchoTableResultset;
     const responseBody = results.map((x) =>
       parseEchoTableResult(context, x.echo_table),
-    ) as unknown as schemas.Api.EchoTableSingleResultsetRecord;
+    ) as unknown as schemas.Api.EchoTableResultset;
     return responseBody;
   };
 
@@ -209,7 +209,7 @@ export namespace Api {
     const results = response as unknown as EchoTypeSetResultset;
     const responseBody = results.map(
       (x) => x.echo_type_set,
-    ) as unknown as schemas.Api.EchoTypeSetSingleResultsetRecord;
+    ) as unknown as schemas.Api.EchoTypeSetResultset;
     return responseBody;
   };
 }

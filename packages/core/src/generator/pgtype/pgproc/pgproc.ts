@@ -58,6 +58,14 @@ export class PGProc implements PostgresProcTypecast {
     );
   }
 
+  typescriptNameForPostgresResult(withNamespace = false) {
+    if (this.returnsPseudoTypeRecord || this.returnsSet) {
+      return this.typescriptNameForPostgresResultset(withNamespace);
+    } else {
+      return this.typescriptNameForPostgresResultsetRecord(withNamespace);
+    }
+  }
+
   typescriptNameForPostgresResultsetRecord(withNamespace = false) {
     return (
       (withNamespace ? `${this.namespace.typescriptName}.` : "") +
