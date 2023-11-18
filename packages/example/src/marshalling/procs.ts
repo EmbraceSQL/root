@@ -26,7 +26,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo(message =>);
+                  api.echo(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoResultset;
@@ -51,7 +53,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_set(message =>);
+                  api.echo_set(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoSetResultset;
@@ -88,7 +92,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_table(message =>);
+                  api.echo_table(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoTableResultset;
@@ -114,7 +120,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_type(message =>);
+                  api.echo_type(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoTypeResultset;
@@ -139,7 +147,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_type_array(message =>);
+                  api.echo_type_array(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoTypeArrayResultset;
@@ -164,7 +174,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_type_nested(message =>);
+                  api.echo_type_nested(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoTypeNestedResultset;
@@ -189,7 +201,9 @@ export namespace Api {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  api.echo_type_set(message =>);
+                  api.echo_type_set(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
                   `;
     });
     const results = response as unknown as EchoTypeSetResultset;

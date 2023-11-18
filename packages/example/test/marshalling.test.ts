@@ -37,4 +37,12 @@ describe("The database can marshall complex types", () => {
       },
     ]);
   });
+  it("that are from an echo function", async () => {
+    const ret = await db.Api.Echo({ message: "Hi" });
+    expect(ret).toEqual("Hi");
+  });
+  it("that are from an echoset function", async () => {
+    const ret = await db.Api.EchoSet({ message: "Hi" });
+    expect(ret).toMatchObject(["Hi"]);
+  });
 });

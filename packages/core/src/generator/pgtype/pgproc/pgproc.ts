@@ -176,11 +176,10 @@ export class PGProc implements PostgresProcTypecast {
           type,
         };
       })
-      .map((a) =>
-        a.namedParameter
-          ? `${a.name} =>`
-          : `` +
-            ` \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
+      .map(
+        (a) =>
+          (a.namedParameter ? `${a.name} =>` : ``) +
+          ` \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
       );
     return `(${args.join(",")})`;
   }

@@ -36,7 +36,11 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.film_in_stock(pFilmId =>,pStoreId =>);
+                  public.film_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
                   `;
     });
     const results = response as unknown as FilmInStockResultset;
@@ -73,7 +77,11 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.film_not_in_stock(pFilmId =>,pStoreId =>);
+                  public.film_not_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
                   `;
     });
     const results = response as unknown as FilmNotInStockResultset;
@@ -99,7 +107,11 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.get_customer_balance(pCustomerId =>,pEffectiveDate =>);
+                  public.get_customer_balance(pCustomerId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pCustomerId),
+                  )},pEffectiveDate => ${typed.pg_catalog_timestamp(
+                    undefinedIsNull(parameters.pEffectiveDate),
+                  )});
                   `;
     });
     const results = response as unknown as GetCustomerBalanceResultset;
@@ -124,7 +136,9 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.inventory_held_by_customer(pInventoryId =>);
+                  public.inventory_held_by_customer(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
                   `;
     });
     const results = response as unknown as InventoryHeldByCustomerResultset;
@@ -149,7 +163,9 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.inventory_in_stock(pInventoryId =>);
+                  public.inventory_in_stock(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
                   `;
     });
     const results = response as unknown as InventoryInStockResultset;
@@ -201,7 +217,11 @@ export namespace Public {
     const response = await sql.begin(async (sql: postgres.Sql) => {
       return await sql`
                   SELECT
-                  public.rewards_report(minMonthlyPurchases =>,minDollarAmountPurchased =>);
+                  public.rewards_report(minMonthlyPurchases => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.minMonthlyPurchases),
+                  )},minDollarAmountPurchased => ${typed.pg_catalog_numeric(
+                    undefinedIsNull(parameters.minDollarAmountPurchased),
+                  )});
                   `;
     });
     const results = response as unknown as RewardsReportResultset;
