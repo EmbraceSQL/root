@@ -48,17 +48,4 @@ describe("The array parser", () => {
     expect(() => arrayAttribute.tryParse(String.raw`}`)).toThrow();
     expect(() => arrayAttribute.tryParse(String.raw`,`)).toThrow();
   });
-
-  it.skip("can split a record array", () => {
-    // TODO context free way to check this parse
-    /*
-    const sample = String.raw`{"(\"howdy y'all\",\"2022-07-02 09:35:31.966868+00\")"}`;
-    expect(context.types.api__echo_type.parse(sample)).toEqual([
-      {
-        echomessage: "howdy y'all",
-        at: new Date("2022-07-02 09:35:31.966868+00"),
-      },
-    ]);
-    */
-  });
 });

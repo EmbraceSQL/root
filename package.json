@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Love SQL? Love TypeScript? Hate ORMs. You're 🏡.",
   "scripts": {
-    "database": "psql --file var/data/dvdrental/dvdrental.sql",
+    "database": "psql --file var/data/dvdrental/dvdrental.sql && psql --file var/data/marshalling/marshalling.sql",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint .",
     "check": "npm run check --workspaces",

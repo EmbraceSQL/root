@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+embracesql --database postgres://postgres:postgres@localhost/dvdrental --generateInto ./src/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql
+embracesql --database postgres://postgres:postgres@localhost/marshalling --generateInto ./src/marshalling 

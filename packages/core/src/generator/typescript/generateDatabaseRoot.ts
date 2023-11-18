@@ -19,10 +19,12 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         // ⚠️ generated - do not modify ⚠️
         import * as schemas from "./schemas";
         import * as procs from "./procs";
-        import * as sqlScripts from "./sqlScripts";
         import { Context, initializeContext } from "@embracesql/core/src/context";
     `,
   ];
+  if (Object.keys(context.generatedFromSqlScripts).length) {
+    generationBuffer.push(`import * as sqlScripts from "./sqlScripts";`);
+  }
   // class start
   generationBuffer.push(`export class Database { `);
   generationBuffer.push(`
@@ -35,7 +37,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         return new Database(await initializeContext(postgresUrl));
     }
 
-    private constructor(private context: Context) {
+    private constructor(public context: Context) {
     }
 
     /**

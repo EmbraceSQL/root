@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "check": "tsc --noEmit",
-    "generate": "embracesql --database postgres://postgres:postgres@localhost/dvdrental --generateInto ./src/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql",
+    "generate": "./bin/generate",
     "test": "npm run generate && jest "
   },
   "author": "Will Ballard <wballard@mailframe.net>",

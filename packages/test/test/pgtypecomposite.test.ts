@@ -49,34 +49,4 @@ describe("The composite parser", () => {
       `{"(\\"howdy y'all\\",\\"2022-07-02 10:13:05.840209+00\\")"}`,
     );
   });
-
-  it.skip("can split a record", () => {
-    // TODO: work without a context
-    /*
-    // sample value pulled from a debugger run calling api.echo_table
-    const sample = `("howdy y'all","2022-06-30 21:16:16.374389+00")`;
-    expect(context.types.api_echo_type.parse(sample)).toEqual({
-      echomessage: "howdy y'all",
-      at: new Date("2022-06-30 21:16:16.374389+00"),
-    });
-    */
-  });
-  it.skip("can split a nested array record", () => {
-    // TODO: work without a context
-    // sample valeus from api.echo_type_nested
-    /*
-    const sample = String.raw`("{""(\\""howdy y'all\\"",\\""2022-07-02 10:13:05.840209+00\\"")""}")`;
-    interface HasEchoes {
-      echoes: any[];
-    }
-    expect(
-      (context.types.api_echo_type_nested.parse(sample) as HasEchoes).echoes
-    ).toEqual([
-      {
-        echomessage: "howdy y'all",
-        at: new Date("2022-07-02 10:13:05.840209+00"),
-      },
-    ]);
-    */
-  });
 });

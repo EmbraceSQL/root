@@ -1,9 +1,9 @@
 // ⚠️ generated - do not modify ⚠️
 import * as schemas from "./schemas";
 import * as procs from "./procs";
-import * as sqlScripts from "./sqlScripts";
 import { Context, initializeContext } from "@embracesql/core/src/context";
 
+import * as sqlScripts from "./sqlScripts";
 export class Database {
   /**
    * Connect to your database server via URL, and return
@@ -13,7 +13,7 @@ export class Database {
     return new Database(await initializeContext(postgresUrl));
   }
 
-  private constructor(private context: Context) {}
+  private constructor(public context: Context) {}
 
   /**
    * Clean up the connection.
