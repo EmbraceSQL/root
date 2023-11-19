@@ -103,6 +103,17 @@ export type EnumRow = {
 };
 
 /**
+ * Database row type for indexes.
+ */
+export type IndexRow = {
+  tabletypeoid: number;
+  indexrelid: number;
+  indisunique: boolean;
+  indisprimary: boolean;
+  attributes: Array<AttributeRow>;
+};
+
+/**
  * Database row for types in the pg catalog.
  */
 export type CatalogRow = {
@@ -116,6 +127,7 @@ export type CatalogRow = {
   typtype: string;
   typrelid: number;
   attributes: Array<AttributeRow>;
+  indexes: Array<IndexRow>;
   enums: Array<EnumRow>;
   typoutput: string;
   typcategory: string;
@@ -189,7 +201,6 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     attname
   FROM 
     pg_attribute a 
-    JOIN pg_type t ON a.atttypid = t.oid
   WHERE 
     attnum > 0 
     AND atttypid > 0
@@ -241,6 +252,30 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     typname ASC
   `) as unknown as CatalogRow[];
 
+  /**
+   * All the indexes, grouped up to the *type* oid of the table indexed.
+   */
+  const indexes = groupBy(
+    (await sql`
+    SELECT 
+        (select greatest(reltype, reloftype) from pg_class where oid = indrelid) tabletypeoid,
+        indexrelid, 
+        indisunique, 
+        indisprimary
+    FROM 
+      pg_index
+    `) as unknown as IndexRow[],
+    (r) => r.tabletypeoid,
+  );
+  // join up index attributes
+  Object.values(indexes).forEach((indexes) => {
+    indexes.forEach((index) => {
+      index.attributes = attributes[index.indexrelid]?.sort(
+        (l, r) => l.attnum - r.attnum,
+      );
+    });
+  });
+
   // join up types with their attributes, this makes composite row types real
   typeCatalog.forEach(
     (t) =>
@@ -254,6 +289,11 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
       (t.enums = enums[t.oid]?.sort(
         (l, r) => l.enumsortorder - r.enumsortorder,
       )),
+  );
+  // join up indexes
+  typeCatalog.forEach(
+    (t) =>
+      (t.indexes = indexes[t.oid]?.sort((l, r) => l.indexrelid - r.indexrelid)),
   );
 
   /**

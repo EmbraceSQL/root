@@ -1,4 +1,5 @@
 import { CatalogRow, Context } from "../../context";
+import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { camelCase } from "change-case";
 import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
@@ -21,8 +22,15 @@ export interface ObjectParser {
  * properties.
  */
 export class PGTypeComposite extends PGCatalogType {
+  attributes: PGAttribute[];
   constructor(catalog: CatalogRow) {
     super(catalog);
+    this.attributes = catalog.attributes.map((a) => new PGAttribute(a));
+  }
+
+  attributeByAttnum(attnum: number) {
+    // yep -- postgres is one based
+    return this.attributes[attnum - 1];
   }
 
   typescriptTypeDefinition(context: Context) {
