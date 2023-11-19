@@ -1,4 +1,3 @@
-#! /usr/bin/env node
+#! /usr/bin/env -S ts-node --esm --transpile-only
 
-require("ts-node").register();
 require("./src/embracesql.ts");

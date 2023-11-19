@@ -2,7 +2,6 @@
   "name": "@embracesql/core",
   "version": "1.0.0",
   "description": "Shared library you will need in your project to use EmbraceSQL.",
-  "main": "src/index.ts",
   "scripts": {
     "check": "tsc --noEmit",
     "lint": "eslint ."

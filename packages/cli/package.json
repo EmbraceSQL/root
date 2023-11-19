@@ -1,10 +1,8 @@
 {
-  "name": "@embracesql/cli",
+  "name": "embracesql",
   "version": "1.0.0",
   "description": "",
-  "bin": {
-    "embracesql": "./embracesql.js"
-  },
+  "bin": "./embracesql.js",
   "scripts": {
     "check": "tsc --noEmit"
   },
