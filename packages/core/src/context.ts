@@ -15,7 +15,8 @@ export interface SqlScript {
 }
 
 /**
- * Keep track of a tree of generated scripts.
+ * Keep track of a tree of generated scripts. These are not in
+ * postgres namespaces, but in your own folder structure.
  */
 export interface GeneratedFromSqlScript {
   [key: string]: GeneratedFromSqlScript | SqlScript;
@@ -288,21 +289,20 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
   // join up types with their attributes, this makes composite row types real
   typeCatalog.forEach(
     (t) =>
-      (t.attributes = attributes[t.typrelid]?.sort(
-        (l, r) => l.attnum - r.attnum,
-      )),
+      (t.attributes =
+        attributes[t.typrelid]?.sort((l, r) => l.attnum - r.attnum) ?? []),
   );
   // join up enums with their values, this makes enum types real
   typeCatalog.forEach(
     (t) =>
-      (t.enums = enums[t.oid]?.sort(
-        (l, r) => l.enumsortorder - r.enumsortorder,
-      )),
+      (t.enums =
+        enums[t.oid]?.sort((l, r) => l.enumsortorder - r.enumsortorder) ?? []),
   );
   // join up indexes
   typeCatalog.forEach(
     (t) =>
-      (t.indexes = indexes[t.oid]?.sort((l, r) => l.indexrelid - r.indexrelid)),
+      (t.indexes =
+        indexes[t.oid]?.sort((l, r) => l.indexrelid - r.indexrelid) ?? []),
   );
 
   /**

@@ -24,16 +24,23 @@ export type GenerationContext = Context & {
  * - OpenAPI controller endpoints for each database procedure
  */
 export const regenerateFromDatabase = async (context: GenerationContext) => {
+  // smoke em so we get a clean generation
   try {
     await fs.stat(context.generateInto);
-    // smoke em so we get a clean generation
     await fs.rm(context.generateInto, { recursive: true });
   } catch {
     // does not exist -- carry on
+  } finally {
+    await fs.mkdir(context.generateInto, { recursive: true });
   }
-  await fs.mkdir(context.generateInto, { recursive: true });
+
+  // pure types
   await generateSchemaDefinitions(context);
+
+  // generating each of the database operations
   await generateProcCalls(context);
   await generateSqlScriptCalls(context);
+
+  // and this the actual object 'root' used to access the database
   await generateDatabaseRoot(context);
 };

@@ -1,4 +1,5 @@
 import { AttributeRow, Context } from "../../context";
+import { PGTypeComposite } from "./pgtypecomposite";
 
 /**
  * Table and composite types have attributes, or as they are called
@@ -6,7 +7,10 @@ import { AttributeRow, Context } from "../../context";
  *
  */
 export class PGAttribute {
-  constructor(public attribute: AttributeRow) {}
+  constructor(
+    public onType: PGTypeComposite,
+    public attribute: AttributeRow,
+  ) {}
 
   get name() {
     return this.attribute.attname;

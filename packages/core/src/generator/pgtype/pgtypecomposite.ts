@@ -1,6 +1,7 @@
 import { CatalogRow, Context } from "../../context";
 import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
+import { PGIndex } from "./pgindex";
 import { camelCase } from "change-case";
 import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
 
@@ -23,9 +24,11 @@ export interface ObjectParser {
  */
 export class PGTypeComposite extends PGCatalogType {
   attributes: PGAttribute[];
+  indexes: PGIndex[];
   constructor(catalog: CatalogRow) {
     super(catalog);
-    this.attributes = catalog.attributes.map((a) => new PGAttribute(a));
+    this.attributes = catalog.attributes.map((a) => new PGAttribute(this, a));
+    this.indexes = catalog.indexes.map((a) => new PGIndex(this, a));
   }
 
   attributeByAttnum(attnum: number) {

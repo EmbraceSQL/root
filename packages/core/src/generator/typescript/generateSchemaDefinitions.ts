@@ -25,7 +25,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "@embracesql/core/src/types";
       `,
   );
-  // each namespace gets a namespace
+  // each postgres namespace gets a typescript namespace -- generates itself
   await Promise.all(
     context.namespaces.map((n) => {
       generationBuffer.push(
