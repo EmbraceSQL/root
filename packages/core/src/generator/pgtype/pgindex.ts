@@ -1,4 +1,5 @@
-import { IndexRow } from "../../context";
+import { Context, IndexRow } from "../../context";
+import { PGAttribute } from "./pgattribute";
 import { PGTypeComposite } from "./pgtypecomposite";
 import { pascalCase } from "change-case";
 
@@ -8,12 +9,28 @@ import { pascalCase } from "change-case";
  *
  */
 export class PGIndex {
+  attributes: PGAttribute[];
   constructor(
     public onType: PGTypeComposite,
     public index: IndexRow,
-  ) {}
+  ) {
+    this.attributes = index.attributes.map((a) => new PGAttribute(onType, a));
+  }
 
   get typescriptName() {
-    return pascalCase(this.index.attributes.map((a) => a.attname).join("_"));
+    return `${this.onType.typescriptName}${pascalCase(
+      this.index.attributes.map((a) => a.attname).join("_"),
+    )}`;
+  }
+
+  typescriptTypeDefinition(context: Context) {
+    const namedValues = this.attributes.map(
+      (a) => `${a.typescriptName}: ${a.typescriptTypeDefinition(context)} ;`,
+    );
+    return `
+    export interface ${this.typescriptName}  {
+      ${namedValues.join("\n")}
+    };
+    `;
   }
 }

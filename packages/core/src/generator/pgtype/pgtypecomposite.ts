@@ -1,4 +1,4 @@
-import { CatalogRow, Context } from "../../context";
+import { AttributeRow, CatalogRow, Context } from "../../context";
 import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
@@ -28,6 +28,14 @@ export class PGTypeComposite extends PGCatalogType {
   constructor(catalog: CatalogRow) {
     super(catalog);
     this.attributes = catalog.attributes.map((a) => new PGAttribute(this, a));
+    // translate the attributes on the index into attributes on the type
+    // this is needed to properly pick up constraints which are on the type
+    // for the base table but are not on the type for the index
+    catalog.indexes.forEach((i) => {
+      i.attributes = i.attributes
+        .map((i) => catalog.attributes.find((c) => c.attname === i.attname))
+        .filter((a) => a) as AttributeRow[];
+    });
     this.indexes = catalog.indexes.map((a) => new PGIndex(this, a));
   }
 
@@ -37,21 +45,24 @@ export class PGTypeComposite extends PGCatalogType {
   }
 
   typescriptTypeDefinition(context: Context) {
-    const namedValues = this.catalog.attributes.map(
-      (a) =>
-        `${camelCase(a.attname)}?: Nullable<${
-          context
-            .resolveType(a.atttypid)
-            ?.typescriptNameWithNamespace(context) ?? "void"
-        }>;`,
+    const generationBuffer = [``];
+    // all the fields -- and a partial type to allow filling out with
+    // various sub selects
+    const namedValues = this.attributes.map(
+      (a) => `${a.typescriptName}?: ${a.typescriptTypeDefinition(context)};`,
     );
-    // all the fields -- and a partial type to allow filling out
-    // partial objects to allow nulls to pass through to the database
-    return `
+    generationBuffer.push(`
     export interface ${this.typescriptName}  {
       ${namedValues.join("\n")}
     };
-    `;
+    `);
+
+    // all the index types are ways into this composite via a table
+    this.indexes.forEach((i) =>
+      generationBuffer.push(i.typescriptTypeDefinition(context)),
+    );
+
+    return generationBuffer.join("\n");
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   serializeToPostgres(context: Context, x: any) {

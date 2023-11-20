@@ -101,6 +101,7 @@ export type AttributeRow = {
   attrelid: number;
   atttypid: number;
   attname: string;
+  attnotnull: boolean;
 };
 
 /**
@@ -208,7 +209,8 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     attnum,
     attrelid,
     atttypid,
-    attname
+    attname,
+    attnotnull
   FROM 
     pg_attribute a 
   WHERE 

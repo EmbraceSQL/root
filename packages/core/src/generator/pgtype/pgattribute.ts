@@ -1,5 +1,6 @@
 import { AttributeRow, Context } from "../../context";
 import { PGTypeComposite } from "./pgtypecomposite";
+import { camelCase } from "change-case";
 
 /**
  * Table and composite types have attributes, or as they are called
@@ -16,7 +17,21 @@ export class PGAttribute {
     return this.attribute.attname;
   }
 
-  type(context: Context) {
-    return context.resolveType(this.attribute.atttypid);
+  get typescriptName() {
+    // camel case -- this is a 'property like'
+    return `${camelCase(this.attribute.attname)}`;
+  }
+
+  typescriptTypeDefinition(context: Context) {
+    // nullability, but otherwise delegate to the type of the attribute
+    const underlyingType =
+      context
+        .resolveType(this.attribute.atttypid)
+        ?.typescriptNameWithNamespace(context) ?? "void";
+    if (this.attribute.attnotnull) {
+      return underlyingType;
+    } else {
+      return `Nullable<${underlyingType}>`;
+    }
   }
 }
