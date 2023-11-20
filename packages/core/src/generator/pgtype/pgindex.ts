@@ -18,7 +18,7 @@ export class PGIndex {
   }
 
   get typescriptName() {
-    return `${this.onType.typescriptName}${pascalCase(
+    return `${this.onType.typescriptName}By${pascalCase(
       this.index.attributes.map((a) => a.attname).join("_"),
     )}`;
   }

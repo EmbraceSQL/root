@@ -1,5 +1,5 @@
 import { GenerationContext } from "..";
-import { GeneratedFromSqlScript, isSqlScript } from "../../context";
+import { SqlScriptOperations } from "../operations/sqlscript";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
@@ -17,14 +17,16 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   const generationBuffer = [
     `
         // ⚠️ generated - do not modify ⚠️
+        /* eslint-disable @typescript-eslint/no-namespace */
         import * as schemas from "./schemas";
         import * as procs from "./procs";
         import { Context, initializeContext } from "@embracesql/core/src/context";
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
+        import postgres from "postgres";
     `,
   ];
-  if (Object.keys(context.generatedFromSqlScripts).length) {
-    generationBuffer.push(`import * as sqlScripts from "./sqlScripts";`);
-  }
+
   // class start
   generationBuffer.push(`export class Database { `);
   generationBuffer.push(`
@@ -68,56 +70,21 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     generationBuffer.push(`}(this)`);
   });
 
-  // holder for all scripts provides a . separatio and a sql context
-  generationBuffer.push(`
+  // holder for all scripts provides a .Scripts grouping
+  if (context.sqlScriptsFrom?.length) {
+    const scripts = await SqlScriptOperations.factory(
+      context,
+      context.sqlScriptsFrom,
+    );
+    generationBuffer.push(`
     public Scripts = new class {
-       		constructor(private superThis: Database) {}
+       		constructor(private context: Context) {}
         `);
+    generationBuffer.push(scripts.typescriptDefinition(context));
 
-  // and through all the generated sql scripts, each one of these
-  // gets a call wrapper -- namespaces recursively tree up as nested classes
-  const depthFirst = (v: GeneratedFromSqlScript) => {
-    Object.keys(v).forEach((key) => {
-      const script = v[key];
-      // this is the no fooling generation case -- pop into
-      // the generation buffer
-      if (isSqlScript(script)) {
-        // snippet will build the ordered parameter list
-        const parameterBuilders = script.metadata.types.map(
-          (oid, i) =>
-            `_${i + 1}: schemas.PgCatalog.${
-              context.resolveType(oid).typescriptName
-            }`,
-        );
-        const parameterString = parameterBuilders.length
-          ? parameterBuilders.join(",")
-          : "";
-        // and the passes
-        const parameterPasses = parameterBuilders.length
-          ? "," + script.metadata.types.map((oid, i) => `_${i + 1}`).join(",")
-          : "";
-        generationBuffer.push(`
-        async ${script.name}(${parameterString}) {
-          return sqlScripts.${script.namespaceSegments.join(".")}${
-            script.namespaceSegments.length ? "." : ""
-          }${script.name}(this.superThis.context${parameterPasses});
-        }
-    `);
-      } else {
-        // and here is the depth first part, make a namespace and fill it
-        generationBuffer.push(`
-          public ${key} = new class {
-       		  constructor(private superThis: Database) {}
-        `);
-        depthFirst(script);
-        generationBuffer.push(`}(this.superThis)`);
-      }
-    });
-  };
-  // visit our entire script tree with some depth first search
-  depthFirst(context.generatedFromSqlScripts);
-  // close off Scripts outer scope
-  generationBuffer.push(`}(this)`);
+    // close off Scripts outer scope
+    generationBuffer.push(`}(this.context)`);
+  }
 
   //class end
   generationBuffer.push(`}`);

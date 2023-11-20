@@ -3,7 +3,6 @@ import {
   generateProcCalls,
   generateSchemaDefinitions,
   generateDatabaseRoot,
-  generateSqlScriptCalls,
 } from "./typescript";
 import * as fs from "fs/promises";
 
@@ -39,7 +38,6 @@ export const regenerateFromDatabase = async (context: GenerationContext) => {
 
   // generating each of the database operations
   await generateProcCalls(context);
-  await generateSqlScriptCalls(context);
 
   // and this the actual object 'root' used to access the database
   await generateDatabaseRoot(context);
