@@ -21,24 +21,10 @@ import { Parser, seqObj } from "parsimmon";
  * group and fully qualify proc names.
  */
 export class PGProc implements PostgresProcTypecast {
-  proc: ProcRow;
-  namespace: PGNamespace;
-  /**
-   * Base constructions picks out the name.
-   *
-   * @param catalog
-   */
-  constructor(namespace: PGNamespace, proc: ProcRow) {
-    this.namespace = namespace;
-    this.proc = proc;
-  }
-
-  /**
-   * The all powerful oid.
-   */
-  get oid() {
-    return this.proc.oid;
-  }
+  constructor(
+    public namespace: PGNamespace,
+    public proc: ProcRow,
+  ) {}
 
   get typescriptName() {
     return pascalCase(this.proc.proname);

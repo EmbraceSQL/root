@@ -84,6 +84,15 @@ export interface PostgresProcTypecastMap {
 }
 
 /**
+ * Database row type for tables.
+ */
+export type TableRow = {
+  relname: string;
+  nspname: string;
+  tabletypeoid: number;
+};
+
+/**
  * Database row type for attributes -- the pg catalog name for columns.
  */
 export type AttributeRow = {
@@ -297,6 +306,21 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
   );
 
   /**
+   * Tables - meaning plain old tables. The definition of tables comes
+   * from types, this is just to know what types count 'as tables'.
+   */
+  const tableCatalog = (await sql`
+  SELECT
+    relname,
+    (select nspname FROM pg_namespace n WHERE n.oid = relnamespace) nspname,
+    GREATEST(reltype, reloftype) tabletypeoid
+  FROM
+    pg_class
+  WHERE
+    relkind in ('r')
+  `) as unknown as TableRow[];
+
+  /**
    * All the procs -- stored procedures and functions -- along with
    * their arguments.
    */
@@ -331,8 +355,15 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     AND oid NOT IN (SELECT tgfoid FROM pg_trigger)
   `) as unknown as ProcRow[];
 
-  const namespaces = PGNamespace.factory(typeCatalog, procCatalog);
+  // catalog is loaded, translate the raw catalog data into runtime objects
+  const namespaces = PGNamespace.factory(
+    typeCatalog,
+    tableCatalog,
+    procCatalog,
+  );
 
+  // after the namespaces have been created, we have fully defined
+  // PGCatalogType objects ready to use, map them all by oid
   const typeMap = new Map(
     namespaces.flatMap((n) => n.types).map((t) => [t.oid, t]),
   );

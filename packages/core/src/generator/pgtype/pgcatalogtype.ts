@@ -37,9 +37,6 @@ export class PGCatalogType {
     return formatted;
   }
 
-  /**
-   * Convention is pascal case. Public is a reserved word in TypeScript.
-   */
   typescriptNameWithNamespace(context: Context) {
     if (this.catalog.nspname === context.currentNamespace) {
       return this.typescriptName;

@@ -1,7 +1,8 @@
-import { CatalogRow, Context, ProcRow } from "../../context";
+import { CatalogRow, Context, ProcRow, TableRow } from "../../context";
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGProc } from "./pgproc";
+import { PGTable } from "./pgtable";
 import { PGType } from "./pgtype";
 import { pascalCase } from "change-case";
 
@@ -14,14 +15,20 @@ export class PGNamespace {
   /**
    * Build all namespaces to be found in the passed catalogs.
    */
-  static factory(typeCatalog: CatalogRow[], procCatalog: ProcRow[]) {
+  static factory(
+    typeCatalog: CatalogRow[],
+    tableCatalog: TableRow[],
+    procCatalog: ProcRow[],
+  ) {
     const typesByNamespace = groupBy(typeCatalog, (r) => r.nspname);
+    const tablesByNamespace = groupBy(tableCatalog, (r) => r.nspname);
     const procsByNamespace = groupBy(procCatalog, (r) => r.nspname);
     return Object.keys(typesByNamespace).map(
       (namespace) =>
         new PGNamespace(
           namespace,
-          typesByNamespace[namespace],
+          typesByNamespace[namespace] ?? [],
+          tablesByNamespace[namespace] ?? [],
           procsByNamespace[namespace] ?? [],
         ),
     );
@@ -29,11 +36,18 @@ export class PGNamespace {
 
   namespace: string;
   types: PGCatalogType[];
+  tables: PGTable[];
   procs: PGProc[];
 
-  constructor(namespace: string, types: CatalogRow[], procs: ProcRow[]) {
+  constructor(
+    namespace: string,
+    types: CatalogRow[],
+    tables: TableRow[],
+    procs: ProcRow[],
+  ) {
     this.namespace = namespace;
     this.types = types.map((t) => PGType.factory(t)).filter((t) => t);
+    this.tables = tables.map((t) => new PGTable(this, t));
     this.procs = procs.map((p) => new PGProc(this, p));
   }
 
