@@ -1,5 +1,5 @@
 import { GenerationContext } from "..";
-import { ProcOperations } from "../operations/proc";
+import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
 import * as fs from "fs";
 import * as path from "path";
@@ -66,7 +66,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     `);
   // wheel through every namespace, and every proc and generate calls
   // each schema / namespace turns into a .<Schema> grouping
-  const procs = await ProcOperations.factory(context);
+  const procs = await DatabaseOperation.factory(context);
   generationBuffer.push(procs.typescriptDefinition(context));
 
   // holder for all scripts provides a .Scripts grouping

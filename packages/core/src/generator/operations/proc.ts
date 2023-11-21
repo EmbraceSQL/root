@@ -1,71 +1,11 @@
 import { Context } from "../../context";
-import { PGNamespace } from "../pgtype/pgnamespace";
 import { PGProc } from "../pgtype/pgproc";
 import { Operation } from "./operation";
 
 /**
- * Build up a namespace of operations.
- */
-export class ProcOperations implements Operation {
-  static async factory(context: Context) {
-    const ret = new ProcOperations(context);
-    await ret.build(context);
-    return ret;
-  }
-
-  private namespaces: ProcNamespaceOperation[];
-
-  private constructor(context: Context) {
-    this.namespaces = context.namespaces.map(
-      (n) => new ProcNamespaceOperation(n),
-    );
-  }
-
-  async build(context: Context) {
-    await Promise.all(this.namespaces.map((n) => n.build(context)));
-  }
-
-  typescriptDefinition(context: Context): string {
-    return this.namespaces
-      .map((n) => n.typescriptDefinition(context))
-      .join("\n");
-  }
-}
-
-/**
- * A single namespace full of procs.
- */
-class ProcNamespaceOperation implements Operation {
-  private procs: ProcOperation[];
-
-  constructor(private namespace: PGNamespace) {
-    this.procs = namespace.procs.map((p) => new ProcOperation(p));
-  }
-
-  async build(context: Context) {
-    await Promise.all(this.procs.map((p) => p.build(context)));
-  }
-
-  typescriptDefinition(context: Context): string {
-    const generationBuffer = [
-      `
-        public ${this.namespace.typescriptName} = new class {
-       		constructor(private database: Database) {}
-        `,
-    ];
-    this.procs.forEach((p) =>
-      generationBuffer.push(p.typescriptDefinition(context)),
-    );
-
-    generationBuffer.push(`}(this)`);
-    return generationBuffer.join("\n");
-  }
-}
-
-/**
  * A single proc.
  */
-class ProcOperation implements Operation {
+export class ProcOperation implements Operation {
   constructor(private proc: PGProc) {}
   async build(context: Context) {
     // currently nothing to do here
