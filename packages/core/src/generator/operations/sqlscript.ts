@@ -125,6 +125,10 @@ export class SqlScriptOperations implements Operation {
     this.scripts.forEach((s) =>
       generationBuffer.push(s.typescriptDefinition(context)),
     );
+    // and our nested spaces
+    this.namespaces.forEach((s) =>
+      generationBuffer.push(s.typescriptDefinition(context)),
+    );
     generationBuffer.push(`}(this.context)`);
     return generationBuffer.join("\n");
   }

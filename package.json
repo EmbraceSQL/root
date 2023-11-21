@@ -4,9 +4,9 @@
   "description": "Love SQL? Love TypeScript? Hate ORMs. You're 🏡.",
   "scripts": {
     "database": "psql --file var/data/dvdrental/dvdrental.sql && psql --file var/data/marshalling/marshalling.sql",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint .",
     "check": "npm run check --workspaces",
+    "test": "npm run test --workspaces",
     "prepare": "husky install"
   },
   "author": "Will Ballard <wballard@mailframe.net>",

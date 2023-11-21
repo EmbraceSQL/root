@@ -4,7 +4,8 @@
   "description": "Shared library you will need in your project to use EmbraceSQL.",
   "scripts": {
     "check": "tsc --noEmit",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "exit 0"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

@@ -1,7 +1,11 @@
 // ⚠️ generated - do not modify ⚠️
+/* eslint-disable @typescript-eslint/no-namespace */
 import * as schemas from "./schemas";
 import * as procs from "./procs";
 import { Context, initializeContext } from "@embracesql/core/src/context";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
+import postgres from "postgres";
 
 export class Database {
   /**
@@ -59,9 +63,5 @@ export class Database {
     async EchoTypeSet(parameters: schemas.Api.EchoTypeSetArguments) {
       return procs.Api.EchoTypeSet(this.superThis.context, parameters);
     }
-  })(this);
-
-  public Scripts = new (class {
-    constructor(private superThis: Database) {}
   })(this);
 }

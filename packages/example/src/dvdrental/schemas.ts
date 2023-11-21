@@ -713,10 +713,18 @@ export namespace Public {
   export type YearArray = Array<Year>;
 
   export interface Actor {
-    actorId?: Nullable<PgCatalog.Int4>;
-    firstName?: Nullable<PgCatalog.Varchar>;
-    lastName?: Nullable<PgCatalog.Varchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    actorId?: PgCatalog.Int4;
+    firstName?: PgCatalog.Varchar;
+    lastName?: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface ActorByActorId {
+    actorId: PgCatalog.Int4;
+  }
+
+  export interface ActorByLastName {
+    lastName: PgCatalog.Varchar;
   }
 
   export interface ActorInfo {
@@ -727,46 +735,86 @@ export namespace Public {
   }
 
   export interface Address {
-    addressId?: Nullable<PgCatalog.Int4>;
-    address?: Nullable<PgCatalog.Varchar>;
+    addressId?: PgCatalog.Int4;
+    address?: PgCatalog.Varchar;
     address2?: Nullable<PgCatalog.Varchar>;
-    district?: Nullable<PgCatalog.Varchar>;
-    cityId?: Nullable<PgCatalog.Int2>;
+    district?: PgCatalog.Varchar;
+    cityId?: PgCatalog.Int2;
     postalCode?: Nullable<PgCatalog.Varchar>;
-    phone?: Nullable<PgCatalog.Varchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    phone?: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface AddressByAddressId {
+    addressId: PgCatalog.Int4;
+  }
+
+  export interface AddressByCityId {
+    cityId: PgCatalog.Int2;
   }
 
   export interface Category {
-    categoryId?: Nullable<PgCatalog.Int4>;
-    name?: Nullable<PgCatalog.Varchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    categoryId?: PgCatalog.Int4;
+    name?: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CategoryByCategoryId {
+    categoryId: PgCatalog.Int4;
   }
 
   export interface City {
-    cityId?: Nullable<PgCatalog.Int4>;
-    city?: Nullable<PgCatalog.Varchar>;
-    countryId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    cityId?: PgCatalog.Int4;
+    city?: PgCatalog.Varchar;
+    countryId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CityByCityId {
+    cityId: PgCatalog.Int4;
+  }
+
+  export interface CityByCountryId {
+    countryId: PgCatalog.Int2;
   }
 
   export interface Country {
-    countryId?: Nullable<PgCatalog.Int4>;
-    country?: Nullable<PgCatalog.Varchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    countryId?: PgCatalog.Int4;
+    country?: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CountryByCountryId {
+    countryId: PgCatalog.Int4;
   }
 
   export interface Customer {
-    customerId?: Nullable<PgCatalog.Int4>;
-    storeId?: Nullable<PgCatalog.Int2>;
-    firstName?: Nullable<PgCatalog.Varchar>;
-    lastName?: Nullable<PgCatalog.Varchar>;
+    customerId?: PgCatalog.Int4;
+    storeId?: PgCatalog.Int2;
+    firstName?: PgCatalog.Varchar;
+    lastName?: PgCatalog.Varchar;
     email?: Nullable<PgCatalog.Varchar>;
-    addressId?: Nullable<PgCatalog.Int2>;
-    activebool?: Nullable<PgCatalog.Bool>;
-    createDate?: Nullable<PgCatalog.Date>;
+    addressId?: PgCatalog.Int2;
+    activebool?: PgCatalog.Bool;
+    createDate?: PgCatalog.Date;
     lastUpdate?: Nullable<PgCatalog.Timestamp>;
     active?: Nullable<PgCatalog.Int4>;
+  }
+
+  export interface CustomerByCustomerId {
+    customerId: PgCatalog.Int4;
+  }
+
+  export interface CustomerByAddressId {
+    addressId: PgCatalog.Int2;
+  }
+
+  export interface CustomerByStoreId {
+    storeId: PgCatalog.Int2;
+  }
+
+  export interface CustomerByLastName {
+    lastName: PgCatalog.Varchar;
   }
 
   export interface CustomerList {
@@ -782,31 +830,61 @@ export namespace Public {
   }
 
   export interface Film {
-    filmId?: Nullable<PgCatalog.Int4>;
-    title?: Nullable<PgCatalog.Varchar>;
+    filmId?: PgCatalog.Int4;
+    title?: PgCatalog.Varchar;
     description?: Nullable<PgCatalog.Text>;
     releaseYear?: Nullable<Year>;
-    languageId?: Nullable<PgCatalog.Int2>;
-    rentalDuration?: Nullable<PgCatalog.Int2>;
-    rentalRate?: Nullable<PgCatalog.Numeric>;
+    languageId?: PgCatalog.Int2;
+    rentalDuration?: PgCatalog.Int2;
+    rentalRate?: PgCatalog.Numeric;
     length?: Nullable<PgCatalog.Int2>;
-    replacementCost?: Nullable<PgCatalog.Numeric>;
+    replacementCost?: PgCatalog.Numeric;
     rating?: Nullable<MpaaRating>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    lastUpdate?: PgCatalog.Timestamp;
     specialFeatures?: Nullable<PgCatalog.TextArray>;
-    fulltext?: Nullable<PgCatalog.Tsvector>;
+    fulltext?: PgCatalog.Tsvector;
+  }
+
+  export interface FilmByFilmId {
+    filmId: PgCatalog.Int4;
+  }
+
+  export interface FilmByFulltext {
+    fulltext: PgCatalog.Tsvector;
+  }
+
+  export interface FilmByLanguageId {
+    languageId: PgCatalog.Int2;
+  }
+
+  export interface FilmByTitle {
+    title: PgCatalog.Varchar;
   }
 
   export interface FilmActor {
-    actorId?: Nullable<PgCatalog.Int2>;
-    filmId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    actorId?: PgCatalog.Int2;
+    filmId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface FilmActorByActorIdFilmId {
+    actorId: PgCatalog.Int2;
+    filmId: PgCatalog.Int2;
+  }
+
+  export interface FilmActorByFilmId {
+    filmId: PgCatalog.Int2;
   }
 
   export interface FilmCategory {
-    filmId?: Nullable<PgCatalog.Int2>;
-    categoryId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    filmId?: PgCatalog.Int2;
+    categoryId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface FilmCategoryByFilmIdCategoryId {
+    filmId: PgCatalog.Int2;
+    categoryId: PgCatalog.Int2;
   }
 
   export interface FilmList {
@@ -821,16 +899,29 @@ export namespace Public {
   }
 
   export interface Inventory {
-    inventoryId?: Nullable<PgCatalog.Int4>;
-    filmId?: Nullable<PgCatalog.Int2>;
-    storeId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    inventoryId?: PgCatalog.Int4;
+    filmId?: PgCatalog.Int2;
+    storeId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface InventoryByInventoryId {
+    inventoryId: PgCatalog.Int4;
+  }
+
+  export interface InventoryByStoreIdFilmId {
+    storeId: PgCatalog.Int2;
+    filmId: PgCatalog.Int2;
   }
 
   export interface Language {
-    languageId?: Nullable<PgCatalog.Int4>;
-    name?: Nullable<PgCatalog.Bpchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    languageId?: PgCatalog.Int4;
+    name?: PgCatalog.Bpchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface LanguageByLanguageId {
+    languageId: PgCatalog.Int4;
   }
 
   export enum MpaaRating {
@@ -853,22 +944,52 @@ export namespace Public {
   }
 
   export interface Payment {
-    paymentId?: Nullable<PgCatalog.Int4>;
-    customerId?: Nullable<PgCatalog.Int2>;
-    staffId?: Nullable<PgCatalog.Int2>;
-    rentalId?: Nullable<PgCatalog.Int4>;
-    amount?: Nullable<PgCatalog.Numeric>;
-    paymentDate?: Nullable<PgCatalog.Timestamp>;
+    paymentId?: PgCatalog.Int4;
+    customerId?: PgCatalog.Int2;
+    staffId?: PgCatalog.Int2;
+    rentalId?: PgCatalog.Int4;
+    amount?: PgCatalog.Numeric;
+    paymentDate?: PgCatalog.Timestamp;
+  }
+
+  export interface PaymentByPaymentId {
+    paymentId: PgCatalog.Int4;
+  }
+
+  export interface PaymentByCustomerId {
+    customerId: PgCatalog.Int2;
+  }
+
+  export interface PaymentByRentalId {
+    rentalId: PgCatalog.Int4;
+  }
+
+  export interface PaymentByStaffId {
+    staffId: PgCatalog.Int2;
   }
 
   export interface Rental {
-    rentalId?: Nullable<PgCatalog.Int4>;
-    rentalDate?: Nullable<PgCatalog.Timestamp>;
-    inventoryId?: Nullable<PgCatalog.Int4>;
-    customerId?: Nullable<PgCatalog.Int2>;
+    rentalId?: PgCatalog.Int4;
+    rentalDate?: PgCatalog.Timestamp;
+    inventoryId?: PgCatalog.Int4;
+    customerId?: PgCatalog.Int2;
     returnDate?: Nullable<PgCatalog.Timestamp>;
-    staffId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    staffId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface RentalByRentalId {
+    rentalId: PgCatalog.Int4;
+  }
+
+  export interface RentalByInventoryId {
+    inventoryId: PgCatalog.Int4;
+  }
+
+  export interface RentalByRentalDateInventoryIdCustomerId {
+    rentalDate: PgCatalog.Timestamp;
+    inventoryId: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
   }
 
   export interface SalesByFilmCategory {
@@ -883,17 +1004,21 @@ export namespace Public {
   }
 
   export interface Staff {
-    staffId?: Nullable<PgCatalog.Int4>;
-    firstName?: Nullable<PgCatalog.Varchar>;
-    lastName?: Nullable<PgCatalog.Varchar>;
-    addressId?: Nullable<PgCatalog.Int2>;
+    staffId?: PgCatalog.Int4;
+    firstName?: PgCatalog.Varchar;
+    lastName?: PgCatalog.Varchar;
+    addressId?: PgCatalog.Int2;
     email?: Nullable<PgCatalog.Varchar>;
-    storeId?: Nullable<PgCatalog.Int2>;
-    active?: Nullable<PgCatalog.Bool>;
-    username?: Nullable<PgCatalog.Varchar>;
+    storeId?: PgCatalog.Int2;
+    active?: PgCatalog.Bool;
+    username?: PgCatalog.Varchar;
     password?: Nullable<PgCatalog.Varchar>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    lastUpdate?: PgCatalog.Timestamp;
     picture?: Nullable<PgCatalog.Bytea>;
+  }
+
+  export interface StaffByStaffId {
+    staffId: PgCatalog.Int4;
   }
 
   export interface StaffList {
@@ -908,10 +1033,18 @@ export namespace Public {
   }
 
   export interface Store {
-    storeId?: Nullable<PgCatalog.Int4>;
-    managerStaffId?: Nullable<PgCatalog.Int2>;
-    addressId?: Nullable<PgCatalog.Int2>;
-    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    storeId?: PgCatalog.Int4;
+    managerStaffId?: PgCatalog.Int2;
+    addressId?: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface StoreByStoreId {
+    storeId: PgCatalog.Int4;
+  }
+
+  export interface StoreByManagerStaffId {
+    managerStaffId: PgCatalog.Int2;
   }
 
   export type Year = PgCatalog.Int4;

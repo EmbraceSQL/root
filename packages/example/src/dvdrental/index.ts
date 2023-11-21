@@ -1,9 +1,12 @@
 // ⚠️ generated - do not modify ⚠️
+/* eslint-disable @typescript-eslint/no-namespace */
 import * as schemas from "./schemas";
 import * as procs from "./procs";
 import { Context, initializeContext } from "@embracesql/core/src/context";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
+import postgres from "postgres";
 
-import * as sqlScripts from "./sqlScripts";
 export class Database {
   /**
    * Connect to your database server via URL, and return
@@ -75,26 +78,88 @@ export class Database {
   })(this);
 
   public Scripts = new (class {
-    constructor(private superThis: Database) {}
+    constructor(private context: Context) {}
 
-    public Sample = new (class {
-      constructor(private superThis: Database) {}
+    public Sql = new (class {
+      constructor(private context: Context) {}
 
-      public Film = new (class {
-        constructor(private superThis: Database) {}
+      tally = async () => {
+        const response = await this.context.sql.begin(
+          async (sql: postgres.Sql) => {
+            return await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.actor
 
-        async tally() {
-          return sqlScripts.Sample.Film.tally(this.superThis.context);
-        }
-      })(this.superThis);
+                
+                `);
+          },
+        );
+        return response.map((record) => ({
+          count: undefinedIsNull(record.count),
+        }));
+      };
 
-      async pick(_1: schemas.PgCatalog.Text) {
-        return sqlScripts.Sample.pick(this.superThis.context, _1);
-      }
-    })(this.superThis);
+      public Sample = new (class {
+        constructor(private context: Context) {}
 
-    async tally() {
-      return sqlScripts.tally(this.superThis.context);
-    }
-  })(this);
+        pick = async (_1: schemas.PgCatalog.Text) => {
+          const response = await this.context.sql.begin(
+            async (sql: postgres.Sql) => {
+              return await sql.unsafe(
+                `
+                SELECT
+    *
+FROM
+    public.film
+WHERE
+    title = $1
+                
+                `,
+                [_1],
+              );
+            },
+          );
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        };
+
+        public Film = new (class {
+          constructor(private context: Context) {}
+
+          tally = async () => {
+            const response = await this.context.sql.begin(
+              async (sql: postgres.Sql) => {
+                return await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.film
+
+                
+                `);
+              },
+            );
+            return response.map((record) => ({
+              count: undefinedIsNull(record.count),
+            }));
+          };
+        })(this.context);
+      })(this.context);
+    })(this.context);
+  })(this.context);
 }

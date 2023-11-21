@@ -23,6 +23,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         import { Context, initializeContext } from "@embracesql/core/src/context";
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         import postgres from "postgres";
     `,
   ];

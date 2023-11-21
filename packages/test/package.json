@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest "
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
