@@ -1,11 +1,17 @@
 // ⚠️ generated - do not modify ⚠️
 /* eslint-disable @typescript-eslint/no-namespace */
 import * as schemas from "./schemas";
-import * as procs from "./procs";
 import { Context, initializeContext } from "@embracesql/core/src/context";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { PostgresTypecasts } from "./schemas";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import postgres from "postgres";
+
+interface HasDatabase {
+  database: Database;
+}
 
 export class Database {
   /**
@@ -26,65 +32,200 @@ export class Database {
   }
 
   public PgCatalog = new (class {
-    constructor(public superThis: Database) {}
+    constructor(private database: Database) {}
   })(this);
 
   public Public = new (class {
-    constructor(public superThis: Database) {}
+    constructor(private database: Database) {}
 
     async FilmInStock(parameters: schemas.Public.FilmInStockArguments) {
-      return procs.Public.FilmInStock(this.superThis.context, parameters);
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.film_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseFilmInStockResult(this.database.context, x.film_in_stock),
+      ) as unknown as schemas.Public.FilmInStockResultset;
+      return responseBody;
     }
 
+    parseFilmInStockResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): schemas.Public.FilmInStockSingleResultsetRecord => {
+      return context.procTypes.public_film_in_stock.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as schemas.Public.FilmInStockSingleResultsetRecord;
+    };
+
     async FilmNotInStock(parameters: schemas.Public.FilmNotInStockArguments) {
-      return procs.Public.FilmNotInStock(this.superThis.context, parameters);
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.film_not_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseFilmNotInStockResult(
+          this.database.context,
+          x.film_not_in_stock,
+        ),
+      ) as unknown as schemas.Public.FilmNotInStockResultset;
+      return responseBody;
     }
+
+    parseFilmNotInStockResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): schemas.Public.FilmNotInStockSingleResultsetRecord => {
+      return context.procTypes.public_film_not_in_stock.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as schemas.Public.FilmNotInStockSingleResultsetRecord;
+    };
 
     async GetCustomerBalance(
       parameters: schemas.Public.GetCustomerBalanceArguments,
     ) {
-      return procs.Public.GetCustomerBalance(
-        this.superThis.context,
-        parameters,
-      );
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.get_customer_balance(pCustomerId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pCustomerId),
+                  )},pEffectiveDate => ${typed.pg_catalog_timestamp(
+                    undefinedIsNull(parameters.pEffectiveDate),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .get_customer_balance as unknown as schemas.Public.GetCustomerBalanceSingleResultsetRecord;
+      return responseBody;
     }
-
     async InventoryHeldByCustomer(
       parameters: schemas.Public.InventoryHeldByCustomerArguments,
     ) {
-      return procs.Public.InventoryHeldByCustomer(
-        this.superThis.context,
-        parameters,
-      );
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.inventory_held_by_customer(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .inventory_held_by_customer as unknown as schemas.Public.InventoryHeldByCustomerSingleResultsetRecord;
+      return responseBody;
     }
-
     async InventoryInStock(
       parameters: schemas.Public.InventoryInStockArguments,
     ) {
-      return procs.Public.InventoryInStock(this.superThis.context, parameters);
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.inventory_in_stock(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .inventory_in_stock as unknown as schemas.Public.InventoryInStockSingleResultsetRecord;
+      return responseBody;
     }
-
     async LastDay(parameters: schemas.Public.LastDayArguments) {
-      return procs.Public.LastDay(this.superThis.context, parameters);
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.last_day( ${typed.pg_catalog_timestamp(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .last_day as unknown as schemas.Public.LastDaySingleResultsetRecord;
+      return responseBody;
     }
-
     async RewardsReport(parameters: schemas.Public.RewardsReportArguments) {
-      return procs.Public.RewardsReport(this.superThis.context, parameters);
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.rewards_report(minMonthlyPurchases => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.minMonthlyPurchases),
+                  )},minDollarAmountPurchased => ${typed.pg_catalog_numeric(
+                    undefinedIsNull(parameters.minDollarAmountPurchased),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map(
+        (x) => x.rewards_report,
+      ) as unknown as schemas.Public.RewardsReportResultset;
+      return responseBody;
     }
   })(this);
 
   public InformationSchema = new (class {
-    constructor(public superThis: Database) {}
+    constructor(private database: Database) {}
   })(this);
 
-  public Scripts = new (class {
-    constructor(private context: Context) {}
+  public Scripts = new (class implements HasDatabase {
+    constructor(public database: Database) {}
 
-    public Sql = new (class {
-      constructor(private context: Context) {}
+    public Sql = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
 
       tally = async () => {
-        const response = await this.context.sql.begin(
+        const response = await this.database.context.sql.begin(
           async (sql: postgres.Sql) => {
             return await sql.unsafe(`
                 SELECT
@@ -101,11 +242,15 @@ FROM
         }));
       };
 
-      public Sample = new (class {
-        constructor(private context: Context) {}
+      public Sample = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
 
         pick = async (_1: schemas.PgCatalog.Text) => {
-          const response = await this.context.sql.begin(
+          const response = await this.database.context.sql.begin(
             async (sql: postgres.Sql) => {
               return await sql.unsafe(
                 `
@@ -138,11 +283,15 @@ WHERE
           }));
         };
 
-        public Film = new (class {
-          constructor(private context: Context) {}
+        public Film = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
 
           tally = async () => {
-            const response = await this.context.sql.begin(
+            const response = await this.database.context.sql.begin(
               async (sql: postgres.Sql) => {
                 return await sql.unsafe(`
                 SELECT
@@ -158,8 +307,8 @@ FROM
               count: undefinedIsNull(record.count),
             }));
           };
-        })(this.context);
-      })(this.context);
-    })(this.context);
-  })(this.context);
+        })(this);
+      })(this);
+    })(this);
+  })(this);
 }

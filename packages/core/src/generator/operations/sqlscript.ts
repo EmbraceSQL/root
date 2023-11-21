@@ -59,7 +59,7 @@ class SqlScriptOperation implements Operation {
     // main call body
     generationBuffer.push(`
          ${this.typescriptName} = async (${parameterString})  => {
-            const response = (await this.context.sql.begin(async (sql: postgres.Sql) =>{
+            const response = (await this.database.context.sql.begin(async (sql: postgres.Sql) =>{
                 return await sql.unsafe(\`
                 ${preparedSql}
                 
@@ -119,8 +119,13 @@ export class SqlScriptOperations implements Operation {
   typescriptDefinition(context: Context): string {
     const generationBuffer = [``];
     generationBuffer.push(`
-          public ${this.typescriptName} = new class {
-       		  constructor(private context: Context) {}
+          public ${this.typescriptName} = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
         `);
     this.scripts.forEach((s) =>
       generationBuffer.push(s.typescriptDefinition(context)),
@@ -129,7 +134,7 @@ export class SqlScriptOperations implements Operation {
     this.namespaces.forEach((s) =>
       generationBuffer.push(s.typescriptDefinition(context)),
     );
-    generationBuffer.push(`}(this.context)`);
+    generationBuffer.push(`}(this)`);
     return generationBuffer.join("\n");
   }
 }

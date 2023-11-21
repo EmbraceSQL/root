@@ -1,9 +1,5 @@
 import { Context } from "../context";
-import {
-  generateProcCalls,
-  generateSchemaDefinitions,
-  generateDatabaseRoot,
-} from "./typescript";
+import { generateSchemaDefinitions, generateDatabaseRoot } from "./typescript";
 import * as fs from "fs/promises";
 
 /**
@@ -35,9 +31,6 @@ export const regenerateFromDatabase = async (context: GenerationContext) => {
 
   // pure types
   await generateSchemaDefinitions(context);
-
-  // generating each of the database operations
-  await generateProcCalls(context);
 
   // and this the actual object 'root' used to access the database
   await generateDatabaseRoot(context);

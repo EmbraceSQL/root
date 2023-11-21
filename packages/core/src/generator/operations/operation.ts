@@ -5,6 +5,10 @@ import { Context } from "../../context";
  */
 export interface Operation {
   /**
+   * Build up the needed metadata.
+   */
+  build(context: Context): Promise<void>;
+  /**
    * Generate the source string defining the operation.
    */
   typescriptDefinition(context: Context): string;

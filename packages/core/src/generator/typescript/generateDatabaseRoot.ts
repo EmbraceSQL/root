@@ -1,4 +1,5 @@
 import { GenerationContext } from "..";
+import { ProcOperations } from "../operations/proc";
 import { SqlScriptOperations } from "../operations/sqlscript";
 import * as fs from "fs";
 import * as path from "path";
@@ -19,14 +20,22 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         // ⚠️ generated - do not modify ⚠️
         /* eslint-disable @typescript-eslint/no-namespace */
         import * as schemas from "./schemas";
-        import * as procs from "./procs";
         import { Context, initializeContext } from "@embracesql/core/src/context";
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        import type { PostgresTypecasts } from "./schemas";
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         import postgres from "postgres";
     `,
   ];
+  // common database interface
+  generationBuffer.push(`
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface HasDatabase {
+    database: Database;
+  }
+  `);
 
   // class start
   generationBuffer.push(`export class Database { `);
@@ -40,7 +49,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         return new Database(await initializeContext(postgresUrl));
     }
 
-    private constructor(public context: Context) {
+    private constructor(public context: Context) {`);
+
+  // constructor body currently empty
+
+  generationBuffer.push(`
     }
 
     /**
@@ -52,24 +65,9 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     
     `);
   // wheel through every namespace, and every proc and generate calls
-  context.namespaces.forEach((n) => {
-    generationBuffer.push(`
-    public ${n.typescriptName} = new class {
-       		constructor(public superThis: Database) {}
-        `);
-    n.procs.map((p) => {
-      generationBuffer.push(`
-      async ${
-        p.typescriptName
-      }(parameters : schemas.${p.typescriptNameForPostgresArguments(true)}){
-        return procs.${n.typescriptName}.${
-          p.typescriptName
-        }(this.superThis.context, parameters);
-
-      }`);
-    });
-    generationBuffer.push(`}(this)`);
-  });
+  // each schema / namespace turns into a .<Schema> grouping
+  const procs = await ProcOperations.factory(context);
+  generationBuffer.push(procs.typescriptDefinition(context));
 
   // holder for all scripts provides a .Scripts grouping
   if (context.sqlScriptsFrom?.length) {
@@ -78,13 +76,13 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       context.sqlScriptsFrom,
     );
     generationBuffer.push(`
-    public Scripts = new class {
-       		constructor(private context: Context) {}
+    public Scripts = new class implements HasDatabase {
+       		constructor(public database: Database) {}
         `);
     generationBuffer.push(scripts.typescriptDefinition(context));
 
     // close off Scripts outer scope
-    generationBuffer.push(`}(this.context)`);
+    generationBuffer.push(`}(this)`);
   }
 
   //class end

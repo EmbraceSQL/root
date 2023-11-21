@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "ESNext",
     "sourceMap": true,
     "strict": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
@@ -14,7 +13,7 @@
     "paths": {
       "@embracesql/core/*": ["packages/core/*"]
     },
-    "lib": ["ES2020"],
+    "lib": ["ESNext"],
     "noEmit": true,
     "typeRoots": ["./node_modules/@types"]
   },

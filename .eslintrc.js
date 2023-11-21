@@ -16,6 +16,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       rules: {
+        "@typescript-eslint/require-await": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-argument": "off",
