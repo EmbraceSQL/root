@@ -1,5 +1,5 @@
-import { PGProc } from ".";
 import { Context } from "../../../context";
+import { PGProc } from "./pgproc";
 import { camelCase } from "change-case";
 
 /**

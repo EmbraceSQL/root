@@ -1,5 +1,10 @@
+import { PGAttributes } from "./generator/pgtype/pgattribute";
+import { PGIndexes } from "./generator/pgtype/pgindex";
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
-import { groupBy } from "./util";
+import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
+import { PGTables } from "./generator/pgtype/pgtable";
+import { PGTypes } from "./generator/pgtype/pgtype";
+import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import { parse, ConnectionOptions } from "pg-connection-string";
 import postgres from "postgres";
 
@@ -57,79 +62,14 @@ export interface PostgresProcTypecastMap {
 }
 
 /**
- * Database row type for tables.
+ * Type factories need metadata from the 'leaf' level ahead of time
+ * to join up. This allows one query per catalog table instead of
+ * ORM style chitter chatter.
  */
-export type TableRow = {
-  relname: string;
-  nspname: string;
-  tabletypeoid: number;
-};
-
-/**
- * Database row type for attributes -- the pg catalog name for columns.
- */
-export type AttributeRow = {
-  attnum: number;
-  attrelid: number;
-  atttypid: number;
-  attname: string;
-  attnotnull: boolean;
-};
-
-/**
- * Database row type for enums.
- */
-export type EnumRow = {
-  enumsortorder: number;
-  enumtypid: number;
-  enumlabel: string;
-};
-
-/**
- * Database row type for indexes.
- */
-export type IndexRow = {
-  tabletypeoid: number;
-  indexrelid: number;
-  indisunique: boolean;
-  indisprimary: boolean;
-  attributes: Array<AttributeRow>;
-};
-
-/**
- * Database row for types in the pg catalog.
- */
-export type CatalogRow = {
-  oid: number;
-  fullname: string;
-  nspname: string;
-  typname: string;
-  typbasetype: number;
-  typelem: number;
-  rngsubtype: number;
-  typtype: string;
-  typrelid: number;
-  attributes: Array<AttributeRow>;
-  indexes: Array<IndexRow>;
-  enums: Array<EnumRow>;
-  typoutput: string;
-  typcategory: string;
-  description: string;
-};
-
-/**
- * Database row for procs in the pg catalog - pg catalog name for functions.
- */
-export type ProcRow = {
-  oid: number;
-  proname: string;
-  nspname: string;
-  proargtypes: number[];
-  proallargtypes: number[];
-  proargnames: string[];
-  prorettype: number;
-  proretset: boolean;
-  pronargdefaults: number;
+export type TypeFactoryContext = {
+  attributes: PGAttributes;
+  indexes: PGIndexes;
+  enumValues: PGTypeEnumValues;
 };
 
 const DEFAULT_POSTGRES_URL =
@@ -158,7 +98,7 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     port: parsed.port ? Number.parseInt(parsed.port) : undefined,
     ssl: parsed.ssl as boolean | object | undefined,
   };
-  // initial sql -- connect to the database and query the catalog
+  // initial sql -- connect to the database, this is used to query the catalog
   let sql = postgres({
     ...connection,
     prepare: false,
@@ -170,179 +110,48 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
    * Oh - this is worth knowing, you can end up with two databases that are in
    * your mind 'the same' - created from the same create scripts - but aren't
    * 'the same' in that different OIDs will be assigned to the logical 'same type'.
+   *
+   * So - having the generated code be in terms of 'names' but this runtime
+   * context be in terms of OIDs is the way you can connect to local or dev
+   * database as well as a production database with the same code.
    */
 
-  /**
-   * Attributes on the composite type that represent each relation (table).
-   */
-  const attributes = groupBy(
-    (await sql`
-  SELECT 
-    attnum,
-    attrelid,
-    atttypid,
-    attname,
-    attnotnull
-  FROM 
-    pg_attribute a 
-  WHERE 
-    attnum > 0 
-    AND atttypid > 0
-  `) as unknown as AttributeRow[],
-    (r) => r.attrelid,
-  );
-  /**
-   * Enumerated values.
-   */
-  const enums = groupBy(
-    (await sql`
-    SELECT 
-        oid, 
-        enumtypid,
-        enumsortorder, 
-        enumlabel
-    FROM 
-      pg_enum
-    `) as unknown as EnumRow[],
-    (r) => r.enumtypid,
-  );
-  /**
-   * Need to look up the types in the database. The postgres catalog unfortunately
-   * does not have this all in one place, so this is going to join a few things up.
-   */
-  const typeCatalog = (await sql`
-  SELECT 
-    oid,
-    typname,
-    (select nspname FROM pg_namespace n WHERE n.oid = p.typnamespace) nspname,
-    typcategory,
-    typtype,
-    p.typbasetype,
-    typrelid,
-    p.typelem,
-    typoutput,
-    -- don't need a whole lot for range types
-    (SELECT rngsubtype::int FROM pg_range WHERE rngtypid = p.oid) rngsubtype,
-    format_type(oid, typtypmod) fullname,
-    (select description FROM pg_description d WHERE d.objoid = p.oid) description
-  FROM
-    pg_type p
-  WHERE
-    -- excluding 'magic' internal types on purpose, these won't show up
-    -- in user schema / code
-    typname NOT LIKE '__pg%'
-    AND typname NOT LIKE 'pg_%'
-  ORDER BY
-    typname ASC
-  `) as unknown as CatalogRow[];
+  // Attributes on the composite type that represent each relation (table, view, index).
+  const attributes = await PGAttributes.factory(sql);
 
-  /**
-   * All the indexes, grouped up to the *type* oid of the table indexed.
-   */
-  const indexes = groupBy(
-    (await sql`
-    SELECT 
-        (select greatest(reltype, reloftype) from pg_class where oid = indrelid) tabletypeoid,
-        indexrelid, 
-        indisunique, 
-        indisprimary
-    FROM 
-      pg_index
-    `) as unknown as IndexRow[],
-    (r) => r.tabletypeoid,
-  );
-  // join up index attributes
-  Object.values(indexes).forEach((indexes) => {
-    indexes.forEach((index) => {
-      index.attributes = attributes[index.indexrelid]?.sort(
-        (l, r) => l.attnum - r.attnum,
-      );
-    });
-  });
+  // indexes a bit more obvious in the catalog, but they need attributes ahead of time
+  // to join up
+  const indexes = await PGIndexes.factory(sql, attributes);
 
-  // join up types with their attributes, this makes composite row types real
-  typeCatalog.forEach(
-    (t) =>
-      (t.attributes =
-        attributes[t.typrelid]?.sort((l, r) => l.attnum - r.attnum) ?? []),
-  );
-  // join up enums with their values, this makes enum types real
-  typeCatalog.forEach(
-    (t) =>
-      (t.enums =
-        enums[t.oid]?.sort((l, r) => l.enumsortorder - r.enumsortorder) ?? []),
-  );
-  // join up indexes
-  typeCatalog.forEach(
-    (t) =>
-      (t.indexes =
-        indexes[t.oid]?.sort((l, r) => l.indexrelid - r.indexrelid) ?? []),
+  // enum values -- these are the individual bits of the enum like attributes
+  // but not the postgres type that is the enum itself
+  const enumValues = await PGTypeEnumValues.factory(sql);
+
+  // and now we have enough data to really make types
+  const typeCatalog = await PGTypes.factory(
+    { attributes, indexes, enumValues },
+    sql,
   );
 
-  /**
-   * Tables - meaning plain old tables. The definition of tables comes
-   * from types, this is just to know what types count 'as tables'.
-   */
-  const tableCatalog = (await sql`
-  SELECT
-    relname,
-    (select nspname FROM pg_namespace n WHERE n.oid = relnamespace) nspname,
-    GREATEST(reltype, reloftype) tabletypeoid
-  FROM
-    pg_class
-  WHERE
-    relkind in ('r')
-  `) as unknown as TableRow[];
+  // procs rely on types so we can create them now
+  const procCatalog = await PGProcs.factory({ typeCatalog }, sql);
 
-  /**
-   * All the procs -- stored procedures and functions -- along with
-   * their arguments.
-   */
-  const procCatalog = (await sql`
-  WITH all_procs AS (
-  SELECT 
-    oid,
-    prokind,
-    proname, 
-    (select nspname FROM pg_namespace n WHERE n.oid = pronamespace) nspname,
-    provariadic, 
-    pronargdefaults,
-    prorettype, 
-    proretset, 
-    COALESCE(proargtypes, ARRAY[]::oid[]) proargtypes, 
-    COALESCE(proallargtypes, ARRAY[]::oid[]) proallargtypes, 
-    COALESCE(proargnames, ARRAY[]::text[]) proargnames
-  FROM 
-    pg_proc
-  )
-  SELECT 
-    *
-  FROM
-      all_procs
-  WHERE 
-    NOT proname ~ '^_'
-    -- schemas that we will need to skip go here
-    AND nspname NOT IN('pg_catalog')
-    -- only functions and procs
-    AND prokind IN ('f', 'p')
-    -- no triggers please
-    AND oid NOT IN (SELECT tgfoid FROM pg_trigger)
-  `) as unknown as ProcRow[];
+  // Tables - meaning plain old tables. The definition of tables comes from types.
+  // Tables are interesting because they have columns (attributes) and indexes.
+  const tableCatalog = await PGTables.factory(
+    { attributes, indexes, enumValues, typeCatalog },
+    sql,
+  );
 
-  // catalog is loaded, translate the raw catalog data into runtime objects
+  // and group up all the database by namespaces
   const namespaces = PGNamespace.factory(
     typeCatalog,
     tableCatalog,
     procCatalog,
   );
 
-  // after the namespaces have been created, we have fully defined
-  // PGCatalogType objects ready to use, map them all by oid
-  const typeMap = new Map(
-    namespaces.flatMap((n) => n.types).map((t) => [t.oid, t]),
-  );
-
-  // now we set up a new sql that can do type marshalling
+  // now we set up a new sql that can do type marshalling - runtime data
+  // from the database is complete
   await sql.end();
   const types: PostgresTypecastMap = {};
   const procTypes: PostgresProcTypecastMap = {};
@@ -355,17 +164,16 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     types,
     procTypes,
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    resolveType: (oid: number) => typeMap.get(oid)!,
+    resolveType: (oid: number) => typeCatalog.typesByOid[oid]!,
     namespaces,
     currentNamespace: "",
   };
 
   // expand out the type resolvers for all types
-  namespaces
-    .flatMap((n) => n.types)
-    .forEach(
-      (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context)),
-    );
+  typeCatalog.types.forEach(
+    (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context)),
+  );
+  // and resolvers for procs, which have their own pseudo types as return types
   namespaces
     .flatMap((n) => n.procs)
     .filter((p) => p.returnsPseudoTypeRecord)

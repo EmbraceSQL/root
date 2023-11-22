@@ -1,5 +1,6 @@
-import { CatalogRow, Context } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { CatalogRow } from "./pgtype";
 
 /**
  * Domain types are renaming of other types.
@@ -7,7 +8,7 @@ import { PGCatalogType } from "./pgcatalogtype";
  * In the database these may have different constraints
  */
 export class PGTypeDomain extends PGCatalogType {
-  constructor(catalog: CatalogRow) {
+  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
   }
 

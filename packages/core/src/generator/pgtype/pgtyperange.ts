@@ -1,12 +1,13 @@
-import { CatalogRow, Context } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { CatalogRow } from "./pgtype";
 
 /**
  * Ranges are pairs of base types the specify the low and high potential
  * values.
  */
 export class PGTypeRange extends PGCatalogType {
-  constructor(catalog: CatalogRow) {
+  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
   }
 

@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { CatalogRow, Context } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGNumber } from "./base/number";
 import { PGCatalogType } from "./pgcatalogtype";
+import { CatalogRow } from "./pgtype";
 
 /**
  * Base types defined by PostgreSQL. This is another factory
  * that dispenses type specific code generation strategies.
  */
 export class PGTypeBase extends PGCatalogType {
-  static factory(catalog: CatalogRow) {
+  static factory(context: TypeFactoryContext, catalog: CatalogRow) {
     switch (catalog.typname) {
       case "tid":
         return new PGTypeTid(catalog);
@@ -90,6 +90,7 @@ export class PGTypeBase extends PGCatalogType {
 
 class PGTypeTid extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = {
       blockNumber: number;
@@ -101,6 +102,7 @@ class PGTypeTid extends PGTypeBase {
 
 class PGTypeText extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = string;
     `;
@@ -109,6 +111,7 @@ class PGTypeText extends PGTypeBase {
 
 class PGTypeTextArray extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = Array<string>;
     `;
@@ -117,6 +120,7 @@ class PGTypeTextArray extends PGTypeBase {
 
 class PGTypeBigInt extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = BigInt;
     `;
@@ -125,6 +129,7 @@ class PGTypeBigInt extends PGTypeBase {
 
 class PGTypeBool extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = boolean;
     `;
@@ -139,6 +144,7 @@ class PGTypeBool extends PGTypeBase {
 
 class PGTypeBytea extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = Uint8Array;
     `;
@@ -147,6 +153,7 @@ class PGTypeBytea extends PGTypeBase {
 
 class PGTypeVector extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = Float32Array;
     `;
@@ -155,6 +162,7 @@ class PGTypeVector extends PGTypeBase {
 
 class PGTypeUuid extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = string;
     `;
@@ -163,6 +171,7 @@ class PGTypeUuid extends PGTypeBase {
 
 class PGTypeInet extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = string;
     `;
@@ -171,6 +180,7 @@ class PGTypeInet extends PGTypeBase {
 
 class PGTypePoint extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = {
       x: number;
@@ -181,6 +191,7 @@ class PGTypePoint extends PGTypeBase {
 }
 class PGTypePointPair extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = {
       from: Point;
@@ -192,6 +203,7 @@ class PGTypePointPair extends PGTypeBase {
 
 class PGTypePointArray extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = Array<Point>;
     `;
@@ -200,6 +212,7 @@ class PGTypePointArray extends PGTypeBase {
 
 class PGTypeCircle extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = {
       center: Point;
@@ -211,6 +224,7 @@ class PGTypeCircle extends PGTypeBase {
 
 class PGTypeUri extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
+    console.assert(context);
     return `
     export type ${this.typescriptName} = URL;
     `;

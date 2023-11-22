@@ -40,7 +40,7 @@ describe("The context can", () => {
       .find((n) => n.namespace === "public")
       ?.types.find((t) => t.postgresName === "public.actor") as PGTypeComposite;
 
-    expect(actorTable.catalog.indexes.length).toBe(2);
-    expect(actorTable.catalog.indexes[0].attributes.length).toBe(1);
+    expect(actorTable.indexes.length).toBe(2);
+    expect(actorTable.indexes[0].attributes.length).toBe(1);
   });
 });

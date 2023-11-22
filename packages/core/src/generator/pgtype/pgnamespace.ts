@@ -1,9 +1,9 @@
-import { CatalogRow, Context, ProcRow, TableRow } from "../../context";
+import { Context } from "../../context";
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
-import { PGProc } from "./pgproc";
-import { PGTable } from "./pgtable";
-import { PGType } from "./pgtype";
+import { PGProc, PGProcs } from "./pgproc/pgproc";
+import { PGTable, PGTables } from "./pgtable";
+import { PGTypes } from "./pgtype";
 import { pascalCase } from "change-case";
 
 /**
@@ -16,13 +16,25 @@ export class PGNamespace {
    * Build all namespaces to be found in the passed catalogs.
    */
   static factory(
-    typeCatalog: CatalogRow[],
-    tableCatalog: TableRow[],
-    procCatalog: ProcRow[],
+    typeCatalog: PGTypes,
+    tableCatalog: PGTables,
+    procCatalog: PGProcs,
   ) {
-    const typesByNamespace = groupBy(typeCatalog, (r) => r.nspname);
-    const tablesByNamespace = groupBy(tableCatalog, (r) => r.nspname);
-    const procsByNamespace = groupBy(procCatalog, (r) => r.nspname);
+    const typesByNamespace = groupBy(
+      typeCatalog.types,
+      (r) => r.catalog.nspname,
+      (r) => r,
+    );
+    const tablesByNamespace = groupBy(
+      tableCatalog.tables,
+      (r) => r.table.nspname,
+      (r) => r,
+    );
+    const procsByNamespace = groupBy(
+      procCatalog.procs,
+      (r) => r.proc.nspname,
+      (r) => r,
+    );
     return Object.keys(typesByNamespace).map(
       (namespace) =>
         new PGNamespace(
@@ -34,25 +46,23 @@ export class PGNamespace {
     );
   }
 
-  namespace: string;
-  types: PGCatalogType[];
-  tables: PGTable[];
-  procs: PGProc[];
-
-  constructor(
-    namespace: string,
-    types: CatalogRow[],
-    tables: TableRow[],
-    procs: ProcRow[],
-  ) {
-    this.namespace = namespace;
-    this.types = types.map((t) => PGType.factory(t)).filter((t) => t);
-    this.tables = tables.map((t) => new PGTable(this, t));
-    this.procs = procs.map((p) => new PGProc(this, p));
+  /**
+   * Name formatting for typescript, which PascalCase as a sql namespace
+   * is like a typescript namespace or nested class.
+   */
+  static typescriptName(name: string) {
+    return pascalCase(name);
   }
 
+  constructor(
+    public namespace: string,
+    public types: PGCatalogType[],
+    public tables: PGTable[],
+    public procs: PGProc[],
+  ) {}
+
   get typescriptName() {
-    return pascalCase(this.namespace);
+    return PGNamespace.typescriptName(this.namespace);
   }
 
   /**

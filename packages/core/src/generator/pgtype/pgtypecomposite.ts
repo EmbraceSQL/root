@@ -1,7 +1,8 @@
-import { AttributeRow, CatalogRow, Context } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
+import { CatalogRow } from "./pgtype";
 import { camelCase } from "change-case";
 import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
 
@@ -25,18 +26,16 @@ export interface ObjectParser {
 export class PGTypeComposite extends PGCatalogType {
   attributes: PGAttribute[];
   indexes: PGIndex[];
-  constructor(catalog: CatalogRow) {
+  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
-    this.attributes = catalog.attributes.map((a) => new PGAttribute(this, a));
+
+    this.attributes = context.attributes.attributesForType(this);
     // translate the attributes on the index into attributes on the type
     // this is needed to properly pick up constraints which are on the type
     // for the base table but are not on the type for the index
-    catalog.indexes.forEach((i) => {
-      i.attributes = i.attributes
-        .map((i) => catalog.attributes.find((c) => c.attname === i.attname))
-        .filter((a) => a) as AttributeRow[];
-    });
-    this.indexes = catalog.indexes.map((a) => new PGIndex(this, a));
+    this.indexes = context.indexes
+      .indexesForType(this)
+      .map((i) => i.translateAttributes(context, this));
   }
 
   attributeByAttnum(attnum: number) {
@@ -69,13 +68,15 @@ export class PGTypeComposite extends PGCatalogType {
     // make a composite type -- escape the values looked up from the
     // passed object
     if (x) {
-      const attributes = this.catalog.attributes.map((a) => {
+      const attributes = this.attributes.map((a) => {
         // hand off the the serializer
-        const value = context.resolveType(a.atttypid).serializeToPostgres(
-          context,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          x[camelCase(a.attname)],
-        );
+        const value = context
+          .resolveType(a.attribute.atttypid)
+          .serializeToPostgres(
+            context,
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            x[camelCase(a.attribute.attname)],
+          );
         // quick escape with regex
         return value ? escapeValue.tryParse(`${value}`) : "";
       });
@@ -89,14 +90,14 @@ export class PGTypeComposite extends PGCatalogType {
   parseFromPostgres(context: Context, x: string) {
     // have parsimmon pick out an object right from our metadata
     // and chain along to the parser for that type
-    const attributes = this.catalog.attributes.map(
+    const attributes = this.attributes.map(
       (a) =>
         [
-          camelCase(a.attname),
+          camelCase(a.attribute.attname),
           compositeAttribute.map((parsedAttributeText) =>
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             context
-              .resolveType(a.atttypid)
+              .resolveType(a.attribute.atttypid)
               .parseFromPostgres(context, parsedAttributeText),
           ),
         ] as [string, Parser<string | null>],

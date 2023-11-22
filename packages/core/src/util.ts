@@ -1,4 +1,4 @@
-import { PGProc } from "./generator/pgtype/pgproc";
+import { PGProc } from "./generator/pgtype/pgproc/pgproc";
 import { camelCase } from "change-case";
 
 /**
@@ -9,16 +9,17 @@ import { camelCase } from "change-case";
  * @param key
  * @returns
  */
-export const groupBy = <T, K extends string | number>(
+export const groupBy = <T, TT, K extends string | number>(
   list: T[],
   key: (i: T) => K,
+  map = (i: T) => i as unknown as TT,
 ) =>
   list.reduce(
     (groups, item) => {
-      (groups[key(item)] ||= []).push(item);
+      (groups[key(item)] ||= []).push(map(item));
       return groups;
     },
-    {} as Record<K, T[]>,
+    {} as Record<K, TT[]>,
   );
 
 // identifier legalizer?

@@ -1,12 +1,13 @@
-import { CatalogRow, Context } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
+import { CatalogRow } from "./pgtype";
 import { alt, noneOf, oneOf, string } from "parsimmon";
 
 /**
  * Arrays of other types are somewhat simple to declare - it is just Array<...>.
  */
 export class PGTypeArray extends PGCatalogType {
-  constructor(catalog: CatalogRow) {
+  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
   }
 

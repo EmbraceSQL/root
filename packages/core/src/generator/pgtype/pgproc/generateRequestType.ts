@@ -1,6 +1,6 @@
-import { PGProc } from ".";
 import { Context } from "../../../context";
 import { buildTypescriptParameterName } from "../../../util";
+import { PGProc } from "./pgproc";
 
 /**
  * Generate request type TS code from PG catalog definitions.

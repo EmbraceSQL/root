@@ -719,11 +719,11 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface ActorByActorId {
+  export interface ByActorId {
     actorId: PgCatalog.Int4;
   }
 
-  export interface ActorByLastName {
+  export interface ByLastName {
     lastName: PgCatalog.Varchar;
   }
 
@@ -745,11 +745,11 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface AddressByAddressId {
+  export interface ByAddressId {
     addressId: PgCatalog.Int4;
   }
 
-  export interface AddressByCityId {
+  export interface ByCityId {
     cityId: PgCatalog.Int2;
   }
 
@@ -759,7 +759,7 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface CategoryByCategoryId {
+  export interface ByCategoryId {
     categoryId: PgCatalog.Int4;
   }
 
@@ -770,11 +770,11 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface CityByCityId {
+  export interface ByCityId {
     cityId: PgCatalog.Int4;
   }
 
-  export interface CityByCountryId {
+  export interface ByCountryId {
     countryId: PgCatalog.Int2;
   }
 
@@ -784,7 +784,7 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface CountryByCountryId {
+  export interface ByCountryId {
     countryId: PgCatalog.Int4;
   }
 
@@ -801,20 +801,20 @@ export namespace Public {
     active?: Nullable<PgCatalog.Int4>;
   }
 
-  export interface CustomerByCustomerId {
-    customerId: PgCatalog.Int4;
-  }
-
-  export interface CustomerByAddressId {
+  export interface ByAddressId {
     addressId: PgCatalog.Int2;
   }
 
-  export interface CustomerByStoreId {
-    storeId: PgCatalog.Int2;
+  export interface ByCustomerId {
+    customerId: PgCatalog.Int4;
   }
 
-  export interface CustomerByLastName {
+  export interface ByLastName {
     lastName: PgCatalog.Varchar;
+  }
+
+  export interface ByStoreId {
+    storeId: PgCatalog.Int2;
   }
 
   export interface CustomerList {
@@ -845,19 +845,19 @@ export namespace Public {
     fulltext?: PgCatalog.Tsvector;
   }
 
-  export interface FilmByFilmId {
+  export interface ByFilmId {
     filmId: PgCatalog.Int4;
   }
 
-  export interface FilmByFulltext {
+  export interface ByFulltext {
     fulltext: PgCatalog.Tsvector;
   }
 
-  export interface FilmByLanguageId {
+  export interface ByLanguageId {
     languageId: PgCatalog.Int2;
   }
 
-  export interface FilmByTitle {
+  export interface ByTitle {
     title: PgCatalog.Varchar;
   }
 
@@ -867,12 +867,12 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface FilmActorByActorIdFilmId {
+  export interface ByActorIdFilmId {
     actorId: PgCatalog.Int2;
     filmId: PgCatalog.Int2;
   }
 
-  export interface FilmActorByFilmId {
+  export interface ByFilmId {
     filmId: PgCatalog.Int2;
   }
 
@@ -882,7 +882,7 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface FilmCategoryByFilmIdCategoryId {
+  export interface ByFilmIdCategoryId {
     filmId: PgCatalog.Int2;
     categoryId: PgCatalog.Int2;
   }
@@ -905,11 +905,11 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface InventoryByInventoryId {
+  export interface ByInventoryId {
     inventoryId: PgCatalog.Int4;
   }
 
-  export interface InventoryByStoreIdFilmId {
+  export interface ByStoreIdFilmId {
     storeId: PgCatalog.Int2;
     filmId: PgCatalog.Int2;
   }
@@ -920,7 +920,7 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface LanguageByLanguageId {
+  export interface ByLanguageId {
     languageId: PgCatalog.Int4;
   }
 
@@ -952,19 +952,19 @@ export namespace Public {
     paymentDate?: PgCatalog.Timestamp;
   }
 
-  export interface PaymentByPaymentId {
-    paymentId: PgCatalog.Int4;
-  }
-
-  export interface PaymentByCustomerId {
+  export interface ByCustomerId {
     customerId: PgCatalog.Int2;
   }
 
-  export interface PaymentByRentalId {
+  export interface ByPaymentId {
+    paymentId: PgCatalog.Int4;
+  }
+
+  export interface ByRentalId {
     rentalId: PgCatalog.Int4;
   }
 
-  export interface PaymentByStaffId {
+  export interface ByStaffId {
     staffId: PgCatalog.Int2;
   }
 
@@ -978,18 +978,18 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface RentalByRentalId {
-    rentalId: PgCatalog.Int4;
-  }
-
-  export interface RentalByInventoryId {
+  export interface ByInventoryId {
     inventoryId: PgCatalog.Int4;
   }
 
-  export interface RentalByRentalDateInventoryIdCustomerId {
+  export interface ByRentalDateInventoryIdCustomerId {
     rentalDate: PgCatalog.Timestamp;
     inventoryId: PgCatalog.Int4;
     customerId: PgCatalog.Int2;
+  }
+
+  export interface ByRentalId {
+    rentalId: PgCatalog.Int4;
   }
 
   export interface SalesByFilmCategory {
@@ -1017,7 +1017,7 @@ export namespace Public {
     picture?: Nullable<PgCatalog.Bytea>;
   }
 
-  export interface StaffByStaffId {
+  export interface ByStaffId {
     staffId: PgCatalog.Int4;
   }
 
@@ -1039,12 +1039,12 @@ export namespace Public {
     lastUpdate?: PgCatalog.Timestamp;
   }
 
-  export interface StoreByStoreId {
-    storeId: PgCatalog.Int4;
+  export interface ByManagerStaffId {
+    managerStaffId: PgCatalog.Int2;
   }
 
-  export interface StoreByManagerStaffId {
-    managerStaffId: PgCatalog.Int2;
+  export interface ByStoreId {
+    storeId: PgCatalog.Int4;
   }
 
   export type Year = PgCatalog.Int4;

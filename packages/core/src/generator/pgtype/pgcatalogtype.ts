@@ -1,19 +1,17 @@
-import { CatalogRow, Context, PostgresTypecast } from "../../context";
+import { Context, PostgresTypecast } from "../../context";
+import { CatalogRow } from "./pgtype";
 import { pascalCase } from "change-case";
 
 /**
  * All types come from here.
  */
 export class PGCatalogType {
-  catalog: CatalogRow;
   /**
    * Base constructions picks out the name.
    *
    * @param catalog
    */
-  constructor(catalog: CatalogRow) {
-    this.catalog = catalog;
-  }
+  constructor(public catalog: CatalogRow) {}
 
   /**
    * The all powerful oid.

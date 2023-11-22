@@ -1,5 +1,5 @@
 import { Context } from "../../context";
-import { PGProc } from "../pgtype/pgproc";
+import { PGProc } from "../pgtype/pgproc/pgproc";
 import { Operation } from "./operation";
 
 /**

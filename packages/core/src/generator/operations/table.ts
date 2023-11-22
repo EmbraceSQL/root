@@ -1,15 +1,19 @@
 import { Context } from "../../context";
 import { PGTable } from "../pgtype/pgtable";
+import { ReadOperation } from "./autocrud/read";
 import { Operation } from "./operation";
 
 /**
  * Individual tables in the database expose operations for AutoCRUD.
  */
 export class TableOperation implements Operation {
-  constructor(private table: PGTable) {}
+  private operations: Operation[];
+  constructor(private table: PGTable) {
+    this.operations = [new ReadOperation(table)];
+  }
 
   async build(context: Context) {
-    console.assert(context);
+    await Promise.all(this.operations.map((o) => o.build(context)));
   }
 
   typescriptDefinition(context: Context): string {
@@ -25,6 +29,9 @@ export class TableOperation implements Operation {
             }
         `,
     ];
+    this.operations.forEach((o) =>
+      generationBuffer.push(o.typescriptDefinition(context)),
+    );
 
     generationBuffer.push(`}(this)`);
     return generationBuffer.join("\n");

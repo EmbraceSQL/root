@@ -1,6 +1,7 @@
-import { Context, PostgresProcTypecast, ProcRow } from "../../../context";
+import { Context, PostgresProcTypecast } from "../../../context";
 import { buildTypescriptParameterName } from "../../../util";
 import { PGNamespace } from "../pgnamespace";
+import { PGTypes } from "../pgtype";
 import {
   attributeSeperator,
   compositeAttribute,
@@ -13,6 +14,44 @@ import { generateRequestType } from "./generateRequestType";
 import { generateResponseType } from "./generateResponseType";
 import { camelCase, pascalCase } from "change-case";
 import { Parser, seqObj } from "parsimmon";
+import * as path from "path";
+import { Sql } from "postgres";
+
+type ProcRow = {
+  oid: number;
+  proname: string;
+  nspname: string;
+  proargtypes: number[];
+  proallargtypes: number[];
+  proargnames: string[];
+  prorettype: number;
+  proretset: boolean;
+  pronargdefaults: number;
+};
+
+type PGProcsContext = { typeCatalog: PGTypes };
+
+/**
+ * All stored procedures and functions.
+ * These create individual callables to the database and serve as a way
+ * to define a database-as-API.
+ *
+ */
+export class PGProcs {
+  static async factory(context: PGProcsContext, sql: Sql) {
+    return new PGProcs(
+      context,
+      (await sql.file(
+        path.join(__dirname, "pgprocs.sql"),
+      )) as unknown as ProcRow[],
+    );
+  }
+
+  procs: PGProc[];
+  private constructor(context: PGProcsContext, procRows: ProcRow[]) {
+    this.procs = procRows.map((r) => new PGProc(context, r));
+  }
+}
 
 /**
  * Procs -- which are different than types in the postgres catalog.
@@ -22,7 +61,7 @@ import { Parser, seqObj } from "parsimmon";
  */
 export class PGProc implements PostgresProcTypecast {
   constructor(
-    public namespace: PGNamespace,
+    context: PGProcsContext,
     public proc: ProcRow,
   ) {}
 
@@ -30,16 +69,20 @@ export class PGProc implements PostgresProcTypecast {
     return pascalCase(this.proc.proname);
   }
 
+  get typescriptNameForNamespace() {
+    return PGNamespace.typescriptName(this.proc.nspname);
+  }
+
   typescriptNameForResponse(withNamespace = false) {
     return (
-      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
+      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
       `${this.typescriptName}Response`
     );
   }
 
   typescriptNameForPostgresArguments(withNamespace = false) {
     return (
-      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
+      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
       `${this.typescriptName}Arguments`
     );
   }
@@ -54,14 +97,14 @@ export class PGProc implements PostgresProcTypecast {
 
   typescriptNameForPostgresResultsetRecord(withNamespace = false) {
     return (
-      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
+      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
       `${this.typescriptName}SingleResultsetRecord`
     );
   }
 
   typescriptNameForPostgresResultset(withNamespace = false) {
     return (
-      (withNamespace ? `${this.namespace.typescriptName}.` : "") +
+      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
       `${this.typescriptName}Resultset`
     );
   }
@@ -154,8 +197,6 @@ export class PGProc implements PostgresProcTypecast {
 
   /**
    * Build up the string that is the call / argument pass to a database proc.
-   *
-   * @param context
    */
   typescriptProcedureCallArguments(context: Context) {
     // won't be name value pairs in the call, but instead sql marshalling
@@ -186,8 +227,6 @@ export class PGProc implements PostgresProcTypecast {
    *
    * These can be scalars or arrays.
    *
-   * @param context
-   * @returns
    */
   typescriptReturnType(context: Context) {
     const resultType = context.resolveType(this.proc.prorettype);
