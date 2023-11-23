@@ -1,7 +1,4 @@
 import { GenerationContext } from "..";
-import * as fs from "fs";
-import * as path from "path";
-import * as prettier from "prettier";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -17,14 +14,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // a place to store all the types
   // buffer up generated code here
   const generationBuffer = [];
-  generationBuffer.push(
-    `
-      /* eslint-disable @typescript-eslint/no-empty-interface */
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      /* eslint-disable @typescript-eslint/no-namespace */
-      import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable} from "@embracesql/core/src/types";
-      `,
-  );
   // each postgres namespace gets a typescript namespace -- generates itself
   await Promise.all(
     context.namespaces.map((n) => {
@@ -52,11 +41,5 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     }
   `,
   );
-  const writeTo = path.join(context.generateInto, `schemas.ts`);
-  await fs.promises.writeFile(
-    writeTo,
-    await prettier.format(generationBuffer.join("\n"), {
-      parser: "typescript",
-    }),
-  );
+  return generationBuffer.join("\n");
 };

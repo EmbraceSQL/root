@@ -36,9 +36,7 @@ class SqlScriptOperation implements Operation {
     // snippet will build the ordered parameter list
     const parameterBuilders = this.metadata.types.map(
       (oid, i) =>
-        `_${i + 1}: schemas.PgCatalog.${
-          context.resolveType(oid).typescriptName
-        }`,
+        `_${i + 1}: PgCatalog.${context.resolveType(oid).typescriptName}`,
     );
     const parameterString = parameterBuilders.length
       ? parameterBuilders.join(",")

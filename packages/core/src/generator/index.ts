@@ -1,5 +1,5 @@
 import { Context } from "../context";
-import { generateSchemaDefinitions, generateDatabaseRoot } from "./typescript";
+import { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
 import * as fs from "fs/promises";
 
 /**
@@ -28,9 +28,6 @@ export const regenerateFromDatabase = async (context: GenerationContext) => {
   } finally {
     await fs.mkdir(context.generateInto, { recursive: true });
   }
-
-  // pure types
-  await generateSchemaDefinitions(context);
 
   // and this the actual object 'root' used to access the database
   await generateDatabaseRoot(context);

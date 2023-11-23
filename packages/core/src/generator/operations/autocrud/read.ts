@@ -24,7 +24,7 @@ export class ReadOperation implements Operation {
       (n) => n.nspname === this.table.table.nspname,
     );
     for (const index of this.table.indexes) {
-      const parameters = `parameters: schemas.${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
+      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
 
       generationBuffer.push(
         `async ${camelCase(index.typescriptName)}(${parameters}){`,
@@ -33,7 +33,6 @@ export class ReadOperation implements Operation {
         `
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
       );

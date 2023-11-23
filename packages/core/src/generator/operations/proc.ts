@@ -15,15 +15,12 @@ export class ProcOperation implements Operation {
     const generationBuffer = [
       ` async ${
         this.proc.typescriptName
-      }(parameters : schemas.${this.proc.typescriptNameForPostgresArguments(
-        true,
-      )}){`,
+      }(parameters : ${this.proc.typescriptNameForPostgresArguments(true)}){`,
     ];
     // and the call body
     generationBuffer.push(`
               console.assert(parameters);
               const sql = this.database.context.sql;
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const typed = sql.typed as unknown as PostgresTypecasts;
               const response = (await sql.begin(async (sql: postgres.Sql) => {
                   return await sql\`
@@ -45,7 +42,7 @@ export class ProcOperation implements Operation {
                 }
                 // pick out the scalar case
                 return `results?.[0].${this.proc.resultsetName}`;
-              })()} ) as unknown as schemas.${this.proc.typescriptNameForPostgresResult(
+              })()} ) as unknown as ${this.proc.typescriptNameForPostgresResult(
                 true,
               )};
               return responseBody;
@@ -57,12 +54,12 @@ export class ProcOperation implements Operation {
       generationBuffer.push(`
             const parse${this.proc.typescriptName}Result = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              result: any) : schemas.${this.proc.typescriptNameForPostgresResultsetRecord(
+              result: any) : ${this.proc.typescriptNameForPostgresResultsetRecord(
                 true,
               )} => {
               return context.procTypes.${
                 this.proc.postgresMarshallName
-              }.parseFromPostgresIfRecord(context, result) as unknown as schemas.${this.proc.typescriptNameForPostgresResultsetRecord(
+              }.parseFromPostgresIfRecord(context, result) as unknown as ${this.proc.typescriptNameForPostgresResultsetRecord(
                 true,
               )};
             } 

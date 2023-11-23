@@ -1,6 +1,7 @@
 import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
+import { generateSchemaDefinitions } from "./generateSchemaDefinitions";
 import * as fs from "fs";
 import * as path from "path";
 import * as prettier from "prettier";
@@ -18,20 +19,18 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   const generationBuffer = [
     `
         // ⚠️ generated - do not modify ⚠️
+        /* eslint-disable @typescript-eslint/no-empty-interface */
         /* eslint-disable @typescript-eslint/no-namespace */
-        import * as schemas from "./schemas";
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/core/src/types";
         import { Context, initializeContext } from "@embracesql/core/src/context";
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        import type { PostgresTypecasts } from "./schemas";
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        import { undefinedIsNull, Nullable } from "@embracesql/core/src/types";
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         import postgres from "postgres";
     `,
   ];
+  // the schema
+  generationBuffer.push(await generateSchemaDefinitions(context));
   // common database interface
   generationBuffer.push(`
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface HasDatabase {
     database: Database;
   }

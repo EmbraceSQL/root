@@ -1,8 +1,5 @@
 import { Database } from "../src/dvdrental/index";
 
-/**
- * Works-at-all.
- */
 describe("The database can AutoCRUD", () => {
   let db: Database;
   beforeAll(async () => {
