@@ -48,7 +48,10 @@ export class PGTypeComposite extends PGCatalogType {
     // all the fields -- and a partial type to allow filling out with
     // various sub selects
     const namedValues = this.attributes.map(
-      (a) => `${a.typescriptName}?: ${a.typescriptTypeDefinition(context)};`,
+      (a) =>
+        `${a.typescriptName}${
+          a.attribute.attnotnull ? "" : "?"
+        }: ${a.typescriptTypeDefinition(context)};`,
     );
     generationBuffer.push(`
     export interface ${this.typescriptName}  {
@@ -56,13 +59,29 @@ export class PGTypeComposite extends PGCatalogType {
     };
     `);
 
-    // all the index types are ways into this composite via a table
-    this.indexes.forEach((i) =>
-      generationBuffer.push(i.typescriptTypeDefinition(context)),
-    );
-
     return generationBuffer.join("\n");
   }
+
+  sqlColumns(context: Context) {
+    console.assert(context);
+    return this.attributes.map((a) => a.postgresName).join(",");
+  }
+
+  postgresResultRecordToTypescript(
+    context: Context,
+    resultsetName = "response",
+  ) {
+    console.assert(context);
+    // snippet will pick resultset fields to type map
+    const recordPieceBuilders = this.attributes.map(
+      (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
+    );
+    // all the fields in the resultset mapped out to an inferred type array
+    return `${resultsetName}.map(record => ({ ${recordPieceBuilders.join(
+      ",",
+    )} }))`;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   serializeToPostgres(context: Context, x: any) {
     // make a composite type -- escape the values looked up from the

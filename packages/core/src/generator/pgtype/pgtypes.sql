@@ -35,6 +35,5 @@ WHERE
     -- excluding 'magic' internal types on purpose, these won't show up
     -- in user schema / code
     typname NOT LIKE '__pg%'
-    AND typname NOT LIKE 'pg_%'
 ORDER BY
     typname ASC

@@ -59,6 +59,10 @@ export class PGAttribute {
     return `${camelCase(this.attribute.attname)}`;
   }
 
+  get postgresName() {
+    return this.attribute.attname;
+  }
+
   typescriptTypeDefinition(context: Context) {
     // nullability, but otherwise delegate to the type of the attribute
     const underlyingType =
@@ -70,5 +74,10 @@ export class PGAttribute {
     } else {
       return `Nullable<${underlyingType}>`;
     }
+  }
+
+  postgresParameter(context: Context, parameterHolder = "parameters") {
+    const postgresType = context.resolveType(this.attribute.atttypid);
+    return ` \${ typed.${postgresType.postgresMarshallName}(undefinedIsNull(${parameterHolder}.${this.typescriptName})) }`;
   }
 }

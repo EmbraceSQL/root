@@ -93,4 +93,17 @@ export class PGIndex {
     };
     `;
   }
+
+  sqlPredicate(context: Context, parameterHolder = "parameters") {
+    console.assert(context);
+    return this.attributes
+      .map(
+        (a) =>
+          `${a.postgresName} = ${a.postgresParameter(
+            context,
+            parameterHolder,
+          )}`,
+      )
+      .join(" AND ");
+  }
 }

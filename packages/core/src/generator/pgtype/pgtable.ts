@@ -1,4 +1,4 @@
-import { TypeFactoryContext } from "../../context";
+import { Context, TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { pascalCase } from "change-case";
@@ -44,7 +44,8 @@ export class PGTable {
     context: TypeFactoryContext,
     public table: TableRow,
   ) {
-    this.indexes = context.indexes.indexesByTableTypeOid[table.tabletypeoid];
+    this.indexes =
+      context.indexes.indexesByTableTypeOid[table.tabletypeoid] ?? [];
   }
 
   get typescriptName() {
@@ -53,5 +54,13 @@ export class PGTable {
 
   get postgresName() {
     return `${this.table.nspname}.${this.table.relname}`;
+  }
+  typescriptTypeDefinition(context: Context) {
+    console.assert(context);
+    return `
+    export namespace ${this.typescriptName}  {
+      ${this.indexes.map((i) => i.typescriptTypeDefinition(context)).join("\n")}
+    };
+    `;
   }
 }

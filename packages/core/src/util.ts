@@ -48,3 +48,18 @@ export const buildTypescriptParameterName = (
     return `_${parameterIndex}`;
   }
 };
+
+/**
+ * Take a string and turn it into a doc comment.
+ */
+export const asDocComment = (body: string) => {
+  return body
+    ? `
+/**
+${body
+  .split("\n")
+  .map((l) => ` * ${l}`)
+  .join("\n")}
+ */`
+    : "";
+};

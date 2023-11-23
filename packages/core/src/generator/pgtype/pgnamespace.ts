@@ -65,6 +65,10 @@ export class PGNamespace {
     return PGNamespace.typescriptName(this.namespace);
   }
 
+  get nspname() {
+    return this.namespace;
+  }
+
   /**
    * Generate typescript source for this namespace.
    */
@@ -73,6 +77,11 @@ export class PGNamespace {
       export namespace ${this.typescriptName} {
       ${this.types.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
       ${this.procs.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
+        export namespace Tables {
+        ${this.tables
+          .map((t) => t.typescriptTypeDefinition(context))
+          .join("\n")}
+        }
       }
     `;
   }

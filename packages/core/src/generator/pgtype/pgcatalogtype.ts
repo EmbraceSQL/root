@@ -1,4 +1,5 @@
 import { Context, PostgresTypecast } from "../../context";
+import { asDocComment } from "../../util";
 import { CatalogRow } from "./pgtype";
 import { pascalCase } from "change-case";
 
@@ -11,7 +12,10 @@ export class PGCatalogType {
    *
    * @param catalog
    */
-  constructor(public catalog: CatalogRow) {}
+  constructor(
+    public catalog: CatalogRow,
+    public comment = "",
+  ) {}
 
   /**
    * The all powerful oid.
@@ -71,6 +75,7 @@ export class PGCatalogType {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = void;
     `;
   }

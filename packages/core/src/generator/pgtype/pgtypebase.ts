@@ -1,4 +1,5 @@
 import { Context, TypeFactoryContext } from "../../context";
+import { asDocComment } from "../../util";
 import { PGNumber } from "./base/number";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
@@ -80,8 +81,9 @@ export class PGTypeBase extends PGCatalogType {
           case "S":
             return new PGTypeText(catalog);
           default:
-            throw new Error(
-              `${catalog.typname} did not resolve to a base type`,
+            return new PGTypeText(
+              catalog,
+              `FIXME: ${catalog.typname} did not resolve to a base type`,
             );
         }
     }
@@ -104,6 +106,7 @@ class PGTypeText extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
     `;
   }
@@ -113,6 +116,7 @@ class PGTypeTextArray extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Array<string>;
     `;
   }
@@ -122,6 +126,7 @@ class PGTypeBigInt extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = BigInt;
     `;
   }
@@ -131,6 +136,7 @@ class PGTypeBool extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = boolean;
     `;
   }
@@ -146,6 +152,7 @@ class PGTypeBytea extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Uint8Array;
     `;
   }
@@ -155,6 +162,7 @@ class PGTypeVector extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Float32Array;
     `;
   }
@@ -164,6 +172,7 @@ class PGTypeUuid extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
     `;
   }
@@ -173,6 +182,7 @@ class PGTypeInet extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
     `;
   }
@@ -182,6 +192,7 @@ class PGTypePoint extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = {
       x: number;
       y: number;
@@ -193,6 +204,7 @@ class PGTypePointPair extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = {
       from: Point;
       to: Point;
@@ -205,6 +217,7 @@ class PGTypePointArray extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Array<Point>;
     `;
   }
@@ -214,6 +227,7 @@ class PGTypeCircle extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = {
       center: Point;
       radius: number;
@@ -226,6 +240,7 @@ class PGTypeUri extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
+    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = URL;
     `;
   }
