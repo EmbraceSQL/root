@@ -1,7 +1,7 @@
 // ⚠️ generated - do not modify ⚠️
 /* eslint-disable @typescript-eslint/no-empty-interface */
 /* eslint-disable @typescript-eslint/no-namespace */
-// eslint-disable @typescript-eslint/no-unused-vars
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   UUID,
   JsDate,
@@ -12,7 +12,6 @@ import {
   undefinedIsNull,
 } from "@embracesql/core/src/types";
 import { Context, initializeContext } from "@embracesql/core/src/context";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import postgres from "postgres";
 
 export namespace PgCatalog {
@@ -4961,7 +4960,6 @@ export interface PostgresTypecasts {
   api_echo_type_nested: Typecast;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface HasDatabase {
   database: Database;
 }
@@ -4984,6 +4982,43 @@ export class Database {
     await this.context.sql.end();
   }
 
+  /**
+   * Use the database inside a transaction.
+   *
+   * A successful return is a commit.
+   * An escaping exception is a rollback.
+   */
+  async withTransaction<T>(body: (database: Database) => Promise<T>) {
+    return await this.context.sql.begin(
+      async (sql) => await body(new Database({ ...this.context, sql })),
+    );
+  }
+
+  /**
+   * Returns a database scoped to a new transaction.
+   * You must explicitly call `rollback` or `commit`.
+   */
+  async beginTransaction() {
+    return await new Promise<{
+      database: Database;
+      commit: () => void;
+      rollback: (message?: string) => void;
+    }>((resolveReady) => {
+      const complete = new Promise((resolve, reject) => {
+        this.context.sql
+          .begin(async (sql) => {
+            resolveReady({
+              database: new Database({ ...this.context, sql }),
+              commit: () => resolve(true),
+              rollback: (message?: string) => reject(message),
+            });
+            await complete;
+          })
+          .catch((reason) => reason);
+      });
+    });
+  }
+
   public PgCatalog = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
@@ -4999,7 +5034,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5057,7 +5091,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgType.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5105,7 +5138,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5162,7 +5194,6 @@ export class Database {
       async byFtrelid(parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5188,7 +5219,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAuthid.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5214,7 +5244,6 @@ export class Database {
       async byRolname(parameters: PgCatalog.Tables.PgAuthid.ByRolname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5251,7 +5280,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5282,7 +5310,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgUserMapping.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5302,7 +5329,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5331,7 +5357,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgSubscription.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5364,7 +5389,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5408,7 +5432,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5452,7 +5475,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5503,7 +5525,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgProc.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5549,7 +5570,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5606,7 +5626,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgClass.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5655,7 +5674,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5706,7 +5724,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5766,7 +5783,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5786,7 +5802,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAttrdef.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5815,7 +5830,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5859,7 +5873,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5901,7 +5914,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5945,7 +5957,6 @@ export class Database {
       async byContypid(parameters: PgCatalog.Tables.PgConstraint.ByContypid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -5985,7 +5996,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgConstraint.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6034,7 +6044,6 @@ export class Database {
       async byInhparent(parameters: PgCatalog.Tables.PgInherits.ByInhparent) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6054,7 +6063,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6083,7 +6091,6 @@ export class Database {
       async byIndexrelid(parameters: PgCatalog.Tables.PgIndex.ByIndexrelid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6118,7 +6125,6 @@ export class Database {
       async byIndrelid(parameters: PgCatalog.Tables.PgIndex.ByIndrelid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6162,7 +6168,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgOperator.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6193,7 +6198,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6237,7 +6241,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgOpfamily.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6258,7 +6261,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6290,7 +6292,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgOpclass.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6315,7 +6316,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6351,7 +6351,6 @@ export class Database {
       async byAmname(parameters: PgCatalog.Tables.PgAm.ByAmname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6369,7 +6368,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAm.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6398,7 +6396,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6429,7 +6426,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6456,7 +6452,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAmop.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6490,7 +6485,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6516,7 +6510,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAmproc.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6545,7 +6538,6 @@ export class Database {
       async byLanname(parameters: PgCatalog.Tables.PgLanguage.ByLanname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6568,7 +6560,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgLanguage.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6600,7 +6591,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6626,7 +6616,6 @@ export class Database {
       async byAggfnoid(parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6671,7 +6660,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgStatisticExt.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6696,7 +6684,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6721,7 +6708,6 @@ export class Database {
       async byStxrelid(parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6755,7 +6741,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6779,7 +6764,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgRewrite.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6810,7 +6794,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTrigger.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6845,7 +6828,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6880,7 +6862,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6924,7 +6905,6 @@ export class Database {
       async byEvtname(parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6945,7 +6925,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgEventTrigger.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -6977,7 +6956,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7010,7 +6988,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7032,7 +7009,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgCast.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7063,7 +7039,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7085,7 +7060,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7105,7 +7079,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgEnum.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7132,7 +7105,6 @@ export class Database {
       async byNspname(parameters: PgCatalog.Tables.PgNamespace.ByNspname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7150,7 +7122,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgNamespace.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7179,7 +7150,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7205,7 +7175,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7233,7 +7202,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgConversion.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7266,7 +7234,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7293,7 +7260,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7327,7 +7293,6 @@ export class Database {
       async byDatname(parameters: PgCatalog.Tables.PgDatabase.ByDatname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7358,7 +7323,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgDatabase.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7400,7 +7364,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7428,7 +7391,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTablespace.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7447,7 +7409,6 @@ export class Database {
       async bySpcname(parameters: PgCatalog.Tables.PgTablespace.BySpcname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7475,7 +7436,6 @@ export class Database {
       async byGrantor(parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7498,7 +7458,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7523,7 +7482,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgAuthMembers.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7546,7 +7504,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7582,7 +7539,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7611,7 +7567,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7645,7 +7600,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7675,7 +7629,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7696,7 +7649,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTsConfig.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7726,7 +7678,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7759,7 +7710,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7781,7 +7731,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTsDict.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7810,7 +7759,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTsParser.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7834,7 +7782,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7867,7 +7814,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTsTemplate.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7888,7 +7834,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7918,7 +7863,6 @@ export class Database {
       async byExtname(parameters: PgCatalog.Tables.PgExtension.ByExtname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7940,7 +7884,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgExtension.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7973,7 +7916,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -7994,7 +7936,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8024,7 +7965,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgForeignServer.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8046,7 +7986,6 @@ export class Database {
       async bySrvname(parameters: PgCatalog.Tables.PgForeignServer.BySrvname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8077,7 +8016,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgPolicy.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8101,7 +8039,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8136,7 +8073,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8154,7 +8090,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8181,7 +8116,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8204,7 +8138,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgDefaultAcl.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8234,7 +8167,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8268,7 +8200,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8304,7 +8235,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8337,7 +8267,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8367,7 +8296,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgCollation.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8402,7 +8330,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgParameterAcl.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8419,7 +8346,6 @@ export class Database {
       async byParname(parameters: PgCatalog.Tables.PgParameterAcl.ByParname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8447,7 +8373,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8480,7 +8405,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8501,7 +8425,6 @@ export class Database {
       async byRngtypid(parameters: PgCatalog.Tables.PgRange.ByRngtypid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8531,7 +8454,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgTransform.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8552,7 +8474,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8582,7 +8503,6 @@ export class Database {
       async bySeqrelid(parameters: PgCatalog.Tables.PgSequence.BySeqrelid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8613,7 +8533,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgPublication.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8636,7 +8555,6 @@ export class Database {
       async byPubname(parameters: PgCatalog.Tables.PgPublication.ByPubname) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8668,7 +8586,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8687,7 +8604,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8715,7 +8631,6 @@ export class Database {
       async byOid(parameters: PgCatalog.Tables.PgPublicationRel.ByOid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8734,7 +8649,6 @@ export class Database {
       async byPrpubid(parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8755,7 +8669,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8787,7 +8700,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8818,7 +8730,6 @@ export class Database {
       ) {
         console.assert(parameters);
         const sql = this.database.context.sql;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         const response =
@@ -8879,7 +8790,6 @@ export class Database {
     async Echo(parameters: Api.EchoArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -8897,7 +8807,6 @@ export class Database {
     async EchoSet(parameters: Api.EchoSetArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -8916,7 +8825,6 @@ export class Database {
     async EchoTable(parameters: Api.EchoTableArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -8947,7 +8855,6 @@ export class Database {
     async EchoType(parameters: Api.EchoTypeArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -8965,7 +8872,6 @@ export class Database {
     async EchoTypeArray(parameters: Api.EchoTypeArrayArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -8983,7 +8889,6 @@ export class Database {
     async EchoTypeNested(parameters: Api.EchoTypeNestedArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
@@ -9001,7 +8906,6 @@ export class Database {
     async EchoTypeSet(parameters: Api.EchoTypeSetArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`

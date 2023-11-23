@@ -1,17 +1,22 @@
 import { Database } from "../src/dvdrental/index";
 
 describe("The database can AutoCRUD", () => {
-  let db: Database;
+  let rootDatabase: Database;
+  let database: Database;
+  let rollback: (message?: string) => void;
   beforeAll(async () => {
-    db = await Database.connect(
+    rootDatabase = await Database.connect(
       "postgres://postgres:postgres@localhost:5432/dvdrental",
     );
+    // and in a transaction now
+    ({ database, rollback } = await rootDatabase.beginTransaction());
   });
   afterAll(async () => {
-    await db.disconnect();
+    rollback();
+    await rootDatabase.disconnect();
   });
   it("a unique index read", async () => {
-    const value = await db.Public.Actor.byActorId({ actorId: 1 });
+    const value = await database.Public.Actor.byActorId({ actorId: 1 });
     expect(value).toMatchObject({
       actorId: 1,
       firstName: "Penelope",
@@ -19,7 +24,9 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("a non unique index read", async () => {
-    const values = await db.Public.Actor.byLastName({ lastName: "Akroyd" });
+    const values = await database.Public.Actor.byLastName({
+      lastName: "Akroyd",
+    });
     expect(values.length).toBeGreaterThan(1);
   });
 });

@@ -63,6 +63,42 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     }
     
     `);
+
+  // transaction support is a nested context
+  generationBuffer.push(`
+    /**
+     * Use the database inside a transaction. 
+     * 
+     * A successful return is a commit.
+     * An escaping exception is a rollback.
+     */
+    async withTransaction<T>(body: (database: Database) => Promise<T>) {
+      return await this.context.sql.begin(async (sql) => await body(new Database({...this.context, sql})));
+    }
+
+  /**
+   * Returns a database scoped to a new transaction.
+   * You must explicitly call \`rollback\` or \`commit\`.
+   */
+  async beginTransaction() {
+    return await new Promise<{
+      database: Database;
+      commit: () => void;
+      rollback: (message?: string) => void;
+    }>((resolveReady) => {
+      const complete = new Promise((resolve, reject) => {
+        this.context.sql.begin(async (sql) => {
+          resolveReady({
+            database: new Database({ ...this.context, sql }),
+            commit: () => resolve(true),
+            rollback: (message?: string) => reject(message),
+          });
+          await complete;
+        }).catch((reason) => reason);
+      });
+    });
+  }
+  `);
   // wheel through every namespace, and every proc and generate calls
   // each schema / namespace turns into a .<Schema> grouping
   const procs = await DatabaseOperation.factory(context);
