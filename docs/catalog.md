@@ -26,33 +26,4 @@ postgres from typescript.
 
 ## AutoCRUD
 
-Tables with primary keys qualify for AutoCRUD. What is AutoCRUD you might ask?
-
-```typescript
-import { database } from "./generated";
-
-// TODO
-```
-
-Generation of per schema, per table function calls to:
-
-- CREATE
-- SELECT
-- UPDATE
-- DELETE
-
-by primary key.
-
-You call these functions with typescript, with strong types for inputs and outputs.
-This isn't like an ORM where you 'make sql with functions', it's like each table
-is a dictionary keyed by primary key that happens to be stored in your
-database.
-
-Partial creates are allowed, with nullability constraints
-in the database mirrored in typescript.
-
-Partial updates are allow down to the single column.
-
-Selects pull a whole row by primary key.
-
-Deletes remove a whole row by primary key.
+Tables with primary keys qualify for [AutoCRUD](./autocrud.md).

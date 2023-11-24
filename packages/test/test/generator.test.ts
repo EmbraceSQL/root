@@ -1,6 +1,7 @@
 import { Context, initializeContext } from "@embracesql/core/src/context";
 import { regenerateFromDatabase } from "@embracesql/core/src/generator";
 import * as path from "path";
+import * as ts from "typescript";
 
 /**
  * This is a pretty coarse test which exists to provide a place
@@ -17,10 +18,11 @@ describe("The generator can", () => {
     await context.sql.end();
   });
   it("create TypeScript definitions for database types", async () => {
-    await regenerateFromDatabase({
+    const source = await regenerateFromDatabase({
       ...context,
-      generateInto: path.join(__dirname, "..", "tmp", "generated", "dvdrental"),
       sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
     });
+    const compiled = ts.transpile(source);
+    expect(compiled).toBeTruthy();
   });
 });

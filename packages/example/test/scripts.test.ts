@@ -1,4 +1,4 @@
-import { Database } from "../src/dvdrental/index";
+import { Database } from "../src/dvdrental";
 
 /**
  * Works-at-all.

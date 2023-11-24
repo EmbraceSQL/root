@@ -3195,6 +3195,495 @@ export namespace PgCatalog {
   }
 }
 
+export namespace Public {
+  export type ActorArray = Array<Actor>;
+
+  export type ActorInfoArray = Array<ActorInfo>;
+
+  export type AddressArray = Array<Address>;
+
+  export type CategoryArray = Array<Category>;
+
+  export type CityArray = Array<City>;
+
+  export type CountryArray = Array<Country>;
+
+  export type CustomerArray = Array<Customer>;
+
+  export type CustomerListArray = Array<CustomerList>;
+
+  export type FilmArray = Array<Film>;
+
+  export type FilmActorArray = Array<FilmActor>;
+
+  export type FilmCategoryArray = Array<FilmCategory>;
+
+  export type FilmListArray = Array<FilmList>;
+
+  export type InventoryArray = Array<Inventory>;
+
+  export type LanguageArray = Array<Language>;
+
+  export type MpaaRatingArray = Array<MpaaRating>;
+
+  export type NicerButSlowerFilmListArray = Array<NicerButSlowerFilmList>;
+
+  export type PaymentArray = Array<Payment>;
+
+  export type RentalArray = Array<Rental>;
+
+  export type SalesByFilmCategoryArray = Array<SalesByFilmCategory>;
+
+  export type SalesByStoreArray = Array<SalesByStore>;
+
+  export type StaffArray = Array<Staff>;
+
+  export type StaffListArray = Array<StaffList>;
+
+  export type StoreArray = Array<Store>;
+
+  export type YearArray = Array<Year>;
+
+  export interface Actor {
+    actorId: PgCatalog.Int4;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface ActorInfo {
+    actorId?: Nullable<PgCatalog.Int4>;
+    firstName?: Nullable<PgCatalog.Varchar>;
+    lastName?: Nullable<PgCatalog.Varchar>;
+    filmInfo?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Address {
+    addressId: PgCatalog.Int4;
+    address: PgCatalog.Varchar;
+    address2?: Nullable<PgCatalog.Varchar>;
+    district: PgCatalog.Varchar;
+    cityId: PgCatalog.Int2;
+    postalCode?: Nullable<PgCatalog.Varchar>;
+    phone: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface Category {
+    categoryId: PgCatalog.Int4;
+    name: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface City {
+    cityId: PgCatalog.Int4;
+    city: PgCatalog.Varchar;
+    countryId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface Country {
+    countryId: PgCatalog.Int4;
+    country: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface Customer {
+    customerId: PgCatalog.Int4;
+    storeId: PgCatalog.Int2;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    email?: Nullable<PgCatalog.Varchar>;
+    addressId: PgCatalog.Int2;
+    activebool: PgCatalog.Bool;
+    createDate: PgCatalog.Date;
+    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    active?: Nullable<PgCatalog.Int4>;
+  }
+
+  export interface CustomerList {
+    id?: Nullable<PgCatalog.Int4>;
+    name?: Nullable<PgCatalog.Text>;
+    address?: Nullable<PgCatalog.Varchar>;
+    zipCode?: Nullable<PgCatalog.Varchar>;
+    phone?: Nullable<PgCatalog.Varchar>;
+    city?: Nullable<PgCatalog.Varchar>;
+    country?: Nullable<PgCatalog.Varchar>;
+    notes?: Nullable<PgCatalog.Text>;
+    sid?: Nullable<PgCatalog.Int2>;
+  }
+
+  export interface Film {
+    filmId: PgCatalog.Int4;
+    title: PgCatalog.Varchar;
+    description?: Nullable<PgCatalog.Text>;
+    releaseYear?: Nullable<Year>;
+    languageId: PgCatalog.Int2;
+    rentalDuration: PgCatalog.Int2;
+    rentalRate: PgCatalog.Numeric;
+    length?: Nullable<PgCatalog.Int2>;
+    replacementCost: PgCatalog.Numeric;
+    rating?: Nullable<MpaaRating>;
+    lastUpdate: PgCatalog.Timestamp;
+    specialFeatures?: Nullable<PgCatalog.TextArray>;
+    fulltext: PgCatalog.Tsvector;
+  }
+
+  export interface FilmActor {
+    actorId: PgCatalog.Int2;
+    filmId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface FilmCategory {
+    filmId: PgCatalog.Int2;
+    categoryId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface FilmList {
+    fid?: Nullable<PgCatalog.Int4>;
+    title?: Nullable<PgCatalog.Varchar>;
+    description?: Nullable<PgCatalog.Text>;
+    category?: Nullable<PgCatalog.Varchar>;
+    price?: Nullable<PgCatalog.Numeric>;
+    length?: Nullable<PgCatalog.Int2>;
+    rating?: Nullable<MpaaRating>;
+    actors?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Inventory {
+    inventoryId: PgCatalog.Int4;
+    filmId: PgCatalog.Int2;
+    storeId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface Language {
+    languageId: PgCatalog.Int4;
+    name: PgCatalog.Bpchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export enum MpaaRating {
+    G = "G",
+    PG = "PG",
+    PG_13 = "PG-13",
+    R = "R",
+    NC_17 = "NC-17",
+  }
+
+  export interface NicerButSlowerFilmList {
+    fid?: Nullable<PgCatalog.Int4>;
+    title?: Nullable<PgCatalog.Varchar>;
+    description?: Nullable<PgCatalog.Text>;
+    category?: Nullable<PgCatalog.Varchar>;
+    price?: Nullable<PgCatalog.Numeric>;
+    length?: Nullable<PgCatalog.Int2>;
+    rating?: Nullable<MpaaRating>;
+    actors?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Payment {
+    paymentId: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
+    staffId: PgCatalog.Int2;
+    rentalId: PgCatalog.Int4;
+    amount: PgCatalog.Numeric;
+    paymentDate: PgCatalog.Timestamp;
+  }
+
+  export interface Rental {
+    rentalId: PgCatalog.Int4;
+    rentalDate: PgCatalog.Timestamp;
+    inventoryId: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
+    returnDate?: Nullable<PgCatalog.Timestamp>;
+    staffId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export interface SalesByFilmCategory {
+    category?: Nullable<PgCatalog.Varchar>;
+    totalSales?: Nullable<PgCatalog.Numeric>;
+  }
+
+  export interface SalesByStore {
+    store?: Nullable<PgCatalog.Text>;
+    manager?: Nullable<PgCatalog.Text>;
+    totalSales?: Nullable<PgCatalog.Numeric>;
+  }
+
+  export interface Staff {
+    staffId: PgCatalog.Int4;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    addressId: PgCatalog.Int2;
+    email?: Nullable<PgCatalog.Varchar>;
+    storeId: PgCatalog.Int2;
+    active: PgCatalog.Bool;
+    username: PgCatalog.Varchar;
+    password?: Nullable<PgCatalog.Varchar>;
+    lastUpdate: PgCatalog.Timestamp;
+    picture?: Nullable<PgCatalog.Bytea>;
+  }
+
+  export interface StaffList {
+    id?: Nullable<PgCatalog.Int4>;
+    name?: Nullable<PgCatalog.Text>;
+    address?: Nullable<PgCatalog.Varchar>;
+    zipCode?: Nullable<PgCatalog.Varchar>;
+    phone?: Nullable<PgCatalog.Varchar>;
+    city?: Nullable<PgCatalog.Varchar>;
+    country?: Nullable<PgCatalog.Varchar>;
+    sid?: Nullable<PgCatalog.Int2>;
+  }
+
+  export interface Store {
+    storeId: PgCatalog.Int4;
+    managerStaffId: PgCatalog.Int2;
+    addressId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export type Year = PgCatalog.Int4;
+
+  export interface FilmInStockArguments {
+    pFilmId: Nullable<PgCatalog.Int4>;
+    pStoreId: Nullable<PgCatalog.Int4>;
+  }
+
+  interface FilmInStockResponseRecord {
+    pFilmCount: PgCatalog.Int4;
+  }
+  export type FilmInStockSingleResultsetRecord = FilmInStockResponseRecord;
+
+  export type FilmInStockResultset = FilmInStockSingleResultsetRecord[];
+
+  export interface FilmNotInStockArguments {
+    pFilmId: Nullable<PgCatalog.Int4>;
+    pStoreId: Nullable<PgCatalog.Int4>;
+  }
+
+  interface FilmNotInStockResponseRecord {
+    pFilmCount: PgCatalog.Int4;
+  }
+  export type FilmNotInStockSingleResultsetRecord =
+    FilmNotInStockResponseRecord;
+
+  export type FilmNotInStockResultset = FilmNotInStockSingleResultsetRecord[];
+
+  export interface GetCustomerBalanceArguments {
+    pCustomerId: Nullable<PgCatalog.Int4>;
+    pEffectiveDate: Nullable<PgCatalog.Timestamp>;
+  }
+
+  export type GetCustomerBalanceSingleResultsetRecord = PgCatalog.Numeric;
+
+  export type GetCustomerBalanceResultset =
+    GetCustomerBalanceSingleResultsetRecord[];
+
+  export interface InventoryHeldByCustomerArguments {
+    pInventoryId: Nullable<PgCatalog.Int4>;
+  }
+
+  export type InventoryHeldByCustomerSingleResultsetRecord = PgCatalog.Int4;
+
+  export type InventoryHeldByCustomerResultset =
+    InventoryHeldByCustomerSingleResultsetRecord[];
+
+  export interface InventoryInStockArguments {
+    pInventoryId: Nullable<PgCatalog.Int4>;
+  }
+
+  export type InventoryInStockSingleResultsetRecord = PgCatalog.Bool;
+
+  export type InventoryInStockResultset =
+    InventoryInStockSingleResultsetRecord[];
+
+  export interface LastDayArguments {
+    _0: Nullable<PgCatalog.Timestamp>;
+  }
+
+  export type LastDaySingleResultsetRecord = PgCatalog.Date;
+
+  export type LastDayResultset = LastDaySingleResultsetRecord[];
+
+  export interface RewardsReportArguments {
+    minMonthlyPurchases: Nullable<PgCatalog.Int4>;
+    minDollarAmountPurchased: Nullable<PgCatalog.Numeric>;
+  }
+
+  export type RewardsReportSingleResultsetRecord = Customer;
+
+  export type RewardsReportResultset = RewardsReportSingleResultsetRecord[];
+
+  export namespace Tables {
+    export namespace FilmActor {
+      export interface ByActorIdFilmId {
+        actorId: Nullable<PgCatalog.Int2>;
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByFilmId {
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Address {
+      export interface ByAddressId {
+        addressId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByCityId {
+        cityId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace City {
+      export interface ByCityId {
+        cityId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByCountryId {
+        countryId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Customer {
+      export interface ByAddressId {
+        addressId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByCustomerId {
+        customerId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByLastName {
+        lastName: Nullable<PgCatalog.Varchar>;
+      }
+
+      export interface ByStoreId {
+        storeId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Actor {
+      export interface ByActorId {
+        actorId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByLastName {
+        lastName: Nullable<PgCatalog.Varchar>;
+      }
+    }
+
+    export namespace FilmCategory {
+      export interface ByFilmIdCategoryId {
+        filmId: Nullable<PgCatalog.Int2>;
+        categoryId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Inventory {
+      export interface ByInventoryId {
+        inventoryId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByStoreIdFilmId {
+        storeId: Nullable<PgCatalog.Int2>;
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Category {
+      export interface ByCategoryId {
+        categoryId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Country {
+      export interface ByCountryId {
+        countryId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Language {
+      export interface ByLanguageId {
+        languageId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Rental {
+      export interface ByInventoryId {
+        inventoryId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByRentalDateInventoryIdCustomerId {
+        rentalDate: Nullable<PgCatalog.Timestamp>;
+        inventoryId: Nullable<PgCatalog.Int4>;
+        customerId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByRentalId {
+        rentalId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Staff {
+      export interface ByStaffId {
+        staffId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Store {
+      export interface ByManagerStaffId {
+        managerStaffId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByStoreId {
+        storeId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Payment {
+      export interface ByCustomerId {
+        customerId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByPaymentId {
+        paymentId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByRentalId {
+        rentalId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByStaffId {
+        staffId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Film {
+      export interface ByFilmId {
+        filmId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByFulltext {
+        fulltext: Nullable<PgCatalog.Gtsvector>;
+      }
+
+      export interface ByLanguageId {
+        languageId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByTitle {
+        title: Nullable<PgCatalog.Varchar>;
+      }
+    }
+  }
+}
+
 export namespace InformationSchema {
   export type AdministrableRoleAuthorizationsArray =
     Array<AdministrableRoleAuthorizations>;
@@ -4263,83 +4752,6 @@ export namespace InformationSchema {
   }
 }
 
-export namespace Api {
-  export type EchoTypeArray = Array<EchoType>;
-
-  export type EchoTypeNestedArray = Array<EchoTypeNested>;
-
-  export interface EchoType {
-    echomessage?: Nullable<PgCatalog.Text>;
-    at?: Nullable<PgCatalog.Timestamptz>;
-  }
-
-  export interface EchoTypeNested {
-    echoes?: Nullable<EchoTypeArray>;
-  }
-
-  export interface EchoArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoResultset = EchoSingleResultsetRecord[];
-
-  export interface EchoSetArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSetSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoSetResultset = EchoSetSingleResultsetRecord[];
-
-  export interface EchoTableArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  interface EchoTableResponseRecord {
-    echomessage: PgCatalog.Text;
-    at: PgCatalog.Timestamptz;
-  }
-  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
-
-  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
-
-  export interface EchoTypeArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeSingleResultsetRecord = EchoType;
-
-  export type EchoTypeResultset = EchoTypeSingleResultsetRecord[];
-
-  export interface EchoTypeArrayArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeArraySingleResultsetRecord = EchoTypeArray;
-
-  export type EchoTypeArrayResultset = EchoTypeArraySingleResultsetRecord[];
-
-  export interface EchoTypeNestedArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeNestedSingleResultsetRecord = EchoTypeNested;
-
-  export type EchoTypeNestedResultset = EchoTypeNestedSingleResultsetRecord[];
-
-  export interface EchoTypeSetArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeSetSingleResultsetRecord = EchoType;
-
-  export type EchoTypeSetResultset = EchoTypeSetSingleResultsetRecord[];
-
-  export namespace Tables {}
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -4811,6 +5223,54 @@ export interface PostgresTypecasts {
   pg_catalog_xid: Typecast;
   pg_catalog_xid8: Typecast;
   pg_catalog_xml: Typecast;
+  public__actor: Typecast;
+  public__actor_info: Typecast;
+  public__address: Typecast;
+  public__category: Typecast;
+  public__city: Typecast;
+  public__country: Typecast;
+  public__customer: Typecast;
+  public__customer_list: Typecast;
+  public__film: Typecast;
+  public__film_actor: Typecast;
+  public__film_category: Typecast;
+  public__film_list: Typecast;
+  public__inventory: Typecast;
+  public__language: Typecast;
+  public__mpaa_rating: Typecast;
+  public__nicer_but_slower_film_list: Typecast;
+  public__payment: Typecast;
+  public__rental: Typecast;
+  public__sales_by_film_category: Typecast;
+  public__sales_by_store: Typecast;
+  public__staff: Typecast;
+  public__staff_list: Typecast;
+  public__store: Typecast;
+  public__year: Typecast;
+  public_actor: Typecast;
+  public_actor_info: Typecast;
+  public_address: Typecast;
+  public_category: Typecast;
+  public_city: Typecast;
+  public_country: Typecast;
+  public_customer: Typecast;
+  public_customer_list: Typecast;
+  public_film: Typecast;
+  public_film_actor: Typecast;
+  public_film_category: Typecast;
+  public_film_list: Typecast;
+  public_inventory: Typecast;
+  public_language: Typecast;
+  public_mpaa_rating: Typecast;
+  public_nicer_but_slower_film_list: Typecast;
+  public_payment: Typecast;
+  public_rental: Typecast;
+  public_sales_by_film_category: Typecast;
+  public_sales_by_store: Typecast;
+  public_staff: Typecast;
+  public_staff_list: Typecast;
+  public_store: Typecast;
+  public_year: Typecast;
   information_schema__administrable_role_authorizations: Typecast;
   information_schema__applicable_roles: Typecast;
   information_schema__attributes: Typecast;
@@ -4954,10 +5414,6 @@ export interface PostgresTypecasts {
   information_schema_view_table_usage: Typecast;
   information_schema_views: Typecast;
   information_schema_yes_or_no: Typecast;
-  api__echo_type: Typecast;
-  api__echo_type_nested: Typecast;
-  api_echo_type: Typecast;
-  api_echo_type_nested: Typecast;
 }
 
 interface HasDatabase {
@@ -5079,6 +5535,22 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByStarelidStaattnumStainherit(
+        parameters: PgCatalog.Tables.PgStatistic.ByStarelidStaattnumStainherit,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_statistic WHERE starelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.starelid),
+        )} AND staattnum =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.staattnum),
+        )} AND stainherit =  ${typed.pg_catalog_bool(
+          undefinedIsNull(parameters.stainherit),
+        )}`;
+      }
     })(this);
 
     public PgType = new (class implements HasDatabase {
@@ -5182,6 +5654,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgType.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_type WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByTypnameTypnamespace(
+        parameters: PgCatalog.Tables.PgType.ByTypnameTypnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_type WHERE typname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.typname),
+        )} AND typnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.typnamespace),
+        )}`;
+      }
     })(this);
 
     public PgForeignTable = new (class implements HasDatabase {
@@ -5206,6 +5701,18 @@ export class Database {
           ftoptions: undefinedIsNull(record.ftoptions),
         }));
         return results[0];
+      }
+
+      async deleteByFtrelid(
+        parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_foreign_table WHERE ftrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.ftrelid),
+        )}`;
       }
     })(this);
 
@@ -5266,6 +5773,25 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgAuthid.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_authid WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByRolname(parameters: PgCatalog.Tables.PgAuthid.ByRolname) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_authid WHERE rolname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.rolname),
+        )}`;
+      }
     })(this);
 
     public PgStatisticExtData = new (class implements HasDatabase {
@@ -5297,6 +5823,20 @@ export class Database {
           stxdexpr: undefinedIsNull(record.stxdexpr),
         }));
         return results[0];
+      }
+
+      async deleteByStxoidStxdinherit(
+        parameters: PgCatalog.Tables.PgStatisticExtData.ByStxoidStxdinherit,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_statistic_ext_data WHERE stxoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.stxoid),
+        )} AND stxdinherit =  ${typed.pg_catalog_bool(
+          undefinedIsNull(parameters.stxdinherit),
+        )}`;
       }
     })(this);
 
@@ -5344,6 +5884,29 @@ export class Database {
           umoptions: undefinedIsNull(record.umoptions),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgUserMapping.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_user_mapping WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByUmuserUmserver(
+        parameters: PgCatalog.Tables.PgUserMapping.ByUmuserUmserver,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_user_mapping WHERE umuser =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.umuser),
+        )} AND umserver =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.umserver),
+        )}`;
       }
     })(this);
 
@@ -5417,6 +5980,29 @@ export class Database {
           suborigin: undefinedIsNull(record.suborigin),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgSubscription.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_subscription WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteBySubdbidSubname(
+        parameters: PgCatalog.Tables.PgSubscription.BySubdbidSubname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_subscription WHERE subdbid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.subdbid),
+        )} AND subname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.subname),
+        )}`;
       }
     })(this);
 
@@ -5512,6 +6098,33 @@ export class Database {
           attmissingval: undefinedIsNull(record.attmissingval),
         }));
         return results[0];
+      }
+
+      async deleteByAttrelidAttname(
+        parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_attribute WHERE attrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.attrelid),
+        )} AND attname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.attname),
+        )}`;
+      }
+      async deleteByAttrelidAttnum(
+        parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttnum,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_attribute WHERE attrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.attrelid),
+        )} AND attnum =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.attnum),
+        )}`;
       }
     })(this);
 
@@ -5613,6 +6226,31 @@ export class Database {
           proacl: undefinedIsNull(record.proacl),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgProc.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_proc WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPronameProargtypesPronamespace(
+        parameters: PgCatalog.Tables.PgProc.ByPronameProargtypesPronamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_proc WHERE proname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.proname),
+        )} AND proargtypes =  ${typed.pg_catalog_oidvector(
+          undefinedIsNull(parameters.proargtypes),
+        )} AND pronamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.pronamespace),
+        )}`;
       }
     })(this);
 
@@ -5769,6 +6407,42 @@ export class Database {
         }));
         return results;
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgClass.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_class WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByRelnameRelnamespace(
+        parameters: PgCatalog.Tables.PgClass.ByRelnameRelnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_class WHERE relname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.relname),
+        )} AND relnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.relnamespace),
+        )}`;
+      }
+      async deleteByReltablespaceRelfilenode(
+        parameters: PgCatalog.Tables.PgClass.ByReltablespaceRelfilenode,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_class WHERE reltablespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.reltablespace),
+        )} AND relfilenode =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.relfilenode),
+        )}`;
+      }
     })(this);
 
     public PgAttrdef = new (class implements HasDatabase {
@@ -5815,6 +6489,29 @@ export class Database {
           adbin: undefinedIsNull(record.adbin),
         }));
         return results[0];
+      }
+
+      async deleteByAdrelidAdnum(
+        parameters: PgCatalog.Tables.PgAttrdef.ByAdrelidAdnum,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_attrdef WHERE adrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.adrelid),
+        )} AND adnum =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.adnum),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgAttrdef.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_attrdef WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -6032,6 +6729,66 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByConnameConnamespace(
+        parameters: PgCatalog.Tables.PgConstraint.ByConnameConnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_constraint WHERE conname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.conname),
+        )} AND connamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.connamespace),
+        )}`;
+      }
+      async deleteByConparentid(
+        parameters: PgCatalog.Tables.PgConstraint.ByConparentid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_constraint WHERE conparentid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.conparentid),
+        )}`;
+      }
+      async deleteByConrelidContypidConname(
+        parameters: PgCatalog.Tables.PgConstraint.ByConrelidContypidConname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_constraint WHERE conrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.conrelid),
+        )} AND contypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.contypid),
+        )} AND conname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.conname),
+        )}`;
+      }
+      async deleteByContypid(
+        parameters: PgCatalog.Tables.PgConstraint.ByContypid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_constraint WHERE contypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.contypid),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgConstraint.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_constraint WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgInherits = new (class implements HasDatabase {
@@ -6078,6 +6835,31 @@ export class Database {
           inhdetachpending: undefinedIsNull(record.inhdetachpending),
         }));
         return results[0];
+      }
+
+      async deleteByInhparent(
+        parameters: PgCatalog.Tables.PgInherits.ByInhparent,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_inherits WHERE inhparent =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.inhparent),
+        )}`;
+      }
+      async deleteByInhrelidInhseqno(
+        parameters: PgCatalog.Tables.PgInherits.ByInhrelidInhseqno,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_inherits WHERE inhrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.inhrelid),
+        )} AND inhseqno =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.inhseqno),
+        )}`;
       }
     })(this);
 
@@ -6156,6 +6938,27 @@ export class Database {
         }));
         return results;
       }
+
+      async deleteByIndexrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndexrelid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_index WHERE indexrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.indexrelid),
+        )}`;
+      }
+      async deleteByIndrelid(parameters: PgCatalog.Tables.PgIndex.ByIndrelid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_index WHERE indrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.indrelid),
+        )}`;
+      }
     })(this);
 
     public PgOperator = new (class implements HasDatabase {
@@ -6229,6 +7032,33 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgOperator.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_operator WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByOprnameOprleftOprrightOprnamespace(
+        parameters: PgCatalog.Tables.PgOperator.ByOprnameOprleftOprrightOprnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_operator WHERE oprname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.oprname),
+        )} AND oprleft =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oprleft),
+        )} AND oprright =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oprright),
+        )} AND oprnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oprnamespace),
+        )}`;
+      }
     })(this);
 
     public PgOpfamily = new (class implements HasDatabase {
@@ -6279,6 +7109,31 @@ export class Database {
           opfowner: undefinedIsNull(record.opfowner),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgOpfamily.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_opfamily WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByOpfmethodOpfnameOpfnamespace(
+        parameters: PgCatalog.Tables.PgOpfamily.ByOpfmethodOpfnameOpfnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_opfamily WHERE opfmethod =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.opfmethod),
+        )} AND opfname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.opfname),
+        )} AND opfnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.opfnamespace),
+        )}`;
       }
     })(this);
 
@@ -6339,6 +7194,31 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgOpclass.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_opclass WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByOpcmethodOpcnameOpcnamespace(
+        parameters: PgCatalog.Tables.PgOpclass.ByOpcmethodOpcnameOpcnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_opclass WHERE opcmethod =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.opcmethod),
+        )} AND opcname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.opcname),
+        )} AND opcnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.opcnamespace),
+        )}`;
+      }
     })(this);
 
     public PgAm = new (class implements HasDatabase {
@@ -6381,6 +7261,25 @@ export class Database {
           amtype: undefinedIsNull(record.amtype),
         }));
         return results[0];
+      }
+
+      async deleteByAmname(parameters: PgCatalog.Tables.PgAm.ByAmname) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_am WHERE amname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.amname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgAm.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_am WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -6471,6 +7370,48 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy(
+        parameters: PgCatalog.Tables.PgAmop.ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_amop WHERE amopfamily =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amopfamily),
+        )} AND amoplefttype =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amoplefttype),
+        )} AND amoprighttype =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amoprighttype),
+        )} AND amopstrategy =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.amopstrategy),
+        )}`;
+      }
+      async deleteByAmopoprAmoppurposeAmopfamily(
+        parameters: PgCatalog.Tables.PgAmop.ByAmopoprAmoppurposeAmopfamily,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_amop WHERE amopopr =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amopopr),
+        )} AND amoppurpose =  ${typed.pg_catalog_char(
+          undefinedIsNull(parameters.amoppurpose),
+        )} AND amopfamily =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amopfamily),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgAmop.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_amop WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgAmproc = new (class implements HasDatabase {
@@ -6526,6 +7467,33 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum(
+        parameters: PgCatalog.Tables.PgAmproc.ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_amproc WHERE amprocfamily =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amprocfamily),
+        )} AND amproclefttype =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amproclefttype),
+        )} AND amprocrighttype =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.amprocrighttype),
+        )} AND amprocnum =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.amprocnum),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgAmproc.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_amproc WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgLanguage = new (class implements HasDatabase {
@@ -6579,6 +7547,25 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByLanname(parameters: PgCatalog.Tables.PgLanguage.ByLanname) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_language WHERE lanname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.lanname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgLanguage.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_language WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgLargeobjectMetadata = new (class implements HasDatabase {
@@ -6603,6 +7590,18 @@ export class Database {
           lomacl: undefinedIsNull(record.lomacl),
         }));
         return results[0];
+      }
+
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_largeobject_metadata WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -6647,6 +7646,18 @@ export class Database {
           aggminitval: undefinedIsNull(record.aggminitval),
         }));
         return results[0];
+      }
+
+      async deleteByAggfnoid(
+        parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_aggregate WHERE aggfnoid =  ${typed.pg_catalog_regproc(
+          undefinedIsNull(parameters.aggfnoid),
+        )}`;
       }
     })(this);
 
@@ -6727,6 +7738,40 @@ export class Database {
         }));
         return results;
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgStatisticExt.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByStxnameStxnamespace(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByStxnameStxnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE stxname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.stxname),
+        )} AND stxnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.stxnamespace),
+        )}`;
+      }
+      async deleteByStxrelid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE stxrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.stxrelid),
+        )}`;
+      }
     })(this);
 
     public PgRewrite = new (class implements HasDatabase {
@@ -6781,6 +7826,29 @@ export class Database {
           evAction: undefinedIsNull(record.ev_action),
         }));
         return results[0];
+      }
+
+      async deleteByEvClassRulename(
+        parameters: PgCatalog.Tables.PgRewrite.ByEvClassRulename,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_rewrite WHERE ev_class =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.evClass),
+        )} AND rulename =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.rulename),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgRewrite.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_rewrite WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -6893,6 +7961,40 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgTrigger.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_trigger WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByTgconstraint(
+        parameters: PgCatalog.Tables.PgTrigger.ByTgconstraint,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_trigger WHERE tgconstraint =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.tgconstraint),
+        )}`;
+      }
+      async deleteByTgrelidTgname(
+        parameters: PgCatalog.Tables.PgTrigger.ByTgrelidTgname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_trigger WHERE tgrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.tgrelid),
+        )} AND tgname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.tgname),
+        )}`;
+      }
     })(this);
 
     public PgEventTrigger = new (class implements HasDatabase {
@@ -6942,6 +8044,27 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByEvtname(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_event_trigger WHERE evtname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.evtname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgEventTrigger.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_event_trigger WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgDescription = new (class implements HasDatabase {
@@ -6973,6 +8096,22 @@ export class Database {
           description: undefinedIsNull(record.description),
         }));
         return results[0];
+      }
+
+      async deleteByObjoidClassoidObjsubid(
+        parameters: PgCatalog.Tables.PgDescription.ByObjoidClassoidObjsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_description WHERE objoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objoid),
+        )} AND classoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classoid),
+        )} AND objsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.objsubid),
+        )}`;
       }
     })(this);
 
@@ -7024,6 +8163,29 @@ export class Database {
           castmethod: undefinedIsNull(record.castmethod),
         }));
         return results[0];
+      }
+
+      async deleteByCastsourceCasttarget(
+        parameters: PgCatalog.Tables.PgCast.ByCastsourceCasttarget,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_cast WHERE castsource =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.castsource),
+        )} AND casttarget =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.casttarget),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgCast.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_cast WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -7093,6 +8255,42 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByEnumtypidEnumlabel(
+        parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumlabel,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_enum WHERE enumtypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.enumtypid),
+        )} AND enumlabel =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.enumlabel),
+        )}`;
+      }
+      async deleteByEnumtypidEnumsortorder(
+        parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumsortorder,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_enum WHERE enumtypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.enumtypid),
+        )} AND enumsortorder =  ${typed.pg_catalog_float4(
+          undefinedIsNull(parameters.enumsortorder),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgEnum.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_enum WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgNamespace = new (class implements HasDatabase {
@@ -7135,6 +8333,27 @@ export class Database {
           nspacl: undefinedIsNull(record.nspacl),
         }));
         return results[0];
+      }
+
+      async deleteByNspname(
+        parameters: PgCatalog.Tables.PgNamespace.ByNspname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_namespace WHERE nspname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.nspname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgNamespace.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_namespace WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -7220,6 +8439,44 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByConnameConnamespace(
+        parameters: PgCatalog.Tables.PgConversion.ByConnameConnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_conversion WHERE conname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.conname),
+        )} AND connamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.connamespace),
+        )}`;
+      }
+      async deleteByConnamespaceConforencodingContoencodingOid(
+        parameters: PgCatalog.Tables.PgConversion.ByConnamespaceConforencodingContoencodingOid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_conversion WHERE connamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.connamespace),
+        )} AND conforencoding =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.conforencoding),
+        )} AND contoencoding =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.contoencoding),
+        )} AND oid =  ${typed.pg_catalog_oid(undefinedIsNull(parameters.oid))}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgConversion.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_conversion WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgDepend = new (class implements HasDatabase {
@@ -7280,6 +8537,37 @@ export class Database {
           deptype: undefinedIsNull(record.deptype),
         }));
         return results;
+      }
+
+      async deleteByClassidObjidObjsubid(
+        parameters: PgCatalog.Tables.PgDepend.ByClassidObjidObjsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_depend WHERE classid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classid),
+        )} AND objid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objid),
+        )} AND objsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.objsubid),
+        )}`;
+      }
+      async deleteByRefclassidRefobjidRefobjsubid(
+        parameters: PgCatalog.Tables.PgDepend.ByRefclassidRefobjidRefobjsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_depend WHERE refclassid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.refclassid),
+        )} AND refobjid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.refobjid),
+        )} AND refobjsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.refobjsubid),
+        )}`;
       }
     })(this);
 
@@ -7350,6 +8638,25 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByDatname(parameters: PgCatalog.Tables.PgDatabase.ByDatname) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_database WHERE datname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.datname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgDatabase.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_database WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgDbRoleSetting = new (class implements HasDatabase {
@@ -7378,6 +8685,20 @@ export class Database {
           setconfig: undefinedIsNull(record.setconfig),
         }));
         return results[0];
+      }
+
+      async deleteBySetdatabaseSetrole(
+        parameters: PgCatalog.Tables.PgDbRoleSetting.BySetdatabaseSetrole,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_db_role_setting WHERE setdatabase =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.setdatabase),
+        )} AND setrole =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.setrole),
+        )}`;
       }
     })(this);
 
@@ -7423,6 +8744,27 @@ export class Database {
           spcoptions: undefinedIsNull(record.spcoptions),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgTablespace.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_tablespace WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteBySpcname(
+        parameters: PgCatalog.Tables.PgTablespace.BySpcname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_tablespace WHERE spcname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.spcname),
+        )}`;
       }
     })(this);
 
@@ -7525,6 +8867,57 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_auth_members WHERE grantor =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.grantor),
+        )}`;
+      }
+      async deleteByMemberRoleidGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByMemberRoleidGrantor,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_auth_members WHERE member =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.member),
+        )} AND roleid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.roleid),
+        )} AND grantor =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.grantor),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgAuthMembers.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_auth_members WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByRoleidMemberGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByRoleidMemberGrantor,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_auth_members WHERE roleid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.roleid),
+        )} AND member =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.member),
+        )} AND grantor =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.grantor),
+        )}`;
+      }
     })(this);
 
     public PgShdepend = new (class implements HasDatabase {
@@ -7586,6 +8979,37 @@ export class Database {
         }));
         return results;
       }
+
+      async deleteByDbidClassidObjidObjsubid(
+        parameters: PgCatalog.Tables.PgShdepend.ByDbidClassidObjidObjsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_shdepend WHERE dbid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.dbid),
+        )} AND classid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classid),
+        )} AND objid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objid),
+        )} AND objsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.objsubid),
+        )}`;
+      }
+      async deleteByRefclassidRefobjid(
+        parameters: PgCatalog.Tables.PgShdepend.ByRefclassidRefobjid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_shdepend WHERE refclassid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.refclassid),
+        )} AND refobjid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.refobjid),
+        )}`;
+      }
     })(this);
 
     public PgShdescription = new (class implements HasDatabase {
@@ -7614,6 +9038,20 @@ export class Database {
           description: undefinedIsNull(record.description),
         }));
         return results[0];
+      }
+
+      async deleteByObjoidClassoid(
+        parameters: PgCatalog.Tables.PgShdescription.ByObjoidClassoid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_shdescription WHERE objoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objoid),
+        )} AND classoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classoid),
+        )}`;
       }
     })(this);
 
@@ -7664,6 +9102,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByCfgnameCfgnamespace(
+        parameters: PgCatalog.Tables.PgTsConfig.ByCfgnameCfgnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_config WHERE cfgname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.cfgname),
+        )} AND cfgnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.cfgnamespace),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgTsConfig.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_config WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgTsConfigMap = new (class implements HasDatabase {
@@ -7695,6 +9156,22 @@ export class Database {
           mapdict: undefinedIsNull(record.mapdict),
         }));
         return results[0];
+      }
+
+      async deleteByMapcfgMaptokentypeMapseqno(
+        parameters: PgCatalog.Tables.PgTsConfigMap.ByMapcfgMaptokentypeMapseqno,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_config_map WHERE mapcfg =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.mapcfg),
+        )} AND maptokentype =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.maptokentype),
+        )} AND mapseqno =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.mapseqno),
+        )}`;
       }
     })(this);
 
@@ -7746,6 +9223,29 @@ export class Database {
           dictinitoption: undefinedIsNull(record.dictinitoption),
         }));
         return results[0];
+      }
+
+      async deleteByDictnameDictnamespace(
+        parameters: PgCatalog.Tables.PgTsDict.ByDictnameDictnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_dict WHERE dictname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.dictname),
+        )} AND dictnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.dictnamespace),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgTsDict.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_dict WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
       }
     })(this);
 
@@ -7802,6 +9302,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgTsParser.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_parser WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPrsnamePrsnamespace(
+        parameters: PgCatalog.Tables.PgTsParser.ByPrsnamePrsnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_parser WHERE prsname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.prsname),
+        )} AND prsnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.prsnamespace),
+        )}`;
+      }
     })(this);
 
     public PgTsTemplate = new (class implements HasDatabase {
@@ -7850,6 +9373,29 @@ export class Database {
           tmpllexize: undefinedIsNull(record.tmpllexize),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgTsTemplate.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_template WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByTmplnameTmplnamespace(
+        parameters: PgCatalog.Tables.PgTsTemplate.ByTmplnameTmplnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_ts_template WHERE tmplname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.tmplname),
+        )} AND tmplnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.tmplnamespace),
+        )}`;
       }
     })(this);
 
@@ -7902,6 +9448,27 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByExtname(
+        parameters: PgCatalog.Tables.PgExtension.ByExtname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_extension WHERE extname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.extname),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgExtension.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_extension WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgForeignDataWrapper = new (class implements HasDatabase {
@@ -7953,6 +9520,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByFdwname(
+        parameters: PgCatalog.Tables.PgForeignDataWrapper.ByFdwname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_foreign_data_wrapper WHERE fdwname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.fdwname),
+        )}`;
+      }
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_foreign_data_wrapper WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgForeignServer = new (class implements HasDatabase {
@@ -8003,6 +9593,27 @@ export class Database {
           srvoptions: undefinedIsNull(record.srvoptions),
         }));
         return results[0];
+      }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgForeignServer.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_foreign_server WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteBySrvname(
+        parameters: PgCatalog.Tables.PgForeignServer.BySrvname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_foreign_server WHERE srvname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.srvname),
+        )}`;
       }
     })(this);
 
@@ -8059,6 +9670,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgPolicy.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_policy WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPolrelidPolname(
+        parameters: PgCatalog.Tables.PgPolicy.ByPolrelidPolname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_policy WHERE polrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.polrelid),
+        )} AND polname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.polname),
+        )}`;
+      }
     })(this);
 
     public PgReplicationOrigin = new (class implements HasDatabase {
@@ -8101,6 +9735,29 @@ export class Database {
           roname: undefinedIsNull(record.roname),
         }));
         return results[0];
+      }
+
+      async deleteByRoident(
+        parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoident,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_replication_origin WHERE roident =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.roident),
+        )}`;
+      }
+      async deleteByRoname(
+        parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_replication_origin WHERE roname =  ${typed.pg_catalog_text(
+          undefinedIsNull(parameters.roname),
+        )}`;
       }
     })(this);
 
@@ -8153,6 +9810,31 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByDefaclroleDefaclnamespaceDefaclobjtype(
+        parameters: PgCatalog.Tables.PgDefaultAcl.ByDefaclroleDefaclnamespaceDefaclobjtype,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_default_acl WHERE defaclrole =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.defaclrole),
+        )} AND defaclnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.defaclnamespace),
+        )} AND defaclobjtype =  ${typed.pg_catalog_char(
+          undefinedIsNull(parameters.defaclobjtype),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgDefaultAcl.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_default_acl WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgInitPrivs = new (class implements HasDatabase {
@@ -8185,6 +9867,22 @@ export class Database {
           initprivs: undefinedIsNull(record.initprivs),
         }));
         return results[0];
+      }
+
+      async deleteByObjoidClassoidObjsubid(
+        parameters: PgCatalog.Tables.PgInitPrivs.ByObjoidClassoidObjsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_init_privs WHERE objoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objoid),
+        )} AND classoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classoid),
+        )} AND objsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.objsubid),
+        )}`;
       }
     })(this);
 
@@ -8221,6 +9919,24 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByObjoidClassoidObjsubidProvider(
+        parameters: PgCatalog.Tables.PgSeclabel.ByObjoidClassoidObjsubidProvider,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_seclabel WHERE objoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objoid),
+        )} AND classoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classoid),
+        )} AND objsubid =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.objsubid),
+        )} AND provider =  ${typed.pg_catalog_text(
+          undefinedIsNull(parameters.provider),
+        )}`;
+      }
     })(this);
 
     public PgShseclabel = new (class implements HasDatabase {
@@ -8252,6 +9968,22 @@ export class Database {
           label: undefinedIsNull(record.label),
         }));
         return results[0];
+      }
+
+      async deleteByObjoidClassoidProvider(
+        parameters: PgCatalog.Tables.PgShseclabel.ByObjoidClassoidProvider,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_shseclabel WHERE objoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.objoid),
+        )} AND classoid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.classoid),
+        )} AND provider =  ${typed.pg_catalog_text(
+          undefinedIsNull(parameters.provider),
+        )}`;
       }
     })(this);
 
@@ -8318,6 +10050,31 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByCollnameCollencodingCollnamespace(
+        parameters: PgCatalog.Tables.PgCollation.ByCollnameCollencodingCollnamespace,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_collation WHERE collname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.collname),
+        )} AND collencoding =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.collencoding),
+        )} AND collnamespace =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.collnamespace),
+        )}`;
+      }
+      async deleteByOid(parameters: PgCatalog.Tables.PgCollation.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_collation WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
     })(this);
 
     public PgParameterAcl = new (class implements HasDatabase {
@@ -8359,6 +10116,27 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgParameterAcl.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_parameter_acl WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByParname(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByParname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_parameter_acl WHERE parname =  ${typed.pg_catalog_text(
+          undefinedIsNull(parameters.parname),
+        )}`;
+      }
     })(this);
 
     public PgPartitionedTable = new (class implements HasDatabase {
@@ -8390,6 +10168,18 @@ export class Database {
           partexprs: undefinedIsNull(record.partexprs),
         }));
         return results[0];
+      }
+
+      async deleteByPartrelid(
+        parameters: PgCatalog.Tables.PgPartitionedTable.ByPartrelid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_partitioned_table WHERE partrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.partrelid),
+        )}`;
       }
     })(this);
 
@@ -8442,6 +10232,27 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByRngmultitypid(
+        parameters: PgCatalog.Tables.PgRange.ByRngmultitypid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_range WHERE rngmultitypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.rngmultitypid),
+        )}`;
+      }
+      async deleteByRngtypid(parameters: PgCatalog.Tables.PgRange.ByRngtypid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_range WHERE rngtypid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.rngtypid),
+        )}`;
+      }
     })(this);
 
     public PgTransform = new (class implements HasDatabase {
@@ -8491,6 +10302,29 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgTransform.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_transform WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByTrftypeTrflang(
+        parameters: PgCatalog.Tables.PgTransform.ByTrftypeTrflang,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_transform WHERE trftype =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.trftype),
+        )} AND trflang =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.trflang),
+        )}`;
+      }
     })(this);
 
     public PgSequence = new (class implements HasDatabase {
@@ -8520,6 +10354,18 @@ export class Database {
           seqcycle: undefinedIsNull(record.seqcycle),
         }));
         return results[0];
+      }
+
+      async deleteBySeqrelid(
+        parameters: PgCatalog.Tables.PgSequence.BySeqrelid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_sequence WHERE seqrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.seqrelid),
+        )}`;
       }
     })(this);
 
@@ -8574,6 +10420,27 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgPublication.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPubname(
+        parameters: PgCatalog.Tables.PgPublication.ByPubname,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication WHERE pubname =  ${typed.pg_catalog_cstring(
+          undefinedIsNull(parameters.pubname),
+        )}`;
+      }
     })(this);
 
     public PgPublicationNamespace = new (class implements HasDatabase {
@@ -8618,6 +10485,31 @@ export class Database {
           pnnspid: undefinedIsNull(record.pnnspid),
         }));
         return results[0];
+      }
+
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication_namespace WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPnnspidPnpubid(
+        parameters: PgCatalog.Tables.PgPublicationNamespace.ByPnnspidPnpubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication_namespace WHERE pnnspid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.pnnspid),
+        )} AND pnpubid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.pnpubid),
+        )}`;
       }
     })(this);
 
@@ -8686,6 +10578,40 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteByOid(parameters: PgCatalog.Tables.PgPublicationRel.ByOid) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE oid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.oid),
+        )}`;
+      }
+      async deleteByPrpubid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE prpubid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.prpubid),
+        )}`;
+      }
+      async deleteByPrrelidPrpubid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByPrrelidPrpubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE prrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.prrelid),
+        )} AND prpubid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.prpubid),
+        )}`;
+      }
     })(this);
 
     public PgSubscriptionRel = new (class implements HasDatabase {
@@ -8716,6 +10642,20 @@ export class Database {
         }));
         return results[0];
       }
+
+      async deleteBySrrelidSrsubid(
+        parameters: PgCatalog.Tables.PgSubscriptionRel.BySrrelidSrsubid,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_subscription_rel WHERE srrelid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.srrelid),
+        )} AND srsubid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.srsubid),
+        )}`;
+      }
     })(this);
 
     public PgLargeobject = new (class implements HasDatabase {
@@ -8744,6 +10684,1300 @@ export class Database {
           data: undefinedIsNull(record.data),
         }));
         return results[0];
+      }
+
+      async deleteByLoidPageno(
+        parameters: PgCatalog.Tables.PgLargeobject.ByLoidPageno,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM pg_catalog.pg_largeobject WHERE loid =  ${typed.pg_catalog_oid(
+          undefinedIsNull(parameters.loid),
+        )} AND pageno =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.pageno),
+        )}`;
+      }
+    })(this);
+  })(this);
+
+  public Public = new (class implements HasDatabase {
+    constructor(public database: Database) {}
+
+    async FilmInStock(parameters: Public.FilmInStockArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.film_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseFilmInStockResult(this.database.context, x.film_in_stock),
+      ) as unknown as Public.FilmInStockResultset;
+      return responseBody;
+    }
+
+    parseFilmInStockResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): Public.FilmInStockSingleResultsetRecord => {
+      return context.procTypes.public_film_in_stock.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as Public.FilmInStockSingleResultsetRecord;
+    };
+
+    async FilmNotInStock(parameters: Public.FilmNotInStockArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.film_not_in_stock(pFilmId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pFilmId),
+                  )},pStoreId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pStoreId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseFilmNotInStockResult(
+          this.database.context,
+          x.film_not_in_stock,
+        ),
+      ) as unknown as Public.FilmNotInStockResultset;
+      return responseBody;
+    }
+
+    parseFilmNotInStockResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): Public.FilmNotInStockSingleResultsetRecord => {
+      return context.procTypes.public_film_not_in_stock.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as Public.FilmNotInStockSingleResultsetRecord;
+    };
+
+    async GetCustomerBalance(parameters: Public.GetCustomerBalanceArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.get_customer_balance(pCustomerId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pCustomerId),
+                  )},pEffectiveDate => ${typed.pg_catalog_timestamp(
+                    undefinedIsNull(parameters.pEffectiveDate),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .get_customer_balance as unknown as Public.GetCustomerBalanceSingleResultsetRecord;
+      return responseBody;
+    }
+    async InventoryHeldByCustomer(
+      parameters: Public.InventoryHeldByCustomerArguments,
+    ) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.inventory_held_by_customer(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .inventory_held_by_customer as unknown as Public.InventoryHeldByCustomerSingleResultsetRecord;
+      return responseBody;
+    }
+    async InventoryInStock(parameters: Public.InventoryInStockArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.inventory_in_stock(pInventoryId => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.pInventoryId),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .inventory_in_stock as unknown as Public.InventoryInStockSingleResultsetRecord;
+      return responseBody;
+    }
+    async LastDay(parameters: Public.LastDayArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.last_day( ${typed.pg_catalog_timestamp(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .last_day as unknown as Public.LastDaySingleResultsetRecord;
+      return responseBody;
+    }
+    async RewardsReport(parameters: Public.RewardsReportArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.rewards_report(minMonthlyPurchases => ${typed.pg_catalog_int4(
+                    undefinedIsNull(parameters.minMonthlyPurchases),
+                  )},minDollarAmountPurchased => ${typed.pg_catalog_numeric(
+                    undefinedIsNull(parameters.minDollarAmountPurchased),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map(
+        (x) => x.rewards_report,
+      ) as unknown as Public.RewardsReportResultset;
+      return responseBody;
+    }
+
+    public FilmActor = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byActorIdFilmId(
+        parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT actor_id,film_id,last_update FROM public.film_actor WHERE actor_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.actorId),
+          )} AND film_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.filmId),
+          )}`;
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          filmId: undefinedIsNull(record.film_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT actor_id,film_id,last_update FROM public.film_actor WHERE film_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.filmId),
+          )}`;
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          filmId: undefinedIsNull(record.film_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async deleteByActorIdFilmId(
+        parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film_actor WHERE actor_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.actorId),
+        )} AND film_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.filmId),
+        )}`;
+      }
+      async deleteByFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film_actor WHERE film_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.filmId),
+        )}`;
+      }
+    })(this);
+
+    public Address = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byAddressId(parameters: Public.Tables.Address.ByAddressId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT address_id,address,address2,district,city_id,postal_code,phone,last_update FROM public.address WHERE address_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.addressId),
+          )}`;
+        const results = response.map((record) => ({
+          addressId: undefinedIsNull(record.address_id),
+          address: undefinedIsNull(record.address),
+          address2: undefinedIsNull(record.address2),
+          district: undefinedIsNull(record.district),
+          cityId: undefinedIsNull(record.city_id),
+          postalCode: undefinedIsNull(record.postal_code),
+          phone: undefinedIsNull(record.phone),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byCityId(parameters: Public.Tables.Address.ByCityId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT address_id,address,address2,district,city_id,postal_code,phone,last_update FROM public.address WHERE city_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.cityId),
+          )}`;
+        const results = response.map((record) => ({
+          addressId: undefinedIsNull(record.address_id),
+          address: undefinedIsNull(record.address),
+          address2: undefinedIsNull(record.address2),
+          district: undefinedIsNull(record.district),
+          cityId: undefinedIsNull(record.city_id),
+          postalCode: undefinedIsNull(record.postal_code),
+          phone: undefinedIsNull(record.phone),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async deleteByAddressId(parameters: Public.Tables.Address.ByAddressId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.address WHERE address_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.addressId),
+        )}`;
+      }
+      async deleteByCityId(parameters: Public.Tables.Address.ByCityId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.address WHERE city_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.cityId),
+        )}`;
+      }
+    })(this);
+
+    public City = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byCityId(parameters: Public.Tables.City.ByCityId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT city_id,city,country_id,last_update FROM public.city WHERE city_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.cityId),
+          )}`;
+        const results = response.map((record) => ({
+          cityId: undefinedIsNull(record.city_id),
+          city: undefinedIsNull(record.city),
+          countryId: undefinedIsNull(record.country_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byCountryId(parameters: Public.Tables.City.ByCountryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT city_id,city,country_id,last_update FROM public.city WHERE country_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.countryId),
+          )}`;
+        const results = response.map((record) => ({
+          cityId: undefinedIsNull(record.city_id),
+          city: undefinedIsNull(record.city),
+          countryId: undefinedIsNull(record.country_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async deleteByCityId(parameters: Public.Tables.City.ByCityId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.city WHERE city_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.cityId),
+        )}`;
+      }
+      async deleteByCountryId(parameters: Public.Tables.City.ByCountryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.city WHERE country_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.countryId),
+        )}`;
+      }
+    })(this);
+
+    public Customer = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byAddressId(parameters: Public.Tables.Customer.ByAddressId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE address_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.addressId),
+          )}`;
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+      async byCustomerId(parameters: Public.Tables.Customer.ByCustomerId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE customer_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.customerId),
+          )}`;
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results[0];
+      }
+      async byLastName(parameters: Public.Tables.Customer.ByLastName) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE last_name =  ${typed.pg_catalog_varchar(
+            undefinedIsNull(parameters.lastName),
+          )}`;
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+      async byStoreId(parameters: Public.Tables.Customer.ByStoreId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE store_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.storeId),
+          )}`;
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+
+      async deleteByAddressId(parameters: Public.Tables.Customer.ByAddressId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.customer WHERE address_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.addressId),
+        )}`;
+      }
+      async deleteByCustomerId(
+        parameters: Public.Tables.Customer.ByCustomerId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.customer WHERE customer_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.customerId),
+        )}`;
+      }
+      async deleteByLastName(parameters: Public.Tables.Customer.ByLastName) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.customer WHERE last_name =  ${typed.pg_catalog_varchar(
+          undefinedIsNull(parameters.lastName),
+        )}`;
+      }
+      async deleteByStoreId(parameters: Public.Tables.Customer.ByStoreId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.customer WHERE store_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.storeId),
+        )}`;
+      }
+    })(this);
+
+    public Actor = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byActorId(parameters: Public.Tables.Actor.ByActorId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT actor_id,first_name,last_name,last_update FROM public.actor WHERE actor_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.actorId),
+          )}`;
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byLastName(parameters: Public.Tables.Actor.ByLastName) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT actor_id,first_name,last_name,last_update FROM public.actor WHERE last_name =  ${typed.pg_catalog_varchar(
+            undefinedIsNull(parameters.lastName),
+          )}`;
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async deleteByActorId(parameters: Public.Tables.Actor.ByActorId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.actor WHERE actor_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.actorId),
+        )}`;
+      }
+      async deleteByLastName(parameters: Public.Tables.Actor.ByLastName) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.actor WHERE last_name =  ${typed.pg_catalog_varchar(
+          undefinedIsNull(parameters.lastName),
+        )}`;
+      }
+    })(this);
+
+    public FilmCategory = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byFilmIdCategoryId(
+        parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT film_id,category_id,last_update FROM public.film_category WHERE film_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.filmId),
+          )} AND category_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.categoryId),
+          )}`;
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          categoryId: undefinedIsNull(record.category_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByFilmIdCategoryId(
+        parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film_category WHERE film_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.filmId),
+        )} AND category_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.categoryId),
+        )}`;
+      }
+    })(this);
+
+    public Inventory = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byInventoryId(parameters: Public.Tables.Inventory.ByInventoryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT inventory_id,film_id,store_id,last_update FROM public.inventory WHERE inventory_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.inventoryId),
+          )}`;
+        const results = response.map((record) => ({
+          inventoryId: undefinedIsNull(record.inventory_id),
+          filmId: undefinedIsNull(record.film_id),
+          storeId: undefinedIsNull(record.store_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byStoreIdFilmId(
+        parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT inventory_id,film_id,store_id,last_update FROM public.inventory WHERE store_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.storeId),
+          )} AND film_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.filmId),
+          )}`;
+        const results = response.map((record) => ({
+          inventoryId: undefinedIsNull(record.inventory_id),
+          filmId: undefinedIsNull(record.film_id),
+          storeId: undefinedIsNull(record.store_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async deleteByInventoryId(
+        parameters: Public.Tables.Inventory.ByInventoryId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.inventory WHERE inventory_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.inventoryId),
+        )}`;
+      }
+      async deleteByStoreIdFilmId(
+        parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.inventory WHERE store_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.storeId),
+        )} AND film_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.filmId),
+        )}`;
+      }
+    })(this);
+
+    public Category = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byCategoryId(parameters: Public.Tables.Category.ByCategoryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT category_id,name,last_update FROM public.category WHERE category_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.categoryId),
+          )}`;
+        const results = response.map((record) => ({
+          categoryId: undefinedIsNull(record.category_id),
+          name: undefinedIsNull(record.name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByCategoryId(
+        parameters: Public.Tables.Category.ByCategoryId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.category WHERE category_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.categoryId),
+        )}`;
+      }
+    })(this);
+
+    public Country = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byCountryId(parameters: Public.Tables.Country.ByCountryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT country_id,country,last_update FROM public.country WHERE country_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.countryId),
+          )}`;
+        const results = response.map((record) => ({
+          countryId: undefinedIsNull(record.country_id),
+          country: undefinedIsNull(record.country),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByCountryId(parameters: Public.Tables.Country.ByCountryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.country WHERE country_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.countryId),
+        )}`;
+      }
+    })(this);
+
+    public Language = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byLanguageId(parameters: Public.Tables.Language.ByLanguageId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT language_id,name,last_update FROM public.language WHERE language_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.languageId),
+          )}`;
+        const results = response.map((record) => ({
+          languageId: undefinedIsNull(record.language_id),
+          name: undefinedIsNull(record.name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByLanguageId(
+        parameters: Public.Tables.Language.ByLanguageId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.language WHERE language_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.languageId),
+        )}`;
+      }
+    })(this);
+
+    public Rental = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byInventoryId(parameters: Public.Tables.Rental.ByInventoryId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE inventory_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.inventoryId),
+          )}`;
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+      async byRentalDateInventoryIdCustomerId(
+        parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE rental_date =  ${typed.pg_catalog_timestamp(
+            undefinedIsNull(parameters.rentalDate),
+          )} AND inventory_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.inventoryId),
+          )} AND customer_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.customerId),
+          )}`;
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byRentalId(parameters: Public.Tables.Rental.ByRentalId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE rental_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.rentalId),
+          )}`;
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByInventoryId(
+        parameters: Public.Tables.Rental.ByInventoryId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.rental WHERE inventory_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.inventoryId),
+        )}`;
+      }
+      async deleteByRentalDateInventoryIdCustomerId(
+        parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.rental WHERE rental_date =  ${typed.pg_catalog_timestamp(
+          undefinedIsNull(parameters.rentalDate),
+        )} AND inventory_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.inventoryId),
+        )} AND customer_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.customerId),
+        )}`;
+      }
+      async deleteByRentalId(parameters: Public.Tables.Rental.ByRentalId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.rental WHERE rental_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.rentalId),
+        )}`;
+      }
+    })(this);
+
+    public Staff = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byStaffId(parameters: Public.Tables.Staff.ByStaffId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture FROM public.staff WHERE staff_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.staffId),
+          )}`;
+        const results = response.map((record) => ({
+          staffId: undefinedIsNull(record.staff_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          addressId: undefinedIsNull(record.address_id),
+          email: undefinedIsNull(record.email),
+          storeId: undefinedIsNull(record.store_id),
+          active: undefinedIsNull(record.active),
+          username: undefinedIsNull(record.username),
+          password: undefinedIsNull(record.password),
+          lastUpdate: undefinedIsNull(record.last_update),
+          picture: undefinedIsNull(record.picture),
+        }));
+        return results[0];
+      }
+
+      async deleteByStaffId(parameters: Public.Tables.Staff.ByStaffId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.staff WHERE staff_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.staffId),
+        )}`;
+      }
+    })(this);
+
+    public Store = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byManagerStaffId(parameters: Public.Tables.Store.ByManagerStaffId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT store_id,manager_staff_id,address_id,last_update FROM public.store WHERE manager_staff_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.managerStaffId),
+          )}`;
+        const results = response.map((record) => ({
+          storeId: undefinedIsNull(record.store_id),
+          managerStaffId: undefinedIsNull(record.manager_staff_id),
+          addressId: undefinedIsNull(record.address_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async byStoreId(parameters: Public.Tables.Store.ByStoreId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT store_id,manager_staff_id,address_id,last_update FROM public.store WHERE store_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.storeId),
+          )}`;
+        const results = response.map((record) => ({
+          storeId: undefinedIsNull(record.store_id),
+          managerStaffId: undefinedIsNull(record.manager_staff_id),
+          addressId: undefinedIsNull(record.address_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async deleteByManagerStaffId(
+        parameters: Public.Tables.Store.ByManagerStaffId,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.store WHERE manager_staff_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.managerStaffId),
+        )}`;
+      }
+      async deleteByStoreId(parameters: Public.Tables.Store.ByStoreId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.store WHERE store_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.storeId),
+        )}`;
+      }
+    })(this);
+
+    public Payment = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byCustomerId(parameters: Public.Tables.Payment.ByCustomerId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE customer_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.customerId),
+          )}`;
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+      async byPaymentId(parameters: Public.Tables.Payment.ByPaymentId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE payment_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.paymentId),
+          )}`;
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results[0];
+      }
+      async byRentalId(parameters: Public.Tables.Payment.ByRentalId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE rental_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.rentalId),
+          )}`;
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+      async byStaffId(parameters: Public.Tables.Payment.ByStaffId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE staff_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.staffId),
+          )}`;
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+
+      async deleteByCustomerId(parameters: Public.Tables.Payment.ByCustomerId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.payment WHERE customer_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.customerId),
+        )}`;
+      }
+      async deleteByPaymentId(parameters: Public.Tables.Payment.ByPaymentId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.payment WHERE payment_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.paymentId),
+        )}`;
+      }
+      async deleteByRentalId(parameters: Public.Tables.Payment.ByRentalId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.payment WHERE rental_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.rentalId),
+        )}`;
+      }
+      async deleteByStaffId(parameters: Public.Tables.Payment.ByStaffId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.payment WHERE staff_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.staffId),
+        )}`;
+      }
+    })(this);
+
+    public Film = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async byFilmId(parameters: Public.Tables.Film.ByFilmId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE film_id =  ${typed.pg_catalog_int4(
+            undefinedIsNull(parameters.filmId),
+          )}`;
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results[0];
+      }
+      async byFulltext(parameters: Public.Tables.Film.ByFulltext) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE fulltext =  ${typed.pg_catalog_gtsvector(
+            undefinedIsNull(parameters.fulltext),
+          )}`;
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+      async byLanguageId(parameters: Public.Tables.Film.ByLanguageId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE language_id =  ${typed.pg_catalog_int2(
+            undefinedIsNull(parameters.languageId),
+          )}`;
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+      async byTitle(parameters: Public.Tables.Film.ByTitle) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE title =  ${typed.pg_catalog_varchar(
+            undefinedIsNull(parameters.title),
+          )}`;
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+
+      async deleteByFilmId(parameters: Public.Tables.Film.ByFilmId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film WHERE film_id =  ${typed.pg_catalog_int4(
+          undefinedIsNull(parameters.filmId),
+        )}`;
+      }
+      async deleteByFulltext(parameters: Public.Tables.Film.ByFulltext) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film WHERE fulltext =  ${typed.pg_catalog_gtsvector(
+          undefinedIsNull(parameters.fulltext),
+        )}`;
+      }
+      async deleteByLanguageId(parameters: Public.Tables.Film.ByLanguageId) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film WHERE language_id =  ${typed.pg_catalog_int2(
+          undefinedIsNull(parameters.languageId),
+        )}`;
+      }
+      async deleteByTitle(parameters: Public.Tables.Film.ByTitle) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        await sql`DELETE FROM public.film WHERE title =  ${typed.pg_catalog_varchar(
+          undefinedIsNull(parameters.title),
+        )}`;
       }
     })(this);
   })(this);
@@ -8784,142 +12018,101 @@ export class Database {
     })(this);
   })(this);
 
-  public Api = new (class implements HasDatabase {
+  public Scripts = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
-    async Echo(parameters: Api.EchoArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo as unknown as Api.EchoSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoSet(parameters: Api.EchoSetArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_set(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_set,
-      ) as unknown as Api.EchoSetResultset;
-      return responseBody;
-    }
-    async EchoTable(parameters: Api.EchoTableArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_table(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map((x) =>
-        this.parseEchoTableResult(this.database.context, x.echo_table),
-      ) as unknown as Api.EchoTableResultset;
-      return responseBody;
-    }
+    public Sql = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
 
-    parseEchoTableResult = (
-      context: Context,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      result: any,
-    ): Api.EchoTableSingleResultsetRecord => {
-      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
-        context,
-        result,
-      ) as unknown as Api.EchoTableSingleResultsetRecord;
-    };
+      get database() {
+        return this.hasDatabase.database;
+      }
 
-    async EchoType(parameters: Api.EchoTypeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type as unknown as Api.EchoTypeSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeArray(parameters: Api.EchoTypeArrayArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_array(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_array as unknown as Api.EchoTypeArraySingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeNested(parameters: Api.EchoTypeNestedArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_nested(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_nested as unknown as Api.EchoTypeNestedSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeSet(parameters: Api.EchoTypeSetArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_set(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_type_set,
-      ) as unknown as Api.EchoTypeSetResultset;
-      return responseBody;
-    }
+      tally = async () => {
+        const response = await this.database.context.sql.begin(
+          async (sql: postgres.Sql) => {
+            return await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.actor
+
+                
+                `);
+          },
+        );
+        return response.map((record) => ({
+          count: undefinedIsNull(record.count),
+        }));
+      };
+
+      public Sample = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        pick = async (_1: PgCatalog.Text) => {
+          const response = await this.database.context.sql.begin(
+            async (sql: postgres.Sql) => {
+              return await sql.unsafe(
+                `
+                SELECT
+    *
+FROM
+    public.film
+WHERE
+    title = $1
+                
+                `,
+                [_1],
+              );
+            },
+          );
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        };
+
+        public Film = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          tally = async () => {
+            const response = await this.database.context.sql.begin(
+              async (sql: postgres.Sql) => {
+                return await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.film
+
+                
+                `);
+              },
+            );
+            return response.map((record) => ({
+              count: undefinedIsNull(record.count),
+            }));
+          };
+        })(this);
+      })(this);
+    })(this);
   })(this);
 }

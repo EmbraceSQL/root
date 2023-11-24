@@ -1,4 +1,4 @@
-import { Database } from "../src/dvdrental/index";
+import { Database } from "../src/dvdrental";
 
 describe("The database can AutoCRUD", () => {
   // each test runs in an isolated transaction that is rolled back

@@ -1,17 +1,11 @@
 import { initializeContext } from "@embracesql/core/src/context";
 import { regenerateFromDatabase } from "@embracesql/core/src/generator";
+import chalk from "chalk";
 import { Command } from "commander";
 import figlet from "figlet";
 
-console.log(figlet.textSync("Embrace SQL"));
-
 const program = new Command()
   .version(process.env.npm_package_version ?? "")
-  .option(
-    "--generateInto [value]",
-    "Code will generate into this directory.",
-    "./src/postgres",
-  )
   .option(
     "--database [value]",
     "Connect to this postgres for generation.",
@@ -25,16 +19,17 @@ const program = new Command()
   .parse(process.argv);
 
 async function main() {
+  process.stderr.write(chalk.blue(figlet.textSync("Embrace SQL")));
+  process.stderr.write("\n");
   const options = program.opts();
   const context = await initializeContext(options.database);
   const start = Date.now();
-  console.log(`generating to ${options.generateInto}`);
-  await regenerateFromDatabase({
+  const generatedSource = await regenerateFromDatabase({
     ...context,
-    generateInto: options.generateInto,
     sqlScriptsFrom: options.sqlScriptsFrom,
   });
-  console.log(`generated in ${Date.now() - start}ms`);
+  process.stdout.write(generatedSource);
+  process.stderr.write(chalk.green(`generated in ${Date.now() - start}ms\n`));
   await context.sql.end();
 }
 

@@ -2,8 +2,6 @@ import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
 import { generateSchemaDefinitions } from "./generateSchemaDefinitions";
-import * as fs from "fs";
-import * as path from "path";
 import * as prettier from "prettier";
 
 /**
@@ -122,10 +120,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
   //class end
   generationBuffer.push(`}`);
-  await fs.promises.writeFile(
-    path.join(context.generateInto, `index.ts`),
-    await prettier.format(generationBuffer.join("\n"), {
-      parser: "typescript",
-    }),
-  );
+  return await prettier.format(generationBuffer.join("\n"), {
+    parser: "typescript",
+  });
 };

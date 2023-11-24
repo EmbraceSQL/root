@@ -1,4 +1,4 @@
-import { Database } from "../src/marshalling/index";
+import { Database } from "../src/marshalling";
 
 /**
  * Works-at-all.
