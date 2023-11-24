@@ -2,12 +2,12 @@ import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { Operation } from "../operation";
 import { Context } from "@embracesql/core/src/context";
-import { camelCase } from "change-case";
+import { pascalCase } from "change-case";
 
 /**
- * AutoCRUD reads by index for a table.
+ * AutoCRUD deletes by index for a table.
  */
-export class ReadOperation implements Operation {
+export class DeleteOperation implements Operation {
   constructor(private table: PGTable) {}
 
   async build(context: Context) {
@@ -27,7 +27,7 @@ export class ReadOperation implements Operation {
       const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
 
       generationBuffer.push(
-        `async ${camelCase(index.typescriptName)}(${parameters}){`,
+        `async delete${pascalCase(index.typescriptName)}(${parameters}){`,
       );
       generationBuffer.push(
         `
@@ -38,23 +38,10 @@ export class ReadOperation implements Operation {
       );
 
       // query using postgres driver bindings to the index
-      const sql = `SELECT ${tableType.sqlColumns(context)} FROM ${
+      const sql = `DELETE FROM ${
         tableType.postgresName
       } WHERE ${index.sqlPredicate(context)}`;
-      generationBuffer.push(`const response = await sql\`${sql}\``);
-      // add in some types
-      generationBuffer.push(
-        `const results = ${tableType.postgresResultRecordToTypescript(
-          context,
-        )}`,
-      );
-      // if this is a unique index, pull back a single record
-      // which makes this way more KV like than always having an array back
-      if (index.index.indisunique) {
-        generationBuffer.push(`return results[0]`);
-      } else {
-        generationBuffer.push(`return results`);
-      }
+      generationBuffer.push(`await sql\`${sql}\``);
 
       generationBuffer.push(`}`);
     }
