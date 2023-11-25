@@ -36,7 +36,10 @@ describe("The database can AutoCRUD", () => {
       paymentId: 17503,
     });
     expect(before).toBeTruthy();
-    await database.Public.Payment.deleteByPaymentId({ paymentId: 17503 });
+    const deleted = await database.Public.Payment.deleteByPaymentId({
+      paymentId: 17503,
+    });
+    expect(deleted).toMatchObject(before);
     const after = await database.Public.Payment.byPaymentId({
       paymentId: 17503,
     });
@@ -47,7 +50,10 @@ describe("The database can AutoCRUD", () => {
       customerId: 341,
     });
     expect(before.length).toBeGreaterThan(0);
-    await database.Public.Payment.deleteByCustomerId({ customerId: 341 });
+    const deleted = await database.Public.Payment.deleteByCustomerId({
+      customerId: 341,
+    });
+    expect(deleted).toMatchObject(before);
     const after = await database.Public.Payment.byCustomerId({
       customerId: 341,
     });

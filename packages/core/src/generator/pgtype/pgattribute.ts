@@ -76,8 +76,19 @@ export class PGAttribute {
     }
   }
 
-  postgresParameter(context: Context, parameterHolder = "parameters") {
+  /**
+   * Render a code generation string that will create a postgres 'right hand side'
+   * of an equals value expression for this attribute.
+   *
+   * This will create an expression that will self equal for undefined on the
+   * parameterHolder in calling typescript -- allows partial updates.
+   *
+   */
+  postgresValueExpression(context: Context, parameterHolder = "parameters") {
     const postgresType = context.resolveType(this.attribute.atttypid);
-    return ` \${ typed.${postgresType.postgresMarshallName}(undefinedIsNull(${parameterHolder}.${this.typescriptName})) }`;
+    const undefinedSelfEqualExpression = `${this.postgresName}`;
+    const valueExpression = `typed.${postgresType.postgresMarshallName}(${parameterHolder}.${this.typescriptName})`;
+    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? '${undefinedSelfEqualExpression}' : ${valueExpression}`;
+    return `\${ ${combinedExpression} }`;
   }
 }

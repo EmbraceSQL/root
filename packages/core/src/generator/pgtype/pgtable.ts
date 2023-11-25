@@ -1,6 +1,7 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
+import { PGTypeComposite } from "./pgtypecomposite";
 import { pascalCase } from "change-case";
 import * as path from "path";
 import { Sql } from "postgres";
@@ -62,5 +63,29 @@ export class PGTable {
       ${this.indexes.map((i) => i.typescriptTypeDefinition(context)).join("\n")}
     };
     `;
+  }
+
+  /**
+   * Code generation builder for all fields updating.
+   *
+   * This will do self assignment for undefined properties, allowing
+   * partial updates in typescript by omitting properties corresponding to
+   * columns.
+   *
+   * Nulls in the passed typescript turn into SQL NULL.
+   */
+  sqlSetExpressions(context: Context, parameterHolder = "parameters") {
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.tabletypeoid,
+    );
+    return tableType.attributes
+      .map(
+        (a) =>
+          `${a.postgresName} = ${a.postgresValueExpression(
+            context,
+            parameterHolder,
+          )}`,
+      )
+      .join(" , ");
   }
 }

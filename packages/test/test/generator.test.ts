@@ -22,7 +22,9 @@ describe("The generator can", () => {
       ...context,
       sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
     });
-    const compiled = ts.transpile(source);
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.CommonJS },
+    });
     expect(compiled).toBeTruthy();
   });
 });

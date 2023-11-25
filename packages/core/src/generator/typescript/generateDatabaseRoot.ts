@@ -120,7 +120,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
   //class end
   generationBuffer.push(`}`);
-  return await prettier.format(generationBuffer.join("\n"), {
-    parser: "typescript",
-  });
+  const source = generationBuffer.join("\n");
+  try {
+    return await prettier.format(source, { parser: "typescript" });
+  } catch {
+    // no format -- we'll need it to debug then
+    return source;
+  }
 };

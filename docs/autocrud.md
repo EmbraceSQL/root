@@ -13,7 +13,6 @@ allowing you to work with tables in a similar fashion to KV-stores:
 
 All you need are tables with indexes. Yes, primary keys count!
 
-
 ## Example
 
 You can look in the [intro](./index.md) to see how to generate the dvdrental code.

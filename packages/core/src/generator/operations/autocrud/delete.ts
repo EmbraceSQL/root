@@ -1,19 +1,12 @@
-import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
-import { Operation } from "../operation";
+import { TableOperation } from "../operation";
 import { Context } from "@embracesql/core/src/context";
 import { pascalCase } from "change-case";
 
 /**
  * AutoCRUD deletes by index for a table.
  */
-export class DeleteOperation implements Operation {
-  constructor(private table: PGTable) {}
-
-  async build(context: Context) {
-    console.assert(context);
-  }
-
+export class DeleteOperation extends TableOperation {
   typescriptDefinition(context: Context): string {
     console.assert(context);
     const generationBuffer = [""];
@@ -40,8 +33,15 @@ export class DeleteOperation implements Operation {
       // query using postgres driver bindings to the index
       const sql = `DELETE FROM ${
         tableType.postgresName
-      } WHERE ${index.sqlPredicate(context)}`;
-      generationBuffer.push(`await sql\`${sql}\``);
+      } WHERE ${index.sqlPredicate(context)} RETURNING ${tableType.sqlColumns(
+        context,
+      )}
+      `;
+      generationBuffer.push(`const response = await sql\`${sql}\``);
+
+      generationBuffer.push(
+        this.typescriptTableReturnStatementsFromResponse(context, index),
+      );
 
       generationBuffer.push(`}`);
     }

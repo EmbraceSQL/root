@@ -94,12 +94,14 @@ export class PGIndex {
     `;
   }
 
+  /**
+   * Code generation builder for an exact index match.
+   */
   sqlPredicate(context: Context, parameterHolder = "parameters") {
-    console.assert(context);
     return this.attributes
       .map(
         (a) =>
-          `${a.postgresName} = ${a.postgresParameter(
+          `${a.postgresName} = ${a.postgresValueExpression(
             context,
             parameterHolder,
           )}`,
