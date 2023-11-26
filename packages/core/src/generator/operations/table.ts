@@ -2,6 +2,7 @@ import { Context } from "../../context";
 import { PGTable } from "../pgtype/pgtable";
 import { DeleteOperation } from "./autocrud/delete";
 import { ReadOperation } from "./autocrud/read";
+import { UpdateOperation } from "./autocrud/update";
 import { Operation } from "./operation";
 
 /**
@@ -10,7 +11,11 @@ import { Operation } from "./operation";
 export class TableOperation implements Operation {
   private operations: Operation[];
   constructor(private table: PGTable) {
-    this.operations = [new ReadOperation(table), new DeleteOperation(table)];
+    this.operations = [
+      new ReadOperation(table),
+      new DeleteOperation(table),
+      new UpdateOperation(table),
+    ];
   }
 
   async build(context: Context) {

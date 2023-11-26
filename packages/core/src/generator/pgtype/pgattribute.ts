@@ -86,9 +86,9 @@ export class PGAttribute {
    */
   postgresValueExpression(context: Context, parameterHolder = "parameters") {
     const postgresType = context.resolveType(this.attribute.atttypid);
-    const undefinedSelfEqualExpression = `${this.postgresName}`;
+    const undefinedSelfEqualExpression = `sql("${this.postgresName}")`;
     const valueExpression = `typed.${postgresType.postgresMarshallName}(${parameterHolder}.${this.typescriptName})`;
-    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? '${undefinedSelfEqualExpression}' : ${valueExpression}`;
+    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? ${undefinedSelfEqualExpression} : ${valueExpression}`;
     return `\${ ${combinedExpression} }`;
   }
 }

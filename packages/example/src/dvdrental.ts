@@ -5495,15 +5495,15 @@ export class Database {
         const response =
           await sql`SELECT starelid,staattnum,stainherit,stanullfrac,stawidth,stadistinct,stakind1,stakind2,stakind3,stakind4,stakind5,staop1,staop2,staop3,staop4,staop5,stacoll1,stacoll2,stacoll3,stacoll4,stacoll5,stanumbers1,stanumbers2,stanumbers3,stanumbers4,stanumbers5,stavalues1,stavalues2,stavalues3,stavalues4,stavalues5 FROM pg_catalog.pg_statistic WHERE starelid = ${
             parameters.starelid === undefined
-              ? "starelid"
+              ? sql("starelid")
               : typed.pg_catalog_oid(parameters.starelid)
           } AND staattnum = ${
             parameters.staattnum === undefined
-              ? "staattnum"
+              ? sql("staattnum")
               : typed.pg_catalog_int2(parameters.staattnum)
           } AND stainherit = ${
             parameters.stainherit === undefined
-              ? "stainherit"
+              ? sql("stainherit")
               : typed.pg_catalog_bool(parameters.stainherit)
           }`;
 
@@ -5553,18 +5553,202 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_statistic WHERE starelid = ${
             parameters.starelid === undefined
-              ? "starelid"
+              ? sql("starelid")
               : typed.pg_catalog_oid(parameters.starelid)
           } AND staattnum = ${
             parameters.staattnum === undefined
-              ? "staattnum"
+              ? sql("staattnum")
               : typed.pg_catalog_int2(parameters.staattnum)
           } AND stainherit = ${
             parameters.stainherit === undefined
-              ? "stainherit"
+              ? sql("stainherit")
               : typed.pg_catalog_bool(parameters.stainherit)
           } RETURNING starelid,staattnum,stainherit,stanullfrac,stawidth,stadistinct,stakind1,stakind2,stakind3,stakind4,stakind5,staop1,staop2,staop3,staop4,staop5,stacoll1,stacoll2,stacoll3,stacoll4,stacoll5,stanumbers1,stanumbers2,stanumbers3,stanumbers4,stanumbers5,stavalues1,stavalues2,stavalues3,stavalues4,stavalues5
       `;
+
+        const results = response.map((record) => ({
+          starelid: undefinedIsNull(record.starelid),
+          staattnum: undefinedIsNull(record.staattnum),
+          stainherit: undefinedIsNull(record.stainherit),
+          stanullfrac: undefinedIsNull(record.stanullfrac),
+          stawidth: undefinedIsNull(record.stawidth),
+          stadistinct: undefinedIsNull(record.stadistinct),
+          stakind1: undefinedIsNull(record.stakind1),
+          stakind2: undefinedIsNull(record.stakind2),
+          stakind3: undefinedIsNull(record.stakind3),
+          stakind4: undefinedIsNull(record.stakind4),
+          stakind5: undefinedIsNull(record.stakind5),
+          staop1: undefinedIsNull(record.staop1),
+          staop2: undefinedIsNull(record.staop2),
+          staop3: undefinedIsNull(record.staop3),
+          staop4: undefinedIsNull(record.staop4),
+          staop5: undefinedIsNull(record.staop5),
+          stacoll1: undefinedIsNull(record.stacoll1),
+          stacoll2: undefinedIsNull(record.stacoll2),
+          stacoll3: undefinedIsNull(record.stacoll3),
+          stacoll4: undefinedIsNull(record.stacoll4),
+          stacoll5: undefinedIsNull(record.stacoll5),
+          stanumbers1: undefinedIsNull(record.stanumbers1),
+          stanumbers2: undefinedIsNull(record.stanumbers2),
+          stanumbers3: undefinedIsNull(record.stanumbers3),
+          stanumbers4: undefinedIsNull(record.stanumbers4),
+          stanumbers5: undefinedIsNull(record.stanumbers5),
+          stavalues1: undefinedIsNull(record.stavalues1),
+          stavalues2: undefinedIsNull(record.stavalues2),
+          stavalues3: undefinedIsNull(record.stavalues3),
+          stavalues4: undefinedIsNull(record.stavalues4),
+          stavalues5: undefinedIsNull(record.stavalues5),
+        }));
+        return results[0];
+      }
+
+      async updateByStarelidStaattnumStainherit(
+        parameters: PgCatalog.Tables.PgStatistic.ByStarelidStaattnumStainherit,
+        values: Partial<PgCatalog.PgStatistic>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_statistic SET starelid = ${
+            values.starelid === undefined
+              ? sql("starelid")
+              : typed.pg_catalog_oid(values.starelid)
+          } , staattnum = ${
+            values.staattnum === undefined
+              ? sql("staattnum")
+              : typed.pg_catalog_int2(values.staattnum)
+          } , stainherit = ${
+            values.stainherit === undefined
+              ? sql("stainherit")
+              : typed.pg_catalog_bool(values.stainherit)
+          } , stanullfrac = ${
+            values.stanullfrac === undefined
+              ? sql("stanullfrac")
+              : typed.pg_catalog_float4(values.stanullfrac)
+          } , stawidth = ${
+            values.stawidth === undefined
+              ? sql("stawidth")
+              : typed.pg_catalog_int4(values.stawidth)
+          } , stadistinct = ${
+            values.stadistinct === undefined
+              ? sql("stadistinct")
+              : typed.pg_catalog_float4(values.stadistinct)
+          } , stakind1 = ${
+            values.stakind1 === undefined
+              ? sql("stakind1")
+              : typed.pg_catalog_int2(values.stakind1)
+          } , stakind2 = ${
+            values.stakind2 === undefined
+              ? sql("stakind2")
+              : typed.pg_catalog_int2(values.stakind2)
+          } , stakind3 = ${
+            values.stakind3 === undefined
+              ? sql("stakind3")
+              : typed.pg_catalog_int2(values.stakind3)
+          } , stakind4 = ${
+            values.stakind4 === undefined
+              ? sql("stakind4")
+              : typed.pg_catalog_int2(values.stakind4)
+          } , stakind5 = ${
+            values.stakind5 === undefined
+              ? sql("stakind5")
+              : typed.pg_catalog_int2(values.stakind5)
+          } , staop1 = ${
+            values.staop1 === undefined
+              ? sql("staop1")
+              : typed.pg_catalog_oid(values.staop1)
+          } , staop2 = ${
+            values.staop2 === undefined
+              ? sql("staop2")
+              : typed.pg_catalog_oid(values.staop2)
+          } , staop3 = ${
+            values.staop3 === undefined
+              ? sql("staop3")
+              : typed.pg_catalog_oid(values.staop3)
+          } , staop4 = ${
+            values.staop4 === undefined
+              ? sql("staop4")
+              : typed.pg_catalog_oid(values.staop4)
+          } , staop5 = ${
+            values.staop5 === undefined
+              ? sql("staop5")
+              : typed.pg_catalog_oid(values.staop5)
+          } , stacoll1 = ${
+            values.stacoll1 === undefined
+              ? sql("stacoll1")
+              : typed.pg_catalog_oid(values.stacoll1)
+          } , stacoll2 = ${
+            values.stacoll2 === undefined
+              ? sql("stacoll2")
+              : typed.pg_catalog_oid(values.stacoll2)
+          } , stacoll3 = ${
+            values.stacoll3 === undefined
+              ? sql("stacoll3")
+              : typed.pg_catalog_oid(values.stacoll3)
+          } , stacoll4 = ${
+            values.stacoll4 === undefined
+              ? sql("stacoll4")
+              : typed.pg_catalog_oid(values.stacoll4)
+          } , stacoll5 = ${
+            values.stacoll5 === undefined
+              ? sql("stacoll5")
+              : typed.pg_catalog_oid(values.stacoll5)
+          } , stanumbers1 = ${
+            values.stanumbers1 === undefined
+              ? sql("stanumbers1")
+              : typed.pg_catalog__float4(values.stanumbers1)
+          } , stanumbers2 = ${
+            values.stanumbers2 === undefined
+              ? sql("stanumbers2")
+              : typed.pg_catalog__float4(values.stanumbers2)
+          } , stanumbers3 = ${
+            values.stanumbers3 === undefined
+              ? sql("stanumbers3")
+              : typed.pg_catalog__float4(values.stanumbers3)
+          } , stanumbers4 = ${
+            values.stanumbers4 === undefined
+              ? sql("stanumbers4")
+              : typed.pg_catalog__float4(values.stanumbers4)
+          } , stanumbers5 = ${
+            values.stanumbers5 === undefined
+              ? sql("stanumbers5")
+              : typed.pg_catalog__float4(values.stanumbers5)
+          } , stavalues1 = ${
+            values.stavalues1 === undefined
+              ? sql("stavalues1")
+              : typed.pg_catalog_anyarray(values.stavalues1)
+          } , stavalues2 = ${
+            values.stavalues2 === undefined
+              ? sql("stavalues2")
+              : typed.pg_catalog_anyarray(values.stavalues2)
+          } , stavalues3 = ${
+            values.stavalues3 === undefined
+              ? sql("stavalues3")
+              : typed.pg_catalog_anyarray(values.stavalues3)
+          } , stavalues4 = ${
+            values.stavalues4 === undefined
+              ? sql("stavalues4")
+              : typed.pg_catalog_anyarray(values.stavalues4)
+          } , stavalues5 = ${
+            values.stavalues5 === undefined
+              ? sql("stavalues5")
+              : typed.pg_catalog_anyarray(values.stavalues5)
+          } WHERE starelid = ${
+            parameters.starelid === undefined
+              ? sql("starelid")
+              : typed.pg_catalog_oid(parameters.starelid)
+          } AND staattnum = ${
+            parameters.staattnum === undefined
+              ? sql("staattnum")
+              : typed.pg_catalog_int2(parameters.staattnum)
+          } AND stainherit = ${
+            parameters.stainherit === undefined
+              ? sql("stainherit")
+              : typed.pg_catalog_bool(parameters.stainherit)
+          } RETURNING starelid,staattnum,stainherit,stanullfrac,stawidth,stadistinct,stakind1,stakind2,stakind3,stakind4,stakind5,staop1,staop2,staop3,staop4,staop5,stacoll1,stacoll2,stacoll3,stacoll4,stacoll5,stanumbers1,stanumbers2,stanumbers3,stanumbers4,stanumbers5,stavalues1,stavalues2,stavalues3,stavalues4,stavalues5`;
 
         const results = response.map((record) => ({
           starelid: undefinedIsNull(record.starelid),
@@ -5618,7 +5802,7 @@ export class Database {
         const response =
           await sql`SELECT oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl FROM pg_catalog.pg_type WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -5668,11 +5852,11 @@ export class Database {
         const response =
           await sql`SELECT oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl FROM pg_catalog.pg_type WHERE typname = ${
             parameters.typname === undefined
-              ? "typname"
+              ? sql("typname")
               : typed.pg_catalog_cstring(parameters.typname)
           } AND typnamespace = ${
             parameters.typnamespace === undefined
-              ? "typnamespace"
+              ? sql("typnamespace")
               : typed.pg_catalog_oid(parameters.typnamespace)
           }`;
 
@@ -5720,7 +5904,7 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_type WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl
       `;
@@ -5771,14 +5955,377 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_type WHERE typname = ${
             parameters.typname === undefined
-              ? "typname"
+              ? sql("typname")
               : typed.pg_catalog_cstring(parameters.typname)
           } AND typnamespace = ${
             parameters.typnamespace === undefined
-              ? "typnamespace"
+              ? sql("typnamespace")
               : typed.pg_catalog_oid(parameters.typnamespace)
           } RETURNING oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          typname: undefinedIsNull(record.typname),
+          typnamespace: undefinedIsNull(record.typnamespace),
+          typowner: undefinedIsNull(record.typowner),
+          typlen: undefinedIsNull(record.typlen),
+          typbyval: undefinedIsNull(record.typbyval),
+          typtype: undefinedIsNull(record.typtype),
+          typcategory: undefinedIsNull(record.typcategory),
+          typispreferred: undefinedIsNull(record.typispreferred),
+          typisdefined: undefinedIsNull(record.typisdefined),
+          typdelim: undefinedIsNull(record.typdelim),
+          typrelid: undefinedIsNull(record.typrelid),
+          typsubscript: undefinedIsNull(record.typsubscript),
+          typelem: undefinedIsNull(record.typelem),
+          typarray: undefinedIsNull(record.typarray),
+          typinput: undefinedIsNull(record.typinput),
+          typoutput: undefinedIsNull(record.typoutput),
+          typreceive: undefinedIsNull(record.typreceive),
+          typsend: undefinedIsNull(record.typsend),
+          typmodin: undefinedIsNull(record.typmodin),
+          typmodout: undefinedIsNull(record.typmodout),
+          typanalyze: undefinedIsNull(record.typanalyze),
+          typalign: undefinedIsNull(record.typalign),
+          typstorage: undefinedIsNull(record.typstorage),
+          typnotnull: undefinedIsNull(record.typnotnull),
+          typbasetype: undefinedIsNull(record.typbasetype),
+          typtypmod: undefinedIsNull(record.typtypmod),
+          typndims: undefinedIsNull(record.typndims),
+          typcollation: undefinedIsNull(record.typcollation),
+          typdefaultbin: undefinedIsNull(record.typdefaultbin),
+          typdefault: undefinedIsNull(record.typdefault),
+          typacl: undefinedIsNull(record.typacl),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgType.ByOid,
+        values: Partial<PgCatalog.PgType>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_type SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , typname = ${
+          values.typname === undefined
+            ? sql("typname")
+            : typed.pg_catalog_name(values.typname)
+        } , typnamespace = ${
+          values.typnamespace === undefined
+            ? sql("typnamespace")
+            : typed.pg_catalog_oid(values.typnamespace)
+        } , typowner = ${
+          values.typowner === undefined
+            ? sql("typowner")
+            : typed.pg_catalog_oid(values.typowner)
+        } , typlen = ${
+          values.typlen === undefined
+            ? sql("typlen")
+            : typed.pg_catalog_int2(values.typlen)
+        } , typbyval = ${
+          values.typbyval === undefined
+            ? sql("typbyval")
+            : typed.pg_catalog_bool(values.typbyval)
+        } , typtype = ${
+          values.typtype === undefined
+            ? sql("typtype")
+            : typed.pg_catalog_char(values.typtype)
+        } , typcategory = ${
+          values.typcategory === undefined
+            ? sql("typcategory")
+            : typed.pg_catalog_char(values.typcategory)
+        } , typispreferred = ${
+          values.typispreferred === undefined
+            ? sql("typispreferred")
+            : typed.pg_catalog_bool(values.typispreferred)
+        } , typisdefined = ${
+          values.typisdefined === undefined
+            ? sql("typisdefined")
+            : typed.pg_catalog_bool(values.typisdefined)
+        } , typdelim = ${
+          values.typdelim === undefined
+            ? sql("typdelim")
+            : typed.pg_catalog_char(values.typdelim)
+        } , typrelid = ${
+          values.typrelid === undefined
+            ? sql("typrelid")
+            : typed.pg_catalog_oid(values.typrelid)
+        } , typsubscript = ${
+          values.typsubscript === undefined
+            ? sql("typsubscript")
+            : typed.pg_catalog_regproc(values.typsubscript)
+        } , typelem = ${
+          values.typelem === undefined
+            ? sql("typelem")
+            : typed.pg_catalog_oid(values.typelem)
+        } , typarray = ${
+          values.typarray === undefined
+            ? sql("typarray")
+            : typed.pg_catalog_oid(values.typarray)
+        } , typinput = ${
+          values.typinput === undefined
+            ? sql("typinput")
+            : typed.pg_catalog_regproc(values.typinput)
+        } , typoutput = ${
+          values.typoutput === undefined
+            ? sql("typoutput")
+            : typed.pg_catalog_regproc(values.typoutput)
+        } , typreceive = ${
+          values.typreceive === undefined
+            ? sql("typreceive")
+            : typed.pg_catalog_regproc(values.typreceive)
+        } , typsend = ${
+          values.typsend === undefined
+            ? sql("typsend")
+            : typed.pg_catalog_regproc(values.typsend)
+        } , typmodin = ${
+          values.typmodin === undefined
+            ? sql("typmodin")
+            : typed.pg_catalog_regproc(values.typmodin)
+        } , typmodout = ${
+          values.typmodout === undefined
+            ? sql("typmodout")
+            : typed.pg_catalog_regproc(values.typmodout)
+        } , typanalyze = ${
+          values.typanalyze === undefined
+            ? sql("typanalyze")
+            : typed.pg_catalog_regproc(values.typanalyze)
+        } , typalign = ${
+          values.typalign === undefined
+            ? sql("typalign")
+            : typed.pg_catalog_char(values.typalign)
+        } , typstorage = ${
+          values.typstorage === undefined
+            ? sql("typstorage")
+            : typed.pg_catalog_char(values.typstorage)
+        } , typnotnull = ${
+          values.typnotnull === undefined
+            ? sql("typnotnull")
+            : typed.pg_catalog_bool(values.typnotnull)
+        } , typbasetype = ${
+          values.typbasetype === undefined
+            ? sql("typbasetype")
+            : typed.pg_catalog_oid(values.typbasetype)
+        } , typtypmod = ${
+          values.typtypmod === undefined
+            ? sql("typtypmod")
+            : typed.pg_catalog_int4(values.typtypmod)
+        } , typndims = ${
+          values.typndims === undefined
+            ? sql("typndims")
+            : typed.pg_catalog_int4(values.typndims)
+        } , typcollation = ${
+          values.typcollation === undefined
+            ? sql("typcollation")
+            : typed.pg_catalog_oid(values.typcollation)
+        } , typdefaultbin = ${
+          values.typdefaultbin === undefined
+            ? sql("typdefaultbin")
+            : typed.pg_catalog_pg_node_tree(values.typdefaultbin)
+        } , typdefault = ${
+          values.typdefault === undefined
+            ? sql("typdefault")
+            : typed.pg_catalog_text(values.typdefault)
+        } , typacl = ${
+          values.typacl === undefined
+            ? sql("typacl")
+            : typed.pg_catalog__aclitem(values.typacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          typname: undefinedIsNull(record.typname),
+          typnamespace: undefinedIsNull(record.typnamespace),
+          typowner: undefinedIsNull(record.typowner),
+          typlen: undefinedIsNull(record.typlen),
+          typbyval: undefinedIsNull(record.typbyval),
+          typtype: undefinedIsNull(record.typtype),
+          typcategory: undefinedIsNull(record.typcategory),
+          typispreferred: undefinedIsNull(record.typispreferred),
+          typisdefined: undefinedIsNull(record.typisdefined),
+          typdelim: undefinedIsNull(record.typdelim),
+          typrelid: undefinedIsNull(record.typrelid),
+          typsubscript: undefinedIsNull(record.typsubscript),
+          typelem: undefinedIsNull(record.typelem),
+          typarray: undefinedIsNull(record.typarray),
+          typinput: undefinedIsNull(record.typinput),
+          typoutput: undefinedIsNull(record.typoutput),
+          typreceive: undefinedIsNull(record.typreceive),
+          typsend: undefinedIsNull(record.typsend),
+          typmodin: undefinedIsNull(record.typmodin),
+          typmodout: undefinedIsNull(record.typmodout),
+          typanalyze: undefinedIsNull(record.typanalyze),
+          typalign: undefinedIsNull(record.typalign),
+          typstorage: undefinedIsNull(record.typstorage),
+          typnotnull: undefinedIsNull(record.typnotnull),
+          typbasetype: undefinedIsNull(record.typbasetype),
+          typtypmod: undefinedIsNull(record.typtypmod),
+          typndims: undefinedIsNull(record.typndims),
+          typcollation: undefinedIsNull(record.typcollation),
+          typdefaultbin: undefinedIsNull(record.typdefaultbin),
+          typdefault: undefinedIsNull(record.typdefault),
+          typacl: undefinedIsNull(record.typacl),
+        }));
+        return results[0];
+      }
+      async updateByTypnameTypnamespace(
+        parameters: PgCatalog.Tables.PgType.ByTypnameTypnamespace,
+        values: Partial<PgCatalog.PgType>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_type SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , typname = ${
+          values.typname === undefined
+            ? sql("typname")
+            : typed.pg_catalog_name(values.typname)
+        } , typnamespace = ${
+          values.typnamespace === undefined
+            ? sql("typnamespace")
+            : typed.pg_catalog_oid(values.typnamespace)
+        } , typowner = ${
+          values.typowner === undefined
+            ? sql("typowner")
+            : typed.pg_catalog_oid(values.typowner)
+        } , typlen = ${
+          values.typlen === undefined
+            ? sql("typlen")
+            : typed.pg_catalog_int2(values.typlen)
+        } , typbyval = ${
+          values.typbyval === undefined
+            ? sql("typbyval")
+            : typed.pg_catalog_bool(values.typbyval)
+        } , typtype = ${
+          values.typtype === undefined
+            ? sql("typtype")
+            : typed.pg_catalog_char(values.typtype)
+        } , typcategory = ${
+          values.typcategory === undefined
+            ? sql("typcategory")
+            : typed.pg_catalog_char(values.typcategory)
+        } , typispreferred = ${
+          values.typispreferred === undefined
+            ? sql("typispreferred")
+            : typed.pg_catalog_bool(values.typispreferred)
+        } , typisdefined = ${
+          values.typisdefined === undefined
+            ? sql("typisdefined")
+            : typed.pg_catalog_bool(values.typisdefined)
+        } , typdelim = ${
+          values.typdelim === undefined
+            ? sql("typdelim")
+            : typed.pg_catalog_char(values.typdelim)
+        } , typrelid = ${
+          values.typrelid === undefined
+            ? sql("typrelid")
+            : typed.pg_catalog_oid(values.typrelid)
+        } , typsubscript = ${
+          values.typsubscript === undefined
+            ? sql("typsubscript")
+            : typed.pg_catalog_regproc(values.typsubscript)
+        } , typelem = ${
+          values.typelem === undefined
+            ? sql("typelem")
+            : typed.pg_catalog_oid(values.typelem)
+        } , typarray = ${
+          values.typarray === undefined
+            ? sql("typarray")
+            : typed.pg_catalog_oid(values.typarray)
+        } , typinput = ${
+          values.typinput === undefined
+            ? sql("typinput")
+            : typed.pg_catalog_regproc(values.typinput)
+        } , typoutput = ${
+          values.typoutput === undefined
+            ? sql("typoutput")
+            : typed.pg_catalog_regproc(values.typoutput)
+        } , typreceive = ${
+          values.typreceive === undefined
+            ? sql("typreceive")
+            : typed.pg_catalog_regproc(values.typreceive)
+        } , typsend = ${
+          values.typsend === undefined
+            ? sql("typsend")
+            : typed.pg_catalog_regproc(values.typsend)
+        } , typmodin = ${
+          values.typmodin === undefined
+            ? sql("typmodin")
+            : typed.pg_catalog_regproc(values.typmodin)
+        } , typmodout = ${
+          values.typmodout === undefined
+            ? sql("typmodout")
+            : typed.pg_catalog_regproc(values.typmodout)
+        } , typanalyze = ${
+          values.typanalyze === undefined
+            ? sql("typanalyze")
+            : typed.pg_catalog_regproc(values.typanalyze)
+        } , typalign = ${
+          values.typalign === undefined
+            ? sql("typalign")
+            : typed.pg_catalog_char(values.typalign)
+        } , typstorage = ${
+          values.typstorage === undefined
+            ? sql("typstorage")
+            : typed.pg_catalog_char(values.typstorage)
+        } , typnotnull = ${
+          values.typnotnull === undefined
+            ? sql("typnotnull")
+            : typed.pg_catalog_bool(values.typnotnull)
+        } , typbasetype = ${
+          values.typbasetype === undefined
+            ? sql("typbasetype")
+            : typed.pg_catalog_oid(values.typbasetype)
+        } , typtypmod = ${
+          values.typtypmod === undefined
+            ? sql("typtypmod")
+            : typed.pg_catalog_int4(values.typtypmod)
+        } , typndims = ${
+          values.typndims === undefined
+            ? sql("typndims")
+            : typed.pg_catalog_int4(values.typndims)
+        } , typcollation = ${
+          values.typcollation === undefined
+            ? sql("typcollation")
+            : typed.pg_catalog_oid(values.typcollation)
+        } , typdefaultbin = ${
+          values.typdefaultbin === undefined
+            ? sql("typdefaultbin")
+            : typed.pg_catalog_pg_node_tree(values.typdefaultbin)
+        } , typdefault = ${
+          values.typdefault === undefined
+            ? sql("typdefault")
+            : typed.pg_catalog_text(values.typdefault)
+        } , typacl = ${
+          values.typacl === undefined
+            ? sql("typacl")
+            : typed.pg_catalog__aclitem(values.typacl)
+        } WHERE typname = ${
+          parameters.typname === undefined
+            ? sql("typname")
+            : typed.pg_catalog_cstring(parameters.typname)
+        } AND typnamespace = ${
+          parameters.typnamespace === undefined
+            ? sql("typnamespace")
+            : typed.pg_catalog_oid(parameters.typnamespace)
+        } RETURNING oid,typname,typnamespace,typowner,typlen,typbyval,typtype,typcategory,typispreferred,typisdefined,typdelim,typrelid,typsubscript,typelem,typarray,typinput,typoutput,typreceive,typsend,typmodin,typmodout,typanalyze,typalign,typstorage,typnotnull,typbasetype,typtypmod,typndims,typcollation,typdefaultbin,typdefault,typacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -5833,7 +6380,7 @@ export class Database {
         const response =
           await sql`SELECT ftrelid,ftserver,ftoptions FROM pg_catalog.pg_foreign_table WHERE ftrelid = ${
             parameters.ftrelid === undefined
-              ? "ftrelid"
+              ? sql("ftrelid")
               : typed.pg_catalog_oid(parameters.ftrelid)
           }`;
 
@@ -5855,10 +6402,46 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_foreign_table WHERE ftrelid = ${
             parameters.ftrelid === undefined
-              ? "ftrelid"
+              ? sql("ftrelid")
               : typed.pg_catalog_oid(parameters.ftrelid)
           } RETURNING ftrelid,ftserver,ftoptions
       `;
+
+        const results = response.map((record) => ({
+          ftrelid: undefinedIsNull(record.ftrelid),
+          ftserver: undefinedIsNull(record.ftserver),
+          ftoptions: undefinedIsNull(record.ftoptions),
+        }));
+        return results[0];
+      }
+
+      async updateByFtrelid(
+        parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid,
+        values: Partial<PgCatalog.PgForeignTable>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_foreign_table SET ftrelid = ${
+            values.ftrelid === undefined
+              ? sql("ftrelid")
+              : typed.pg_catalog_oid(values.ftrelid)
+          } , ftserver = ${
+            values.ftserver === undefined
+              ? sql("ftserver")
+              : typed.pg_catalog_oid(values.ftserver)
+          } , ftoptions = ${
+            values.ftoptions === undefined
+              ? sql("ftoptions")
+              : typed.pg_catalog__text(values.ftoptions)
+          } WHERE ftrelid = ${
+            parameters.ftrelid === undefined
+              ? sql("ftrelid")
+              : typed.pg_catalog_oid(parameters.ftrelid)
+          } RETURNING ftrelid,ftserver,ftoptions`;
 
         const results = response.map((record) => ({
           ftrelid: undefinedIsNull(record.ftrelid),
@@ -5884,7 +6467,7 @@ export class Database {
         const response =
           await sql`SELECT oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil FROM pg_catalog.pg_authid WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -5912,7 +6495,7 @@ export class Database {
         const response =
           await sql`SELECT oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil FROM pg_catalog.pg_authid WHERE rolname = ${
             parameters.rolname === undefined
-              ? "rolname"
+              ? sql("rolname")
               : typed.pg_catalog_cstring(parameters.rolname)
           }`;
 
@@ -5941,7 +6524,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_authid WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil
       `;
@@ -5970,10 +6553,169 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_authid WHERE rolname = ${
             parameters.rolname === undefined
-              ? "rolname"
+              ? sql("rolname")
               : typed.pg_catalog_cstring(parameters.rolname)
           } RETURNING oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          rolname: undefinedIsNull(record.rolname),
+          rolsuper: undefinedIsNull(record.rolsuper),
+          rolinherit: undefinedIsNull(record.rolinherit),
+          rolcreaterole: undefinedIsNull(record.rolcreaterole),
+          rolcreatedb: undefinedIsNull(record.rolcreatedb),
+          rolcanlogin: undefinedIsNull(record.rolcanlogin),
+          rolreplication: undefinedIsNull(record.rolreplication),
+          rolbypassrls: undefinedIsNull(record.rolbypassrls),
+          rolconnlimit: undefinedIsNull(record.rolconnlimit),
+          rolpassword: undefinedIsNull(record.rolpassword),
+          rolvaliduntil: undefinedIsNull(record.rolvaliduntil),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAuthid.ByOid,
+        values: Partial<PgCatalog.PgAuthid>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_authid SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , rolname = ${
+          values.rolname === undefined
+            ? sql("rolname")
+            : typed.pg_catalog_name(values.rolname)
+        } , rolsuper = ${
+          values.rolsuper === undefined
+            ? sql("rolsuper")
+            : typed.pg_catalog_bool(values.rolsuper)
+        } , rolinherit = ${
+          values.rolinherit === undefined
+            ? sql("rolinherit")
+            : typed.pg_catalog_bool(values.rolinherit)
+        } , rolcreaterole = ${
+          values.rolcreaterole === undefined
+            ? sql("rolcreaterole")
+            : typed.pg_catalog_bool(values.rolcreaterole)
+        } , rolcreatedb = ${
+          values.rolcreatedb === undefined
+            ? sql("rolcreatedb")
+            : typed.pg_catalog_bool(values.rolcreatedb)
+        } , rolcanlogin = ${
+          values.rolcanlogin === undefined
+            ? sql("rolcanlogin")
+            : typed.pg_catalog_bool(values.rolcanlogin)
+        } , rolreplication = ${
+          values.rolreplication === undefined
+            ? sql("rolreplication")
+            : typed.pg_catalog_bool(values.rolreplication)
+        } , rolbypassrls = ${
+          values.rolbypassrls === undefined
+            ? sql("rolbypassrls")
+            : typed.pg_catalog_bool(values.rolbypassrls)
+        } , rolconnlimit = ${
+          values.rolconnlimit === undefined
+            ? sql("rolconnlimit")
+            : typed.pg_catalog_int4(values.rolconnlimit)
+        } , rolpassword = ${
+          values.rolpassword === undefined
+            ? sql("rolpassword")
+            : typed.pg_catalog_text(values.rolpassword)
+        } , rolvaliduntil = ${
+          values.rolvaliduntil === undefined
+            ? sql("rolvaliduntil")
+            : typed.pg_catalog_timestamptz(values.rolvaliduntil)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          rolname: undefinedIsNull(record.rolname),
+          rolsuper: undefinedIsNull(record.rolsuper),
+          rolinherit: undefinedIsNull(record.rolinherit),
+          rolcreaterole: undefinedIsNull(record.rolcreaterole),
+          rolcreatedb: undefinedIsNull(record.rolcreatedb),
+          rolcanlogin: undefinedIsNull(record.rolcanlogin),
+          rolreplication: undefinedIsNull(record.rolreplication),
+          rolbypassrls: undefinedIsNull(record.rolbypassrls),
+          rolconnlimit: undefinedIsNull(record.rolconnlimit),
+          rolpassword: undefinedIsNull(record.rolpassword),
+          rolvaliduntil: undefinedIsNull(record.rolvaliduntil),
+        }));
+        return results[0];
+      }
+      async updateByRolname(
+        parameters: PgCatalog.Tables.PgAuthid.ByRolname,
+        values: Partial<PgCatalog.PgAuthid>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_authid SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , rolname = ${
+          values.rolname === undefined
+            ? sql("rolname")
+            : typed.pg_catalog_name(values.rolname)
+        } , rolsuper = ${
+          values.rolsuper === undefined
+            ? sql("rolsuper")
+            : typed.pg_catalog_bool(values.rolsuper)
+        } , rolinherit = ${
+          values.rolinherit === undefined
+            ? sql("rolinherit")
+            : typed.pg_catalog_bool(values.rolinherit)
+        } , rolcreaterole = ${
+          values.rolcreaterole === undefined
+            ? sql("rolcreaterole")
+            : typed.pg_catalog_bool(values.rolcreaterole)
+        } , rolcreatedb = ${
+          values.rolcreatedb === undefined
+            ? sql("rolcreatedb")
+            : typed.pg_catalog_bool(values.rolcreatedb)
+        } , rolcanlogin = ${
+          values.rolcanlogin === undefined
+            ? sql("rolcanlogin")
+            : typed.pg_catalog_bool(values.rolcanlogin)
+        } , rolreplication = ${
+          values.rolreplication === undefined
+            ? sql("rolreplication")
+            : typed.pg_catalog_bool(values.rolreplication)
+        } , rolbypassrls = ${
+          values.rolbypassrls === undefined
+            ? sql("rolbypassrls")
+            : typed.pg_catalog_bool(values.rolbypassrls)
+        } , rolconnlimit = ${
+          values.rolconnlimit === undefined
+            ? sql("rolconnlimit")
+            : typed.pg_catalog_int4(values.rolconnlimit)
+        } , rolpassword = ${
+          values.rolpassword === undefined
+            ? sql("rolpassword")
+            : typed.pg_catalog_text(values.rolpassword)
+        } , rolvaliduntil = ${
+          values.rolvaliduntil === undefined
+            ? sql("rolvaliduntil")
+            : typed.pg_catalog_timestamptz(values.rolvaliduntil)
+        } WHERE rolname = ${
+          parameters.rolname === undefined
+            ? sql("rolname")
+            : typed.pg_catalog_cstring(parameters.rolname)
+        } RETURNING oid,rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls,rolconnlimit,rolpassword,rolvaliduntil`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -6010,11 +6752,11 @@ export class Database {
         const response =
           await sql`SELECT stxoid,stxdinherit,stxdndistinct,stxddependencies,stxdmcv,stxdexpr FROM pg_catalog.pg_statistic_ext_data WHERE stxoid = ${
             parameters.stxoid === undefined
-              ? "stxoid"
+              ? sql("stxoid")
               : typed.pg_catalog_oid(parameters.stxoid)
           } AND stxdinherit = ${
             parameters.stxdinherit === undefined
-              ? "stxdinherit"
+              ? sql("stxdinherit")
               : typed.pg_catalog_bool(parameters.stxdinherit)
           }`;
 
@@ -6039,14 +6781,69 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_statistic_ext_data WHERE stxoid = ${
             parameters.stxoid === undefined
-              ? "stxoid"
+              ? sql("stxoid")
               : typed.pg_catalog_oid(parameters.stxoid)
           } AND stxdinherit = ${
             parameters.stxdinherit === undefined
-              ? "stxdinherit"
+              ? sql("stxdinherit")
               : typed.pg_catalog_bool(parameters.stxdinherit)
           } RETURNING stxoid,stxdinherit,stxdndistinct,stxddependencies,stxdmcv,stxdexpr
       `;
+
+        const results = response.map((record) => ({
+          stxoid: undefinedIsNull(record.stxoid),
+          stxdinherit: undefinedIsNull(record.stxdinherit),
+          stxdndistinct: undefinedIsNull(record.stxdndistinct),
+          stxddependencies: undefinedIsNull(record.stxddependencies),
+          stxdmcv: undefinedIsNull(record.stxdmcv),
+          stxdexpr: undefinedIsNull(record.stxdexpr),
+        }));
+        return results[0];
+      }
+
+      async updateByStxoidStxdinherit(
+        parameters: PgCatalog.Tables.PgStatisticExtData.ByStxoidStxdinherit,
+        values: Partial<PgCatalog.PgStatisticExtData>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_statistic_ext_data SET stxoid = ${
+            values.stxoid === undefined
+              ? sql("stxoid")
+              : typed.pg_catalog_oid(values.stxoid)
+          } , stxdinherit = ${
+            values.stxdinherit === undefined
+              ? sql("stxdinherit")
+              : typed.pg_catalog_bool(values.stxdinherit)
+          } , stxdndistinct = ${
+            values.stxdndistinct === undefined
+              ? sql("stxdndistinct")
+              : typed.pg_catalog_pg_ndistinct(values.stxdndistinct)
+          } , stxddependencies = ${
+            values.stxddependencies === undefined
+              ? sql("stxddependencies")
+              : typed.pg_catalog_pg_dependencies(values.stxddependencies)
+          } , stxdmcv = ${
+            values.stxdmcv === undefined
+              ? sql("stxdmcv")
+              : typed.pg_catalog_pg_mcv_list(values.stxdmcv)
+          } , stxdexpr = ${
+            values.stxdexpr === undefined
+              ? sql("stxdexpr")
+              : typed.pg_catalog__pg_statistic(values.stxdexpr)
+          } WHERE stxoid = ${
+            parameters.stxoid === undefined
+              ? sql("stxoid")
+              : typed.pg_catalog_oid(parameters.stxoid)
+          } AND stxdinherit = ${
+            parameters.stxdinherit === undefined
+              ? sql("stxdinherit")
+              : typed.pg_catalog_bool(parameters.stxdinherit)
+          } RETURNING stxoid,stxdinherit,stxdndistinct,stxddependencies,stxdmcv,stxdexpr`;
 
         const results = response.map((record) => ({
           stxoid: undefinedIsNull(record.stxoid),
@@ -6075,7 +6872,7 @@ export class Database {
         const response =
           await sql`SELECT oid,umuser,umserver,umoptions FROM pg_catalog.pg_user_mapping WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -6097,11 +6894,11 @@ export class Database {
         const response =
           await sql`SELECT oid,umuser,umserver,umoptions FROM pg_catalog.pg_user_mapping WHERE umuser = ${
             parameters.umuser === undefined
-              ? "umuser"
+              ? sql("umuser")
               : typed.pg_catalog_oid(parameters.umuser)
           } AND umserver = ${
             parameters.umserver === undefined
-              ? "umserver"
+              ? sql("umserver")
               : typed.pg_catalog_oid(parameters.umserver)
           }`;
 
@@ -6122,7 +6919,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_user_mapping WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,umuser,umserver,umoptions
       `;
@@ -6145,14 +6942,99 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_user_mapping WHERE umuser = ${
             parameters.umuser === undefined
-              ? "umuser"
+              ? sql("umuser")
               : typed.pg_catalog_oid(parameters.umuser)
           } AND umserver = ${
             parameters.umserver === undefined
-              ? "umserver"
+              ? sql("umserver")
               : typed.pg_catalog_oid(parameters.umserver)
           } RETURNING oid,umuser,umserver,umoptions
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          umuser: undefinedIsNull(record.umuser),
+          umserver: undefinedIsNull(record.umserver),
+          umoptions: undefinedIsNull(record.umoptions),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgUserMapping.ByOid,
+        values: Partial<PgCatalog.PgUserMapping>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_user_mapping SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , umuser = ${
+            values.umuser === undefined
+              ? sql("umuser")
+              : typed.pg_catalog_oid(values.umuser)
+          } , umserver = ${
+            values.umserver === undefined
+              ? sql("umserver")
+              : typed.pg_catalog_oid(values.umserver)
+          } , umoptions = ${
+            values.umoptions === undefined
+              ? sql("umoptions")
+              : typed.pg_catalog__text(values.umoptions)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,umuser,umserver,umoptions`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          umuser: undefinedIsNull(record.umuser),
+          umserver: undefinedIsNull(record.umserver),
+          umoptions: undefinedIsNull(record.umoptions),
+        }));
+        return results[0];
+      }
+      async updateByUmuserUmserver(
+        parameters: PgCatalog.Tables.PgUserMapping.ByUmuserUmserver,
+        values: Partial<PgCatalog.PgUserMapping>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_user_mapping SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , umuser = ${
+            values.umuser === undefined
+              ? sql("umuser")
+              : typed.pg_catalog_oid(values.umuser)
+          } , umserver = ${
+            values.umserver === undefined
+              ? sql("umserver")
+              : typed.pg_catalog_oid(values.umserver)
+          } , umoptions = ${
+            values.umoptions === undefined
+              ? sql("umoptions")
+              : typed.pg_catalog__text(values.umoptions)
+          } WHERE umuser = ${
+            parameters.umuser === undefined
+              ? sql("umuser")
+              : typed.pg_catalog_oid(parameters.umuser)
+          } AND umserver = ${
+            parameters.umserver === undefined
+              ? sql("umserver")
+              : typed.pg_catalog_oid(parameters.umserver)
+          } RETURNING oid,umuser,umserver,umoptions`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -6179,7 +7061,7 @@ export class Database {
         const response =
           await sql`SELECT oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin FROM pg_catalog.pg_subscription WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -6214,11 +7096,11 @@ export class Database {
         const response =
           await sql`SELECT oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin FROM pg_catalog.pg_subscription WHERE subdbid = ${
             parameters.subdbid === undefined
-              ? "subdbid"
+              ? sql("subdbid")
               : typed.pg_catalog_oid(parameters.subdbid)
           } AND subname = ${
             parameters.subname === undefined
-              ? "subname"
+              ? sql("subname")
               : typed.pg_catalog_cstring(parameters.subname)
           }`;
 
@@ -6252,7 +7134,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_subscription WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin
       `;
@@ -6288,14 +7170,229 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_subscription WHERE subdbid = ${
             parameters.subdbid === undefined
-              ? "subdbid"
+              ? sql("subdbid")
               : typed.pg_catalog_oid(parameters.subdbid)
           } AND subname = ${
             parameters.subname === undefined
-              ? "subname"
+              ? sql("subname")
               : typed.pg_catalog_cstring(parameters.subname)
           } RETURNING oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          subdbid: undefinedIsNull(record.subdbid),
+          subskiplsn: undefinedIsNull(record.subskiplsn),
+          subname: undefinedIsNull(record.subname),
+          subowner: undefinedIsNull(record.subowner),
+          subenabled: undefinedIsNull(record.subenabled),
+          subbinary: undefinedIsNull(record.subbinary),
+          substream: undefinedIsNull(record.substream),
+          subtwophasestate: undefinedIsNull(record.subtwophasestate),
+          subdisableonerr: undefinedIsNull(record.subdisableonerr),
+          subpasswordrequired: undefinedIsNull(record.subpasswordrequired),
+          subrunasowner: undefinedIsNull(record.subrunasowner),
+          subconninfo: undefinedIsNull(record.subconninfo),
+          subslotname: undefinedIsNull(record.subslotname),
+          subsynccommit: undefinedIsNull(record.subsynccommit),
+          subpublications: undefinedIsNull(record.subpublications),
+          suborigin: undefinedIsNull(record.suborigin),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgSubscription.ByOid,
+        values: Partial<PgCatalog.PgSubscription>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_subscription SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , subdbid = ${
+            values.subdbid === undefined
+              ? sql("subdbid")
+              : typed.pg_catalog_oid(values.subdbid)
+          } , subskiplsn = ${
+            values.subskiplsn === undefined
+              ? sql("subskiplsn")
+              : typed.pg_catalog_pg_lsn(values.subskiplsn)
+          } , subname = ${
+            values.subname === undefined
+              ? sql("subname")
+              : typed.pg_catalog_name(values.subname)
+          } , subowner = ${
+            values.subowner === undefined
+              ? sql("subowner")
+              : typed.pg_catalog_oid(values.subowner)
+          } , subenabled = ${
+            values.subenabled === undefined
+              ? sql("subenabled")
+              : typed.pg_catalog_bool(values.subenabled)
+          } , subbinary = ${
+            values.subbinary === undefined
+              ? sql("subbinary")
+              : typed.pg_catalog_bool(values.subbinary)
+          } , substream = ${
+            values.substream === undefined
+              ? sql("substream")
+              : typed.pg_catalog_char(values.substream)
+          } , subtwophasestate = ${
+            values.subtwophasestate === undefined
+              ? sql("subtwophasestate")
+              : typed.pg_catalog_char(values.subtwophasestate)
+          } , subdisableonerr = ${
+            values.subdisableonerr === undefined
+              ? sql("subdisableonerr")
+              : typed.pg_catalog_bool(values.subdisableonerr)
+          } , subpasswordrequired = ${
+            values.subpasswordrequired === undefined
+              ? sql("subpasswordrequired")
+              : typed.pg_catalog_bool(values.subpasswordrequired)
+          } , subrunasowner = ${
+            values.subrunasowner === undefined
+              ? sql("subrunasowner")
+              : typed.pg_catalog_bool(values.subrunasowner)
+          } , subconninfo = ${
+            values.subconninfo === undefined
+              ? sql("subconninfo")
+              : typed.pg_catalog_text(values.subconninfo)
+          } , subslotname = ${
+            values.subslotname === undefined
+              ? sql("subslotname")
+              : typed.pg_catalog_name(values.subslotname)
+          } , subsynccommit = ${
+            values.subsynccommit === undefined
+              ? sql("subsynccommit")
+              : typed.pg_catalog_text(values.subsynccommit)
+          } , subpublications = ${
+            values.subpublications === undefined
+              ? sql("subpublications")
+              : typed.pg_catalog__text(values.subpublications)
+          } , suborigin = ${
+            values.suborigin === undefined
+              ? sql("suborigin")
+              : typed.pg_catalog_text(values.suborigin)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          subdbid: undefinedIsNull(record.subdbid),
+          subskiplsn: undefinedIsNull(record.subskiplsn),
+          subname: undefinedIsNull(record.subname),
+          subowner: undefinedIsNull(record.subowner),
+          subenabled: undefinedIsNull(record.subenabled),
+          subbinary: undefinedIsNull(record.subbinary),
+          substream: undefinedIsNull(record.substream),
+          subtwophasestate: undefinedIsNull(record.subtwophasestate),
+          subdisableonerr: undefinedIsNull(record.subdisableonerr),
+          subpasswordrequired: undefinedIsNull(record.subpasswordrequired),
+          subrunasowner: undefinedIsNull(record.subrunasowner),
+          subconninfo: undefinedIsNull(record.subconninfo),
+          subslotname: undefinedIsNull(record.subslotname),
+          subsynccommit: undefinedIsNull(record.subsynccommit),
+          subpublications: undefinedIsNull(record.subpublications),
+          suborigin: undefinedIsNull(record.suborigin),
+        }));
+        return results[0];
+      }
+      async updateBySubdbidSubname(
+        parameters: PgCatalog.Tables.PgSubscription.BySubdbidSubname,
+        values: Partial<PgCatalog.PgSubscription>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_subscription SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , subdbid = ${
+            values.subdbid === undefined
+              ? sql("subdbid")
+              : typed.pg_catalog_oid(values.subdbid)
+          } , subskiplsn = ${
+            values.subskiplsn === undefined
+              ? sql("subskiplsn")
+              : typed.pg_catalog_pg_lsn(values.subskiplsn)
+          } , subname = ${
+            values.subname === undefined
+              ? sql("subname")
+              : typed.pg_catalog_name(values.subname)
+          } , subowner = ${
+            values.subowner === undefined
+              ? sql("subowner")
+              : typed.pg_catalog_oid(values.subowner)
+          } , subenabled = ${
+            values.subenabled === undefined
+              ? sql("subenabled")
+              : typed.pg_catalog_bool(values.subenabled)
+          } , subbinary = ${
+            values.subbinary === undefined
+              ? sql("subbinary")
+              : typed.pg_catalog_bool(values.subbinary)
+          } , substream = ${
+            values.substream === undefined
+              ? sql("substream")
+              : typed.pg_catalog_char(values.substream)
+          } , subtwophasestate = ${
+            values.subtwophasestate === undefined
+              ? sql("subtwophasestate")
+              : typed.pg_catalog_char(values.subtwophasestate)
+          } , subdisableonerr = ${
+            values.subdisableonerr === undefined
+              ? sql("subdisableonerr")
+              : typed.pg_catalog_bool(values.subdisableonerr)
+          } , subpasswordrequired = ${
+            values.subpasswordrequired === undefined
+              ? sql("subpasswordrequired")
+              : typed.pg_catalog_bool(values.subpasswordrequired)
+          } , subrunasowner = ${
+            values.subrunasowner === undefined
+              ? sql("subrunasowner")
+              : typed.pg_catalog_bool(values.subrunasowner)
+          } , subconninfo = ${
+            values.subconninfo === undefined
+              ? sql("subconninfo")
+              : typed.pg_catalog_text(values.subconninfo)
+          } , subslotname = ${
+            values.subslotname === undefined
+              ? sql("subslotname")
+              : typed.pg_catalog_name(values.subslotname)
+          } , subsynccommit = ${
+            values.subsynccommit === undefined
+              ? sql("subsynccommit")
+              : typed.pg_catalog_text(values.subsynccommit)
+          } , subpublications = ${
+            values.subpublications === undefined
+              ? sql("subpublications")
+              : typed.pg_catalog__text(values.subpublications)
+          } , suborigin = ${
+            values.suborigin === undefined
+              ? sql("suborigin")
+              : typed.pg_catalog_text(values.suborigin)
+          } WHERE subdbid = ${
+            parameters.subdbid === undefined
+              ? sql("subdbid")
+              : typed.pg_catalog_oid(parameters.subdbid)
+          } AND subname = ${
+            parameters.subname === undefined
+              ? sql("subname")
+              : typed.pg_catalog_cstring(parameters.subname)
+          } RETURNING oid,subdbid,subskiplsn,subname,subowner,subenabled,subbinary,substream,subtwophasestate,subdisableonerr,subpasswordrequired,subrunasowner,subconninfo,subslotname,subsynccommit,subpublications,suborigin`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -6337,11 +7434,11 @@ export class Database {
         const response =
           await sql`SELECT attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval FROM pg_catalog.pg_attribute WHERE attrelid = ${
             parameters.attrelid === undefined
-              ? "attrelid"
+              ? sql("attrelid")
               : typed.pg_catalog_oid(parameters.attrelid)
           } AND attname = ${
             parameters.attname === undefined
-              ? "attname"
+              ? sql("attname")
               : typed.pg_catalog_cstring(parameters.attname)
           }`;
 
@@ -6385,11 +7482,11 @@ export class Database {
         const response =
           await sql`SELECT attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval FROM pg_catalog.pg_attribute WHERE attrelid = ${
             parameters.attrelid === undefined
-              ? "attrelid"
+              ? sql("attrelid")
               : typed.pg_catalog_oid(parameters.attrelid)
           } AND attnum = ${
             parameters.attnum === undefined
-              ? "attnum"
+              ? sql("attnum")
               : typed.pg_catalog_int2(parameters.attnum)
           }`;
 
@@ -6434,11 +7531,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_attribute WHERE attrelid = ${
             parameters.attrelid === undefined
-              ? "attrelid"
+              ? sql("attrelid")
               : typed.pg_catalog_oid(parameters.attrelid)
           } AND attname = ${
             parameters.attname === undefined
-              ? "attname"
+              ? sql("attname")
               : typed.pg_catalog_cstring(parameters.attname)
           } RETURNING attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval
       `;
@@ -6483,14 +7580,323 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_attribute WHERE attrelid = ${
             parameters.attrelid === undefined
-              ? "attrelid"
+              ? sql("attrelid")
               : typed.pg_catalog_oid(parameters.attrelid)
           } AND attnum = ${
             parameters.attnum === undefined
-              ? "attnum"
+              ? sql("attnum")
               : typed.pg_catalog_int2(parameters.attnum)
           } RETURNING attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval
       `;
+
+        const results = response.map((record) => ({
+          attrelid: undefinedIsNull(record.attrelid),
+          attname: undefinedIsNull(record.attname),
+          atttypid: undefinedIsNull(record.atttypid),
+          attlen: undefinedIsNull(record.attlen),
+          attnum: undefinedIsNull(record.attnum),
+          attcacheoff: undefinedIsNull(record.attcacheoff),
+          atttypmod: undefinedIsNull(record.atttypmod),
+          attndims: undefinedIsNull(record.attndims),
+          attbyval: undefinedIsNull(record.attbyval),
+          attalign: undefinedIsNull(record.attalign),
+          attstorage: undefinedIsNull(record.attstorage),
+          attcompression: undefinedIsNull(record.attcompression),
+          attnotnull: undefinedIsNull(record.attnotnull),
+          atthasdef: undefinedIsNull(record.atthasdef),
+          atthasmissing: undefinedIsNull(record.atthasmissing),
+          attidentity: undefinedIsNull(record.attidentity),
+          attgenerated: undefinedIsNull(record.attgenerated),
+          attisdropped: undefinedIsNull(record.attisdropped),
+          attislocal: undefinedIsNull(record.attislocal),
+          attinhcount: undefinedIsNull(record.attinhcount),
+          attstattarget: undefinedIsNull(record.attstattarget),
+          attcollation: undefinedIsNull(record.attcollation),
+          attacl: undefinedIsNull(record.attacl),
+          attoptions: undefinedIsNull(record.attoptions),
+          attfdwoptions: undefinedIsNull(record.attfdwoptions),
+          attmissingval: undefinedIsNull(record.attmissingval),
+        }));
+        return results[0];
+      }
+
+      async updateByAttrelidAttname(
+        parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttname,
+        values: Partial<PgCatalog.PgAttribute>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_attribute SET attrelid = ${
+            values.attrelid === undefined
+              ? sql("attrelid")
+              : typed.pg_catalog_oid(values.attrelid)
+          } , attname = ${
+            values.attname === undefined
+              ? sql("attname")
+              : typed.pg_catalog_name(values.attname)
+          } , atttypid = ${
+            values.atttypid === undefined
+              ? sql("atttypid")
+              : typed.pg_catalog_oid(values.atttypid)
+          } , attlen = ${
+            values.attlen === undefined
+              ? sql("attlen")
+              : typed.pg_catalog_int2(values.attlen)
+          } , attnum = ${
+            values.attnum === undefined
+              ? sql("attnum")
+              : typed.pg_catalog_int2(values.attnum)
+          } , attcacheoff = ${
+            values.attcacheoff === undefined
+              ? sql("attcacheoff")
+              : typed.pg_catalog_int4(values.attcacheoff)
+          } , atttypmod = ${
+            values.atttypmod === undefined
+              ? sql("atttypmod")
+              : typed.pg_catalog_int4(values.atttypmod)
+          } , attndims = ${
+            values.attndims === undefined
+              ? sql("attndims")
+              : typed.pg_catalog_int2(values.attndims)
+          } , attbyval = ${
+            values.attbyval === undefined
+              ? sql("attbyval")
+              : typed.pg_catalog_bool(values.attbyval)
+          } , attalign = ${
+            values.attalign === undefined
+              ? sql("attalign")
+              : typed.pg_catalog_char(values.attalign)
+          } , attstorage = ${
+            values.attstorage === undefined
+              ? sql("attstorage")
+              : typed.pg_catalog_char(values.attstorage)
+          } , attcompression = ${
+            values.attcompression === undefined
+              ? sql("attcompression")
+              : typed.pg_catalog_char(values.attcompression)
+          } , attnotnull = ${
+            values.attnotnull === undefined
+              ? sql("attnotnull")
+              : typed.pg_catalog_bool(values.attnotnull)
+          } , atthasdef = ${
+            values.atthasdef === undefined
+              ? sql("atthasdef")
+              : typed.pg_catalog_bool(values.atthasdef)
+          } , atthasmissing = ${
+            values.atthasmissing === undefined
+              ? sql("atthasmissing")
+              : typed.pg_catalog_bool(values.atthasmissing)
+          } , attidentity = ${
+            values.attidentity === undefined
+              ? sql("attidentity")
+              : typed.pg_catalog_char(values.attidentity)
+          } , attgenerated = ${
+            values.attgenerated === undefined
+              ? sql("attgenerated")
+              : typed.pg_catalog_char(values.attgenerated)
+          } , attisdropped = ${
+            values.attisdropped === undefined
+              ? sql("attisdropped")
+              : typed.pg_catalog_bool(values.attisdropped)
+          } , attislocal = ${
+            values.attislocal === undefined
+              ? sql("attislocal")
+              : typed.pg_catalog_bool(values.attislocal)
+          } , attinhcount = ${
+            values.attinhcount === undefined
+              ? sql("attinhcount")
+              : typed.pg_catalog_int2(values.attinhcount)
+          } , attstattarget = ${
+            values.attstattarget === undefined
+              ? sql("attstattarget")
+              : typed.pg_catalog_int2(values.attstattarget)
+          } , attcollation = ${
+            values.attcollation === undefined
+              ? sql("attcollation")
+              : typed.pg_catalog_oid(values.attcollation)
+          } , attacl = ${
+            values.attacl === undefined
+              ? sql("attacl")
+              : typed.pg_catalog__aclitem(values.attacl)
+          } , attoptions = ${
+            values.attoptions === undefined
+              ? sql("attoptions")
+              : typed.pg_catalog__text(values.attoptions)
+          } , attfdwoptions = ${
+            values.attfdwoptions === undefined
+              ? sql("attfdwoptions")
+              : typed.pg_catalog__text(values.attfdwoptions)
+          } , attmissingval = ${
+            values.attmissingval === undefined
+              ? sql("attmissingval")
+              : typed.pg_catalog_anyarray(values.attmissingval)
+          } WHERE attrelid = ${
+            parameters.attrelid === undefined
+              ? sql("attrelid")
+              : typed.pg_catalog_oid(parameters.attrelid)
+          } AND attname = ${
+            parameters.attname === undefined
+              ? sql("attname")
+              : typed.pg_catalog_cstring(parameters.attname)
+          } RETURNING attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval`;
+
+        const results = response.map((record) => ({
+          attrelid: undefinedIsNull(record.attrelid),
+          attname: undefinedIsNull(record.attname),
+          atttypid: undefinedIsNull(record.atttypid),
+          attlen: undefinedIsNull(record.attlen),
+          attnum: undefinedIsNull(record.attnum),
+          attcacheoff: undefinedIsNull(record.attcacheoff),
+          atttypmod: undefinedIsNull(record.atttypmod),
+          attndims: undefinedIsNull(record.attndims),
+          attbyval: undefinedIsNull(record.attbyval),
+          attalign: undefinedIsNull(record.attalign),
+          attstorage: undefinedIsNull(record.attstorage),
+          attcompression: undefinedIsNull(record.attcompression),
+          attnotnull: undefinedIsNull(record.attnotnull),
+          atthasdef: undefinedIsNull(record.atthasdef),
+          atthasmissing: undefinedIsNull(record.atthasmissing),
+          attidentity: undefinedIsNull(record.attidentity),
+          attgenerated: undefinedIsNull(record.attgenerated),
+          attisdropped: undefinedIsNull(record.attisdropped),
+          attislocal: undefinedIsNull(record.attislocal),
+          attinhcount: undefinedIsNull(record.attinhcount),
+          attstattarget: undefinedIsNull(record.attstattarget),
+          attcollation: undefinedIsNull(record.attcollation),
+          attacl: undefinedIsNull(record.attacl),
+          attoptions: undefinedIsNull(record.attoptions),
+          attfdwoptions: undefinedIsNull(record.attfdwoptions),
+          attmissingval: undefinedIsNull(record.attmissingval),
+        }));
+        return results[0];
+      }
+      async updateByAttrelidAttnum(
+        parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttnum,
+        values: Partial<PgCatalog.PgAttribute>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_attribute SET attrelid = ${
+            values.attrelid === undefined
+              ? sql("attrelid")
+              : typed.pg_catalog_oid(values.attrelid)
+          } , attname = ${
+            values.attname === undefined
+              ? sql("attname")
+              : typed.pg_catalog_name(values.attname)
+          } , atttypid = ${
+            values.atttypid === undefined
+              ? sql("atttypid")
+              : typed.pg_catalog_oid(values.atttypid)
+          } , attlen = ${
+            values.attlen === undefined
+              ? sql("attlen")
+              : typed.pg_catalog_int2(values.attlen)
+          } , attnum = ${
+            values.attnum === undefined
+              ? sql("attnum")
+              : typed.pg_catalog_int2(values.attnum)
+          } , attcacheoff = ${
+            values.attcacheoff === undefined
+              ? sql("attcacheoff")
+              : typed.pg_catalog_int4(values.attcacheoff)
+          } , atttypmod = ${
+            values.atttypmod === undefined
+              ? sql("atttypmod")
+              : typed.pg_catalog_int4(values.atttypmod)
+          } , attndims = ${
+            values.attndims === undefined
+              ? sql("attndims")
+              : typed.pg_catalog_int2(values.attndims)
+          } , attbyval = ${
+            values.attbyval === undefined
+              ? sql("attbyval")
+              : typed.pg_catalog_bool(values.attbyval)
+          } , attalign = ${
+            values.attalign === undefined
+              ? sql("attalign")
+              : typed.pg_catalog_char(values.attalign)
+          } , attstorage = ${
+            values.attstorage === undefined
+              ? sql("attstorage")
+              : typed.pg_catalog_char(values.attstorage)
+          } , attcompression = ${
+            values.attcompression === undefined
+              ? sql("attcompression")
+              : typed.pg_catalog_char(values.attcompression)
+          } , attnotnull = ${
+            values.attnotnull === undefined
+              ? sql("attnotnull")
+              : typed.pg_catalog_bool(values.attnotnull)
+          } , atthasdef = ${
+            values.atthasdef === undefined
+              ? sql("atthasdef")
+              : typed.pg_catalog_bool(values.atthasdef)
+          } , atthasmissing = ${
+            values.atthasmissing === undefined
+              ? sql("atthasmissing")
+              : typed.pg_catalog_bool(values.atthasmissing)
+          } , attidentity = ${
+            values.attidentity === undefined
+              ? sql("attidentity")
+              : typed.pg_catalog_char(values.attidentity)
+          } , attgenerated = ${
+            values.attgenerated === undefined
+              ? sql("attgenerated")
+              : typed.pg_catalog_char(values.attgenerated)
+          } , attisdropped = ${
+            values.attisdropped === undefined
+              ? sql("attisdropped")
+              : typed.pg_catalog_bool(values.attisdropped)
+          } , attislocal = ${
+            values.attislocal === undefined
+              ? sql("attislocal")
+              : typed.pg_catalog_bool(values.attislocal)
+          } , attinhcount = ${
+            values.attinhcount === undefined
+              ? sql("attinhcount")
+              : typed.pg_catalog_int2(values.attinhcount)
+          } , attstattarget = ${
+            values.attstattarget === undefined
+              ? sql("attstattarget")
+              : typed.pg_catalog_int2(values.attstattarget)
+          } , attcollation = ${
+            values.attcollation === undefined
+              ? sql("attcollation")
+              : typed.pg_catalog_oid(values.attcollation)
+          } , attacl = ${
+            values.attacl === undefined
+              ? sql("attacl")
+              : typed.pg_catalog__aclitem(values.attacl)
+          } , attoptions = ${
+            values.attoptions === undefined
+              ? sql("attoptions")
+              : typed.pg_catalog__text(values.attoptions)
+          } , attfdwoptions = ${
+            values.attfdwoptions === undefined
+              ? sql("attfdwoptions")
+              : typed.pg_catalog__text(values.attfdwoptions)
+          } , attmissingval = ${
+            values.attmissingval === undefined
+              ? sql("attmissingval")
+              : typed.pg_catalog_anyarray(values.attmissingval)
+          } WHERE attrelid = ${
+            parameters.attrelid === undefined
+              ? sql("attrelid")
+              : typed.pg_catalog_oid(parameters.attrelid)
+          } AND attnum = ${
+            parameters.attnum === undefined
+              ? sql("attnum")
+              : typed.pg_catalog_int2(parameters.attnum)
+          } RETURNING attrelid,attname,atttypid,attlen,attnum,attcacheoff,atttypmod,attndims,attbyval,attalign,attstorage,attcompression,attnotnull,atthasdef,atthasmissing,attidentity,attgenerated,attisdropped,attislocal,attinhcount,attstattarget,attcollation,attacl,attoptions,attfdwoptions,attmissingval`;
 
         const results = response.map((record) => ({
           attrelid: undefinedIsNull(record.attrelid),
@@ -6539,7 +7945,7 @@ export class Database {
         const response =
           await sql`SELECT oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl FROM pg_catalog.pg_proc WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -6587,15 +7993,15 @@ export class Database {
         const response =
           await sql`SELECT oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl FROM pg_catalog.pg_proc WHERE proname = ${
             parameters.proname === undefined
-              ? "proname"
+              ? sql("proname")
               : typed.pg_catalog_cstring(parameters.proname)
           } AND proargtypes = ${
             parameters.proargtypes === undefined
-              ? "proargtypes"
+              ? sql("proargtypes")
               : typed.pg_catalog_oidvector(parameters.proargtypes)
           } AND pronamespace = ${
             parameters.pronamespace === undefined
-              ? "pronamespace"
+              ? sql("pronamespace")
               : typed.pg_catalog_oid(parameters.pronamespace)
           }`;
 
@@ -6641,7 +8047,7 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_proc WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl
       `;
@@ -6690,18 +8096,365 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_proc WHERE proname = ${
             parameters.proname === undefined
-              ? "proname"
+              ? sql("proname")
               : typed.pg_catalog_cstring(parameters.proname)
           } AND proargtypes = ${
             parameters.proargtypes === undefined
-              ? "proargtypes"
+              ? sql("proargtypes")
               : typed.pg_catalog_oidvector(parameters.proargtypes)
           } AND pronamespace = ${
             parameters.pronamespace === undefined
-              ? "pronamespace"
+              ? sql("pronamespace")
               : typed.pg_catalog_oid(parameters.pronamespace)
           } RETURNING oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          proname: undefinedIsNull(record.proname),
+          pronamespace: undefinedIsNull(record.pronamespace),
+          proowner: undefinedIsNull(record.proowner),
+          prolang: undefinedIsNull(record.prolang),
+          procost: undefinedIsNull(record.procost),
+          prorows: undefinedIsNull(record.prorows),
+          provariadic: undefinedIsNull(record.provariadic),
+          prosupport: undefinedIsNull(record.prosupport),
+          prokind: undefinedIsNull(record.prokind),
+          prosecdef: undefinedIsNull(record.prosecdef),
+          proleakproof: undefinedIsNull(record.proleakproof),
+          proisstrict: undefinedIsNull(record.proisstrict),
+          proretset: undefinedIsNull(record.proretset),
+          provolatile: undefinedIsNull(record.provolatile),
+          proparallel: undefinedIsNull(record.proparallel),
+          pronargs: undefinedIsNull(record.pronargs),
+          pronargdefaults: undefinedIsNull(record.pronargdefaults),
+          prorettype: undefinedIsNull(record.prorettype),
+          proargtypes: undefinedIsNull(record.proargtypes),
+          proallargtypes: undefinedIsNull(record.proallargtypes),
+          proargmodes: undefinedIsNull(record.proargmodes),
+          proargnames: undefinedIsNull(record.proargnames),
+          proargdefaults: undefinedIsNull(record.proargdefaults),
+          protrftypes: undefinedIsNull(record.protrftypes),
+          prosrc: undefinedIsNull(record.prosrc),
+          probin: undefinedIsNull(record.probin),
+          prosqlbody: undefinedIsNull(record.prosqlbody),
+          proconfig: undefinedIsNull(record.proconfig),
+          proacl: undefinedIsNull(record.proacl),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgProc.ByOid,
+        values: Partial<PgCatalog.PgProc>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_proc SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , proname = ${
+          values.proname === undefined
+            ? sql("proname")
+            : typed.pg_catalog_name(values.proname)
+        } , pronamespace = ${
+          values.pronamespace === undefined
+            ? sql("pronamespace")
+            : typed.pg_catalog_oid(values.pronamespace)
+        } , proowner = ${
+          values.proowner === undefined
+            ? sql("proowner")
+            : typed.pg_catalog_oid(values.proowner)
+        } , prolang = ${
+          values.prolang === undefined
+            ? sql("prolang")
+            : typed.pg_catalog_oid(values.prolang)
+        } , procost = ${
+          values.procost === undefined
+            ? sql("procost")
+            : typed.pg_catalog_float4(values.procost)
+        } , prorows = ${
+          values.prorows === undefined
+            ? sql("prorows")
+            : typed.pg_catalog_float4(values.prorows)
+        } , provariadic = ${
+          values.provariadic === undefined
+            ? sql("provariadic")
+            : typed.pg_catalog_oid(values.provariadic)
+        } , prosupport = ${
+          values.prosupport === undefined
+            ? sql("prosupport")
+            : typed.pg_catalog_regproc(values.prosupport)
+        } , prokind = ${
+          values.prokind === undefined
+            ? sql("prokind")
+            : typed.pg_catalog_char(values.prokind)
+        } , prosecdef = ${
+          values.prosecdef === undefined
+            ? sql("prosecdef")
+            : typed.pg_catalog_bool(values.prosecdef)
+        } , proleakproof = ${
+          values.proleakproof === undefined
+            ? sql("proleakproof")
+            : typed.pg_catalog_bool(values.proleakproof)
+        } , proisstrict = ${
+          values.proisstrict === undefined
+            ? sql("proisstrict")
+            : typed.pg_catalog_bool(values.proisstrict)
+        } , proretset = ${
+          values.proretset === undefined
+            ? sql("proretset")
+            : typed.pg_catalog_bool(values.proretset)
+        } , provolatile = ${
+          values.provolatile === undefined
+            ? sql("provolatile")
+            : typed.pg_catalog_char(values.provolatile)
+        } , proparallel = ${
+          values.proparallel === undefined
+            ? sql("proparallel")
+            : typed.pg_catalog_char(values.proparallel)
+        } , pronargs = ${
+          values.pronargs === undefined
+            ? sql("pronargs")
+            : typed.pg_catalog_int2(values.pronargs)
+        } , pronargdefaults = ${
+          values.pronargdefaults === undefined
+            ? sql("pronargdefaults")
+            : typed.pg_catalog_int2(values.pronargdefaults)
+        } , prorettype = ${
+          values.prorettype === undefined
+            ? sql("prorettype")
+            : typed.pg_catalog_oid(values.prorettype)
+        } , proargtypes = ${
+          values.proargtypes === undefined
+            ? sql("proargtypes")
+            : typed.pg_catalog_oidvector(values.proargtypes)
+        } , proallargtypes = ${
+          values.proallargtypes === undefined
+            ? sql("proallargtypes")
+            : typed.pg_catalog__oid(values.proallargtypes)
+        } , proargmodes = ${
+          values.proargmodes === undefined
+            ? sql("proargmodes")
+            : typed.pg_catalog__char(values.proargmodes)
+        } , proargnames = ${
+          values.proargnames === undefined
+            ? sql("proargnames")
+            : typed.pg_catalog__text(values.proargnames)
+        } , proargdefaults = ${
+          values.proargdefaults === undefined
+            ? sql("proargdefaults")
+            : typed.pg_catalog_pg_node_tree(values.proargdefaults)
+        } , protrftypes = ${
+          values.protrftypes === undefined
+            ? sql("protrftypes")
+            : typed.pg_catalog__oid(values.protrftypes)
+        } , prosrc = ${
+          values.prosrc === undefined
+            ? sql("prosrc")
+            : typed.pg_catalog_text(values.prosrc)
+        } , probin = ${
+          values.probin === undefined
+            ? sql("probin")
+            : typed.pg_catalog_text(values.probin)
+        } , prosqlbody = ${
+          values.prosqlbody === undefined
+            ? sql("prosqlbody")
+            : typed.pg_catalog_pg_node_tree(values.prosqlbody)
+        } , proconfig = ${
+          values.proconfig === undefined
+            ? sql("proconfig")
+            : typed.pg_catalog__text(values.proconfig)
+        } , proacl = ${
+          values.proacl === undefined
+            ? sql("proacl")
+            : typed.pg_catalog__aclitem(values.proacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          proname: undefinedIsNull(record.proname),
+          pronamespace: undefinedIsNull(record.pronamespace),
+          proowner: undefinedIsNull(record.proowner),
+          prolang: undefinedIsNull(record.prolang),
+          procost: undefinedIsNull(record.procost),
+          prorows: undefinedIsNull(record.prorows),
+          provariadic: undefinedIsNull(record.provariadic),
+          prosupport: undefinedIsNull(record.prosupport),
+          prokind: undefinedIsNull(record.prokind),
+          prosecdef: undefinedIsNull(record.prosecdef),
+          proleakproof: undefinedIsNull(record.proleakproof),
+          proisstrict: undefinedIsNull(record.proisstrict),
+          proretset: undefinedIsNull(record.proretset),
+          provolatile: undefinedIsNull(record.provolatile),
+          proparallel: undefinedIsNull(record.proparallel),
+          pronargs: undefinedIsNull(record.pronargs),
+          pronargdefaults: undefinedIsNull(record.pronargdefaults),
+          prorettype: undefinedIsNull(record.prorettype),
+          proargtypes: undefinedIsNull(record.proargtypes),
+          proallargtypes: undefinedIsNull(record.proallargtypes),
+          proargmodes: undefinedIsNull(record.proargmodes),
+          proargnames: undefinedIsNull(record.proargnames),
+          proargdefaults: undefinedIsNull(record.proargdefaults),
+          protrftypes: undefinedIsNull(record.protrftypes),
+          prosrc: undefinedIsNull(record.prosrc),
+          probin: undefinedIsNull(record.probin),
+          prosqlbody: undefinedIsNull(record.prosqlbody),
+          proconfig: undefinedIsNull(record.proconfig),
+          proacl: undefinedIsNull(record.proacl),
+        }));
+        return results[0];
+      }
+      async updateByPronameProargtypesPronamespace(
+        parameters: PgCatalog.Tables.PgProc.ByPronameProargtypesPronamespace,
+        values: Partial<PgCatalog.PgProc>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_proc SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , proname = ${
+          values.proname === undefined
+            ? sql("proname")
+            : typed.pg_catalog_name(values.proname)
+        } , pronamespace = ${
+          values.pronamespace === undefined
+            ? sql("pronamespace")
+            : typed.pg_catalog_oid(values.pronamespace)
+        } , proowner = ${
+          values.proowner === undefined
+            ? sql("proowner")
+            : typed.pg_catalog_oid(values.proowner)
+        } , prolang = ${
+          values.prolang === undefined
+            ? sql("prolang")
+            : typed.pg_catalog_oid(values.prolang)
+        } , procost = ${
+          values.procost === undefined
+            ? sql("procost")
+            : typed.pg_catalog_float4(values.procost)
+        } , prorows = ${
+          values.prorows === undefined
+            ? sql("prorows")
+            : typed.pg_catalog_float4(values.prorows)
+        } , provariadic = ${
+          values.provariadic === undefined
+            ? sql("provariadic")
+            : typed.pg_catalog_oid(values.provariadic)
+        } , prosupport = ${
+          values.prosupport === undefined
+            ? sql("prosupport")
+            : typed.pg_catalog_regproc(values.prosupport)
+        } , prokind = ${
+          values.prokind === undefined
+            ? sql("prokind")
+            : typed.pg_catalog_char(values.prokind)
+        } , prosecdef = ${
+          values.prosecdef === undefined
+            ? sql("prosecdef")
+            : typed.pg_catalog_bool(values.prosecdef)
+        } , proleakproof = ${
+          values.proleakproof === undefined
+            ? sql("proleakproof")
+            : typed.pg_catalog_bool(values.proleakproof)
+        } , proisstrict = ${
+          values.proisstrict === undefined
+            ? sql("proisstrict")
+            : typed.pg_catalog_bool(values.proisstrict)
+        } , proretset = ${
+          values.proretset === undefined
+            ? sql("proretset")
+            : typed.pg_catalog_bool(values.proretset)
+        } , provolatile = ${
+          values.provolatile === undefined
+            ? sql("provolatile")
+            : typed.pg_catalog_char(values.provolatile)
+        } , proparallel = ${
+          values.proparallel === undefined
+            ? sql("proparallel")
+            : typed.pg_catalog_char(values.proparallel)
+        } , pronargs = ${
+          values.pronargs === undefined
+            ? sql("pronargs")
+            : typed.pg_catalog_int2(values.pronargs)
+        } , pronargdefaults = ${
+          values.pronargdefaults === undefined
+            ? sql("pronargdefaults")
+            : typed.pg_catalog_int2(values.pronargdefaults)
+        } , prorettype = ${
+          values.prorettype === undefined
+            ? sql("prorettype")
+            : typed.pg_catalog_oid(values.prorettype)
+        } , proargtypes = ${
+          values.proargtypes === undefined
+            ? sql("proargtypes")
+            : typed.pg_catalog_oidvector(values.proargtypes)
+        } , proallargtypes = ${
+          values.proallargtypes === undefined
+            ? sql("proallargtypes")
+            : typed.pg_catalog__oid(values.proallargtypes)
+        } , proargmodes = ${
+          values.proargmodes === undefined
+            ? sql("proargmodes")
+            : typed.pg_catalog__char(values.proargmodes)
+        } , proargnames = ${
+          values.proargnames === undefined
+            ? sql("proargnames")
+            : typed.pg_catalog__text(values.proargnames)
+        } , proargdefaults = ${
+          values.proargdefaults === undefined
+            ? sql("proargdefaults")
+            : typed.pg_catalog_pg_node_tree(values.proargdefaults)
+        } , protrftypes = ${
+          values.protrftypes === undefined
+            ? sql("protrftypes")
+            : typed.pg_catalog__oid(values.protrftypes)
+        } , prosrc = ${
+          values.prosrc === undefined
+            ? sql("prosrc")
+            : typed.pg_catalog_text(values.prosrc)
+        } , probin = ${
+          values.probin === undefined
+            ? sql("probin")
+            : typed.pg_catalog_text(values.probin)
+        } , prosqlbody = ${
+          values.prosqlbody === undefined
+            ? sql("prosqlbody")
+            : typed.pg_catalog_pg_node_tree(values.prosqlbody)
+        } , proconfig = ${
+          values.proconfig === undefined
+            ? sql("proconfig")
+            : typed.pg_catalog__text(values.proconfig)
+        } , proacl = ${
+          values.proacl === undefined
+            ? sql("proacl")
+            : typed.pg_catalog__aclitem(values.proacl)
+        } WHERE proname = ${
+          parameters.proname === undefined
+            ? sql("proname")
+            : typed.pg_catalog_cstring(parameters.proname)
+        } AND proargtypes = ${
+          parameters.proargtypes === undefined
+            ? sql("proargtypes")
+            : typed.pg_catalog_oidvector(parameters.proargtypes)
+        } AND pronamespace = ${
+          parameters.pronamespace === undefined
+            ? sql("pronamespace")
+            : typed.pg_catalog_oid(parameters.pronamespace)
+        } RETURNING oid,proname,pronamespace,proowner,prolang,procost,prorows,provariadic,prosupport,prokind,prosecdef,proleakproof,proisstrict,proretset,provolatile,proparallel,pronargs,pronargdefaults,prorettype,proargtypes,proallargtypes,proargmodes,proargnames,proargdefaults,protrftypes,prosrc,probin,prosqlbody,proconfig,proacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -6754,7 +8507,7 @@ export class Database {
         const response =
           await sql`SELECT oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound FROM pg_catalog.pg_class WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -6805,11 +8558,11 @@ export class Database {
         const response =
           await sql`SELECT oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound FROM pg_catalog.pg_class WHERE relname = ${
             parameters.relname === undefined
-              ? "relname"
+              ? sql("relname")
               : typed.pg_catalog_cstring(parameters.relname)
           } AND relnamespace = ${
             parameters.relnamespace === undefined
-              ? "relnamespace"
+              ? sql("relnamespace")
               : typed.pg_catalog_oid(parameters.relnamespace)
           }`;
 
@@ -6860,11 +8613,11 @@ export class Database {
         const response =
           await sql`SELECT oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound FROM pg_catalog.pg_class WHERE reltablespace = ${
             parameters.reltablespace === undefined
-              ? "reltablespace"
+              ? sql("reltablespace")
               : typed.pg_catalog_oid(parameters.reltablespace)
           } AND relfilenode = ${
             parameters.relfilenode === undefined
-              ? "relfilenode"
+              ? sql("relfilenode")
               : typed.pg_catalog_oid(parameters.relfilenode)
           }`;
 
@@ -6914,7 +8667,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_class WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound
       `;
@@ -6966,11 +8719,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_class WHERE relname = ${
             parameters.relname === undefined
-              ? "relname"
+              ? sql("relname")
               : typed.pg_catalog_cstring(parameters.relname)
           } AND relnamespace = ${
             parameters.relnamespace === undefined
-              ? "relnamespace"
+              ? sql("relnamespace")
               : typed.pg_catalog_oid(parameters.relnamespace)
           } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound
       `;
@@ -7022,14 +8775,575 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_class WHERE reltablespace = ${
             parameters.reltablespace === undefined
-              ? "reltablespace"
+              ? sql("reltablespace")
               : typed.pg_catalog_oid(parameters.reltablespace)
           } AND relfilenode = ${
             parameters.relfilenode === undefined
-              ? "relfilenode"
+              ? sql("relfilenode")
               : typed.pg_catalog_oid(parameters.relfilenode)
           } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          relname: undefinedIsNull(record.relname),
+          relnamespace: undefinedIsNull(record.relnamespace),
+          reltype: undefinedIsNull(record.reltype),
+          reloftype: undefinedIsNull(record.reloftype),
+          relowner: undefinedIsNull(record.relowner),
+          relam: undefinedIsNull(record.relam),
+          relfilenode: undefinedIsNull(record.relfilenode),
+          reltablespace: undefinedIsNull(record.reltablespace),
+          relpages: undefinedIsNull(record.relpages),
+          reltuples: undefinedIsNull(record.reltuples),
+          relallvisible: undefinedIsNull(record.relallvisible),
+          reltoastrelid: undefinedIsNull(record.reltoastrelid),
+          relhasindex: undefinedIsNull(record.relhasindex),
+          relisshared: undefinedIsNull(record.relisshared),
+          relpersistence: undefinedIsNull(record.relpersistence),
+          relkind: undefinedIsNull(record.relkind),
+          relnatts: undefinedIsNull(record.relnatts),
+          relchecks: undefinedIsNull(record.relchecks),
+          relhasrules: undefinedIsNull(record.relhasrules),
+          relhastriggers: undefinedIsNull(record.relhastriggers),
+          relhassubclass: undefinedIsNull(record.relhassubclass),
+          relrowsecurity: undefinedIsNull(record.relrowsecurity),
+          relforcerowsecurity: undefinedIsNull(record.relforcerowsecurity),
+          relispopulated: undefinedIsNull(record.relispopulated),
+          relreplident: undefinedIsNull(record.relreplident),
+          relispartition: undefinedIsNull(record.relispartition),
+          relrewrite: undefinedIsNull(record.relrewrite),
+          relfrozenxid: undefinedIsNull(record.relfrozenxid),
+          relminmxid: undefinedIsNull(record.relminmxid),
+          relacl: undefinedIsNull(record.relacl),
+          reloptions: undefinedIsNull(record.reloptions),
+          relpartbound: undefinedIsNull(record.relpartbound),
+        }));
+        return results;
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgClass.ByOid,
+        values: Partial<PgCatalog.PgClass>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_class SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , relname = ${
+          values.relname === undefined
+            ? sql("relname")
+            : typed.pg_catalog_name(values.relname)
+        } , relnamespace = ${
+          values.relnamespace === undefined
+            ? sql("relnamespace")
+            : typed.pg_catalog_oid(values.relnamespace)
+        } , reltype = ${
+          values.reltype === undefined
+            ? sql("reltype")
+            : typed.pg_catalog_oid(values.reltype)
+        } , reloftype = ${
+          values.reloftype === undefined
+            ? sql("reloftype")
+            : typed.pg_catalog_oid(values.reloftype)
+        } , relowner = ${
+          values.relowner === undefined
+            ? sql("relowner")
+            : typed.pg_catalog_oid(values.relowner)
+        } , relam = ${
+          values.relam === undefined
+            ? sql("relam")
+            : typed.pg_catalog_oid(values.relam)
+        } , relfilenode = ${
+          values.relfilenode === undefined
+            ? sql("relfilenode")
+            : typed.pg_catalog_oid(values.relfilenode)
+        } , reltablespace = ${
+          values.reltablespace === undefined
+            ? sql("reltablespace")
+            : typed.pg_catalog_oid(values.reltablespace)
+        } , relpages = ${
+          values.relpages === undefined
+            ? sql("relpages")
+            : typed.pg_catalog_int4(values.relpages)
+        } , reltuples = ${
+          values.reltuples === undefined
+            ? sql("reltuples")
+            : typed.pg_catalog_float4(values.reltuples)
+        } , relallvisible = ${
+          values.relallvisible === undefined
+            ? sql("relallvisible")
+            : typed.pg_catalog_int4(values.relallvisible)
+        } , reltoastrelid = ${
+          values.reltoastrelid === undefined
+            ? sql("reltoastrelid")
+            : typed.pg_catalog_oid(values.reltoastrelid)
+        } , relhasindex = ${
+          values.relhasindex === undefined
+            ? sql("relhasindex")
+            : typed.pg_catalog_bool(values.relhasindex)
+        } , relisshared = ${
+          values.relisshared === undefined
+            ? sql("relisshared")
+            : typed.pg_catalog_bool(values.relisshared)
+        } , relpersistence = ${
+          values.relpersistence === undefined
+            ? sql("relpersistence")
+            : typed.pg_catalog_char(values.relpersistence)
+        } , relkind = ${
+          values.relkind === undefined
+            ? sql("relkind")
+            : typed.pg_catalog_char(values.relkind)
+        } , relnatts = ${
+          values.relnatts === undefined
+            ? sql("relnatts")
+            : typed.pg_catalog_int2(values.relnatts)
+        } , relchecks = ${
+          values.relchecks === undefined
+            ? sql("relchecks")
+            : typed.pg_catalog_int2(values.relchecks)
+        } , relhasrules = ${
+          values.relhasrules === undefined
+            ? sql("relhasrules")
+            : typed.pg_catalog_bool(values.relhasrules)
+        } , relhastriggers = ${
+          values.relhastriggers === undefined
+            ? sql("relhastriggers")
+            : typed.pg_catalog_bool(values.relhastriggers)
+        } , relhassubclass = ${
+          values.relhassubclass === undefined
+            ? sql("relhassubclass")
+            : typed.pg_catalog_bool(values.relhassubclass)
+        } , relrowsecurity = ${
+          values.relrowsecurity === undefined
+            ? sql("relrowsecurity")
+            : typed.pg_catalog_bool(values.relrowsecurity)
+        } , relforcerowsecurity = ${
+          values.relforcerowsecurity === undefined
+            ? sql("relforcerowsecurity")
+            : typed.pg_catalog_bool(values.relforcerowsecurity)
+        } , relispopulated = ${
+          values.relispopulated === undefined
+            ? sql("relispopulated")
+            : typed.pg_catalog_bool(values.relispopulated)
+        } , relreplident = ${
+          values.relreplident === undefined
+            ? sql("relreplident")
+            : typed.pg_catalog_char(values.relreplident)
+        } , relispartition = ${
+          values.relispartition === undefined
+            ? sql("relispartition")
+            : typed.pg_catalog_bool(values.relispartition)
+        } , relrewrite = ${
+          values.relrewrite === undefined
+            ? sql("relrewrite")
+            : typed.pg_catalog_oid(values.relrewrite)
+        } , relfrozenxid = ${
+          values.relfrozenxid === undefined
+            ? sql("relfrozenxid")
+            : typed.pg_catalog_xid(values.relfrozenxid)
+        } , relminmxid = ${
+          values.relminmxid === undefined
+            ? sql("relminmxid")
+            : typed.pg_catalog_xid(values.relminmxid)
+        } , relacl = ${
+          values.relacl === undefined
+            ? sql("relacl")
+            : typed.pg_catalog__aclitem(values.relacl)
+        } , reloptions = ${
+          values.reloptions === undefined
+            ? sql("reloptions")
+            : typed.pg_catalog__text(values.reloptions)
+        } , relpartbound = ${
+          values.relpartbound === undefined
+            ? sql("relpartbound")
+            : typed.pg_catalog_pg_node_tree(values.relpartbound)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          relname: undefinedIsNull(record.relname),
+          relnamespace: undefinedIsNull(record.relnamespace),
+          reltype: undefinedIsNull(record.reltype),
+          reloftype: undefinedIsNull(record.reloftype),
+          relowner: undefinedIsNull(record.relowner),
+          relam: undefinedIsNull(record.relam),
+          relfilenode: undefinedIsNull(record.relfilenode),
+          reltablespace: undefinedIsNull(record.reltablespace),
+          relpages: undefinedIsNull(record.relpages),
+          reltuples: undefinedIsNull(record.reltuples),
+          relallvisible: undefinedIsNull(record.relallvisible),
+          reltoastrelid: undefinedIsNull(record.reltoastrelid),
+          relhasindex: undefinedIsNull(record.relhasindex),
+          relisshared: undefinedIsNull(record.relisshared),
+          relpersistence: undefinedIsNull(record.relpersistence),
+          relkind: undefinedIsNull(record.relkind),
+          relnatts: undefinedIsNull(record.relnatts),
+          relchecks: undefinedIsNull(record.relchecks),
+          relhasrules: undefinedIsNull(record.relhasrules),
+          relhastriggers: undefinedIsNull(record.relhastriggers),
+          relhassubclass: undefinedIsNull(record.relhassubclass),
+          relrowsecurity: undefinedIsNull(record.relrowsecurity),
+          relforcerowsecurity: undefinedIsNull(record.relforcerowsecurity),
+          relispopulated: undefinedIsNull(record.relispopulated),
+          relreplident: undefinedIsNull(record.relreplident),
+          relispartition: undefinedIsNull(record.relispartition),
+          relrewrite: undefinedIsNull(record.relrewrite),
+          relfrozenxid: undefinedIsNull(record.relfrozenxid),
+          relminmxid: undefinedIsNull(record.relminmxid),
+          relacl: undefinedIsNull(record.relacl),
+          reloptions: undefinedIsNull(record.reloptions),
+          relpartbound: undefinedIsNull(record.relpartbound),
+        }));
+        return results[0];
+      }
+      async updateByRelnameRelnamespace(
+        parameters: PgCatalog.Tables.PgClass.ByRelnameRelnamespace,
+        values: Partial<PgCatalog.PgClass>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_class SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , relname = ${
+          values.relname === undefined
+            ? sql("relname")
+            : typed.pg_catalog_name(values.relname)
+        } , relnamespace = ${
+          values.relnamespace === undefined
+            ? sql("relnamespace")
+            : typed.pg_catalog_oid(values.relnamespace)
+        } , reltype = ${
+          values.reltype === undefined
+            ? sql("reltype")
+            : typed.pg_catalog_oid(values.reltype)
+        } , reloftype = ${
+          values.reloftype === undefined
+            ? sql("reloftype")
+            : typed.pg_catalog_oid(values.reloftype)
+        } , relowner = ${
+          values.relowner === undefined
+            ? sql("relowner")
+            : typed.pg_catalog_oid(values.relowner)
+        } , relam = ${
+          values.relam === undefined
+            ? sql("relam")
+            : typed.pg_catalog_oid(values.relam)
+        } , relfilenode = ${
+          values.relfilenode === undefined
+            ? sql("relfilenode")
+            : typed.pg_catalog_oid(values.relfilenode)
+        } , reltablespace = ${
+          values.reltablespace === undefined
+            ? sql("reltablespace")
+            : typed.pg_catalog_oid(values.reltablespace)
+        } , relpages = ${
+          values.relpages === undefined
+            ? sql("relpages")
+            : typed.pg_catalog_int4(values.relpages)
+        } , reltuples = ${
+          values.reltuples === undefined
+            ? sql("reltuples")
+            : typed.pg_catalog_float4(values.reltuples)
+        } , relallvisible = ${
+          values.relallvisible === undefined
+            ? sql("relallvisible")
+            : typed.pg_catalog_int4(values.relallvisible)
+        } , reltoastrelid = ${
+          values.reltoastrelid === undefined
+            ? sql("reltoastrelid")
+            : typed.pg_catalog_oid(values.reltoastrelid)
+        } , relhasindex = ${
+          values.relhasindex === undefined
+            ? sql("relhasindex")
+            : typed.pg_catalog_bool(values.relhasindex)
+        } , relisshared = ${
+          values.relisshared === undefined
+            ? sql("relisshared")
+            : typed.pg_catalog_bool(values.relisshared)
+        } , relpersistence = ${
+          values.relpersistence === undefined
+            ? sql("relpersistence")
+            : typed.pg_catalog_char(values.relpersistence)
+        } , relkind = ${
+          values.relkind === undefined
+            ? sql("relkind")
+            : typed.pg_catalog_char(values.relkind)
+        } , relnatts = ${
+          values.relnatts === undefined
+            ? sql("relnatts")
+            : typed.pg_catalog_int2(values.relnatts)
+        } , relchecks = ${
+          values.relchecks === undefined
+            ? sql("relchecks")
+            : typed.pg_catalog_int2(values.relchecks)
+        } , relhasrules = ${
+          values.relhasrules === undefined
+            ? sql("relhasrules")
+            : typed.pg_catalog_bool(values.relhasrules)
+        } , relhastriggers = ${
+          values.relhastriggers === undefined
+            ? sql("relhastriggers")
+            : typed.pg_catalog_bool(values.relhastriggers)
+        } , relhassubclass = ${
+          values.relhassubclass === undefined
+            ? sql("relhassubclass")
+            : typed.pg_catalog_bool(values.relhassubclass)
+        } , relrowsecurity = ${
+          values.relrowsecurity === undefined
+            ? sql("relrowsecurity")
+            : typed.pg_catalog_bool(values.relrowsecurity)
+        } , relforcerowsecurity = ${
+          values.relforcerowsecurity === undefined
+            ? sql("relforcerowsecurity")
+            : typed.pg_catalog_bool(values.relforcerowsecurity)
+        } , relispopulated = ${
+          values.relispopulated === undefined
+            ? sql("relispopulated")
+            : typed.pg_catalog_bool(values.relispopulated)
+        } , relreplident = ${
+          values.relreplident === undefined
+            ? sql("relreplident")
+            : typed.pg_catalog_char(values.relreplident)
+        } , relispartition = ${
+          values.relispartition === undefined
+            ? sql("relispartition")
+            : typed.pg_catalog_bool(values.relispartition)
+        } , relrewrite = ${
+          values.relrewrite === undefined
+            ? sql("relrewrite")
+            : typed.pg_catalog_oid(values.relrewrite)
+        } , relfrozenxid = ${
+          values.relfrozenxid === undefined
+            ? sql("relfrozenxid")
+            : typed.pg_catalog_xid(values.relfrozenxid)
+        } , relminmxid = ${
+          values.relminmxid === undefined
+            ? sql("relminmxid")
+            : typed.pg_catalog_xid(values.relminmxid)
+        } , relacl = ${
+          values.relacl === undefined
+            ? sql("relacl")
+            : typed.pg_catalog__aclitem(values.relacl)
+        } , reloptions = ${
+          values.reloptions === undefined
+            ? sql("reloptions")
+            : typed.pg_catalog__text(values.reloptions)
+        } , relpartbound = ${
+          values.relpartbound === undefined
+            ? sql("relpartbound")
+            : typed.pg_catalog_pg_node_tree(values.relpartbound)
+        } WHERE relname = ${
+          parameters.relname === undefined
+            ? sql("relname")
+            : typed.pg_catalog_cstring(parameters.relname)
+        } AND relnamespace = ${
+          parameters.relnamespace === undefined
+            ? sql("relnamespace")
+            : typed.pg_catalog_oid(parameters.relnamespace)
+        } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          relname: undefinedIsNull(record.relname),
+          relnamespace: undefinedIsNull(record.relnamespace),
+          reltype: undefinedIsNull(record.reltype),
+          reloftype: undefinedIsNull(record.reloftype),
+          relowner: undefinedIsNull(record.relowner),
+          relam: undefinedIsNull(record.relam),
+          relfilenode: undefinedIsNull(record.relfilenode),
+          reltablespace: undefinedIsNull(record.reltablespace),
+          relpages: undefinedIsNull(record.relpages),
+          reltuples: undefinedIsNull(record.reltuples),
+          relallvisible: undefinedIsNull(record.relallvisible),
+          reltoastrelid: undefinedIsNull(record.reltoastrelid),
+          relhasindex: undefinedIsNull(record.relhasindex),
+          relisshared: undefinedIsNull(record.relisshared),
+          relpersistence: undefinedIsNull(record.relpersistence),
+          relkind: undefinedIsNull(record.relkind),
+          relnatts: undefinedIsNull(record.relnatts),
+          relchecks: undefinedIsNull(record.relchecks),
+          relhasrules: undefinedIsNull(record.relhasrules),
+          relhastriggers: undefinedIsNull(record.relhastriggers),
+          relhassubclass: undefinedIsNull(record.relhassubclass),
+          relrowsecurity: undefinedIsNull(record.relrowsecurity),
+          relforcerowsecurity: undefinedIsNull(record.relforcerowsecurity),
+          relispopulated: undefinedIsNull(record.relispopulated),
+          relreplident: undefinedIsNull(record.relreplident),
+          relispartition: undefinedIsNull(record.relispartition),
+          relrewrite: undefinedIsNull(record.relrewrite),
+          relfrozenxid: undefinedIsNull(record.relfrozenxid),
+          relminmxid: undefinedIsNull(record.relminmxid),
+          relacl: undefinedIsNull(record.relacl),
+          reloptions: undefinedIsNull(record.reloptions),
+          relpartbound: undefinedIsNull(record.relpartbound),
+        }));
+        return results[0];
+      }
+      async updateByReltablespaceRelfilenode(
+        parameters: PgCatalog.Tables.PgClass.ByReltablespaceRelfilenode,
+        values: Partial<PgCatalog.PgClass>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_class SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , relname = ${
+          values.relname === undefined
+            ? sql("relname")
+            : typed.pg_catalog_name(values.relname)
+        } , relnamespace = ${
+          values.relnamespace === undefined
+            ? sql("relnamespace")
+            : typed.pg_catalog_oid(values.relnamespace)
+        } , reltype = ${
+          values.reltype === undefined
+            ? sql("reltype")
+            : typed.pg_catalog_oid(values.reltype)
+        } , reloftype = ${
+          values.reloftype === undefined
+            ? sql("reloftype")
+            : typed.pg_catalog_oid(values.reloftype)
+        } , relowner = ${
+          values.relowner === undefined
+            ? sql("relowner")
+            : typed.pg_catalog_oid(values.relowner)
+        } , relam = ${
+          values.relam === undefined
+            ? sql("relam")
+            : typed.pg_catalog_oid(values.relam)
+        } , relfilenode = ${
+          values.relfilenode === undefined
+            ? sql("relfilenode")
+            : typed.pg_catalog_oid(values.relfilenode)
+        } , reltablespace = ${
+          values.reltablespace === undefined
+            ? sql("reltablespace")
+            : typed.pg_catalog_oid(values.reltablespace)
+        } , relpages = ${
+          values.relpages === undefined
+            ? sql("relpages")
+            : typed.pg_catalog_int4(values.relpages)
+        } , reltuples = ${
+          values.reltuples === undefined
+            ? sql("reltuples")
+            : typed.pg_catalog_float4(values.reltuples)
+        } , relallvisible = ${
+          values.relallvisible === undefined
+            ? sql("relallvisible")
+            : typed.pg_catalog_int4(values.relallvisible)
+        } , reltoastrelid = ${
+          values.reltoastrelid === undefined
+            ? sql("reltoastrelid")
+            : typed.pg_catalog_oid(values.reltoastrelid)
+        } , relhasindex = ${
+          values.relhasindex === undefined
+            ? sql("relhasindex")
+            : typed.pg_catalog_bool(values.relhasindex)
+        } , relisshared = ${
+          values.relisshared === undefined
+            ? sql("relisshared")
+            : typed.pg_catalog_bool(values.relisshared)
+        } , relpersistence = ${
+          values.relpersistence === undefined
+            ? sql("relpersistence")
+            : typed.pg_catalog_char(values.relpersistence)
+        } , relkind = ${
+          values.relkind === undefined
+            ? sql("relkind")
+            : typed.pg_catalog_char(values.relkind)
+        } , relnatts = ${
+          values.relnatts === undefined
+            ? sql("relnatts")
+            : typed.pg_catalog_int2(values.relnatts)
+        } , relchecks = ${
+          values.relchecks === undefined
+            ? sql("relchecks")
+            : typed.pg_catalog_int2(values.relchecks)
+        } , relhasrules = ${
+          values.relhasrules === undefined
+            ? sql("relhasrules")
+            : typed.pg_catalog_bool(values.relhasrules)
+        } , relhastriggers = ${
+          values.relhastriggers === undefined
+            ? sql("relhastriggers")
+            : typed.pg_catalog_bool(values.relhastriggers)
+        } , relhassubclass = ${
+          values.relhassubclass === undefined
+            ? sql("relhassubclass")
+            : typed.pg_catalog_bool(values.relhassubclass)
+        } , relrowsecurity = ${
+          values.relrowsecurity === undefined
+            ? sql("relrowsecurity")
+            : typed.pg_catalog_bool(values.relrowsecurity)
+        } , relforcerowsecurity = ${
+          values.relforcerowsecurity === undefined
+            ? sql("relforcerowsecurity")
+            : typed.pg_catalog_bool(values.relforcerowsecurity)
+        } , relispopulated = ${
+          values.relispopulated === undefined
+            ? sql("relispopulated")
+            : typed.pg_catalog_bool(values.relispopulated)
+        } , relreplident = ${
+          values.relreplident === undefined
+            ? sql("relreplident")
+            : typed.pg_catalog_char(values.relreplident)
+        } , relispartition = ${
+          values.relispartition === undefined
+            ? sql("relispartition")
+            : typed.pg_catalog_bool(values.relispartition)
+        } , relrewrite = ${
+          values.relrewrite === undefined
+            ? sql("relrewrite")
+            : typed.pg_catalog_oid(values.relrewrite)
+        } , relfrozenxid = ${
+          values.relfrozenxid === undefined
+            ? sql("relfrozenxid")
+            : typed.pg_catalog_xid(values.relfrozenxid)
+        } , relminmxid = ${
+          values.relminmxid === undefined
+            ? sql("relminmxid")
+            : typed.pg_catalog_xid(values.relminmxid)
+        } , relacl = ${
+          values.relacl === undefined
+            ? sql("relacl")
+            : typed.pg_catalog__aclitem(values.relacl)
+        } , reloptions = ${
+          values.reloptions === undefined
+            ? sql("reloptions")
+            : typed.pg_catalog__text(values.reloptions)
+        } , relpartbound = ${
+          values.relpartbound === undefined
+            ? sql("relpartbound")
+            : typed.pg_catalog_pg_node_tree(values.relpartbound)
+        } WHERE reltablespace = ${
+          parameters.reltablespace === undefined
+            ? sql("reltablespace")
+            : typed.pg_catalog_oid(parameters.reltablespace)
+        } AND relfilenode = ${
+          parameters.relfilenode === undefined
+            ? sql("relfilenode")
+            : typed.pg_catalog_oid(parameters.relfilenode)
+        } RETURNING oid,relname,relnamespace,reltype,reloftype,relowner,relam,relfilenode,reltablespace,relpages,reltuples,relallvisible,reltoastrelid,relhasindex,relisshared,relpersistence,relkind,relnatts,relchecks,relhasrules,relhastriggers,relhassubclass,relrowsecurity,relforcerowsecurity,relispopulated,relreplident,relispartition,relrewrite,relfrozenxid,relminmxid,relacl,reloptions,relpartbound`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -7087,11 +9401,11 @@ export class Database {
         const response =
           await sql`SELECT oid,adrelid,adnum,adbin FROM pg_catalog.pg_attrdef WHERE adrelid = ${
             parameters.adrelid === undefined
-              ? "adrelid"
+              ? sql("adrelid")
               : typed.pg_catalog_oid(parameters.adrelid)
           } AND adnum = ${
             parameters.adnum === undefined
-              ? "adnum"
+              ? sql("adnum")
               : typed.pg_catalog_int2(parameters.adnum)
           }`;
 
@@ -7111,7 +9425,7 @@ export class Database {
         const response =
           await sql`SELECT oid,adrelid,adnum,adbin FROM pg_catalog.pg_attrdef WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -7134,11 +9448,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_attrdef WHERE adrelid = ${
             parameters.adrelid === undefined
-              ? "adrelid"
+              ? sql("adrelid")
               : typed.pg_catalog_oid(parameters.adrelid)
           } AND adnum = ${
             parameters.adnum === undefined
-              ? "adnum"
+              ? sql("adnum")
               : typed.pg_catalog_int2(parameters.adnum)
           } RETURNING oid,adrelid,adnum,adbin
       `;
@@ -7159,10 +9473,93 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_attrdef WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,adrelid,adnum,adbin
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          adrelid: undefinedIsNull(record.adrelid),
+          adnum: undefinedIsNull(record.adnum),
+          adbin: undefinedIsNull(record.adbin),
+        }));
+        return results[0];
+      }
+
+      async updateByAdrelidAdnum(
+        parameters: PgCatalog.Tables.PgAttrdef.ByAdrelidAdnum,
+        values: Partial<PgCatalog.PgAttrdef>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_attrdef SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , adrelid = ${
+          values.adrelid === undefined
+            ? sql("adrelid")
+            : typed.pg_catalog_oid(values.adrelid)
+        } , adnum = ${
+          values.adnum === undefined
+            ? sql("adnum")
+            : typed.pg_catalog_int2(values.adnum)
+        } , adbin = ${
+          values.adbin === undefined
+            ? sql("adbin")
+            : typed.pg_catalog_pg_node_tree(values.adbin)
+        } WHERE adrelid = ${
+          parameters.adrelid === undefined
+            ? sql("adrelid")
+            : typed.pg_catalog_oid(parameters.adrelid)
+        } AND adnum = ${
+          parameters.adnum === undefined
+            ? sql("adnum")
+            : typed.pg_catalog_int2(parameters.adnum)
+        } RETURNING oid,adrelid,adnum,adbin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          adrelid: undefinedIsNull(record.adrelid),
+          adnum: undefinedIsNull(record.adnum),
+          adbin: undefinedIsNull(record.adbin),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAttrdef.ByOid,
+        values: Partial<PgCatalog.PgAttrdef>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_attrdef SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , adrelid = ${
+          values.adrelid === undefined
+            ? sql("adrelid")
+            : typed.pg_catalog_oid(values.adrelid)
+        } , adnum = ${
+          values.adnum === undefined
+            ? sql("adnum")
+            : typed.pg_catalog_int2(values.adnum)
+        } , adbin = ${
+          values.adbin === undefined
+            ? sql("adbin")
+            : typed.pg_catalog_pg_node_tree(values.adbin)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,adrelid,adnum,adbin`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -7191,11 +9588,11 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin FROM pg_catalog.pg_constraint WHERE conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           } AND connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           }`;
 
@@ -7239,7 +9636,7 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin FROM pg_catalog.pg_constraint WHERE conparentid = ${
             parameters.conparentid === undefined
-              ? "conparentid"
+              ? sql("conparentid")
               : typed.pg_catalog_oid(parameters.conparentid)
           }`;
 
@@ -7283,15 +9680,15 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin FROM pg_catalog.pg_constraint WHERE conrelid = ${
             parameters.conrelid === undefined
-              ? "conrelid"
+              ? sql("conrelid")
               : typed.pg_catalog_oid(parameters.conrelid)
           } AND contypid = ${
             parameters.contypid === undefined
-              ? "contypid"
+              ? sql("contypid")
               : typed.pg_catalog_oid(parameters.contypid)
           } AND conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           }`;
 
@@ -7333,7 +9730,7 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin FROM pg_catalog.pg_constraint WHERE contypid = ${
             parameters.contypid === undefined
-              ? "contypid"
+              ? sql("contypid")
               : typed.pg_catalog_oid(parameters.contypid)
           }`;
 
@@ -7375,7 +9772,7 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin FROM pg_catalog.pg_constraint WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -7420,11 +9817,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_constraint WHERE conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           } AND connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin
       `;
@@ -7469,7 +9866,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_constraint WHERE conparentid = ${
             parameters.conparentid === undefined
-              ? "conparentid"
+              ? sql("conparentid")
               : typed.pg_catalog_oid(parameters.conparentid)
           } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin
       `;
@@ -7514,15 +9911,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_constraint WHERE conrelid = ${
             parameters.conrelid === undefined
-              ? "conrelid"
+              ? sql("conrelid")
               : typed.pg_catalog_oid(parameters.conrelid)
           } AND contypid = ${
             parameters.contypid === undefined
-              ? "contypid"
+              ? sql("contypid")
               : typed.pg_catalog_oid(parameters.contypid)
           } AND conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin
       `;
@@ -7567,7 +9964,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_constraint WHERE contypid = ${
             parameters.contypid === undefined
-              ? "contypid"
+              ? sql("contypid")
               : typed.pg_catalog_oid(parameters.contypid)
           } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin
       `;
@@ -7610,10 +10007,768 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_constraint WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          contype: undefinedIsNull(record.contype),
+          condeferrable: undefinedIsNull(record.condeferrable),
+          condeferred: undefinedIsNull(record.condeferred),
+          convalidated: undefinedIsNull(record.convalidated),
+          conrelid: undefinedIsNull(record.conrelid),
+          contypid: undefinedIsNull(record.contypid),
+          conindid: undefinedIsNull(record.conindid),
+          conparentid: undefinedIsNull(record.conparentid),
+          confrelid: undefinedIsNull(record.confrelid),
+          confupdtype: undefinedIsNull(record.confupdtype),
+          confdeltype: undefinedIsNull(record.confdeltype),
+          confmatchtype: undefinedIsNull(record.confmatchtype),
+          conislocal: undefinedIsNull(record.conislocal),
+          coninhcount: undefinedIsNull(record.coninhcount),
+          connoinherit: undefinedIsNull(record.connoinherit),
+          conkey: undefinedIsNull(record.conkey),
+          confkey: undefinedIsNull(record.confkey),
+          conpfeqop: undefinedIsNull(record.conpfeqop),
+          conppeqop: undefinedIsNull(record.conppeqop),
+          conffeqop: undefinedIsNull(record.conffeqop),
+          confdelsetcols: undefinedIsNull(record.confdelsetcols),
+          conexclop: undefinedIsNull(record.conexclop),
+          conbin: undefinedIsNull(record.conbin),
+        }));
+        return results[0];
+      }
+
+      async updateByConnameConnamespace(
+        parameters: PgCatalog.Tables.PgConstraint.ByConnameConnamespace,
+        values: Partial<PgCatalog.PgConstraint>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_constraint SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , contype = ${
+          values.contype === undefined
+            ? sql("contype")
+            : typed.pg_catalog_char(values.contype)
+        } , condeferrable = ${
+          values.condeferrable === undefined
+            ? sql("condeferrable")
+            : typed.pg_catalog_bool(values.condeferrable)
+        } , condeferred = ${
+          values.condeferred === undefined
+            ? sql("condeferred")
+            : typed.pg_catalog_bool(values.condeferred)
+        } , convalidated = ${
+          values.convalidated === undefined
+            ? sql("convalidated")
+            : typed.pg_catalog_bool(values.convalidated)
+        } , conrelid = ${
+          values.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(values.conrelid)
+        } , contypid = ${
+          values.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(values.contypid)
+        } , conindid = ${
+          values.conindid === undefined
+            ? sql("conindid")
+            : typed.pg_catalog_oid(values.conindid)
+        } , conparentid = ${
+          values.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(values.conparentid)
+        } , confrelid = ${
+          values.confrelid === undefined
+            ? sql("confrelid")
+            : typed.pg_catalog_oid(values.confrelid)
+        } , confupdtype = ${
+          values.confupdtype === undefined
+            ? sql("confupdtype")
+            : typed.pg_catalog_char(values.confupdtype)
+        } , confdeltype = ${
+          values.confdeltype === undefined
+            ? sql("confdeltype")
+            : typed.pg_catalog_char(values.confdeltype)
+        } , confmatchtype = ${
+          values.confmatchtype === undefined
+            ? sql("confmatchtype")
+            : typed.pg_catalog_char(values.confmatchtype)
+        } , conislocal = ${
+          values.conislocal === undefined
+            ? sql("conislocal")
+            : typed.pg_catalog_bool(values.conislocal)
+        } , coninhcount = ${
+          values.coninhcount === undefined
+            ? sql("coninhcount")
+            : typed.pg_catalog_int2(values.coninhcount)
+        } , connoinherit = ${
+          values.connoinherit === undefined
+            ? sql("connoinherit")
+            : typed.pg_catalog_bool(values.connoinherit)
+        } , conkey = ${
+          values.conkey === undefined
+            ? sql("conkey")
+            : typed.pg_catalog__int2(values.conkey)
+        } , confkey = ${
+          values.confkey === undefined
+            ? sql("confkey")
+            : typed.pg_catalog__int2(values.confkey)
+        } , conpfeqop = ${
+          values.conpfeqop === undefined
+            ? sql("conpfeqop")
+            : typed.pg_catalog__oid(values.conpfeqop)
+        } , conppeqop = ${
+          values.conppeqop === undefined
+            ? sql("conppeqop")
+            : typed.pg_catalog__oid(values.conppeqop)
+        } , conffeqop = ${
+          values.conffeqop === undefined
+            ? sql("conffeqop")
+            : typed.pg_catalog__oid(values.conffeqop)
+        } , confdelsetcols = ${
+          values.confdelsetcols === undefined
+            ? sql("confdelsetcols")
+            : typed.pg_catalog__int2(values.confdelsetcols)
+        } , conexclop = ${
+          values.conexclop === undefined
+            ? sql("conexclop")
+            : typed.pg_catalog__oid(values.conexclop)
+        } , conbin = ${
+          values.conbin === undefined
+            ? sql("conbin")
+            : typed.pg_catalog_pg_node_tree(values.conbin)
+        } WHERE conname = ${
+          parameters.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_cstring(parameters.conname)
+        } AND connamespace = ${
+          parameters.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(parameters.connamespace)
+        } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          contype: undefinedIsNull(record.contype),
+          condeferrable: undefinedIsNull(record.condeferrable),
+          condeferred: undefinedIsNull(record.condeferred),
+          convalidated: undefinedIsNull(record.convalidated),
+          conrelid: undefinedIsNull(record.conrelid),
+          contypid: undefinedIsNull(record.contypid),
+          conindid: undefinedIsNull(record.conindid),
+          conparentid: undefinedIsNull(record.conparentid),
+          confrelid: undefinedIsNull(record.confrelid),
+          confupdtype: undefinedIsNull(record.confupdtype),
+          confdeltype: undefinedIsNull(record.confdeltype),
+          confmatchtype: undefinedIsNull(record.confmatchtype),
+          conislocal: undefinedIsNull(record.conislocal),
+          coninhcount: undefinedIsNull(record.coninhcount),
+          connoinherit: undefinedIsNull(record.connoinherit),
+          conkey: undefinedIsNull(record.conkey),
+          confkey: undefinedIsNull(record.confkey),
+          conpfeqop: undefinedIsNull(record.conpfeqop),
+          conppeqop: undefinedIsNull(record.conppeqop),
+          conffeqop: undefinedIsNull(record.conffeqop),
+          confdelsetcols: undefinedIsNull(record.confdelsetcols),
+          conexclop: undefinedIsNull(record.conexclop),
+          conbin: undefinedIsNull(record.conbin),
+        }));
+        return results;
+      }
+      async updateByConparentid(
+        parameters: PgCatalog.Tables.PgConstraint.ByConparentid,
+        values: Partial<PgCatalog.PgConstraint>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_constraint SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , contype = ${
+          values.contype === undefined
+            ? sql("contype")
+            : typed.pg_catalog_char(values.contype)
+        } , condeferrable = ${
+          values.condeferrable === undefined
+            ? sql("condeferrable")
+            : typed.pg_catalog_bool(values.condeferrable)
+        } , condeferred = ${
+          values.condeferred === undefined
+            ? sql("condeferred")
+            : typed.pg_catalog_bool(values.condeferred)
+        } , convalidated = ${
+          values.convalidated === undefined
+            ? sql("convalidated")
+            : typed.pg_catalog_bool(values.convalidated)
+        } , conrelid = ${
+          values.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(values.conrelid)
+        } , contypid = ${
+          values.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(values.contypid)
+        } , conindid = ${
+          values.conindid === undefined
+            ? sql("conindid")
+            : typed.pg_catalog_oid(values.conindid)
+        } , conparentid = ${
+          values.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(values.conparentid)
+        } , confrelid = ${
+          values.confrelid === undefined
+            ? sql("confrelid")
+            : typed.pg_catalog_oid(values.confrelid)
+        } , confupdtype = ${
+          values.confupdtype === undefined
+            ? sql("confupdtype")
+            : typed.pg_catalog_char(values.confupdtype)
+        } , confdeltype = ${
+          values.confdeltype === undefined
+            ? sql("confdeltype")
+            : typed.pg_catalog_char(values.confdeltype)
+        } , confmatchtype = ${
+          values.confmatchtype === undefined
+            ? sql("confmatchtype")
+            : typed.pg_catalog_char(values.confmatchtype)
+        } , conislocal = ${
+          values.conislocal === undefined
+            ? sql("conislocal")
+            : typed.pg_catalog_bool(values.conislocal)
+        } , coninhcount = ${
+          values.coninhcount === undefined
+            ? sql("coninhcount")
+            : typed.pg_catalog_int2(values.coninhcount)
+        } , connoinherit = ${
+          values.connoinherit === undefined
+            ? sql("connoinherit")
+            : typed.pg_catalog_bool(values.connoinherit)
+        } , conkey = ${
+          values.conkey === undefined
+            ? sql("conkey")
+            : typed.pg_catalog__int2(values.conkey)
+        } , confkey = ${
+          values.confkey === undefined
+            ? sql("confkey")
+            : typed.pg_catalog__int2(values.confkey)
+        } , conpfeqop = ${
+          values.conpfeqop === undefined
+            ? sql("conpfeqop")
+            : typed.pg_catalog__oid(values.conpfeqop)
+        } , conppeqop = ${
+          values.conppeqop === undefined
+            ? sql("conppeqop")
+            : typed.pg_catalog__oid(values.conppeqop)
+        } , conffeqop = ${
+          values.conffeqop === undefined
+            ? sql("conffeqop")
+            : typed.pg_catalog__oid(values.conffeqop)
+        } , confdelsetcols = ${
+          values.confdelsetcols === undefined
+            ? sql("confdelsetcols")
+            : typed.pg_catalog__int2(values.confdelsetcols)
+        } , conexclop = ${
+          values.conexclop === undefined
+            ? sql("conexclop")
+            : typed.pg_catalog__oid(values.conexclop)
+        } , conbin = ${
+          values.conbin === undefined
+            ? sql("conbin")
+            : typed.pg_catalog_pg_node_tree(values.conbin)
+        } WHERE conparentid = ${
+          parameters.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(parameters.conparentid)
+        } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          contype: undefinedIsNull(record.contype),
+          condeferrable: undefinedIsNull(record.condeferrable),
+          condeferred: undefinedIsNull(record.condeferred),
+          convalidated: undefinedIsNull(record.convalidated),
+          conrelid: undefinedIsNull(record.conrelid),
+          contypid: undefinedIsNull(record.contypid),
+          conindid: undefinedIsNull(record.conindid),
+          conparentid: undefinedIsNull(record.conparentid),
+          confrelid: undefinedIsNull(record.confrelid),
+          confupdtype: undefinedIsNull(record.confupdtype),
+          confdeltype: undefinedIsNull(record.confdeltype),
+          confmatchtype: undefinedIsNull(record.confmatchtype),
+          conislocal: undefinedIsNull(record.conislocal),
+          coninhcount: undefinedIsNull(record.coninhcount),
+          connoinherit: undefinedIsNull(record.connoinherit),
+          conkey: undefinedIsNull(record.conkey),
+          confkey: undefinedIsNull(record.confkey),
+          conpfeqop: undefinedIsNull(record.conpfeqop),
+          conppeqop: undefinedIsNull(record.conppeqop),
+          conffeqop: undefinedIsNull(record.conffeqop),
+          confdelsetcols: undefinedIsNull(record.confdelsetcols),
+          conexclop: undefinedIsNull(record.conexclop),
+          conbin: undefinedIsNull(record.conbin),
+        }));
+        return results;
+      }
+      async updateByConrelidContypidConname(
+        parameters: PgCatalog.Tables.PgConstraint.ByConrelidContypidConname,
+        values: Partial<PgCatalog.PgConstraint>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_constraint SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , contype = ${
+          values.contype === undefined
+            ? sql("contype")
+            : typed.pg_catalog_char(values.contype)
+        } , condeferrable = ${
+          values.condeferrable === undefined
+            ? sql("condeferrable")
+            : typed.pg_catalog_bool(values.condeferrable)
+        } , condeferred = ${
+          values.condeferred === undefined
+            ? sql("condeferred")
+            : typed.pg_catalog_bool(values.condeferred)
+        } , convalidated = ${
+          values.convalidated === undefined
+            ? sql("convalidated")
+            : typed.pg_catalog_bool(values.convalidated)
+        } , conrelid = ${
+          values.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(values.conrelid)
+        } , contypid = ${
+          values.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(values.contypid)
+        } , conindid = ${
+          values.conindid === undefined
+            ? sql("conindid")
+            : typed.pg_catalog_oid(values.conindid)
+        } , conparentid = ${
+          values.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(values.conparentid)
+        } , confrelid = ${
+          values.confrelid === undefined
+            ? sql("confrelid")
+            : typed.pg_catalog_oid(values.confrelid)
+        } , confupdtype = ${
+          values.confupdtype === undefined
+            ? sql("confupdtype")
+            : typed.pg_catalog_char(values.confupdtype)
+        } , confdeltype = ${
+          values.confdeltype === undefined
+            ? sql("confdeltype")
+            : typed.pg_catalog_char(values.confdeltype)
+        } , confmatchtype = ${
+          values.confmatchtype === undefined
+            ? sql("confmatchtype")
+            : typed.pg_catalog_char(values.confmatchtype)
+        } , conislocal = ${
+          values.conislocal === undefined
+            ? sql("conislocal")
+            : typed.pg_catalog_bool(values.conislocal)
+        } , coninhcount = ${
+          values.coninhcount === undefined
+            ? sql("coninhcount")
+            : typed.pg_catalog_int2(values.coninhcount)
+        } , connoinherit = ${
+          values.connoinherit === undefined
+            ? sql("connoinherit")
+            : typed.pg_catalog_bool(values.connoinherit)
+        } , conkey = ${
+          values.conkey === undefined
+            ? sql("conkey")
+            : typed.pg_catalog__int2(values.conkey)
+        } , confkey = ${
+          values.confkey === undefined
+            ? sql("confkey")
+            : typed.pg_catalog__int2(values.confkey)
+        } , conpfeqop = ${
+          values.conpfeqop === undefined
+            ? sql("conpfeqop")
+            : typed.pg_catalog__oid(values.conpfeqop)
+        } , conppeqop = ${
+          values.conppeqop === undefined
+            ? sql("conppeqop")
+            : typed.pg_catalog__oid(values.conppeqop)
+        } , conffeqop = ${
+          values.conffeqop === undefined
+            ? sql("conffeqop")
+            : typed.pg_catalog__oid(values.conffeqop)
+        } , confdelsetcols = ${
+          values.confdelsetcols === undefined
+            ? sql("confdelsetcols")
+            : typed.pg_catalog__int2(values.confdelsetcols)
+        } , conexclop = ${
+          values.conexclop === undefined
+            ? sql("conexclop")
+            : typed.pg_catalog__oid(values.conexclop)
+        } , conbin = ${
+          values.conbin === undefined
+            ? sql("conbin")
+            : typed.pg_catalog_pg_node_tree(values.conbin)
+        } WHERE conrelid = ${
+          parameters.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(parameters.conrelid)
+        } AND contypid = ${
+          parameters.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(parameters.contypid)
+        } AND conname = ${
+          parameters.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_cstring(parameters.conname)
+        } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          contype: undefinedIsNull(record.contype),
+          condeferrable: undefinedIsNull(record.condeferrable),
+          condeferred: undefinedIsNull(record.condeferred),
+          convalidated: undefinedIsNull(record.convalidated),
+          conrelid: undefinedIsNull(record.conrelid),
+          contypid: undefinedIsNull(record.contypid),
+          conindid: undefinedIsNull(record.conindid),
+          conparentid: undefinedIsNull(record.conparentid),
+          confrelid: undefinedIsNull(record.confrelid),
+          confupdtype: undefinedIsNull(record.confupdtype),
+          confdeltype: undefinedIsNull(record.confdeltype),
+          confmatchtype: undefinedIsNull(record.confmatchtype),
+          conislocal: undefinedIsNull(record.conislocal),
+          coninhcount: undefinedIsNull(record.coninhcount),
+          connoinherit: undefinedIsNull(record.connoinherit),
+          conkey: undefinedIsNull(record.conkey),
+          confkey: undefinedIsNull(record.confkey),
+          conpfeqop: undefinedIsNull(record.conpfeqop),
+          conppeqop: undefinedIsNull(record.conppeqop),
+          conffeqop: undefinedIsNull(record.conffeqop),
+          confdelsetcols: undefinedIsNull(record.confdelsetcols),
+          conexclop: undefinedIsNull(record.conexclop),
+          conbin: undefinedIsNull(record.conbin),
+        }));
+        return results[0];
+      }
+      async updateByContypid(
+        parameters: PgCatalog.Tables.PgConstraint.ByContypid,
+        values: Partial<PgCatalog.PgConstraint>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_constraint SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , contype = ${
+          values.contype === undefined
+            ? sql("contype")
+            : typed.pg_catalog_char(values.contype)
+        } , condeferrable = ${
+          values.condeferrable === undefined
+            ? sql("condeferrable")
+            : typed.pg_catalog_bool(values.condeferrable)
+        } , condeferred = ${
+          values.condeferred === undefined
+            ? sql("condeferred")
+            : typed.pg_catalog_bool(values.condeferred)
+        } , convalidated = ${
+          values.convalidated === undefined
+            ? sql("convalidated")
+            : typed.pg_catalog_bool(values.convalidated)
+        } , conrelid = ${
+          values.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(values.conrelid)
+        } , contypid = ${
+          values.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(values.contypid)
+        } , conindid = ${
+          values.conindid === undefined
+            ? sql("conindid")
+            : typed.pg_catalog_oid(values.conindid)
+        } , conparentid = ${
+          values.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(values.conparentid)
+        } , confrelid = ${
+          values.confrelid === undefined
+            ? sql("confrelid")
+            : typed.pg_catalog_oid(values.confrelid)
+        } , confupdtype = ${
+          values.confupdtype === undefined
+            ? sql("confupdtype")
+            : typed.pg_catalog_char(values.confupdtype)
+        } , confdeltype = ${
+          values.confdeltype === undefined
+            ? sql("confdeltype")
+            : typed.pg_catalog_char(values.confdeltype)
+        } , confmatchtype = ${
+          values.confmatchtype === undefined
+            ? sql("confmatchtype")
+            : typed.pg_catalog_char(values.confmatchtype)
+        } , conislocal = ${
+          values.conislocal === undefined
+            ? sql("conislocal")
+            : typed.pg_catalog_bool(values.conislocal)
+        } , coninhcount = ${
+          values.coninhcount === undefined
+            ? sql("coninhcount")
+            : typed.pg_catalog_int2(values.coninhcount)
+        } , connoinherit = ${
+          values.connoinherit === undefined
+            ? sql("connoinherit")
+            : typed.pg_catalog_bool(values.connoinherit)
+        } , conkey = ${
+          values.conkey === undefined
+            ? sql("conkey")
+            : typed.pg_catalog__int2(values.conkey)
+        } , confkey = ${
+          values.confkey === undefined
+            ? sql("confkey")
+            : typed.pg_catalog__int2(values.confkey)
+        } , conpfeqop = ${
+          values.conpfeqop === undefined
+            ? sql("conpfeqop")
+            : typed.pg_catalog__oid(values.conpfeqop)
+        } , conppeqop = ${
+          values.conppeqop === undefined
+            ? sql("conppeqop")
+            : typed.pg_catalog__oid(values.conppeqop)
+        } , conffeqop = ${
+          values.conffeqop === undefined
+            ? sql("conffeqop")
+            : typed.pg_catalog__oid(values.conffeqop)
+        } , confdelsetcols = ${
+          values.confdelsetcols === undefined
+            ? sql("confdelsetcols")
+            : typed.pg_catalog__int2(values.confdelsetcols)
+        } , conexclop = ${
+          values.conexclop === undefined
+            ? sql("conexclop")
+            : typed.pg_catalog__oid(values.conexclop)
+        } , conbin = ${
+          values.conbin === undefined
+            ? sql("conbin")
+            : typed.pg_catalog_pg_node_tree(values.conbin)
+        } WHERE contypid = ${
+          parameters.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(parameters.contypid)
+        } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          contype: undefinedIsNull(record.contype),
+          condeferrable: undefinedIsNull(record.condeferrable),
+          condeferred: undefinedIsNull(record.condeferred),
+          convalidated: undefinedIsNull(record.convalidated),
+          conrelid: undefinedIsNull(record.conrelid),
+          contypid: undefinedIsNull(record.contypid),
+          conindid: undefinedIsNull(record.conindid),
+          conparentid: undefinedIsNull(record.conparentid),
+          confrelid: undefinedIsNull(record.confrelid),
+          confupdtype: undefinedIsNull(record.confupdtype),
+          confdeltype: undefinedIsNull(record.confdeltype),
+          confmatchtype: undefinedIsNull(record.confmatchtype),
+          conislocal: undefinedIsNull(record.conislocal),
+          coninhcount: undefinedIsNull(record.coninhcount),
+          connoinherit: undefinedIsNull(record.connoinherit),
+          conkey: undefinedIsNull(record.conkey),
+          confkey: undefinedIsNull(record.confkey),
+          conpfeqop: undefinedIsNull(record.conpfeqop),
+          conppeqop: undefinedIsNull(record.conppeqop),
+          conffeqop: undefinedIsNull(record.conffeqop),
+          confdelsetcols: undefinedIsNull(record.confdelsetcols),
+          conexclop: undefinedIsNull(record.conexclop),
+          conbin: undefinedIsNull(record.conbin),
+        }));
+        return results;
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgConstraint.ByOid,
+        values: Partial<PgCatalog.PgConstraint>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_constraint SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , contype = ${
+          values.contype === undefined
+            ? sql("contype")
+            : typed.pg_catalog_char(values.contype)
+        } , condeferrable = ${
+          values.condeferrable === undefined
+            ? sql("condeferrable")
+            : typed.pg_catalog_bool(values.condeferrable)
+        } , condeferred = ${
+          values.condeferred === undefined
+            ? sql("condeferred")
+            : typed.pg_catalog_bool(values.condeferred)
+        } , convalidated = ${
+          values.convalidated === undefined
+            ? sql("convalidated")
+            : typed.pg_catalog_bool(values.convalidated)
+        } , conrelid = ${
+          values.conrelid === undefined
+            ? sql("conrelid")
+            : typed.pg_catalog_oid(values.conrelid)
+        } , contypid = ${
+          values.contypid === undefined
+            ? sql("contypid")
+            : typed.pg_catalog_oid(values.contypid)
+        } , conindid = ${
+          values.conindid === undefined
+            ? sql("conindid")
+            : typed.pg_catalog_oid(values.conindid)
+        } , conparentid = ${
+          values.conparentid === undefined
+            ? sql("conparentid")
+            : typed.pg_catalog_oid(values.conparentid)
+        } , confrelid = ${
+          values.confrelid === undefined
+            ? sql("confrelid")
+            : typed.pg_catalog_oid(values.confrelid)
+        } , confupdtype = ${
+          values.confupdtype === undefined
+            ? sql("confupdtype")
+            : typed.pg_catalog_char(values.confupdtype)
+        } , confdeltype = ${
+          values.confdeltype === undefined
+            ? sql("confdeltype")
+            : typed.pg_catalog_char(values.confdeltype)
+        } , confmatchtype = ${
+          values.confmatchtype === undefined
+            ? sql("confmatchtype")
+            : typed.pg_catalog_char(values.confmatchtype)
+        } , conislocal = ${
+          values.conislocal === undefined
+            ? sql("conislocal")
+            : typed.pg_catalog_bool(values.conislocal)
+        } , coninhcount = ${
+          values.coninhcount === undefined
+            ? sql("coninhcount")
+            : typed.pg_catalog_int2(values.coninhcount)
+        } , connoinherit = ${
+          values.connoinherit === undefined
+            ? sql("connoinherit")
+            : typed.pg_catalog_bool(values.connoinherit)
+        } , conkey = ${
+          values.conkey === undefined
+            ? sql("conkey")
+            : typed.pg_catalog__int2(values.conkey)
+        } , confkey = ${
+          values.confkey === undefined
+            ? sql("confkey")
+            : typed.pg_catalog__int2(values.confkey)
+        } , conpfeqop = ${
+          values.conpfeqop === undefined
+            ? sql("conpfeqop")
+            : typed.pg_catalog__oid(values.conpfeqop)
+        } , conppeqop = ${
+          values.conppeqop === undefined
+            ? sql("conppeqop")
+            : typed.pg_catalog__oid(values.conppeqop)
+        } , conffeqop = ${
+          values.conffeqop === undefined
+            ? sql("conffeqop")
+            : typed.pg_catalog__oid(values.conffeqop)
+        } , confdelsetcols = ${
+          values.confdelsetcols === undefined
+            ? sql("confdelsetcols")
+            : typed.pg_catalog__int2(values.confdelsetcols)
+        } , conexclop = ${
+          values.conexclop === undefined
+            ? sql("conexclop")
+            : typed.pg_catalog__oid(values.conexclop)
+        } , conbin = ${
+          values.conbin === undefined
+            ? sql("conbin")
+            : typed.pg_catalog_pg_node_tree(values.conbin)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,conname,connamespace,contype,condeferrable,condeferred,convalidated,conrelid,contypid,conindid,conparentid,confrelid,confupdtype,confdeltype,confmatchtype,conislocal,coninhcount,connoinherit,conkey,confkey,conpfeqop,conppeqop,conffeqop,confdelsetcols,conexclop,conbin`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -7662,7 +10817,7 @@ export class Database {
         const response =
           await sql`SELECT inhrelid,inhparent,inhseqno,inhdetachpending FROM pg_catalog.pg_inherits WHERE inhparent = ${
             parameters.inhparent === undefined
-              ? "inhparent"
+              ? sql("inhparent")
               : typed.pg_catalog_oid(parameters.inhparent)
           }`;
 
@@ -7684,11 +10839,11 @@ export class Database {
         const response =
           await sql`SELECT inhrelid,inhparent,inhseqno,inhdetachpending FROM pg_catalog.pg_inherits WHERE inhrelid = ${
             parameters.inhrelid === undefined
-              ? "inhrelid"
+              ? sql("inhrelid")
               : typed.pg_catalog_oid(parameters.inhrelid)
           } AND inhseqno = ${
             parameters.inhseqno === undefined
-              ? "inhseqno"
+              ? sql("inhseqno")
               : typed.pg_catalog_int4(parameters.inhseqno)
           }`;
 
@@ -7711,7 +10866,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_inherits WHERE inhparent = ${
             parameters.inhparent === undefined
-              ? "inhparent"
+              ? sql("inhparent")
               : typed.pg_catalog_oid(parameters.inhparent)
           } RETURNING inhrelid,inhparent,inhseqno,inhdetachpending
       `;
@@ -7734,14 +10889,99 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_inherits WHERE inhrelid = ${
             parameters.inhrelid === undefined
-              ? "inhrelid"
+              ? sql("inhrelid")
               : typed.pg_catalog_oid(parameters.inhrelid)
           } AND inhseqno = ${
             parameters.inhseqno === undefined
-              ? "inhseqno"
+              ? sql("inhseqno")
               : typed.pg_catalog_int4(parameters.inhseqno)
           } RETURNING inhrelid,inhparent,inhseqno,inhdetachpending
       `;
+
+        const results = response.map((record) => ({
+          inhrelid: undefinedIsNull(record.inhrelid),
+          inhparent: undefinedIsNull(record.inhparent),
+          inhseqno: undefinedIsNull(record.inhseqno),
+          inhdetachpending: undefinedIsNull(record.inhdetachpending),
+        }));
+        return results[0];
+      }
+
+      async updateByInhparent(
+        parameters: PgCatalog.Tables.PgInherits.ByInhparent,
+        values: Partial<PgCatalog.PgInherits>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_inherits SET inhrelid = ${
+            values.inhrelid === undefined
+              ? sql("inhrelid")
+              : typed.pg_catalog_oid(values.inhrelid)
+          } , inhparent = ${
+            values.inhparent === undefined
+              ? sql("inhparent")
+              : typed.pg_catalog_oid(values.inhparent)
+          } , inhseqno = ${
+            values.inhseqno === undefined
+              ? sql("inhseqno")
+              : typed.pg_catalog_int4(values.inhseqno)
+          } , inhdetachpending = ${
+            values.inhdetachpending === undefined
+              ? sql("inhdetachpending")
+              : typed.pg_catalog_bool(values.inhdetachpending)
+          } WHERE inhparent = ${
+            parameters.inhparent === undefined
+              ? sql("inhparent")
+              : typed.pg_catalog_oid(parameters.inhparent)
+          } RETURNING inhrelid,inhparent,inhseqno,inhdetachpending`;
+
+        const results = response.map((record) => ({
+          inhrelid: undefinedIsNull(record.inhrelid),
+          inhparent: undefinedIsNull(record.inhparent),
+          inhseqno: undefinedIsNull(record.inhseqno),
+          inhdetachpending: undefinedIsNull(record.inhdetachpending),
+        }));
+        return results;
+      }
+      async updateByInhrelidInhseqno(
+        parameters: PgCatalog.Tables.PgInherits.ByInhrelidInhseqno,
+        values: Partial<PgCatalog.PgInherits>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_inherits SET inhrelid = ${
+            values.inhrelid === undefined
+              ? sql("inhrelid")
+              : typed.pg_catalog_oid(values.inhrelid)
+          } , inhparent = ${
+            values.inhparent === undefined
+              ? sql("inhparent")
+              : typed.pg_catalog_oid(values.inhparent)
+          } , inhseqno = ${
+            values.inhseqno === undefined
+              ? sql("inhseqno")
+              : typed.pg_catalog_int4(values.inhseqno)
+          } , inhdetachpending = ${
+            values.inhdetachpending === undefined
+              ? sql("inhdetachpending")
+              : typed.pg_catalog_bool(values.inhdetachpending)
+          } WHERE inhrelid = ${
+            parameters.inhrelid === undefined
+              ? sql("inhrelid")
+              : typed.pg_catalog_oid(parameters.inhrelid)
+          } AND inhseqno = ${
+            parameters.inhseqno === undefined
+              ? sql("inhseqno")
+              : typed.pg_catalog_int4(parameters.inhseqno)
+          } RETURNING inhrelid,inhparent,inhseqno,inhdetachpending`;
 
         const results = response.map((record) => ({
           inhrelid: undefinedIsNull(record.inhrelid),
@@ -7768,7 +11008,7 @@ export class Database {
         const response =
           await sql`SELECT indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred FROM pg_catalog.pg_index WHERE indexrelid = ${
             parameters.indexrelid === undefined
-              ? "indexrelid"
+              ? sql("indexrelid")
               : typed.pg_catalog_oid(parameters.indexrelid)
           }`;
 
@@ -7805,7 +11045,7 @@ export class Database {
         const response =
           await sql`SELECT indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred FROM pg_catalog.pg_index WHERE indrelid = ${
             parameters.indrelid === undefined
-              ? "indrelid"
+              ? sql("indrelid")
               : typed.pg_catalog_oid(parameters.indrelid)
           }`;
 
@@ -7845,7 +11085,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_index WHERE indexrelid = ${
             parameters.indexrelid === undefined
-              ? "indexrelid"
+              ? sql("indexrelid")
               : typed.pg_catalog_oid(parameters.indexrelid)
           } RETURNING indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred
       `;
@@ -7883,10 +11123,261 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_index WHERE indrelid = ${
             parameters.indrelid === undefined
-              ? "indrelid"
+              ? sql("indrelid")
               : typed.pg_catalog_oid(parameters.indrelid)
           } RETURNING indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred
       `;
+
+        const results = response.map((record) => ({
+          indexrelid: undefinedIsNull(record.indexrelid),
+          indrelid: undefinedIsNull(record.indrelid),
+          indnatts: undefinedIsNull(record.indnatts),
+          indnkeyatts: undefinedIsNull(record.indnkeyatts),
+          indisunique: undefinedIsNull(record.indisunique),
+          indnullsnotdistinct: undefinedIsNull(record.indnullsnotdistinct),
+          indisprimary: undefinedIsNull(record.indisprimary),
+          indisexclusion: undefinedIsNull(record.indisexclusion),
+          indimmediate: undefinedIsNull(record.indimmediate),
+          indisclustered: undefinedIsNull(record.indisclustered),
+          indisvalid: undefinedIsNull(record.indisvalid),
+          indcheckxmin: undefinedIsNull(record.indcheckxmin),
+          indisready: undefinedIsNull(record.indisready),
+          indislive: undefinedIsNull(record.indislive),
+          indisreplident: undefinedIsNull(record.indisreplident),
+          indkey: undefinedIsNull(record.indkey),
+          indcollation: undefinedIsNull(record.indcollation),
+          indclass: undefinedIsNull(record.indclass),
+          indoption: undefinedIsNull(record.indoption),
+          indexprs: undefinedIsNull(record.indexprs),
+          indpred: undefinedIsNull(record.indpred),
+        }));
+        return results;
+      }
+
+      async updateByIndexrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndexrelid,
+        values: Partial<PgCatalog.PgIndex>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_index SET indexrelid = ${
+            values.indexrelid === undefined
+              ? sql("indexrelid")
+              : typed.pg_catalog_oid(values.indexrelid)
+          } , indrelid = ${
+            values.indrelid === undefined
+              ? sql("indrelid")
+              : typed.pg_catalog_oid(values.indrelid)
+          } , indnatts = ${
+            values.indnatts === undefined
+              ? sql("indnatts")
+              : typed.pg_catalog_int2(values.indnatts)
+          } , indnkeyatts = ${
+            values.indnkeyatts === undefined
+              ? sql("indnkeyatts")
+              : typed.pg_catalog_int2(values.indnkeyatts)
+          } , indisunique = ${
+            values.indisunique === undefined
+              ? sql("indisunique")
+              : typed.pg_catalog_bool(values.indisunique)
+          } , indnullsnotdistinct = ${
+            values.indnullsnotdistinct === undefined
+              ? sql("indnullsnotdistinct")
+              : typed.pg_catalog_bool(values.indnullsnotdistinct)
+          } , indisprimary = ${
+            values.indisprimary === undefined
+              ? sql("indisprimary")
+              : typed.pg_catalog_bool(values.indisprimary)
+          } , indisexclusion = ${
+            values.indisexclusion === undefined
+              ? sql("indisexclusion")
+              : typed.pg_catalog_bool(values.indisexclusion)
+          } , indimmediate = ${
+            values.indimmediate === undefined
+              ? sql("indimmediate")
+              : typed.pg_catalog_bool(values.indimmediate)
+          } , indisclustered = ${
+            values.indisclustered === undefined
+              ? sql("indisclustered")
+              : typed.pg_catalog_bool(values.indisclustered)
+          } , indisvalid = ${
+            values.indisvalid === undefined
+              ? sql("indisvalid")
+              : typed.pg_catalog_bool(values.indisvalid)
+          } , indcheckxmin = ${
+            values.indcheckxmin === undefined
+              ? sql("indcheckxmin")
+              : typed.pg_catalog_bool(values.indcheckxmin)
+          } , indisready = ${
+            values.indisready === undefined
+              ? sql("indisready")
+              : typed.pg_catalog_bool(values.indisready)
+          } , indislive = ${
+            values.indislive === undefined
+              ? sql("indislive")
+              : typed.pg_catalog_bool(values.indislive)
+          } , indisreplident = ${
+            values.indisreplident === undefined
+              ? sql("indisreplident")
+              : typed.pg_catalog_bool(values.indisreplident)
+          } , indkey = ${
+            values.indkey === undefined
+              ? sql("indkey")
+              : typed.pg_catalog_int2vector(values.indkey)
+          } , indcollation = ${
+            values.indcollation === undefined
+              ? sql("indcollation")
+              : typed.pg_catalog_oidvector(values.indcollation)
+          } , indclass = ${
+            values.indclass === undefined
+              ? sql("indclass")
+              : typed.pg_catalog_oidvector(values.indclass)
+          } , indoption = ${
+            values.indoption === undefined
+              ? sql("indoption")
+              : typed.pg_catalog_int2vector(values.indoption)
+          } , indexprs = ${
+            values.indexprs === undefined
+              ? sql("indexprs")
+              : typed.pg_catalog_pg_node_tree(values.indexprs)
+          } , indpred = ${
+            values.indpred === undefined
+              ? sql("indpred")
+              : typed.pg_catalog_pg_node_tree(values.indpred)
+          } WHERE indexrelid = ${
+            parameters.indexrelid === undefined
+              ? sql("indexrelid")
+              : typed.pg_catalog_oid(parameters.indexrelid)
+          } RETURNING indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred`;
+
+        const results = response.map((record) => ({
+          indexrelid: undefinedIsNull(record.indexrelid),
+          indrelid: undefinedIsNull(record.indrelid),
+          indnatts: undefinedIsNull(record.indnatts),
+          indnkeyatts: undefinedIsNull(record.indnkeyatts),
+          indisunique: undefinedIsNull(record.indisunique),
+          indnullsnotdistinct: undefinedIsNull(record.indnullsnotdistinct),
+          indisprimary: undefinedIsNull(record.indisprimary),
+          indisexclusion: undefinedIsNull(record.indisexclusion),
+          indimmediate: undefinedIsNull(record.indimmediate),
+          indisclustered: undefinedIsNull(record.indisclustered),
+          indisvalid: undefinedIsNull(record.indisvalid),
+          indcheckxmin: undefinedIsNull(record.indcheckxmin),
+          indisready: undefinedIsNull(record.indisready),
+          indislive: undefinedIsNull(record.indislive),
+          indisreplident: undefinedIsNull(record.indisreplident),
+          indkey: undefinedIsNull(record.indkey),
+          indcollation: undefinedIsNull(record.indcollation),
+          indclass: undefinedIsNull(record.indclass),
+          indoption: undefinedIsNull(record.indoption),
+          indexprs: undefinedIsNull(record.indexprs),
+          indpred: undefinedIsNull(record.indpred),
+        }));
+        return results[0];
+      }
+      async updateByIndrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndrelid,
+        values: Partial<PgCatalog.PgIndex>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_index SET indexrelid = ${
+            values.indexrelid === undefined
+              ? sql("indexrelid")
+              : typed.pg_catalog_oid(values.indexrelid)
+          } , indrelid = ${
+            values.indrelid === undefined
+              ? sql("indrelid")
+              : typed.pg_catalog_oid(values.indrelid)
+          } , indnatts = ${
+            values.indnatts === undefined
+              ? sql("indnatts")
+              : typed.pg_catalog_int2(values.indnatts)
+          } , indnkeyatts = ${
+            values.indnkeyatts === undefined
+              ? sql("indnkeyatts")
+              : typed.pg_catalog_int2(values.indnkeyatts)
+          } , indisunique = ${
+            values.indisunique === undefined
+              ? sql("indisunique")
+              : typed.pg_catalog_bool(values.indisunique)
+          } , indnullsnotdistinct = ${
+            values.indnullsnotdistinct === undefined
+              ? sql("indnullsnotdistinct")
+              : typed.pg_catalog_bool(values.indnullsnotdistinct)
+          } , indisprimary = ${
+            values.indisprimary === undefined
+              ? sql("indisprimary")
+              : typed.pg_catalog_bool(values.indisprimary)
+          } , indisexclusion = ${
+            values.indisexclusion === undefined
+              ? sql("indisexclusion")
+              : typed.pg_catalog_bool(values.indisexclusion)
+          } , indimmediate = ${
+            values.indimmediate === undefined
+              ? sql("indimmediate")
+              : typed.pg_catalog_bool(values.indimmediate)
+          } , indisclustered = ${
+            values.indisclustered === undefined
+              ? sql("indisclustered")
+              : typed.pg_catalog_bool(values.indisclustered)
+          } , indisvalid = ${
+            values.indisvalid === undefined
+              ? sql("indisvalid")
+              : typed.pg_catalog_bool(values.indisvalid)
+          } , indcheckxmin = ${
+            values.indcheckxmin === undefined
+              ? sql("indcheckxmin")
+              : typed.pg_catalog_bool(values.indcheckxmin)
+          } , indisready = ${
+            values.indisready === undefined
+              ? sql("indisready")
+              : typed.pg_catalog_bool(values.indisready)
+          } , indislive = ${
+            values.indislive === undefined
+              ? sql("indislive")
+              : typed.pg_catalog_bool(values.indislive)
+          } , indisreplident = ${
+            values.indisreplident === undefined
+              ? sql("indisreplident")
+              : typed.pg_catalog_bool(values.indisreplident)
+          } , indkey = ${
+            values.indkey === undefined
+              ? sql("indkey")
+              : typed.pg_catalog_int2vector(values.indkey)
+          } , indcollation = ${
+            values.indcollation === undefined
+              ? sql("indcollation")
+              : typed.pg_catalog_oidvector(values.indcollation)
+          } , indclass = ${
+            values.indclass === undefined
+              ? sql("indclass")
+              : typed.pg_catalog_oidvector(values.indclass)
+          } , indoption = ${
+            values.indoption === undefined
+              ? sql("indoption")
+              : typed.pg_catalog_int2vector(values.indoption)
+          } , indexprs = ${
+            values.indexprs === undefined
+              ? sql("indexprs")
+              : typed.pg_catalog_pg_node_tree(values.indexprs)
+          } , indpred = ${
+            values.indpred === undefined
+              ? sql("indpred")
+              : typed.pg_catalog_pg_node_tree(values.indpred)
+          } WHERE indrelid = ${
+            parameters.indrelid === undefined
+              ? sql("indrelid")
+              : typed.pg_catalog_oid(parameters.indrelid)
+          } RETURNING indexrelid,indrelid,indnatts,indnkeyatts,indisunique,indnullsnotdistinct,indisprimary,indisexclusion,indimmediate,indisclustered,indisvalid,indcheckxmin,indisready,indislive,indisreplident,indkey,indcollation,indclass,indoption,indexprs,indpred`;
 
         const results = response.map((record) => ({
           indexrelid: undefinedIsNull(record.indexrelid),
@@ -7930,7 +11421,7 @@ export class Database {
         const response =
           await sql`SELECT oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin FROM pg_catalog.pg_operator WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -7963,19 +11454,19 @@ export class Database {
         const response =
           await sql`SELECT oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin FROM pg_catalog.pg_operator WHERE oprname = ${
             parameters.oprname === undefined
-              ? "oprname"
+              ? sql("oprname")
               : typed.pg_catalog_cstring(parameters.oprname)
           } AND oprleft = ${
             parameters.oprleft === undefined
-              ? "oprleft"
+              ? sql("oprleft")
               : typed.pg_catalog_oid(parameters.oprleft)
           } AND oprright = ${
             parameters.oprright === undefined
-              ? "oprright"
+              ? sql("oprright")
               : typed.pg_catalog_oid(parameters.oprright)
           } AND oprnamespace = ${
             parameters.oprnamespace === undefined
-              ? "oprnamespace"
+              ? sql("oprnamespace")
               : typed.pg_catalog_oid(parameters.oprnamespace)
           }`;
 
@@ -8007,7 +11498,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_operator WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin
       `;
@@ -8041,22 +11532,223 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_operator WHERE oprname = ${
             parameters.oprname === undefined
-              ? "oprname"
+              ? sql("oprname")
               : typed.pg_catalog_cstring(parameters.oprname)
           } AND oprleft = ${
             parameters.oprleft === undefined
-              ? "oprleft"
+              ? sql("oprleft")
               : typed.pg_catalog_oid(parameters.oprleft)
           } AND oprright = ${
             parameters.oprright === undefined
-              ? "oprright"
+              ? sql("oprright")
               : typed.pg_catalog_oid(parameters.oprright)
           } AND oprnamespace = ${
             parameters.oprnamespace === undefined
-              ? "oprnamespace"
+              ? sql("oprnamespace")
               : typed.pg_catalog_oid(parameters.oprnamespace)
           } RETURNING oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          oprname: undefinedIsNull(record.oprname),
+          oprnamespace: undefinedIsNull(record.oprnamespace),
+          oprowner: undefinedIsNull(record.oprowner),
+          oprkind: undefinedIsNull(record.oprkind),
+          oprcanmerge: undefinedIsNull(record.oprcanmerge),
+          oprcanhash: undefinedIsNull(record.oprcanhash),
+          oprleft: undefinedIsNull(record.oprleft),
+          oprright: undefinedIsNull(record.oprright),
+          oprresult: undefinedIsNull(record.oprresult),
+          oprcom: undefinedIsNull(record.oprcom),
+          oprnegate: undefinedIsNull(record.oprnegate),
+          oprcode: undefinedIsNull(record.oprcode),
+          oprrest: undefinedIsNull(record.oprrest),
+          oprjoin: undefinedIsNull(record.oprjoin),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgOperator.ByOid,
+        values: Partial<PgCatalog.PgOperator>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_operator SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , oprname = ${
+          values.oprname === undefined
+            ? sql("oprname")
+            : typed.pg_catalog_name(values.oprname)
+        } , oprnamespace = ${
+          values.oprnamespace === undefined
+            ? sql("oprnamespace")
+            : typed.pg_catalog_oid(values.oprnamespace)
+        } , oprowner = ${
+          values.oprowner === undefined
+            ? sql("oprowner")
+            : typed.pg_catalog_oid(values.oprowner)
+        } , oprkind = ${
+          values.oprkind === undefined
+            ? sql("oprkind")
+            : typed.pg_catalog_char(values.oprkind)
+        } , oprcanmerge = ${
+          values.oprcanmerge === undefined
+            ? sql("oprcanmerge")
+            : typed.pg_catalog_bool(values.oprcanmerge)
+        } , oprcanhash = ${
+          values.oprcanhash === undefined
+            ? sql("oprcanhash")
+            : typed.pg_catalog_bool(values.oprcanhash)
+        } , oprleft = ${
+          values.oprleft === undefined
+            ? sql("oprleft")
+            : typed.pg_catalog_oid(values.oprleft)
+        } , oprright = ${
+          values.oprright === undefined
+            ? sql("oprright")
+            : typed.pg_catalog_oid(values.oprright)
+        } , oprresult = ${
+          values.oprresult === undefined
+            ? sql("oprresult")
+            : typed.pg_catalog_oid(values.oprresult)
+        } , oprcom = ${
+          values.oprcom === undefined
+            ? sql("oprcom")
+            : typed.pg_catalog_oid(values.oprcom)
+        } , oprnegate = ${
+          values.oprnegate === undefined
+            ? sql("oprnegate")
+            : typed.pg_catalog_oid(values.oprnegate)
+        } , oprcode = ${
+          values.oprcode === undefined
+            ? sql("oprcode")
+            : typed.pg_catalog_regproc(values.oprcode)
+        } , oprrest = ${
+          values.oprrest === undefined
+            ? sql("oprrest")
+            : typed.pg_catalog_regproc(values.oprrest)
+        } , oprjoin = ${
+          values.oprjoin === undefined
+            ? sql("oprjoin")
+            : typed.pg_catalog_regproc(values.oprjoin)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          oprname: undefinedIsNull(record.oprname),
+          oprnamespace: undefinedIsNull(record.oprnamespace),
+          oprowner: undefinedIsNull(record.oprowner),
+          oprkind: undefinedIsNull(record.oprkind),
+          oprcanmerge: undefinedIsNull(record.oprcanmerge),
+          oprcanhash: undefinedIsNull(record.oprcanhash),
+          oprleft: undefinedIsNull(record.oprleft),
+          oprright: undefinedIsNull(record.oprright),
+          oprresult: undefinedIsNull(record.oprresult),
+          oprcom: undefinedIsNull(record.oprcom),
+          oprnegate: undefinedIsNull(record.oprnegate),
+          oprcode: undefinedIsNull(record.oprcode),
+          oprrest: undefinedIsNull(record.oprrest),
+          oprjoin: undefinedIsNull(record.oprjoin),
+        }));
+        return results[0];
+      }
+      async updateByOprnameOprleftOprrightOprnamespace(
+        parameters: PgCatalog.Tables.PgOperator.ByOprnameOprleftOprrightOprnamespace,
+        values: Partial<PgCatalog.PgOperator>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_operator SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , oprname = ${
+          values.oprname === undefined
+            ? sql("oprname")
+            : typed.pg_catalog_name(values.oprname)
+        } , oprnamespace = ${
+          values.oprnamespace === undefined
+            ? sql("oprnamespace")
+            : typed.pg_catalog_oid(values.oprnamespace)
+        } , oprowner = ${
+          values.oprowner === undefined
+            ? sql("oprowner")
+            : typed.pg_catalog_oid(values.oprowner)
+        } , oprkind = ${
+          values.oprkind === undefined
+            ? sql("oprkind")
+            : typed.pg_catalog_char(values.oprkind)
+        } , oprcanmerge = ${
+          values.oprcanmerge === undefined
+            ? sql("oprcanmerge")
+            : typed.pg_catalog_bool(values.oprcanmerge)
+        } , oprcanhash = ${
+          values.oprcanhash === undefined
+            ? sql("oprcanhash")
+            : typed.pg_catalog_bool(values.oprcanhash)
+        } , oprleft = ${
+          values.oprleft === undefined
+            ? sql("oprleft")
+            : typed.pg_catalog_oid(values.oprleft)
+        } , oprright = ${
+          values.oprright === undefined
+            ? sql("oprright")
+            : typed.pg_catalog_oid(values.oprright)
+        } , oprresult = ${
+          values.oprresult === undefined
+            ? sql("oprresult")
+            : typed.pg_catalog_oid(values.oprresult)
+        } , oprcom = ${
+          values.oprcom === undefined
+            ? sql("oprcom")
+            : typed.pg_catalog_oid(values.oprcom)
+        } , oprnegate = ${
+          values.oprnegate === undefined
+            ? sql("oprnegate")
+            : typed.pg_catalog_oid(values.oprnegate)
+        } , oprcode = ${
+          values.oprcode === undefined
+            ? sql("oprcode")
+            : typed.pg_catalog_regproc(values.oprcode)
+        } , oprrest = ${
+          values.oprrest === undefined
+            ? sql("oprrest")
+            : typed.pg_catalog_regproc(values.oprrest)
+        } , oprjoin = ${
+          values.oprjoin === undefined
+            ? sql("oprjoin")
+            : typed.pg_catalog_regproc(values.oprjoin)
+        } WHERE oprname = ${
+          parameters.oprname === undefined
+            ? sql("oprname")
+            : typed.pg_catalog_cstring(parameters.oprname)
+        } AND oprleft = ${
+          parameters.oprleft === undefined
+            ? sql("oprleft")
+            : typed.pg_catalog_oid(parameters.oprleft)
+        } AND oprright = ${
+          parameters.oprright === undefined
+            ? sql("oprright")
+            : typed.pg_catalog_oid(parameters.oprright)
+        } AND oprnamespace = ${
+          parameters.oprnamespace === undefined
+            ? sql("oprnamespace")
+            : typed.pg_catalog_oid(parameters.oprnamespace)
+        } RETURNING oid,oprname,oprnamespace,oprowner,oprkind,oprcanmerge,oprcanhash,oprleft,oprright,oprresult,oprcom,oprnegate,oprcode,oprrest,oprjoin`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8094,7 +11786,7 @@ export class Database {
         const response =
           await sql`SELECT oid,opfmethod,opfname,opfnamespace,opfowner FROM pg_catalog.pg_opfamily WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8117,15 +11809,15 @@ export class Database {
         const response =
           await sql`SELECT oid,opfmethod,opfname,opfnamespace,opfowner FROM pg_catalog.pg_opfamily WHERE opfmethod = ${
             parameters.opfmethod === undefined
-              ? "opfmethod"
+              ? sql("opfmethod")
               : typed.pg_catalog_oid(parameters.opfmethod)
           } AND opfname = ${
             parameters.opfname === undefined
-              ? "opfname"
+              ? sql("opfname")
               : typed.pg_catalog_cstring(parameters.opfname)
           } AND opfnamespace = ${
             parameters.opfnamespace === undefined
-              ? "opfnamespace"
+              ? sql("opfnamespace")
               : typed.pg_catalog_oid(parameters.opfnamespace)
           }`;
 
@@ -8147,7 +11839,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_opfamily WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,opfmethod,opfname,opfnamespace,opfowner
       `;
@@ -8171,18 +11863,115 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_opfamily WHERE opfmethod = ${
             parameters.opfmethod === undefined
-              ? "opfmethod"
+              ? sql("opfmethod")
               : typed.pg_catalog_oid(parameters.opfmethod)
           } AND opfname = ${
             parameters.opfname === undefined
-              ? "opfname"
+              ? sql("opfname")
               : typed.pg_catalog_cstring(parameters.opfname)
           } AND opfnamespace = ${
             parameters.opfnamespace === undefined
-              ? "opfnamespace"
+              ? sql("opfnamespace")
               : typed.pg_catalog_oid(parameters.opfnamespace)
           } RETURNING oid,opfmethod,opfname,opfnamespace,opfowner
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          opfmethod: undefinedIsNull(record.opfmethod),
+          opfname: undefinedIsNull(record.opfname),
+          opfnamespace: undefinedIsNull(record.opfnamespace),
+          opfowner: undefinedIsNull(record.opfowner),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgOpfamily.ByOid,
+        values: Partial<PgCatalog.PgOpfamily>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_opfamily SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , opfmethod = ${
+          values.opfmethod === undefined
+            ? sql("opfmethod")
+            : typed.pg_catalog_oid(values.opfmethod)
+        } , opfname = ${
+          values.opfname === undefined
+            ? sql("opfname")
+            : typed.pg_catalog_name(values.opfname)
+        } , opfnamespace = ${
+          values.opfnamespace === undefined
+            ? sql("opfnamespace")
+            : typed.pg_catalog_oid(values.opfnamespace)
+        } , opfowner = ${
+          values.opfowner === undefined
+            ? sql("opfowner")
+            : typed.pg_catalog_oid(values.opfowner)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,opfmethod,opfname,opfnamespace,opfowner`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          opfmethod: undefinedIsNull(record.opfmethod),
+          opfname: undefinedIsNull(record.opfname),
+          opfnamespace: undefinedIsNull(record.opfnamespace),
+          opfowner: undefinedIsNull(record.opfowner),
+        }));
+        return results[0];
+      }
+      async updateByOpfmethodOpfnameOpfnamespace(
+        parameters: PgCatalog.Tables.PgOpfamily.ByOpfmethodOpfnameOpfnamespace,
+        values: Partial<PgCatalog.PgOpfamily>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_opfamily SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , opfmethod = ${
+          values.opfmethod === undefined
+            ? sql("opfmethod")
+            : typed.pg_catalog_oid(values.opfmethod)
+        } , opfname = ${
+          values.opfname === undefined
+            ? sql("opfname")
+            : typed.pg_catalog_name(values.opfname)
+        } , opfnamespace = ${
+          values.opfnamespace === undefined
+            ? sql("opfnamespace")
+            : typed.pg_catalog_oid(values.opfnamespace)
+        } , opfowner = ${
+          values.opfowner === undefined
+            ? sql("opfowner")
+            : typed.pg_catalog_oid(values.opfowner)
+        } WHERE opfmethod = ${
+          parameters.opfmethod === undefined
+            ? sql("opfmethod")
+            : typed.pg_catalog_oid(parameters.opfmethod)
+        } AND opfname = ${
+          parameters.opfname === undefined
+            ? sql("opfname")
+            : typed.pg_catalog_cstring(parameters.opfname)
+        } AND opfnamespace = ${
+          parameters.opfnamespace === undefined
+            ? sql("opfnamespace")
+            : typed.pg_catalog_oid(parameters.opfnamespace)
+        } RETURNING oid,opfmethod,opfname,opfnamespace,opfowner`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8210,7 +11999,7 @@ export class Database {
         const response =
           await sql`SELECT oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype FROM pg_catalog.pg_opclass WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8237,15 +12026,15 @@ export class Database {
         const response =
           await sql`SELECT oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype FROM pg_catalog.pg_opclass WHERE opcmethod = ${
             parameters.opcmethod === undefined
-              ? "opcmethod"
+              ? sql("opcmethod")
               : typed.pg_catalog_oid(parameters.opcmethod)
           } AND opcname = ${
             parameters.opcname === undefined
-              ? "opcname"
+              ? sql("opcname")
               : typed.pg_catalog_cstring(parameters.opcname)
           } AND opcnamespace = ${
             parameters.opcnamespace === undefined
-              ? "opcnamespace"
+              ? sql("opcnamespace")
               : typed.pg_catalog_oid(parameters.opcnamespace)
           }`;
 
@@ -8271,7 +12060,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_opclass WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype
       `;
@@ -8299,18 +12088,155 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_opclass WHERE opcmethod = ${
             parameters.opcmethod === undefined
-              ? "opcmethod"
+              ? sql("opcmethod")
               : typed.pg_catalog_oid(parameters.opcmethod)
           } AND opcname = ${
             parameters.opcname === undefined
-              ? "opcname"
+              ? sql("opcname")
               : typed.pg_catalog_cstring(parameters.opcname)
           } AND opcnamespace = ${
             parameters.opcnamespace === undefined
-              ? "opcnamespace"
+              ? sql("opcnamespace")
               : typed.pg_catalog_oid(parameters.opcnamespace)
           } RETURNING oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          opcmethod: undefinedIsNull(record.opcmethod),
+          opcname: undefinedIsNull(record.opcname),
+          opcnamespace: undefinedIsNull(record.opcnamespace),
+          opcowner: undefinedIsNull(record.opcowner),
+          opcfamily: undefinedIsNull(record.opcfamily),
+          opcintype: undefinedIsNull(record.opcintype),
+          opcdefault: undefinedIsNull(record.opcdefault),
+          opckeytype: undefinedIsNull(record.opckeytype),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgOpclass.ByOid,
+        values: Partial<PgCatalog.PgOpclass>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_opclass SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , opcmethod = ${
+          values.opcmethod === undefined
+            ? sql("opcmethod")
+            : typed.pg_catalog_oid(values.opcmethod)
+        } , opcname = ${
+          values.opcname === undefined
+            ? sql("opcname")
+            : typed.pg_catalog_name(values.opcname)
+        } , opcnamespace = ${
+          values.opcnamespace === undefined
+            ? sql("opcnamespace")
+            : typed.pg_catalog_oid(values.opcnamespace)
+        } , opcowner = ${
+          values.opcowner === undefined
+            ? sql("opcowner")
+            : typed.pg_catalog_oid(values.opcowner)
+        } , opcfamily = ${
+          values.opcfamily === undefined
+            ? sql("opcfamily")
+            : typed.pg_catalog_oid(values.opcfamily)
+        } , opcintype = ${
+          values.opcintype === undefined
+            ? sql("opcintype")
+            : typed.pg_catalog_oid(values.opcintype)
+        } , opcdefault = ${
+          values.opcdefault === undefined
+            ? sql("opcdefault")
+            : typed.pg_catalog_bool(values.opcdefault)
+        } , opckeytype = ${
+          values.opckeytype === undefined
+            ? sql("opckeytype")
+            : typed.pg_catalog_oid(values.opckeytype)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          opcmethod: undefinedIsNull(record.opcmethod),
+          opcname: undefinedIsNull(record.opcname),
+          opcnamespace: undefinedIsNull(record.opcnamespace),
+          opcowner: undefinedIsNull(record.opcowner),
+          opcfamily: undefinedIsNull(record.opcfamily),
+          opcintype: undefinedIsNull(record.opcintype),
+          opcdefault: undefinedIsNull(record.opcdefault),
+          opckeytype: undefinedIsNull(record.opckeytype),
+        }));
+        return results[0];
+      }
+      async updateByOpcmethodOpcnameOpcnamespace(
+        parameters: PgCatalog.Tables.PgOpclass.ByOpcmethodOpcnameOpcnamespace,
+        values: Partial<PgCatalog.PgOpclass>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_opclass SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , opcmethod = ${
+          values.opcmethod === undefined
+            ? sql("opcmethod")
+            : typed.pg_catalog_oid(values.opcmethod)
+        } , opcname = ${
+          values.opcname === undefined
+            ? sql("opcname")
+            : typed.pg_catalog_name(values.opcname)
+        } , opcnamespace = ${
+          values.opcnamespace === undefined
+            ? sql("opcnamespace")
+            : typed.pg_catalog_oid(values.opcnamespace)
+        } , opcowner = ${
+          values.opcowner === undefined
+            ? sql("opcowner")
+            : typed.pg_catalog_oid(values.opcowner)
+        } , opcfamily = ${
+          values.opcfamily === undefined
+            ? sql("opcfamily")
+            : typed.pg_catalog_oid(values.opcfamily)
+        } , opcintype = ${
+          values.opcintype === undefined
+            ? sql("opcintype")
+            : typed.pg_catalog_oid(values.opcintype)
+        } , opcdefault = ${
+          values.opcdefault === undefined
+            ? sql("opcdefault")
+            : typed.pg_catalog_bool(values.opcdefault)
+        } , opckeytype = ${
+          values.opckeytype === undefined
+            ? sql("opckeytype")
+            : typed.pg_catalog_oid(values.opckeytype)
+        } WHERE opcmethod = ${
+          parameters.opcmethod === undefined
+            ? sql("opcmethod")
+            : typed.pg_catalog_oid(parameters.opcmethod)
+        } AND opcname = ${
+          parameters.opcname === undefined
+            ? sql("opcname")
+            : typed.pg_catalog_cstring(parameters.opcname)
+        } AND opcnamespace = ${
+          parameters.opcnamespace === undefined
+            ? sql("opcnamespace")
+            : typed.pg_catalog_oid(parameters.opcnamespace)
+        } RETURNING oid,opcmethod,opcname,opcnamespace,opcowner,opcfamily,opcintype,opcdefault,opckeytype`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8342,7 +12268,7 @@ export class Database {
         const response =
           await sql`SELECT oid,amname,amhandler,amtype FROM pg_catalog.pg_am WHERE amname = ${
             parameters.amname === undefined
-              ? "amname"
+              ? sql("amname")
               : typed.pg_catalog_cstring(parameters.amname)
           }`;
 
@@ -8362,7 +12288,7 @@ export class Database {
         const response =
           await sql`SELECT oid,amname,amhandler,amtype FROM pg_catalog.pg_am WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8383,7 +12309,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_am WHERE amname = ${
             parameters.amname === undefined
-              ? "amname"
+              ? sql("amname")
               : typed.pg_catalog_cstring(parameters.amname)
           } RETURNING oid,amname,amhandler,amtype
       `;
@@ -8403,10 +12329,89 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_am WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,amname,amhandler,amtype
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amname: undefinedIsNull(record.amname),
+          amhandler: undefinedIsNull(record.amhandler),
+          amtype: undefinedIsNull(record.amtype),
+        }));
+        return results[0];
+      }
+
+      async updateByAmname(
+        parameters: PgCatalog.Tables.PgAm.ByAmname,
+        values: Partial<PgCatalog.PgAm>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_am SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amname = ${
+          values.amname === undefined
+            ? sql("amname")
+            : typed.pg_catalog_name(values.amname)
+        } , amhandler = ${
+          values.amhandler === undefined
+            ? sql("amhandler")
+            : typed.pg_catalog_regproc(values.amhandler)
+        } , amtype = ${
+          values.amtype === undefined
+            ? sql("amtype")
+            : typed.pg_catalog_char(values.amtype)
+        } WHERE amname = ${
+          parameters.amname === undefined
+            ? sql("amname")
+            : typed.pg_catalog_cstring(parameters.amname)
+        } RETURNING oid,amname,amhandler,amtype`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amname: undefinedIsNull(record.amname),
+          amhandler: undefinedIsNull(record.amhandler),
+          amtype: undefinedIsNull(record.amtype),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAm.ByOid,
+        values: Partial<PgCatalog.PgAm>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_am SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amname = ${
+          values.amname === undefined
+            ? sql("amname")
+            : typed.pg_catalog_name(values.amname)
+        } , amhandler = ${
+          values.amhandler === undefined
+            ? sql("amhandler")
+            : typed.pg_catalog_regproc(values.amhandler)
+        } , amtype = ${
+          values.amtype === undefined
+            ? sql("amtype")
+            : typed.pg_catalog_char(values.amtype)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,amname,amhandler,amtype`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8435,19 +12440,19 @@ export class Database {
         const response =
           await sql`SELECT oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily FROM pg_catalog.pg_amop WHERE amopfamily = ${
             parameters.amopfamily === undefined
-              ? "amopfamily"
+              ? sql("amopfamily")
               : typed.pg_catalog_oid(parameters.amopfamily)
           } AND amoplefttype = ${
             parameters.amoplefttype === undefined
-              ? "amoplefttype"
+              ? sql("amoplefttype")
               : typed.pg_catalog_oid(parameters.amoplefttype)
           } AND amoprighttype = ${
             parameters.amoprighttype === undefined
-              ? "amoprighttype"
+              ? sql("amoprighttype")
               : typed.pg_catalog_oid(parameters.amoprighttype)
           } AND amopstrategy = ${
             parameters.amopstrategy === undefined
-              ? "amopstrategy"
+              ? sql("amopstrategy")
               : typed.pg_catalog_int2(parameters.amopstrategy)
           }`;
 
@@ -8474,15 +12479,15 @@ export class Database {
         const response =
           await sql`SELECT oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily FROM pg_catalog.pg_amop WHERE amopopr = ${
             parameters.amopopr === undefined
-              ? "amopopr"
+              ? sql("amopopr")
               : typed.pg_catalog_oid(parameters.amopopr)
           } AND amoppurpose = ${
             parameters.amoppurpose === undefined
-              ? "amoppurpose"
+              ? sql("amoppurpose")
               : typed.pg_catalog_char(parameters.amoppurpose)
           } AND amopfamily = ${
             parameters.amopfamily === undefined
-              ? "amopfamily"
+              ? sql("amopfamily")
               : typed.pg_catalog_oid(parameters.amopfamily)
           }`;
 
@@ -8507,7 +12512,7 @@ export class Database {
         const response =
           await sql`SELECT oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily FROM pg_catalog.pg_amop WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8535,19 +12540,19 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_amop WHERE amopfamily = ${
             parameters.amopfamily === undefined
-              ? "amopfamily"
+              ? sql("amopfamily")
               : typed.pg_catalog_oid(parameters.amopfamily)
           } AND amoplefttype = ${
             parameters.amoplefttype === undefined
-              ? "amoplefttype"
+              ? sql("amoplefttype")
               : typed.pg_catalog_oid(parameters.amoplefttype)
           } AND amoprighttype = ${
             parameters.amoprighttype === undefined
-              ? "amoprighttype"
+              ? sql("amoprighttype")
               : typed.pg_catalog_oid(parameters.amoprighttype)
           } AND amopstrategy = ${
             parameters.amopstrategy === undefined
-              ? "amopstrategy"
+              ? sql("amopstrategy")
               : typed.pg_catalog_int2(parameters.amopstrategy)
           } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily
       `;
@@ -8575,15 +12580,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_amop WHERE amopopr = ${
             parameters.amopopr === undefined
-              ? "amopopr"
+              ? sql("amopopr")
               : typed.pg_catalog_oid(parameters.amopopr)
           } AND amoppurpose = ${
             parameters.amoppurpose === undefined
-              ? "amoppurpose"
+              ? sql("amoppurpose")
               : typed.pg_catalog_char(parameters.amoppurpose)
           } AND amopfamily = ${
             parameters.amopfamily === undefined
-              ? "amopfamily"
+              ? sql("amopfamily")
               : typed.pg_catalog_oid(parameters.amopfamily)
           } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily
       `;
@@ -8608,10 +12613,223 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_amop WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amopfamily: undefinedIsNull(record.amopfamily),
+          amoplefttype: undefinedIsNull(record.amoplefttype),
+          amoprighttype: undefinedIsNull(record.amoprighttype),
+          amopstrategy: undefinedIsNull(record.amopstrategy),
+          amoppurpose: undefinedIsNull(record.amoppurpose),
+          amopopr: undefinedIsNull(record.amopopr),
+          amopmethod: undefinedIsNull(record.amopmethod),
+          amopsortfamily: undefinedIsNull(record.amopsortfamily),
+        }));
+        return results[0];
+      }
+
+      async updateByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy(
+        parameters: PgCatalog.Tables.PgAmop.ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy,
+        values: Partial<PgCatalog.PgAmop>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_amop SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amopfamily = ${
+          values.amopfamily === undefined
+            ? sql("amopfamily")
+            : typed.pg_catalog_oid(values.amopfamily)
+        } , amoplefttype = ${
+          values.amoplefttype === undefined
+            ? sql("amoplefttype")
+            : typed.pg_catalog_oid(values.amoplefttype)
+        } , amoprighttype = ${
+          values.amoprighttype === undefined
+            ? sql("amoprighttype")
+            : typed.pg_catalog_oid(values.amoprighttype)
+        } , amopstrategy = ${
+          values.amopstrategy === undefined
+            ? sql("amopstrategy")
+            : typed.pg_catalog_int2(values.amopstrategy)
+        } , amoppurpose = ${
+          values.amoppurpose === undefined
+            ? sql("amoppurpose")
+            : typed.pg_catalog_char(values.amoppurpose)
+        } , amopopr = ${
+          values.amopopr === undefined
+            ? sql("amopopr")
+            : typed.pg_catalog_oid(values.amopopr)
+        } , amopmethod = ${
+          values.amopmethod === undefined
+            ? sql("amopmethod")
+            : typed.pg_catalog_oid(values.amopmethod)
+        } , amopsortfamily = ${
+          values.amopsortfamily === undefined
+            ? sql("amopsortfamily")
+            : typed.pg_catalog_oid(values.amopsortfamily)
+        } WHERE amopfamily = ${
+          parameters.amopfamily === undefined
+            ? sql("amopfamily")
+            : typed.pg_catalog_oid(parameters.amopfamily)
+        } AND amoplefttype = ${
+          parameters.amoplefttype === undefined
+            ? sql("amoplefttype")
+            : typed.pg_catalog_oid(parameters.amoplefttype)
+        } AND amoprighttype = ${
+          parameters.amoprighttype === undefined
+            ? sql("amoprighttype")
+            : typed.pg_catalog_oid(parameters.amoprighttype)
+        } AND amopstrategy = ${
+          parameters.amopstrategy === undefined
+            ? sql("amopstrategy")
+            : typed.pg_catalog_int2(parameters.amopstrategy)
+        } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amopfamily: undefinedIsNull(record.amopfamily),
+          amoplefttype: undefinedIsNull(record.amoplefttype),
+          amoprighttype: undefinedIsNull(record.amoprighttype),
+          amopstrategy: undefinedIsNull(record.amopstrategy),
+          amoppurpose: undefinedIsNull(record.amoppurpose),
+          amopopr: undefinedIsNull(record.amopopr),
+          amopmethod: undefinedIsNull(record.amopmethod),
+          amopsortfamily: undefinedIsNull(record.amopsortfamily),
+        }));
+        return results[0];
+      }
+      async updateByAmopoprAmoppurposeAmopfamily(
+        parameters: PgCatalog.Tables.PgAmop.ByAmopoprAmoppurposeAmopfamily,
+        values: Partial<PgCatalog.PgAmop>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_amop SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amopfamily = ${
+          values.amopfamily === undefined
+            ? sql("amopfamily")
+            : typed.pg_catalog_oid(values.amopfamily)
+        } , amoplefttype = ${
+          values.amoplefttype === undefined
+            ? sql("amoplefttype")
+            : typed.pg_catalog_oid(values.amoplefttype)
+        } , amoprighttype = ${
+          values.amoprighttype === undefined
+            ? sql("amoprighttype")
+            : typed.pg_catalog_oid(values.amoprighttype)
+        } , amopstrategy = ${
+          values.amopstrategy === undefined
+            ? sql("amopstrategy")
+            : typed.pg_catalog_int2(values.amopstrategy)
+        } , amoppurpose = ${
+          values.amoppurpose === undefined
+            ? sql("amoppurpose")
+            : typed.pg_catalog_char(values.amoppurpose)
+        } , amopopr = ${
+          values.amopopr === undefined
+            ? sql("amopopr")
+            : typed.pg_catalog_oid(values.amopopr)
+        } , amopmethod = ${
+          values.amopmethod === undefined
+            ? sql("amopmethod")
+            : typed.pg_catalog_oid(values.amopmethod)
+        } , amopsortfamily = ${
+          values.amopsortfamily === undefined
+            ? sql("amopsortfamily")
+            : typed.pg_catalog_oid(values.amopsortfamily)
+        } WHERE amopopr = ${
+          parameters.amopopr === undefined
+            ? sql("amopopr")
+            : typed.pg_catalog_oid(parameters.amopopr)
+        } AND amoppurpose = ${
+          parameters.amoppurpose === undefined
+            ? sql("amoppurpose")
+            : typed.pg_catalog_char(parameters.amoppurpose)
+        } AND amopfamily = ${
+          parameters.amopfamily === undefined
+            ? sql("amopfamily")
+            : typed.pg_catalog_oid(parameters.amopfamily)
+        } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amopfamily: undefinedIsNull(record.amopfamily),
+          amoplefttype: undefinedIsNull(record.amoplefttype),
+          amoprighttype: undefinedIsNull(record.amoprighttype),
+          amopstrategy: undefinedIsNull(record.amopstrategy),
+          amoppurpose: undefinedIsNull(record.amoppurpose),
+          amopopr: undefinedIsNull(record.amopopr),
+          amopmethod: undefinedIsNull(record.amopmethod),
+          amopsortfamily: undefinedIsNull(record.amopsortfamily),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAmop.ByOid,
+        values: Partial<PgCatalog.PgAmop>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_amop SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amopfamily = ${
+          values.amopfamily === undefined
+            ? sql("amopfamily")
+            : typed.pg_catalog_oid(values.amopfamily)
+        } , amoplefttype = ${
+          values.amoplefttype === undefined
+            ? sql("amoplefttype")
+            : typed.pg_catalog_oid(values.amoplefttype)
+        } , amoprighttype = ${
+          values.amoprighttype === undefined
+            ? sql("amoprighttype")
+            : typed.pg_catalog_oid(values.amoprighttype)
+        } , amopstrategy = ${
+          values.amopstrategy === undefined
+            ? sql("amopstrategy")
+            : typed.pg_catalog_int2(values.amopstrategy)
+        } , amoppurpose = ${
+          values.amoppurpose === undefined
+            ? sql("amoppurpose")
+            : typed.pg_catalog_char(values.amoppurpose)
+        } , amopopr = ${
+          values.amopopr === undefined
+            ? sql("amopopr")
+            : typed.pg_catalog_oid(values.amopopr)
+        } , amopmethod = ${
+          values.amopmethod === undefined
+            ? sql("amopmethod")
+            : typed.pg_catalog_oid(values.amopmethod)
+        } , amopsortfamily = ${
+          values.amopsortfamily === undefined
+            ? sql("amopsortfamily")
+            : typed.pg_catalog_oid(values.amopsortfamily)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,amopfamily,amoplefttype,amoprighttype,amopstrategy,amoppurpose,amopopr,amopmethod,amopsortfamily`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8645,19 +12863,19 @@ export class Database {
         const response =
           await sql`SELECT oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc FROM pg_catalog.pg_amproc WHERE amprocfamily = ${
             parameters.amprocfamily === undefined
-              ? "amprocfamily"
+              ? sql("amprocfamily")
               : typed.pg_catalog_oid(parameters.amprocfamily)
           } AND amproclefttype = ${
             parameters.amproclefttype === undefined
-              ? "amproclefttype"
+              ? sql("amproclefttype")
               : typed.pg_catalog_oid(parameters.amproclefttype)
           } AND amprocrighttype = ${
             parameters.amprocrighttype === undefined
-              ? "amprocrighttype"
+              ? sql("amprocrighttype")
               : typed.pg_catalog_oid(parameters.amprocrighttype)
           } AND amprocnum = ${
             parameters.amprocnum === undefined
-              ? "amprocnum"
+              ? sql("amprocnum")
               : typed.pg_catalog_int2(parameters.amprocnum)
           }`;
 
@@ -8679,7 +12897,7 @@ export class Database {
         const response =
           await sql`SELECT oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc FROM pg_catalog.pg_amproc WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8704,19 +12922,19 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_amproc WHERE amprocfamily = ${
             parameters.amprocfamily === undefined
-              ? "amprocfamily"
+              ? sql("amprocfamily")
               : typed.pg_catalog_oid(parameters.amprocfamily)
           } AND amproclefttype = ${
             parameters.amproclefttype === undefined
-              ? "amproclefttype"
+              ? sql("amproclefttype")
               : typed.pg_catalog_oid(parameters.amproclefttype)
           } AND amprocrighttype = ${
             parameters.amprocrighttype === undefined
-              ? "amprocrighttype"
+              ? sql("amprocrighttype")
               : typed.pg_catalog_oid(parameters.amprocrighttype)
           } AND amprocnum = ${
             parameters.amprocnum === undefined
-              ? "amprocnum"
+              ? sql("amprocnum")
               : typed.pg_catalog_int2(parameters.amprocnum)
           } RETURNING oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc
       `;
@@ -8739,10 +12957,121 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_amproc WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amprocfamily: undefinedIsNull(record.amprocfamily),
+          amproclefttype: undefinedIsNull(record.amproclefttype),
+          amprocrighttype: undefinedIsNull(record.amprocrighttype),
+          amprocnum: undefinedIsNull(record.amprocnum),
+          amproc: undefinedIsNull(record.amproc),
+        }));
+        return results[0];
+      }
+
+      async updateByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum(
+        parameters: PgCatalog.Tables.PgAmproc.ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum,
+        values: Partial<PgCatalog.PgAmproc>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_amproc SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amprocfamily = ${
+          values.amprocfamily === undefined
+            ? sql("amprocfamily")
+            : typed.pg_catalog_oid(values.amprocfamily)
+        } , amproclefttype = ${
+          values.amproclefttype === undefined
+            ? sql("amproclefttype")
+            : typed.pg_catalog_oid(values.amproclefttype)
+        } , amprocrighttype = ${
+          values.amprocrighttype === undefined
+            ? sql("amprocrighttype")
+            : typed.pg_catalog_oid(values.amprocrighttype)
+        } , amprocnum = ${
+          values.amprocnum === undefined
+            ? sql("amprocnum")
+            : typed.pg_catalog_int2(values.amprocnum)
+        } , amproc = ${
+          values.amproc === undefined
+            ? sql("amproc")
+            : typed.pg_catalog_regproc(values.amproc)
+        } WHERE amprocfamily = ${
+          parameters.amprocfamily === undefined
+            ? sql("amprocfamily")
+            : typed.pg_catalog_oid(parameters.amprocfamily)
+        } AND amproclefttype = ${
+          parameters.amproclefttype === undefined
+            ? sql("amproclefttype")
+            : typed.pg_catalog_oid(parameters.amproclefttype)
+        } AND amprocrighttype = ${
+          parameters.amprocrighttype === undefined
+            ? sql("amprocrighttype")
+            : typed.pg_catalog_oid(parameters.amprocrighttype)
+        } AND amprocnum = ${
+          parameters.amprocnum === undefined
+            ? sql("amprocnum")
+            : typed.pg_catalog_int2(parameters.amprocnum)
+        } RETURNING oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          amprocfamily: undefinedIsNull(record.amprocfamily),
+          amproclefttype: undefinedIsNull(record.amproclefttype),
+          amprocrighttype: undefinedIsNull(record.amprocrighttype),
+          amprocnum: undefinedIsNull(record.amprocnum),
+          amproc: undefinedIsNull(record.amproc),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAmproc.ByOid,
+        values: Partial<PgCatalog.PgAmproc>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_amproc SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , amprocfamily = ${
+          values.amprocfamily === undefined
+            ? sql("amprocfamily")
+            : typed.pg_catalog_oid(values.amprocfamily)
+        } , amproclefttype = ${
+          values.amproclefttype === undefined
+            ? sql("amproclefttype")
+            : typed.pg_catalog_oid(values.amproclefttype)
+        } , amprocrighttype = ${
+          values.amprocrighttype === undefined
+            ? sql("amprocrighttype")
+            : typed.pg_catalog_oid(values.amprocrighttype)
+        } , amprocnum = ${
+          values.amprocnum === undefined
+            ? sql("amprocnum")
+            : typed.pg_catalog_int2(values.amprocnum)
+        } , amproc = ${
+          values.amproc === undefined
+            ? sql("amproc")
+            : typed.pg_catalog_regproc(values.amproc)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,amprocfamily,amproclefttype,amprocrighttype,amprocnum,amproc`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8771,7 +13100,7 @@ export class Database {
         const response =
           await sql`SELECT oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl FROM pg_catalog.pg_language WHERE lanname = ${
             parameters.lanname === undefined
-              ? "lanname"
+              ? sql("lanname")
               : typed.pg_catalog_cstring(parameters.lanname)
           }`;
 
@@ -8796,7 +13125,7 @@ export class Database {
         const response =
           await sql`SELECT oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl FROM pg_catalog.pg_language WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8822,7 +13151,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_language WHERE lanname = ${
             parameters.lanname === undefined
-              ? "lanname"
+              ? sql("lanname")
               : typed.pg_catalog_cstring(parameters.lanname)
           } RETURNING oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl
       `;
@@ -8848,10 +13177,139 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_language WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          lanname: undefinedIsNull(record.lanname),
+          lanowner: undefinedIsNull(record.lanowner),
+          lanispl: undefinedIsNull(record.lanispl),
+          lanpltrusted: undefinedIsNull(record.lanpltrusted),
+          lanplcallfoid: undefinedIsNull(record.lanplcallfoid),
+          laninline: undefinedIsNull(record.laninline),
+          lanvalidator: undefinedIsNull(record.lanvalidator),
+          lanacl: undefinedIsNull(record.lanacl),
+        }));
+        return results[0];
+      }
+
+      async updateByLanname(
+        parameters: PgCatalog.Tables.PgLanguage.ByLanname,
+        values: Partial<PgCatalog.PgLanguage>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_language SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , lanname = ${
+          values.lanname === undefined
+            ? sql("lanname")
+            : typed.pg_catalog_name(values.lanname)
+        } , lanowner = ${
+          values.lanowner === undefined
+            ? sql("lanowner")
+            : typed.pg_catalog_oid(values.lanowner)
+        } , lanispl = ${
+          values.lanispl === undefined
+            ? sql("lanispl")
+            : typed.pg_catalog_bool(values.lanispl)
+        } , lanpltrusted = ${
+          values.lanpltrusted === undefined
+            ? sql("lanpltrusted")
+            : typed.pg_catalog_bool(values.lanpltrusted)
+        } , lanplcallfoid = ${
+          values.lanplcallfoid === undefined
+            ? sql("lanplcallfoid")
+            : typed.pg_catalog_oid(values.lanplcallfoid)
+        } , laninline = ${
+          values.laninline === undefined
+            ? sql("laninline")
+            : typed.pg_catalog_oid(values.laninline)
+        } , lanvalidator = ${
+          values.lanvalidator === undefined
+            ? sql("lanvalidator")
+            : typed.pg_catalog_oid(values.lanvalidator)
+        } , lanacl = ${
+          values.lanacl === undefined
+            ? sql("lanacl")
+            : typed.pg_catalog__aclitem(values.lanacl)
+        } WHERE lanname = ${
+          parameters.lanname === undefined
+            ? sql("lanname")
+            : typed.pg_catalog_cstring(parameters.lanname)
+        } RETURNING oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          lanname: undefinedIsNull(record.lanname),
+          lanowner: undefinedIsNull(record.lanowner),
+          lanispl: undefinedIsNull(record.lanispl),
+          lanpltrusted: undefinedIsNull(record.lanpltrusted),
+          lanplcallfoid: undefinedIsNull(record.lanplcallfoid),
+          laninline: undefinedIsNull(record.laninline),
+          lanvalidator: undefinedIsNull(record.lanvalidator),
+          lanacl: undefinedIsNull(record.lanacl),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgLanguage.ByOid,
+        values: Partial<PgCatalog.PgLanguage>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_language SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , lanname = ${
+          values.lanname === undefined
+            ? sql("lanname")
+            : typed.pg_catalog_name(values.lanname)
+        } , lanowner = ${
+          values.lanowner === undefined
+            ? sql("lanowner")
+            : typed.pg_catalog_oid(values.lanowner)
+        } , lanispl = ${
+          values.lanispl === undefined
+            ? sql("lanispl")
+            : typed.pg_catalog_bool(values.lanispl)
+        } , lanpltrusted = ${
+          values.lanpltrusted === undefined
+            ? sql("lanpltrusted")
+            : typed.pg_catalog_bool(values.lanpltrusted)
+        } , lanplcallfoid = ${
+          values.lanplcallfoid === undefined
+            ? sql("lanplcallfoid")
+            : typed.pg_catalog_oid(values.lanplcallfoid)
+        } , laninline = ${
+          values.laninline === undefined
+            ? sql("laninline")
+            : typed.pg_catalog_oid(values.laninline)
+        } , lanvalidator = ${
+          values.lanvalidator === undefined
+            ? sql("lanvalidator")
+            : typed.pg_catalog_oid(values.lanvalidator)
+        } , lanacl = ${
+          values.lanacl === undefined
+            ? sql("lanacl")
+            : typed.pg_catalog__aclitem(values.lanacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,lanname,lanowner,lanispl,lanpltrusted,lanplcallfoid,laninline,lanvalidator,lanacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8883,7 +13341,7 @@ export class Database {
         const response =
           await sql`SELECT oid,lomowner,lomacl FROM pg_catalog.pg_largeobject_metadata WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -8905,10 +13363,46 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_largeobject_metadata WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,lomowner,lomacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          lomowner: undefinedIsNull(record.lomowner),
+          lomacl: undefinedIsNull(record.lomacl),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid,
+        values: Partial<PgCatalog.PgLargeobjectMetadata>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_largeobject_metadata SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , lomowner = ${
+            values.lomowner === undefined
+              ? sql("lomowner")
+              : typed.pg_catalog_oid(values.lomowner)
+          } , lomacl = ${
+            values.lomacl === undefined
+              ? sql("lomacl")
+              : typed.pg_catalog__aclitem(values.lomacl)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,lomowner,lomacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -8934,7 +13428,7 @@ export class Database {
         const response =
           await sql`SELECT aggfnoid,aggkind,aggnumdirectargs,aggtransfn,aggfinalfn,aggcombinefn,aggserialfn,aggdeserialfn,aggmtransfn,aggminvtransfn,aggmfinalfn,aggfinalextra,aggmfinalextra,aggfinalmodify,aggmfinalmodify,aggsortop,aggtranstype,aggtransspace,aggmtranstype,aggmtransspace,agginitval,aggminitval FROM pg_catalog.pg_aggregate WHERE aggfnoid = ${
             parameters.aggfnoid === undefined
-              ? "aggfnoid"
+              ? sql("aggfnoid")
               : typed.pg_catalog_regproc(parameters.aggfnoid)
           }`;
 
@@ -8975,10 +13469,141 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_aggregate WHERE aggfnoid = ${
             parameters.aggfnoid === undefined
-              ? "aggfnoid"
+              ? sql("aggfnoid")
               : typed.pg_catalog_regproc(parameters.aggfnoid)
           } RETURNING aggfnoid,aggkind,aggnumdirectargs,aggtransfn,aggfinalfn,aggcombinefn,aggserialfn,aggdeserialfn,aggmtransfn,aggminvtransfn,aggmfinalfn,aggfinalextra,aggmfinalextra,aggfinalmodify,aggmfinalmodify,aggsortop,aggtranstype,aggtransspace,aggmtranstype,aggmtransspace,agginitval,aggminitval
       `;
+
+        const results = response.map((record) => ({
+          aggfnoid: undefinedIsNull(record.aggfnoid),
+          aggkind: undefinedIsNull(record.aggkind),
+          aggnumdirectargs: undefinedIsNull(record.aggnumdirectargs),
+          aggtransfn: undefinedIsNull(record.aggtransfn),
+          aggfinalfn: undefinedIsNull(record.aggfinalfn),
+          aggcombinefn: undefinedIsNull(record.aggcombinefn),
+          aggserialfn: undefinedIsNull(record.aggserialfn),
+          aggdeserialfn: undefinedIsNull(record.aggdeserialfn),
+          aggmtransfn: undefinedIsNull(record.aggmtransfn),
+          aggminvtransfn: undefinedIsNull(record.aggminvtransfn),
+          aggmfinalfn: undefinedIsNull(record.aggmfinalfn),
+          aggfinalextra: undefinedIsNull(record.aggfinalextra),
+          aggmfinalextra: undefinedIsNull(record.aggmfinalextra),
+          aggfinalmodify: undefinedIsNull(record.aggfinalmodify),
+          aggmfinalmodify: undefinedIsNull(record.aggmfinalmodify),
+          aggsortop: undefinedIsNull(record.aggsortop),
+          aggtranstype: undefinedIsNull(record.aggtranstype),
+          aggtransspace: undefinedIsNull(record.aggtransspace),
+          aggmtranstype: undefinedIsNull(record.aggmtranstype),
+          aggmtransspace: undefinedIsNull(record.aggmtransspace),
+          agginitval: undefinedIsNull(record.agginitval),
+          aggminitval: undefinedIsNull(record.aggminitval),
+        }));
+        return results[0];
+      }
+
+      async updateByAggfnoid(
+        parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid,
+        values: Partial<PgCatalog.PgAggregate>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_aggregate SET aggfnoid = ${
+            values.aggfnoid === undefined
+              ? sql("aggfnoid")
+              : typed.pg_catalog_regproc(values.aggfnoid)
+          } , aggkind = ${
+            values.aggkind === undefined
+              ? sql("aggkind")
+              : typed.pg_catalog_char(values.aggkind)
+          } , aggnumdirectargs = ${
+            values.aggnumdirectargs === undefined
+              ? sql("aggnumdirectargs")
+              : typed.pg_catalog_int2(values.aggnumdirectargs)
+          } , aggtransfn = ${
+            values.aggtransfn === undefined
+              ? sql("aggtransfn")
+              : typed.pg_catalog_regproc(values.aggtransfn)
+          } , aggfinalfn = ${
+            values.aggfinalfn === undefined
+              ? sql("aggfinalfn")
+              : typed.pg_catalog_regproc(values.aggfinalfn)
+          } , aggcombinefn = ${
+            values.aggcombinefn === undefined
+              ? sql("aggcombinefn")
+              : typed.pg_catalog_regproc(values.aggcombinefn)
+          } , aggserialfn = ${
+            values.aggserialfn === undefined
+              ? sql("aggserialfn")
+              : typed.pg_catalog_regproc(values.aggserialfn)
+          } , aggdeserialfn = ${
+            values.aggdeserialfn === undefined
+              ? sql("aggdeserialfn")
+              : typed.pg_catalog_regproc(values.aggdeserialfn)
+          } , aggmtransfn = ${
+            values.aggmtransfn === undefined
+              ? sql("aggmtransfn")
+              : typed.pg_catalog_regproc(values.aggmtransfn)
+          } , aggminvtransfn = ${
+            values.aggminvtransfn === undefined
+              ? sql("aggminvtransfn")
+              : typed.pg_catalog_regproc(values.aggminvtransfn)
+          } , aggmfinalfn = ${
+            values.aggmfinalfn === undefined
+              ? sql("aggmfinalfn")
+              : typed.pg_catalog_regproc(values.aggmfinalfn)
+          } , aggfinalextra = ${
+            values.aggfinalextra === undefined
+              ? sql("aggfinalextra")
+              : typed.pg_catalog_bool(values.aggfinalextra)
+          } , aggmfinalextra = ${
+            values.aggmfinalextra === undefined
+              ? sql("aggmfinalextra")
+              : typed.pg_catalog_bool(values.aggmfinalextra)
+          } , aggfinalmodify = ${
+            values.aggfinalmodify === undefined
+              ? sql("aggfinalmodify")
+              : typed.pg_catalog_char(values.aggfinalmodify)
+          } , aggmfinalmodify = ${
+            values.aggmfinalmodify === undefined
+              ? sql("aggmfinalmodify")
+              : typed.pg_catalog_char(values.aggmfinalmodify)
+          } , aggsortop = ${
+            values.aggsortop === undefined
+              ? sql("aggsortop")
+              : typed.pg_catalog_oid(values.aggsortop)
+          } , aggtranstype = ${
+            values.aggtranstype === undefined
+              ? sql("aggtranstype")
+              : typed.pg_catalog_oid(values.aggtranstype)
+          } , aggtransspace = ${
+            values.aggtransspace === undefined
+              ? sql("aggtransspace")
+              : typed.pg_catalog_int4(values.aggtransspace)
+          } , aggmtranstype = ${
+            values.aggmtranstype === undefined
+              ? sql("aggmtranstype")
+              : typed.pg_catalog_oid(values.aggmtranstype)
+          } , aggmtransspace = ${
+            values.aggmtransspace === undefined
+              ? sql("aggmtransspace")
+              : typed.pg_catalog_int4(values.aggmtransspace)
+          } , agginitval = ${
+            values.agginitval === undefined
+              ? sql("agginitval")
+              : typed.pg_catalog_text(values.agginitval)
+          } , aggminitval = ${
+            values.aggminitval === undefined
+              ? sql("aggminitval")
+              : typed.pg_catalog_text(values.aggminitval)
+          } WHERE aggfnoid = ${
+            parameters.aggfnoid === undefined
+              ? sql("aggfnoid")
+              : typed.pg_catalog_regproc(parameters.aggfnoid)
+          } RETURNING aggfnoid,aggkind,aggnumdirectargs,aggtransfn,aggfinalfn,aggcombinefn,aggserialfn,aggdeserialfn,aggmtransfn,aggminvtransfn,aggmfinalfn,aggfinalextra,aggmfinalextra,aggfinalmodify,aggmfinalmodify,aggsortop,aggtranstype,aggtransspace,aggmtranstype,aggmtransspace,agginitval,aggminitval`;
 
         const results = response.map((record) => ({
           aggfnoid: undefinedIsNull(record.aggfnoid),
@@ -9023,7 +13648,7 @@ export class Database {
         const response =
           await sql`SELECT oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs FROM pg_catalog.pg_statistic_ext WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9050,11 +13675,11 @@ export class Database {
         const response =
           await sql`SELECT oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs FROM pg_catalog.pg_statistic_ext WHERE stxname = ${
             parameters.stxname === undefined
-              ? "stxname"
+              ? sql("stxname")
               : typed.pg_catalog_cstring(parameters.stxname)
           } AND stxnamespace = ${
             parameters.stxnamespace === undefined
-              ? "stxnamespace"
+              ? sql("stxnamespace")
               : typed.pg_catalog_oid(parameters.stxnamespace)
           }`;
 
@@ -9079,7 +13704,7 @@ export class Database {
         const response =
           await sql`SELECT oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs FROM pg_catalog.pg_statistic_ext WHERE stxrelid = ${
             parameters.stxrelid === undefined
-              ? "stxrelid"
+              ? sql("stxrelid")
               : typed.pg_catalog_oid(parameters.stxrelid)
           }`;
 
@@ -9105,7 +13730,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs
       `;
@@ -9133,11 +13758,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE stxname = ${
             parameters.stxname === undefined
-              ? "stxname"
+              ? sql("stxname")
               : typed.pg_catalog_cstring(parameters.stxname)
           } AND stxnamespace = ${
             parameters.stxnamespace === undefined
-              ? "stxnamespace"
+              ? sql("stxnamespace")
               : typed.pg_catalog_oid(parameters.stxnamespace)
           } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs
       `;
@@ -9165,10 +13790,210 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_statistic_ext WHERE stxrelid = ${
             parameters.stxrelid === undefined
-              ? "stxrelid"
+              ? sql("stxrelid")
               : typed.pg_catalog_oid(parameters.stxrelid)
           } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          stxrelid: undefinedIsNull(record.stxrelid),
+          stxname: undefinedIsNull(record.stxname),
+          stxnamespace: undefinedIsNull(record.stxnamespace),
+          stxowner: undefinedIsNull(record.stxowner),
+          stxstattarget: undefinedIsNull(record.stxstattarget),
+          stxkeys: undefinedIsNull(record.stxkeys),
+          stxkind: undefinedIsNull(record.stxkind),
+          stxexprs: undefinedIsNull(record.stxexprs),
+        }));
+        return results;
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByOid,
+        values: Partial<PgCatalog.PgStatisticExt>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_statistic_ext SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , stxrelid = ${
+            values.stxrelid === undefined
+              ? sql("stxrelid")
+              : typed.pg_catalog_oid(values.stxrelid)
+          } , stxname = ${
+            values.stxname === undefined
+              ? sql("stxname")
+              : typed.pg_catalog_name(values.stxname)
+          } , stxnamespace = ${
+            values.stxnamespace === undefined
+              ? sql("stxnamespace")
+              : typed.pg_catalog_oid(values.stxnamespace)
+          } , stxowner = ${
+            values.stxowner === undefined
+              ? sql("stxowner")
+              : typed.pg_catalog_oid(values.stxowner)
+          } , stxstattarget = ${
+            values.stxstattarget === undefined
+              ? sql("stxstattarget")
+              : typed.pg_catalog_int4(values.stxstattarget)
+          } , stxkeys = ${
+            values.stxkeys === undefined
+              ? sql("stxkeys")
+              : typed.pg_catalog_int2vector(values.stxkeys)
+          } , stxkind = ${
+            values.stxkind === undefined
+              ? sql("stxkind")
+              : typed.pg_catalog__char(values.stxkind)
+          } , stxexprs = ${
+            values.stxexprs === undefined
+              ? sql("stxexprs")
+              : typed.pg_catalog_pg_node_tree(values.stxexprs)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          stxrelid: undefinedIsNull(record.stxrelid),
+          stxname: undefinedIsNull(record.stxname),
+          stxnamespace: undefinedIsNull(record.stxnamespace),
+          stxowner: undefinedIsNull(record.stxowner),
+          stxstattarget: undefinedIsNull(record.stxstattarget),
+          stxkeys: undefinedIsNull(record.stxkeys),
+          stxkind: undefinedIsNull(record.stxkind),
+          stxexprs: undefinedIsNull(record.stxexprs),
+        }));
+        return results[0];
+      }
+      async updateByStxnameStxnamespace(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByStxnameStxnamespace,
+        values: Partial<PgCatalog.PgStatisticExt>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_statistic_ext SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , stxrelid = ${
+            values.stxrelid === undefined
+              ? sql("stxrelid")
+              : typed.pg_catalog_oid(values.stxrelid)
+          } , stxname = ${
+            values.stxname === undefined
+              ? sql("stxname")
+              : typed.pg_catalog_name(values.stxname)
+          } , stxnamespace = ${
+            values.stxnamespace === undefined
+              ? sql("stxnamespace")
+              : typed.pg_catalog_oid(values.stxnamespace)
+          } , stxowner = ${
+            values.stxowner === undefined
+              ? sql("stxowner")
+              : typed.pg_catalog_oid(values.stxowner)
+          } , stxstattarget = ${
+            values.stxstattarget === undefined
+              ? sql("stxstattarget")
+              : typed.pg_catalog_int4(values.stxstattarget)
+          } , stxkeys = ${
+            values.stxkeys === undefined
+              ? sql("stxkeys")
+              : typed.pg_catalog_int2vector(values.stxkeys)
+          } , stxkind = ${
+            values.stxkind === undefined
+              ? sql("stxkind")
+              : typed.pg_catalog__char(values.stxkind)
+          } , stxexprs = ${
+            values.stxexprs === undefined
+              ? sql("stxexprs")
+              : typed.pg_catalog_pg_node_tree(values.stxexprs)
+          } WHERE stxname = ${
+            parameters.stxname === undefined
+              ? sql("stxname")
+              : typed.pg_catalog_cstring(parameters.stxname)
+          } AND stxnamespace = ${
+            parameters.stxnamespace === undefined
+              ? sql("stxnamespace")
+              : typed.pg_catalog_oid(parameters.stxnamespace)
+          } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          stxrelid: undefinedIsNull(record.stxrelid),
+          stxname: undefinedIsNull(record.stxname),
+          stxnamespace: undefinedIsNull(record.stxnamespace),
+          stxowner: undefinedIsNull(record.stxowner),
+          stxstattarget: undefinedIsNull(record.stxstattarget),
+          stxkeys: undefinedIsNull(record.stxkeys),
+          stxkind: undefinedIsNull(record.stxkind),
+          stxexprs: undefinedIsNull(record.stxexprs),
+        }));
+        return results[0];
+      }
+      async updateByStxrelid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid,
+        values: Partial<PgCatalog.PgStatisticExt>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_statistic_ext SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , stxrelid = ${
+            values.stxrelid === undefined
+              ? sql("stxrelid")
+              : typed.pg_catalog_oid(values.stxrelid)
+          } , stxname = ${
+            values.stxname === undefined
+              ? sql("stxname")
+              : typed.pg_catalog_name(values.stxname)
+          } , stxnamespace = ${
+            values.stxnamespace === undefined
+              ? sql("stxnamespace")
+              : typed.pg_catalog_oid(values.stxnamespace)
+          } , stxowner = ${
+            values.stxowner === undefined
+              ? sql("stxowner")
+              : typed.pg_catalog_oid(values.stxowner)
+          } , stxstattarget = ${
+            values.stxstattarget === undefined
+              ? sql("stxstattarget")
+              : typed.pg_catalog_int4(values.stxstattarget)
+          } , stxkeys = ${
+            values.stxkeys === undefined
+              ? sql("stxkeys")
+              : typed.pg_catalog_int2vector(values.stxkeys)
+          } , stxkind = ${
+            values.stxkind === undefined
+              ? sql("stxkind")
+              : typed.pg_catalog__char(values.stxkind)
+          } , stxexprs = ${
+            values.stxexprs === undefined
+              ? sql("stxexprs")
+              : typed.pg_catalog_pg_node_tree(values.stxexprs)
+          } WHERE stxrelid = ${
+            parameters.stxrelid === undefined
+              ? sql("stxrelid")
+              : typed.pg_catalog_oid(parameters.stxrelid)
+          } RETURNING oid,stxrelid,stxname,stxnamespace,stxowner,stxstattarget,stxkeys,stxkind,stxexprs`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -9202,11 +14027,11 @@ export class Database {
         const response =
           await sql`SELECT oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action FROM pg_catalog.pg_rewrite WHERE ev_class = ${
             parameters.evClass === undefined
-              ? "ev_class"
+              ? sql("ev_class")
               : typed.pg_catalog_oid(parameters.evClass)
           } AND rulename = ${
             parameters.rulename === undefined
-              ? "rulename"
+              ? sql("rulename")
               : typed.pg_catalog_cstring(parameters.rulename)
           }`;
 
@@ -9230,7 +14055,7 @@ export class Database {
         const response =
           await sql`SELECT oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action FROM pg_catalog.pg_rewrite WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9257,11 +14082,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_rewrite WHERE ev_class = ${
             parameters.evClass === undefined
-              ? "ev_class"
+              ? sql("ev_class")
               : typed.pg_catalog_oid(parameters.evClass)
           } AND rulename = ${
             parameters.rulename === undefined
-              ? "rulename"
+              ? sql("rulename")
               : typed.pg_catalog_cstring(parameters.rulename)
           } RETURNING oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action
       `;
@@ -9286,10 +14111,133 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_rewrite WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          rulename: undefinedIsNull(record.rulename),
+          evClass: undefinedIsNull(record.ev_class),
+          evType: undefinedIsNull(record.ev_type),
+          evEnabled: undefinedIsNull(record.ev_enabled),
+          isInstead: undefinedIsNull(record.is_instead),
+          evQual: undefinedIsNull(record.ev_qual),
+          evAction: undefinedIsNull(record.ev_action),
+        }));
+        return results[0];
+      }
+
+      async updateByEvClassRulename(
+        parameters: PgCatalog.Tables.PgRewrite.ByEvClassRulename,
+        values: Partial<PgCatalog.PgRewrite>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_rewrite SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , rulename = ${
+          values.rulename === undefined
+            ? sql("rulename")
+            : typed.pg_catalog_name(values.rulename)
+        } , ev_class = ${
+          values.evClass === undefined
+            ? sql("ev_class")
+            : typed.pg_catalog_oid(values.evClass)
+        } , ev_type = ${
+          values.evType === undefined
+            ? sql("ev_type")
+            : typed.pg_catalog_char(values.evType)
+        } , ev_enabled = ${
+          values.evEnabled === undefined
+            ? sql("ev_enabled")
+            : typed.pg_catalog_char(values.evEnabled)
+        } , is_instead = ${
+          values.isInstead === undefined
+            ? sql("is_instead")
+            : typed.pg_catalog_bool(values.isInstead)
+        } , ev_qual = ${
+          values.evQual === undefined
+            ? sql("ev_qual")
+            : typed.pg_catalog_pg_node_tree(values.evQual)
+        } , ev_action = ${
+          values.evAction === undefined
+            ? sql("ev_action")
+            : typed.pg_catalog_pg_node_tree(values.evAction)
+        } WHERE ev_class = ${
+          parameters.evClass === undefined
+            ? sql("ev_class")
+            : typed.pg_catalog_oid(parameters.evClass)
+        } AND rulename = ${
+          parameters.rulename === undefined
+            ? sql("rulename")
+            : typed.pg_catalog_cstring(parameters.rulename)
+        } RETURNING oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          rulename: undefinedIsNull(record.rulename),
+          evClass: undefinedIsNull(record.ev_class),
+          evType: undefinedIsNull(record.ev_type),
+          evEnabled: undefinedIsNull(record.ev_enabled),
+          isInstead: undefinedIsNull(record.is_instead),
+          evQual: undefinedIsNull(record.ev_qual),
+          evAction: undefinedIsNull(record.ev_action),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgRewrite.ByOid,
+        values: Partial<PgCatalog.PgRewrite>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_rewrite SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , rulename = ${
+          values.rulename === undefined
+            ? sql("rulename")
+            : typed.pg_catalog_name(values.rulename)
+        } , ev_class = ${
+          values.evClass === undefined
+            ? sql("ev_class")
+            : typed.pg_catalog_oid(values.evClass)
+        } , ev_type = ${
+          values.evType === undefined
+            ? sql("ev_type")
+            : typed.pg_catalog_char(values.evType)
+        } , ev_enabled = ${
+          values.evEnabled === undefined
+            ? sql("ev_enabled")
+            : typed.pg_catalog_char(values.evEnabled)
+        } , is_instead = ${
+          values.isInstead === undefined
+            ? sql("is_instead")
+            : typed.pg_catalog_bool(values.isInstead)
+        } , ev_qual = ${
+          values.evQual === undefined
+            ? sql("ev_qual")
+            : typed.pg_catalog_pg_node_tree(values.evQual)
+        } , ev_action = ${
+          values.evAction === undefined
+            ? sql("ev_action")
+            : typed.pg_catalog_pg_node_tree(values.evAction)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,rulename,ev_class,ev_type,ev_enabled,is_instead,ev_qual,ev_action`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -9320,7 +14268,7 @@ export class Database {
         const response =
           await sql`SELECT oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable FROM pg_catalog.pg_trigger WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9357,7 +14305,7 @@ export class Database {
         const response =
           await sql`SELECT oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable FROM pg_catalog.pg_trigger WHERE tgconstraint = ${
             parameters.tgconstraint === undefined
-              ? "tgconstraint"
+              ? sql("tgconstraint")
               : typed.pg_catalog_oid(parameters.tgconstraint)
           }`;
 
@@ -9394,11 +14342,11 @@ export class Database {
         const response =
           await sql`SELECT oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable FROM pg_catalog.pg_trigger WHERE tgrelid = ${
             parameters.tgrelid === undefined
-              ? "tgrelid"
+              ? sql("tgrelid")
               : typed.pg_catalog_oid(parameters.tgrelid)
           } AND tgname = ${
             parameters.tgname === undefined
-              ? "tgname"
+              ? sql("tgname")
               : typed.pg_catalog_cstring(parameters.tgname)
           }`;
 
@@ -9434,7 +14382,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_trigger WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable
       `;
@@ -9472,7 +14420,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_trigger WHERE tgconstraint = ${
             parameters.tgconstraint === undefined
-              ? "tgconstraint"
+              ? sql("tgconstraint")
               : typed.pg_catalog_oid(parameters.tgconstraint)
           } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable
       `;
@@ -9510,14 +14458,361 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_trigger WHERE tgrelid = ${
             parameters.tgrelid === undefined
-              ? "tgrelid"
+              ? sql("tgrelid")
               : typed.pg_catalog_oid(parameters.tgrelid)
           } AND tgname = ${
             parameters.tgname === undefined
-              ? "tgname"
+              ? sql("tgname")
               : typed.pg_catalog_cstring(parameters.tgname)
           } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          tgrelid: undefinedIsNull(record.tgrelid),
+          tgparentid: undefinedIsNull(record.tgparentid),
+          tgname: undefinedIsNull(record.tgname),
+          tgfoid: undefinedIsNull(record.tgfoid),
+          tgtype: undefinedIsNull(record.tgtype),
+          tgenabled: undefinedIsNull(record.tgenabled),
+          tgisinternal: undefinedIsNull(record.tgisinternal),
+          tgconstrrelid: undefinedIsNull(record.tgconstrrelid),
+          tgconstrindid: undefinedIsNull(record.tgconstrindid),
+          tgconstraint: undefinedIsNull(record.tgconstraint),
+          tgdeferrable: undefinedIsNull(record.tgdeferrable),
+          tginitdeferred: undefinedIsNull(record.tginitdeferred),
+          tgnargs: undefinedIsNull(record.tgnargs),
+          tgattr: undefinedIsNull(record.tgattr),
+          tgargs: undefinedIsNull(record.tgargs),
+          tgqual: undefinedIsNull(record.tgqual),
+          tgoldtable: undefinedIsNull(record.tgoldtable),
+          tgnewtable: undefinedIsNull(record.tgnewtable),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTrigger.ByOid,
+        values: Partial<PgCatalog.PgTrigger>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_trigger SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , tgrelid = ${
+          values.tgrelid === undefined
+            ? sql("tgrelid")
+            : typed.pg_catalog_oid(values.tgrelid)
+        } , tgparentid = ${
+          values.tgparentid === undefined
+            ? sql("tgparentid")
+            : typed.pg_catalog_oid(values.tgparentid)
+        } , tgname = ${
+          values.tgname === undefined
+            ? sql("tgname")
+            : typed.pg_catalog_name(values.tgname)
+        } , tgfoid = ${
+          values.tgfoid === undefined
+            ? sql("tgfoid")
+            : typed.pg_catalog_oid(values.tgfoid)
+        } , tgtype = ${
+          values.tgtype === undefined
+            ? sql("tgtype")
+            : typed.pg_catalog_int2(values.tgtype)
+        } , tgenabled = ${
+          values.tgenabled === undefined
+            ? sql("tgenabled")
+            : typed.pg_catalog_char(values.tgenabled)
+        } , tgisinternal = ${
+          values.tgisinternal === undefined
+            ? sql("tgisinternal")
+            : typed.pg_catalog_bool(values.tgisinternal)
+        } , tgconstrrelid = ${
+          values.tgconstrrelid === undefined
+            ? sql("tgconstrrelid")
+            : typed.pg_catalog_oid(values.tgconstrrelid)
+        } , tgconstrindid = ${
+          values.tgconstrindid === undefined
+            ? sql("tgconstrindid")
+            : typed.pg_catalog_oid(values.tgconstrindid)
+        } , tgconstraint = ${
+          values.tgconstraint === undefined
+            ? sql("tgconstraint")
+            : typed.pg_catalog_oid(values.tgconstraint)
+        } , tgdeferrable = ${
+          values.tgdeferrable === undefined
+            ? sql("tgdeferrable")
+            : typed.pg_catalog_bool(values.tgdeferrable)
+        } , tginitdeferred = ${
+          values.tginitdeferred === undefined
+            ? sql("tginitdeferred")
+            : typed.pg_catalog_bool(values.tginitdeferred)
+        } , tgnargs = ${
+          values.tgnargs === undefined
+            ? sql("tgnargs")
+            : typed.pg_catalog_int2(values.tgnargs)
+        } , tgattr = ${
+          values.tgattr === undefined
+            ? sql("tgattr")
+            : typed.pg_catalog_int2vector(values.tgattr)
+        } , tgargs = ${
+          values.tgargs === undefined
+            ? sql("tgargs")
+            : typed.pg_catalog_bytea(values.tgargs)
+        } , tgqual = ${
+          values.tgqual === undefined
+            ? sql("tgqual")
+            : typed.pg_catalog_pg_node_tree(values.tgqual)
+        } , tgoldtable = ${
+          values.tgoldtable === undefined
+            ? sql("tgoldtable")
+            : typed.pg_catalog_name(values.tgoldtable)
+        } , tgnewtable = ${
+          values.tgnewtable === undefined
+            ? sql("tgnewtable")
+            : typed.pg_catalog_name(values.tgnewtable)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          tgrelid: undefinedIsNull(record.tgrelid),
+          tgparentid: undefinedIsNull(record.tgparentid),
+          tgname: undefinedIsNull(record.tgname),
+          tgfoid: undefinedIsNull(record.tgfoid),
+          tgtype: undefinedIsNull(record.tgtype),
+          tgenabled: undefinedIsNull(record.tgenabled),
+          tgisinternal: undefinedIsNull(record.tgisinternal),
+          tgconstrrelid: undefinedIsNull(record.tgconstrrelid),
+          tgconstrindid: undefinedIsNull(record.tgconstrindid),
+          tgconstraint: undefinedIsNull(record.tgconstraint),
+          tgdeferrable: undefinedIsNull(record.tgdeferrable),
+          tginitdeferred: undefinedIsNull(record.tginitdeferred),
+          tgnargs: undefinedIsNull(record.tgnargs),
+          tgattr: undefinedIsNull(record.tgattr),
+          tgargs: undefinedIsNull(record.tgargs),
+          tgqual: undefinedIsNull(record.tgqual),
+          tgoldtable: undefinedIsNull(record.tgoldtable),
+          tgnewtable: undefinedIsNull(record.tgnewtable),
+        }));
+        return results[0];
+      }
+      async updateByTgconstraint(
+        parameters: PgCatalog.Tables.PgTrigger.ByTgconstraint,
+        values: Partial<PgCatalog.PgTrigger>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_trigger SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , tgrelid = ${
+          values.tgrelid === undefined
+            ? sql("tgrelid")
+            : typed.pg_catalog_oid(values.tgrelid)
+        } , tgparentid = ${
+          values.tgparentid === undefined
+            ? sql("tgparentid")
+            : typed.pg_catalog_oid(values.tgparentid)
+        } , tgname = ${
+          values.tgname === undefined
+            ? sql("tgname")
+            : typed.pg_catalog_name(values.tgname)
+        } , tgfoid = ${
+          values.tgfoid === undefined
+            ? sql("tgfoid")
+            : typed.pg_catalog_oid(values.tgfoid)
+        } , tgtype = ${
+          values.tgtype === undefined
+            ? sql("tgtype")
+            : typed.pg_catalog_int2(values.tgtype)
+        } , tgenabled = ${
+          values.tgenabled === undefined
+            ? sql("tgenabled")
+            : typed.pg_catalog_char(values.tgenabled)
+        } , tgisinternal = ${
+          values.tgisinternal === undefined
+            ? sql("tgisinternal")
+            : typed.pg_catalog_bool(values.tgisinternal)
+        } , tgconstrrelid = ${
+          values.tgconstrrelid === undefined
+            ? sql("tgconstrrelid")
+            : typed.pg_catalog_oid(values.tgconstrrelid)
+        } , tgconstrindid = ${
+          values.tgconstrindid === undefined
+            ? sql("tgconstrindid")
+            : typed.pg_catalog_oid(values.tgconstrindid)
+        } , tgconstraint = ${
+          values.tgconstraint === undefined
+            ? sql("tgconstraint")
+            : typed.pg_catalog_oid(values.tgconstraint)
+        } , tgdeferrable = ${
+          values.tgdeferrable === undefined
+            ? sql("tgdeferrable")
+            : typed.pg_catalog_bool(values.tgdeferrable)
+        } , tginitdeferred = ${
+          values.tginitdeferred === undefined
+            ? sql("tginitdeferred")
+            : typed.pg_catalog_bool(values.tginitdeferred)
+        } , tgnargs = ${
+          values.tgnargs === undefined
+            ? sql("tgnargs")
+            : typed.pg_catalog_int2(values.tgnargs)
+        } , tgattr = ${
+          values.tgattr === undefined
+            ? sql("tgattr")
+            : typed.pg_catalog_int2vector(values.tgattr)
+        } , tgargs = ${
+          values.tgargs === undefined
+            ? sql("tgargs")
+            : typed.pg_catalog_bytea(values.tgargs)
+        } , tgqual = ${
+          values.tgqual === undefined
+            ? sql("tgqual")
+            : typed.pg_catalog_pg_node_tree(values.tgqual)
+        } , tgoldtable = ${
+          values.tgoldtable === undefined
+            ? sql("tgoldtable")
+            : typed.pg_catalog_name(values.tgoldtable)
+        } , tgnewtable = ${
+          values.tgnewtable === undefined
+            ? sql("tgnewtable")
+            : typed.pg_catalog_name(values.tgnewtable)
+        } WHERE tgconstraint = ${
+          parameters.tgconstraint === undefined
+            ? sql("tgconstraint")
+            : typed.pg_catalog_oid(parameters.tgconstraint)
+        } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          tgrelid: undefinedIsNull(record.tgrelid),
+          tgparentid: undefinedIsNull(record.tgparentid),
+          tgname: undefinedIsNull(record.tgname),
+          tgfoid: undefinedIsNull(record.tgfoid),
+          tgtype: undefinedIsNull(record.tgtype),
+          tgenabled: undefinedIsNull(record.tgenabled),
+          tgisinternal: undefinedIsNull(record.tgisinternal),
+          tgconstrrelid: undefinedIsNull(record.tgconstrrelid),
+          tgconstrindid: undefinedIsNull(record.tgconstrindid),
+          tgconstraint: undefinedIsNull(record.tgconstraint),
+          tgdeferrable: undefinedIsNull(record.tgdeferrable),
+          tginitdeferred: undefinedIsNull(record.tginitdeferred),
+          tgnargs: undefinedIsNull(record.tgnargs),
+          tgattr: undefinedIsNull(record.tgattr),
+          tgargs: undefinedIsNull(record.tgargs),
+          tgqual: undefinedIsNull(record.tgqual),
+          tgoldtable: undefinedIsNull(record.tgoldtable),
+          tgnewtable: undefinedIsNull(record.tgnewtable),
+        }));
+        return results;
+      }
+      async updateByTgrelidTgname(
+        parameters: PgCatalog.Tables.PgTrigger.ByTgrelidTgname,
+        values: Partial<PgCatalog.PgTrigger>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_trigger SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , tgrelid = ${
+          values.tgrelid === undefined
+            ? sql("tgrelid")
+            : typed.pg_catalog_oid(values.tgrelid)
+        } , tgparentid = ${
+          values.tgparentid === undefined
+            ? sql("tgparentid")
+            : typed.pg_catalog_oid(values.tgparentid)
+        } , tgname = ${
+          values.tgname === undefined
+            ? sql("tgname")
+            : typed.pg_catalog_name(values.tgname)
+        } , tgfoid = ${
+          values.tgfoid === undefined
+            ? sql("tgfoid")
+            : typed.pg_catalog_oid(values.tgfoid)
+        } , tgtype = ${
+          values.tgtype === undefined
+            ? sql("tgtype")
+            : typed.pg_catalog_int2(values.tgtype)
+        } , tgenabled = ${
+          values.tgenabled === undefined
+            ? sql("tgenabled")
+            : typed.pg_catalog_char(values.tgenabled)
+        } , tgisinternal = ${
+          values.tgisinternal === undefined
+            ? sql("tgisinternal")
+            : typed.pg_catalog_bool(values.tgisinternal)
+        } , tgconstrrelid = ${
+          values.tgconstrrelid === undefined
+            ? sql("tgconstrrelid")
+            : typed.pg_catalog_oid(values.tgconstrrelid)
+        } , tgconstrindid = ${
+          values.tgconstrindid === undefined
+            ? sql("tgconstrindid")
+            : typed.pg_catalog_oid(values.tgconstrindid)
+        } , tgconstraint = ${
+          values.tgconstraint === undefined
+            ? sql("tgconstraint")
+            : typed.pg_catalog_oid(values.tgconstraint)
+        } , tgdeferrable = ${
+          values.tgdeferrable === undefined
+            ? sql("tgdeferrable")
+            : typed.pg_catalog_bool(values.tgdeferrable)
+        } , tginitdeferred = ${
+          values.tginitdeferred === undefined
+            ? sql("tginitdeferred")
+            : typed.pg_catalog_bool(values.tginitdeferred)
+        } , tgnargs = ${
+          values.tgnargs === undefined
+            ? sql("tgnargs")
+            : typed.pg_catalog_int2(values.tgnargs)
+        } , tgattr = ${
+          values.tgattr === undefined
+            ? sql("tgattr")
+            : typed.pg_catalog_int2vector(values.tgattr)
+        } , tgargs = ${
+          values.tgargs === undefined
+            ? sql("tgargs")
+            : typed.pg_catalog_bytea(values.tgargs)
+        } , tgqual = ${
+          values.tgqual === undefined
+            ? sql("tgqual")
+            : typed.pg_catalog_pg_node_tree(values.tgqual)
+        } , tgoldtable = ${
+          values.tgoldtable === undefined
+            ? sql("tgoldtable")
+            : typed.pg_catalog_name(values.tgoldtable)
+        } , tgnewtable = ${
+          values.tgnewtable === undefined
+            ? sql("tgnewtable")
+            : typed.pg_catalog_name(values.tgnewtable)
+        } WHERE tgrelid = ${
+          parameters.tgrelid === undefined
+            ? sql("tgrelid")
+            : typed.pg_catalog_oid(parameters.tgrelid)
+        } AND tgname = ${
+          parameters.tgname === undefined
+            ? sql("tgname")
+            : typed.pg_catalog_cstring(parameters.tgname)
+        } RETURNING oid,tgrelid,tgparentid,tgname,tgfoid,tgtype,tgenabled,tgisinternal,tgconstrrelid,tgconstrindid,tgconstraint,tgdeferrable,tginitdeferred,tgnargs,tgattr,tgargs,tgqual,tgoldtable,tgnewtable`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -9559,7 +14854,7 @@ export class Database {
         const response =
           await sql`SELECT oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags FROM pg_catalog.pg_event_trigger WHERE evtname = ${
             parameters.evtname === undefined
-              ? "evtname"
+              ? sql("evtname")
               : typed.pg_catalog_cstring(parameters.evtname)
           }`;
 
@@ -9582,7 +14877,7 @@ export class Database {
         const response =
           await sql`SELECT oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags FROM pg_catalog.pg_event_trigger WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9608,7 +14903,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_event_trigger WHERE evtname = ${
             parameters.evtname === undefined
-              ? "evtname"
+              ? sql("evtname")
               : typed.pg_catalog_cstring(parameters.evtname)
           } RETURNING oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags
       `;
@@ -9632,10 +14927,121 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_event_trigger WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          evtname: undefinedIsNull(record.evtname),
+          evtevent: undefinedIsNull(record.evtevent),
+          evtowner: undefinedIsNull(record.evtowner),
+          evtfoid: undefinedIsNull(record.evtfoid),
+          evtenabled: undefinedIsNull(record.evtenabled),
+          evttags: undefinedIsNull(record.evttags),
+        }));
+        return results[0];
+      }
+
+      async updateByEvtname(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname,
+        values: Partial<PgCatalog.PgEventTrigger>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_event_trigger SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , evtname = ${
+            values.evtname === undefined
+              ? sql("evtname")
+              : typed.pg_catalog_name(values.evtname)
+          } , evtevent = ${
+            values.evtevent === undefined
+              ? sql("evtevent")
+              : typed.pg_catalog_name(values.evtevent)
+          } , evtowner = ${
+            values.evtowner === undefined
+              ? sql("evtowner")
+              : typed.pg_catalog_oid(values.evtowner)
+          } , evtfoid = ${
+            values.evtfoid === undefined
+              ? sql("evtfoid")
+              : typed.pg_catalog_oid(values.evtfoid)
+          } , evtenabled = ${
+            values.evtenabled === undefined
+              ? sql("evtenabled")
+              : typed.pg_catalog_char(values.evtenabled)
+          } , evttags = ${
+            values.evttags === undefined
+              ? sql("evttags")
+              : typed.pg_catalog__text(values.evttags)
+          } WHERE evtname = ${
+            parameters.evtname === undefined
+              ? sql("evtname")
+              : typed.pg_catalog_cstring(parameters.evtname)
+          } RETURNING oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          evtname: undefinedIsNull(record.evtname),
+          evtevent: undefinedIsNull(record.evtevent),
+          evtowner: undefinedIsNull(record.evtowner),
+          evtfoid: undefinedIsNull(record.evtfoid),
+          evtenabled: undefinedIsNull(record.evtenabled),
+          evttags: undefinedIsNull(record.evttags),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByOid,
+        values: Partial<PgCatalog.PgEventTrigger>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_event_trigger SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , evtname = ${
+            values.evtname === undefined
+              ? sql("evtname")
+              : typed.pg_catalog_name(values.evtname)
+          } , evtevent = ${
+            values.evtevent === undefined
+              ? sql("evtevent")
+              : typed.pg_catalog_name(values.evtevent)
+          } , evtowner = ${
+            values.evtowner === undefined
+              ? sql("evtowner")
+              : typed.pg_catalog_oid(values.evtowner)
+          } , evtfoid = ${
+            values.evtfoid === undefined
+              ? sql("evtfoid")
+              : typed.pg_catalog_oid(values.evtfoid)
+          } , evtenabled = ${
+            values.evtenabled === undefined
+              ? sql("evtenabled")
+              : typed.pg_catalog_char(values.evtenabled)
+          } , evttags = ${
+            values.evttags === undefined
+              ? sql("evttags")
+              : typed.pg_catalog__text(values.evttags)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,evtname,evtevent,evtowner,evtfoid,evtenabled,evttags`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -9667,15 +15073,15 @@ export class Database {
         const response =
           await sql`SELECT objoid,classoid,objsubid,description FROM pg_catalog.pg_description WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           }`;
 
@@ -9698,18 +15104,67 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_description WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } RETURNING objoid,classoid,objsubid,description
       `;
+
+        const results = response.map((record) => ({
+          objoid: undefinedIsNull(record.objoid),
+          classoid: undefinedIsNull(record.classoid),
+          objsubid: undefinedIsNull(record.objsubid),
+          description: undefinedIsNull(record.description),
+        }));
+        return results[0];
+      }
+
+      async updateByObjoidClassoidObjsubid(
+        parameters: PgCatalog.Tables.PgDescription.ByObjoidClassoidObjsubid,
+        values: Partial<PgCatalog.PgDescription>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_description SET objoid = ${
+            values.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(values.objoid)
+          } , classoid = ${
+            values.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(values.classoid)
+          } , objsubid = ${
+            values.objsubid === undefined
+              ? sql("objsubid")
+              : typed.pg_catalog_int4(values.objsubid)
+          } , description = ${
+            values.description === undefined
+              ? sql("description")
+              : typed.pg_catalog_text(values.description)
+          } WHERE objoid = ${
+            parameters.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(parameters.objoid)
+          } AND classoid = ${
+            parameters.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(parameters.classoid)
+          } AND objsubid = ${
+            parameters.objsubid === undefined
+              ? sql("objsubid")
+              : typed.pg_catalog_int4(parameters.objsubid)
+          } RETURNING objoid,classoid,objsubid,description`;
 
         const results = response.map((record) => ({
           objoid: undefinedIsNull(record.objoid),
@@ -9738,11 +15193,11 @@ export class Database {
         const response =
           await sql`SELECT oid,castsource,casttarget,castfunc,castcontext,castmethod FROM pg_catalog.pg_cast WHERE castsource = ${
             parameters.castsource === undefined
-              ? "castsource"
+              ? sql("castsource")
               : typed.pg_catalog_oid(parameters.castsource)
           } AND casttarget = ${
             parameters.casttarget === undefined
-              ? "casttarget"
+              ? sql("casttarget")
               : typed.pg_catalog_oid(parameters.casttarget)
           }`;
 
@@ -9764,7 +15219,7 @@ export class Database {
         const response =
           await sql`SELECT oid,castsource,casttarget,castfunc,castcontext,castmethod FROM pg_catalog.pg_cast WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9789,11 +15244,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_cast WHERE castsource = ${
             parameters.castsource === undefined
-              ? "castsource"
+              ? sql("castsource")
               : typed.pg_catalog_oid(parameters.castsource)
           } AND casttarget = ${
             parameters.casttarget === undefined
-              ? "casttarget"
+              ? sql("casttarget")
               : typed.pg_catalog_oid(parameters.casttarget)
           } RETURNING oid,castsource,casttarget,castfunc,castcontext,castmethod
       `;
@@ -9815,10 +15270,113 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_cast WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,castsource,casttarget,castfunc,castcontext,castmethod
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          castsource: undefinedIsNull(record.castsource),
+          casttarget: undefinedIsNull(record.casttarget),
+          castfunc: undefinedIsNull(record.castfunc),
+          castcontext: undefinedIsNull(record.castcontext),
+          castmethod: undefinedIsNull(record.castmethod),
+        }));
+        return results[0];
+      }
+
+      async updateByCastsourceCasttarget(
+        parameters: PgCatalog.Tables.PgCast.ByCastsourceCasttarget,
+        values: Partial<PgCatalog.PgCast>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_cast SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , castsource = ${
+          values.castsource === undefined
+            ? sql("castsource")
+            : typed.pg_catalog_oid(values.castsource)
+        } , casttarget = ${
+          values.casttarget === undefined
+            ? sql("casttarget")
+            : typed.pg_catalog_oid(values.casttarget)
+        } , castfunc = ${
+          values.castfunc === undefined
+            ? sql("castfunc")
+            : typed.pg_catalog_oid(values.castfunc)
+        } , castcontext = ${
+          values.castcontext === undefined
+            ? sql("castcontext")
+            : typed.pg_catalog_char(values.castcontext)
+        } , castmethod = ${
+          values.castmethod === undefined
+            ? sql("castmethod")
+            : typed.pg_catalog_char(values.castmethod)
+        } WHERE castsource = ${
+          parameters.castsource === undefined
+            ? sql("castsource")
+            : typed.pg_catalog_oid(parameters.castsource)
+        } AND casttarget = ${
+          parameters.casttarget === undefined
+            ? sql("casttarget")
+            : typed.pg_catalog_oid(parameters.casttarget)
+        } RETURNING oid,castsource,casttarget,castfunc,castcontext,castmethod`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          castsource: undefinedIsNull(record.castsource),
+          casttarget: undefinedIsNull(record.casttarget),
+          castfunc: undefinedIsNull(record.castfunc),
+          castcontext: undefinedIsNull(record.castcontext),
+          castmethod: undefinedIsNull(record.castmethod),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgCast.ByOid,
+        values: Partial<PgCatalog.PgCast>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_cast SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , castsource = ${
+          values.castsource === undefined
+            ? sql("castsource")
+            : typed.pg_catalog_oid(values.castsource)
+        } , casttarget = ${
+          values.casttarget === undefined
+            ? sql("casttarget")
+            : typed.pg_catalog_oid(values.casttarget)
+        } , castfunc = ${
+          values.castfunc === undefined
+            ? sql("castfunc")
+            : typed.pg_catalog_oid(values.castfunc)
+        } , castcontext = ${
+          values.castcontext === undefined
+            ? sql("castcontext")
+            : typed.pg_catalog_char(values.castcontext)
+        } , castmethod = ${
+          values.castmethod === undefined
+            ? sql("castmethod")
+            : typed.pg_catalog_char(values.castmethod)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,castsource,casttarget,castfunc,castcontext,castmethod`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -9849,11 +15407,11 @@ export class Database {
         const response =
           await sql`SELECT oid,enumtypid,enumsortorder,enumlabel FROM pg_catalog.pg_enum WHERE enumtypid = ${
             parameters.enumtypid === undefined
-              ? "enumtypid"
+              ? sql("enumtypid")
               : typed.pg_catalog_oid(parameters.enumtypid)
           } AND enumlabel = ${
             parameters.enumlabel === undefined
-              ? "enumlabel"
+              ? sql("enumlabel")
               : typed.pg_catalog_cstring(parameters.enumlabel)
           }`;
 
@@ -9875,11 +15433,11 @@ export class Database {
         const response =
           await sql`SELECT oid,enumtypid,enumsortorder,enumlabel FROM pg_catalog.pg_enum WHERE enumtypid = ${
             parameters.enumtypid === undefined
-              ? "enumtypid"
+              ? sql("enumtypid")
               : typed.pg_catalog_oid(parameters.enumtypid)
           } AND enumsortorder = ${
             parameters.enumsortorder === undefined
-              ? "enumsortorder"
+              ? sql("enumsortorder")
               : typed.pg_catalog_float4(parameters.enumsortorder)
           }`;
 
@@ -9899,7 +15457,7 @@ export class Database {
         const response =
           await sql`SELECT oid,enumtypid,enumsortorder,enumlabel FROM pg_catalog.pg_enum WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -9922,11 +15480,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_enum WHERE enumtypid = ${
             parameters.enumtypid === undefined
-              ? "enumtypid"
+              ? sql("enumtypid")
               : typed.pg_catalog_oid(parameters.enumtypid)
           } AND enumlabel = ${
             parameters.enumlabel === undefined
-              ? "enumlabel"
+              ? sql("enumlabel")
               : typed.pg_catalog_cstring(parameters.enumlabel)
           } RETURNING oid,enumtypid,enumsortorder,enumlabel
       `;
@@ -9949,11 +15507,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_enum WHERE enumtypid = ${
             parameters.enumtypid === undefined
-              ? "enumtypid"
+              ? sql("enumtypid")
               : typed.pg_catalog_oid(parameters.enumtypid)
           } AND enumsortorder = ${
             parameters.enumsortorder === undefined
-              ? "enumsortorder"
+              ? sql("enumsortorder")
               : typed.pg_catalog_float4(parameters.enumsortorder)
           } RETURNING oid,enumtypid,enumsortorder,enumlabel
       `;
@@ -9973,10 +15531,136 @@ export class Database {
 
         const response = await sql`DELETE FROM pg_catalog.pg_enum WHERE oid = ${
           parameters.oid === undefined
-            ? "oid"
+            ? sql("oid")
             : typed.pg_catalog_oid(parameters.oid)
         } RETURNING oid,enumtypid,enumsortorder,enumlabel
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          enumtypid: undefinedIsNull(record.enumtypid),
+          enumsortorder: undefinedIsNull(record.enumsortorder),
+          enumlabel: undefinedIsNull(record.enumlabel),
+        }));
+        return results[0];
+      }
+
+      async updateByEnumtypidEnumlabel(
+        parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumlabel,
+        values: Partial<PgCatalog.PgEnum>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_enum SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , enumtypid = ${
+          values.enumtypid === undefined
+            ? sql("enumtypid")
+            : typed.pg_catalog_oid(values.enumtypid)
+        } , enumsortorder = ${
+          values.enumsortorder === undefined
+            ? sql("enumsortorder")
+            : typed.pg_catalog_float4(values.enumsortorder)
+        } , enumlabel = ${
+          values.enumlabel === undefined
+            ? sql("enumlabel")
+            : typed.pg_catalog_name(values.enumlabel)
+        } WHERE enumtypid = ${
+          parameters.enumtypid === undefined
+            ? sql("enumtypid")
+            : typed.pg_catalog_oid(parameters.enumtypid)
+        } AND enumlabel = ${
+          parameters.enumlabel === undefined
+            ? sql("enumlabel")
+            : typed.pg_catalog_cstring(parameters.enumlabel)
+        } RETURNING oid,enumtypid,enumsortorder,enumlabel`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          enumtypid: undefinedIsNull(record.enumtypid),
+          enumsortorder: undefinedIsNull(record.enumsortorder),
+          enumlabel: undefinedIsNull(record.enumlabel),
+        }));
+        return results[0];
+      }
+      async updateByEnumtypidEnumsortorder(
+        parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumsortorder,
+        values: Partial<PgCatalog.PgEnum>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_enum SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , enumtypid = ${
+          values.enumtypid === undefined
+            ? sql("enumtypid")
+            : typed.pg_catalog_oid(values.enumtypid)
+        } , enumsortorder = ${
+          values.enumsortorder === undefined
+            ? sql("enumsortorder")
+            : typed.pg_catalog_float4(values.enumsortorder)
+        } , enumlabel = ${
+          values.enumlabel === undefined
+            ? sql("enumlabel")
+            : typed.pg_catalog_name(values.enumlabel)
+        } WHERE enumtypid = ${
+          parameters.enumtypid === undefined
+            ? sql("enumtypid")
+            : typed.pg_catalog_oid(parameters.enumtypid)
+        } AND enumsortorder = ${
+          parameters.enumsortorder === undefined
+            ? sql("enumsortorder")
+            : typed.pg_catalog_float4(parameters.enumsortorder)
+        } RETURNING oid,enumtypid,enumsortorder,enumlabel`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          enumtypid: undefinedIsNull(record.enumtypid),
+          enumsortorder: undefinedIsNull(record.enumsortorder),
+          enumlabel: undefinedIsNull(record.enumlabel),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgEnum.ByOid,
+        values: Partial<PgCatalog.PgEnum>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_enum SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , enumtypid = ${
+          values.enumtypid === undefined
+            ? sql("enumtypid")
+            : typed.pg_catalog_oid(values.enumtypid)
+        } , enumsortorder = ${
+          values.enumsortorder === undefined
+            ? sql("enumsortorder")
+            : typed.pg_catalog_float4(values.enumsortorder)
+        } , enumlabel = ${
+          values.enumlabel === undefined
+            ? sql("enumlabel")
+            : typed.pg_catalog_name(values.enumlabel)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,enumtypid,enumsortorder,enumlabel`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10003,7 +15687,7 @@ export class Database {
         const response =
           await sql`SELECT oid,nspname,nspowner,nspacl FROM pg_catalog.pg_namespace WHERE nspname = ${
             parameters.nspname === undefined
-              ? "nspname"
+              ? sql("nspname")
               : typed.pg_catalog_cstring(parameters.nspname)
           }`;
 
@@ -10023,7 +15707,7 @@ export class Database {
         const response =
           await sql`SELECT oid,nspname,nspowner,nspacl FROM pg_catalog.pg_namespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10046,7 +15730,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_namespace WHERE nspname = ${
             parameters.nspname === undefined
-              ? "nspname"
+              ? sql("nspname")
               : typed.pg_catalog_cstring(parameters.nspname)
           } RETURNING oid,nspname,nspowner,nspacl
       `;
@@ -10067,10 +15751,89 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_namespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,nspname,nspowner,nspacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          nspname: undefinedIsNull(record.nspname),
+          nspowner: undefinedIsNull(record.nspowner),
+          nspacl: undefinedIsNull(record.nspacl),
+        }));
+        return results[0];
+      }
+
+      async updateByNspname(
+        parameters: PgCatalog.Tables.PgNamespace.ByNspname,
+        values: Partial<PgCatalog.PgNamespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_namespace SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , nspname = ${
+          values.nspname === undefined
+            ? sql("nspname")
+            : typed.pg_catalog_name(values.nspname)
+        } , nspowner = ${
+          values.nspowner === undefined
+            ? sql("nspowner")
+            : typed.pg_catalog_oid(values.nspowner)
+        } , nspacl = ${
+          values.nspacl === undefined
+            ? sql("nspacl")
+            : typed.pg_catalog__aclitem(values.nspacl)
+        } WHERE nspname = ${
+          parameters.nspname === undefined
+            ? sql("nspname")
+            : typed.pg_catalog_cstring(parameters.nspname)
+        } RETURNING oid,nspname,nspowner,nspacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          nspname: undefinedIsNull(record.nspname),
+          nspowner: undefinedIsNull(record.nspowner),
+          nspacl: undefinedIsNull(record.nspacl),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgNamespace.ByOid,
+        values: Partial<PgCatalog.PgNamespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_namespace SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , nspname = ${
+          values.nspname === undefined
+            ? sql("nspname")
+            : typed.pg_catalog_name(values.nspname)
+        } , nspowner = ${
+          values.nspowner === undefined
+            ? sql("nspowner")
+            : typed.pg_catalog_oid(values.nspowner)
+        } , nspacl = ${
+          values.nspacl === undefined
+            ? sql("nspacl")
+            : typed.pg_catalog__aclitem(values.nspacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,nspname,nspowner,nspacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10099,11 +15862,11 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault FROM pg_catalog.pg_conversion WHERE conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           } AND connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           }`;
 
@@ -10129,19 +15892,19 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault FROM pg_catalog.pg_conversion WHERE connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           } AND conforencoding = ${
             parameters.conforencoding === undefined
-              ? "conforencoding"
+              ? sql("conforencoding")
               : typed.pg_catalog_int4(parameters.conforencoding)
           } AND contoencoding = ${
             parameters.contoencoding === undefined
-              ? "contoencoding"
+              ? sql("contoencoding")
               : typed.pg_catalog_int4(parameters.contoencoding)
           } AND oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10165,7 +15928,7 @@ export class Database {
         const response =
           await sql`SELECT oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault FROM pg_catalog.pg_conversion WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10192,11 +15955,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_conversion WHERE conname = ${
             parameters.conname === undefined
-              ? "conname"
+              ? sql("conname")
               : typed.pg_catalog_cstring(parameters.conname)
           } AND connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault
       `;
@@ -10223,19 +15986,19 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_conversion WHERE connamespace = ${
             parameters.connamespace === undefined
-              ? "connamespace"
+              ? sql("connamespace")
               : typed.pg_catalog_oid(parameters.connamespace)
           } AND conforencoding = ${
             parameters.conforencoding === undefined
-              ? "conforencoding"
+              ? sql("conforencoding")
               : typed.pg_catalog_int4(parameters.conforencoding)
           } AND contoencoding = ${
             parameters.contoencoding === undefined
-              ? "contoencoding"
+              ? sql("contoencoding")
               : typed.pg_catalog_int4(parameters.contoencoding)
           } AND oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault
       `;
@@ -10260,10 +16023,204 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_conversion WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          conowner: undefinedIsNull(record.conowner),
+          conforencoding: undefinedIsNull(record.conforencoding),
+          contoencoding: undefinedIsNull(record.contoencoding),
+          conproc: undefinedIsNull(record.conproc),
+          condefault: undefinedIsNull(record.condefault),
+        }));
+        return results[0];
+      }
+
+      async updateByConnameConnamespace(
+        parameters: PgCatalog.Tables.PgConversion.ByConnameConnamespace,
+        values: Partial<PgCatalog.PgConversion>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_conversion SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , conowner = ${
+          values.conowner === undefined
+            ? sql("conowner")
+            : typed.pg_catalog_oid(values.conowner)
+        } , conforencoding = ${
+          values.conforencoding === undefined
+            ? sql("conforencoding")
+            : typed.pg_catalog_int4(values.conforencoding)
+        } , contoencoding = ${
+          values.contoencoding === undefined
+            ? sql("contoencoding")
+            : typed.pg_catalog_int4(values.contoencoding)
+        } , conproc = ${
+          values.conproc === undefined
+            ? sql("conproc")
+            : typed.pg_catalog_regproc(values.conproc)
+        } , condefault = ${
+          values.condefault === undefined
+            ? sql("condefault")
+            : typed.pg_catalog_bool(values.condefault)
+        } WHERE conname = ${
+          parameters.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_cstring(parameters.conname)
+        } AND connamespace = ${
+          parameters.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(parameters.connamespace)
+        } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          conowner: undefinedIsNull(record.conowner),
+          conforencoding: undefinedIsNull(record.conforencoding),
+          contoencoding: undefinedIsNull(record.contoencoding),
+          conproc: undefinedIsNull(record.conproc),
+          condefault: undefinedIsNull(record.condefault),
+        }));
+        return results[0];
+      }
+      async updateByConnamespaceConforencodingContoencodingOid(
+        parameters: PgCatalog.Tables.PgConversion.ByConnamespaceConforencodingContoencodingOid,
+        values: Partial<PgCatalog.PgConversion>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_conversion SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , conowner = ${
+          values.conowner === undefined
+            ? sql("conowner")
+            : typed.pg_catalog_oid(values.conowner)
+        } , conforencoding = ${
+          values.conforencoding === undefined
+            ? sql("conforencoding")
+            : typed.pg_catalog_int4(values.conforencoding)
+        } , contoencoding = ${
+          values.contoencoding === undefined
+            ? sql("contoencoding")
+            : typed.pg_catalog_int4(values.contoencoding)
+        } , conproc = ${
+          values.conproc === undefined
+            ? sql("conproc")
+            : typed.pg_catalog_regproc(values.conproc)
+        } , condefault = ${
+          values.condefault === undefined
+            ? sql("condefault")
+            : typed.pg_catalog_bool(values.condefault)
+        } WHERE connamespace = ${
+          parameters.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(parameters.connamespace)
+        } AND conforencoding = ${
+          parameters.conforencoding === undefined
+            ? sql("conforencoding")
+            : typed.pg_catalog_int4(parameters.conforencoding)
+        } AND contoencoding = ${
+          parameters.contoencoding === undefined
+            ? sql("contoencoding")
+            : typed.pg_catalog_int4(parameters.contoencoding)
+        } AND oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          conname: undefinedIsNull(record.conname),
+          connamespace: undefinedIsNull(record.connamespace),
+          conowner: undefinedIsNull(record.conowner),
+          conforencoding: undefinedIsNull(record.conforencoding),
+          contoencoding: undefinedIsNull(record.contoencoding),
+          conproc: undefinedIsNull(record.conproc),
+          condefault: undefinedIsNull(record.condefault),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgConversion.ByOid,
+        values: Partial<PgCatalog.PgConversion>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_conversion SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , conname = ${
+          values.conname === undefined
+            ? sql("conname")
+            : typed.pg_catalog_name(values.conname)
+        } , connamespace = ${
+          values.connamespace === undefined
+            ? sql("connamespace")
+            : typed.pg_catalog_oid(values.connamespace)
+        } , conowner = ${
+          values.conowner === undefined
+            ? sql("conowner")
+            : typed.pg_catalog_oid(values.conowner)
+        } , conforencoding = ${
+          values.conforencoding === undefined
+            ? sql("conforencoding")
+            : typed.pg_catalog_int4(values.conforencoding)
+        } , contoencoding = ${
+          values.contoencoding === undefined
+            ? sql("contoencoding")
+            : typed.pg_catalog_int4(values.contoencoding)
+        } , conproc = ${
+          values.conproc === undefined
+            ? sql("conproc")
+            : typed.pg_catalog_regproc(values.conproc)
+        } , condefault = ${
+          values.condefault === undefined
+            ? sql("condefault")
+            : typed.pg_catalog_bool(values.condefault)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,conname,connamespace,conowner,conforencoding,contoencoding,conproc,condefault`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10296,15 +16253,15 @@ export class Database {
         const response =
           await sql`SELECT classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype FROM pg_catalog.pg_depend WHERE classid = ${
             parameters.classid === undefined
-              ? "classid"
+              ? sql("classid")
               : typed.pg_catalog_oid(parameters.classid)
           } AND objid = ${
             parameters.objid === undefined
-              ? "objid"
+              ? sql("objid")
               : typed.pg_catalog_oid(parameters.objid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           }`;
 
@@ -10329,15 +16286,15 @@ export class Database {
         const response =
           await sql`SELECT classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype FROM pg_catalog.pg_depend WHERE refclassid = ${
             parameters.refclassid === undefined
-              ? "refclassid"
+              ? sql("refclassid")
               : typed.pg_catalog_oid(parameters.refclassid)
           } AND refobjid = ${
             parameters.refobjid === undefined
-              ? "refobjid"
+              ? sql("refobjid")
               : typed.pg_catalog_oid(parameters.refobjid)
           } AND refobjsubid = ${
             parameters.refobjsubid === undefined
-              ? "refobjsubid"
+              ? sql("refobjsubid")
               : typed.pg_catalog_int4(parameters.refobjsubid)
           }`;
 
@@ -10363,15 +16320,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_depend WHERE classid = ${
             parameters.classid === undefined
-              ? "classid"
+              ? sql("classid")
               : typed.pg_catalog_oid(parameters.classid)
           } AND objid = ${
             parameters.objid === undefined
-              ? "objid"
+              ? sql("objid")
               : typed.pg_catalog_oid(parameters.objid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } RETURNING classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype
       `;
@@ -10397,18 +16354,143 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_depend WHERE refclassid = ${
             parameters.refclassid === undefined
-              ? "refclassid"
+              ? sql("refclassid")
               : typed.pg_catalog_oid(parameters.refclassid)
           } AND refobjid = ${
             parameters.refobjid === undefined
-              ? "refobjid"
+              ? sql("refobjid")
               : typed.pg_catalog_oid(parameters.refobjid)
           } AND refobjsubid = ${
             parameters.refobjsubid === undefined
-              ? "refobjsubid"
+              ? sql("refobjsubid")
               : typed.pg_catalog_int4(parameters.refobjsubid)
           } RETURNING classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype
       `;
+
+        const results = response.map((record) => ({
+          classid: undefinedIsNull(record.classid),
+          objid: undefinedIsNull(record.objid),
+          objsubid: undefinedIsNull(record.objsubid),
+          refclassid: undefinedIsNull(record.refclassid),
+          refobjid: undefinedIsNull(record.refobjid),
+          refobjsubid: undefinedIsNull(record.refobjsubid),
+          deptype: undefinedIsNull(record.deptype),
+        }));
+        return results;
+      }
+
+      async updateByClassidObjidObjsubid(
+        parameters: PgCatalog.Tables.PgDepend.ByClassidObjidObjsubid,
+        values: Partial<PgCatalog.PgDepend>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_depend SET classid = ${
+          values.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(values.classid)
+        } , objid = ${
+          values.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(values.objid)
+        } , objsubid = ${
+          values.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(values.objsubid)
+        } , refclassid = ${
+          values.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(values.refclassid)
+        } , refobjid = ${
+          values.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(values.refobjid)
+        } , refobjsubid = ${
+          values.refobjsubid === undefined
+            ? sql("refobjsubid")
+            : typed.pg_catalog_int4(values.refobjsubid)
+        } , deptype = ${
+          values.deptype === undefined
+            ? sql("deptype")
+            : typed.pg_catalog_char(values.deptype)
+        } WHERE classid = ${
+          parameters.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(parameters.classid)
+        } AND objid = ${
+          parameters.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(parameters.objid)
+        } AND objsubid = ${
+          parameters.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(parameters.objsubid)
+        } RETURNING classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype`;
+
+        const results = response.map((record) => ({
+          classid: undefinedIsNull(record.classid),
+          objid: undefinedIsNull(record.objid),
+          objsubid: undefinedIsNull(record.objsubid),
+          refclassid: undefinedIsNull(record.refclassid),
+          refobjid: undefinedIsNull(record.refobjid),
+          refobjsubid: undefinedIsNull(record.refobjsubid),
+          deptype: undefinedIsNull(record.deptype),
+        }));
+        return results;
+      }
+      async updateByRefclassidRefobjidRefobjsubid(
+        parameters: PgCatalog.Tables.PgDepend.ByRefclassidRefobjidRefobjsubid,
+        values: Partial<PgCatalog.PgDepend>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_depend SET classid = ${
+          values.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(values.classid)
+        } , objid = ${
+          values.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(values.objid)
+        } , objsubid = ${
+          values.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(values.objsubid)
+        } , refclassid = ${
+          values.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(values.refclassid)
+        } , refobjid = ${
+          values.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(values.refobjid)
+        } , refobjsubid = ${
+          values.refobjsubid === undefined
+            ? sql("refobjsubid")
+            : typed.pg_catalog_int4(values.refobjsubid)
+        } , deptype = ${
+          values.deptype === undefined
+            ? sql("deptype")
+            : typed.pg_catalog_char(values.deptype)
+        } WHERE refclassid = ${
+          parameters.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(parameters.refclassid)
+        } AND refobjid = ${
+          parameters.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(parameters.refobjid)
+        } AND refobjsubid = ${
+          parameters.refobjsubid === undefined
+            ? sql("refobjsubid")
+            : typed.pg_catalog_int4(parameters.refobjsubid)
+        } RETURNING classid,objid,objsubid,refclassid,refobjid,refobjsubid,deptype`;
 
         const results = response.map((record) => ({
           classid: undefinedIsNull(record.classid),
@@ -10438,7 +16520,7 @@ export class Database {
         const response =
           await sql`SELECT oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl FROM pg_catalog.pg_database WHERE datname = ${
             parameters.datname === undefined
-              ? "datname"
+              ? sql("datname")
               : typed.pg_catalog_cstring(parameters.datname)
           }`;
 
@@ -10471,7 +16553,7 @@ export class Database {
         const response =
           await sql`SELECT oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl FROM pg_catalog.pg_database WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10505,7 +16587,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_database WHERE datname = ${
             parameters.datname === undefined
-              ? "datname"
+              ? sql("datname")
               : typed.pg_catalog_cstring(parameters.datname)
           } RETURNING oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl
       `;
@@ -10539,10 +16621,219 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_database WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          datname: undefinedIsNull(record.datname),
+          datdba: undefinedIsNull(record.datdba),
+          encoding: undefinedIsNull(record.encoding),
+          datlocprovider: undefinedIsNull(record.datlocprovider),
+          datistemplate: undefinedIsNull(record.datistemplate),
+          datallowconn: undefinedIsNull(record.datallowconn),
+          datconnlimit: undefinedIsNull(record.datconnlimit),
+          datfrozenxid: undefinedIsNull(record.datfrozenxid),
+          datminmxid: undefinedIsNull(record.datminmxid),
+          dattablespace: undefinedIsNull(record.dattablespace),
+          datcollate: undefinedIsNull(record.datcollate),
+          datctype: undefinedIsNull(record.datctype),
+          daticulocale: undefinedIsNull(record.daticulocale),
+          daticurules: undefinedIsNull(record.daticurules),
+          datcollversion: undefinedIsNull(record.datcollversion),
+          datacl: undefinedIsNull(record.datacl),
+        }));
+        return results[0];
+      }
+
+      async updateByDatname(
+        parameters: PgCatalog.Tables.PgDatabase.ByDatname,
+        values: Partial<PgCatalog.PgDatabase>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_database SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , datname = ${
+          values.datname === undefined
+            ? sql("datname")
+            : typed.pg_catalog_name(values.datname)
+        } , datdba = ${
+          values.datdba === undefined
+            ? sql("datdba")
+            : typed.pg_catalog_oid(values.datdba)
+        } , encoding = ${
+          values.encoding === undefined
+            ? sql("encoding")
+            : typed.pg_catalog_int4(values.encoding)
+        } , datlocprovider = ${
+          values.datlocprovider === undefined
+            ? sql("datlocprovider")
+            : typed.pg_catalog_char(values.datlocprovider)
+        } , datistemplate = ${
+          values.datistemplate === undefined
+            ? sql("datistemplate")
+            : typed.pg_catalog_bool(values.datistemplate)
+        } , datallowconn = ${
+          values.datallowconn === undefined
+            ? sql("datallowconn")
+            : typed.pg_catalog_bool(values.datallowconn)
+        } , datconnlimit = ${
+          values.datconnlimit === undefined
+            ? sql("datconnlimit")
+            : typed.pg_catalog_int4(values.datconnlimit)
+        } , datfrozenxid = ${
+          values.datfrozenxid === undefined
+            ? sql("datfrozenxid")
+            : typed.pg_catalog_xid(values.datfrozenxid)
+        } , datminmxid = ${
+          values.datminmxid === undefined
+            ? sql("datminmxid")
+            : typed.pg_catalog_xid(values.datminmxid)
+        } , dattablespace = ${
+          values.dattablespace === undefined
+            ? sql("dattablespace")
+            : typed.pg_catalog_oid(values.dattablespace)
+        } , datcollate = ${
+          values.datcollate === undefined
+            ? sql("datcollate")
+            : typed.pg_catalog_text(values.datcollate)
+        } , datctype = ${
+          values.datctype === undefined
+            ? sql("datctype")
+            : typed.pg_catalog_text(values.datctype)
+        } , daticulocale = ${
+          values.daticulocale === undefined
+            ? sql("daticulocale")
+            : typed.pg_catalog_text(values.daticulocale)
+        } , daticurules = ${
+          values.daticurules === undefined
+            ? sql("daticurules")
+            : typed.pg_catalog_text(values.daticurules)
+        } , datcollversion = ${
+          values.datcollversion === undefined
+            ? sql("datcollversion")
+            : typed.pg_catalog_text(values.datcollversion)
+        } , datacl = ${
+          values.datacl === undefined
+            ? sql("datacl")
+            : typed.pg_catalog__aclitem(values.datacl)
+        } WHERE datname = ${
+          parameters.datname === undefined
+            ? sql("datname")
+            : typed.pg_catalog_cstring(parameters.datname)
+        } RETURNING oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          datname: undefinedIsNull(record.datname),
+          datdba: undefinedIsNull(record.datdba),
+          encoding: undefinedIsNull(record.encoding),
+          datlocprovider: undefinedIsNull(record.datlocprovider),
+          datistemplate: undefinedIsNull(record.datistemplate),
+          datallowconn: undefinedIsNull(record.datallowconn),
+          datconnlimit: undefinedIsNull(record.datconnlimit),
+          datfrozenxid: undefinedIsNull(record.datfrozenxid),
+          datminmxid: undefinedIsNull(record.datminmxid),
+          dattablespace: undefinedIsNull(record.dattablespace),
+          datcollate: undefinedIsNull(record.datcollate),
+          datctype: undefinedIsNull(record.datctype),
+          daticulocale: undefinedIsNull(record.daticulocale),
+          daticurules: undefinedIsNull(record.daticurules),
+          datcollversion: undefinedIsNull(record.datcollversion),
+          datacl: undefinedIsNull(record.datacl),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgDatabase.ByOid,
+        values: Partial<PgCatalog.PgDatabase>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_database SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , datname = ${
+          values.datname === undefined
+            ? sql("datname")
+            : typed.pg_catalog_name(values.datname)
+        } , datdba = ${
+          values.datdba === undefined
+            ? sql("datdba")
+            : typed.pg_catalog_oid(values.datdba)
+        } , encoding = ${
+          values.encoding === undefined
+            ? sql("encoding")
+            : typed.pg_catalog_int4(values.encoding)
+        } , datlocprovider = ${
+          values.datlocprovider === undefined
+            ? sql("datlocprovider")
+            : typed.pg_catalog_char(values.datlocprovider)
+        } , datistemplate = ${
+          values.datistemplate === undefined
+            ? sql("datistemplate")
+            : typed.pg_catalog_bool(values.datistemplate)
+        } , datallowconn = ${
+          values.datallowconn === undefined
+            ? sql("datallowconn")
+            : typed.pg_catalog_bool(values.datallowconn)
+        } , datconnlimit = ${
+          values.datconnlimit === undefined
+            ? sql("datconnlimit")
+            : typed.pg_catalog_int4(values.datconnlimit)
+        } , datfrozenxid = ${
+          values.datfrozenxid === undefined
+            ? sql("datfrozenxid")
+            : typed.pg_catalog_xid(values.datfrozenxid)
+        } , datminmxid = ${
+          values.datminmxid === undefined
+            ? sql("datminmxid")
+            : typed.pg_catalog_xid(values.datminmxid)
+        } , dattablespace = ${
+          values.dattablespace === undefined
+            ? sql("dattablespace")
+            : typed.pg_catalog_oid(values.dattablespace)
+        } , datcollate = ${
+          values.datcollate === undefined
+            ? sql("datcollate")
+            : typed.pg_catalog_text(values.datcollate)
+        } , datctype = ${
+          values.datctype === undefined
+            ? sql("datctype")
+            : typed.pg_catalog_text(values.datctype)
+        } , daticulocale = ${
+          values.daticulocale === undefined
+            ? sql("daticulocale")
+            : typed.pg_catalog_text(values.daticulocale)
+        } , daticurules = ${
+          values.daticurules === undefined
+            ? sql("daticurules")
+            : typed.pg_catalog_text(values.daticurules)
+        } , datcollversion = ${
+          values.datcollversion === undefined
+            ? sql("datcollversion")
+            : typed.pg_catalog_text(values.datcollversion)
+        } , datacl = ${
+          values.datacl === undefined
+            ? sql("datacl")
+            : typed.pg_catalog__aclitem(values.datacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,datname,datdba,encoding,datlocprovider,datistemplate,datallowconn,datconnlimit,datfrozenxid,datminmxid,dattablespace,datcollate,datctype,daticulocale,daticurules,datcollversion,datacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10584,11 +16875,11 @@ export class Database {
         const response =
           await sql`SELECT setdatabase,setrole,setconfig FROM pg_catalog.pg_db_role_setting WHERE setdatabase = ${
             parameters.setdatabase === undefined
-              ? "setdatabase"
+              ? sql("setdatabase")
               : typed.pg_catalog_oid(parameters.setdatabase)
           } AND setrole = ${
             parameters.setrole === undefined
-              ? "setrole"
+              ? sql("setrole")
               : typed.pg_catalog_oid(parameters.setrole)
           }`;
 
@@ -10610,14 +16901,54 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_db_role_setting WHERE setdatabase = ${
             parameters.setdatabase === undefined
-              ? "setdatabase"
+              ? sql("setdatabase")
               : typed.pg_catalog_oid(parameters.setdatabase)
           } AND setrole = ${
             parameters.setrole === undefined
-              ? "setrole"
+              ? sql("setrole")
               : typed.pg_catalog_oid(parameters.setrole)
           } RETURNING setdatabase,setrole,setconfig
       `;
+
+        const results = response.map((record) => ({
+          setdatabase: undefinedIsNull(record.setdatabase),
+          setrole: undefinedIsNull(record.setrole),
+          setconfig: undefinedIsNull(record.setconfig),
+        }));
+        return results[0];
+      }
+
+      async updateBySetdatabaseSetrole(
+        parameters: PgCatalog.Tables.PgDbRoleSetting.BySetdatabaseSetrole,
+        values: Partial<PgCatalog.PgDbRoleSetting>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_db_role_setting SET setdatabase = ${
+            values.setdatabase === undefined
+              ? sql("setdatabase")
+              : typed.pg_catalog_oid(values.setdatabase)
+          } , setrole = ${
+            values.setrole === undefined
+              ? sql("setrole")
+              : typed.pg_catalog_oid(values.setrole)
+          } , setconfig = ${
+            values.setconfig === undefined
+              ? sql("setconfig")
+              : typed.pg_catalog__text(values.setconfig)
+          } WHERE setdatabase = ${
+            parameters.setdatabase === undefined
+              ? sql("setdatabase")
+              : typed.pg_catalog_oid(parameters.setdatabase)
+          } AND setrole = ${
+            parameters.setrole === undefined
+              ? sql("setrole")
+              : typed.pg_catalog_oid(parameters.setrole)
+          } RETURNING setdatabase,setrole,setconfig`;
 
         const results = response.map((record) => ({
           setdatabase: undefinedIsNull(record.setdatabase),
@@ -10643,7 +16974,7 @@ export class Database {
         const response =
           await sql`SELECT oid,spcname,spcowner,spcacl,spcoptions FROM pg_catalog.pg_tablespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10664,7 +16995,7 @@ export class Database {
         const response =
           await sql`SELECT oid,spcname,spcowner,spcacl,spcoptions FROM pg_catalog.pg_tablespace WHERE spcname = ${
             parameters.spcname === undefined
-              ? "spcname"
+              ? sql("spcname")
               : typed.pg_catalog_cstring(parameters.spcname)
           }`;
 
@@ -10686,7 +17017,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_tablespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,spcname,spcowner,spcacl,spcoptions
       `;
@@ -10710,10 +17041,99 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_tablespace WHERE spcname = ${
             parameters.spcname === undefined
-              ? "spcname"
+              ? sql("spcname")
               : typed.pg_catalog_cstring(parameters.spcname)
           } RETURNING oid,spcname,spcowner,spcacl,spcoptions
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          spcname: undefinedIsNull(record.spcname),
+          spcowner: undefinedIsNull(record.spcowner),
+          spcacl: undefinedIsNull(record.spcacl),
+          spcoptions: undefinedIsNull(record.spcoptions),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTablespace.ByOid,
+        values: Partial<PgCatalog.PgTablespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_tablespace SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , spcname = ${
+          values.spcname === undefined
+            ? sql("spcname")
+            : typed.pg_catalog_name(values.spcname)
+        } , spcowner = ${
+          values.spcowner === undefined
+            ? sql("spcowner")
+            : typed.pg_catalog_oid(values.spcowner)
+        } , spcacl = ${
+          values.spcacl === undefined
+            ? sql("spcacl")
+            : typed.pg_catalog__aclitem(values.spcacl)
+        } , spcoptions = ${
+          values.spcoptions === undefined
+            ? sql("spcoptions")
+            : typed.pg_catalog__text(values.spcoptions)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,spcname,spcowner,spcacl,spcoptions`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          spcname: undefinedIsNull(record.spcname),
+          spcowner: undefinedIsNull(record.spcowner),
+          spcacl: undefinedIsNull(record.spcacl),
+          spcoptions: undefinedIsNull(record.spcoptions),
+        }));
+        return results[0];
+      }
+      async updateBySpcname(
+        parameters: PgCatalog.Tables.PgTablespace.BySpcname,
+        values: Partial<PgCatalog.PgTablespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_tablespace SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , spcname = ${
+          values.spcname === undefined
+            ? sql("spcname")
+            : typed.pg_catalog_name(values.spcname)
+        } , spcowner = ${
+          values.spcowner === undefined
+            ? sql("spcowner")
+            : typed.pg_catalog_oid(values.spcowner)
+        } , spcacl = ${
+          values.spcacl === undefined
+            ? sql("spcacl")
+            : typed.pg_catalog__aclitem(values.spcacl)
+        } , spcoptions = ${
+          values.spcoptions === undefined
+            ? sql("spcoptions")
+            : typed.pg_catalog__text(values.spcoptions)
+        } WHERE spcname = ${
+          parameters.spcname === undefined
+            ? sql("spcname")
+            : typed.pg_catalog_cstring(parameters.spcname)
+        } RETURNING oid,spcname,spcowner,spcacl,spcoptions`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10741,7 +17161,7 @@ export class Database {
         const response =
           await sql`SELECT oid,roleid,member,grantor,admin_option,inherit_option,set_option FROM pg_catalog.pg_auth_members WHERE grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           }`;
 
@@ -10766,15 +17186,15 @@ export class Database {
         const response =
           await sql`SELECT oid,roleid,member,grantor,admin_option,inherit_option,set_option FROM pg_catalog.pg_auth_members WHERE member = ${
             parameters.member === undefined
-              ? "member"
+              ? sql("member")
               : typed.pg_catalog_oid(parameters.member)
           } AND roleid = ${
             parameters.roleid === undefined
-              ? "roleid"
+              ? sql("roleid")
               : typed.pg_catalog_oid(parameters.roleid)
           } AND grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           }`;
 
@@ -10797,7 +17217,7 @@ export class Database {
         const response =
           await sql`SELECT oid,roleid,member,grantor,admin_option,inherit_option,set_option FROM pg_catalog.pg_auth_members WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -10822,15 +17242,15 @@ export class Database {
         const response =
           await sql`SELECT oid,roleid,member,grantor,admin_option,inherit_option,set_option FROM pg_catalog.pg_auth_members WHERE roleid = ${
             parameters.roleid === undefined
-              ? "roleid"
+              ? sql("roleid")
               : typed.pg_catalog_oid(parameters.roleid)
           } AND member = ${
             parameters.member === undefined
-              ? "member"
+              ? sql("member")
               : typed.pg_catalog_oid(parameters.member)
           } AND grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           }`;
 
@@ -10856,7 +17276,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_auth_members WHERE grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option
       `;
@@ -10882,15 +17302,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_auth_members WHERE member = ${
             parameters.member === undefined
-              ? "member"
+              ? sql("member")
               : typed.pg_catalog_oid(parameters.member)
           } AND roleid = ${
             parameters.roleid === undefined
-              ? "roleid"
+              ? sql("roleid")
               : typed.pg_catalog_oid(parameters.roleid)
           } AND grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option
       `;
@@ -10914,7 +17334,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_auth_members WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option
       `;
@@ -10940,18 +17360,255 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_auth_members WHERE roleid = ${
             parameters.roleid === undefined
-              ? "roleid"
+              ? sql("roleid")
               : typed.pg_catalog_oid(parameters.roleid)
           } AND member = ${
             parameters.member === undefined
-              ? "member"
+              ? sql("member")
               : typed.pg_catalog_oid(parameters.member)
           } AND grantor = ${
             parameters.grantor === undefined
-              ? "grantor"
+              ? sql("grantor")
               : typed.pg_catalog_oid(parameters.grantor)
           } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          roleid: undefinedIsNull(record.roleid),
+          member: undefinedIsNull(record.member),
+          grantor: undefinedIsNull(record.grantor),
+          adminOption: undefinedIsNull(record.admin_option),
+          inheritOption: undefinedIsNull(record.inherit_option),
+          setOption: undefinedIsNull(record.set_option),
+        }));
+        return results[0];
+      }
+
+      async updateByGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor,
+        values: Partial<PgCatalog.PgAuthMembers>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_auth_members SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , roleid = ${
+            values.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(values.roleid)
+          } , member = ${
+            values.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(values.member)
+          } , grantor = ${
+            values.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(values.grantor)
+          } , admin_option = ${
+            values.adminOption === undefined
+              ? sql("admin_option")
+              : typed.pg_catalog_bool(values.adminOption)
+          } , inherit_option = ${
+            values.inheritOption === undefined
+              ? sql("inherit_option")
+              : typed.pg_catalog_bool(values.inheritOption)
+          } , set_option = ${
+            values.setOption === undefined
+              ? sql("set_option")
+              : typed.pg_catalog_bool(values.setOption)
+          } WHERE grantor = ${
+            parameters.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(parameters.grantor)
+          } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          roleid: undefinedIsNull(record.roleid),
+          member: undefinedIsNull(record.member),
+          grantor: undefinedIsNull(record.grantor),
+          adminOption: undefinedIsNull(record.admin_option),
+          inheritOption: undefinedIsNull(record.inherit_option),
+          setOption: undefinedIsNull(record.set_option),
+        }));
+        return results;
+      }
+      async updateByMemberRoleidGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByMemberRoleidGrantor,
+        values: Partial<PgCatalog.PgAuthMembers>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_auth_members SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , roleid = ${
+            values.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(values.roleid)
+          } , member = ${
+            values.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(values.member)
+          } , grantor = ${
+            values.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(values.grantor)
+          } , admin_option = ${
+            values.adminOption === undefined
+              ? sql("admin_option")
+              : typed.pg_catalog_bool(values.adminOption)
+          } , inherit_option = ${
+            values.inheritOption === undefined
+              ? sql("inherit_option")
+              : typed.pg_catalog_bool(values.inheritOption)
+          } , set_option = ${
+            values.setOption === undefined
+              ? sql("set_option")
+              : typed.pg_catalog_bool(values.setOption)
+          } WHERE member = ${
+            parameters.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(parameters.member)
+          } AND roleid = ${
+            parameters.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(parameters.roleid)
+          } AND grantor = ${
+            parameters.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(parameters.grantor)
+          } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          roleid: undefinedIsNull(record.roleid),
+          member: undefinedIsNull(record.member),
+          grantor: undefinedIsNull(record.grantor),
+          adminOption: undefinedIsNull(record.admin_option),
+          inheritOption: undefinedIsNull(record.inherit_option),
+          setOption: undefinedIsNull(record.set_option),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByOid,
+        values: Partial<PgCatalog.PgAuthMembers>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_auth_members SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , roleid = ${
+            values.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(values.roleid)
+          } , member = ${
+            values.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(values.member)
+          } , grantor = ${
+            values.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(values.grantor)
+          } , admin_option = ${
+            values.adminOption === undefined
+              ? sql("admin_option")
+              : typed.pg_catalog_bool(values.adminOption)
+          } , inherit_option = ${
+            values.inheritOption === undefined
+              ? sql("inherit_option")
+              : typed.pg_catalog_bool(values.inheritOption)
+          } , set_option = ${
+            values.setOption === undefined
+              ? sql("set_option")
+              : typed.pg_catalog_bool(values.setOption)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          roleid: undefinedIsNull(record.roleid),
+          member: undefinedIsNull(record.member),
+          grantor: undefinedIsNull(record.grantor),
+          adminOption: undefinedIsNull(record.admin_option),
+          inheritOption: undefinedIsNull(record.inherit_option),
+          setOption: undefinedIsNull(record.set_option),
+        }));
+        return results[0];
+      }
+      async updateByRoleidMemberGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByRoleidMemberGrantor,
+        values: Partial<PgCatalog.PgAuthMembers>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_auth_members SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , roleid = ${
+            values.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(values.roleid)
+          } , member = ${
+            values.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(values.member)
+          } , grantor = ${
+            values.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(values.grantor)
+          } , admin_option = ${
+            values.adminOption === undefined
+              ? sql("admin_option")
+              : typed.pg_catalog_bool(values.adminOption)
+          } , inherit_option = ${
+            values.inheritOption === undefined
+              ? sql("inherit_option")
+              : typed.pg_catalog_bool(values.inheritOption)
+          } , set_option = ${
+            values.setOption === undefined
+              ? sql("set_option")
+              : typed.pg_catalog_bool(values.setOption)
+          } WHERE roleid = ${
+            parameters.roleid === undefined
+              ? sql("roleid")
+              : typed.pg_catalog_oid(parameters.roleid)
+          } AND member = ${
+            parameters.member === undefined
+              ? sql("member")
+              : typed.pg_catalog_oid(parameters.member)
+          } AND grantor = ${
+            parameters.grantor === undefined
+              ? sql("grantor")
+              : typed.pg_catalog_oid(parameters.grantor)
+          } RETURNING oid,roleid,member,grantor,admin_option,inherit_option,set_option`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -10983,19 +17640,19 @@ export class Database {
         const response =
           await sql`SELECT dbid,classid,objid,objsubid,refclassid,refobjid,deptype FROM pg_catalog.pg_shdepend WHERE dbid = ${
             parameters.dbid === undefined
-              ? "dbid"
+              ? sql("dbid")
               : typed.pg_catalog_oid(parameters.dbid)
           } AND classid = ${
             parameters.classid === undefined
-              ? "classid"
+              ? sql("classid")
               : typed.pg_catalog_oid(parameters.classid)
           } AND objid = ${
             parameters.objid === undefined
-              ? "objid"
+              ? sql("objid")
               : typed.pg_catalog_oid(parameters.objid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           }`;
 
@@ -11020,11 +17677,11 @@ export class Database {
         const response =
           await sql`SELECT dbid,classid,objid,objsubid,refclassid,refobjid,deptype FROM pg_catalog.pg_shdepend WHERE refclassid = ${
             parameters.refclassid === undefined
-              ? "refclassid"
+              ? sql("refclassid")
               : typed.pg_catalog_oid(parameters.refclassid)
           } AND refobjid = ${
             parameters.refobjid === undefined
-              ? "refobjid"
+              ? sql("refobjid")
               : typed.pg_catalog_oid(parameters.refobjid)
           }`;
 
@@ -11050,19 +17707,19 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_shdepend WHERE dbid = ${
             parameters.dbid === undefined
-              ? "dbid"
+              ? sql("dbid")
               : typed.pg_catalog_oid(parameters.dbid)
           } AND classid = ${
             parameters.classid === undefined
-              ? "classid"
+              ? sql("classid")
               : typed.pg_catalog_oid(parameters.classid)
           } AND objid = ${
             parameters.objid === undefined
-              ? "objid"
+              ? sql("objid")
               : typed.pg_catalog_oid(parameters.objid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } RETURNING dbid,classid,objid,objsubid,refclassid,refobjid,deptype
       `;
@@ -11088,14 +17745,139 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_shdepend WHERE refclassid = ${
             parameters.refclassid === undefined
-              ? "refclassid"
+              ? sql("refclassid")
               : typed.pg_catalog_oid(parameters.refclassid)
           } AND refobjid = ${
             parameters.refobjid === undefined
-              ? "refobjid"
+              ? sql("refobjid")
               : typed.pg_catalog_oid(parameters.refobjid)
           } RETURNING dbid,classid,objid,objsubid,refclassid,refobjid,deptype
       `;
+
+        const results = response.map((record) => ({
+          dbid: undefinedIsNull(record.dbid),
+          classid: undefinedIsNull(record.classid),
+          objid: undefinedIsNull(record.objid),
+          objsubid: undefinedIsNull(record.objsubid),
+          refclassid: undefinedIsNull(record.refclassid),
+          refobjid: undefinedIsNull(record.refobjid),
+          deptype: undefinedIsNull(record.deptype),
+        }));
+        return results;
+      }
+
+      async updateByDbidClassidObjidObjsubid(
+        parameters: PgCatalog.Tables.PgShdepend.ByDbidClassidObjidObjsubid,
+        values: Partial<PgCatalog.PgShdepend>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_shdepend SET dbid = ${
+          values.dbid === undefined
+            ? sql("dbid")
+            : typed.pg_catalog_oid(values.dbid)
+        } , classid = ${
+          values.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(values.classid)
+        } , objid = ${
+          values.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(values.objid)
+        } , objsubid = ${
+          values.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(values.objsubid)
+        } , refclassid = ${
+          values.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(values.refclassid)
+        } , refobjid = ${
+          values.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(values.refobjid)
+        } , deptype = ${
+          values.deptype === undefined
+            ? sql("deptype")
+            : typed.pg_catalog_char(values.deptype)
+        } WHERE dbid = ${
+          parameters.dbid === undefined
+            ? sql("dbid")
+            : typed.pg_catalog_oid(parameters.dbid)
+        } AND classid = ${
+          parameters.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(parameters.classid)
+        } AND objid = ${
+          parameters.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(parameters.objid)
+        } AND objsubid = ${
+          parameters.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(parameters.objsubid)
+        } RETURNING dbid,classid,objid,objsubid,refclassid,refobjid,deptype`;
+
+        const results = response.map((record) => ({
+          dbid: undefinedIsNull(record.dbid),
+          classid: undefinedIsNull(record.classid),
+          objid: undefinedIsNull(record.objid),
+          objsubid: undefinedIsNull(record.objsubid),
+          refclassid: undefinedIsNull(record.refclassid),
+          refobjid: undefinedIsNull(record.refobjid),
+          deptype: undefinedIsNull(record.deptype),
+        }));
+        return results;
+      }
+      async updateByRefclassidRefobjid(
+        parameters: PgCatalog.Tables.PgShdepend.ByRefclassidRefobjid,
+        values: Partial<PgCatalog.PgShdepend>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_shdepend SET dbid = ${
+          values.dbid === undefined
+            ? sql("dbid")
+            : typed.pg_catalog_oid(values.dbid)
+        } , classid = ${
+          values.classid === undefined
+            ? sql("classid")
+            : typed.pg_catalog_oid(values.classid)
+        } , objid = ${
+          values.objid === undefined
+            ? sql("objid")
+            : typed.pg_catalog_oid(values.objid)
+        } , objsubid = ${
+          values.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(values.objsubid)
+        } , refclassid = ${
+          values.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(values.refclassid)
+        } , refobjid = ${
+          values.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(values.refobjid)
+        } , deptype = ${
+          values.deptype === undefined
+            ? sql("deptype")
+            : typed.pg_catalog_char(values.deptype)
+        } WHERE refclassid = ${
+          parameters.refclassid === undefined
+            ? sql("refclassid")
+            : typed.pg_catalog_oid(parameters.refclassid)
+        } AND refobjid = ${
+          parameters.refobjid === undefined
+            ? sql("refobjid")
+            : typed.pg_catalog_oid(parameters.refobjid)
+        } RETURNING dbid,classid,objid,objsubid,refclassid,refobjid,deptype`;
 
         const results = response.map((record) => ({
           dbid: undefinedIsNull(record.dbid),
@@ -11127,11 +17909,11 @@ export class Database {
         const response =
           await sql`SELECT objoid,classoid,description FROM pg_catalog.pg_shdescription WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           }`;
 
@@ -11153,14 +17935,54 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_shdescription WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } RETURNING objoid,classoid,description
       `;
+
+        const results = response.map((record) => ({
+          objoid: undefinedIsNull(record.objoid),
+          classoid: undefinedIsNull(record.classoid),
+          description: undefinedIsNull(record.description),
+        }));
+        return results[0];
+      }
+
+      async updateByObjoidClassoid(
+        parameters: PgCatalog.Tables.PgShdescription.ByObjoidClassoid,
+        values: Partial<PgCatalog.PgShdescription>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_shdescription SET objoid = ${
+            values.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(values.objoid)
+          } , classoid = ${
+            values.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(values.classoid)
+          } , description = ${
+            values.description === undefined
+              ? sql("description")
+              : typed.pg_catalog_text(values.description)
+          } WHERE objoid = ${
+            parameters.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(parameters.objoid)
+          } AND classoid = ${
+            parameters.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(parameters.classoid)
+          } RETURNING objoid,classoid,description`;
 
         const results = response.map((record) => ({
           objoid: undefinedIsNull(record.objoid),
@@ -11188,11 +18010,11 @@ export class Database {
         const response =
           await sql`SELECT oid,cfgname,cfgnamespace,cfgowner,cfgparser FROM pg_catalog.pg_ts_config WHERE cfgname = ${
             parameters.cfgname === undefined
-              ? "cfgname"
+              ? sql("cfgname")
               : typed.pg_catalog_cstring(parameters.cfgname)
           } AND cfgnamespace = ${
             parameters.cfgnamespace === undefined
-              ? "cfgnamespace"
+              ? sql("cfgnamespace")
               : typed.pg_catalog_oid(parameters.cfgnamespace)
           }`;
 
@@ -11213,7 +18035,7 @@ export class Database {
         const response =
           await sql`SELECT oid,cfgname,cfgnamespace,cfgowner,cfgparser FROM pg_catalog.pg_ts_config WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11237,11 +18059,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_config WHERE cfgname = ${
             parameters.cfgname === undefined
-              ? "cfgname"
+              ? sql("cfgname")
               : typed.pg_catalog_cstring(parameters.cfgname)
           } AND cfgnamespace = ${
             parameters.cfgnamespace === undefined
-              ? "cfgnamespace"
+              ? sql("cfgnamespace")
               : typed.pg_catalog_oid(parameters.cfgnamespace)
           } RETURNING oid,cfgname,cfgnamespace,cfgowner,cfgparser
       `;
@@ -11263,10 +18085,103 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_config WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,cfgname,cfgnamespace,cfgowner,cfgparser
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          cfgname: undefinedIsNull(record.cfgname),
+          cfgnamespace: undefinedIsNull(record.cfgnamespace),
+          cfgowner: undefinedIsNull(record.cfgowner),
+          cfgparser: undefinedIsNull(record.cfgparser),
+        }));
+        return results[0];
+      }
+
+      async updateByCfgnameCfgnamespace(
+        parameters: PgCatalog.Tables.PgTsConfig.ByCfgnameCfgnamespace,
+        values: Partial<PgCatalog.PgTsConfig>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_config SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , cfgname = ${
+          values.cfgname === undefined
+            ? sql("cfgname")
+            : typed.pg_catalog_name(values.cfgname)
+        } , cfgnamespace = ${
+          values.cfgnamespace === undefined
+            ? sql("cfgnamespace")
+            : typed.pg_catalog_oid(values.cfgnamespace)
+        } , cfgowner = ${
+          values.cfgowner === undefined
+            ? sql("cfgowner")
+            : typed.pg_catalog_oid(values.cfgowner)
+        } , cfgparser = ${
+          values.cfgparser === undefined
+            ? sql("cfgparser")
+            : typed.pg_catalog_oid(values.cfgparser)
+        } WHERE cfgname = ${
+          parameters.cfgname === undefined
+            ? sql("cfgname")
+            : typed.pg_catalog_cstring(parameters.cfgname)
+        } AND cfgnamespace = ${
+          parameters.cfgnamespace === undefined
+            ? sql("cfgnamespace")
+            : typed.pg_catalog_oid(parameters.cfgnamespace)
+        } RETURNING oid,cfgname,cfgnamespace,cfgowner,cfgparser`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          cfgname: undefinedIsNull(record.cfgname),
+          cfgnamespace: undefinedIsNull(record.cfgnamespace),
+          cfgowner: undefinedIsNull(record.cfgowner),
+          cfgparser: undefinedIsNull(record.cfgparser),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTsConfig.ByOid,
+        values: Partial<PgCatalog.PgTsConfig>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_config SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , cfgname = ${
+          values.cfgname === undefined
+            ? sql("cfgname")
+            : typed.pg_catalog_name(values.cfgname)
+        } , cfgnamespace = ${
+          values.cfgnamespace === undefined
+            ? sql("cfgnamespace")
+            : typed.pg_catalog_oid(values.cfgnamespace)
+        } , cfgowner = ${
+          values.cfgowner === undefined
+            ? sql("cfgowner")
+            : typed.pg_catalog_oid(values.cfgowner)
+        } , cfgparser = ${
+          values.cfgparser === undefined
+            ? sql("cfgparser")
+            : typed.pg_catalog_oid(values.cfgparser)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,cfgname,cfgnamespace,cfgowner,cfgparser`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11296,15 +18211,15 @@ export class Database {
         const response =
           await sql`SELECT mapcfg,maptokentype,mapseqno,mapdict FROM pg_catalog.pg_ts_config_map WHERE mapcfg = ${
             parameters.mapcfg === undefined
-              ? "mapcfg"
+              ? sql("mapcfg")
               : typed.pg_catalog_oid(parameters.mapcfg)
           } AND maptokentype = ${
             parameters.maptokentype === undefined
-              ? "maptokentype"
+              ? sql("maptokentype")
               : typed.pg_catalog_int4(parameters.maptokentype)
           } AND mapseqno = ${
             parameters.mapseqno === undefined
-              ? "mapseqno"
+              ? sql("mapseqno")
               : typed.pg_catalog_int4(parameters.mapseqno)
           }`;
 
@@ -11327,18 +18242,67 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_config_map WHERE mapcfg = ${
             parameters.mapcfg === undefined
-              ? "mapcfg"
+              ? sql("mapcfg")
               : typed.pg_catalog_oid(parameters.mapcfg)
           } AND maptokentype = ${
             parameters.maptokentype === undefined
-              ? "maptokentype"
+              ? sql("maptokentype")
               : typed.pg_catalog_int4(parameters.maptokentype)
           } AND mapseqno = ${
             parameters.mapseqno === undefined
-              ? "mapseqno"
+              ? sql("mapseqno")
               : typed.pg_catalog_int4(parameters.mapseqno)
           } RETURNING mapcfg,maptokentype,mapseqno,mapdict
       `;
+
+        const results = response.map((record) => ({
+          mapcfg: undefinedIsNull(record.mapcfg),
+          maptokentype: undefinedIsNull(record.maptokentype),
+          mapseqno: undefinedIsNull(record.mapseqno),
+          mapdict: undefinedIsNull(record.mapdict),
+        }));
+        return results[0];
+      }
+
+      async updateByMapcfgMaptokentypeMapseqno(
+        parameters: PgCatalog.Tables.PgTsConfigMap.ByMapcfgMaptokentypeMapseqno,
+        values: Partial<PgCatalog.PgTsConfigMap>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_ts_config_map SET mapcfg = ${
+            values.mapcfg === undefined
+              ? sql("mapcfg")
+              : typed.pg_catalog_oid(values.mapcfg)
+          } , maptokentype = ${
+            values.maptokentype === undefined
+              ? sql("maptokentype")
+              : typed.pg_catalog_int4(values.maptokentype)
+          } , mapseqno = ${
+            values.mapseqno === undefined
+              ? sql("mapseqno")
+              : typed.pg_catalog_int4(values.mapseqno)
+          } , mapdict = ${
+            values.mapdict === undefined
+              ? sql("mapdict")
+              : typed.pg_catalog_oid(values.mapdict)
+          } WHERE mapcfg = ${
+            parameters.mapcfg === undefined
+              ? sql("mapcfg")
+              : typed.pg_catalog_oid(parameters.mapcfg)
+          } AND maptokentype = ${
+            parameters.maptokentype === undefined
+              ? sql("maptokentype")
+              : typed.pg_catalog_int4(parameters.maptokentype)
+          } AND mapseqno = ${
+            parameters.mapseqno === undefined
+              ? sql("mapseqno")
+              : typed.pg_catalog_int4(parameters.mapseqno)
+          } RETURNING mapcfg,maptokentype,mapseqno,mapdict`;
 
         const results = response.map((record) => ({
           mapcfg: undefinedIsNull(record.mapcfg),
@@ -11367,11 +18331,11 @@ export class Database {
         const response =
           await sql`SELECT oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption FROM pg_catalog.pg_ts_dict WHERE dictname = ${
             parameters.dictname === undefined
-              ? "dictname"
+              ? sql("dictname")
               : typed.pg_catalog_cstring(parameters.dictname)
           } AND dictnamespace = ${
             parameters.dictnamespace === undefined
-              ? "dictnamespace"
+              ? sql("dictnamespace")
               : typed.pg_catalog_oid(parameters.dictnamespace)
           }`;
 
@@ -11393,7 +18357,7 @@ export class Database {
         const response =
           await sql`SELECT oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption FROM pg_catalog.pg_ts_dict WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11418,11 +18382,11 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_dict WHERE dictname = ${
             parameters.dictname === undefined
-              ? "dictname"
+              ? sql("dictname")
               : typed.pg_catalog_cstring(parameters.dictname)
           } AND dictnamespace = ${
             parameters.dictnamespace === undefined
-              ? "dictnamespace"
+              ? sql("dictnamespace")
               : typed.pg_catalog_oid(parameters.dictnamespace)
           } RETURNING oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption
       `;
@@ -11445,10 +18409,113 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_dict WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          dictname: undefinedIsNull(record.dictname),
+          dictnamespace: undefinedIsNull(record.dictnamespace),
+          dictowner: undefinedIsNull(record.dictowner),
+          dicttemplate: undefinedIsNull(record.dicttemplate),
+          dictinitoption: undefinedIsNull(record.dictinitoption),
+        }));
+        return results[0];
+      }
+
+      async updateByDictnameDictnamespace(
+        parameters: PgCatalog.Tables.PgTsDict.ByDictnameDictnamespace,
+        values: Partial<PgCatalog.PgTsDict>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_dict SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , dictname = ${
+          values.dictname === undefined
+            ? sql("dictname")
+            : typed.pg_catalog_name(values.dictname)
+        } , dictnamespace = ${
+          values.dictnamespace === undefined
+            ? sql("dictnamespace")
+            : typed.pg_catalog_oid(values.dictnamespace)
+        } , dictowner = ${
+          values.dictowner === undefined
+            ? sql("dictowner")
+            : typed.pg_catalog_oid(values.dictowner)
+        } , dicttemplate = ${
+          values.dicttemplate === undefined
+            ? sql("dicttemplate")
+            : typed.pg_catalog_oid(values.dicttemplate)
+        } , dictinitoption = ${
+          values.dictinitoption === undefined
+            ? sql("dictinitoption")
+            : typed.pg_catalog_text(values.dictinitoption)
+        } WHERE dictname = ${
+          parameters.dictname === undefined
+            ? sql("dictname")
+            : typed.pg_catalog_cstring(parameters.dictname)
+        } AND dictnamespace = ${
+          parameters.dictnamespace === undefined
+            ? sql("dictnamespace")
+            : typed.pg_catalog_oid(parameters.dictnamespace)
+        } RETURNING oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          dictname: undefinedIsNull(record.dictname),
+          dictnamespace: undefinedIsNull(record.dictnamespace),
+          dictowner: undefinedIsNull(record.dictowner),
+          dicttemplate: undefinedIsNull(record.dicttemplate),
+          dictinitoption: undefinedIsNull(record.dictinitoption),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTsDict.ByOid,
+        values: Partial<PgCatalog.PgTsDict>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_dict SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , dictname = ${
+          values.dictname === undefined
+            ? sql("dictname")
+            : typed.pg_catalog_name(values.dictname)
+        } , dictnamespace = ${
+          values.dictnamespace === undefined
+            ? sql("dictnamespace")
+            : typed.pg_catalog_oid(values.dictnamespace)
+        } , dictowner = ${
+          values.dictowner === undefined
+            ? sql("dictowner")
+            : typed.pg_catalog_oid(values.dictowner)
+        } , dicttemplate = ${
+          values.dicttemplate === undefined
+            ? sql("dicttemplate")
+            : typed.pg_catalog_oid(values.dicttemplate)
+        } , dictinitoption = ${
+          values.dictinitoption === undefined
+            ? sql("dictinitoption")
+            : typed.pg_catalog_text(values.dictinitoption)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,dictname,dictnamespace,dictowner,dicttemplate,dictinitoption`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11477,7 +18544,7 @@ export class Database {
         const response =
           await sql`SELECT oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype FROM pg_catalog.pg_ts_parser WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11503,11 +18570,11 @@ export class Database {
         const response =
           await sql`SELECT oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype FROM pg_catalog.pg_ts_parser WHERE prsname = ${
             parameters.prsname === undefined
-              ? "prsname"
+              ? sql("prsname")
               : typed.pg_catalog_cstring(parameters.prsname)
           } AND prsnamespace = ${
             parameters.prsnamespace === undefined
-              ? "prsnamespace"
+              ? sql("prsnamespace")
               : typed.pg_catalog_oid(parameters.prsnamespace)
           }`;
 
@@ -11532,7 +18599,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_parser WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype
       `;
@@ -11559,14 +18626,137 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_parser WHERE prsname = ${
             parameters.prsname === undefined
-              ? "prsname"
+              ? sql("prsname")
               : typed.pg_catalog_cstring(parameters.prsname)
           } AND prsnamespace = ${
             parameters.prsnamespace === undefined
-              ? "prsnamespace"
+              ? sql("prsnamespace")
               : typed.pg_catalog_oid(parameters.prsnamespace)
           } RETURNING oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          prsname: undefinedIsNull(record.prsname),
+          prsnamespace: undefinedIsNull(record.prsnamespace),
+          prsstart: undefinedIsNull(record.prsstart),
+          prstoken: undefinedIsNull(record.prstoken),
+          prsend: undefinedIsNull(record.prsend),
+          prsheadline: undefinedIsNull(record.prsheadline),
+          prslextype: undefinedIsNull(record.prslextype),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTsParser.ByOid,
+        values: Partial<PgCatalog.PgTsParser>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_parser SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , prsname = ${
+          values.prsname === undefined
+            ? sql("prsname")
+            : typed.pg_catalog_name(values.prsname)
+        } , prsnamespace = ${
+          values.prsnamespace === undefined
+            ? sql("prsnamespace")
+            : typed.pg_catalog_oid(values.prsnamespace)
+        } , prsstart = ${
+          values.prsstart === undefined
+            ? sql("prsstart")
+            : typed.pg_catalog_regproc(values.prsstart)
+        } , prstoken = ${
+          values.prstoken === undefined
+            ? sql("prstoken")
+            : typed.pg_catalog_regproc(values.prstoken)
+        } , prsend = ${
+          values.prsend === undefined
+            ? sql("prsend")
+            : typed.pg_catalog_regproc(values.prsend)
+        } , prsheadline = ${
+          values.prsheadline === undefined
+            ? sql("prsheadline")
+            : typed.pg_catalog_regproc(values.prsheadline)
+        } , prslextype = ${
+          values.prslextype === undefined
+            ? sql("prslextype")
+            : typed.pg_catalog_regproc(values.prslextype)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          prsname: undefinedIsNull(record.prsname),
+          prsnamespace: undefinedIsNull(record.prsnamespace),
+          prsstart: undefinedIsNull(record.prsstart),
+          prstoken: undefinedIsNull(record.prstoken),
+          prsend: undefinedIsNull(record.prsend),
+          prsheadline: undefinedIsNull(record.prsheadline),
+          prslextype: undefinedIsNull(record.prslextype),
+        }));
+        return results[0];
+      }
+      async updateByPrsnamePrsnamespace(
+        parameters: PgCatalog.Tables.PgTsParser.ByPrsnamePrsnamespace,
+        values: Partial<PgCatalog.PgTsParser>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_parser SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , prsname = ${
+          values.prsname === undefined
+            ? sql("prsname")
+            : typed.pg_catalog_name(values.prsname)
+        } , prsnamespace = ${
+          values.prsnamespace === undefined
+            ? sql("prsnamespace")
+            : typed.pg_catalog_oid(values.prsnamespace)
+        } , prsstart = ${
+          values.prsstart === undefined
+            ? sql("prsstart")
+            : typed.pg_catalog_regproc(values.prsstart)
+        } , prstoken = ${
+          values.prstoken === undefined
+            ? sql("prstoken")
+            : typed.pg_catalog_regproc(values.prstoken)
+        } , prsend = ${
+          values.prsend === undefined
+            ? sql("prsend")
+            : typed.pg_catalog_regproc(values.prsend)
+        } , prsheadline = ${
+          values.prsheadline === undefined
+            ? sql("prsheadline")
+            : typed.pg_catalog_regproc(values.prsheadline)
+        } , prslextype = ${
+          values.prslextype === undefined
+            ? sql("prslextype")
+            : typed.pg_catalog_regproc(values.prslextype)
+        } WHERE prsname = ${
+          parameters.prsname === undefined
+            ? sql("prsname")
+            : typed.pg_catalog_cstring(parameters.prsname)
+        } AND prsnamespace = ${
+          parameters.prsnamespace === undefined
+            ? sql("prsnamespace")
+            : typed.pg_catalog_oid(parameters.prsnamespace)
+        } RETURNING oid,prsname,prsnamespace,prsstart,prstoken,prsend,prsheadline,prslextype`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11597,7 +18787,7 @@ export class Database {
         const response =
           await sql`SELECT oid,tmplname,tmplnamespace,tmplinit,tmpllexize FROM pg_catalog.pg_ts_template WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11620,11 +18810,11 @@ export class Database {
         const response =
           await sql`SELECT oid,tmplname,tmplnamespace,tmplinit,tmpllexize FROM pg_catalog.pg_ts_template WHERE tmplname = ${
             parameters.tmplname === undefined
-              ? "tmplname"
+              ? sql("tmplname")
               : typed.pg_catalog_cstring(parameters.tmplname)
           } AND tmplnamespace = ${
             parameters.tmplnamespace === undefined
-              ? "tmplnamespace"
+              ? sql("tmplnamespace")
               : typed.pg_catalog_oid(parameters.tmplnamespace)
           }`;
 
@@ -11646,7 +18836,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_template WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,tmplname,tmplnamespace,tmplinit,tmpllexize
       `;
@@ -11670,14 +18860,107 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_ts_template WHERE tmplname = ${
             parameters.tmplname === undefined
-              ? "tmplname"
+              ? sql("tmplname")
               : typed.pg_catalog_cstring(parameters.tmplname)
           } AND tmplnamespace = ${
             parameters.tmplnamespace === undefined
-              ? "tmplnamespace"
+              ? sql("tmplnamespace")
               : typed.pg_catalog_oid(parameters.tmplnamespace)
           } RETURNING oid,tmplname,tmplnamespace,tmplinit,tmpllexize
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          tmplname: undefinedIsNull(record.tmplname),
+          tmplnamespace: undefinedIsNull(record.tmplnamespace),
+          tmplinit: undefinedIsNull(record.tmplinit),
+          tmpllexize: undefinedIsNull(record.tmpllexize),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTsTemplate.ByOid,
+        values: Partial<PgCatalog.PgTsTemplate>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_template SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , tmplname = ${
+          values.tmplname === undefined
+            ? sql("tmplname")
+            : typed.pg_catalog_name(values.tmplname)
+        } , tmplnamespace = ${
+          values.tmplnamespace === undefined
+            ? sql("tmplnamespace")
+            : typed.pg_catalog_oid(values.tmplnamespace)
+        } , tmplinit = ${
+          values.tmplinit === undefined
+            ? sql("tmplinit")
+            : typed.pg_catalog_regproc(values.tmplinit)
+        } , tmpllexize = ${
+          values.tmpllexize === undefined
+            ? sql("tmpllexize")
+            : typed.pg_catalog_regproc(values.tmpllexize)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,tmplname,tmplnamespace,tmplinit,tmpllexize`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          tmplname: undefinedIsNull(record.tmplname),
+          tmplnamespace: undefinedIsNull(record.tmplnamespace),
+          tmplinit: undefinedIsNull(record.tmplinit),
+          tmpllexize: undefinedIsNull(record.tmpllexize),
+        }));
+        return results[0];
+      }
+      async updateByTmplnameTmplnamespace(
+        parameters: PgCatalog.Tables.PgTsTemplate.ByTmplnameTmplnamespace,
+        values: Partial<PgCatalog.PgTsTemplate>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_ts_template SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , tmplname = ${
+          values.tmplname === undefined
+            ? sql("tmplname")
+            : typed.pg_catalog_name(values.tmplname)
+        } , tmplnamespace = ${
+          values.tmplnamespace === undefined
+            ? sql("tmplnamespace")
+            : typed.pg_catalog_oid(values.tmplnamespace)
+        } , tmplinit = ${
+          values.tmplinit === undefined
+            ? sql("tmplinit")
+            : typed.pg_catalog_regproc(values.tmplinit)
+        } , tmpllexize = ${
+          values.tmpllexize === undefined
+            ? sql("tmpllexize")
+            : typed.pg_catalog_regproc(values.tmpllexize)
+        } WHERE tmplname = ${
+          parameters.tmplname === undefined
+            ? sql("tmplname")
+            : typed.pg_catalog_cstring(parameters.tmplname)
+        } AND tmplnamespace = ${
+          parameters.tmplnamespace === undefined
+            ? sql("tmplnamespace")
+            : typed.pg_catalog_oid(parameters.tmplnamespace)
+        } RETURNING oid,tmplname,tmplnamespace,tmplinit,tmpllexize`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11705,7 +18988,7 @@ export class Database {
         const response =
           await sql`SELECT oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition FROM pg_catalog.pg_extension WHERE extname = ${
             parameters.extname === undefined
-              ? "extname"
+              ? sql("extname")
               : typed.pg_catalog_cstring(parameters.extname)
           }`;
 
@@ -11729,7 +19012,7 @@ export class Database {
         const response =
           await sql`SELECT oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition FROM pg_catalog.pg_extension WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11756,7 +19039,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_extension WHERE extname = ${
             parameters.extname === undefined
-              ? "extname"
+              ? sql("extname")
               : typed.pg_catalog_cstring(parameters.extname)
           } RETURNING oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition
       `;
@@ -11781,10 +19064,129 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_extension WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          extname: undefinedIsNull(record.extname),
+          extowner: undefinedIsNull(record.extowner),
+          extnamespace: undefinedIsNull(record.extnamespace),
+          extrelocatable: undefinedIsNull(record.extrelocatable),
+          extversion: undefinedIsNull(record.extversion),
+          extconfig: undefinedIsNull(record.extconfig),
+          extcondition: undefinedIsNull(record.extcondition),
+        }));
+        return results[0];
+      }
+
+      async updateByExtname(
+        parameters: PgCatalog.Tables.PgExtension.ByExtname,
+        values: Partial<PgCatalog.PgExtension>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_extension SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , extname = ${
+          values.extname === undefined
+            ? sql("extname")
+            : typed.pg_catalog_name(values.extname)
+        } , extowner = ${
+          values.extowner === undefined
+            ? sql("extowner")
+            : typed.pg_catalog_oid(values.extowner)
+        } , extnamespace = ${
+          values.extnamespace === undefined
+            ? sql("extnamespace")
+            : typed.pg_catalog_oid(values.extnamespace)
+        } , extrelocatable = ${
+          values.extrelocatable === undefined
+            ? sql("extrelocatable")
+            : typed.pg_catalog_bool(values.extrelocatable)
+        } , extversion = ${
+          values.extversion === undefined
+            ? sql("extversion")
+            : typed.pg_catalog_text(values.extversion)
+        } , extconfig = ${
+          values.extconfig === undefined
+            ? sql("extconfig")
+            : typed.pg_catalog__oid(values.extconfig)
+        } , extcondition = ${
+          values.extcondition === undefined
+            ? sql("extcondition")
+            : typed.pg_catalog__text(values.extcondition)
+        } WHERE extname = ${
+          parameters.extname === undefined
+            ? sql("extname")
+            : typed.pg_catalog_cstring(parameters.extname)
+        } RETURNING oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          extname: undefinedIsNull(record.extname),
+          extowner: undefinedIsNull(record.extowner),
+          extnamespace: undefinedIsNull(record.extnamespace),
+          extrelocatable: undefinedIsNull(record.extrelocatable),
+          extversion: undefinedIsNull(record.extversion),
+          extconfig: undefinedIsNull(record.extconfig),
+          extcondition: undefinedIsNull(record.extcondition),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgExtension.ByOid,
+        values: Partial<PgCatalog.PgExtension>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_extension SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , extname = ${
+          values.extname === undefined
+            ? sql("extname")
+            : typed.pg_catalog_name(values.extname)
+        } , extowner = ${
+          values.extowner === undefined
+            ? sql("extowner")
+            : typed.pg_catalog_oid(values.extowner)
+        } , extnamespace = ${
+          values.extnamespace === undefined
+            ? sql("extnamespace")
+            : typed.pg_catalog_oid(values.extnamespace)
+        } , extrelocatable = ${
+          values.extrelocatable === undefined
+            ? sql("extrelocatable")
+            : typed.pg_catalog_bool(values.extrelocatable)
+        } , extversion = ${
+          values.extversion === undefined
+            ? sql("extversion")
+            : typed.pg_catalog_text(values.extversion)
+        } , extconfig = ${
+          values.extconfig === undefined
+            ? sql("extconfig")
+            : typed.pg_catalog__oid(values.extconfig)
+        } , extcondition = ${
+          values.extcondition === undefined
+            ? sql("extcondition")
+            : typed.pg_catalog__text(values.extcondition)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,extname,extowner,extnamespace,extrelocatable,extversion,extconfig,extcondition`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11817,7 +19219,7 @@ export class Database {
         const response =
           await sql`SELECT oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions FROM pg_catalog.pg_foreign_data_wrapper WHERE fdwname = ${
             parameters.fdwname === undefined
-              ? "fdwname"
+              ? sql("fdwname")
               : typed.pg_catalog_cstring(parameters.fdwname)
           }`;
 
@@ -11840,7 +19242,7 @@ export class Database {
         const response =
           await sql`SELECT oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions FROM pg_catalog.pg_foreign_data_wrapper WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11866,7 +19268,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_foreign_data_wrapper WHERE fdwname = ${
             parameters.fdwname === undefined
-              ? "fdwname"
+              ? sql("fdwname")
               : typed.pg_catalog_cstring(parameters.fdwname)
           } RETURNING oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions
       `;
@@ -11892,10 +19294,121 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_foreign_data_wrapper WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          fdwname: undefinedIsNull(record.fdwname),
+          fdwowner: undefinedIsNull(record.fdwowner),
+          fdwhandler: undefinedIsNull(record.fdwhandler),
+          fdwvalidator: undefinedIsNull(record.fdwvalidator),
+          fdwacl: undefinedIsNull(record.fdwacl),
+          fdwoptions: undefinedIsNull(record.fdwoptions),
+        }));
+        return results[0];
+      }
+
+      async updateByFdwname(
+        parameters: PgCatalog.Tables.PgForeignDataWrapper.ByFdwname,
+        values: Partial<PgCatalog.PgForeignDataWrapper>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_foreign_data_wrapper SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , fdwname = ${
+            values.fdwname === undefined
+              ? sql("fdwname")
+              : typed.pg_catalog_name(values.fdwname)
+          } , fdwowner = ${
+            values.fdwowner === undefined
+              ? sql("fdwowner")
+              : typed.pg_catalog_oid(values.fdwowner)
+          } , fdwhandler = ${
+            values.fdwhandler === undefined
+              ? sql("fdwhandler")
+              : typed.pg_catalog_oid(values.fdwhandler)
+          } , fdwvalidator = ${
+            values.fdwvalidator === undefined
+              ? sql("fdwvalidator")
+              : typed.pg_catalog_oid(values.fdwvalidator)
+          } , fdwacl = ${
+            values.fdwacl === undefined
+              ? sql("fdwacl")
+              : typed.pg_catalog__aclitem(values.fdwacl)
+          } , fdwoptions = ${
+            values.fdwoptions === undefined
+              ? sql("fdwoptions")
+              : typed.pg_catalog__text(values.fdwoptions)
+          } WHERE fdwname = ${
+            parameters.fdwname === undefined
+              ? sql("fdwname")
+              : typed.pg_catalog_cstring(parameters.fdwname)
+          } RETURNING oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          fdwname: undefinedIsNull(record.fdwname),
+          fdwowner: undefinedIsNull(record.fdwowner),
+          fdwhandler: undefinedIsNull(record.fdwhandler),
+          fdwvalidator: undefinedIsNull(record.fdwvalidator),
+          fdwacl: undefinedIsNull(record.fdwacl),
+          fdwoptions: undefinedIsNull(record.fdwoptions),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid,
+        values: Partial<PgCatalog.PgForeignDataWrapper>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_foreign_data_wrapper SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , fdwname = ${
+            values.fdwname === undefined
+              ? sql("fdwname")
+              : typed.pg_catalog_name(values.fdwname)
+          } , fdwowner = ${
+            values.fdwowner === undefined
+              ? sql("fdwowner")
+              : typed.pg_catalog_oid(values.fdwowner)
+          } , fdwhandler = ${
+            values.fdwhandler === undefined
+              ? sql("fdwhandler")
+              : typed.pg_catalog_oid(values.fdwhandler)
+          } , fdwvalidator = ${
+            values.fdwvalidator === undefined
+              ? sql("fdwvalidator")
+              : typed.pg_catalog_oid(values.fdwvalidator)
+          } , fdwacl = ${
+            values.fdwacl === undefined
+              ? sql("fdwacl")
+              : typed.pg_catalog__aclitem(values.fdwacl)
+          } , fdwoptions = ${
+            values.fdwoptions === undefined
+              ? sql("fdwoptions")
+              : typed.pg_catalog__text(values.fdwoptions)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,fdwname,fdwowner,fdwhandler,fdwvalidator,fdwacl,fdwoptions`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -11925,7 +19438,7 @@ export class Database {
         const response =
           await sql`SELECT oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions FROM pg_catalog.pg_foreign_server WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -11949,7 +19462,7 @@ export class Database {
         const response =
           await sql`SELECT oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions FROM pg_catalog.pg_foreign_server WHERE srvname = ${
             parameters.srvname === undefined
-              ? "srvname"
+              ? sql("srvname")
               : typed.pg_catalog_cstring(parameters.srvname)
           }`;
 
@@ -11974,7 +19487,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_foreign_server WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions
       `;
@@ -12001,10 +19514,131 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_foreign_server WHERE srvname = ${
             parameters.srvname === undefined
-              ? "srvname"
+              ? sql("srvname")
               : typed.pg_catalog_cstring(parameters.srvname)
           } RETURNING oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          srvname: undefinedIsNull(record.srvname),
+          srvowner: undefinedIsNull(record.srvowner),
+          srvfdw: undefinedIsNull(record.srvfdw),
+          srvtype: undefinedIsNull(record.srvtype),
+          srvversion: undefinedIsNull(record.srvversion),
+          srvacl: undefinedIsNull(record.srvacl),
+          srvoptions: undefinedIsNull(record.srvoptions),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgForeignServer.ByOid,
+        values: Partial<PgCatalog.PgForeignServer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_foreign_server SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , srvname = ${
+            values.srvname === undefined
+              ? sql("srvname")
+              : typed.pg_catalog_name(values.srvname)
+          } , srvowner = ${
+            values.srvowner === undefined
+              ? sql("srvowner")
+              : typed.pg_catalog_oid(values.srvowner)
+          } , srvfdw = ${
+            values.srvfdw === undefined
+              ? sql("srvfdw")
+              : typed.pg_catalog_oid(values.srvfdw)
+          } , srvtype = ${
+            values.srvtype === undefined
+              ? sql("srvtype")
+              : typed.pg_catalog_text(values.srvtype)
+          } , srvversion = ${
+            values.srvversion === undefined
+              ? sql("srvversion")
+              : typed.pg_catalog_text(values.srvversion)
+          } , srvacl = ${
+            values.srvacl === undefined
+              ? sql("srvacl")
+              : typed.pg_catalog__aclitem(values.srvacl)
+          } , srvoptions = ${
+            values.srvoptions === undefined
+              ? sql("srvoptions")
+              : typed.pg_catalog__text(values.srvoptions)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          srvname: undefinedIsNull(record.srvname),
+          srvowner: undefinedIsNull(record.srvowner),
+          srvfdw: undefinedIsNull(record.srvfdw),
+          srvtype: undefinedIsNull(record.srvtype),
+          srvversion: undefinedIsNull(record.srvversion),
+          srvacl: undefinedIsNull(record.srvacl),
+          srvoptions: undefinedIsNull(record.srvoptions),
+        }));
+        return results[0];
+      }
+      async updateBySrvname(
+        parameters: PgCatalog.Tables.PgForeignServer.BySrvname,
+        values: Partial<PgCatalog.PgForeignServer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_foreign_server SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , srvname = ${
+            values.srvname === undefined
+              ? sql("srvname")
+              : typed.pg_catalog_name(values.srvname)
+          } , srvowner = ${
+            values.srvowner === undefined
+              ? sql("srvowner")
+              : typed.pg_catalog_oid(values.srvowner)
+          } , srvfdw = ${
+            values.srvfdw === undefined
+              ? sql("srvfdw")
+              : typed.pg_catalog_oid(values.srvfdw)
+          } , srvtype = ${
+            values.srvtype === undefined
+              ? sql("srvtype")
+              : typed.pg_catalog_text(values.srvtype)
+          } , srvversion = ${
+            values.srvversion === undefined
+              ? sql("srvversion")
+              : typed.pg_catalog_text(values.srvversion)
+          } , srvacl = ${
+            values.srvacl === undefined
+              ? sql("srvacl")
+              : typed.pg_catalog__aclitem(values.srvacl)
+          } , srvoptions = ${
+            values.srvoptions === undefined
+              ? sql("srvoptions")
+              : typed.pg_catalog__text(values.srvoptions)
+          } WHERE srvname = ${
+            parameters.srvname === undefined
+              ? sql("srvname")
+              : typed.pg_catalog_cstring(parameters.srvname)
+          } RETURNING oid,srvname,srvowner,srvfdw,srvtype,srvversion,srvacl,srvoptions`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -12035,7 +19669,7 @@ export class Database {
         const response =
           await sql`SELECT oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck FROM pg_catalog.pg_policy WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -12061,11 +19695,11 @@ export class Database {
         const response =
           await sql`SELECT oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck FROM pg_catalog.pg_policy WHERE polrelid = ${
             parameters.polrelid === undefined
-              ? "polrelid"
+              ? sql("polrelid")
               : typed.pg_catalog_oid(parameters.polrelid)
           } AND polname = ${
             parameters.polname === undefined
-              ? "polname"
+              ? sql("polname")
               : typed.pg_catalog_cstring(parameters.polname)
           }`;
 
@@ -12090,7 +19724,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_policy WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck
       `;
@@ -12117,14 +19751,137 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_policy WHERE polrelid = ${
             parameters.polrelid === undefined
-              ? "polrelid"
+              ? sql("polrelid")
               : typed.pg_catalog_oid(parameters.polrelid)
           } AND polname = ${
             parameters.polname === undefined
-              ? "polname"
+              ? sql("polname")
               : typed.pg_catalog_cstring(parameters.polname)
           } RETURNING oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          polname: undefinedIsNull(record.polname),
+          polrelid: undefinedIsNull(record.polrelid),
+          polcmd: undefinedIsNull(record.polcmd),
+          polpermissive: undefinedIsNull(record.polpermissive),
+          polroles: undefinedIsNull(record.polroles),
+          polqual: undefinedIsNull(record.polqual),
+          polwithcheck: undefinedIsNull(record.polwithcheck),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgPolicy.ByOid,
+        values: Partial<PgCatalog.PgPolicy>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_policy SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , polname = ${
+          values.polname === undefined
+            ? sql("polname")
+            : typed.pg_catalog_name(values.polname)
+        } , polrelid = ${
+          values.polrelid === undefined
+            ? sql("polrelid")
+            : typed.pg_catalog_oid(values.polrelid)
+        } , polcmd = ${
+          values.polcmd === undefined
+            ? sql("polcmd")
+            : typed.pg_catalog_char(values.polcmd)
+        } , polpermissive = ${
+          values.polpermissive === undefined
+            ? sql("polpermissive")
+            : typed.pg_catalog_bool(values.polpermissive)
+        } , polroles = ${
+          values.polroles === undefined
+            ? sql("polroles")
+            : typed.pg_catalog__oid(values.polroles)
+        } , polqual = ${
+          values.polqual === undefined
+            ? sql("polqual")
+            : typed.pg_catalog_pg_node_tree(values.polqual)
+        } , polwithcheck = ${
+          values.polwithcheck === undefined
+            ? sql("polwithcheck")
+            : typed.pg_catalog_pg_node_tree(values.polwithcheck)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          polname: undefinedIsNull(record.polname),
+          polrelid: undefinedIsNull(record.polrelid),
+          polcmd: undefinedIsNull(record.polcmd),
+          polpermissive: undefinedIsNull(record.polpermissive),
+          polroles: undefinedIsNull(record.polroles),
+          polqual: undefinedIsNull(record.polqual),
+          polwithcheck: undefinedIsNull(record.polwithcheck),
+        }));
+        return results[0];
+      }
+      async updateByPolrelidPolname(
+        parameters: PgCatalog.Tables.PgPolicy.ByPolrelidPolname,
+        values: Partial<PgCatalog.PgPolicy>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_policy SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , polname = ${
+          values.polname === undefined
+            ? sql("polname")
+            : typed.pg_catalog_name(values.polname)
+        } , polrelid = ${
+          values.polrelid === undefined
+            ? sql("polrelid")
+            : typed.pg_catalog_oid(values.polrelid)
+        } , polcmd = ${
+          values.polcmd === undefined
+            ? sql("polcmd")
+            : typed.pg_catalog_char(values.polcmd)
+        } , polpermissive = ${
+          values.polpermissive === undefined
+            ? sql("polpermissive")
+            : typed.pg_catalog_bool(values.polpermissive)
+        } , polroles = ${
+          values.polroles === undefined
+            ? sql("polroles")
+            : typed.pg_catalog__oid(values.polroles)
+        } , polqual = ${
+          values.polqual === undefined
+            ? sql("polqual")
+            : typed.pg_catalog_pg_node_tree(values.polqual)
+        } , polwithcheck = ${
+          values.polwithcheck === undefined
+            ? sql("polwithcheck")
+            : typed.pg_catalog_pg_node_tree(values.polwithcheck)
+        } WHERE polrelid = ${
+          parameters.polrelid === undefined
+            ? sql("polrelid")
+            : typed.pg_catalog_oid(parameters.polrelid)
+        } AND polname = ${
+          parameters.polname === undefined
+            ? sql("polname")
+            : typed.pg_catalog_cstring(parameters.polname)
+        } RETURNING oid,polname,polrelid,polcmd,polpermissive,polroles,polqual,polwithcheck`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -12157,7 +19914,7 @@ export class Database {
         const response =
           await sql`SELECT roident,roname FROM pg_catalog.pg_replication_origin WHERE roident = ${
             parameters.roident === undefined
-              ? "roident"
+              ? sql("roident")
               : typed.pg_catalog_oid(parameters.roident)
           }`;
 
@@ -12177,7 +19934,7 @@ export class Database {
         const response =
           await sql`SELECT roident,roname FROM pg_catalog.pg_replication_origin WHERE roname = ${
             parameters.roname === undefined
-              ? "roname"
+              ? sql("roname")
               : typed.pg_catalog_text(parameters.roname)
           }`;
 
@@ -12198,7 +19955,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_replication_origin WHERE roident = ${
             parameters.roident === undefined
-              ? "roident"
+              ? sql("roident")
               : typed.pg_catalog_oid(parameters.roident)
           } RETURNING roident,roname
       `;
@@ -12219,10 +19976,71 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_replication_origin WHERE roname = ${
             parameters.roname === undefined
-              ? "roname"
+              ? sql("roname")
               : typed.pg_catalog_text(parameters.roname)
           } RETURNING roident,roname
       `;
+
+        const results = response.map((record) => ({
+          roident: undefinedIsNull(record.roident),
+          roname: undefinedIsNull(record.roname),
+        }));
+        return results[0];
+      }
+
+      async updateByRoident(
+        parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoident,
+        values: Partial<PgCatalog.PgReplicationOrigin>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_replication_origin SET roident = ${
+            values.roident === undefined
+              ? sql("roident")
+              : typed.pg_catalog_oid(values.roident)
+          } , roname = ${
+            values.roname === undefined
+              ? sql("roname")
+              : typed.pg_catalog_text(values.roname)
+          } WHERE roident = ${
+            parameters.roident === undefined
+              ? sql("roident")
+              : typed.pg_catalog_oid(parameters.roident)
+          } RETURNING roident,roname`;
+
+        const results = response.map((record) => ({
+          roident: undefinedIsNull(record.roident),
+          roname: undefinedIsNull(record.roname),
+        }));
+        return results[0];
+      }
+      async updateByRoname(
+        parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoname,
+        values: Partial<PgCatalog.PgReplicationOrigin>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_replication_origin SET roident = ${
+            values.roident === undefined
+              ? sql("roident")
+              : typed.pg_catalog_oid(values.roident)
+          } , roname = ${
+            values.roname === undefined
+              ? sql("roname")
+              : typed.pg_catalog_text(values.roname)
+          } WHERE roname = ${
+            parameters.roname === undefined
+              ? sql("roname")
+              : typed.pg_catalog_text(parameters.roname)
+          } RETURNING roident,roname`;
 
         const results = response.map((record) => ({
           roident: undefinedIsNull(record.roident),
@@ -12249,15 +20067,15 @@ export class Database {
         const response =
           await sql`SELECT oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl FROM pg_catalog.pg_default_acl WHERE defaclrole = ${
             parameters.defaclrole === undefined
-              ? "defaclrole"
+              ? sql("defaclrole")
               : typed.pg_catalog_oid(parameters.defaclrole)
           } AND defaclnamespace = ${
             parameters.defaclnamespace === undefined
-              ? "defaclnamespace"
+              ? sql("defaclnamespace")
               : typed.pg_catalog_oid(parameters.defaclnamespace)
           } AND defaclobjtype = ${
             parameters.defaclobjtype === undefined
-              ? "defaclobjtype"
+              ? sql("defaclobjtype")
               : typed.pg_catalog_char(parameters.defaclobjtype)
           }`;
 
@@ -12278,7 +20096,7 @@ export class Database {
         const response =
           await sql`SELECT oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl FROM pg_catalog.pg_default_acl WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -12302,15 +20120,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_default_acl WHERE defaclrole = ${
             parameters.defaclrole === undefined
-              ? "defaclrole"
+              ? sql("defaclrole")
               : typed.pg_catalog_oid(parameters.defaclrole)
           } AND defaclnamespace = ${
             parameters.defaclnamespace === undefined
-              ? "defaclnamespace"
+              ? sql("defaclnamespace")
               : typed.pg_catalog_oid(parameters.defaclnamespace)
           } AND defaclobjtype = ${
             parameters.defaclobjtype === undefined
-              ? "defaclobjtype"
+              ? sql("defaclobjtype")
               : typed.pg_catalog_char(parameters.defaclobjtype)
           } RETURNING oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl
       `;
@@ -12332,10 +20150,107 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_default_acl WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          defaclrole: undefinedIsNull(record.defaclrole),
+          defaclnamespace: undefinedIsNull(record.defaclnamespace),
+          defaclobjtype: undefinedIsNull(record.defaclobjtype),
+          defaclacl: undefinedIsNull(record.defaclacl),
+        }));
+        return results[0];
+      }
+
+      async updateByDefaclroleDefaclnamespaceDefaclobjtype(
+        parameters: PgCatalog.Tables.PgDefaultAcl.ByDefaclroleDefaclnamespaceDefaclobjtype,
+        values: Partial<PgCatalog.PgDefaultAcl>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_default_acl SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , defaclrole = ${
+          values.defaclrole === undefined
+            ? sql("defaclrole")
+            : typed.pg_catalog_oid(values.defaclrole)
+        } , defaclnamespace = ${
+          values.defaclnamespace === undefined
+            ? sql("defaclnamespace")
+            : typed.pg_catalog_oid(values.defaclnamespace)
+        } , defaclobjtype = ${
+          values.defaclobjtype === undefined
+            ? sql("defaclobjtype")
+            : typed.pg_catalog_char(values.defaclobjtype)
+        } , defaclacl = ${
+          values.defaclacl === undefined
+            ? sql("defaclacl")
+            : typed.pg_catalog__aclitem(values.defaclacl)
+        } WHERE defaclrole = ${
+          parameters.defaclrole === undefined
+            ? sql("defaclrole")
+            : typed.pg_catalog_oid(parameters.defaclrole)
+        } AND defaclnamespace = ${
+          parameters.defaclnamespace === undefined
+            ? sql("defaclnamespace")
+            : typed.pg_catalog_oid(parameters.defaclnamespace)
+        } AND defaclobjtype = ${
+          parameters.defaclobjtype === undefined
+            ? sql("defaclobjtype")
+            : typed.pg_catalog_char(parameters.defaclobjtype)
+        } RETURNING oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          defaclrole: undefinedIsNull(record.defaclrole),
+          defaclnamespace: undefinedIsNull(record.defaclnamespace),
+          defaclobjtype: undefinedIsNull(record.defaclobjtype),
+          defaclacl: undefinedIsNull(record.defaclacl),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgDefaultAcl.ByOid,
+        values: Partial<PgCatalog.PgDefaultAcl>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_default_acl SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , defaclrole = ${
+          values.defaclrole === undefined
+            ? sql("defaclrole")
+            : typed.pg_catalog_oid(values.defaclrole)
+        } , defaclnamespace = ${
+          values.defaclnamespace === undefined
+            ? sql("defaclnamespace")
+            : typed.pg_catalog_oid(values.defaclnamespace)
+        } , defaclobjtype = ${
+          values.defaclobjtype === undefined
+            ? sql("defaclobjtype")
+            : typed.pg_catalog_char(values.defaclobjtype)
+        } , defaclacl = ${
+          values.defaclacl === undefined
+            ? sql("defaclacl")
+            : typed.pg_catalog__aclitem(values.defaclacl)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,defaclrole,defaclnamespace,defaclobjtype,defaclacl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -12365,15 +20280,15 @@ export class Database {
         const response =
           await sql`SELECT objoid,classoid,objsubid,privtype,initprivs FROM pg_catalog.pg_init_privs WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           }`;
 
@@ -12397,18 +20312,72 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_init_privs WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } RETURNING objoid,classoid,objsubid,privtype,initprivs
       `;
+
+        const results = response.map((record) => ({
+          objoid: undefinedIsNull(record.objoid),
+          classoid: undefinedIsNull(record.classoid),
+          objsubid: undefinedIsNull(record.objsubid),
+          privtype: undefinedIsNull(record.privtype),
+          initprivs: undefinedIsNull(record.initprivs),
+        }));
+        return results[0];
+      }
+
+      async updateByObjoidClassoidObjsubid(
+        parameters: PgCatalog.Tables.PgInitPrivs.ByObjoidClassoidObjsubid,
+        values: Partial<PgCatalog.PgInitPrivs>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_init_privs SET objoid = ${
+            values.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(values.objoid)
+          } , classoid = ${
+            values.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(values.classoid)
+          } , objsubid = ${
+            values.objsubid === undefined
+              ? sql("objsubid")
+              : typed.pg_catalog_int4(values.objsubid)
+          } , privtype = ${
+            values.privtype === undefined
+              ? sql("privtype")
+              : typed.pg_catalog_char(values.privtype)
+          } , initprivs = ${
+            values.initprivs === undefined
+              ? sql("initprivs")
+              : typed.pg_catalog__aclitem(values.initprivs)
+          } WHERE objoid = ${
+            parameters.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(parameters.objoid)
+          } AND classoid = ${
+            parameters.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(parameters.classoid)
+          } AND objsubid = ${
+            parameters.objsubid === undefined
+              ? sql("objsubid")
+              : typed.pg_catalog_int4(parameters.objsubid)
+          } RETURNING objoid,classoid,objsubid,privtype,initprivs`;
 
         const results = response.map((record) => ({
           objoid: undefinedIsNull(record.objoid),
@@ -12438,19 +20407,19 @@ export class Database {
         const response =
           await sql`SELECT objoid,classoid,objsubid,provider,label FROM pg_catalog.pg_seclabel WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } AND provider = ${
             parameters.provider === undefined
-              ? "provider"
+              ? sql("provider")
               : typed.pg_catalog_text(parameters.provider)
           }`;
 
@@ -12474,22 +20443,79 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_seclabel WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND objsubid = ${
             parameters.objsubid === undefined
-              ? "objsubid"
+              ? sql("objsubid")
               : typed.pg_catalog_int4(parameters.objsubid)
           } AND provider = ${
             parameters.provider === undefined
-              ? "provider"
+              ? sql("provider")
               : typed.pg_catalog_text(parameters.provider)
           } RETURNING objoid,classoid,objsubid,provider,label
       `;
+
+        const results = response.map((record) => ({
+          objoid: undefinedIsNull(record.objoid),
+          classoid: undefinedIsNull(record.classoid),
+          objsubid: undefinedIsNull(record.objsubid),
+          provider: undefinedIsNull(record.provider),
+          label: undefinedIsNull(record.label),
+        }));
+        return results[0];
+      }
+
+      async updateByObjoidClassoidObjsubidProvider(
+        parameters: PgCatalog.Tables.PgSeclabel.ByObjoidClassoidObjsubidProvider,
+        values: Partial<PgCatalog.PgSeclabel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_seclabel SET objoid = ${
+          values.objoid === undefined
+            ? sql("objoid")
+            : typed.pg_catalog_oid(values.objoid)
+        } , classoid = ${
+          values.classoid === undefined
+            ? sql("classoid")
+            : typed.pg_catalog_oid(values.classoid)
+        } , objsubid = ${
+          values.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(values.objsubid)
+        } , provider = ${
+          values.provider === undefined
+            ? sql("provider")
+            : typed.pg_catalog_text(values.provider)
+        } , label = ${
+          values.label === undefined
+            ? sql("label")
+            : typed.pg_catalog_text(values.label)
+        } WHERE objoid = ${
+          parameters.objoid === undefined
+            ? sql("objoid")
+            : typed.pg_catalog_oid(parameters.objoid)
+        } AND classoid = ${
+          parameters.classoid === undefined
+            ? sql("classoid")
+            : typed.pg_catalog_oid(parameters.classoid)
+        } AND objsubid = ${
+          parameters.objsubid === undefined
+            ? sql("objsubid")
+            : typed.pg_catalog_int4(parameters.objsubid)
+        } AND provider = ${
+          parameters.provider === undefined
+            ? sql("provider")
+            : typed.pg_catalog_text(parameters.provider)
+        } RETURNING objoid,classoid,objsubid,provider,label`;
 
         const results = response.map((record) => ({
           objoid: undefinedIsNull(record.objoid),
@@ -12519,15 +20545,15 @@ export class Database {
         const response =
           await sql`SELECT objoid,classoid,provider,label FROM pg_catalog.pg_shseclabel WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND provider = ${
             parameters.provider === undefined
-              ? "provider"
+              ? sql("provider")
               : typed.pg_catalog_text(parameters.provider)
           }`;
 
@@ -12550,18 +20576,67 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_shseclabel WHERE objoid = ${
             parameters.objoid === undefined
-              ? "objoid"
+              ? sql("objoid")
               : typed.pg_catalog_oid(parameters.objoid)
           } AND classoid = ${
             parameters.classoid === undefined
-              ? "classoid"
+              ? sql("classoid")
               : typed.pg_catalog_oid(parameters.classoid)
           } AND provider = ${
             parameters.provider === undefined
-              ? "provider"
+              ? sql("provider")
               : typed.pg_catalog_text(parameters.provider)
           } RETURNING objoid,classoid,provider,label
       `;
+
+        const results = response.map((record) => ({
+          objoid: undefinedIsNull(record.objoid),
+          classoid: undefinedIsNull(record.classoid),
+          provider: undefinedIsNull(record.provider),
+          label: undefinedIsNull(record.label),
+        }));
+        return results[0];
+      }
+
+      async updateByObjoidClassoidProvider(
+        parameters: PgCatalog.Tables.PgShseclabel.ByObjoidClassoidProvider,
+        values: Partial<PgCatalog.PgShseclabel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_shseclabel SET objoid = ${
+            values.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(values.objoid)
+          } , classoid = ${
+            values.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(values.classoid)
+          } , provider = ${
+            values.provider === undefined
+              ? sql("provider")
+              : typed.pg_catalog_text(values.provider)
+          } , label = ${
+            values.label === undefined
+              ? sql("label")
+              : typed.pg_catalog_text(values.label)
+          } WHERE objoid = ${
+            parameters.objoid === undefined
+              ? sql("objoid")
+              : typed.pg_catalog_oid(parameters.objoid)
+          } AND classoid = ${
+            parameters.classoid === undefined
+              ? sql("classoid")
+              : typed.pg_catalog_oid(parameters.classoid)
+          } AND provider = ${
+            parameters.provider === undefined
+              ? sql("provider")
+              : typed.pg_catalog_text(parameters.provider)
+          } RETURNING objoid,classoid,provider,label`;
 
         const results = response.map((record) => ({
           objoid: undefinedIsNull(record.objoid),
@@ -12590,15 +20665,15 @@ export class Database {
         const response =
           await sql`SELECT oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion FROM pg_catalog.pg_collation WHERE collname = ${
             parameters.collname === undefined
-              ? "collname"
+              ? sql("collname")
               : typed.pg_catalog_cstring(parameters.collname)
           } AND collencoding = ${
             parameters.collencoding === undefined
-              ? "collencoding"
+              ? sql("collencoding")
               : typed.pg_catalog_int4(parameters.collencoding)
           } AND collnamespace = ${
             parameters.collnamespace === undefined
-              ? "collnamespace"
+              ? sql("collnamespace")
               : typed.pg_catalog_oid(parameters.collnamespace)
           }`;
 
@@ -12626,7 +20701,7 @@ export class Database {
         const response =
           await sql`SELECT oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion FROM pg_catalog.pg_collation WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -12657,15 +20732,15 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_collation WHERE collname = ${
             parameters.collname === undefined
-              ? "collname"
+              ? sql("collname")
               : typed.pg_catalog_cstring(parameters.collname)
           } AND collencoding = ${
             parameters.collencoding === undefined
-              ? "collencoding"
+              ? sql("collencoding")
               : typed.pg_catalog_int4(parameters.collencoding)
           } AND collnamespace = ${
             parameters.collnamespace === undefined
-              ? "collnamespace"
+              ? sql("collnamespace")
               : typed.pg_catalog_oid(parameters.collnamespace)
           } RETURNING oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion
       `;
@@ -12694,10 +20769,177 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_collation WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          collname: undefinedIsNull(record.collname),
+          collnamespace: undefinedIsNull(record.collnamespace),
+          collowner: undefinedIsNull(record.collowner),
+          collprovider: undefinedIsNull(record.collprovider),
+          collisdeterministic: undefinedIsNull(record.collisdeterministic),
+          collencoding: undefinedIsNull(record.collencoding),
+          collcollate: undefinedIsNull(record.collcollate),
+          collctype: undefinedIsNull(record.collctype),
+          colliculocale: undefinedIsNull(record.colliculocale),
+          collicurules: undefinedIsNull(record.collicurules),
+          collversion: undefinedIsNull(record.collversion),
+        }));
+        return results[0];
+      }
+
+      async updateByCollnameCollencodingCollnamespace(
+        parameters: PgCatalog.Tables.PgCollation.ByCollnameCollencodingCollnamespace,
+        values: Partial<PgCatalog.PgCollation>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_collation SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , collname = ${
+          values.collname === undefined
+            ? sql("collname")
+            : typed.pg_catalog_name(values.collname)
+        } , collnamespace = ${
+          values.collnamespace === undefined
+            ? sql("collnamespace")
+            : typed.pg_catalog_oid(values.collnamespace)
+        } , collowner = ${
+          values.collowner === undefined
+            ? sql("collowner")
+            : typed.pg_catalog_oid(values.collowner)
+        } , collprovider = ${
+          values.collprovider === undefined
+            ? sql("collprovider")
+            : typed.pg_catalog_char(values.collprovider)
+        } , collisdeterministic = ${
+          values.collisdeterministic === undefined
+            ? sql("collisdeterministic")
+            : typed.pg_catalog_bool(values.collisdeterministic)
+        } , collencoding = ${
+          values.collencoding === undefined
+            ? sql("collencoding")
+            : typed.pg_catalog_int4(values.collencoding)
+        } , collcollate = ${
+          values.collcollate === undefined
+            ? sql("collcollate")
+            : typed.pg_catalog_text(values.collcollate)
+        } , collctype = ${
+          values.collctype === undefined
+            ? sql("collctype")
+            : typed.pg_catalog_text(values.collctype)
+        } , colliculocale = ${
+          values.colliculocale === undefined
+            ? sql("colliculocale")
+            : typed.pg_catalog_text(values.colliculocale)
+        } , collicurules = ${
+          values.collicurules === undefined
+            ? sql("collicurules")
+            : typed.pg_catalog_text(values.collicurules)
+        } , collversion = ${
+          values.collversion === undefined
+            ? sql("collversion")
+            : typed.pg_catalog_text(values.collversion)
+        } WHERE collname = ${
+          parameters.collname === undefined
+            ? sql("collname")
+            : typed.pg_catalog_cstring(parameters.collname)
+        } AND collencoding = ${
+          parameters.collencoding === undefined
+            ? sql("collencoding")
+            : typed.pg_catalog_int4(parameters.collencoding)
+        } AND collnamespace = ${
+          parameters.collnamespace === undefined
+            ? sql("collnamespace")
+            : typed.pg_catalog_oid(parameters.collnamespace)
+        } RETURNING oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          collname: undefinedIsNull(record.collname),
+          collnamespace: undefinedIsNull(record.collnamespace),
+          collowner: undefinedIsNull(record.collowner),
+          collprovider: undefinedIsNull(record.collprovider),
+          collisdeterministic: undefinedIsNull(record.collisdeterministic),
+          collencoding: undefinedIsNull(record.collencoding),
+          collcollate: undefinedIsNull(record.collcollate),
+          collctype: undefinedIsNull(record.collctype),
+          colliculocale: undefinedIsNull(record.colliculocale),
+          collicurules: undefinedIsNull(record.collicurules),
+          collversion: undefinedIsNull(record.collversion),
+        }));
+        return results[0];
+      }
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgCollation.ByOid,
+        values: Partial<PgCatalog.PgCollation>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_collation SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , collname = ${
+          values.collname === undefined
+            ? sql("collname")
+            : typed.pg_catalog_name(values.collname)
+        } , collnamespace = ${
+          values.collnamespace === undefined
+            ? sql("collnamespace")
+            : typed.pg_catalog_oid(values.collnamespace)
+        } , collowner = ${
+          values.collowner === undefined
+            ? sql("collowner")
+            : typed.pg_catalog_oid(values.collowner)
+        } , collprovider = ${
+          values.collprovider === undefined
+            ? sql("collprovider")
+            : typed.pg_catalog_char(values.collprovider)
+        } , collisdeterministic = ${
+          values.collisdeterministic === undefined
+            ? sql("collisdeterministic")
+            : typed.pg_catalog_bool(values.collisdeterministic)
+        } , collencoding = ${
+          values.collencoding === undefined
+            ? sql("collencoding")
+            : typed.pg_catalog_int4(values.collencoding)
+        } , collcollate = ${
+          values.collcollate === undefined
+            ? sql("collcollate")
+            : typed.pg_catalog_text(values.collcollate)
+        } , collctype = ${
+          values.collctype === undefined
+            ? sql("collctype")
+            : typed.pg_catalog_text(values.collctype)
+        } , colliculocale = ${
+          values.colliculocale === undefined
+            ? sql("colliculocale")
+            : typed.pg_catalog_text(values.colliculocale)
+        } , collicurules = ${
+          values.collicurules === undefined
+            ? sql("collicurules")
+            : typed.pg_catalog_text(values.collicurules)
+        } , collversion = ${
+          values.collversion === undefined
+            ? sql("collversion")
+            : typed.pg_catalog_text(values.collversion)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,collname,collnamespace,collowner,collprovider,collisdeterministic,collencoding,collcollate,collctype,colliculocale,collicurules,collversion`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -12732,7 +20974,7 @@ export class Database {
         const response =
           await sql`SELECT oid,parname,paracl FROM pg_catalog.pg_parameter_acl WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -12751,7 +20993,7 @@ export class Database {
         const response =
           await sql`SELECT oid,parname,paracl FROM pg_catalog.pg_parameter_acl WHERE parname = ${
             parameters.parname === undefined
-              ? "parname"
+              ? sql("parname")
               : typed.pg_catalog_text(parameters.parname)
           }`;
 
@@ -12771,7 +21013,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_parameter_acl WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,parname,paracl
       `;
@@ -12793,10 +21035,81 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_parameter_acl WHERE parname = ${
             parameters.parname === undefined
-              ? "parname"
+              ? sql("parname")
               : typed.pg_catalog_text(parameters.parname)
           } RETURNING oid,parname,paracl
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          parname: undefinedIsNull(record.parname),
+          paracl: undefinedIsNull(record.paracl),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByOid,
+        values: Partial<PgCatalog.PgParameterAcl>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_parameter_acl SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , parname = ${
+            values.parname === undefined
+              ? sql("parname")
+              : typed.pg_catalog_text(values.parname)
+          } , paracl = ${
+            values.paracl === undefined
+              ? sql("paracl")
+              : typed.pg_catalog__aclitem(values.paracl)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,parname,paracl`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          parname: undefinedIsNull(record.parname),
+          paracl: undefinedIsNull(record.paracl),
+        }));
+        return results[0];
+      }
+      async updateByParname(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByParname,
+        values: Partial<PgCatalog.PgParameterAcl>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_parameter_acl SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , parname = ${
+            values.parname === undefined
+              ? sql("parname")
+              : typed.pg_catalog_text(values.parname)
+          } , paracl = ${
+            values.paracl === undefined
+              ? sql("paracl")
+              : typed.pg_catalog__aclitem(values.paracl)
+          } WHERE parname = ${
+            parameters.parname === undefined
+              ? sql("parname")
+              : typed.pg_catalog_text(parameters.parname)
+          } RETURNING oid,parname,paracl`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -12824,7 +21137,7 @@ export class Database {
         const response =
           await sql`SELECT partrelid,partstrat,partnatts,partdefid,partattrs,partclass,partcollation,partexprs FROM pg_catalog.pg_partitioned_table WHERE partrelid = ${
             parameters.partrelid === undefined
-              ? "partrelid"
+              ? sql("partrelid")
               : typed.pg_catalog_oid(parameters.partrelid)
           }`;
 
@@ -12851,10 +21164,71 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_partitioned_table WHERE partrelid = ${
             parameters.partrelid === undefined
-              ? "partrelid"
+              ? sql("partrelid")
               : typed.pg_catalog_oid(parameters.partrelid)
           } RETURNING partrelid,partstrat,partnatts,partdefid,partattrs,partclass,partcollation,partexprs
       `;
+
+        const results = response.map((record) => ({
+          partrelid: undefinedIsNull(record.partrelid),
+          partstrat: undefinedIsNull(record.partstrat),
+          partnatts: undefinedIsNull(record.partnatts),
+          partdefid: undefinedIsNull(record.partdefid),
+          partattrs: undefinedIsNull(record.partattrs),
+          partclass: undefinedIsNull(record.partclass),
+          partcollation: undefinedIsNull(record.partcollation),
+          partexprs: undefinedIsNull(record.partexprs),
+        }));
+        return results[0];
+      }
+
+      async updateByPartrelid(
+        parameters: PgCatalog.Tables.PgPartitionedTable.ByPartrelid,
+        values: Partial<PgCatalog.PgPartitionedTable>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_partitioned_table SET partrelid = ${
+            values.partrelid === undefined
+              ? sql("partrelid")
+              : typed.pg_catalog_oid(values.partrelid)
+          } , partstrat = ${
+            values.partstrat === undefined
+              ? sql("partstrat")
+              : typed.pg_catalog_char(values.partstrat)
+          } , partnatts = ${
+            values.partnatts === undefined
+              ? sql("partnatts")
+              : typed.pg_catalog_int2(values.partnatts)
+          } , partdefid = ${
+            values.partdefid === undefined
+              ? sql("partdefid")
+              : typed.pg_catalog_oid(values.partdefid)
+          } , partattrs = ${
+            values.partattrs === undefined
+              ? sql("partattrs")
+              : typed.pg_catalog_int2vector(values.partattrs)
+          } , partclass = ${
+            values.partclass === undefined
+              ? sql("partclass")
+              : typed.pg_catalog_oidvector(values.partclass)
+          } , partcollation = ${
+            values.partcollation === undefined
+              ? sql("partcollation")
+              : typed.pg_catalog_oidvector(values.partcollation)
+          } , partexprs = ${
+            values.partexprs === undefined
+              ? sql("partexprs")
+              : typed.pg_catalog_pg_node_tree(values.partexprs)
+          } WHERE partrelid = ${
+            parameters.partrelid === undefined
+              ? sql("partrelid")
+              : typed.pg_catalog_oid(parameters.partrelid)
+          } RETURNING partrelid,partstrat,partnatts,partdefid,partattrs,partclass,partcollation,partexprs`;
 
         const results = response.map((record) => ({
           partrelid: undefinedIsNull(record.partrelid),
@@ -12887,7 +21261,7 @@ export class Database {
         const response =
           await sql`SELECT rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff FROM pg_catalog.pg_range WHERE rngmultitypid = ${
             parameters.rngmultitypid === undefined
-              ? "rngmultitypid"
+              ? sql("rngmultitypid")
               : typed.pg_catalog_oid(parameters.rngmultitypid)
           }`;
 
@@ -12910,7 +21284,7 @@ export class Database {
         const response =
           await sql`SELECT rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff FROM pg_catalog.pg_range WHERE rngtypid = ${
             parameters.rngtypid === undefined
-              ? "rngtypid"
+              ? sql("rngtypid")
               : typed.pg_catalog_oid(parameters.rngtypid)
           }`;
 
@@ -12936,7 +21310,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_range WHERE rngmultitypid = ${
             parameters.rngmultitypid === undefined
-              ? "rngmultitypid"
+              ? sql("rngmultitypid")
               : typed.pg_catalog_oid(parameters.rngmultitypid)
           } RETURNING rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff
       `;
@@ -12960,10 +21334,119 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_range WHERE rngtypid = ${
             parameters.rngtypid === undefined
-              ? "rngtypid"
+              ? sql("rngtypid")
               : typed.pg_catalog_oid(parameters.rngtypid)
           } RETURNING rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff
       `;
+
+        const results = response.map((record) => ({
+          rngtypid: undefinedIsNull(record.rngtypid),
+          rngsubtype: undefinedIsNull(record.rngsubtype),
+          rngmultitypid: undefinedIsNull(record.rngmultitypid),
+          rngcollation: undefinedIsNull(record.rngcollation),
+          rngsubopc: undefinedIsNull(record.rngsubopc),
+          rngcanonical: undefinedIsNull(record.rngcanonical),
+          rngsubdiff: undefinedIsNull(record.rngsubdiff),
+        }));
+        return results[0];
+      }
+
+      async updateByRngmultitypid(
+        parameters: PgCatalog.Tables.PgRange.ByRngmultitypid,
+        values: Partial<PgCatalog.PgRange>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_range SET rngtypid = ${
+          values.rngtypid === undefined
+            ? sql("rngtypid")
+            : typed.pg_catalog_oid(values.rngtypid)
+        } , rngsubtype = ${
+          values.rngsubtype === undefined
+            ? sql("rngsubtype")
+            : typed.pg_catalog_oid(values.rngsubtype)
+        } , rngmultitypid = ${
+          values.rngmultitypid === undefined
+            ? sql("rngmultitypid")
+            : typed.pg_catalog_oid(values.rngmultitypid)
+        } , rngcollation = ${
+          values.rngcollation === undefined
+            ? sql("rngcollation")
+            : typed.pg_catalog_oid(values.rngcollation)
+        } , rngsubopc = ${
+          values.rngsubopc === undefined
+            ? sql("rngsubopc")
+            : typed.pg_catalog_oid(values.rngsubopc)
+        } , rngcanonical = ${
+          values.rngcanonical === undefined
+            ? sql("rngcanonical")
+            : typed.pg_catalog_regproc(values.rngcanonical)
+        } , rngsubdiff = ${
+          values.rngsubdiff === undefined
+            ? sql("rngsubdiff")
+            : typed.pg_catalog_regproc(values.rngsubdiff)
+        } WHERE rngmultitypid = ${
+          parameters.rngmultitypid === undefined
+            ? sql("rngmultitypid")
+            : typed.pg_catalog_oid(parameters.rngmultitypid)
+        } RETURNING rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff`;
+
+        const results = response.map((record) => ({
+          rngtypid: undefinedIsNull(record.rngtypid),
+          rngsubtype: undefinedIsNull(record.rngsubtype),
+          rngmultitypid: undefinedIsNull(record.rngmultitypid),
+          rngcollation: undefinedIsNull(record.rngcollation),
+          rngsubopc: undefinedIsNull(record.rngsubopc),
+          rngcanonical: undefinedIsNull(record.rngcanonical),
+          rngsubdiff: undefinedIsNull(record.rngsubdiff),
+        }));
+        return results[0];
+      }
+      async updateByRngtypid(
+        parameters: PgCatalog.Tables.PgRange.ByRngtypid,
+        values: Partial<PgCatalog.PgRange>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_range SET rngtypid = ${
+          values.rngtypid === undefined
+            ? sql("rngtypid")
+            : typed.pg_catalog_oid(values.rngtypid)
+        } , rngsubtype = ${
+          values.rngsubtype === undefined
+            ? sql("rngsubtype")
+            : typed.pg_catalog_oid(values.rngsubtype)
+        } , rngmultitypid = ${
+          values.rngmultitypid === undefined
+            ? sql("rngmultitypid")
+            : typed.pg_catalog_oid(values.rngmultitypid)
+        } , rngcollation = ${
+          values.rngcollation === undefined
+            ? sql("rngcollation")
+            : typed.pg_catalog_oid(values.rngcollation)
+        } , rngsubopc = ${
+          values.rngsubopc === undefined
+            ? sql("rngsubopc")
+            : typed.pg_catalog_oid(values.rngsubopc)
+        } , rngcanonical = ${
+          values.rngcanonical === undefined
+            ? sql("rngcanonical")
+            : typed.pg_catalog_regproc(values.rngcanonical)
+        } , rngsubdiff = ${
+          values.rngsubdiff === undefined
+            ? sql("rngsubdiff")
+            : typed.pg_catalog_regproc(values.rngsubdiff)
+        } WHERE rngtypid = ${
+          parameters.rngtypid === undefined
+            ? sql("rngtypid")
+            : typed.pg_catalog_oid(parameters.rngtypid)
+        } RETURNING rngtypid,rngsubtype,rngmultitypid,rngcollation,rngsubopc,rngcanonical,rngsubdiff`;
 
         const results = response.map((record) => ({
           rngtypid: undefinedIsNull(record.rngtypid),
@@ -12993,7 +21476,7 @@ export class Database {
         const response =
           await sql`SELECT oid,trftype,trflang,trffromsql,trftosql FROM pg_catalog.pg_transform WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -13016,11 +21499,11 @@ export class Database {
         const response =
           await sql`SELECT oid,trftype,trflang,trffromsql,trftosql FROM pg_catalog.pg_transform WHERE trftype = ${
             parameters.trftype === undefined
-              ? "trftype"
+              ? sql("trftype")
               : typed.pg_catalog_oid(parameters.trftype)
           } AND trflang = ${
             parameters.trflang === undefined
-              ? "trflang"
+              ? sql("trflang")
               : typed.pg_catalog_oid(parameters.trflang)
           }`;
 
@@ -13042,7 +21525,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_transform WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,trftype,trflang,trffromsql,trftosql
       `;
@@ -13066,14 +21549,107 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_transform WHERE trftype = ${
             parameters.trftype === undefined
-              ? "trftype"
+              ? sql("trftype")
               : typed.pg_catalog_oid(parameters.trftype)
           } AND trflang = ${
             parameters.trflang === undefined
-              ? "trflang"
+              ? sql("trflang")
               : typed.pg_catalog_oid(parameters.trflang)
           } RETURNING oid,trftype,trflang,trffromsql,trftosql
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          trftype: undefinedIsNull(record.trftype),
+          trflang: undefinedIsNull(record.trflang),
+          trffromsql: undefinedIsNull(record.trffromsql),
+          trftosql: undefinedIsNull(record.trftosql),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgTransform.ByOid,
+        values: Partial<PgCatalog.PgTransform>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_transform SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , trftype = ${
+          values.trftype === undefined
+            ? sql("trftype")
+            : typed.pg_catalog_oid(values.trftype)
+        } , trflang = ${
+          values.trflang === undefined
+            ? sql("trflang")
+            : typed.pg_catalog_oid(values.trflang)
+        } , trffromsql = ${
+          values.trffromsql === undefined
+            ? sql("trffromsql")
+            : typed.pg_catalog_regproc(values.trffromsql)
+        } , trftosql = ${
+          values.trftosql === undefined
+            ? sql("trftosql")
+            : typed.pg_catalog_regproc(values.trftosql)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,trftype,trflang,trffromsql,trftosql`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          trftype: undefinedIsNull(record.trftype),
+          trflang: undefinedIsNull(record.trflang),
+          trffromsql: undefinedIsNull(record.trffromsql),
+          trftosql: undefinedIsNull(record.trftosql),
+        }));
+        return results[0];
+      }
+      async updateByTrftypeTrflang(
+        parameters: PgCatalog.Tables.PgTransform.ByTrftypeTrflang,
+        values: Partial<PgCatalog.PgTransform>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_transform SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , trftype = ${
+          values.trftype === undefined
+            ? sql("trftype")
+            : typed.pg_catalog_oid(values.trftype)
+        } , trflang = ${
+          values.trflang === undefined
+            ? sql("trflang")
+            : typed.pg_catalog_oid(values.trflang)
+        } , trffromsql = ${
+          values.trffromsql === undefined
+            ? sql("trffromsql")
+            : typed.pg_catalog_regproc(values.trffromsql)
+        } , trftosql = ${
+          values.trftosql === undefined
+            ? sql("trftosql")
+            : typed.pg_catalog_regproc(values.trftosql)
+        } WHERE trftype = ${
+          parameters.trftype === undefined
+            ? sql("trftype")
+            : typed.pg_catalog_oid(parameters.trftype)
+        } AND trflang = ${
+          parameters.trflang === undefined
+            ? sql("trflang")
+            : typed.pg_catalog_oid(parameters.trflang)
+        } RETURNING oid,trftype,trflang,trffromsql,trftosql`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -13101,7 +21677,7 @@ export class Database {
         const response =
           await sql`SELECT seqrelid,seqtypid,seqstart,seqincrement,seqmax,seqmin,seqcache,seqcycle FROM pg_catalog.pg_sequence WHERE seqrelid = ${
             parameters.seqrelid === undefined
-              ? "seqrelid"
+              ? sql("seqrelid")
               : typed.pg_catalog_oid(parameters.seqrelid)
           }`;
 
@@ -13128,10 +21704,71 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_sequence WHERE seqrelid = ${
             parameters.seqrelid === undefined
-              ? "seqrelid"
+              ? sql("seqrelid")
               : typed.pg_catalog_oid(parameters.seqrelid)
           } RETURNING seqrelid,seqtypid,seqstart,seqincrement,seqmax,seqmin,seqcache,seqcycle
       `;
+
+        const results = response.map((record) => ({
+          seqrelid: undefinedIsNull(record.seqrelid),
+          seqtypid: undefinedIsNull(record.seqtypid),
+          seqstart: undefinedIsNull(record.seqstart),
+          seqincrement: undefinedIsNull(record.seqincrement),
+          seqmax: undefinedIsNull(record.seqmax),
+          seqmin: undefinedIsNull(record.seqmin),
+          seqcache: undefinedIsNull(record.seqcache),
+          seqcycle: undefinedIsNull(record.seqcycle),
+        }));
+        return results[0];
+      }
+
+      async updateBySeqrelid(
+        parameters: PgCatalog.Tables.PgSequence.BySeqrelid,
+        values: Partial<PgCatalog.PgSequence>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_sequence SET seqrelid = ${
+            values.seqrelid === undefined
+              ? sql("seqrelid")
+              : typed.pg_catalog_oid(values.seqrelid)
+          } , seqtypid = ${
+            values.seqtypid === undefined
+              ? sql("seqtypid")
+              : typed.pg_catalog_oid(values.seqtypid)
+          } , seqstart = ${
+            values.seqstart === undefined
+              ? sql("seqstart")
+              : typed.pg_catalog_int8(values.seqstart)
+          } , seqincrement = ${
+            values.seqincrement === undefined
+              ? sql("seqincrement")
+              : typed.pg_catalog_int8(values.seqincrement)
+          } , seqmax = ${
+            values.seqmax === undefined
+              ? sql("seqmax")
+              : typed.pg_catalog_int8(values.seqmax)
+          } , seqmin = ${
+            values.seqmin === undefined
+              ? sql("seqmin")
+              : typed.pg_catalog_int8(values.seqmin)
+          } , seqcache = ${
+            values.seqcache === undefined
+              ? sql("seqcache")
+              : typed.pg_catalog_int8(values.seqcache)
+          } , seqcycle = ${
+            values.seqcycle === undefined
+              ? sql("seqcycle")
+              : typed.pg_catalog_bool(values.seqcycle)
+          } WHERE seqrelid = ${
+            parameters.seqrelid === undefined
+              ? sql("seqrelid")
+              : typed.pg_catalog_oid(parameters.seqrelid)
+          } RETURNING seqrelid,seqtypid,seqstart,seqincrement,seqmax,seqmin,seqcache,seqcycle`;
 
         const results = response.map((record) => ({
           seqrelid: undefinedIsNull(record.seqrelid),
@@ -13162,7 +21799,7 @@ export class Database {
         const response =
           await sql`SELECT oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot FROM pg_catalog.pg_publication WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -13187,7 +21824,7 @@ export class Database {
         const response =
           await sql`SELECT oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot FROM pg_catalog.pg_publication WHERE pubname = ${
             parameters.pubname === undefined
-              ? "pubname"
+              ? sql("pubname")
               : typed.pg_catalog_cstring(parameters.pubname)
           }`;
 
@@ -13213,7 +21850,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot
       `;
@@ -13241,10 +21878,139 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication WHERE pubname = ${
             parameters.pubname === undefined
-              ? "pubname"
+              ? sql("pubname")
               : typed.pg_catalog_cstring(parameters.pubname)
           } RETURNING oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          pubname: undefinedIsNull(record.pubname),
+          pubowner: undefinedIsNull(record.pubowner),
+          puballtables: undefinedIsNull(record.puballtables),
+          pubinsert: undefinedIsNull(record.pubinsert),
+          pubupdate: undefinedIsNull(record.pubupdate),
+          pubdelete: undefinedIsNull(record.pubdelete),
+          pubtruncate: undefinedIsNull(record.pubtruncate),
+          pubviaroot: undefinedIsNull(record.pubviaroot),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgPublication.ByOid,
+        values: Partial<PgCatalog.PgPublication>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_publication SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , pubname = ${
+          values.pubname === undefined
+            ? sql("pubname")
+            : typed.pg_catalog_name(values.pubname)
+        } , pubowner = ${
+          values.pubowner === undefined
+            ? sql("pubowner")
+            : typed.pg_catalog_oid(values.pubowner)
+        } , puballtables = ${
+          values.puballtables === undefined
+            ? sql("puballtables")
+            : typed.pg_catalog_bool(values.puballtables)
+        } , pubinsert = ${
+          values.pubinsert === undefined
+            ? sql("pubinsert")
+            : typed.pg_catalog_bool(values.pubinsert)
+        } , pubupdate = ${
+          values.pubupdate === undefined
+            ? sql("pubupdate")
+            : typed.pg_catalog_bool(values.pubupdate)
+        } , pubdelete = ${
+          values.pubdelete === undefined
+            ? sql("pubdelete")
+            : typed.pg_catalog_bool(values.pubdelete)
+        } , pubtruncate = ${
+          values.pubtruncate === undefined
+            ? sql("pubtruncate")
+            : typed.pg_catalog_bool(values.pubtruncate)
+        } , pubviaroot = ${
+          values.pubviaroot === undefined
+            ? sql("pubviaroot")
+            : typed.pg_catalog_bool(values.pubviaroot)
+        } WHERE oid = ${
+          parameters.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(parameters.oid)
+        } RETURNING oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          pubname: undefinedIsNull(record.pubname),
+          pubowner: undefinedIsNull(record.pubowner),
+          puballtables: undefinedIsNull(record.puballtables),
+          pubinsert: undefinedIsNull(record.pubinsert),
+          pubupdate: undefinedIsNull(record.pubupdate),
+          pubdelete: undefinedIsNull(record.pubdelete),
+          pubtruncate: undefinedIsNull(record.pubtruncate),
+          pubviaroot: undefinedIsNull(record.pubviaroot),
+        }));
+        return results[0];
+      }
+      async updateByPubname(
+        parameters: PgCatalog.Tables.PgPublication.ByPubname,
+        values: Partial<PgCatalog.PgPublication>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE pg_catalog.pg_publication SET oid = ${
+          values.oid === undefined
+            ? sql("oid")
+            : typed.pg_catalog_oid(values.oid)
+        } , pubname = ${
+          values.pubname === undefined
+            ? sql("pubname")
+            : typed.pg_catalog_name(values.pubname)
+        } , pubowner = ${
+          values.pubowner === undefined
+            ? sql("pubowner")
+            : typed.pg_catalog_oid(values.pubowner)
+        } , puballtables = ${
+          values.puballtables === undefined
+            ? sql("puballtables")
+            : typed.pg_catalog_bool(values.puballtables)
+        } , pubinsert = ${
+          values.pubinsert === undefined
+            ? sql("pubinsert")
+            : typed.pg_catalog_bool(values.pubinsert)
+        } , pubupdate = ${
+          values.pubupdate === undefined
+            ? sql("pubupdate")
+            : typed.pg_catalog_bool(values.pubupdate)
+        } , pubdelete = ${
+          values.pubdelete === undefined
+            ? sql("pubdelete")
+            : typed.pg_catalog_bool(values.pubdelete)
+        } , pubtruncate = ${
+          values.pubtruncate === undefined
+            ? sql("pubtruncate")
+            : typed.pg_catalog_bool(values.pubtruncate)
+        } , pubviaroot = ${
+          values.pubviaroot === undefined
+            ? sql("pubviaroot")
+            : typed.pg_catalog_bool(values.pubviaroot)
+        } WHERE pubname = ${
+          parameters.pubname === undefined
+            ? sql("pubname")
+            : typed.pg_catalog_cstring(parameters.pubname)
+        } RETURNING oid,pubname,pubowner,puballtables,pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -13276,7 +22042,7 @@ export class Database {
         const response =
           await sql`SELECT oid,pnpubid,pnnspid FROM pg_catalog.pg_publication_namespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -13297,11 +22063,11 @@ export class Database {
         const response =
           await sql`SELECT oid,pnpubid,pnnspid FROM pg_catalog.pg_publication_namespace WHERE pnnspid = ${
             parameters.pnnspid === undefined
-              ? "pnnspid"
+              ? sql("pnnspid")
               : typed.pg_catalog_oid(parameters.pnnspid)
           } AND pnpubid = ${
             parameters.pnpubid === undefined
-              ? "pnpubid"
+              ? sql("pnpubid")
               : typed.pg_catalog_oid(parameters.pnpubid)
           }`;
 
@@ -13323,7 +22089,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication_namespace WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,pnpubid,pnnspid
       `;
@@ -13345,14 +22111,89 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication_namespace WHERE pnnspid = ${
             parameters.pnnspid === undefined
-              ? "pnnspid"
+              ? sql("pnnspid")
               : typed.pg_catalog_oid(parameters.pnnspid)
           } AND pnpubid = ${
             parameters.pnpubid === undefined
-              ? "pnpubid"
+              ? sql("pnpubid")
               : typed.pg_catalog_oid(parameters.pnpubid)
           } RETURNING oid,pnpubid,pnnspid
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          pnpubid: undefinedIsNull(record.pnpubid),
+          pnnspid: undefinedIsNull(record.pnnspid),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid,
+        values: Partial<PgCatalog.PgPublicationNamespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_publication_namespace SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , pnpubid = ${
+            values.pnpubid === undefined
+              ? sql("pnpubid")
+              : typed.pg_catalog_oid(values.pnpubid)
+          } , pnnspid = ${
+            values.pnnspid === undefined
+              ? sql("pnnspid")
+              : typed.pg_catalog_oid(values.pnnspid)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,pnpubid,pnnspid`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          pnpubid: undefinedIsNull(record.pnpubid),
+          pnnspid: undefinedIsNull(record.pnnspid),
+        }));
+        return results[0];
+      }
+      async updateByPnnspidPnpubid(
+        parameters: PgCatalog.Tables.PgPublicationNamespace.ByPnnspidPnpubid,
+        values: Partial<PgCatalog.PgPublicationNamespace>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_publication_namespace SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , pnpubid = ${
+            values.pnpubid === undefined
+              ? sql("pnpubid")
+              : typed.pg_catalog_oid(values.pnpubid)
+          } , pnnspid = ${
+            values.pnnspid === undefined
+              ? sql("pnnspid")
+              : typed.pg_catalog_oid(values.pnnspid)
+          } WHERE pnnspid = ${
+            parameters.pnnspid === undefined
+              ? sql("pnnspid")
+              : typed.pg_catalog_oid(parameters.pnnspid)
+          } AND pnpubid = ${
+            parameters.pnpubid === undefined
+              ? sql("pnpubid")
+              : typed.pg_catalog_oid(parameters.pnpubid)
+          } RETURNING oid,pnpubid,pnnspid`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -13378,7 +22219,7 @@ export class Database {
         const response =
           await sql`SELECT oid,prpubid,prrelid,prqual,prattrs FROM pg_catalog.pg_publication_rel WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           }`;
 
@@ -13399,7 +22240,7 @@ export class Database {
         const response =
           await sql`SELECT oid,prpubid,prrelid,prqual,prattrs FROM pg_catalog.pg_publication_rel WHERE prpubid = ${
             parameters.prpubid === undefined
-              ? "prpubid"
+              ? sql("prpubid")
               : typed.pg_catalog_oid(parameters.prpubid)
           }`;
 
@@ -13422,11 +22263,11 @@ export class Database {
         const response =
           await sql`SELECT oid,prpubid,prrelid,prqual,prattrs FROM pg_catalog.pg_publication_rel WHERE prrelid = ${
             parameters.prrelid === undefined
-              ? "prrelid"
+              ? sql("prrelid")
               : typed.pg_catalog_oid(parameters.prrelid)
           } AND prpubid = ${
             parameters.prpubid === undefined
-              ? "prpubid"
+              ? sql("prpubid")
               : typed.pg_catalog_oid(parameters.prpubid)
           }`;
 
@@ -13448,7 +22289,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE oid = ${
             parameters.oid === undefined
-              ? "oid"
+              ? sql("oid")
               : typed.pg_catalog_oid(parameters.oid)
           } RETURNING oid,prpubid,prrelid,prqual,prattrs
       `;
@@ -13472,7 +22313,7 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE prpubid = ${
             parameters.prpubid === undefined
-              ? "prpubid"
+              ? sql("prpubid")
               : typed.pg_catalog_oid(parameters.prpubid)
           } RETURNING oid,prpubid,prrelid,prqual,prattrs
       `;
@@ -13496,14 +22337,154 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_publication_rel WHERE prrelid = ${
             parameters.prrelid === undefined
-              ? "prrelid"
+              ? sql("prrelid")
               : typed.pg_catalog_oid(parameters.prrelid)
           } AND prpubid = ${
             parameters.prpubid === undefined
-              ? "prpubid"
+              ? sql("prpubid")
               : typed.pg_catalog_oid(parameters.prpubid)
           } RETURNING oid,prpubid,prrelid,prqual,prattrs
       `;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          prpubid: undefinedIsNull(record.prpubid),
+          prrelid: undefinedIsNull(record.prrelid),
+          prqual: undefinedIsNull(record.prqual),
+          prattrs: undefinedIsNull(record.prattrs),
+        }));
+        return results[0];
+      }
+
+      async updateByOid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByOid,
+        values: Partial<PgCatalog.PgPublicationRel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_publication_rel SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , prpubid = ${
+            values.prpubid === undefined
+              ? sql("prpubid")
+              : typed.pg_catalog_oid(values.prpubid)
+          } , prrelid = ${
+            values.prrelid === undefined
+              ? sql("prrelid")
+              : typed.pg_catalog_oid(values.prrelid)
+          } , prqual = ${
+            values.prqual === undefined
+              ? sql("prqual")
+              : typed.pg_catalog_pg_node_tree(values.prqual)
+          } , prattrs = ${
+            values.prattrs === undefined
+              ? sql("prattrs")
+              : typed.pg_catalog_int2vector(values.prattrs)
+          } WHERE oid = ${
+            parameters.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(parameters.oid)
+          } RETURNING oid,prpubid,prrelid,prqual,prattrs`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          prpubid: undefinedIsNull(record.prpubid),
+          prrelid: undefinedIsNull(record.prrelid),
+          prqual: undefinedIsNull(record.prqual),
+          prattrs: undefinedIsNull(record.prattrs),
+        }));
+        return results[0];
+      }
+      async updateByPrpubid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid,
+        values: Partial<PgCatalog.PgPublicationRel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_publication_rel SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , prpubid = ${
+            values.prpubid === undefined
+              ? sql("prpubid")
+              : typed.pg_catalog_oid(values.prpubid)
+          } , prrelid = ${
+            values.prrelid === undefined
+              ? sql("prrelid")
+              : typed.pg_catalog_oid(values.prrelid)
+          } , prqual = ${
+            values.prqual === undefined
+              ? sql("prqual")
+              : typed.pg_catalog_pg_node_tree(values.prqual)
+          } , prattrs = ${
+            values.prattrs === undefined
+              ? sql("prattrs")
+              : typed.pg_catalog_int2vector(values.prattrs)
+          } WHERE prpubid = ${
+            parameters.prpubid === undefined
+              ? sql("prpubid")
+              : typed.pg_catalog_oid(parameters.prpubid)
+          } RETURNING oid,prpubid,prrelid,prqual,prattrs`;
+
+        const results = response.map((record) => ({
+          oid: undefinedIsNull(record.oid),
+          prpubid: undefinedIsNull(record.prpubid),
+          prrelid: undefinedIsNull(record.prrelid),
+          prqual: undefinedIsNull(record.prqual),
+          prattrs: undefinedIsNull(record.prattrs),
+        }));
+        return results;
+      }
+      async updateByPrrelidPrpubid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByPrrelidPrpubid,
+        values: Partial<PgCatalog.PgPublicationRel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_publication_rel SET oid = ${
+            values.oid === undefined
+              ? sql("oid")
+              : typed.pg_catalog_oid(values.oid)
+          } , prpubid = ${
+            values.prpubid === undefined
+              ? sql("prpubid")
+              : typed.pg_catalog_oid(values.prpubid)
+          } , prrelid = ${
+            values.prrelid === undefined
+              ? sql("prrelid")
+              : typed.pg_catalog_oid(values.prrelid)
+          } , prqual = ${
+            values.prqual === undefined
+              ? sql("prqual")
+              : typed.pg_catalog_pg_node_tree(values.prqual)
+          } , prattrs = ${
+            values.prattrs === undefined
+              ? sql("prattrs")
+              : typed.pg_catalog_int2vector(values.prattrs)
+          } WHERE prrelid = ${
+            parameters.prrelid === undefined
+              ? sql("prrelid")
+              : typed.pg_catalog_oid(parameters.prrelid)
+          } AND prpubid = ${
+            parameters.prpubid === undefined
+              ? sql("prpubid")
+              : typed.pg_catalog_oid(parameters.prpubid)
+          } RETURNING oid,prpubid,prrelid,prqual,prattrs`;
 
         const results = response.map((record) => ({
           oid: undefinedIsNull(record.oid),
@@ -13533,11 +22514,11 @@ export class Database {
         const response =
           await sql`SELECT srsubid,srrelid,srsubstate,srsublsn FROM pg_catalog.pg_subscription_rel WHERE srrelid = ${
             parameters.srrelid === undefined
-              ? "srrelid"
+              ? sql("srrelid")
               : typed.pg_catalog_oid(parameters.srrelid)
           } AND srsubid = ${
             parameters.srsubid === undefined
-              ? "srsubid"
+              ? sql("srsubid")
               : typed.pg_catalog_oid(parameters.srsubid)
           }`;
 
@@ -13560,14 +22541,59 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_subscription_rel WHERE srrelid = ${
             parameters.srrelid === undefined
-              ? "srrelid"
+              ? sql("srrelid")
               : typed.pg_catalog_oid(parameters.srrelid)
           } AND srsubid = ${
             parameters.srsubid === undefined
-              ? "srsubid"
+              ? sql("srsubid")
               : typed.pg_catalog_oid(parameters.srsubid)
           } RETURNING srsubid,srrelid,srsubstate,srsublsn
       `;
+
+        const results = response.map((record) => ({
+          srsubid: undefinedIsNull(record.srsubid),
+          srrelid: undefinedIsNull(record.srrelid),
+          srsubstate: undefinedIsNull(record.srsubstate),
+          srsublsn: undefinedIsNull(record.srsublsn),
+        }));
+        return results[0];
+      }
+
+      async updateBySrrelidSrsubid(
+        parameters: PgCatalog.Tables.PgSubscriptionRel.BySrrelidSrsubid,
+        values: Partial<PgCatalog.PgSubscriptionRel>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_subscription_rel SET srsubid = ${
+            values.srsubid === undefined
+              ? sql("srsubid")
+              : typed.pg_catalog_oid(values.srsubid)
+          } , srrelid = ${
+            values.srrelid === undefined
+              ? sql("srrelid")
+              : typed.pg_catalog_oid(values.srrelid)
+          } , srsubstate = ${
+            values.srsubstate === undefined
+              ? sql("srsubstate")
+              : typed.pg_catalog_char(values.srsubstate)
+          } , srsublsn = ${
+            values.srsublsn === undefined
+              ? sql("srsublsn")
+              : typed.pg_catalog_pg_lsn(values.srsublsn)
+          } WHERE srrelid = ${
+            parameters.srrelid === undefined
+              ? sql("srrelid")
+              : typed.pg_catalog_oid(parameters.srrelid)
+          } AND srsubid = ${
+            parameters.srsubid === undefined
+              ? sql("srsubid")
+              : typed.pg_catalog_oid(parameters.srsubid)
+          } RETURNING srsubid,srrelid,srsubstate,srsublsn`;
 
         const results = response.map((record) => ({
           srsubid: undefinedIsNull(record.srsubid),
@@ -13596,11 +22622,11 @@ export class Database {
         const response =
           await sql`SELECT loid,pageno,data FROM pg_catalog.pg_largeobject WHERE loid = ${
             parameters.loid === undefined
-              ? "loid"
+              ? sql("loid")
               : typed.pg_catalog_oid(parameters.loid)
           } AND pageno = ${
             parameters.pageno === undefined
-              ? "pageno"
+              ? sql("pageno")
               : typed.pg_catalog_int4(parameters.pageno)
           }`;
 
@@ -13622,14 +22648,54 @@ export class Database {
         const response =
           await sql`DELETE FROM pg_catalog.pg_largeobject WHERE loid = ${
             parameters.loid === undefined
-              ? "loid"
+              ? sql("loid")
               : typed.pg_catalog_oid(parameters.loid)
           } AND pageno = ${
             parameters.pageno === undefined
-              ? "pageno"
+              ? sql("pageno")
               : typed.pg_catalog_int4(parameters.pageno)
           } RETURNING loid,pageno,data
       `;
+
+        const results = response.map((record) => ({
+          loid: undefinedIsNull(record.loid),
+          pageno: undefinedIsNull(record.pageno),
+          data: undefinedIsNull(record.data),
+        }));
+        return results[0];
+      }
+
+      async updateByLoidPageno(
+        parameters: PgCatalog.Tables.PgLargeobject.ByLoidPageno,
+        values: Partial<PgCatalog.PgLargeobject>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`UPDATE pg_catalog.pg_largeobject SET loid = ${
+            values.loid === undefined
+              ? sql("loid")
+              : typed.pg_catalog_oid(values.loid)
+          } , pageno = ${
+            values.pageno === undefined
+              ? sql("pageno")
+              : typed.pg_catalog_int4(values.pageno)
+          } , data = ${
+            values.data === undefined
+              ? sql("data")
+              : typed.pg_catalog_bytea(values.data)
+          } WHERE loid = ${
+            parameters.loid === undefined
+              ? sql("loid")
+              : typed.pg_catalog_oid(parameters.loid)
+          } AND pageno = ${
+            parameters.pageno === undefined
+              ? sql("pageno")
+              : typed.pg_catalog_int4(parameters.pageno)
+          } RETURNING loid,pageno,data`;
 
         const results = response.map((record) => ({
           loid: undefinedIsNull(record.loid),
@@ -13821,11 +22887,11 @@ export class Database {
         const response =
           await sql`SELECT actor_id,film_id,last_update FROM public.film_actor WHERE actor_id = ${
             parameters.actorId === undefined
-              ? "actor_id"
+              ? sql("actor_id")
               : typed.pg_catalog_int2(parameters.actorId)
           } AND film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           }`;
 
@@ -13844,7 +22910,7 @@ export class Database {
         const response =
           await sql`SELECT actor_id,film_id,last_update FROM public.film_actor WHERE film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           }`;
 
@@ -13866,11 +22932,11 @@ export class Database {
         const response =
           await sql`DELETE FROM public.film_actor WHERE actor_id = ${
             parameters.actorId === undefined
-              ? "actor_id"
+              ? sql("actor_id")
               : typed.pg_catalog_int2(parameters.actorId)
           } AND film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           } RETURNING actor_id,film_id,last_update
       `;
@@ -13890,10 +22956,83 @@ export class Database {
         const response =
           await sql`DELETE FROM public.film_actor WHERE film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           } RETURNING actor_id,film_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          filmId: undefinedIsNull(record.film_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async updateByActorIdFilmId(
+        parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+        values: Partial<Public.FilmActor>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film_actor SET actor_id = ${
+          values.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int2(values.actorId)
+        } , film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(values.filmId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE actor_id = ${
+          parameters.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int2(parameters.actorId)
+        } AND film_id = ${
+          parameters.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(parameters.filmId)
+        } RETURNING actor_id,film_id,last_update`;
+
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          filmId: undefinedIsNull(record.film_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByFilmId(
+        parameters: Public.Tables.FilmActor.ByFilmId,
+        values: Partial<Public.FilmActor>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film_actor SET actor_id = ${
+          values.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int2(values.actorId)
+        } , film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(values.filmId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE film_id = ${
+          parameters.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(parameters.filmId)
+        } RETURNING actor_id,film_id,last_update`;
 
         const results = response.map((record) => ({
           actorId: undefinedIsNull(record.actor_id),
@@ -13919,7 +23058,7 @@ export class Database {
         const response =
           await sql`SELECT address_id,address,address2,district,city_id,postal_code,phone,last_update FROM public.address WHERE address_id = ${
             parameters.addressId === undefined
-              ? "address_id"
+              ? sql("address_id")
               : typed.pg_catalog_int4(parameters.addressId)
           }`;
 
@@ -13943,7 +23082,7 @@ export class Database {
         const response =
           await sql`SELECT address_id,address,address2,district,city_id,postal_code,phone,last_update FROM public.address WHERE city_id = ${
             parameters.cityId === undefined
-              ? "city_id"
+              ? sql("city_id")
               : typed.pg_catalog_int2(parameters.cityId)
           }`;
 
@@ -13968,7 +23107,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.address WHERE address_id = ${
             parameters.addressId === undefined
-              ? "address_id"
+              ? sql("address_id")
               : typed.pg_catalog_int4(parameters.addressId)
           } RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
       `;
@@ -13992,10 +23131,129 @@ export class Database {
 
         const response = await sql`DELETE FROM public.address WHERE city_id = ${
           parameters.cityId === undefined
-            ? "city_id"
+            ? sql("city_id")
             : typed.pg_catalog_int2(parameters.cityId)
         } RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
       `;
+
+        const results = response.map((record) => ({
+          addressId: undefinedIsNull(record.address_id),
+          address: undefinedIsNull(record.address),
+          address2: undefinedIsNull(record.address2),
+          district: undefinedIsNull(record.district),
+          cityId: undefinedIsNull(record.city_id),
+          postalCode: undefinedIsNull(record.postal_code),
+          phone: undefinedIsNull(record.phone),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async updateByAddressId(
+        parameters: Public.Tables.Address.ByAddressId,
+        values: Partial<Public.Address>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.address SET address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int4(values.addressId)
+        } , address = ${
+          values.address === undefined
+            ? sql("address")
+            : typed.pg_catalog_varchar(values.address)
+        } , address2 = ${
+          values.address2 === undefined
+            ? sql("address2")
+            : typed.pg_catalog_varchar(values.address2)
+        } , district = ${
+          values.district === undefined
+            ? sql("district")
+            : typed.pg_catalog_varchar(values.district)
+        } , city_id = ${
+          values.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int2(values.cityId)
+        } , postal_code = ${
+          values.postalCode === undefined
+            ? sql("postal_code")
+            : typed.pg_catalog_varchar(values.postalCode)
+        } , phone = ${
+          values.phone === undefined
+            ? sql("phone")
+            : typed.pg_catalog_varchar(values.phone)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE address_id = ${
+          parameters.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int4(parameters.addressId)
+        } RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+
+        const results = response.map((record) => ({
+          addressId: undefinedIsNull(record.address_id),
+          address: undefinedIsNull(record.address),
+          address2: undefinedIsNull(record.address2),
+          district: undefinedIsNull(record.district),
+          cityId: undefinedIsNull(record.city_id),
+          postalCode: undefinedIsNull(record.postal_code),
+          phone: undefinedIsNull(record.phone),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByCityId(
+        parameters: Public.Tables.Address.ByCityId,
+        values: Partial<Public.Address>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.address SET address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int4(values.addressId)
+        } , address = ${
+          values.address === undefined
+            ? sql("address")
+            : typed.pg_catalog_varchar(values.address)
+        } , address2 = ${
+          values.address2 === undefined
+            ? sql("address2")
+            : typed.pg_catalog_varchar(values.address2)
+        } , district = ${
+          values.district === undefined
+            ? sql("district")
+            : typed.pg_catalog_varchar(values.district)
+        } , city_id = ${
+          values.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int2(values.cityId)
+        } , postal_code = ${
+          values.postalCode === undefined
+            ? sql("postal_code")
+            : typed.pg_catalog_varchar(values.postalCode)
+        } , phone = ${
+          values.phone === undefined
+            ? sql("phone")
+            : typed.pg_catalog_varchar(values.phone)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE city_id = ${
+          parameters.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int2(parameters.cityId)
+        } RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
 
         const results = response.map((record) => ({
           addressId: undefinedIsNull(record.address_id),
@@ -14026,7 +23284,7 @@ export class Database {
         const response =
           await sql`SELECT city_id,city,country_id,last_update FROM public.city WHERE city_id = ${
             parameters.cityId === undefined
-              ? "city_id"
+              ? sql("city_id")
               : typed.pg_catalog_int4(parameters.cityId)
           }`;
 
@@ -14046,7 +23304,7 @@ export class Database {
         const response =
           await sql`SELECT city_id,city,country_id,last_update FROM public.city WHERE country_id = ${
             parameters.countryId === undefined
-              ? "country_id"
+              ? sql("country_id")
               : typed.pg_catalog_int2(parameters.countryId)
           }`;
 
@@ -14066,7 +23324,7 @@ export class Database {
 
         const response = await sql`DELETE FROM public.city WHERE city_id = ${
           parameters.cityId === undefined
-            ? "city_id"
+            ? sql("city_id")
             : typed.pg_catalog_int4(parameters.cityId)
         } RETURNING city_id,city,country_id,last_update
       `;
@@ -14086,10 +23344,89 @@ export class Database {
 
         const response = await sql`DELETE FROM public.city WHERE country_id = ${
           parameters.countryId === undefined
-            ? "country_id"
+            ? sql("country_id")
             : typed.pg_catalog_int2(parameters.countryId)
         } RETURNING city_id,city,country_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          cityId: undefinedIsNull(record.city_id),
+          city: undefinedIsNull(record.city),
+          countryId: undefinedIsNull(record.country_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async updateByCityId(
+        parameters: Public.Tables.City.ByCityId,
+        values: Partial<Public.City>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.city SET city_id = ${
+          values.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int4(values.cityId)
+        } , city = ${
+          values.city === undefined
+            ? sql("city")
+            : typed.pg_catalog_varchar(values.city)
+        } , country_id = ${
+          values.countryId === undefined
+            ? sql("country_id")
+            : typed.pg_catalog_int2(values.countryId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE city_id = ${
+          parameters.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int4(parameters.cityId)
+        } RETURNING city_id,city,country_id,last_update`;
+
+        const results = response.map((record) => ({
+          cityId: undefinedIsNull(record.city_id),
+          city: undefinedIsNull(record.city),
+          countryId: undefinedIsNull(record.country_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByCountryId(
+        parameters: Public.Tables.City.ByCountryId,
+        values: Partial<Public.City>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.city SET city_id = ${
+          values.cityId === undefined
+            ? sql("city_id")
+            : typed.pg_catalog_int4(values.cityId)
+        } , city = ${
+          values.city === undefined
+            ? sql("city")
+            : typed.pg_catalog_varchar(values.city)
+        } , country_id = ${
+          values.countryId === undefined
+            ? sql("country_id")
+            : typed.pg_catalog_int2(values.countryId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE country_id = ${
+          parameters.countryId === undefined
+            ? sql("country_id")
+            : typed.pg_catalog_int2(parameters.countryId)
+        } RETURNING city_id,city,country_id,last_update`;
 
         const results = response.map((record) => ({
           cityId: undefinedIsNull(record.city_id),
@@ -14116,7 +23453,7 @@ export class Database {
         const response =
           await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE address_id = ${
             parameters.addressId === undefined
-              ? "address_id"
+              ? sql("address_id")
               : typed.pg_catalog_int2(parameters.addressId)
           }`;
 
@@ -14142,7 +23479,7 @@ export class Database {
         const response =
           await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int4(parameters.customerId)
           }`;
 
@@ -14168,7 +23505,7 @@ export class Database {
         const response =
           await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE last_name = ${
             parameters.lastName === undefined
-              ? "last_name"
+              ? sql("last_name")
               : typed.pg_catalog_varchar(parameters.lastName)
           }`;
 
@@ -14194,7 +23531,7 @@ export class Database {
         const response =
           await sql`SELECT customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active FROM public.customer WHERE store_id = ${
             parameters.storeId === undefined
-              ? "store_id"
+              ? sql("store_id")
               : typed.pg_catalog_int2(parameters.storeId)
           }`;
 
@@ -14221,7 +23558,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.customer WHERE address_id = ${
             parameters.addressId === undefined
-              ? "address_id"
+              ? sql("address_id")
               : typed.pg_catalog_int2(parameters.addressId)
           } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
       `;
@@ -14250,7 +23587,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.customer WHERE customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int4(parameters.customerId)
           } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
       `;
@@ -14277,7 +23614,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.customer WHERE last_name = ${
             parameters.lastName === undefined
-              ? "last_name"
+              ? sql("last_name")
               : typed.pg_catalog_varchar(parameters.lastName)
           } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
       `;
@@ -14304,10 +23641,287 @@ export class Database {
         const response =
           await sql`DELETE FROM public.customer WHERE store_id = ${
             parameters.storeId === undefined
-              ? "store_id"
+              ? sql("store_id")
               : typed.pg_catalog_int2(parameters.storeId)
           } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
       `;
+
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+
+      async updateByAddressId(
+        parameters: Public.Tables.Customer.ByAddressId,
+        values: Partial<Public.Customer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.customer SET customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int4(values.customerId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , email = ${
+          values.email === undefined
+            ? sql("email")
+            : typed.pg_catalog_varchar(values.email)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , activebool = ${
+          values.activebool === undefined
+            ? sql("activebool")
+            : typed.pg_catalog_bool(values.activebool)
+        } , create_date = ${
+          values.createDate === undefined
+            ? sql("create_date")
+            : typed.pg_catalog_date(values.createDate)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , active = ${
+          values.active === undefined
+            ? sql("active")
+            : typed.pg_catalog_int4(values.active)
+        } WHERE address_id = ${
+          parameters.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(parameters.addressId)
+        } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+      async updateByCustomerId(
+        parameters: Public.Tables.Customer.ByCustomerId,
+        values: Partial<Public.Customer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.customer SET customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int4(values.customerId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , email = ${
+          values.email === undefined
+            ? sql("email")
+            : typed.pg_catalog_varchar(values.email)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , activebool = ${
+          values.activebool === undefined
+            ? sql("activebool")
+            : typed.pg_catalog_bool(values.activebool)
+        } , create_date = ${
+          values.createDate === undefined
+            ? sql("create_date")
+            : typed.pg_catalog_date(values.createDate)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , active = ${
+          values.active === undefined
+            ? sql("active")
+            : typed.pg_catalog_int4(values.active)
+        } WHERE customer_id = ${
+          parameters.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int4(parameters.customerId)
+        } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results[0];
+      }
+      async updateByLastName(
+        parameters: Public.Tables.Customer.ByLastName,
+        values: Partial<Public.Customer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.customer SET customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int4(values.customerId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , email = ${
+          values.email === undefined
+            ? sql("email")
+            : typed.pg_catalog_varchar(values.email)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , activebool = ${
+          values.activebool === undefined
+            ? sql("activebool")
+            : typed.pg_catalog_bool(values.activebool)
+        } , create_date = ${
+          values.createDate === undefined
+            ? sql("create_date")
+            : typed.pg_catalog_date(values.createDate)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , active = ${
+          values.active === undefined
+            ? sql("active")
+            : typed.pg_catalog_int4(values.active)
+        } WHERE last_name = ${
+          parameters.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(parameters.lastName)
+        } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+
+        const results = response.map((record) => ({
+          customerId: undefinedIsNull(record.customer_id),
+          storeId: undefinedIsNull(record.store_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          email: undefinedIsNull(record.email),
+          addressId: undefinedIsNull(record.address_id),
+          activebool: undefinedIsNull(record.activebool),
+          createDate: undefinedIsNull(record.create_date),
+          lastUpdate: undefinedIsNull(record.last_update),
+          active: undefinedIsNull(record.active),
+        }));
+        return results;
+      }
+      async updateByStoreId(
+        parameters: Public.Tables.Customer.ByStoreId,
+        values: Partial<Public.Customer>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.customer SET customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int4(values.customerId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , email = ${
+          values.email === undefined
+            ? sql("email")
+            : typed.pg_catalog_varchar(values.email)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , activebool = ${
+          values.activebool === undefined
+            ? sql("activebool")
+            : typed.pg_catalog_bool(values.activebool)
+        } , create_date = ${
+          values.createDate === undefined
+            ? sql("create_date")
+            : typed.pg_catalog_date(values.createDate)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , active = ${
+          values.active === undefined
+            ? sql("active")
+            : typed.pg_catalog_int4(values.active)
+        } WHERE store_id = ${
+          parameters.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(parameters.storeId)
+        } RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
 
         const results = response.map((record) => ({
           customerId: undefinedIsNull(record.customer_id),
@@ -14340,7 +23954,7 @@ export class Database {
         const response =
           await sql`SELECT actor_id,first_name,last_name,last_update FROM public.actor WHERE actor_id = ${
             parameters.actorId === undefined
-              ? "actor_id"
+              ? sql("actor_id")
               : typed.pg_catalog_int4(parameters.actorId)
           }`;
 
@@ -14360,7 +23974,7 @@ export class Database {
         const response =
           await sql`SELECT actor_id,first_name,last_name,last_update FROM public.actor WHERE last_name = ${
             parameters.lastName === undefined
-              ? "last_name"
+              ? sql("last_name")
               : typed.pg_catalog_varchar(parameters.lastName)
           }`;
 
@@ -14380,7 +23994,7 @@ export class Database {
 
         const response = await sql`DELETE FROM public.actor WHERE actor_id = ${
           parameters.actorId === undefined
-            ? "actor_id"
+            ? sql("actor_id")
             : typed.pg_catalog_int4(parameters.actorId)
         } RETURNING actor_id,first_name,last_name,last_update
       `;
@@ -14400,10 +24014,89 @@ export class Database {
 
         const response = await sql`DELETE FROM public.actor WHERE last_name = ${
           parameters.lastName === undefined
-            ? "last_name"
+            ? sql("last_name")
             : typed.pg_catalog_varchar(parameters.lastName)
         } RETURNING actor_id,first_name,last_name,last_update
       `;
+
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async updateByActorId(
+        parameters: Public.Tables.Actor.ByActorId,
+        values: Partial<Public.Actor>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.actor SET actor_id = ${
+          values.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int4(values.actorId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE actor_id = ${
+          parameters.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int4(parameters.actorId)
+        } RETURNING actor_id,first_name,last_name,last_update`;
+
+        const results = response.map((record) => ({
+          actorId: undefinedIsNull(record.actor_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByLastName(
+        parameters: Public.Tables.Actor.ByLastName,
+        values: Partial<Public.Actor>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.actor SET actor_id = ${
+          values.actorId === undefined
+            ? sql("actor_id")
+            : typed.pg_catalog_int4(values.actorId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE last_name = ${
+          parameters.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(parameters.lastName)
+        } RETURNING actor_id,first_name,last_name,last_update`;
 
         const results = response.map((record) => ({
           actorId: undefinedIsNull(record.actor_id),
@@ -14432,11 +24125,11 @@ export class Database {
         const response =
           await sql`SELECT film_id,category_id,last_update FROM public.film_category WHERE film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           } AND category_id = ${
             parameters.categoryId === undefined
-              ? "category_id"
+              ? sql("category_id")
               : typed.pg_catalog_int2(parameters.categoryId)
           }`;
 
@@ -14458,14 +24151,53 @@ export class Database {
         const response =
           await sql`DELETE FROM public.film_category WHERE film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           } AND category_id = ${
             parameters.categoryId === undefined
-              ? "category_id"
+              ? sql("category_id")
               : typed.pg_catalog_int2(parameters.categoryId)
           } RETURNING film_id,category_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          categoryId: undefinedIsNull(record.category_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByFilmIdCategoryId(
+        parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        values: Partial<Public.FilmCategory>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film_category SET film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(values.filmId)
+        } , category_id = ${
+          values.categoryId === undefined
+            ? sql("category_id")
+            : typed.pg_catalog_int2(values.categoryId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE film_id = ${
+          parameters.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(parameters.filmId)
+        } AND category_id = ${
+          parameters.categoryId === undefined
+            ? sql("category_id")
+            : typed.pg_catalog_int2(parameters.categoryId)
+        } RETURNING film_id,category_id,last_update`;
 
         const results = response.map((record) => ({
           filmId: undefinedIsNull(record.film_id),
@@ -14491,7 +24223,7 @@ export class Database {
         const response =
           await sql`SELECT inventory_id,film_id,store_id,last_update FROM public.inventory WHERE inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           }`;
 
@@ -14513,11 +24245,11 @@ export class Database {
         const response =
           await sql`SELECT inventory_id,film_id,store_id,last_update FROM public.inventory WHERE store_id = ${
             parameters.storeId === undefined
-              ? "store_id"
+              ? sql("store_id")
               : typed.pg_catalog_int2(parameters.storeId)
           } AND film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           }`;
 
@@ -14540,7 +24272,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.inventory WHERE inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           } RETURNING inventory_id,film_id,store_id,last_update
       `;
@@ -14563,14 +24295,97 @@ export class Database {
         const response =
           await sql`DELETE FROM public.inventory WHERE store_id = ${
             parameters.storeId === undefined
-              ? "store_id"
+              ? sql("store_id")
               : typed.pg_catalog_int2(parameters.storeId)
           } AND film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int2(parameters.filmId)
           } RETURNING inventory_id,film_id,store_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          inventoryId: undefinedIsNull(record.inventory_id),
+          filmId: undefinedIsNull(record.film_id),
+          storeId: undefinedIsNull(record.store_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+
+      async updateByInventoryId(
+        parameters: Public.Tables.Inventory.ByInventoryId,
+        values: Partial<Public.Inventory>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.inventory SET inventory_id = ${
+          values.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(values.inventoryId)
+        } , film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(values.filmId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE inventory_id = ${
+          parameters.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(parameters.inventoryId)
+        } RETURNING inventory_id,film_id,store_id,last_update`;
+
+        const results = response.map((record) => ({
+          inventoryId: undefinedIsNull(record.inventory_id),
+          filmId: undefinedIsNull(record.film_id),
+          storeId: undefinedIsNull(record.store_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByStoreIdFilmId(
+        parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+        values: Partial<Public.Inventory>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.inventory SET inventory_id = ${
+          values.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(values.inventoryId)
+        } , film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(values.filmId)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE store_id = ${
+          parameters.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(parameters.storeId)
+        } AND film_id = ${
+          parameters.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int2(parameters.filmId)
+        } RETURNING inventory_id,film_id,store_id,last_update`;
 
         const results = response.map((record) => ({
           inventoryId: undefinedIsNull(record.inventory_id),
@@ -14597,7 +24412,7 @@ export class Database {
         const response =
           await sql`SELECT category_id,name,last_update FROM public.category WHERE category_id = ${
             parameters.categoryId === undefined
-              ? "category_id"
+              ? sql("category_id")
               : typed.pg_catalog_int4(parameters.categoryId)
           }`;
 
@@ -14619,10 +24434,45 @@ export class Database {
         const response =
           await sql`DELETE FROM public.category WHERE category_id = ${
             parameters.categoryId === undefined
-              ? "category_id"
+              ? sql("category_id")
               : typed.pg_catalog_int4(parameters.categoryId)
           } RETURNING category_id,name,last_update
       `;
+
+        const results = response.map((record) => ({
+          categoryId: undefinedIsNull(record.category_id),
+          name: undefinedIsNull(record.name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByCategoryId(
+        parameters: Public.Tables.Category.ByCategoryId,
+        values: Partial<Public.Category>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.category SET category_id = ${
+          values.categoryId === undefined
+            ? sql("category_id")
+            : typed.pg_catalog_int4(values.categoryId)
+        } , name = ${
+          values.name === undefined
+            ? sql("name")
+            : typed.pg_catalog_varchar(values.name)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE category_id = ${
+          parameters.categoryId === undefined
+            ? sql("category_id")
+            : typed.pg_catalog_int4(parameters.categoryId)
+        } RETURNING category_id,name,last_update`;
 
         const results = response.map((record) => ({
           categoryId: undefinedIsNull(record.category_id),
@@ -14648,7 +24498,7 @@ export class Database {
         const response =
           await sql`SELECT country_id,country,last_update FROM public.country WHERE country_id = ${
             parameters.countryId === undefined
-              ? "country_id"
+              ? sql("country_id")
               : typed.pg_catalog_int4(parameters.countryId)
           }`;
 
@@ -14668,10 +24518,45 @@ export class Database {
         const response =
           await sql`DELETE FROM public.country WHERE country_id = ${
             parameters.countryId === undefined
-              ? "country_id"
+              ? sql("country_id")
               : typed.pg_catalog_int4(parameters.countryId)
           } RETURNING country_id,country,last_update
       `;
+
+        const results = response.map((record) => ({
+          countryId: undefinedIsNull(record.country_id),
+          country: undefinedIsNull(record.country),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByCountryId(
+        parameters: Public.Tables.Country.ByCountryId,
+        values: Partial<Public.Country>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.country SET country_id = ${
+          values.countryId === undefined
+            ? sql("country_id")
+            : typed.pg_catalog_int4(values.countryId)
+        } , country = ${
+          values.country === undefined
+            ? sql("country")
+            : typed.pg_catalog_varchar(values.country)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE country_id = ${
+          parameters.countryId === undefined
+            ? sql("country_id")
+            : typed.pg_catalog_int4(parameters.countryId)
+        } RETURNING country_id,country,last_update`;
 
         const results = response.map((record) => ({
           countryId: undefinedIsNull(record.country_id),
@@ -14697,7 +24582,7 @@ export class Database {
         const response =
           await sql`SELECT language_id,name,last_update FROM public.language WHERE language_id = ${
             parameters.languageId === undefined
-              ? "language_id"
+              ? sql("language_id")
               : typed.pg_catalog_int4(parameters.languageId)
           }`;
 
@@ -14719,10 +24604,45 @@ export class Database {
         const response =
           await sql`DELETE FROM public.language WHERE language_id = ${
             parameters.languageId === undefined
-              ? "language_id"
+              ? sql("language_id")
               : typed.pg_catalog_int4(parameters.languageId)
           } RETURNING language_id,name,last_update
       `;
+
+        const results = response.map((record) => ({
+          languageId: undefinedIsNull(record.language_id),
+          name: undefinedIsNull(record.name),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByLanguageId(
+        parameters: Public.Tables.Language.ByLanguageId,
+        values: Partial<Public.Language>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.language SET language_id = ${
+          values.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int4(values.languageId)
+        } , name = ${
+          values.name === undefined
+            ? sql("name")
+            : typed.pg_catalog_bpchar(values.name)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE language_id = ${
+          parameters.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int4(parameters.languageId)
+        } RETURNING language_id,name,last_update`;
 
         const results = response.map((record) => ({
           languageId: undefinedIsNull(record.language_id),
@@ -14748,7 +24668,7 @@ export class Database {
         const response =
           await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           }`;
 
@@ -14773,15 +24693,15 @@ export class Database {
         const response =
           await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE rental_date = ${
             parameters.rentalDate === undefined
-              ? "rental_date"
+              ? sql("rental_date")
               : typed.pg_catalog_timestamp(parameters.rentalDate)
           } AND inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           } AND customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int2(parameters.customerId)
           }`;
 
@@ -14804,7 +24724,7 @@ export class Database {
         const response =
           await sql`SELECT rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update FROM public.rental WHERE rental_id = ${
             parameters.rentalId === undefined
-              ? "rental_id"
+              ? sql("rental_id")
               : typed.pg_catalog_int4(parameters.rentalId)
           }`;
 
@@ -14830,7 +24750,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.rental WHERE inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
       `;
@@ -14856,15 +24776,15 @@ export class Database {
         const response =
           await sql`DELETE FROM public.rental WHERE rental_date = ${
             parameters.rentalDate === undefined
-              ? "rental_date"
+              ? sql("rental_date")
               : typed.pg_catalog_timestamp(parameters.rentalDate)
           } AND inventory_id = ${
             parameters.inventoryId === undefined
-              ? "inventory_id"
+              ? sql("inventory_id")
               : typed.pg_catalog_int4(parameters.inventoryId)
           } AND customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int2(parameters.customerId)
           } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
       `;
@@ -14888,10 +24808,181 @@ export class Database {
         const response =
           await sql`DELETE FROM public.rental WHERE rental_id = ${
             parameters.rentalId === undefined
-              ? "rental_id"
+              ? sql("rental_id")
               : typed.pg_catalog_int4(parameters.rentalId)
           } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByInventoryId(
+        parameters: Public.Tables.Rental.ByInventoryId,
+        values: Partial<Public.Rental>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.rental SET rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , rental_date = ${
+          values.rentalDate === undefined
+            ? sql("rental_date")
+            : typed.pg_catalog_timestamp(values.rentalDate)
+        } , inventory_id = ${
+          values.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(values.inventoryId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , return_date = ${
+          values.returnDate === undefined
+            ? sql("return_date")
+            : typed.pg_catalog_timestamp(values.returnDate)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE inventory_id = ${
+          parameters.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(parameters.inventoryId)
+        } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results;
+      }
+      async updateByRentalDateInventoryIdCustomerId(
+        parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        values: Partial<Public.Rental>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.rental SET rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , rental_date = ${
+          values.rentalDate === undefined
+            ? sql("rental_date")
+            : typed.pg_catalog_timestamp(values.rentalDate)
+        } , inventory_id = ${
+          values.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(values.inventoryId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , return_date = ${
+          values.returnDate === undefined
+            ? sql("return_date")
+            : typed.pg_catalog_timestamp(values.returnDate)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE rental_date = ${
+          parameters.rentalDate === undefined
+            ? sql("rental_date")
+            : typed.pg_catalog_timestamp(parameters.rentalDate)
+        } AND inventory_id = ${
+          parameters.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(parameters.inventoryId)
+        } AND customer_id = ${
+          parameters.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(parameters.customerId)
+        } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+
+        const results = response.map((record) => ({
+          rentalId: undefinedIsNull(record.rental_id),
+          rentalDate: undefinedIsNull(record.rental_date),
+          inventoryId: undefinedIsNull(record.inventory_id),
+          customerId: undefinedIsNull(record.customer_id),
+          returnDate: undefinedIsNull(record.return_date),
+          staffId: undefinedIsNull(record.staff_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByRentalId(
+        parameters: Public.Tables.Rental.ByRentalId,
+        values: Partial<Public.Rental>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.rental SET rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , rental_date = ${
+          values.rentalDate === undefined
+            ? sql("rental_date")
+            : typed.pg_catalog_timestamp(values.rentalDate)
+        } , inventory_id = ${
+          values.inventoryId === undefined
+            ? sql("inventory_id")
+            : typed.pg_catalog_int4(values.inventoryId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , return_date = ${
+          values.returnDate === undefined
+            ? sql("return_date")
+            : typed.pg_catalog_timestamp(values.returnDate)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE rental_id = ${
+          parameters.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(parameters.rentalId)
+        } RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
 
         const results = response.map((record) => ({
           rentalId: undefinedIsNull(record.rental_id),
@@ -14921,7 +25012,7 @@ export class Database {
         const response =
           await sql`SELECT staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture FROM public.staff WHERE staff_id = ${
             parameters.staffId === undefined
-              ? "staff_id"
+              ? sql("staff_id")
               : typed.pg_catalog_int4(parameters.staffId)
           }`;
 
@@ -14948,10 +25039,85 @@ export class Database {
 
         const response = await sql`DELETE FROM public.staff WHERE staff_id = ${
           parameters.staffId === undefined
-            ? "staff_id"
+            ? sql("staff_id")
             : typed.pg_catalog_int4(parameters.staffId)
         } RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
       `;
+
+        const results = response.map((record) => ({
+          staffId: undefinedIsNull(record.staff_id),
+          firstName: undefinedIsNull(record.first_name),
+          lastName: undefinedIsNull(record.last_name),
+          addressId: undefinedIsNull(record.address_id),
+          email: undefinedIsNull(record.email),
+          storeId: undefinedIsNull(record.store_id),
+          active: undefinedIsNull(record.active),
+          username: undefinedIsNull(record.username),
+          password: undefinedIsNull(record.password),
+          lastUpdate: undefinedIsNull(record.last_update),
+          picture: undefinedIsNull(record.picture),
+        }));
+        return results[0];
+      }
+
+      async updateByStaffId(
+        parameters: Public.Tables.Staff.ByStaffId,
+        values: Partial<Public.Staff>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.staff SET staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int4(values.staffId)
+        } , first_name = ${
+          values.firstName === undefined
+            ? sql("first_name")
+            : typed.pg_catalog_varchar(values.firstName)
+        } , last_name = ${
+          values.lastName === undefined
+            ? sql("last_name")
+            : typed.pg_catalog_varchar(values.lastName)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , email = ${
+          values.email === undefined
+            ? sql("email")
+            : typed.pg_catalog_varchar(values.email)
+        } , store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int2(values.storeId)
+        } , active = ${
+          values.active === undefined
+            ? sql("active")
+            : typed.pg_catalog_bool(values.active)
+        } , username = ${
+          values.username === undefined
+            ? sql("username")
+            : typed.pg_catalog_varchar(values.username)
+        } , password = ${
+          values.password === undefined
+            ? sql("password")
+            : typed.pg_catalog_varchar(values.password)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , picture = ${
+          values.picture === undefined
+            ? sql("picture")
+            : typed.pg_catalog_bytea(values.picture)
+        } WHERE staff_id = ${
+          parameters.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int4(parameters.staffId)
+        } RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
 
         const results = response.map((record) => ({
           staffId: undefinedIsNull(record.staff_id),
@@ -14985,7 +25151,7 @@ export class Database {
         const response =
           await sql`SELECT store_id,manager_staff_id,address_id,last_update FROM public.store WHERE manager_staff_id = ${
             parameters.managerStaffId === undefined
-              ? "manager_staff_id"
+              ? sql("manager_staff_id")
               : typed.pg_catalog_int2(parameters.managerStaffId)
           }`;
 
@@ -15005,7 +25171,7 @@ export class Database {
         const response =
           await sql`SELECT store_id,manager_staff_id,address_id,last_update FROM public.store WHERE store_id = ${
             parameters.storeId === undefined
-              ? "store_id"
+              ? sql("store_id")
               : typed.pg_catalog_int4(parameters.storeId)
           }`;
 
@@ -15028,7 +25194,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.store WHERE manager_staff_id = ${
             parameters.managerStaffId === undefined
-              ? "manager_staff_id"
+              ? sql("manager_staff_id")
               : typed.pg_catalog_int2(parameters.managerStaffId)
           } RETURNING store_id,manager_staff_id,address_id,last_update
       `;
@@ -15048,10 +25214,89 @@ export class Database {
 
         const response = await sql`DELETE FROM public.store WHERE store_id = ${
           parameters.storeId === undefined
-            ? "store_id"
+            ? sql("store_id")
             : typed.pg_catalog_int4(parameters.storeId)
         } RETURNING store_id,manager_staff_id,address_id,last_update
       `;
+
+        const results = response.map((record) => ({
+          storeId: undefinedIsNull(record.store_id),
+          managerStaffId: undefinedIsNull(record.manager_staff_id),
+          addressId: undefinedIsNull(record.address_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+
+      async updateByManagerStaffId(
+        parameters: Public.Tables.Store.ByManagerStaffId,
+        values: Partial<Public.Store>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.store SET store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int4(values.storeId)
+        } , manager_staff_id = ${
+          values.managerStaffId === undefined
+            ? sql("manager_staff_id")
+            : typed.pg_catalog_int2(values.managerStaffId)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE manager_staff_id = ${
+          parameters.managerStaffId === undefined
+            ? sql("manager_staff_id")
+            : typed.pg_catalog_int2(parameters.managerStaffId)
+        } RETURNING store_id,manager_staff_id,address_id,last_update`;
+
+        const results = response.map((record) => ({
+          storeId: undefinedIsNull(record.store_id),
+          managerStaffId: undefinedIsNull(record.manager_staff_id),
+          addressId: undefinedIsNull(record.address_id),
+          lastUpdate: undefinedIsNull(record.last_update),
+        }));
+        return results[0];
+      }
+      async updateByStoreId(
+        parameters: Public.Tables.Store.ByStoreId,
+        values: Partial<Public.Store>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.store SET store_id = ${
+          values.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int4(values.storeId)
+        } , manager_staff_id = ${
+          values.managerStaffId === undefined
+            ? sql("manager_staff_id")
+            : typed.pg_catalog_int2(values.managerStaffId)
+        } , address_id = ${
+          values.addressId === undefined
+            ? sql("address_id")
+            : typed.pg_catalog_int2(values.addressId)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } WHERE store_id = ${
+          parameters.storeId === undefined
+            ? sql("store_id")
+            : typed.pg_catalog_int4(parameters.storeId)
+        } RETURNING store_id,manager_staff_id,address_id,last_update`;
 
         const results = response.map((record) => ({
           storeId: undefinedIsNull(record.store_id),
@@ -15078,7 +25323,7 @@ export class Database {
         const response =
           await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int2(parameters.customerId)
           }`;
 
@@ -15100,7 +25345,7 @@ export class Database {
         const response =
           await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE payment_id = ${
             parameters.paymentId === undefined
-              ? "payment_id"
+              ? sql("payment_id")
               : typed.pg_catalog_int4(parameters.paymentId)
           }`;
 
@@ -15122,7 +25367,7 @@ export class Database {
         const response =
           await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE rental_id = ${
             parameters.rentalId === undefined
-              ? "rental_id"
+              ? sql("rental_id")
               : typed.pg_catalog_int4(parameters.rentalId)
           }`;
 
@@ -15144,7 +25389,7 @@ export class Database {
         const response =
           await sql`SELECT payment_id,customer_id,staff_id,rental_id,amount,payment_date FROM public.payment WHERE staff_id = ${
             parameters.staffId === undefined
-              ? "staff_id"
+              ? sql("staff_id")
               : typed.pg_catalog_int2(parameters.staffId)
           }`;
 
@@ -15167,7 +25412,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.payment WHERE customer_id = ${
             parameters.customerId === undefined
-              ? "customer_id"
+              ? sql("customer_id")
               : typed.pg_catalog_int2(parameters.customerId)
           } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
       `;
@@ -15190,7 +25435,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.payment WHERE payment_id = ${
             parameters.paymentId === undefined
-              ? "payment_id"
+              ? sql("payment_id")
               : typed.pg_catalog_int4(parameters.paymentId)
           } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
       `;
@@ -15213,7 +25458,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.payment WHERE rental_id = ${
             parameters.rentalId === undefined
-              ? "rental_id"
+              ? sql("rental_id")
               : typed.pg_catalog_int4(parameters.rentalId)
           } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
       `;
@@ -15236,10 +25481,207 @@ export class Database {
         const response =
           await sql`DELETE FROM public.payment WHERE staff_id = ${
             parameters.staffId === undefined
-              ? "staff_id"
+              ? sql("staff_id")
               : typed.pg_catalog_int2(parameters.staffId)
           } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
       `;
+
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+
+      async updateByCustomerId(
+        parameters: Public.Tables.Payment.ByCustomerId,
+        values: Partial<Public.Payment>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.payment SET payment_id = ${
+          values.paymentId === undefined
+            ? sql("payment_id")
+            : typed.pg_catalog_int4(values.paymentId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , amount = ${
+          values.amount === undefined
+            ? sql("amount")
+            : typed.pg_catalog_numeric(values.amount)
+        } , payment_date = ${
+          values.paymentDate === undefined
+            ? sql("payment_date")
+            : typed.pg_catalog_timestamp(values.paymentDate)
+        } WHERE customer_id = ${
+          parameters.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(parameters.customerId)
+        } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+      async updateByPaymentId(
+        parameters: Public.Tables.Payment.ByPaymentId,
+        values: Partial<Public.Payment>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.payment SET payment_id = ${
+          values.paymentId === undefined
+            ? sql("payment_id")
+            : typed.pg_catalog_int4(values.paymentId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , amount = ${
+          values.amount === undefined
+            ? sql("amount")
+            : typed.pg_catalog_numeric(values.amount)
+        } , payment_date = ${
+          values.paymentDate === undefined
+            ? sql("payment_date")
+            : typed.pg_catalog_timestamp(values.paymentDate)
+        } WHERE payment_id = ${
+          parameters.paymentId === undefined
+            ? sql("payment_id")
+            : typed.pg_catalog_int4(parameters.paymentId)
+        } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results[0];
+      }
+      async updateByRentalId(
+        parameters: Public.Tables.Payment.ByRentalId,
+        values: Partial<Public.Payment>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.payment SET payment_id = ${
+          values.paymentId === undefined
+            ? sql("payment_id")
+            : typed.pg_catalog_int4(values.paymentId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , amount = ${
+          values.amount === undefined
+            ? sql("amount")
+            : typed.pg_catalog_numeric(values.amount)
+        } , payment_date = ${
+          values.paymentDate === undefined
+            ? sql("payment_date")
+            : typed.pg_catalog_timestamp(values.paymentDate)
+        } WHERE rental_id = ${
+          parameters.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(parameters.rentalId)
+        } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+
+        const results = response.map((record) => ({
+          paymentId: undefinedIsNull(record.payment_id),
+          customerId: undefinedIsNull(record.customer_id),
+          staffId: undefinedIsNull(record.staff_id),
+          rentalId: undefinedIsNull(record.rental_id),
+          amount: undefinedIsNull(record.amount),
+          paymentDate: undefinedIsNull(record.payment_date),
+        }));
+        return results;
+      }
+      async updateByStaffId(
+        parameters: Public.Tables.Payment.ByStaffId,
+        values: Partial<Public.Payment>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.payment SET payment_id = ${
+          values.paymentId === undefined
+            ? sql("payment_id")
+            : typed.pg_catalog_int4(values.paymentId)
+        } , customer_id = ${
+          values.customerId === undefined
+            ? sql("customer_id")
+            : typed.pg_catalog_int2(values.customerId)
+        } , staff_id = ${
+          values.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(values.staffId)
+        } , rental_id = ${
+          values.rentalId === undefined
+            ? sql("rental_id")
+            : typed.pg_catalog_int4(values.rentalId)
+        } , amount = ${
+          values.amount === undefined
+            ? sql("amount")
+            : typed.pg_catalog_numeric(values.amount)
+        } , payment_date = ${
+          values.paymentDate === undefined
+            ? sql("payment_date")
+            : typed.pg_catalog_timestamp(values.paymentDate)
+        } WHERE staff_id = ${
+          parameters.staffId === undefined
+            ? sql("staff_id")
+            : typed.pg_catalog_int2(parameters.staffId)
+        } RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
 
         const results = response.map((record) => ({
           paymentId: undefinedIsNull(record.payment_id),
@@ -15268,7 +25710,7 @@ export class Database {
         const response =
           await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE film_id = ${
             parameters.filmId === undefined
-              ? "film_id"
+              ? sql("film_id")
               : typed.pg_catalog_int4(parameters.filmId)
           }`;
 
@@ -15297,7 +25739,7 @@ export class Database {
         const response =
           await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE fulltext = ${
             parameters.fulltext === undefined
-              ? "fulltext"
+              ? sql("fulltext")
               : typed.pg_catalog_gtsvector(parameters.fulltext)
           }`;
 
@@ -15326,7 +25768,7 @@ export class Database {
         const response =
           await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE language_id = ${
             parameters.languageId === undefined
-              ? "language_id"
+              ? sql("language_id")
               : typed.pg_catalog_int2(parameters.languageId)
           }`;
 
@@ -15355,7 +25797,7 @@ export class Database {
         const response =
           await sql`SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext FROM public.film WHERE title = ${
             parameters.title === undefined
-              ? "title"
+              ? sql("title")
               : typed.pg_catalog_varchar(parameters.title)
           }`;
 
@@ -15384,7 +25826,7 @@ export class Database {
 
         const response = await sql`DELETE FROM public.film WHERE film_id = ${
           parameters.filmId === undefined
-            ? "film_id"
+            ? sql("film_id")
             : typed.pg_catalog_int4(parameters.filmId)
         } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
       `;
@@ -15413,7 +25855,7 @@ export class Database {
 
         const response = await sql`DELETE FROM public.film WHERE fulltext = ${
           parameters.fulltext === undefined
-            ? "fulltext"
+            ? sql("fulltext")
             : typed.pg_catalog_gtsvector(parameters.fulltext)
         } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
       `;
@@ -15443,7 +25885,7 @@ export class Database {
         const response =
           await sql`DELETE FROM public.film WHERE language_id = ${
             parameters.languageId === undefined
-              ? "language_id"
+              ? sql("language_id")
               : typed.pg_catalog_int2(parameters.languageId)
           } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
       `;
@@ -15472,10 +25914,347 @@ export class Database {
 
         const response = await sql`DELETE FROM public.film WHERE title = ${
           parameters.title === undefined
-            ? "title"
+            ? sql("title")
             : typed.pg_catalog_varchar(parameters.title)
         } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
       `;
+
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+
+      async updateByFilmId(
+        parameters: Public.Tables.Film.ByFilmId,
+        values: Partial<Public.Film>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film SET film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int4(values.filmId)
+        } , title = ${
+          values.title === undefined
+            ? sql("title")
+            : typed.pg_catalog_varchar(values.title)
+        } , description = ${
+          values.description === undefined
+            ? sql("description")
+            : typed.pg_catalog_text(values.description)
+        } , release_year = ${
+          values.releaseYear === undefined
+            ? sql("release_year")
+            : typed.public_year(values.releaseYear)
+        } , language_id = ${
+          values.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int2(values.languageId)
+        } , rental_duration = ${
+          values.rentalDuration === undefined
+            ? sql("rental_duration")
+            : typed.pg_catalog_int2(values.rentalDuration)
+        } , rental_rate = ${
+          values.rentalRate === undefined
+            ? sql("rental_rate")
+            : typed.pg_catalog_numeric(values.rentalRate)
+        } , length = ${
+          values.length === undefined
+            ? sql("length")
+            : typed.pg_catalog_int2(values.length)
+        } , replacement_cost = ${
+          values.replacementCost === undefined
+            ? sql("replacement_cost")
+            : typed.pg_catalog_numeric(values.replacementCost)
+        } , rating = ${
+          values.rating === undefined
+            ? sql("rating")
+            : typed.public_mpaa_rating(values.rating)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , special_features = ${
+          values.specialFeatures === undefined
+            ? sql("special_features")
+            : typed.pg_catalog__text(values.specialFeatures)
+        } , fulltext = ${
+          values.fulltext === undefined
+            ? sql("fulltext")
+            : typed.pg_catalog_tsvector(values.fulltext)
+        } WHERE film_id = ${
+          parameters.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int4(parameters.filmId)
+        } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results[0];
+      }
+      async updateByFulltext(
+        parameters: Public.Tables.Film.ByFulltext,
+        values: Partial<Public.Film>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film SET film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int4(values.filmId)
+        } , title = ${
+          values.title === undefined
+            ? sql("title")
+            : typed.pg_catalog_varchar(values.title)
+        } , description = ${
+          values.description === undefined
+            ? sql("description")
+            : typed.pg_catalog_text(values.description)
+        } , release_year = ${
+          values.releaseYear === undefined
+            ? sql("release_year")
+            : typed.public_year(values.releaseYear)
+        } , language_id = ${
+          values.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int2(values.languageId)
+        } , rental_duration = ${
+          values.rentalDuration === undefined
+            ? sql("rental_duration")
+            : typed.pg_catalog_int2(values.rentalDuration)
+        } , rental_rate = ${
+          values.rentalRate === undefined
+            ? sql("rental_rate")
+            : typed.pg_catalog_numeric(values.rentalRate)
+        } , length = ${
+          values.length === undefined
+            ? sql("length")
+            : typed.pg_catalog_int2(values.length)
+        } , replacement_cost = ${
+          values.replacementCost === undefined
+            ? sql("replacement_cost")
+            : typed.pg_catalog_numeric(values.replacementCost)
+        } , rating = ${
+          values.rating === undefined
+            ? sql("rating")
+            : typed.public_mpaa_rating(values.rating)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , special_features = ${
+          values.specialFeatures === undefined
+            ? sql("special_features")
+            : typed.pg_catalog__text(values.specialFeatures)
+        } , fulltext = ${
+          values.fulltext === undefined
+            ? sql("fulltext")
+            : typed.pg_catalog_tsvector(values.fulltext)
+        } WHERE fulltext = ${
+          parameters.fulltext === undefined
+            ? sql("fulltext")
+            : typed.pg_catalog_gtsvector(parameters.fulltext)
+        } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+      async updateByLanguageId(
+        parameters: Public.Tables.Film.ByLanguageId,
+        values: Partial<Public.Film>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film SET film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int4(values.filmId)
+        } , title = ${
+          values.title === undefined
+            ? sql("title")
+            : typed.pg_catalog_varchar(values.title)
+        } , description = ${
+          values.description === undefined
+            ? sql("description")
+            : typed.pg_catalog_text(values.description)
+        } , release_year = ${
+          values.releaseYear === undefined
+            ? sql("release_year")
+            : typed.public_year(values.releaseYear)
+        } , language_id = ${
+          values.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int2(values.languageId)
+        } , rental_duration = ${
+          values.rentalDuration === undefined
+            ? sql("rental_duration")
+            : typed.pg_catalog_int2(values.rentalDuration)
+        } , rental_rate = ${
+          values.rentalRate === undefined
+            ? sql("rental_rate")
+            : typed.pg_catalog_numeric(values.rentalRate)
+        } , length = ${
+          values.length === undefined
+            ? sql("length")
+            : typed.pg_catalog_int2(values.length)
+        } , replacement_cost = ${
+          values.replacementCost === undefined
+            ? sql("replacement_cost")
+            : typed.pg_catalog_numeric(values.replacementCost)
+        } , rating = ${
+          values.rating === undefined
+            ? sql("rating")
+            : typed.public_mpaa_rating(values.rating)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , special_features = ${
+          values.specialFeatures === undefined
+            ? sql("special_features")
+            : typed.pg_catalog__text(values.specialFeatures)
+        } , fulltext = ${
+          values.fulltext === undefined
+            ? sql("fulltext")
+            : typed.pg_catalog_tsvector(values.fulltext)
+        } WHERE language_id = ${
+          parameters.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int2(parameters.languageId)
+        } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+
+        const results = response.map((record) => ({
+          filmId: undefinedIsNull(record.film_id),
+          title: undefinedIsNull(record.title),
+          description: undefinedIsNull(record.description),
+          releaseYear: undefinedIsNull(record.release_year),
+          languageId: undefinedIsNull(record.language_id),
+          rentalDuration: undefinedIsNull(record.rental_duration),
+          rentalRate: undefinedIsNull(record.rental_rate),
+          length: undefinedIsNull(record.length),
+          replacementCost: undefinedIsNull(record.replacement_cost),
+          rating: undefinedIsNull(record.rating),
+          lastUpdate: undefinedIsNull(record.last_update),
+          specialFeatures: undefinedIsNull(record.special_features),
+          fulltext: undefinedIsNull(record.fulltext),
+        }));
+        return results;
+      }
+      async updateByTitle(
+        parameters: Public.Tables.Film.ByTitle,
+        values: Partial<Public.Film>,
+      ) {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.film SET film_id = ${
+          values.filmId === undefined
+            ? sql("film_id")
+            : typed.pg_catalog_int4(values.filmId)
+        } , title = ${
+          values.title === undefined
+            ? sql("title")
+            : typed.pg_catalog_varchar(values.title)
+        } , description = ${
+          values.description === undefined
+            ? sql("description")
+            : typed.pg_catalog_text(values.description)
+        } , release_year = ${
+          values.releaseYear === undefined
+            ? sql("release_year")
+            : typed.public_year(values.releaseYear)
+        } , language_id = ${
+          values.languageId === undefined
+            ? sql("language_id")
+            : typed.pg_catalog_int2(values.languageId)
+        } , rental_duration = ${
+          values.rentalDuration === undefined
+            ? sql("rental_duration")
+            : typed.pg_catalog_int2(values.rentalDuration)
+        } , rental_rate = ${
+          values.rentalRate === undefined
+            ? sql("rental_rate")
+            : typed.pg_catalog_numeric(values.rentalRate)
+        } , length = ${
+          values.length === undefined
+            ? sql("length")
+            : typed.pg_catalog_int2(values.length)
+        } , replacement_cost = ${
+          values.replacementCost === undefined
+            ? sql("replacement_cost")
+            : typed.pg_catalog_numeric(values.replacementCost)
+        } , rating = ${
+          values.rating === undefined
+            ? sql("rating")
+            : typed.public_mpaa_rating(values.rating)
+        } , last_update = ${
+          values.lastUpdate === undefined
+            ? sql("last_update")
+            : typed.pg_catalog_timestamp(values.lastUpdate)
+        } , special_features = ${
+          values.specialFeatures === undefined
+            ? sql("special_features")
+            : typed.pg_catalog__text(values.specialFeatures)
+        } , fulltext = ${
+          values.fulltext === undefined
+            ? sql("fulltext")
+            : typed.pg_catalog_tsvector(values.fulltext)
+        } WHERE title = ${
+          parameters.title === undefined
+            ? sql("title")
+            : typed.pg_catalog_varchar(parameters.title)
+        } RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
 
         const results = response.map((record) => ({
           filmId: undefinedIsNull(record.film_id),

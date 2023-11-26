@@ -59,4 +59,37 @@ describe("The database can AutoCRUD", () => {
     });
     expect(after.length).toBe(0);
   });
+  it("a unique index update", async () => {
+    const before = await database.Public.Customer.byCustomerId({
+      customerId: 1,
+    });
+    expect(before).toBeTruthy();
+    const updated = await database.Public.Customer.updateByCustomerId(
+      {
+        customerId: 1,
+      },
+      { activebool: false, email: null },
+    );
+    expect(updated).toMatchObject({
+      activebool: false,
+      email: null,
+      firstName: "Mary",
+      lastName: "Smith",
+    });
+    expect(before).not.toMatchObject(updated);
+  });
+  it("a non-unique index update", async () => {
+    const before = await database.Public.Customer.byStoreId({
+      storeId: 1,
+    });
+    expect(before.filter((c) => c.activebool)).toHaveLength(326);
+    const updated = await database.Public.Customer.updateByStoreId(
+      {
+        storeId: 1,
+      },
+      { activebool: false, email: null },
+    );
+    expect(updated.filter((c) => c.activebool)).toHaveLength(0);
+    expect(before).not.toMatchObject(updated);
+  });
 });

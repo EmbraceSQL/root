@@ -140,6 +140,13 @@ class PGTypeBool extends PGTypeBase {
     export type ${this.typescriptName} = boolean;
     `;
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  serializeToPostgres(context: Context, x: any) {
+    // string it -- yeah I know this is strange -- but it is how the
+    // postges protocol works
+    // https://github.com/porsager/postgres/blob/master/src/types.js#L25
+    return x ? "t" : "f";
+  }
   parseFromPostgres(context: Context, x: string | null) {
     // I've seen text encoding come back with t, f, true, false
     if (["t", "true"].includes(x as string)) return true;
