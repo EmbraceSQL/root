@@ -51,6 +51,10 @@ export class PGAttributes {
 export class PGAttribute {
   constructor(public attribute: AttributeRow) {}
 
+  get hasDefault() {
+    return this.attribute.atthasdef;
+  }
+
   get name() {
     return this.attribute.attname;
   }

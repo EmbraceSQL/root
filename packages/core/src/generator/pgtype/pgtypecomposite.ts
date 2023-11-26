@@ -38,6 +38,38 @@ export class PGTypeComposite extends PGCatalogType {
       .map((i) => i.translateAttributes(context, this));
   }
 
+  get hasPrimaryKey() {
+    return this.primaryKey !== undefined;
+  }
+
+  get hasPrimaryKeyDefault() {
+    const primaryKey = this.indexes.find((i) => i.primaryKey);
+    if (primaryKey !== undefined) {
+      // check all the primary key attributes
+      return (
+        primaryKey.attributes.filter((a) => a.hasDefault).length ===
+        primaryKey.attributes.length
+      );
+    }
+    //fallthrough
+    return false;
+  }
+
+  get primaryKey() {
+    return this.indexes.find((i) => i.primaryKey);
+  }
+
+  get primaryKeyAttributes() {
+    const primaryKey = this.indexes.find((i) => i.primaryKey);
+    return primaryKey?.attributes ?? [];
+  }
+
+  get notPrimaryKeyAttributes() {
+    const primaryKey = this.indexes.find((i) => i.primaryKey);
+    const notIt = primaryKey?.attributes.map((a) => a.name) ?? [];
+    return this.attributes.filter((a) => !notIt.includes(a.name));
+  }
+
   attributeByAttnum(attnum: number) {
     // yep -- postgres is one based
     return this.attributes[attnum - 1];
@@ -47,7 +79,7 @@ export class PGTypeComposite extends PGCatalogType {
     const generationBuffer = [``];
     // all the fields -- and a partial type to allow filling out with
     // various sub selects
-    const namedValues = this.attributes.map(
+    const nameAndType = this.attributes.map(
       (a) =>
         `${a.typescriptName}${
           a.attribute.attnotnull ? "" : "?"
@@ -55,9 +87,37 @@ export class PGTypeComposite extends PGCatalogType {
     );
     generationBuffer.push(`
     export interface ${this.typescriptName}  {
-      ${namedValues.join("\n")}
+      ${nameAndType.join("\n")}
     };
     `);
+
+    if (this.hasPrimaryKey) {
+      // without the primary key, used to create rows when there
+      // is a default value in the database on the primary key
+      const nameAndType = this.notPrimaryKeyAttributes.map(
+        (a) =>
+          `${a.typescriptName}${
+            a.attribute.attnotnull ? "" : "?"
+          }: ${a.typescriptTypeDefinition(context)};`,
+      );
+      generationBuffer.push(`
+    export interface ${this.typescriptName}NotPrimaryKey  {
+      ${nameAndType.join("\n")}
+    };
+    `);
+
+      const primaryKeyNames =
+        this.primaryKey?.attributes.map(
+          (a) => `value.${a.typescriptName} !== undefined`,
+        ) || [];
+      generationBuffer.push(`
+      export function includes${this.typescriptName}PrimaryKey(value: Partial<${
+        this.typescriptName
+      }>){
+        return ${primaryKeyNames.join(" && ")}
+      }
+      `);
+    }
 
     return generationBuffer.join("\n");
   }

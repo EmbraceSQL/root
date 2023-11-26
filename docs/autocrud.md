@@ -118,16 +118,16 @@ Creating records has one trick - automatic primary keys like:
 * `BIGSERIAL`
 * `DEFAULT nextval()` from a sequence.
 
-These keys are not passed in, but are created from defaults in the database.
+These keys are created from defaults in the database.
 This means primary key attributes are optional in TypeScript, and you probably
 want to leave them undefined in order to have the database create you a primary key.
 
 The good news is the `RETURNING` record will show you the primary key as
 created by the database. 
 
-It's OK to pass in `values` with the primary key - particularly when you
+You can pass in `values` with the primary key - particularly when you
 intend to get an upsert. Or if you are on purpose 'setting' the primary key
-and bypassing the default.
+and bypassing the default. 
 
 ### Upserts
 

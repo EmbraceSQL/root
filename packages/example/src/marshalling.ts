@@ -608,11 +608,49 @@ export namespace PgCatalog {
     aggminitval?: Nullable<Text>;
   }
 
+  export interface PgAggregateNotPrimaryKey {
+    aggkind: Char;
+    aggnumdirectargs: Int2;
+    aggtransfn: Regproc;
+    aggfinalfn: Regproc;
+    aggcombinefn: Regproc;
+    aggserialfn: Regproc;
+    aggdeserialfn: Regproc;
+    aggmtransfn: Regproc;
+    aggminvtransfn: Regproc;
+    aggmfinalfn: Regproc;
+    aggfinalextra: Bool;
+    aggmfinalextra: Bool;
+    aggfinalmodify: Char;
+    aggmfinalmodify: Char;
+    aggsortop: Oid;
+    aggtranstype: Oid;
+    aggtransspace: Int4;
+    aggmtranstype: Oid;
+    aggmtransspace: Int4;
+    agginitval?: Nullable<Text>;
+    aggminitval?: Nullable<Text>;
+  }
+
+  export function includesPgAggregatePrimaryKey(value: Partial<PgAggregate>) {
+    return value.aggfnoid !== undefined;
+  }
+
   export interface PgAm {
     oid: Oid;
     amname: Name;
     amhandler: Regproc;
     amtype: Char;
+  }
+
+  export interface PgAmNotPrimaryKey {
+    amname: Name;
+    amhandler: Regproc;
+    amtype: Char;
+  }
+
+  export function includesPgAmPrimaryKey(value: Partial<PgAm>) {
+    return value.oid !== undefined;
   }
 
   export interface PgAmop {
@@ -627,6 +665,21 @@ export namespace PgCatalog {
     amopsortfamily: Oid;
   }
 
+  export interface PgAmopNotPrimaryKey {
+    amopfamily: Oid;
+    amoplefttype: Oid;
+    amoprighttype: Oid;
+    amopstrategy: Int2;
+    amoppurpose: Char;
+    amopopr: Oid;
+    amopmethod: Oid;
+    amopsortfamily: Oid;
+  }
+
+  export function includesPgAmopPrimaryKey(value: Partial<PgAmop>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgAmproc {
     oid: Oid;
     amprocfamily: Oid;
@@ -636,11 +689,33 @@ export namespace PgCatalog {
     amproc: Regproc;
   }
 
+  export interface PgAmprocNotPrimaryKey {
+    amprocfamily: Oid;
+    amproclefttype: Oid;
+    amprocrighttype: Oid;
+    amprocnum: Int2;
+    amproc: Regproc;
+  }
+
+  export function includesPgAmprocPrimaryKey(value: Partial<PgAmproc>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgAttrdef {
     oid: Oid;
     adrelid: Oid;
     adnum: Int2;
     adbin: PgNodeTree;
+  }
+
+  export interface PgAttrdefNotPrimaryKey {
+    adrelid: Oid;
+    adnum: Int2;
+    adbin: PgNodeTree;
+  }
+
+  export function includesPgAttrdefPrimaryKey(value: Partial<PgAttrdef>) {
+    return value.oid !== undefined;
   }
 
   export interface PgAttribute {
@@ -672,6 +747,37 @@ export namespace PgCatalog {
     attmissingval?: Nullable<Anyarray>;
   }
 
+  export interface PgAttributeNotPrimaryKey {
+    attname: Name;
+    atttypid: Oid;
+    attlen: Int2;
+    attcacheoff: Int4;
+    atttypmod: Int4;
+    attndims: Int2;
+    attbyval: Bool;
+    attalign: Char;
+    attstorage: Char;
+    attcompression: Char;
+    attnotnull: Bool;
+    atthasdef: Bool;
+    atthasmissing: Bool;
+    attidentity: Char;
+    attgenerated: Char;
+    attisdropped: Bool;
+    attislocal: Bool;
+    attinhcount: Int2;
+    attstattarget: Int2;
+    attcollation: Oid;
+    attacl?: Nullable<AclitemArray>;
+    attoptions?: Nullable<TextArray>;
+    attfdwoptions?: Nullable<TextArray>;
+    attmissingval?: Nullable<Anyarray>;
+  }
+
+  export function includesPgAttributePrimaryKey(value: Partial<PgAttribute>) {
+    return value.attrelid !== undefined && value.attnum !== undefined;
+  }
+
   export interface PgAuthMembers {
     oid: Oid;
     roleid: Oid;
@@ -680,6 +786,21 @@ export namespace PgCatalog {
     adminOption: Bool;
     inheritOption: Bool;
     setOption: Bool;
+  }
+
+  export interface PgAuthMembersNotPrimaryKey {
+    roleid: Oid;
+    member: Oid;
+    grantor: Oid;
+    adminOption: Bool;
+    inheritOption: Bool;
+    setOption: Bool;
+  }
+
+  export function includesPgAuthMembersPrimaryKey(
+    value: Partial<PgAuthMembers>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgAuthid {
@@ -695,6 +816,24 @@ export namespace PgCatalog {
     rolconnlimit: Int4;
     rolpassword?: Nullable<Text>;
     rolvaliduntil?: Nullable<Timestamptz>;
+  }
+
+  export interface PgAuthidNotPrimaryKey {
+    rolname: Name;
+    rolsuper: Bool;
+    rolinherit: Bool;
+    rolcreaterole: Bool;
+    rolcreatedb: Bool;
+    rolcanlogin: Bool;
+    rolreplication: Bool;
+    rolbypassrls: Bool;
+    rolconnlimit: Int4;
+    rolpassword?: Nullable<Text>;
+    rolvaliduntil?: Nullable<Timestamptz>;
+  }
+
+  export function includesPgAuthidPrimaryKey(value: Partial<PgAuthid>) {
+    return value.oid !== undefined;
   }
 
   export interface PgAvailableExtensionVersions {
@@ -747,6 +886,18 @@ export namespace PgCatalog {
     castmethod: Char;
   }
 
+  export interface PgCastNotPrimaryKey {
+    castsource: Oid;
+    casttarget: Oid;
+    castfunc: Oid;
+    castcontext: Char;
+    castmethod: Char;
+  }
+
+  export function includesPgCastPrimaryKey(value: Partial<PgCast>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgClass {
     oid: Oid;
     relname: Name;
@@ -783,6 +934,45 @@ export namespace PgCatalog {
     relpartbound?: Nullable<PgNodeTree>;
   }
 
+  export interface PgClassNotPrimaryKey {
+    relname: Name;
+    relnamespace: Oid;
+    reltype: Oid;
+    reloftype: Oid;
+    relowner: Oid;
+    relam: Oid;
+    relfilenode: Oid;
+    reltablespace: Oid;
+    relpages: Int4;
+    reltuples: Float4;
+    relallvisible: Int4;
+    reltoastrelid: Oid;
+    relhasindex: Bool;
+    relisshared: Bool;
+    relpersistence: Char;
+    relkind: Char;
+    relnatts: Int2;
+    relchecks: Int2;
+    relhasrules: Bool;
+    relhastriggers: Bool;
+    relhassubclass: Bool;
+    relrowsecurity: Bool;
+    relforcerowsecurity: Bool;
+    relispopulated: Bool;
+    relreplident: Char;
+    relispartition: Bool;
+    relrewrite: Oid;
+    relfrozenxid: Xid;
+    relminmxid: Xid;
+    relacl?: Nullable<AclitemArray>;
+    reloptions?: Nullable<TextArray>;
+    relpartbound?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgClassPrimaryKey(value: Partial<PgClass>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgCollation {
     oid: Oid;
     collname: Name;
@@ -796,6 +986,24 @@ export namespace PgCatalog {
     colliculocale?: Nullable<Text>;
     collicurules?: Nullable<Text>;
     collversion?: Nullable<Text>;
+  }
+
+  export interface PgCollationNotPrimaryKey {
+    collname: Name;
+    collnamespace: Oid;
+    collowner: Oid;
+    collprovider: Char;
+    collisdeterministic: Bool;
+    collencoding: Int4;
+    collcollate?: Nullable<Text>;
+    collctype?: Nullable<Text>;
+    colliculocale?: Nullable<Text>;
+    collicurules?: Nullable<Text>;
+    collversion?: Nullable<Text>;
+  }
+
+  export function includesPgCollationPrimaryKey(value: Partial<PgCollation>) {
+    return value.oid !== undefined;
   }
 
   export interface PgConfig {
@@ -832,6 +1040,38 @@ export namespace PgCatalog {
     conbin?: Nullable<PgNodeTree>;
   }
 
+  export interface PgConstraintNotPrimaryKey {
+    conname: Name;
+    connamespace: Oid;
+    contype: Char;
+    condeferrable: Bool;
+    condeferred: Bool;
+    convalidated: Bool;
+    conrelid: Oid;
+    contypid: Oid;
+    conindid: Oid;
+    conparentid: Oid;
+    confrelid: Oid;
+    confupdtype: Char;
+    confdeltype: Char;
+    confmatchtype: Char;
+    conislocal: Bool;
+    coninhcount: Int2;
+    connoinherit: Bool;
+    conkey?: Nullable<Int2Array>;
+    confkey?: Nullable<Int2Array>;
+    conpfeqop?: Nullable<OidArray>;
+    conppeqop?: Nullable<OidArray>;
+    conffeqop?: Nullable<OidArray>;
+    confdelsetcols?: Nullable<Int2Array>;
+    conexclop?: Nullable<OidArray>;
+    conbin?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgConstraintPrimaryKey(value: Partial<PgConstraint>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgConversion {
     oid: Oid;
     conname: Name;
@@ -841,6 +1081,20 @@ export namespace PgCatalog {
     contoencoding: Int4;
     conproc: Regproc;
     condefault: Bool;
+  }
+
+  export interface PgConversionNotPrimaryKey {
+    conname: Name;
+    connamespace: Oid;
+    conowner: Oid;
+    conforencoding: Int4;
+    contoencoding: Int4;
+    conproc: Regproc;
+    condefault: Bool;
+  }
+
+  export function includesPgConversionPrimaryKey(value: Partial<PgConversion>) {
+    return value.oid !== undefined;
   }
 
   export interface PgCursors {
@@ -872,10 +1126,43 @@ export namespace PgCatalog {
     datacl?: Nullable<AclitemArray>;
   }
 
+  export interface PgDatabaseNotPrimaryKey {
+    datname: Name;
+    datdba: Oid;
+    encoding: Int4;
+    datlocprovider: Char;
+    datistemplate: Bool;
+    datallowconn: Bool;
+    datconnlimit: Int4;
+    datfrozenxid: Xid;
+    datminmxid: Xid;
+    dattablespace: Oid;
+    datcollate: Text;
+    datctype: Text;
+    daticulocale?: Nullable<Text>;
+    daticurules?: Nullable<Text>;
+    datcollversion?: Nullable<Text>;
+    datacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgDatabasePrimaryKey(value: Partial<PgDatabase>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgDbRoleSetting {
     setdatabase: Oid;
     setrole: Oid;
     setconfig?: Nullable<TextArray>;
+  }
+
+  export interface PgDbRoleSettingNotPrimaryKey {
+    setconfig?: Nullable<TextArray>;
+  }
+
+  export function includesPgDbRoleSettingPrimaryKey(
+    value: Partial<PgDbRoleSetting>,
+  ) {
+    return value.setdatabase !== undefined && value.setrole !== undefined;
   }
 
   export type PgDdlCommand = void;
@@ -886,6 +1173,17 @@ export namespace PgCatalog {
     defaclnamespace: Oid;
     defaclobjtype: Char;
     defaclacl: AclitemArray;
+  }
+
+  export interface PgDefaultAclNotPrimaryKey {
+    defaclrole: Oid;
+    defaclnamespace: Oid;
+    defaclobjtype: Char;
+    defaclacl: AclitemArray;
+  }
+
+  export function includesPgDefaultAclPrimaryKey(value: Partial<PgDefaultAcl>) {
+    return value.oid !== undefined;
   }
 
   export interface PgDepend {
@@ -910,11 +1208,35 @@ export namespace PgCatalog {
     description: Text;
   }
 
+  export interface PgDescriptionNotPrimaryKey {
+    description: Text;
+  }
+
+  export function includesPgDescriptionPrimaryKey(
+    value: Partial<PgDescription>,
+  ) {
+    return (
+      value.objoid !== undefined &&
+      value.classoid !== undefined &&
+      value.objsubid !== undefined
+    );
+  }
+
   export interface PgEnum {
     oid: Oid;
     enumtypid: Oid;
     enumsortorder: Float4;
     enumlabel: Name;
+  }
+
+  export interface PgEnumNotPrimaryKey {
+    enumtypid: Oid;
+    enumsortorder: Float4;
+    enumlabel: Name;
+  }
+
+  export function includesPgEnumPrimaryKey(value: Partial<PgEnum>) {
+    return value.oid !== undefined;
   }
 
   export interface PgEventTrigger {
@@ -927,6 +1249,21 @@ export namespace PgCatalog {
     evttags?: Nullable<TextArray>;
   }
 
+  export interface PgEventTriggerNotPrimaryKey {
+    evtname: Name;
+    evtevent: Name;
+    evtowner: Oid;
+    evtfoid: Oid;
+    evtenabled: Char;
+    evttags?: Nullable<TextArray>;
+  }
+
+  export function includesPgEventTriggerPrimaryKey(
+    value: Partial<PgEventTrigger>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgExtension {
     oid: Oid;
     extname: Name;
@@ -936,6 +1273,20 @@ export namespace PgCatalog {
     extversion: Text;
     extconfig?: Nullable<OidArray>;
     extcondition?: Nullable<TextArray>;
+  }
+
+  export interface PgExtensionNotPrimaryKey {
+    extname: Name;
+    extowner: Oid;
+    extnamespace: Oid;
+    extrelocatable: Bool;
+    extversion: Text;
+    extconfig?: Nullable<OidArray>;
+    extcondition?: Nullable<TextArray>;
+  }
+
+  export function includesPgExtensionPrimaryKey(value: Partial<PgExtension>) {
+    return value.oid !== undefined;
   }
 
   export interface PgFileSettings {
@@ -958,6 +1309,21 @@ export namespace PgCatalog {
     fdwoptions?: Nullable<TextArray>;
   }
 
+  export interface PgForeignDataWrapperNotPrimaryKey {
+    fdwname: Name;
+    fdwowner: Oid;
+    fdwhandler: Oid;
+    fdwvalidator: Oid;
+    fdwacl?: Nullable<AclitemArray>;
+    fdwoptions?: Nullable<TextArray>;
+  }
+
+  export function includesPgForeignDataWrapperPrimaryKey(
+    value: Partial<PgForeignDataWrapper>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgForeignServer {
     oid: Oid;
     srvname: Name;
@@ -969,10 +1335,37 @@ export namespace PgCatalog {
     srvoptions?: Nullable<TextArray>;
   }
 
+  export interface PgForeignServerNotPrimaryKey {
+    srvname: Name;
+    srvowner: Oid;
+    srvfdw: Oid;
+    srvtype?: Nullable<Text>;
+    srvversion?: Nullable<Text>;
+    srvacl?: Nullable<AclitemArray>;
+    srvoptions?: Nullable<TextArray>;
+  }
+
+  export function includesPgForeignServerPrimaryKey(
+    value: Partial<PgForeignServer>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgForeignTable {
     ftrelid: Oid;
     ftserver: Oid;
     ftoptions?: Nullable<TextArray>;
+  }
+
+  export interface PgForeignTableNotPrimaryKey {
+    ftserver: Oid;
+    ftoptions?: Nullable<TextArray>;
+  }
+
+  export function includesPgForeignTablePrimaryKey(
+    value: Partial<PgForeignTable>,
+  ) {
+    return value.ftrelid !== undefined;
   }
 
   export interface PgGroup {
@@ -1029,6 +1422,33 @@ export namespace PgCatalog {
     indpred?: Nullable<PgNodeTree>;
   }
 
+  export interface PgIndexNotPrimaryKey {
+    indrelid: Oid;
+    indnatts: Int2;
+    indnkeyatts: Int2;
+    indisunique: Bool;
+    indnullsnotdistinct: Bool;
+    indisprimary: Bool;
+    indisexclusion: Bool;
+    indimmediate: Bool;
+    indisclustered: Bool;
+    indisvalid: Bool;
+    indcheckxmin: Bool;
+    indisready: Bool;
+    indislive: Bool;
+    indisreplident: Bool;
+    indkey: Int2vector;
+    indcollation: Oidvector;
+    indclass: Oidvector;
+    indoption: Int2vector;
+    indexprs?: Nullable<PgNodeTree>;
+    indpred?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgIndexPrimaryKey(value: Partial<PgIndex>) {
+    return value.indexrelid !== undefined;
+  }
+
   export interface PgIndexes {
     schemaname?: Nullable<Name>;
     tablename?: Nullable<Name>;
@@ -1044,12 +1464,34 @@ export namespace PgCatalog {
     inhdetachpending: Bool;
   }
 
+  export interface PgInheritsNotPrimaryKey {
+    inhparent: Oid;
+    inhdetachpending: Bool;
+  }
+
+  export function includesPgInheritsPrimaryKey(value: Partial<PgInherits>) {
+    return value.inhrelid !== undefined && value.inhseqno !== undefined;
+  }
+
   export interface PgInitPrivs {
     objoid: Oid;
     classoid: Oid;
     objsubid: Int4;
     privtype: Char;
     initprivs: AclitemArray;
+  }
+
+  export interface PgInitPrivsNotPrimaryKey {
+    privtype: Char;
+    initprivs: AclitemArray;
+  }
+
+  export function includesPgInitPrivsPrimaryKey(value: Partial<PgInitPrivs>) {
+    return (
+      value.objoid !== undefined &&
+      value.classoid !== undefined &&
+      value.objsubid !== undefined
+    );
   }
 
   export interface PgLanguage {
@@ -1064,16 +1506,52 @@ export namespace PgCatalog {
     lanacl?: Nullable<AclitemArray>;
   }
 
+  export interface PgLanguageNotPrimaryKey {
+    lanname: Name;
+    lanowner: Oid;
+    lanispl: Bool;
+    lanpltrusted: Bool;
+    lanplcallfoid: Oid;
+    laninline: Oid;
+    lanvalidator: Oid;
+    lanacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgLanguagePrimaryKey(value: Partial<PgLanguage>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgLargeobject {
     loid: Oid;
     pageno: Int4;
     data: Bytea;
   }
 
+  export interface PgLargeobjectNotPrimaryKey {
+    data: Bytea;
+  }
+
+  export function includesPgLargeobjectPrimaryKey(
+    value: Partial<PgLargeobject>,
+  ) {
+    return value.loid !== undefined && value.pageno !== undefined;
+  }
+
   export interface PgLargeobjectMetadata {
     oid: Oid;
     lomowner: Oid;
     lomacl?: Nullable<AclitemArray>;
+  }
+
+  export interface PgLargeobjectMetadataNotPrimaryKey {
+    lomowner: Oid;
+    lomacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgLargeobjectMetadataPrimaryKey(
+    value: Partial<PgLargeobjectMetadata>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgLocks {
@@ -1122,6 +1600,16 @@ export namespace PgCatalog {
     nspacl?: Nullable<AclitemArray>;
   }
 
+  export interface PgNamespaceNotPrimaryKey {
+    nspname: Name;
+    nspowner: Oid;
+    nspacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgNamespacePrimaryKey(value: Partial<PgNamespace>) {
+    return value.oid !== undefined;
+  }
+
   /**
    * FIXME: pg_ndistinct did not resolve to a base type
    */
@@ -1144,6 +1632,21 @@ export namespace PgCatalog {
     opckeytype: Oid;
   }
 
+  export interface PgOpclassNotPrimaryKey {
+    opcmethod: Oid;
+    opcname: Name;
+    opcnamespace: Oid;
+    opcowner: Oid;
+    opcfamily: Oid;
+    opcintype: Oid;
+    opcdefault: Bool;
+    opckeytype: Oid;
+  }
+
+  export function includesPgOpclassPrimaryKey(value: Partial<PgOpclass>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgOperator {
     oid: Oid;
     oprname: Name;
@@ -1162,6 +1665,27 @@ export namespace PgCatalog {
     oprjoin: Regproc;
   }
 
+  export interface PgOperatorNotPrimaryKey {
+    oprname: Name;
+    oprnamespace: Oid;
+    oprowner: Oid;
+    oprkind: Char;
+    oprcanmerge: Bool;
+    oprcanhash: Bool;
+    oprleft: Oid;
+    oprright: Oid;
+    oprresult: Oid;
+    oprcom: Oid;
+    oprnegate: Oid;
+    oprcode: Regproc;
+    oprrest: Regproc;
+    oprjoin: Regproc;
+  }
+
+  export function includesPgOperatorPrimaryKey(value: Partial<PgOperator>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgOpfamily {
     oid: Oid;
     opfmethod: Oid;
@@ -1170,10 +1694,32 @@ export namespace PgCatalog {
     opfowner: Oid;
   }
 
+  export interface PgOpfamilyNotPrimaryKey {
+    opfmethod: Oid;
+    opfname: Name;
+    opfnamespace: Oid;
+    opfowner: Oid;
+  }
+
+  export function includesPgOpfamilyPrimaryKey(value: Partial<PgOpfamily>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgParameterAcl {
     oid: Oid;
     parname: Text;
     paracl?: Nullable<AclitemArray>;
+  }
+
+  export interface PgParameterAclNotPrimaryKey {
+    parname: Text;
+    paracl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgParameterAclPrimaryKey(
+    value: Partial<PgParameterAcl>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgPartitionedTable {
@@ -1185,6 +1731,22 @@ export namespace PgCatalog {
     partclass: Oidvector;
     partcollation: Oidvector;
     partexprs?: Nullable<PgNodeTree>;
+  }
+
+  export interface PgPartitionedTableNotPrimaryKey {
+    partstrat: Char;
+    partnatts: Int2;
+    partdefid: Oid;
+    partattrs: Int2vector;
+    partclass: Oidvector;
+    partcollation: Oidvector;
+    partexprs?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgPartitionedTablePrimaryKey(
+    value: Partial<PgPartitionedTable>,
+  ) {
+    return value.partrelid !== undefined;
   }
 
   export interface PgPolicies {
@@ -1207,6 +1769,20 @@ export namespace PgCatalog {
     polroles: OidArray;
     polqual?: Nullable<PgNodeTree>;
     polwithcheck?: Nullable<PgNodeTree>;
+  }
+
+  export interface PgPolicyNotPrimaryKey {
+    polname: Name;
+    polrelid: Oid;
+    polcmd: Char;
+    polpermissive: Bool;
+    polroles: OidArray;
+    polqual?: Nullable<PgNodeTree>;
+    polwithcheck?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgPolicyPrimaryKey(value: Partial<PgPolicy>) {
+    return value.oid !== undefined;
   }
 
   export interface PgPreparedStatements {
@@ -1261,6 +1837,42 @@ export namespace PgCatalog {
     proacl?: Nullable<AclitemArray>;
   }
 
+  export interface PgProcNotPrimaryKey {
+    proname: Name;
+    pronamespace: Oid;
+    proowner: Oid;
+    prolang: Oid;
+    procost: Float4;
+    prorows: Float4;
+    provariadic: Oid;
+    prosupport: Regproc;
+    prokind: Char;
+    prosecdef: Bool;
+    proleakproof: Bool;
+    proisstrict: Bool;
+    proretset: Bool;
+    provolatile: Char;
+    proparallel: Char;
+    pronargs: Int2;
+    pronargdefaults: Int2;
+    prorettype: Oid;
+    proargtypes: Oidvector;
+    proallargtypes?: Nullable<OidArray>;
+    proargmodes?: Nullable<CharArray>;
+    proargnames?: Nullable<TextArray>;
+    proargdefaults?: Nullable<PgNodeTree>;
+    protrftypes?: Nullable<OidArray>;
+    prosrc: Text;
+    probin?: Nullable<Text>;
+    prosqlbody?: Nullable<PgNodeTree>;
+    proconfig?: Nullable<TextArray>;
+    proacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgProcPrimaryKey(value: Partial<PgProc>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgPublication {
     oid: Oid;
     pubname: Name;
@@ -1273,10 +1885,38 @@ export namespace PgCatalog {
     pubviaroot: Bool;
   }
 
+  export interface PgPublicationNotPrimaryKey {
+    pubname: Name;
+    pubowner: Oid;
+    puballtables: Bool;
+    pubinsert: Bool;
+    pubupdate: Bool;
+    pubdelete: Bool;
+    pubtruncate: Bool;
+    pubviaroot: Bool;
+  }
+
+  export function includesPgPublicationPrimaryKey(
+    value: Partial<PgPublication>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgPublicationNamespace {
     oid: Oid;
     pnpubid: Oid;
     pnnspid: Oid;
+  }
+
+  export interface PgPublicationNamespaceNotPrimaryKey {
+    pnpubid: Oid;
+    pnnspid: Oid;
+  }
+
+  export function includesPgPublicationNamespacePrimaryKey(
+    value: Partial<PgPublicationNamespace>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgPublicationRel {
@@ -1285,6 +1925,19 @@ export namespace PgCatalog {
     prrelid: Oid;
     prqual?: Nullable<PgNodeTree>;
     prattrs?: Nullable<Int2vector>;
+  }
+
+  export interface PgPublicationRelNotPrimaryKey {
+    prpubid: Oid;
+    prrelid: Oid;
+    prqual?: Nullable<PgNodeTree>;
+    prattrs?: Nullable<Int2vector>;
+  }
+
+  export function includesPgPublicationRelPrimaryKey(
+    value: Partial<PgPublicationRel>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgPublicationTables {
@@ -1305,9 +1958,32 @@ export namespace PgCatalog {
     rngsubdiff: Regproc;
   }
 
+  export interface PgRangeNotPrimaryKey {
+    rngsubtype: Oid;
+    rngmultitypid: Oid;
+    rngcollation: Oid;
+    rngsubopc: Oid;
+    rngcanonical: Regproc;
+    rngsubdiff: Regproc;
+  }
+
+  export function includesPgRangePrimaryKey(value: Partial<PgRange>) {
+    return value.rngtypid !== undefined;
+  }
+
   export interface PgReplicationOrigin {
     roident: Oid;
     roname: Text;
+  }
+
+  export interface PgReplicationOriginNotPrimaryKey {
+    roname: Text;
+  }
+
+  export function includesPgReplicationOriginPrimaryKey(
+    value: Partial<PgReplicationOrigin>,
+  ) {
+    return value.roident !== undefined;
   }
 
   export interface PgReplicationOriginStatus {
@@ -1347,6 +2023,20 @@ export namespace PgCatalog {
     evAction: PgNodeTree;
   }
 
+  export interface PgRewriteNotPrimaryKey {
+    rulename: Name;
+    evClass: Oid;
+    evType: Char;
+    evEnabled: Char;
+    isInstead: Bool;
+    evQual: PgNodeTree;
+    evAction: PgNodeTree;
+  }
+
+  export function includesPgRewritePrimaryKey(value: Partial<PgRewrite>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgRoles {
     rolname?: Nullable<Name>;
     rolsuper?: Nullable<Bool>;
@@ -1378,6 +2068,19 @@ export namespace PgCatalog {
     label: Text;
   }
 
+  export interface PgSeclabelNotPrimaryKey {
+    label: Text;
+  }
+
+  export function includesPgSeclabelPrimaryKey(value: Partial<PgSeclabel>) {
+    return (
+      value.objoid !== undefined &&
+      value.classoid !== undefined &&
+      value.objsubid !== undefined &&
+      value.provider !== undefined
+    );
+  }
+
   export interface PgSeclabels {
     objoid?: Nullable<Oid>;
     classoid?: Nullable<Oid>;
@@ -1398,6 +2101,20 @@ export namespace PgCatalog {
     seqmin: Int8;
     seqcache: Int8;
     seqcycle: Bool;
+  }
+
+  export interface PgSequenceNotPrimaryKey {
+    seqtypid: Oid;
+    seqstart: Int8;
+    seqincrement: Int8;
+    seqmax: Int8;
+    seqmin: Int8;
+    seqcache: Int8;
+    seqcycle: Bool;
+  }
+
+  export function includesPgSequencePrimaryKey(value: Partial<PgSequence>) {
+    return value.seqrelid !== undefined;
   }
 
   export interface PgSequences {
@@ -1462,6 +2179,16 @@ export namespace PgCatalog {
     description: Text;
   }
 
+  export interface PgShdescriptionNotPrimaryKey {
+    description: Text;
+  }
+
+  export function includesPgShdescriptionPrimaryKey(
+    value: Partial<PgShdescription>,
+  ) {
+    return value.objoid !== undefined && value.classoid !== undefined;
+  }
+
   export interface PgShmemAllocations {
     name?: Nullable<Text>;
     off?: Nullable<Int8>;
@@ -1474,6 +2201,18 @@ export namespace PgCatalog {
     classoid: Oid;
     provider: Text;
     label: Text;
+  }
+
+  export interface PgShseclabelNotPrimaryKey {
+    label: Text;
+  }
+
+  export function includesPgShseclabelPrimaryKey(value: Partial<PgShseclabel>) {
+    return (
+      value.objoid !== undefined &&
+      value.classoid !== undefined &&
+      value.provider !== undefined
+    );
   }
 
   /**
@@ -2125,6 +2864,45 @@ export namespace PgCatalog {
     stavalues5?: Nullable<Anyarray>;
   }
 
+  export interface PgStatisticNotPrimaryKey {
+    stanullfrac: Float4;
+    stawidth: Int4;
+    stadistinct: Float4;
+    stakind1: Int2;
+    stakind2: Int2;
+    stakind3: Int2;
+    stakind4: Int2;
+    stakind5: Int2;
+    staop1: Oid;
+    staop2: Oid;
+    staop3: Oid;
+    staop4: Oid;
+    staop5: Oid;
+    stacoll1: Oid;
+    stacoll2: Oid;
+    stacoll3: Oid;
+    stacoll4: Oid;
+    stacoll5: Oid;
+    stanumbers1?: Nullable<Float4Array>;
+    stanumbers2?: Nullable<Float4Array>;
+    stanumbers3?: Nullable<Float4Array>;
+    stanumbers4?: Nullable<Float4Array>;
+    stanumbers5?: Nullable<Float4Array>;
+    stavalues1?: Nullable<Anyarray>;
+    stavalues2?: Nullable<Anyarray>;
+    stavalues3?: Nullable<Anyarray>;
+    stavalues4?: Nullable<Anyarray>;
+    stavalues5?: Nullable<Anyarray>;
+  }
+
+  export function includesPgStatisticPrimaryKey(value: Partial<PgStatistic>) {
+    return (
+      value.starelid !== undefined &&
+      value.staattnum !== undefined &&
+      value.stainherit !== undefined
+    );
+  }
+
   export interface PgStatisticExt {
     oid: Oid;
     stxrelid: Oid;
@@ -2137,6 +2915,23 @@ export namespace PgCatalog {
     stxexprs?: Nullable<PgNodeTree>;
   }
 
+  export interface PgStatisticExtNotPrimaryKey {
+    stxrelid: Oid;
+    stxname: Name;
+    stxnamespace: Oid;
+    stxowner: Oid;
+    stxstattarget: Int4;
+    stxkeys: Int2vector;
+    stxkind: CharArray;
+    stxexprs?: Nullable<PgNodeTree>;
+  }
+
+  export function includesPgStatisticExtPrimaryKey(
+    value: Partial<PgStatisticExt>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgStatisticExtData {
     stxoid: Oid;
     stxdinherit: Bool;
@@ -2144,6 +2939,19 @@ export namespace PgCatalog {
     stxddependencies?: Nullable<PgDependencies>;
     stxdmcv?: Nullable<PgMcvList>;
     stxdexpr?: Nullable<PgStatisticArray>;
+  }
+
+  export interface PgStatisticExtDataNotPrimaryKey {
+    stxdndistinct?: Nullable<PgNdistinct>;
+    stxddependencies?: Nullable<PgDependencies>;
+    stxdmcv?: Nullable<PgMcvList>;
+    stxdexpr?: Nullable<PgStatisticArray>;
+  }
+
+  export function includesPgStatisticExtDataPrimaryKey(
+    value: Partial<PgStatisticExtData>,
+  ) {
+    return value.stxoid !== undefined && value.stxdinherit !== undefined;
   }
 
   export interface PgStats {
@@ -2221,11 +3029,47 @@ export namespace PgCatalog {
     suborigin?: Nullable<Text>;
   }
 
+  export interface PgSubscriptionNotPrimaryKey {
+    subdbid: Oid;
+    subskiplsn: PgLsn;
+    subname: Name;
+    subowner: Oid;
+    subenabled: Bool;
+    subbinary: Bool;
+    substream: Char;
+    subtwophasestate: Char;
+    subdisableonerr: Bool;
+    subpasswordrequired: Bool;
+    subrunasowner: Bool;
+    subconninfo: Text;
+    subslotname?: Nullable<Name>;
+    subsynccommit: Text;
+    subpublications: TextArray;
+    suborigin?: Nullable<Text>;
+  }
+
+  export function includesPgSubscriptionPrimaryKey(
+    value: Partial<PgSubscription>,
+  ) {
+    return value.oid !== undefined;
+  }
+
   export interface PgSubscriptionRel {
     srsubid: Oid;
     srrelid: Oid;
     srsubstate: Char;
     srsublsn?: Nullable<PgLsn>;
+  }
+
+  export interface PgSubscriptionRelNotPrimaryKey {
+    srsubstate: Char;
+    srsublsn?: Nullable<PgLsn>;
+  }
+
+  export function includesPgSubscriptionRelPrimaryKey(
+    value: Partial<PgSubscriptionRel>,
+  ) {
+    return value.srrelid !== undefined && value.srsubid !== undefined;
   }
 
   export interface PgTables {
@@ -2247,6 +3091,17 @@ export namespace PgCatalog {
     spcoptions?: Nullable<TextArray>;
   }
 
+  export interface PgTablespaceNotPrimaryKey {
+    spcname: Name;
+    spcowner: Oid;
+    spcacl?: Nullable<AclitemArray>;
+    spcoptions?: Nullable<TextArray>;
+  }
+
+  export function includesPgTablespacePrimaryKey(value: Partial<PgTablespace>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgTimezoneAbbrevs {
     abbrev?: Nullable<Text>;
     utcOffset?: Nullable<Interval>;
@@ -2266,6 +3121,17 @@ export namespace PgCatalog {
     trflang: Oid;
     trffromsql: Regproc;
     trftosql: Regproc;
+  }
+
+  export interface PgTransformNotPrimaryKey {
+    trftype: Oid;
+    trflang: Oid;
+    trffromsql: Regproc;
+    trftosql: Regproc;
+  }
+
+  export function includesPgTransformPrimaryKey(value: Partial<PgTransform>) {
+    return value.oid !== undefined;
   }
 
   export interface PgTrigger {
@@ -2290,12 +3156,48 @@ export namespace PgCatalog {
     tgnewtable?: Nullable<Name>;
   }
 
+  export interface PgTriggerNotPrimaryKey {
+    tgrelid: Oid;
+    tgparentid: Oid;
+    tgname: Name;
+    tgfoid: Oid;
+    tgtype: Int2;
+    tgenabled: Char;
+    tgisinternal: Bool;
+    tgconstrrelid: Oid;
+    tgconstrindid: Oid;
+    tgconstraint: Oid;
+    tgdeferrable: Bool;
+    tginitdeferred: Bool;
+    tgnargs: Int2;
+    tgattr: Int2vector;
+    tgargs: Bytea;
+    tgqual?: Nullable<PgNodeTree>;
+    tgoldtable?: Nullable<Name>;
+    tgnewtable?: Nullable<Name>;
+  }
+
+  export function includesPgTriggerPrimaryKey(value: Partial<PgTrigger>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgTsConfig {
     oid: Oid;
     cfgname: Name;
     cfgnamespace: Oid;
     cfgowner: Oid;
     cfgparser: Oid;
+  }
+
+  export interface PgTsConfigNotPrimaryKey {
+    cfgname: Name;
+    cfgnamespace: Oid;
+    cfgowner: Oid;
+    cfgparser: Oid;
+  }
+
+  export function includesPgTsConfigPrimaryKey(value: Partial<PgTsConfig>) {
+    return value.oid !== undefined;
   }
 
   export interface PgTsConfigMap {
@@ -2305,6 +3207,20 @@ export namespace PgCatalog {
     mapdict: Oid;
   }
 
+  export interface PgTsConfigMapNotPrimaryKey {
+    mapdict: Oid;
+  }
+
+  export function includesPgTsConfigMapPrimaryKey(
+    value: Partial<PgTsConfigMap>,
+  ) {
+    return (
+      value.mapcfg !== undefined &&
+      value.maptokentype !== undefined &&
+      value.mapseqno !== undefined
+    );
+  }
+
   export interface PgTsDict {
     oid: Oid;
     dictname: Name;
@@ -2312,6 +3228,18 @@ export namespace PgCatalog {
     dictowner: Oid;
     dicttemplate: Oid;
     dictinitoption?: Nullable<Text>;
+  }
+
+  export interface PgTsDictNotPrimaryKey {
+    dictname: Name;
+    dictnamespace: Oid;
+    dictowner: Oid;
+    dicttemplate: Oid;
+    dictinitoption?: Nullable<Text>;
+  }
+
+  export function includesPgTsDictPrimaryKey(value: Partial<PgTsDict>) {
+    return value.oid !== undefined;
   }
 
   export interface PgTsParser {
@@ -2325,12 +3253,37 @@ export namespace PgCatalog {
     prslextype: Regproc;
   }
 
+  export interface PgTsParserNotPrimaryKey {
+    prsname: Name;
+    prsnamespace: Oid;
+    prsstart: Regproc;
+    prstoken: Regproc;
+    prsend: Regproc;
+    prsheadline: Regproc;
+    prslextype: Regproc;
+  }
+
+  export function includesPgTsParserPrimaryKey(value: Partial<PgTsParser>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgTsTemplate {
     oid: Oid;
     tmplname: Name;
     tmplnamespace: Oid;
     tmplinit: Regproc;
     tmpllexize: Regproc;
+  }
+
+  export interface PgTsTemplateNotPrimaryKey {
+    tmplname: Name;
+    tmplnamespace: Oid;
+    tmplinit: Regproc;
+    tmpllexize: Regproc;
+  }
+
+  export function includesPgTsTemplatePrimaryKey(value: Partial<PgTsTemplate>) {
+    return value.oid !== undefined;
   }
 
   export interface PgType {
@@ -2368,6 +3321,44 @@ export namespace PgCatalog {
     typacl?: Nullable<AclitemArray>;
   }
 
+  export interface PgTypeNotPrimaryKey {
+    typname: Name;
+    typnamespace: Oid;
+    typowner: Oid;
+    typlen: Int2;
+    typbyval: Bool;
+    typtype: Char;
+    typcategory: Char;
+    typispreferred: Bool;
+    typisdefined: Bool;
+    typdelim: Char;
+    typrelid: Oid;
+    typsubscript: Regproc;
+    typelem: Oid;
+    typarray: Oid;
+    typinput: Regproc;
+    typoutput: Regproc;
+    typreceive: Regproc;
+    typsend: Regproc;
+    typmodin: Regproc;
+    typmodout: Regproc;
+    typanalyze: Regproc;
+    typalign: Char;
+    typstorage: Char;
+    typnotnull: Bool;
+    typbasetype: Oid;
+    typtypmod: Int4;
+    typndims: Int4;
+    typcollation: Oid;
+    typdefaultbin?: Nullable<PgNodeTree>;
+    typdefault?: Nullable<Text>;
+    typacl?: Nullable<AclitemArray>;
+  }
+
+  export function includesPgTypePrimaryKey(value: Partial<PgType>) {
+    return value.oid !== undefined;
+  }
+
   export interface PgUser {
     usename?: Nullable<Name>;
     usesysid?: Nullable<Oid>;
@@ -2385,6 +3376,18 @@ export namespace PgCatalog {
     umuser: Oid;
     umserver: Oid;
     umoptions?: Nullable<TextArray>;
+  }
+
+  export interface PgUserMappingNotPrimaryKey {
+    umuser: Oid;
+    umserver: Oid;
+    umoptions?: Nullable<TextArray>;
+  }
+
+  export function includesPgUserMappingPrimaryKey(
+    value: Partial<PgUserMapping>,
+  ) {
+    return value.oid !== undefined;
   }
 
   export interface PgUserMappings {
@@ -4340,22 +5343,6 @@ export namespace Api {
   export namespace Tables {}
 }
 
-export namespace Public {
-  export type SlugArray = Array<Slug>;
-
-  export interface Slug {
-    slugId: PgCatalog.Int4;
-  }
-
-  export namespace Tables {
-    export namespace Slug {
-      export interface BySlugId {
-        slugId: Nullable<PgCatalog.Int4>;
-      }
-    }
-  }
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -4974,8 +5961,6 @@ export interface PostgresTypecasts {
   api__echo_type_nested: Typecast;
   api_echo_type: Typecast;
   api_echo_type_nested: Typecast;
-  public__slug: Typecast;
-  public_slug: Typecast;
 }
 
 interface HasDatabase {
@@ -22669,82 +23654,5 @@ export class Database {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
-  })(this);
-
-  public Public = new (class implements HasDatabase {
-    constructor(public database: Database) {}
-
-    public Slug = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      async bySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response =
-          await sql`SELECT slug_id FROM public.slug WHERE slug_id = ${
-            parameters.slugId === undefined
-              ? sql("slug_id")
-              : typed.pg_catalog_int4(parameters.slugId)
-          }`;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async deleteBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response = await sql`DELETE FROM public.slug WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id
-      `;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async updateBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-        values: Partial<Public.Slug>,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        console.assert(values);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response = await sql`UPDATE public.slug SET slug_id = ${
-          values.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(values.slugId)
-        } WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id`;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-    })(this);
   })(this);
 }
