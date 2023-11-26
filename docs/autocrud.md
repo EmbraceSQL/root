@@ -41,6 +41,16 @@ const deactivatedCustomer = await database.Public.Customer.updateByCustomerId(
     { activebool: false },
 );
 const convenientReadBack = deactivatedCustomer.activebool; // this is now false, no additional read needed
+
+// creating a new record
+const theBob = await database.Public.Actor.create({
+    firstName: "Bob",
+    lastName: "Hope",
+});
+
+// or upserting -- no new record, turns into an update
+theBob.firstName = "Robert";
+const theRobert = await database.Public.Actor.create(theBob);
 ```
 
 ## Details
@@ -111,7 +121,9 @@ Creates have one method per table generated of the format `{Schema}.{Table}.crea
 Pass in values, get a whole new row from the database. If the row exists, it will
 upsert automatically.
 
-Creating records has one trick - automatic primary keys like:
+Creating records recognizes defaults.
+
+Primary keys often have defaults defined with
 
 * `SMALLSERIAL`
 * `SERIAL`
@@ -121,6 +133,9 @@ Creating records has one trick - automatic primary keys like:
 These keys are created from defaults in the database.
 This means primary key attributes are optional in TypeScript, and you probably
 want to leave them undefined in order to have the database create you a primary key.
+
+Columns beyond the primary key can have defaults as well, `created_date` is a common
+pattern here. To get the database default, just don't pass a value for the column.
 
 The good news is the `RETURNING` record will show you the primary key as
 created by the database. 
@@ -133,7 +148,6 @@ and bypassing the default.
 
 Creates automatically upsert, turning the `INSERT` into an `UPDATE`, `RETURNING`
 the modified record.
-
 
 ## Transactions
 

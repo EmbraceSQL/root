@@ -55,7 +55,7 @@ export abstract class TableOperation implements Operation {
    */
   protected typescriptTableReturnStatementsFromResponse(
     context: Context,
-    index: PGIndex,
+    index?: PGIndex,
   ): string {
     const tableType = context.resolveType<PGTypeComposite>(
       this.table.table.tabletypeoid,
@@ -67,7 +67,9 @@ export abstract class TableOperation implements Operation {
     );
     // if this is a unique index, pull back a single record
     // which makes this way more KV like than always having an array back
-    if (index.index.indisunique) {
+    if (index === undefined) {
+      generationBuffer.push(`return results[0]`);
+    } else if (index.index.indisunique) {
       generationBuffer.push(`return results[0]`);
     } else {
       generationBuffer.push(`return results`);

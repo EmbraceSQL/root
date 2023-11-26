@@ -82,7 +82,7 @@ export class PGTypeComposite extends PGCatalogType {
     const nameAndType = this.attributes.map(
       (a) =>
         `${a.typescriptName}${
-          a.attribute.attnotnull ? "" : "?"
+          a.isOptional ? "?" : ""
         }: ${a.typescriptTypeDefinition(context)};`,
     );
     generationBuffer.push(`
@@ -113,7 +113,7 @@ export class PGTypeComposite extends PGCatalogType {
       generationBuffer.push(`
       export function includes${this.typescriptName}PrimaryKey(value: Partial<${
         this.typescriptName
-      }>){
+      }>): value is ${this.typescriptName}{
         return ${primaryKeyNames.join(" && ")}
       }
       `);

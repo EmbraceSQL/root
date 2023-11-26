@@ -1,5 +1,6 @@
 import { Context } from "../../context";
 import { PGTable } from "../pgtype/pgtable";
+import { CreateOperation } from "./autocrud/create";
 import { DeleteOperation } from "./autocrud/delete";
 import { ReadOperation } from "./autocrud/read";
 import { UpdateOperation } from "./autocrud/update";
@@ -15,6 +16,7 @@ export class TableOperation implements Operation {
       new ReadOperation(table),
       new DeleteOperation(table),
       new UpdateOperation(table),
+      new CreateOperation(table),
     ];
   }
 

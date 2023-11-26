@@ -134,4 +134,45 @@ describe("The database can AutoCRUD", () => {
     expect(updated.filter((c) => c.activebool)).toHaveLength(0);
     expect(before).not.toMatchObject(updated);
   });
+  it("a create with no passed key", async () => {
+    const created = await database.Public.Actor.create({
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+    expect(created.actorId).toBeGreaterThan(0);
+    expect(created).toMatchObject({
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+  });
+  it("a create with a passed key will upsert", async () => {
+    const created = await database.Public.Actor.create({
+      actorId: 1,
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+    expect(created.actorId).toBeGreaterThan(0);
+    expect(created).toMatchObject({
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+  });
+  it("a create on a create will upsert", async () => {
+    const theBob = await database.Public.Actor.create({
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+    expect(theBob.actorId).toBeGreaterThan(0);
+    expect(theBob).toMatchObject({
+      firstName: "Bob",
+      lastName: "Hope",
+    });
+    theBob.firstName = "Robert";
+    const theRobert = await database.Public.Actor.create(theBob);
+    expect(theRobert).toMatchObject({
+      actorId: theBob.actorId,
+      firstName: "Robert",
+      lastName: "Hope",
+    });
+  });
 });

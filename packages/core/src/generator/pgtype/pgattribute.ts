@@ -51,8 +51,20 @@ export class PGAttributes {
 export class PGAttribute {
   constructor(public attribute: AttributeRow) {}
 
+  get notNull() {
+    return this.attribute.attnotnull;
+  }
+
+  get allowsNull() {
+    return !this.attribute.attnotnull;
+  }
+
   get hasDefault() {
     return this.attribute.atthasdef;
+  }
+
+  get isOptional() {
+    return this.allowsNull || this.hasDefault;
   }
 
   get name() {
@@ -89,11 +101,17 @@ export class PGAttribute {
    * parameterHolder in calling typescript -- allows partial updates.
    *
    */
-  postgresValueExpression(context: Context, parameterHolder = "parameters") {
+  postgresValueExpression(
+    context: Context,
+    parameterHolder = "parameters",
+    selfEqual = true,
+  ) {
     const postgresType = context.resolveType(this.attribute.atttypid);
-    const undefinedSelfEqualExpression = `sql("${this.postgresName}")`;
+    const undefinedExpression = selfEqual
+      ? `sql("${this.postgresName}")`
+      : "sql`DEFAULT`";
     const valueExpression = `typed.${postgresType.postgresMarshallName}(${parameterHolder}.${this.typescriptName})`;
-    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? ${undefinedSelfEqualExpression} : ${valueExpression}`;
+    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? ${undefinedExpression} : ${valueExpression}`;
     return `\${ ${combinedExpression} }`;
   }
 }
