@@ -17,6 +17,48 @@ describe("The database can AutoCRUD", () => {
     rollback();
     await rootDatabase.disconnect();
   });
+  it("in a nested transaction", async () => {
+    const updatedCustomer = await database.withTransaction(async (db) => {
+      return await db.Public.Customer.updateByCustomerId(
+        {
+          customerId: 1,
+        },
+        { activebool: false, email: null },
+      );
+    });
+
+    expect(updatedCustomer).toMatchObject({
+      activebool: false,
+      email: null,
+      firstName: "Mary",
+      lastName: "Smith",
+    });
+  });
+  it("in a nested transaction that rolls back", async () => {
+    try {
+      await database.withTransaction(async (db) => {
+        await db.Public.Customer.updateByCustomerId(
+          {
+            customerId: 1,
+          },
+          { activebool: false, email: null },
+        );
+        throw new Error("aha");
+      });
+    } catch (e) {
+      expect((e as Error).message).toBe("aha");
+    }
+    const customer = await database.Public.Customer.byCustomerId({
+      customerId: 1,
+    });
+
+    expect(customer).toMatchObject({
+      activebool: true,
+      email: "mary.smith@sakilacustomer.org",
+      firstName: "Mary",
+      lastName: "Smith",
+    });
+  });
   it("a unique index read", async () => {
     const value = await database.Public.Actor.byActorId({ actorId: 1 });
     expect(value).toMatchObject({

@@ -20,7 +20,9 @@ export class DeleteOperation extends TableOperation {
       const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
 
       generationBuffer.push(
-        `async delete${pascalCase(index.typescriptName)}(${parameters}){`,
+        `async delete${pascalCase(
+          index.typescriptName,
+        )}(${parameters}): ${this.typescriptReturnType(context, index)}{`,
       );
       generationBuffer.push(
         `

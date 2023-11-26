@@ -71,7 +71,14 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
      * An escaping exception is a rollback.
      */
     async withTransaction<T>(body: (database: Database) => Promise<T>) {
-      return await this.context.sql.begin(async (sql) => await body(new Database({...this.context, sql})));
+      if(this.context.sql.begin) {
+        // root transaction
+        return await this.context.sql.begin(async (sql) => await body(new Database({...this.context, sql})));
+      } else {
+        // nested transaction
+        const nested = this.context.sql as postgres.TransactionSql
+        return await nested.savepoint(async (sql) => await body(new Database({...this.context, sql})));
+      }
     }
 
   /**

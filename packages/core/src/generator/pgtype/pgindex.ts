@@ -62,6 +62,10 @@ export class PGIndex {
     }
   }
 
+  get unique() {
+    return this.index.indisunique;
+  }
+
   /**
    * Rewrite the index in terms of the base type attributes in order to
    * pick up type constraints and flags that are missing on the index

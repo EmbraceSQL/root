@@ -19,7 +19,9 @@ export class UpdateOperation extends TableOperation {
       const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}, values: Partial<${namespace?.typescriptName}.${this.table.typescriptName}>`;
 
       generationBuffer.push(
-        `async update${pascalCase(index.typescriptName)}(${parameters}){`,
+        `async update${pascalCase(
+          index.typescriptName,
+        )}(${parameters}): ${this.typescriptReturnType(context, index)}{`,
       );
       generationBuffer.push(
         `

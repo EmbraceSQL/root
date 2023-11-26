@@ -19,7 +19,9 @@ export class ReadOperation extends TableOperation {
       const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
 
       generationBuffer.push(
-        `async ${camelCase(index.typescriptName)}(${parameters}){`,
+        `async ${camelCase(
+          index.typescriptName,
+        )}(${parameters}) : ${this.typescriptReturnType(context, index)}{`,
       );
       generationBuffer.push(
         `

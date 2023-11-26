@@ -33,6 +33,24 @@ export abstract class TableOperation implements Operation {
   }
 
   /**
+   * Return type declaration based on the index.
+   */
+  protected typescriptReturnType(context: Context, index: PGIndex): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+
+    if (index.unique) {
+      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}>`;
+    } else {
+      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}[]>`;
+    }
+  }
+
+  /**
    * Table return processing, this is used for SELECT and RETURNING.
    */
   protected typescriptTableReturnStatementsFromResponse(

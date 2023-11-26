@@ -5445,9 +5445,18 @@ export class Database {
    * An escaping exception is a rollback.
    */
   async withTransaction<T>(body: (database: Database) => Promise<T>) {
-    return await this.context.sql.begin(
-      async (sql) => await body(new Database({ ...this.context, sql })),
-    );
+    if (this.context.sql.begin) {
+      // root transaction
+      return await this.context.sql.begin(
+        async (sql) => await body(new Database({ ...this.context, sql })),
+      );
+    } else {
+      // nested transaction
+      const nested = this.context.sql as postgres.TransactionSql;
+      return await nested.savepoint(
+        async (sql) => await body(new Database({ ...this.context, sql })),
+      );
+    }
   }
 
   /**
@@ -5487,7 +5496,7 @@ export class Database {
 
       async byStarelidStaattnumStainherit(
         parameters: PgCatalog.Tables.PgStatistic.ByStarelidStaattnumStainherit,
-      ) {
+      ): Promise<PgCatalog.PgStatistic> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -5545,7 +5554,7 @@ export class Database {
 
       async deleteByStarelidStaattnumStainherit(
         parameters: PgCatalog.Tables.PgStatistic.ByStarelidStaattnumStainherit,
-      ) {
+      ): Promise<PgCatalog.PgStatistic> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -5605,7 +5614,7 @@ export class Database {
       async updateByStarelidStaattnumStainherit(
         parameters: PgCatalog.Tables.PgStatistic.ByStarelidStaattnumStainherit,
         values: Partial<PgCatalog.PgStatistic>,
-      ) {
+      ): Promise<PgCatalog.PgStatistic> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -5794,7 +5803,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgType.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgType.ByOid,
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -5844,7 +5855,7 @@ export class Database {
       }
       async byTypnameTypnamespace(
         parameters: PgCatalog.Tables.PgType.ByTypnameTypnamespace,
-      ) {
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -5897,7 +5908,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgType.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgType.ByOid,
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -5947,7 +5960,7 @@ export class Database {
       }
       async deleteByTypnameTypnamespace(
         parameters: PgCatalog.Tables.PgType.ByTypnameTypnamespace,
-      ) {
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6004,7 +6017,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgType.ByOid,
         values: Partial<PgCatalog.PgType>,
-      ) {
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6183,7 +6196,7 @@ export class Database {
       async updateByTypnameTypnamespace(
         parameters: PgCatalog.Tables.PgType.ByTypnameTypnamespace,
         values: Partial<PgCatalog.PgType>,
-      ) {
+      ): Promise<PgCatalog.PgType> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6372,7 +6385,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byFtrelid(parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid) {
+      async byFtrelid(
+        parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid,
+      ): Promise<PgCatalog.PgForeignTable> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6394,7 +6409,7 @@ export class Database {
 
       async deleteByFtrelid(
         parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid,
-      ) {
+      ): Promise<PgCatalog.PgForeignTable> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6418,7 +6433,7 @@ export class Database {
       async updateByFtrelid(
         parameters: PgCatalog.Tables.PgForeignTable.ByFtrelid,
         values: Partial<PgCatalog.PgForeignTable>,
-      ) {
+      ): Promise<PgCatalog.PgForeignTable> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6459,7 +6474,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgAuthid.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAuthid.ByOid,
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6487,7 +6504,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byRolname(parameters: PgCatalog.Tables.PgAuthid.ByRolname) {
+      async byRolname(
+        parameters: PgCatalog.Tables.PgAuthid.ByRolname,
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6516,7 +6535,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgAuthid.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAuthid.ByOid,
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6545,7 +6566,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByRolname(parameters: PgCatalog.Tables.PgAuthid.ByRolname) {
+      async deleteByRolname(
+        parameters: PgCatalog.Tables.PgAuthid.ByRolname,
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6578,7 +6601,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAuthid.ByOid,
         values: Partial<PgCatalog.PgAuthid>,
-      ) {
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6657,7 +6680,7 @@ export class Database {
       async updateByRolname(
         parameters: PgCatalog.Tables.PgAuthid.ByRolname,
         values: Partial<PgCatalog.PgAuthid>,
-      ) {
+      ): Promise<PgCatalog.PgAuthid> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6744,7 +6767,7 @@ export class Database {
 
       async byStxoidStxdinherit(
         parameters: PgCatalog.Tables.PgStatisticExtData.ByStxoidStxdinherit,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExtData> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6773,7 +6796,7 @@ export class Database {
 
       async deleteByStxoidStxdinherit(
         parameters: PgCatalog.Tables.PgStatisticExtData.ByStxoidStxdinherit,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExtData> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6804,7 +6827,7 @@ export class Database {
       async updateByStxoidStxdinherit(
         parameters: PgCatalog.Tables.PgStatisticExtData.ByStxoidStxdinherit,
         values: Partial<PgCatalog.PgStatisticExtData>,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExtData> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -6864,7 +6887,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgUserMapping.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgUserMapping.ByOid,
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6886,7 +6911,7 @@ export class Database {
       }
       async byUmuserUmserver(
         parameters: PgCatalog.Tables.PgUserMapping.ByUmuserUmserver,
-      ) {
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6911,7 +6936,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgUserMapping.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgUserMapping.ByOid,
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6934,7 +6961,7 @@ export class Database {
       }
       async deleteByUmuserUmserver(
         parameters: PgCatalog.Tables.PgUserMapping.ByUmuserUmserver,
-      ) {
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -6963,7 +6990,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgUserMapping.ByOid,
         values: Partial<PgCatalog.PgUserMapping>,
-      ) {
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7003,7 +7030,7 @@ export class Database {
       async updateByUmuserUmserver(
         parameters: PgCatalog.Tables.PgUserMapping.ByUmuserUmserver,
         values: Partial<PgCatalog.PgUserMapping>,
-      ) {
+      ): Promise<PgCatalog.PgUserMapping> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7053,7 +7080,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgSubscription.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgSubscription.ByOid,
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7088,7 +7117,7 @@ export class Database {
       }
       async bySubdbidSubname(
         parameters: PgCatalog.Tables.PgSubscription.BySubdbidSubname,
-      ) {
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7126,7 +7155,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgSubscription.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgSubscription.ByOid,
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7162,7 +7193,7 @@ export class Database {
       }
       async deleteBySubdbidSubname(
         parameters: PgCatalog.Tables.PgSubscription.BySubdbidSubname,
-      ) {
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7204,7 +7235,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgSubscription.ByOid,
         values: Partial<PgCatalog.PgSubscription>,
-      ) {
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7309,7 +7340,7 @@ export class Database {
       async updateBySubdbidSubname(
         parameters: PgCatalog.Tables.PgSubscription.BySubdbidSubname,
         values: Partial<PgCatalog.PgSubscription>,
-      ) {
+      ): Promise<PgCatalog.PgSubscription> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7426,7 +7457,7 @@ export class Database {
 
       async byAttrelidAttname(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttname,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7474,7 +7505,7 @@ export class Database {
       }
       async byAttrelidAttnum(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttnum,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7523,7 +7554,7 @@ export class Database {
 
       async deleteByAttrelidAttname(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttname,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7572,7 +7603,7 @@ export class Database {
       }
       async deleteByAttrelidAttnum(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttnum,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7623,7 +7654,7 @@ export class Database {
       async updateByAttrelidAttname(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttname,
         values: Partial<PgCatalog.PgAttribute>,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7777,7 +7808,7 @@ export class Database {
       async updateByAttrelidAttnum(
         parameters: PgCatalog.Tables.PgAttribute.ByAttrelidAttnum,
         values: Partial<PgCatalog.PgAttribute>,
-      ) {
+      ): Promise<PgCatalog.PgAttribute> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -7937,7 +7968,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgProc.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgProc.ByOid,
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -7985,7 +8018,7 @@ export class Database {
       }
       async byPronameProargtypesPronamespace(
         parameters: PgCatalog.Tables.PgProc.ByPronameProargtypesPronamespace,
-      ) {
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8040,7 +8073,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgProc.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgProc.ByOid,
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8088,7 +8123,7 @@ export class Database {
       }
       async deleteByPronameProargtypesPronamespace(
         parameters: PgCatalog.Tables.PgProc.ByPronameProargtypesPronamespace,
-      ) {
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8147,7 +8182,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgProc.ByOid,
         values: Partial<PgCatalog.PgProc>,
-      ) {
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -8316,7 +8351,7 @@ export class Database {
       async updateByPronameProargtypesPronamespace(
         parameters: PgCatalog.Tables.PgProc.ByPronameProargtypesPronamespace,
         values: Partial<PgCatalog.PgProc>,
-      ) {
+      ): Promise<PgCatalog.PgProc> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -8499,7 +8534,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgClass.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgClass.ByOid,
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8550,7 +8587,7 @@ export class Database {
       }
       async byRelnameRelnamespace(
         parameters: PgCatalog.Tables.PgClass.ByRelnameRelnamespace,
-      ) {
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8605,7 +8642,7 @@ export class Database {
       }
       async byReltablespaceRelfilenode(
         parameters: PgCatalog.Tables.PgClass.ByReltablespaceRelfilenode,
-      ) {
+      ): Promise<PgCatalog.PgClass[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8659,7 +8696,9 @@ export class Database {
         return results;
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgClass.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgClass.ByOid,
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8711,7 +8750,7 @@ export class Database {
       }
       async deleteByRelnameRelnamespace(
         parameters: PgCatalog.Tables.PgClass.ByRelnameRelnamespace,
-      ) {
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8767,7 +8806,7 @@ export class Database {
       }
       async deleteByReltablespaceRelfilenode(
         parameters: PgCatalog.Tables.PgClass.ByReltablespaceRelfilenode,
-      ) {
+      ): Promise<PgCatalog.PgClass[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -8825,7 +8864,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgClass.ByOid,
         values: Partial<PgCatalog.PgClass>,
-      ) {
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -9009,7 +9048,7 @@ export class Database {
       async updateByRelnameRelnamespace(
         parameters: PgCatalog.Tables.PgClass.ByRelnameRelnamespace,
         values: Partial<PgCatalog.PgClass>,
-      ) {
+      ): Promise<PgCatalog.PgClass> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -9197,7 +9236,7 @@ export class Database {
       async updateByReltablespaceRelfilenode(
         parameters: PgCatalog.Tables.PgClass.ByReltablespaceRelfilenode,
         values: Partial<PgCatalog.PgClass>,
-      ) {
+      ): Promise<PgCatalog.PgClass[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -9393,7 +9432,7 @@ export class Database {
 
       async byAdrelidAdnum(
         parameters: PgCatalog.Tables.PgAttrdef.ByAdrelidAdnum,
-      ) {
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9417,7 +9456,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgAttrdef.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAttrdef.ByOid,
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9440,7 +9481,7 @@ export class Database {
 
       async deleteByAdrelidAdnum(
         parameters: PgCatalog.Tables.PgAttrdef.ByAdrelidAdnum,
-      ) {
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9465,7 +9506,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgAttrdef.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAttrdef.ByOid,
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9490,7 +9533,7 @@ export class Database {
       async updateByAdrelidAdnum(
         parameters: PgCatalog.Tables.PgAttrdef.ByAdrelidAdnum,
         values: Partial<PgCatalog.PgAttrdef>,
-      ) {
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -9533,7 +9576,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAttrdef.ByOid,
         values: Partial<PgCatalog.PgAttrdef>,
-      ) {
+      ): Promise<PgCatalog.PgAttrdef> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -9580,7 +9623,7 @@ export class Database {
 
       async byConnameConnamespace(
         parameters: PgCatalog.Tables.PgConstraint.ByConnameConnamespace,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9628,7 +9671,7 @@ export class Database {
       }
       async byConparentid(
         parameters: PgCatalog.Tables.PgConstraint.ByConparentid,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9672,7 +9715,7 @@ export class Database {
       }
       async byConrelidContypidConname(
         parameters: PgCatalog.Tables.PgConstraint.ByConrelidContypidConname,
-      ) {
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9722,7 +9765,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byContypid(parameters: PgCatalog.Tables.PgConstraint.ByContypid) {
+      async byContypid(
+        parameters: PgCatalog.Tables.PgConstraint.ByContypid,
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9764,7 +9809,9 @@ export class Database {
         }));
         return results;
       }
-      async byOid(parameters: PgCatalog.Tables.PgConstraint.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgConstraint.ByOid,
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9809,7 +9856,7 @@ export class Database {
 
       async deleteByConnameConnamespace(
         parameters: PgCatalog.Tables.PgConstraint.ByConnameConnamespace,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9858,7 +9905,7 @@ export class Database {
       }
       async deleteByConparentid(
         parameters: PgCatalog.Tables.PgConstraint.ByConparentid,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9903,7 +9950,7 @@ export class Database {
       }
       async deleteByConrelidContypidConname(
         parameters: PgCatalog.Tables.PgConstraint.ByConrelidContypidConname,
-      ) {
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9956,7 +10003,7 @@ export class Database {
       }
       async deleteByContypid(
         parameters: PgCatalog.Tables.PgConstraint.ByContypid,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -9999,7 +10046,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgConstraint.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgConstraint.ByOid,
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -10046,7 +10095,7 @@ export class Database {
       async updateByConnameConnamespace(
         parameters: PgCatalog.Tables.PgConstraint.ByConnameConnamespace,
         values: Partial<PgCatalog.PgConstraint>,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10199,7 +10248,7 @@ export class Database {
       async updateByConparentid(
         parameters: PgCatalog.Tables.PgConstraint.ByConparentid,
         values: Partial<PgCatalog.PgConstraint>,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10348,7 +10397,7 @@ export class Database {
       async updateByConrelidContypidConname(
         parameters: PgCatalog.Tables.PgConstraint.ByConrelidContypidConname,
         values: Partial<PgCatalog.PgConstraint>,
-      ) {
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10505,7 +10554,7 @@ export class Database {
       async updateByContypid(
         parameters: PgCatalog.Tables.PgConstraint.ByContypid,
         values: Partial<PgCatalog.PgConstraint>,
-      ) {
+      ): Promise<PgCatalog.PgConstraint[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10654,7 +10703,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgConstraint.ByOid,
         values: Partial<PgCatalog.PgConstraint>,
-      ) {
+      ): Promise<PgCatalog.PgConstraint> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10809,7 +10858,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byInhparent(parameters: PgCatalog.Tables.PgInherits.ByInhparent) {
+      async byInhparent(
+        parameters: PgCatalog.Tables.PgInherits.ByInhparent,
+      ): Promise<PgCatalog.PgInherits[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -10831,7 +10882,7 @@ export class Database {
       }
       async byInhrelidInhseqno(
         parameters: PgCatalog.Tables.PgInherits.ByInhrelidInhseqno,
-      ) {
+      ): Promise<PgCatalog.PgInherits> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -10858,7 +10909,7 @@ export class Database {
 
       async deleteByInhparent(
         parameters: PgCatalog.Tables.PgInherits.ByInhparent,
-      ) {
+      ): Promise<PgCatalog.PgInherits[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -10881,7 +10932,7 @@ export class Database {
       }
       async deleteByInhrelidInhseqno(
         parameters: PgCatalog.Tables.PgInherits.ByInhrelidInhseqno,
-      ) {
+      ): Promise<PgCatalog.PgInherits> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -10910,7 +10961,7 @@ export class Database {
       async updateByInhparent(
         parameters: PgCatalog.Tables.PgInherits.ByInhparent,
         values: Partial<PgCatalog.PgInherits>,
-      ) {
+      ): Promise<PgCatalog.PgInherits[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -10950,7 +11001,7 @@ export class Database {
       async updateByInhrelidInhseqno(
         parameters: PgCatalog.Tables.PgInherits.ByInhrelidInhseqno,
         values: Partial<PgCatalog.PgInherits>,
-      ) {
+      ): Promise<PgCatalog.PgInherits> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11000,7 +11051,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byIndexrelid(parameters: PgCatalog.Tables.PgIndex.ByIndexrelid) {
+      async byIndexrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndexrelid,
+      ): Promise<PgCatalog.PgIndex> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11037,7 +11090,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byIndrelid(parameters: PgCatalog.Tables.PgIndex.ByIndrelid) {
+      async byIndrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndrelid,
+      ): Promise<PgCatalog.PgIndex[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11077,7 +11132,7 @@ export class Database {
 
       async deleteByIndexrelid(
         parameters: PgCatalog.Tables.PgIndex.ByIndexrelid,
-      ) {
+      ): Promise<PgCatalog.PgIndex> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11115,7 +11170,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByIndrelid(parameters: PgCatalog.Tables.PgIndex.ByIndrelid) {
+      async deleteByIndrelid(
+        parameters: PgCatalog.Tables.PgIndex.ByIndrelid,
+      ): Promise<PgCatalog.PgIndex[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11157,7 +11214,7 @@ export class Database {
       async updateByIndexrelid(
         parameters: PgCatalog.Tables.PgIndex.ByIndexrelid,
         values: Partial<PgCatalog.PgIndex>,
-      ) {
+      ): Promise<PgCatalog.PgIndex> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11282,7 +11339,7 @@ export class Database {
       async updateByIndrelid(
         parameters: PgCatalog.Tables.PgIndex.ByIndrelid,
         values: Partial<PgCatalog.PgIndex>,
-      ) {
+      ): Promise<PgCatalog.PgIndex[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11413,7 +11470,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgOperator.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgOperator.ByOid,
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11446,7 +11505,7 @@ export class Database {
       }
       async byOprnameOprleftOprrightOprnamespace(
         parameters: PgCatalog.Tables.PgOperator.ByOprnameOprleftOprrightOprnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11490,7 +11549,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgOperator.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgOperator.ByOid,
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11524,7 +11585,7 @@ export class Database {
       }
       async deleteByOprnameOprleftOprrightOprnamespace(
         parameters: PgCatalog.Tables.PgOperator.ByOprnameOprleftOprrightOprnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11572,7 +11633,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgOperator.ByOid,
         values: Partial<PgCatalog.PgOperator>,
-      ) {
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11666,7 +11727,7 @@ export class Database {
       async updateByOprnameOprleftOprrightOprnamespace(
         parameters: PgCatalog.Tables.PgOperator.ByOprnameOprleftOprrightOprnamespace,
         values: Partial<PgCatalog.PgOperator>,
-      ) {
+      ): Promise<PgCatalog.PgOperator> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11778,7 +11839,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgOpfamily.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgOpfamily.ByOid,
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11801,7 +11864,7 @@ export class Database {
       }
       async byOpfmethodOpfnameOpfnamespace(
         parameters: PgCatalog.Tables.PgOpfamily.ByOpfmethodOpfnameOpfnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11831,7 +11894,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgOpfamily.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgOpfamily.ByOid,
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11855,7 +11920,7 @@ export class Database {
       }
       async deleteByOpfmethodOpfnameOpfnamespace(
         parameters: PgCatalog.Tables.PgOpfamily.ByOpfmethodOpfnameOpfnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -11889,7 +11954,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgOpfamily.ByOid,
         values: Partial<PgCatalog.PgOpfamily>,
-      ) {
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11933,7 +11998,7 @@ export class Database {
       async updateByOpfmethodOpfnameOpfnamespace(
         parameters: PgCatalog.Tables.PgOpfamily.ByOpfmethodOpfnameOpfnamespace,
         values: Partial<PgCatalog.PgOpfamily>,
-      ) {
+      ): Promise<PgCatalog.PgOpfamily> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -11991,7 +12056,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgOpclass.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgOpclass.ByOid,
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12018,7 +12085,7 @@ export class Database {
       }
       async byOpcmethodOpcnameOpcnamespace(
         parameters: PgCatalog.Tables.PgOpclass.ByOpcmethodOpcnameOpcnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12052,7 +12119,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgOpclass.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgOpclass.ByOid,
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12080,7 +12149,7 @@ export class Database {
       }
       async deleteByOpcmethodOpcnameOpcnamespace(
         parameters: PgCatalog.Tables.PgOpclass.ByOpcmethodOpcnameOpcnamespace,
-      ) {
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12118,7 +12187,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgOpclass.ByOid,
         values: Partial<PgCatalog.PgOpclass>,
-      ) {
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12182,7 +12251,7 @@ export class Database {
       async updateByOpcmethodOpcnameOpcnamespace(
         parameters: PgCatalog.Tables.PgOpclass.ByOpcmethodOpcnameOpcnamespace,
         values: Partial<PgCatalog.PgOpclass>,
-      ) {
+      ): Promise<PgCatalog.PgOpclass> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12260,7 +12329,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byAmname(parameters: PgCatalog.Tables.PgAm.ByAmname) {
+      async byAmname(
+        parameters: PgCatalog.Tables.PgAm.ByAmname,
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12280,7 +12351,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgAm.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAm.ByOid,
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12301,7 +12374,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByAmname(parameters: PgCatalog.Tables.PgAm.ByAmname) {
+      async deleteByAmname(
+        parameters: PgCatalog.Tables.PgAm.ByAmname,
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12322,7 +12397,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgAm.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAm.ByOid,
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12346,7 +12423,7 @@ export class Database {
       async updateByAmname(
         parameters: PgCatalog.Tables.PgAm.ByAmname,
         values: Partial<PgCatalog.PgAm>,
-      ) {
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12385,7 +12462,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAm.ByOid,
         values: Partial<PgCatalog.PgAm>,
-      ) {
+      ): Promise<PgCatalog.PgAm> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12432,7 +12509,7 @@ export class Database {
 
       async byAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy(
         parameters: PgCatalog.Tables.PgAmop.ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12471,7 +12548,7 @@ export class Database {
       }
       async byAmopoprAmoppurposeAmopfamily(
         parameters: PgCatalog.Tables.PgAmop.ByAmopoprAmoppurposeAmopfamily,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12504,7 +12581,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgAmop.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAmop.ByOid,
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12532,7 +12611,7 @@ export class Database {
 
       async deleteByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy(
         parameters: PgCatalog.Tables.PgAmop.ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12572,7 +12651,7 @@ export class Database {
       }
       async deleteByAmopoprAmoppurposeAmopfamily(
         parameters: PgCatalog.Tables.PgAmop.ByAmopoprAmoppurposeAmopfamily,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12606,7 +12685,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgAmop.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAmop.ByOid,
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12635,7 +12716,7 @@ export class Database {
       async updateByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy(
         parameters: PgCatalog.Tables.PgAmop.ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy,
         values: Partial<PgCatalog.PgAmop>,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12711,7 +12792,7 @@ export class Database {
       async updateByAmopoprAmoppurposeAmopfamily(
         parameters: PgCatalog.Tables.PgAmop.ByAmopoprAmoppurposeAmopfamily,
         values: Partial<PgCatalog.PgAmop>,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12783,7 +12864,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAmop.ByOid,
         values: Partial<PgCatalog.PgAmop>,
-      ) {
+      ): Promise<PgCatalog.PgAmop> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -12855,7 +12936,7 @@ export class Database {
 
       async byAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum(
         parameters: PgCatalog.Tables.PgAmproc.ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum,
-      ) {
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12889,7 +12970,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgAmproc.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAmproc.ByOid,
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12914,7 +12997,7 @@ export class Database {
 
       async deleteByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum(
         parameters: PgCatalog.Tables.PgAmproc.ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum,
-      ) {
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12949,7 +13032,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgAmproc.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAmproc.ByOid,
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12976,7 +13061,7 @@ export class Database {
       async updateByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum(
         parameters: PgCatalog.Tables.PgAmproc.ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum,
         values: Partial<PgCatalog.PgAmproc>,
-      ) {
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13037,7 +13122,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAmproc.ByOid,
         values: Partial<PgCatalog.PgAmproc>,
-      ) {
+      ): Promise<PgCatalog.PgAmproc> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13092,7 +13177,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byLanname(parameters: PgCatalog.Tables.PgLanguage.ByLanname) {
+      async byLanname(
+        parameters: PgCatalog.Tables.PgLanguage.ByLanname,
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13117,7 +13204,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgLanguage.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgLanguage.ByOid,
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13143,7 +13232,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByLanname(parameters: PgCatalog.Tables.PgLanguage.ByLanname) {
+      async deleteByLanname(
+        parameters: PgCatalog.Tables.PgLanguage.ByLanname,
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13169,7 +13260,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgLanguage.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgLanguage.ByOid,
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13199,7 +13292,7 @@ export class Database {
       async updateByLanname(
         parameters: PgCatalog.Tables.PgLanguage.ByLanname,
         values: Partial<PgCatalog.PgLanguage>,
-      ) {
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13263,7 +13356,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgLanguage.ByOid,
         values: Partial<PgCatalog.PgLanguage>,
-      ) {
+      ): Promise<PgCatalog.PgLanguage> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13333,7 +13426,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid,
+      ): Promise<PgCatalog.PgLargeobjectMetadata> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13355,7 +13450,7 @@ export class Database {
 
       async deleteByOid(
         parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid,
-      ) {
+      ): Promise<PgCatalog.PgLargeobjectMetadata> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13379,7 +13474,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgLargeobjectMetadata.ByOid,
         values: Partial<PgCatalog.PgLargeobjectMetadata>,
-      ) {
+      ): Promise<PgCatalog.PgLargeobjectMetadata> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13420,7 +13515,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byAggfnoid(parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid) {
+      async byAggfnoid(
+        parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid,
+      ): Promise<PgCatalog.PgAggregate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13461,7 +13558,7 @@ export class Database {
 
       async deleteByAggfnoid(
         parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid,
-      ) {
+      ): Promise<PgCatalog.PgAggregate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13504,7 +13601,7 @@ export class Database {
       async updateByAggfnoid(
         parameters: PgCatalog.Tables.PgAggregate.ByAggfnoid,
         values: Partial<PgCatalog.PgAggregate>,
-      ) {
+      ): Promise<PgCatalog.PgAggregate> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13640,7 +13737,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgStatisticExt.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByOid,
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13667,7 +13766,7 @@ export class Database {
       }
       async byStxnameStxnamespace(
         parameters: PgCatalog.Tables.PgStatisticExt.ByStxnameStxnamespace,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13696,7 +13795,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byStxrelid(parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid) {
+      async byStxrelid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid,
+      ): Promise<PgCatalog.PgStatisticExt[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13722,7 +13823,9 @@ export class Database {
         return results;
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgStatisticExt.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgStatisticExt.ByOid,
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13750,7 +13853,7 @@ export class Database {
       }
       async deleteByStxnameStxnamespace(
         parameters: PgCatalog.Tables.PgStatisticExt.ByStxnameStxnamespace,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13782,7 +13885,7 @@ export class Database {
       }
       async deleteByStxrelid(
         parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -13812,7 +13915,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgStatisticExt.ByOid,
         values: Partial<PgCatalog.PgStatisticExt>,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13877,7 +13980,7 @@ export class Database {
       async updateByStxnameStxnamespace(
         parameters: PgCatalog.Tables.PgStatisticExt.ByStxnameStxnamespace,
         values: Partial<PgCatalog.PgStatisticExt>,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -13946,7 +14049,7 @@ export class Database {
       async updateByStxrelid(
         parameters: PgCatalog.Tables.PgStatisticExt.ByStxrelid,
         values: Partial<PgCatalog.PgStatisticExt>,
-      ) {
+      ): Promise<PgCatalog.PgStatisticExt[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14019,7 +14122,7 @@ export class Database {
 
       async byEvClassRulename(
         parameters: PgCatalog.Tables.PgRewrite.ByEvClassRulename,
-      ) {
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14047,7 +14150,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgRewrite.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgRewrite.ByOid,
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14074,7 +14179,7 @@ export class Database {
 
       async deleteByEvClassRulename(
         parameters: PgCatalog.Tables.PgRewrite.ByEvClassRulename,
-      ) {
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14103,7 +14208,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgRewrite.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgRewrite.ByOid,
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14132,7 +14239,7 @@ export class Database {
       async updateByEvClassRulename(
         parameters: PgCatalog.Tables.PgRewrite.ByEvClassRulename,
         values: Partial<PgCatalog.PgRewrite>,
-      ) {
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14195,7 +14302,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgRewrite.ByOid,
         values: Partial<PgCatalog.PgRewrite>,
-      ) {
+      ): Promise<PgCatalog.PgRewrite> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14260,7 +14367,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgTrigger.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTrigger.ByOid,
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14297,7 +14406,7 @@ export class Database {
       }
       async byTgconstraint(
         parameters: PgCatalog.Tables.PgTrigger.ByTgconstraint,
-      ) {
+      ): Promise<PgCatalog.PgTrigger[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14334,7 +14443,7 @@ export class Database {
       }
       async byTgrelidTgname(
         parameters: PgCatalog.Tables.PgTrigger.ByTgrelidTgname,
-      ) {
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14374,7 +14483,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgTrigger.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTrigger.ByOid,
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14412,7 +14523,7 @@ export class Database {
       }
       async deleteByTgconstraint(
         parameters: PgCatalog.Tables.PgTrigger.ByTgconstraint,
-      ) {
+      ): Promise<PgCatalog.PgTrigger[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14450,7 +14561,7 @@ export class Database {
       }
       async deleteByTgrelidTgname(
         parameters: PgCatalog.Tables.PgTrigger.ByTgrelidTgname,
-      ) {
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14494,7 +14605,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTrigger.ByOid,
         values: Partial<PgCatalog.PgTrigger>,
-      ) {
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14608,7 +14719,7 @@ export class Database {
       async updateByTgconstraint(
         parameters: PgCatalog.Tables.PgTrigger.ByTgconstraint,
         values: Partial<PgCatalog.PgTrigger>,
-      ) {
+      ): Promise<PgCatalog.PgTrigger[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14722,7 +14833,7 @@ export class Database {
       async updateByTgrelidTgname(
         parameters: PgCatalog.Tables.PgTrigger.ByTgrelidTgname,
         values: Partial<PgCatalog.PgTrigger>,
-      ) {
+      ): Promise<PgCatalog.PgTrigger> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -14846,7 +14957,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byEvtname(parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname) {
+      async byEvtname(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname,
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14869,7 +14982,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgEventTrigger.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByOid,
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14895,7 +15010,7 @@ export class Database {
 
       async deleteByEvtname(
         parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname,
-      ) {
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14919,7 +15034,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgEventTrigger.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgEventTrigger.ByOid,
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14947,7 +15064,7 @@ export class Database {
       async updateByEvtname(
         parameters: PgCatalog.Tables.PgEventTrigger.ByEvtname,
         values: Partial<PgCatalog.PgEventTrigger>,
-      ) {
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15002,7 +15119,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgEventTrigger.ByOid,
         values: Partial<PgCatalog.PgEventTrigger>,
-      ) {
+      ): Promise<PgCatalog.PgEventTrigger> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15065,7 +15182,7 @@ export class Database {
 
       async byObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgDescription.ByObjoidClassoidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDescription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15096,7 +15213,7 @@ export class Database {
 
       async deleteByObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgDescription.ByObjoidClassoidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDescription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15129,7 +15246,7 @@ export class Database {
       async updateByObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgDescription.ByObjoidClassoidObjsubid,
         values: Partial<PgCatalog.PgDescription>,
-      ) {
+      ): Promise<PgCatalog.PgDescription> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15185,7 +15302,7 @@ export class Database {
 
       async byCastsourceCasttarget(
         parameters: PgCatalog.Tables.PgCast.ByCastsourceCasttarget,
-      ) {
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15211,7 +15328,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgCast.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgCast.ByOid,
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15236,7 +15355,7 @@ export class Database {
 
       async deleteByCastsourceCasttarget(
         parameters: PgCatalog.Tables.PgCast.ByCastsourceCasttarget,
-      ) {
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15263,7 +15382,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgCast.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgCast.ByOid,
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15289,7 +15410,7 @@ export class Database {
       async updateByCastsourceCasttarget(
         parameters: PgCatalog.Tables.PgCast.ByCastsourceCasttarget,
         values: Partial<PgCatalog.PgCast>,
-      ) {
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15342,7 +15463,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgCast.ByOid,
         values: Partial<PgCatalog.PgCast>,
-      ) {
+      ): Promise<PgCatalog.PgCast> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15399,7 +15520,7 @@ export class Database {
 
       async byEnumtypidEnumlabel(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumlabel,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15425,7 +15546,7 @@ export class Database {
       }
       async byEnumtypidEnumsortorder(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumsortorder,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15449,7 +15570,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgEnum.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgEnum.ByOid,
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15472,7 +15595,7 @@ export class Database {
 
       async deleteByEnumtypidEnumlabel(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumlabel,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15499,7 +15622,7 @@ export class Database {
       }
       async deleteByEnumtypidEnumsortorder(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumsortorder,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15524,7 +15647,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgEnum.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgEnum.ByOid,
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15548,7 +15673,7 @@ export class Database {
       async updateByEnumtypidEnumlabel(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumlabel,
         values: Partial<PgCatalog.PgEnum>,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15591,7 +15716,7 @@ export class Database {
       async updateByEnumtypidEnumsortorder(
         parameters: PgCatalog.Tables.PgEnum.ByEnumtypidEnumsortorder,
         values: Partial<PgCatalog.PgEnum>,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15634,7 +15759,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgEnum.ByOid,
         values: Partial<PgCatalog.PgEnum>,
-      ) {
+      ): Promise<PgCatalog.PgEnum> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15679,7 +15804,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byNspname(parameters: PgCatalog.Tables.PgNamespace.ByNspname) {
+      async byNspname(
+        parameters: PgCatalog.Tables.PgNamespace.ByNspname,
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15699,7 +15826,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgNamespace.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgNamespace.ByOid,
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15722,7 +15851,7 @@ export class Database {
 
       async deleteByNspname(
         parameters: PgCatalog.Tables.PgNamespace.ByNspname,
-      ) {
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15743,7 +15872,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgNamespace.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgNamespace.ByOid,
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15768,7 +15899,7 @@ export class Database {
       async updateByNspname(
         parameters: PgCatalog.Tables.PgNamespace.ByNspname,
         values: Partial<PgCatalog.PgNamespace>,
-      ) {
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15807,7 +15938,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgNamespace.ByOid,
         values: Partial<PgCatalog.PgNamespace>,
-      ) {
+      ): Promise<PgCatalog.PgNamespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -15854,7 +15985,7 @@ export class Database {
 
       async byConnameConnamespace(
         parameters: PgCatalog.Tables.PgConversion.ByConnameConnamespace,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15884,7 +16015,7 @@ export class Database {
       }
       async byConnamespaceConforencodingContoencodingOid(
         parameters: PgCatalog.Tables.PgConversion.ByConnamespaceConforencodingContoencodingOid,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15920,7 +16051,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgConversion.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgConversion.ByOid,
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15947,7 +16080,7 @@ export class Database {
 
       async deleteByConnameConnamespace(
         parameters: PgCatalog.Tables.PgConversion.ByConnameConnamespace,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15978,7 +16111,7 @@ export class Database {
       }
       async deleteByConnamespaceConforencodingContoencodingOid(
         parameters: PgCatalog.Tables.PgConversion.ByConnamespaceConforencodingContoencodingOid,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16015,7 +16148,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgConversion.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgConversion.ByOid,
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16044,7 +16179,7 @@ export class Database {
       async updateByConnameConnamespace(
         parameters: PgCatalog.Tables.PgConversion.ByConnameConnamespace,
         values: Partial<PgCatalog.PgConversion>,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16107,7 +16242,7 @@ export class Database {
       async updateByConnamespaceConforencodingContoencodingOid(
         parameters: PgCatalog.Tables.PgConversion.ByConnamespaceConforencodingContoencodingOid,
         values: Partial<PgCatalog.PgConversion>,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16178,7 +16313,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgConversion.ByOid,
         values: Partial<PgCatalog.PgConversion>,
-      ) {
+      ): Promise<PgCatalog.PgConversion> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16245,7 +16380,7 @@ export class Database {
 
       async byClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByClassidObjidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16278,7 +16413,7 @@ export class Database {
       }
       async byRefclassidRefobjidRefobjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByRefclassidRefobjidRefobjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16312,7 +16447,7 @@ export class Database {
 
       async deleteByClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByClassidObjidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16346,7 +16481,7 @@ export class Database {
       }
       async deleteByRefclassidRefobjidRefobjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByRefclassidRefobjidRefobjsubid,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16382,7 +16517,7 @@ export class Database {
       async updateByClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByClassidObjidObjsubid,
         values: Partial<PgCatalog.PgDepend>,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16444,7 +16579,7 @@ export class Database {
       async updateByRefclassidRefobjidRefobjsubid(
         parameters: PgCatalog.Tables.PgDepend.ByRefclassidRefobjidRefobjsubid,
         values: Partial<PgCatalog.PgDepend>,
-      ) {
+      ): Promise<PgCatalog.PgDepend[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16512,7 +16647,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byDatname(parameters: PgCatalog.Tables.PgDatabase.ByDatname) {
+      async byDatname(
+        parameters: PgCatalog.Tables.PgDatabase.ByDatname,
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16545,7 +16682,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgDatabase.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgDatabase.ByOid,
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16579,7 +16718,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByDatname(parameters: PgCatalog.Tables.PgDatabase.ByDatname) {
+      async deleteByDatname(
+        parameters: PgCatalog.Tables.PgDatabase.ByDatname,
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16613,7 +16754,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgDatabase.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgDatabase.ByOid,
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16651,7 +16794,7 @@ export class Database {
       async updateByDatname(
         parameters: PgCatalog.Tables.PgDatabase.ByDatname,
         values: Partial<PgCatalog.PgDatabase>,
-      ) {
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16755,7 +16898,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgDatabase.ByOid,
         values: Partial<PgCatalog.PgDatabase>,
-      ) {
+      ): Promise<PgCatalog.PgDatabase> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16867,7 +17010,7 @@ export class Database {
 
       async bySetdatabaseSetrole(
         parameters: PgCatalog.Tables.PgDbRoleSetting.BySetdatabaseSetrole,
-      ) {
+      ): Promise<PgCatalog.PgDbRoleSetting> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16893,7 +17036,7 @@ export class Database {
 
       async deleteBySetdatabaseSetrole(
         parameters: PgCatalog.Tables.PgDbRoleSetting.BySetdatabaseSetrole,
-      ) {
+      ): Promise<PgCatalog.PgDbRoleSetting> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16921,7 +17064,7 @@ export class Database {
       async updateBySetdatabaseSetrole(
         parameters: PgCatalog.Tables.PgDbRoleSetting.BySetdatabaseSetrole,
         values: Partial<PgCatalog.PgDbRoleSetting>,
-      ) {
+      ): Promise<PgCatalog.PgDbRoleSetting> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -16966,7 +17109,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgTablespace.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTablespace.ByOid,
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16987,7 +17132,9 @@ export class Database {
         }));
         return results[0];
       }
-      async bySpcname(parameters: PgCatalog.Tables.PgTablespace.BySpcname) {
+      async bySpcname(
+        parameters: PgCatalog.Tables.PgTablespace.BySpcname,
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17009,7 +17156,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgTablespace.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTablespace.ByOid,
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17033,7 +17182,7 @@ export class Database {
       }
       async deleteBySpcname(
         parameters: PgCatalog.Tables.PgTablespace.BySpcname,
-      ) {
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17059,7 +17208,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTablespace.ByOid,
         values: Partial<PgCatalog.PgTablespace>,
-      ) {
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17103,7 +17252,7 @@ export class Database {
       async updateBySpcname(
         parameters: PgCatalog.Tables.PgTablespace.BySpcname,
         values: Partial<PgCatalog.PgTablespace>,
-      ) {
+      ): Promise<PgCatalog.PgTablespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17153,7 +17302,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byGrantor(parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor) {
+      async byGrantor(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor,
+      ): Promise<PgCatalog.PgAuthMembers[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17178,7 +17329,7 @@ export class Database {
       }
       async byMemberRoleidGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByMemberRoleidGrantor,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17209,7 +17360,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgAuthMembers.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByOid,
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17234,7 +17387,7 @@ export class Database {
       }
       async byRoleidMemberGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByRoleidMemberGrantor,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17268,7 +17421,7 @@ export class Database {
 
       async deleteByGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17294,7 +17447,7 @@ export class Database {
       }
       async deleteByMemberRoleidGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByMemberRoleidGrantor,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17326,7 +17479,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgAuthMembers.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgAuthMembers.ByOid,
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17352,7 +17507,7 @@ export class Database {
       }
       async deleteByRoleidMemberGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByRoleidMemberGrantor,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17388,7 +17543,7 @@ export class Database {
       async updateByGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByGrantor,
         values: Partial<PgCatalog.PgAuthMembers>,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17443,7 +17598,7 @@ export class Database {
       async updateByMemberRoleidGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByMemberRoleidGrantor,
         values: Partial<PgCatalog.PgAuthMembers>,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17506,7 +17661,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgAuthMembers.ByOid,
         values: Partial<PgCatalog.PgAuthMembers>,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17561,7 +17716,7 @@ export class Database {
       async updateByRoleidMemberGrantor(
         parameters: PgCatalog.Tables.PgAuthMembers.ByRoleidMemberGrantor,
         values: Partial<PgCatalog.PgAuthMembers>,
-      ) {
+      ): Promise<PgCatalog.PgAuthMembers> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17632,7 +17787,7 @@ export class Database {
 
       async byDbidClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgShdepend.ByDbidClassidObjidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17669,7 +17824,7 @@ export class Database {
       }
       async byRefclassidRefobjid(
         parameters: PgCatalog.Tables.PgShdepend.ByRefclassidRefobjid,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17699,7 +17854,7 @@ export class Database {
 
       async deleteByDbidClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgShdepend.ByDbidClassidObjidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17737,7 +17892,7 @@ export class Database {
       }
       async deleteByRefclassidRefobjid(
         parameters: PgCatalog.Tables.PgShdepend.ByRefclassidRefobjid,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17769,7 +17924,7 @@ export class Database {
       async updateByDbidClassidObjidObjsubid(
         parameters: PgCatalog.Tables.PgShdepend.ByDbidClassidObjidObjsubid,
         values: Partial<PgCatalog.PgShdepend>,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17835,7 +17990,7 @@ export class Database {
       async updateByRefclassidRefobjid(
         parameters: PgCatalog.Tables.PgShdepend.ByRefclassidRefobjid,
         values: Partial<PgCatalog.PgShdepend>,
-      ) {
+      ): Promise<PgCatalog.PgShdepend[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -17901,7 +18056,7 @@ export class Database {
 
       async byObjoidClassoid(
         parameters: PgCatalog.Tables.PgShdescription.ByObjoidClassoid,
-      ) {
+      ): Promise<PgCatalog.PgShdescription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17927,7 +18082,7 @@ export class Database {
 
       async deleteByObjoidClassoid(
         parameters: PgCatalog.Tables.PgShdescription.ByObjoidClassoid,
-      ) {
+      ): Promise<PgCatalog.PgShdescription> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -17955,7 +18110,7 @@ export class Database {
       async updateByObjoidClassoid(
         parameters: PgCatalog.Tables.PgShdescription.ByObjoidClassoid,
         values: Partial<PgCatalog.PgShdescription>,
-      ) {
+      ): Promise<PgCatalog.PgShdescription> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18002,7 +18157,7 @@ export class Database {
 
       async byCfgnameCfgnamespace(
         parameters: PgCatalog.Tables.PgTsConfig.ByCfgnameCfgnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18027,7 +18182,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgTsConfig.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTsConfig.ByOid,
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18051,7 +18208,7 @@ export class Database {
 
       async deleteByCfgnameCfgnamespace(
         parameters: PgCatalog.Tables.PgTsConfig.ByCfgnameCfgnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18077,7 +18234,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgTsConfig.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTsConfig.ByOid,
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18103,7 +18262,7 @@ export class Database {
       async updateByCfgnameCfgnamespace(
         parameters: PgCatalog.Tables.PgTsConfig.ByCfgnameCfgnamespace,
         values: Partial<PgCatalog.PgTsConfig>,
-      ) {
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18151,7 +18310,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTsConfig.ByOid,
         values: Partial<PgCatalog.PgTsConfig>,
-      ) {
+      ): Promise<PgCatalog.PgTsConfig> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18203,7 +18362,7 @@ export class Database {
 
       async byMapcfgMaptokentypeMapseqno(
         parameters: PgCatalog.Tables.PgTsConfigMap.ByMapcfgMaptokentypeMapseqno,
-      ) {
+      ): Promise<PgCatalog.PgTsConfigMap> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18234,7 +18393,7 @@ export class Database {
 
       async deleteByMapcfgMaptokentypeMapseqno(
         parameters: PgCatalog.Tables.PgTsConfigMap.ByMapcfgMaptokentypeMapseqno,
-      ) {
+      ): Promise<PgCatalog.PgTsConfigMap> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18267,7 +18426,7 @@ export class Database {
       async updateByMapcfgMaptokentypeMapseqno(
         parameters: PgCatalog.Tables.PgTsConfigMap.ByMapcfgMaptokentypeMapseqno,
         values: Partial<PgCatalog.PgTsConfigMap>,
-      ) {
+      ): Promise<PgCatalog.PgTsConfigMap> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18323,7 +18482,7 @@ export class Database {
 
       async byDictnameDictnamespace(
         parameters: PgCatalog.Tables.PgTsDict.ByDictnameDictnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18349,7 +18508,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgTsDict.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTsDict.ByOid,
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18374,7 +18535,7 @@ export class Database {
 
       async deleteByDictnameDictnamespace(
         parameters: PgCatalog.Tables.PgTsDict.ByDictnameDictnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18401,7 +18562,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgTsDict.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTsDict.ByOid,
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18428,7 +18591,7 @@ export class Database {
       async updateByDictnameDictnamespace(
         parameters: PgCatalog.Tables.PgTsDict.ByDictnameDictnamespace,
         values: Partial<PgCatalog.PgTsDict>,
-      ) {
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18481,7 +18644,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTsDict.ByOid,
         values: Partial<PgCatalog.PgTsDict>,
-      ) {
+      ): Promise<PgCatalog.PgTsDict> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18536,7 +18699,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgTsParser.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTsParser.ByOid,
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18562,7 +18727,7 @@ export class Database {
       }
       async byPrsnamePrsnamespace(
         parameters: PgCatalog.Tables.PgTsParser.ByPrsnamePrsnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18591,7 +18756,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgTsParser.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTsParser.ByOid,
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18618,7 +18785,7 @@ export class Database {
       }
       async deleteByPrsnamePrsnamespace(
         parameters: PgCatalog.Tables.PgTsParser.ByPrsnamePrsnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18651,7 +18818,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTsParser.ByOid,
         values: Partial<PgCatalog.PgTsParser>,
-      ) {
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18710,7 +18877,7 @@ export class Database {
       async updateByPrsnamePrsnamespace(
         parameters: PgCatalog.Tables.PgTsParser.ByPrsnamePrsnamespace,
         values: Partial<PgCatalog.PgTsParser>,
-      ) {
+      ): Promise<PgCatalog.PgTsParser> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18779,7 +18946,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgTsTemplate.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTsTemplate.ByOid,
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18802,7 +18971,7 @@ export class Database {
       }
       async byTmplnameTmplnamespace(
         parameters: PgCatalog.Tables.PgTsTemplate.ByTmplnameTmplnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18828,7 +18997,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgTsTemplate.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTsTemplate.ByOid,
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18852,7 +19023,7 @@ export class Database {
       }
       async deleteByTmplnameTmplnamespace(
         parameters: PgCatalog.Tables.PgTsTemplate.ByTmplnameTmplnamespace,
-      ) {
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -18882,7 +19053,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTsTemplate.ByOid,
         values: Partial<PgCatalog.PgTsTemplate>,
-      ) {
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18926,7 +19097,7 @@ export class Database {
       async updateByTmplnameTmplnamespace(
         parameters: PgCatalog.Tables.PgTsTemplate.ByTmplnameTmplnamespace,
         values: Partial<PgCatalog.PgTsTemplate>,
-      ) {
+      ): Promise<PgCatalog.PgTsTemplate> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -18980,7 +19151,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byExtname(parameters: PgCatalog.Tables.PgExtension.ByExtname) {
+      async byExtname(
+        parameters: PgCatalog.Tables.PgExtension.ByExtname,
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19004,7 +19177,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgExtension.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgExtension.ByOid,
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19031,7 +19206,7 @@ export class Database {
 
       async deleteByExtname(
         parameters: PgCatalog.Tables.PgExtension.ByExtname,
-      ) {
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19056,7 +19231,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgExtension.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgExtension.ByOid,
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19085,7 +19262,7 @@ export class Database {
       async updateByExtname(
         parameters: PgCatalog.Tables.PgExtension.ByExtname,
         values: Partial<PgCatalog.PgExtension>,
-      ) {
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19144,7 +19321,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgExtension.ByOid,
         values: Partial<PgCatalog.PgExtension>,
-      ) {
+      ): Promise<PgCatalog.PgExtension> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19211,7 +19388,7 @@ export class Database {
 
       async byFdwname(
         parameters: PgCatalog.Tables.PgForeignDataWrapper.ByFdwname,
-      ) {
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19234,7 +19411,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid,
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19260,7 +19439,7 @@ export class Database {
 
       async deleteByFdwname(
         parameters: PgCatalog.Tables.PgForeignDataWrapper.ByFdwname,
-      ) {
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19286,7 +19465,7 @@ export class Database {
       }
       async deleteByOid(
         parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid,
-      ) {
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19314,7 +19493,7 @@ export class Database {
       async updateByFdwname(
         parameters: PgCatalog.Tables.PgForeignDataWrapper.ByFdwname,
         values: Partial<PgCatalog.PgForeignDataWrapper>,
-      ) {
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19369,7 +19548,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgForeignDataWrapper.ByOid,
         values: Partial<PgCatalog.PgForeignDataWrapper>,
-      ) {
+      ): Promise<PgCatalog.PgForeignDataWrapper> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19430,7 +19609,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgForeignServer.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgForeignServer.ByOid,
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19454,7 +19635,9 @@ export class Database {
         }));
         return results[0];
       }
-      async bySrvname(parameters: PgCatalog.Tables.PgForeignServer.BySrvname) {
+      async bySrvname(
+        parameters: PgCatalog.Tables.PgForeignServer.BySrvname,
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19479,7 +19662,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgForeignServer.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgForeignServer.ByOid,
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19506,7 +19691,7 @@ export class Database {
       }
       async deleteBySrvname(
         parameters: PgCatalog.Tables.PgForeignServer.BySrvname,
-      ) {
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19535,7 +19720,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgForeignServer.ByOid,
         values: Partial<PgCatalog.PgForeignServer>,
-      ) {
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19595,7 +19780,7 @@ export class Database {
       async updateBySrvname(
         parameters: PgCatalog.Tables.PgForeignServer.BySrvname,
         values: Partial<PgCatalog.PgForeignServer>,
-      ) {
+      ): Promise<PgCatalog.PgForeignServer> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19661,7 +19846,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgPolicy.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgPolicy.ByOid,
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19687,7 +19874,7 @@ export class Database {
       }
       async byPolrelidPolname(
         parameters: PgCatalog.Tables.PgPolicy.ByPolrelidPolname,
-      ) {
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19716,7 +19903,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgPolicy.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgPolicy.ByOid,
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19743,7 +19932,7 @@ export class Database {
       }
       async deleteByPolrelidPolname(
         parameters: PgCatalog.Tables.PgPolicy.ByPolrelidPolname,
-      ) {
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19776,7 +19965,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgPolicy.ByOid,
         values: Partial<PgCatalog.PgPolicy>,
-      ) {
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19835,7 +20024,7 @@ export class Database {
       async updateByPolrelidPolname(
         parameters: PgCatalog.Tables.PgPolicy.ByPolrelidPolname,
         values: Partial<PgCatalog.PgPolicy>,
-      ) {
+      ): Promise<PgCatalog.PgPolicy> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -19906,7 +20095,7 @@ export class Database {
 
       async byRoident(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoident,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19926,7 +20115,7 @@ export class Database {
       }
       async byRoname(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoname,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19947,7 +20136,7 @@ export class Database {
 
       async deleteByRoident(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoident,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19968,7 +20157,7 @@ export class Database {
       }
       async deleteByRoname(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoname,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -19991,7 +20180,7 @@ export class Database {
       async updateByRoident(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoident,
         values: Partial<PgCatalog.PgReplicationOrigin>,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20021,7 +20210,7 @@ export class Database {
       async updateByRoname(
         parameters: PgCatalog.Tables.PgReplicationOrigin.ByRoname,
         values: Partial<PgCatalog.PgReplicationOrigin>,
-      ) {
+      ): Promise<PgCatalog.PgReplicationOrigin> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20059,7 +20248,7 @@ export class Database {
 
       async byDefaclroleDefaclnamespaceDefaclobjtype(
         parameters: PgCatalog.Tables.PgDefaultAcl.ByDefaclroleDefaclnamespaceDefaclobjtype,
-      ) {
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20088,7 +20277,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgDefaultAcl.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgDefaultAcl.ByOid,
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20112,7 +20303,7 @@ export class Database {
 
       async deleteByDefaclroleDefaclnamespaceDefaclobjtype(
         parameters: PgCatalog.Tables.PgDefaultAcl.ByDefaclroleDefaclnamespaceDefaclobjtype,
-      ) {
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20142,7 +20333,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgDefaultAcl.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgDefaultAcl.ByOid,
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20168,7 +20361,7 @@ export class Database {
       async updateByDefaclroleDefaclnamespaceDefaclobjtype(
         parameters: PgCatalog.Tables.PgDefaultAcl.ByDefaclroleDefaclnamespaceDefaclobjtype,
         values: Partial<PgCatalog.PgDefaultAcl>,
-      ) {
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20220,7 +20413,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgDefaultAcl.ByOid,
         values: Partial<PgCatalog.PgDefaultAcl>,
-      ) {
+      ): Promise<PgCatalog.PgDefaultAcl> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20272,7 +20465,7 @@ export class Database {
 
       async byObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgInitPrivs.ByObjoidClassoidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgInitPrivs> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20304,7 +20497,7 @@ export class Database {
 
       async deleteByObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgInitPrivs.ByObjoidClassoidObjsubid,
-      ) {
+      ): Promise<PgCatalog.PgInitPrivs> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20338,7 +20531,7 @@ export class Database {
       async updateByObjoidClassoidObjsubid(
         parameters: PgCatalog.Tables.PgInitPrivs.ByObjoidClassoidObjsubid,
         values: Partial<PgCatalog.PgInitPrivs>,
-      ) {
+      ): Promise<PgCatalog.PgInitPrivs> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20399,7 +20592,7 @@ export class Database {
 
       async byObjoidClassoidObjsubidProvider(
         parameters: PgCatalog.Tables.PgSeclabel.ByObjoidClassoidObjsubidProvider,
-      ) {
+      ): Promise<PgCatalog.PgSeclabel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20435,7 +20628,7 @@ export class Database {
 
       async deleteByObjoidClassoidObjsubidProvider(
         parameters: PgCatalog.Tables.PgSeclabel.ByObjoidClassoidObjsubidProvider,
-      ) {
+      ): Promise<PgCatalog.PgSeclabel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20473,7 +20666,7 @@ export class Database {
       async updateByObjoidClassoidObjsubidProvider(
         parameters: PgCatalog.Tables.PgSeclabel.ByObjoidClassoidObjsubidProvider,
         values: Partial<PgCatalog.PgSeclabel>,
-      ) {
+      ): Promise<PgCatalog.PgSeclabel> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20537,7 +20730,7 @@ export class Database {
 
       async byObjoidClassoidProvider(
         parameters: PgCatalog.Tables.PgShseclabel.ByObjoidClassoidProvider,
-      ) {
+      ): Promise<PgCatalog.PgShseclabel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20568,7 +20761,7 @@ export class Database {
 
       async deleteByObjoidClassoidProvider(
         parameters: PgCatalog.Tables.PgShseclabel.ByObjoidClassoidProvider,
-      ) {
+      ): Promise<PgCatalog.PgShseclabel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20601,7 +20794,7 @@ export class Database {
       async updateByObjoidClassoidProvider(
         parameters: PgCatalog.Tables.PgShseclabel.ByObjoidClassoidProvider,
         values: Partial<PgCatalog.PgShseclabel>,
-      ) {
+      ): Promise<PgCatalog.PgShseclabel> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20657,7 +20850,7 @@ export class Database {
 
       async byCollnameCollencodingCollnamespace(
         parameters: PgCatalog.Tables.PgCollation.ByCollnameCollencodingCollnamespace,
-      ) {
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20693,7 +20886,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byOid(parameters: PgCatalog.Tables.PgCollation.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgCollation.ByOid,
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20724,7 +20919,7 @@ export class Database {
 
       async deleteByCollnameCollencodingCollnamespace(
         parameters: PgCatalog.Tables.PgCollation.ByCollnameCollencodingCollnamespace,
-      ) {
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20761,7 +20956,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByOid(parameters: PgCatalog.Tables.PgCollation.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgCollation.ByOid,
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20794,7 +20991,7 @@ export class Database {
       async updateByCollnameCollencodingCollnamespace(
         parameters: PgCatalog.Tables.PgCollation.ByCollnameCollencodingCollnamespace,
         values: Partial<PgCatalog.PgCollation>,
-      ) {
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20881,7 +21078,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgCollation.ByOid,
         values: Partial<PgCatalog.PgCollation>,
-      ) {
+      ): Promise<PgCatalog.PgCollation> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -20966,7 +21163,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgParameterAcl.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByOid,
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -20985,7 +21184,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byParname(parameters: PgCatalog.Tables.PgParameterAcl.ByParname) {
+      async byParname(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByParname,
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21005,7 +21206,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgParameterAcl.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgParameterAcl.ByOid,
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21027,7 +21230,7 @@ export class Database {
       }
       async deleteByParname(
         parameters: PgCatalog.Tables.PgParameterAcl.ByParname,
-      ) {
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21051,7 +21254,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgParameterAcl.ByOid,
         values: Partial<PgCatalog.PgParameterAcl>,
-      ) {
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21086,7 +21289,7 @@ export class Database {
       async updateByParname(
         parameters: PgCatalog.Tables.PgParameterAcl.ByParname,
         values: Partial<PgCatalog.PgParameterAcl>,
-      ) {
+      ): Promise<PgCatalog.PgParameterAcl> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21129,7 +21332,7 @@ export class Database {
 
       async byPartrelid(
         parameters: PgCatalog.Tables.PgPartitionedTable.ByPartrelid,
-      ) {
+      ): Promise<PgCatalog.PgPartitionedTable> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21156,7 +21359,7 @@ export class Database {
 
       async deleteByPartrelid(
         parameters: PgCatalog.Tables.PgPartitionedTable.ByPartrelid,
-      ) {
+      ): Promise<PgCatalog.PgPartitionedTable> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21185,7 +21388,7 @@ export class Database {
       async updateByPartrelid(
         parameters: PgCatalog.Tables.PgPartitionedTable.ByPartrelid,
         values: Partial<PgCatalog.PgPartitionedTable>,
-      ) {
+      ): Promise<PgCatalog.PgPartitionedTable> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21253,7 +21456,7 @@ export class Database {
 
       async byRngmultitypid(
         parameters: PgCatalog.Tables.PgRange.ByRngmultitypid,
-      ) {
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21276,7 +21479,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byRngtypid(parameters: PgCatalog.Tables.PgRange.ByRngtypid) {
+      async byRngtypid(
+        parameters: PgCatalog.Tables.PgRange.ByRngtypid,
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21302,7 +21507,7 @@ export class Database {
 
       async deleteByRngmultitypid(
         parameters: PgCatalog.Tables.PgRange.ByRngmultitypid,
-      ) {
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21326,7 +21531,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByRngtypid(parameters: PgCatalog.Tables.PgRange.ByRngtypid) {
+      async deleteByRngtypid(
+        parameters: PgCatalog.Tables.PgRange.ByRngtypid,
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21354,7 +21561,7 @@ export class Database {
       async updateByRngmultitypid(
         parameters: PgCatalog.Tables.PgRange.ByRngmultitypid,
         values: Partial<PgCatalog.PgRange>,
-      ) {
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21408,7 +21615,7 @@ export class Database {
       async updateByRngtypid(
         parameters: PgCatalog.Tables.PgRange.ByRngtypid,
         values: Partial<PgCatalog.PgRange>,
-      ) {
+      ): Promise<PgCatalog.PgRange> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21468,7 +21675,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgTransform.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgTransform.ByOid,
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21491,7 +21700,7 @@ export class Database {
       }
       async byTrftypeTrflang(
         parameters: PgCatalog.Tables.PgTransform.ByTrftypeTrflang,
-      ) {
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21517,7 +21726,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgTransform.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgTransform.ByOid,
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21541,7 +21752,7 @@ export class Database {
       }
       async deleteByTrftypeTrflang(
         parameters: PgCatalog.Tables.PgTransform.ByTrftypeTrflang,
-      ) {
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21571,7 +21782,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgTransform.ByOid,
         values: Partial<PgCatalog.PgTransform>,
-      ) {
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21615,7 +21826,7 @@ export class Database {
       async updateByTrftypeTrflang(
         parameters: PgCatalog.Tables.PgTransform.ByTrftypeTrflang,
         values: Partial<PgCatalog.PgTransform>,
-      ) {
+      ): Promise<PgCatalog.PgTransform> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21669,7 +21880,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async bySeqrelid(parameters: PgCatalog.Tables.PgSequence.BySeqrelid) {
+      async bySeqrelid(
+        parameters: PgCatalog.Tables.PgSequence.BySeqrelid,
+      ): Promise<PgCatalog.PgSequence> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21696,7 +21909,7 @@ export class Database {
 
       async deleteBySeqrelid(
         parameters: PgCatalog.Tables.PgSequence.BySeqrelid,
-      ) {
+      ): Promise<PgCatalog.PgSequence> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21725,7 +21938,7 @@ export class Database {
       async updateBySeqrelid(
         parameters: PgCatalog.Tables.PgSequence.BySeqrelid,
         values: Partial<PgCatalog.PgSequence>,
-      ) {
+      ): Promise<PgCatalog.PgSequence> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21791,7 +22004,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgPublication.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgPublication.ByOid,
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21816,7 +22031,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byPubname(parameters: PgCatalog.Tables.PgPublication.ByPubname) {
+      async byPubname(
+        parameters: PgCatalog.Tables.PgPublication.ByPubname,
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21842,7 +22059,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgPublication.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgPublication.ByOid,
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21870,7 +22089,7 @@ export class Database {
       }
       async deleteByPubname(
         parameters: PgCatalog.Tables.PgPublication.ByPubname,
-      ) {
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -21900,7 +22119,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgPublication.ByOid,
         values: Partial<PgCatalog.PgPublication>,
-      ) {
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -21964,7 +22183,7 @@ export class Database {
       async updateByPubname(
         parameters: PgCatalog.Tables.PgPublication.ByPubname,
         values: Partial<PgCatalog.PgPublication>,
-      ) {
+      ): Promise<PgCatalog.PgPublication> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22034,7 +22253,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid,
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22055,7 +22276,7 @@ export class Database {
       }
       async byPnnspidPnpubid(
         parameters: PgCatalog.Tables.PgPublicationNamespace.ByPnnspidPnpubid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22081,7 +22302,7 @@ export class Database {
 
       async deleteByOid(
         parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22103,7 +22324,7 @@ export class Database {
       }
       async deleteByPnnspidPnpubid(
         parameters: PgCatalog.Tables.PgPublicationNamespace.ByPnnspidPnpubid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22131,7 +22352,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgPublicationNamespace.ByOid,
         values: Partial<PgCatalog.PgPublicationNamespace>,
-      ) {
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22166,7 +22387,7 @@ export class Database {
       async updateByPnnspidPnpubid(
         parameters: PgCatalog.Tables.PgPublicationNamespace.ByPnnspidPnpubid,
         values: Partial<PgCatalog.PgPublicationNamespace>,
-      ) {
+      ): Promise<PgCatalog.PgPublicationNamespace> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22211,7 +22432,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byOid(parameters: PgCatalog.Tables.PgPublicationRel.ByOid) {
+      async byOid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByOid,
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22232,7 +22455,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byPrpubid(parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid) {
+      async byPrpubid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid,
+      ): Promise<PgCatalog.PgPublicationRel[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22255,7 +22480,7 @@ export class Database {
       }
       async byPrrelidPrpubid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByPrrelidPrpubid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22281,7 +22506,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByOid(parameters: PgCatalog.Tables.PgPublicationRel.ByOid) {
+      async deleteByOid(
+        parameters: PgCatalog.Tables.PgPublicationRel.ByOid,
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22305,7 +22532,7 @@ export class Database {
       }
       async deleteByPrpubid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22329,7 +22556,7 @@ export class Database {
       }
       async deleteByPrrelidPrpubid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByPrrelidPrpubid,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22359,7 +22586,7 @@ export class Database {
       async updateByOid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByOid,
         values: Partial<PgCatalog.PgPublicationRel>,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22404,7 +22631,7 @@ export class Database {
       async updateByPrpubid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByPrpubid,
         values: Partial<PgCatalog.PgPublicationRel>,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22449,7 +22676,7 @@ export class Database {
       async updateByPrrelidPrpubid(
         parameters: PgCatalog.Tables.PgPublicationRel.ByPrrelidPrpubid,
         values: Partial<PgCatalog.PgPublicationRel>,
-      ) {
+      ): Promise<PgCatalog.PgPublicationRel> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22506,7 +22733,7 @@ export class Database {
 
       async bySrrelidSrsubid(
         parameters: PgCatalog.Tables.PgSubscriptionRel.BySrrelidSrsubid,
-      ) {
+      ): Promise<PgCatalog.PgSubscriptionRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22533,7 +22760,7 @@ export class Database {
 
       async deleteBySrrelidSrsubid(
         parameters: PgCatalog.Tables.PgSubscriptionRel.BySrrelidSrsubid,
-      ) {
+      ): Promise<PgCatalog.PgSubscriptionRel> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22562,7 +22789,7 @@ export class Database {
       async updateBySrrelidSrsubid(
         parameters: PgCatalog.Tables.PgSubscriptionRel.BySrrelidSrsubid,
         values: Partial<PgCatalog.PgSubscriptionRel>,
-      ) {
+      ): Promise<PgCatalog.PgSubscriptionRel> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22614,7 +22841,7 @@ export class Database {
 
       async byLoidPageno(
         parameters: PgCatalog.Tables.PgLargeobject.ByLoidPageno,
-      ) {
+      ): Promise<PgCatalog.PgLargeobject> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22640,7 +22867,7 @@ export class Database {
 
       async deleteByLoidPageno(
         parameters: PgCatalog.Tables.PgLargeobject.ByLoidPageno,
-      ) {
+      ): Promise<PgCatalog.PgLargeobject> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22668,7 +22895,7 @@ export class Database {
       async updateByLoidPageno(
         parameters: PgCatalog.Tables.PgLargeobject.ByLoidPageno,
         values: Partial<PgCatalog.PgLargeobject>,
-      ) {
+      ): Promise<PgCatalog.PgLargeobject> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -22879,7 +23106,7 @@ export class Database {
 
       async byActorIdFilmId(
         parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-      ) {
+      ): Promise<Public.FilmActor> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22902,7 +23129,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
+      async byFilmId(
+        parameters: Public.Tables.FilmActor.ByFilmId,
+      ): Promise<Public.FilmActor[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22924,7 +23153,7 @@ export class Database {
 
       async deleteByActorIdFilmId(
         parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-      ) {
+      ): Promise<Public.FilmActor> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22948,7 +23177,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
+      async deleteByFilmId(
+        parameters: Public.Tables.FilmActor.ByFilmId,
+      ): Promise<Public.FilmActor[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -22972,7 +23203,7 @@ export class Database {
       async updateByActorIdFilmId(
         parameters: Public.Tables.FilmActor.ByActorIdFilmId,
         values: Partial<Public.FilmActor>,
-      ) {
+      ): Promise<Public.FilmActor> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23010,7 +23241,7 @@ export class Database {
       async updateByFilmId(
         parameters: Public.Tables.FilmActor.ByFilmId,
         values: Partial<Public.FilmActor>,
-      ) {
+      ): Promise<Public.FilmActor[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23050,7 +23281,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byAddressId(parameters: Public.Tables.Address.ByAddressId) {
+      async byAddressId(
+        parameters: Public.Tables.Address.ByAddressId,
+      ): Promise<Public.Address> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23074,7 +23307,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byCityId(parameters: Public.Tables.Address.ByCityId) {
+      async byCityId(
+        parameters: Public.Tables.Address.ByCityId,
+      ): Promise<Public.Address[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23099,7 +23334,9 @@ export class Database {
         return results;
       }
 
-      async deleteByAddressId(parameters: Public.Tables.Address.ByAddressId) {
+      async deleteByAddressId(
+        parameters: Public.Tables.Address.ByAddressId,
+      ): Promise<Public.Address> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23124,7 +23361,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByCityId(parameters: Public.Tables.Address.ByCityId) {
+      async deleteByCityId(
+        parameters: Public.Tables.Address.ByCityId,
+      ): Promise<Public.Address[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23152,7 +23391,7 @@ export class Database {
       async updateByAddressId(
         parameters: Public.Tables.Address.ByAddressId,
         values: Partial<Public.Address>,
-      ) {
+      ): Promise<Public.Address> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23211,7 +23450,7 @@ export class Database {
       async updateByCityId(
         parameters: Public.Tables.Address.ByCityId,
         values: Partial<Public.Address>,
-      ) {
+      ): Promise<Public.Address[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23276,7 +23515,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byCityId(parameters: Public.Tables.City.ByCityId) {
+      async byCityId(
+        parameters: Public.Tables.City.ByCityId,
+      ): Promise<Public.City> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23296,7 +23537,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byCountryId(parameters: Public.Tables.City.ByCountryId) {
+      async byCountryId(
+        parameters: Public.Tables.City.ByCountryId,
+      ): Promise<Public.City[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23317,7 +23560,9 @@ export class Database {
         return results;
       }
 
-      async deleteByCityId(parameters: Public.Tables.City.ByCityId) {
+      async deleteByCityId(
+        parameters: Public.Tables.City.ByCityId,
+      ): Promise<Public.City> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23337,7 +23582,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByCountryId(parameters: Public.Tables.City.ByCountryId) {
+      async deleteByCountryId(
+        parameters: Public.Tables.City.ByCountryId,
+      ): Promise<Public.City[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23361,7 +23608,7 @@ export class Database {
       async updateByCityId(
         parameters: Public.Tables.City.ByCityId,
         values: Partial<Public.City>,
-      ) {
+      ): Promise<Public.City> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23400,7 +23647,7 @@ export class Database {
       async updateByCountryId(
         parameters: Public.Tables.City.ByCountryId,
         values: Partial<Public.City>,
-      ) {
+      ): Promise<Public.City[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23445,7 +23692,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byAddressId(parameters: Public.Tables.Customer.ByAddressId) {
+      async byAddressId(
+        parameters: Public.Tables.Customer.ByAddressId,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23471,7 +23720,9 @@ export class Database {
         }));
         return results;
       }
-      async byCustomerId(parameters: Public.Tables.Customer.ByCustomerId) {
+      async byCustomerId(
+        parameters: Public.Tables.Customer.ByCustomerId,
+      ): Promise<Public.Customer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23497,7 +23748,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byLastName(parameters: Public.Tables.Customer.ByLastName) {
+      async byLastName(
+        parameters: Public.Tables.Customer.ByLastName,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23523,7 +23776,9 @@ export class Database {
         }));
         return results;
       }
-      async byStoreId(parameters: Public.Tables.Customer.ByStoreId) {
+      async byStoreId(
+        parameters: Public.Tables.Customer.ByStoreId,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23550,7 +23805,9 @@ export class Database {
         return results;
       }
 
-      async deleteByAddressId(parameters: Public.Tables.Customer.ByAddressId) {
+      async deleteByAddressId(
+        parameters: Public.Tables.Customer.ByAddressId,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23579,7 +23836,7 @@ export class Database {
       }
       async deleteByCustomerId(
         parameters: Public.Tables.Customer.ByCustomerId,
-      ) {
+      ): Promise<Public.Customer> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23606,7 +23863,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByLastName(parameters: Public.Tables.Customer.ByLastName) {
+      async deleteByLastName(
+        parameters: Public.Tables.Customer.ByLastName,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23633,7 +23892,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByStoreId(parameters: Public.Tables.Customer.ByStoreId) {
+      async deleteByStoreId(
+        parameters: Public.Tables.Customer.ByStoreId,
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23664,7 +23925,7 @@ export class Database {
       async updateByAddressId(
         parameters: Public.Tables.Customer.ByAddressId,
         values: Partial<Public.Customer>,
-      ) {
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23733,7 +23994,7 @@ export class Database {
       async updateByCustomerId(
         parameters: Public.Tables.Customer.ByCustomerId,
         values: Partial<Public.Customer>,
-      ) {
+      ): Promise<Public.Customer> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23802,7 +24063,7 @@ export class Database {
       async updateByLastName(
         parameters: Public.Tables.Customer.ByLastName,
         values: Partial<Public.Customer>,
-      ) {
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23871,7 +24132,7 @@ export class Database {
       async updateByStoreId(
         parameters: Public.Tables.Customer.ByStoreId,
         values: Partial<Public.Customer>,
-      ) {
+      ): Promise<Public.Customer[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -23946,7 +24207,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byActorId(parameters: Public.Tables.Actor.ByActorId) {
+      async byActorId(
+        parameters: Public.Tables.Actor.ByActorId,
+      ): Promise<Public.Actor> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23966,7 +24229,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byLastName(parameters: Public.Tables.Actor.ByLastName) {
+      async byLastName(
+        parameters: Public.Tables.Actor.ByLastName,
+      ): Promise<Public.Actor[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -23987,7 +24252,9 @@ export class Database {
         return results;
       }
 
-      async deleteByActorId(parameters: Public.Tables.Actor.ByActorId) {
+      async deleteByActorId(
+        parameters: Public.Tables.Actor.ByActorId,
+      ): Promise<Public.Actor> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24007,7 +24274,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByLastName(parameters: Public.Tables.Actor.ByLastName) {
+      async deleteByLastName(
+        parameters: Public.Tables.Actor.ByLastName,
+      ): Promise<Public.Actor[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24031,7 +24300,7 @@ export class Database {
       async updateByActorId(
         parameters: Public.Tables.Actor.ByActorId,
         values: Partial<Public.Actor>,
-      ) {
+      ): Promise<Public.Actor> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24070,7 +24339,7 @@ export class Database {
       async updateByLastName(
         parameters: Public.Tables.Actor.ByLastName,
         values: Partial<Public.Actor>,
-      ) {
+      ): Promise<Public.Actor[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24117,7 +24386,7 @@ export class Database {
 
       async byFilmIdCategoryId(
         parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-      ) {
+      ): Promise<Public.FilmCategory> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24143,7 +24412,7 @@ export class Database {
 
       async deleteByFilmIdCategoryId(
         parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-      ) {
+      ): Promise<Public.FilmCategory> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24171,7 +24440,7 @@ export class Database {
       async updateByFilmIdCategoryId(
         parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
         values: Partial<Public.FilmCategory>,
-      ) {
+      ): Promise<Public.FilmCategory> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24215,7 +24484,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byInventoryId(parameters: Public.Tables.Inventory.ByInventoryId) {
+      async byInventoryId(
+        parameters: Public.Tables.Inventory.ByInventoryId,
+      ): Promise<Public.Inventory> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24237,7 +24508,7 @@ export class Database {
       }
       async byStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-      ) {
+      ): Promise<Public.Inventory[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24264,7 +24535,7 @@ export class Database {
 
       async deleteByInventoryId(
         parameters: Public.Tables.Inventory.ByInventoryId,
-      ) {
+      ): Promise<Public.Inventory> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24287,7 +24558,7 @@ export class Database {
       }
       async deleteByStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-      ) {
+      ): Promise<Public.Inventory[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24316,7 +24587,7 @@ export class Database {
       async updateByInventoryId(
         parameters: Public.Tables.Inventory.ByInventoryId,
         values: Partial<Public.Inventory>,
-      ) {
+      ): Promise<Public.Inventory> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24355,7 +24626,7 @@ export class Database {
       async updateByStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
         values: Partial<Public.Inventory>,
-      ) {
+      ): Promise<Public.Inventory[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24404,7 +24675,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byCategoryId(parameters: Public.Tables.Category.ByCategoryId) {
+      async byCategoryId(
+        parameters: Public.Tables.Category.ByCategoryId,
+      ): Promise<Public.Category> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24426,7 +24699,7 @@ export class Database {
 
       async deleteByCategoryId(
         parameters: Public.Tables.Category.ByCategoryId,
-      ) {
+      ): Promise<Public.Category> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24450,7 +24723,7 @@ export class Database {
       async updateByCategoryId(
         parameters: Public.Tables.Category.ByCategoryId,
         values: Partial<Public.Category>,
-      ) {
+      ): Promise<Public.Category> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24490,7 +24763,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byCountryId(parameters: Public.Tables.Country.ByCountryId) {
+      async byCountryId(
+        parameters: Public.Tables.Country.ByCountryId,
+      ): Promise<Public.Country> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24510,7 +24785,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByCountryId(parameters: Public.Tables.Country.ByCountryId) {
+      async deleteByCountryId(
+        parameters: Public.Tables.Country.ByCountryId,
+      ): Promise<Public.Country> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24534,7 +24811,7 @@ export class Database {
       async updateByCountryId(
         parameters: Public.Tables.Country.ByCountryId,
         values: Partial<Public.Country>,
-      ) {
+      ): Promise<Public.Country> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24574,7 +24851,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byLanguageId(parameters: Public.Tables.Language.ByLanguageId) {
+      async byLanguageId(
+        parameters: Public.Tables.Language.ByLanguageId,
+      ): Promise<Public.Language> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24596,7 +24875,7 @@ export class Database {
 
       async deleteByLanguageId(
         parameters: Public.Tables.Language.ByLanguageId,
-      ) {
+      ): Promise<Public.Language> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24620,7 +24899,7 @@ export class Database {
       async updateByLanguageId(
         parameters: Public.Tables.Language.ByLanguageId,
         values: Partial<Public.Language>,
-      ) {
+      ): Promise<Public.Language> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24660,7 +24939,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byInventoryId(parameters: Public.Tables.Rental.ByInventoryId) {
+      async byInventoryId(
+        parameters: Public.Tables.Rental.ByInventoryId,
+      ): Promise<Public.Rental[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24685,7 +24966,7 @@ export class Database {
       }
       async byRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-      ) {
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24716,7 +24997,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byRentalId(parameters: Public.Tables.Rental.ByRentalId) {
+      async byRentalId(
+        parameters: Public.Tables.Rental.ByRentalId,
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24742,7 +25025,7 @@ export class Database {
 
       async deleteByInventoryId(
         parameters: Public.Tables.Rental.ByInventoryId,
-      ) {
+      ): Promise<Public.Rental[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24768,7 +25051,7 @@ export class Database {
       }
       async deleteByRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-      ) {
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24800,7 +25083,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByRentalId(parameters: Public.Tables.Rental.ByRentalId) {
+      async deleteByRentalId(
+        parameters: Public.Tables.Rental.ByRentalId,
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -24828,7 +25113,7 @@ export class Database {
       async updateByInventoryId(
         parameters: Public.Tables.Rental.ByInventoryId,
         values: Partial<Public.Rental>,
-      ) {
+      ): Promise<Public.Rental[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24882,7 +25167,7 @@ export class Database {
       async updateByRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         values: Partial<Public.Rental>,
-      ) {
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -24944,7 +25229,7 @@ export class Database {
       async updateByRentalId(
         parameters: Public.Tables.Rental.ByRentalId,
         values: Partial<Public.Rental>,
-      ) {
+      ): Promise<Public.Rental> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25004,7 +25289,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byStaffId(parameters: Public.Tables.Staff.ByStaffId) {
+      async byStaffId(
+        parameters: Public.Tables.Staff.ByStaffId,
+      ): Promise<Public.Staff> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25032,7 +25319,9 @@ export class Database {
         return results[0];
       }
 
-      async deleteByStaffId(parameters: Public.Tables.Staff.ByStaffId) {
+      async deleteByStaffId(
+        parameters: Public.Tables.Staff.ByStaffId,
+      ): Promise<Public.Staff> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25063,7 +25352,7 @@ export class Database {
       async updateByStaffId(
         parameters: Public.Tables.Staff.ByStaffId,
         values: Partial<Public.Staff>,
-      ) {
+      ): Promise<Public.Staff> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25143,7 +25432,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byManagerStaffId(parameters: Public.Tables.Store.ByManagerStaffId) {
+      async byManagerStaffId(
+        parameters: Public.Tables.Store.ByManagerStaffId,
+      ): Promise<Public.Store> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25163,7 +25454,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byStoreId(parameters: Public.Tables.Store.ByStoreId) {
+      async byStoreId(
+        parameters: Public.Tables.Store.ByStoreId,
+      ): Promise<Public.Store> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25186,7 +25479,7 @@ export class Database {
 
       async deleteByManagerStaffId(
         parameters: Public.Tables.Store.ByManagerStaffId,
-      ) {
+      ): Promise<Public.Store> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25207,7 +25500,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByStoreId(parameters: Public.Tables.Store.ByStoreId) {
+      async deleteByStoreId(
+        parameters: Public.Tables.Store.ByStoreId,
+      ): Promise<Public.Store> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25231,7 +25526,7 @@ export class Database {
       async updateByManagerStaffId(
         parameters: Public.Tables.Store.ByManagerStaffId,
         values: Partial<Public.Store>,
-      ) {
+      ): Promise<Public.Store> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25270,7 +25565,7 @@ export class Database {
       async updateByStoreId(
         parameters: Public.Tables.Store.ByStoreId,
         values: Partial<Public.Store>,
-      ) {
+      ): Promise<Public.Store> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25315,7 +25610,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byCustomerId(parameters: Public.Tables.Payment.ByCustomerId) {
+      async byCustomerId(
+        parameters: Public.Tables.Payment.ByCustomerId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25337,7 +25634,9 @@ export class Database {
         }));
         return results;
       }
-      async byPaymentId(parameters: Public.Tables.Payment.ByPaymentId) {
+      async byPaymentId(
+        parameters: Public.Tables.Payment.ByPaymentId,
+      ): Promise<Public.Payment> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25359,7 +25658,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byRentalId(parameters: Public.Tables.Payment.ByRentalId) {
+      async byRentalId(
+        parameters: Public.Tables.Payment.ByRentalId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25381,7 +25682,9 @@ export class Database {
         }));
         return results;
       }
-      async byStaffId(parameters: Public.Tables.Payment.ByStaffId) {
+      async byStaffId(
+        parameters: Public.Tables.Payment.ByStaffId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25404,7 +25707,9 @@ export class Database {
         return results;
       }
 
-      async deleteByCustomerId(parameters: Public.Tables.Payment.ByCustomerId) {
+      async deleteByCustomerId(
+        parameters: Public.Tables.Payment.ByCustomerId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25427,7 +25732,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByPaymentId(parameters: Public.Tables.Payment.ByPaymentId) {
+      async deleteByPaymentId(
+        parameters: Public.Tables.Payment.ByPaymentId,
+      ): Promise<Public.Payment> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25450,7 +25757,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByRentalId(parameters: Public.Tables.Payment.ByRentalId) {
+      async deleteByRentalId(
+        parameters: Public.Tables.Payment.ByRentalId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25473,7 +25782,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByStaffId(parameters: Public.Tables.Payment.ByStaffId) {
+      async deleteByStaffId(
+        parameters: Public.Tables.Payment.ByStaffId,
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25500,7 +25811,7 @@ export class Database {
       async updateByCustomerId(
         parameters: Public.Tables.Payment.ByCustomerId,
         values: Partial<Public.Payment>,
-      ) {
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25549,7 +25860,7 @@ export class Database {
       async updateByPaymentId(
         parameters: Public.Tables.Payment.ByPaymentId,
         values: Partial<Public.Payment>,
-      ) {
+      ): Promise<Public.Payment> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25598,7 +25909,7 @@ export class Database {
       async updateByRentalId(
         parameters: Public.Tables.Payment.ByRentalId,
         values: Partial<Public.Payment>,
-      ) {
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25647,7 +25958,7 @@ export class Database {
       async updateByStaffId(
         parameters: Public.Tables.Payment.ByStaffId,
         values: Partial<Public.Payment>,
-      ) {
+      ): Promise<Public.Payment[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -25702,7 +26013,9 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      async byFilmId(parameters: Public.Tables.Film.ByFilmId) {
+      async byFilmId(
+        parameters: Public.Tables.Film.ByFilmId,
+      ): Promise<Public.Film> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25731,7 +26044,9 @@ export class Database {
         }));
         return results[0];
       }
-      async byFulltext(parameters: Public.Tables.Film.ByFulltext) {
+      async byFulltext(
+        parameters: Public.Tables.Film.ByFulltext,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25760,7 +26075,9 @@ export class Database {
         }));
         return results;
       }
-      async byLanguageId(parameters: Public.Tables.Film.ByLanguageId) {
+      async byLanguageId(
+        parameters: Public.Tables.Film.ByLanguageId,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25789,7 +26106,9 @@ export class Database {
         }));
         return results;
       }
-      async byTitle(parameters: Public.Tables.Film.ByTitle) {
+      async byTitle(
+        parameters: Public.Tables.Film.ByTitle,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25819,7 +26138,9 @@ export class Database {
         return results;
       }
 
-      async deleteByFilmId(parameters: Public.Tables.Film.ByFilmId) {
+      async deleteByFilmId(
+        parameters: Public.Tables.Film.ByFilmId,
+      ): Promise<Public.Film> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25848,7 +26169,9 @@ export class Database {
         }));
         return results[0];
       }
-      async deleteByFulltext(parameters: Public.Tables.Film.ByFulltext) {
+      async deleteByFulltext(
+        parameters: Public.Tables.Film.ByFulltext,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25877,7 +26200,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByLanguageId(parameters: Public.Tables.Film.ByLanguageId) {
+      async deleteByLanguageId(
+        parameters: Public.Tables.Film.ByLanguageId,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25907,7 +26232,9 @@ export class Database {
         }));
         return results;
       }
-      async deleteByTitle(parameters: Public.Tables.Film.ByTitle) {
+      async deleteByTitle(
+        parameters: Public.Tables.Film.ByTitle,
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
@@ -25940,7 +26267,7 @@ export class Database {
       async updateByFilmId(
         parameters: Public.Tables.Film.ByFilmId,
         values: Partial<Public.Film>,
-      ) {
+      ): Promise<Public.Film> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -26024,7 +26351,7 @@ export class Database {
       async updateByFulltext(
         parameters: Public.Tables.Film.ByFulltext,
         values: Partial<Public.Film>,
-      ) {
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -26108,7 +26435,7 @@ export class Database {
       async updateByLanguageId(
         parameters: Public.Tables.Film.ByLanguageId,
         values: Partial<Public.Film>,
-      ) {
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
@@ -26192,7 +26519,7 @@ export class Database {
       async updateByTitle(
         parameters: Public.Tables.Film.ByTitle,
         values: Partial<Public.Film>,
-      ) {
+      ): Promise<Public.Film[]> {
         console.assert(parameters);
         console.assert(values);
         const sql = this.database.context.sql;
