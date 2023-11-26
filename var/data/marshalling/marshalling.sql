@@ -5,6 +5,13 @@ ALTER DATABASE marshalling OWNER TO postgres;
 
 \connect marshalling
 
+
+DROP TABLE IF EXISTS slug;
+
+CREATE TABLE slug (
+  slug_id SERIAL PRIMARY KEY NOT NULL
+);
+
 CREATE SCHEMA api;
 
 

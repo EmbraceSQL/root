@@ -66,6 +66,10 @@ export class PGIndex {
     return this.index.indisunique;
   }
 
+  get primaryKey() {
+    return this.index.indisprimary;
+  }
+
   /**
    * Rewrite the index in terms of the base type attributes in order to
    * pick up type constraints and flags that are missing on the index

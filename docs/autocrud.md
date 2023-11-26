@@ -80,11 +80,15 @@ If you need another way to read records, just add an index.
 
 ### Deletes
 
+Deletes work along indexes with methods generated of the format `{Schema}.{Table}.deleteBy{IndexColumns}`.
+
 Deletes get rid of records. Nothing surprising here, unless you have foreign
 keys without `ON DELETE CASCADE`, in which case you won't actually be deleting
 and records after all 😉.
 
 ### Updates
+
+Deletes work along indexes with methods generated of the format `{Schema}.{Table}.updateBy{IndexColumns}`.
 
 Updates allow partial of full updates, passing in `values` that can be
 any subset of columns that you like. The update statement is smart in that 
@@ -102,16 +106,33 @@ an exception back.
 
 ### Creates
 
+Creates have one method per table generated of the format `{Schema}.{Table}.create`.
+
+Pass in values, get a whole new row from the database. If the row exists, it will
+upsert automatically.
+
 Creating records has one trick - automatic primary keys like:
 
 * `SMALLSERIAL`
 * `SERIAL`
 * `BIGSERIAL`
-aren't passed in, but created by the database and returned.
+* `DEFAULT nextval()` from a sequence.
+
+These keys are not passed in, but are created from defaults in the database.
+This means primary key attributes are optional in TypeScript, and you probably
+want to leave them undefined in order to have the database create you a primary key.
+
+The good news is the `RETURNING` record will show you the primary key as
+created by the database. 
+
+It's OK to pass in `values` with the primary key - particularly when you
+intend to get an upsert. Or if you are on purpose 'setting' the primary key
+and bypassing the default.
 
 ### Upserts
 
-Creates automatically upsert, turning the `INSERT` into an `UPDATE`.
+Creates automatically upsert, turning the `INSERT` into an `UPDATE`, `RETURNING`
+the modified record.
 
 
 ## Transactions

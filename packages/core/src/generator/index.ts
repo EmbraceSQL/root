@@ -8,7 +8,7 @@ import { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
  * postgres along with needed metadata.
  */
 export type GenerationContext = Context & {
-  sqlScriptsFrom: string;
+  sqlScriptsFrom?: string;
 };
 
 /**

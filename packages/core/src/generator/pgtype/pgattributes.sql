@@ -3,7 +3,8 @@ SELECT
     attrelid,
     atttypid,
     attname,
-    attnotnull
+    attnotnull,
+    atthasdef
 FROM
     pg_attribute a
 WHERE

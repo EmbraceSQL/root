@@ -49,6 +49,11 @@ export class PGTable {
       context.indexes.indexesByTableTypeOid[table.tabletypeoid] ?? [];
   }
 
+  get primaryKeyAttributes() {
+    const primaryKey = this.indexes.find((i) => i.primaryKey);
+    return primaryKey?.attributes ?? [];
+  }
+
   get typescriptName() {
     return pascalCase(this.table.relname);
   }

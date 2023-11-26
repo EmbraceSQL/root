@@ -11,6 +11,7 @@ type AttributeRow = {
   atttypid: number;
   attname: string;
   attnotnull: boolean;
+  atthasdef: boolean;
 };
 
 /**

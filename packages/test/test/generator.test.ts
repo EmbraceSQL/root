@@ -9,19 +9,28 @@ import * as ts from "typescript";
  */
 describe("The generator can", () => {
   let context: Context;
-  beforeEach(async () => {
-    context = await initializeContext(
-      "postgres://postgres:postgres@localhost/dvdrental",
-    );
-  });
+  beforeEach(async () => {});
   afterEach(async () => {
     await context.sql.end();
   });
-  it("create TypeScript definitions for database types", async () => {
+  it("create TypeScript definitions for dvdrental sample", async () => {
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/dvdrental",
+    );
     const source = await regenerateFromDatabase({
       ...context,
       sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
     });
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.CommonJS },
+    });
+    expect(compiled).toBeTruthy();
+  });
+  it("create TypeScript definitions for marshalling sample", async () => {
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/marshalling",
+    );
+    const source = await regenerateFromDatabase(context);
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },
     });
