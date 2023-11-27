@@ -15,6 +15,8 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // buffer up generated code here
   const generationBuffer = [];
   // each postgres namespace gets a typescript namespace -- generates itself
+  // this includes all namespaces in order to get all types which can
+  // be used by user defined schemas
   await Promise.all(
     context.namespaces.map((n) => {
       generationBuffer.push(

@@ -1,3 +1,4 @@
+import { GenerationContext } from "..";
 import { Context } from "../../context";
 import { PGNamespace } from "../pgtype/pgnamespace";
 import { Operation } from "./operation";
@@ -8,7 +9,7 @@ import { TableOperation } from "./table";
  * Build up a full database of operations.
  */
 export class DatabaseOperation implements Operation {
-  static async factory(context: Context) {
+  static async factory(context: GenerationContext) {
     const ret = new DatabaseOperation(context);
     await ret.build(context);
     return ret;
@@ -16,8 +17,11 @@ export class DatabaseOperation implements Operation {
 
   private namespaces: SchemaOperation[];
 
-  private constructor(context: Context) {
-    this.namespaces = context.namespaces.map((n) => new SchemaOperation(n));
+  private constructor(context: GenerationContext) {
+    this.namespaces = context.namespaces
+      // skip over excluded schemas -- no need for operations to be generated
+      .filter((n) => !(context.skipSchemas ?? []).includes(n.namespace))
+      .map((n) => new SchemaOperation(n));
   }
 
   async build(context: Context) {

@@ -9,6 +9,7 @@ import { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
  */
 export type GenerationContext = Context & {
   sqlScriptsFrom?: string;
+  skipSchemas?: string[];
 };
 
 /**
