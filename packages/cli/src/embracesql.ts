@@ -6,16 +6,20 @@ import figlet from "figlet";
 
 const program = new Command();
 
+const logo = () => chalk.blue(figlet.textSync("Embrace SQL"));
+
 program.version(process.env.npm_package_version ?? "");
 
 program.hook("preAction", () => {
-  process.stderr.write(chalk.blue(figlet.textSync("Embrace SQL")));
+  process.stderr.write(logo());
   process.stderr.write("\n");
 });
 
 const generate = program
   .command("generate")
   .description("Generate some code from the database.");
+
+program.addHelpText("beforeAll", logo());
 
 generate
   .command("typescript-node")
