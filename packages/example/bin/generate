@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-embracesql --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/dvdrental.ts
-embracesql --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
+embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/dvdrental.ts
+embracesql generate typescript-node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
