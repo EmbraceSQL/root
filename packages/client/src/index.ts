@@ -1,4 +1,4 @@
-import { fetch, Request } from "cross-fetch";
+import "cross-fetch/polyfill";
 
 type EmbraceSQLClientProps = {
   /**
@@ -20,11 +20,13 @@ type EmbraceSQLClientProps = {
 };
 
 type EmbraceSQLClientRequest<P, V = never> = {
+  operation: string;
   parameters: P;
   values: V;
 };
 
 type EmbraceSQLClientResponse<R> = {
+  operation: string;
   results: R;
 };
 
@@ -64,9 +66,8 @@ export class EmbraceSQLClient {
       redirect: "follow",
       body: JSON.stringify(request),
     });
+
     // it'll be JSON back or an exception
-    return JSON.parse(
-      await response.json(),
-    ) as unknown as EmbraceSQLClientResponse<Response>;
+    return (await response.json()) as unknown as EmbraceSQLClientResponse<Response>;
   }
 }
