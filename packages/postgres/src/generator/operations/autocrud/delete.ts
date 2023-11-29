@@ -1,14 +1,20 @@
 import { Context } from "../../../context";
+import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
-import { TableOperation } from "../operation";
+import { TableIndexOperation, TableIndexOperations } from "../table";
 import { pascalCase } from "change-case";
 
 /**
  * AutoCRUD deletes by index for a table.
  */
-export class DeleteOperation extends TableOperation {
+export class DeleteOperations extends TableIndexOperations {
+  constructor(public table: PGTable) {
+    super(table, DeleteOperation);
+  }
+}
+
+class DeleteOperation extends TableIndexOperation {
   typescriptDefinition(context: Context): string {
-    console.assert(context);
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(
       this.table.table.tabletypeoid,
@@ -16,37 +22,35 @@ export class DeleteOperation extends TableOperation {
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    for (const index of this.table.indexes) {
-      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
+    const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${this.index.typescriptName}`;
 
-      generationBuffer.push(
-        `async delete${pascalCase(
-          index.typescriptName,
-        )}(${parameters}): ${this.typescriptReturnType(context, index)}{`,
-      );
-      generationBuffer.push(
-        `
+    generationBuffer.push(
+      `async delete${pascalCase(
+        this.index.typescriptName,
+      )}(${parameters}): ${this.typescriptReturnType(context)}{`,
+    );
+    generationBuffer.push(
+      `
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
-      );
+    );
 
-      // query using postgres driver bindings to the index
-      const sql = `DELETE FROM ${
-        tableType.postgresName
-      } WHERE ${index.sqlPredicate(context)} RETURNING ${tableType.sqlColumns(
-        context,
-      )}
+    // query using postgres driver bindings to the index
+    const sql = `DELETE FROM ${
+      tableType.postgresName
+    } WHERE ${this.index.sqlPredicate(
+      context,
+    )} RETURNING ${tableType.sqlColumns(context)}
       `;
-      generationBuffer.push(`const response = await sql\`${sql}\``);
+    generationBuffer.push(`const response = await sql\`${sql}\``);
 
-      generationBuffer.push(
-        this.typescriptTableReturnStatementsFromResponse(context, index),
-      );
+    generationBuffer.push(
+      this.typescriptTableReturnStatementsFromResponse(context),
+    );
 
-      generationBuffer.push(`}`);
-    }
+    generationBuffer.push(`}`);
 
     return generationBuffer.join("\n");
   }

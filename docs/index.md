@@ -30,7 +30,7 @@ Going with this dvdrental example, assuming you are in the root directory
 of your typescript project.
 
 ```shell
-embracesql --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 
 ```
 
@@ -61,7 +61,7 @@ WHERE
 Generate some code:
 
 ```shell
-embracesql --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
+embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
 
 ```
 

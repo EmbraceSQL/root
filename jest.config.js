@@ -8,7 +8,7 @@ module.exports = {
   bail: true,
   projects: [
     "<rootDir>/packages/test",
-    "<rootDir>/packages/example",
+    "<rootDir>/packages/test-generation",
     "<rootDir>/packages/client",
     "<rootDir>/packages/express",
   ],

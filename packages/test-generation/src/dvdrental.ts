@@ -6960,6 +6960,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byFilmId(
         parameters: Public.Tables.FilmActor.ByFilmId,
       ): Promise<Public.FilmActor[]> {
@@ -7008,6 +7009,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByFilmId(
         parameters: Public.Tables.FilmActor.ByFilmId,
       ): Promise<Public.FilmActor[]> {
@@ -7069,6 +7071,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByFilmId(
         parameters: Public.Tables.FilmActor.ByFilmId,
         values: Partial<Public.FilmActor>,
@@ -7189,6 +7192,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byCityId(
         parameters: Public.Tables.Address.ByCityId,
       ): Promise<Public.Address[]> {
@@ -7243,6 +7247,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByCityId(
         parameters: Public.Tables.Address.ByCityId,
       ): Promise<Public.Address[]> {
@@ -7329,6 +7334,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByCityId(
         parameters: Public.Tables.Address.ByCityId,
         values: Partial<Public.Address>,
@@ -7525,6 +7531,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byCountryId(
         parameters: Public.Tables.City.ByCountryId,
       ): Promise<Public.City[]> {
@@ -7570,6 +7577,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByCountryId(
         parameters: Public.Tables.City.ByCountryId,
       ): Promise<Public.City[]> {
@@ -7632,6 +7640,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByCountryId(
         parameters: Public.Tables.City.ByCountryId,
         values: Partial<Public.City>,
@@ -7774,6 +7783,7 @@ export class Database {
         }));
         return results;
       }
+
       async byCustomerId(
         parameters: Public.Tables.Customer.ByCustomerId,
       ): Promise<Public.Customer> {
@@ -7802,6 +7812,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byLastName(
         parameters: Public.Tables.Customer.ByLastName,
       ): Promise<Public.Customer[]> {
@@ -7830,6 +7841,7 @@ export class Database {
         }));
         return results;
       }
+
       async byStoreId(
         parameters: Public.Tables.Customer.ByStoreId,
       ): Promise<Public.Customer[]> {
@@ -7888,6 +7900,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByCustomerId(
         parameters: Public.Tables.Customer.ByCustomerId,
       ): Promise<Public.Customer> {
@@ -7917,6 +7930,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByLastName(
         parameters: Public.Tables.Customer.ByLastName,
       ): Promise<Public.Customer[]> {
@@ -7946,6 +7960,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByStoreId(
         parameters: Public.Tables.Customer.ByStoreId,
       ): Promise<Public.Customer[]> {
@@ -8045,6 +8060,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByCustomerId(
         parameters: Public.Tables.Customer.ByCustomerId,
         values: Partial<Public.Customer>,
@@ -8114,6 +8130,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByLastName(
         parameters: Public.Tables.Customer.ByLastName,
         values: Partial<Public.Customer>,
@@ -8183,6 +8200,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByStoreId(
         parameters: Public.Tables.Customer.ByStoreId,
         values: Partial<Public.Customer>,
@@ -8409,6 +8427,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byLastName(
         parameters: Public.Tables.Actor.ByLastName,
       ): Promise<Public.Actor[]> {
@@ -8454,6 +8473,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByLastName(
         parameters: Public.Tables.Actor.ByLastName,
       ): Promise<Public.Actor[]> {
@@ -8516,6 +8536,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByLastName(
         parameters: Public.Tables.Actor.ByLastName,
         values: Partial<Public.Actor>,
@@ -8804,6 +8825,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
       ): Promise<Public.Inventory[]> {
@@ -8854,6 +8876,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
       ): Promise<Public.Inventory[]> {
@@ -8921,6 +8944,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByStoreIdFilmId(
         parameters: Public.Tables.Inventory.ByStoreIdFilmId,
         values: Partial<Public.Inventory>,
@@ -9496,6 +9520,7 @@ export class Database {
         }));
         return results;
       }
+
       async byRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
       ): Promise<Public.Rental> {
@@ -9529,6 +9554,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byRentalId(
         parameters: Public.Tables.Rental.ByRentalId,
       ): Promise<Public.Rental> {
@@ -9581,6 +9607,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
       ): Promise<Public.Rental> {
@@ -9615,6 +9642,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByRentalId(
         parameters: Public.Tables.Rental.ByRentalId,
       ): Promise<Public.Rental> {
@@ -9696,6 +9724,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByRentalDateInventoryIdCustomerId(
         parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         values: Partial<Public.Rental>,
@@ -9758,6 +9787,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByRentalId(
         parameters: Public.Tables.Rental.ByRentalId,
         values: Partial<Public.Rental>,
@@ -10218,6 +10248,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byStoreId(
         parameters: Public.Tables.Store.ByStoreId,
       ): Promise<Public.Store> {
@@ -10264,6 +10295,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByStoreId(
         parameters: Public.Tables.Store.ByStoreId,
       ): Promise<Public.Store> {
@@ -10326,6 +10358,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByStoreId(
         parameters: Public.Tables.Store.ByStoreId,
         values: Partial<Public.Store>,
@@ -10464,6 +10497,7 @@ export class Database {
         }));
         return results;
       }
+
       async byPaymentId(
         parameters: Public.Tables.Payment.ByPaymentId,
       ): Promise<Public.Payment> {
@@ -10488,6 +10522,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byRentalId(
         parameters: Public.Tables.Payment.ByRentalId,
       ): Promise<Public.Payment[]> {
@@ -10512,6 +10547,7 @@ export class Database {
         }));
         return results;
       }
+
       async byStaffId(
         parameters: Public.Tables.Payment.ByStaffId,
       ): Promise<Public.Payment[]> {
@@ -10562,6 +10598,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByPaymentId(
         parameters: Public.Tables.Payment.ByPaymentId,
       ): Promise<Public.Payment> {
@@ -10587,6 +10624,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByRentalId(
         parameters: Public.Tables.Payment.ByRentalId,
       ): Promise<Public.Payment[]> {
@@ -10612,6 +10650,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByStaffId(
         parameters: Public.Tables.Payment.ByStaffId,
       ): Promise<Public.Payment[]> {
@@ -10687,6 +10726,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByPaymentId(
         parameters: Public.Tables.Payment.ByPaymentId,
         values: Partial<Public.Payment>,
@@ -10736,6 +10776,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByRentalId(
         parameters: Public.Tables.Payment.ByRentalId,
         values: Partial<Public.Payment>,
@@ -10785,6 +10826,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByStaffId(
         parameters: Public.Tables.Payment.ByStaffId,
         values: Partial<Public.Payment>,
@@ -10960,6 +11002,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async byFulltext(
         parameters: Public.Tables.Film.ByFulltext,
       ): Promise<Public.Film[]> {
@@ -10991,6 +11034,7 @@ export class Database {
         }));
         return results;
       }
+
       async byLanguageId(
         parameters: Public.Tables.Film.ByLanguageId,
       ): Promise<Public.Film[]> {
@@ -11022,6 +11066,7 @@ export class Database {
         }));
         return results;
       }
+
       async byTitle(
         parameters: Public.Tables.Film.ByTitle,
       ): Promise<Public.Film[]> {
@@ -11085,6 +11130,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async deleteByFulltext(
         parameters: Public.Tables.Film.ByFulltext,
       ): Promise<Public.Film[]> {
@@ -11116,6 +11162,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByLanguageId(
         parameters: Public.Tables.Film.ByLanguageId,
       ): Promise<Public.Film[]> {
@@ -11148,6 +11195,7 @@ export class Database {
         }));
         return results;
       }
+
       async deleteByTitle(
         parameters: Public.Tables.Film.ByTitle,
       ): Promise<Public.Film[]> {
@@ -11264,6 +11312,7 @@ export class Database {
         }));
         return results[0];
       }
+
       async updateByFulltext(
         parameters: Public.Tables.Film.ByFulltext,
         values: Partial<Public.Film>,
@@ -11348,6 +11397,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByLanguageId(
         parameters: Public.Tables.Film.ByLanguageId,
         values: Partial<Public.Film>,
@@ -11432,6 +11482,7 @@ export class Database {
         }));
         return results;
       }
+
       async updateByTitle(
         parameters: Public.Tables.Film.ByTitle,
         values: Partial<Public.Film>,

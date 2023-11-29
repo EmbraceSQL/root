@@ -1,11 +1,15 @@
 import { Context } from "../../../context";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
-import { TableOperation } from "../operation";
+import { TableOperation } from "../table";
 
 /**
  * AutoCRUD creates or upserts a record by table.
  */
 export class CreateOperation extends TableOperation {
+  operationName(context: Context): string {
+    return `${super.operationName(context)}.create`;
+  }
+
   typescriptDefinition(context: Context): string {
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(

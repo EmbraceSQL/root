@@ -1,47 +1,132 @@
+import { GenerationContext } from "..";
 import { Context } from "../../context";
+import { PGIndex } from "../pgtype/pgindex";
 import { PGTable } from "../pgtype/pgtable";
-import { CreateOperation } from "./autocrud/create";
-import { DeleteOperation } from "./autocrud/delete";
-import { ReadOperation } from "./autocrud/read";
-import { UpdateOperation } from "./autocrud/update";
-import { Operation } from "./operation";
+import { PGTypeComposite } from "../pgtype/pgtypecomposite";
+import { Operation, Operations } from "./operation";
 
 /**
- * Individual tables in the database expose operations for AutoCRUD.
+ * A single operation on a table.
  */
-export class TableOperation implements Operation {
-  private operations: Operation[];
-  constructor(private table: PGTable) {
-    this.operations = [
-      new ReadOperation(table),
-      new DeleteOperation(table),
-      new UpdateOperation(table),
-      new CreateOperation(table),
-    ];
-  }
+export abstract class TableOperation implements Operation {
+  constructor(public table: PGTable) {}
 
   async build(context: Context) {
-    await Promise.all(this.operations.map((o) => o.build(context)));
+    console.assert(context);
   }
 
   typescriptDefinition(context: Context): string {
     console.assert(context);
-    const generationBuffer = [
-      `
-        public ${this.table.typescriptName} = new class implements HasDatabase {
-       		constructor(private hasDatabase: HasDatabase) {
-            }
+    throw new Error("not implemented");
+  }
 
-            get database() {
-              return this.hasDatabase.database;
-            }
-        `,
-    ];
+  operationName(context: Context): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    return `${namespace?.typescriptName}.${this.table.typescriptName}`;
+  }
+
+  /**
+   * Table return processing, this is used for SELECT and RETURNING.
+   */
+  protected typescriptTableReturnStatementsFromResponse(
+    context: Context,
+  ): string {
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const generationBuffer = [""];
+    // add in some types
+    generationBuffer.push(
+      `const results = ${tableType.postgresResultRecordToTypescript(context)}`,
+    );
+    generationBuffer.push(`return results[0]`);
+    return generationBuffer.join("\n");
+  }
+}
+
+/**
+ * A single operation on a table by index.
+ */
+export class TableIndexOperation extends TableOperation {
+  constructor(
+    public table: PGTable,
+    public index: PGIndex,
+  ) {
+    super(table);
+  }
+
+  /**
+   * Return type declaration based on the index.
+   */
+  protected typescriptReturnType(context: Context): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+
+    if (this.index.unique) {
+      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}>`;
+    } else {
+      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}[]>`;
+    }
+  }
+
+  /**
+   * Table return processing, this is used for SELECT and RETURNING.
+   */
+  protected typescriptTableReturnStatementsFromResponse(
+    context: Context,
+  ): string {
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const generationBuffer = [""];
+    // add in some types
+    generationBuffer.push(
+      `const results = ${tableType.postgresResultRecordToTypescript(context)}`,
+    );
+    // if this is a unique index, pull back a single record
+    // which makes this way more KV like than always having an array back
+    if (this.index.index.indisunique) {
+      generationBuffer.push(`return results[0]`);
+    } else {
+      generationBuffer.push(`return results`);
+    }
+
+    return generationBuffer.join("\n");
+  }
+}
+
+/**
+ * Builds up an operation per table per index.
+ */
+export abstract class TableIndexOperations implements Operations {
+  public operations: Operation[];
+  constructor(
+    public table: PGTable,
+    readonly OperationClass: new (
+      table: PGTable,
+      index: PGIndex,
+    ) => TableIndexOperation,
+  ) {
+    this.operations = table.indexes.map(
+      (index) => new OperationClass(table, index),
+    );
+  }
+
+  async build(context: GenerationContext) {
+    await Promise.all(this.operations.map((o) => o.build(context)));
+  }
+
+  typescriptDefinition(context: Context): string {
+    const generationBuffer = [""];
     this.operations.forEach((o) =>
       generationBuffer.push(o.typescriptDefinition(context)),
     );
-
-    generationBuffer.push(`}(this)`);
     return generationBuffer.join("\n");
   }
 }

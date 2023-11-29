@@ -1,11 +1,11 @@
 {
-  "name": "@embracesql/example",
+  "name": "@embracesql/test-generation",
   "private": true,
   "version": "0.0.0",
   "description": "",
   "scripts": {
     "check": "tsc --noEmit",
-    "generate": "./bin/generate",
+    "generate": "bin/generate",
     "test": "npm run generate && jest "
   },
   "author": "Will Ballard <wballard@mailframe.net>",

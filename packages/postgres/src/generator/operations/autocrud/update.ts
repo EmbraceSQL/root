@@ -1,12 +1,19 @@
 import { Context } from "../../../context";
+import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
-import { TableOperation } from "../operation";
+import { TableIndexOperation, TableIndexOperations } from "../table";
 import { pascalCase } from "change-case";
 
 /**
  * AutoCRUD updates by index for a table.
  */
-export class UpdateOperation extends TableOperation {
+export class UpdateOperations extends TableIndexOperations {
+  constructor(public table: PGTable) {
+    super(table, UpdateOperation);
+  }
+}
+
+class UpdateOperation extends TableIndexOperation {
   typescriptDefinition(context: Context): string {
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(
@@ -15,39 +22,37 @@ export class UpdateOperation extends TableOperation {
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    for (const index of this.table.indexes) {
-      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}, values: Partial<${namespace?.typescriptName}.${this.table.typescriptName}>`;
+    const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${this.index.typescriptName}, values: Partial<${namespace?.typescriptName}.${this.table.typescriptName}>`;
 
-      generationBuffer.push(
-        `async update${pascalCase(
-          index.typescriptName,
-        )}(${parameters}): ${this.typescriptReturnType(context, index)}{`,
-      );
-      generationBuffer.push(
-        `
+    generationBuffer.push(
+      `async update${pascalCase(
+        this.index.typescriptName,
+      )}(${parameters}): ${this.typescriptReturnType(context)}{`,
+    );
+    generationBuffer.push(
+      `
       console.assert(parameters);
       console.assert(values);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
-      );
-      // query using postgres driver bindings to the index
-      const sql = `UPDATE ${
-        tableType.postgresName
-      } SET ${this.table.sqlSetExpressions(
-        context,
-        "values",
-      )} WHERE ${index.sqlPredicate(context)} RETURNING ${tableType.sqlColumns(
-        context,
-      )}`;
-      generationBuffer.push(`const response = await sql\`${sql}\``);
+    );
+    // query using postgres driver bindings to the index
+    const sql = `UPDATE ${
+      tableType.postgresName
+    } SET ${this.table.sqlSetExpressions(
+      context,
+      "values",
+    )} WHERE ${this.index.sqlPredicate(
+      context,
+    )} RETURNING ${tableType.sqlColumns(context)}`;
+    generationBuffer.push(`const response = await sql\`${sql}\``);
 
-      generationBuffer.push(
-        this.typescriptTableReturnStatementsFromResponse(context, index),
-      );
+    generationBuffer.push(
+      this.typescriptTableReturnStatementsFromResponse(context),
+    );
 
-      generationBuffer.push(`}`);
-    }
+    generationBuffer.push(`}`);
 
     return generationBuffer.join("\n");
   }

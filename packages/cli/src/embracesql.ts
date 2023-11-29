@@ -1,6 +1,10 @@
 import { Command } from "@commander-js/extra-typings";
 import { initializeContext } from "@embracesql/postgres/src/context";
-import { regenerateFromDatabase } from "@embracesql/postgres/src/generator";
+import {
+  generateDatabaseRoot,
+  formatSource,
+  generateOperationDispatcher,
+} from "@embracesql/postgres/src/generator";
 import chalk from "chalk";
 import figlet from "figlet";
 
@@ -10,9 +14,33 @@ const logo = () => chalk.blue(figlet.textSync("Embrace SQL"));
 
 program.version(process.env.npm_package_version ?? "");
 
+// shared options
+const addOptions = (command: Command) => {
+  return command
+    .option(
+      "--database <url>",
+      "Connect to this postgres for generation.",
+      "postgres://postgres:postgres@localhost:5432/postgres",
+    )
+    .option(
+      "--sqlScriptsFrom <path>",
+      "Look in this directory for loose SQL scripts.",
+      "",
+    )
+    .option("--skipSchemas <names...>", "Schemas to skip while generating.", [
+      "pg_catalog",
+      "information_schema",
+    ]);
+};
+
+const start = Date.now();
+// needless but fun banner -- stderr to not interfere with piping
 program.hook("preAction", () => {
   process.stderr.write(logo());
   process.stderr.write("\n");
+});
+program.hook("postAction", () => {
+  process.stderr.write(chalk.green(`generated in ${Date.now() - start}ms\n`));
 });
 
 const generate = program
@@ -21,34 +49,39 @@ const generate = program
 
 program.addHelpText("beforeAll", logo());
 
-generate
-  .command("typescript-node")
-  .description("Typescript code for use in nodejs.")
-  .option(
-    "--database <url>",
-    "Connect to this postgres for generation.",
-    "postgres://postgres:postgres@localhost:5432/postgres",
-  )
-  .option(
-    "--sqlScriptsFrom <path>",
-    "Look in this directory for loose SQL scripts.",
-    "",
-  )
-  .option("--skipSchemas <names...>", "Schemas to skip while generating.", [
-    "pg_catalog",
-    "information_schema",
-  ])
-  .action(async (options) => {
-    const context = await initializeContext(options.database);
-    const start = Date.now();
-    const generatedSource = await regenerateFromDatabase({
-      ...context,
-      sqlScriptsFrom: options.sqlScriptsFrom,
-      skipSchemas: options.skipSchemas,
-    });
-    process.stdout.write(generatedSource);
-    process.stderr.write(chalk.green(`generated in ${Date.now() - start}ms\n`));
-    await context.sql.end();
+addOptions(
+  generate
+    .command("typescript-node")
+    .description("Typescript code for use in nodejs."),
+).action(async (options) => {
+  const context = await initializeContext(options.database);
+  const generatedSource = await generateDatabaseRoot({
+    ...context,
+    sqlScriptsFrom: options.sqlScriptsFrom,
+    skipSchemas: options.skipSchemas,
   });
+  process.stdout.write(await formatSource(generatedSource));
+  await context.sql.end();
+});
+
+addOptions(
+  generate
+    .command("express")
+    .description("Typescript code for use with Express."),
+).action(async (options) => {
+  const context = await initializeContext(options.database);
+  const generationBuffer: string[] = [];
+
+  const combinedContext = {
+    ...context,
+    sqlScriptsFrom: options.sqlScriptsFrom,
+    skipSchemas: options.skipSchemas,
+  };
+
+  generationBuffer.push(await generateDatabaseRoot(combinedContext));
+  generationBuffer.push(await generateOperationDispatcher(combinedContext));
+  process.stdout.write(await formatSource(generationBuffer.join("\n")));
+  await context.sql.end();
+});
 
 void program.parseAsync(process.argv);

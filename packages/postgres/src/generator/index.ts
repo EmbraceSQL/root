@@ -1,5 +1,8 @@
 import { Context } from "../context";
-import { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
+import * as prettier from "prettier";
+
+export { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
+export { generateOperationDispatcher } from "./typescript/generateOperationDispatcher";
 
 /**
  * Shared context for the generation sequence.
@@ -13,11 +16,13 @@ export type GenerationContext = Context & {
 };
 
 /**
- * The generator looks to the database api schema and creates:
- * - TypeScript for each database type
- * - OpenAPI controller endpoints for each database procedure
+ * Make that generated source 💄.
  */
-export const regenerateFromDatabase = async (context: GenerationContext) => {
-  // and this the actual object 'root' used to access the database
-  return await generateDatabaseRoot(context);
+export const formatSource = async (source: string) => {
+  try {
+    return await prettier.format(source, { parser: "typescript" });
+  } catch {
+    // no format -- we'll need it to debug then
+    return source;
+  }
 };

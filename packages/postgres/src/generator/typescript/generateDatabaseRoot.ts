@@ -2,7 +2,6 @@ import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
 import { generateSchemaDefinitions } from "./generateSchemaDefinitions";
-import * as prettier from "prettier";
 
 /**
  * Generate a root object class that serves as 'the database'.
@@ -106,8 +105,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   `);
   // wheel through every namespace, and every proc and generate calls
   // each schema / namespace turns into a .<Schema> grouping
-  const procs = await DatabaseOperation.factory(context);
-  generationBuffer.push(procs.typescriptDefinition(context));
+  const operations = await DatabaseOperation.factory(context);
+  generationBuffer.push(operations.typescriptDefinition(context));
 
   // holder for all scripts provides a .Scripts grouping
   if (context.sqlScriptsFrom?.length) {
@@ -127,11 +126,5 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
   //class end
   generationBuffer.push(`}`);
-  const source = generationBuffer.join("\n");
-  try {
-    return await prettier.format(source, { parser: "typescript" });
-  } catch {
-    // no format -- we'll need it to debug then
-    return source;
-  }
+  return generationBuffer.join("\n");
 };

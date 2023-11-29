@@ -1,12 +1,19 @@
 import { Context } from "../../../context";
+import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
-import { TableOperation } from "../operation";
+import { TableIndexOperation, TableIndexOperations } from "../table";
 import { camelCase } from "change-case";
 
 /**
  * AutoCRUD reads by index for a table.
  */
-export class ReadOperation extends TableOperation {
+export class ReadOperations extends TableIndexOperations {
+  constructor(public table: PGTable) {
+    super(table, ReadOperation);
+  }
+}
+
+class ReadOperation extends TableIndexOperation {
   typescriptDefinition(context: Context): string {
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(
@@ -15,33 +22,31 @@ export class ReadOperation extends TableOperation {
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    for (const index of this.table.indexes) {
-      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
+    const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${this.index.typescriptName}`;
 
-      generationBuffer.push(
-        `async ${camelCase(
-          index.typescriptName,
-        )}(${parameters}) : ${this.typescriptReturnType(context, index)}{`,
-      );
-      generationBuffer.push(
-        `
+    generationBuffer.push(
+      `async ${camelCase(
+        this.index.typescriptName,
+      )}(${parameters}) : ${this.typescriptReturnType(context)}{`,
+    );
+    generationBuffer.push(
+      `
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
-      );
-      // query using postgres driver bindings to the index
-      const sql = `SELECT ${tableType.sqlColumns(context)} FROM ${
-        tableType.postgresName
-      } WHERE ${index.sqlPredicate(context)}`;
-      generationBuffer.push(`const response = await sql\`${sql}\``);
+    );
+    // query using postgres driver bindings to the index
+    const sql = `SELECT ${tableType.sqlColumns(context)} FROM ${
+      tableType.postgresName
+    } WHERE ${this.index.sqlPredicate(context)}`;
+    generationBuffer.push(`const response = await sql\`${sql}\``);
 
-      generationBuffer.push(
-        this.typescriptTableReturnStatementsFromResponse(context, index),
-      );
+    generationBuffer.push(
+      this.typescriptTableReturnStatementsFromResponse(context),
+    );
 
-      generationBuffer.push(`}`);
-    }
+    generationBuffer.push(`}`);
 
     return generationBuffer.join("\n");
   }
