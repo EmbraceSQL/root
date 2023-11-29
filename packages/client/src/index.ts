@@ -1,7 +1,4 @@
-import {
-  EmbraceSQLClientRequest,
-  EmbraceSQLClientResponse,
-} from "@embracesql/shared";
+import { EmbraceSQLRequest, EmbraceSQLResponse } from "@embracesql/shared";
 import "cross-fetch/polyfill";
 
 type EmbraceSQLClientProps = {
@@ -42,8 +39,8 @@ export class EmbraceSQLClient {
    * compared to using generated react hooks!
    */
   async invoke<Parameters, Values, Response>(
-    request: EmbraceSQLClientRequest<Parameters, Values>,
-  ): Promise<EmbraceSQLClientResponse<Response>> {
+    request: EmbraceSQLRequest<Parameters, Values>,
+  ): Promise<EmbraceSQLResponse<Response>> {
     // it's always POST JSON in EmbraceSQL
     const props = {
       ...this.props,
@@ -61,6 +58,6 @@ export class EmbraceSQLClient {
     });
 
     // it'll be JSON back or an exception
-    return (await response.json()) as unknown as EmbraceSQLClientResponse<Response>;
+    return (await response.json()) as unknown as EmbraceSQLResponse<Response>;
   }
 }

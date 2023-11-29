@@ -10,5 +10,6 @@ module.exports = {
     "<rootDir>/packages/test",
     "<rootDir>/packages/example",
     "<rootDir>/packages/client",
+    "<rootDir>/packages/express",
   ],
 };

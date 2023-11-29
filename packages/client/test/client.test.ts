@@ -1,7 +1,7 @@
 import { EmbraceSQLClient } from "../src";
 import fetch from "jest-fetch-mock";
 
-describe("EmbraceSQL can", () => {
+describe("EmbraceSQLClient can", () => {
   beforeAll(() => {
     fetch.enableMocks();
   });
@@ -10,7 +10,7 @@ describe("EmbraceSQL can", () => {
   });
 
   // all requests are going to be mocked
-  it("connect via client", async () => {
+  it("connect", async () => {
     fetch.mockResponseOnce(
       JSON.stringify({
         operation: "hello",
