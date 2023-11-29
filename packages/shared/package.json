@@ -1,0 +1,14 @@
+{
+  "name": "@embracesql/shared",
+  "version": "1.0.0",
+  "description": "EmbraceSQL shared types between browser and node.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "exit 0",
+    "check": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "author": "Will Ballard <wballard@mailframe.net>",
+  "license": "ISC",
+  "dependencies": {}
+}

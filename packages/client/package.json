@@ -11,6 +11,7 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
+    "@embracesql/shared": "*",
     "cross-fetch": "^4.0.0"
   }
 }

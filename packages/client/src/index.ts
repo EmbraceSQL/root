@@ -1,3 +1,7 @@
+import {
+  EmbraceSQLClientRequest,
+  EmbraceSQLClientResponse,
+} from "@embracesql/shared";
 import "cross-fetch/polyfill";
 
 type EmbraceSQLClientProps = {
@@ -17,17 +21,6 @@ type EmbraceSQLClientProps = {
    * CORS mode!
    */
   mode?: Request["mode"];
-};
-
-type EmbraceSQLClientRequest<P, V = never> = {
-  operation: string;
-  parameters: P;
-  values: V;
-};
-
-type EmbraceSQLClientResponse<R> = {
-  operation: string;
-  results: R;
 };
 
 /**
