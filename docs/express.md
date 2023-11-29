@@ -34,7 +34,7 @@ npx ts-node index.ts
 And curl for some data:
 
 ```shell
-curl -X POST http://localhost:3000
-   -H 'Content-Type: application/json'
+curl -X POST http://localhost:3000 \
+   -H 'Content-Type: application/json' \
    -d '{"operation":"Public.Actor.byActorId","arguments":{"actorId": 1}}'
 ```

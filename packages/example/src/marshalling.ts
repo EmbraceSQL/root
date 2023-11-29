@@ -5421,6 +5421,28 @@ export namespace Api {
   export namespace Tables {}
 }
 
+export namespace Public {
+  export type SlugArray = Array<Slug>;
+
+  export interface Slug {
+    slugId?: PgCatalog.Int4;
+  }
+
+  export interface SlugNotPrimaryKey {}
+
+  export function includesSlugPrimaryKey(value: Partial<Slug>): value is Slug {
+    return value.slugId !== undefined;
+  }
+
+  export namespace Tables {
+    export namespace Slug {
+      export interface BySlugId {
+        slugId: Nullable<PgCatalog.Int4>;
+      }
+    }
+  }
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -6039,6 +6061,8 @@ export interface PostgresTypecasts {
   api__echo_type_nested: Typecast;
   api_echo_type: Typecast;
   api_echo_type_nested: Typecast;
+  public__slug: Typecast;
+  public_slug: Typecast;
 }
 
 interface HasDatabase {
@@ -6246,5 +6270,116 @@ export class Database {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
+  })(this);
+
+  public Public = new (class implements HasDatabase {
+    constructor(public database: Database) {}
+
+    public Slug = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async bySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT slug_id FROM public.slug WHERE slug_id = ${
+            parameters.slugId === undefined
+              ? sql("slug_id")
+              : typed.pg_catalog_int4(parameters.slugId)
+          }`;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async deleteBySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`DELETE FROM public.slug WHERE slug_id = ${
+          parameters.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(parameters.slugId)
+        } RETURNING slug_id
+      `;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async updateBySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+        values: Partial<Public.Slug>,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.slug SET slug_id = ${
+          values.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(values.slugId)
+        } WHERE slug_id = ${
+          parameters.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(parameters.slugId)
+        } RETURNING slug_id`;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async create(
+        values: Public.Slug | Public.SlugNotPrimaryKey,
+      ): Promise<Public.Slug> {
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        if (Public.includesSlugPrimaryKey(values)) {
+          const response = await sql`INSERT INTO public.slug (slug_id)
+    VALUES (${
+      values.slugId === undefined
+        ? sql`DEFAULT`
+        : typed.pg_catalog_int4(values.slugId)
+    })
+    ON CONFLICT (slug_id) DO UPDATE
+    SET 
+    RETURNING slug_id
+    `;
+
+          const results = response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }));
+          return results[0];
+        }
+        const response = await sql`INSERT INTO public.slug ()
+    VALUES ()
+    RETURNING slug_id
+    `;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+    })(this);
   })(this);
 }
