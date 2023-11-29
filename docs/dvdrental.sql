@@ -1,1 +1,1 @@
-var/data/dvdrental/dvdrental.sql
+../var/data/dvdrental/dvdrental.sql

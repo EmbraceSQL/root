@@ -35,7 +35,7 @@ type EmbraceSQLProps = {
  */
 export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
   const app = express();
-  app.use(express.json());
+  app.use(express.json({ limit: "10mb" }));
   app.post("/", (req, res, next) => {
     // complete a request, sending along any result set
     // with attached headers
