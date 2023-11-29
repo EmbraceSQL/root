@@ -1,7 +1,7 @@
 import {
   compositeAttribute,
   escaped,
-} from "@embracesql/core/src/generator/pgtype/pgtypecomposite";
+} from "@embracesql/postgres/src/generator/pgtype/pgtypecomposite";
 
 describe("The composite parser", () => {
   it("can parse an escape", () => {

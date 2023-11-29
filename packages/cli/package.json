@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@commander-js/extra-typings": "^11.1.0",
-    "@embracesql/core": "*",
+    "@embracesql/postgres": "*",
     "chalk": "4.1.2",
     "commander": "^11.1.0",
     "figlet": "^1.7.0",

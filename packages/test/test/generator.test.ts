@@ -1,5 +1,5 @@
-import { Context, initializeContext } from "@embracesql/core/src/context";
-import { regenerateFromDatabase } from "@embracesql/core/src/generator";
+import { Context, initializeContext } from "@embracesql/postgres/src/context";
+import { regenerateFromDatabase } from "@embracesql/postgres/src/generator";
 import * as path from "path";
 import * as ts from "typescript";
 

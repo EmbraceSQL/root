@@ -1,6 +1,6 @@
 import { Command } from "@commander-js/extra-typings";
-import { initializeContext } from "@embracesql/core/src/context";
-import { regenerateFromDatabase } from "@embracesql/core/src/generator";
+import { initializeContext } from "@embracesql/postgres/src/context";
+import { regenerateFromDatabase } from "@embracesql/postgres/src/generator";
 import chalk from "chalk";
 import figlet from "figlet";
 

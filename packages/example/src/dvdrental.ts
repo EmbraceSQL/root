@@ -10,8 +10,8 @@ import {
   Empty,
   Nullable,
   undefinedIsNull,
-} from "@embracesql/core/src/types";
-import { Context, initializeContext } from "@embracesql/core/src/context";
+} from "@embracesql/postgres/src/types";
+import { Context, initializeContext } from "@embracesql/postgres/src/context";
 import postgres from "postgres";
 
 export namespace PgCatalog {

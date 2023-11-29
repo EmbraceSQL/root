@@ -1,6 +1,6 @@
+import { Context } from "../../../context";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableOperation } from "../operation";
-import { Context } from "@embracesql/core/src/context";
 
 /**
  * AutoCRUD creates or upserts a record by table.

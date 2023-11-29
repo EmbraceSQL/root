@@ -11,13 +11,12 @@
     "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
-      "@embracesql/core/*": ["packages/core/*"]
+      "@embracesql/postgres/*": ["packages/postgres/*"]
     },
     "lib": ["ESNext"],
     "noEmit": true,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./src/", "./tmp/"],
-  "exclude": ["node_modules", "dist"],
-  "references": [{ "path": "packages/core" }, { "path": "packages/test" }]
+  "include": ["./src/"],
+  "exclude": ["node_modules", "dist"]
 }

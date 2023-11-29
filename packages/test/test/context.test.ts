@@ -1,5 +1,5 @@
-import { Context, initializeContext } from "@embracesql/core/src/context";
-import { PGTypeComposite } from "@embracesql/core/src/generator/pgtype/pgtypecomposite";
+import { Context, initializeContext } from "@embracesql/postgres/src/context";
+import { PGTypeComposite } from "@embracesql/postgres/src/generator/pgtype/pgtypecomposite";
 
 /**
  * Test setting up the context and interrogating the schema.

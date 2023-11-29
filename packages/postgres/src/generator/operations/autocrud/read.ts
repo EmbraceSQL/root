@@ -1,12 +1,12 @@
+import { Context } from "../../../context";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableOperation } from "../operation";
-import { Context } from "@embracesql/core/src/context";
-import { pascalCase } from "change-case";
+import { camelCase } from "change-case";
 
 /**
- * AutoCRUD updates by index for a table.
+ * AutoCRUD reads by index for a table.
  */
-export class UpdateOperation extends TableOperation {
+export class ReadOperation extends TableOperation {
   typescriptDefinition(context: Context): string {
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(
@@ -16,30 +16,24 @@ export class UpdateOperation extends TableOperation {
       (n) => n.nspname === this.table.table.nspname,
     );
     for (const index of this.table.indexes) {
-      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}, values: Partial<${namespace?.typescriptName}.${this.table.typescriptName}>`;
+      const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${index.typescriptName}`;
 
       generationBuffer.push(
-        `async update${pascalCase(
+        `async ${camelCase(
           index.typescriptName,
-        )}(${parameters}): ${this.typescriptReturnType(context, index)}{`,
+        )}(${parameters}) : ${this.typescriptReturnType(context, index)}{`,
       );
       generationBuffer.push(
         `
       console.assert(parameters);
-      console.assert(values);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
       );
       // query using postgres driver bindings to the index
-      const sql = `UPDATE ${
+      const sql = `SELECT ${tableType.sqlColumns(context)} FROM ${
         tableType.postgresName
-      } SET ${this.table.sqlSetExpressions(
-        context,
-        "values",
-      )} WHERE ${index.sqlPredicate(context)} RETURNING ${tableType.sqlColumns(
-        context,
-      )}`;
+      } WHERE ${index.sqlPredicate(context)}`;
       generationBuffer.push(`const response = await sql\`${sql}\``);
 
       generationBuffer.push(

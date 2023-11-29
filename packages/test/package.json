@@ -10,6 +10,6 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/core": "*"
+    "@embracesql/postgres": "*"
   }
 }
