@@ -41,32 +41,6 @@ const value = await db.Public.LastDay({ _0: new Date() });
 await db.disconnect();
 ```
 
-You can even have `.sql` file scripts that will generate typed wrappers.
+Learn about [AutoCRUD](./autocrud.md) to get at all the tables.
 
-Make a file `./src/sql/pick.sql`. Notice the use of Postgres style parameters.
-
-```sql
-SELECT
-    *
-FROM
-    public.film
-WHERE
-    title = $1
-```
-
-Generate some code:
-
-```shell
-embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
-
-```
-
-And call your SQL script as a strongly typed function
-
-```typescript
-import { Database } from "./src/dvdrental";
-    
-const db = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
-const value = await db.Scripts.Sample.pick("Basic Easy");
-await db.disconnect();
-```
+Lear about [SQL Scripts](./sql.md) to get any data you want -- all strongly typed.
