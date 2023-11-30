@@ -12,7 +12,7 @@ import {
   undefinedIsNull,
 } from "@embracesql/postgres/src/types";
 import { Context, initializeContext } from "@embracesql/postgres/src/context";
-import { OperationDispatchMethod } from "@embracesql/shared";
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 
 export namespace PgCatalog {
@@ -11842,604 +11842,748 @@ export class OperationDispatcher {
   private dispatchMap: Record<string, OperationDispatchMethod>;
   constructor(private database: Database) {
     this.dispatchMap = {
-      "Public.FilmInStock": async (parameters: object) =>
-        database.Public.FilmInStock(parameters as Public.FilmInStockArguments),
-      "Public.FilmNotInStock": async (parameters: object) =>
+      "Public.FilmInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmInStock(
+          request.parameters as Public.FilmInStockArguments,
+        ),
+      "Public.FilmNotInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmNotInStock(
-          parameters as Public.FilmNotInStockArguments,
+          request.parameters as Public.FilmNotInStockArguments,
         ),
-      "Public.GetCustomerBalance": async (parameters: object) =>
+      "Public.GetCustomerBalance": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.GetCustomerBalance(
-          parameters as Public.GetCustomerBalanceArguments,
+          request.parameters as Public.GetCustomerBalanceArguments,
         ),
-      "Public.InventoryHeldByCustomer": async (parameters: object) =>
+      "Public.InventoryHeldByCustomer": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.InventoryHeldByCustomer(
-          parameters as Public.InventoryHeldByCustomerArguments,
+          request.parameters as Public.InventoryHeldByCustomerArguments,
         ),
-      "Public.InventoryInStock": async (parameters: object) =>
+      "Public.InventoryInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.InventoryInStock(
-          parameters as Public.InventoryInStockArguments,
+          request.parameters as Public.InventoryInStockArguments,
         ),
-      "Public.LastDay": async (parameters: object) =>
-        database.Public.LastDay(parameters as Public.LastDayArguments),
-      "Public.RewardsReport": async (parameters: object) =>
+      "Public.LastDay": async (request: EmbraceSQLRequest<object, object>) =>
+        database.Public.LastDay(request.parameters as Public.LastDayArguments),
+      "Public.RewardsReport": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.RewardsReport(
-          parameters as Public.RewardsReportArguments,
+          request.parameters as Public.RewardsReportArguments,
         ),
-      "Public.FilmActor.byActorIdFilmId": async (parameters: object) =>
+      "Public.FilmActor.byActorIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmActor.byActorIdFilmId(
-          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
         ),
-      "Public.FilmActor.byFilmId": async (parameters: object) =>
+      "Public.FilmActor.byFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmActor.byFilmId(
-          parameters as Public.Tables.FilmActor.ByFilmId,
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
         ),
-      "Public.FilmActor.deleteByActorIdFilmId": async (parameters: object) =>
+      "Public.FilmActor.deleteByActorIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmActor.deleteByActorIdFilmId(
-          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
         ),
-      "Public.FilmActor.deleteByFilmId": async (parameters: object) =>
+      "Public.FilmActor.deleteByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmActor.deleteByFilmId(
-          parameters as Public.Tables.FilmActor.ByFilmId,
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
         ),
       "Public.FilmActor.updateByActorIdFilmId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.FilmActor.updateByActorIdFilmId(
-          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
-          values as Partial<Public.FilmActor>,
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          request.values as Partial<Public.FilmActor>,
         ),
       "Public.FilmActor.updateByFilmId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.FilmActor.updateByFilmId(
-          parameters as Public.Tables.FilmActor.ByFilmId,
-          values as Partial<Public.FilmActor>,
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+          request.values as Partial<Public.FilmActor>,
         ),
-      "Public.FilmActor.create": async (values: object) =>
+      "Public.FilmActor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmActor.create(
-          values as Public.FilmActor | Public.FilmActorNotPrimaryKey,
+          request.values as Public.FilmActor | Public.FilmActorNotPrimaryKey,
         ),
-      "Public.Address.byAddressId": async (parameters: object) =>
+      "Public.Address.byAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Address.byAddressId(
-          parameters as Public.Tables.Address.ByAddressId,
+          request.parameters as Public.Tables.Address.ByAddressId,
         ),
-      "Public.Address.byCityId": async (parameters: object) =>
+      "Public.Address.byCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Address.byCityId(
-          parameters as Public.Tables.Address.ByCityId,
+          request.parameters as Public.Tables.Address.ByCityId,
         ),
-      "Public.Address.deleteByAddressId": async (parameters: object) =>
+      "Public.Address.deleteByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Address.deleteByAddressId(
-          parameters as Public.Tables.Address.ByAddressId,
+          request.parameters as Public.Tables.Address.ByAddressId,
         ),
-      "Public.Address.deleteByCityId": async (parameters: object) =>
+      "Public.Address.deleteByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Address.deleteByCityId(
-          parameters as Public.Tables.Address.ByCityId,
+          request.parameters as Public.Tables.Address.ByCityId,
         ),
       "Public.Address.updateByAddressId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Address.updateByAddressId(
-          parameters as Public.Tables.Address.ByAddressId,
-          values as Partial<Public.Address>,
+          request.parameters as Public.Tables.Address.ByAddressId,
+          request.values as Partial<Public.Address>,
         ),
       "Public.Address.updateByCityId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Address.updateByCityId(
-          parameters as Public.Tables.Address.ByCityId,
-          values as Partial<Public.Address>,
+          request.parameters as Public.Tables.Address.ByCityId,
+          request.values as Partial<Public.Address>,
         ),
-      "Public.Address.create": async (values: object) =>
+      "Public.Address.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Address.create(
-          values as Public.Address | Public.AddressNotPrimaryKey,
+          request.values as Public.Address | Public.AddressNotPrimaryKey,
         ),
-      "Public.City.byCityId": async (parameters: object) =>
+      "Public.City.byCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.City.byCityId(
-          parameters as Public.Tables.City.ByCityId,
+          request.parameters as Public.Tables.City.ByCityId,
         ),
-      "Public.City.byCountryId": async (parameters: object) =>
+      "Public.City.byCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.City.byCountryId(
-          parameters as Public.Tables.City.ByCountryId,
+          request.parameters as Public.Tables.City.ByCountryId,
         ),
-      "Public.City.deleteByCityId": async (parameters: object) =>
+      "Public.City.deleteByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.City.deleteByCityId(
-          parameters as Public.Tables.City.ByCityId,
+          request.parameters as Public.Tables.City.ByCityId,
         ),
-      "Public.City.deleteByCountryId": async (parameters: object) =>
+      "Public.City.deleteByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.City.deleteByCountryId(
-          parameters as Public.Tables.City.ByCountryId,
+          request.parameters as Public.Tables.City.ByCountryId,
         ),
       "Public.City.updateByCityId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.City.updateByCityId(
-          parameters as Public.Tables.City.ByCityId,
-          values as Partial<Public.City>,
+          request.parameters as Public.Tables.City.ByCityId,
+          request.values as Partial<Public.City>,
         ),
       "Public.City.updateByCountryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.City.updateByCountryId(
-          parameters as Public.Tables.City.ByCountryId,
-          values as Partial<Public.City>,
+          request.parameters as Public.Tables.City.ByCountryId,
+          request.values as Partial<Public.City>,
         ),
-      "Public.City.create": async (values: object) =>
+      "Public.City.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.City.create(
-          values as Public.City | Public.CityNotPrimaryKey,
+          request.values as Public.City | Public.CityNotPrimaryKey,
         ),
-      "Public.Customer.byAddressId": async (parameters: object) =>
+      "Public.Customer.byAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.byAddressId(
-          parameters as Public.Tables.Customer.ByAddressId,
+          request.parameters as Public.Tables.Customer.ByAddressId,
         ),
-      "Public.Customer.byCustomerId": async (parameters: object) =>
+      "Public.Customer.byCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.byCustomerId(
-          parameters as Public.Tables.Customer.ByCustomerId,
+          request.parameters as Public.Tables.Customer.ByCustomerId,
         ),
-      "Public.Customer.byLastName": async (parameters: object) =>
+      "Public.Customer.byLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.byLastName(
-          parameters as Public.Tables.Customer.ByLastName,
+          request.parameters as Public.Tables.Customer.ByLastName,
         ),
-      "Public.Customer.byStoreId": async (parameters: object) =>
+      "Public.Customer.byStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.byStoreId(
-          parameters as Public.Tables.Customer.ByStoreId,
+          request.parameters as Public.Tables.Customer.ByStoreId,
         ),
-      "Public.Customer.deleteByAddressId": async (parameters: object) =>
+      "Public.Customer.deleteByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.deleteByAddressId(
-          parameters as Public.Tables.Customer.ByAddressId,
+          request.parameters as Public.Tables.Customer.ByAddressId,
         ),
-      "Public.Customer.deleteByCustomerId": async (parameters: object) =>
+      "Public.Customer.deleteByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.deleteByCustomerId(
-          parameters as Public.Tables.Customer.ByCustomerId,
+          request.parameters as Public.Tables.Customer.ByCustomerId,
         ),
-      "Public.Customer.deleteByLastName": async (parameters: object) =>
+      "Public.Customer.deleteByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.deleteByLastName(
-          parameters as Public.Tables.Customer.ByLastName,
+          request.parameters as Public.Tables.Customer.ByLastName,
         ),
-      "Public.Customer.deleteByStoreId": async (parameters: object) =>
+      "Public.Customer.deleteByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.deleteByStoreId(
-          parameters as Public.Tables.Customer.ByStoreId,
+          request.parameters as Public.Tables.Customer.ByStoreId,
         ),
       "Public.Customer.updateByAddressId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Customer.updateByAddressId(
-          parameters as Public.Tables.Customer.ByAddressId,
-          values as Partial<Public.Customer>,
+          request.parameters as Public.Tables.Customer.ByAddressId,
+          request.values as Partial<Public.Customer>,
         ),
       "Public.Customer.updateByCustomerId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Customer.updateByCustomerId(
-          parameters as Public.Tables.Customer.ByCustomerId,
-          values as Partial<Public.Customer>,
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+          request.values as Partial<Public.Customer>,
         ),
       "Public.Customer.updateByLastName": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Customer.updateByLastName(
-          parameters as Public.Tables.Customer.ByLastName,
-          values as Partial<Public.Customer>,
+          request.parameters as Public.Tables.Customer.ByLastName,
+          request.values as Partial<Public.Customer>,
         ),
       "Public.Customer.updateByStoreId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Customer.updateByStoreId(
-          parameters as Public.Tables.Customer.ByStoreId,
-          values as Partial<Public.Customer>,
+          request.parameters as Public.Tables.Customer.ByStoreId,
+          request.values as Partial<Public.Customer>,
         ),
-      "Public.Customer.create": async (values: object) =>
+      "Public.Customer.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Customer.create(
-          values as Public.Customer | Public.CustomerNotPrimaryKey,
+          request.values as Public.Customer | Public.CustomerNotPrimaryKey,
         ),
-      "Public.Actor.byActorId": async (parameters: object) =>
+      "Public.Actor.byActorId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Actor.byActorId(
-          parameters as Public.Tables.Actor.ByActorId,
+          request.parameters as Public.Tables.Actor.ByActorId,
         ),
-      "Public.Actor.byLastName": async (parameters: object) =>
+      "Public.Actor.byLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Actor.byLastName(
-          parameters as Public.Tables.Actor.ByLastName,
+          request.parameters as Public.Tables.Actor.ByLastName,
         ),
-      "Public.Actor.deleteByActorId": async (parameters: object) =>
+      "Public.Actor.deleteByActorId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Actor.deleteByActorId(
-          parameters as Public.Tables.Actor.ByActorId,
+          request.parameters as Public.Tables.Actor.ByActorId,
         ),
-      "Public.Actor.deleteByLastName": async (parameters: object) =>
+      "Public.Actor.deleteByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Actor.deleteByLastName(
-          parameters as Public.Tables.Actor.ByLastName,
+          request.parameters as Public.Tables.Actor.ByLastName,
         ),
       "Public.Actor.updateByActorId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Actor.updateByActorId(
-          parameters as Public.Tables.Actor.ByActorId,
-          values as Partial<Public.Actor>,
+          request.parameters as Public.Tables.Actor.ByActorId,
+          request.values as Partial<Public.Actor>,
         ),
       "Public.Actor.updateByLastName": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Actor.updateByLastName(
-          parameters as Public.Tables.Actor.ByLastName,
-          values as Partial<Public.Actor>,
+          request.parameters as Public.Tables.Actor.ByLastName,
+          request.values as Partial<Public.Actor>,
         ),
-      "Public.Actor.create": async (values: object) =>
+      "Public.Actor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Actor.create(
-          values as Public.Actor | Public.ActorNotPrimaryKey,
+          request.values as Public.Actor | Public.ActorNotPrimaryKey,
         ),
-      "Public.FilmCategory.byFilmIdCategoryId": async (parameters: object) =>
+      "Public.FilmCategory.byFilmIdCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmCategory.byFilmIdCategoryId(
-          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
         ),
       "Public.FilmCategory.deleteByFilmIdCategoryId": async (
-        parameters: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.FilmCategory.deleteByFilmIdCategoryId(
-          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
         ),
       "Public.FilmCategory.updateByFilmIdCategoryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.FilmCategory.updateByFilmIdCategoryId(
-          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
-          values as Partial<Public.FilmCategory>,
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          request.values as Partial<Public.FilmCategory>,
         ),
-      "Public.FilmCategory.create": async (values: object) =>
+      "Public.FilmCategory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.FilmCategory.create(
-          values as Public.FilmCategory | Public.FilmCategoryNotPrimaryKey,
+          request.values as
+            | Public.FilmCategory
+            | Public.FilmCategoryNotPrimaryKey,
         ),
-      "Public.Inventory.byInventoryId": async (parameters: object) =>
+      "Public.Inventory.byInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Inventory.byInventoryId(
-          parameters as Public.Tables.Inventory.ByInventoryId,
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
         ),
-      "Public.Inventory.byStoreIdFilmId": async (parameters: object) =>
+      "Public.Inventory.byStoreIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Inventory.byStoreIdFilmId(
-          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
         ),
-      "Public.Inventory.deleteByInventoryId": async (parameters: object) =>
+      "Public.Inventory.deleteByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Inventory.deleteByInventoryId(
-          parameters as Public.Tables.Inventory.ByInventoryId,
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
         ),
-      "Public.Inventory.deleteByStoreIdFilmId": async (parameters: object) =>
+      "Public.Inventory.deleteByStoreIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Inventory.deleteByStoreIdFilmId(
-          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
         ),
       "Public.Inventory.updateByInventoryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Inventory.updateByInventoryId(
-          parameters as Public.Tables.Inventory.ByInventoryId,
-          values as Partial<Public.Inventory>,
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+          request.values as Partial<Public.Inventory>,
         ),
       "Public.Inventory.updateByStoreIdFilmId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Inventory.updateByStoreIdFilmId(
-          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
-          values as Partial<Public.Inventory>,
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          request.values as Partial<Public.Inventory>,
         ),
-      "Public.Inventory.create": async (values: object) =>
+      "Public.Inventory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Inventory.create(
-          values as Public.Inventory | Public.InventoryNotPrimaryKey,
+          request.values as Public.Inventory | Public.InventoryNotPrimaryKey,
         ),
-      "Public.Category.byCategoryId": async (parameters: object) =>
+      "Public.Category.byCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Category.byCategoryId(
-          parameters as Public.Tables.Category.ByCategoryId,
+          request.parameters as Public.Tables.Category.ByCategoryId,
         ),
-      "Public.Category.deleteByCategoryId": async (parameters: object) =>
+      "Public.Category.deleteByCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Category.deleteByCategoryId(
-          parameters as Public.Tables.Category.ByCategoryId,
+          request.parameters as Public.Tables.Category.ByCategoryId,
         ),
       "Public.Category.updateByCategoryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Category.updateByCategoryId(
-          parameters as Public.Tables.Category.ByCategoryId,
-          values as Partial<Public.Category>,
+          request.parameters as Public.Tables.Category.ByCategoryId,
+          request.values as Partial<Public.Category>,
         ),
-      "Public.Category.create": async (values: object) =>
+      "Public.Category.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Category.create(
-          values as Public.Category | Public.CategoryNotPrimaryKey,
+          request.values as Public.Category | Public.CategoryNotPrimaryKey,
         ),
-      "Public.Country.byCountryId": async (parameters: object) =>
+      "Public.Country.byCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Country.byCountryId(
-          parameters as Public.Tables.Country.ByCountryId,
+          request.parameters as Public.Tables.Country.ByCountryId,
         ),
-      "Public.Country.deleteByCountryId": async (parameters: object) =>
+      "Public.Country.deleteByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Country.deleteByCountryId(
-          parameters as Public.Tables.Country.ByCountryId,
+          request.parameters as Public.Tables.Country.ByCountryId,
         ),
       "Public.Country.updateByCountryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Country.updateByCountryId(
-          parameters as Public.Tables.Country.ByCountryId,
-          values as Partial<Public.Country>,
+          request.parameters as Public.Tables.Country.ByCountryId,
+          request.values as Partial<Public.Country>,
         ),
-      "Public.Country.create": async (values: object) =>
+      "Public.Country.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Country.create(
-          values as Public.Country | Public.CountryNotPrimaryKey,
+          request.values as Public.Country | Public.CountryNotPrimaryKey,
         ),
-      "Public.Language.byLanguageId": async (parameters: object) =>
+      "Public.Language.byLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Language.byLanguageId(
-          parameters as Public.Tables.Language.ByLanguageId,
+          request.parameters as Public.Tables.Language.ByLanguageId,
         ),
-      "Public.Language.deleteByLanguageId": async (parameters: object) =>
+      "Public.Language.deleteByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Language.deleteByLanguageId(
-          parameters as Public.Tables.Language.ByLanguageId,
+          request.parameters as Public.Tables.Language.ByLanguageId,
         ),
       "Public.Language.updateByLanguageId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Language.updateByLanguageId(
-          parameters as Public.Tables.Language.ByLanguageId,
-          values as Partial<Public.Language>,
+          request.parameters as Public.Tables.Language.ByLanguageId,
+          request.values as Partial<Public.Language>,
         ),
-      "Public.Language.create": async (values: object) =>
+      "Public.Language.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Language.create(
-          values as Public.Language | Public.LanguageNotPrimaryKey,
+          request.values as Public.Language | Public.LanguageNotPrimaryKey,
         ),
-      "Public.Rental.byInventoryId": async (parameters: object) =>
+      "Public.Rental.byInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Rental.byInventoryId(
-          parameters as Public.Tables.Rental.ByInventoryId,
+          request.parameters as Public.Tables.Rental.ByInventoryId,
         ),
       "Public.Rental.byRentalDateInventoryIdCustomerId": async (
-        parameters: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Rental.byRentalDateInventoryIdCustomerId(
-          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         ),
-      "Public.Rental.byRentalId": async (parameters: object) =>
+      "Public.Rental.byRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Rental.byRentalId(
-          parameters as Public.Tables.Rental.ByRentalId,
+          request.parameters as Public.Tables.Rental.ByRentalId,
         ),
-      "Public.Rental.deleteByInventoryId": async (parameters: object) =>
+      "Public.Rental.deleteByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Rental.deleteByInventoryId(
-          parameters as Public.Tables.Rental.ByInventoryId,
+          request.parameters as Public.Tables.Rental.ByInventoryId,
         ),
       "Public.Rental.deleteByRentalDateInventoryIdCustomerId": async (
-        parameters: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Rental.deleteByRentalDateInventoryIdCustomerId(
-          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         ),
-      "Public.Rental.deleteByRentalId": async (parameters: object) =>
+      "Public.Rental.deleteByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Rental.deleteByRentalId(
-          parameters as Public.Tables.Rental.ByRentalId,
+          request.parameters as Public.Tables.Rental.ByRentalId,
         ),
       "Public.Rental.updateByInventoryId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Rental.updateByInventoryId(
-          parameters as Public.Tables.Rental.ByInventoryId,
-          values as Partial<Public.Rental>,
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+          request.values as Partial<Public.Rental>,
         ),
       "Public.Rental.updateByRentalDateInventoryIdCustomerId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Rental.updateByRentalDateInventoryIdCustomerId(
-          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-          values as Partial<Public.Rental>,
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          request.values as Partial<Public.Rental>,
         ),
       "Public.Rental.updateByRentalId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Rental.updateByRentalId(
-          parameters as Public.Tables.Rental.ByRentalId,
-          values as Partial<Public.Rental>,
+          request.parameters as Public.Tables.Rental.ByRentalId,
+          request.values as Partial<Public.Rental>,
         ),
-      "Public.Rental.create": async (values: object) =>
+      "Public.Rental.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Rental.create(
-          values as Public.Rental | Public.RentalNotPrimaryKey,
+          request.values as Public.Rental | Public.RentalNotPrimaryKey,
         ),
-      "Public.Staff.byStaffId": async (parameters: object) =>
+      "Public.Staff.byStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Staff.byStaffId(
-          parameters as Public.Tables.Staff.ByStaffId,
+          request.parameters as Public.Tables.Staff.ByStaffId,
         ),
-      "Public.Staff.deleteByStaffId": async (parameters: object) =>
+      "Public.Staff.deleteByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Staff.deleteByStaffId(
-          parameters as Public.Tables.Staff.ByStaffId,
+          request.parameters as Public.Tables.Staff.ByStaffId,
         ),
       "Public.Staff.updateByStaffId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Staff.updateByStaffId(
-          parameters as Public.Tables.Staff.ByStaffId,
-          values as Partial<Public.Staff>,
+          request.parameters as Public.Tables.Staff.ByStaffId,
+          request.values as Partial<Public.Staff>,
         ),
-      "Public.Staff.create": async (values: object) =>
+      "Public.Staff.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Staff.create(
-          values as Public.Staff | Public.StaffNotPrimaryKey,
+          request.values as Public.Staff | Public.StaffNotPrimaryKey,
         ),
-      "Public.Store.byManagerStaffId": async (parameters: object) =>
+      "Public.Store.byManagerStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Store.byManagerStaffId(
-          parameters as Public.Tables.Store.ByManagerStaffId,
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
         ),
-      "Public.Store.byStoreId": async (parameters: object) =>
+      "Public.Store.byStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Store.byStoreId(
-          parameters as Public.Tables.Store.ByStoreId,
+          request.parameters as Public.Tables.Store.ByStoreId,
         ),
-      "Public.Store.deleteByManagerStaffId": async (parameters: object) =>
+      "Public.Store.deleteByManagerStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Store.deleteByManagerStaffId(
-          parameters as Public.Tables.Store.ByManagerStaffId,
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
         ),
-      "Public.Store.deleteByStoreId": async (parameters: object) =>
+      "Public.Store.deleteByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Store.deleteByStoreId(
-          parameters as Public.Tables.Store.ByStoreId,
+          request.parameters as Public.Tables.Store.ByStoreId,
         ),
       "Public.Store.updateByManagerStaffId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Store.updateByManagerStaffId(
-          parameters as Public.Tables.Store.ByManagerStaffId,
-          values as Partial<Public.Store>,
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+          request.values as Partial<Public.Store>,
         ),
       "Public.Store.updateByStoreId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Store.updateByStoreId(
-          parameters as Public.Tables.Store.ByStoreId,
-          values as Partial<Public.Store>,
+          request.parameters as Public.Tables.Store.ByStoreId,
+          request.values as Partial<Public.Store>,
         ),
-      "Public.Store.create": async (values: object) =>
+      "Public.Store.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Store.create(
-          values as Public.Store | Public.StoreNotPrimaryKey,
+          request.values as Public.Store | Public.StoreNotPrimaryKey,
         ),
-      "Public.Payment.byCustomerId": async (parameters: object) =>
+      "Public.Payment.byCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.byCustomerId(
-          parameters as Public.Tables.Payment.ByCustomerId,
+          request.parameters as Public.Tables.Payment.ByCustomerId,
         ),
-      "Public.Payment.byPaymentId": async (parameters: object) =>
+      "Public.Payment.byPaymentId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.byPaymentId(
-          parameters as Public.Tables.Payment.ByPaymentId,
+          request.parameters as Public.Tables.Payment.ByPaymentId,
         ),
-      "Public.Payment.byRentalId": async (parameters: object) =>
+      "Public.Payment.byRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.byRentalId(
-          parameters as Public.Tables.Payment.ByRentalId,
+          request.parameters as Public.Tables.Payment.ByRentalId,
         ),
-      "Public.Payment.byStaffId": async (parameters: object) =>
+      "Public.Payment.byStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.byStaffId(
-          parameters as Public.Tables.Payment.ByStaffId,
+          request.parameters as Public.Tables.Payment.ByStaffId,
         ),
-      "Public.Payment.deleteByCustomerId": async (parameters: object) =>
+      "Public.Payment.deleteByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.deleteByCustomerId(
-          parameters as Public.Tables.Payment.ByCustomerId,
+          request.parameters as Public.Tables.Payment.ByCustomerId,
         ),
-      "Public.Payment.deleteByPaymentId": async (parameters: object) =>
+      "Public.Payment.deleteByPaymentId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.deleteByPaymentId(
-          parameters as Public.Tables.Payment.ByPaymentId,
+          request.parameters as Public.Tables.Payment.ByPaymentId,
         ),
-      "Public.Payment.deleteByRentalId": async (parameters: object) =>
+      "Public.Payment.deleteByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.deleteByRentalId(
-          parameters as Public.Tables.Payment.ByRentalId,
+          request.parameters as Public.Tables.Payment.ByRentalId,
         ),
-      "Public.Payment.deleteByStaffId": async (parameters: object) =>
+      "Public.Payment.deleteByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.deleteByStaffId(
-          parameters as Public.Tables.Payment.ByStaffId,
+          request.parameters as Public.Tables.Payment.ByStaffId,
         ),
       "Public.Payment.updateByCustomerId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Payment.updateByCustomerId(
-          parameters as Public.Tables.Payment.ByCustomerId,
-          values as Partial<Public.Payment>,
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+          request.values as Partial<Public.Payment>,
         ),
       "Public.Payment.updateByPaymentId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Payment.updateByPaymentId(
-          parameters as Public.Tables.Payment.ByPaymentId,
-          values as Partial<Public.Payment>,
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+          request.values as Partial<Public.Payment>,
         ),
       "Public.Payment.updateByRentalId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Payment.updateByRentalId(
-          parameters as Public.Tables.Payment.ByRentalId,
-          values as Partial<Public.Payment>,
+          request.parameters as Public.Tables.Payment.ByRentalId,
+          request.values as Partial<Public.Payment>,
         ),
       "Public.Payment.updateByStaffId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Payment.updateByStaffId(
-          parameters as Public.Tables.Payment.ByStaffId,
-          values as Partial<Public.Payment>,
+          request.parameters as Public.Tables.Payment.ByStaffId,
+          request.values as Partial<Public.Payment>,
         ),
-      "Public.Payment.create": async (values: object) =>
+      "Public.Payment.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Payment.create(
-          values as Public.Payment | Public.PaymentNotPrimaryKey,
+          request.values as Public.Payment | Public.PaymentNotPrimaryKey,
         ),
-      "Public.Film.byFilmId": async (parameters: object) =>
+      "Public.Film.byFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.byFilmId(
-          parameters as Public.Tables.Film.ByFilmId,
+          request.parameters as Public.Tables.Film.ByFilmId,
         ),
-      "Public.Film.byFulltext": async (parameters: object) =>
+      "Public.Film.byFulltext": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.byFulltext(
-          parameters as Public.Tables.Film.ByFulltext,
+          request.parameters as Public.Tables.Film.ByFulltext,
         ),
-      "Public.Film.byLanguageId": async (parameters: object) =>
+      "Public.Film.byLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.byLanguageId(
-          parameters as Public.Tables.Film.ByLanguageId,
+          request.parameters as Public.Tables.Film.ByLanguageId,
         ),
-      "Public.Film.byTitle": async (parameters: object) =>
-        database.Public.Film.byTitle(parameters as Public.Tables.Film.ByTitle),
-      "Public.Film.deleteByFilmId": async (parameters: object) =>
+      "Public.Film.byTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.byTitle(
+          request.parameters as Public.Tables.Film.ByTitle,
+        ),
+      "Public.Film.deleteByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.deleteByFilmId(
-          parameters as Public.Tables.Film.ByFilmId,
+          request.parameters as Public.Tables.Film.ByFilmId,
         ),
-      "Public.Film.deleteByFulltext": async (parameters: object) =>
+      "Public.Film.deleteByFulltext": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.deleteByFulltext(
-          parameters as Public.Tables.Film.ByFulltext,
+          request.parameters as Public.Tables.Film.ByFulltext,
         ),
-      "Public.Film.deleteByLanguageId": async (parameters: object) =>
+      "Public.Film.deleteByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.deleteByLanguageId(
-          parameters as Public.Tables.Film.ByLanguageId,
+          request.parameters as Public.Tables.Film.ByLanguageId,
         ),
-      "Public.Film.deleteByTitle": async (parameters: object) =>
+      "Public.Film.deleteByTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.deleteByTitle(
-          parameters as Public.Tables.Film.ByTitle,
+          request.parameters as Public.Tables.Film.ByTitle,
         ),
       "Public.Film.updateByFilmId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Film.updateByFilmId(
-          parameters as Public.Tables.Film.ByFilmId,
-          values as Partial<Public.Film>,
+          request.parameters as Public.Tables.Film.ByFilmId,
+          request.values as Partial<Public.Film>,
         ),
       "Public.Film.updateByFulltext": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Film.updateByFulltext(
-          parameters as Public.Tables.Film.ByFulltext,
-          values as Partial<Public.Film>,
+          request.parameters as Public.Tables.Film.ByFulltext,
+          request.values as Partial<Public.Film>,
         ),
       "Public.Film.updateByLanguageId": async (
-        parameters: object,
-        values: object,
+        request: EmbraceSQLRequest<object, object>,
       ) =>
         database.Public.Film.updateByLanguageId(
-          parameters as Public.Tables.Film.ByLanguageId,
-          values as Partial<Public.Film>,
+          request.parameters as Public.Tables.Film.ByLanguageId,
+          request.values as Partial<Public.Film>,
         ),
-      "Public.Film.updateByTitle": async (parameters: object, values: object) =>
+      "Public.Film.updateByTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.updateByTitle(
-          parameters as Public.Tables.Film.ByTitle,
-          values as Partial<Public.Film>,
+          request.parameters as Public.Tables.Film.ByTitle,
+          request.values as Partial<Public.Film>,
         ),
-      "Public.Film.create": async (values: object) =>
+      "Public.Film.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
         database.Public.Film.create(
-          values as Public.Film | Public.FilmNotPrimaryKey,
+          request.values as Public.Film | Public.FilmNotPrimaryKey,
         ),
     };
   }
-  async dispatch() {}
+
+  async dispatch(request: EmbraceSQLRequest<object, object>) {
+    return this.dispatchMap[request.operation](request);
+  }
 }

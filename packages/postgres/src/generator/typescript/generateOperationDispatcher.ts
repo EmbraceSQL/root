@@ -23,21 +23,22 @@ export const generateOperationDispatcher = async (
   // all possible operations
   const operations = await DatabaseOperation.factory(context);
   operations.dispatchable.forEach((o) => {
-    const caller: string[] = [];
     const callee: string[] = [];
     // parameters go first!
     if (o.typescriptParametersType(context)) {
-      caller.push(`parameters: object`);
-      callee.push(`parameters as ${o.typescriptParametersType(context)}`);
+      callee.push(
+        `request.parameters as ${o.typescriptParametersType(context)}`,
+      );
     }
     if (o.typescriptValuesType(context)) {
-      caller.push(`values: object`);
-      callee.push(`values as ${o.typescriptValuesType(context)}`);
+      callee.push(`request.values as ${o.typescriptValuesType(context)}`);
     }
     generationBuffer.push(
-      `"${o.dispatchName(context)}": async (${caller.join(
-        ",",
-      )}) => database.${o.dispatchName(context)}(${callee.join(",")}),`,
+      `"${o.dispatchName(
+        context,
+      )}": async (request: EmbraceSQLRequest<object, object>) => database.${o.dispatchName(
+        context,
+      )}(${callee.join(",")}),`,
     );
   });
   // all possible scripts
@@ -51,9 +52,10 @@ export const generateOperationDispatcher = async (
   // close constructor
   generationBuffer.push(`}}`);
 
-  generationBuffer.push(`async dispatch() {`);
-  // close dispatch
-  generationBuffer.push(`}`);
+  generationBuffer.push(`
+  async dispatch(request: EmbraceSQLRequest<object, object>) {
+    return this.dispatchMap[request.operation](request);
+  }`);
   // close class
   generationBuffer.push(`}`);
   return generationBuffer.join("\n");
