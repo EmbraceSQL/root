@@ -1,4 +1,4 @@
-import { Context } from "../../../context";
+import { GenerationContext } from "../..";
 import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableIndexOperation, TableIndexOperations } from "../table";
@@ -14,15 +14,33 @@ export class UpdateOperations extends TableIndexOperations {
 }
 
 class UpdateOperation extends TableIndexOperation {
-  typescriptDefinition(context: Context): string {
-    const generationBuffer = [""];
+  typescriptValuesType(context: GenerationContext) {
     const tableType = context.resolveType<PGTypeComposite>(
       this.table.table.tabletypeoid,
     );
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${this.index.typescriptName}, values: Partial<${namespace?.typescriptName}.${this.table.typescriptName}>`;
+    return `Partial<${namespace?.typescriptName}.${tableType.typescriptName}>`;
+  }
+
+  dispatchName(context: GenerationContext): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    return `${namespace?.typescriptName}.${
+      this.table.typescriptName
+    }.update${pascalCase(this.index.typescriptName)}`;
+  }
+
+  typescriptDefinition(context: GenerationContext): string {
+    const generationBuffer = [""];
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const parameters = `parameters: ${this.typescriptParametersType(
+      context,
+    )}, values: ${this.typescriptValuesType(context)}`;
 
     generationBuffer.push(
       `async update${pascalCase(

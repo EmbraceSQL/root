@@ -1,11 +1,7 @@
----
-title: Introduction
----
 
-# EmbraceSQL
+# Introduction
 
 EmbraceSQL for data access -- you write the **SQL** -- we’ll do the **REST**!
-
 
 Learn about the [Problems](./problems) with data access. Then [Get Started](#getting-started).
 

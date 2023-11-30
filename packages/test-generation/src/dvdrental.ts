@@ -12,6 +12,7 @@ import {
   undefinedIsNull,
 } from "@embracesql/postgres/src/types";
 import { Context, initializeContext } from "@embracesql/postgres/src/context";
+import { OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 
 export namespace PgCatalog {
@@ -6697,6 +6698,18 @@ export interface PostgresTypecasts {
   information_schema_yes_or_no: Typecast;
 }
 
+export namespace ScriptTypes {
+  export namespace Sql {
+    export namespace Sample {
+      export interface pickParameters {
+        _1: PgCatalog.Text;
+      }
+
+      export namespace Film {}
+    }
+  }
+}
+
 interface HasDatabase {
   database: Database;
 }
@@ -11736,7 +11749,7 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      tally = async () => {
+      async tally() {
         const response = await this.database.context.sql.begin(
           async (sql: postgres.Sql) => {
             return await sql.unsafe(`
@@ -11752,7 +11765,7 @@ FROM
         return response.map((record) => ({
           count: undefinedIsNull(record.count),
         }));
-      };
+      }
 
       public Sample = new (class implements HasDatabase {
         constructor(private hasDatabase: HasDatabase) {}
@@ -11761,7 +11774,7 @@ FROM
           return this.hasDatabase.database;
         }
 
-        pick = async (_1: PgCatalog.Text) => {
+        async pick(parameters: ScriptTypes.Sql.Sample.pickParameters) {
           const response = await this.database.context.sql.begin(
             async (sql: postgres.Sql) => {
               return await sql.unsafe(
@@ -11774,7 +11787,7 @@ WHERE
     title = $1
                 
                 `,
-                [_1],
+                [parameters._1],
               );
             },
           );
@@ -11793,7 +11806,7 @@ WHERE
             specialFeatures: undefinedIsNull(record.special_features),
             fulltext: undefinedIsNull(record.fulltext),
           }));
-        };
+        }
 
         public Film = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -11802,7 +11815,7 @@ WHERE
             return this.hasDatabase.database;
           }
 
-          tally = async () => {
+          async tally() {
             const response = await this.database.context.sql.begin(
               async (sql: postgres.Sql) => {
                 return await sql.unsafe(`
@@ -11818,7 +11831,7 @@ FROM
             return response.map((record) => ({
               count: undefinedIsNull(record.count),
             }));
-          };
+          }
         })(this);
       })(this);
     })(this);

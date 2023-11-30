@@ -19,3 +19,16 @@ export type EmbraceSQLResponse<R> = {
   headers?: Record<string, string>;
   results: R;
 };
+
+type ParametersAndValues = (
+  parameters: object,
+  values: object,
+) => Promise<object>;
+
+type Parameters = (parameters: object) => Promise<unknown>;
+
+/**
+ * Operation dispatch. This has a vague type on purpose to allow
+ * selecting the proper operation via HTTP/S + JSON.
+ */
+export type OperationDispatchMethod = ParametersAndValues | Parameters;

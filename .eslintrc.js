@@ -7,7 +7,7 @@ module.exports = {
       files: ["*.ts", "*.tsx"], // only lint the ts, thanks
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: ["./tsconfig.json", "./packages/*/tsconfig.json"],
+        project: ["./packages/*/tsconfig.json"],
       },
       extends: [
         "eslint:recommended",

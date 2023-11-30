@@ -1,7 +1,3 @@
----
-title: AutoCRUD
----
-
 # AutoCRUD
 
 AutoCRUD looks at tables, and their indexes and creates a functional interface
@@ -101,7 +97,7 @@ and records after all 😉.
 Deletes work along indexes with methods generated of the format `{Schema}.{Table}.updateBy{IndexColumns}`.
 
 Updates allow partial of full updates, passing in `values` that can be
-any subset of columns that you like. The update statement is smart in that 
+any subset of columns that you like. The update statement is smart in that
 it will take your new passed in values, or leave the existing database value
 without generating a dynamic sql string.
 
@@ -138,11 +134,11 @@ Columns beyond the primary key can have defaults as well, `created_date` is a co
 pattern here. To get the database default, just don't pass a value for the column.
 
 The good news is the `RETURNING` record will show you the primary key as
-created by the database. 
+created by the database.
 
 You can pass in `values` with the primary key - particularly when you
 intend to get an upsert. Or if you are on purpose 'setting' the primary key
-and bypassing the default. 
+and bypassing the default.
 
 ### Upserts
 

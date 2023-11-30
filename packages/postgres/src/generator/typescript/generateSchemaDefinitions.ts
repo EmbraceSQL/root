@@ -1,4 +1,8 @@
 import { GenerationContext } from "..";
+import {
+  SCRIPT_TYPES_NAMESPACE,
+  SqlScriptOperations,
+} from "../operations/sqlscript";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -43,5 +47,18 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     }
   `,
   );
+  // script parameter and return types
+  // holder for all scripts provides a .Scripts grouping
+  if (context.sqlScriptsFrom?.length) {
+    const scripts = await SqlScriptOperations.factory(
+      context,
+      context.sqlScriptsFrom,
+    );
+    generationBuffer.push(`export namespace ${SCRIPT_TYPES_NAMESPACE}{`);
+    generationBuffer.push(scripts.typescriptTypeDefinition(context));
+
+    // close off Scripts namespace
+    generationBuffer.push(`}`);
+  }
   return generationBuffer.join("\n");
 };

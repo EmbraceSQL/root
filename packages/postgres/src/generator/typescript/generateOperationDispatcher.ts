@@ -13,15 +13,33 @@ export const generateOperationDispatcher = async (
   const generationBuffer = [
     `
     export class OperationDispatcher {
+      private dispatchMap: Record<string, OperationDispatchMethod>;
+      constructor(private database: Database){
+        this.dispatchMap = {
 
-      constructor(private database: Database){}
     `,
   ];
 
-  generationBuffer.push(`async dispatch() {`);
   // all possible operations
   const operations = await DatabaseOperation.factory(context);
-  console.assert(operations);
+  operations.dispatchable.forEach((o) => {
+    const caller: string[] = [];
+    const callee: string[] = [];
+    // parameters go first!
+    if (o.typescriptParametersType(context)) {
+      caller.push(`parameters: object`);
+      callee.push(`parameters as ${o.typescriptParametersType(context)}`);
+    }
+    if (o.typescriptValuesType(context)) {
+      caller.push(`values: object`);
+      callee.push(`values as ${o.typescriptValuesType(context)}`);
+    }
+    generationBuffer.push(
+      `"${o.dispatchName(context)}": async (${caller.join(
+        ",",
+      )}) => database.${o.dispatchName(context)}(${callee.join(",")}),`,
+    );
+  });
   // all possible scripts
   if (context.sqlScriptsFrom?.length) {
     const scripts = await SqlScriptOperations.factory(
@@ -30,6 +48,10 @@ export const generateOperationDispatcher = async (
     );
     console.assert(scripts);
   }
+  // close constructor
+  generationBuffer.push(`}}`);
+
+  generationBuffer.push(`async dispatch() {`);
   // close dispatch
   generationBuffer.push(`}`);
   // close class

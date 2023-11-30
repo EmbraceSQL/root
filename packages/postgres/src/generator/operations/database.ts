@@ -17,7 +17,7 @@ import { ProcOperation } from "./proc";
 /**
  * Build up a full database of operations.
  */
-export class DatabaseOperation implements Operation {
+export class DatabaseOperation implements Operations {
   static async factory(context: GenerationContext) {
     const ret = new DatabaseOperation(context);
     await ret.build(context);
@@ -37,8 +37,8 @@ export class DatabaseOperation implements Operation {
     await Promise.all(this.namespaces.map((n) => n.build(context)));
   }
 
-  get operations() {
-    return this.namespaces.flatMap((n) => n.operations);
+  get dispatchable() {
+    return this.namespaces.flatMap((n) => n.dispatchable);
   }
 
   typescriptDefinition(context: Context): string {
@@ -53,8 +53,8 @@ export class DatabaseOperation implements Operation {
  *
  * This is referred to in the postgres catalog as a namespace.
  */
-export class SchemaOperation implements Operation {
-  public operations: Operation[];
+export class SchemaOperation implements Operations {
+  private operations: TypescriptGenerateable[];
 
   constructor(private namespace: PGNamespace) {
     this.operations = [];
@@ -62,6 +62,13 @@ export class SchemaOperation implements Operation {
     this.operations.push(
       ...namespace.tables.map((t) => new TableOperations(t)),
     );
+  }
+
+  get dispatchable(): Operation[] {
+    const ret = this.operations
+      .flatMap((c) => (isOperations(c) ? c.dispatchable : c))
+      .filter((o) => !isOperations(o));
+    return ret as Operation[];
   }
 
   async build(context: Context) {
@@ -99,8 +106,11 @@ class TableOperations implements Operations {
     ];
   }
 
-  get operations() {
-    return this.cruds.flatMap((c) => (isOperations(c) ? c.operations : c));
+  get dispatchable(): Operation[] {
+    const ret = this.cruds
+      .flatMap((c) => (isOperations(c) ? c.dispatchable : c))
+      .filter((o) => !isOperations(o));
+    return ret as Operation[];
   }
 
   async build(context: Context) {

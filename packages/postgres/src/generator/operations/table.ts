@@ -4,6 +4,7 @@ import { PGIndex } from "../pgtype/pgindex";
 import { PGTable } from "../pgtype/pgtable";
 import { PGTypeComposite } from "../pgtype/pgtypecomposite";
 import { Operation, Operations } from "./operation";
+import { camelCase } from "change-case";
 
 /**
  * A single operation on a table.
@@ -20,11 +21,21 @@ export abstract class TableOperation implements Operation {
     throw new Error("not implemented");
   }
 
-  operationName(context: Context): string {
+  dispatchName(context: Context): string {
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
     return `${namespace?.typescriptName}.${this.table.typescriptName}`;
+  }
+
+  typescriptValuesType(context: GenerationContext): string | undefined {
+    console.assert(context);
+    return undefined;
+  }
+
+  typescriptParametersType(context: GenerationContext): string | undefined {
+    console.assert(context);
+    return undefined;
   }
 
   /**
@@ -55,6 +66,25 @@ export class TableIndexOperation extends TableOperation {
     public index: PGIndex,
   ) {
     super(table);
+  }
+
+  dispatchName(context: Context): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    return `${namespace?.typescriptName}.${
+      this.table.typescriptName
+    }.${camelCase(this.index.typescriptName)}`;
+  }
+
+  typescriptParametersType(context: GenerationContext) {
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    return `${namespace?.typescriptName}.Tables.${tableType.typescriptName}.${this.index.typescriptName}`;
   }
 
   /**
@@ -105,7 +135,7 @@ export class TableIndexOperation extends TableOperation {
  * Builds up an operation per table per index.
  */
 export abstract class TableIndexOperations implements Operations {
-  public operations: Operation[];
+  private operations: Operation[];
   constructor(
     public table: PGTable,
     readonly OperationClass: new (
@@ -116,6 +146,20 @@ export abstract class TableIndexOperations implements Operations {
     this.operations = table.indexes.map(
       (index) => new OperationClass(table, index),
     );
+  }
+
+  get dispatchable() {
+    return this.operations;
+  }
+
+  typescriptValuesType(context: GenerationContext): string | undefined {
+    console.assert(context);
+    return undefined;
+  }
+
+  typescriptParametersType(context: GenerationContext): string | undefined {
+    console.assert(context);
+    return undefined;
   }
 
   async build(context: GenerationContext) {

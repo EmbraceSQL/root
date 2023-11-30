@@ -12,6 +12,7 @@ import {
   undefinedIsNull,
 } from "@embracesql/postgres/src/types";
 import { Context, initializeContext } from "@embracesql/postgres/src/context";
+import { OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 
 export namespace PgCatalog {

@@ -1,4 +1,4 @@
-import { Context } from "../../context";
+import { GenerationContext } from "..";
 import { PGProc } from "../pgtype/pgproc/pgproc";
 import { Operation } from "./operation";
 
@@ -7,15 +7,34 @@ import { Operation } from "./operation";
  */
 export class ProcOperation implements Operation {
   constructor(private proc: PGProc) {}
-  async build(context: Context) {
+
+  dispatchName(context: GenerationContext): string {
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.proc.nspname,
+    );
+    return `${namespace?.typescriptName}.${this.proc.typescriptName}`;
+  }
+
+  typescriptValuesType(context: GenerationContext) {
+    console.assert(context);
+    return undefined;
+  }
+
+  typescriptParametersType(context: GenerationContext) {
+    console.assert(context);
+    return this.proc.typescriptNameForPostgresArguments(true);
+  }
+
+  async build(context: GenerationContext) {
     // currently nothing to do here
     console.assert(context);
   }
-  typescriptDefinition(context: Context): string {
+
+  typescriptDefinition(context: GenerationContext): string {
     const generationBuffer = [
       ` async ${
         this.proc.typescriptName
-      }(parameters : ${this.proc.typescriptNameForPostgresArguments(true)}){`,
+      }(parameters : ${this.typescriptParametersType(context)}){`,
     ];
     // and the call body
     generationBuffer.push(`

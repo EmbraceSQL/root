@@ -1,4 +1,4 @@
-import { Context } from "../../../context";
+import { GenerationContext } from "../..";
 import { PGTable } from "../../pgtype/pgtable";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableIndexOperation, TableIndexOperations } from "../table";
@@ -14,15 +14,22 @@ export class ReadOperations extends TableIndexOperations {
 }
 
 class ReadOperation extends TableIndexOperation {
-  typescriptDefinition(context: Context): string {
-    const generationBuffer = [""];
+  typescriptParametersType(context: GenerationContext) {
     const tableType = context.resolveType<PGTypeComposite>(
       this.table.table.tabletypeoid,
     );
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    const parameters = `parameters: ${namespace?.typescriptName}.Tables.${this.table.typescriptName}.${this.index.typescriptName}`;
+    return `${namespace?.typescriptName}.Tables.${tableType.typescriptName}.${this.index.typescriptName}`;
+  }
+
+  typescriptDefinition(context: GenerationContext): string {
+    const generationBuffer = [""];
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const parameters = `parameters: ${this.typescriptParametersType(context)}`;
 
     generationBuffer.push(
       `async ${camelCase(

@@ -65,6 +65,10 @@ export class PGProc implements PostgresProcTypecast {
     public proc: ProcRow,
   ) {}
 
+  get nspname() {
+    return this.proc.nspname;
+  }
+
   get typescriptName() {
     return pascalCase(this.proc.proname);
   }

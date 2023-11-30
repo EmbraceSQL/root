@@ -22,7 +22,7 @@ describe("The database can run scripts", () => {
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
   it("that have positional parameters", async () => {
-    const value = await db.Scripts.Sql.Sample.pick("Basic Easy");
+    const value = await db.Scripts.Sql.Sample.pick({ _1: "Basic Easy" });
     expect(value.length).toEqual(1);
   });
 });

@@ -1,4 +1,4 @@
-import { Context } from "../../../context";
+import { GenerationContext } from "../..";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableOperation } from "../table";
 
@@ -6,11 +6,23 @@ import { TableOperation } from "../table";
  * AutoCRUD creates or upserts a record by table.
  */
 export class CreateOperation extends TableOperation {
-  operationName(context: Context): string {
-    return `${super.operationName(context)}.create`;
+  typescriptValuesType(context: GenerationContext) {
+    const tableType = context.resolveType<PGTypeComposite>(
+      this.table.table.tabletypeoid,
+    );
+    const namespace = context.namespaces.find(
+      (n) => n.nspname === this.table.table.nspname,
+    );
+    return tableType.hasPrimaryKey
+      ? `${namespace?.typescriptName}.${this.table.typescriptName} | ${namespace?.typescriptName}.${this.table.typescriptName}NotPrimaryKey`
+      : `${namespace?.typescriptName}.${this.table.typescriptName}`;
   }
 
-  typescriptDefinition(context: Context): string {
+  dispatchName(context: GenerationContext): string {
+    return `${super.dispatchName(context)}.create`;
+  }
+
+  typescriptDefinition(context: GenerationContext): string {
     const generationBuffer = [""];
     const tableType = context.resolveType<PGTypeComposite>(
       this.table.table.tabletypeoid,
@@ -18,12 +30,10 @@ export class CreateOperation extends TableOperation {
     const namespace = context.namespaces.find(
       (n) => n.nspname === this.table.table.nspname,
     );
-    const parameters = tableType.hasPrimaryKey
-      ? `values: ${namespace?.typescriptName}.${this.table.typescriptName} | ${namespace?.typescriptName}.${this.table.typescriptName}NotPrimaryKey`
-      : `values: ${namespace?.typescriptName}.${this.table.typescriptName}`;
+    const values = `values: ${this.typescriptValuesType(context)}`;
 
     generationBuffer.push(
-      `async create(${parameters}): Promise<${namespace?.typescriptName}.${this.table.typescriptName}>{`,
+      `async create(${values}): Promise<${namespace?.typescriptName}.${this.table.typescriptName}>{`,
     );
     generationBuffer.push(
       `

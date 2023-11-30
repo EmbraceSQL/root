@@ -12,6 +12,7 @@ import {
   undefinedIsNull,
 } from "@embracesql/postgres/src/types";
 import { Context, initializeContext } from "@embracesql/postgres/src/context";
+import { OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 
 export namespace PgCatalog {
@@ -6697,6 +6698,18 @@ export interface PostgresTypecasts {
   information_schema_yes_or_no: Typecast;
 }
 
+export namespace ScriptTypes {
+  export namespace Sql {
+    export namespace Sample {
+      export interface pickParameters {
+        _1: PgCatalog.Text;
+      }
+
+      export namespace Film {}
+    }
+  }
+}
+
 interface HasDatabase {
   database: Database;
 }
@@ -11736,7 +11749,7 @@ export class Database {
         return this.hasDatabase.database;
       }
 
-      tally = async () => {
+      async tally() {
         const response = await this.database.context.sql.begin(
           async (sql: postgres.Sql) => {
             return await sql.unsafe(`
@@ -11752,7 +11765,7 @@ FROM
         return response.map((record) => ({
           count: undefinedIsNull(record.count),
         }));
-      };
+      }
 
       public Sample = new (class implements HasDatabase {
         constructor(private hasDatabase: HasDatabase) {}
@@ -11761,7 +11774,7 @@ FROM
           return this.hasDatabase.database;
         }
 
-        pick = async (_1: PgCatalog.Text) => {
+        async pick(parameters: ScriptTypes.Sql.Sample.pickParameters) {
           const response = await this.database.context.sql.begin(
             async (sql: postgres.Sql) => {
               return await sql.unsafe(
@@ -11774,7 +11787,7 @@ WHERE
     title = $1
                 
                 `,
-                [_1],
+                [parameters._1],
               );
             },
           );
@@ -11793,7 +11806,7 @@ WHERE
             specialFeatures: undefinedIsNull(record.special_features),
             fulltext: undefinedIsNull(record.fulltext),
           }));
-        };
+        }
 
         public Film = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -11802,7 +11815,7 @@ WHERE
             return this.hasDatabase.database;
           }
 
-          tally = async () => {
+          async tally() {
             const response = await this.database.context.sql.begin(
               async (sql: postgres.Sql) => {
                 return await sql.unsafe(`
@@ -11818,7 +11831,7 @@ FROM
             return response.map((record) => ({
               count: undefinedIsNull(record.count),
             }));
-          };
+          }
         })(this);
       })(this);
     })(this);
@@ -11826,7 +11839,607 @@ FROM
 }
 
 export class OperationDispatcher {
-  constructor(private database: Database) {}
-
+  private dispatchMap: Record<string, OperationDispatchMethod>;
+  constructor(private database: Database) {
+    this.dispatchMap = {
+      "Public.FilmInStock": async (parameters: object) =>
+        database.Public.FilmInStock(parameters as Public.FilmInStockArguments),
+      "Public.FilmNotInStock": async (parameters: object) =>
+        database.Public.FilmNotInStock(
+          parameters as Public.FilmNotInStockArguments,
+        ),
+      "Public.GetCustomerBalance": async (parameters: object) =>
+        database.Public.GetCustomerBalance(
+          parameters as Public.GetCustomerBalanceArguments,
+        ),
+      "Public.InventoryHeldByCustomer": async (parameters: object) =>
+        database.Public.InventoryHeldByCustomer(
+          parameters as Public.InventoryHeldByCustomerArguments,
+        ),
+      "Public.InventoryInStock": async (parameters: object) =>
+        database.Public.InventoryInStock(
+          parameters as Public.InventoryInStockArguments,
+        ),
+      "Public.LastDay": async (parameters: object) =>
+        database.Public.LastDay(parameters as Public.LastDayArguments),
+      "Public.RewardsReport": async (parameters: object) =>
+        database.Public.RewardsReport(
+          parameters as Public.RewardsReportArguments,
+        ),
+      "Public.FilmActor.byActorIdFilmId": async (parameters: object) =>
+        database.Public.FilmActor.byActorIdFilmId(
+          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.FilmActor.byFilmId": async (parameters: object) =>
+        database.Public.FilmActor.byFilmId(
+          parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.FilmActor.deleteByActorIdFilmId": async (parameters: object) =>
+        database.Public.FilmActor.deleteByActorIdFilmId(
+          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.FilmActor.deleteByFilmId": async (parameters: object) =>
+        database.Public.FilmActor.deleteByFilmId(
+          parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.FilmActor.updateByActorIdFilmId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.FilmActor.updateByActorIdFilmId(
+          parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          values as Partial<Public.FilmActor>,
+        ),
+      "Public.FilmActor.updateByFilmId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.FilmActor.updateByFilmId(
+          parameters as Public.Tables.FilmActor.ByFilmId,
+          values as Partial<Public.FilmActor>,
+        ),
+      "Public.FilmActor.create": async (values: object) =>
+        database.Public.FilmActor.create(
+          values as Public.FilmActor | Public.FilmActorNotPrimaryKey,
+        ),
+      "Public.Address.byAddressId": async (parameters: object) =>
+        database.Public.Address.byAddressId(
+          parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Address.byCityId": async (parameters: object) =>
+        database.Public.Address.byCityId(
+          parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Address.deleteByAddressId": async (parameters: object) =>
+        database.Public.Address.deleteByAddressId(
+          parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Address.deleteByCityId": async (parameters: object) =>
+        database.Public.Address.deleteByCityId(
+          parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Address.updateByAddressId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Address.updateByAddressId(
+          parameters as Public.Tables.Address.ByAddressId,
+          values as Partial<Public.Address>,
+        ),
+      "Public.Address.updateByCityId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Address.updateByCityId(
+          parameters as Public.Tables.Address.ByCityId,
+          values as Partial<Public.Address>,
+        ),
+      "Public.Address.create": async (values: object) =>
+        database.Public.Address.create(
+          values as Public.Address | Public.AddressNotPrimaryKey,
+        ),
+      "Public.City.byCityId": async (parameters: object) =>
+        database.Public.City.byCityId(
+          parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.City.byCountryId": async (parameters: object) =>
+        database.Public.City.byCountryId(
+          parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.City.deleteByCityId": async (parameters: object) =>
+        database.Public.City.deleteByCityId(
+          parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.City.deleteByCountryId": async (parameters: object) =>
+        database.Public.City.deleteByCountryId(
+          parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.City.updateByCityId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.City.updateByCityId(
+          parameters as Public.Tables.City.ByCityId,
+          values as Partial<Public.City>,
+        ),
+      "Public.City.updateByCountryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.City.updateByCountryId(
+          parameters as Public.Tables.City.ByCountryId,
+          values as Partial<Public.City>,
+        ),
+      "Public.City.create": async (values: object) =>
+        database.Public.City.create(
+          values as Public.City | Public.CityNotPrimaryKey,
+        ),
+      "Public.Customer.byAddressId": async (parameters: object) =>
+        database.Public.Customer.byAddressId(
+          parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Customer.byCustomerId": async (parameters: object) =>
+        database.Public.Customer.byCustomerId(
+          parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Customer.byLastName": async (parameters: object) =>
+        database.Public.Customer.byLastName(
+          parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Customer.byStoreId": async (parameters: object) =>
+        database.Public.Customer.byStoreId(
+          parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Customer.deleteByAddressId": async (parameters: object) =>
+        database.Public.Customer.deleteByAddressId(
+          parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Customer.deleteByCustomerId": async (parameters: object) =>
+        database.Public.Customer.deleteByCustomerId(
+          parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Customer.deleteByLastName": async (parameters: object) =>
+        database.Public.Customer.deleteByLastName(
+          parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Customer.deleteByStoreId": async (parameters: object) =>
+        database.Public.Customer.deleteByStoreId(
+          parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Customer.updateByAddressId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Customer.updateByAddressId(
+          parameters as Public.Tables.Customer.ByAddressId,
+          values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByCustomerId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Customer.updateByCustomerId(
+          parameters as Public.Tables.Customer.ByCustomerId,
+          values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByLastName": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Customer.updateByLastName(
+          parameters as Public.Tables.Customer.ByLastName,
+          values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByStoreId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Customer.updateByStoreId(
+          parameters as Public.Tables.Customer.ByStoreId,
+          values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.create": async (values: object) =>
+        database.Public.Customer.create(
+          values as Public.Customer | Public.CustomerNotPrimaryKey,
+        ),
+      "Public.Actor.byActorId": async (parameters: object) =>
+        database.Public.Actor.byActorId(
+          parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Actor.byLastName": async (parameters: object) =>
+        database.Public.Actor.byLastName(
+          parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Actor.deleteByActorId": async (parameters: object) =>
+        database.Public.Actor.deleteByActorId(
+          parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Actor.deleteByLastName": async (parameters: object) =>
+        database.Public.Actor.deleteByLastName(
+          parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Actor.updateByActorId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Actor.updateByActorId(
+          parameters as Public.Tables.Actor.ByActorId,
+          values as Partial<Public.Actor>,
+        ),
+      "Public.Actor.updateByLastName": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Actor.updateByLastName(
+          parameters as Public.Tables.Actor.ByLastName,
+          values as Partial<Public.Actor>,
+        ),
+      "Public.Actor.create": async (values: object) =>
+        database.Public.Actor.create(
+          values as Public.Actor | Public.ActorNotPrimaryKey,
+        ),
+      "Public.FilmCategory.byFilmIdCategoryId": async (parameters: object) =>
+        database.Public.FilmCategory.byFilmIdCategoryId(
+          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.FilmCategory.deleteByFilmIdCategoryId": async (
+        parameters: object,
+      ) =>
+        database.Public.FilmCategory.deleteByFilmIdCategoryId(
+          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.FilmCategory.updateByFilmIdCategoryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.FilmCategory.updateByFilmIdCategoryId(
+          parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          values as Partial<Public.FilmCategory>,
+        ),
+      "Public.FilmCategory.create": async (values: object) =>
+        database.Public.FilmCategory.create(
+          values as Public.FilmCategory | Public.FilmCategoryNotPrimaryKey,
+        ),
+      "Public.Inventory.byInventoryId": async (parameters: object) =>
+        database.Public.Inventory.byInventoryId(
+          parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Inventory.byStoreIdFilmId": async (parameters: object) =>
+        database.Public.Inventory.byStoreIdFilmId(
+          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Inventory.deleteByInventoryId": async (parameters: object) =>
+        database.Public.Inventory.deleteByInventoryId(
+          parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Inventory.deleteByStoreIdFilmId": async (parameters: object) =>
+        database.Public.Inventory.deleteByStoreIdFilmId(
+          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Inventory.updateByInventoryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Inventory.updateByInventoryId(
+          parameters as Public.Tables.Inventory.ByInventoryId,
+          values as Partial<Public.Inventory>,
+        ),
+      "Public.Inventory.updateByStoreIdFilmId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Inventory.updateByStoreIdFilmId(
+          parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          values as Partial<Public.Inventory>,
+        ),
+      "Public.Inventory.create": async (values: object) =>
+        database.Public.Inventory.create(
+          values as Public.Inventory | Public.InventoryNotPrimaryKey,
+        ),
+      "Public.Category.byCategoryId": async (parameters: object) =>
+        database.Public.Category.byCategoryId(
+          parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Category.deleteByCategoryId": async (parameters: object) =>
+        database.Public.Category.deleteByCategoryId(
+          parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Category.updateByCategoryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Category.updateByCategoryId(
+          parameters as Public.Tables.Category.ByCategoryId,
+          values as Partial<Public.Category>,
+        ),
+      "Public.Category.create": async (values: object) =>
+        database.Public.Category.create(
+          values as Public.Category | Public.CategoryNotPrimaryKey,
+        ),
+      "Public.Country.byCountryId": async (parameters: object) =>
+        database.Public.Country.byCountryId(
+          parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Country.deleteByCountryId": async (parameters: object) =>
+        database.Public.Country.deleteByCountryId(
+          parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Country.updateByCountryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Country.updateByCountryId(
+          parameters as Public.Tables.Country.ByCountryId,
+          values as Partial<Public.Country>,
+        ),
+      "Public.Country.create": async (values: object) =>
+        database.Public.Country.create(
+          values as Public.Country | Public.CountryNotPrimaryKey,
+        ),
+      "Public.Language.byLanguageId": async (parameters: object) =>
+        database.Public.Language.byLanguageId(
+          parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Language.deleteByLanguageId": async (parameters: object) =>
+        database.Public.Language.deleteByLanguageId(
+          parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Language.updateByLanguageId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Language.updateByLanguageId(
+          parameters as Public.Tables.Language.ByLanguageId,
+          values as Partial<Public.Language>,
+        ),
+      "Public.Language.create": async (values: object) =>
+        database.Public.Language.create(
+          values as Public.Language | Public.LanguageNotPrimaryKey,
+        ),
+      "Public.Rental.byInventoryId": async (parameters: object) =>
+        database.Public.Rental.byInventoryId(
+          parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Rental.byRentalDateInventoryIdCustomerId": async (
+        parameters: object,
+      ) =>
+        database.Public.Rental.byRentalDateInventoryIdCustomerId(
+          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Rental.byRentalId": async (parameters: object) =>
+        database.Public.Rental.byRentalId(
+          parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Rental.deleteByInventoryId": async (parameters: object) =>
+        database.Public.Rental.deleteByInventoryId(
+          parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Rental.deleteByRentalDateInventoryIdCustomerId": async (
+        parameters: object,
+      ) =>
+        database.Public.Rental.deleteByRentalDateInventoryIdCustomerId(
+          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Rental.deleteByRentalId": async (parameters: object) =>
+        database.Public.Rental.deleteByRentalId(
+          parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Rental.updateByInventoryId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Rental.updateByInventoryId(
+          parameters as Public.Tables.Rental.ByInventoryId,
+          values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.updateByRentalDateInventoryIdCustomerId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Rental.updateByRentalDateInventoryIdCustomerId(
+          parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.updateByRentalId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Rental.updateByRentalId(
+          parameters as Public.Tables.Rental.ByRentalId,
+          values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.create": async (values: object) =>
+        database.Public.Rental.create(
+          values as Public.Rental | Public.RentalNotPrimaryKey,
+        ),
+      "Public.Staff.byStaffId": async (parameters: object) =>
+        database.Public.Staff.byStaffId(
+          parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Staff.deleteByStaffId": async (parameters: object) =>
+        database.Public.Staff.deleteByStaffId(
+          parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Staff.updateByStaffId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Staff.updateByStaffId(
+          parameters as Public.Tables.Staff.ByStaffId,
+          values as Partial<Public.Staff>,
+        ),
+      "Public.Staff.create": async (values: object) =>
+        database.Public.Staff.create(
+          values as Public.Staff | Public.StaffNotPrimaryKey,
+        ),
+      "Public.Store.byManagerStaffId": async (parameters: object) =>
+        database.Public.Store.byManagerStaffId(
+          parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Store.byStoreId": async (parameters: object) =>
+        database.Public.Store.byStoreId(
+          parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Store.deleteByManagerStaffId": async (parameters: object) =>
+        database.Public.Store.deleteByManagerStaffId(
+          parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Store.deleteByStoreId": async (parameters: object) =>
+        database.Public.Store.deleteByStoreId(
+          parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Store.updateByManagerStaffId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Store.updateByManagerStaffId(
+          parameters as Public.Tables.Store.ByManagerStaffId,
+          values as Partial<Public.Store>,
+        ),
+      "Public.Store.updateByStoreId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Store.updateByStoreId(
+          parameters as Public.Tables.Store.ByStoreId,
+          values as Partial<Public.Store>,
+        ),
+      "Public.Store.create": async (values: object) =>
+        database.Public.Store.create(
+          values as Public.Store | Public.StoreNotPrimaryKey,
+        ),
+      "Public.Payment.byCustomerId": async (parameters: object) =>
+        database.Public.Payment.byCustomerId(
+          parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Payment.byPaymentId": async (parameters: object) =>
+        database.Public.Payment.byPaymentId(
+          parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Payment.byRentalId": async (parameters: object) =>
+        database.Public.Payment.byRentalId(
+          parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Payment.byStaffId": async (parameters: object) =>
+        database.Public.Payment.byStaffId(
+          parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Payment.deleteByCustomerId": async (parameters: object) =>
+        database.Public.Payment.deleteByCustomerId(
+          parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Payment.deleteByPaymentId": async (parameters: object) =>
+        database.Public.Payment.deleteByPaymentId(
+          parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Payment.deleteByRentalId": async (parameters: object) =>
+        database.Public.Payment.deleteByRentalId(
+          parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Payment.deleteByStaffId": async (parameters: object) =>
+        database.Public.Payment.deleteByStaffId(
+          parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Payment.updateByCustomerId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Payment.updateByCustomerId(
+          parameters as Public.Tables.Payment.ByCustomerId,
+          values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByPaymentId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Payment.updateByPaymentId(
+          parameters as Public.Tables.Payment.ByPaymentId,
+          values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByRentalId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Payment.updateByRentalId(
+          parameters as Public.Tables.Payment.ByRentalId,
+          values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByStaffId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Payment.updateByStaffId(
+          parameters as Public.Tables.Payment.ByStaffId,
+          values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.create": async (values: object) =>
+        database.Public.Payment.create(
+          values as Public.Payment | Public.PaymentNotPrimaryKey,
+        ),
+      "Public.Film.byFilmId": async (parameters: object) =>
+        database.Public.Film.byFilmId(
+          parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Film.byFulltext": async (parameters: object) =>
+        database.Public.Film.byFulltext(
+          parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Film.byLanguageId": async (parameters: object) =>
+        database.Public.Film.byLanguageId(
+          parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Film.byTitle": async (parameters: object) =>
+        database.Public.Film.byTitle(parameters as Public.Tables.Film.ByTitle),
+      "Public.Film.deleteByFilmId": async (parameters: object) =>
+        database.Public.Film.deleteByFilmId(
+          parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Film.deleteByFulltext": async (parameters: object) =>
+        database.Public.Film.deleteByFulltext(
+          parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Film.deleteByLanguageId": async (parameters: object) =>
+        database.Public.Film.deleteByLanguageId(
+          parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Film.deleteByTitle": async (parameters: object) =>
+        database.Public.Film.deleteByTitle(
+          parameters as Public.Tables.Film.ByTitle,
+        ),
+      "Public.Film.updateByFilmId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Film.updateByFilmId(
+          parameters as Public.Tables.Film.ByFilmId,
+          values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByFulltext": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Film.updateByFulltext(
+          parameters as Public.Tables.Film.ByFulltext,
+          values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByLanguageId": async (
+        parameters: object,
+        values: object,
+      ) =>
+        database.Public.Film.updateByLanguageId(
+          parameters as Public.Tables.Film.ByLanguageId,
+          values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByTitle": async (parameters: object, values: object) =>
+        database.Public.Film.updateByTitle(
+          parameters as Public.Tables.Film.ByTitle,
+          values as Partial<Public.Film>,
+        ),
+      "Public.Film.create": async (values: object) =>
+        database.Public.Film.create(
+          values as Public.Film | Public.FilmNotPrimaryKey,
+        ),
+    };
+  }
   async dispatch() {}
 }
