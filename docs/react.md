@@ -25,11 +25,11 @@ from the database, and allow saving to the database without you writing
 a line of SQL, or additional schema, or even a server.
 
 `./src/app.tsx`
+
 ```typescript
 import React from "react";
 import * as ReactDOM from "react-dom/client";
-import { EmbraceSQLClient, EmbraceSQLProvider, Hooks } from "./dvdrenal-react.ts";
-import App from "./App";
+import { EmbraceSQLClient, EmbraceSQLProvider, Hooks } from "./dvdrental-react";
 
 const client = new EmbraceSQLClient({
   url: "http://localhost:3000/",

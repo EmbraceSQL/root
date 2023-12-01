@@ -17,7 +17,8 @@ embracesql generate express --database postgres://postgres:postgres@localhost/dv
 
 And a very simple express server `index.ts`, assumes top level `await`.
 
-`express.ts`
+`./src/express.ts`
+
 ```typescript
 import {EmbraceSQLExpressApp} from "./dvdrental"
 
