@@ -151,8 +151,9 @@ What would a database library be without transactions?
 
 Just pass a callback function, throw to abort, return clean to commit.
 
+`./src/autocrud.ts`
 ```typescript
-import { Database } from "./src/dvdrental";
+import { Database } from "./dvdrental";
 
 // connect
 const database = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
