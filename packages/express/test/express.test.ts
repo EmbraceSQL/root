@@ -2,7 +2,7 @@ import { EmbraceSQLExpress } from "../src";
 import { EmbraceSQLRequest } from "@embracesql/shared";
 import request from "supertest";
 
-describe("EmbraceSQLExpress can", () => {
+describe("EmbraceSQL Express can", () => {
   it("serve a default operation", async () => {
     const req: EmbraceSQLRequest<object> = {
       operation: "hello",

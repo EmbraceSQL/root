@@ -38,13 +38,13 @@ const client = new EmbraceSQLClient({
 
 const App = () => {
     // this is hooking to an AutoCRUD method to read an actor
-    const {loading, results, error, refresh} = Hooks.Public.Actor.useByActorId({ actorId: 1 });
+    const {loading, results: actor, setResults: setActor, error, refresh} = Hooks.Public.Actor.useByActorId({ actorId: 1 });
     // 🪄 an automatic onChange saving hook, with debounce to not smoke your DB!
     const onChange = Hooks.Public.Actor.useOnChange(results, {debounce: 200});
 
     return <div>
-        <input value={results.firstName} onChange={onChange}/>
-        <input value={results.lastName} onChange={onChange}/>
+        <input value={actor.firstName} onChange={setActor.firstName}/>
+        <input value={actor.lastName} onChange={setActor.lastName}/>
     </div>
 }
 
