@@ -15,13 +15,13 @@ Once you have a database, you can generate the express application:
 embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```
 
-And a very simple express server `index.ts`:
+And a very simple express server `index.ts`, assumes top level `await`.
 
 ```typescript
 import {EmbraceSQLExpressApp} from "./src/devrental"
 
 // this is an express application
-const app = EmbraceSQLExpressApp();
+const app = await EmbraceSQLExpressApp("postgres://postgres:postgres@localhost/dvdrental");
 app.listen(3000)
 ```
 

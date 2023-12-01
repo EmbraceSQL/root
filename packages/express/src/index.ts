@@ -1,19 +1,11 @@
-import { EmbraceSQLRequest, EmbraceSQLResponse } from "@embracesql/shared";
+import {
+  EmbraceSQLRequest,
+  EmbraceSQLResponse,
+  OperationDispatchMethod,
+} from "@embracesql/shared";
 import express, { response } from "express";
 
-/**
- * Operation handling methods connect express middleware plumbing to
- * EmbraceSQL.
- */
-export type EmbraceSQLOperationHandler<P, V, R> = (
-  request: EmbraceSQLRequest<P, V>,
-) => Promise<R>;
-
 type EmbraceSQLProps = {
-  /**
-   * Any headers you like will be attached to `EmbraceSQLResponse` messages.
-   */
-  defaultResponseHeaders?: Record<string, string>;
   /**
    * Pass in the operation handler. This dispatches requests to be processed
    * into results.
@@ -21,7 +13,7 @@ type EmbraceSQLProps = {
    * The type is vauge -- need to be able to handle all the different
    * generated operations.
    */
-  operationHandler: EmbraceSQLOperationHandler<object, object, object>;
+  dispatch: OperationDispatchMethod;
 };
 
 /**
@@ -39,10 +31,14 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
   app.post("/", (req, res, next) => {
     // complete a request, sending along any result set
     // with attached headers
-    const completeResponse = (operation: string, results: object) => {
-      const response: EmbraceSQLResponse<object> = {
+    const completeResponse = (
+      operation: string,
+      headers: Record<string, string>,
+      results: unknown,
+    ) => {
+      const response: EmbraceSQLResponse<unknown> = {
         operation,
-        headers: props?.defaultResponseHeaders ?? {},
+        headers,
         results,
       };
       res.status(200).json(response).end();
@@ -55,11 +51,11 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
 
     // if the requested operation is in the type map -- handle it
     // otherwise chain along to the middleware
-    if (props?.operationHandler) {
+    if (props?.dispatch) {
       props
-        .operationHandler(request)
+        .dispatch(request)
         .then((results) => {
-          completeResponse(request.operation, results);
+          completeResponse(request.operation, request.headers ?? {}, results);
         })
         .catch((reason) => response.status(500).end(reason));
     } else {

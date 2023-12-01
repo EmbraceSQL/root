@@ -10,7 +10,7 @@ describe("EmbraceSQLExpress can", () => {
     };
     const res = await request(
       EmbraceSQLExpress({
-        operationHandler: async (request) => {
+        dispatch: async (request) => {
           console.assert(request);
           return {};
         },

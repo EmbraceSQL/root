@@ -12587,3 +12587,13 @@ export class OperationDispatcher {
     return this.dispatchMap[request.operation](request);
   }
 }
+// Begin Express generated section
+import { EmbraceSQLExpress } from "@embracesql/express";
+
+export const EmbraceSQLExpressApp = async (postgresUrl: string) => {
+  const database = await Database.connect(postgresUrl);
+  const dispatcher = new OperationDispatcher(database);
+  return EmbraceSQLExpress(dispatcher);
+};
+
+// End Express generated section
