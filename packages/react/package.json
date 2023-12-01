@@ -1,0 +1,18 @@
+{
+  "name": "@embracesql/react",
+  "version": "1.0.0",
+  "description": "Hook into EmbraceSQL from React.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "check": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "author": "Will Ballard <wballard@mailframe.net>",
+  "license": "ISC",
+  "dependencies": {
+    "@embracesql/shared": "*",
+    "@embracesql/client": "*",
+    "react": "18.x"
+  }
+}

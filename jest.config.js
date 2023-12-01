@@ -11,5 +11,6 @@ module.exports = {
     "<rootDir>/packages/test-generation",
     "<rootDir>/packages/client",
     "<rootDir>/packages/express",
+    "<rootDir>/packages/react",
   ],
 };
