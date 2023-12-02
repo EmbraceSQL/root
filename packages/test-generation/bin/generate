@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+
+# dvdrental examples
 embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/dvdrental.ts
-mkdir -p src/express
-embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/express/dvdrental.ts
+embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/dvdrental-express.ts
+embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ../../var/data/dvdrental/sql > src/dvdrental-react.ts
+
+# marshalling samples -- these are just to test typescript<->postgres conversions
 embracesql generate typescript-node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts

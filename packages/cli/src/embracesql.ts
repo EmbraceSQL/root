@@ -6,6 +6,7 @@ import {
   formatSource,
   generateOperationDispatcher,
 } from "@embracesql/postgres/src/generator";
+import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import chalk from "chalk";
 import figlet from "figlet";
 
@@ -82,6 +83,25 @@ addOptions(
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
   generationBuffer.push(await generateOperationDispatcher(combinedContext));
   generationBuffer.push(await generateExpressApp());
+  process.stdout.write(await formatSource(generationBuffer.join("\n")));
+  await context.sql.end();
+});
+
+addOptions(
+  generate.command("react").description("Typescript code for use with React."),
+).action(async (options) => {
+  const context = await initializeContext(options.database);
+  const generationBuffer: string[] = [];
+
+  const combinedContext = {
+    ...context,
+    sqlScriptsFrom: options.sqlScriptsFrom,
+    skipSchemas: options.skipSchemas,
+  };
+
+  generationBuffer.push(await generateDatabaseRoot(combinedContext));
+  generationBuffer.push(await generateOperationDispatcher(combinedContext));
+  generationBuffer.push(await generateReactComponents(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });

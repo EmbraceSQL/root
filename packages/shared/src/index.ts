@@ -27,3 +27,11 @@ export type EmbraceSQLResponse<R> = {
 export type OperationDispatchMethod = (
   request: EmbraceSQLRequest<object, object>,
 ) => Promise<unknown>;
+
+/**
+ * Shared context for the generation sequence.
+ */
+export type GenerationContext = {
+  sqlScriptsFrom?: string;
+  skipSchemas?: string[];
+};
