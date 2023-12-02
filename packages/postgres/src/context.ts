@@ -6,6 +6,7 @@ import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
+import { DatabaseNode } from "@embracesql/shared";
 import { parse, ConnectionOptions } from "pg-connection-string";
 import postgres from "postgres";
 
@@ -117,6 +118,9 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
    * database as well as a production database with the same code.
    */
 
+  const databaseName = (await sql` SELECT current_database();`)[0]
+    .current_database;
+
   // Attributes on the composite type that represent each relation (table, view, index).
   const attributes = await PGAttributes.factory(sql);
 
@@ -151,6 +155,10 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     procCatalog,
   );
 
+  // abstract database representation
+  const database = new DatabaseNode(databaseName);
+  namespaces.forEach((n) => n.addToAST(database));
+
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete
   await sql.end();
@@ -170,6 +178,7 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     resolveType,
     namespaces,
     currentNamespace: "",
+    database,
   };
 
   // expand out the type resolvers for all types
@@ -199,6 +208,8 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     ...context,
     // this is the hook into 'actually running postgres'
     sql,
+    // and an abstract of the database
+    database,
   };
 };
 

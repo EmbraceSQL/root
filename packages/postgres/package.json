@@ -10,6 +10,7 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
+    "@embracesql/shared": "*",
     "change-case": "^4.1.2",
     "glob": "^10.3.10",
     "parsimmon": "^1.18.1",

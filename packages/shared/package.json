@@ -10,5 +10,7 @@
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "change-case": "^4.1.2"
+  }
 }

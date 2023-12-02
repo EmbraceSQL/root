@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@embracesql/postgres": "*",
+    "@embracesql/react": "*",
+    "@embracesql/client": "*",
     "@embracesql/cli": "*"
   }
 }

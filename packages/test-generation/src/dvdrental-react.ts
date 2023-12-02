@@ -12589,4 +12589,96 @@ export class OperationDispatcher {
 }
 // Begin React generated section
 import React from "react";
+import { EmbraceSQLClient } from "@embracesql/client";
+import { EmbraceSQLProvider, useEmbraceSQLClient } from "@embracesql/react";
+
+export namespace PgCatalog {
+  export namespace PgStatistic {}
+  export namespace PgType {}
+  export namespace PgForeignTable {}
+  export namespace PgAuthid {}
+  export namespace PgStatisticExtData {}
+  export namespace PgUserMapping {}
+  export namespace PgSubscription {}
+  export namespace PgAttribute {}
+  export namespace PgProc {}
+  export namespace PgClass {}
+  export namespace PgAttrdef {}
+  export namespace PgConstraint {}
+  export namespace PgInherits {}
+  export namespace PgIndex {}
+  export namespace PgOperator {}
+  export namespace PgOpfamily {}
+  export namespace PgOpclass {}
+  export namespace PgAm {}
+  export namespace PgAmop {}
+  export namespace PgAmproc {}
+  export namespace PgLanguage {}
+  export namespace PgLargeobjectMetadata {}
+  export namespace PgAggregate {}
+  export namespace PgStatisticExt {}
+  export namespace PgRewrite {}
+  export namespace PgTrigger {}
+  export namespace PgEventTrigger {}
+  export namespace PgDescription {}
+  export namespace PgCast {}
+  export namespace PgEnum {}
+  export namespace PgNamespace {}
+  export namespace PgConversion {}
+  export namespace PgDepend {}
+  export namespace PgDatabase {}
+  export namespace PgDbRoleSetting {}
+  export namespace PgTablespace {}
+  export namespace PgAuthMembers {}
+  export namespace PgShdepend {}
+  export namespace PgShdescription {}
+  export namespace PgTsConfig {}
+  export namespace PgTsConfigMap {}
+  export namespace PgTsDict {}
+  export namespace PgTsParser {}
+  export namespace PgTsTemplate {}
+  export namespace PgExtension {}
+  export namespace PgForeignDataWrapper {}
+  export namespace PgForeignServer {}
+  export namespace PgPolicy {}
+  export namespace PgReplicationOrigin {}
+  export namespace PgDefaultAcl {}
+  export namespace PgInitPrivs {}
+  export namespace PgSeclabel {}
+  export namespace PgShseclabel {}
+  export namespace PgCollation {}
+  export namespace PgParameterAcl {}
+  export namespace PgPartitionedTable {}
+  export namespace PgRange {}
+  export namespace PgTransform {}
+  export namespace PgSequence {}
+  export namespace PgPublication {}
+  export namespace PgPublicationNamespace {}
+  export namespace PgPublicationRel {}
+  export namespace PgSubscriptionRel {}
+  export namespace PgLargeobject {}
+}
+export namespace Public {
+  export namespace FilmActor {}
+  export namespace Address {}
+  export namespace City {}
+  export namespace Customer {}
+  export namespace Actor {}
+  export namespace FilmCategory {}
+  export namespace Inventory {}
+  export namespace Category {}
+  export namespace Country {}
+  export namespace Language {}
+  export namespace Rental {}
+  export namespace Staff {}
+  export namespace Store {}
+  export namespace Payment {}
+  export namespace Film {}
+}
+export namespace InformationSchema {
+  export namespace SqlFeatures {}
+  export namespace SqlImplementationInfo {}
+  export namespace SqlParts {}
+  export namespace SqlSizing {}
+}
 // End React generated section

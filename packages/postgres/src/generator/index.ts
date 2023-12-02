@@ -15,6 +15,8 @@ export type GenerationContext = Context & {
   skipSchemas?: string[];
 };
 
+//TODO - this does not belong in postgres
+
 /**
  * Make that generated source 💄.
  */

@@ -1,3 +1,8 @@
+import { DatabaseNode } from "./ast";
+
+export * from "./ast";
+export * from "./typescript";
+
 /**
  * Message format for EmbraceSQL.
  *
@@ -34,4 +39,5 @@ export type OperationDispatchMethod = (
 export type GenerationContext = {
   sqlScriptsFrom?: string;
   skipSchemas?: string[];
+  database: DatabaseNode;
 };
