@@ -1,4 +1,4 @@
-import { DatabaseNode } from "./ast";
+import { DatabaseNode, VisitorMap } from "./ast";
 
 export * from "./ast";
 export * from "./typescript";
@@ -40,4 +40,5 @@ export type GenerationContext = {
   sqlScriptsFrom?: string;
   skipSchemas?: string[];
   database: DatabaseNode;
+  handlers?: VisitorMap;
 };

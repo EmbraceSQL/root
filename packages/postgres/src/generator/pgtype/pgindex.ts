@@ -3,6 +3,7 @@ import { groupBy } from "../../util";
 import { PGAttribute, PGAttributes } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeComposite } from "./pgtypecomposite";
+import { IndexNode, TableNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import * as path from "path";
 import { Sql } from "postgres";
@@ -60,6 +61,15 @@ export class PGIndex {
     } else {
       this.attributes = attributes as PGAttribute[];
     }
+  }
+
+  addToAST(table: TableNode) {
+    const index = new IndexNode(table, this.name);
+    table.children.push(index);
+  }
+
+  get name() {
+    return `${this.attributes.map((a) => a.typescriptName).join("_")}`;
   }
 
   get unique() {

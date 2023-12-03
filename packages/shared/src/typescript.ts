@@ -1,4 +1,4 @@
-import { ASTNode, isContainer, isNamed } from "./ast";
+import { ASTNode, Visitor, isNamed } from "./ast";
 import { pascalCase } from "change-case";
 
 /**
@@ -13,18 +13,21 @@ export function typescriptTypeName(node: ASTNode) {
 }
 
 /**
- * Represent containers as namespaces.
+ * This is a really simple visitor that names the node into a namespace.
  */
-export function typescriptNamespaces(node: ASTNode) {
-  const generationBuffer = [``];
-  if (isContainer(node)) {
-    for (const child of node.children) {
-      generationBuffer.push(`export namespace ${typescriptTypeName(child)} {`);
-      // and recurse!
-      generationBuffer.push(typescriptNamespaces(child));
-      generationBuffer.push("}");
+export const NamespaceVisitor: Visitor<ASTNode> = {
+  before: async (_, node) => {
+    if (isNamed(node)) {
+      return `export namespace ${typescriptTypeName(node)} {`;
+    } else {
+      return "";
     }
-  }
-
-  return generationBuffer.join("\n");
-}
+  },
+  after: async (_, node) => {
+    if (isNamed(node)) {
+      return "}";
+    } else {
+      return "";
+    }
+  },
+};

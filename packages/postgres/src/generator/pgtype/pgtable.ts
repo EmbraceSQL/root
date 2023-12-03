@@ -2,7 +2,7 @@ import { Context, TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
-import { SchemaNode, TableNode } from "@embracesql/shared";
+import { ColumnNode, SchemaNode, TableNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import * as path from "path";
 import { Sql } from "postgres";
@@ -42,17 +42,25 @@ export class PGTables {
  */
 export class PGTable {
   indexes: PGIndex[];
+  tableType: PGTypeComposite;
   constructor(
-    context: TypeFactoryContext,
+    context: PGTablesContext,
     public table: TableRow,
   ) {
     this.indexes =
       context.indexes.indexesByTableTypeOid[table.tabletypeoid] ?? [];
+    this.tableType = context.typeCatalog.typesByOid[
+      table.tabletypeoid
+    ] as PGTypeComposite;
   }
 
   addToAST(schema: SchemaNode) {
-    // each namespace joins the tree
-    schema.children.push(new TableNode(schema, this.table.relname));
+    const table = new TableNode(schema, this.table.relname);
+    schema.children.push(table);
+    this.tableType.attributes.forEach((a) =>
+      table.children.push(new ColumnNode(table, a.name)),
+    );
+    this.indexes.forEach((i) => i.addToAST(table));
   }
 
   get typescriptName() {
