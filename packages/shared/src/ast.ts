@@ -1,4 +1,5 @@
 import { GenerationContext } from ".";
+import { camelCase, pascalCase } from "change-case";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.
@@ -10,6 +11,7 @@ export const enum ASTKind {
   Node,
   Database,
   Schema,
+  Tables,
   Table,
   Column,
   Index,
@@ -66,6 +68,7 @@ export type VisitorMap = {
   [ASTKind.Database]?: Visitor<DatabaseNode>;
   [ASTKind.Schema]?: Visitor<SchemaNode>;
   [ASTKind.Table]?: Visitor<TableNode>;
+  [ASTKind.Tables]?: Visitor<TableNode>;
   [ASTKind.Column]?: Visitor<ColumnNode>;
   [ASTKind.Index]?: Visitor<IndexNode>;
 };
@@ -94,6 +97,10 @@ export abstract class ASTNode {
     );
 
     return generationBuffer.filter((line) => line).join("\n");
+  }
+
+  get dispatchName() {
+    return "";
   }
 }
 
@@ -156,6 +163,29 @@ export class SchemaNode extends ContainerNode {
   ) {
     super(name, ASTKind.Schema, database);
   }
+
+  async visit(context: GenerationContext): Promise<string> {
+    if (context?.skipSchemas?.includes(this.name)) {
+      return "";
+    } else {
+      return super.visit(context);
+    }
+  }
+  get dispatchName() {
+    return `${pascalCase(this.name)}`;
+  }
+}
+
+/**
+ * Collects all tables in a schema in a database.
+ */
+export class TablesNode extends ContainerNode {
+  constructor(schema: SchemaNode) {
+    super("Tables", ASTKind.Tables, schema);
+  }
+  get dispatchName() {
+    return this.parent?.dispatchName ?? "";
+  }
 }
 
 /**
@@ -166,10 +196,13 @@ export class SchemaNode extends ContainerNode {
  */
 export class TableNode extends ContainerNode {
   constructor(
-    schema: SchemaNode,
+    tables: TablesNode,
     public name: string,
   ) {
-    super(name, ASTKind.Table, schema);
+    super(name, ASTKind.Table, tables);
+  }
+  get dispatchName(): string {
+    return `${this.parent?.dispatchName}.${pascalCase(this.name)}`;
   }
 }
 
@@ -194,5 +227,9 @@ export class IndexNode extends ContainerNode {
     public name: string,
   ) {
     super(name, ASTKind.Index, table);
+  }
+
+  get dispatchName(): string {
+    return `${this.parent?.dispatchName}.${camelCase(this.name)}`;
   }
 }

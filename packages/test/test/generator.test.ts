@@ -3,6 +3,7 @@ import {
   generateDatabaseRoot,
   generateOperationDispatcher,
 } from "@embracesql/postgres/src/generator";
+import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import * as path from "path";
 import * as ts from "typescript";
 
@@ -36,6 +37,20 @@ describe("The generator can", () => {
     const source = await generateOperationDispatcher({
       ...context,
       sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
+    });
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.CommonJS },
+    });
+    expect(compiled).toBeTruthy();
+  });
+  it("create React  TypeScript definitions for dvdrental sample", async () => {
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/dvdrental",
+    );
+    const source = await generateReactComponents({
+      ...context,
+      sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
+      skipSchemas: ["pg_catalog", "information_schema"],
     });
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },

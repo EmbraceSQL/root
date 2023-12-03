@@ -19,10 +19,26 @@ export const generateReactComponents = async (context: GenerationContext) => {
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: NamespaceVisitor,
+    [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Column]: NamespaceVisitor,
     [ASTKind.Index]: {
       before: async (_, node) => {
-        return `export function use${pascalCase(node.name)}() {`;
+        const generationBuffer = [""];
+        generationBuffer.push(
+          `export function use${pascalCase(node.name)}(parameters: ${pascalCase(
+            node.name,
+          )}) {`,
+        );
+        generationBuffer.push(`const client = useEmbraceSQLClient()`);
+
+        // request - this is the actual doing
+        generationBuffer.push(`const request = {`);
+        generationBuffer.push(`operation: "${node.dispatchName}",`);
+        generationBuffer.push(`parameters,`);
+        generationBuffer.push(`values: {},`);
+        generationBuffer.push(`}`);
+
+        return generationBuffer.join("\n");
       },
       after: async () => {
         return `}`;

@@ -69,7 +69,7 @@ export class PGIndex {
   }
 
   get name() {
-    return `${this.attributes.map((a) => a.typescriptName).join("_")}`;
+    return `by_${this.attributes.map((a) => a.typescriptName).join("_")}`;
   }
 
   get unique() {

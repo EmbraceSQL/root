@@ -12591,1035 +12591,414 @@ export class OperationDispatcher {
 import React from "react";
 import { EmbraceSQLClient } from "@embracesql/client";
 import { EmbraceSQLProvider, useEmbraceSQLClient } from "@embracesql/react";
-export namespace PgCatalog {
-  export namespace PgStatistic {
-    export namespace Starelid {}
-    export namespace Staattnum {}
-    export namespace Stainherit {}
-    export namespace Stanullfrac {}
-    export namespace Stawidth {}
-    export namespace Stadistinct {}
-    export namespace Stakind1 {}
-    export namespace Stakind2 {}
-    export namespace Stakind3 {}
-    export namespace Stakind4 {}
-    export namespace Stakind5 {}
-    export namespace Staop1 {}
-    export namespace Staop2 {}
-    export namespace Staop3 {}
-    export namespace Staop4 {}
-    export namespace Staop5 {}
-    export namespace Stacoll1 {}
-    export namespace Stacoll2 {}
-    export namespace Stacoll3 {}
-    export namespace Stacoll4 {}
-    export namespace Stacoll5 {}
-    export namespace Stanumbers1 {}
-    export namespace Stanumbers2 {}
-    export namespace Stanumbers3 {}
-    export namespace Stanumbers4 {}
-    export namespace Stanumbers5 {}
-    export namespace Stavalues1 {}
-    export namespace Stavalues2 {}
-    export namespace Stavalues3 {}
-    export namespace Stavalues4 {}
-    export namespace Stavalues5 {}
-    export function useStarelidStaattnumStainherit() {}
-  }
-  export namespace PgType {
-    export namespace Oid {}
-    export namespace Typname {}
-    export namespace Typnamespace {}
-    export namespace Typowner {}
-    export namespace Typlen {}
-    export namespace Typbyval {}
-    export namespace Typtype {}
-    export namespace Typcategory {}
-    export namespace Typispreferred {}
-    export namespace Typisdefined {}
-    export namespace Typdelim {}
-    export namespace Typrelid {}
-    export namespace Typsubscript {}
-    export namespace Typelem {}
-    export namespace Typarray {}
-    export namespace Typinput {}
-    export namespace Typoutput {}
-    export namespace Typreceive {}
-    export namespace Typsend {}
-    export namespace Typmodin {}
-    export namespace Typmodout {}
-    export namespace Typanalyze {}
-    export namespace Typalign {}
-    export namespace Typstorage {}
-    export namespace Typnotnull {}
-    export namespace Typbasetype {}
-    export namespace Typtypmod {}
-    export namespace Typndims {}
-    export namespace Typcollation {}
-    export namespace Typdefaultbin {}
-    export namespace Typdefault {}
-    export namespace Typacl {}
-    export function useOid() {}
-    export function useTypnameTypnamespace() {}
-  }
-  export namespace PgForeignTable {
-    export namespace Ftrelid {}
-    export namespace Ftserver {}
-    export namespace Ftoptions {}
-    export function useFtrelid() {}
-  }
-  export namespace PgAuthid {
-    export namespace Oid {}
-    export namespace Rolname {}
-    export namespace Rolsuper {}
-    export namespace Rolinherit {}
-    export namespace Rolcreaterole {}
-    export namespace Rolcreatedb {}
-    export namespace Rolcanlogin {}
-    export namespace Rolreplication {}
-    export namespace Rolbypassrls {}
-    export namespace Rolconnlimit {}
-    export namespace Rolpassword {}
-    export namespace Rolvaliduntil {}
-    export function useOid() {}
-    export function useRolname() {}
-  }
-  export namespace PgStatisticExtData {
-    export namespace Stxoid {}
-    export namespace Stxdinherit {}
-    export namespace Stxdndistinct {}
-    export namespace Stxddependencies {}
-    export namespace Stxdmcv {}
-    export namespace Stxdexpr {}
-    export function useStxoidStxdinherit() {}
-  }
-  export namespace PgUserMapping {
-    export namespace Oid {}
-    export namespace Umuser {}
-    export namespace Umserver {}
-    export namespace Umoptions {}
-    export function useOid() {}
-    export function useUmuserUmserver() {}
-  }
-  export namespace PgSubscription {
-    export namespace Oid {}
-    export namespace Subdbid {}
-    export namespace Subskiplsn {}
-    export namespace Subname {}
-    export namespace Subowner {}
-    export namespace Subenabled {}
-    export namespace Subbinary {}
-    export namespace Substream {}
-    export namespace Subtwophasestate {}
-    export namespace Subdisableonerr {}
-    export namespace Subpasswordrequired {}
-    export namespace Subrunasowner {}
-    export namespace Subconninfo {}
-    export namespace Subslotname {}
-    export namespace Subsynccommit {}
-    export namespace Subpublications {}
-    export namespace Suborigin {}
-    export function useOid() {}
-    export function useSubdbidSubname() {}
-  }
-  export namespace PgAttribute {
-    export namespace Attrelid {}
-    export namespace Attname {}
-    export namespace Atttypid {}
-    export namespace Attlen {}
-    export namespace Attnum {}
-    export namespace Attcacheoff {}
-    export namespace Atttypmod {}
-    export namespace Attndims {}
-    export namespace Attbyval {}
-    export namespace Attalign {}
-    export namespace Attstorage {}
-    export namespace Attcompression {}
-    export namespace Attnotnull {}
-    export namespace Atthasdef {}
-    export namespace Atthasmissing {}
-    export namespace Attidentity {}
-    export namespace Attgenerated {}
-    export namespace Attisdropped {}
-    export namespace Attislocal {}
-    export namespace Attinhcount {}
-    export namespace Attstattarget {}
-    export namespace Attcollation {}
-    export namespace Attacl {}
-    export namespace Attoptions {}
-    export namespace Attfdwoptions {}
-    export namespace Attmissingval {}
-    export function useAttrelidAttname() {}
-    export function useAttrelidAttnum() {}
-  }
-  export namespace PgProc {
-    export namespace Oid {}
-    export namespace Proname {}
-    export namespace Pronamespace {}
-    export namespace Proowner {}
-    export namespace Prolang {}
-    export namespace Procost {}
-    export namespace Prorows {}
-    export namespace Provariadic {}
-    export namespace Prosupport {}
-    export namespace Prokind {}
-    export namespace Prosecdef {}
-    export namespace Proleakproof {}
-    export namespace Proisstrict {}
-    export namespace Proretset {}
-    export namespace Provolatile {}
-    export namespace Proparallel {}
-    export namespace Pronargs {}
-    export namespace Pronargdefaults {}
-    export namespace Prorettype {}
-    export namespace Proargtypes {}
-    export namespace Proallargtypes {}
-    export namespace Proargmodes {}
-    export namespace Proargnames {}
-    export namespace Proargdefaults {}
-    export namespace Protrftypes {}
-    export namespace Prosrc {}
-    export namespace Probin {}
-    export namespace Prosqlbody {}
-    export namespace Proconfig {}
-    export namespace Proacl {}
-    export function useOid() {}
-    export function usePronameProargtypesPronamespace() {}
-  }
-  export namespace PgClass {
-    export namespace Oid {}
-    export namespace Relname {}
-    export namespace Relnamespace {}
-    export namespace Reltype {}
-    export namespace Reloftype {}
-    export namespace Relowner {}
-    export namespace Relam {}
-    export namespace Relfilenode {}
-    export namespace Reltablespace {}
-    export namespace Relpages {}
-    export namespace Reltuples {}
-    export namespace Relallvisible {}
-    export namespace Reltoastrelid {}
-    export namespace Relhasindex {}
-    export namespace Relisshared {}
-    export namespace Relpersistence {}
-    export namespace Relkind {}
-    export namespace Relnatts {}
-    export namespace Relchecks {}
-    export namespace Relhasrules {}
-    export namespace Relhastriggers {}
-    export namespace Relhassubclass {}
-    export namespace Relrowsecurity {}
-    export namespace Relforcerowsecurity {}
-    export namespace Relispopulated {}
-    export namespace Relreplident {}
-    export namespace Relispartition {}
-    export namespace Relrewrite {}
-    export namespace Relfrozenxid {}
-    export namespace Relminmxid {}
-    export namespace Relacl {}
-    export namespace Reloptions {}
-    export namespace Relpartbound {}
-    export function useOid() {}
-    export function useRelnameRelnamespace() {}
-    export function useReltablespaceRelfilenode() {}
-  }
-  export namespace PgAttrdef {
-    export namespace Oid {}
-    export namespace Adrelid {}
-    export namespace Adnum {}
-    export namespace Adbin {}
-    export function useAdrelidAdnum() {}
-    export function useOid() {}
-  }
-  export namespace PgConstraint {
-    export namespace Oid {}
-    export namespace Conname {}
-    export namespace Connamespace {}
-    export namespace Contype {}
-    export namespace Condeferrable {}
-    export namespace Condeferred {}
-    export namespace Convalidated {}
-    export namespace Conrelid {}
-    export namespace Contypid {}
-    export namespace Conindid {}
-    export namespace Conparentid {}
-    export namespace Confrelid {}
-    export namespace Confupdtype {}
-    export namespace Confdeltype {}
-    export namespace Confmatchtype {}
-    export namespace Conislocal {}
-    export namespace Coninhcount {}
-    export namespace Connoinherit {}
-    export namespace Conkey {}
-    export namespace Confkey {}
-    export namespace Conpfeqop {}
-    export namespace Conppeqop {}
-    export namespace Conffeqop {}
-    export namespace Confdelsetcols {}
-    export namespace Conexclop {}
-    export namespace Conbin {}
-    export function useConnameConnamespace() {}
-    export function useConparentid() {}
-    export function useConrelidContypidConname() {}
-    export function useContypid() {}
-    export function useOid() {}
-  }
-  export namespace PgInherits {
-    export namespace Inhrelid {}
-    export namespace Inhparent {}
-    export namespace Inhseqno {}
-    export namespace Inhdetachpending {}
-    export function useInhparent() {}
-    export function useInhrelidInhseqno() {}
-  }
-  export namespace PgIndex {
-    export namespace Indexrelid {}
-    export namespace Indrelid {}
-    export namespace Indnatts {}
-    export namespace Indnkeyatts {}
-    export namespace Indisunique {}
-    export namespace Indnullsnotdistinct {}
-    export namespace Indisprimary {}
-    export namespace Indisexclusion {}
-    export namespace Indimmediate {}
-    export namespace Indisclustered {}
-    export namespace Indisvalid {}
-    export namespace Indcheckxmin {}
-    export namespace Indisready {}
-    export namespace Indislive {}
-    export namespace Indisreplident {}
-    export namespace Indkey {}
-    export namespace Indcollation {}
-    export namespace Indclass {}
-    export namespace Indoption {}
-    export namespace Indexprs {}
-    export namespace Indpred {}
-    export function useIndexrelid() {}
-    export function useIndrelid() {}
-  }
-  export namespace PgOperator {
-    export namespace Oid {}
-    export namespace Oprname {}
-    export namespace Oprnamespace {}
-    export namespace Oprowner {}
-    export namespace Oprkind {}
-    export namespace Oprcanmerge {}
-    export namespace Oprcanhash {}
-    export namespace Oprleft {}
-    export namespace Oprright {}
-    export namespace Oprresult {}
-    export namespace Oprcom {}
-    export namespace Oprnegate {}
-    export namespace Oprcode {}
-    export namespace Oprrest {}
-    export namespace Oprjoin {}
-    export function useOid() {}
-    export function useOprnameOprleftOprrightOprnamespace() {}
-  }
-  export namespace PgOpfamily {
-    export namespace Oid {}
-    export namespace Opfmethod {}
-    export namespace Opfname {}
-    export namespace Opfnamespace {}
-    export namespace Opfowner {}
-    export function useOid() {}
-    export function useOpfmethodOpfnameOpfnamespace() {}
-  }
-  export namespace PgOpclass {
-    export namespace Oid {}
-    export namespace Opcmethod {}
-    export namespace Opcname {}
-    export namespace Opcnamespace {}
-    export namespace Opcowner {}
-    export namespace Opcfamily {}
-    export namespace Opcintype {}
-    export namespace Opcdefault {}
-    export namespace Opckeytype {}
-    export function useOid() {}
-    export function useOpcmethodOpcnameOpcnamespace() {}
-  }
-  export namespace PgAm {
-    export namespace Oid {}
-    export namespace Amname {}
-    export namespace Amhandler {}
-    export namespace Amtype {}
-    export function useAmname() {}
-    export function useOid() {}
-  }
-  export namespace PgAmop {
-    export namespace Oid {}
-    export namespace Amopfamily {}
-    export namespace Amoplefttype {}
-    export namespace Amoprighttype {}
-    export namespace Amopstrategy {}
-    export namespace Amoppurpose {}
-    export namespace Amopopr {}
-    export namespace Amopmethod {}
-    export namespace Amopsortfamily {}
-    export function useAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy() {}
-    export function useAmopoprAmoppurposeAmopfamily() {}
-    export function useOid() {}
-  }
-  export namespace PgAmproc {
-    export namespace Oid {}
-    export namespace Amprocfamily {}
-    export namespace Amproclefttype {}
-    export namespace Amprocrighttype {}
-    export namespace Amprocnum {}
-    export namespace Amproc {}
-    export function useAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum() {}
-    export function useOid() {}
-  }
-  export namespace PgLanguage {
-    export namespace Oid {}
-    export namespace Lanname {}
-    export namespace Lanowner {}
-    export namespace Lanispl {}
-    export namespace Lanpltrusted {}
-    export namespace Lanplcallfoid {}
-    export namespace Laninline {}
-    export namespace Lanvalidator {}
-    export namespace Lanacl {}
-    export function useLanname() {}
-    export function useOid() {}
-  }
-  export namespace PgLargeobjectMetadata {
-    export namespace Oid {}
-    export namespace Lomowner {}
-    export namespace Lomacl {}
-    export function useOid() {}
-  }
-  export namespace PgAggregate {
-    export namespace Aggfnoid {}
-    export namespace Aggkind {}
-    export namespace Aggnumdirectargs {}
-    export namespace Aggtransfn {}
-    export namespace Aggfinalfn {}
-    export namespace Aggcombinefn {}
-    export namespace Aggserialfn {}
-    export namespace Aggdeserialfn {}
-    export namespace Aggmtransfn {}
-    export namespace Aggminvtransfn {}
-    export namespace Aggmfinalfn {}
-    export namespace Aggfinalextra {}
-    export namespace Aggmfinalextra {}
-    export namespace Aggfinalmodify {}
-    export namespace Aggmfinalmodify {}
-    export namespace Aggsortop {}
-    export namespace Aggtranstype {}
-    export namespace Aggtransspace {}
-    export namespace Aggmtranstype {}
-    export namespace Aggmtransspace {}
-    export namespace Agginitval {}
-    export namespace Aggminitval {}
-    export function useAggfnoid() {}
-  }
-  export namespace PgStatisticExt {
-    export namespace Oid {}
-    export namespace Stxrelid {}
-    export namespace Stxname {}
-    export namespace Stxnamespace {}
-    export namespace Stxowner {}
-    export namespace Stxstattarget {}
-    export namespace Stxkeys {}
-    export namespace Stxkind {}
-    export namespace Stxexprs {}
-    export function useOid() {}
-    export function useStxnameStxnamespace() {}
-    export function useStxrelid() {}
-  }
-  export namespace PgRewrite {
-    export namespace Oid {}
-    export namespace Rulename {}
-    export namespace EvClass {}
-    export namespace EvType {}
-    export namespace EvEnabled {}
-    export namespace IsInstead {}
-    export namespace EvQual {}
-    export namespace EvAction {}
-    export function useEvClassRulename() {}
-    export function useOid() {}
-  }
-  export namespace PgTrigger {
-    export namespace Oid {}
-    export namespace Tgrelid {}
-    export namespace Tgparentid {}
-    export namespace Tgname {}
-    export namespace Tgfoid {}
-    export namespace Tgtype {}
-    export namespace Tgenabled {}
-    export namespace Tgisinternal {}
-    export namespace Tgconstrrelid {}
-    export namespace Tgconstrindid {}
-    export namespace Tgconstraint {}
-    export namespace Tgdeferrable {}
-    export namespace Tginitdeferred {}
-    export namespace Tgnargs {}
-    export namespace Tgattr {}
-    export namespace Tgargs {}
-    export namespace Tgqual {}
-    export namespace Tgoldtable {}
-    export namespace Tgnewtable {}
-    export function useOid() {}
-    export function useTgconstraint() {}
-    export function useTgrelidTgname() {}
-  }
-  export namespace PgEventTrigger {
-    export namespace Oid {}
-    export namespace Evtname {}
-    export namespace Evtevent {}
-    export namespace Evtowner {}
-    export namespace Evtfoid {}
-    export namespace Evtenabled {}
-    export namespace Evttags {}
-    export function useEvtname() {}
-    export function useOid() {}
-  }
-  export namespace PgDescription {
-    export namespace Objoid {}
-    export namespace Classoid {}
-    export namespace Objsubid {}
-    export namespace Description {}
-    export function useObjoidClassoidObjsubid() {}
-  }
-  export namespace PgCast {
-    export namespace Oid {}
-    export namespace Castsource {}
-    export namespace Casttarget {}
-    export namespace Castfunc {}
-    export namespace Castcontext {}
-    export namespace Castmethod {}
-    export function useCastsourceCasttarget() {}
-    export function useOid() {}
-  }
-  export namespace PgEnum {
-    export namespace Oid {}
-    export namespace Enumtypid {}
-    export namespace Enumsortorder {}
-    export namespace Enumlabel {}
-    export function useEnumtypidEnumlabel() {}
-    export function useEnumtypidEnumsortorder() {}
-    export function useOid() {}
-  }
-  export namespace PgNamespace {
-    export namespace Oid {}
-    export namespace Nspname {}
-    export namespace Nspowner {}
-    export namespace Nspacl {}
-    export function useNspname() {}
-    export function useOid() {}
-  }
-  export namespace PgConversion {
-    export namespace Oid {}
-    export namespace Conname {}
-    export namespace Connamespace {}
-    export namespace Conowner {}
-    export namespace Conforencoding {}
-    export namespace Contoencoding {}
-    export namespace Conproc {}
-    export namespace Condefault {}
-    export function useConnameConnamespace() {}
-    export function useConnamespaceConforencodingContoencodingOid() {}
-    export function useOid() {}
-  }
-  export namespace PgDepend {
-    export namespace Classid {}
-    export namespace Objid {}
-    export namespace Objsubid {}
-    export namespace Refclassid {}
-    export namespace Refobjid {}
-    export namespace Refobjsubid {}
-    export namespace Deptype {}
-    export function useClassidObjidObjsubid() {}
-    export function useRefclassidRefobjidRefobjsubid() {}
-  }
-  export namespace PgDatabase {
-    export namespace Oid {}
-    export namespace Datname {}
-    export namespace Datdba {}
-    export namespace Encoding {}
-    export namespace Datlocprovider {}
-    export namespace Datistemplate {}
-    export namespace Datallowconn {}
-    export namespace Datconnlimit {}
-    export namespace Datfrozenxid {}
-    export namespace Datminmxid {}
-    export namespace Dattablespace {}
-    export namespace Datcollate {}
-    export namespace Datctype {}
-    export namespace Daticulocale {}
-    export namespace Daticurules {}
-    export namespace Datcollversion {}
-    export namespace Datacl {}
-    export function useDatname() {}
-    export function useOid() {}
-  }
-  export namespace PgDbRoleSetting {
-    export namespace Setdatabase {}
-    export namespace Setrole {}
-    export namespace Setconfig {}
-    export function useSetdatabaseSetrole() {}
-  }
-  export namespace PgTablespace {
-    export namespace Oid {}
-    export namespace Spcname {}
-    export namespace Spcowner {}
-    export namespace Spcacl {}
-    export namespace Spcoptions {}
-    export function useOid() {}
-    export function useSpcname() {}
-  }
-  export namespace PgAuthMembers {
-    export namespace Oid {}
-    export namespace Roleid {}
-    export namespace Member {}
-    export namespace Grantor {}
-    export namespace AdminOption {}
-    export namespace InheritOption {}
-    export namespace SetOption {}
-    export function useGrantor() {}
-    export function useMemberRoleidGrantor() {}
-    export function useOid() {}
-    export function useRoleidMemberGrantor() {}
-  }
-  export namespace PgShdepend {
-    export namespace Dbid {}
-    export namespace Classid {}
-    export namespace Objid {}
-    export namespace Objsubid {}
-    export namespace Refclassid {}
-    export namespace Refobjid {}
-    export namespace Deptype {}
-    export function useDbidClassidObjidObjsubid() {}
-    export function useRefclassidRefobjid() {}
-  }
-  export namespace PgShdescription {
-    export namespace Objoid {}
-    export namespace Classoid {}
-    export namespace Description {}
-    export function useObjoidClassoid() {}
-  }
-  export namespace PgTsConfig {
-    export namespace Oid {}
-    export namespace Cfgname {}
-    export namespace Cfgnamespace {}
-    export namespace Cfgowner {}
-    export namespace Cfgparser {}
-    export function useCfgnameCfgnamespace() {}
-    export function useOid() {}
-  }
-  export namespace PgTsConfigMap {
-    export namespace Mapcfg {}
-    export namespace Maptokentype {}
-    export namespace Mapseqno {}
-    export namespace Mapdict {}
-    export function useMapcfgMaptokentypeMapseqno() {}
-  }
-  export namespace PgTsDict {
-    export namespace Oid {}
-    export namespace Dictname {}
-    export namespace Dictnamespace {}
-    export namespace Dictowner {}
-    export namespace Dicttemplate {}
-    export namespace Dictinitoption {}
-    export function useDictnameDictnamespace() {}
-    export function useOid() {}
-  }
-  export namespace PgTsParser {
-    export namespace Oid {}
-    export namespace Prsname {}
-    export namespace Prsnamespace {}
-    export namespace Prsstart {}
-    export namespace Prstoken {}
-    export namespace Prsend {}
-    export namespace Prsheadline {}
-    export namespace Prslextype {}
-    export function useOid() {}
-    export function usePrsnamePrsnamespace() {}
-  }
-  export namespace PgTsTemplate {
-    export namespace Oid {}
-    export namespace Tmplname {}
-    export namespace Tmplnamespace {}
-    export namespace Tmplinit {}
-    export namespace Tmpllexize {}
-    export function useOid() {}
-    export function useTmplnameTmplnamespace() {}
-  }
-  export namespace PgExtension {
-    export namespace Oid {}
-    export namespace Extname {}
-    export namespace Extowner {}
-    export namespace Extnamespace {}
-    export namespace Extrelocatable {}
-    export namespace Extversion {}
-    export namespace Extconfig {}
-    export namespace Extcondition {}
-    export function useExtname() {}
-    export function useOid() {}
-  }
-  export namespace PgForeignDataWrapper {
-    export namespace Oid {}
-    export namespace Fdwname {}
-    export namespace Fdwowner {}
-    export namespace Fdwhandler {}
-    export namespace Fdwvalidator {}
-    export namespace Fdwacl {}
-    export namespace Fdwoptions {}
-    export function useFdwname() {}
-    export function useOid() {}
-  }
-  export namespace PgForeignServer {
-    export namespace Oid {}
-    export namespace Srvname {}
-    export namespace Srvowner {}
-    export namespace Srvfdw {}
-    export namespace Srvtype {}
-    export namespace Srvversion {}
-    export namespace Srvacl {}
-    export namespace Srvoptions {}
-    export function useOid() {}
-    export function useSrvname() {}
-  }
-  export namespace PgPolicy {
-    export namespace Oid {}
-    export namespace Polname {}
-    export namespace Polrelid {}
-    export namespace Polcmd {}
-    export namespace Polpermissive {}
-    export namespace Polroles {}
-    export namespace Polqual {}
-    export namespace Polwithcheck {}
-    export function useOid() {}
-    export function usePolrelidPolname() {}
-  }
-  export namespace PgReplicationOrigin {
-    export namespace Roident {}
-    export namespace Roname {}
-    export function useRoident() {}
-    export function useRoname() {}
-  }
-  export namespace PgDefaultAcl {
-    export namespace Oid {}
-    export namespace Defaclrole {}
-    export namespace Defaclnamespace {}
-    export namespace Defaclobjtype {}
-    export namespace Defaclacl {}
-    export function useDefaclroleDefaclnamespaceDefaclobjtype() {}
-    export function useOid() {}
-  }
-  export namespace PgInitPrivs {
-    export namespace Objoid {}
-    export namespace Classoid {}
-    export namespace Objsubid {}
-    export namespace Privtype {}
-    export namespace Initprivs {}
-    export function useObjoidClassoidObjsubid() {}
-  }
-  export namespace PgSeclabel {
-    export namespace Objoid {}
-    export namespace Classoid {}
-    export namespace Objsubid {}
-    export namespace Provider {}
-    export namespace Label {}
-    export function useObjoidClassoidObjsubidProvider() {}
-  }
-  export namespace PgShseclabel {
-    export namespace Objoid {}
-    export namespace Classoid {}
-    export namespace Provider {}
-    export namespace Label {}
-    export function useObjoidClassoidProvider() {}
-  }
-  export namespace PgCollation {
-    export namespace Oid {}
-    export namespace Collname {}
-    export namespace Collnamespace {}
-    export namespace Collowner {}
-    export namespace Collprovider {}
-    export namespace Collisdeterministic {}
-    export namespace Collencoding {}
-    export namespace Collcollate {}
-    export namespace Collctype {}
-    export namespace Colliculocale {}
-    export namespace Collicurules {}
-    export namespace Collversion {}
-    export function useCollnameCollencodingCollnamespace() {}
-    export function useOid() {}
-  }
-  export namespace PgParameterAcl {
-    export namespace Oid {}
-    export namespace Parname {}
-    export namespace Paracl {}
-    export function useOid() {}
-    export function useParname() {}
-  }
-  export namespace PgPartitionedTable {
-    export namespace Partrelid {}
-    export namespace Partstrat {}
-    export namespace Partnatts {}
-    export namespace Partdefid {}
-    export namespace Partattrs {}
-    export namespace Partclass {}
-    export namespace Partcollation {}
-    export namespace Partexprs {}
-    export function usePartrelid() {}
-  }
-  export namespace PgRange {
-    export namespace Rngtypid {}
-    export namespace Rngsubtype {}
-    export namespace Rngmultitypid {}
-    export namespace Rngcollation {}
-    export namespace Rngsubopc {}
-    export namespace Rngcanonical {}
-    export namespace Rngsubdiff {}
-    export function useRngmultitypid() {}
-    export function useRngtypid() {}
-  }
-  export namespace PgTransform {
-    export namespace Oid {}
-    export namespace Trftype {}
-    export namespace Trflang {}
-    export namespace Trffromsql {}
-    export namespace Trftosql {}
-    export function useOid() {}
-    export function useTrftypeTrflang() {}
-  }
-  export namespace PgSequence {
-    export namespace Seqrelid {}
-    export namespace Seqtypid {}
-    export namespace Seqstart {}
-    export namespace Seqincrement {}
-    export namespace Seqmax {}
-    export namespace Seqmin {}
-    export namespace Seqcache {}
-    export namespace Seqcycle {}
-    export function useSeqrelid() {}
-  }
-  export namespace PgPublication {
-    export namespace Oid {}
-    export namespace Pubname {}
-    export namespace Pubowner {}
-    export namespace Puballtables {}
-    export namespace Pubinsert {}
-    export namespace Pubupdate {}
-    export namespace Pubdelete {}
-    export namespace Pubtruncate {}
-    export namespace Pubviaroot {}
-    export function useOid() {}
-    export function usePubname() {}
-  }
-  export namespace PgPublicationNamespace {
-    export namespace Oid {}
-    export namespace Pnpubid {}
-    export namespace Pnnspid {}
-    export function useOid() {}
-    export function usePnnspidPnpubid() {}
-  }
-  export namespace PgPublicationRel {
-    export namespace Oid {}
-    export namespace Prpubid {}
-    export namespace Prrelid {}
-    export namespace Prqual {}
-    export namespace Prattrs {}
-    export function useOid() {}
-    export function usePrpubid() {}
-    export function usePrrelidPrpubid() {}
-  }
-  export namespace PgSubscriptionRel {
-    export namespace Srsubid {}
-    export namespace Srrelid {}
-    export namespace Srsubstate {}
-    export namespace Srsublsn {}
-    export function useSrrelidSrsubid() {}
-  }
-  export namespace PgLargeobject {
-    export namespace Loid {}
-    export namespace Pageno {}
-    export namespace Data {}
-    export function useLoidPageno() {}
-  }
-}
 export namespace Public {
-  export namespace FilmActor {
-    export namespace ActorId {}
-    export namespace FilmId {}
-    export namespace LastUpdate {}
-    export function useActorIdFilmId() {}
-    export function useFilmId() {}
-  }
-  export namespace Address {
-    export namespace AddressId {}
-    export namespace Address {}
-    export namespace Address2 {}
-    export namespace District {}
-    export namespace CityId {}
-    export namespace PostalCode {}
-    export namespace Phone {}
-    export namespace LastUpdate {}
-    export function useAddressId() {}
-    export function useCityId() {}
-  }
-  export namespace City {
-    export namespace CityId {}
-    export namespace City {}
-    export namespace CountryId {}
-    export namespace LastUpdate {}
-    export function useCityId() {}
-    export function useCountryId() {}
-  }
-  export namespace Customer {
-    export namespace CustomerId {}
-    export namespace StoreId {}
-    export namespace FirstName {}
-    export namespace LastName {}
-    export namespace Email {}
-    export namespace AddressId {}
-    export namespace Activebool {}
-    export namespace CreateDate {}
-    export namespace LastUpdate {}
-    export namespace Active {}
-    export function useAddressId() {}
-    export function useCustomerId() {}
-    export function useLastName() {}
-    export function useStoreId() {}
-  }
-  export namespace Actor {
-    export namespace ActorId {}
-    export namespace FirstName {}
-    export namespace LastName {}
-    export namespace LastUpdate {}
-    export function useActorId() {}
-    export function useLastName() {}
-  }
-  export namespace FilmCategory {
-    export namespace FilmId {}
-    export namespace CategoryId {}
-    export namespace LastUpdate {}
-    export function useFilmIdCategoryId() {}
-  }
-  export namespace Inventory {
-    export namespace InventoryId {}
-    export namespace FilmId {}
-    export namespace StoreId {}
-    export namespace LastUpdate {}
-    export function useInventoryId() {}
-    export function useStoreIdFilmId() {}
-  }
-  export namespace Category {
-    export namespace CategoryId {}
-    export namespace Name {}
-    export namespace LastUpdate {}
-    export function useCategoryId() {}
-  }
-  export namespace Country {
-    export namespace CountryId {}
-    export namespace Country {}
-    export namespace LastUpdate {}
-    export function useCountryId() {}
-  }
-  export namespace Language {
-    export namespace LanguageId {}
-    export namespace Name {}
-    export namespace LastUpdate {}
-    export function useLanguageId() {}
-  }
-  export namespace Rental {
-    export namespace RentalId {}
-    export namespace RentalDate {}
-    export namespace InventoryId {}
-    export namespace CustomerId {}
-    export namespace ReturnDate {}
-    export namespace StaffId {}
-    export namespace LastUpdate {}
-    export function useInventoryId() {}
-    export function useRentalDateInventoryIdCustomerId() {}
-    export function useRentalId() {}
-  }
-  export namespace Staff {
-    export namespace StaffId {}
-    export namespace FirstName {}
-    export namespace LastName {}
-    export namespace AddressId {}
-    export namespace Email {}
-    export namespace StoreId {}
-    export namespace Active {}
-    export namespace Username {}
-    export namespace Password {}
-    export namespace LastUpdate {}
-    export namespace Picture {}
-    export function useStaffId() {}
-  }
-  export namespace Store {
-    export namespace StoreId {}
-    export namespace ManagerStaffId {}
-    export namespace AddressId {}
-    export namespace LastUpdate {}
-    export function useManagerStaffId() {}
-    export function useStoreId() {}
-  }
-  export namespace Payment {
-    export namespace PaymentId {}
-    export namespace CustomerId {}
-    export namespace StaffId {}
-    export namespace RentalId {}
-    export namespace Amount {}
-    export namespace PaymentDate {}
-    export function useCustomerId() {}
-    export function usePaymentId() {}
-    export function useRentalId() {}
-    export function useStaffId() {}
-  }
-  export namespace Film {
-    export namespace FilmId {}
-    export namespace Title {}
-    export namespace Description {}
-    export namespace ReleaseYear {}
-    export namespace LanguageId {}
-    export namespace RentalDuration {}
-    export namespace RentalRate {}
-    export namespace Length {}
-    export namespace ReplacementCost {}
-    export namespace Rating {}
-    export namespace LastUpdate {}
-    export namespace SpecialFeatures {}
-    export namespace Fulltext {}
-    export function useFilmId() {}
-    export function useFulltext() {}
-    export function useLanguageId() {}
-    export function useTitle() {}
-  }
-}
-export namespace InformationSchema {
-  export namespace SqlFeatures {
-    export namespace FeatureId {}
-    export namespace FeatureName {}
-    export namespace SubFeatureId {}
-    export namespace SubFeatureName {}
-    export namespace IsSupported {}
-    export namespace IsVerifiedBy {}
-    export namespace Comments {}
-  }
-  export namespace SqlImplementationInfo {
-    export namespace ImplementationInfoId {}
-    export namespace ImplementationInfoName {}
-    export namespace IntegerValue {}
-    export namespace CharacterValue {}
-    export namespace Comments {}
-  }
-  export namespace SqlParts {
-    export namespace FeatureId {}
-    export namespace FeatureName {}
-    export namespace IsSupported {}
-    export namespace IsVerifiedBy {}
-    export namespace Comments {}
-  }
-  export namespace SqlSizing {
-    export namespace SizingId {}
-    export namespace SizingName {}
-    export namespace SupportedValue {}
-    export namespace Comments {}
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace ActorId {}
+      export namespace FilmId {}
+      export namespace LastUpdate {}
+
+      export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.FilmActor.byActorIdFilmId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByFilmId(parameters: ByFilmId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.FilmActor.byFilmId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Address {
+      export namespace AddressId {}
+      export namespace Address {}
+      export namespace Address2 {}
+      export namespace District {}
+      export namespace CityId {}
+      export namespace PostalCode {}
+      export namespace Phone {}
+      export namespace LastUpdate {}
+
+      export function useByAddressId(parameters: ByAddressId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Address.byAddressId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByCityId(parameters: ByCityId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Address.byCityId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace City {
+      export namespace CityId {}
+      export namespace City {}
+      export namespace CountryId {}
+      export namespace LastUpdate {}
+
+      export function useByCityId(parameters: ByCityId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.City.byCityId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByCountryId(parameters: ByCountryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.City.byCountryId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Customer {
+      export namespace CustomerId {}
+      export namespace StoreId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace Email {}
+      export namespace AddressId {}
+      export namespace Activebool {}
+      export namespace CreateDate {}
+      export namespace LastUpdate {}
+      export namespace Active {}
+
+      export function useByAddressId(parameters: ByAddressId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Customer.byAddressId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByCustomerId(parameters: ByCustomerId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Customer.byCustomerId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByLastName(parameters: ByLastName) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Customer.byLastName",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByStoreId(parameters: ByStoreId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Customer.byStoreId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Actor {
+      export namespace ActorId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace LastUpdate {}
+
+      export function useByActorId(parameters: ByActorId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Actor.byActorId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByLastName(parameters: ByLastName) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Actor.byLastName",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace FilmCategory {
+      export namespace FilmId {}
+      export namespace CategoryId {}
+      export namespace LastUpdate {}
+
+      export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.FilmCategory.byFilmIdCategoryId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Inventory {
+      export namespace InventoryId {}
+      export namespace FilmId {}
+      export namespace StoreId {}
+      export namespace LastUpdate {}
+
+      export function useByInventoryId(parameters: ByInventoryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Inventory.byInventoryId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Inventory.byStoreIdFilmId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Category {
+      export namespace CategoryId {}
+      export namespace Name {}
+      export namespace LastUpdate {}
+
+      export function useByCategoryId(parameters: ByCategoryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Category.byCategoryId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Country {
+      export namespace CountryId {}
+      export namespace Country {}
+      export namespace LastUpdate {}
+
+      export function useByCountryId(parameters: ByCountryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Country.byCountryId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Language {
+      export namespace LanguageId {}
+      export namespace Name {}
+      export namespace LastUpdate {}
+
+      export function useByLanguageId(parameters: ByLanguageId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Language.byLanguageId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Rental {
+      export namespace RentalId {}
+      export namespace RentalDate {}
+      export namespace InventoryId {}
+      export namespace CustomerId {}
+      export namespace ReturnDate {}
+      export namespace StaffId {}
+      export namespace LastUpdate {}
+
+      export function useByInventoryId(parameters: ByInventoryId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Rental.byInventoryId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByRentalDateInventoryIdCustomerId(
+        parameters: ByRentalDateInventoryIdCustomerId,
+      ) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByRentalId(parameters: ByRentalId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Rental.byRentalId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Staff {
+      export namespace StaffId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace AddressId {}
+      export namespace Email {}
+      export namespace StoreId {}
+      export namespace Active {}
+      export namespace Username {}
+      export namespace Password {}
+      export namespace LastUpdate {}
+      export namespace Picture {}
+
+      export function useByStaffId(parameters: ByStaffId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Staff.byStaffId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Store {
+      export namespace StoreId {}
+      export namespace ManagerStaffId {}
+      export namespace AddressId {}
+      export namespace LastUpdate {}
+
+      export function useByManagerStaffId(parameters: ByManagerStaffId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Store.byManagerStaffId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByStoreId(parameters: ByStoreId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Store.byStoreId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Payment {
+      export namespace PaymentId {}
+      export namespace CustomerId {}
+      export namespace StaffId {}
+      export namespace RentalId {}
+      export namespace Amount {}
+      export namespace PaymentDate {}
+
+      export function useByCustomerId(parameters: ByCustomerId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Payment.byCustomerId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByPaymentId(parameters: ByPaymentId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Payment.byPaymentId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByRentalId(parameters: ByRentalId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Payment.byRentalId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByStaffId(parameters: ByStaffId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Payment.byStaffId",
+          parameters,
+          values: {},
+        };
+      }
+    }
+    export namespace Film {
+      export namespace FilmId {}
+      export namespace Title {}
+      export namespace Description {}
+      export namespace ReleaseYear {}
+      export namespace LanguageId {}
+      export namespace RentalDuration {}
+      export namespace RentalRate {}
+      export namespace Length {}
+      export namespace ReplacementCost {}
+      export namespace Rating {}
+      export namespace LastUpdate {}
+      export namespace SpecialFeatures {}
+      export namespace Fulltext {}
+
+      export function useByFilmId(parameters: ByFilmId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Film.byFilmId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByFulltext(parameters: ByFulltext) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Film.byFulltext",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByLanguageId(parameters: ByLanguageId) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Film.byLanguageId",
+          parameters,
+          values: {},
+        };
+      }
+
+      export function useByTitle(parameters: ByTitle) {
+        const client = useEmbraceSQLClient();
+        const request = {
+          operation: "Public.Film.byTitle",
+          parameters,
+          values: {},
+        };
+      }
+    }
   }
 }
 // End React generated section
