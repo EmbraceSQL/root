@@ -29,7 +29,7 @@ a line of SQL, or additional schema, or even a server.
 ```typescript
 import React from "react";
 import * as ReactDOM from "react-dom/client";
-import { EmbraceSQLClient, EmbraceSQLProvider, Hooks } from "./dvdrental-react";
+import { EmbraceSQLClient, EmbraceSQLProvider, Public } from "./dvdrental-react";
 
 const client = new EmbraceSQLClient({
   url: "http://localhost:3000/",
@@ -38,10 +38,8 @@ const client = new EmbraceSQLClient({
 
 const App = () => {
     // this is hooking to an AutoCRUD method to read an actor
-    const {loading, results: actor, error, refresh} = Hooks.Public.Actor.useByActorId({ actorId: 1 });
-    // 🪄 an automatic onChange saving hook, with debounce to not smoke your DB!
-    const onChange = Hooks.Public.Actor.useOnChange(results, {debounce: 200});
-
+    const {loading, results: actor, error, refresh} = Public.Tables.Actor.useByActorId({ actorId: 1 });
+    // 🪄 - automatic onChange saving though the hook, with debounce to not smoke your DB!
     return <div>
         <input value={actor.firstName} onChange={actor.firstName}/>
         <input value={actor.lastName} onChange={actor.lastName}/>

@@ -12589,8 +12589,8 @@ export class OperationDispatcher {
 }
 // Begin React generated section
 import React from "react";
-import { EmbraceSQLClient } from "@embracesql/client";
-import { EmbraceSQLProvider, useEmbraceSQLClient } from "@embracesql/react";
+export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
+import { EmbraceSQLProvider, useEmbraceSQLRequest } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
@@ -12599,20 +12599,36 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.FilmActor.byActorIdFilmId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByActorIdFilmId,
+          never,
+          Public.FilmActor
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByFilmId(parameters: ByFilmId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.FilmActor.byFilmId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12627,20 +12643,34 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByAddressId(parameters: ByAddressId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Address.byAddressId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByCityId(parameters: ByCityId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Address.byCityId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCityId, never, Public.Address>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12651,20 +12681,34 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByCityId(parameters: ByCityId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.City.byCityId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByCountryId(parameters: ByCountryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.City.byCountryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCountryId, never, Public.City>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12681,38 +12725,66 @@ export namespace Public {
       export namespace Active {}
 
       export function useByAddressId(parameters: ByAddressId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Customer.byAddressId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByAddressId, never, Public.Customer>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByCustomerId(parameters: ByCustomerId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Customer.byCustomerId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByLastName(parameters: ByLastName) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Customer.byLastName",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByStoreId(parameters: ByStoreId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Customer.byStoreId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12723,20 +12795,34 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByActorId(parameters: ByActorId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Actor.byActorId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByLastName(parameters: ByLastName) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Actor.byLastName",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12746,11 +12832,20 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.FilmCategory.byFilmIdCategoryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByFilmIdCategoryId,
+          never,
+          Public.FilmCategory
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12761,20 +12856,38 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByInventoryId(parameters: ByInventoryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Inventory.byInventoryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByInventoryId,
+          never,
+          Public.Inventory
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Inventory.byStoreIdFilmId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByStoreIdFilmId,
+          never,
+          Public.Inventory
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12784,11 +12897,18 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByCategoryId(parameters: ByCategoryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Category.byCategoryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12798,11 +12918,18 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByCountryId(parameters: ByCountryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Country.byCountryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12812,11 +12939,18 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByLanguageId(parameters: ByLanguageId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Language.byLanguageId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12830,31 +12964,54 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByInventoryId(parameters: ByInventoryId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Rental.byInventoryId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByInventoryId, never, Public.Rental>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByRentalDateInventoryIdCustomerId(
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByRentalDateInventoryIdCustomerId,
+          never,
+          Public.Rental
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByRentalId(parameters: ByRentalId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Rental.byRentalId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12872,11 +13029,18 @@ export namespace Public {
       export namespace Picture {}
 
       export function useByStaffId(parameters: ByStaffId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Staff.byStaffId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12887,20 +13051,36 @@ export namespace Public {
       export namespace LastUpdate {}
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Store.byManagerStaffId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<
+          ByManagerStaffId,
+          never,
+          Public.Store
+        >(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByStoreId(parameters: ByStoreId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Store.byStoreId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12913,38 +13093,66 @@ export namespace Public {
       export namespace PaymentDate {}
 
       export function useByCustomerId(parameters: ByCustomerId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Payment.byCustomerId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Payment>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByPaymentId(parameters: ByPaymentId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Payment.byPaymentId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByRentalId(parameters: ByRentalId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Payment.byRentalId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByStaffId(parameters: ByStaffId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Payment.byStaffId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }
@@ -12964,38 +13172,64 @@ export namespace Public {
       export namespace Fulltext {}
 
       export function useByFilmId(parameters: ByFilmId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Film.byFilmId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByFulltext(parameters: ByFulltext) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Film.byFulltext",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByLanguageId(parameters: ByLanguageId) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Film.byLanguageId",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film>(
+          request,
+        );
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
 
       export function useByTitle(parameters: ByTitle) {
-        const client = useEmbraceSQLClient();
         const request = {
           operation: "Public.Film.byTitle",
           parameters,
-          values: {},
+        };
+        const done = useEmbraceSQLRequest<ByTitle, never, Public.Film>(request);
+
+        return {
+          loading: done?.loading,
+          error: done?.error,
+          results: done?.response?.results,
         };
       }
     }

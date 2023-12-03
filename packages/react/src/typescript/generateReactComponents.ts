@@ -1,6 +1,7 @@
 import {
   ASTKind,
   GenerationContext,
+  IsNamed,
   NamespaceVisitor,
 } from "@embracesql/shared";
 import { pascalCase } from "change-case";
@@ -12,8 +13,8 @@ export const generateReactComponents = async (context: GenerationContext) => {
   const generationBuffer = [
     `// Begin React generated section`,
     `import React from "react";`,
-    `import {EmbraceSQLClient} from "@embracesql/client";`,
-    `import { EmbraceSQLProvider, useEmbraceSQLClient } from "@embracesql/react";`,
+    `export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";`,
+    `import { EmbraceSQLProvider, useEmbraceSQLRequest } from "@embracesql/react";`,
   ];
 
   context.handlers = {
@@ -23,20 +24,34 @@ export const generateReactComponents = async (context: GenerationContext) => {
     [ASTKind.Column]: NamespaceVisitor,
     [ASTKind.Index]: {
       before: async (_, node) => {
+        const tableTypeName = `${pascalCase(
+          (node.parent?.parent?.parent as unknown as IsNamed)?.name,
+        )}.${pascalCase((node.parent as unknown as IsNamed)?.name)}`;
         const generationBuffer = [""];
         generationBuffer.push(
           `export function use${pascalCase(node.name)}(parameters: ${pascalCase(
             node.name,
           )}) {`,
         );
-        generationBuffer.push(`const client = useEmbraceSQLClient()`);
 
         // request - this is the actual doing
         generationBuffer.push(`const request = {`);
         generationBuffer.push(`operation: "${node.dispatchName}",`);
         generationBuffer.push(`parameters,`);
-        generationBuffer.push(`values: {},`);
         generationBuffer.push(`}`);
+        // dispatching the request
+        generationBuffer.push(
+          `const done = useEmbraceSQLRequest<${pascalCase(
+            node.name,
+          )}, never, ${tableTypeName}>(request);`,
+        );
+        generationBuffer.push(`
+            return {
+                loading: done?.loading,
+                error: done?.error,
+                results: done?.response?.results,
+            };
+            `);
 
         return generationBuffer.join("\n");
       },
@@ -48,7 +63,7 @@ export const generateReactComponents = async (context: GenerationContext) => {
 
   // laying out schemas and tables as namespaces
   generationBuffer.push(await context.database.visit(context));
-
+  // close off Hooks namespace
   generationBuffer.push(`// End React generated section`);
   return generationBuffer.join("\n");
 };
