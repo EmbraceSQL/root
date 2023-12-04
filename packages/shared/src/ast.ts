@@ -85,15 +85,15 @@ export abstract class ASTNode {
     public parent?: ASTNode,
   ) {}
 
-  async visit(context: GenerationContext): Promise<string> {
+  async visit<T extends this>(context: GenerationContext): Promise<string> {
     const generationBuffer = [""];
     const visitor = context.handlers?.[this.kind] as Visitor<typeof this>;
     generationBuffer.push(
-      visitor?.before ? await visitor?.before(context, this) : "",
+      visitor?.before ? await visitor?.before(context, this as T) : "",
     );
 
     generationBuffer.push(
-      visitor?.after ? await visitor?.after(context, this) : "",
+      visitor?.after ? await visitor?.after(context, this as T) : "",
     );
 
     return generationBuffer.filter((line) => line).join("\n");
@@ -120,11 +120,11 @@ export abstract class ContainerNode
     super(kind, parent);
   }
 
-  async visit(context: GenerationContext): Promise<string> {
+  async visit<T extends this>(context: GenerationContext): Promise<string> {
     const generationBuffer = [""];
-    const beforeHandler = context.handlers?.[this.kind]?.before;
+    const visitor = context.handlers?.[this.kind] as Visitor<typeof this>;
     generationBuffer.push(
-      beforeHandler ? await beforeHandler(context, this) : "",
+      visitor?.before ? await visitor?.before(context, this as T) : "",
     );
 
     // and here is that recursion
@@ -132,9 +132,8 @@ export abstract class ContainerNode
       generationBuffer.push(await child.visit(context));
     }
 
-    const afterHandler = context.handlers?.[this.kind]?.after;
     generationBuffer.push(
-      afterHandler ? await afterHandler(context, this) : "",
+      visitor?.after ? await visitor?.after(context, this as T) : "",
     );
 
     return generationBuffer.filter((line) => line).join("\n");
@@ -202,7 +201,7 @@ export class TableNode extends ContainerNode {
     super(name, ASTKind.Table, tables);
   }
   get dispatchName(): string {
-    return `${this.parent?.dispatchName}.${pascalCase(this.name)}`;
+    return `${this.parent?.dispatchName}.${pascalCase(this.name)}.create`;
   }
 }
 
@@ -225,6 +224,7 @@ export class IndexNode extends ContainerNode {
   constructor(
     table: TableNode,
     public name: string,
+    public unique: boolean,
   ) {
     super(name, ASTKind.Index, table);
   }

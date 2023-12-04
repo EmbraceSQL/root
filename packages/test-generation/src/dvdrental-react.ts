@@ -12590,7 +12590,820 @@ export class OperationDispatcher {
 // Begin React generated section
 import React from "react";
 export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
-import { EmbraceSQLProvider, useEmbraceSQLRequest } from "@embracesql/react";
+import {
+  useEmbraceSQLRequest,
+  useEmbraceSQLUpdateCallback,
+} from "@embracesql/react";
+type InterceptorCallback<T> = (value: T, index?: number) => Promise<void>;
+export namespace Public {
+  export function FilmActorInterceptor(
+    value: FilmActor,
+    callback: InterceptorCallback<FilmActor>,
+    index?: number,
+  ): FilmActor {
+    return {
+      get actorId() {
+        return value.actorId;
+      },
+      set actorId(newValue) {
+        value.actorId = newValue;
+        void callback(value, index);
+      },
+
+      get filmId() {
+        return value.filmId;
+      },
+      set filmId(newValue) {
+        value.filmId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function AddressInterceptor(
+    value: Address,
+    callback: InterceptorCallback<Address>,
+    index?: number,
+  ): Address {
+    return {
+      get addressId() {
+        return value.addressId;
+      },
+      set addressId(newValue) {
+        value.addressId = newValue;
+        void callback(value, index);
+      },
+
+      get address() {
+        return value.address;
+      },
+      set address(newValue) {
+        value.address = newValue;
+        void callback(value, index);
+      },
+
+      get address2() {
+        return value.address2;
+      },
+      set address2(newValue) {
+        value.address2 = newValue;
+        void callback(value, index);
+      },
+
+      get district() {
+        return value.district;
+      },
+      set district(newValue) {
+        value.district = newValue;
+        void callback(value, index);
+      },
+
+      get cityId() {
+        return value.cityId;
+      },
+      set cityId(newValue) {
+        value.cityId = newValue;
+        void callback(value, index);
+      },
+
+      get postalCode() {
+        return value.postalCode;
+      },
+      set postalCode(newValue) {
+        value.postalCode = newValue;
+        void callback(value, index);
+      },
+
+      get phone() {
+        return value.phone;
+      },
+      set phone(newValue) {
+        value.phone = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function CityInterceptor(
+    value: City,
+    callback: InterceptorCallback<City>,
+    index?: number,
+  ): City {
+    return {
+      get cityId() {
+        return value.cityId;
+      },
+      set cityId(newValue) {
+        value.cityId = newValue;
+        void callback(value, index);
+      },
+
+      get city() {
+        return value.city;
+      },
+      set city(newValue) {
+        value.city = newValue;
+        void callback(value, index);
+      },
+
+      get countryId() {
+        return value.countryId;
+      },
+      set countryId(newValue) {
+        value.countryId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function CustomerInterceptor(
+    value: Customer,
+    callback: InterceptorCallback<Customer>,
+    index?: number,
+  ): Customer {
+    return {
+      get customerId() {
+        return value.customerId;
+      },
+      set customerId(newValue) {
+        value.customerId = newValue;
+        void callback(value, index);
+      },
+
+      get storeId() {
+        return value.storeId;
+      },
+      set storeId(newValue) {
+        value.storeId = newValue;
+        void callback(value, index);
+      },
+
+      get firstName() {
+        return value.firstName;
+      },
+      set firstName(newValue) {
+        value.firstName = newValue;
+        void callback(value, index);
+      },
+
+      get lastName() {
+        return value.lastName;
+      },
+      set lastName(newValue) {
+        value.lastName = newValue;
+        void callback(value, index);
+      },
+
+      get email() {
+        return value.email;
+      },
+      set email(newValue) {
+        value.email = newValue;
+        void callback(value, index);
+      },
+
+      get addressId() {
+        return value.addressId;
+      },
+      set addressId(newValue) {
+        value.addressId = newValue;
+        void callback(value, index);
+      },
+
+      get activebool() {
+        return value.activebool;
+      },
+      set activebool(newValue) {
+        value.activebool = newValue;
+        void callback(value, index);
+      },
+
+      get createDate() {
+        return value.createDate;
+      },
+      set createDate(newValue) {
+        value.createDate = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+
+      get active() {
+        return value.active;
+      },
+      set active(newValue) {
+        value.active = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function ActorInterceptor(
+    value: Actor,
+    callback: InterceptorCallback<Actor>,
+    index?: number,
+  ): Actor {
+    return {
+      get actorId() {
+        return value.actorId;
+      },
+      set actorId(newValue) {
+        value.actorId = newValue;
+        void callback(value, index);
+      },
+
+      get firstName() {
+        return value.firstName;
+      },
+      set firstName(newValue) {
+        value.firstName = newValue;
+        void callback(value, index);
+      },
+
+      get lastName() {
+        return value.lastName;
+      },
+      set lastName(newValue) {
+        value.lastName = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function FilmCategoryInterceptor(
+    value: FilmCategory,
+    callback: InterceptorCallback<FilmCategory>,
+    index?: number,
+  ): FilmCategory {
+    return {
+      get filmId() {
+        return value.filmId;
+      },
+      set filmId(newValue) {
+        value.filmId = newValue;
+        void callback(value, index);
+      },
+
+      get categoryId() {
+        return value.categoryId;
+      },
+      set categoryId(newValue) {
+        value.categoryId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function InventoryInterceptor(
+    value: Inventory,
+    callback: InterceptorCallback<Inventory>,
+    index?: number,
+  ): Inventory {
+    return {
+      get inventoryId() {
+        return value.inventoryId;
+      },
+      set inventoryId(newValue) {
+        value.inventoryId = newValue;
+        void callback(value, index);
+      },
+
+      get filmId() {
+        return value.filmId;
+      },
+      set filmId(newValue) {
+        value.filmId = newValue;
+        void callback(value, index);
+      },
+
+      get storeId() {
+        return value.storeId;
+      },
+      set storeId(newValue) {
+        value.storeId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function CategoryInterceptor(
+    value: Category,
+    callback: InterceptorCallback<Category>,
+    index?: number,
+  ): Category {
+    return {
+      get categoryId() {
+        return value.categoryId;
+      },
+      set categoryId(newValue) {
+        value.categoryId = newValue;
+        void callback(value, index);
+      },
+
+      get name() {
+        return value.name;
+      },
+      set name(newValue) {
+        value.name = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function CountryInterceptor(
+    value: Country,
+    callback: InterceptorCallback<Country>,
+    index?: number,
+  ): Country {
+    return {
+      get countryId() {
+        return value.countryId;
+      },
+      set countryId(newValue) {
+        value.countryId = newValue;
+        void callback(value, index);
+      },
+
+      get country() {
+        return value.country;
+      },
+      set country(newValue) {
+        value.country = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function LanguageInterceptor(
+    value: Language,
+    callback: InterceptorCallback<Language>,
+    index?: number,
+  ): Language {
+    return {
+      get languageId() {
+        return value.languageId;
+      },
+      set languageId(newValue) {
+        value.languageId = newValue;
+        void callback(value, index);
+      },
+
+      get name() {
+        return value.name;
+      },
+      set name(newValue) {
+        value.name = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function RentalInterceptor(
+    value: Rental,
+    callback: InterceptorCallback<Rental>,
+    index?: number,
+  ): Rental {
+    return {
+      get rentalId() {
+        return value.rentalId;
+      },
+      set rentalId(newValue) {
+        value.rentalId = newValue;
+        void callback(value, index);
+      },
+
+      get rentalDate() {
+        return value.rentalDate;
+      },
+      set rentalDate(newValue) {
+        value.rentalDate = newValue;
+        void callback(value, index);
+      },
+
+      get inventoryId() {
+        return value.inventoryId;
+      },
+      set inventoryId(newValue) {
+        value.inventoryId = newValue;
+        void callback(value, index);
+      },
+
+      get customerId() {
+        return value.customerId;
+      },
+      set customerId(newValue) {
+        value.customerId = newValue;
+        void callback(value, index);
+      },
+
+      get returnDate() {
+        return value.returnDate;
+      },
+      set returnDate(newValue) {
+        value.returnDate = newValue;
+        void callback(value, index);
+      },
+
+      get staffId() {
+        return value.staffId;
+      },
+      set staffId(newValue) {
+        value.staffId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function StaffInterceptor(
+    value: Staff,
+    callback: InterceptorCallback<Staff>,
+    index?: number,
+  ): Staff {
+    return {
+      get staffId() {
+        return value.staffId;
+      },
+      set staffId(newValue) {
+        value.staffId = newValue;
+        void callback(value, index);
+      },
+
+      get firstName() {
+        return value.firstName;
+      },
+      set firstName(newValue) {
+        value.firstName = newValue;
+        void callback(value, index);
+      },
+
+      get lastName() {
+        return value.lastName;
+      },
+      set lastName(newValue) {
+        value.lastName = newValue;
+        void callback(value, index);
+      },
+
+      get addressId() {
+        return value.addressId;
+      },
+      set addressId(newValue) {
+        value.addressId = newValue;
+        void callback(value, index);
+      },
+
+      get email() {
+        return value.email;
+      },
+      set email(newValue) {
+        value.email = newValue;
+        void callback(value, index);
+      },
+
+      get storeId() {
+        return value.storeId;
+      },
+      set storeId(newValue) {
+        value.storeId = newValue;
+        void callback(value, index);
+      },
+
+      get active() {
+        return value.active;
+      },
+      set active(newValue) {
+        value.active = newValue;
+        void callback(value, index);
+      },
+
+      get username() {
+        return value.username;
+      },
+      set username(newValue) {
+        value.username = newValue;
+        void callback(value, index);
+      },
+
+      get password() {
+        return value.password;
+      },
+      set password(newValue) {
+        value.password = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+
+      get picture() {
+        return value.picture;
+      },
+      set picture(newValue) {
+        value.picture = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function StoreInterceptor(
+    value: Store,
+    callback: InterceptorCallback<Store>,
+    index?: number,
+  ): Store {
+    return {
+      get storeId() {
+        return value.storeId;
+      },
+      set storeId(newValue) {
+        value.storeId = newValue;
+        void callback(value, index);
+      },
+
+      get managerStaffId() {
+        return value.managerStaffId;
+      },
+      set managerStaffId(newValue) {
+        value.managerStaffId = newValue;
+        void callback(value, index);
+      },
+
+      get addressId() {
+        return value.addressId;
+      },
+      set addressId(newValue) {
+        value.addressId = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function PaymentInterceptor(
+    value: Payment,
+    callback: InterceptorCallback<Payment>,
+    index?: number,
+  ): Payment {
+    return {
+      get paymentId() {
+        return value.paymentId;
+      },
+      set paymentId(newValue) {
+        value.paymentId = newValue;
+        void callback(value, index);
+      },
+
+      get customerId() {
+        return value.customerId;
+      },
+      set customerId(newValue) {
+        value.customerId = newValue;
+        void callback(value, index);
+      },
+
+      get staffId() {
+        return value.staffId;
+      },
+      set staffId(newValue) {
+        value.staffId = newValue;
+        void callback(value, index);
+      },
+
+      get rentalId() {
+        return value.rentalId;
+      },
+      set rentalId(newValue) {
+        value.rentalId = newValue;
+        void callback(value, index);
+      },
+
+      get amount() {
+        return value.amount;
+      },
+      set amount(newValue) {
+        value.amount = newValue;
+        void callback(value, index);
+      },
+
+      get paymentDate() {
+        return value.paymentDate;
+      },
+      set paymentDate(newValue) {
+        value.paymentDate = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+
+  export function FilmInterceptor(
+    value: Film,
+    callback: InterceptorCallback<Film>,
+    index?: number,
+  ): Film {
+    return {
+      get filmId() {
+        return value.filmId;
+      },
+      set filmId(newValue) {
+        value.filmId = newValue;
+        void callback(value, index);
+      },
+
+      get title() {
+        return value.title;
+      },
+      set title(newValue) {
+        value.title = newValue;
+        void callback(value, index);
+      },
+
+      get description() {
+        return value.description;
+      },
+      set description(newValue) {
+        value.description = newValue;
+        void callback(value, index);
+      },
+
+      get releaseYear() {
+        return value.releaseYear;
+      },
+      set releaseYear(newValue) {
+        value.releaseYear = newValue;
+        void callback(value, index);
+      },
+
+      get languageId() {
+        return value.languageId;
+      },
+      set languageId(newValue) {
+        value.languageId = newValue;
+        void callback(value, index);
+      },
+
+      get rentalDuration() {
+        return value.rentalDuration;
+      },
+      set rentalDuration(newValue) {
+        value.rentalDuration = newValue;
+        void callback(value, index);
+      },
+
+      get rentalRate() {
+        return value.rentalRate;
+      },
+      set rentalRate(newValue) {
+        value.rentalRate = newValue;
+        void callback(value, index);
+      },
+
+      get length() {
+        return value.length;
+      },
+      set length(newValue) {
+        value.length = newValue;
+        void callback(value, index);
+      },
+
+      get replacementCost() {
+        return value.replacementCost;
+      },
+      set replacementCost(newValue) {
+        value.replacementCost = newValue;
+        void callback(value, index);
+      },
+
+      get rating() {
+        return value.rating;
+      },
+      set rating(newValue) {
+        value.rating = newValue;
+        void callback(value, index);
+      },
+
+      get lastUpdate() {
+        return value.lastUpdate;
+      },
+      set lastUpdate(newValue) {
+        value.lastUpdate = newValue;
+        void callback(value, index);
+      },
+
+      get specialFeatures() {
+        return value.specialFeatures;
+      },
+      set specialFeatures(newValue) {
+        value.specialFeatures = newValue;
+        void callback(value, index);
+      },
+
+      get fulltext() {
+        return value.fulltext;
+      },
+      set fulltext(newValue) {
+        value.fulltext = newValue;
+        void callback(value, index);
+      },
+    };
+  }
+}
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
@@ -12600,35 +13413,68 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.FilmActor.byActorIdFilmId",
+          operation: "Public.FilmActor.create.byActorIdFilmId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.FilmActor>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmActor,
+          Public.FilmActor
+        >({ operation: "Public.FilmActor.create", setResults });
         const done = useEmbraceSQLRequest<
           ByActorIdFilmId,
           never,
           Public.FilmActor
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.FilmActorInterceptor(
+                done.response.results,
+                updateCallback,
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.FilmActor.byFilmId",
+          operation: "Public.FilmActor.create.byFilmId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor>(
+        const [results, setResults] = React.useState<Public.FilmActor[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmActor,
+          Public.FilmActor[]
+        >({ operation: "Public.FilmActor.create", setResults });
+        const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.FilmActorInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12644,33 +13490,63 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Address.byAddressId",
+          operation: "Public.Address.create.byAddressId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Address>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Address,
+          Public.Address
+        >({ operation: "Public.Address.create", setResults });
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.AddressInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Address.byCityId",
+          operation: "Public.Address.create.byCityId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByCityId, never, Public.Address>(
+        const [results, setResults] = React.useState<Public.Address[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Address,
+          Public.Address[]
+        >({ operation: "Public.Address.create", setResults });
+        const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.AddressInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12682,33 +13558,63 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.City.byCityId",
+          operation: "Public.City.create.byCityId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.City>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.City,
+          Public.City
+        >({ operation: "Public.City.create", setResults });
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.CityInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.City.byCountryId",
+          operation: "Public.City.create.byCountryId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByCountryId, never, Public.City>(
+        const [results, setResults] = React.useState<Public.City[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.City,
+          Public.City[]
+        >({ operation: "Public.City.create", setResults });
+        const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.CityInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12726,65 +13632,129 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Customer.byAddressId",
+          operation: "Public.Customer.create.byAddressId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByAddressId, never, Public.Customer>(
-          request,
-        );
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", setResults });
+        const done = useEmbraceSQLRequest<
+          ByAddressId,
+          never,
+          Public.Customer[]
+        >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.CustomerInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Customer.byCustomerId",
+          operation: "Public.Customer.create.byCustomerId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Customer>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer
+        >({ operation: "Public.Customer.create", setResults });
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.CustomerInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Customer.byLastName",
+          operation: "Public.Customer.create.byLastName",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer>(
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", setResults });
+        const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.CustomerInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Customer.byStoreId",
+          operation: "Public.Customer.create.byStoreId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer>(
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", setResults });
+        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.CustomerInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12796,33 +13766,63 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Actor.byActorId",
+          operation: "Public.Actor.create.byActorId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Actor>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Actor,
+          Public.Actor
+        >({ operation: "Public.Actor.create", setResults });
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.ActorInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Actor.byLastName",
+          operation: "Public.Actor.create.byLastName",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor>(
+        const [results, setResults] = React.useState<Public.Actor[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Actor,
+          Public.Actor[]
+        >({ operation: "Public.Actor.create", setResults });
+        const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.ActorInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12833,19 +13833,36 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.FilmCategory.byFilmIdCategoryId",
+          operation: "Public.FilmCategory.create.byFilmIdCategoryId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.FilmCategory>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmCategory,
+          Public.FilmCategory
+        >({ operation: "Public.FilmCategory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByFilmIdCategoryId,
           never,
           Public.FilmCategory
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.FilmCategoryInterceptor(
+                done.response.results,
+                updateCallback,
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12857,37 +13874,70 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Inventory.byInventoryId",
+          operation: "Public.Inventory.create.byInventoryId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Inventory>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Inventory,
+          Public.Inventory
+        >({ operation: "Public.Inventory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByInventoryId,
           never,
           Public.Inventory
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.InventoryInterceptor(
+                done.response.results,
+                updateCallback,
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Inventory.byStoreIdFilmId",
+          operation: "Public.Inventory.create.byStoreIdFilmId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Inventory[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Inventory,
+          Public.Inventory[]
+        >({ operation: "Public.Inventory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByStoreIdFilmId,
           never,
-          Public.Inventory
+          Public.Inventory[]
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.InventoryInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12898,17 +13948,31 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Category.byCategoryId",
+          operation: "Public.Category.create.byCategoryId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Category>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Category,
+          Public.Category
+        >({ operation: "Public.Category.create", setResults });
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.CategoryInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12919,17 +13983,31 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Country.byCountryId",
+          operation: "Public.Country.create.byCountryId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Country>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Country,
+          Public.Country
+        >({ operation: "Public.Country.create", setResults });
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.CountryInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12940,17 +14018,31 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Language.byLanguageId",
+          operation: "Public.Language.create.byLanguageId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Language>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Language,
+          Public.Language
+        >({ operation: "Public.Language.create", setResults });
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.LanguageInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -12965,17 +14057,35 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Rental.byInventoryId",
+          operation: "Public.Rental.create.byInventoryId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByInventoryId, never, Public.Rental>(
-          request,
-        );
+        const [results, setResults] = React.useState<Public.Rental[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental[]
+        >({ operation: "Public.Rental.create", setResults });
+        const done = useEmbraceSQLRequest<
+          ByInventoryId,
+          never,
+          Public.Rental[]
+        >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.RentalInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
@@ -12983,35 +14093,63 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
+          operation: "Public.Rental.create.byRentalDateInventoryIdCustomerId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Rental>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental
+        >({ operation: "Public.Rental.create", setResults });
         const done = useEmbraceSQLRequest<
           ByRentalDateInventoryIdCustomerId,
           never,
           Public.Rental
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.RentalInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Rental.byRentalId",
+          operation: "Public.Rental.create.byRentalId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Rental>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental
+        >({ operation: "Public.Rental.create", setResults });
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.RentalInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -13030,17 +14168,31 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Staff.byStaffId",
+          operation: "Public.Staff.create.byStaffId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Staff>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Staff,
+          Public.Staff
+        >({ operation: "Public.Staff.create", setResults });
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.StaffInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -13052,35 +14204,63 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Store.byManagerStaffId",
+          operation: "Public.Store.create.byManagerStaffId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Store>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Store,
+          Public.Store
+        >({ operation: "Public.Store.create", setResults });
         const done = useEmbraceSQLRequest<
           ByManagerStaffId,
           never,
           Public.Store
         >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.StoreInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Store.byStoreId",
+          operation: "Public.Store.create.byStoreId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Store>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Store,
+          Public.Store
+        >({ operation: "Public.Store.create", setResults });
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.StoreInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -13094,65 +14274,129 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Payment.byCustomerId",
+          operation: "Public.Payment.create.byCustomerId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Payment>(
-          request,
-        );
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", setResults });
+        const done = useEmbraceSQLRequest<
+          ByCustomerId,
+          never,
+          Public.Payment[]
+        >(request);
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.PaymentInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Payment.byPaymentId",
+          operation: "Public.Payment.create.byPaymentId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Payment>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment
+        >({ operation: "Public.Payment.create", setResults });
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.PaymentInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Payment.byRentalId",
+          operation: "Public.Payment.create.byRentalId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment>(
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", setResults });
+        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.PaymentInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Payment.byStaffId",
+          operation: "Public.Payment.create.byStaffId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment>(
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", setResults });
+        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.PaymentInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }
@@ -13173,63 +14417,127 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Film.byFilmId",
+          operation: "Public.Film.create.byFilmId",
           parameters,
         };
+        const [results, setResults] = React.useState<Public.Film>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film
+        >({ operation: "Public.Film.create", setResults });
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              Public.FilmInterceptor(done.response.results, updateCallback),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Film.byFulltext",
+          operation: "Public.Film.create.byFulltext",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film>(
+        const [results, setResults] = React.useState<Public.Film[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", setResults });
+        const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.FilmInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Film.byLanguageId",
+          operation: "Public.Film.create.byLanguageId",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film>(
+        const [results, setResults] = React.useState<Public.Film[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", setResults });
+        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
           request,
         );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.FilmInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Film.byTitle",
+          operation: "Public.Film.create.byTitle",
           parameters,
         };
-        const done = useEmbraceSQLRequest<ByTitle, never, Public.Film>(request);
+        const [results, setResults] = React.useState<Public.Film[]>();
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", setResults });
+        const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(
+          request,
+        );
+        React.useEffect(() => {
+          if (done?.response?.results) {
+            setResults(
+              done.response.results.map((r, i) =>
+                Public.FilmInterceptor(r, updateCallback, i),
+              ),
+            );
+          } else {
+            setResults(undefined);
+          }
+        }, [done?.response]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: done?.response?.results,
+          results: results,
         };
       }
     }

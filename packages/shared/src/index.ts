@@ -22,7 +22,7 @@ export type EmbraceSQLRequest<P, V = never> = {
 export type EmbraceSQLResponse<R> = {
   operation: string;
   headers?: Record<string, string>;
-  results: R;
+  results?: R;
 };
 
 /**
