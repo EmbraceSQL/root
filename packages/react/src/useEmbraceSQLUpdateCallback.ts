@@ -2,6 +2,12 @@ import { useEmbraceSQLClient } from "./provider";
 import { Branded } from "@embracesql/shared";
 import React from "react";
 
+/**
+ * When a type is wrapped up with an interceptor, brand it
+ * in order to get some additional type checking.
+ *
+ * Easier to avoid passing the wrong thing...
+ */
 export type Intercepted<T> = Branded<T, "__intercepted__">;
 
 /**
@@ -13,7 +19,11 @@ export type InterceptorCallback<T> = (
 ) => Promise<void>;
 
 /**
- * An Interceptor is a function that wraps some raw data T
+ * An Interceptor is a function that wraps some raw data T and 'intercepts'
+ * writes via `set`.
+ *
+ * This is explicitly a code generated solution rather than using proxies becuase
+ * it is easier to debug!
  */
 export type Interceptor<T> = (
   uninterceptedValue: T,
