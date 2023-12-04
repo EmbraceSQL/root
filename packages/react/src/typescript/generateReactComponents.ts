@@ -13,9 +13,9 @@ export const generateReactComponents = async (context: GenerationContext) => {
   const generationBuffer = [
     `// Begin React generated section`,
     `import React from "react";`,
+    `import { Branded, __brand } from "@embracesql/shared";`,
     `export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";`,
-    `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback } from "@embracesql/react";`,
-    `type InterceptorCallback<T> = (value: T, index?: number) => Promise<void>;`,
+    `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback, InterceptorCallback, Intercepted } from "@embracesql/react";`,
   ];
 
   // generate per table return type interceptors - these are used to have
@@ -29,9 +29,10 @@ export const generateReactComponents = async (context: GenerationContext) => {
         )}`;
         const generationBuffer = [""];
         generationBuffer.push(
-          `export function ${tableTypeName}Interceptor(value: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : ${tableTypeName}{`,
+          `export function ${tableTypeName}Interceptor(uninterceptedValue: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : Intercepted<${tableTypeName}>{`,
         );
         generationBuffer.push(`return {`);
+        generationBuffer.push(`[__brand]: "__intercepted__",`);
 
         return generationBuffer.join("\n");
       },
@@ -43,13 +44,15 @@ export const generateReactComponents = async (context: GenerationContext) => {
       before: async (_, node) => {
         const generationBuffer = [""];
         generationBuffer.push(
-          `get ${camelCase(node.name)}() { return value.${camelCase(
+          `get ${camelCase(
             node.name,
-          )};},`,
+          )}() { return uninterceptedValue.${camelCase(node.name)};},`,
         );
         generationBuffer.push(`set ${camelCase(node.name)}(newValue) {`);
-        generationBuffer.push(`value.${camelCase(node.name)} = newValue;`);
-        generationBuffer.push(`void callback(value, index);`);
+        generationBuffer.push(
+          `uninterceptedValue.${camelCase(node.name)} = newValue;`,
+        );
+        generationBuffer.push(`void callback(uninterceptedValue, index);`);
         generationBuffer.push(`},`);
         return generationBuffer.join("\n");
       },
@@ -81,42 +84,52 @@ export const generateReactComponents = async (context: GenerationContext) => {
         generationBuffer.push(`operation: "${node.dispatchName}",`);
         generationBuffer.push(`parameters,`);
         generationBuffer.push(`}`);
-        // capturing results from responses
-        generationBuffer.push(
-          `const [results, setResults] = React.useState<${resultsTypeName}>();`,
-        );
-        // callback on updates
-        generationBuffer.push(
-          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.parent?.dispatchName}", setResults});`,
-        );
         // dispatching the request
         generationBuffer.push(
           `const done = useEmbraceSQLRequest<${pascalCase(
             node.name,
           )}, never, ${resultsTypeName}>(request);`,
         );
-        // hook the response -- attach property set reactions here
+        // capturing results from responses
+        generationBuffer.push(
+          `const [results, setResults] = React.useState<${resultsTypeName}>();`,
+          `React.useEffect(() => {`,
+          `setResults(done?.response?.results)`,
+          `}, [done?.response]);`,
+        );
+        // callback on updates
+        generationBuffer.push(
+          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.parent?.dispatchName}", results, setResults});`,
+        );
+        // buffer up intercepted responses
+        generationBuffer.push(
+          `const [interceptedResults, setInterceptedResults] = React.useState<Intercepted<${tableTypeName}>${
+            node.unique ? "" : "[]"
+          }>();`,
+        );
+
         generationBuffer.push(`React.useEffect(() => {`);
         generationBuffer.push(`if (done?.response?.results) {`);
         // result type, with setters attached
         if (node.unique) {
           generationBuffer.push(
-            `setResults(${tableTypeName}Interceptor(done.response.results, updateCallback));`,
+            `setInterceptedResults(${tableTypeName}Interceptor(done.response.results, updateCallback));`,
           );
         } else {
           generationBuffer.push(
-            `setResults(done.response.results.map((r, i) => ${tableTypeName}Interceptor(r, updateCallback, i)));`,
+            `setInterceptedResults((results ?? []).map((r, i) => ${tableTypeName}Interceptor(r, updateCallback, i)));`,
           );
         }
         generationBuffer.push(`} else { setResults(undefined);}`);
-        generationBuffer.push(`}, [done?.response])`);
+        generationBuffer.push(`}, [results])`);
 
-        // and the hook return all merged up
+        // and the hook return all merged up -- note we're returning the
+        // intercepted wrapper results
         generationBuffer.push(`
             return {
                 loading: done?.loading,
                 error: done?.error,
-                results: results,
+                results: interceptedResults,
             };
             `);
 

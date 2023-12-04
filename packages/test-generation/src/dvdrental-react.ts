@@ -12589,817 +12589,849 @@ export class OperationDispatcher {
 }
 // Begin React generated section
 import React from "react";
+import { Branded, __brand } from "@embracesql/shared";
 export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
 import {
   useEmbraceSQLRequest,
   useEmbraceSQLUpdateCallback,
+  InterceptorCallback,
+  Intercepted,
 } from "@embracesql/react";
-type InterceptorCallback<T> = (value: T, index?: number) => Promise<void>;
 export namespace Public {
   export function FilmActorInterceptor(
-    value: FilmActor,
+    uninterceptedValue: FilmActor,
     callback: InterceptorCallback<FilmActor>,
     index?: number,
-  ): FilmActor {
+  ): Intercepted<FilmActor> {
     return {
+      [__brand]: "__intercepted__",
+
       get actorId() {
-        return value.actorId;
+        return uninterceptedValue.actorId;
       },
       set actorId(newValue) {
-        value.actorId = newValue;
-        void callback(value, index);
+        uninterceptedValue.actorId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get filmId() {
-        return value.filmId;
+        return uninterceptedValue.filmId;
       },
       set filmId(newValue) {
-        value.filmId = newValue;
-        void callback(value, index);
+        uninterceptedValue.filmId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function AddressInterceptor(
-    value: Address,
+    uninterceptedValue: Address,
     callback: InterceptorCallback<Address>,
     index?: number,
-  ): Address {
+  ): Intercepted<Address> {
     return {
+      [__brand]: "__intercepted__",
+
       get addressId() {
-        return value.addressId;
+        return uninterceptedValue.addressId;
       },
       set addressId(newValue) {
-        value.addressId = newValue;
-        void callback(value, index);
+        uninterceptedValue.addressId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get address() {
-        return value.address;
+        return uninterceptedValue.address;
       },
       set address(newValue) {
-        value.address = newValue;
-        void callback(value, index);
+        uninterceptedValue.address = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get address2() {
-        return value.address2;
+        return uninterceptedValue.address2;
       },
       set address2(newValue) {
-        value.address2 = newValue;
-        void callback(value, index);
+        uninterceptedValue.address2 = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get district() {
-        return value.district;
+        return uninterceptedValue.district;
       },
       set district(newValue) {
-        value.district = newValue;
-        void callback(value, index);
+        uninterceptedValue.district = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get cityId() {
-        return value.cityId;
+        return uninterceptedValue.cityId;
       },
       set cityId(newValue) {
-        value.cityId = newValue;
-        void callback(value, index);
+        uninterceptedValue.cityId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get postalCode() {
-        return value.postalCode;
+        return uninterceptedValue.postalCode;
       },
       set postalCode(newValue) {
-        value.postalCode = newValue;
-        void callback(value, index);
+        uninterceptedValue.postalCode = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get phone() {
-        return value.phone;
+        return uninterceptedValue.phone;
       },
       set phone(newValue) {
-        value.phone = newValue;
-        void callback(value, index);
+        uninterceptedValue.phone = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function CityInterceptor(
-    value: City,
+    uninterceptedValue: City,
     callback: InterceptorCallback<City>,
     index?: number,
-  ): City {
+  ): Intercepted<City> {
     return {
+      [__brand]: "__intercepted__",
+
       get cityId() {
-        return value.cityId;
+        return uninterceptedValue.cityId;
       },
       set cityId(newValue) {
-        value.cityId = newValue;
-        void callback(value, index);
+        uninterceptedValue.cityId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get city() {
-        return value.city;
+        return uninterceptedValue.city;
       },
       set city(newValue) {
-        value.city = newValue;
-        void callback(value, index);
+        uninterceptedValue.city = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get countryId() {
-        return value.countryId;
+        return uninterceptedValue.countryId;
       },
       set countryId(newValue) {
-        value.countryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.countryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function CustomerInterceptor(
-    value: Customer,
+    uninterceptedValue: Customer,
     callback: InterceptorCallback<Customer>,
     index?: number,
-  ): Customer {
+  ): Intercepted<Customer> {
     return {
+      [__brand]: "__intercepted__",
+
       get customerId() {
-        return value.customerId;
+        return uninterceptedValue.customerId;
       },
       set customerId(newValue) {
-        value.customerId = newValue;
-        void callback(value, index);
+        uninterceptedValue.customerId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get storeId() {
-        return value.storeId;
+        return uninterceptedValue.storeId;
       },
       set storeId(newValue) {
-        value.storeId = newValue;
-        void callback(value, index);
+        uninterceptedValue.storeId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get firstName() {
-        return value.firstName;
+        return uninterceptedValue.firstName;
       },
       set firstName(newValue) {
-        value.firstName = newValue;
-        void callback(value, index);
+        uninterceptedValue.firstName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastName() {
-        return value.lastName;
+        return uninterceptedValue.lastName;
       },
       set lastName(newValue) {
-        value.lastName = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get email() {
-        return value.email;
+        return uninterceptedValue.email;
       },
       set email(newValue) {
-        value.email = newValue;
-        void callback(value, index);
+        uninterceptedValue.email = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get addressId() {
-        return value.addressId;
+        return uninterceptedValue.addressId;
       },
       set addressId(newValue) {
-        value.addressId = newValue;
-        void callback(value, index);
+        uninterceptedValue.addressId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get activebool() {
-        return value.activebool;
+        return uninterceptedValue.activebool;
       },
       set activebool(newValue) {
-        value.activebool = newValue;
-        void callback(value, index);
+        uninterceptedValue.activebool = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get createDate() {
-        return value.createDate;
+        return uninterceptedValue.createDate;
       },
       set createDate(newValue) {
-        value.createDate = newValue;
-        void callback(value, index);
+        uninterceptedValue.createDate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get active() {
-        return value.active;
+        return uninterceptedValue.active;
       },
       set active(newValue) {
-        value.active = newValue;
-        void callback(value, index);
+        uninterceptedValue.active = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function ActorInterceptor(
-    value: Actor,
+    uninterceptedValue: Actor,
     callback: InterceptorCallback<Actor>,
     index?: number,
-  ): Actor {
+  ): Intercepted<Actor> {
     return {
+      [__brand]: "__intercepted__",
+
       get actorId() {
-        return value.actorId;
+        return uninterceptedValue.actorId;
       },
       set actorId(newValue) {
-        value.actorId = newValue;
-        void callback(value, index);
+        uninterceptedValue.actorId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get firstName() {
-        return value.firstName;
+        return uninterceptedValue.firstName;
       },
       set firstName(newValue) {
-        value.firstName = newValue;
-        void callback(value, index);
+        uninterceptedValue.firstName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastName() {
-        return value.lastName;
+        return uninterceptedValue.lastName;
       },
       set lastName(newValue) {
-        value.lastName = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function FilmCategoryInterceptor(
-    value: FilmCategory,
+    uninterceptedValue: FilmCategory,
     callback: InterceptorCallback<FilmCategory>,
     index?: number,
-  ): FilmCategory {
+  ): Intercepted<FilmCategory> {
     return {
+      [__brand]: "__intercepted__",
+
       get filmId() {
-        return value.filmId;
+        return uninterceptedValue.filmId;
       },
       set filmId(newValue) {
-        value.filmId = newValue;
-        void callback(value, index);
+        uninterceptedValue.filmId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get categoryId() {
-        return value.categoryId;
+        return uninterceptedValue.categoryId;
       },
       set categoryId(newValue) {
-        value.categoryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.categoryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function InventoryInterceptor(
-    value: Inventory,
+    uninterceptedValue: Inventory,
     callback: InterceptorCallback<Inventory>,
     index?: number,
-  ): Inventory {
+  ): Intercepted<Inventory> {
     return {
+      [__brand]: "__intercepted__",
+
       get inventoryId() {
-        return value.inventoryId;
+        return uninterceptedValue.inventoryId;
       },
       set inventoryId(newValue) {
-        value.inventoryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.inventoryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get filmId() {
-        return value.filmId;
+        return uninterceptedValue.filmId;
       },
       set filmId(newValue) {
-        value.filmId = newValue;
-        void callback(value, index);
+        uninterceptedValue.filmId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get storeId() {
-        return value.storeId;
+        return uninterceptedValue.storeId;
       },
       set storeId(newValue) {
-        value.storeId = newValue;
-        void callback(value, index);
+        uninterceptedValue.storeId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function CategoryInterceptor(
-    value: Category,
+    uninterceptedValue: Category,
     callback: InterceptorCallback<Category>,
     index?: number,
-  ): Category {
+  ): Intercepted<Category> {
     return {
+      [__brand]: "__intercepted__",
+
       get categoryId() {
-        return value.categoryId;
+        return uninterceptedValue.categoryId;
       },
       set categoryId(newValue) {
-        value.categoryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.categoryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get name() {
-        return value.name;
+        return uninterceptedValue.name;
       },
       set name(newValue) {
-        value.name = newValue;
-        void callback(value, index);
+        uninterceptedValue.name = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function CountryInterceptor(
-    value: Country,
+    uninterceptedValue: Country,
     callback: InterceptorCallback<Country>,
     index?: number,
-  ): Country {
+  ): Intercepted<Country> {
     return {
+      [__brand]: "__intercepted__",
+
       get countryId() {
-        return value.countryId;
+        return uninterceptedValue.countryId;
       },
       set countryId(newValue) {
-        value.countryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.countryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get country() {
-        return value.country;
+        return uninterceptedValue.country;
       },
       set country(newValue) {
-        value.country = newValue;
-        void callback(value, index);
+        uninterceptedValue.country = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function LanguageInterceptor(
-    value: Language,
+    uninterceptedValue: Language,
     callback: InterceptorCallback<Language>,
     index?: number,
-  ): Language {
+  ): Intercepted<Language> {
     return {
+      [__brand]: "__intercepted__",
+
       get languageId() {
-        return value.languageId;
+        return uninterceptedValue.languageId;
       },
       set languageId(newValue) {
-        value.languageId = newValue;
-        void callback(value, index);
+        uninterceptedValue.languageId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get name() {
-        return value.name;
+        return uninterceptedValue.name;
       },
       set name(newValue) {
-        value.name = newValue;
-        void callback(value, index);
+        uninterceptedValue.name = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function RentalInterceptor(
-    value: Rental,
+    uninterceptedValue: Rental,
     callback: InterceptorCallback<Rental>,
     index?: number,
-  ): Rental {
+  ): Intercepted<Rental> {
     return {
+      [__brand]: "__intercepted__",
+
       get rentalId() {
-        return value.rentalId;
+        return uninterceptedValue.rentalId;
       },
       set rentalId(newValue) {
-        value.rentalId = newValue;
-        void callback(value, index);
+        uninterceptedValue.rentalId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get rentalDate() {
-        return value.rentalDate;
+        return uninterceptedValue.rentalDate;
       },
       set rentalDate(newValue) {
-        value.rentalDate = newValue;
-        void callback(value, index);
+        uninterceptedValue.rentalDate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get inventoryId() {
-        return value.inventoryId;
+        return uninterceptedValue.inventoryId;
       },
       set inventoryId(newValue) {
-        value.inventoryId = newValue;
-        void callback(value, index);
+        uninterceptedValue.inventoryId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get customerId() {
-        return value.customerId;
+        return uninterceptedValue.customerId;
       },
       set customerId(newValue) {
-        value.customerId = newValue;
-        void callback(value, index);
+        uninterceptedValue.customerId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get returnDate() {
-        return value.returnDate;
+        return uninterceptedValue.returnDate;
       },
       set returnDate(newValue) {
-        value.returnDate = newValue;
-        void callback(value, index);
+        uninterceptedValue.returnDate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get staffId() {
-        return value.staffId;
+        return uninterceptedValue.staffId;
       },
       set staffId(newValue) {
-        value.staffId = newValue;
-        void callback(value, index);
+        uninterceptedValue.staffId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function StaffInterceptor(
-    value: Staff,
+    uninterceptedValue: Staff,
     callback: InterceptorCallback<Staff>,
     index?: number,
-  ): Staff {
+  ): Intercepted<Staff> {
     return {
+      [__brand]: "__intercepted__",
+
       get staffId() {
-        return value.staffId;
+        return uninterceptedValue.staffId;
       },
       set staffId(newValue) {
-        value.staffId = newValue;
-        void callback(value, index);
+        uninterceptedValue.staffId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get firstName() {
-        return value.firstName;
+        return uninterceptedValue.firstName;
       },
       set firstName(newValue) {
-        value.firstName = newValue;
-        void callback(value, index);
+        uninterceptedValue.firstName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastName() {
-        return value.lastName;
+        return uninterceptedValue.lastName;
       },
       set lastName(newValue) {
-        value.lastName = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastName = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get addressId() {
-        return value.addressId;
+        return uninterceptedValue.addressId;
       },
       set addressId(newValue) {
-        value.addressId = newValue;
-        void callback(value, index);
+        uninterceptedValue.addressId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get email() {
-        return value.email;
+        return uninterceptedValue.email;
       },
       set email(newValue) {
-        value.email = newValue;
-        void callback(value, index);
+        uninterceptedValue.email = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get storeId() {
-        return value.storeId;
+        return uninterceptedValue.storeId;
       },
       set storeId(newValue) {
-        value.storeId = newValue;
-        void callback(value, index);
+        uninterceptedValue.storeId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get active() {
-        return value.active;
+        return uninterceptedValue.active;
       },
       set active(newValue) {
-        value.active = newValue;
-        void callback(value, index);
+        uninterceptedValue.active = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get username() {
-        return value.username;
+        return uninterceptedValue.username;
       },
       set username(newValue) {
-        value.username = newValue;
-        void callback(value, index);
+        uninterceptedValue.username = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get password() {
-        return value.password;
+        return uninterceptedValue.password;
       },
       set password(newValue) {
-        value.password = newValue;
-        void callback(value, index);
+        uninterceptedValue.password = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get picture() {
-        return value.picture;
+        return uninterceptedValue.picture;
       },
       set picture(newValue) {
-        value.picture = newValue;
-        void callback(value, index);
+        uninterceptedValue.picture = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function StoreInterceptor(
-    value: Store,
+    uninterceptedValue: Store,
     callback: InterceptorCallback<Store>,
     index?: number,
-  ): Store {
+  ): Intercepted<Store> {
     return {
+      [__brand]: "__intercepted__",
+
       get storeId() {
-        return value.storeId;
+        return uninterceptedValue.storeId;
       },
       set storeId(newValue) {
-        value.storeId = newValue;
-        void callback(value, index);
+        uninterceptedValue.storeId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get managerStaffId() {
-        return value.managerStaffId;
+        return uninterceptedValue.managerStaffId;
       },
       set managerStaffId(newValue) {
-        value.managerStaffId = newValue;
-        void callback(value, index);
+        uninterceptedValue.managerStaffId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get addressId() {
-        return value.addressId;
+        return uninterceptedValue.addressId;
       },
       set addressId(newValue) {
-        value.addressId = newValue;
-        void callback(value, index);
+        uninterceptedValue.addressId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function PaymentInterceptor(
-    value: Payment,
+    uninterceptedValue: Payment,
     callback: InterceptorCallback<Payment>,
     index?: number,
-  ): Payment {
+  ): Intercepted<Payment> {
     return {
+      [__brand]: "__intercepted__",
+
       get paymentId() {
-        return value.paymentId;
+        return uninterceptedValue.paymentId;
       },
       set paymentId(newValue) {
-        value.paymentId = newValue;
-        void callback(value, index);
+        uninterceptedValue.paymentId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get customerId() {
-        return value.customerId;
+        return uninterceptedValue.customerId;
       },
       set customerId(newValue) {
-        value.customerId = newValue;
-        void callback(value, index);
+        uninterceptedValue.customerId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get staffId() {
-        return value.staffId;
+        return uninterceptedValue.staffId;
       },
       set staffId(newValue) {
-        value.staffId = newValue;
-        void callback(value, index);
+        uninterceptedValue.staffId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get rentalId() {
-        return value.rentalId;
+        return uninterceptedValue.rentalId;
       },
       set rentalId(newValue) {
-        value.rentalId = newValue;
-        void callback(value, index);
+        uninterceptedValue.rentalId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get amount() {
-        return value.amount;
+        return uninterceptedValue.amount;
       },
       set amount(newValue) {
-        value.amount = newValue;
-        void callback(value, index);
+        uninterceptedValue.amount = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get paymentDate() {
-        return value.paymentDate;
+        return uninterceptedValue.paymentDate;
       },
       set paymentDate(newValue) {
-        value.paymentDate = newValue;
-        void callback(value, index);
+        uninterceptedValue.paymentDate = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
 
   export function FilmInterceptor(
-    value: Film,
+    uninterceptedValue: Film,
     callback: InterceptorCallback<Film>,
     index?: number,
-  ): Film {
+  ): Intercepted<Film> {
     return {
+      [__brand]: "__intercepted__",
+
       get filmId() {
-        return value.filmId;
+        return uninterceptedValue.filmId;
       },
       set filmId(newValue) {
-        value.filmId = newValue;
-        void callback(value, index);
+        uninterceptedValue.filmId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get title() {
-        return value.title;
+        return uninterceptedValue.title;
       },
       set title(newValue) {
-        value.title = newValue;
-        void callback(value, index);
+        uninterceptedValue.title = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get description() {
-        return value.description;
+        return uninterceptedValue.description;
       },
       set description(newValue) {
-        value.description = newValue;
-        void callback(value, index);
+        uninterceptedValue.description = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get releaseYear() {
-        return value.releaseYear;
+        return uninterceptedValue.releaseYear;
       },
       set releaseYear(newValue) {
-        value.releaseYear = newValue;
-        void callback(value, index);
+        uninterceptedValue.releaseYear = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get languageId() {
-        return value.languageId;
+        return uninterceptedValue.languageId;
       },
       set languageId(newValue) {
-        value.languageId = newValue;
-        void callback(value, index);
+        uninterceptedValue.languageId = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get rentalDuration() {
-        return value.rentalDuration;
+        return uninterceptedValue.rentalDuration;
       },
       set rentalDuration(newValue) {
-        value.rentalDuration = newValue;
-        void callback(value, index);
+        uninterceptedValue.rentalDuration = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get rentalRate() {
-        return value.rentalRate;
+        return uninterceptedValue.rentalRate;
       },
       set rentalRate(newValue) {
-        value.rentalRate = newValue;
-        void callback(value, index);
+        uninterceptedValue.rentalRate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get length() {
-        return value.length;
+        return uninterceptedValue.length;
       },
       set length(newValue) {
-        value.length = newValue;
-        void callback(value, index);
+        uninterceptedValue.length = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get replacementCost() {
-        return value.replacementCost;
+        return uninterceptedValue.replacementCost;
       },
       set replacementCost(newValue) {
-        value.replacementCost = newValue;
-        void callback(value, index);
+        uninterceptedValue.replacementCost = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get rating() {
-        return value.rating;
+        return uninterceptedValue.rating;
       },
       set rating(newValue) {
-        value.rating = newValue;
-        void callback(value, index);
+        uninterceptedValue.rating = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get lastUpdate() {
-        return value.lastUpdate;
+        return uninterceptedValue.lastUpdate;
       },
       set lastUpdate(newValue) {
-        value.lastUpdate = newValue;
-        void callback(value, index);
+        uninterceptedValue.lastUpdate = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get specialFeatures() {
-        return value.specialFeatures;
+        return uninterceptedValue.specialFeatures;
       },
       set specialFeatures(newValue) {
-        value.specialFeatures = newValue;
-        void callback(value, index);
+        uninterceptedValue.specialFeatures = newValue;
+        void callback(uninterceptedValue, index);
       },
 
       get fulltext() {
-        return value.fulltext;
+        return uninterceptedValue.fulltext;
       },
       set fulltext(newValue) {
-        value.fulltext = newValue;
-        void callback(value, index);
+        uninterceptedValue.fulltext = newValue;
+        void callback(uninterceptedValue, index);
       },
     };
   }
@@ -13416,19 +13448,24 @@ export namespace Public {
           operation: "Public.FilmActor.create.byActorIdFilmId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.FilmActor>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmActor,
-          Public.FilmActor
-        >({ operation: "Public.FilmActor.create", setResults });
         const done = useEmbraceSQLRequest<
           ByActorIdFilmId,
           never,
           Public.FilmActor
         >(request);
+        const [results, setResults] = React.useState<Public.FilmActor>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmActor,
+          Public.FilmActor
+        >({ operation: "Public.FilmActor.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.FilmActor>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.FilmActorInterceptor(
                 done.response.results,
                 updateCallback,
@@ -13437,12 +13474,12 @@ export namespace Public {
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13451,30 +13488,35 @@ export namespace Public {
           operation: "Public.FilmActor.create.byFilmId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.FilmActor[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmActor,
-          Public.FilmActor[]
-        >({ operation: "Public.FilmActor.create", setResults });
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.FilmActor[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmActor,
+          Public.FilmActor[]
+        >({ operation: "Public.FilmActor.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.FilmActor>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.FilmActorInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13493,28 +13535,33 @@ export namespace Public {
           operation: "Public.Address.create.byAddressId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Address>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Address,
-          Public.Address
-        >({ operation: "Public.Address.create", setResults });
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Address>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Address,
+          Public.Address
+        >({ operation: "Public.Address.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Address>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.AddressInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13523,30 +13570,35 @@ export namespace Public {
           operation: "Public.Address.create.byCityId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Address[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Address,
-          Public.Address[]
-        >({ operation: "Public.Address.create", setResults });
         const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Address[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Address,
+          Public.Address[]
+        >({ operation: "Public.Address.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Address>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.AddressInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13561,28 +13613,33 @@ export namespace Public {
           operation: "Public.City.create.byCityId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.City>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.City,
-          Public.City
-        >({ operation: "Public.City.create", setResults });
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
           request,
         );
+        const [results, setResults] = React.useState<Public.City>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.City,
+          Public.City
+        >({ operation: "Public.City.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.City>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.CityInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13591,30 +13648,35 @@ export namespace Public {
           operation: "Public.City.create.byCountryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.City[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.City,
-          Public.City[]
-        >({ operation: "Public.City.create", setResults });
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.City[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.City,
+          Public.City[]
+        >({ operation: "Public.City.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.City>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.CityInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13635,32 +13697,37 @@ export namespace Public {
           operation: "Public.Customer.create.byAddressId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", setResults });
         const done = useEmbraceSQLRequest<
           ByAddressId,
           never,
           Public.Customer[]
         >(request);
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.CustomerInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13669,28 +13736,33 @@ export namespace Public {
           operation: "Public.Customer.create.byCustomerId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Customer>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer
-        >({ operation: "Public.Customer.create", setResults });
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Customer>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer
+        >({ operation: "Public.Customer.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Customer>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.CustomerInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13699,30 +13771,35 @@ export namespace Public {
           operation: "Public.Customer.create.byLastName",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", setResults });
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.CustomerInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13731,30 +13808,35 @@ export namespace Public {
           operation: "Public.Customer.create.byStoreId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", setResults });
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Customer[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Customer,
+          Public.Customer[]
+        >({ operation: "Public.Customer.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.CustomerInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13769,28 +13851,33 @@ export namespace Public {
           operation: "Public.Actor.create.byActorId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Actor>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Actor,
-          Public.Actor
-        >({ operation: "Public.Actor.create", setResults });
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Actor>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Actor,
+          Public.Actor
+        >({ operation: "Public.Actor.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Actor>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.ActorInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13799,30 +13886,35 @@ export namespace Public {
           operation: "Public.Actor.create.byLastName",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Actor[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Actor,
-          Public.Actor[]
-        >({ operation: "Public.Actor.create", setResults });
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Actor[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Actor,
+          Public.Actor[]
+        >({ operation: "Public.Actor.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Actor>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.ActorInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13836,19 +13928,24 @@ export namespace Public {
           operation: "Public.FilmCategory.create.byFilmIdCategoryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.FilmCategory>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmCategory,
-          Public.FilmCategory
-        >({ operation: "Public.FilmCategory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByFilmIdCategoryId,
           never,
           Public.FilmCategory
         >(request);
+        const [results, setResults] = React.useState<Public.FilmCategory>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.FilmCategory,
+          Public.FilmCategory
+        >({ operation: "Public.FilmCategory.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.FilmCategory>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.FilmCategoryInterceptor(
                 done.response.results,
                 updateCallback,
@@ -13857,12 +13954,12 @@ export namespace Public {
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13877,19 +13974,24 @@ export namespace Public {
           operation: "Public.Inventory.create.byInventoryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Inventory>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Inventory,
-          Public.Inventory
-        >({ operation: "Public.Inventory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByInventoryId,
           never,
           Public.Inventory
         >(request);
+        const [results, setResults] = React.useState<Public.Inventory>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Inventory,
+          Public.Inventory
+        >({ operation: "Public.Inventory.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Inventory>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.InventoryInterceptor(
                 done.response.results,
                 updateCallback,
@@ -13898,12 +14000,12 @@ export namespace Public {
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -13912,32 +14014,37 @@ export namespace Public {
           operation: "Public.Inventory.create.byStoreIdFilmId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Inventory[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Inventory,
-          Public.Inventory[]
-        >({ operation: "Public.Inventory.create", setResults });
         const done = useEmbraceSQLRequest<
           ByStoreIdFilmId,
           never,
           Public.Inventory[]
         >(request);
+        const [results, setResults] = React.useState<Public.Inventory[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Inventory,
+          Public.Inventory[]
+        >({ operation: "Public.Inventory.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Inventory>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.InventoryInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13951,28 +14058,33 @@ export namespace Public {
           operation: "Public.Category.create.byCategoryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Category>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Category,
-          Public.Category
-        >({ operation: "Public.Category.create", setResults });
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Category>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Category,
+          Public.Category
+        >({ operation: "Public.Category.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Category>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.CategoryInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -13986,28 +14098,33 @@ export namespace Public {
           operation: "Public.Country.create.byCountryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Country>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Country,
-          Public.Country
-        >({ operation: "Public.Country.create", setResults });
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Country>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Country,
+          Public.Country
+        >({ operation: "Public.Country.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Country>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.CountryInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14021,28 +14138,33 @@ export namespace Public {
           operation: "Public.Language.create.byLanguageId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Language>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Language,
-          Public.Language
-        >({ operation: "Public.Language.create", setResults });
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Language>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Language,
+          Public.Language
+        >({ operation: "Public.Language.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Language>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.LanguageInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14060,32 +14182,37 @@ export namespace Public {
           operation: "Public.Rental.create.byInventoryId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Rental[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental[]
-        >({ operation: "Public.Rental.create", setResults });
         const done = useEmbraceSQLRequest<
           ByInventoryId,
           never,
           Public.Rental[]
         >(request);
+        const [results, setResults] = React.useState<Public.Rental[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental[]
+        >({ operation: "Public.Rental.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Rental>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.RentalInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14096,30 +14223,35 @@ export namespace Public {
           operation: "Public.Rental.create.byRentalDateInventoryIdCustomerId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Rental>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental
-        >({ operation: "Public.Rental.create", setResults });
         const done = useEmbraceSQLRequest<
           ByRentalDateInventoryIdCustomerId,
           never,
           Public.Rental
         >(request);
+        const [results, setResults] = React.useState<Public.Rental>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental
+        >({ operation: "Public.Rental.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.RentalInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14128,28 +14260,33 @@ export namespace Public {
           operation: "Public.Rental.create.byRentalId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Rental>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental
-        >({ operation: "Public.Rental.create", setResults });
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Rental>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Rental,
+          Public.Rental
+        >({ operation: "Public.Rental.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.RentalInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14171,28 +14308,33 @@ export namespace Public {
           operation: "Public.Staff.create.byStaffId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Staff>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Staff,
-          Public.Staff
-        >({ operation: "Public.Staff.create", setResults });
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Staff>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Staff,
+          Public.Staff
+        >({ operation: "Public.Staff.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Staff>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.StaffInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14207,30 +14349,35 @@ export namespace Public {
           operation: "Public.Store.create.byManagerStaffId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Store>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Store,
-          Public.Store
-        >({ operation: "Public.Store.create", setResults });
         const done = useEmbraceSQLRequest<
           ByManagerStaffId,
           never,
           Public.Store
         >(request);
+        const [results, setResults] = React.useState<Public.Store>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Store,
+          Public.Store
+        >({ operation: "Public.Store.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.StoreInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14239,28 +14386,33 @@ export namespace Public {
           operation: "Public.Store.create.byStoreId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Store>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Store,
-          Public.Store
-        >({ operation: "Public.Store.create", setResults });
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Store>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Store,
+          Public.Store
+        >({ operation: "Public.Store.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.StoreInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14277,32 +14429,37 @@ export namespace Public {
           operation: "Public.Payment.create.byCustomerId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", setResults });
         const done = useEmbraceSQLRequest<
           ByCustomerId,
           never,
           Public.Payment[]
         >(request);
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.PaymentInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14311,28 +14468,33 @@ export namespace Public {
           operation: "Public.Payment.create.byPaymentId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Payment>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment
-        >({ operation: "Public.Payment.create", setResults });
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Payment>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment
+        >({ operation: "Public.Payment.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Payment>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.PaymentInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14341,30 +14503,35 @@ export namespace Public {
           operation: "Public.Payment.create.byRentalId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", setResults });
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.PaymentInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14373,30 +14540,35 @@ export namespace Public {
           operation: "Public.Payment.create.byStaffId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", setResults });
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Payment[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Payment,
+          Public.Payment[]
+        >({ operation: "Public.Payment.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.PaymentInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
@@ -14420,28 +14592,33 @@ export namespace Public {
           operation: "Public.Film.create.byFilmId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Film>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film
-        >({ operation: "Public.Film.create", setResults });
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Film>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film
+        >({ operation: "Public.Film.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Film>>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
+            setInterceptedResults(
               Public.FilmInterceptor(done.response.results, updateCallback),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14450,30 +14627,35 @@ export namespace Public {
           operation: "Public.Film.create.byFulltext",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Film[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", setResults });
         const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Film[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.FilmInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14482,30 +14664,35 @@ export namespace Public {
           operation: "Public.Film.create.byLanguageId",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Film[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", setResults });
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Film[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.FilmInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
 
@@ -14514,30 +14701,35 @@ export namespace Public {
           operation: "Public.Film.create.byTitle",
           parameters,
         };
-        const [results, setResults] = React.useState<Public.Film[]>();
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", setResults });
         const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(
           request,
         );
+        const [results, setResults] = React.useState<Public.Film[]>();
+        React.useEffect(() => {
+          setResults(done?.response?.results);
+        }, [done?.response]);
+        const updateCallback = useEmbraceSQLUpdateCallback<
+          Public.Film,
+          Public.Film[]
+        >({ operation: "Public.Film.create", results, setResults });
+        const [interceptedResults, setInterceptedResults] =
+          React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
           if (done?.response?.results) {
-            setResults(
-              done.response.results.map((r, i) =>
+            setInterceptedResults(
+              (results ?? []).map((r, i) =>
                 Public.FilmInterceptor(r, updateCallback, i),
               ),
             );
           } else {
             setResults(undefined);
           }
-        }, [done?.response]);
+        }, [results]);
 
         return {
           loading: done?.loading,
           error: done?.error,
-          results: results,
+          results: interceptedResults,
         };
       }
     }
