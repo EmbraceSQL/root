@@ -12,7 +12,7 @@ export * from "./typescript";
 export type EmbraceSQLRequest<P, V = never> = {
   operation: string;
   headers?: Record<string, string>;
-  parameters: P;
+  parameters?: P;
   values?: V;
 };
 

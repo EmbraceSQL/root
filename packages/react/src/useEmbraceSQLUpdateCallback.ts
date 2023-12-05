@@ -69,9 +69,8 @@ export function useEmbraceSQLUpdateCallback<T, R extends T | T[]>({
 
       if (client) {
         // actual server trip - counting on a read back of a single record
-        const response = await client.invoke<T, T, T>({
+        const response = await client.invoke<never, T, T>({
           operation,
-          parameters: updated,
           values: updated,
         });
 

@@ -100,7 +100,6 @@ addOptions(
   };
 
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
-  generationBuffer.push(await generateOperationDispatcher(combinedContext));
   generationBuffer.push(await generateReactComponents(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
