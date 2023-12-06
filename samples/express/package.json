@@ -1,0 +1,15 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "exit 0"
+  },
+  "author": "Will Ballard <wballard@mailframe.net>",
+  "license": "ISC",
+  "dependencies": {
+    "@embracesql/express": "*"
+  }
+}

@@ -57,7 +57,10 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
         .then((results) => {
           completeResponse(request.operation, request.headers ?? {}, results);
         })
-        .catch((reason) => response.status(500).end(reason));
+        .catch((reason) => {
+          console.error(reason);
+          response.status(500);
+        });
     } else {
       // hand along, nothing to do...
       next();
