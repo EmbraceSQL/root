@@ -1,0 +1,3 @@
+{
+  "extends": "@embracesql/shared/tsconfig/tsconfig.json"
+}
