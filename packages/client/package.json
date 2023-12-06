@@ -2,11 +2,11 @@
   "name": "@embracesql/client",
   "version": "1.0.0",
   "description": "Connects to EmbraceSQL over HTTP/S from browser and node.",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "check": "tsc --noEmit",
-    "lint": "eslint ."
+    "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

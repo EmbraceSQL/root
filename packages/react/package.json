@@ -2,11 +2,11 @@
   "name": "@embracesql/react",
   "version": "1.0.0",
   "description": "Hook into EmbraceSQL from React.",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "check": "tsc --noEmit",
-    "lint": "eslint ."
+    "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

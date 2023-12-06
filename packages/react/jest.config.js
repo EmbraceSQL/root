@@ -1,4 +1,3 @@
-module.exports = {
-  preset: "ts-jest",
-  automock: false,
-};
+import preset from "@embracesql/shared/src/jest.config.js";
+
+export default preset;

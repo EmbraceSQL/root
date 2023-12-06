@@ -13,7 +13,7 @@ export const generateReactComponents = async (context: GenerationContext) => {
   const generationBuffer = [
     `// Begin React generated section`,
     `import React from "react";`,
-    `import { Branded, __brand } from "@embracesql/shared";`,
+    `import { Branded, Brand } from "@embracesql/shared";`,
     `export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";`,
     `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback, InterceptorCallback, Intercepted } from "@embracesql/react";`,
   ];
@@ -31,13 +31,12 @@ export const generateReactComponents = async (context: GenerationContext) => {
         generationBuffer.push(
           `export function ${tableTypeName}Interceptor(uninterceptedValue: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : Intercepted<${tableTypeName}>{`,
         );
-        generationBuffer.push(`return {`);
-        generationBuffer.push(`[__brand]: "__intercepted__",`);
+        generationBuffer.push(`return Brand({`);
 
         return generationBuffer.join("\n");
       },
       after: async () => {
-        return `}}`;
+        return `}, "__intercepted__")}`;
       },
     },
     [ASTKind.Column]: {

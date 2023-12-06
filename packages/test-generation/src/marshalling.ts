@@ -10,8 +10,8 @@ import {
   Empty,
   Nullable,
   undefinedIsNull,
-} from "@embracesql/postgres/src/types";
-import { Context, initializeContext } from "@embracesql/postgres/src/context";
+} from "@embracesql/postgres";
+import { Context, initializeContext } from "@embracesql/postgres";
 import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 

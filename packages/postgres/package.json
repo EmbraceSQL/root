@@ -2,9 +2,10 @@
   "name": "@embracesql/postgres",
   "version": "1.0.0",
   "description": "EmbraceSQL shared library for talking to postgres. Used in Node.",
+  "type": "module",
+  "main": "src/index.ts",
   "scripts": {
     "check": "tsc --noEmit",
-    "lint": "eslint .",
     "test": "exit 0"
   },
   "author": "Will Ballard <wballard@mailframe.net>",

@@ -7,7 +7,7 @@ import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import { DatabaseNode } from "@embracesql/shared";
-import { parse, ConnectionOptions } from "pg-connection-string";
+import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
 
 /**
@@ -78,8 +78,8 @@ const DEFAULT_POSTGRES_URL =
   "postgres://postgres:postgres@localhost:5432/postgres";
 
 type ConnectionProps = {
-  [Property in keyof ConnectionOptions]: NonNullable<
-    ConnectionOptions[Property]
+  [Property in keyof pgconnectionstring.ConnectionOptions]: NonNullable<
+    pgconnectionstring.ConnectionOptions[Property]
   >;
 };
 
@@ -93,7 +93,7 @@ type ConnectionProps = {
  * this will 'just work'.
  */
 export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
-  const parsed = parse(postgresUrl) as ConnectionProps;
+  const parsed = pgconnectionstring.parse(postgresUrl) as ConnectionProps;
   // little tweaks of types
   const connection = {
     ...parsed,

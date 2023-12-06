@@ -4,7 +4,7 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
 import { CatalogRow } from "./pgtype";
 import { camelCase } from "change-case";
-import { alt, noneOf, oneOf, Parser, seqObj, string } from "parsimmon";
+import parsimmon from "parsimmon";
 
 export const interleave = <T, U>(arr: T[], separator: U) => {
   const ret = new Array<T | U>();
@@ -179,7 +179,7 @@ export class PGTypeComposite extends PGCatalogType {
               .resolveType(a.attribute.atttypid)
               .parseFromPostgres(context, parsedAttributeText),
           ),
-        ] as [string, Parser<string | null>],
+        ] as [string, parsimmon.Parser<string | null>],
     );
 
     const args = [
@@ -188,7 +188,7 @@ export class PGTypeComposite extends PGCatalogType {
       endComposite,
     ];
 
-    return seqObj<ObjectParser>(...args).tryParse(x);
+    return parsimmon.seqObj<ObjectParser>(...args).tryParse(x);
   }
 }
 
@@ -196,7 +196,7 @@ export class PGTypeComposite extends PGCatalogType {
  * An empty string parses to a null. This will show up in composites like
  * (,hello) -- which is null, hello
  */
-const emptyIsNull = string("").result(null);
+const emptyIsNull = parsimmon.string("").result(null);
 
 /**
  * Escaping is done with backslash -- per the docs:
@@ -205,17 +205,21 @@ const emptyIsNull = string("").result(null);
  */
 const SEPARATORS = `(),`;
 const DELIMITER = `,`;
-const separators = oneOf(SEPARATORS);
-export const startComposite = string("(");
-export const endComposite = string(")");
-export const attributeSeperator = string(",");
+const separators = parsimmon.oneOf(SEPARATORS);
+export const startComposite = parsimmon.string("(");
+export const endComposite = parsimmon.string(")");
+export const attributeSeperator = parsimmon.string(",");
 const REQUIRES_ESCAPE_IN_VALUE = `"\\${SEPARATORS}`;
-const requiresEscapeInValue = oneOf(REQUIRES_ESCAPE_IN_VALUE);
-const neverRequiresEscape = noneOf(REQUIRES_ESCAPE_IN_VALUE);
-export const escaped = string("\\").times(1).then(requiresEscapeInValue);
+const requiresEscapeInValue = parsimmon.oneOf(REQUIRES_ESCAPE_IN_VALUE);
+const neverRequiresEscape = parsimmon.noneOf(REQUIRES_ESCAPE_IN_VALUE);
+export const escaped = parsimmon
+  .string("\\")
+  .times(1)
+  .then(requiresEscapeInValue);
 
 const addEscape = requiresEscapeInValue.map((m) => `\\${m}`);
-const escapeValue = alt(neverRequiresEscape, addEscape)
+const escapeValue = parsimmon
+  .alt(neverRequiresEscape, addEscape)
   .many()
   .tie()
   .map((m) => `"${m}"`);
@@ -226,18 +230,23 @@ const escapeValue = alt(neverRequiresEscape, addEscape)
  *
  * meaning -- if you are anything other than these characters -- you are a value.
  */
-const bareString = alt(neverRequiresEscape, escaped).atLeast(1).tie();
+const bareString = parsimmon.alt(neverRequiresEscape, escaped).atLeast(1).tie();
 /**
  * Tales from the docs:
  * ... Also, a pair of double quotes within a double-quoted field value is taken to represent a double quote character, analogously to the rules for single quotes in SQL literal strings.
  */
-const pairOfQuotes = string('"').times(2).result('"');
-const quotedString = alt(neverRequiresEscape, pairOfQuotes, escaped, separators)
+const pairOfQuotes = parsimmon.string('"').times(2).result('"');
+const quotedString = parsimmon
+  .alt(neverRequiresEscape, pairOfQuotes, escaped, separators)
   .many()
-  .wrap(string('"'), string('"'))
+  .wrap(parsimmon.string('"'), parsimmon.string('"'))
   .tie();
 
 /**
  * Parse a composite attribute. This is exposed to allow unit testing.
  */
-export const compositeAttribute = alt(quotedString, bareString, emptyIsNull);
+export const compositeAttribute = parsimmon.alt(
+  quotedString,
+  bareString,
+  emptyIsNull,
+);

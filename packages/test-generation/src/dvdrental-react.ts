@@ -10,8 +10,8 @@ import {
   Empty,
   Nullable,
   undefinedIsNull,
-} from "@embracesql/postgres/src/types";
-import { Context, initializeContext } from "@embracesql/postgres/src/context";
+} from "@embracesql/postgres";
+import { Context, initializeContext } from "@embracesql/postgres";
 import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 import postgres from "postgres";
 
@@ -11934,7 +11934,7 @@ FROM
 }
 // Begin React generated section
 import React from "react";
-import { Branded, __brand } from "@embracesql/shared";
+import { Branded, Brand } from "@embracesql/shared";
 export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
 import {
   useEmbraceSQLRequest,
@@ -11948,33 +11948,34 @@ export namespace Public {
     callback: InterceptorCallback<FilmActor>,
     index?: number,
   ): Intercepted<FilmActor> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get actorId() {
+          return uninterceptedValue.actorId;
+        },
+        set actorId(newValue) {
+          uninterceptedValue.actorId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get actorId() {
-        return uninterceptedValue.actorId;
-      },
-      set actorId(newValue) {
-        uninterceptedValue.actorId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get filmId() {
+          return uninterceptedValue.filmId;
+        },
+        set filmId(newValue) {
+          uninterceptedValue.filmId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get filmId() {
-        return uninterceptedValue.filmId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function AddressInterceptor(
@@ -11982,73 +11983,74 @@ export namespace Public {
     callback: InterceptorCallback<Address>,
     index?: number,
   ): Intercepted<Address> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get addressId() {
+          return uninterceptedValue.addressId;
+        },
+        set addressId(newValue) {
+          uninterceptedValue.addressId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get address() {
+          return uninterceptedValue.address;
+        },
+        set address(newValue) {
+          uninterceptedValue.address = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get address() {
-        return uninterceptedValue.address;
-      },
-      set address(newValue) {
-        uninterceptedValue.address = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get address2() {
+          return uninterceptedValue.address2;
+        },
+        set address2(newValue) {
+          uninterceptedValue.address2 = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get address2() {
-        return uninterceptedValue.address2;
-      },
-      set address2(newValue) {
-        uninterceptedValue.address2 = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get district() {
+          return uninterceptedValue.district;
+        },
+        set district(newValue) {
+          uninterceptedValue.district = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get district() {
-        return uninterceptedValue.district;
-      },
-      set district(newValue) {
-        uninterceptedValue.district = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get cityId() {
+          return uninterceptedValue.cityId;
+        },
+        set cityId(newValue) {
+          uninterceptedValue.cityId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get cityId() {
-        return uninterceptedValue.cityId;
-      },
-      set cityId(newValue) {
-        uninterceptedValue.cityId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get postalCode() {
+          return uninterceptedValue.postalCode;
+        },
+        set postalCode(newValue) {
+          uninterceptedValue.postalCode = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get postalCode() {
-        return uninterceptedValue.postalCode;
-      },
-      set postalCode(newValue) {
-        uninterceptedValue.postalCode = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get phone() {
+          return uninterceptedValue.phone;
+        },
+        set phone(newValue) {
+          uninterceptedValue.phone = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get phone() {
-        return uninterceptedValue.phone;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set phone(newValue) {
-        uninterceptedValue.phone = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function CityInterceptor(
@@ -12056,41 +12058,42 @@ export namespace Public {
     callback: InterceptorCallback<City>,
     index?: number,
   ): Intercepted<City> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get cityId() {
+          return uninterceptedValue.cityId;
+        },
+        set cityId(newValue) {
+          uninterceptedValue.cityId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get cityId() {
-        return uninterceptedValue.cityId;
-      },
-      set cityId(newValue) {
-        uninterceptedValue.cityId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get city() {
+          return uninterceptedValue.city;
+        },
+        set city(newValue) {
+          uninterceptedValue.city = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get city() {
-        return uninterceptedValue.city;
-      },
-      set city(newValue) {
-        uninterceptedValue.city = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get countryId() {
+          return uninterceptedValue.countryId;
+        },
+        set countryId(newValue) {
+          uninterceptedValue.countryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get countryId() {
-        return uninterceptedValue.countryId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set countryId(newValue) {
-        uninterceptedValue.countryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function CustomerInterceptor(
@@ -12098,89 +12101,90 @@ export namespace Public {
     callback: InterceptorCallback<Customer>,
     index?: number,
   ): Intercepted<Customer> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get customerId() {
+          return uninterceptedValue.customerId;
+        },
+        set customerId(newValue) {
+          uninterceptedValue.customerId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get storeId() {
+          return uninterceptedValue.storeId;
+        },
+        set storeId(newValue) {
+          uninterceptedValue.storeId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get firstName() {
+          return uninterceptedValue.firstName;
+        },
+        set firstName(newValue) {
+          uninterceptedValue.firstName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastName() {
+          return uninterceptedValue.lastName;
+        },
+        set lastName(newValue) {
+          uninterceptedValue.lastName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastName() {
-        return uninterceptedValue.lastName;
-      },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get email() {
+          return uninterceptedValue.email;
+        },
+        set email(newValue) {
+          uninterceptedValue.email = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get email() {
-        return uninterceptedValue.email;
-      },
-      set email(newValue) {
-        uninterceptedValue.email = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get addressId() {
+          return uninterceptedValue.addressId;
+        },
+        set addressId(newValue) {
+          uninterceptedValue.addressId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get activebool() {
+          return uninterceptedValue.activebool;
+        },
+        set activebool(newValue) {
+          uninterceptedValue.activebool = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get activebool() {
-        return uninterceptedValue.activebool;
-      },
-      set activebool(newValue) {
-        uninterceptedValue.activebool = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get createDate() {
+          return uninterceptedValue.createDate;
+        },
+        set createDate(newValue) {
+          uninterceptedValue.createDate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get createDate() {
-        return uninterceptedValue.createDate;
-      },
-      set createDate(newValue) {
-        uninterceptedValue.createDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
+        get active() {
+          return uninterceptedValue.active;
+        },
+        set active(newValue) {
+          uninterceptedValue.active = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get active() {
-        return uninterceptedValue.active;
-      },
-      set active(newValue) {
-        uninterceptedValue.active = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function ActorInterceptor(
@@ -12188,41 +12192,42 @@ export namespace Public {
     callback: InterceptorCallback<Actor>,
     index?: number,
   ): Intercepted<Actor> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get actorId() {
+          return uninterceptedValue.actorId;
+        },
+        set actorId(newValue) {
+          uninterceptedValue.actorId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get actorId() {
-        return uninterceptedValue.actorId;
-      },
-      set actorId(newValue) {
-        uninterceptedValue.actorId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get firstName() {
+          return uninterceptedValue.firstName;
+        },
+        set firstName(newValue) {
+          uninterceptedValue.firstName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastName() {
+          return uninterceptedValue.lastName;
+        },
+        set lastName(newValue) {
+          uninterceptedValue.lastName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastName() {
-        return uninterceptedValue.lastName;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function FilmCategoryInterceptor(
@@ -12230,33 +12235,34 @@ export namespace Public {
     callback: InterceptorCallback<FilmCategory>,
     index?: number,
   ): Intercepted<FilmCategory> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get filmId() {
+          return uninterceptedValue.filmId;
+        },
+        set filmId(newValue) {
+          uninterceptedValue.filmId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get categoryId() {
+          return uninterceptedValue.categoryId;
+        },
+        set categoryId(newValue) {
+          uninterceptedValue.categoryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get categoryId() {
-        return uninterceptedValue.categoryId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set categoryId(newValue) {
-        uninterceptedValue.categoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function InventoryInterceptor(
@@ -12264,41 +12270,42 @@ export namespace Public {
     callback: InterceptorCallback<Inventory>,
     index?: number,
   ): Intercepted<Inventory> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get inventoryId() {
+          return uninterceptedValue.inventoryId;
+        },
+        set inventoryId(newValue) {
+          uninterceptedValue.inventoryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get inventoryId() {
-        return uninterceptedValue.inventoryId;
-      },
-      set inventoryId(newValue) {
-        uninterceptedValue.inventoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get filmId() {
+          return uninterceptedValue.filmId;
+        },
+        set filmId(newValue) {
+          uninterceptedValue.filmId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get storeId() {
+          return uninterceptedValue.storeId;
+        },
+        set storeId(newValue) {
+          uninterceptedValue.storeId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get storeId() {
-        return uninterceptedValue.storeId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function CategoryInterceptor(
@@ -12306,33 +12313,34 @@ export namespace Public {
     callback: InterceptorCallback<Category>,
     index?: number,
   ): Intercepted<Category> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get categoryId() {
+          return uninterceptedValue.categoryId;
+        },
+        set categoryId(newValue) {
+          uninterceptedValue.categoryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get categoryId() {
-        return uninterceptedValue.categoryId;
-      },
-      set categoryId(newValue) {
-        uninterceptedValue.categoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get name() {
+          return uninterceptedValue.name;
+        },
+        set name(newValue) {
+          uninterceptedValue.name = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get name() {
-        return uninterceptedValue.name;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set name(newValue) {
-        uninterceptedValue.name = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function CountryInterceptor(
@@ -12340,33 +12348,34 @@ export namespace Public {
     callback: InterceptorCallback<Country>,
     index?: number,
   ): Intercepted<Country> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get countryId() {
+          return uninterceptedValue.countryId;
+        },
+        set countryId(newValue) {
+          uninterceptedValue.countryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get countryId() {
-        return uninterceptedValue.countryId;
-      },
-      set countryId(newValue) {
-        uninterceptedValue.countryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get country() {
+          return uninterceptedValue.country;
+        },
+        set country(newValue) {
+          uninterceptedValue.country = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get country() {
-        return uninterceptedValue.country;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set country(newValue) {
-        uninterceptedValue.country = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function LanguageInterceptor(
@@ -12374,33 +12383,34 @@ export namespace Public {
     callback: InterceptorCallback<Language>,
     index?: number,
   ): Intercepted<Language> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get languageId() {
+          return uninterceptedValue.languageId;
+        },
+        set languageId(newValue) {
+          uninterceptedValue.languageId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get languageId() {
-        return uninterceptedValue.languageId;
-      },
-      set languageId(newValue) {
-        uninterceptedValue.languageId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get name() {
+          return uninterceptedValue.name;
+        },
+        set name(newValue) {
+          uninterceptedValue.name = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get name() {
-        return uninterceptedValue.name;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set name(newValue) {
-        uninterceptedValue.name = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function RentalInterceptor(
@@ -12408,65 +12418,66 @@ export namespace Public {
     callback: InterceptorCallback<Rental>,
     index?: number,
   ): Intercepted<Rental> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get rentalId() {
+          return uninterceptedValue.rentalId;
+        },
+        set rentalId(newValue) {
+          uninterceptedValue.rentalId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rentalId() {
-        return uninterceptedValue.rentalId;
-      },
-      set rentalId(newValue) {
-        uninterceptedValue.rentalId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get rentalDate() {
+          return uninterceptedValue.rentalDate;
+        },
+        set rentalDate(newValue) {
+          uninterceptedValue.rentalDate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rentalDate() {
-        return uninterceptedValue.rentalDate;
-      },
-      set rentalDate(newValue) {
-        uninterceptedValue.rentalDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get inventoryId() {
+          return uninterceptedValue.inventoryId;
+        },
+        set inventoryId(newValue) {
+          uninterceptedValue.inventoryId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get inventoryId() {
-        return uninterceptedValue.inventoryId;
-      },
-      set inventoryId(newValue) {
-        uninterceptedValue.inventoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get customerId() {
+          return uninterceptedValue.customerId;
+        },
+        set customerId(newValue) {
+          uninterceptedValue.customerId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get returnDate() {
+          return uninterceptedValue.returnDate;
+        },
+        set returnDate(newValue) {
+          uninterceptedValue.returnDate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get returnDate() {
-        return uninterceptedValue.returnDate;
-      },
-      set returnDate(newValue) {
-        uninterceptedValue.returnDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get staffId() {
+          return uninterceptedValue.staffId;
+        },
+        set staffId(newValue) {
+          uninterceptedValue.staffId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get staffId() {
-        return uninterceptedValue.staffId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function StaffInterceptor(
@@ -12474,97 +12485,98 @@ export namespace Public {
     callback: InterceptorCallback<Staff>,
     index?: number,
   ): Intercepted<Staff> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get staffId() {
+          return uninterceptedValue.staffId;
+        },
+        set staffId(newValue) {
+          uninterceptedValue.staffId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get staffId() {
-        return uninterceptedValue.staffId;
-      },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get firstName() {
+          return uninterceptedValue.firstName;
+        },
+        set firstName(newValue) {
+          uninterceptedValue.firstName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastName() {
+          return uninterceptedValue.lastName;
+        },
+        set lastName(newValue) {
+          uninterceptedValue.lastName = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastName() {
-        return uninterceptedValue.lastName;
-      },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get addressId() {
+          return uninterceptedValue.addressId;
+        },
+        set addressId(newValue) {
+          uninterceptedValue.addressId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get email() {
+          return uninterceptedValue.email;
+        },
+        set email(newValue) {
+          uninterceptedValue.email = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get email() {
-        return uninterceptedValue.email;
-      },
-      set email(newValue) {
-        uninterceptedValue.email = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get storeId() {
+          return uninterceptedValue.storeId;
+        },
+        set storeId(newValue) {
+          uninterceptedValue.storeId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get active() {
+          return uninterceptedValue.active;
+        },
+        set active(newValue) {
+          uninterceptedValue.active = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get active() {
-        return uninterceptedValue.active;
-      },
-      set active(newValue) {
-        uninterceptedValue.active = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get username() {
+          return uninterceptedValue.username;
+        },
+        set username(newValue) {
+          uninterceptedValue.username = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get username() {
-        return uninterceptedValue.username;
-      },
-      set username(newValue) {
-        uninterceptedValue.username = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get password() {
+          return uninterceptedValue.password;
+        },
+        set password(newValue) {
+          uninterceptedValue.password = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get password() {
-        return uninterceptedValue.password;
-      },
-      set password(newValue) {
-        uninterceptedValue.password = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
+        get picture() {
+          return uninterceptedValue.picture;
+        },
+        set picture(newValue) {
+          uninterceptedValue.picture = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get picture() {
-        return uninterceptedValue.picture;
-      },
-      set picture(newValue) {
-        uninterceptedValue.picture = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function StoreInterceptor(
@@ -12572,41 +12584,42 @@ export namespace Public {
     callback: InterceptorCallback<Store>,
     index?: number,
   ): Intercepted<Store> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get storeId() {
+          return uninterceptedValue.storeId;
+        },
+        set storeId(newValue) {
+          uninterceptedValue.storeId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get managerStaffId() {
+          return uninterceptedValue.managerStaffId;
+        },
+        set managerStaffId(newValue) {
+          uninterceptedValue.managerStaffId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get managerStaffId() {
-        return uninterceptedValue.managerStaffId;
-      },
-      set managerStaffId(newValue) {
-        uninterceptedValue.managerStaffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get addressId() {
+          return uninterceptedValue.addressId;
+        },
+        set addressId(newValue) {
+          uninterceptedValue.addressId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get addressId() {
-        return uninterceptedValue.addressId;
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function PaymentInterceptor(
@@ -12614,57 +12627,58 @@ export namespace Public {
     callback: InterceptorCallback<Payment>,
     index?: number,
   ): Intercepted<Payment> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get paymentId() {
+          return uninterceptedValue.paymentId;
+        },
+        set paymentId(newValue) {
+          uninterceptedValue.paymentId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get paymentId() {
-        return uninterceptedValue.paymentId;
-      },
-      set paymentId(newValue) {
-        uninterceptedValue.paymentId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get customerId() {
+          return uninterceptedValue.customerId;
+        },
+        set customerId(newValue) {
+          uninterceptedValue.customerId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get staffId() {
+          return uninterceptedValue.staffId;
+        },
+        set staffId(newValue) {
+          uninterceptedValue.staffId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get staffId() {
-        return uninterceptedValue.staffId;
-      },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get rentalId() {
+          return uninterceptedValue.rentalId;
+        },
+        set rentalId(newValue) {
+          uninterceptedValue.rentalId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rentalId() {
-        return uninterceptedValue.rentalId;
-      },
-      set rentalId(newValue) {
-        uninterceptedValue.rentalId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get amount() {
+          return uninterceptedValue.amount;
+        },
+        set amount(newValue) {
+          uninterceptedValue.amount = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get amount() {
-        return uninterceptedValue.amount;
+        get paymentDate() {
+          return uninterceptedValue.paymentDate;
+        },
+        set paymentDate(newValue) {
+          uninterceptedValue.paymentDate = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set amount(newValue) {
-        uninterceptedValue.amount = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get paymentDate() {
-        return uninterceptedValue.paymentDate;
-      },
-      set paymentDate(newValue) {
-        uninterceptedValue.paymentDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 
   export function FilmInterceptor(
@@ -12672,113 +12686,114 @@ export namespace Public {
     callback: InterceptorCallback<Film>,
     index?: number,
   ): Intercepted<Film> {
-    return {
-      [__brand]: "__intercepted__",
+    return Brand(
+      {
+        get filmId() {
+          return uninterceptedValue.filmId;
+        },
+        set filmId(newValue) {
+          uninterceptedValue.filmId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get title() {
+          return uninterceptedValue.title;
+        },
+        set title(newValue) {
+          uninterceptedValue.title = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get title() {
-        return uninterceptedValue.title;
-      },
-      set title(newValue) {
-        uninterceptedValue.title = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get description() {
+          return uninterceptedValue.description;
+        },
+        set description(newValue) {
+          uninterceptedValue.description = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get description() {
-        return uninterceptedValue.description;
-      },
-      set description(newValue) {
-        uninterceptedValue.description = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get releaseYear() {
+          return uninterceptedValue.releaseYear;
+        },
+        set releaseYear(newValue) {
+          uninterceptedValue.releaseYear = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get releaseYear() {
-        return uninterceptedValue.releaseYear;
-      },
-      set releaseYear(newValue) {
-        uninterceptedValue.releaseYear = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get languageId() {
+          return uninterceptedValue.languageId;
+        },
+        set languageId(newValue) {
+          uninterceptedValue.languageId = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get languageId() {
-        return uninterceptedValue.languageId;
-      },
-      set languageId(newValue) {
-        uninterceptedValue.languageId = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get rentalDuration() {
+          return uninterceptedValue.rentalDuration;
+        },
+        set rentalDuration(newValue) {
+          uninterceptedValue.rentalDuration = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rentalDuration() {
-        return uninterceptedValue.rentalDuration;
-      },
-      set rentalDuration(newValue) {
-        uninterceptedValue.rentalDuration = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get rentalRate() {
+          return uninterceptedValue.rentalRate;
+        },
+        set rentalRate(newValue) {
+          uninterceptedValue.rentalRate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rentalRate() {
-        return uninterceptedValue.rentalRate;
-      },
-      set rentalRate(newValue) {
-        uninterceptedValue.rentalRate = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get length() {
+          return uninterceptedValue.length;
+        },
+        set length(newValue) {
+          uninterceptedValue.length = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get length() {
-        return uninterceptedValue.length;
-      },
-      set length(newValue) {
-        uninterceptedValue.length = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get replacementCost() {
+          return uninterceptedValue.replacementCost;
+        },
+        set replacementCost(newValue) {
+          uninterceptedValue.replacementCost = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get replacementCost() {
-        return uninterceptedValue.replacementCost;
-      },
-      set replacementCost(newValue) {
-        uninterceptedValue.replacementCost = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get rating() {
+          return uninterceptedValue.rating;
+        },
+        set rating(newValue) {
+          uninterceptedValue.rating = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get rating() {
-        return uninterceptedValue.rating;
-      },
-      set rating(newValue) {
-        uninterceptedValue.rating = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get lastUpdate() {
+          return uninterceptedValue.lastUpdate;
+        },
+        set lastUpdate(newValue) {
+          uninterceptedValue.lastUpdate = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
+        get specialFeatures() {
+          return uninterceptedValue.specialFeatures;
+        },
+        set specialFeatures(newValue) {
+          uninterceptedValue.specialFeatures = newValue;
+          void callback(uninterceptedValue, index);
+        },
 
-      get specialFeatures() {
-        return uninterceptedValue.specialFeatures;
+        get fulltext() {
+          return uninterceptedValue.fulltext;
+        },
+        set fulltext(newValue) {
+          uninterceptedValue.fulltext = newValue;
+          void callback(uninterceptedValue, index);
+        },
       },
-      set specialFeatures(newValue) {
-        uninterceptedValue.specialFeatures = newValue;
-        void callback(uninterceptedValue, index);
-      },
-
-      get fulltext() {
-        return uninterceptedValue.fulltext;
-      },
-      set fulltext(newValue) {
-        uninterceptedValue.fulltext = newValue;
-        void callback(uninterceptedValue, index);
-      },
-    };
+      "__intercepted__",
+    );
   }
 }
 export namespace Public {

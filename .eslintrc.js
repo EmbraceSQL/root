@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
+  ignorePatterns: ["**/samples"],
   overrides: [
     {
       files: ["*.ts", "*.tsx"], // only lint the ts, thanks

@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
     "generate": "bin/generate",
-    "test": "npm run generate && jest "
+    "pretest": "npm run generate",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest "
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

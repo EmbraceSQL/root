@@ -5,8 +5,11 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import { IndexColumnNode, IndexNode, TableNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
-import * as path from "path";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export type IndexRow = {
   tabletypeoid: number;

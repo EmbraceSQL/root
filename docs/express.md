@@ -12,7 +12,9 @@ used in these example snippets.
 Once you have a database, you can generate the express application:
 
 ```shell
-embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+npm install embracesql @embracesql/express
+mkdir -p ./src
+npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```
 
 And a very simple express server `index.ts`, assumes top level `await`.
@@ -30,7 +32,7 @@ app.listen(3000)
 Start that server:
 
 ```shell
-npx ts-node index.ts
+npx tsx ./src/express.ts
 ```
 
 And curl for some data:

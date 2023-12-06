@@ -4,8 +4,11 @@ import {
   generateOperationDispatcher,
 } from "@embracesql/postgres/src/generator";
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
-import * as path from "path";
-import * as ts from "typescript";
+import path from "path";
+import ts from "typescript";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * This is a pretty coarse test which exists to provide a place

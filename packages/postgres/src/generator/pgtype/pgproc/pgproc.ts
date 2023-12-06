@@ -13,9 +13,12 @@ import {
 import { generateRequestType } from "./generateRequestType";
 import { generateResponseType } from "./generateResponseType";
 import { camelCase, pascalCase } from "change-case";
-import { Parser, seqObj } from "parsimmon";
-import * as path from "path";
+import parsimmon from "parsimmon";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type ProcRow = {
   oid: number;
@@ -174,7 +177,7 @@ export class PGProc implements PostgresProcTypecast {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             a.type.parseFromPostgres(context, parsedAttributeText),
           ),
-        ] as [string, Parser<string | null>],
+        ] as [string, parsimmon.Parser<string | null>],
     );
 
     const args = [
@@ -183,7 +186,7 @@ export class PGProc implements PostgresProcTypecast {
       endComposite,
     ];
 
-    return seqObj<ObjectParser>(...args).tryParse(x);
+    return parsimmon.seqObj<ObjectParser>(...args).tryParse(x);
   }
 
   /**

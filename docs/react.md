@@ -8,12 +8,48 @@ EmbraceSQL generates support for React using hooks. The hooks:
 ## Example
 
 You can look in the [intro](./index.md) to see how to generate the dvdrental code
-used in these example snippets.
+used in these example snippets. Make sure you have a dvdrental database created.
 
-This example also assumes you have generated and are running [Express](./express.md)
+We'll use [vite-express](https://github.com/szymmis/vite-express#-documentation)
+which combines the Vite build system with an express server.
 
-Once you have a database, and a server up and going, time to generate some
-React hooks.
+```shell
+npx create-vite-express
+```
+
+Pick 'react' and 'typescript'.
+
+Take a quick run and make sure everythign is up:
+
+```
+cd vite-express-project
+npm install
+npm run dev
+curl http://localhost:3000/
+```
+
+You should see an HTML page. Assuming this is all working -- time to hook
+up EmbraceSQL.
+
+```shell
+npm install embracesql @embracesql/react @embracesql/express
+```
+
+Now it is time to generate the EmbraceSQL express server application.
+
+```shell
+npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
+```
+
+And update the express server entry point:
+
+`./src/server/main./ts`
+
+```typescript
+
+
+```
+
 
 ```shell
 embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental-react.ts

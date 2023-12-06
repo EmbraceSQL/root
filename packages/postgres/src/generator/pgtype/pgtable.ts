@@ -4,8 +4,11 @@ import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import { ColumnNode, TableNode, TablesNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
-import * as path from "path";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type TableRow = {
   relname: string;

@@ -7,8 +7,11 @@ import { PGTypeComposite } from "./pgtypecomposite";
 import { PGTypeDomain } from "./pgtypedomain";
 import { PGTypeEnum } from "./pgtypeenum";
 import { PGTypeRange } from "./pgtyperange";
-import * as path from "path";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Database row for types in the pg catalog. All types - tables, views, indexes

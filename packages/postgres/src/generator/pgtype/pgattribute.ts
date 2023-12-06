@@ -2,8 +2,11 @@ import { Context } from "../../context";
 import { groupBy } from "../../util";
 import { PGTypeComposite } from "./pgtypecomposite";
 import { camelCase } from "change-case";
-import * as path from "path";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type AttributeRow = {
   attnum: number;

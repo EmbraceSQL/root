@@ -2,8 +2,11 @@ import { Context, TypeFactoryContext } from "../../context";
 import { cleanIdentifierForTypescript, groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
-import * as path from "path";
+import path from "path";
 import { Sql } from "postgres";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type EnumRow = {
   enumsortorder: number;

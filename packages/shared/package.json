@@ -2,15 +2,18 @@
   "name": "@embracesql/shared",
   "version": "1.0.0",
   "description": "EmbraceSQL shared types between browser and node.",
-  "main": "src/index.ts",
+  "type": "module",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "exit 0",
-    "check": "tsc --noEmit",
-    "lint": "eslint ."
+    "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
     "change-case": "^4.1.2"
+  },
+  "devDependencies": {
+    "ts-jest": "^29.1.1"
   }
 }

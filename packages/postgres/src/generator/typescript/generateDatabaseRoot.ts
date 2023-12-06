@@ -19,8 +19,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-empty-interface */
         /* eslint-disable @typescript-eslint/no-namespace */
         /* eslint-disable @typescript-eslint/no-unused-vars */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/postgres/src/types";
-        import { Context, initializeContext } from "@embracesql/postgres/src/context";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/postgres";
+        import { Context, initializeContext } from "@embracesql/postgres";
         import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
         import postgres from "postgres";
     `,
