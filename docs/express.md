@@ -18,7 +18,17 @@ npx embracesql generate express --database postgres://postgres:postgres@localhos
 ```
 
 And a very simple express server `index.ts`, assumes top level `await` -- put `"type": "module"`
-in your package json.
+in your package json. And, provided handy tsconfig settings that work great with
+`tsx` and `typescript` 5+.
+
+`tsconfig.json`
+
+```json
+{
+  "extends": "@embracesql/shared/tsconfig/tsconfig.json"
+}
+
+```
 
 `./src/express.ts`
 
