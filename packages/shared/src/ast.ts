@@ -15,6 +15,7 @@ export const enum ASTKind {
   Table,
   Column,
   Index,
+  IndexColumn,
 }
 
 /**
@@ -71,6 +72,7 @@ export type VisitorMap = {
   [ASTKind.Tables]?: Visitor<TableNode>;
   [ASTKind.Column]?: Visitor<ColumnNode>;
   [ASTKind.Index]?: Visitor<IndexNode>;
+  [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
 };
 
 /**
@@ -200,8 +202,13 @@ export class TableNode extends ContainerNode {
   ) {
     super(name, ASTKind.Table, tables);
   }
+
   get dispatchName(): string {
     return `${this.parent?.dispatchName}.${pascalCase(this.name)}.create`;
+  }
+
+  get primaryKey(): IndexNode | undefined {
+    return this.children.find((n) => (n as IndexNode).primaryKey) as IndexNode;
   }
 }
 
@@ -225,11 +232,30 @@ export class IndexNode extends ContainerNode {
     table: TableNode,
     public name: string,
     public unique: boolean,
+    public primaryKey: boolean,
   ) {
     super(name, ASTKind.Index, table);
   }
 
   get dispatchName(): string {
     return `${this.parent?.dispatchName}.${camelCase(this.name)}`;
+  }
+
+  get columns(): IndexColumnNode[] {
+    return this.children.filter(
+      (n) => n.kind === ASTKind.IndexColumn,
+    ) as IndexColumnNode[];
+  }
+}
+
+/**
+ * A single column on a single index in a schema in a database.
+ */
+export class IndexColumnNode extends ContainerNode {
+  constructor(
+    table: IndexNode,
+    public name: string,
+  ) {
+    super(name, ASTKind.IndexColumn, table);
   }
 }

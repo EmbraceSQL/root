@@ -1,4 +1,5 @@
 import { Context } from "../context";
+import { GenerationContext as GC } from "@embracesql/shared";
 import * as prettier from "prettier";
 
 export { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
@@ -10,10 +11,7 @@ export { generateOperationDispatcher } from "./typescript/generateOperationDispa
  * This combines our regular context to connect and work with
  * postgres along with needed metadata.
  */
-export type GenerationContext = Context & {
-  sqlScriptsFrom?: string;
-  skipSchemas?: string[];
-};
+export type GenerationContext = Context & GC;
 
 //TODO - this does not belong in postgres
 

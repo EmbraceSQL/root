@@ -6042,6 +6042,10 @@ export interface PostgresTypecasts {
   api_echo_type_nested: Typecast;
 }
 
+// begin primary key pickers
+export namespace Api {}
+// end primary key pickers
+
 interface HasDatabase {
   database: Database;
 }

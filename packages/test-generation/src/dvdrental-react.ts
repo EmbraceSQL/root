@@ -6709,6 +6709,101 @@ export namespace ScriptTypes {
     }
   }
 }
+// begin primary key pickers
+export namespace Public {
+  export function pickPrimaryKeyFromFilmActor(value: FilmActor): string {
+    return JSON.stringify({
+      actorId: value.actorId,
+      filmId: value.filmId,
+    });
+  }
+
+  export function pickPrimaryKeyFromAddress(value: Address): string {
+    return JSON.stringify({
+      addressId: value.addressId,
+    });
+  }
+
+  export function pickPrimaryKeyFromCity(value: City): string {
+    return JSON.stringify({
+      cityId: value.cityId,
+    });
+  }
+
+  export function pickPrimaryKeyFromCustomer(value: Customer): string {
+    return JSON.stringify({
+      customerId: value.customerId,
+    });
+  }
+
+  export function pickPrimaryKeyFromActor(value: Actor): string {
+    return JSON.stringify({
+      actorId: value.actorId,
+    });
+  }
+
+  export function pickPrimaryKeyFromFilmCategory(value: FilmCategory): string {
+    return JSON.stringify({
+      filmId: value.filmId,
+      categoryId: value.categoryId,
+    });
+  }
+
+  export function pickPrimaryKeyFromInventory(value: Inventory): string {
+    return JSON.stringify({
+      inventoryId: value.inventoryId,
+    });
+  }
+
+  export function pickPrimaryKeyFromCategory(value: Category): string {
+    return JSON.stringify({
+      categoryId: value.categoryId,
+    });
+  }
+
+  export function pickPrimaryKeyFromCountry(value: Country): string {
+    return JSON.stringify({
+      countryId: value.countryId,
+    });
+  }
+
+  export function pickPrimaryKeyFromLanguage(value: Language): string {
+    return JSON.stringify({
+      languageId: value.languageId,
+    });
+  }
+
+  export function pickPrimaryKeyFromRental(value: Rental): string {
+    return JSON.stringify({
+      rentalId: value.rentalId,
+    });
+  }
+
+  export function pickPrimaryKeyFromStaff(value: Staff): string {
+    return JSON.stringify({
+      staffId: value.staffId,
+    });
+  }
+
+  export function pickPrimaryKeyFromStore(value: Store): string {
+    return JSON.stringify({
+      storeId: value.storeId,
+    });
+  }
+
+  export function pickPrimaryKeyFromPayment(value: Payment): string {
+    return JSON.stringify({
+      paymentId: value.paymentId,
+    });
+  }
+
+  export function pickPrimaryKeyFromFilm(value: Film): string {
+    return JSON.stringify({
+      filmId: value.filmId,
+    });
+  }
+}
+// end primary key pickers
 
 interface HasDatabase {
   database: Database;
