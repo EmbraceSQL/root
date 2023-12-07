@@ -43,6 +43,7 @@ export type GenerationContext = {
   handlers?: VisitorMap;
 };
 
+// type branding just to help typescript keep me lining things up correctly
 export declare const __brand: unique symbol;
 type WithBrand<B> = { __brand: B };
 export type Branded<T, B> = T & WithBrand<B>;
@@ -53,3 +54,27 @@ export function Brand<T, B>(toBrand: T, withBrand: B) {
     ...toBrand,
   };
 }
+
+/**
+ * This lovely bit of type origami will generate string prefixed
+ * with a pascal casing of the rest.
+ */
+export type PrefixedPascal<
+  P extends string,
+  T extends string,
+> = T extends `${infer FirstChar}${infer Rest}`
+  ? `${P}${Capitalize<FirstChar>}${Rest}`
+  : never;
+
+/**
+ * Add change handlers on to an existing type of the form
+ * `changePropertyName`.
+ *
+ * You really should only use this on types that have plain properties
+ * that are not functions.
+ */
+export type WithChangeHandlers<T, E = never> = T & {
+  [Property in keyof T as PrefixedPascal<"change", Property & string>]: (
+    e: E,
+  ) => void;
+};

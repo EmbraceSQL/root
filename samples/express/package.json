@@ -1,9 +1,10 @@
 {
-  "name": "express",
-  "version": "1.0.0",
-  "description": "",
+  "name": "express-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "npx tsx ./src/express",
     "check": "tsc --noEmit",
     "test": "exit 0"
   },
@@ -11,5 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "@embracesql/express": "*"
-  }
+  },
+  "devDependencies": {}
 }

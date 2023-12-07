@@ -6698,17 +6698,6 @@ export interface PostgresTypecasts {
   information_schema_yes_or_no: Typecast;
 }
 
-export namespace ScriptTypes {
-  export namespace Sql {
-    export namespace Sample {
-      export interface pickParameters {
-        _1: PgCatalog.Text;
-      }
-
-      export namespace Film {}
-    }
-  }
-}
 // begin primary key pickers
 export namespace Public {
   export function pickPrimaryKeyFromFilmActor(value: FilmActor): string {
@@ -11831,104 +11820,6 @@ export class Database {
         }));
         return results[0];
       }
-    })(this);
-  })(this);
-
-  public Scripts = new (class implements HasDatabase {
-    constructor(public database: Database) {}
-
-    public Sql = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      async tally() {
-        const response = await this.database.context.sql.begin(
-          async (sql: postgres.Sql) => {
-            return await sql.unsafe(`
-                SELECT
-    COUNT(*)
-FROM
-    public.actor
-
-                
-                `);
-          },
-        );
-        return response.map((record) => ({
-          count: undefinedIsNull(record.count),
-        }));
-      }
-
-      public Sample = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async pick(parameters: ScriptTypes.Sql.Sample.pickParameters) {
-          const response = await this.database.context.sql.begin(
-            async (sql: postgres.Sql) => {
-              return await sql.unsafe(
-                `
-                SELECT
-    *
-FROM
-    public.film
-WHERE
-    title = $1
-                
-                `,
-                [parameters._1],
-              );
-            },
-          );
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
-
-        public Film = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
-
-          get database() {
-            return this.hasDatabase.database;
-          }
-
-          async tally() {
-            const response = await this.database.context.sql.begin(
-              async (sql: postgres.Sql) => {
-                return await sql.unsafe(`
-                SELECT
-    COUNT(*)
-FROM
-    public.film
-
-                
-                `);
-              },
-            );
-            return response.map((record) => ({
-              count: undefinedIsNull(record.count),
-            }));
-          }
-        })(this);
-      })(this);
     })(this);
   })(this);
 }

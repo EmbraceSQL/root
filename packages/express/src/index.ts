@@ -3,7 +3,7 @@ import {
   EmbraceSQLResponse,
   OperationDispatchMethod,
 } from "@embracesql/shared";
-import express, { response } from "express";
+import express from "express";
 
 type EmbraceSQLProps = {
   /**
@@ -59,7 +59,7 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
         })
         .catch((reason) => {
           console.error(reason);
-          response.status(500);
+          res.status(500);
         });
     } else {
       // hand along, nothing to do...

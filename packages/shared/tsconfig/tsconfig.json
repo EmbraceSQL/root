@@ -1,9 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "EmbraceSQL",
   "compilerOptions": {
     "target": "ESNext",
     "allowImportingTsExtensions": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
     "noEmit": true,
     "strict": true,
     "jsx": "react-jsxdev"

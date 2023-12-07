@@ -13,7 +13,6 @@ export const generateReactComponents = async (context: GenerationContext) => {
   const generationBuffer = [
     `// Begin React generated section`,
     `import React from "react";`,
-    `import { Branded, Brand } from "@embracesql/shared";`,
     `export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";`,
     `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback, InterceptorCallback, Intercepted } from "@embracesql/react";`,
   ];
@@ -31,27 +30,43 @@ export const generateReactComponents = async (context: GenerationContext) => {
         generationBuffer.push(
           `export function ${tableTypeName}Interceptor(uninterceptedValue: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : Intercepted<${tableTypeName}>{`,
         );
-        generationBuffer.push(`return Brand({`);
+        generationBuffer.push(`return {`);
 
         return generationBuffer.join("\n");
       },
       after: async () => {
-        return `}, "__intercepted__")}`;
+        return `__brand: "__intercepted__"}}`;
       },
     },
     [ASTKind.Column]: {
       before: async (_, node) => {
+        const tableTypeName = `${pascalCase(
+          (node.parent as unknown as IsNamed)?.name,
+        )}`;
         const generationBuffer = [""];
         generationBuffer.push(
           `get ${camelCase(
             node.name,
           )}() { return uninterceptedValue.${camelCase(node.name)};},`,
         );
+        // the setter -- this sets a local memory value and triggers the callback
+        // that intercepts sets
         generationBuffer.push(`set ${camelCase(node.name)}(newValue) {`);
         generationBuffer.push(
           `uninterceptedValue.${camelCase(node.name)} = newValue;`,
         );
         generationBuffer.push(`void callback(uninterceptedValue, index);`);
+        generationBuffer.push(`},`);
+        // react change event handlers
+        generationBuffer.push(`change${pascalCase(node.name)}(event) {`);
+        // TODO: this needs generated type casts from string -> actual no shit value
+        generationBuffer.push(
+          `this.${camelCase(
+            node.name,
+          )} = event.target.value as unknown as ${tableTypeName}["${camelCase(
+            node.name,
+          )}"] ;`,
+        );
         generationBuffer.push(`},`);
         return generationBuffer.join("\n");
       },

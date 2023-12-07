@@ -1,6 +1,8 @@
 import { useEmbraceSQLClient } from "./provider";
-import { Branded } from "@embracesql/shared";
+import { Branded, WithChangeHandlers } from "@embracesql/shared";
 import React from "react";
+
+export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 /**
  * When a type is wrapped up with an interceptor, brand it
@@ -8,7 +10,10 @@ import React from "react";
  *
  * Easier to avoid passing the wrong thing...
  */
-export type Intercepted<T> = Branded<T, "__intercepted__">;
+export type Intercepted<T> = Branded<
+  WithChangeHandlers<T, ChangeEvent>,
+  "__intercepted__"
+>;
 
 /**
  * Call back into an interception hook with this interface.

@@ -1,4 +1,4 @@
 {
-  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "extends": "@embracesql/shared/tsconfig/react.tsconfig.json",
   "include": ["./src/", "./test/"]
 }

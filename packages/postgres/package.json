@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "@embracesql/shared": "*",
-    "change-case": "^4.1.2",
     "glob": "^10.3.10",
     "parsimmon": "^1.18.1",
     "pg-connection-string": "^2.6.2",

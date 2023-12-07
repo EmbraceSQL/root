@@ -6698,17 +6698,6 @@ export interface PostgresTypecasts {
   information_schema_yes_or_no: Typecast;
 }
 
-export namespace ScriptTypes {
-  export namespace Sql {
-    export namespace Sample {
-      export interface pickParameters {
-        _1: PgCatalog.Text;
-      }
-
-      export namespace Film {}
-    }
-  }
-}
 // begin primary key pickers
 export namespace Public {
   export function pickPrimaryKeyFromFilmActor(value: FilmActor): string {
@@ -11833,2516 +11822,764 @@ export class Database {
       }
     })(this);
   })(this);
-
-  public Scripts = new (class implements HasDatabase {
-    constructor(public database: Database) {}
-
-    public Sql = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      async tally() {
-        const response = await this.database.context.sql.begin(
-          async (sql: postgres.Sql) => {
-            return await sql.unsafe(`
-                SELECT
-    COUNT(*)
-FROM
-    public.actor
-
-                
-                `);
-          },
-        );
-        return response.map((record) => ({
-          count: undefinedIsNull(record.count),
-        }));
-      }
-
-      public Sample = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async pick(parameters: ScriptTypes.Sql.Sample.pickParameters) {
-          const response = await this.database.context.sql.begin(
-            async (sql: postgres.Sql) => {
-              return await sql.unsafe(
-                `
-                SELECT
-    *
-FROM
-    public.film
-WHERE
-    title = $1
-                
-                `,
-                [parameters._1],
-              );
-            },
-          );
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
-
-        public Film = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
-
-          get database() {
-            return this.hasDatabase.database;
-          }
-
-          async tally() {
-            const response = await this.database.context.sql.begin(
-              async (sql: postgres.Sql) => {
-                return await sql.unsafe(`
-                SELECT
-    COUNT(*)
-FROM
-    public.film
-
-                
-                `);
-              },
-            );
-            return response.map((record) => ({
-              count: undefinedIsNull(record.count),
-            }));
-          }
-        })(this);
-      })(this);
-    })(this);
-  })(this);
 }
-// Begin React generated section
-import React from "react";
-export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
-import {
-  useEmbraceSQLRequest,
-  useEmbraceSQLUpdateCallback,
-  InterceptorCallback,
-  Intercepted,
-} from "@embracesql/react";
-export namespace Public {
-  export function FilmActorInterceptor(
-    uninterceptedValue: FilmActor,
-    callback: InterceptorCallback<FilmActor>,
-    index?: number,
-  ): Intercepted<FilmActor> {
-    return {
-      get actorId() {
-        return uninterceptedValue.actorId;
-      },
-      set actorId(newValue) {
-        uninterceptedValue.actorId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeActorId(event) {
-        this.actorId = event.target.value as unknown as FilmActor["actorId"];
-      },
 
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as FilmActor["filmId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as FilmActor["lastUpdate"];
-      },
-      __brand: "__intercepted__",
+export class OperationDispatcher {
+  private dispatchMap: Record<string, OperationDispatchMethod>;
+  constructor(private database: Database) {
+    this.dispatchMap = {
+      "Public.FilmInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmInStock(
+          request.parameters as Public.FilmInStockArguments,
+        ),
+      "Public.FilmNotInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmNotInStock(
+          request.parameters as Public.FilmNotInStockArguments,
+        ),
+      "Public.GetCustomerBalance": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.GetCustomerBalance(
+          request.parameters as Public.GetCustomerBalanceArguments,
+        ),
+      "Public.InventoryHeldByCustomer": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.InventoryHeldByCustomer(
+          request.parameters as Public.InventoryHeldByCustomerArguments,
+        ),
+      "Public.InventoryInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.InventoryInStock(
+          request.parameters as Public.InventoryInStockArguments,
+        ),
+      "Public.LastDay": async (request: EmbraceSQLRequest<object, object>) =>
+        database.Public.LastDay(request.parameters as Public.LastDayArguments),
+      "Public.RewardsReport": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.RewardsReport(
+          request.parameters as Public.RewardsReportArguments,
+        ),
+      "Public.FilmActor.byActorIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.byActorIdFilmId(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.FilmActor.byFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.byFilmId(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.FilmActor.deleteByActorIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.deleteByActorIdFilmId(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.FilmActor.deleteByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.deleteByFilmId(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.FilmActor.updateByActorIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.updateByActorIdFilmId(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          request.values as Partial<Public.FilmActor>,
+        ),
+      "Public.FilmActor.updateByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.updateByFilmId(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+          request.values as Partial<Public.FilmActor>,
+        ),
+      "Public.FilmActor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmActor.create(
+          request.values as Public.FilmActor | Public.FilmActorNotPrimaryKey,
+        ),
+      "Public.Address.byAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.byAddressId(
+          request.parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Address.byCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.byCityId(
+          request.parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Address.deleteByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.deleteByAddressId(
+          request.parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Address.deleteByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.deleteByCityId(
+          request.parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Address.updateByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.updateByAddressId(
+          request.parameters as Public.Tables.Address.ByAddressId,
+          request.values as Partial<Public.Address>,
+        ),
+      "Public.Address.updateByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.updateByCityId(
+          request.parameters as Public.Tables.Address.ByCityId,
+          request.values as Partial<Public.Address>,
+        ),
+      "Public.Address.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Address.create(
+          request.values as Public.Address | Public.AddressNotPrimaryKey,
+        ),
+      "Public.City.byCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.byCityId(
+          request.parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.City.byCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.byCountryId(
+          request.parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.City.deleteByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.deleteByCityId(
+          request.parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.City.deleteByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.deleteByCountryId(
+          request.parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.City.updateByCityId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.updateByCityId(
+          request.parameters as Public.Tables.City.ByCityId,
+          request.values as Partial<Public.City>,
+        ),
+      "Public.City.updateByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.updateByCountryId(
+          request.parameters as Public.Tables.City.ByCountryId,
+          request.values as Partial<Public.City>,
+        ),
+      "Public.City.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.City.create(
+          request.values as Public.City | Public.CityNotPrimaryKey,
+        ),
+      "Public.Customer.byAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.byAddressId(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Customer.byCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.byCustomerId(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Customer.byLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.byLastName(
+          request.parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Customer.byStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.byStoreId(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Customer.deleteByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.deleteByAddressId(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Customer.deleteByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.deleteByCustomerId(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Customer.deleteByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.deleteByLastName(
+          request.parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Customer.deleteByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.deleteByStoreId(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Customer.updateByAddressId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.updateByAddressId(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+          request.values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.updateByCustomerId(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+          request.values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.updateByLastName(
+          request.parameters as Public.Tables.Customer.ByLastName,
+          request.values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.updateByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.updateByStoreId(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+          request.values as Partial<Public.Customer>,
+        ),
+      "Public.Customer.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Customer.create(
+          request.values as Public.Customer | Public.CustomerNotPrimaryKey,
+        ),
+      "Public.Actor.byActorId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.byActorId(
+          request.parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Actor.byLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.byLastName(
+          request.parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Actor.deleteByActorId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.deleteByActorId(
+          request.parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Actor.deleteByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.deleteByLastName(
+          request.parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Actor.updateByActorId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.updateByActorId(
+          request.parameters as Public.Tables.Actor.ByActorId,
+          request.values as Partial<Public.Actor>,
+        ),
+      "Public.Actor.updateByLastName": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.updateByLastName(
+          request.parameters as Public.Tables.Actor.ByLastName,
+          request.values as Partial<Public.Actor>,
+        ),
+      "Public.Actor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Actor.create(
+          request.values as Public.Actor | Public.ActorNotPrimaryKey,
+        ),
+      "Public.FilmCategory.byFilmIdCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmCategory.byFilmIdCategoryId(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.FilmCategory.deleteByFilmIdCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmCategory.deleteByFilmIdCategoryId(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.FilmCategory.updateByFilmIdCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmCategory.updateByFilmIdCategoryId(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          request.values as Partial<Public.FilmCategory>,
+        ),
+      "Public.FilmCategory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.FilmCategory.create(
+          request.values as
+            | Public.FilmCategory
+            | Public.FilmCategoryNotPrimaryKey,
+        ),
+      "Public.Inventory.byInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.byInventoryId(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Inventory.byStoreIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.byStoreIdFilmId(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Inventory.deleteByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.deleteByInventoryId(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Inventory.deleteByStoreIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.deleteByStoreIdFilmId(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Inventory.updateByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.updateByInventoryId(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+          request.values as Partial<Public.Inventory>,
+        ),
+      "Public.Inventory.updateByStoreIdFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.updateByStoreIdFilmId(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          request.values as Partial<Public.Inventory>,
+        ),
+      "Public.Inventory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Inventory.create(
+          request.values as Public.Inventory | Public.InventoryNotPrimaryKey,
+        ),
+      "Public.Category.byCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Category.byCategoryId(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Category.deleteByCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Category.deleteByCategoryId(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Category.updateByCategoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Category.updateByCategoryId(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+          request.values as Partial<Public.Category>,
+        ),
+      "Public.Category.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Category.create(
+          request.values as Public.Category | Public.CategoryNotPrimaryKey,
+        ),
+      "Public.Country.byCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Country.byCountryId(
+          request.parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Country.deleteByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Country.deleteByCountryId(
+          request.parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Country.updateByCountryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Country.updateByCountryId(
+          request.parameters as Public.Tables.Country.ByCountryId,
+          request.values as Partial<Public.Country>,
+        ),
+      "Public.Country.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Country.create(
+          request.values as Public.Country | Public.CountryNotPrimaryKey,
+        ),
+      "Public.Language.byLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Language.byLanguageId(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Language.deleteByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Language.deleteByLanguageId(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Language.updateByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Language.updateByLanguageId(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+          request.values as Partial<Public.Language>,
+        ),
+      "Public.Language.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Language.create(
+          request.values as Public.Language | Public.LanguageNotPrimaryKey,
+        ),
+      "Public.Rental.byInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.byInventoryId(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Rental.byRentalDateInventoryIdCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.byRentalDateInventoryIdCustomerId(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Rental.byRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.byRentalId(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Rental.deleteByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.deleteByInventoryId(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Rental.deleteByRentalDateInventoryIdCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.deleteByRentalDateInventoryIdCustomerId(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Rental.deleteByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.deleteByRentalId(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Rental.updateByInventoryId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.updateByInventoryId(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+          request.values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.updateByRentalDateInventoryIdCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.updateByRentalDateInventoryIdCustomerId(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          request.values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.updateByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.updateByRentalId(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+          request.values as Partial<Public.Rental>,
+        ),
+      "Public.Rental.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Rental.create(
+          request.values as Public.Rental | Public.RentalNotPrimaryKey,
+        ),
+      "Public.Staff.byStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Staff.byStaffId(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Staff.deleteByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Staff.deleteByStaffId(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Staff.updateByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Staff.updateByStaffId(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+          request.values as Partial<Public.Staff>,
+        ),
+      "Public.Staff.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Staff.create(
+          request.values as Public.Staff | Public.StaffNotPrimaryKey,
+        ),
+      "Public.Store.byManagerStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.byManagerStaffId(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Store.byStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.byStoreId(
+          request.parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Store.deleteByManagerStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.deleteByManagerStaffId(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Store.deleteByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.deleteByStoreId(
+          request.parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Store.updateByManagerStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.updateByManagerStaffId(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+          request.values as Partial<Public.Store>,
+        ),
+      "Public.Store.updateByStoreId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.updateByStoreId(
+          request.parameters as Public.Tables.Store.ByStoreId,
+          request.values as Partial<Public.Store>,
+        ),
+      "Public.Store.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Store.create(
+          request.values as Public.Store | Public.StoreNotPrimaryKey,
+        ),
+      "Public.Payment.byCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.byCustomerId(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Payment.byPaymentId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.byPaymentId(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Payment.byRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.byRentalId(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Payment.byStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.byStaffId(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Payment.deleteByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.deleteByCustomerId(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Payment.deleteByPaymentId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.deleteByPaymentId(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Payment.deleteByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.deleteByRentalId(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Payment.deleteByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.deleteByStaffId(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Payment.updateByCustomerId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.updateByCustomerId(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+          request.values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByPaymentId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.updateByPaymentId(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+          request.values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByRentalId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.updateByRentalId(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+          request.values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.updateByStaffId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.updateByStaffId(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+          request.values as Partial<Public.Payment>,
+        ),
+      "Public.Payment.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Payment.create(
+          request.values as Public.Payment | Public.PaymentNotPrimaryKey,
+        ),
+      "Public.Film.byFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.byFilmId(
+          request.parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Film.byFulltext": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.byFulltext(
+          request.parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Film.byLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.byLanguageId(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Film.byTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.byTitle(
+          request.parameters as Public.Tables.Film.ByTitle,
+        ),
+      "Public.Film.deleteByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.deleteByFilmId(
+          request.parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Film.deleteByFulltext": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.deleteByFulltext(
+          request.parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Film.deleteByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.deleteByLanguageId(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Film.deleteByTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.deleteByTitle(
+          request.parameters as Public.Tables.Film.ByTitle,
+        ),
+      "Public.Film.updateByFilmId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.updateByFilmId(
+          request.parameters as Public.Tables.Film.ByFilmId,
+          request.values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByFulltext": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.updateByFulltext(
+          request.parameters as Public.Tables.Film.ByFulltext,
+          request.values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByLanguageId": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.updateByLanguageId(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+          request.values as Partial<Public.Film>,
+        ),
+      "Public.Film.updateByTitle": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.updateByTitle(
+          request.parameters as Public.Tables.Film.ByTitle,
+          request.values as Partial<Public.Film>,
+        ),
+      "Public.Film.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Film.create(
+          request.values as Public.Film | Public.FilmNotPrimaryKey,
+        ),
     };
   }
 
-  export function AddressInterceptor(
-    uninterceptedValue: Address,
-    callback: InterceptorCallback<Address>,
-    index?: number,
-  ): Intercepted<Address> {
-    return {
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Address["addressId"];
-      },
-
-      get address() {
-        return uninterceptedValue.address;
-      },
-      set address(newValue) {
-        uninterceptedValue.address = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddress(event) {
-        this.address = event.target.value as unknown as Address["address"];
-      },
-
-      get address2() {
-        return uninterceptedValue.address2;
-      },
-      set address2(newValue) {
-        uninterceptedValue.address2 = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddress2(event) {
-        this.address2 = event.target.value as unknown as Address["address2"];
-      },
-
-      get district() {
-        return uninterceptedValue.district;
-      },
-      set district(newValue) {
-        uninterceptedValue.district = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeDistrict(event) {
-        this.district = event.target.value as unknown as Address["district"];
-      },
-
-      get cityId() {
-        return uninterceptedValue.cityId;
-      },
-      set cityId(newValue) {
-        uninterceptedValue.cityId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCityId(event) {
-        this.cityId = event.target.value as unknown as Address["cityId"];
-      },
-
-      get postalCode() {
-        return uninterceptedValue.postalCode;
-      },
-      set postalCode(newValue) {
-        uninterceptedValue.postalCode = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePostalCode(event) {
-        this.postalCode = event.target
-          .value as unknown as Address["postalCode"];
-      },
-
-      get phone() {
-        return uninterceptedValue.phone;
-      },
-      set phone(newValue) {
-        uninterceptedValue.phone = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePhone(event) {
-        this.phone = event.target.value as unknown as Address["phone"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Address["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function CityInterceptor(
-    uninterceptedValue: City,
-    callback: InterceptorCallback<City>,
-    index?: number,
-  ): Intercepted<City> {
-    return {
-      get cityId() {
-        return uninterceptedValue.cityId;
-      },
-      set cityId(newValue) {
-        uninterceptedValue.cityId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCityId(event) {
-        this.cityId = event.target.value as unknown as City["cityId"];
-      },
-
-      get city() {
-        return uninterceptedValue.city;
-      },
-      set city(newValue) {
-        uninterceptedValue.city = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCity(event) {
-        this.city = event.target.value as unknown as City["city"];
-      },
-
-      get countryId() {
-        return uninterceptedValue.countryId;
-      },
-      set countryId(newValue) {
-        uninterceptedValue.countryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCountryId(event) {
-        this.countryId = event.target.value as unknown as City["countryId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as City["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function CustomerInterceptor(
-    uninterceptedValue: Customer,
-    callback: InterceptorCallback<Customer>,
-    index?: number,
-  ): Intercepted<Customer> {
-    return {
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCustomerId(event) {
-        this.customerId = event.target
-          .value as unknown as Customer["customerId"];
-      },
-
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Customer["storeId"];
-      },
-
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Customer["firstName"];
-      },
-
-      get lastName() {
-        return uninterceptedValue.lastName;
-      },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Customer["lastName"];
-      },
-
-      get email() {
-        return uninterceptedValue.email;
-      },
-      set email(newValue) {
-        uninterceptedValue.email = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeEmail(event) {
-        this.email = event.target.value as unknown as Customer["email"];
-      },
-
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Customer["addressId"];
-      },
-
-      get activebool() {
-        return uninterceptedValue.activebool;
-      },
-      set activebool(newValue) {
-        uninterceptedValue.activebool = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeActivebool(event) {
-        this.activebool = event.target
-          .value as unknown as Customer["activebool"];
-      },
-
-      get createDate() {
-        return uninterceptedValue.createDate;
-      },
-      set createDate(newValue) {
-        uninterceptedValue.createDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCreateDate(event) {
-        this.createDate = event.target
-          .value as unknown as Customer["createDate"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Customer["lastUpdate"];
-      },
-
-      get active() {
-        return uninterceptedValue.active;
-      },
-      set active(newValue) {
-        uninterceptedValue.active = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeActive(event) {
-        this.active = event.target.value as unknown as Customer["active"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function ActorInterceptor(
-    uninterceptedValue: Actor,
-    callback: InterceptorCallback<Actor>,
-    index?: number,
-  ): Intercepted<Actor> {
-    return {
-      get actorId() {
-        return uninterceptedValue.actorId;
-      },
-      set actorId(newValue) {
-        uninterceptedValue.actorId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeActorId(event) {
-        this.actorId = event.target.value as unknown as Actor["actorId"];
-      },
-
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Actor["firstName"];
-      },
-
-      get lastName() {
-        return uninterceptedValue.lastName;
-      },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Actor["lastName"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Actor["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function FilmCategoryInterceptor(
-    uninterceptedValue: FilmCategory,
-    callback: InterceptorCallback<FilmCategory>,
-    index?: number,
-  ): Intercepted<FilmCategory> {
-    return {
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as FilmCategory["filmId"];
-      },
-
-      get categoryId() {
-        return uninterceptedValue.categoryId;
-      },
-      set categoryId(newValue) {
-        uninterceptedValue.categoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCategoryId(event) {
-        this.categoryId = event.target
-          .value as unknown as FilmCategory["categoryId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as FilmCategory["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function InventoryInterceptor(
-    uninterceptedValue: Inventory,
-    callback: InterceptorCallback<Inventory>,
-    index?: number,
-  ): Intercepted<Inventory> {
-    return {
-      get inventoryId() {
-        return uninterceptedValue.inventoryId;
-      },
-      set inventoryId(newValue) {
-        uninterceptedValue.inventoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeInventoryId(event) {
-        this.inventoryId = event.target
-          .value as unknown as Inventory["inventoryId"];
-      },
-
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as Inventory["filmId"];
-      },
-
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Inventory["storeId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Inventory["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function CategoryInterceptor(
-    uninterceptedValue: Category,
-    callback: InterceptorCallback<Category>,
-    index?: number,
-  ): Intercepted<Category> {
-    return {
-      get categoryId() {
-        return uninterceptedValue.categoryId;
-      },
-      set categoryId(newValue) {
-        uninterceptedValue.categoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCategoryId(event) {
-        this.categoryId = event.target
-          .value as unknown as Category["categoryId"];
-      },
-
-      get name() {
-        return uninterceptedValue.name;
-      },
-      set name(newValue) {
-        uninterceptedValue.name = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeName(event) {
-        this.name = event.target.value as unknown as Category["name"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Category["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function CountryInterceptor(
-    uninterceptedValue: Country,
-    callback: InterceptorCallback<Country>,
-    index?: number,
-  ): Intercepted<Country> {
-    return {
-      get countryId() {
-        return uninterceptedValue.countryId;
-      },
-      set countryId(newValue) {
-        uninterceptedValue.countryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCountryId(event) {
-        this.countryId = event.target.value as unknown as Country["countryId"];
-      },
-
-      get country() {
-        return uninterceptedValue.country;
-      },
-      set country(newValue) {
-        uninterceptedValue.country = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCountry(event) {
-        this.country = event.target.value as unknown as Country["country"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Country["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function LanguageInterceptor(
-    uninterceptedValue: Language,
-    callback: InterceptorCallback<Language>,
-    index?: number,
-  ): Intercepted<Language> {
-    return {
-      get languageId() {
-        return uninterceptedValue.languageId;
-      },
-      set languageId(newValue) {
-        uninterceptedValue.languageId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLanguageId(event) {
-        this.languageId = event.target
-          .value as unknown as Language["languageId"];
-      },
-
-      get name() {
-        return uninterceptedValue.name;
-      },
-      set name(newValue) {
-        uninterceptedValue.name = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeName(event) {
-        this.name = event.target.value as unknown as Language["name"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Language["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function RentalInterceptor(
-    uninterceptedValue: Rental,
-    callback: InterceptorCallback<Rental>,
-    index?: number,
-  ): Intercepted<Rental> {
-    return {
-      get rentalId() {
-        return uninterceptedValue.rentalId;
-      },
-      set rentalId(newValue) {
-        uninterceptedValue.rentalId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRentalId(event) {
-        this.rentalId = event.target.value as unknown as Rental["rentalId"];
-      },
-
-      get rentalDate() {
-        return uninterceptedValue.rentalDate;
-      },
-      set rentalDate(newValue) {
-        uninterceptedValue.rentalDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRentalDate(event) {
-        this.rentalDate = event.target.value as unknown as Rental["rentalDate"];
-      },
-
-      get inventoryId() {
-        return uninterceptedValue.inventoryId;
-      },
-      set inventoryId(newValue) {
-        uninterceptedValue.inventoryId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeInventoryId(event) {
-        this.inventoryId = event.target
-          .value as unknown as Rental["inventoryId"];
-      },
-
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCustomerId(event) {
-        this.customerId = event.target.value as unknown as Rental["customerId"];
-      },
-
-      get returnDate() {
-        return uninterceptedValue.returnDate;
-      },
-      set returnDate(newValue) {
-        uninterceptedValue.returnDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeReturnDate(event) {
-        this.returnDate = event.target.value as unknown as Rental["returnDate"];
-      },
-
-      get staffId() {
-        return uninterceptedValue.staffId;
-      },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Rental["staffId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Rental["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function StaffInterceptor(
-    uninterceptedValue: Staff,
-    callback: InterceptorCallback<Staff>,
-    index?: number,
-  ): Intercepted<Staff> {
-    return {
-      get staffId() {
-        return uninterceptedValue.staffId;
-      },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Staff["staffId"];
-      },
-
-      get firstName() {
-        return uninterceptedValue.firstName;
-      },
-      set firstName(newValue) {
-        uninterceptedValue.firstName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Staff["firstName"];
-      },
-
-      get lastName() {
-        return uninterceptedValue.lastName;
-      },
-      set lastName(newValue) {
-        uninterceptedValue.lastName = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Staff["lastName"];
-      },
-
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Staff["addressId"];
-      },
-
-      get email() {
-        return uninterceptedValue.email;
-      },
-      set email(newValue) {
-        uninterceptedValue.email = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeEmail(event) {
-        this.email = event.target.value as unknown as Staff["email"];
-      },
-
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Staff["storeId"];
-      },
-
-      get active() {
-        return uninterceptedValue.active;
-      },
-      set active(newValue) {
-        uninterceptedValue.active = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeActive(event) {
-        this.active = event.target.value as unknown as Staff["active"];
-      },
-
-      get username() {
-        return uninterceptedValue.username;
-      },
-      set username(newValue) {
-        uninterceptedValue.username = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeUsername(event) {
-        this.username = event.target.value as unknown as Staff["username"];
-      },
-
-      get password() {
-        return uninterceptedValue.password;
-      },
-      set password(newValue) {
-        uninterceptedValue.password = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePassword(event) {
-        this.password = event.target.value as unknown as Staff["password"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Staff["lastUpdate"];
-      },
-
-      get picture() {
-        return uninterceptedValue.picture;
-      },
-      set picture(newValue) {
-        uninterceptedValue.picture = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePicture(event) {
-        this.picture = event.target.value as unknown as Staff["picture"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function StoreInterceptor(
-    uninterceptedValue: Store,
-    callback: InterceptorCallback<Store>,
-    index?: number,
-  ): Intercepted<Store> {
-    return {
-      get storeId() {
-        return uninterceptedValue.storeId;
-      },
-      set storeId(newValue) {
-        uninterceptedValue.storeId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Store["storeId"];
-      },
-
-      get managerStaffId() {
-        return uninterceptedValue.managerStaffId;
-      },
-      set managerStaffId(newValue) {
-        uninterceptedValue.managerStaffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeManagerStaffId(event) {
-        this.managerStaffId = event.target
-          .value as unknown as Store["managerStaffId"];
-      },
-
-      get addressId() {
-        return uninterceptedValue.addressId;
-      },
-      set addressId(newValue) {
-        uninterceptedValue.addressId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Store["addressId"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Store["lastUpdate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function PaymentInterceptor(
-    uninterceptedValue: Payment,
-    callback: InterceptorCallback<Payment>,
-    index?: number,
-  ): Intercepted<Payment> {
-    return {
-      get paymentId() {
-        return uninterceptedValue.paymentId;
-      },
-      set paymentId(newValue) {
-        uninterceptedValue.paymentId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePaymentId(event) {
-        this.paymentId = event.target.value as unknown as Payment["paymentId"];
-      },
-
-      get customerId() {
-        return uninterceptedValue.customerId;
-      },
-      set customerId(newValue) {
-        uninterceptedValue.customerId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeCustomerId(event) {
-        this.customerId = event.target
-          .value as unknown as Payment["customerId"];
-      },
-
-      get staffId() {
-        return uninterceptedValue.staffId;
-      },
-      set staffId(newValue) {
-        uninterceptedValue.staffId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Payment["staffId"];
-      },
-
-      get rentalId() {
-        return uninterceptedValue.rentalId;
-      },
-      set rentalId(newValue) {
-        uninterceptedValue.rentalId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRentalId(event) {
-        this.rentalId = event.target.value as unknown as Payment["rentalId"];
-      },
-
-      get amount() {
-        return uninterceptedValue.amount;
-      },
-      set amount(newValue) {
-        uninterceptedValue.amount = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeAmount(event) {
-        this.amount = event.target.value as unknown as Payment["amount"];
-      },
-
-      get paymentDate() {
-        return uninterceptedValue.paymentDate;
-      },
-      set paymentDate(newValue) {
-        uninterceptedValue.paymentDate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changePaymentDate(event) {
-        this.paymentDate = event.target
-          .value as unknown as Payment["paymentDate"];
-      },
-      __brand: "__intercepted__",
-    };
-  }
-
-  export function FilmInterceptor(
-    uninterceptedValue: Film,
-    callback: InterceptorCallback<Film>,
-    index?: number,
-  ): Intercepted<Film> {
-    return {
-      get filmId() {
-        return uninterceptedValue.filmId;
-      },
-      set filmId(newValue) {
-        uninterceptedValue.filmId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as Film["filmId"];
-      },
-
-      get title() {
-        return uninterceptedValue.title;
-      },
-      set title(newValue) {
-        uninterceptedValue.title = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeTitle(event) {
-        this.title = event.target.value as unknown as Film["title"];
-      },
-
-      get description() {
-        return uninterceptedValue.description;
-      },
-      set description(newValue) {
-        uninterceptedValue.description = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeDescription(event) {
-        this.description = event.target.value as unknown as Film["description"];
-      },
-
-      get releaseYear() {
-        return uninterceptedValue.releaseYear;
-      },
-      set releaseYear(newValue) {
-        uninterceptedValue.releaseYear = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeReleaseYear(event) {
-        this.releaseYear = event.target.value as unknown as Film["releaseYear"];
-      },
-
-      get languageId() {
-        return uninterceptedValue.languageId;
-      },
-      set languageId(newValue) {
-        uninterceptedValue.languageId = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLanguageId(event) {
-        this.languageId = event.target.value as unknown as Film["languageId"];
-      },
-
-      get rentalDuration() {
-        return uninterceptedValue.rentalDuration;
-      },
-      set rentalDuration(newValue) {
-        uninterceptedValue.rentalDuration = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRentalDuration(event) {
-        this.rentalDuration = event.target
-          .value as unknown as Film["rentalDuration"];
-      },
-
-      get rentalRate() {
-        return uninterceptedValue.rentalRate;
-      },
-      set rentalRate(newValue) {
-        uninterceptedValue.rentalRate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRentalRate(event) {
-        this.rentalRate = event.target.value as unknown as Film["rentalRate"];
-      },
-
-      get length() {
-        return uninterceptedValue.length;
-      },
-      set length(newValue) {
-        uninterceptedValue.length = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLength(event) {
-        this.length = event.target.value as unknown as Film["length"];
-      },
-
-      get replacementCost() {
-        return uninterceptedValue.replacementCost;
-      },
-      set replacementCost(newValue) {
-        uninterceptedValue.replacementCost = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeReplacementCost(event) {
-        this.replacementCost = event.target
-          .value as unknown as Film["replacementCost"];
-      },
-
-      get rating() {
-        return uninterceptedValue.rating;
-      },
-      set rating(newValue) {
-        uninterceptedValue.rating = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeRating(event) {
-        this.rating = event.target.value as unknown as Film["rating"];
-      },
-
-      get lastUpdate() {
-        return uninterceptedValue.lastUpdate;
-      },
-      set lastUpdate(newValue) {
-        uninterceptedValue.lastUpdate = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Film["lastUpdate"];
-      },
-
-      get specialFeatures() {
-        return uninterceptedValue.specialFeatures;
-      },
-      set specialFeatures(newValue) {
-        uninterceptedValue.specialFeatures = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeSpecialFeatures(event) {
-        this.specialFeatures = event.target
-          .value as unknown as Film["specialFeatures"];
-      },
-
-      get fulltext() {
-        return uninterceptedValue.fulltext;
-      },
-      set fulltext(newValue) {
-        uninterceptedValue.fulltext = newValue;
-        void callback(uninterceptedValue, index);
-      },
-      changeFulltext(event) {
-        this.fulltext = event.target.value as unknown as Film["fulltext"];
-      },
-      __brand: "__intercepted__",
-    };
+  async dispatch(request: EmbraceSQLRequest<object, object>) {
+    return this.dispatchMap[request.operation](request);
   }
 }
-export namespace Public {
-  export namespace Tables {
-    export namespace FilmActor {
-      export namespace ActorId {}
-      export namespace FilmId {}
-      export namespace LastUpdate {}
-
-      export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
-        const request = {
-          operation: "Public.FilmActor.create.byActorIdFilmId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByActorIdFilmId,
-          never,
-          Public.FilmActor
-        >(request);
-        const [results, setResults] = React.useState<Public.FilmActor>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmActor,
-          Public.FilmActor
-        >({ operation: "Public.FilmActor.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.FilmActor>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.FilmActorInterceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByFilmId(parameters: ByFilmId) {
-        const request = {
-          operation: "Public.FilmActor.create.byFilmId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.FilmActor[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmActor,
-          Public.FilmActor[]
-        >({ operation: "Public.FilmActor.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.FilmActor>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.FilmActorInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Address {
-      export namespace AddressId {}
-      export namespace Address {}
-      export namespace Address2 {}
-      export namespace District {}
-      export namespace CityId {}
-      export namespace PostalCode {}
-      export namespace Phone {}
-      export namespace LastUpdate {}
-
-      export function useByAddressId(parameters: ByAddressId) {
-        const request = {
-          operation: "Public.Address.create.byAddressId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Address>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Address,
-          Public.Address
-        >({ operation: "Public.Address.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Address>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.AddressInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByCityId(parameters: ByCityId) {
-        const request = {
-          operation: "Public.Address.create.byCityId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Address[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Address,
-          Public.Address[]
-        >({ operation: "Public.Address.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Address>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.AddressInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace City {
-      export namespace CityId {}
-      export namespace City {}
-      export namespace CountryId {}
-      export namespace LastUpdate {}
-
-      export function useByCityId(parameters: ByCityId) {
-        const request = {
-          operation: "Public.City.create.byCityId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.City>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.City,
-          Public.City
-        >({ operation: "Public.City.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.City>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.CityInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByCountryId(parameters: ByCountryId) {
-        const request = {
-          operation: "Public.City.create.byCountryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.City[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.City,
-          Public.City[]
-        >({ operation: "Public.City.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.City>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.CityInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Customer {
-      export namespace CustomerId {}
-      export namespace StoreId {}
-      export namespace FirstName {}
-      export namespace LastName {}
-      export namespace Email {}
-      export namespace AddressId {}
-      export namespace Activebool {}
-      export namespace CreateDate {}
-      export namespace LastUpdate {}
-      export namespace Active {}
-
-      export function useByAddressId(parameters: ByAddressId) {
-        const request = {
-          operation: "Public.Customer.create.byAddressId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByAddressId,
-          never,
-          Public.Customer[]
-        >(request);
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Customer>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.CustomerInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByCustomerId(parameters: ByCustomerId) {
-        const request = {
-          operation: "Public.Customer.create.byCustomerId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Customer>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer
-        >({ operation: "Public.Customer.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Customer>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.CustomerInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByLastName(parameters: ByLastName) {
-        const request = {
-          operation: "Public.Customer.create.byLastName",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Customer>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.CustomerInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByStoreId(parameters: ByStoreId) {
-        const request = {
-          operation: "Public.Customer.create.byStoreId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Customer[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Customer,
-          Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Customer>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.CustomerInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Actor {
-      export namespace ActorId {}
-      export namespace FirstName {}
-      export namespace LastName {}
-      export namespace LastUpdate {}
-
-      export function useByActorId(parameters: ByActorId) {
-        const request = {
-          operation: "Public.Actor.create.byActorId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Actor>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Actor,
-          Public.Actor
-        >({ operation: "Public.Actor.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Actor>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.ActorInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByLastName(parameters: ByLastName) {
-        const request = {
-          operation: "Public.Actor.create.byLastName",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Actor[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Actor,
-          Public.Actor[]
-        >({ operation: "Public.Actor.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Actor>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.ActorInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace FilmCategory {
-      export namespace FilmId {}
-      export namespace CategoryId {}
-      export namespace LastUpdate {}
-
-      export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
-        const request = {
-          operation: "Public.FilmCategory.create.byFilmIdCategoryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByFilmIdCategoryId,
-          never,
-          Public.FilmCategory
-        >(request);
-        const [results, setResults] = React.useState<Public.FilmCategory>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.FilmCategory,
-          Public.FilmCategory
-        >({ operation: "Public.FilmCategory.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.FilmCategory>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.FilmCategoryInterceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Inventory {
-      export namespace InventoryId {}
-      export namespace FilmId {}
-      export namespace StoreId {}
-      export namespace LastUpdate {}
-
-      export function useByInventoryId(parameters: ByInventoryId) {
-        const request = {
-          operation: "Public.Inventory.create.byInventoryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByInventoryId,
-          never,
-          Public.Inventory
-        >(request);
-        const [results, setResults] = React.useState<Public.Inventory>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Inventory,
-          Public.Inventory
-        >({ operation: "Public.Inventory.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Inventory>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.InventoryInterceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
-        const request = {
-          operation: "Public.Inventory.create.byStoreIdFilmId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByStoreIdFilmId,
-          never,
-          Public.Inventory[]
-        >(request);
-        const [results, setResults] = React.useState<Public.Inventory[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Inventory,
-          Public.Inventory[]
-        >({ operation: "Public.Inventory.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Inventory>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.InventoryInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Category {
-      export namespace CategoryId {}
-      export namespace Name {}
-      export namespace LastUpdate {}
-
-      export function useByCategoryId(parameters: ByCategoryId) {
-        const request = {
-          operation: "Public.Category.create.byCategoryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Category>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Category,
-          Public.Category
-        >({ operation: "Public.Category.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Category>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.CategoryInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Country {
-      export namespace CountryId {}
-      export namespace Country {}
-      export namespace LastUpdate {}
-
-      export function useByCountryId(parameters: ByCountryId) {
-        const request = {
-          operation: "Public.Country.create.byCountryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Country>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Country,
-          Public.Country
-        >({ operation: "Public.Country.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Country>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.CountryInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Language {
-      export namespace LanguageId {}
-      export namespace Name {}
-      export namespace LastUpdate {}
-
-      export function useByLanguageId(parameters: ByLanguageId) {
-        const request = {
-          operation: "Public.Language.create.byLanguageId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Language>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Language,
-          Public.Language
-        >({ operation: "Public.Language.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Language>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.LanguageInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Rental {
-      export namespace RentalId {}
-      export namespace RentalDate {}
-      export namespace InventoryId {}
-      export namespace CustomerId {}
-      export namespace ReturnDate {}
-      export namespace StaffId {}
-      export namespace LastUpdate {}
-
-      export function useByInventoryId(parameters: ByInventoryId) {
-        const request = {
-          operation: "Public.Rental.create.byInventoryId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByInventoryId,
-          never,
-          Public.Rental[]
-        >(request);
-        const [results, setResults] = React.useState<Public.Rental[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental[]
-        >({ operation: "Public.Rental.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Rental>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.RentalInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByRentalDateInventoryIdCustomerId(
-        parameters: ByRentalDateInventoryIdCustomerId,
-      ) {
-        const request = {
-          operation: "Public.Rental.create.byRentalDateInventoryIdCustomerId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByRentalDateInventoryIdCustomerId,
-          never,
-          Public.Rental
-        >(request);
-        const [results, setResults] = React.useState<Public.Rental>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Rental>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.RentalInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByRentalId(parameters: ByRentalId) {
-        const request = {
-          operation: "Public.Rental.create.byRentalId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Rental>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Rental,
-          Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Rental>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.RentalInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Staff {
-      export namespace StaffId {}
-      export namespace FirstName {}
-      export namespace LastName {}
-      export namespace AddressId {}
-      export namespace Email {}
-      export namespace StoreId {}
-      export namespace Active {}
-      export namespace Username {}
-      export namespace Password {}
-      export namespace LastUpdate {}
-      export namespace Picture {}
-
-      export function useByStaffId(parameters: ByStaffId) {
-        const request = {
-          operation: "Public.Staff.create.byStaffId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Staff>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Staff,
-          Public.Staff
-        >({ operation: "Public.Staff.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Staff>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.StaffInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Store {
-      export namespace StoreId {}
-      export namespace ManagerStaffId {}
-      export namespace AddressId {}
-      export namespace LastUpdate {}
-
-      export function useByManagerStaffId(parameters: ByManagerStaffId) {
-        const request = {
-          operation: "Public.Store.create.byManagerStaffId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByManagerStaffId,
-          never,
-          Public.Store
-        >(request);
-        const [results, setResults] = React.useState<Public.Store>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Store,
-          Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Store>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.StoreInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByStoreId(parameters: ByStoreId) {
-        const request = {
-          operation: "Public.Store.create.byStoreId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Store>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Store,
-          Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Store>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.StoreInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Payment {
-      export namespace PaymentId {}
-      export namespace CustomerId {}
-      export namespace StaffId {}
-      export namespace RentalId {}
-      export namespace Amount {}
-      export namespace PaymentDate {}
-
-      export function useByCustomerId(parameters: ByCustomerId) {
-        const request = {
-          operation: "Public.Payment.create.byCustomerId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
-          ByCustomerId,
-          never,
-          Public.Payment[]
-        >(request);
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Payment>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.PaymentInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByPaymentId(parameters: ByPaymentId) {
-        const request = {
-          operation: "Public.Payment.create.byPaymentId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Payment>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment
-        >({ operation: "Public.Payment.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Payment>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.PaymentInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByRentalId(parameters: ByRentalId) {
-        const request = {
-          operation: "Public.Payment.create.byRentalId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Payment>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.PaymentInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByStaffId(parameters: ByStaffId) {
-        const request = {
-          operation: "Public.Payment.create.byStaffId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Payment[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Payment,
-          Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Payment>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.PaymentInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-    export namespace Film {
-      export namespace FilmId {}
-      export namespace Title {}
-      export namespace Description {}
-      export namespace ReleaseYear {}
-      export namespace LanguageId {}
-      export namespace RentalDuration {}
-      export namespace RentalRate {}
-      export namespace Length {}
-      export namespace ReplacementCost {}
-      export namespace Rating {}
-      export namespace LastUpdate {}
-      export namespace SpecialFeatures {}
-      export namespace Fulltext {}
-
-      export function useByFilmId(parameters: ByFilmId) {
-        const request = {
-          operation: "Public.Film.create.byFilmId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Film>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film
-        >({ operation: "Public.Film.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Film>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              Public.FilmInterceptor(done.response.results, updateCallback),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByFulltext(parameters: ByFulltext) {
-        const request = {
-          operation: "Public.Film.create.byFulltext",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Film[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Film>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.FilmInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByLanguageId(parameters: ByLanguageId) {
-        const request = {
-          operation: "Public.Film.create.byLanguageId",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Film[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Film>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.FilmInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-
-      export function useByTitle(parameters: ByTitle) {
-        const request = {
-          operation: "Public.Film.create.byTitle",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(
-          request,
-        );
-        const [results, setResults] = React.useState<Public.Film[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Film,
-          Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Film>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map((r, i) =>
-                Public.FilmInterceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [results]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-        };
-      }
-    }
-  }
-}
-// End React generated section
+// Begin Express generated section
+import { EmbraceSQLExpress } from "@embracesql/express";
+
+export const EmbraceSQLExpressApp = async (postgresUrl: string) => {
+  const database = await Database.connect(postgresUrl);
+  const dispatcher = new OperationDispatcher(database);
+  return EmbraceSQLExpress(dispatcher);
+};
+
+// End Express generated section

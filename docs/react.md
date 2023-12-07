@@ -10,49 +10,93 @@ EmbraceSQL generates support for React using hooks. The hooks:
 You can look in the [intro](./index.md) to see how to generate the dvdrental code
 used in these example snippets. Make sure you have a dvdrental database created.
 
-We'll use [vite-express](https://github.com/szymmis/vite-express#-documentation)
-which combines the Vite build system with an express server.
+
 
 ```shell
-npx create-vite-express
+npm install @embracesql/vite
 ```
 
-Pick 'react' and 'typescript'.
+Yeah -- that's it, hard to believe I know... just a little more to make
+your sample a module so we can use top level await:
 
-Take a quick run and make sure everythign is up:
+`package.json`
+
+```json
+{
+  "type": "module", 
+  "dependencies": {
+    "@embracesql/vite": "*"
+  }
+}
+```
+
+And we provide a typescript preset.
+
+`tsconfig.json`
+
+```json
+{
+  "extends": "@embracesql/shared/tsconfig/react.tsconfig.json"
+}
 
 ```
-cd vite-express-project
-npm install
-npm run dev
-curl http://localhost:3000/
-```
 
-You should see an HTML page. Assuming this is all working -- time to hook
-up EmbraceSQL.
 
-```shell
-npm install embracesql @embracesql/react @embracesql/express
-```
 
 Now it is time to generate the EmbraceSQL express server application.
 
 ```shell
+mkdir -p src/server
 npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
 ```
 
 And update the express server entry point:
 
-`./src/server/main./ts`
+`./src/server/main.ts`
 
 ```typescript
 
+import { EmbraceSQLExpressApp } from "./dvdrental";
+import { EmbraceViteApp } from "@embracesql/vite";
+import express from "express";
+
+const app = express();
+
+// hook embracesql middleware first
+const embracesql = await EmbraceSQLExpressApp(
+  "postgres://postgres:postgres@localhost/dvdrental",
+);
+app.use("/embracesql", embracesql);
+// and then hook in vite
+const vite = await EmbraceViteApp();
+app.use("/", vite);
+
+app.listen(3000, () => console.log("Server is listening on port 3000..."));
 
 ```
 
+Make sure the server starts -- this will even hot reload the server -- and
+web page we're about to build.
 
 ```shell
-embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental-react.ts
+npx tsx watch ./src/server/main.ts
+```
+
+And check for some data:
+
+```shell
+curl -X POST http://localhost:3000/embracesql \
+   -H 'Content-Type: application/json' \
+   -d '{"operation":"Public.Actor.byActorId","parameters":{"actorId": 1}}'
+```
+
+At this point, if you are getting data -- it's time to make a react app!
+
+Generate the client side, react hook code:
+
+```shell
+mkdir -p src/client
+npx embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts
 ```
 
 
@@ -60,7 +104,26 @@ Here is a super minimal React application to get you a single Actor
 from the database, and allow saving to the database without you writing
 a line of SQL, or additional schema, or even a server.
 
-`./src/app.tsx`
+Gonna need an html page entry point
+
+`index.html`
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello EmbraceSQL</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/client/main.tsx"></script>
+  </body>
+</html>
+```
+
+`./src/client/main.tsx`
 
 ```typescript
 import React from "react";
@@ -68,7 +131,7 @@ import * as ReactDOM from "react-dom/client";
 import { EmbraceSQLClient, EmbraceSQLProvider, Public } from "./dvdrental-react";
 
 const client = new EmbraceSQLClient({
-  url: "http://localhost:3000/",
+  url: "http://localhost:3000/embracesql",
 });
 
 
