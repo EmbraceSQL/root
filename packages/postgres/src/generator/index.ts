@@ -4,6 +4,7 @@ import * as prettier from "prettier";
 
 export { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
 export { generateOperationDispatcher } from "./typescript/generateOperationDispatcher";
+export { generateSchemaDefinitions } from "./typescript/generateSchemaDefinitions";
 
 /**
  * Shared context for the generation sequence.

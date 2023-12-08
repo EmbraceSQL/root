@@ -78,3 +78,28 @@ export type WithChangeHandlers<T, E = never> = T & {
     e: E,
   ) => void;
 };
+
+/**
+ * This is an adapter as postgres driver does not auto translate
+ * undefined to null.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const undefinedIsNull = (value: any) => {
+  if (value === undefined) return null;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return value;
+};
+export type JsDate = Date;
+export type Empty = Record<string, never>;
+export type JSONValue =
+  | string
+  | number
+  | boolean
+  | { [x: string]: JSONValue }
+  | Array<JSONValue>;
+export type JSONObject = {
+  [key: string]: JSONValue | JSONObject;
+};
+export type Nullable<T> = T | null | undefined;
+
+export * from "./uuid";

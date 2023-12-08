@@ -11,7 +11,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "change-case": ">=4.0.0"
+    "change-case": ">=4.0.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "ts-jest": "^29.1.1"

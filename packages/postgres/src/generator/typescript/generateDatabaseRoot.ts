@@ -1,7 +1,6 @@
 import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
-import { generateSchemaDefinitions } from "./generateSchemaDefinitions";
 
 /**
  * Generate a root object class that serves as 'the database'.
@@ -15,18 +14,12 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   // and it will be the final output
   const generationBuffer = [
     `
-        // ⚠️ generated - do not modify ⚠️
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/postgres";
+        // BEGIN - Node side database connectivity layer
         import { Context, initializeContext } from "@embracesql/postgres";
-        import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
         import postgres from "postgres";
     `,
   ];
   // the schema
-  generationBuffer.push(await generateSchemaDefinitions(context));
   // common database interface
   generationBuffer.push(`
   interface HasDatabase {

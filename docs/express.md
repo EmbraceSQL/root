@@ -12,7 +12,7 @@ used in these example snippets.
 Once you have a database, you can generate the express application:
 
 ```shell
-npm install embracesql @embracesql/express
+npm install @embracesql/express
 mkdir -p ./src
 npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```

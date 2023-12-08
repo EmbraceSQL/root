@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "generate": "bin/generate",
     "test": "exit 0",
     "check": "tsc --noEmit",
     "start": "npx tsx watch ./src/server/main.ts"

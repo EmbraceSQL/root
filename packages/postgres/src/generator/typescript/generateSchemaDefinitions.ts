@@ -19,7 +19,24 @@ import { camelCase, pascalCase } from "change-case";
 export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // a place to store all the types
   // buffer up generated code here
-  const generationBuffer = [];
+  const generationBuffer = [
+    `
+        // ⚠️ generated - do not modify ⚠️
+
+        /**
+         * BEGIN - shared types generated from schema.
+         *
+         * These types are node/browser isomorphic and are used by all other
+         * EmbraceSQL generated code.
+         */
+        
+        /* eslint-disable @typescript-eslint/no-empty-interface */
+        /* eslint-disable @typescript-eslint/no-namespace */
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
+
+    `,
+  ];
   // each postgres namespace gets a typescript namespace -- generates itself
   // this includes all namespaces in order to get all types which can
   // be used by user defined schemas

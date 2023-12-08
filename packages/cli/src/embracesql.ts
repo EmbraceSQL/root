@@ -6,6 +6,7 @@ import {
   generateDatabaseRoot,
   formatSource,
   generateOperationDispatcher,
+  generateSchemaDefinitions,
 } from "@embracesql/postgres/src/generator";
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import chalk from "chalk";
@@ -58,12 +59,16 @@ addOptions(
     .description("Typescript code for use in nodejs."),
 ).action(async (options) => {
   const context = await initializeContext(options.database);
-  const generatedSource = await generateDatabaseRoot({
+  const generationBuffer: string[] = [];
+
+  const combinedContext = {
     ...context,
     sqlScriptsFrom: options.sqlScriptsFrom,
     skipSchemas: options.skipSchemas,
-  });
-  process.stdout.write(await formatSource(generatedSource));
+  };
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateDatabaseRoot(combinedContext));
+  process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });
 
@@ -81,6 +86,7 @@ addOptions(
     skipSchemas: options.skipSchemas,
   };
 
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
   generationBuffer.push(await generateOperationDispatcher(combinedContext));
   generationBuffer.push(await generateExpressApp());
@@ -100,7 +106,7 @@ addOptions(
     skipSchemas: options.skipSchemas,
   };
 
-  generationBuffer.push(await generateDatabaseRoot(combinedContext));
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   generationBuffer.push(await generateReactComponents(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();

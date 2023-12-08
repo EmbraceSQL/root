@@ -10,10 +10,7 @@ import {
   Empty,
   Nullable,
   undefinedIsNull,
-} from "@embracesql/postgres";
-import { Context, initializeContext } from "@embracesql/postgres";
-import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-import postgres from "postgres";
+} from "@embracesql/shared";
 
 export namespace PgCatalog {
   export type AclitemArray = Array<Aclitem>;
@@ -6804,6 +6801,10 @@ export namespace Public {
   }
 }
 // end primary key pickers
+
+// BEGIN - Node side database connectivity layer
+import { Context, initializeContext } from "@embracesql/postgres";
+import postgres from "postgres";
 
 interface HasDatabase {
   database: Database;

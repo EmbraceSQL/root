@@ -1,7 +1,7 @@
 import { Context } from "../../../context";
-import { UUID } from "../../../types";
 import { PGCatalogType } from "../pgcatalogtype";
 import { registerOverride } from "./_overrides";
+import { UUID } from "@embracesql/shared";
 
 class PGUUID extends PGCatalogType {
   typescriptTypeDefinition(context: Context) {
