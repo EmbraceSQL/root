@@ -14,7 +14,7 @@ export const generateReactComponents = async (context: GenerationContext) => {
     `// Begin React generated section`,
     `import React from "react";`,
     `export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";`,
-    `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback, InterceptorCallback, Intercepted } from "@embracesql/react";`,
+    `import { useEmbraceSQLRequest, useEmbraceSQLUpdateCallback, InterceptorCallback, Intercepted, ChangeEvent } from "@embracesql/react";`,
   ];
 
   // generate per table return type interceptors - these are used to have
@@ -30,12 +30,16 @@ export const generateReactComponents = async (context: GenerationContext) => {
         generationBuffer.push(
           `export function ${tableTypeName}Interceptor(uninterceptedValue: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : Intercepted<${tableTypeName}>{`,
         );
-        generationBuffer.push(`return {`);
+        generationBuffer.push(`const ret = {`);
 
         return generationBuffer.join("\n");
       },
       after: async () => {
-        return `__brand: "__intercepted__"}}`;
+        return `
+          };
+          return ret;
+        }
+          `;
       },
     },
     [ASTKind.Column]: {
@@ -58,10 +62,12 @@ export const generateReactComponents = async (context: GenerationContext) => {
         generationBuffer.push(`void callback(uninterceptedValue, index);`);
         generationBuffer.push(`},`);
         // react change event handlers
-        generationBuffer.push(`change${pascalCase(node.name)}(event) {`);
+        generationBuffer.push(
+          `change${pascalCase(node.name)}(event: ChangeEvent) {`,
+        );
         // TODO: this needs generated type casts from string -> actual no shit value
         generationBuffer.push(
-          `this.${camelCase(
+          `ret.${camelCase(
             node.name,
           )} = event.target.value as unknown as ${tableTypeName}["${camelCase(
             node.name,
@@ -95,7 +101,7 @@ export const generateReactComponents = async (context: GenerationContext) => {
 
         // request - this is the actual doing
         generationBuffer.push(`const request = {`);
-        generationBuffer.push(`operation: "${node.dispatchName}",`);
+        generationBuffer.push(`operation: "${node.dispatchName()}",`);
         generationBuffer.push(`parameters,`);
         generationBuffer.push(`}`);
         // dispatching the request
@@ -113,7 +119,9 @@ export const generateReactComponents = async (context: GenerationContext) => {
         );
         // callback on updates
         generationBuffer.push(
-          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.parent?.dispatchName}", results, setResults});`,
+          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.parent?.dispatchName(
+            ".create",
+          )}", results, setResults});`,
         );
         // buffer up intercepted responses
         generationBuffer.push(

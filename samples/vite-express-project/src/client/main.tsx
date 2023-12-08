@@ -17,11 +17,16 @@ const App = () => {
     loading,
     results: actor,
     error,
-  } = Public.Tables.Actor.useByActorId({ actorId: 1 });
+  } = Public.Tables.Actor.useByActorId({ actorId: 100 });
   // 🪄 - automatic onChange saving though the hook, with debounce to not smoke your DB!
+  // notice there is no <form> to post back or additional hooks
   return actor ? (
     <div className="card">
-      <input value={actor.firstName} onChange={actor.changeFirstName} />
+      <input
+        id="firstname"
+        value={actor.firstName}
+        onChange={actor.changeFirstName}
+      />
       <input value={actor.lastName} onChange={actor.changeLastName} />
     </div>
   ) : null;

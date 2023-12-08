@@ -43,18 +43,6 @@ export type GenerationContext = {
   handlers?: VisitorMap;
 };
 
-// type branding just to help typescript keep me lining things up correctly
-export declare const __brand: unique symbol;
-type WithBrand<B> = { __brand: B };
-export type Branded<T, B> = T & WithBrand<B>;
-
-export function Brand<T, B>(toBrand: T, withBrand: B) {
-  return {
-    __brand: withBrand,
-    ...toBrand,
-  };
-}
-
 /**
  * This lovely bit of type origami will generate string prefixed
  * with a pascal casing of the rest.
@@ -103,3 +91,8 @@ export type JSONObject = {
 export type Nullable<T> = T | null | undefined;
 
 export * from "./uuid";
+
+/**
+ * For a given object, there are different dispatch operations available.
+ */
+export type DispatchOperation = "" | ".create";

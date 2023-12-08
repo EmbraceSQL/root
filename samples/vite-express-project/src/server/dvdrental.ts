@@ -1,4 +1,12 @@
 // ⚠️ generated - do not modify ⚠️
+
+/**
+ * BEGIN - shared types generated from schema.
+ *
+ * These types are node/browser isomorphic and are used by all other
+ * EmbraceSQL generated code.
+ */
+
 /* eslint-disable @typescript-eslint/no-empty-interface */
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */

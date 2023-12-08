@@ -1,4 +1,12 @@
 // ⚠️ generated - do not modify ⚠️
+
+/**
+ * BEGIN - shared types generated from schema.
+ *
+ * These types are node/browser isomorphic and are used by all other
+ * EmbraceSQL generated code.
+ */
+
 /* eslint-disable @typescript-eslint/no-empty-interface */
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -6809,6 +6817,7 @@ import {
   useEmbraceSQLUpdateCallback,
   InterceptorCallback,
   Intercepted,
+  ChangeEvent,
 } from "@embracesql/react";
 export namespace Public {
   export function FilmActorInterceptor(
@@ -6816,7 +6825,7 @@ export namespace Public {
     callback: InterceptorCallback<FilmActor>,
     index?: number,
   ): Intercepted<FilmActor> {
-    return {
+    const ret = {
       get actorId() {
         return uninterceptedValue.actorId;
       },
@@ -6824,8 +6833,8 @@ export namespace Public {
         uninterceptedValue.actorId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeActorId(event) {
-        this.actorId = event.target.value as unknown as FilmActor["actorId"];
+      changeActorId(event: ChangeEvent) {
+        ret.actorId = event.target.value as unknown as FilmActor["actorId"];
       },
 
       get filmId() {
@@ -6835,8 +6844,8 @@ export namespace Public {
         uninterceptedValue.filmId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as FilmActor["filmId"];
+      changeFilmId(event: ChangeEvent) {
+        ret.filmId = event.target.value as unknown as FilmActor["filmId"];
       },
 
       get lastUpdate() {
@@ -6846,12 +6855,12 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as FilmActor["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function AddressInterceptor(
@@ -6859,7 +6868,7 @@ export namespace Public {
     callback: InterceptorCallback<Address>,
     index?: number,
   ): Intercepted<Address> {
-    return {
+    const ret = {
       get addressId() {
         return uninterceptedValue.addressId;
       },
@@ -6867,8 +6876,8 @@ export namespace Public {
         uninterceptedValue.addressId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Address["addressId"];
+      changeAddressId(event: ChangeEvent) {
+        ret.addressId = event.target.value as unknown as Address["addressId"];
       },
 
       get address() {
@@ -6878,8 +6887,8 @@ export namespace Public {
         uninterceptedValue.address = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddress(event) {
-        this.address = event.target.value as unknown as Address["address"];
+      changeAddress(event: ChangeEvent) {
+        ret.address = event.target.value as unknown as Address["address"];
       },
 
       get address2() {
@@ -6889,8 +6898,8 @@ export namespace Public {
         uninterceptedValue.address2 = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddress2(event) {
-        this.address2 = event.target.value as unknown as Address["address2"];
+      changeAddress2(event: ChangeEvent) {
+        ret.address2 = event.target.value as unknown as Address["address2"];
       },
 
       get district() {
@@ -6900,8 +6909,8 @@ export namespace Public {
         uninterceptedValue.district = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeDistrict(event) {
-        this.district = event.target.value as unknown as Address["district"];
+      changeDistrict(event: ChangeEvent) {
+        ret.district = event.target.value as unknown as Address["district"];
       },
 
       get cityId() {
@@ -6911,8 +6920,8 @@ export namespace Public {
         uninterceptedValue.cityId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCityId(event) {
-        this.cityId = event.target.value as unknown as Address["cityId"];
+      changeCityId(event: ChangeEvent) {
+        ret.cityId = event.target.value as unknown as Address["cityId"];
       },
 
       get postalCode() {
@@ -6922,9 +6931,8 @@ export namespace Public {
         uninterceptedValue.postalCode = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePostalCode(event) {
-        this.postalCode = event.target
-          .value as unknown as Address["postalCode"];
+      changePostalCode(event: ChangeEvent) {
+        ret.postalCode = event.target.value as unknown as Address["postalCode"];
       },
 
       get phone() {
@@ -6934,8 +6942,8 @@ export namespace Public {
         uninterceptedValue.phone = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePhone(event) {
-        this.phone = event.target.value as unknown as Address["phone"];
+      changePhone(event: ChangeEvent) {
+        ret.phone = event.target.value as unknown as Address["phone"];
       },
 
       get lastUpdate() {
@@ -6945,12 +6953,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Address["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Address["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function CityInterceptor(
@@ -6958,7 +6965,7 @@ export namespace Public {
     callback: InterceptorCallback<City>,
     index?: number,
   ): Intercepted<City> {
-    return {
+    const ret = {
       get cityId() {
         return uninterceptedValue.cityId;
       },
@@ -6966,8 +6973,8 @@ export namespace Public {
         uninterceptedValue.cityId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCityId(event) {
-        this.cityId = event.target.value as unknown as City["cityId"];
+      changeCityId(event: ChangeEvent) {
+        ret.cityId = event.target.value as unknown as City["cityId"];
       },
 
       get city() {
@@ -6977,8 +6984,8 @@ export namespace Public {
         uninterceptedValue.city = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCity(event) {
-        this.city = event.target.value as unknown as City["city"];
+      changeCity(event: ChangeEvent) {
+        ret.city = event.target.value as unknown as City["city"];
       },
 
       get countryId() {
@@ -6988,8 +6995,8 @@ export namespace Public {
         uninterceptedValue.countryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCountryId(event) {
-        this.countryId = event.target.value as unknown as City["countryId"];
+      changeCountryId(event: ChangeEvent) {
+        ret.countryId = event.target.value as unknown as City["countryId"];
       },
 
       get lastUpdate() {
@@ -6999,11 +7006,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as City["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as City["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function CustomerInterceptor(
@@ -7011,7 +7018,7 @@ export namespace Public {
     callback: InterceptorCallback<Customer>,
     index?: number,
   ): Intercepted<Customer> {
-    return {
+    const ret = {
       get customerId() {
         return uninterceptedValue.customerId;
       },
@@ -7019,8 +7026,8 @@ export namespace Public {
         uninterceptedValue.customerId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCustomerId(event) {
-        this.customerId = event.target
+      changeCustomerId(event: ChangeEvent) {
+        ret.customerId = event.target
           .value as unknown as Customer["customerId"];
       },
 
@@ -7031,8 +7038,8 @@ export namespace Public {
         uninterceptedValue.storeId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Customer["storeId"];
+      changeStoreId(event: ChangeEvent) {
+        ret.storeId = event.target.value as unknown as Customer["storeId"];
       },
 
       get firstName() {
@@ -7042,8 +7049,8 @@ export namespace Public {
         uninterceptedValue.firstName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Customer["firstName"];
+      changeFirstName(event: ChangeEvent) {
+        ret.firstName = event.target.value as unknown as Customer["firstName"];
       },
 
       get lastName() {
@@ -7053,8 +7060,8 @@ export namespace Public {
         uninterceptedValue.lastName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Customer["lastName"];
+      changeLastName(event: ChangeEvent) {
+        ret.lastName = event.target.value as unknown as Customer["lastName"];
       },
 
       get email() {
@@ -7064,8 +7071,8 @@ export namespace Public {
         uninterceptedValue.email = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeEmail(event) {
-        this.email = event.target.value as unknown as Customer["email"];
+      changeEmail(event: ChangeEvent) {
+        ret.email = event.target.value as unknown as Customer["email"];
       },
 
       get addressId() {
@@ -7075,8 +7082,8 @@ export namespace Public {
         uninterceptedValue.addressId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Customer["addressId"];
+      changeAddressId(event: ChangeEvent) {
+        ret.addressId = event.target.value as unknown as Customer["addressId"];
       },
 
       get activebool() {
@@ -7086,8 +7093,8 @@ export namespace Public {
         uninterceptedValue.activebool = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeActivebool(event) {
-        this.activebool = event.target
+      changeActivebool(event: ChangeEvent) {
+        ret.activebool = event.target
           .value as unknown as Customer["activebool"];
       },
 
@@ -7098,8 +7105,8 @@ export namespace Public {
         uninterceptedValue.createDate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCreateDate(event) {
-        this.createDate = event.target
+      changeCreateDate(event: ChangeEvent) {
+        ret.createDate = event.target
           .value as unknown as Customer["createDate"];
       },
 
@@ -7110,8 +7117,8 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as Customer["lastUpdate"];
       },
 
@@ -7122,11 +7129,11 @@ export namespace Public {
         uninterceptedValue.active = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeActive(event) {
-        this.active = event.target.value as unknown as Customer["active"];
+      changeActive(event: ChangeEvent) {
+        ret.active = event.target.value as unknown as Customer["active"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function ActorInterceptor(
@@ -7134,7 +7141,7 @@ export namespace Public {
     callback: InterceptorCallback<Actor>,
     index?: number,
   ): Intercepted<Actor> {
-    return {
+    const ret = {
       get actorId() {
         return uninterceptedValue.actorId;
       },
@@ -7142,8 +7149,8 @@ export namespace Public {
         uninterceptedValue.actorId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeActorId(event) {
-        this.actorId = event.target.value as unknown as Actor["actorId"];
+      changeActorId(event: ChangeEvent) {
+        ret.actorId = event.target.value as unknown as Actor["actorId"];
       },
 
       get firstName() {
@@ -7153,8 +7160,8 @@ export namespace Public {
         uninterceptedValue.firstName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Actor["firstName"];
+      changeFirstName(event: ChangeEvent) {
+        ret.firstName = event.target.value as unknown as Actor["firstName"];
       },
 
       get lastName() {
@@ -7164,8 +7171,8 @@ export namespace Public {
         uninterceptedValue.lastName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Actor["lastName"];
+      changeLastName(event: ChangeEvent) {
+        ret.lastName = event.target.value as unknown as Actor["lastName"];
       },
 
       get lastUpdate() {
@@ -7175,11 +7182,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Actor["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Actor["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function FilmCategoryInterceptor(
@@ -7187,7 +7194,7 @@ export namespace Public {
     callback: InterceptorCallback<FilmCategory>,
     index?: number,
   ): Intercepted<FilmCategory> {
-    return {
+    const ret = {
       get filmId() {
         return uninterceptedValue.filmId;
       },
@@ -7195,8 +7202,8 @@ export namespace Public {
         uninterceptedValue.filmId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as FilmCategory["filmId"];
+      changeFilmId(event: ChangeEvent) {
+        ret.filmId = event.target.value as unknown as FilmCategory["filmId"];
       },
 
       get categoryId() {
@@ -7206,8 +7213,8 @@ export namespace Public {
         uninterceptedValue.categoryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCategoryId(event) {
-        this.categoryId = event.target
+      changeCategoryId(event: ChangeEvent) {
+        ret.categoryId = event.target
           .value as unknown as FilmCategory["categoryId"];
       },
 
@@ -7218,12 +7225,12 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as FilmCategory["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function InventoryInterceptor(
@@ -7231,7 +7238,7 @@ export namespace Public {
     callback: InterceptorCallback<Inventory>,
     index?: number,
   ): Intercepted<Inventory> {
-    return {
+    const ret = {
       get inventoryId() {
         return uninterceptedValue.inventoryId;
       },
@@ -7239,8 +7246,8 @@ export namespace Public {
         uninterceptedValue.inventoryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeInventoryId(event) {
-        this.inventoryId = event.target
+      changeInventoryId(event: ChangeEvent) {
+        ret.inventoryId = event.target
           .value as unknown as Inventory["inventoryId"];
       },
 
@@ -7251,8 +7258,8 @@ export namespace Public {
         uninterceptedValue.filmId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as Inventory["filmId"];
+      changeFilmId(event: ChangeEvent) {
+        ret.filmId = event.target.value as unknown as Inventory["filmId"];
       },
 
       get storeId() {
@@ -7262,8 +7269,8 @@ export namespace Public {
         uninterceptedValue.storeId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Inventory["storeId"];
+      changeStoreId(event: ChangeEvent) {
+        ret.storeId = event.target.value as unknown as Inventory["storeId"];
       },
 
       get lastUpdate() {
@@ -7273,12 +7280,12 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as Inventory["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function CategoryInterceptor(
@@ -7286,7 +7293,7 @@ export namespace Public {
     callback: InterceptorCallback<Category>,
     index?: number,
   ): Intercepted<Category> {
-    return {
+    const ret = {
       get categoryId() {
         return uninterceptedValue.categoryId;
       },
@@ -7294,8 +7301,8 @@ export namespace Public {
         uninterceptedValue.categoryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCategoryId(event) {
-        this.categoryId = event.target
+      changeCategoryId(event: ChangeEvent) {
+        ret.categoryId = event.target
           .value as unknown as Category["categoryId"];
       },
 
@@ -7306,8 +7313,8 @@ export namespace Public {
         uninterceptedValue.name = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeName(event) {
-        this.name = event.target.value as unknown as Category["name"];
+      changeName(event: ChangeEvent) {
+        ret.name = event.target.value as unknown as Category["name"];
       },
 
       get lastUpdate() {
@@ -7317,12 +7324,12 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as Category["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function CountryInterceptor(
@@ -7330,7 +7337,7 @@ export namespace Public {
     callback: InterceptorCallback<Country>,
     index?: number,
   ): Intercepted<Country> {
-    return {
+    const ret = {
       get countryId() {
         return uninterceptedValue.countryId;
       },
@@ -7338,8 +7345,8 @@ export namespace Public {
         uninterceptedValue.countryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCountryId(event) {
-        this.countryId = event.target.value as unknown as Country["countryId"];
+      changeCountryId(event: ChangeEvent) {
+        ret.countryId = event.target.value as unknown as Country["countryId"];
       },
 
       get country() {
@@ -7349,8 +7356,8 @@ export namespace Public {
         uninterceptedValue.country = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCountry(event) {
-        this.country = event.target.value as unknown as Country["country"];
+      changeCountry(event: ChangeEvent) {
+        ret.country = event.target.value as unknown as Country["country"];
       },
 
       get lastUpdate() {
@@ -7360,12 +7367,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
-          .value as unknown as Country["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Country["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function LanguageInterceptor(
@@ -7373,7 +7379,7 @@ export namespace Public {
     callback: InterceptorCallback<Language>,
     index?: number,
   ): Intercepted<Language> {
-    return {
+    const ret = {
       get languageId() {
         return uninterceptedValue.languageId;
       },
@@ -7381,8 +7387,8 @@ export namespace Public {
         uninterceptedValue.languageId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLanguageId(event) {
-        this.languageId = event.target
+      changeLanguageId(event: ChangeEvent) {
+        ret.languageId = event.target
           .value as unknown as Language["languageId"];
       },
 
@@ -7393,8 +7399,8 @@ export namespace Public {
         uninterceptedValue.name = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeName(event) {
-        this.name = event.target.value as unknown as Language["name"];
+      changeName(event: ChangeEvent) {
+        ret.name = event.target.value as unknown as Language["name"];
       },
 
       get lastUpdate() {
@@ -7404,12 +7410,12 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target
           .value as unknown as Language["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function RentalInterceptor(
@@ -7417,7 +7423,7 @@ export namespace Public {
     callback: InterceptorCallback<Rental>,
     index?: number,
   ): Intercepted<Rental> {
-    return {
+    const ret = {
       get rentalId() {
         return uninterceptedValue.rentalId;
       },
@@ -7425,8 +7431,8 @@ export namespace Public {
         uninterceptedValue.rentalId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRentalId(event) {
-        this.rentalId = event.target.value as unknown as Rental["rentalId"];
+      changeRentalId(event: ChangeEvent) {
+        ret.rentalId = event.target.value as unknown as Rental["rentalId"];
       },
 
       get rentalDate() {
@@ -7436,8 +7442,8 @@ export namespace Public {
         uninterceptedValue.rentalDate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRentalDate(event) {
-        this.rentalDate = event.target.value as unknown as Rental["rentalDate"];
+      changeRentalDate(event: ChangeEvent) {
+        ret.rentalDate = event.target.value as unknown as Rental["rentalDate"];
       },
 
       get inventoryId() {
@@ -7447,8 +7453,8 @@ export namespace Public {
         uninterceptedValue.inventoryId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeInventoryId(event) {
-        this.inventoryId = event.target
+      changeInventoryId(event: ChangeEvent) {
+        ret.inventoryId = event.target
           .value as unknown as Rental["inventoryId"];
       },
 
@@ -7459,8 +7465,8 @@ export namespace Public {
         uninterceptedValue.customerId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCustomerId(event) {
-        this.customerId = event.target.value as unknown as Rental["customerId"];
+      changeCustomerId(event: ChangeEvent) {
+        ret.customerId = event.target.value as unknown as Rental["customerId"];
       },
 
       get returnDate() {
@@ -7470,8 +7476,8 @@ export namespace Public {
         uninterceptedValue.returnDate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeReturnDate(event) {
-        this.returnDate = event.target.value as unknown as Rental["returnDate"];
+      changeReturnDate(event: ChangeEvent) {
+        ret.returnDate = event.target.value as unknown as Rental["returnDate"];
       },
 
       get staffId() {
@@ -7481,8 +7487,8 @@ export namespace Public {
         uninterceptedValue.staffId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Rental["staffId"];
+      changeStaffId(event: ChangeEvent) {
+        ret.staffId = event.target.value as unknown as Rental["staffId"];
       },
 
       get lastUpdate() {
@@ -7492,11 +7498,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Rental["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Rental["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function StaffInterceptor(
@@ -7504,7 +7510,7 @@ export namespace Public {
     callback: InterceptorCallback<Staff>,
     index?: number,
   ): Intercepted<Staff> {
-    return {
+    const ret = {
       get staffId() {
         return uninterceptedValue.staffId;
       },
@@ -7512,8 +7518,8 @@ export namespace Public {
         uninterceptedValue.staffId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Staff["staffId"];
+      changeStaffId(event: ChangeEvent) {
+        ret.staffId = event.target.value as unknown as Staff["staffId"];
       },
 
       get firstName() {
@@ -7523,8 +7529,8 @@ export namespace Public {
         uninterceptedValue.firstName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFirstName(event) {
-        this.firstName = event.target.value as unknown as Staff["firstName"];
+      changeFirstName(event: ChangeEvent) {
+        ret.firstName = event.target.value as unknown as Staff["firstName"];
       },
 
       get lastName() {
@@ -7534,8 +7540,8 @@ export namespace Public {
         uninterceptedValue.lastName = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastName(event) {
-        this.lastName = event.target.value as unknown as Staff["lastName"];
+      changeLastName(event: ChangeEvent) {
+        ret.lastName = event.target.value as unknown as Staff["lastName"];
       },
 
       get addressId() {
@@ -7545,8 +7551,8 @@ export namespace Public {
         uninterceptedValue.addressId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Staff["addressId"];
+      changeAddressId(event: ChangeEvent) {
+        ret.addressId = event.target.value as unknown as Staff["addressId"];
       },
 
       get email() {
@@ -7556,8 +7562,8 @@ export namespace Public {
         uninterceptedValue.email = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeEmail(event) {
-        this.email = event.target.value as unknown as Staff["email"];
+      changeEmail(event: ChangeEvent) {
+        ret.email = event.target.value as unknown as Staff["email"];
       },
 
       get storeId() {
@@ -7567,8 +7573,8 @@ export namespace Public {
         uninterceptedValue.storeId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Staff["storeId"];
+      changeStoreId(event: ChangeEvent) {
+        ret.storeId = event.target.value as unknown as Staff["storeId"];
       },
 
       get active() {
@@ -7578,8 +7584,8 @@ export namespace Public {
         uninterceptedValue.active = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeActive(event) {
-        this.active = event.target.value as unknown as Staff["active"];
+      changeActive(event: ChangeEvent) {
+        ret.active = event.target.value as unknown as Staff["active"];
       },
 
       get username() {
@@ -7589,8 +7595,8 @@ export namespace Public {
         uninterceptedValue.username = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeUsername(event) {
-        this.username = event.target.value as unknown as Staff["username"];
+      changeUsername(event: ChangeEvent) {
+        ret.username = event.target.value as unknown as Staff["username"];
       },
 
       get password() {
@@ -7600,8 +7606,8 @@ export namespace Public {
         uninterceptedValue.password = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePassword(event) {
-        this.password = event.target.value as unknown as Staff["password"];
+      changePassword(event: ChangeEvent) {
+        ret.password = event.target.value as unknown as Staff["password"];
       },
 
       get lastUpdate() {
@@ -7611,8 +7617,8 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Staff["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Staff["lastUpdate"];
       },
 
       get picture() {
@@ -7622,11 +7628,11 @@ export namespace Public {
         uninterceptedValue.picture = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePicture(event) {
-        this.picture = event.target.value as unknown as Staff["picture"];
+      changePicture(event: ChangeEvent) {
+        ret.picture = event.target.value as unknown as Staff["picture"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function StoreInterceptor(
@@ -7634,7 +7640,7 @@ export namespace Public {
     callback: InterceptorCallback<Store>,
     index?: number,
   ): Intercepted<Store> {
-    return {
+    const ret = {
       get storeId() {
         return uninterceptedValue.storeId;
       },
@@ -7642,8 +7648,8 @@ export namespace Public {
         uninterceptedValue.storeId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStoreId(event) {
-        this.storeId = event.target.value as unknown as Store["storeId"];
+      changeStoreId(event: ChangeEvent) {
+        ret.storeId = event.target.value as unknown as Store["storeId"];
       },
 
       get managerStaffId() {
@@ -7653,8 +7659,8 @@ export namespace Public {
         uninterceptedValue.managerStaffId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeManagerStaffId(event) {
-        this.managerStaffId = event.target
+      changeManagerStaffId(event: ChangeEvent) {
+        ret.managerStaffId = event.target
           .value as unknown as Store["managerStaffId"];
       },
 
@@ -7665,8 +7671,8 @@ export namespace Public {
         uninterceptedValue.addressId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAddressId(event) {
-        this.addressId = event.target.value as unknown as Store["addressId"];
+      changeAddressId(event: ChangeEvent) {
+        ret.addressId = event.target.value as unknown as Store["addressId"];
       },
 
       get lastUpdate() {
@@ -7676,11 +7682,11 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Store["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Store["lastUpdate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function PaymentInterceptor(
@@ -7688,7 +7694,7 @@ export namespace Public {
     callback: InterceptorCallback<Payment>,
     index?: number,
   ): Intercepted<Payment> {
-    return {
+    const ret = {
       get paymentId() {
         return uninterceptedValue.paymentId;
       },
@@ -7696,8 +7702,8 @@ export namespace Public {
         uninterceptedValue.paymentId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePaymentId(event) {
-        this.paymentId = event.target.value as unknown as Payment["paymentId"];
+      changePaymentId(event: ChangeEvent) {
+        ret.paymentId = event.target.value as unknown as Payment["paymentId"];
       },
 
       get customerId() {
@@ -7707,9 +7713,8 @@ export namespace Public {
         uninterceptedValue.customerId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeCustomerId(event) {
-        this.customerId = event.target
-          .value as unknown as Payment["customerId"];
+      changeCustomerId(event: ChangeEvent) {
+        ret.customerId = event.target.value as unknown as Payment["customerId"];
       },
 
       get staffId() {
@@ -7719,8 +7724,8 @@ export namespace Public {
         uninterceptedValue.staffId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeStaffId(event) {
-        this.staffId = event.target.value as unknown as Payment["staffId"];
+      changeStaffId(event: ChangeEvent) {
+        ret.staffId = event.target.value as unknown as Payment["staffId"];
       },
 
       get rentalId() {
@@ -7730,8 +7735,8 @@ export namespace Public {
         uninterceptedValue.rentalId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRentalId(event) {
-        this.rentalId = event.target.value as unknown as Payment["rentalId"];
+      changeRentalId(event: ChangeEvent) {
+        ret.rentalId = event.target.value as unknown as Payment["rentalId"];
       },
 
       get amount() {
@@ -7741,8 +7746,8 @@ export namespace Public {
         uninterceptedValue.amount = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeAmount(event) {
-        this.amount = event.target.value as unknown as Payment["amount"];
+      changeAmount(event: ChangeEvent) {
+        ret.amount = event.target.value as unknown as Payment["amount"];
       },
 
       get paymentDate() {
@@ -7752,12 +7757,12 @@ export namespace Public {
         uninterceptedValue.paymentDate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changePaymentDate(event) {
-        this.paymentDate = event.target
+      changePaymentDate(event: ChangeEvent) {
+        ret.paymentDate = event.target
           .value as unknown as Payment["paymentDate"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 
   export function FilmInterceptor(
@@ -7765,7 +7770,7 @@ export namespace Public {
     callback: InterceptorCallback<Film>,
     index?: number,
   ): Intercepted<Film> {
-    return {
+    const ret = {
       get filmId() {
         return uninterceptedValue.filmId;
       },
@@ -7773,8 +7778,8 @@ export namespace Public {
         uninterceptedValue.filmId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFilmId(event) {
-        this.filmId = event.target.value as unknown as Film["filmId"];
+      changeFilmId(event: ChangeEvent) {
+        ret.filmId = event.target.value as unknown as Film["filmId"];
       },
 
       get title() {
@@ -7784,8 +7789,8 @@ export namespace Public {
         uninterceptedValue.title = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeTitle(event) {
-        this.title = event.target.value as unknown as Film["title"];
+      changeTitle(event: ChangeEvent) {
+        ret.title = event.target.value as unknown as Film["title"];
       },
 
       get description() {
@@ -7795,8 +7800,8 @@ export namespace Public {
         uninterceptedValue.description = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeDescription(event) {
-        this.description = event.target.value as unknown as Film["description"];
+      changeDescription(event: ChangeEvent) {
+        ret.description = event.target.value as unknown as Film["description"];
       },
 
       get releaseYear() {
@@ -7806,8 +7811,8 @@ export namespace Public {
         uninterceptedValue.releaseYear = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeReleaseYear(event) {
-        this.releaseYear = event.target.value as unknown as Film["releaseYear"];
+      changeReleaseYear(event: ChangeEvent) {
+        ret.releaseYear = event.target.value as unknown as Film["releaseYear"];
       },
 
       get languageId() {
@@ -7817,8 +7822,8 @@ export namespace Public {
         uninterceptedValue.languageId = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLanguageId(event) {
-        this.languageId = event.target.value as unknown as Film["languageId"];
+      changeLanguageId(event: ChangeEvent) {
+        ret.languageId = event.target.value as unknown as Film["languageId"];
       },
 
       get rentalDuration() {
@@ -7828,8 +7833,8 @@ export namespace Public {
         uninterceptedValue.rentalDuration = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRentalDuration(event) {
-        this.rentalDuration = event.target
+      changeRentalDuration(event: ChangeEvent) {
+        ret.rentalDuration = event.target
           .value as unknown as Film["rentalDuration"];
       },
 
@@ -7840,8 +7845,8 @@ export namespace Public {
         uninterceptedValue.rentalRate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRentalRate(event) {
-        this.rentalRate = event.target.value as unknown as Film["rentalRate"];
+      changeRentalRate(event: ChangeEvent) {
+        ret.rentalRate = event.target.value as unknown as Film["rentalRate"];
       },
 
       get length() {
@@ -7851,8 +7856,8 @@ export namespace Public {
         uninterceptedValue.length = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLength(event) {
-        this.length = event.target.value as unknown as Film["length"];
+      changeLength(event: ChangeEvent) {
+        ret.length = event.target.value as unknown as Film["length"];
       },
 
       get replacementCost() {
@@ -7862,8 +7867,8 @@ export namespace Public {
         uninterceptedValue.replacementCost = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeReplacementCost(event) {
-        this.replacementCost = event.target
+      changeReplacementCost(event: ChangeEvent) {
+        ret.replacementCost = event.target
           .value as unknown as Film["replacementCost"];
       },
 
@@ -7874,8 +7879,8 @@ export namespace Public {
         uninterceptedValue.rating = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeRating(event) {
-        this.rating = event.target.value as unknown as Film["rating"];
+      changeRating(event: ChangeEvent) {
+        ret.rating = event.target.value as unknown as Film["rating"];
       },
 
       get lastUpdate() {
@@ -7885,8 +7890,8 @@ export namespace Public {
         uninterceptedValue.lastUpdate = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeLastUpdate(event) {
-        this.lastUpdate = event.target.value as unknown as Film["lastUpdate"];
+      changeLastUpdate(event: ChangeEvent) {
+        ret.lastUpdate = event.target.value as unknown as Film["lastUpdate"];
       },
 
       get specialFeatures() {
@@ -7896,8 +7901,8 @@ export namespace Public {
         uninterceptedValue.specialFeatures = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeSpecialFeatures(event) {
-        this.specialFeatures = event.target
+      changeSpecialFeatures(event: ChangeEvent) {
+        ret.specialFeatures = event.target
           .value as unknown as Film["specialFeatures"];
       },
 
@@ -7908,11 +7913,11 @@ export namespace Public {
         uninterceptedValue.fulltext = newValue;
         void callback(uninterceptedValue, index);
       },
-      changeFulltext(event) {
-        this.fulltext = event.target.value as unknown as Film["fulltext"];
+      changeFulltext(event: ChangeEvent) {
+        ret.fulltext = event.target.value as unknown as Film["fulltext"];
       },
-      __brand: "__intercepted__",
     };
+    return ret;
   }
 }
 export namespace Public {
@@ -7924,7 +7929,7 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.FilmActor.create.byActorIdFilmId",
+          operation: "Public.FilmActor.byActorIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -7964,7 +7969,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.FilmActor.create.byFilmId",
+          operation: "Public.FilmActor.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
@@ -8011,7 +8016,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Address.create.byAddressId",
+          operation: "Public.Address.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
@@ -8046,7 +8051,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Address.create.byCityId",
+          operation: "Public.Address.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
@@ -8089,7 +8094,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.City.create.byCityId",
+          operation: "Public.City.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
@@ -8124,7 +8129,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.City.create.byCountryId",
+          operation: "Public.City.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
@@ -8173,7 +8178,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Customer.create.byAddressId",
+          operation: "Public.Customer.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8212,7 +8217,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Customer.create.byCustomerId",
+          operation: "Public.Customer.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
@@ -8247,7 +8252,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Customer.create.byLastName",
+          operation: "Public.Customer.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
@@ -8284,7 +8289,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Customer.create.byStoreId",
+          operation: "Public.Customer.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
@@ -8327,7 +8332,7 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Actor.create.byActorId",
+          operation: "Public.Actor.byActorId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
@@ -8362,7 +8367,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Actor.create.byLastName",
+          operation: "Public.Actor.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
@@ -8404,7 +8409,7 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.FilmCategory.create.byFilmIdCategoryId",
+          operation: "Public.FilmCategory.byFilmIdCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8450,7 +8455,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Inventory.create.byInventoryId",
+          operation: "Public.Inventory.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8490,7 +8495,7 @@ export namespace Public {
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Inventory.create.byStoreIdFilmId",
+          operation: "Public.Inventory.byStoreIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8534,7 +8539,7 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Category.create.byCategoryId",
+          operation: "Public.Category.byCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
@@ -8574,7 +8579,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Country.create.byCountryId",
+          operation: "Public.Country.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
@@ -8614,7 +8619,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Language.create.byLanguageId",
+          operation: "Public.Language.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
@@ -8658,7 +8663,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Rental.create.byInventoryId",
+          operation: "Public.Rental.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8699,7 +8704,7 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Rental.create.byRentalDateInventoryIdCustomerId",
+          operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8736,7 +8741,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Rental.create.byRentalId",
+          operation: "Public.Rental.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
@@ -8784,7 +8789,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Staff.create.byStaffId",
+          operation: "Public.Staff.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
@@ -8825,7 +8830,7 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Store.create.byManagerStaffId",
+          operation: "Public.Store.byManagerStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8862,7 +8867,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Store.create.byStoreId",
+          operation: "Public.Store.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
@@ -8905,7 +8910,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Payment.create.byCustomerId",
+          operation: "Public.Payment.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -8944,7 +8949,7 @@ export namespace Public {
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Payment.create.byPaymentId",
+          operation: "Public.Payment.byPaymentId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
@@ -8979,7 +8984,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Payment.create.byRentalId",
+          operation: "Public.Payment.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
@@ -9016,7 +9021,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Payment.create.byStaffId",
+          operation: "Public.Payment.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
@@ -9068,7 +9073,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Film.create.byFilmId",
+          operation: "Public.Film.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
@@ -9103,7 +9108,7 @@ export namespace Public {
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Film.create.byFulltext",
+          operation: "Public.Film.byFulltext",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
@@ -9140,7 +9145,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Film.create.byLanguageId",
+          operation: "Public.Film.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
@@ -9177,7 +9182,7 @@ export namespace Public {
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Film.create.byTitle",
+          operation: "Public.Film.byTitle",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(

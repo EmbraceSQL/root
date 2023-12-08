@@ -29,24 +29,11 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
   const app = express();
   app.use(express.json({ limit: "10mb" }));
   app.post("/", (req, res, next) => {
-    // complete a request, sending along any result set
-    // with attached headers
-    const completeResponse = (
-      operation: string,
-      headers: Record<string, string>,
-      results: unknown,
-    ) => {
-      const response: EmbraceSQLResponse<unknown> = {
-        operation,
-        headers,
-        results,
-      };
-      res.status(200).json(response).end();
-    };
     // do we have a valid request?
     const request: EmbraceSQLRequest<object, object> = req.body;
-    if (!request.operation || !request.parameters) {
+    if (!request.operation && !(request.parameters || request.values)) {
       res.status(400).end();
+      return;
     }
 
     // if the requested operation is in the type map -- handle it
@@ -55,12 +42,18 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
       props
         .dispatch(request)
         .then((results) => {
-          completeResponse(request.operation, request.headers ?? {}, results);
+          const response: EmbraceSQLResponse<unknown> = {
+            operation: request.operation,
+            headers: request.headers ?? {},
+            results,
+          };
+          res.status(200).json(response).end();
         })
         .catch((reason) => {
           console.error(reason);
           res.status(500);
         });
+      return;
     } else {
       // hand along, nothing to do...
       next();

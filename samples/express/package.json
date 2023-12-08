@@ -7,7 +7,7 @@
     "generate": "npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts",
     "start": "npx tsx watch ./src/express.ts",
     "check": "tsc --noEmit",
-    "test": "exit 0"
+    "test": "npm run generate"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

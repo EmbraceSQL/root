@@ -1,4 +1,5 @@
 import { GenerationContext } from ".";
+import { DispatchOperation } from "./index";
 import { camelCase, pascalCase } from "change-case";
 
 /**
@@ -101,8 +102,8 @@ export abstract class ASTNode {
     return generationBuffer.filter((line) => line).join("\n");
   }
 
-  get dispatchName() {
-    return "";
+  dispatchName(operation: DispatchOperation = ""): string {
+    return operation;
   }
 }
 
@@ -172,8 +173,9 @@ export class SchemaNode extends ContainerNode {
       return super.visit(context);
     }
   }
-  get dispatchName() {
-    return `${pascalCase(this.name)}`;
+
+  dispatchName(operation: DispatchOperation = "") {
+    return `${pascalCase(this.name)}${operation}`;
   }
 }
 
@@ -184,8 +186,9 @@ export class TablesNode extends ContainerNode {
   constructor(schema: SchemaNode) {
     super("Tables", ASTKind.Tables, schema);
   }
-  get dispatchName() {
-    return this.parent?.dispatchName ?? "";
+
+  dispatchName(operation: DispatchOperation = "") {
+    return this.parent?.dispatchName(operation) ?? "";
   }
 }
 
@@ -203,8 +206,10 @@ export class TableNode extends ContainerNode {
     super(name, ASTKind.Table, tables);
   }
 
-  get dispatchName(): string {
-    return `${this.parent?.dispatchName}.${pascalCase(this.name)}.create`;
+  dispatchName(operation: DispatchOperation = "") {
+    return `${this.parent?.dispatchName()}.${pascalCase(
+      this.name,
+    )}${operation}`;
   }
 
   get primaryKey(): IndexNode | undefined {
@@ -237,8 +242,8 @@ export class IndexNode extends ContainerNode {
     super(name, ASTKind.Index, table);
   }
 
-  get dispatchName(): string {
-    return `${this.parent?.dispatchName}.${camelCase(this.name)}`;
+  dispatchName(operation: DispatchOperation = "") {
+    return `${this.parent?.dispatchName()}.${camelCase(this.name)}${operation}`;
   }
 
   get columns(): IndexColumnNode[] {
