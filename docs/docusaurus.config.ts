@@ -8,6 +8,7 @@ const config: Config = {
   favicon: "img/favicon.ico",
   url: " https://embracesql.github.io/",
   baseUrl: "/",
+  deploymentBranch: "main",
   organizationName: "embracesql",
   projectName: "embracesql.github.io", // Usually your repo name.
   trailingSlash: true,
