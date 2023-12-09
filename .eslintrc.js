@@ -2,13 +2,13 @@ module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
-  ignorePatterns: ["**/samples"],
+  ignorePatterns: ["**/docs/**", "**/var/**"],
   overrides: [
     {
       files: ["*.ts", "*.tsx"], // only lint the ts, thanks
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: ["./packages/*/tsconfig.json"],
+        project: ["./packages/*/tsconfig.json", "./samples/*/tsconfig.json"],
       },
       extends: [
         "eslint:recommended",

@@ -6,7 +6,6 @@
   "bin": "./src/embracesql.ts",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "exit 0",
     "embracesql": "./embracesql.js"
   },
   "author": "Will Ballard <wballard@mailframe.net>",

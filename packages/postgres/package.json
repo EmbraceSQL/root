@@ -5,8 +5,7 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "check": "tsc --noEmit",
-    "test": "exit 0"
+    "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

@@ -16,8 +16,8 @@ used in these example snippets.
 
 You can even have `.sql` file scripts that will generate typed wrappers.
 
-Make a file `./src/sql/pick.sql`. Notice the use of Postgres style parameters with $<number>
-where number is one based.
+Make a file `./src/sql/pick.sql`. Notice the use of Postgres style parameters with `$number`
+where `number` is one based.
 
 ```sql
 SELECT
