@@ -9,7 +9,7 @@ const config: Config = {
   url: " https://embracesql.github.io/",
   baseUrl: "/",
   deploymentBranch: "main",
-  organizationName: "embracesql",
+  organizationName: "EmbraceSQL",
   projectName: "embracesql.github.io", // Usually your repo name.
   trailingSlash: true,
 
@@ -55,13 +55,12 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
           position: "left",
           label: "Tutorial",
+          to: "/docs",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/EmbraceSQL/root",
           label: "GitHub",
           position: "right",
         },
