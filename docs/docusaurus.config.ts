@@ -11,7 +11,7 @@ const config: Config = {
   deploymentBranch: "main",
   organizationName: "EmbraceSQL",
   projectName: "embracesql.github.io", // Usually your repo name.
-  trailingSlash: true,
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
