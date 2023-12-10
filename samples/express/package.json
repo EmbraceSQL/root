@@ -11,7 +11,7 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/express": "*"
+    "@embracesql/express": "^0.0.0"
   },
   "devDependencies": {}
 }

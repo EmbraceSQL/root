@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/react",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Hook into EmbraceSQL from React.",
   "type": "module",
   "main": "src/index.ts",
@@ -11,8 +11,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/shared": "*",
-    "@embracesql/client": "*",
+    "@embracesql/shared": "^0.0.0",
+    "@embracesql/client": "^0.0.0",
     "react": "~18.2.0"
   },
   "peerDependencies": {

@@ -25,7 +25,7 @@ your sample a module so we can use top level await:
 {
   "type": "module", 
   "dependencies": {
-    "@embracesql/vite": "*"
+    "@embracesql/vite": "^0.0.0"
   }
 }
 ```
