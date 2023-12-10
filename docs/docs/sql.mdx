@@ -1,3 +1,6 @@
+
+import CodeBlock from '@theme/CodeBlock';
+
 # SQL Scripts
 
 You can create a directory tree full of parameterized SQL scripts that
@@ -19,19 +22,22 @@ You can even have `.sql` file scripts that will generate typed wrappers.
 Make a file `./src/sql/pick.sql`. Notice the use of Postgres style parameters with `$number`
 where `number` is one based.
 
-```sql
+<CodeBlock language="sql" title="./src/sql/pick.sql">
+{`
 SELECT
     *
 FROM
     public.film
 WHERE
     title = $1
-```
+`}
+</CodeBlock>
 
 Generate some code -- notice the `--sqlScriptsFrom` switch.
 
 ```shell
-embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
+mkdir -p ./src
+npx embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
 
 ```
 

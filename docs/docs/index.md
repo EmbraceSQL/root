@@ -13,8 +13,6 @@ Learn about the [Problems](./problems.md) with data access. Then [Get Started](#
 
 You will need:
 
-- A TypeScript project in need of strongly typed data access.
-- a Postgres database that you want to access
 
 This example assumes a sample DVD rental database, source at [dvdrental.sql](./dvdrental.sql).
 
@@ -30,7 +28,8 @@ Going with this dvdrental example, assuming you are in the root directory
 of your typescript project.
 
 ```shell
-embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+mkdir -p ./src
+npx embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 
 ```
 

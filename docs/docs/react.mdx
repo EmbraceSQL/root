@@ -1,0 +1,96 @@
+import CodeBlock from '@theme/CodeBlock';
+import ExpressSource from '!!raw-loader!../../samples/vite-express-project/src/server/main.ts';
+import HtmlSource from '!!raw-loader!../../samples/vite-express-project/index.html';
+import ReactSource from '!!raw-loader!../../samples/vite-express-project/src/client/main.tsx';
+import CssSource from '!!raw-loader!../../samples/vite-express-project/src/client/main.css';
+import TsConfigSource from '!!raw-loader!../../samples/vite-express-project/tsconfig.json';
+
+# React
+
+EmbraceSQL generates support for React using hooks. The hooks:
+
+* Connect to any HTTP/S EmbraceSQL server endpoint
+* Create, Read, Update, Delete, and Refresh data (CRUD-R)
+
+## Example
+
+In this example you will end up with read-write data access from a hot loading
+[Vite](https://vitejs.dev) built application without:
+* writing a line of SQL
+* Making a POJO
+* Calling the database *manually*
+
+You can look in the [intro](./index.md) to see how to generate the dvdrental code
+used in these example snippets. Make sure you have a dvdrental database created.
+
+
+```shell
+npm install @embracesql/vite
+```
+
+Yeah -- that's it, hard to believe I know... just a little more to make
+your sample a module so we can use top level await, put `"type": "module"`
+in your `package.json`.
+
+
+And how about a typescript preset.
+
+<CodeBlock language="json" title="tsconfig.json">{TsConfigSource}</CodeBlock>
+
+
+
+
+Now it is time to generate the EmbraceSQL express server application.
+
+```shell
+mkdir -p ./src/server
+npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
+```
+
+And update the express server entry point:
+
+<CodeBlock language="typescript" title="./src/server/main.ts">{ExpressSource}</CodeBlock>
+
+Make sure the server starts -- this will even hot reload the server -- and
+web page we're about to build.
+
+```shell
+npx tsx watch ./src/server/main.ts
+```
+
+And check for some data:
+
+```shell
+curl -X POST http://localhost:3000/embracesql \
+   -H 'Content-Type: application/json' \
+   -d '{"operation":"Public.Actor.byActorId","parameters":{"actorId": 1}}'
+```
+
+At this point, if you are getting data -- it's time to make a react app!
+
+Generate the client side, react hook code:
+
+```shell
+mkdir -p src/client
+npx embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts
+```
+
+
+Here is a super minimal React application to get you a single Actor
+from the database, and allow saving to the database without you writing
+a line of SQL, or additional schema, or even a server.
+
+Gonna need an html page entry point.
+
+<CodeBlock language="html" title="index.html">{HtmlSource}</CodeBlock>
+
+And attach a react component to `#root`.
+
+<CodeBlock language="typescript" title="./src/client/main.tsx">{ReactSource}</CodeBlock>
+
+And just a tiny bit of CSS:
+
+<CodeBlock language="css" title="./src/client/main.css">{CssSource}</CodeBlock>
+
+OK - the Express server should now be serving both EmbraceSQL and a fine
+React app connected to it. [Check it out](http://localhost:3000).

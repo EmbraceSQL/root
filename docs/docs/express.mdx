@@ -1,8 +1,12 @@
+import CodeBlock from '@theme/CodeBlock';
+import ExpressSource from '!!raw-loader!../../samples/express/src/express.ts';
+import TsConfigSource from '!!raw-loader!../../samples/express/tsconfig.json';
+
 # Express
 
-EmbraceSQL generates an Express `Application` object suitable for mounting
-at any location with `use` into an existing express setup, or run directly
-with `listen`.
+EmbraceSQL generates an Express [`Application`](https://expressjs.com/en/api.html#app) object suitable for mounting
+at any location with [`use`](https://expressjs.com/en/api.html#app.use) into an existing express setup, or run directly
+with [`listen`](https://expressjs.com/en/api.html#app.listen).
 
 ## Example
 
@@ -21,27 +25,9 @@ And a very simple express server `index.ts`, assumes top level `await` -- put `"
 in your package json. And, provided handy tsconfig settings that work great with
 `tsx` and `typescript` 5+.
 
-`tsconfig.json`
+<CodeBlock language="json" title="tsconfig.json">{TsConfigSource}</CodeBlock>
 
-```json
-{
-  "extends": "@embracesql/shared/tsconfig/tsconfig.json"
-}
-
-```
-
-`./src/express.ts`
-
-```typescript
-import { EmbraceSQLExpressApp } from "./dvdrental";
-
-// this is an express application
-const app = await EmbraceSQLExpressApp(
-  "postgres://postgres:postgres@localhost/dvdrental",
-);
-app.listen(3000);
-
-```
+<CodeBlock language="typescript" title="./src/express.ts">{ExpressSource}</CodeBlock>
 
 Start that server:
 
