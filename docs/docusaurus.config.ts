@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config: Config = {
   title: "EmbraceSQL",
   tagline: "Love SQL? Love TypeScript? Hate ORMs. You're 🏡.",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
   url: " https://embracesql.github.io/",
   baseUrl: "/",
   deploymentBranch: "main",
