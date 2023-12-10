@@ -32,4 +32,4 @@ jobs:
           # taking out husky
           npm install
           npx run build
-          npx run deploy
+          npx docusaurus deploy
