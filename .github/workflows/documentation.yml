@@ -31,4 +31,5 @@ jobs:
           git config --global user.name "gh-actions"
           # taking out husky
           npm install
-          npx docusaurus deploy
+          npx run build
+          npx run deploy
