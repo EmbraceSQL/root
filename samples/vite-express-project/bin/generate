@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p src/server
-npx embracesql generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
+npx @embracesql/cli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
 
 mkdir -p src/client
-npx embracesql generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts
+npx @embracesql/cli generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts

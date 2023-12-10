@@ -1,5 +1,5 @@
 {
-  "name": "embracesql",
+  "name": "@embracesql/cli",
   "version": "0.0.0",
   "description": "",
   "type": "module",

@@ -29,7 +29,7 @@ of your typescript project.
 
 ```shell
 mkdir -p ./src
-npx embracesql generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+npx @embracesql/cli generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 
 ```
 
