@@ -44,6 +44,6 @@ const value = await db.Public.LastDay({ _0: new Date() });
 await db.disconnect();
 ```
 
-Learn about [AutoCRUD](./autocrud.md) to get at all the tables.
+Learn about [AutoCRUD](./autocrud.mdx) to get at all the tables.
 
-Lear about [SQL Scripts](./sql.md) to get any data you want -- all strongly typed.
+Lear about [SQL Scripts](./sql.mdx) to get any data you want -- all strongly typed.
