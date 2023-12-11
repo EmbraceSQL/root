@@ -13,16 +13,9 @@
   "license": "ISC",
   "private": true,
   "workspaces": [
-    "packages/shared",
-    "packages/client",
-    "packages/express",
-    "packages/react",
-    "packages/vite",
-    "packages/cli",
-    "packages/test",
-    "packages/test-generation",
-    "samples/express",
-    "samples/vite-express-project"
+    "packages/*",
+    "samples/*",
+    "samples/*"
   ],
   "devDependencies": {
     "@embracesql/react": "^0.0.0",
