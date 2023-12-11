@@ -1,7 +1,7 @@
 {
   "name": "@embracesql/test",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/postgres": "0.0.0",
-    "@embracesql/react": "0.0.0"
+    "@embracesql/postgres": "^0.0.1",
+    "@embracesql/react": "^0.0.1"
   }
 }
