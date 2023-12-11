@@ -18,7 +18,6 @@ const logo = () => chalk.blue(figlet.textSync("Embrace SQL"));
 
 program.version(process.env.npm_package_version ?? "");
 
-
 // shared options
 const addOptions = (command: Command) => {
   return command
@@ -55,9 +54,7 @@ const generate = program
 program.addHelpText("beforeAll", logo());
 
 addOptions(
-  generate
-    .command("typescript-node")
-    .description("Typescript code for use in nodejs."),
+  generate.command("node").description("TypeScript code for use in nodejs."),
 ).action(async (options) => {
   const context = await initializeContext(options.database);
   const generationBuffer: string[] = [];
@@ -76,7 +73,7 @@ addOptions(
 addOptions(
   generate
     .command("express")
-    .description("Typescript code for use with Express."),
+    .description("TypeScript code for use with Express."),
 ).action(async (options) => {
   const context = await initializeContext(options.database);
   const generationBuffer: string[] = [];
@@ -96,7 +93,7 @@ addOptions(
 });
 
 addOptions(
-  generate.command("react").description("Typescript code for use with React."),
+  generate.command("react").description("TypeScript code for use with React."),
 ).action(async (options) => {
   const context = await initializeContext(options.database);
   const generationBuffer: string[] = [];

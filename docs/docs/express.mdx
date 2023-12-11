@@ -1,6 +1,6 @@
-import CodeBlock from '@theme/CodeBlock';
-import ExpressSource from '!!raw-loader!../../samples/express/src/express.ts';
-import TsConfigSource from '!!raw-loader!../../samples/express/tsconfig.json';
+import ExpressSource from "!!raw-loader!../../samples/express/src/express.ts";
+import TsConfigSource from "!!raw-loader!../../samples/express/tsconfig.json";
+import CodeBlock from "@theme/CodeBlock";
 
 # Express
 
@@ -18,16 +18,20 @@ Once you have a database, you can generate the express application:
 ```shell
 npm install @embracesql/express
 mkdir -p ./src
-npx @embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```
 
 And a very simple express server `index.ts`, assumes top level `await` -- put `"type": "module"`
 in your package json. And, provided handy tsconfig settings that work great with
 `tsx` and `typescript` 5+.
 
-<CodeBlock language="json" title="tsconfig.json">{TsConfigSource}</CodeBlock>
+<CodeBlock language="json" title="tsconfig.json">
+  {TsConfigSource}
+</CodeBlock>
 
-<CodeBlock language="typescript" title="./src/express.ts">{ExpressSource}</CodeBlock>
+<CodeBlock language="typescript" title="./src/express.ts">
+  {ExpressSource}
+</CodeBlock>
 
 Start that server:
 

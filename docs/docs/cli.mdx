@@ -1,0 +1,38 @@
+# embracesqlcli
+
+Use this command line tool for all your EmbraceSQL needs. 
+
+You can quickly invoke it with:
+
+```shell
+npx embracesqlcli
+```
+
+No need to specifically install it into your local node.
+
+## generate
+
+Use this sub command to generate code. 
+All code generations are in TypeScript. Code is emitted to `stdout`, so you just
+pipe `|` or redirect `>` the output as needed.
+
+Descriptive messages, status, and decorations are all directed to `stderr` so
+they won't end up in your generated output.
+
+### node
+
+When you want to make a node program, this is the generation option for you.
+The code generated gives you access to your target database via [AutoCRUD](./autocrud.mdx)
+and [SQL Scripts](./sql.mdx).
+
+### express
+
+When you want to make an [Express](./express.mdx) application, this
+option will generate the code you need. 
+
+### react
+
+When you want to make a a [React](./react.mdx) application, specifically
+the client side React code, this is what you need.
+
+You will need to pair the client-side React with a server-side code for Express.

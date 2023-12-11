@@ -2,7 +2,6 @@
 sidebar_position: 0
 ---
 
-
 # Introduction
 
 EmbraceSQL for data access -- you write the **SQL** -- we’ll do the **REST**!
@@ -12,7 +11,6 @@ Learn about the [Problems](./problems.md) with data access. Then [Get Started](#
 ## Getting Started
 
 You will need:
-
 
 This example assumes a sample DVD rental database, source at [dvdrental.sql](./dvdrental.sql).
 
@@ -29,7 +27,7 @@ of your typescript project.
 
 ```shell
 mkdir -p ./src
-npx @embracesqlcli generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+npx embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 
 ```
 
@@ -37,8 +35,10 @@ Now you can use your fully typed database:
 
 ```typescript
 import { Database } from "./src/dvdrental";
-    
-const db = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
+
+const db = await Database.connect(
+  "postgres://postgres:postgres@localhost:5432/dvdrental",
+);
 // calling a stored database function with positional, typed arguments.
 const value = await db.Public.LastDay({ _0: new Date() });
 await db.disconnect();

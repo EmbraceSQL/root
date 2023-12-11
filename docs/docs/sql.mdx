@@ -1,5 +1,4 @@
-
-import CodeBlock from '@theme/CodeBlock';
+import CodeBlock from "@theme/CodeBlock";
 
 # SQL Scripts
 
@@ -23,7 +22,7 @@ Make a file `./src/sql/pick.sql`. Notice the use of Postgres style parameters wi
 where `number` is one based.
 
 <CodeBlock language="sql" title="./src/sql/pick.sql">
-{`
+  {`
 SELECT
     *
 FROM
@@ -37,7 +36,7 @@ Generate some code -- notice the `--sqlScriptsFrom` switch.
 
 ```shell
 mkdir -p ./src
-npx @embracesqlcli generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
+npx embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ./src/sql > ./src/dvdrental.ts
 
 ```
 
@@ -45,8 +44,10 @@ And call your SQL script as a strongly typed function
 
 ```typescript
 import { Database } from "./src/dvdrental";
-    
-const db = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
+
+const db = await Database.connect(
+  "postgres://postgres:postgres@localhost:5432/dvdrental",
+);
 const value = await db.Scripts.Sql.Sample.pick({ _1: "Basic Easy" });
 await db.disconnect();
 ```

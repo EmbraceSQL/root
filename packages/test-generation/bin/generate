@@ -3,10 +3,10 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # dvdrental examples
 echo dvdrental
-embracesqlcli generate typescript-node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental.ts
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental.ts
 embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-express.ts
 embracesqlcli generate react --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-react.ts
 
 # marshalling samples -- these are just to test typescript<->postgres conversions
 echo marshalling
-embracesqlcli generate typescript-node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
