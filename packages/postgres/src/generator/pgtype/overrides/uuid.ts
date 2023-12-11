@@ -1,9 +1,17 @@
 import { Context } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
 import { registerOverride } from "./_overrides";
-import { UUID } from "@embracesql/shared";
+import { GenerationContext, UUID } from "@embracesql/shared";
 
 class PGUUID extends PGCatalogType {
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string) {
+      return new UUID(from);
+    }
+    `;
+  }
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `

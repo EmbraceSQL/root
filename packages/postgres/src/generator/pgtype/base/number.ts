@@ -1,11 +1,27 @@
 import { Context } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
+import { GenerationContext } from "@embracesql/shared";
 
-export class PGNumber extends PGCatalogType {
+/**
+ * Numbers in the database flow from here.
+ *
+ * One thing to keep in mind, JS/TS have a powerful -- but only the
+ * one number type. Postgres is closer to C byte width style numerics.
+ */
+export class PGTypeNumber extends PGCatalogType {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = number;
+    `;
+  }
+
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string) {
+      return Number.parseFloat(from);
+    }
     `;
   }
 
@@ -27,5 +43,26 @@ export class PGNumber extends PGCatalogType {
     } else {
       return null;
     }
+  }
+}
+
+/**
+ * Large integers. Surprise! JS does have a type for this too.
+ */
+export class PGTypeBigInt extends PGTypeNumber {
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string) {
+      return BigInt(from);
+    }
+    `;
+  }
+
+  typescriptTypeDefinition(context: Context) {
+    console.assert(context);
+    return `
+    export type ${this.typescriptName} = BigInt;
+    `;
   }
 }

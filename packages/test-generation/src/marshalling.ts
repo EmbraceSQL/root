@@ -885,14 +885,8 @@ export namespace PgCatalog {
     usedBytes?: Nullable<Int8>;
   }
 
-  /**
-   * FIXME: pg_brin_bloom_summary did not resolve to a base type
-   */
   export type PgBrinBloomSummary = string;
 
-  /**
-   * FIXME: pg_brin_minmax_multi_summary did not resolve to a base type
-   */
   export type PgBrinMinmaxMultiSummary = string;
 
   export interface PgCast {
@@ -1228,9 +1222,6 @@ export namespace PgCatalog {
     deptype: Char;
   }
 
-  /**
-   * FIXME: pg_dependencies did not resolve to a base type
-   */
   export type PgDependencies = string;
 
   export interface PgDescription {
@@ -1617,9 +1608,6 @@ export namespace PgCatalog {
     waitstart?: Nullable<Timestamptz>;
   }
 
-  /**
-   * FIXME: pg_lsn did not resolve to a base type
-   */
   export type PgLsn = string;
 
   export interface PgMatviews {
@@ -1632,9 +1620,6 @@ export namespace PgCatalog {
     definition?: Nullable<Text>;
   }
 
-  /**
-   * FIXME: pg_mcv_list did not resolve to a base type
-   */
   export type PgMcvList = string;
 
   export interface PgNamespace {
@@ -1656,14 +1641,8 @@ export namespace PgCatalog {
     return value.oid !== undefined;
   }
 
-  /**
-   * FIXME: pg_ndistinct did not resolve to a base type
-   */
   export type PgNdistinct = string;
 
-  /**
-   * FIXME: pg_node_tree did not resolve to a base type
-   */
   export type PgNodeTree = string;
 
   export interface PgOpclass {
@@ -2281,9 +2260,6 @@ export namespace PgCatalog {
     );
   }
 
-  /**
-   * FIXME: pg_snapshot did not resolve to a base type
-   */
   export type PgSnapshot = string;
 
   export interface PgStatActivity {
@@ -5427,28 +5403,6 @@ export namespace Api {
   export namespace Tables {}
 }
 
-export namespace Public {
-  export type SlugArray = Array<Slug>;
-
-  export interface Slug {
-    slugId?: PgCatalog.Int4;
-  }
-
-  export interface SlugNotPrimaryKey {}
-
-  export function includesSlugPrimaryKey(value: Partial<Slug>): value is Slug {
-    return value.slugId !== undefined;
-  }
-
-  export namespace Tables {
-    export namespace Slug {
-      export interface BySlugId {
-        slugId: Nullable<PgCatalog.Int4>;
-      }
-    }
-  }
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -6067,19 +6021,2481 @@ export interface PostgresTypecasts {
   api__echo_type_nested: Typecast;
   api_echo_type: Typecast;
   api_echo_type_nested: Typecast;
-  public__slug: Typecast;
-  public_slug: Typecast;
 }
 
-// begin primary key pickers
-export namespace Api {}
-export namespace Public {
-  export function pickPrimaryKeyFromSlug(value: Slug): string {
-    return JSON.stringify({
-      slugId: value.slugId,
-    });
+// begin string parsers
+export namespace PgCatalog {
+  export function parseAclitemArray(from: string) {
+    return from;
+  }
+
+  export function parseBitArray(from: string) {
+    return from;
+  }
+
+  export function parseBoolArray(from: string) {
+    return from;
+  }
+
+  export function parseBoxArray(from: string) {
+    return from;
+  }
+
+  export function parseBpcharArray(from: string) {
+    return from;
+  }
+
+  export function parseByteaArray(from: string) {
+    return from;
+  }
+
+  export function parseCharArray(from: string) {
+    return from;
+  }
+
+  export function parseCidArray(from: string) {
+    return from;
+  }
+
+  export function parseCidrArray(from: string) {
+    return from;
+  }
+
+  export function parseCircleArray(from: string) {
+    return from;
+  }
+
+  export function parseCstringArray(from: string) {
+    return from;
+  }
+
+  export function parseDateArray(from: string) {
+    return from;
+  }
+
+  export function parseDatemultirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseDaterangeArray(from: string) {
+    return from;
+  }
+
+  export function parseFloat4Array(from: string) {
+    return from;
+  }
+
+  export function parseFloat8Array(from: string) {
+    return from;
+  }
+
+  export function parseGtsvectorArray(from: string) {
+    return from;
+  }
+
+  export function parseInetArray(from: string) {
+    return from;
+  }
+
+  export function parseInt2Array(from: string) {
+    return from;
+  }
+
+  export function parseInt2vectorArray(from: string) {
+    return from;
+  }
+
+  export function parseInt4Array(from: string) {
+    return from;
+  }
+
+  export function parseInt4multirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseInt4rangeArray(from: string) {
+    return from;
+  }
+
+  export function parseInt8Array(from: string) {
+    return from;
+  }
+
+  export function parseInt8multirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseInt8rangeArray(from: string) {
+    return from;
+  }
+
+  export function parseIntervalArray(from: string) {
+    return from;
+  }
+
+  export function parseJsonArray(from: string) {
+    return from;
+  }
+
+  export function parseJsonbArray(from: string) {
+    return from;
+  }
+
+  export function parseJsonpathArray(from: string) {
+    return from;
+  }
+
+  export function parseLineArray(from: string) {
+    return from;
+  }
+
+  export function parseLsegArray(from: string) {
+    return from;
+  }
+
+  export function parseMacaddrArray(from: string) {
+    return from;
+  }
+
+  export function parseMacaddr8Array(from: string) {
+    return from;
+  }
+
+  export function parseMoneyArray(from: string) {
+    return from;
+  }
+
+  export function parseNameArray(from: string) {
+    return from;
+  }
+
+  export function parseNumericArray(from: string) {
+    return from;
+  }
+
+  export function parseNummultirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseNumrangeArray(from: string) {
+    return from;
+  }
+
+  export function parseOidArray(from: string) {
+    return from;
+  }
+
+  export function parseOidvectorArray(from: string) {
+    return from;
+  }
+
+  export function parsePathArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAggregateArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAmArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAmopArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAmprocArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAttrdefArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAttributeArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAuthMembersArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAuthidArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAvailableExtensionVersionsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgAvailableExtensionsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgBackendMemoryContextsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgCastArray(from: string) {
+    return from;
+  }
+
+  export function parsePgClassArray(from: string) {
+    return from;
+  }
+
+  export function parsePgCollationArray(from: string) {
+    return from;
+  }
+
+  export function parsePgConfigArray(from: string) {
+    return from;
+  }
+
+  export function parsePgConstraintArray(from: string) {
+    return from;
+  }
+
+  export function parsePgConversionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgCursorsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgDatabaseArray(from: string) {
+    return from;
+  }
+
+  export function parsePgDbRoleSettingArray(from: string) {
+    return from;
+  }
+
+  export function parsePgDefaultAclArray(from: string) {
+    return from;
+  }
+
+  export function parsePgDependArray(from: string) {
+    return from;
+  }
+
+  export function parsePgDescriptionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgEnumArray(from: string) {
+    return from;
+  }
+
+  export function parsePgEventTriggerArray(from: string) {
+    return from;
+  }
+
+  export function parsePgExtensionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgFileSettingsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignDataWrapperArray(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignServerArray(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignTableArray(from: string) {
+    return from;
+  }
+
+  export function parsePgGroupArray(from: string) {
+    return from;
+  }
+
+  export function parsePgHbaFileRulesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgIdentFileMappingsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgIndexArray(from: string) {
+    return from;
+  }
+
+  export function parsePgIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgInheritsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgInitPrivsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgLanguageArray(from: string) {
+    return from;
+  }
+
+  export function parsePgLargeobjectArray(from: string) {
+    return from;
+  }
+
+  export function parsePgLargeobjectMetadataArray(from: string) {
+    return from;
+  }
+
+  export function parsePgLocksArray(from: string) {
+    return from;
+  }
+
+  export function parsePgLsnArray(from: string) {
+    return from;
+  }
+
+  export function parsePgMatviewsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgNamespaceArray(from: string) {
+    return from;
+  }
+
+  export function parsePgOpclassArray(from: string) {
+    return from;
+  }
+
+  export function parsePgOperatorArray(from: string) {
+    return from;
+  }
+
+  export function parsePgOpfamilyArray(from: string) {
+    return from;
+  }
+
+  export function parsePgParameterAclArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPartitionedTableArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPoliciesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPolicyArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPreparedStatementsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPreparedXactsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgProcArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationNamespaceArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationRelArray(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgRangeArray(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationOriginArray(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationOriginStatusArray(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationSlotsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgRewriteArray(from: string) {
+    return from;
+  }
+
+  export function parsePgRolesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgRulesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSeclabelArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSeclabelsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSequenceArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSequencesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSettingsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgShadowArray(from: string) {
+    return from;
+  }
+
+  export function parsePgShdependArray(from: string) {
+    return from;
+  }
+
+  export function parsePgShdescriptionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgShmemAllocationsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgShseclabelArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSnapshotArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatActivityArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatAllIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatAllTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatArchiverArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatBgwriterArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatDatabaseArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatDatabaseConflictsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatGssapiArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatIoArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressAnalyzeArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressBasebackupArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressClusterArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressCopyArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressCreateIndexArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressVacuumArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatRecoveryPrefetchArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatReplicationArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatReplicationSlotsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSlruArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSslArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSubscriptionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSubscriptionStatsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSysIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSysTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserFunctionsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatWalArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatWalReceiverArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactAllTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactSysTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactUserFunctionsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactUserTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllSequencesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysSequencesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserIndexesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserSequencesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatisticArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatisticExtArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatisticExtDataArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatsExtArray(from: string) {
+    return from;
+  }
+
+  export function parsePgStatsExtExprsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSubscriptionArray(from: string) {
+    return from;
+  }
+
+  export function parsePgSubscriptionRelArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTablesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTablespaceArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTimezoneAbbrevsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTimezoneNamesArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTransformArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTriggerArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTsConfigArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTsConfigMapArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTsDictArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTsParserArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTsTemplateArray(from: string) {
+    return from;
+  }
+
+  export function parsePgTypeArray(from: string) {
+    return from;
+  }
+
+  export function parsePgUserArray(from: string) {
+    return from;
+  }
+
+  export function parsePgUserMappingArray(from: string) {
+    return from;
+  }
+
+  export function parsePgUserMappingsArray(from: string) {
+    return from;
+  }
+
+  export function parsePgViewsArray(from: string) {
+    return from;
+  }
+
+  export function parsePointArray(from: string) {
+    return from;
+  }
+
+  export function parsePolygonArray(from: string) {
+    return from;
+  }
+
+  export function parseRecordArray(from: string) {
+    return from;
+  }
+
+  export function parseRefcursorArray(from: string) {
+    return from;
+  }
+
+  export function parseRegclassArray(from: string) {
+    return from;
+  }
+
+  export function parseRegcollationArray(from: string) {
+    return from;
+  }
+
+  export function parseRegconfigArray(from: string) {
+    return from;
+  }
+
+  export function parseRegdictionaryArray(from: string) {
+    return from;
+  }
+
+  export function parseRegnamespaceArray(from: string) {
+    return from;
+  }
+
+  export function parseRegoperArray(from: string) {
+    return from;
+  }
+
+  export function parseRegoperatorArray(from: string) {
+    return from;
+  }
+
+  export function parseRegprocArray(from: string) {
+    return from;
+  }
+
+  export function parseRegprocedureArray(from: string) {
+    return from;
+  }
+
+  export function parseRegroleArray(from: string) {
+    return from;
+  }
+
+  export function parseRegtypeArray(from: string) {
+    return from;
+  }
+
+  export function parseTextArray(from: string) {
+    return from;
+  }
+
+  export function parseTidArray(from: string) {
+    return from;
+  }
+
+  export function parseTimeArray(from: string) {
+    return from;
+  }
+
+  export function parseTimestampArray(from: string) {
+    return from;
+  }
+
+  export function parseTimestamptzArray(from: string) {
+    return from;
+  }
+
+  export function parseTimetzArray(from: string) {
+    return from;
+  }
+
+  export function parseTsmultirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseTsqueryArray(from: string) {
+    return from;
+  }
+
+  export function parseTsrangeArray(from: string) {
+    return from;
+  }
+
+  export function parseTstzmultirangeArray(from: string) {
+    return from;
+  }
+
+  export function parseTstzrangeArray(from: string) {
+    return from;
+  }
+
+  export function parseTsvectorArray(from: string) {
+    return from;
+  }
+
+  export function parseTxidSnapshotArray(from: string) {
+    return from;
+  }
+
+  export function parseUuidArray(from: string) {
+    return from;
+  }
+
+  export function parseVarbitArray(from: string) {
+    return from;
+  }
+
+  export function parseVarcharArray(from: string) {
+    return from;
+  }
+
+  export function parseXidArray(from: string) {
+    return from;
+  }
+
+  export function parseXid8Array(from: string) {
+    return from;
+  }
+
+  export function parseXmlArray(from: string) {
+    return from;
+  }
+
+  export function parseAclitem(from: string) {
+    return from;
+  }
+
+  export function parseAny(from: string) {
+    return from;
+  }
+
+  export function parseAnyarray(from: string) {
+    return from;
+  }
+
+  export function parseAnycompatible(from: string) {
+    return from;
+  }
+
+  export function parseAnycompatiblearray(from: string) {
+    return from;
+  }
+
+  export function parseAnycompatiblemultirange(from: string) {
+    return from;
+  }
+
+  export function parseAnycompatiblenonarray(from: string) {
+    return from;
+  }
+
+  export function parseAnycompatiblerange(from: string) {
+    return from;
+  }
+
+  export function parseAnyelement(from: string) {
+    return from;
+  }
+
+  export function parseAnyenum(from: string) {
+    return from;
+  }
+
+  export function parseAnymultirange(from: string) {
+    return from;
+  }
+
+  export function parseAnynonarray(from: string) {
+    return from;
+  }
+
+  export function parseAnyrange(from: string) {
+    return from;
+  }
+
+  export function parseBit(from: string) {
+    if (["t", "T", "true", "True"].includes(from)) return true;
+    try {
+      if (Number.parseFloat(from) > 0) return true;
+    } catch (e) {
+      // eat
+    }
+    return false;
+  }
+
+  export function parseBool(from: string) {
+    if (["t", "T", "true", "True"].includes(from)) return true;
+    try {
+      if (Number.parseFloat(from) > 0) return true;
+    } catch (e) {
+      // eat
+    }
+    return false;
+  }
+
+  export function parseBox(from: string) {
+    return from;
+  }
+
+  export function parseBpchar(from: string) {
+    return from;
+  }
+
+  export function parseBytea(from: string) {
+    return from;
+  }
+
+  export function parseChar(from: string) {
+    return from;
+  }
+
+  export function parseCid(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseCidr(from: string) {
+    return from;
+  }
+
+  export function parseCircle(from: string) {
+    return from;
+  }
+
+  export function parseCstring(from: string) {
+    return from;
+  }
+
+  export function parseDate(from: string) {
+    return from;
+  }
+
+  export function parseDatemultirange(from: string) {
+    return from;
+  }
+
+  export function parseDaterange(from: string) {
+    return from;
+  }
+
+  export function parseEventTrigger(from: string) {
+    return from;
+  }
+
+  export function parseFdwHandler(from: string) {
+    return from;
+  }
+
+  export function parseFloat4(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseFloat8(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseGtsvector(from: string) {
+    return from;
+  }
+
+  export function parseIndexAmHandler(from: string) {
+    return from;
+  }
+
+  export function parseInet(from: string) {
+    return from;
+  }
+
+  export function parseInt2(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseInt2vector(from: string) {
+    return from;
+  }
+
+  export function parseInt4(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseInt4multirange(from: string) {
+    return from;
+  }
+
+  export function parseInt4range(from: string) {
+    return from;
+  }
+
+  export function parseInt8(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseInt8multirange(from: string) {
+    return from;
+  }
+
+  export function parseInt8range(from: string) {
+    return from;
+  }
+
+  export function parseInternal(from: string) {
+    return from;
+  }
+
+  export function parseInterval(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseJson(from: string) {
+    return from;
+  }
+
+  export function parseJsonb(from: string) {
+    return from;
+  }
+
+  export function parseJsonpath(from: string) {
+    return from;
+  }
+
+  export function parseLanguageHandler(from: string) {
+    return from;
+  }
+
+  export function parseLine(from: string) {
+    return from;
+  }
+
+  export function parseLseg(from: string) {
+    return from;
+  }
+
+  export function parseMacaddr(from: string) {
+    return from;
+  }
+
+  export function parseMacaddr8(from: string) {
+    return from;
+  }
+
+  export function parseMoney(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseName(from: string) {
+    return from;
+  }
+
+  export function parseNumeric(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseNummultirange(from: string) {
+    return from;
+  }
+
+  export function parseNumrange(from: string) {
+    return from;
+  }
+
+  export function parseOid(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseOidvector(from: string) {
+    return from;
+  }
+
+  export function parsePath(from: string) {
+    return from;
+  }
+
+  export function parsePgAggregate(from: string) {
+    return from;
+  }
+
+  export function parsePgAm(from: string) {
+    return from;
+  }
+
+  export function parsePgAmop(from: string) {
+    return from;
+  }
+
+  export function parsePgAmproc(from: string) {
+    return from;
+  }
+
+  export function parsePgAttrdef(from: string) {
+    return from;
+  }
+
+  export function parsePgAttribute(from: string) {
+    return from;
+  }
+
+  export function parsePgAuthMembers(from: string) {
+    return from;
+  }
+
+  export function parsePgAuthid(from: string) {
+    return from;
+  }
+
+  export function parsePgAvailableExtensionVersions(from: string) {
+    return from;
+  }
+
+  export function parsePgAvailableExtensions(from: string) {
+    return from;
+  }
+
+  export function parsePgBackendMemoryContexts(from: string) {
+    return from;
+  }
+
+  export function parsePgBrinBloomSummary(from: string) {
+    return from;
+  }
+
+  export function parsePgBrinMinmaxMultiSummary(from: string) {
+    return from;
+  }
+
+  export function parsePgCast(from: string) {
+    return from;
+  }
+
+  export function parsePgClass(from: string) {
+    return from;
+  }
+
+  export function parsePgCollation(from: string) {
+    return from;
+  }
+
+  export function parsePgConfig(from: string) {
+    return from;
+  }
+
+  export function parsePgConstraint(from: string) {
+    return from;
+  }
+
+  export function parsePgConversion(from: string) {
+    return from;
+  }
+
+  export function parsePgCursors(from: string) {
+    return from;
+  }
+
+  export function parsePgDatabase(from: string) {
+    return from;
+  }
+
+  export function parsePgDbRoleSetting(from: string) {
+    return from;
+  }
+
+  export function parsePgDdlCommand(from: string) {
+    return from;
+  }
+
+  export function parsePgDefaultAcl(from: string) {
+    return from;
+  }
+
+  export function parsePgDepend(from: string) {
+    return from;
+  }
+
+  export function parsePgDependencies(from: string) {
+    return from;
+  }
+
+  export function parsePgDescription(from: string) {
+    return from;
+  }
+
+  export function parsePgEnum(from: string) {
+    return from;
+  }
+
+  export function parsePgEventTrigger(from: string) {
+    return from;
+  }
+
+  export function parsePgExtension(from: string) {
+    return from;
+  }
+
+  export function parsePgFileSettings(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignDataWrapper(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignServer(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignTable(from: string) {
+    return from;
+  }
+
+  export function parsePgGroup(from: string) {
+    return from;
+  }
+
+  export function parsePgHbaFileRules(from: string) {
+    return from;
+  }
+
+  export function parsePgIdentFileMappings(from: string) {
+    return from;
+  }
+
+  export function parsePgIndex(from: string) {
+    return from;
+  }
+
+  export function parsePgIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgInherits(from: string) {
+    return from;
+  }
+
+  export function parsePgInitPrivs(from: string) {
+    return from;
+  }
+
+  export function parsePgLanguage(from: string) {
+    return from;
+  }
+
+  export function parsePgLargeobject(from: string) {
+    return from;
+  }
+
+  export function parsePgLargeobjectMetadata(from: string) {
+    return from;
+  }
+
+  export function parsePgLocks(from: string) {
+    return from;
+  }
+
+  export function parsePgLsn(from: string) {
+    return from;
+  }
+
+  export function parsePgMatviews(from: string) {
+    return from;
+  }
+
+  export function parsePgMcvList(from: string) {
+    return from;
+  }
+
+  export function parsePgNamespace(from: string) {
+    return from;
+  }
+
+  export function parsePgNdistinct(from: string) {
+    return from;
+  }
+
+  export function parsePgNodeTree(from: string) {
+    return from;
+  }
+
+  export function parsePgOpclass(from: string) {
+    return from;
+  }
+
+  export function parsePgOperator(from: string) {
+    return from;
+  }
+
+  export function parsePgOpfamily(from: string) {
+    return from;
+  }
+
+  export function parsePgParameterAcl(from: string) {
+    return from;
+  }
+
+  export function parsePgPartitionedTable(from: string) {
+    return from;
+  }
+
+  export function parsePgPolicies(from: string) {
+    return from;
+  }
+
+  export function parsePgPolicy(from: string) {
+    return from;
+  }
+
+  export function parsePgPreparedStatements(from: string) {
+    return from;
+  }
+
+  export function parsePgPreparedXacts(from: string) {
+    return from;
+  }
+
+  export function parsePgProc(from: string) {
+    return from;
+  }
+
+  export function parsePgPublication(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationNamespace(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationRel(from: string) {
+    return from;
+  }
+
+  export function parsePgPublicationTables(from: string) {
+    return from;
+  }
+
+  export function parsePgRange(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationOrigin(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationOriginStatus(from: string) {
+    return from;
+  }
+
+  export function parsePgReplicationSlots(from: string) {
+    return from;
+  }
+
+  export function parsePgRewrite(from: string) {
+    return from;
+  }
+
+  export function parsePgRoles(from: string) {
+    return from;
+  }
+
+  export function parsePgRules(from: string) {
+    return from;
+  }
+
+  export function parsePgSeclabel(from: string) {
+    return from;
+  }
+
+  export function parsePgSeclabels(from: string) {
+    return from;
+  }
+
+  export function parsePgSequence(from: string) {
+    return from;
+  }
+
+  export function parsePgSequences(from: string) {
+    return from;
+  }
+
+  export function parsePgSettings(from: string) {
+    return from;
+  }
+
+  export function parsePgShadow(from: string) {
+    return from;
+  }
+
+  export function parsePgShdepend(from: string) {
+    return from;
+  }
+
+  export function parsePgShdescription(from: string) {
+    return from;
+  }
+
+  export function parsePgShmemAllocations(from: string) {
+    return from;
+  }
+
+  export function parsePgShseclabel(from: string) {
+    return from;
+  }
+
+  export function parsePgSnapshot(from: string) {
+    return from;
+  }
+
+  export function parsePgStatActivity(from: string) {
+    return from;
+  }
+
+  export function parsePgStatAllIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatAllTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatArchiver(from: string) {
+    return from;
+  }
+
+  export function parsePgStatBgwriter(from: string) {
+    return from;
+  }
+
+  export function parsePgStatDatabase(from: string) {
+    return from;
+  }
+
+  export function parsePgStatDatabaseConflicts(from: string) {
+    return from;
+  }
+
+  export function parsePgStatGssapi(from: string) {
+    return from;
+  }
+
+  export function parsePgStatIo(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressAnalyze(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressBasebackup(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressCluster(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressCopy(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressCreateIndex(from: string) {
+    return from;
+  }
+
+  export function parsePgStatProgressVacuum(from: string) {
+    return from;
+  }
+
+  export function parsePgStatRecoveryPrefetch(from: string) {
+    return from;
+  }
+
+  export function parsePgStatReplication(from: string) {
+    return from;
+  }
+
+  export function parsePgStatReplicationSlots(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSlru(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSsl(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSubscription(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSubscriptionStats(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSysIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatSysTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserFunctions(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatUserTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatWal(from: string) {
+    return from;
+  }
+
+  export function parsePgStatWalReceiver(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactAllTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactSysTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactUserFunctions(from: string) {
+    return from;
+  }
+
+  export function parsePgStatXactUserTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllSequences(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioAllTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysSequences(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioSysTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserIndexes(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserSequences(from: string) {
+    return from;
+  }
+
+  export function parsePgStatioUserTables(from: string) {
+    return from;
+  }
+
+  export function parsePgStatistic(from: string) {
+    return from;
+  }
+
+  export function parsePgStatisticExt(from: string) {
+    return from;
+  }
+
+  export function parsePgStatisticExtData(from: string) {
+    return from;
+  }
+
+  export function parsePgStats(from: string) {
+    return from;
+  }
+
+  export function parsePgStatsExt(from: string) {
+    return from;
+  }
+
+  export function parsePgStatsExtExprs(from: string) {
+    return from;
+  }
+
+  export function parsePgSubscription(from: string) {
+    return from;
+  }
+
+  export function parsePgSubscriptionRel(from: string) {
+    return from;
+  }
+
+  export function parsePgTables(from: string) {
+    return from;
+  }
+
+  export function parsePgTablespace(from: string) {
+    return from;
+  }
+
+  export function parsePgTimezoneAbbrevs(from: string) {
+    return from;
+  }
+
+  export function parsePgTimezoneNames(from: string) {
+    return from;
+  }
+
+  export function parsePgTransform(from: string) {
+    return from;
+  }
+
+  export function parsePgTrigger(from: string) {
+    return from;
+  }
+
+  export function parsePgTsConfig(from: string) {
+    return from;
+  }
+
+  export function parsePgTsConfigMap(from: string) {
+    return from;
+  }
+
+  export function parsePgTsDict(from: string) {
+    return from;
+  }
+
+  export function parsePgTsParser(from: string) {
+    return from;
+  }
+
+  export function parsePgTsTemplate(from: string) {
+    return from;
+  }
+
+  export function parsePgType(from: string) {
+    return from;
+  }
+
+  export function parsePgUser(from: string) {
+    return from;
+  }
+
+  export function parsePgUserMapping(from: string) {
+    return from;
+  }
+
+  export function parsePgUserMappings(from: string) {
+    return from;
+  }
+
+  export function parsePgViews(from: string) {
+    return from;
+  }
+
+  export function parsePoint(from: string) {
+    return from;
+  }
+
+  export function parsePolygon(from: string) {
+    return from;
+  }
+
+  export function parseRecord(from: string) {
+    return from;
+  }
+
+  export function parseRefcursor(from: string) {
+    return from;
+  }
+
+  export function parseRegclass(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegcollation(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegconfig(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegdictionary(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegnamespace(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegoper(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegoperator(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegproc(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegprocedure(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegrole(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseRegtype(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseTableAmHandler(from: string) {
+    return from;
+  }
+
+  export function parseText(from: string) {
+    return from;
+  }
+
+  export function parseTid(from: string) {
+    return from;
+  }
+
+  export function parseTime(from: string) {
+    return from;
+  }
+
+  export function parseTimestamp(from: string) {
+    return from;
+  }
+
+  export function parseTimestamptz(from: string) {
+    return from;
+  }
+
+  export function parseTimetz(from: string) {
+    return from;
+  }
+
+  export function parseTrigger(from: string) {
+    return from;
+  }
+
+  export function parseTsmHandler(from: string) {
+    return from;
+  }
+
+  export function parseTsmultirange(from: string) {
+    return from;
+  }
+
+  export function parseTsquery(from: string) {
+    return from;
+  }
+
+  export function parseTsrange(from: string) {
+    return from;
+  }
+
+  export function parseTstzmultirange(from: string) {
+    return from;
+  }
+
+  export function parseTstzrange(from: string) {
+    return from;
+  }
+
+  export function parseTsvector(from: string) {
+    return from;
+  }
+
+  export function parseTxidSnapshot(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseUnknown(from: string) {
+    return from;
+  }
+
+  export function parseUuid(from: string) {
+    return from;
+  }
+
+  export function parseVarbit(from: string) {
+    if (["t", "T", "true", "True"].includes(from)) return true;
+    try {
+      if (Number.parseFloat(from) > 0) return true;
+    } catch (e) {
+      // eat
+    }
+    return false;
+  }
+
+  export function parseVarchar(from: string) {
+    return from;
+  }
+
+  export function parseVoid(from: string) {
+    return from;
+  }
+
+  export function parseXid(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseXid8(from: string) {
+    return Number.parseFloat(from);
+  }
+
+  export function parseXml(from: string) {
+    return from;
   }
 }
+export namespace InformationSchema {
+  export function parseAdministrableRoleAuthorizationsArray(from: string) {
+    return from;
+  }
+
+  export function parseApplicableRolesArray(from: string) {
+    return from;
+  }
+
+  export function parseAttributesArray(from: string) {
+    return from;
+  }
+
+  export function parseCardinalNumberArray(from: string) {
+    return from;
+  }
+
+  export function parseCharacterDataArray(from: string) {
+    return from;
+  }
+
+  export function parseCharacterSetsArray(from: string) {
+    return from;
+  }
+
+  export function parseCheckConstraintRoutineUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseCheckConstraintsArray(from: string) {
+    return from;
+  }
+
+  export function parseCollationCharacterSetApplicabilityArray(from: string) {
+    return from;
+  }
+
+  export function parseCollationsArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnColumnUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnDomainUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnOptionsArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnPrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnUdtUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseColumnsArray(from: string) {
+    return from;
+  }
+
+  export function parseConstraintColumnUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseConstraintTableUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseDataTypePrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseDomainConstraintsArray(from: string) {
+    return from;
+  }
+
+  export function parseDomainUdtUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseDomainsArray(from: string) {
+    return from;
+  }
+
+  export function parseElementTypesArray(from: string) {
+    return from;
+  }
+
+  export function parseEnabledRolesArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignDataWrapperOptionsArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignDataWrappersArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignServerOptionsArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignServersArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignTableOptionsArray(from: string) {
+    return from;
+  }
+
+  export function parseForeignTablesArray(from: string) {
+    return from;
+  }
+
+  export function parseInformationSchemaCatalogNameArray(from: string) {
+    return from;
+  }
+
+  export function parseKeyColumnUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseParametersArray(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignDataWrappers(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignServers(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignTableColumns(from: string) {
+    return from;
+  }
+
+  export function parsePgForeignTables(from: string) {
+    return from;
+  }
+
+  export function parsePgUserMappings(from: string) {
+    return from;
+  }
+
+  export function parseReferentialConstraintsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoleColumnGrantsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoleRoutineGrantsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoleTableGrantsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoleUdtGrantsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoleUsageGrantsArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutineColumnUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutinePrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutineRoutineUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutineSequenceUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutineTableUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseRoutinesArray(from: string) {
+    return from;
+  }
+
+  export function parseSchemataArray(from: string) {
+    return from;
+  }
+
+  export function parseSequencesArray(from: string) {
+    return from;
+  }
+
+  export function parseSqlFeaturesArray(from: string) {
+    return from;
+  }
+
+  export function parseSqlIdentifierArray(from: string) {
+    return from;
+  }
+
+  export function parseSqlImplementationInfoArray(from: string) {
+    return from;
+  }
+
+  export function parseSqlPartsArray(from: string) {
+    return from;
+  }
+
+  export function parseSqlSizingArray(from: string) {
+    return from;
+  }
+
+  export function parseTableConstraintsArray(from: string) {
+    return from;
+  }
+
+  export function parseTablePrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseTablesArray(from: string) {
+    return from;
+  }
+
+  export function parseTimeStampArray(from: string) {
+    return from;
+  }
+
+  export function parseTransformsArray(from: string) {
+    return from;
+  }
+
+  export function parseTriggeredUpdateColumnsArray(from: string) {
+    return from;
+  }
+
+  export function parseTriggersArray(from: string) {
+    return from;
+  }
+
+  export function parseUdtPrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseUsagePrivilegesArray(from: string) {
+    return from;
+  }
+
+  export function parseUserDefinedTypesArray(from: string) {
+    return from;
+  }
+
+  export function parseUserMappingOptionsArray(from: string) {
+    return from;
+  }
+
+  export function parseUserMappingsArray(from: string) {
+    return from;
+  }
+
+  export function parseViewColumnUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseViewRoutineUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseViewTableUsageArray(from: string) {
+    return from;
+  }
+
+  export function parseViewsArray(from: string) {
+    return from;
+  }
+
+  export function parseYesOrNoArray(from: string) {
+    return from;
+  }
+
+  export function parseAdministrableRoleAuthorizations(from: string) {
+    return from;
+  }
+
+  export function parseApplicableRoles(from: string) {
+    return from;
+  }
+
+  export function parseAttributes(from: string) {
+    return from;
+  }
+
+  export function parseCardinalNumber(from: string) {
+    return from;
+  }
+
+  export function parseCharacterData(from: string) {
+    return from;
+  }
+
+  export function parseCharacterSets(from: string) {
+    return from;
+  }
+
+  export function parseCheckConstraintRoutineUsage(from: string) {
+    return from;
+  }
+
+  export function parseCheckConstraints(from: string) {
+    return from;
+  }
+
+  export function parseCollationCharacterSetApplicability(from: string) {
+    return from;
+  }
+
+  export function parseCollations(from: string) {
+    return from;
+  }
+
+  export function parseColumnColumnUsage(from: string) {
+    return from;
+  }
+
+  export function parseColumnDomainUsage(from: string) {
+    return from;
+  }
+
+  export function parseColumnOptions(from: string) {
+    return from;
+  }
+
+  export function parseColumnPrivileges(from: string) {
+    return from;
+  }
+
+  export function parseColumnUdtUsage(from: string) {
+    return from;
+  }
+
+  export function parseColumns(from: string) {
+    return from;
+  }
+
+  export function parseConstraintColumnUsage(from: string) {
+    return from;
+  }
+
+  export function parseConstraintTableUsage(from: string) {
+    return from;
+  }
+
+  export function parseDataTypePrivileges(from: string) {
+    return from;
+  }
+
+  export function parseDomainConstraints(from: string) {
+    return from;
+  }
+
+  export function parseDomainUdtUsage(from: string) {
+    return from;
+  }
+
+  export function parseDomains(from: string) {
+    return from;
+  }
+
+  export function parseElementTypes(from: string) {
+    return from;
+  }
+
+  export function parseEnabledRoles(from: string) {
+    return from;
+  }
+
+  export function parseForeignDataWrapperOptions(from: string) {
+    return from;
+  }
+
+  export function parseForeignDataWrappers(from: string) {
+    return from;
+  }
+
+  export function parseForeignServerOptions(from: string) {
+    return from;
+  }
+
+  export function parseForeignServers(from: string) {
+    return from;
+  }
+
+  export function parseForeignTableOptions(from: string) {
+    return from;
+  }
+
+  export function parseForeignTables(from: string) {
+    return from;
+  }
+
+  export function parseInformationSchemaCatalogName(from: string) {
+    return from;
+  }
+
+  export function parseKeyColumnUsage(from: string) {
+    return from;
+  }
+
+  export function parseParameters(from: string) {
+    return from;
+  }
+
+  export function parseReferentialConstraints(from: string) {
+    return from;
+  }
+
+  export function parseRoleColumnGrants(from: string) {
+    return from;
+  }
+
+  export function parseRoleRoutineGrants(from: string) {
+    return from;
+  }
+
+  export function parseRoleTableGrants(from: string) {
+    return from;
+  }
+
+  export function parseRoleUdtGrants(from: string) {
+    return from;
+  }
+
+  export function parseRoleUsageGrants(from: string) {
+    return from;
+  }
+
+  export function parseRoutineColumnUsage(from: string) {
+    return from;
+  }
+
+  export function parseRoutinePrivileges(from: string) {
+    return from;
+  }
+
+  export function parseRoutineRoutineUsage(from: string) {
+    return from;
+  }
+
+  export function parseRoutineSequenceUsage(from: string) {
+    return from;
+  }
+
+  export function parseRoutineTableUsage(from: string) {
+    return from;
+  }
+
+  export function parseRoutines(from: string) {
+    return from;
+  }
+
+  export function parseSchemata(from: string) {
+    return from;
+  }
+
+  export function parseSequences(from: string) {
+    return from;
+  }
+
+  export function parseSqlFeatures(from: string) {
+    return from;
+  }
+
+  export function parseSqlIdentifier(from: string) {
+    return from;
+  }
+
+  export function parseSqlImplementationInfo(from: string) {
+    return from;
+  }
+
+  export function parseSqlParts(from: string) {
+    return from;
+  }
+
+  export function parseSqlSizing(from: string) {
+    return from;
+  }
+
+  export function parseTableConstraints(from: string) {
+    return from;
+  }
+
+  export function parseTablePrivileges(from: string) {
+    return from;
+  }
+
+  export function parseTables(from: string) {
+    return from;
+  }
+
+  export function parseTimeStamp(from: string) {
+    return from;
+  }
+
+  export function parseTransforms(from: string) {
+    return from;
+  }
+
+  export function parseTriggeredUpdateColumns(from: string) {
+    return from;
+  }
+
+  export function parseTriggers(from: string) {
+    return from;
+  }
+
+  export function parseUdtPrivileges(from: string) {
+    return from;
+  }
+
+  export function parseUsagePrivileges(from: string) {
+    return from;
+  }
+
+  export function parseUserDefinedTypes(from: string) {
+    return from;
+  }
+
+  export function parseUserMappingOptions(from: string) {
+    return from;
+  }
+
+  export function parseUserMappings(from: string) {
+    return from;
+  }
+
+  export function parseViewColumnUsage(from: string) {
+    return from;
+  }
+
+  export function parseViewRoutineUsage(from: string) {
+    return from;
+  }
+
+  export function parseViewTableUsage(from: string) {
+    return from;
+  }
+
+  export function parseViews(from: string) {
+    return from;
+  }
+
+  export function parseYesOrNo(from: string) {
+    return from;
+  }
+}
+export namespace Api {
+  export function parseEchoTypeArray(from: string) {
+    return from;
+  }
+
+  export function parseEchoTypeNestedArray(from: string) {
+    return from;
+  }
+
+  export function parseEchoType(from: string) {
+    return from;
+  }
+
+  export function parseEchoTypeNested(from: string) {
+    return from;
+  }
+}
+// end string parsers
+// begin primary key pickers
+export namespace Api {}
 // end primary key pickers
 
 // BEGIN - Node side database connectivity layer
@@ -6291,116 +8707,5 @@ export class Database {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
-  })(this);
-
-  public Public = new (class implements HasDatabase {
-    constructor(public database: Database) {}
-
-    public Slug = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      async bySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response =
-          await sql`SELECT slug_id FROM public.slug WHERE slug_id = ${
-            parameters.slugId === undefined
-              ? sql("slug_id")
-              : typed.pg_catalog_int4(parameters.slugId)
-          }`;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async deleteBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response = await sql`DELETE FROM public.slug WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id
-      `;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async updateBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-        values: Partial<Public.Slug>,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        console.assert(values);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response = await sql`UPDATE public.slug SET slug_id = ${
-          values.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(values.slugId)
-        } WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id`;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async create(
-        values: Public.Slug | Public.SlugNotPrimaryKey,
-      ): Promise<Public.Slug> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        if (Public.includesSlugPrimaryKey(values)) {
-          const response = await sql`INSERT INTO public.slug (slug_id)
-    VALUES (${
-      values.slugId === undefined
-        ? sql`DEFAULT`
-        : typed.pg_catalog_int4(values.slugId)
-    })
-    ON CONFLICT (slug_id) DO UPDATE
-    SET 
-    RETURNING slug_id
-    `;
-
-          const results = response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }));
-          return results[0];
-        }
-        const response = await sql`INSERT INTO public.slug ()
-    VALUES ()
-    RETURNING slug_id
-    `;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-    })(this);
   })(this);
 }

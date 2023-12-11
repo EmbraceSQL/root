@@ -4,7 +4,7 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGProc, PGProcs } from "./pgproc/pgproc";
 import { PGTable, PGTables } from "./pgtable";
 import { PGTypes } from "./pgtype";
-import { DatabaseNode, SchemaNode, TablesNode } from "@embracesql/shared";
+import { DatabaseNode, SchemaNode, TablesNode, TypeNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
 /**
@@ -69,6 +69,8 @@ export class PGNamespace {
     const tables = new TablesNode(schema);
     schema.children.push(tables);
     this.tables.forEach((t) => t.addToAST(tables));
+    // all types in the namespace
+    this.types.forEach(t => schema.children.push(new TypeNode(schema, t)))
   }
 
   get typescriptName() {

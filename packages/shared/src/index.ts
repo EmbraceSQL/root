@@ -96,3 +96,5 @@ export * from "./uuid";
  * For a given object, there are different dispatch operations available.
  */
 export type DispatchOperation = "" | ".create";
+
+export type {GeneratesTypeScriptParser} from "./typescript"

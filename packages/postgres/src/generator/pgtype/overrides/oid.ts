@@ -1,7 +1,7 @@
-import { PGNumber } from "../base/number";
+import { PGTypeNumber } from "../base/number";
 import { registerOverride } from "./_overrides";
 
-class OID extends PGNumber {}
+class OID extends PGTypeNumber {}
 
 registerOverride("oid", OID);
 registerOverride("cid", OID);

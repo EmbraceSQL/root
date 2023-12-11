@@ -1,3 +1,4 @@
+import { GenerationContext } from ".";
 import { ASTNode, Visitor, isNamed } from "./ast";
 import { pascalCase } from "change-case";
 
@@ -46,3 +47,14 @@ export const NamespaceVisitor: Visitor<ASTNode> = {
     }
   },
 };
+
+/**
+ * Pretty much everything touched with JS/TS ends up as a string. 
+ * And needs to be parsed back from a string to a type.
+ * 
+ * Implement this interface to generate a function that is a parser from
+ * string back to a type.
+ */
+export interface GeneratesTypeScriptParser {
+  typescriptTypeParser(context: GenerationContext) : string;
+}

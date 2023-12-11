@@ -1,4 +1,4 @@
-import { PGNumber } from "../base/number";
+import { PGTypeNumber } from "../base/number";
 import { registerOverride } from "./_overrides";
 
 export { overrides } from "./_overrides";
@@ -17,4 +17,4 @@ export * from "./date";
 export * from "./json";
 export * from "./cube";
 
-registerOverride("interval", PGNumber);
+registerOverride("interval", PGTypeNumber);

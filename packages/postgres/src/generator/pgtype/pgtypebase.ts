@@ -1,12 +1,14 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { asDocComment } from "../../util";
-import { PGNumber } from "./base/number";
+import { PGTypeBool } from "./base/bool";
+import { PGTypeBigInt, PGTypeNumber } from "./base/number";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 
 /**
- * Base types defined by PostgreSQL. This is another factory
- * that dispenses type specific code generation strategies.
+ * Base types defined by PostgreSQL.
+ *
+ * This is another factory that dispenses type specific code generation strategies.
  */
 export class PGTypeBase extends PGCatalogType {
   static factory(context: TypeFactoryContext, catalog: CatalogRow) {
@@ -77,7 +79,7 @@ export class PGTypeBase extends PGCatalogType {
         // categorical type mappings form a backstop
         switch (catalog.typcategory) {
           case "N":
-            return new PGNumber(catalog);
+            return new PGTypeNumber(catalog);
           case "S":
             return new PGTypeText(catalog);
           default:
@@ -106,7 +108,6 @@ class PGTypeText extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
-    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
     `;
   }
@@ -116,42 +117,8 @@ class PGTypeTextArray extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
-    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Array<string>;
     `;
-  }
-}
-
-class PGTypeBigInt extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = BigInt;
-    `;
-  }
-}
-
-class PGTypeBool extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = boolean;
-    `;
-  }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
-    // string it -- yeah I know this is strange -- but it is how the
-    // postges protocol works
-    // https://github.com/porsager/postgres/blob/master/src/types.js#L25
-    return x ? "t" : "f";
-  }
-  parseFromPostgres(context: Context, x: string | null) {
-    // I've seen text encoding come back with t, f, true, false
-    if (["t", "true"].includes(x as string)) return true;
-    // false is the default
-    return false;
   }
 }
 

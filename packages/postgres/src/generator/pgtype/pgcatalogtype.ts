@@ -1,12 +1,13 @@
+import { GeneratesTypeScriptParser, GenerationContext } from "@embracesql/shared";
 import { Context, PostgresTypecast } from "../../context";
 import { asDocComment } from "../../util";
-import { CatalogRow } from "./pgtype";
 import { pascalCase } from "change-case";
+import { CatalogRow } from "./pgtype";
 
 /**
  * All types come from here.
  */
-export class PGCatalogType {
+export class PGCatalogType implements GeneratesTypeScriptParser {
   /**
    * Base constructions picks out the name.
    *
@@ -22,6 +23,18 @@ export class PGCatalogType {
    */
   get oid() {
     return this.catalog.oid;
+  }
+
+  /**
+   * The default parser doesn't do much -- just echoes a string.
+   */
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context)
+    return `
+    parse${this.typescriptName}(from: string) {
+      return from;
+    }
+    `
   }
 
   /**
@@ -48,7 +61,8 @@ export class PGCatalogType {
   }
 
   /**
-   * Convention is snake case in PG.
+   * Convention is snake case in PG, separating namespace(schema) from
+   * the object (type, table, proc...) with a `.`.
    */
   get postgresName() {
     return `${this.catalog.nspname}.${this.catalog.typname}`;

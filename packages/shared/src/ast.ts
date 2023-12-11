@@ -1,4 +1,4 @@
-import { GenerationContext } from ".";
+import { GeneratesTypeScriptParser, GenerationContext } from ".";
 import { DispatchOperation } from "./index";
 import { camelCase, pascalCase } from "change-case";
 
@@ -17,6 +17,7 @@ export const enum ASTKind {
   Column,
   Index,
   IndexColumn,
+  Type,
 }
 
 /**
@@ -74,6 +75,7 @@ export type VisitorMap = {
   [ASTKind.Column]?: Visitor<ColumnNode>;
   [ASTKind.Index]?: Visitor<IndexNode>;
   [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
+  [ASTKind.Type]?: Visitor<TypeNode>;
 };
 
 /**
@@ -176,6 +178,17 @@ export class SchemaNode extends ContainerNode {
 
   dispatchName(operation: DispatchOperation = "") {
     return `${pascalCase(this.name)}${operation}`;
+  }
+}
+
+/**
+ * Represents a single type inside of postgres. 
+ * 
+ * These are grouped by schema.
+ */
+export class TypeNode extends ASTNode {
+  constructor(schema: SchemaNode, public parser: GeneratesTypeScriptParser) {
+    super(ASTKind.Type, schema);
   }
 }
 

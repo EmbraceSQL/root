@@ -18,7 +18,7 @@ export type IndexRow = {
   indisprimary: boolean;
 };
 /**
- * Collect up all indexes in the posgres catalog.
+ * Collect up all indexes in the postgres catalog.
  */
 export class PGIndexes {
   static async factory(sql: Sql, attributes: PGAttributes) {

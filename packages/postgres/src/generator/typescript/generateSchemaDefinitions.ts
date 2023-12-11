@@ -80,8 +80,21 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     generationBuffer.push(`}`);
   }
 
-  // primary key 'pickers' used to debounce and hash objects
+  // parsing from strings into TS types.  
+  generationBuffer.push(`// begin string parsers`);
+  context.handlers = {
+    [ASTKind.Schema]: NamespaceVisitor,
+    [ASTKind.Type]: {
+      before: async (context, node) => {
+        return `export function ${node.parser.typescriptTypeParser(context)}`;
+      },
+    },
+  };
+  // no skipping schemas for parsing
+  generationBuffer.push(await context.database.visit({ ...context, skipSchemas: [] }));
+  generationBuffer.push(`// end string parsers`);
 
+  // primary key 'pickers' used to debounce and hash objects
   generationBuffer.push(`// begin primary key pickers`);
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
