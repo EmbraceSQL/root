@@ -7,18 +7,17 @@
     "lint": "eslint .",
     "check": "npm run check --workspaces",
     "test": "npm run test --workspaces --if-present",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate": "embracesqlcli"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "private": true,
   "workspaces": [
     "packages/*",
-    "samples/*",
     "samples/*"
   ],
   "devDependencies": {
-    "@embracesql/react": "^0.0.0",
     "@testing-library/react": "^14.1.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@tsconfig/node20": "^20.1.2",
@@ -30,7 +29,6 @@
     "@types/supertest": "^2.0.16",
     "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "embracesql": "^0.0.0",
     "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
     "husky": "^8.0.0",

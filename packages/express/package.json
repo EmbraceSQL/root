@@ -11,8 +11,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/shared": "^0.0.0",
-    "@embracesql/postgres": "^0.0.0",
+    "@embracesql/shared": "0.0.0",
+    "@embracesql/postgres": "0.0.0",
     "express": "^4.0.0"
   },
   "devDependencies": {}

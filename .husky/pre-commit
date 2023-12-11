@@ -4,5 +4,3 @@
 npm test
 npm run check
 npm run lint
-cd docs
-npm run build

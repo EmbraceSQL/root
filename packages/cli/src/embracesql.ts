@@ -18,6 +18,7 @@ const logo = () => chalk.blue(figlet.textSync("Embrace SQL"));
 
 program.version(process.env.npm_package_version ?? "");
 
+
 // shared options
 const addOptions = (command: Command) => {
   return command
