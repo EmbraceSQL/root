@@ -3,21 +3,13 @@ import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
 import { CatalogRow } from "./pgtype";
+import {
+  DELIMITER,
+  compositeAttribute,
+  escapeCompositeValue,
+  parseObjectWithAttributes,
+} from "@embracesql/shared";
 import { camelCase } from "change-case";
-import parsimmon from "parsimmon";
-
-export const interleave = <T, U>(arr: T[], separator: U) => {
-  const ret = new Array<T | U>();
-  arr.forEach((e, i) => {
-    ret.push(e);
-    if (i < arr.length - 1) ret.push(separator);
-  });
-  return ret;
-};
-
-export interface ObjectParser {
-  [name: string]: string | null;
-}
 
 /**
  * Composite types are built up with other types into name:type
@@ -157,7 +149,7 @@ export class PGTypeComposite extends PGCatalogType {
             x[camelCase(a.attribute.attname)],
           );
         // quick escape with regex
-        return value ? escapeValue.tryParse(`${value}`) : "";
+        return value ? escapeCompositeValue.tryParse(`${value}`) : "";
       });
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       return `(${attributes.join(DELIMITER)})`;
@@ -169,84 +161,15 @@ export class PGTypeComposite extends PGCatalogType {
   parseFromPostgres(context: Context, x: string) {
     // have parsimmon pick out an object right from our metadata
     // and chain along to the parser for that type
-    const attributes = this.attributes.map(
-      (a) =>
-        [
-          camelCase(a.attribute.attname),
-          compositeAttribute.map((parsedAttributeText) =>
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-            context
-              .resolveType(a.attribute.atttypid)
-              .parseFromPostgres(context, parsedAttributeText),
-          ),
-        ] as [string, parsimmon.Parser<string | null>],
-    );
-
-    const args = [
-      startComposite,
-      ...interleave(attributes, attributeSeperator),
-      endComposite,
-    ];
-
-    return parsimmon.seqObj<ObjectParser>(...args).tryParse(x);
+    const attributes = this.attributes.map((a) => [
+      camelCase(a.attribute.attname),
+      compositeAttribute.map((parsedAttributeText) =>
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+        context
+          .resolveType(a.attribute.atttypid)
+          .parseFromPostgres(context, parsedAttributeText),
+      ),
+    ]);
+    return parseObjectWithAttributes(attributes, x);
   }
 }
-
-/**
- * An empty string parses to a null. This will show up in composites like
- * (,hello) -- which is null, hello
- */
-const emptyIsNull = parsimmon.string("").result(null);
-
-/**
- * Escaping is done with backslash -- per the docs:
- * ... To put a double quote or backslash in a quoted composite field value, precede it with a backslash. (Also, a pair of double quotes within a double-quoted field value is taken to represent a double quote character, analogously to the rules for single quotes in SQL literal strings.)
- * ...Alternatively, you can avoid quoting and use backslash-escaping to protect all data characters that would otherwise be taken as composite syntax.
- */
-const SEPARATORS = `(),`;
-const DELIMITER = `,`;
-const separators = parsimmon.oneOf(SEPARATORS);
-export const startComposite = parsimmon.string("(");
-export const endComposite = parsimmon.string(")");
-export const attributeSeperator = parsimmon.string(",");
-const REQUIRES_ESCAPE_IN_VALUE = `"\\${SEPARATORS}`;
-const requiresEscapeInValue = parsimmon.oneOf(REQUIRES_ESCAPE_IN_VALUE);
-const neverRequiresEscape = parsimmon.noneOf(REQUIRES_ESCAPE_IN_VALUE);
-export const escaped = parsimmon
-  .string("\\")
-  .times(1)
-  .then(requiresEscapeInValue);
-
-const addEscape = requiresEscapeInValue.map((m) => `\\${m}`);
-const escapeValue = parsimmon
-  .alt(neverRequiresEscape, addEscape)
-  .many()
-  .tie()
-  .map((m) => `"${m}"`);
-
-/**
- *  From the PG docs
- * ... In particular, fields containing parentheses, commas, double quotes, or backslashes must be double-quoted.
- *
- * meaning -- if you are anything other than these characters -- you are a value.
- */
-const bareString = parsimmon.alt(neverRequiresEscape, escaped).atLeast(1).tie();
-/**
- * Tales from the docs:
- * ... Also, a pair of double quotes within a double-quoted field value is taken to represent a double quote character, analogously to the rules for single quotes in SQL literal strings.
- */
-const pairOfQuotes = parsimmon.string('"').times(2).result('"');
-const quotedString = parsimmon
-  .alt(neverRequiresEscape, pairOfQuotes, escaped, separators)
-  .many()
-  .wrap(parsimmon.string('"'), parsimmon.string('"'))
-  .tie();
-
-/**
- * Parse a composite attribute. This is exposed to allow unit testing.
- */
-export const compositeAttribute = parsimmon.alt(
-  quotedString,
-  bareString,
-  emptyIsNull,
-);

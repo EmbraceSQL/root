@@ -1,13 +1,13 @@
-import { arrayAttribute, escaped } from "@embracesql/shared";
+import { arrayAttribute, parseEscapedArrayValue } from "@embracesql/shared";
 
 describe("The array parser", () => {
   it("can parse an escape", () => {
     // beware the javascript escaping too
-    expect(escaped.tryParse(String.raw`\\`)).toBe("\\");
-    expect(escaped.tryParse(String.raw`\"`)).toBe('"');
-    expect(escaped.tryParse(String.raw`\{`)).toBe("{");
-    expect(escaped.tryParse(String.raw`\}`)).toBe("}");
-    expect(escaped.tryParse(String.raw`\,`)).toBe(",");
+    expect(parseEscapedArrayValue.tryParse(String.raw`\\`)).toBe("\\");
+    expect(parseEscapedArrayValue.tryParse(String.raw`\"`)).toBe('"');
+    expect(parseEscapedArrayValue.tryParse(String.raw`\{`)).toBe("{");
+    expect(parseEscapedArrayValue.tryParse(String.raw`\}`)).toBe("}");
+    expect(parseEscapedArrayValue.tryParse(String.raw`\,`)).toBe(",");
   });
 
   it("can parse a null", () => {

@@ -2,16 +2,12 @@ import { Context, PostgresProcTypecast } from "../../../context";
 import { buildTypescriptParameterName } from "../../../util";
 import { PGNamespace } from "../pgnamespace";
 import { PGTypes } from "../pgtype";
-import {
-  attributeSeperator,
-  compositeAttribute,
-  endComposite,
-  interleave,
-  ObjectParser,
-  startComposite,
-} from "../pgtypecomposite";
 import { generateRequestType } from "./generateRequestType";
 import { generateResponseType } from "./generateResponseType";
+import {
+  compositeAttribute,
+  parseObjectWithAttributes,
+} from "@embracesql/shared";
 import { camelCase, pascalCase } from "change-case";
 import parsimmon from "parsimmon";
 import path from "path";
@@ -180,13 +176,7 @@ export class PGProc implements PostgresProcTypecast {
         ] as [string, parsimmon.Parser<string | null>],
     );
 
-    const args = [
-      startComposite,
-      ...interleave(attributes, attributeSeperator),
-      endComposite,
-    ];
-
-    return parsimmon.seqObj<ObjectParser>(...args).tryParse(x);
+    return parseObjectWithAttributes(attributes, x);
   }
 
   /**

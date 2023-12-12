@@ -25,13 +25,13 @@ const NULLisNull = parsimmon.string("NULL").result(null);
 const REQUIRES_ESCAPE_IN_VALUE = String.raw`"\{},"`;
 const requiresEscapeInValue = parsimmon.oneOf(REQUIRES_ESCAPE_IN_VALUE);
 const neverRequiresEscape = parsimmon.noneOf(REQUIRES_ESCAPE_IN_VALUE);
-export const escaped = parsimmon
+export const parseEscapedArrayValue = parsimmon
   .string("\\")
   .times(1)
   .then(requiresEscapeInValue);
 
 const addEscape = requiresEscapeInValue.map((m) => `\\${m}`);
-export const escapeValue = parsimmon
+export const escapeArrayValue = parsimmon
   .alt(neverRequiresEscape, addEscape)
   .many()
   .tie()
@@ -41,14 +41,17 @@ export const escapeValue = parsimmon
  * And you can escape everything -- from the docs:
  * ... you can avoid quotes and use backslash-escaping to protect all data characters that would otherwise be taken as array syntax.
  */
-const bareString = parsimmon.alt(neverRequiresEscape, escaped).atLeast(1).tie();
+const bareString = parsimmon
+  .alt(neverRequiresEscape, parseEscapedArrayValue)
+  .atLeast(1)
+  .tie();
 
 /**
  * And an element can be quoted - looking at actual DB results, this
  * is the common case.
  */
 const quotedString = parsimmon
-  .alt(neverRequiresEscape, escaped, separators)
+  .alt(neverRequiresEscape, parseEscapedArrayValue, separators)
   .many()
   .wrap(parsimmon.string('"'), parsimmon.string('"'))
   .tie();

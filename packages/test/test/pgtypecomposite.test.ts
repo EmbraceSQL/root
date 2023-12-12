@@ -1,16 +1,16 @@
 import {
   compositeAttribute,
-  escaped,
-} from "@embracesql/postgres/src/generator/pgtype/pgtypecomposite";
+  parseEscapedCompositeValue,
+} from "@embracesql/shared";
 
 describe("The composite parser", () => {
   it("can parse an escape", () => {
     // beware the javascript escaping too
-    expect(escaped.tryParse(String.raw`\\`)).toBe("\\");
-    expect(escaped.tryParse(String.raw`\"`)).toBe('"');
-    expect(escaped.tryParse(String.raw`\(`)).toBe("(");
-    expect(escaped.tryParse(String.raw`\)`)).toBe(")");
-    expect(escaped.tryParse(String.raw`\,`)).toBe(",");
+    expect(parseEscapedCompositeValue.tryParse(String.raw`\\`)).toBe("\\");
+    expect(parseEscapedCompositeValue.tryParse(String.raw`\"`)).toBe('"');
+    expect(parseEscapedCompositeValue.tryParse(String.raw`\(`)).toBe("(");
+    expect(parseEscapedCompositeValue.tryParse(String.raw`\)`)).toBe(")");
+    expect(parseEscapedCompositeValue.tryParse(String.raw`\,`)).toBe(",");
   });
 
   it("can parse a null", () => {

@@ -1,7 +1,11 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
-import { DELIMITER, arrayAttribute, escapeValue } from "@embracesql/shared";
+import {
+  DELIMITER,
+  arrayAttribute,
+  escapeArrayValue,
+} from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
 /**
@@ -42,7 +46,7 @@ export class PGTypeArray extends PGCatalogType {
         // hand off the the serializer
         const value = elementType.serializeToPostgres(context, e);
         // quick escape with regex
-        return value ? escapeValue.tryParse(`${value}`) : "";
+        return value ? escapeArrayValue.tryParse(`${value}`) : "";
       });
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       return `{${attributes.join(DELIMITER)}}`;
