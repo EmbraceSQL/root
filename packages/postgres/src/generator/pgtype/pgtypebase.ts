@@ -3,6 +3,7 @@ import { asDocComment } from "../../util";
 import { PGTypeBool } from "./base/bool";
 import { PGTypeBigInt, PGTypeNumber } from "./base/number";
 import { PGTypeText, PGTypeTextArray } from "./base/text";
+import { PGTypeUri } from "./base/uri";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 
@@ -177,16 +178,6 @@ class PGTypeCircle extends PGTypeBase {
       center: Point;
       radius: number;
     };
-    `;
-  }
-}
-
-class PGTypeUri extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = URL;
     `;
   }
 }
