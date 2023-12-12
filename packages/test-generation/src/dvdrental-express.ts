@@ -7645,7 +7645,7 @@ export namespace PgCatalog {
   }
 
   export function parseBytea(from: string) {
-    return from;
+    return new Uint8Array(JSON.parse(from));
   }
 
   export function parseChar(from: string) {
@@ -7657,7 +7657,7 @@ export namespace PgCatalog {
   }
 
   export function parseCidr(from: string) {
-    return from;
+    return new Uint8Array(JSON.parse(from));
   }
 
   export function parseCircle(from: string) {
@@ -7773,11 +7773,11 @@ export namespace PgCatalog {
   }
 
   export function parseMacaddr(from: string) {
-    return from;
+    return new Uint8Array(JSON.parse(from));
   }
 
   export function parseMacaddr8(from: string) {
-    return from;
+    return new Uint8Array(JSON.parse(from));
   }
 
   export function parseMoney(from: string) {

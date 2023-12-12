@@ -2,6 +2,7 @@ import { DatabaseNode, VisitorMap } from "./ast";
 
 export * from "./ast";
 export * from "./typescript";
+export * from "./parsers";
 
 /**
  * Message format for EmbraceSQL.
@@ -97,4 +98,4 @@ export * from "./uuid";
  */
 export type DispatchOperation = "" | ".create";
 
-export type {GeneratesTypeScriptParser} from "./typescript"
+export type { GeneratesTypeScriptParser } from "./typescript";

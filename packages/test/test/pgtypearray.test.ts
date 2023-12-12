@@ -1,7 +1,4 @@
-import {
-  arrayAttribute,
-  escaped,
-} from "@embracesql/postgres/src/generator/pgtype/pgtypearray";
+import { arrayAttribute, escaped } from "@embracesql/shared";
 
 describe("The array parser", () => {
   it("can parse an escape", () => {

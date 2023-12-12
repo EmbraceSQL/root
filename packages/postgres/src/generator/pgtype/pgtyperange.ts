@@ -15,6 +15,7 @@ export class PGTypeRange extends PGCatalogType {
     // look up the range'd type and use it to make a tuple.
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const type = context.resolveType(this.catalog.rngsubtype)!;
+    // array with two elements is the nearst-to-a-tuple in JS
     return `
     export type ${this.typescriptName} = [${type.typescriptNameWithNamespace(
       context,
