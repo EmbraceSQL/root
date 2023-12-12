@@ -1,7 +1,7 @@
 {
   "name": "express-typescript-starter",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "generate": "npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts",
@@ -11,6 +11,6 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/express": "^0.0.2"
+    "@embracesql/express": "^0.0.3"
   }
 }
