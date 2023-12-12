@@ -1,4 +1,4 @@
-import { EmbraceSQLExpress } from "../src";
+import { EmbraceSQLExpress } from "@embracesql/express";
 import { EmbraceSQLRequest } from "@embracesql/shared";
 import request from "supertest";
 

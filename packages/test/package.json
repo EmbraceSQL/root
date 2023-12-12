@@ -11,6 +11,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
+    "@embracesql/client": "^0.0.2",
+    "@embracesql/express": "^0.0.2",
     "@embracesql/postgres": "^0.0.2",
     "@embracesql/react": "^0.0.2"
   }

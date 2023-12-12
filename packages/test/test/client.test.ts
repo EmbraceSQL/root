@@ -1,4 +1,4 @@
-import { EmbraceSQLClient } from "../src";
+import { EmbraceSQLClient } from "@embracesql/client";
 import fetch from "jest-fetch-mock";
 
 describe("EmbraceSQLClient can", () => {

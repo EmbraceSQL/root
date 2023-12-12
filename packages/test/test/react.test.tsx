@@ -5,7 +5,7 @@ import {
   EmbraceSQLClient,
   EmbraceSQLProvider,
   useEmbraceSQLClient,
-} from "../src";
+} from "@embracesql/react";
 import { renderHook } from "@testing-library/react";
 import React from "react";
 

@@ -1,4 +1,4 @@
 {
   "extends": "@embracesql/shared/tsconfig/react.tsconfig.json",
-  "include": ["./src/", "./test/"]
+  "include": ["./src/", "./test/", "../test/test/react.test.tsx"]
 }

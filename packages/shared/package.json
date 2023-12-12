@@ -14,7 +14,5 @@
     "parsimmon": "^1.18.1",
     "uuid": "^9.0.1"
   },
-  "devDependencies": {
-    "ts-jest": "^29.1.1"
-  }
+  "devDependencies": {}
 }
