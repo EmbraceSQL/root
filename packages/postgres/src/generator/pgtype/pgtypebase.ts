@@ -1,7 +1,12 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { asDocComment } from "../../util";
 import { PGTypeBool } from "./base/bool";
-import { PGTypeBigInt, PGTypeNumber } from "./base/number";
+import {
+  PGTypeBigInt,
+  PGTypeBytea,
+  PGTypeNumber,
+  PGTypeVector,
+} from "./base/number";
 import { PGTypeText, PGTypeTextArray } from "./base/text";
 import { PGTypeUri } from "./base/uri";
 import { PGCatalogType } from "./pgcatalogtype";
@@ -100,26 +105,6 @@ class PGTypeTid extends PGTypeBase {
       blockNumber: number;
       tupleIndex: number;
     };
-    `;
-  }
-}
-
-class PGTypeBytea extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = Uint8Array;
-    `;
-  }
-}
-
-class PGTypeVector extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = Float32Array;
     `;
   }
 }

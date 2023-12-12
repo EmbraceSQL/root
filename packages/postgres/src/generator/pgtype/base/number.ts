@@ -66,3 +66,37 @@ export class PGTypeBigInt extends PGTypeNumber {
     `;
   }
 }
+
+export class PGTypeBytea extends PGCatalogType {
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string) {
+      return new Uint8Array(JSON.parse(from));
+    }
+    `;
+  }
+  typescriptTypeDefinition(context: Context) {
+    console.assert(context);
+    return `
+    export type ${this.typescriptName} = Uint8Array;
+    `;
+  }
+}
+
+export class PGTypeVector extends PGCatalogType {
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string) {
+      return new Float32Array(JSON.parse(from));
+    }
+    `;
+  }
+  typescriptTypeDefinition(context: Context) {
+    console.assert(context);
+    return `
+    export type ${this.typescriptName} = Float32Array;
+    `;
+  }
+}
