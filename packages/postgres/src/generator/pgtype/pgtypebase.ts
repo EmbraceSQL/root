@@ -2,6 +2,7 @@ import { Context, TypeFactoryContext } from "../../context";
 import { asDocComment } from "../../util";
 import { PGTypeBool } from "./base/bool";
 import { PGTypeBigInt, PGTypeNumber } from "./base/number";
+import { PGTypeText, PGTypeTextArray } from "./base/text";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 
@@ -15,8 +16,6 @@ export class PGTypeBase extends PGCatalogType {
     switch (catalog.typname) {
       case "tid":
         return new PGTypeTid(catalog);
-      case "uuid":
-        return new PGTypeUuid(catalog);
       case "xml":
         return new PGTypeText(catalog);
       case "name":
@@ -104,24 +103,6 @@ class PGTypeTid extends PGTypeBase {
   }
 }
 
-class PGTypeText extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    export type ${this.typescriptName} = string;
-    `;
-  }
-}
-
-class PGTypeTextArray extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    export type ${this.typescriptName} = Array<string>;
-    `;
-  }
-}
-
 class PGTypeBytea extends PGTypeBase {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
@@ -138,16 +119,6 @@ class PGTypeVector extends PGTypeBase {
     return `
     ${asDocComment(this.comment)}
     export type ${this.typescriptName} = Float32Array;
-    `;
-  }
-}
-
-class PGTypeUuid extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = string;
     `;
   }
 }
