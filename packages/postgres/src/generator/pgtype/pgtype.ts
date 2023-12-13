@@ -67,6 +67,10 @@ class PGType extends PGCatalogType {
       const cons = overrides.get(catalog.typname);
       if (cons) return new cons(catalog);
     }
+    // oidvector is an odd one -- it's an array but a base type
+    if (catalog.typname === "oidvector")
+      return PGTypeBase.factory(context, catalog);
+
     if (catalog.typtype === "c") return new PGTypeComposite(context, catalog);
     if (catalog.typtype === "e") return new PGTypeEnum(context, catalog);
     if (catalog.typtype === "d") return new PGTypeDomain(context, catalog);

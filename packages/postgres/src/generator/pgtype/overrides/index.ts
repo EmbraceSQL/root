@@ -6,7 +6,6 @@ export { overrides } from "./_overrides";
 // yeah -- looks odd -- but registerOverride needs to be defined first
 export * from "./name";
 export * from "./oid";
-export * from "./oidvector";
 export * from "./uuid";
 export * from "./point";
 export * from "./box";

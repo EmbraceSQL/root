@@ -3,24 +3,45 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 import {
   DELIMITER,
+  GenerationContext,
   arrayAttribute,
   escapeArrayValue,
 } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
+type Props = {
+  arraySuffix: boolean;
+};
+
 /**
  * Arrays of other types are somewhat simple to declare - it is just Array<...>.
  */
 export class PGTypeArray extends PGCatalogType {
-  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
+  constructor(
+    context: TypeFactoryContext,
+    catalog: CatalogRow,
+    private props: Props = { arraySuffix: true },
+  ) {
     super(catalog);
   }
 
-  /**
-   * Arrays have ... the word Array...
-   */
+  typescriptTypeParser(context: GenerationContext) {
+    const elementType = (context as Context).resolveType(this.catalog.typelem);
+    return `
+    parse${this.typescriptName}(from: string) {
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e:unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return parse${elementType.typescriptName}(\`\${e}\`);
+      });
+    }
+    `;
+  }
+
   get typescriptName() {
-    return `${pascalCase(this.catalog.typname)}Array`;
+    return `${pascalCase(this.catalog.typname)}${
+      this.props.arraySuffix ? "Array" : ""
+    }`;
   }
 
   typescriptTypeDefinition(context: Context) {

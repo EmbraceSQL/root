@@ -1,8 +1,11 @@
-import { GeneratesTypeScriptParser, GenerationContext } from "@embracesql/shared";
 import { Context, PostgresTypecast } from "../../context";
 import { asDocComment } from "../../util";
-import { pascalCase } from "change-case";
 import { CatalogRow } from "./pgtype";
+import {
+  GeneratesTypeScriptParser,
+  GenerationContext,
+} from "@embracesql/shared";
+import { pascalCase } from "change-case";
 
 /**
  * All types come from here.
@@ -29,12 +32,12 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
    * The default parser doesn't do much -- just echoes a string.
    */
   typescriptTypeParser(context: GenerationContext) {
-    console.assert(context)
+    console.assert(context);
     return `
     parse${this.typescriptName}(from: string) {
       return from;
     }
-    `
+    `;
   }
 
   /**

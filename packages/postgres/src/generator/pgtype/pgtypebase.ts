@@ -11,6 +11,7 @@ import { PGTypeText, PGTypeTextArray } from "./base/text";
 import { PGTypeUri } from "./base/uri";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
+import { PGTypeArray } from "./pgtypearray";
 
 /**
  * Base types defined by PostgreSQL.
@@ -78,6 +79,8 @@ export class PGTypeBase extends PGCatalogType {
         return new PGTypeText(catalog);
       case "uri":
         return new PGTypeUri(catalog);
+      case "oidvector":
+        return new PGTypeArray(context, catalog, { arraySuffix: false });
       default:
         // if the db wants to code it as text, so do we
         if (catalog.typoutput === "textout") return new PGTypeText(catalog);

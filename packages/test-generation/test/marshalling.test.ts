@@ -113,4 +113,36 @@ describe("The database can marshall base types", () => {
       roundTrip("pg_catalog_bool", PgCatalog.parseBool, val as string);
     }
   });
+  it("that are numbers", () => {
+    for (const val of ["0", 0, "1.5", 1.5, "-1", -1]) {
+      roundTrip("pg_catalog_numeric", PgCatalog.parseNumeric, val as string);
+    }
+  });
+  it("that are text", () => {
+    for (const val of ["0", "1.5", "hello 🌎"]) {
+      roundTrip("pg_catalog_text", PgCatalog.parseText, val);
+    }
+  });
+  it("that are points", () => {
+    for (const val of [
+      JSON.stringify({ x: 0, y: 0 }),
+      JSON.stringify({ x: 1.5, y: 100 }),
+    ]) {
+      roundTrip("pg_catalog_point", PgCatalog.parsePoint, val);
+    }
+  });
+  it("that are oids", () => {
+    for (const val of ["0", 0, "1", 2]) {
+      roundTrip("pg_catalog_oid", PgCatalog.parseOid, val as string);
+    }
+  });
+  it("that are oidvectors", () => {
+    for (const val of [
+      JSON.stringify([1, 2, 3]),
+      JSON.stringify([]),
+      JSON.stringify([null]),
+    ]) {
+      roundTrip("pg_catalog_oidvector", PgCatalog.parseOidvector, val);
+    }
+  });
 });

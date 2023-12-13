@@ -585,7 +585,7 @@ export namespace PgCatalog {
 
   export type Oid = number;
 
-  export type Oidvector = Array<number>;
+  export type Oidvector = Array<Oid>;
 
   export type Path = Array<Point>;
 
@@ -6693,875 +6693,1747 @@ export namespace ScriptTypes {
 // begin string parsers
 export namespace PgCatalog {
   export function parseAclitemArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseAclitem(`${e}`);
+    });
   }
 
   export function parseBitArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseBit(`${e}`);
+    });
   }
 
   export function parseBoolArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseBool(`${e}`);
+    });
   }
 
   export function parseBoxArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseBox(`${e}`);
+    });
   }
 
   export function parseBpcharArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseBpchar(`${e}`);
+    });
   }
 
   export function parseByteaArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseBytea(`${e}`);
+    });
   }
 
   export function parseCharArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseChar(`${e}`);
+    });
   }
 
   export function parseCidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCid(`${e}`);
+    });
   }
 
   export function parseCidrArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCidr(`${e}`);
+    });
   }
 
   export function parseCircleArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCircle(`${e}`);
+    });
   }
 
   export function parseCstringArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCstring(`${e}`);
+    });
   }
 
   export function parseDateArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDate(`${e}`);
+    });
   }
 
   export function parseDatemultirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDatemultirange(`${e}`);
+    });
   }
 
   export function parseDaterangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDaterange(`${e}`);
+    });
   }
 
   export function parseFloat4Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFloat4(`${e}`);
+    });
   }
 
   export function parseFloat8Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFloat8(`${e}`);
+    });
   }
 
   export function parseGtsvectorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseGtsvector(`${e}`);
+    });
   }
 
   export function parseInetArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInet(`${e}`);
+    });
   }
 
   export function parseInt2Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt2(`${e}`);
+    });
   }
 
   export function parseInt2vectorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt2vector(`${e}`);
+    });
   }
 
   export function parseInt4Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt4(`${e}`);
+    });
   }
 
   export function parseInt4multirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt4multirange(`${e}`);
+    });
   }
 
   export function parseInt4rangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt4range(`${e}`);
+    });
   }
 
   export function parseInt8Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt8(`${e}`);
+    });
   }
 
   export function parseInt8multirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt8multirange(`${e}`);
+    });
   }
 
   export function parseInt8rangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInt8range(`${e}`);
+    });
   }
 
   export function parseIntervalArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInterval(`${e}`);
+    });
   }
 
   export function parseJsonArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseJson(`${e}`);
+    });
   }
 
   export function parseJsonbArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseJsonb(`${e}`);
+    });
   }
 
   export function parseJsonpathArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseJsonpath(`${e}`);
+    });
   }
 
   export function parseLineArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseLine(`${e}`);
+    });
   }
 
   export function parseLsegArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseLseg(`${e}`);
+    });
   }
 
   export function parseMacaddrArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseMacaddr(`${e}`);
+    });
   }
 
   export function parseMacaddr8Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseMacaddr8(`${e}`);
+    });
   }
 
   export function parseMoneyArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseMoney(`${e}`);
+    });
   }
 
   export function parseNameArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseName(`${e}`);
+    });
   }
 
   export function parseNumericArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseNumeric(`${e}`);
+    });
   }
 
   export function parseNummultirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseNummultirange(`${e}`);
+    });
   }
 
   export function parseNumrangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseNumrange(`${e}`);
+    });
   }
 
   export function parseOidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseOid(`${e}`);
+    });
   }
 
   export function parseOidvectorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseOidvector(`${e}`);
+    });
   }
 
   export function parsePathArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePath(`${e}`);
+    });
   }
 
   export function parsePgAggregateArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAggregate(`${e}`);
+    });
   }
 
   export function parsePgAmArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAm(`${e}`);
+    });
   }
 
   export function parsePgAmopArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAmop(`${e}`);
+    });
   }
 
   export function parsePgAmprocArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAmproc(`${e}`);
+    });
   }
 
   export function parsePgAttrdefArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAttrdef(`${e}`);
+    });
   }
 
   export function parsePgAttributeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAttribute(`${e}`);
+    });
   }
 
   export function parsePgAuthMembersArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAuthMembers(`${e}`);
+    });
   }
 
   export function parsePgAuthidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAuthid(`${e}`);
+    });
   }
 
   export function parsePgAvailableExtensionVersionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAvailableExtensionVersions(`${e}`);
+    });
   }
 
   export function parsePgAvailableExtensionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgAvailableExtensions(`${e}`);
+    });
   }
 
   export function parsePgBackendMemoryContextsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgBackendMemoryContexts(`${e}`);
+    });
   }
 
   export function parsePgCastArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgCast(`${e}`);
+    });
   }
 
   export function parsePgClassArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgClass(`${e}`);
+    });
   }
 
   export function parsePgCollationArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgCollation(`${e}`);
+    });
   }
 
   export function parsePgConfigArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgConfig(`${e}`);
+    });
   }
 
   export function parsePgConstraintArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgConstraint(`${e}`);
+    });
   }
 
   export function parsePgConversionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgConversion(`${e}`);
+    });
   }
 
   export function parsePgCursorsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgCursors(`${e}`);
+    });
   }
 
   export function parsePgDatabaseArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgDatabase(`${e}`);
+    });
   }
 
   export function parsePgDbRoleSettingArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgDbRoleSetting(`${e}`);
+    });
   }
 
   export function parsePgDefaultAclArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgDefaultAcl(`${e}`);
+    });
   }
 
   export function parsePgDependArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgDepend(`${e}`);
+    });
   }
 
   export function parsePgDescriptionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgDescription(`${e}`);
+    });
   }
 
   export function parsePgEnumArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgEnum(`${e}`);
+    });
   }
 
   export function parsePgEventTriggerArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgEventTrigger(`${e}`);
+    });
   }
 
   export function parsePgExtensionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgExtension(`${e}`);
+    });
   }
 
   export function parsePgFileSettingsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgFileSettings(`${e}`);
+    });
   }
 
   export function parsePgForeignDataWrapperArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgForeignDataWrapper(`${e}`);
+    });
   }
 
   export function parsePgForeignServerArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgForeignServer(`${e}`);
+    });
   }
 
   export function parsePgForeignTableArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgForeignTable(`${e}`);
+    });
   }
 
   export function parsePgGroupArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgGroup(`${e}`);
+    });
   }
 
   export function parsePgHbaFileRulesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgHbaFileRules(`${e}`);
+    });
   }
 
   export function parsePgIdentFileMappingsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgIdentFileMappings(`${e}`);
+    });
   }
 
   export function parsePgIndexArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgIndex(`${e}`);
+    });
   }
 
   export function parsePgIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgIndexes(`${e}`);
+    });
   }
 
   export function parsePgInheritsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgInherits(`${e}`);
+    });
   }
 
   export function parsePgInitPrivsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgInitPrivs(`${e}`);
+    });
   }
 
   export function parsePgLanguageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgLanguage(`${e}`);
+    });
   }
 
   export function parsePgLargeobjectArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgLargeobject(`${e}`);
+    });
   }
 
   export function parsePgLargeobjectMetadataArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgLargeobjectMetadata(`${e}`);
+    });
   }
 
   export function parsePgLocksArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgLocks(`${e}`);
+    });
   }
 
   export function parsePgLsnArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgLsn(`${e}`);
+    });
   }
 
   export function parsePgMatviewsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgMatviews(`${e}`);
+    });
   }
 
   export function parsePgNamespaceArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgNamespace(`${e}`);
+    });
   }
 
   export function parsePgOpclassArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgOpclass(`${e}`);
+    });
   }
 
   export function parsePgOperatorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgOperator(`${e}`);
+    });
   }
 
   export function parsePgOpfamilyArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgOpfamily(`${e}`);
+    });
   }
 
   export function parsePgParameterAclArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgParameterAcl(`${e}`);
+    });
   }
 
   export function parsePgPartitionedTableArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPartitionedTable(`${e}`);
+    });
   }
 
   export function parsePgPoliciesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPolicies(`${e}`);
+    });
   }
 
   export function parsePgPolicyArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPolicy(`${e}`);
+    });
   }
 
   export function parsePgPreparedStatementsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPreparedStatements(`${e}`);
+    });
   }
 
   export function parsePgPreparedXactsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPreparedXacts(`${e}`);
+    });
   }
 
   export function parsePgProcArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgProc(`${e}`);
+    });
   }
 
   export function parsePgPublicationArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPublication(`${e}`);
+    });
   }
 
   export function parsePgPublicationNamespaceArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPublicationNamespace(`${e}`);
+    });
   }
 
   export function parsePgPublicationRelArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPublicationRel(`${e}`);
+    });
   }
 
   export function parsePgPublicationTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgPublicationTables(`${e}`);
+    });
   }
 
   export function parsePgRangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgRange(`${e}`);
+    });
   }
 
   export function parsePgReplicationOriginArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgReplicationOrigin(`${e}`);
+    });
   }
 
   export function parsePgReplicationOriginStatusArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgReplicationOriginStatus(`${e}`);
+    });
   }
 
   export function parsePgReplicationSlotsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgReplicationSlots(`${e}`);
+    });
   }
 
   export function parsePgRewriteArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgRewrite(`${e}`);
+    });
   }
 
   export function parsePgRolesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgRoles(`${e}`);
+    });
   }
 
   export function parsePgRulesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgRules(`${e}`);
+    });
   }
 
   export function parsePgSeclabelArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSeclabel(`${e}`);
+    });
   }
 
   export function parsePgSeclabelsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSeclabels(`${e}`);
+    });
   }
 
   export function parsePgSequenceArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSequence(`${e}`);
+    });
   }
 
   export function parsePgSequencesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSequences(`${e}`);
+    });
   }
 
   export function parsePgSettingsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSettings(`${e}`);
+    });
   }
 
   export function parsePgShadowArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgShadow(`${e}`);
+    });
   }
 
   export function parsePgShdependArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgShdepend(`${e}`);
+    });
   }
 
   export function parsePgShdescriptionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgShdescription(`${e}`);
+    });
   }
 
   export function parsePgShmemAllocationsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgShmemAllocations(`${e}`);
+    });
   }
 
   export function parsePgShseclabelArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgShseclabel(`${e}`);
+    });
   }
 
   export function parsePgSnapshotArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSnapshot(`${e}`);
+    });
   }
 
   export function parsePgStatActivityArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatActivity(`${e}`);
+    });
   }
 
   export function parsePgStatAllIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatAllIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatAllTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatAllTables(`${e}`);
+    });
   }
 
   export function parsePgStatArchiverArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatArchiver(`${e}`);
+    });
   }
 
   export function parsePgStatBgwriterArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatBgwriter(`${e}`);
+    });
   }
 
   export function parsePgStatDatabaseArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatDatabase(`${e}`);
+    });
   }
 
   export function parsePgStatDatabaseConflictsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatDatabaseConflicts(`${e}`);
+    });
   }
 
   export function parsePgStatGssapiArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatGssapi(`${e}`);
+    });
   }
 
   export function parsePgStatIoArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatIo(`${e}`);
+    });
   }
 
   export function parsePgStatProgressAnalyzeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressAnalyze(`${e}`);
+    });
   }
 
   export function parsePgStatProgressBasebackupArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressBasebackup(`${e}`);
+    });
   }
 
   export function parsePgStatProgressClusterArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressCluster(`${e}`);
+    });
   }
 
   export function parsePgStatProgressCopyArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressCopy(`${e}`);
+    });
   }
 
   export function parsePgStatProgressCreateIndexArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressCreateIndex(`${e}`);
+    });
   }
 
   export function parsePgStatProgressVacuumArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatProgressVacuum(`${e}`);
+    });
   }
 
   export function parsePgStatRecoveryPrefetchArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatRecoveryPrefetch(`${e}`);
+    });
   }
 
   export function parsePgStatReplicationArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatReplication(`${e}`);
+    });
   }
 
   export function parsePgStatReplicationSlotsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatReplicationSlots(`${e}`);
+    });
   }
 
   export function parsePgStatSlruArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSlru(`${e}`);
+    });
   }
 
   export function parsePgStatSslArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSsl(`${e}`);
+    });
   }
 
   export function parsePgStatSubscriptionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSubscription(`${e}`);
+    });
   }
 
   export function parsePgStatSubscriptionStatsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSubscriptionStats(`${e}`);
+    });
   }
 
   export function parsePgStatSysIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSysIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatSysTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatSysTables(`${e}`);
+    });
   }
 
   export function parsePgStatUserFunctionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatUserFunctions(`${e}`);
+    });
   }
 
   export function parsePgStatUserIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatUserIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatUserTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatUserTables(`${e}`);
+    });
   }
 
   export function parsePgStatWalArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatWal(`${e}`);
+    });
   }
 
   export function parsePgStatWalReceiverArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatWalReceiver(`${e}`);
+    });
   }
 
   export function parsePgStatXactAllTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatXactAllTables(`${e}`);
+    });
   }
 
   export function parsePgStatXactSysTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatXactSysTables(`${e}`);
+    });
   }
 
   export function parsePgStatXactUserFunctionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatXactUserFunctions(`${e}`);
+    });
   }
 
   export function parsePgStatXactUserTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatXactUserTables(`${e}`);
+    });
   }
 
   export function parsePgStatioAllIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioAllIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatioAllSequencesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioAllSequences(`${e}`);
+    });
   }
 
   export function parsePgStatioAllTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioAllTables(`${e}`);
+    });
   }
 
   export function parsePgStatioSysIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioSysIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatioSysSequencesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioSysSequences(`${e}`);
+    });
   }
 
   export function parsePgStatioSysTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioSysTables(`${e}`);
+    });
   }
 
   export function parsePgStatioUserIndexesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioUserIndexes(`${e}`);
+    });
   }
 
   export function parsePgStatioUserSequencesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioUserSequences(`${e}`);
+    });
   }
 
   export function parsePgStatioUserTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatioUserTables(`${e}`);
+    });
   }
 
   export function parsePgStatisticArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatistic(`${e}`);
+    });
   }
 
   export function parsePgStatisticExtArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatisticExt(`${e}`);
+    });
   }
 
   export function parsePgStatisticExtDataArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatisticExtData(`${e}`);
+    });
   }
 
   export function parsePgStatsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStats(`${e}`);
+    });
   }
 
   export function parsePgStatsExtArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatsExt(`${e}`);
+    });
   }
 
   export function parsePgStatsExtExprsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgStatsExtExprs(`${e}`);
+    });
   }
 
   export function parsePgSubscriptionArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSubscription(`${e}`);
+    });
   }
 
   export function parsePgSubscriptionRelArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgSubscriptionRel(`${e}`);
+    });
   }
 
   export function parsePgTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTables(`${e}`);
+    });
   }
 
   export function parsePgTablespaceArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTablespace(`${e}`);
+    });
   }
 
   export function parsePgTimezoneAbbrevsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTimezoneAbbrevs(`${e}`);
+    });
   }
 
   export function parsePgTimezoneNamesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTimezoneNames(`${e}`);
+    });
   }
 
   export function parsePgTransformArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTransform(`${e}`);
+    });
   }
 
   export function parsePgTriggerArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTrigger(`${e}`);
+    });
   }
 
   export function parsePgTsConfigArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTsConfig(`${e}`);
+    });
   }
 
   export function parsePgTsConfigMapArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTsConfigMap(`${e}`);
+    });
   }
 
   export function parsePgTsDictArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTsDict(`${e}`);
+    });
   }
 
   export function parsePgTsParserArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTsParser(`${e}`);
+    });
   }
 
   export function parsePgTsTemplateArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgTsTemplate(`${e}`);
+    });
   }
 
   export function parsePgTypeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgType(`${e}`);
+    });
   }
 
   export function parsePgUserArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgUser(`${e}`);
+    });
   }
 
   export function parsePgUserMappingArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgUserMapping(`${e}`);
+    });
   }
 
   export function parsePgUserMappingsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgUserMappings(`${e}`);
+    });
   }
 
   export function parsePgViewsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePgViews(`${e}`);
+    });
   }
 
   export function parsePointArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePoint(`${e}`);
+    });
   }
 
   export function parsePolygonArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePolygon(`${e}`);
+    });
   }
 
   export function parseRecordArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRecord(`${e}`);
+    });
   }
 
   export function parseRefcursorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRefcursor(`${e}`);
+    });
   }
 
   export function parseRegclassArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegclass(`${e}`);
+    });
   }
 
   export function parseRegcollationArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegcollation(`${e}`);
+    });
   }
 
   export function parseRegconfigArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegconfig(`${e}`);
+    });
   }
 
   export function parseRegdictionaryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegdictionary(`${e}`);
+    });
   }
 
   export function parseRegnamespaceArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegnamespace(`${e}`);
+    });
   }
 
   export function parseRegoperArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegoper(`${e}`);
+    });
   }
 
   export function parseRegoperatorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegoperator(`${e}`);
+    });
   }
 
   export function parseRegprocArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegproc(`${e}`);
+    });
   }
 
   export function parseRegprocedureArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegprocedure(`${e}`);
+    });
   }
 
   export function parseRegroleArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegrole(`${e}`);
+    });
   }
 
   export function parseRegtypeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRegtype(`${e}`);
+    });
   }
 
   export function parseTextArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseText(`${e}`);
+    });
   }
 
   export function parseTidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTid(`${e}`);
+    });
   }
 
   export function parseTimeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTime(`${e}`);
+    });
   }
 
   export function parseTimestampArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTimestamp(`${e}`);
+    });
   }
 
   export function parseTimestamptzArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTimestamptz(`${e}`);
+    });
   }
 
   export function parseTimetzArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTimetz(`${e}`);
+    });
   }
 
   export function parseTsmultirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTsmultirange(`${e}`);
+    });
   }
 
   export function parseTsqueryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTsquery(`${e}`);
+    });
   }
 
   export function parseTsrangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTsrange(`${e}`);
+    });
   }
 
   export function parseTstzmultirangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTstzmultirange(`${e}`);
+    });
   }
 
   export function parseTstzrangeArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTstzrange(`${e}`);
+    });
   }
 
   export function parseTsvectorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTsvector(`${e}`);
+    });
   }
 
   export function parseTxidSnapshotArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTxidSnapshot(`${e}`);
+    });
   }
 
   export function parseUuidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUuid(`${e}`);
+    });
   }
 
   export function parseVarbitArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseVarbit(`${e}`);
+    });
   }
 
   export function parseVarcharArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseVarchar(`${e}`);
+    });
   }
 
   export function parseXidArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseXid(`${e}`);
+    });
   }
 
   export function parseXid8Array(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseXid8(`${e}`);
+    });
   }
 
   export function parseXmlArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseXml(`${e}`);
+    });
   }
 
   export function parseAclitem(from: string) {
@@ -7805,7 +8677,11 @@ export namespace PgCatalog {
   }
 
   export function parseOidvector(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseOid(`${e}`);
+    });
   }
 
   export function parsePath(from: string) {
@@ -8572,99 +9448,195 @@ export namespace PgCatalog {
 }
 export namespace Public {
   export function parseActorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseActor(`${e}`);
+    });
   }
 
   export function parseActorInfoArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseActorInfo(`${e}`);
+    });
   }
 
   export function parseAddressArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseAddress(`${e}`);
+    });
   }
 
   export function parseCategoryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCategory(`${e}`);
+    });
   }
 
   export function parseCityArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCity(`${e}`);
+    });
   }
 
   export function parseCountryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCountry(`${e}`);
+    });
   }
 
   export function parseCustomerArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCustomer(`${e}`);
+    });
   }
 
   export function parseCustomerListArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCustomerList(`${e}`);
+    });
   }
 
   export function parseFilmArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFilm(`${e}`);
+    });
   }
 
   export function parseFilmActorArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFilmActor(`${e}`);
+    });
   }
 
   export function parseFilmCategoryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFilmCategory(`${e}`);
+    });
   }
 
   export function parseFilmListArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseFilmList(`${e}`);
+    });
   }
 
   export function parseInventoryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInventory(`${e}`);
+    });
   }
 
   export function parseLanguageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseLanguage(`${e}`);
+    });
   }
 
   export function parseMpaaRatingArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseMpaaRating(`${e}`);
+    });
   }
 
   export function parseNicerButSlowerFilmListArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseNicerButSlowerFilmList(`${e}`);
+    });
   }
 
   export function parsePaymentArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parsePayment(`${e}`);
+    });
   }
 
   export function parseRentalArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRental(`${e}`);
+    });
   }
 
   export function parseSalesByFilmCategoryArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSalesByFilmCategory(`${e}`);
+    });
   }
 
   export function parseSalesByStoreArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSalesByStore(`${e}`);
+    });
   }
 
   export function parseStaffArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseStaff(`${e}`);
+    });
   }
 
   export function parseStaffListArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseStaffList(`${e}`);
+    });
   }
 
   export function parseStoreArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseStore(`${e}`);
+    });
   }
 
   export function parseYearArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseYear(`${e}`);
+    });
   }
 
   export function parseActor(from: string) {
@@ -8765,135 +9737,267 @@ export namespace Public {
 }
 export namespace InformationSchema {
   export function parseAdministrableRoleAuthorizationsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseAdministrableRoleAuthorizations(`${e}`);
+    });
   }
 
   export function parseApplicableRolesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseApplicableRoles(`${e}`);
+    });
   }
 
   export function parseAttributesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseAttributes(`${e}`);
+    });
   }
 
   export function parseCardinalNumberArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCardinalNumber(`${e}`);
+    });
   }
 
   export function parseCharacterDataArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCharacterData(`${e}`);
+    });
   }
 
   export function parseCharacterSetsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCharacterSets(`${e}`);
+    });
   }
 
   export function parseCheckConstraintRoutineUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCheckConstraintRoutineUsage(`${e}`);
+    });
   }
 
   export function parseCheckConstraintsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCheckConstraints(`${e}`);
+    });
   }
 
   export function parseCollationCharacterSetApplicabilityArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCollationCharacterSetApplicability(`${e}`);
+    });
   }
 
   export function parseCollationsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseCollations(`${e}`);
+    });
   }
 
   export function parseColumnColumnUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumnColumnUsage(`${e}`);
+    });
   }
 
   export function parseColumnDomainUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumnDomainUsage(`${e}`);
+    });
   }
 
   export function parseColumnOptionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumnOptions(`${e}`);
+    });
   }
 
   export function parseColumnPrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumnPrivileges(`${e}`);
+    });
   }
 
   export function parseColumnUdtUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumnUdtUsage(`${e}`);
+    });
   }
 
   export function parseColumnsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseColumns(`${e}`);
+    });
   }
 
   export function parseConstraintColumnUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseConstraintColumnUsage(`${e}`);
+    });
   }
 
   export function parseConstraintTableUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseConstraintTableUsage(`${e}`);
+    });
   }
 
   export function parseDataTypePrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDataTypePrivileges(`${e}`);
+    });
   }
 
   export function parseDomainConstraintsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDomainConstraints(`${e}`);
+    });
   }
 
   export function parseDomainUdtUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDomainUdtUsage(`${e}`);
+    });
   }
 
   export function parseDomainsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseDomains(`${e}`);
+    });
   }
 
   export function parseElementTypesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseElementTypes(`${e}`);
+    });
   }
 
   export function parseEnabledRolesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseEnabledRoles(`${e}`);
+    });
   }
 
   export function parseForeignDataWrapperOptionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignDataWrapperOptions(`${e}`);
+    });
   }
 
   export function parseForeignDataWrappersArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignDataWrappers(`${e}`);
+    });
   }
 
   export function parseForeignServerOptionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignServerOptions(`${e}`);
+    });
   }
 
   export function parseForeignServersArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignServers(`${e}`);
+    });
   }
 
   export function parseForeignTableOptionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignTableOptions(`${e}`);
+    });
   }
 
   export function parseForeignTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseForeignTables(`${e}`);
+    });
   }
 
   export function parseInformationSchemaCatalogNameArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseInformationSchemaCatalogName(`${e}`);
+    });
   }
 
   export function parseKeyColumnUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseKeyColumnUsage(`${e}`);
+    });
   }
 
   export function parseParametersArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseParameters(`${e}`);
+    });
   }
 
   export function parsePgForeignDataWrappers(from: string) {
@@ -8917,147 +10021,291 @@ export namespace InformationSchema {
   }
 
   export function parseReferentialConstraintsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseReferentialConstraints(`${e}`);
+    });
   }
 
   export function parseRoleColumnGrantsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoleColumnGrants(`${e}`);
+    });
   }
 
   export function parseRoleRoutineGrantsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoleRoutineGrants(`${e}`);
+    });
   }
 
   export function parseRoleTableGrantsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoleTableGrants(`${e}`);
+    });
   }
 
   export function parseRoleUdtGrantsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoleUdtGrants(`${e}`);
+    });
   }
 
   export function parseRoleUsageGrantsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoleUsageGrants(`${e}`);
+    });
   }
 
   export function parseRoutineColumnUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutineColumnUsage(`${e}`);
+    });
   }
 
   export function parseRoutinePrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutinePrivileges(`${e}`);
+    });
   }
 
   export function parseRoutineRoutineUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutineRoutineUsage(`${e}`);
+    });
   }
 
   export function parseRoutineSequenceUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutineSequenceUsage(`${e}`);
+    });
   }
 
   export function parseRoutineTableUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutineTableUsage(`${e}`);
+    });
   }
 
   export function parseRoutinesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseRoutines(`${e}`);
+    });
   }
 
   export function parseSchemataArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSchemata(`${e}`);
+    });
   }
 
   export function parseSequencesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSequences(`${e}`);
+    });
   }
 
   export function parseSqlFeaturesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSqlFeatures(`${e}`);
+    });
   }
 
   export function parseSqlIdentifierArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSqlIdentifier(`${e}`);
+    });
   }
 
   export function parseSqlImplementationInfoArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSqlImplementationInfo(`${e}`);
+    });
   }
 
   export function parseSqlPartsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSqlParts(`${e}`);
+    });
   }
 
   export function parseSqlSizingArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseSqlSizing(`${e}`);
+    });
   }
 
   export function parseTableConstraintsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTableConstraints(`${e}`);
+    });
   }
 
   export function parseTablePrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTablePrivileges(`${e}`);
+    });
   }
 
   export function parseTablesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTables(`${e}`);
+    });
   }
 
   export function parseTimeStampArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTimeStamp(`${e}`);
+    });
   }
 
   export function parseTransformsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTransforms(`${e}`);
+    });
   }
 
   export function parseTriggeredUpdateColumnsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTriggeredUpdateColumns(`${e}`);
+    });
   }
 
   export function parseTriggersArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseTriggers(`${e}`);
+    });
   }
 
   export function parseUdtPrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUdtPrivileges(`${e}`);
+    });
   }
 
   export function parseUsagePrivilegesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUsagePrivileges(`${e}`);
+    });
   }
 
   export function parseUserDefinedTypesArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUserDefinedTypes(`${e}`);
+    });
   }
 
   export function parseUserMappingOptionsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUserMappingOptions(`${e}`);
+    });
   }
 
   export function parseUserMappingsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseUserMappings(`${e}`);
+    });
   }
 
   export function parseViewColumnUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseViewColumnUsage(`${e}`);
+    });
   }
 
   export function parseViewRoutineUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseViewRoutineUsage(`${e}`);
+    });
   }
 
   export function parseViewTableUsageArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseViewTableUsage(`${e}`);
+    });
   }
 
   export function parseViewsArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseViews(`${e}`);
+    });
   }
 
   export function parseYesOrNoArray(from: string) {
-    return from;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      parseYesOrNo(`${e}`);
+    });
   }
 
   export function parseAdministrableRoleAuthorizations(from: string) {

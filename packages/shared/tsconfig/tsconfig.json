@@ -9,7 +9,8 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "strict": true,
-    "jsx": "react-jsxdev"
+    "jsx": "react-jsxdev",
+    "sourceMap": true
   },
   "exclude": ["node_modules", "dist"]
 }
