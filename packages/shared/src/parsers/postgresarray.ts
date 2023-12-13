@@ -1,4 +1,4 @@
-import { DELIMITER } from "./shared";
+import { delimiter } from ".";
 import parsimmon from "parsimmon";
 
 /**
@@ -8,7 +8,6 @@ import parsimmon from "parsimmon";
 const startArray = parsimmon.string("{");
 const endArray = parsimmon.string("}");
 
-const delimiter = parsimmon.string(DELIMITER);
 const separators = parsimmon.oneOf("{},");
 
 /**

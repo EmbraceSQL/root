@@ -1,4 +1,9 @@
-import { Database, PgCatalog, PostgresTypecasts } from "../src/marshalling";
+import {
+  Database,
+  PgCatalog,
+  Public,
+  PostgresTypecasts,
+} from "../src/marshalling";
 
 /**
  * Works-at-all.
@@ -231,6 +236,11 @@ describe("The database can marshall base types", () => {
         PgCatalog.parseInt2vector,
         val as string,
       );
+    }
+  });
+  it("that are cubes", () => {
+    for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
+      roundTrip("public_cube", Public.parseCube, val as string);
     }
   });
 });

@@ -1,3 +1,4 @@
+import { interleave } from ".";
 import parsimmon, { Parser } from "parsimmon";
 
 /**
@@ -65,15 +66,6 @@ export const compositeAttribute = parsimmon.alt(
   bareString,
   emptyIsNull,
 );
-
-const interleave = <T, U>(arr: T[], separator: U) => {
-  const ret = new Array<T | U>();
-  arr.forEach((e, i) => {
-    ret.push(e);
-    if (i < arr.length - 1) ret.push(separator);
-  });
-  return ret;
-};
 
 interface ObjectParser {
   [name: string]: string | null;
