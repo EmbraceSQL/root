@@ -12,7 +12,7 @@ export * from "./geometric/box";
 export * from "./geometric/circle";
 export * from "./geometric/line";
 export * from "./geometric/lseg";
-export * from "./int2vector";
+export * from "./vector";
 export * from "./date";
 export * from "./json";
 export * from "./cube";

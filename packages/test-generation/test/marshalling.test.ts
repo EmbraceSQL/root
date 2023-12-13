@@ -224,4 +224,13 @@ describe("The database can marshall base types", () => {
       roundTrip("pg_catalog_pg_lsn", PgCatalog.parsePgLsn, val as string);
     }
   });
+  it("that are vectors", () => {
+    for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
+      roundTrip(
+        "pg_catalog_int2vector",
+        PgCatalog.parseInt2vector,
+        val as string,
+      );
+    }
+  });
 });

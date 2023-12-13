@@ -8808,7 +8808,11 @@ export namespace PgCatalog {
   }
 
   export function parseInt2vector(from: string | null) {
-    return from;
+    if (from === null) return null;
+    const source = Array.isArray(from)
+      ? new Uint16Array(from)
+      : JSON.parse(from);
+    return new Uint16Array(source);
   }
 
   export function parseInt4(from: string | null) {

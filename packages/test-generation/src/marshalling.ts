@@ -5326,6 +5326,394 @@ export namespace InformationSchema {
   }
 }
 
+export namespace Public {
+  export type CubeArray = Array<Cube>;
+
+  export type SlugArray = Array<Slug>;
+
+  export type Cube = Float32Array;
+
+  export interface Slug {
+    slugId?: PgCatalog.Int4;
+  }
+
+  export interface SlugNotPrimaryKey {}
+
+  export function includesSlugPrimaryKey(value: Partial<Slug>): value is Slug {
+    return value.slugId !== undefined;
+  }
+
+  export interface CubeInArguments {
+    _0: Nullable<PgCatalog.Cstring>;
+  }
+
+  export type CubeInSingleResultsetRecord = Cube;
+
+  export type CubeInResultset = CubeInSingleResultsetRecord[];
+
+  export interface Cube9c45Arguments {
+    _0: Nullable<PgCatalog.Float8Array>;
+    _1: Nullable<PgCatalog.Float8Array>;
+  }
+
+  export type Cube9c45SingleResultsetRecord = Cube;
+
+  export type Cube9c45Resultset = Cube9c45SingleResultsetRecord[];
+
+  export interface Cube2e6dArguments {
+    _0: Nullable<PgCatalog.Float8Array>;
+  }
+
+  export type Cube2e6dSingleResultsetRecord = Cube;
+
+  export type Cube2e6dResultset = Cube2e6dSingleResultsetRecord[];
+
+  export interface CubeOutArguments {
+    _0: Nullable<Cube>;
+  }
+
+  export type CubeOutSingleResultsetRecord = PgCatalog.Cstring;
+
+  export type CubeOutResultset = CubeOutSingleResultsetRecord[];
+
+  export interface CubeEqArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeEqSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeEqResultset = CubeEqSingleResultsetRecord[];
+
+  export interface CubeNeArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeNeSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeNeResultset = CubeNeSingleResultsetRecord[];
+
+  export interface CubeLtArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeLtSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeLtResultset = CubeLtSingleResultsetRecord[];
+
+  export interface CubeGtArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeGtSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeGtResultset = CubeGtSingleResultsetRecord[];
+
+  export interface CubeLeArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeLeSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeLeResultset = CubeLeSingleResultsetRecord[];
+
+  export interface CubeGeArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeGeSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeGeResultset = CubeGeSingleResultsetRecord[];
+
+  export interface CubeCmpArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeCmpSingleResultsetRecord = PgCatalog.Int4;
+
+  export type CubeCmpResultset = CubeCmpSingleResultsetRecord[];
+
+  export interface CubeContainsArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeContainsSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeContainsResultset = CubeContainsSingleResultsetRecord[];
+
+  export interface CubeContainedArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeContainedSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeContainedResultset = CubeContainedSingleResultsetRecord[];
+
+  export interface CubeOverlapArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeOverlapSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeOverlapResultset = CubeOverlapSingleResultsetRecord[];
+
+  export interface CubeUnionArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeUnionSingleResultsetRecord = Cube;
+
+  export type CubeUnionResultset = CubeUnionSingleResultsetRecord[];
+
+  export interface CubeInterArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeInterSingleResultsetRecord = Cube;
+
+  export type CubeInterResultset = CubeInterSingleResultsetRecord[];
+
+  export interface CubeSizeArguments {
+    _0: Nullable<Cube>;
+  }
+
+  export type CubeSizeSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeSizeResultset = CubeSizeSingleResultsetRecord[];
+
+  export interface CubeSubsetArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Int4Array>;
+  }
+
+  export type CubeSubsetSingleResultsetRecord = Cube;
+
+  export type CubeSubsetResultset = CubeSubsetSingleResultsetRecord[];
+
+  export interface CubeDistanceArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type CubeDistanceSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeDistanceResultset = CubeDistanceSingleResultsetRecord[];
+
+  export interface DistanceChebyshevArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type DistanceChebyshevSingleResultsetRecord = PgCatalog.Float8;
+
+  export type DistanceChebyshevResultset =
+    DistanceChebyshevSingleResultsetRecord[];
+
+  export interface DistanceTaxicabArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+  }
+
+  export type DistanceTaxicabSingleResultsetRecord = PgCatalog.Float8;
+
+  export type DistanceTaxicabResultset = DistanceTaxicabSingleResultsetRecord[];
+
+  export interface CubeDimArguments {
+    _0: Nullable<Cube>;
+  }
+
+  export type CubeDimSingleResultsetRecord = PgCatalog.Int4;
+
+  export type CubeDimResultset = CubeDimSingleResultsetRecord[];
+
+  export interface CubeLlCoordArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Int4>;
+  }
+
+  export type CubeLlCoordSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeLlCoordResultset = CubeLlCoordSingleResultsetRecord[];
+
+  export interface CubeUrCoordArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Int4>;
+  }
+
+  export type CubeUrCoordSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeUrCoordResultset = CubeUrCoordSingleResultsetRecord[];
+
+  export interface CubeCoordArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Int4>;
+  }
+
+  export type CubeCoordSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeCoordResultset = CubeCoordSingleResultsetRecord[];
+
+  export interface CubeCoordLlurArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Int4>;
+  }
+
+  export type CubeCoordLlurSingleResultsetRecord = PgCatalog.Float8;
+
+  export type CubeCoordLlurResultset = CubeCoordLlurSingleResultsetRecord[];
+
+  export interface Cubea5b3Arguments {
+    _0: Nullable<PgCatalog.Float8>;
+  }
+
+  export type Cubea5b3SingleResultsetRecord = Cube;
+
+  export type Cubea5b3Resultset = Cubea5b3SingleResultsetRecord[];
+
+  export interface Cube0aecArguments {
+    _0: Nullable<PgCatalog.Float8>;
+    _1: Nullable<PgCatalog.Float8>;
+  }
+
+  export type Cube0aecSingleResultsetRecord = Cube;
+
+  export type Cube0aecResultset = Cube0aecSingleResultsetRecord[];
+
+  export interface Cubeffa3Arguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Float8>;
+  }
+
+  export type Cubeffa3SingleResultsetRecord = Cube;
+
+  export type Cubeffa3Resultset = Cubeffa3SingleResultsetRecord[];
+
+  export interface Cube908dArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Float8>;
+    _2?: Nullable<PgCatalog.Float8>;
+  }
+
+  export type Cube908dSingleResultsetRecord = Cube;
+
+  export type Cube908dResultset = Cube908dSingleResultsetRecord[];
+
+  export interface CubeIsPointArguments {
+    _0: Nullable<Cube>;
+  }
+
+  export type CubeIsPointSingleResultsetRecord = PgCatalog.Bool;
+
+  export type CubeIsPointResultset = CubeIsPointSingleResultsetRecord[];
+
+  export interface CubeEnlargeArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<PgCatalog.Float8>;
+    _2?: Nullable<PgCatalog.Int4>;
+  }
+
+  export type CubeEnlargeSingleResultsetRecord = Cube;
+
+  export type CubeEnlargeResultset = CubeEnlargeSingleResultsetRecord[];
+
+  export interface GCubeConsistentArguments {
+    _0: Nullable<PgCatalog.Internal>;
+    _1: Nullable<Cube>;
+    _2?: Nullable<PgCatalog.Int2>;
+    _3?: Nullable<PgCatalog.Oid>;
+    _4?: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubeConsistentSingleResultsetRecord = PgCatalog.Bool;
+
+  export type GCubeConsistentResultset = GCubeConsistentSingleResultsetRecord[];
+
+  export interface GCubePenaltyArguments {
+    _0: Nullable<PgCatalog.Internal>;
+    _1: Nullable<PgCatalog.Internal>;
+    _2?: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubePenaltySingleResultsetRecord = PgCatalog.Internal;
+
+  export type GCubePenaltyResultset = GCubePenaltySingleResultsetRecord[];
+
+  export interface GCubePicksplitArguments {
+    _0: Nullable<PgCatalog.Internal>;
+    _1: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubePicksplitSingleResultsetRecord = PgCatalog.Internal;
+
+  export type GCubePicksplitResultset = GCubePicksplitSingleResultsetRecord[];
+
+  export interface GCubeUnionArguments {
+    _0: Nullable<PgCatalog.Internal>;
+    _1: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubeUnionSingleResultsetRecord = Cube;
+
+  export type GCubeUnionResultset = GCubeUnionSingleResultsetRecord[];
+
+  export interface GCubeSameArguments {
+    _0: Nullable<Cube>;
+    _1: Nullable<Cube>;
+    _2?: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubeSameSingleResultsetRecord = PgCatalog.Internal;
+
+  export type GCubeSameResultset = GCubeSameSingleResultsetRecord[];
+
+  export interface GCubeDistanceArguments {
+    _0: Nullable<PgCatalog.Internal>;
+    _1: Nullable<Cube>;
+    _2?: Nullable<PgCatalog.Int2>;
+    _3?: Nullable<PgCatalog.Oid>;
+    _4?: Nullable<PgCatalog.Internal>;
+  }
+
+  export type GCubeDistanceSingleResultsetRecord = PgCatalog.Float8;
+
+  export type GCubeDistanceResultset = GCubeDistanceSingleResultsetRecord[];
+
+  export interface CubeRecvArguments {
+    _0: Nullable<PgCatalog.Internal>;
+  }
+
+  export type CubeRecvSingleResultsetRecord = Cube;
+
+  export type CubeRecvResultset = CubeRecvSingleResultsetRecord[];
+
+  export interface CubeSendArguments {
+    _0: Nullable<Cube>;
+  }
+
+  export type CubeSendSingleResultsetRecord = PgCatalog.Bytea;
+
+  export type CubeSendResultset = CubeSendSingleResultsetRecord[];
+
+  export namespace Tables {
+    export namespace Slug {
+      export interface BySlugId {
+        slugId: Nullable<PgCatalog.Int4>;
+      }
+    }
+  }
+}
+
 export namespace Api {
   export type EchoTypeArray = Array<EchoType>;
 
@@ -5340,14 +5728,6 @@ export namespace Api {
     echoes?: Nullable<EchoTypeArray>;
   }
 
-  export interface EchoArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoResultset = EchoSingleResultsetRecord[];
-
   export interface EchoSetArguments {
     message: Nullable<PgCatalog.Text>;
   }
@@ -5355,18 +5735,6 @@ export namespace Api {
   export type EchoSetSingleResultsetRecord = PgCatalog.Text;
 
   export type EchoSetResultset = EchoSetSingleResultsetRecord[];
-
-  export interface EchoTableArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  interface EchoTableResponseRecord {
-    echomessage: PgCatalog.Text;
-    at: PgCatalog.Timestamptz;
-  }
-  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
-
-  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export interface EchoTypeArguments {
     message: Nullable<PgCatalog.Text>;
@@ -5399,6 +5767,26 @@ export namespace Api {
   export type EchoTypeSetSingleResultsetRecord = EchoType;
 
   export type EchoTypeSetResultset = EchoTypeSetSingleResultsetRecord[];
+
+  export interface EchoArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  export type EchoSingleResultsetRecord = PgCatalog.Text;
+
+  export type EchoResultset = EchoSingleResultsetRecord[];
+
+  export interface EchoTableArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  interface EchoTableResponseRecord {
+    echomessage: PgCatalog.Text;
+    at: PgCatalog.Timestamptz;
+  }
+  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
+
+  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export namespace Tables {}
 }
@@ -6017,6 +6405,10 @@ export interface PostgresTypecasts {
   information_schema_view_table_usage: Typecast;
   information_schema_views: Typecast;
   information_schema_yes_or_no: Typecast;
+  public__cube: Typecast;
+  public__slug: Typecast;
+  public_cube: Typecast;
+  public_slug: Typecast;
   api__echo_type: Typecast;
   api__echo_type_nested: Typecast;
   api_echo_type: Typecast;
@@ -8141,7 +8533,11 @@ export namespace PgCatalog {
   }
 
   export function parseInt2vector(from: string | null) {
-    return from;
+    if (from === null) return null;
+    const source = Array.isArray(from)
+      ? new Uint16Array(from)
+      : JSON.parse(from);
+    return new Uint16Array(source);
   }
 
   export function parseInt4(from: string | null) {
@@ -9943,6 +10339,33 @@ export namespace InformationSchema {
     return from;
   }
 }
+export namespace Public {
+  export function parseCubeArray(from: string | null) {
+    if (from === null) return null;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      return parseCube(`${e}`);
+    });
+  }
+
+  export function parseSlugArray(from: string | null) {
+    if (from === null) return null;
+    const rawArray = JSON.parse(from);
+    return rawArray.map((e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      return parseSlug(`${e}`);
+    });
+  }
+
+  export function parseCube(from: string | null) {
+    return from;
+  }
+
+  export function parseSlug(from: string | null) {
+    return from;
+  }
+}
 export namespace Api {
   export function parseEchoTypeArray(from: string | null) {
     if (from === null) return null;
@@ -9972,6 +10395,13 @@ export namespace Api {
 }
 // end string parsers
 // begin primary key pickers
+export namespace Public {
+  export function pickPrimaryKeyFromSlug(value: Slug): string {
+    return JSON.stringify({
+      slugId: value.slugId,
+    });
+  }
+}
 export namespace Api {}
 // end primary key pickers
 
@@ -10047,26 +10477,843 @@ export class Database {
     });
   }
 
-  public Api = new (class implements HasDatabase {
+  public Public = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
-    async Echo(parameters: Api.EchoArguments) {
+    async CubeIn(parameters: Public.CubeInArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
       const response = await sql.begin(async (sql: postgres.Sql) => {
         return await sql`
                   SELECT
-                  api.echo(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
+                  public.cube_in( ${typed.pg_catalog_cstring(
+                    undefinedIsNull(parameters._0),
                   )});
                   `;
       });
       const results = response;
       const responseBody = results?.[0]
-        .echo as unknown as Api.EchoSingleResultsetRecord;
+        .cube_in as unknown as Public.CubeInSingleResultsetRecord;
       return responseBody;
     }
+    async Cube9c45(parameters: Public.Cube9c45Arguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.pg_catalog__float8(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog__float8(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cube9c45SingleResultsetRecord;
+      return responseBody;
+    }
+    async Cube2e6d(parameters: Public.Cube2e6dArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.pg_catalog__float8(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cube2e6dSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeOut(parameters: Public.CubeOutArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_out( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_out as unknown as Public.CubeOutSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeEq(parameters: Public.CubeEqArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_eq( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_eq as unknown as Public.CubeEqSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeNe(parameters: Public.CubeNeArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_ne( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_ne as unknown as Public.CubeNeSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeLt(parameters: Public.CubeLtArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_lt( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_lt as unknown as Public.CubeLtSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeGt(parameters: Public.CubeGtArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_gt( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_gt as unknown as Public.CubeGtSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeLe(parameters: Public.CubeLeArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_le( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_le as unknown as Public.CubeLeSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeGe(parameters: Public.CubeGeArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_ge( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_ge as unknown as Public.CubeGeSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeCmp(parameters: Public.CubeCmpArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_cmp( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_cmp as unknown as Public.CubeCmpSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeContains(parameters: Public.CubeContainsArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_contains( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_contains as unknown as Public.CubeContainsSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeContained(parameters: Public.CubeContainedArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_contained( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_contained as unknown as Public.CubeContainedSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeOverlap(parameters: Public.CubeOverlapArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_overlap( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_overlap as unknown as Public.CubeOverlapSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeUnion(parameters: Public.CubeUnionArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_union( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_union as unknown as Public.CubeUnionSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeInter(parameters: Public.CubeInterArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_inter( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_inter as unknown as Public.CubeInterSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeSize(parameters: Public.CubeSizeArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_size( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_size as unknown as Public.CubeSizeSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeSubset(parameters: Public.CubeSubsetArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_subset( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog__int4(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_subset as unknown as Public.CubeSubsetSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeDistance(parameters: Public.CubeDistanceArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_distance( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_distance as unknown as Public.CubeDistanceSingleResultsetRecord;
+      return responseBody;
+    }
+    async DistanceChebyshev(parameters: Public.DistanceChebyshevArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.distance_chebyshev( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .distance_chebyshev as unknown as Public.DistanceChebyshevSingleResultsetRecord;
+      return responseBody;
+    }
+    async DistanceTaxicab(parameters: Public.DistanceTaxicabArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.distance_taxicab( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .distance_taxicab as unknown as Public.DistanceTaxicabSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeDim(parameters: Public.CubeDimArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_dim( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_dim as unknown as Public.CubeDimSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeLlCoord(parameters: Public.CubeLlCoordArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_ll_coord( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_ll_coord as unknown as Public.CubeLlCoordSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeUrCoord(parameters: Public.CubeUrCoordArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_ur_coord( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_ur_coord as unknown as Public.CubeUrCoordSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeCoord(parameters: Public.CubeCoordArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_coord( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_coord as unknown as Public.CubeCoordSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeCoordLlur(parameters: Public.CubeCoordLlurArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_coord_llur( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_coord_llur as unknown as Public.CubeCoordLlurSingleResultsetRecord;
+      return responseBody;
+    }
+    async Cubea5b3(parameters: Public.Cubea5b3Arguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cubea5b3SingleResultsetRecord;
+      return responseBody;
+    }
+    async Cube0aec(parameters: Public.Cube0aecArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cube0aecSingleResultsetRecord;
+      return responseBody;
+    }
+    async Cubeffa3(parameters: Public.Cubeffa3Arguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cubeffa3SingleResultsetRecord;
+      return responseBody;
+    }
+    async Cube908d(parameters: Public.Cube908dArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._2),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube as unknown as Public.Cube908dSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeIsPoint(parameters: Public.CubeIsPointArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_is_point( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_is_point as unknown as Public.CubeIsPointSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeEnlarge(parameters: Public.CubeEnlargeArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_enlarge( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_float8(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._2))});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_enlarge as unknown as Public.CubeEnlargeSingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubeConsistent(parameters: Public.GCubeConsistentArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_consistent( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_int2(
+                    undefinedIsNull(parameters._2),
+                  )}, ${typed.pg_catalog_oid(
+                    undefinedIsNull(parameters._3),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._4),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_consistent as unknown as Public.GCubeConsistentSingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubePenalty(parameters: Public.GCubePenaltyArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_penalty( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._2),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_penalty as unknown as Public.GCubePenaltySingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubePicksplit(parameters: Public.GCubePicksplitArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_picksplit( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_picksplit as unknown as Public.GCubePicksplitSingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubeUnion(parameters: Public.GCubeUnionArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_union( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._1),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_union as unknown as Public.GCubeUnionSingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubeSame(parameters: Public.GCubeSameArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_same( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._2),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_same as unknown as Public.GCubeSameSingleResultsetRecord;
+      return responseBody;
+    }
+    async GCubeDistance(parameters: Public.GCubeDistanceArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.g_cube_distance( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )}, ${typed.public_cube(
+                    undefinedIsNull(parameters._1),
+                  )}, ${typed.pg_catalog_int2(
+                    undefinedIsNull(parameters._2),
+                  )}, ${typed.pg_catalog_oid(
+                    undefinedIsNull(parameters._3),
+                  )}, ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._4),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .g_cube_distance as unknown as Public.GCubeDistanceSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeRecv(parameters: Public.CubeRecvArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_recv( ${typed.pg_catalog_internal(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_recv as unknown as Public.CubeRecvSingleResultsetRecord;
+      return responseBody;
+    }
+    async CubeSend(parameters: Public.CubeSendArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  public.cube_send( ${typed.public_cube(
+                    undefinedIsNull(parameters._0),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .cube_send as unknown as Public.CubeSendSingleResultsetRecord;
+      return responseBody;
+    }
+
+    public Slug = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async bySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response =
+          await sql`SELECT slug_id FROM public.slug WHERE slug_id = ${
+            parameters.slugId === undefined
+              ? sql("slug_id")
+              : typed.pg_catalog_int4(parameters.slugId)
+          }`;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async deleteBySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`DELETE FROM public.slug WHERE slug_id = ${
+          parameters.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(parameters.slugId)
+        } RETURNING slug_id
+      `;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async updateBySlugId(
+        parameters: Public.Tables.Slug.BySlugId,
+        values: Partial<Public.Slug>,
+      ): Promise<Public.Slug> {
+        console.assert(parameters);
+        console.assert(values);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        const response = await sql`UPDATE public.slug SET slug_id = ${
+          values.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(values.slugId)
+        } WHERE slug_id = ${
+          parameters.slugId === undefined
+            ? sql("slug_id")
+            : typed.pg_catalog_int4(parameters.slugId)
+        } RETURNING slug_id`;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+
+      async create(
+        values: Public.Slug | Public.SlugNotPrimaryKey,
+      ): Promise<Public.Slug> {
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+
+        if (Public.includesSlugPrimaryKey(values)) {
+          const response = await sql`INSERT INTO public.slug (slug_id)
+    VALUES (${
+      values.slugId === undefined
+        ? sql`DEFAULT`
+        : typed.pg_catalog_int4(values.slugId)
+    })
+    ON CONFLICT (slug_id) DO UPDATE
+    SET 
+    RETURNING slug_id
+    `;
+
+          const results = response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }));
+          return results[0];
+        }
+        const response = await sql`INSERT INTO public.slug ()
+    VALUES ()
+    RETURNING slug_id
+    `;
+
+        const results = response.map((record) => ({
+          slugId: undefinedIsNull(record.slug_id),
+        }));
+        return results[0];
+      }
+    })(this);
+  })(this);
+
+  public Api = new (class implements HasDatabase {
+    constructor(public database: Database) {}
+
     async EchoSet(parameters: Api.EchoSetArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -10085,36 +11332,6 @@ export class Database {
       ) as unknown as Api.EchoSetResultset;
       return responseBody;
     }
-    async EchoTable(parameters: Api.EchoTableArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_table(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map((x) =>
-        this.parseEchoTableResult(this.database.context, x.echo_table),
-      ) as unknown as Api.EchoTableResultset;
-      return responseBody;
-    }
-
-    parseEchoTableResult = (
-      context: Context,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      result: any,
-    ): Api.EchoTableSingleResultsetRecord => {
-      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
-        context,
-        result,
-      ) as unknown as Api.EchoTableSingleResultsetRecord;
-    };
-
     async EchoType(parameters: Api.EchoTypeArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -10184,5 +11401,51 @@ export class Database {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
+    async Echo(parameters: Api.EchoArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  api.echo(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .echo as unknown as Api.EchoSingleResultsetRecord;
+      return responseBody;
+    }
+    async EchoTable(parameters: Api.EchoTableArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  api.echo_table(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseEchoTableResult(this.database.context, x.echo_table),
+      ) as unknown as Api.EchoTableResultset;
+      return responseBody;
+    }
+
+    parseEchoTableResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): Api.EchoTableSingleResultsetRecord => {
+      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as Api.EchoTableSingleResultsetRecord;
+    };
   })(this);
 }

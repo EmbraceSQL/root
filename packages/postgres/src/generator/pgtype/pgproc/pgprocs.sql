@@ -11,10 +11,17 @@
     proretset, 
     COALESCE(proargtypes, ARRAY[]::oid[]) proargtypes, 
     COALESCE(proallargtypes, ARRAY[]::oid[]) proallargtypes, 
-    COALESCE(proargnames, ARRAY[]::text[]) proargnames
+    COALESCE(proargnames, ARRAY[]::text[]) proargnames,
+    (
+      SELECT COUNT(*) 
+      FROM pg_proc again 
+      WHERE 
+        again.proname = procs.proname
+        AND again.pronamespace = procs.pronamespace
+    ) overloads
   FROM 
-    pg_proc
-  )
+    pg_proc procs
+  ) 
   SELECT 
     *
   FROM

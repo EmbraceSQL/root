@@ -9,6 +9,7 @@ import {
   parseObjectWithAttributes,
 } from "@embracesql/shared";
 import { camelCase, pascalCase } from "change-case";
+import hash from "object-hash";
 import parsimmon from "parsimmon";
 import path from "path";
 import { Sql } from "postgres";
@@ -26,6 +27,7 @@ type ProcRow = {
   prorettype: number;
   proretset: boolean;
   pronargdefaults: number;
+  overloads: number;
 };
 
 type PGProcsContext = { typeCatalog: PGTypes };
@@ -64,12 +66,18 @@ export class PGProc implements PostgresProcTypecast {
     public proc: ProcRow,
   ) {}
 
+  get overloaded() {
+    return Number.parseInt(`${this.proc.overloads}`) > 1;
+  }
+
   get nspname() {
     return this.proc.nspname;
   }
 
   get typescriptName() {
-    return pascalCase(this.proc.proname);
+    const seed = pascalCase(this.proc.proname);
+    const stem = hash(this.proc.proargtypes.flatMap((x) => x)).substring(0, 4);
+    return this.overloaded ? `${seed}${stem}` : seed;
   }
 
   get typescriptNameForNamespace() {

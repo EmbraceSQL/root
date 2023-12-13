@@ -1,12 +1,7 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { asDocComment } from "../../util";
 import { PGTypeBool } from "./base/bool";
-import {
-  PGTypeBigInt,
-  PGTypeBytea,
-  PGTypeNumber,
-  PGTypeVector,
-} from "./base/number";
+import { PGTypeBigInt, PGTypeBytea, PGTypeNumber } from "./base/number";
 import { PGTypeText, PGTypeTextArray } from "./base/text";
 import { PGTypeUri } from "./base/uri";
 import { PGCatalogType } from "./pgcatalogtype";
@@ -49,8 +44,6 @@ export class PGTypeBase extends PGCatalogType {
         return new PGTypeBytea(catalog);
       case "bytea":
         return new PGTypeBytea(catalog);
-      case "vector":
-        return new PGTypeVector(catalog);
       case "inet":
         return new PGTypeInet(catalog);
       case "jsonpath":
