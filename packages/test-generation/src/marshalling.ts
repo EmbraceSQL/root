@@ -8486,7 +8486,9 @@ export namespace PgCatalog {
   }
 
   export function parseDate(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if ((from as unknown) instanceof Date) return from;
+    return new Date(from);
   }
 
   export function parseDatemultirange(from: string | null) {
@@ -9327,19 +9329,27 @@ export namespace PgCatalog {
   }
 
   export function parseTime(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if ((from as unknown) instanceof Date) return from;
+    return new Date(from);
   }
 
   export function parseTimestamp(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if ((from as unknown) instanceof Date) return from;
+    return new Date(from);
   }
 
   export function parseTimestamptz(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if ((from as unknown) instanceof Date) return from;
+    return new Date(from);
   }
 
   export function parseTimetz(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if ((from as unknown) instanceof Date) return from;
+    return new Date(from);
   }
 
   export function parseTrigger(from: string | null) {

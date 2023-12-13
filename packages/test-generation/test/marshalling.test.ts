@@ -243,4 +243,9 @@ describe("The database can marshall base types", () => {
       roundTrip("public_cube", Public.parseCube, val as string);
     }
   });
+  it("that are dates", () => {
+    for (const val of [new Date(), "2000-01-01"]) {
+      roundTrip("pg_catalog_date", PgCatalog.parseDate, val as string);
+    }
+  });
 });

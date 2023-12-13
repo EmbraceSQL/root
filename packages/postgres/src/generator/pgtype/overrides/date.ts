@@ -1,8 +1,19 @@
 import { Context } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
 import { registerOverride } from "./_overrides";
+import { GenerationContext } from "@embracesql/shared";
 
 class PGDate extends PGCatalogType {
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+    parse${this.typescriptName}(from: string|null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof Date) return from;
+      return new Date(from);
+    }
+    `;
+  }
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
@@ -36,5 +47,7 @@ class PGDate extends PGCatalogType {
 registerOverride("timestamptz", PGDate);
 registerOverride("timestamp", PGDate);
 registerOverride("date", PGDate);
+
+// TODO: gonna need a real JS 'time' type
 registerOverride("time", PGDate);
 registerOverride("timetz", PGDate);
