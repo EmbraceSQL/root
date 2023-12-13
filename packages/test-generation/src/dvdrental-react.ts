@@ -3471,7 +3471,7 @@ export namespace PgCatalog {
     y: number;
   };
 
-  export type Polygon = Array<Point>;
+  export type Polygon = string;
 
   export type Record = void;
 

@@ -55,16 +55,6 @@ export class PGTypeBase extends PGCatalogType {
         return new PGTypeInet(catalog);
       case "jsonpath":
         return new PGTypeText(catalog);
-      case "point":
-        return new PGTypePoint(catalog);
-      case "box":
-        return new PGTypePointPair(catalog);
-      case "path":
-        return new PGTypePointArray(catalog);
-      case "polygon":
-        return new PGTypePointArray(catalog);
-      case "circle":
-        return new PGTypeCircle(catalog);
       case "aclitem":
         return new PGTypeText(catalog);
       case "bpchar":
@@ -118,54 +108,6 @@ class PGTypeInet extends PGTypeBase {
     return `
     ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
-    `;
-  }
-}
-
-class PGTypePoint extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = {
-      x: number;
-      y: number;
-    };
-    `;
-  }
-}
-class PGTypePointPair extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = {
-      from: Point;
-      to: Point;
-    };
-    `;
-  }
-}
-
-class PGTypePointArray extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = Array<Point>;
-    `;
-  }
-}
-
-class PGTypeCircle extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
-    console.assert(context);
-    return `
-    ${asDocComment(this.comment)}
-    export type ${this.typescriptName} = {
-      center: Point;
-      radius: number;
-    };
     `;
   }
 }

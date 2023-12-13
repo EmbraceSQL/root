@@ -125,10 +125,79 @@ describe("The database can marshall base types", () => {
   });
   it("that are points", () => {
     for (const val of [
+      null,
       JSON.stringify({ x: 0, y: 0 }),
       JSON.stringify({ x: 1.5, y: 100 }),
     ]) {
       roundTrip("pg_catalog_point", PgCatalog.parsePoint, val);
+    }
+  });
+  it("that are line segments", () => {
+    for (const val of [
+      null,
+      JSON.stringify({
+        from: { x: 0, y: 0 },
+        to: { x: 1.5, y: 100 },
+      }),
+    ]) {
+      roundTrip("pg_catalog_lseg", PgCatalog.parseLseg, val);
+    }
+  });
+  it("that are lines", () => {
+    for (const val of [
+      null,
+      JSON.stringify({ a: 0, b: 0, c: 0 }),
+      JSON.stringify({ a: 1, b: 2, c: 3 }),
+    ]) {
+      roundTrip("pg_catalog_line", PgCatalog.parseLine, val);
+    }
+  });
+  it("that are boxes", () => {
+    for (const val of [
+      null,
+      JSON.stringify({
+        lowerLeft: { x: 0, y: 0 },
+        upperRight: { x: 1.5, y: 100 },
+      }),
+    ]) {
+      roundTrip("pg_catalog_box", PgCatalog.parseBox, val);
+    }
+  });
+  it("that are paths", () => {
+    for (const val of [
+      null,
+      JSON.stringify([
+        { x: 0, y: 0 },
+        { x: 1.5, y: 100 },
+      ]),
+    ]) {
+      roundTrip("pg_catalog_path", PgCatalog.parsePath, val);
+    }
+  });
+  it("that are polygons", () => {
+    for (const val of [
+      null,
+      JSON.stringify([
+        { x: 0, y: 0 },
+        { x: 1.5, y: 100 },
+      ]),
+    ]) {
+      roundTrip("pg_catalog_polygon", PgCatalog.parsePolygon, val);
+    }
+  });
+  it("that are circles", () => {
+    for (const val of [
+      null,
+      JSON.stringify({
+        center: { x: 0, y: 0 },
+        radius: 0,
+      }),
+      JSON.stringify({
+        center: { x: 1, y: 2 },
+        radius: 3.5,
+      }),
+    ]) {
+      roundTrip("pg_catalog_box", PgCatalog.parseBox, val);
     }
   });
   it("that are oids", () => {
