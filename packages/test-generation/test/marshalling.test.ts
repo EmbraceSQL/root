@@ -86,13 +86,15 @@ describe("The database can marshall base types", () => {
   });
   const roundTrip = (
     type: keyof PostgresTypecasts,
-    parser: (v: string) => unknown,
-    value: string,
+    parser: (v: string | null) => unknown,
+    value: string | null,
   ) => {
     const fromTs = parser(value);
     const toPostgres = db.context.types[type].serialize(fromTs);
     const fromPostgres = db.context.types[type].parse(toPostgres);
-    if (typeof fromTs === "object") {
+    if (value === null) {
+      expect(fromPostgres).toBeNull();
+    } else if (typeof fromTs === "object") {
       expect(fromTs).toMatchObject(fromPostgres);
     } else {
       expect(fromTs).toEqual(fromPostgres);
@@ -143,6 +145,16 @@ describe("The database can marshall base types", () => {
       JSON.stringify([null]),
     ]) {
       roundTrip("pg_catalog_oidvector", PgCatalog.parseOidvector, val);
+    }
+  });
+  it("that are names", () => {
+    for (const val of [null, "", "0", "hello 🌎 "]) {
+      roundTrip("pg_catalog_name", PgCatalog.parseName, val);
+    }
+  });
+  it("that are big numbers", () => {
+    for (const val of [null, "", "0", "123456789", 123456789]) {
+      roundTrip("pg_catalog_pg_lsn", PgCatalog.parsePgLsn, val as string);
     }
   });
 });

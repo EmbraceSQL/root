@@ -34,7 +34,7 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string) {
+    parse${this.typescriptName}(from: string|null) {
       return from;
     }
     `;

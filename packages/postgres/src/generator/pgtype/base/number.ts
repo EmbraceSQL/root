@@ -19,7 +19,8 @@ export class PGTypeNumber extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string) {
+    parse${this.typescriptName}(from: string|null) {
+      if (from === null) return null;
       return Number.parseFloat(from);
     }
     `;
@@ -53,7 +54,8 @@ export class PGTypeBigInt extends PGTypeNumber {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string) {
+    parse${this.typescriptName}(from: string|null) {
+      if (from === null) return null;
       return BigInt(from);
     }
     `;
@@ -71,8 +73,8 @@ export class PGTypeBytea extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string) {
-      return new Uint8Array(JSON.parse(from));
+    parse${this.typescriptName}(from: string|null) {
+      return from ? new Uint8Array(JSON.parse(from)) : null;
     }
     `;
   }
@@ -88,8 +90,8 @@ export class PGTypeVector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string) {
-      return new Float32Array(JSON.parse(from));
+    parse${this.typescriptName}(from: string|null) {
+      return from ? new Float32Array(JSON.parse(from)) : null;
     }
     `;
   }

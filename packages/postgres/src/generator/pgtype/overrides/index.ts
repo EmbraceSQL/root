@@ -4,7 +4,6 @@ import { registerOverride } from "./_overrides";
 export { overrides } from "./_overrides";
 
 // yeah -- looks odd -- but registerOverride needs to be defined first
-export * from "./name";
 export * from "./oid";
 export * from "./uuid";
 export * from "./point";

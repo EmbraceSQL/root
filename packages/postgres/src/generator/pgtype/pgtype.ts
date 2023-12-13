@@ -1,4 +1,5 @@
 import { TypeFactoryContext } from "../../context";
+import { PGTypeText } from "./base/text";
 import { overrides } from "./overrides";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeArray } from "./pgtypearray";
@@ -67,9 +68,11 @@ class PGType extends PGCatalogType {
       const cons = overrides.get(catalog.typname);
       if (cons) return new cons(catalog);
     }
-    // oidvector is an odd one -- it's an array but a base type
+    // there are 'odd' base types that are arrays of scalars but when you
+    // but are not named like other arrays
     if (catalog.typname === "oidvector")
       return PGTypeBase.factory(context, catalog);
+    if (catalog.typname === "name") return new PGTypeText(catalog);
 
     if (catalog.typtype === "c") return new PGTypeComposite(context, catalog);
     if (catalog.typtype === "e") return new PGTypeEnum(context, catalog);
