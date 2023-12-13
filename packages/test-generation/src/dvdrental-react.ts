@@ -499,7 +499,7 @@ export namespace PgCatalog {
 
   export type Char = string;
 
-  export type Cid = number;
+  export type Cid = string;
 
   export type Cidr = Uint8Array;
 
@@ -3532,7 +3532,7 @@ export namespace PgCatalog {
 
   export type Tsvector = Array<string>;
 
-  export type TxidSnapshot = number;
+  export type TxidSnapshot = string;
 
   export type Unknown = void;
 
@@ -3544,9 +3544,9 @@ export namespace PgCatalog {
 
   export type Void = void;
 
-  export type Xid = number;
+  export type Xid = string;
 
-  export type Xid8 = number;
+  export type Xid8 = string;
 
   export type Xml = string;
 
@@ -8745,8 +8745,7 @@ export namespace PgCatalog {
   }
 
   export function parseCid(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
+    return from;
   }
 
   export function parseCidr(from: string | null) {
@@ -9647,8 +9646,7 @@ export namespace PgCatalog {
   }
 
   export function parseTxidSnapshot(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
+    return from;
   }
 
   export function parseUnknown(from: string | null) {
@@ -9679,13 +9677,11 @@ export namespace PgCatalog {
   }
 
   export function parseXid(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
+    return from;
   }
 
   export function parseXid8(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
+    return from;
   }
 
   export function parseXml(from: string | null) {

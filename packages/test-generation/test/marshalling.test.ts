@@ -101,11 +101,9 @@ describe("The database can marshall base types", () => {
     }
   };
   it("that are UUIDs", () => {
-    roundTrip(
-      "pg_catalog_uuid",
-      PgCatalog.parseUuid,
-      "24562c58-c8d1-4c39-9073-6f956e08eb8b",
-    );
+    for (const val of [null, "24562c58-c8d1-4c39-9073-6f956e08eb8b"]) {
+      roundTrip("pg_catalog_uuid", PgCatalog.parseUuid, val);
+    }
   });
   it("that are bools", () => {
     for (const val of ["t", "true", 1, "1"]) {
