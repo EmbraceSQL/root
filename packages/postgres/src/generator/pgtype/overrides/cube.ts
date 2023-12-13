@@ -28,17 +28,18 @@ class PGTypeCube extends PGCatalogType {
    * Coming in from JSON as an array like object, make this into
    * a float buffer
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
     console.assert(context);
     // default is just 'a string of it'
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     if (x === null) return null;
     // postgres array literal
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return `${Object.values(x)
-      .map((x) => (x ? x : 0))
-      .join(",")}`;
+    if (Array.isArray(x))
+      return `${Object.values(x)
+        .map((x) => (x ? x : 0))
+        .join(",")}`;
+    // wing it 🪽
+    return `${x}`;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

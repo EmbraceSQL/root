@@ -1608,7 +1608,7 @@ export namespace PgCatalog {
     waitstart?: Nullable<Timestamptz>;
   }
 
-  export type PgLsn = string;
+  export type PgLsn = bigint;
 
   export interface PgMatviews {
     schemaname?: Nullable<Name>;
@@ -9105,7 +9105,9 @@ export namespace PgCatalog {
   }
 
   export function parsePgLsn(from: string | null) {
-    return from;
+    if (from === null) return null;
+    if (from === "") return null;
+    return BigInt(from);
   }
 
   export function parsePgMatviews(from: string | null) {

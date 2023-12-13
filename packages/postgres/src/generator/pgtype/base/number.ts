@@ -26,11 +26,11 @@ export class PGTypeNumber extends PGCatalogType {
     `;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
     // string it
     if (!(x === undefined) && !(x === null)) {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
       return `${x}`;
     } else {
       return null;
@@ -38,7 +38,7 @@ export class PGTypeNumber extends PGCatalogType {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  parseFromPostgres(context: Context, x: any) {
+  parseFromPostgres(context: Context, x: any): bigint | number | null {
     if (!(x === undefined) && !(x === null)) {
       return +x;
     } else {
@@ -56,6 +56,7 @@ export class PGTypeBigInt extends PGTypeNumber {
     return `
     parse${this.typescriptName}(from: string|null) {
       if (from === null) return null;
+      if (from === '') return null;
       return BigInt(from);
     }
     `;
@@ -64,8 +65,16 @@ export class PGTypeBigInt extends PGTypeNumber {
   typescriptTypeDefinition(context: Context) {
     console.assert(context);
     return `
-    export type ${this.typescriptName} = BigInt;
+    export type ${this.typescriptName} = bigint;
     `;
+  }
+
+  parseFromPostgres(context: Context, x: unknown) {
+    if (!(x === undefined) && !(x === null)) {
+      return BigInt(+x);
+    } else {
+      return null;
+    }
   }
 }
 

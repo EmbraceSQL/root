@@ -13,8 +13,8 @@ class PGJson extends PGCatalogType {
     `;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
     // string it if we need it
     if (x) {
       if (typeof x === "string") return x;

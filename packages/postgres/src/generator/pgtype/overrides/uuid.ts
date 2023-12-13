@@ -19,9 +19,11 @@ class PGUUID extends PGCatalogType {
     `;
   }
 
-  serializeToPostgres(context: Context, x: UUID) {
+  serializeToPostgres(context: Context, x: unknown) {
+    if (x === null) return null;
+    if ((x as UUID).uuid) return (x as UUID).uuid;
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    return x ? x.uuid : null;
+    return `${x}`;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

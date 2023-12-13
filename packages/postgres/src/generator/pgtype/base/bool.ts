@@ -27,8 +27,8 @@ export class PGTypeBool extends PGCatalogType {
     export type ${this.typescriptName} = boolean;
     `;
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
     // string it -- yeah I know this is strange -- but it is how the
     // postges protocol works
     // https://github.com/porsager/postgres/blob/master/src/types.js#L25

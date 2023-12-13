@@ -1,7 +1,7 @@
 import { Context } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
 import { registerOverride } from "./_overrides";
-import { GenerationContext } from "@embracesql/shared";
+import { GenerationContext, commaSeparatedNumbers } from "@embracesql/shared";
 
 class PGTypeInt2Vector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
@@ -19,6 +19,15 @@ class PGTypeInt2Vector extends PGCatalogType {
     return `
     export type ${this.typescriptName} = Uint16Array;
     `;
+  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  parseFromPostgres(context: Context, x: any) {
+    console.assert(context);
+    if (x) {
+      return new Uint16Array(commaSeparatedNumbers.tryParse(`${x}`));
+    } else {
+      return null;
+    }
   }
 }
 
@@ -40,6 +49,16 @@ class PGTypeVector extends PGCatalogType {
     return `
     export type ${this.typescriptName} = Float32Array;
     `;
+  }
+
+  parseFromPostgres(context: Context, x: unknown) {
+    console.assert(context);
+    if (x) {
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
+      return new Float32Array(commaSeparatedNumbers.tryParse(`${x}`));
+    } else {
+      return null;
+    }
   }
 }
 

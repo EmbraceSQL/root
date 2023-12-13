@@ -134,11 +134,10 @@ export class PGTypeComposite extends PGCatalogType {
     )} }))`;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
     // make a composite type -- escape the values looked up from the
     // passed object
-    if (x) {
+    if (typeof x === "object") {
       const attributes = this.attributes.map((a) => {
         // hand off the the serializer
         const value = context
@@ -146,7 +145,7 @@ export class PGTypeComposite extends PGCatalogType {
           .serializeToPostgres(
             context,
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            x[camelCase(a.attribute.attname)],
+            (x as Record<string, object>)[camelCase(a.attribute.attname)],
           );
         // quick escape with regex
         return value ? escapeCompositeValue.tryParse(`${value}`) : "";

@@ -97,7 +97,7 @@ describe("The database can marshall base types", () => {
     const fromTs = parser(value);
     const toPostgres = db.context.types[type].serialize(fromTs);
     const fromPostgres = db.context.types[type].parse(toPostgres);
-    if (value === null) {
+    if (fromTs === null) {
       expect(fromPostgres).toBeNull();
     } else if (typeof fromTs === "object") {
       expect(fromTs).toMatchObject(fromPostgres);

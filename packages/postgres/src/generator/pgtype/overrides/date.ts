@@ -21,11 +21,11 @@ class PGDate extends PGCatalogType {
     `;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
     // string it
     if (x) {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
       return (x instanceof Date ? x : new Date(`${x}`)).toISOString();
     } else {
       return null;

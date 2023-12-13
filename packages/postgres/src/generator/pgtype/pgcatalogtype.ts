@@ -97,16 +97,14 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
     `;
   }
 
-  /**
-   * Override this to get 'to' postgres and interface with the database.
-   */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
     // default is just 'a string of it'
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     if (x === null) return null;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return x;
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return `${x}`;
   }
 
   /**

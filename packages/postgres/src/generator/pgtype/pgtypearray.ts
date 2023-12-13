@@ -56,8 +56,7 @@ export class PGTypeArray extends PGCatalogType {
     `;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  serializeToPostgres(context: Context, x: any) {
+  serializeToPostgres(context: Context, x: unknown) {
     // passed object
     if (x) {
       // make an array type -- the passed x is gonna be elements
