@@ -1,4 +1,4 @@
-import { Database } from "../src/marshalling";
+import { Database, PgCatalog, PostgresTypecasts } from "../src/marshalling";
 
 /**
  * Works-at-all.
@@ -71,5 +71,46 @@ describe("The database can marshall complex types", () => {
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();
+  });
+});
+
+describe("The database can marshall base types", () => {
+  let db: Database;
+  beforeAll(async () => {
+    db = await Database.connect(
+      "postgres://postgres:postgres@localhost:5432/marshalling",
+    );
+  });
+  afterAll(async () => {
+    await db.disconnect();
+  });
+  const roundTrip = (
+    type: keyof PostgresTypecasts,
+    parser: (v: string) => unknown,
+    value: string,
+  ) => {
+    const fromTs = parser(value);
+    const toPostgres = db.context.types[type].serialize(fromTs);
+    const fromPostgres = db.context.types[type].parse(toPostgres);
+    if (typeof fromTs === "object") {
+      expect(fromTs).toMatchObject(fromPostgres);
+    } else {
+      expect(fromTs).toEqual(fromPostgres);
+    }
+  };
+  it("that are UUIDs", () => {
+    roundTrip(
+      "pg_catalog_uuid",
+      PgCatalog.parseUuid,
+      "24562c58-c8d1-4c39-9073-6f956e08eb8b",
+    );
+  });
+  it("that are bools", () => {
+    for (const val of ["t", "true", 1, "1"]) {
+      roundTrip("pg_catalog_bool", PgCatalog.parseBool, val as string);
+    }
+    for (const val of ["f", "false", 0, "0"]) {
+      roundTrip("pg_catalog_bool", PgCatalog.parseBool, val as string);
+    }
   });
 });
