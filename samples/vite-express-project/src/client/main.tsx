@@ -35,14 +35,12 @@ const App = () => {
     );
   }
   if (actor) {
-    <div className="card">
-      <input
-        id="firstname"
-        value={actor.firstName}
-        onChange={actor.changeFirstName}
-      />
-      <input value={actor.lastName} onChange={actor.changeLastName} />
-    </div>;
+    return (
+      <div className="card">
+        <input value={actor.firstName} onChange={actor.changeFirstName} />
+        <input value={actor.lastName} onChange={actor.changeLastName} />
+      </div>
+    );
   }
 };
 

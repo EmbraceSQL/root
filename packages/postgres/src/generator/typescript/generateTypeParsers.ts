@@ -10,6 +10,7 @@ export async function generateTypeParsers(context: GenerationContext) {
   generationBuffer.push(`// begin string parsers`);
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
+    [ASTKind.Types]: NamespaceVisitor,
     [ASTKind.Type]: {
       before: async (context, node) => {
         const generationBuffer = [

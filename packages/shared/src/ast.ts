@@ -17,6 +17,7 @@ export const enum ASTKind {
   Column,
   Index,
   IndexColumn,
+  Types,
   Type,
 }
 
@@ -26,6 +27,7 @@ export const enum ASTKind {
  */
 export interface IsNamed {
   name: string;
+  typescriptName: string;
 }
 
 export function isNamed(node: ASTNode | IsNamed): node is IsNamed {
@@ -76,6 +78,7 @@ export type VisitorMap = {
   [ASTKind.Index]?: Visitor<IndexNode>;
   [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
   [ASTKind.Type]?: Visitor<TypeNode>;
+  [ASTKind.Types]?: Visitor<TypeNode>;
 };
 
 /**
@@ -143,14 +146,29 @@ export abstract class ContainerNode
 
     return generationBuffer.filter((line) => line).join("\n");
   }
+
+  get typescriptName() {
+    return `${pascalCase(this.name)}`;
+  }
 }
 
 /**
  * Represents a database as an AST for code generation.
  */
 export class DatabaseNode extends ContainerNode {
+  // keep track of all types, these get used across schemas
+  private types = new Map<string | number, TypeNode>();
+
   constructor(public name: string) {
     super(name, ASTKind.Database);
+  }
+
+  registerType(id: string | number, type: TypeNode) {
+    this.types.set(`${id}`, type);
+  }
+
+  resolveType(id: string | number) {
+    return this.types.get(`${id}`);
   }
 }
 
@@ -179,6 +197,23 @@ export class SchemaNode extends ContainerNode {
   dispatchName(operation: DispatchOperation = "") {
     return `${pascalCase(this.name)}${operation}`;
   }
+
+  get typescriptNamespacedName() {
+    return this.typescriptName;
+  }
+}
+
+/**
+ * Collects all types in a schema in a database.
+ */
+export class TypesNode extends ContainerNode {
+  constructor(schema: SchemaNode) {
+    super("Types", ASTKind.Types, schema);
+  }
+  get typescriptNamespacedName() {
+    const schema = this.parent as SchemaNode;
+    return `${schema.typescriptName}.${this.typescriptName}`;
+  }
 }
 
 /**
@@ -189,11 +224,21 @@ export class SchemaNode extends ContainerNode {
 export class TypeNode extends ASTNode implements IsNamed {
   public name: string;
   constructor(
-    schema: SchemaNode,
+    types: TypesNode,
+    public id: string | number,
     public parser: GeneratesTypeScriptParser,
   ) {
-    super(ASTKind.Type, schema);
+    super(ASTKind.Type, types);
     this.name = parser.typescriptName;
+  }
+
+  get typescriptName() {
+    return `${pascalCase(this.name)}`;
+  }
+
+  get typescriptNamespacedName() {
+    const types = this.parent as TypesNode;
+    return `${types.typescriptNamespacedName}.${this.typescriptName}`;
   }
 }
 
@@ -242,8 +287,27 @@ export class ColumnNode extends ContainerNode {
   constructor(
     table: TableNode,
     public name: string,
+    public type: TypeNode,
   ) {
     super(name, ASTKind.Column, table);
+  }
+
+  get typescriptName() {
+    return `${pascalCase(this.schema.name)}.${pascalCase(
+      this.table.name,
+    )}.${pascalCase(this.name)}`;
+  }
+
+  get schema() {
+    return this.parent?.parent?.parent as SchemaNode;
+  }
+
+  get tables() {
+    return this.parent?.parent as TablesNode;
+  }
+
+  get table() {
+    return this.parent as TableNode;
   }
 }
 
@@ -278,6 +342,7 @@ export class IndexColumnNode extends ContainerNode {
   constructor(
     table: IndexNode,
     public name: string,
+    public type: TypeNode,
   ) {
     super(name, ASTKind.IndexColumn, table);
   }

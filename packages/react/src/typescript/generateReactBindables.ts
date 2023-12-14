@@ -36,9 +36,7 @@ export const generateReactBindables = async (context: GenerationContext) => {
     },
     [ASTKind.Column]: {
       before: async (_, node) => {
-        const tableTypeName = `${pascalCase(
-          (node.parent as unknown as IsNamed)?.name,
-        )}`;
+        const tableTypeName = `${pascalCase(node.table?.name)}`;
         const generationBuffer = [""];
         generationBuffer.push(
           `get ${camelCase(
@@ -57,13 +55,13 @@ export const generateReactBindables = async (context: GenerationContext) => {
         generationBuffer.push(
           `change${pascalCase(node.name)}(event: ChangeEvent) {`,
         );
-        // TODO: this needs generated type casts from string -> actual no shit value
+        generationBuffer.push(
+          `const parsedValue = ${node.type.typescriptNamespacedName}.parse(event.target.value);`,
+        );
         generationBuffer.push(
           `ret.${camelCase(
             node.name,
-          )} = event.target.value as unknown as ${tableTypeName}["${camelCase(
-            node.name,
-          )}"] ;`,
+          )} = parsedValue as ${tableTypeName}["${camelCase(node.name)}"] ;`,
         );
         generationBuffer.push(`},`);
         return generationBuffer.join("\n");

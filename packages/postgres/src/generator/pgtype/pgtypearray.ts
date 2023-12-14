@@ -26,17 +26,23 @@ export class PGTypeArray extends PGCatalogType {
   }
 
   typescriptTypeParser(context: GenerationContext) {
-    const elementType = (context as Context).resolveType(this.catalog.typelem);
-    return `
+    const elementType = context.database.resolveType(this.catalog.typelem);
+    if (elementType) {
+      return `
       if (from === null) return null;
       const rawArray = JSON.parse(from);
       return rawArray.map((e:unknown) => {
-        return ${elementType.typescriptNamespaceName}.${elementType.typescriptName}.parse(
+        return ${elementType.typescriptNamespacedName}.parse(
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           \`\${e}\`
         );
       });
     `;
+    } else {
+      throw new Error(
+        `${this.catalog.typname} could not resolve type of element`,
+      );
+    }
   }
 
   get typescriptName() {

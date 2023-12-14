@@ -55,7 +55,7 @@ export class PGTypeBase extends PGCatalogType {
       case "pg_lsn":
         return new PGTypeBigInt(catalog);
       case "tsvector":
-        return new PGTypeTextArray(catalog);
+        return new PGTypeText(catalog);
       case "gtsvector":
         return new PGTypeTextArray(catalog);
       case "tsquery":
