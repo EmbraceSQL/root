@@ -107,25 +107,25 @@ describe("The database can marshall base types", () => {
   };
   it("that are UUIDs", () => {
     for (const val of [null, "24562c58-c8d1-4c39-9073-6f956e08eb8b"]) {
-      roundTrip("pg_catalog_uuid", PgCatalog.parseUuid, val);
+      roundTrip("pg_catalog_uuid", PgCatalog.Uuid.parse, val);
     }
   });
   it("that are bools", () => {
     for (const val of ["t", "true", 1, "1"]) {
-      roundTrip("pg_catalog_bool", PgCatalog.parseBool, val as string);
+      roundTrip("pg_catalog_bool", PgCatalog.Bool.parse, val as string);
     }
     for (const val of ["f", "false", 0, "0"]) {
-      roundTrip("pg_catalog_bool", PgCatalog.parseBool, val as string);
+      roundTrip("pg_catalog_bool", PgCatalog.Bool.parse, val as string);
     }
   });
   it("that are numbers", () => {
     for (const val of ["0", 0, "1.5", 1.5, "-1", -1]) {
-      roundTrip("pg_catalog_numeric", PgCatalog.parseNumeric, val as string);
+      roundTrip("pg_catalog_numeric", PgCatalog.Numeric.parse, val as string);
     }
   });
   it("that are text", () => {
     for (const val of ["0", "1.5", "hello 🌎"]) {
-      roundTrip("pg_catalog_text", PgCatalog.parseText, val);
+      roundTrip("pg_catalog_text", PgCatalog.Text.parse, val);
     }
   });
   it("that are points", () => {
@@ -134,7 +134,7 @@ describe("The database can marshall base types", () => {
       JSON.stringify({ x: 0, y: 0 }),
       JSON.stringify({ x: 1.5, y: 100 }),
     ]) {
-      roundTrip("pg_catalog_point", PgCatalog.parsePoint, val);
+      roundTrip("pg_catalog_point", PgCatalog.Point.parse, val);
     }
   });
   it("that are line segments", () => {
@@ -145,7 +145,7 @@ describe("The database can marshall base types", () => {
         to: { x: 1.5, y: 100 },
       }),
     ]) {
-      roundTrip("pg_catalog_lseg", PgCatalog.parseLseg, val);
+      roundTrip("pg_catalog_lseg", PgCatalog.Lseg.parse, val);
     }
   });
   it("that are lines", () => {
@@ -154,7 +154,7 @@ describe("The database can marshall base types", () => {
       JSON.stringify({ a: 0, b: 0, c: 0 }),
       JSON.stringify({ a: 1, b: 2, c: 3 }),
     ]) {
-      roundTrip("pg_catalog_line", PgCatalog.parseLine, val);
+      roundTrip("pg_catalog_line", PgCatalog.Line.parse, val);
     }
   });
   it("that are boxes", () => {
@@ -165,7 +165,7 @@ describe("The database can marshall base types", () => {
         upperRight: { x: 1.5, y: 100 },
       }),
     ]) {
-      roundTrip("pg_catalog_box", PgCatalog.parseBox, val);
+      roundTrip("pg_catalog_box", PgCatalog.Box.parse, val);
     }
   });
   it("that are paths", () => {
@@ -176,7 +176,7 @@ describe("The database can marshall base types", () => {
         { x: 1.5, y: 100 },
       ]),
     ]) {
-      roundTrip("pg_catalog_path", PgCatalog.parsePath, val);
+      roundTrip("pg_catalog_path", PgCatalog.Path.parse, val);
     }
   });
   it("that are polygons", () => {
@@ -187,7 +187,7 @@ describe("The database can marshall base types", () => {
         { x: 1.5, y: 100 },
       ]),
     ]) {
-      roundTrip("pg_catalog_polygon", PgCatalog.parsePolygon, val);
+      roundTrip("pg_catalog_polygon", PgCatalog.Polygon.parse, val);
     }
   });
   it("that are circles", () => {
@@ -202,12 +202,12 @@ describe("The database can marshall base types", () => {
         radius: 3.5,
       }),
     ]) {
-      roundTrip("pg_catalog_box", PgCatalog.parseBox, val);
+      roundTrip("pg_catalog_circle", PgCatalog.Circle.parse, val);
     }
   });
   it("that are oids", () => {
     for (const val of ["0", 0, "1", 2]) {
-      roundTrip("pg_catalog_oid", PgCatalog.parseOid, val as string);
+      roundTrip("pg_catalog_oid", PgCatalog.Oid.parse, val as string);
     }
   });
   it("that are oidvectors", () => {
@@ -216,36 +216,37 @@ describe("The database can marshall base types", () => {
       JSON.stringify([]),
       JSON.stringify([null]),
     ]) {
-      roundTrip("pg_catalog_oidvector", PgCatalog.parseOidvector, val);
+      roundTrip("pg_catalog_oidvector", PgCatalog.Oidvector.parse, val);
     }
   });
   it("that are names", () => {
     for (const val of [null, "", "0", "hello 🌎 "]) {
-      roundTrip("pg_catalog_name", PgCatalog.parseName, val);
+      roundTrip("pg_catalog_name", PgCatalog.Name.parse, val);
     }
   });
   it("that are big numbers", () => {
     for (const val of [null, "", "0", "123456789", 123456789]) {
-      roundTrip("pg_catalog_pg_lsn", PgCatalog.parsePgLsn, val as string);
+      roundTrip("pg_catalog_pg_lsn", PgCatalog.PgLsn.parse, val as string);
     }
   });
   it("that are vectors", () => {
     for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
       roundTrip(
         "pg_catalog_int2vector",
-        PgCatalog.parseInt2vector,
+        // TODO: int2vector is a vector, though an odd built in one -- don't generate Array for these
+        PgCatalog.Int2vector.parse,
         val as string,
       );
     }
   });
   it("that are cubes", () => {
     for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
-      roundTrip("public_cube", Public.parseCube, val as string);
+      roundTrip("public_cube", Public.Cube.parse, val as string);
     }
   });
   it("that are dates", () => {
     for (const val of [new Date(), "2000-01-01"]) {
-      roundTrip("pg_catalog_date", PgCatalog.parseDate, val as string);
+      roundTrip("pg_catalog_date", PgCatalog.Date.parse, val as string);
     }
   });
 });

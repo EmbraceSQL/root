@@ -49,12 +49,14 @@ export const NamespaceVisitor: Visitor<ASTNode> = {
 };
 
 /**
- * Pretty much everything touched with JS/TS ends up as a string. 
+ * Pretty much everything touched with JS/TS ends up as a string.
  * And needs to be parsed back from a string to a type.
- * 
- * Implement this interface to generate a function that is a parser from
- * string back to a type.
+ *
+ * Implement this interface to generate a function *body* that
+ * will turn a single input parameter `from: string|null` into
+ * the actual type or `null`.
  */
 export interface GeneratesTypeScriptParser {
-  typescriptTypeParser(context: GenerationContext) : string;
+  typescriptName: string;
+  typescriptTypeParser(context: GenerationContext): string;
 }

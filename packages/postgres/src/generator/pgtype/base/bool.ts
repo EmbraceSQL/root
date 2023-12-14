@@ -9,7 +9,6 @@ export class PGTypeBool extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-    parse${this.typescriptName}(from: string|null) {
       if (from === null) return null;
       if(['t', 'T', 'true', 'True'].includes(from)) return true;
       try {
@@ -18,7 +17,6 @@ export class PGTypeBool extends PGCatalogType {
         // eat
       }
       return false;
-    }
     `;
   }
   typescriptTypeDefinition(context: Context) {

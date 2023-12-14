@@ -182,13 +182,18 @@ export class SchemaNode extends ContainerNode {
 }
 
 /**
- * Represents a single type inside of postgres. 
- * 
+ * Represents a single type inside of postgres.
+ *
  * These are grouped by schema.
  */
-export class TypeNode extends ASTNode {
-  constructor(schema: SchemaNode, public parser: GeneratesTypeScriptParser) {
+export class TypeNode extends ASTNode implements IsNamed {
+  public name: string;
+  constructor(
+    schema: SchemaNode,
+    public parser: GeneratesTypeScriptParser,
+  ) {
     super(ASTKind.Type, schema);
+    this.name = parser.typescriptName;
   }
 }
 

@@ -3,8 +3,8 @@ import {
   SCRIPT_TYPES_NAMESPACE,
   SqlScriptOperations,
 } from "../operations/sqlscript";
-import { ASTKind, IsNamed, NamespaceVisitor } from "@embracesql/shared";
-import { camelCase, pascalCase } from "change-case";
+import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
+import { generateTypeParsers } from "./generateTypeParsers";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -80,50 +80,8 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     generationBuffer.push(`}`);
   }
 
-  // parsing from strings into TS types.  
-  generationBuffer.push(`// begin string parsers`);
-  context.handlers = {
-    [ASTKind.Schema]: NamespaceVisitor,
-    [ASTKind.Type]: {
-      before: async (context, node) => {
-        return `export function ${node.parser.typescriptTypeParser(context)}`;
-      },
-    },
-  };
-  // no skipping schemas for parsing
-  generationBuffer.push(await context.database.visit({ ...context, skipSchemas: [] }));
-  generationBuffer.push(`// end string parsers`);
+  generationBuffer.push(await generateTypeParsers(context));
+  generationBuffer.push(await generatePrimaryKeyPickers(context));
 
-  // primary key 'pickers' used to debounce and hash objects
-  generationBuffer.push(`// begin primary key pickers`);
-  context.handlers = {
-    [ASTKind.Schema]: NamespaceVisitor,
-    [ASTKind.Table]: {
-      before: async (_, node) => {
-        const tableTypeName = `${pascalCase(
-          (node as unknown as IsNamed)?.name,
-        )}`;
-        const generationBuffer = [""];
-        const primaryKey = node.primaryKey;
-        if (primaryKey) {
-          generationBuffer.push(
-            `export function pickPrimaryKeyFrom${tableTypeName}(value: ${tableTypeName}) : string {`,
-          );
-          generationBuffer.push(`return JSON.stringify({`);
-          primaryKey.columns.forEach((c) =>
-            generationBuffer.push(
-              `${camelCase(c.name)}: value.${camelCase(c.name)},`,
-            ),
-          );
-          generationBuffer.push(`});`);
-          generationBuffer.push(`}`);
-        }
-
-        return generationBuffer.join("\n");
-      },
-    },
-  };
-  generationBuffer.push(await context.database.visit(context));
-  generationBuffer.push(`// end primary key pickers`);
   return generationBuffer.join("\n");
 };

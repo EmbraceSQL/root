@@ -28,14 +28,14 @@ export class PGTypeArray extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     const elementType = (context as Context).resolveType(this.catalog.typelem);
     return `
-    parse${this.typescriptName}(from: string|null) {
       if (from === null) return null;
       const rawArray = JSON.parse(from);
       return rawArray.map((e:unknown) => {
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        return parse${elementType.typescriptName}(\`\${e}\`);
+        return ${elementType.typescriptNamespaceName}.${elementType.typescriptName}.parse(
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+          \`\${e}\`
+        );
       });
-    }
     `;
   }
 

@@ -6690,4348 +6690,5023 @@ export namespace ScriptTypes {
     }
   }
 }
+
 // begin string parsers
 export namespace PgCatalog {
-  export function parseAclitemArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseAclitem(`${e}`);
-    });
-  }
-
-  export function parseBitArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseBit(`${e}`);
-    });
-  }
-
-  export function parseBoolArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseBool(`${e}`);
-    });
-  }
-
-  export function parseBoxArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseBox(`${e}`);
-    });
-  }
-
-  export function parseBpcharArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseBpchar(`${e}`);
-    });
-  }
-
-  export function parseByteaArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseBytea(`${e}`);
-    });
-  }
-
-  export function parseCharArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseChar(`${e}`);
-    });
-  }
-
-  export function parseCidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCid(`${e}`);
-    });
-  }
-
-  export function parseCidrArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCidr(`${e}`);
-    });
-  }
-
-  export function parseCircleArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCircle(`${e}`);
-    });
-  }
-
-  export function parseCstringArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCstring(`${e}`);
-    });
-  }
-
-  export function parseDateArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDate(`${e}`);
-    });
-  }
-
-  export function parseDatemultirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDatemultirange(`${e}`);
-    });
-  }
-
-  export function parseDaterangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDaterange(`${e}`);
-    });
-  }
-
-  export function parseFloat4Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFloat4(`${e}`);
-    });
-  }
-
-  export function parseFloat8Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFloat8(`${e}`);
-    });
-  }
-
-  export function parseGtsvectorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseGtsvector(`${e}`);
-    });
-  }
-
-  export function parseInetArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInet(`${e}`);
-    });
-  }
-
-  export function parseInt2Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt2(`${e}`);
-    });
-  }
-
-  export function parseInt2vectorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt2vector(`${e}`);
-    });
-  }
-
-  export function parseInt4Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt4(`${e}`);
-    });
-  }
-
-  export function parseInt4multirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt4multirange(`${e}`);
-    });
-  }
-
-  export function parseInt4rangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt4range(`${e}`);
-    });
-  }
-
-  export function parseInt8Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt8(`${e}`);
-    });
-  }
-
-  export function parseInt8multirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt8multirange(`${e}`);
-    });
-  }
-
-  export function parseInt8rangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInt8range(`${e}`);
-    });
-  }
-
-  export function parseIntervalArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInterval(`${e}`);
-    });
-  }
-
-  export function parseJsonArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseJson(`${e}`);
-    });
-  }
-
-  export function parseJsonbArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseJsonb(`${e}`);
-    });
-  }
-
-  export function parseJsonpathArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseJsonpath(`${e}`);
-    });
-  }
-
-  export function parseLineArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseLine(`${e}`);
-    });
-  }
-
-  export function parseLsegArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseLseg(`${e}`);
-    });
-  }
-
-  export function parseMacaddrArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseMacaddr(`${e}`);
-    });
-  }
-
-  export function parseMacaddr8Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseMacaddr8(`${e}`);
-    });
-  }
-
-  export function parseMoneyArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseMoney(`${e}`);
-    });
-  }
-
-  export function parseNameArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseName(`${e}`);
-    });
-  }
-
-  export function parseNumericArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseNumeric(`${e}`);
-    });
-  }
-
-  export function parseNummultirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseNummultirange(`${e}`);
-    });
-  }
-
-  export function parseNumrangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseNumrange(`${e}`);
-    });
-  }
-
-  export function parseOidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseOid(`${e}`);
-    });
-  }
-
-  export function parseOidvectorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseOidvector(`${e}`);
-    });
-  }
-
-  export function parsePathArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePath(`${e}`);
-    });
-  }
-
-  export function parsePgAggregateArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAggregate(`${e}`);
-    });
-  }
-
-  export function parsePgAmArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAm(`${e}`);
-    });
-  }
-
-  export function parsePgAmopArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAmop(`${e}`);
-    });
-  }
-
-  export function parsePgAmprocArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAmproc(`${e}`);
-    });
-  }
-
-  export function parsePgAttrdefArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAttrdef(`${e}`);
-    });
-  }
-
-  export function parsePgAttributeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAttribute(`${e}`);
-    });
-  }
-
-  export function parsePgAuthMembersArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAuthMembers(`${e}`);
-    });
-  }
-
-  export function parsePgAuthidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAuthid(`${e}`);
-    });
-  }
-
-  export function parsePgAvailableExtensionVersionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAvailableExtensionVersions(`${e}`);
-    });
-  }
-
-  export function parsePgAvailableExtensionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgAvailableExtensions(`${e}`);
-    });
-  }
-
-  export function parsePgBackendMemoryContextsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgBackendMemoryContexts(`${e}`);
-    });
-  }
-
-  export function parsePgCastArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgCast(`${e}`);
-    });
-  }
-
-  export function parsePgClassArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgClass(`${e}`);
-    });
-  }
-
-  export function parsePgCollationArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgCollation(`${e}`);
-    });
-  }
-
-  export function parsePgConfigArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgConfig(`${e}`);
-    });
-  }
-
-  export function parsePgConstraintArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgConstraint(`${e}`);
-    });
-  }
-
-  export function parsePgConversionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgConversion(`${e}`);
-    });
-  }
-
-  export function parsePgCursorsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgCursors(`${e}`);
-    });
-  }
-
-  export function parsePgDatabaseArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgDatabase(`${e}`);
-    });
-  }
-
-  export function parsePgDbRoleSettingArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgDbRoleSetting(`${e}`);
-    });
-  }
-
-  export function parsePgDefaultAclArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgDefaultAcl(`${e}`);
-    });
-  }
-
-  export function parsePgDependArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgDepend(`${e}`);
-    });
-  }
-
-  export function parsePgDescriptionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgDescription(`${e}`);
-    });
-  }
-
-  export function parsePgEnumArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgEnum(`${e}`);
-    });
-  }
-
-  export function parsePgEventTriggerArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgEventTrigger(`${e}`);
-    });
-  }
-
-  export function parsePgExtensionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgExtension(`${e}`);
-    });
-  }
-
-  export function parsePgFileSettingsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgFileSettings(`${e}`);
-    });
-  }
-
-  export function parsePgForeignDataWrapperArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgForeignDataWrapper(`${e}`);
-    });
-  }
-
-  export function parsePgForeignServerArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgForeignServer(`${e}`);
-    });
-  }
-
-  export function parsePgForeignTableArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgForeignTable(`${e}`);
-    });
-  }
-
-  export function parsePgGroupArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgGroup(`${e}`);
-    });
-  }
-
-  export function parsePgHbaFileRulesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgHbaFileRules(`${e}`);
-    });
-  }
-
-  export function parsePgIdentFileMappingsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgIdentFileMappings(`${e}`);
-    });
-  }
-
-  export function parsePgIndexArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgIndex(`${e}`);
-    });
-  }
-
-  export function parsePgIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgInheritsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgInherits(`${e}`);
-    });
-  }
-
-  export function parsePgInitPrivsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgInitPrivs(`${e}`);
-    });
-  }
-
-  export function parsePgLanguageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgLanguage(`${e}`);
-    });
-  }
-
-  export function parsePgLargeobjectArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgLargeobject(`${e}`);
-    });
-  }
-
-  export function parsePgLargeobjectMetadataArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgLargeobjectMetadata(`${e}`);
-    });
-  }
-
-  export function parsePgLocksArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgLocks(`${e}`);
-    });
-  }
-
-  export function parsePgLsnArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgLsn(`${e}`);
-    });
-  }
-
-  export function parsePgMatviewsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgMatviews(`${e}`);
-    });
-  }
-
-  export function parsePgNamespaceArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgNamespace(`${e}`);
-    });
-  }
-
-  export function parsePgOpclassArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgOpclass(`${e}`);
-    });
-  }
-
-  export function parsePgOperatorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgOperator(`${e}`);
-    });
-  }
-
-  export function parsePgOpfamilyArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgOpfamily(`${e}`);
-    });
-  }
-
-  export function parsePgParameterAclArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgParameterAcl(`${e}`);
-    });
-  }
-
-  export function parsePgPartitionedTableArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPartitionedTable(`${e}`);
-    });
-  }
-
-  export function parsePgPoliciesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPolicies(`${e}`);
-    });
-  }
-
-  export function parsePgPolicyArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPolicy(`${e}`);
-    });
-  }
-
-  export function parsePgPreparedStatementsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPreparedStatements(`${e}`);
-    });
-  }
-
-  export function parsePgPreparedXactsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPreparedXacts(`${e}`);
-    });
-  }
-
-  export function parsePgProcArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgProc(`${e}`);
-    });
-  }
-
-  export function parsePgPublicationArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPublication(`${e}`);
-    });
-  }
-
-  export function parsePgPublicationNamespaceArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPublicationNamespace(`${e}`);
-    });
-  }
-
-  export function parsePgPublicationRelArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPublicationRel(`${e}`);
-    });
-  }
-
-  export function parsePgPublicationTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgPublicationTables(`${e}`);
-    });
-  }
-
-  export function parsePgRangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgRange(`${e}`);
-    });
-  }
-
-  export function parsePgReplicationOriginArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgReplicationOrigin(`${e}`);
-    });
-  }
-
-  export function parsePgReplicationOriginStatusArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgReplicationOriginStatus(`${e}`);
-    });
-  }
-
-  export function parsePgReplicationSlotsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgReplicationSlots(`${e}`);
-    });
-  }
-
-  export function parsePgRewriteArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgRewrite(`${e}`);
-    });
-  }
-
-  export function parsePgRolesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgRoles(`${e}`);
-    });
-  }
-
-  export function parsePgRulesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgRules(`${e}`);
-    });
-  }
-
-  export function parsePgSeclabelArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSeclabel(`${e}`);
-    });
-  }
-
-  export function parsePgSeclabelsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSeclabels(`${e}`);
-    });
-  }
-
-  export function parsePgSequenceArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSequence(`${e}`);
-    });
-  }
-
-  export function parsePgSequencesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSequences(`${e}`);
-    });
-  }
-
-  export function parsePgSettingsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSettings(`${e}`);
-    });
-  }
-
-  export function parsePgShadowArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgShadow(`${e}`);
-    });
-  }
-
-  export function parsePgShdependArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgShdepend(`${e}`);
-    });
-  }
-
-  export function parsePgShdescriptionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgShdescription(`${e}`);
-    });
-  }
-
-  export function parsePgShmemAllocationsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgShmemAllocations(`${e}`);
-    });
-  }
-
-  export function parsePgShseclabelArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgShseclabel(`${e}`);
-    });
-  }
-
-  export function parsePgSnapshotArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSnapshot(`${e}`);
-    });
-  }
-
-  export function parsePgStatActivityArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatActivity(`${e}`);
-    });
-  }
-
-  export function parsePgStatAllIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatAllIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatAllTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatAllTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatArchiverArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatArchiver(`${e}`);
-    });
-  }
-
-  export function parsePgStatBgwriterArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatBgwriter(`${e}`);
-    });
-  }
-
-  export function parsePgStatDatabaseArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatDatabase(`${e}`);
-    });
-  }
-
-  export function parsePgStatDatabaseConflictsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatDatabaseConflicts(`${e}`);
-    });
-  }
-
-  export function parsePgStatGssapiArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatGssapi(`${e}`);
-    });
-  }
-
-  export function parsePgStatIoArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatIo(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressAnalyzeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressAnalyze(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressBasebackupArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressBasebackup(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressClusterArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressCluster(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressCopyArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressCopy(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressCreateIndexArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressCreateIndex(`${e}`);
-    });
-  }
-
-  export function parsePgStatProgressVacuumArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatProgressVacuum(`${e}`);
-    });
-  }
-
-  export function parsePgStatRecoveryPrefetchArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatRecoveryPrefetch(`${e}`);
-    });
-  }
-
-  export function parsePgStatReplicationArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatReplication(`${e}`);
-    });
-  }
-
-  export function parsePgStatReplicationSlotsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatReplicationSlots(`${e}`);
-    });
-  }
-
-  export function parsePgStatSlruArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSlru(`${e}`);
-    });
-  }
-
-  export function parsePgStatSslArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSsl(`${e}`);
-    });
-  }
-
-  export function parsePgStatSubscriptionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSubscription(`${e}`);
-    });
-  }
-
-  export function parsePgStatSubscriptionStatsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSubscriptionStats(`${e}`);
-    });
-  }
-
-  export function parsePgStatSysIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSysIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatSysTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatSysTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatUserFunctionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatUserFunctions(`${e}`);
-    });
-  }
-
-  export function parsePgStatUserIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatUserIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatUserTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatUserTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatWalArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatWal(`${e}`);
-    });
-  }
-
-  export function parsePgStatWalReceiverArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatWalReceiver(`${e}`);
-    });
-  }
-
-  export function parsePgStatXactAllTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatXactAllTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatXactSysTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatXactSysTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatXactUserFunctionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatXactUserFunctions(`${e}`);
-    });
-  }
-
-  export function parsePgStatXactUserTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatXactUserTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatioAllIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioAllIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatioAllSequencesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioAllSequences(`${e}`);
-    });
-  }
-
-  export function parsePgStatioAllTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioAllTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatioSysIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioSysIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatioSysSequencesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioSysSequences(`${e}`);
-    });
-  }
-
-  export function parsePgStatioSysTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioSysTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatioUserIndexesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioUserIndexes(`${e}`);
-    });
-  }
-
-  export function parsePgStatioUserSequencesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioUserSequences(`${e}`);
-    });
-  }
-
-  export function parsePgStatioUserTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatioUserTables(`${e}`);
-    });
-  }
-
-  export function parsePgStatisticArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatistic(`${e}`);
-    });
-  }
-
-  export function parsePgStatisticExtArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatisticExt(`${e}`);
-    });
-  }
-
-  export function parsePgStatisticExtDataArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatisticExtData(`${e}`);
-    });
-  }
-
-  export function parsePgStatsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStats(`${e}`);
-    });
-  }
-
-  export function parsePgStatsExtArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatsExt(`${e}`);
-    });
-  }
-
-  export function parsePgStatsExtExprsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgStatsExtExprs(`${e}`);
-    });
-  }
-
-  export function parsePgSubscriptionArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSubscription(`${e}`);
-    });
-  }
-
-  export function parsePgSubscriptionRelArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgSubscriptionRel(`${e}`);
-    });
-  }
-
-  export function parsePgTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTables(`${e}`);
-    });
-  }
-
-  export function parsePgTablespaceArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTablespace(`${e}`);
-    });
-  }
-
-  export function parsePgTimezoneAbbrevsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTimezoneAbbrevs(`${e}`);
-    });
-  }
-
-  export function parsePgTimezoneNamesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTimezoneNames(`${e}`);
-    });
-  }
-
-  export function parsePgTransformArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTransform(`${e}`);
-    });
-  }
-
-  export function parsePgTriggerArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTrigger(`${e}`);
-    });
-  }
-
-  export function parsePgTsConfigArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTsConfig(`${e}`);
-    });
-  }
-
-  export function parsePgTsConfigMapArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTsConfigMap(`${e}`);
-    });
-  }
-
-  export function parsePgTsDictArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTsDict(`${e}`);
-    });
-  }
-
-  export function parsePgTsParserArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTsParser(`${e}`);
-    });
-  }
-
-  export function parsePgTsTemplateArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgTsTemplate(`${e}`);
-    });
-  }
-
-  export function parsePgTypeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgType(`${e}`);
-    });
-  }
-
-  export function parsePgUserArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgUser(`${e}`);
-    });
-  }
-
-  export function parsePgUserMappingArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgUserMapping(`${e}`);
-    });
-  }
-
-  export function parsePgUserMappingsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgUserMappings(`${e}`);
-    });
-  }
-
-  export function parsePgViewsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePgViews(`${e}`);
-    });
-  }
-
-  export function parsePointArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePoint(`${e}`);
-    });
-  }
-
-  export function parsePolygonArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePolygon(`${e}`);
-    });
-  }
-
-  export function parseRecordArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRecord(`${e}`);
-    });
-  }
-
-  export function parseRefcursorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRefcursor(`${e}`);
-    });
-  }
-
-  export function parseRegclassArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegclass(`${e}`);
-    });
-  }
-
-  export function parseRegcollationArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegcollation(`${e}`);
-    });
-  }
-
-  export function parseRegconfigArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegconfig(`${e}`);
-    });
-  }
-
-  export function parseRegdictionaryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegdictionary(`${e}`);
-    });
-  }
-
-  export function parseRegnamespaceArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegnamespace(`${e}`);
-    });
-  }
-
-  export function parseRegoperArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegoper(`${e}`);
-    });
-  }
-
-  export function parseRegoperatorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegoperator(`${e}`);
-    });
-  }
-
-  export function parseRegprocArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegproc(`${e}`);
-    });
-  }
-
-  export function parseRegprocedureArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegprocedure(`${e}`);
-    });
-  }
-
-  export function parseRegroleArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegrole(`${e}`);
-    });
-  }
-
-  export function parseRegtypeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRegtype(`${e}`);
-    });
-  }
-
-  export function parseTextArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseText(`${e}`);
-    });
-  }
-
-  export function parseTidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTid(`${e}`);
-    });
-  }
-
-  export function parseTimeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTime(`${e}`);
-    });
-  }
-
-  export function parseTimestampArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTimestamp(`${e}`);
-    });
-  }
-
-  export function parseTimestamptzArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTimestamptz(`${e}`);
-    });
-  }
-
-  export function parseTimetzArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTimetz(`${e}`);
-    });
-  }
-
-  export function parseTsmultirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTsmultirange(`${e}`);
-    });
-  }
-
-  export function parseTsqueryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTsquery(`${e}`);
-    });
-  }
-
-  export function parseTsrangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTsrange(`${e}`);
-    });
-  }
-
-  export function parseTstzmultirangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTstzmultirange(`${e}`);
-    });
-  }
-
-  export function parseTstzrangeArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTstzrange(`${e}`);
-    });
-  }
-
-  export function parseTsvectorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTsvector(`${e}`);
-    });
-  }
-
-  export function parseTxidSnapshotArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTxidSnapshot(`${e}`);
-    });
-  }
-
-  export function parseUuidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUuid(`${e}`);
-    });
-  }
-
-  export function parseVarbitArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseVarbit(`${e}`);
-    });
-  }
-
-  export function parseVarcharArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseVarchar(`${e}`);
-    });
-  }
-
-  export function parseXidArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseXid(`${e}`);
-    });
-  }
-
-  export function parseXid8Array(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseXid8(`${e}`);
-    });
-  }
-
-  export function parseXmlArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseXml(`${e}`);
-    });
-  }
-
-  export function parseAclitem(from: string | null) {
-    return from;
-  }
-
-  export function parseAny(from: string | null) {
-    return from;
-  }
-
-  export function parseAnyarray(from: string | null) {
-    return from;
-  }
-
-  export function parseAnycompatible(from: string | null) {
-    return from;
-  }
-
-  export function parseAnycompatiblearray(from: string | null) {
-    return from;
-  }
-
-  export function parseAnycompatiblemultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseAnycompatiblenonarray(from: string | null) {
-    return from;
-  }
-
-  export function parseAnycompatiblerange(from: string | null) {
-    return from;
-  }
-
-  export function parseAnyelement(from: string | null) {
-    return from;
-  }
-
-  export function parseAnyenum(from: string | null) {
-    return from;
-  }
-
-  export function parseAnymultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseAnynonarray(from: string | null) {
-    return from;
-  }
-
-  export function parseAnyrange(from: string | null) {
-    return from;
-  }
-
-  export function parseBit(from: string | null) {
-    if (from === null) return null;
-    if (["t", "T", "true", "True"].includes(from)) return true;
-    try {
-      if (Number.parseFloat(from) > 0) return true;
-    } catch (e) {
-      // eat
+  export namespace AclitemArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Aclitem.parse(`${e}`);
+      });
     }
-    return false;
   }
-
-  export function parseBool(from: string | null) {
-    if (from === null) return null;
-    if (["t", "T", "true", "True"].includes(from)) return true;
-    try {
-      if (Number.parseFloat(from) > 0) return true;
-    } catch (e) {
-      // eat
+  export namespace BitArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Bit.parse(`${e}`);
+      });
     }
-    return false;
   }
-
-  export function parseBox(from: string | null) {
-    return from;
-  }
-
-  export function parseBpchar(from: string | null) {
-    return from;
-  }
-
-  export function parseBytea(from: string | null) {
-    return from ? new Uint8Array(JSON.parse(from)) : null;
-  }
-
-  export function parseChar(from: string | null) {
-    return from;
-  }
-
-  export function parseCid(from: string | null) {
-    return from;
-  }
-
-  export function parseCidr(from: string | null) {
-    return from ? new Uint8Array(JSON.parse(from)) : null;
-  }
-
-  export function parseCircle(from: string | null) {
-    return from;
-  }
-
-  export function parseCstring(from: string | null) {
-    return from;
-  }
-
-  export function parseDate(from: string | null) {
-    if (from === null) return null;
-    if ((from as unknown) instanceof Date) return from;
-    return new Date(from);
-  }
-
-  export function parseDatemultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseDaterange(from: string | null) {
-    return from;
-  }
-
-  export function parseEventTrigger(from: string | null) {
-    return from;
-  }
-
-  export function parseFdwHandler(from: string | null) {
-    return from;
-  }
-
-  export function parseFloat4(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseFloat8(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseGtsvector(from: string | null) {
-    return from;
-  }
-
-  export function parseIndexAmHandler(from: string | null) {
-    return from;
-  }
-
-  export function parseInet(from: string | null) {
-    return from;
-  }
-
-  export function parseInt2(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseInt2vector(from: string | null) {
-    if (from === null) return null;
-    const source = Array.isArray(from)
-      ? new Uint16Array(from)
-      : JSON.parse(from);
-    return new Uint16Array(source);
-  }
-
-  export function parseInt4(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseInt4multirange(from: string | null) {
-    return from;
-  }
-
-  export function parseInt4range(from: string | null) {
-    return from;
-  }
-
-  export function parseInt8(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseInt8multirange(from: string | null) {
-    return from;
-  }
-
-  export function parseInt8range(from: string | null) {
-    return from;
-  }
-
-  export function parseInternal(from: string | null) {
-    return from;
-  }
-
-  export function parseInterval(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseJson(from: string | null) {
-    return from;
-  }
-
-  export function parseJsonb(from: string | null) {
-    return from;
-  }
-
-  export function parseJsonpath(from: string | null) {
-    return from;
-  }
-
-  export function parseLanguageHandler(from: string | null) {
-    return from;
-  }
-
-  export function parseLine(from: string | null) {
-    return from;
-  }
-
-  export function parseLseg(from: string | null) {
-    return from;
-  }
-
-  export function parseMacaddr(from: string | null) {
-    return from ? new Uint8Array(JSON.parse(from)) : null;
-  }
-
-  export function parseMacaddr8(from: string | null) {
-    return from ? new Uint8Array(JSON.parse(from)) : null;
-  }
-
-  export function parseMoney(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseName(from: string | null) {
-    return from;
-  }
-
-  export function parseNumeric(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseNummultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseNumrange(from: string | null) {
-    return from;
-  }
-
-  export function parseOid(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseOidvector(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseOid(`${e}`);
-    });
-  }
-
-  export function parsePath(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAggregate(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAm(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAmop(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAmproc(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAttrdef(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAttribute(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAuthMembers(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAuthid(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAvailableExtensionVersions(from: string | null) {
-    return from;
-  }
-
-  export function parsePgAvailableExtensions(from: string | null) {
-    return from;
-  }
-
-  export function parsePgBackendMemoryContexts(from: string | null) {
-    return from;
-  }
-
-  export function parsePgBrinBloomSummary(from: string | null) {
-    return from;
-  }
-
-  export function parsePgBrinMinmaxMultiSummary(from: string | null) {
-    return from;
-  }
-
-  export function parsePgCast(from: string | null) {
-    return from;
-  }
-
-  export function parsePgClass(from: string | null) {
-    return from;
-  }
-
-  export function parsePgCollation(from: string | null) {
-    return from;
-  }
-
-  export function parsePgConfig(from: string | null) {
-    return from;
-  }
-
-  export function parsePgConstraint(from: string | null) {
-    return from;
-  }
-
-  export function parsePgConversion(from: string | null) {
-    return from;
-  }
-
-  export function parsePgCursors(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDatabase(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDbRoleSetting(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDdlCommand(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDefaultAcl(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDepend(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDependencies(from: string | null) {
-    return from;
-  }
-
-  export function parsePgDescription(from: string | null) {
-    return from;
-  }
-
-  export function parsePgEnum(from: string | null) {
-    return from;
-  }
-
-  export function parsePgEventTrigger(from: string | null) {
-    return from;
-  }
-
-  export function parsePgExtension(from: string | null) {
-    return from;
-  }
-
-  export function parsePgFileSettings(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignDataWrapper(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignServer(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignTable(from: string | null) {
-    return from;
-  }
-
-  export function parsePgGroup(from: string | null) {
-    return from;
-  }
-
-  export function parsePgHbaFileRules(from: string | null) {
-    return from;
-  }
-
-  export function parsePgIdentFileMappings(from: string | null) {
-    return from;
-  }
-
-  export function parsePgIndex(from: string | null) {
-    return from;
-  }
-
-  export function parsePgIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgInherits(from: string | null) {
-    return from;
-  }
-
-  export function parsePgInitPrivs(from: string | null) {
-    return from;
-  }
-
-  export function parsePgLanguage(from: string | null) {
-    return from;
-  }
-
-  export function parsePgLargeobject(from: string | null) {
-    return from;
-  }
-
-  export function parsePgLargeobjectMetadata(from: string | null) {
-    return from;
-  }
-
-  export function parsePgLocks(from: string | null) {
-    return from;
-  }
-
-  export function parsePgLsn(from: string | null) {
-    if (from === null) return null;
-    if (from === "") return null;
-    return BigInt(from);
-  }
-
-  export function parsePgMatviews(from: string | null) {
-    return from;
-  }
-
-  export function parsePgMcvList(from: string | null) {
-    return from;
-  }
-
-  export function parsePgNamespace(from: string | null) {
-    return from;
-  }
-
-  export function parsePgNdistinct(from: string | null) {
-    return from;
-  }
-
-  export function parsePgNodeTree(from: string | null) {
-    return from;
-  }
-
-  export function parsePgOpclass(from: string | null) {
-    return from;
-  }
-
-  export function parsePgOperator(from: string | null) {
-    return from;
-  }
-
-  export function parsePgOpfamily(from: string | null) {
-    return from;
-  }
-
-  export function parsePgParameterAcl(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPartitionedTable(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPolicies(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPolicy(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPreparedStatements(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPreparedXacts(from: string | null) {
-    return from;
-  }
-
-  export function parsePgProc(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPublication(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPublicationNamespace(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPublicationRel(from: string | null) {
-    return from;
-  }
-
-  export function parsePgPublicationTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgRange(from: string | null) {
-    return from;
-  }
-
-  export function parsePgReplicationOrigin(from: string | null) {
-    return from;
-  }
-
-  export function parsePgReplicationOriginStatus(from: string | null) {
-    return from;
-  }
-
-  export function parsePgReplicationSlots(from: string | null) {
-    return from;
-  }
-
-  export function parsePgRewrite(from: string | null) {
-    return from;
-  }
-
-  export function parsePgRoles(from: string | null) {
-    return from;
-  }
-
-  export function parsePgRules(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSeclabel(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSeclabels(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSequence(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSequences(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSettings(from: string | null) {
-    return from;
-  }
-
-  export function parsePgShadow(from: string | null) {
-    return from;
-  }
-
-  export function parsePgShdepend(from: string | null) {
-    return from;
-  }
-
-  export function parsePgShdescription(from: string | null) {
-    return from;
-  }
-
-  export function parsePgShmemAllocations(from: string | null) {
-    return from;
-  }
-
-  export function parsePgShseclabel(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSnapshot(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatActivity(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatAllIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatAllTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatArchiver(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatBgwriter(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatDatabase(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatDatabaseConflicts(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatGssapi(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatIo(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressAnalyze(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressBasebackup(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressCluster(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressCopy(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressCreateIndex(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatProgressVacuum(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatRecoveryPrefetch(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatReplication(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatReplicationSlots(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSlru(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSsl(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSubscription(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSubscriptionStats(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSysIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatSysTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatUserFunctions(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatUserIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatUserTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatWal(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatWalReceiver(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatXactAllTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatXactSysTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatXactUserFunctions(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatXactUserTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioAllIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioAllSequences(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioAllTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioSysIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioSysSequences(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioSysTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioUserIndexes(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioUserSequences(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatioUserTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatistic(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatisticExt(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatisticExtData(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStats(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatsExt(from: string | null) {
-    return from;
-  }
-
-  export function parsePgStatsExtExprs(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSubscription(from: string | null) {
-    return from;
-  }
-
-  export function parsePgSubscriptionRel(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTablespace(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTimezoneAbbrevs(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTimezoneNames(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTransform(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTrigger(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTsConfig(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTsConfigMap(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTsDict(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTsParser(from: string | null) {
-    return from;
-  }
-
-  export function parsePgTsTemplate(from: string | null) {
-    return from;
-  }
-
-  export function parsePgType(from: string | null) {
-    return from;
-  }
-
-  export function parsePgUser(from: string | null) {
-    return from;
-  }
-
-  export function parsePgUserMapping(from: string | null) {
-    return from;
-  }
-
-  export function parsePgUserMappings(from: string | null) {
-    return from;
-  }
-
-  export function parsePgViews(from: string | null) {
-    return from;
-  }
-
-  export function parsePoint(from: string | null) {
-    return from;
-  }
-
-  export function parsePolygon(from: string | null) {
-    return from;
-  }
-
-  export function parseRecord(from: string | null) {
-    return from;
-  }
-
-  export function parseRefcursor(from: string | null) {
-    return from;
-  }
-
-  export function parseRegclass(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegcollation(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegconfig(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegdictionary(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegnamespace(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegoper(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegoperator(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegproc(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegprocedure(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegrole(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseRegtype(from: string | null) {
-    if (from === null) return null;
-    return Number.parseFloat(from);
-  }
-
-  export function parseTableAmHandler(from: string | null) {
-    return from;
-  }
-
-  export function parseText(from: string | null) {
-    return from;
-  }
-
-  export function parseTid(from: string | null) {
-    return from;
-  }
-
-  export function parseTime(from: string | null) {
-    if (from === null) return null;
-    if ((from as unknown) instanceof Date) return from;
-    return new Date(from);
-  }
-
-  export function parseTimestamp(from: string | null) {
-    if (from === null) return null;
-    if ((from as unknown) instanceof Date) return from;
-    return new Date(from);
-  }
-
-  export function parseTimestamptz(from: string | null) {
-    if (from === null) return null;
-    if ((from as unknown) instanceof Date) return from;
-    return new Date(from);
-  }
-
-  export function parseTimetz(from: string | null) {
-    if (from === null) return null;
-    if ((from as unknown) instanceof Date) return from;
-    return new Date(from);
-  }
-
-  export function parseTrigger(from: string | null) {
-    return from;
-  }
-
-  export function parseTsmHandler(from: string | null) {
-    return from;
-  }
-
-  export function parseTsmultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseTsquery(from: string | null) {
-    return from;
-  }
-
-  export function parseTsrange(from: string | null) {
-    return from;
-  }
-
-  export function parseTstzmultirange(from: string | null) {
-    return from;
-  }
-
-  export function parseTstzrange(from: string | null) {
-    return from;
-  }
-
-  export function parseTsvector(from: string | null) {
-    return from;
-  }
-
-  export function parseTxidSnapshot(from: string | null) {
-    return from;
-  }
-
-  export function parseUnknown(from: string | null) {
-    return from;
-  }
-
-  export function parseUuid(from: string | null) {
-    return from ? new UUID(from) : null;
-  }
-
-  export function parseVarbit(from: string | null) {
-    if (from === null) return null;
-    if (["t", "T", "true", "True"].includes(from)) return true;
-    try {
-      if (Number.parseFloat(from) > 0) return true;
-    } catch (e) {
-      // eat
+  export namespace BoolArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Bool.parse(`${e}`);
+      });
     }
-    return false;
   }
-
-  export function parseVarchar(from: string | null) {
-    return from;
+  export namespace BoxArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Box.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseVoid(from: string | null) {
-    return from;
+  export namespace BpcharArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Bpchar.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseXid(from: string | null) {
-    return from;
+  export namespace ByteaArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Bytea.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseXid8(from: string | null) {
-    return from;
+  export namespace CharArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Char.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseXml(from: string | null) {
-    return from;
+  export namespace CidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Cid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CidrArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Cidr.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CircleArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Circle.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CstringArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Cstring.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DateArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Date.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DatemultirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Datemultirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DaterangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Daterange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Float4Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Float4.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Float8Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Float8.parse(`${e}`);
+      });
+    }
+  }
+  export namespace GtsvectorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Gtsvector.parse(`${e}`);
+      });
+    }
+  }
+  export namespace InetArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Inet.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int2Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int2.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int2vectorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int2vector.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int4Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int4.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int4multirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int4multirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int4rangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int4range.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int8Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int8.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int8multirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int8multirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Int8rangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Int8range.parse(`${e}`);
+      });
+    }
+  }
+  export namespace IntervalArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Interval.parse(`${e}`);
+      });
+    }
+  }
+  export namespace JsonArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Json.parse(`${e}`);
+      });
+    }
+  }
+  export namespace JsonbArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Jsonb.parse(`${e}`);
+      });
+    }
+  }
+  export namespace JsonpathArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Jsonpath.parse(`${e}`);
+      });
+    }
+  }
+  export namespace LineArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Line.parse(`${e}`);
+      });
+    }
+  }
+  export namespace LsegArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Lseg.parse(`${e}`);
+      });
+    }
+  }
+  export namespace MacaddrArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Macaddr.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Macaddr8Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Macaddr8.parse(`${e}`);
+      });
+    }
+  }
+  export namespace MoneyArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Money.parse(`${e}`);
+      });
+    }
+  }
+  export namespace NameArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Name.parse(`${e}`);
+      });
+    }
+  }
+  export namespace NumericArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Numeric.parse(`${e}`);
+      });
+    }
+  }
+  export namespace NummultirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Nummultirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace NumrangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Numrange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace OidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Oid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace OidvectorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Oidvector.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PathArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Path.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAggregateArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAggregate.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAmArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAm.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAmopArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAmop.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAmprocArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAmproc.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAttrdefArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAttrdef.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAttributeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAttribute.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAuthMembersArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAuthMembers.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAuthidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAuthid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAvailableExtensionVersionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAvailableExtensionVersions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgAvailableExtensionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgAvailableExtensions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgBackendMemoryContextsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgBackendMemoryContexts.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgCastArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgCast.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgClassArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgClass.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgCollationArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgCollation.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgConfigArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgConfig.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgConstraintArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgConstraint.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgConversionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgConversion.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgCursorsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgCursors.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgDatabaseArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgDatabase.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgDbRoleSettingArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgDbRoleSetting.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgDefaultAclArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgDefaultAcl.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgDependArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgDepend.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgDescriptionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgDescription.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgEnumArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgEnum.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgEventTriggerArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgEventTrigger.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgExtensionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgExtension.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgFileSettingsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgFileSettings.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgForeignDataWrapperArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgForeignDataWrapper.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgForeignServerArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgForeignServer.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgForeignTableArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgForeignTable.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgGroupArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgGroup.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgHbaFileRulesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgHbaFileRules.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgIdentFileMappingsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgIdentFileMappings.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgIndexArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgIndex.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgInheritsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgInherits.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgInitPrivsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgInitPrivs.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgLanguageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgLanguage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgLargeobjectArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgLargeobject.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgLargeobjectMetadataArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgLargeobjectMetadata.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgLocksArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgLocks.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgLsnArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgLsn.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgMatviewsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgMatviews.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgNamespaceArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgNamespace.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgOpclassArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgOpclass.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgOperatorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgOperator.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgOpfamilyArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgOpfamily.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgParameterAclArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgParameterAcl.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPartitionedTableArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPartitionedTable.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPoliciesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPolicies.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPolicyArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPolicy.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPreparedStatementsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPreparedStatements.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPreparedXactsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPreparedXacts.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgProcArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgProc.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPublicationArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPublication.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPublicationNamespaceArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPublicationNamespace.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPublicationRelArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPublicationRel.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgPublicationTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgPublicationTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgRangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgRange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgReplicationOriginArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgReplicationOrigin.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgReplicationOriginStatusArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgReplicationOriginStatus.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgReplicationSlotsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgReplicationSlots.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgRewriteArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgRewrite.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgRolesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgRoles.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgRulesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgRules.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSeclabelArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSeclabel.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSeclabelsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSeclabels.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSequenceArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSequence.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSequencesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSequences.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSettingsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSettings.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgShadowArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgShadow.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgShdependArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgShdepend.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgShdescriptionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgShdescription.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgShmemAllocationsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgShmemAllocations.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgShseclabelArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgShseclabel.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSnapshotArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSnapshot.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatActivityArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatActivity.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatAllIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatAllIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatAllTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatAllTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatArchiverArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatArchiver.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatBgwriterArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatBgwriter.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatDatabaseArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatDatabase.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatDatabaseConflictsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatDatabaseConflicts.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatGssapiArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatGssapi.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatIoArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatIo.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressAnalyzeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressAnalyze.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressBasebackupArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressBasebackup.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressClusterArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressCluster.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressCopyArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressCopy.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressCreateIndexArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressCreateIndex.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatProgressVacuumArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatProgressVacuum.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatRecoveryPrefetchArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatRecoveryPrefetch.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatReplicationArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatReplication.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatReplicationSlotsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatReplicationSlots.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSlruArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSlru.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSslArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSsl.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSubscriptionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSubscription.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSubscriptionStatsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSubscriptionStats.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSysIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSysIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatSysTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatSysTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatUserFunctionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatUserFunctions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatUserIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatUserIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatUserTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatUserTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatWalArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatWal.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatWalReceiverArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatWalReceiver.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatXactAllTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatXactAllTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatXactSysTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatXactSysTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatXactUserFunctionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatXactUserFunctions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatXactUserTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatXactUserTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioAllIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioAllIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioAllSequencesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioAllSequences.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioAllTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioAllTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioSysIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioSysIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioSysSequencesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioSysSequences.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioSysTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioSysTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioUserIndexesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioUserIndexes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioUserSequencesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioUserSequences.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatioUserTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatioUserTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatisticArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatistic.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatisticExtArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatisticExt.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatisticExtDataArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatisticExtData.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStats.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatsExtArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatsExt.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgStatsExtExprsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgStatsExtExprs.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSubscriptionArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSubscription.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgSubscriptionRelArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgSubscriptionRel.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTablespaceArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTablespace.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTimezoneAbbrevsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTimezoneAbbrevs.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTimezoneNamesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTimezoneNames.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTransformArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTransform.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTriggerArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTrigger.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTsConfigArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTsConfig.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTsConfigMapArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTsConfigMap.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTsDictArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTsDict.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTsParserArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTsParser.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTsTemplateArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgTsTemplate.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgTypeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgType.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgUserArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgUser.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgUserMappingArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgUserMapping.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgUserMappingsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgUserMappings.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgViewsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.PgViews.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PointArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Point.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PolygonArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Polygon.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RecordArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Record.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RefcursorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Refcursor.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegclassArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regclass.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegcollationArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regcollation.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegconfigArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regconfig.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegdictionaryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regdictionary.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegnamespaceArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regnamespace.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegoperArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regoper.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegoperatorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regoperator.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegprocArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regproc.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegprocedureArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regprocedure.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegroleArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regrole.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RegtypeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Regtype.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TextArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Text.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TimeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Time.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TimestampArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Timestamp.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TimestamptzArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Timestamptz.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TimetzArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Timetz.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TsmultirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tsmultirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TsqueryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tsquery.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TsrangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tsrange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TstzmultirangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tstzmultirange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TstzrangeArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tstzrange.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TsvectorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Tsvector.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TxidSnapshotArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.TxidSnapshot.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UuidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Uuid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace VarbitArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Varbit.parse(`${e}`);
+      });
+    }
+  }
+  export namespace VarcharArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Varchar.parse(`${e}`);
+      });
+    }
+  }
+  export namespace XidArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Xid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Xid8Array {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Xid8.parse(`${e}`);
+      });
+    }
+  }
+  export namespace XmlArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Xml.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Aclitem {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Any {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anyarray {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anycompatible {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anycompatiblearray {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anycompatiblemultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anycompatiblenonarray {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anycompatiblerange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anyelement {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anyenum {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anymultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anynonarray {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Anyrange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Bit {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if (["t", "T", "true", "True"].includes(from)) return true;
+      try {
+        if (Number.parseFloat(from) > 0) return true;
+      } catch (e) {
+        // eat
+      }
+      return false;
+    }
+  }
+  export namespace Bool {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if (["t", "T", "true", "True"].includes(from)) return true;
+      try {
+        if (Number.parseFloat(from) > 0) return true;
+      } catch (e) {
+        // eat
+      }
+      return false;
+    }
+  }
+  export namespace Box {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Bpchar {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Bytea {
+    export function parse(from: string | null) {
+      return from ? new Uint8Array(JSON.parse(from)) : null;
+    }
+  }
+  export namespace Char {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Cid {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Cidr {
+    export function parse(from: string | null) {
+      return from ? new Uint8Array(JSON.parse(from)) : null;
+    }
+  }
+  export namespace Circle {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Cstring {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Date {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof global.Date) return from;
+      return new global.Date(from);
+    }
+  }
+  export namespace Datemultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Daterange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace EventTrigger {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace FdwHandler {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Float4 {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Float8 {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Gtsvector {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace IndexAmHandler {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Inet {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Int2 {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Int2vector {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const source = Array.isArray(from)
+        ? new Uint16Array(from)
+        : JSON.parse(from);
+      return new Uint16Array(source);
+    }
+  }
+  export namespace Int4 {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Int4multirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Int4range {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Int8 {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Int8multirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Int8range {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Internal {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Interval {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Json {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Jsonb {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Jsonpath {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace LanguageHandler {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Line {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Lseg {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Macaddr {
+    export function parse(from: string | null) {
+      return from ? new Uint8Array(JSON.parse(from)) : null;
+    }
+  }
+  export namespace Macaddr8 {
+    export function parse(from: string | null) {
+      return from ? new Uint8Array(JSON.parse(from)) : null;
+    }
+  }
+  export namespace Money {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Name {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Numeric {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Nummultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Numrange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Oid {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Oidvector {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return PgCatalog.Oid.parse(`${e}`);
+      });
+    }
+  }
+  export namespace Path {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAggregate {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAm {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAmop {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAmproc {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAttrdef {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAttribute {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAuthMembers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAuthid {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAvailableExtensionVersions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgAvailableExtensions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgBackendMemoryContexts {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgBrinBloomSummary {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgBrinMinmaxMultiSummary {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgCast {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgClass {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgCollation {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgConfig {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgConstraint {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgConversion {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgCursors {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDatabase {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDbRoleSetting {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDdlCommand {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDefaultAcl {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDepend {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDependencies {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgDescription {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgEnum {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgEventTrigger {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgExtension {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgFileSettings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignDataWrapper {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignServer {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignTable {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgGroup {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgHbaFileRules {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgIdentFileMappings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgIndex {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgInherits {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgInitPrivs {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgLanguage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgLargeobject {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgLargeobjectMetadata {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgLocks {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgLsn {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if (from === "") return null;
+      return BigInt(from);
+    }
+  }
+  export namespace PgMatviews {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgMcvList {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgNamespace {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgNdistinct {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgNodeTree {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgOpclass {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgOperator {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgOpfamily {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgParameterAcl {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPartitionedTable {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPolicies {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPolicy {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPreparedStatements {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPreparedXacts {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgProc {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPublication {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPublicationNamespace {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPublicationRel {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgPublicationTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgRange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgReplicationOrigin {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgReplicationOriginStatus {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgReplicationSlots {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgRewrite {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgRoles {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgRules {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSeclabel {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSeclabels {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSequence {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSequences {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSettings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgShadow {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgShdepend {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgShdescription {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgShmemAllocations {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgShseclabel {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSnapshot {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatActivity {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatAllIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatAllTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatArchiver {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatBgwriter {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatDatabase {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatDatabaseConflicts {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatGssapi {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatIo {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressAnalyze {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressBasebackup {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressCluster {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressCopy {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressCreateIndex {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatProgressVacuum {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatRecoveryPrefetch {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatReplication {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatReplicationSlots {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSlru {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSsl {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSubscription {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSubscriptionStats {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSysIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatSysTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatUserFunctions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatUserIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatUserTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatWal {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatWalReceiver {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatXactAllTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatXactSysTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatXactUserFunctions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatXactUserTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioAllIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioAllSequences {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioAllTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioSysIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioSysSequences {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioSysTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioUserIndexes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioUserSequences {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatioUserTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatistic {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatisticExt {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatisticExtData {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStats {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatsExt {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgStatsExtExprs {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSubscription {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgSubscriptionRel {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTablespace {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTimezoneAbbrevs {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTimezoneNames {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTransform {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTrigger {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTsConfig {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTsConfigMap {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTsDict {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTsParser {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgTsTemplate {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgType {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgUser {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgUserMapping {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgUserMappings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgViews {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Point {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Polygon {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Record {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Refcursor {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Regclass {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regcollation {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regconfig {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regdictionary {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regnamespace {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regoper {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regoperator {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regproc {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regprocedure {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regrole {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace Regtype {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      return Number.parseFloat(from);
+    }
+  }
+  export namespace TableAmHandler {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Text {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tid {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Time {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof global.Date) return from;
+      return new global.Date(from);
+    }
+  }
+  export namespace Timestamp {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof global.Date) return from;
+      return new global.Date(from);
+    }
+  }
+  export namespace Timestamptz {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof global.Date) return from;
+      return new global.Date(from);
+    }
+  }
+  export namespace Timetz {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if ((from as unknown) instanceof global.Date) return from;
+      return new global.Date(from);
+    }
+  }
+  export namespace Trigger {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TsmHandler {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tsmultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tsquery {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tsrange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tstzmultirange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tstzrange {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tsvector {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TxidSnapshot {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Unknown {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Uuid {
+    export function parse(from: string | null) {
+      return from ? new UUID(from) : null;
+    }
+  }
+  export namespace Varbit {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      if (["t", "T", "true", "True"].includes(from)) return true;
+      try {
+        if (Number.parseFloat(from) > 0) return true;
+      } catch (e) {
+        // eat
+      }
+      return false;
+    }
+  }
+  export namespace Varchar {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Void {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Xid {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Xid8 {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Xml {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
 }
 export namespace Public {
-  export function parseActorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseActor(`${e}`);
-    });
+  export namespace ActorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Actor.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseActorInfoArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseActorInfo(`${e}`);
-    });
+  export namespace ActorInfoArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.ActorInfo.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseAddressArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseAddress(`${e}`);
-    });
+  export namespace AddressArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Address.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseCategoryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCategory(`${e}`);
-    });
+  export namespace CategoryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Category.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseCityArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCity(`${e}`);
-    });
+  export namespace CityArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.City.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseCountryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCountry(`${e}`);
-    });
+  export namespace CountryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Country.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseCustomerArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCustomer(`${e}`);
-    });
+  export namespace CustomerArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Customer.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseCustomerListArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCustomerList(`${e}`);
-    });
+  export namespace CustomerListArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.CustomerList.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseFilmArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFilm(`${e}`);
-    });
+  export namespace FilmArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Film.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseFilmActorArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFilmActor(`${e}`);
-    });
+  export namespace FilmActorArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.FilmActor.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseFilmCategoryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFilmCategory(`${e}`);
-    });
+  export namespace FilmCategoryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.FilmCategory.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseFilmListArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseFilmList(`${e}`);
-    });
+  export namespace FilmListArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.FilmList.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseInventoryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInventory(`${e}`);
-    });
+  export namespace InventoryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Inventory.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseLanguageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseLanguage(`${e}`);
-    });
+  export namespace LanguageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Language.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseMpaaRatingArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseMpaaRating(`${e}`);
-    });
+  export namespace MpaaRatingArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.MpaaRating.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseNicerButSlowerFilmListArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseNicerButSlowerFilmList(`${e}`);
-    });
+  export namespace NicerButSlowerFilmListArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.NicerButSlowerFilmList.parse(`${e}`);
+      });
+    }
   }
-
-  export function parsePaymentArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parsePayment(`${e}`);
-    });
+  export namespace PaymentArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Payment.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseRentalArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRental(`${e}`);
-    });
+  export namespace RentalArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Rental.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseSalesByFilmCategoryArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSalesByFilmCategory(`${e}`);
-    });
+  export namespace SalesByFilmCategoryArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.SalesByFilmCategory.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseSalesByStoreArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSalesByStore(`${e}`);
-    });
+  export namespace SalesByStoreArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.SalesByStore.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseStaffArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseStaff(`${e}`);
-    });
+  export namespace StaffArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Staff.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseStaffListArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseStaffList(`${e}`);
-    });
+  export namespace StaffListArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.StaffList.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseStoreArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseStore(`${e}`);
-    });
+  export namespace StoreArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Store.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseYearArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseYear(`${e}`);
-    });
+  export namespace YearArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return Public.Year.parse(`${e}`);
+      });
+    }
   }
-
-  export function parseActor(from: string | null) {
-    return from;
+  export namespace Actor {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseActorInfo(from: string | null) {
-    return from;
+  export namespace ActorInfo {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseAddress(from: string | null) {
-    return from;
+  export namespace Address {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseCategory(from: string | null) {
-    return from;
+  export namespace Category {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseCity(from: string | null) {
-    return from;
+  export namespace City {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseCountry(from: string | null) {
-    return from;
+  export namespace Country {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseCustomer(from: string | null) {
-    return from;
+  export namespace Customer {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseCustomerList(from: string | null) {
-    return from;
+  export namespace CustomerList {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseFilm(from: string | null) {
-    return from;
+  export namespace Film {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseFilmActor(from: string | null) {
-    return from;
+  export namespace FilmActor {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseFilmCategory(from: string | null) {
-    return from;
+  export namespace FilmCategory {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseFilmList(from: string | null) {
-    return from;
+  export namespace FilmList {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseInventory(from: string | null) {
-    return from;
+  export namespace Inventory {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseLanguage(from: string | null) {
-    return from;
+  export namespace Language {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseMpaaRating(from: string | null) {
-    return from;
+  export namespace MpaaRating {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseNicerButSlowerFilmList(from: string | null) {
-    return from;
+  export namespace NicerButSlowerFilmList {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parsePayment(from: string | null) {
-    return from;
+  export namespace Payment {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseRental(from: string | null) {
-    return from;
+  export namespace Rental {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseSalesByFilmCategory(from: string | null) {
-    return from;
+  export namespace SalesByFilmCategory {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseSalesByStore(from: string | null) {
-    return from;
+  export namespace SalesByStore {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseStaff(from: string | null) {
-    return from;
+  export namespace Staff {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseStaffList(from: string | null) {
-    return from;
+  export namespace StaffList {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseStore(from: string | null) {
-    return from;
+  export namespace Store {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
-
-  export function parseYear(from: string | null) {
-    return from;
+  export namespace Year {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
 }
 export namespace InformationSchema {
-  export function parseAdministrableRoleAuthorizationsArray(
-    from: string | null,
-  ) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseAdministrableRoleAuthorizations(`${e}`);
-    });
-  }
-
-  export function parseApplicableRolesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseApplicableRoles(`${e}`);
-    });
-  }
-
-  export function parseAttributesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseAttributes(`${e}`);
-    });
-  }
-
-  export function parseCardinalNumberArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCardinalNumber(`${e}`);
-    });
-  }
-
-  export function parseCharacterDataArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCharacterData(`${e}`);
-    });
-  }
-
-  export function parseCharacterSetsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCharacterSets(`${e}`);
-    });
-  }
-
-  export function parseCheckConstraintRoutineUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCheckConstraintRoutineUsage(`${e}`);
-    });
-  }
-
-  export function parseCheckConstraintsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCheckConstraints(`${e}`);
-    });
-  }
-
-  export function parseCollationCharacterSetApplicabilityArray(
-    from: string | null,
-  ) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCollationCharacterSetApplicability(`${e}`);
-    });
-  }
-
-  export function parseCollationsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseCollations(`${e}`);
-    });
-  }
-
-  export function parseColumnColumnUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumnColumnUsage(`${e}`);
-    });
-  }
-
-  export function parseColumnDomainUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumnDomainUsage(`${e}`);
-    });
-  }
-
-  export function parseColumnOptionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumnOptions(`${e}`);
-    });
-  }
-
-  export function parseColumnPrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumnPrivileges(`${e}`);
-    });
-  }
-
-  export function parseColumnUdtUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumnUdtUsage(`${e}`);
-    });
-  }
-
-  export function parseColumnsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseColumns(`${e}`);
-    });
-  }
-
-  export function parseConstraintColumnUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseConstraintColumnUsage(`${e}`);
-    });
-  }
-
-  export function parseConstraintTableUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseConstraintTableUsage(`${e}`);
-    });
-  }
-
-  export function parseDataTypePrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDataTypePrivileges(`${e}`);
-    });
-  }
-
-  export function parseDomainConstraintsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDomainConstraints(`${e}`);
-    });
-  }
-
-  export function parseDomainUdtUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDomainUdtUsage(`${e}`);
-    });
-  }
-
-  export function parseDomainsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseDomains(`${e}`);
-    });
-  }
-
-  export function parseElementTypesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseElementTypes(`${e}`);
-    });
-  }
-
-  export function parseEnabledRolesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseEnabledRoles(`${e}`);
-    });
-  }
-
-  export function parseForeignDataWrapperOptionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignDataWrapperOptions(`${e}`);
-    });
-  }
-
-  export function parseForeignDataWrappersArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignDataWrappers(`${e}`);
-    });
-  }
-
-  export function parseForeignServerOptionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignServerOptions(`${e}`);
-    });
-  }
-
-  export function parseForeignServersArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignServers(`${e}`);
-    });
-  }
-
-  export function parseForeignTableOptionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignTableOptions(`${e}`);
-    });
-  }
-
-  export function parseForeignTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseForeignTables(`${e}`);
-    });
-  }
-
-  export function parseInformationSchemaCatalogNameArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseInformationSchemaCatalogName(`${e}`);
-    });
-  }
-
-  export function parseKeyColumnUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseKeyColumnUsage(`${e}`);
-    });
-  }
-
-  export function parseParametersArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseParameters(`${e}`);
-    });
-  }
-
-  export function parsePgForeignDataWrappers(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignServers(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignTableColumns(from: string | null) {
-    return from;
-  }
-
-  export function parsePgForeignTables(from: string | null) {
-    return from;
-  }
-
-  export function parsePgUserMappings(from: string | null) {
-    return from;
-  }
-
-  export function parseReferentialConstraintsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseReferentialConstraints(`${e}`);
-    });
-  }
-
-  export function parseRoleColumnGrantsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoleColumnGrants(`${e}`);
-    });
-  }
-
-  export function parseRoleRoutineGrantsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoleRoutineGrants(`${e}`);
-    });
-  }
-
-  export function parseRoleTableGrantsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoleTableGrants(`${e}`);
-    });
-  }
-
-  export function parseRoleUdtGrantsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoleUdtGrants(`${e}`);
-    });
-  }
-
-  export function parseRoleUsageGrantsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoleUsageGrants(`${e}`);
-    });
-  }
-
-  export function parseRoutineColumnUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutineColumnUsage(`${e}`);
-    });
-  }
-
-  export function parseRoutinePrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutinePrivileges(`${e}`);
-    });
-  }
-
-  export function parseRoutineRoutineUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutineRoutineUsage(`${e}`);
-    });
-  }
-
-  export function parseRoutineSequenceUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutineSequenceUsage(`${e}`);
-    });
-  }
-
-  export function parseRoutineTableUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutineTableUsage(`${e}`);
-    });
-  }
-
-  export function parseRoutinesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseRoutines(`${e}`);
-    });
-  }
-
-  export function parseSchemataArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSchemata(`${e}`);
-    });
-  }
-
-  export function parseSequencesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSequences(`${e}`);
-    });
-  }
-
-  export function parseSqlFeaturesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSqlFeatures(`${e}`);
-    });
-  }
-
-  export function parseSqlIdentifierArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSqlIdentifier(`${e}`);
-    });
-  }
-
-  export function parseSqlImplementationInfoArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSqlImplementationInfo(`${e}`);
-    });
-  }
-
-  export function parseSqlPartsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSqlParts(`${e}`);
-    });
-  }
-
-  export function parseSqlSizingArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseSqlSizing(`${e}`);
-    });
-  }
-
-  export function parseTableConstraintsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTableConstraints(`${e}`);
-    });
-  }
-
-  export function parseTablePrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTablePrivileges(`${e}`);
-    });
-  }
-
-  export function parseTablesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTables(`${e}`);
-    });
-  }
-
-  export function parseTimeStampArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTimeStamp(`${e}`);
-    });
-  }
-
-  export function parseTransformsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTransforms(`${e}`);
-    });
-  }
-
-  export function parseTriggeredUpdateColumnsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTriggeredUpdateColumns(`${e}`);
-    });
-  }
-
-  export function parseTriggersArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseTriggers(`${e}`);
-    });
-  }
-
-  export function parseUdtPrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUdtPrivileges(`${e}`);
-    });
-  }
-
-  export function parseUsagePrivilegesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUsagePrivileges(`${e}`);
-    });
-  }
-
-  export function parseUserDefinedTypesArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUserDefinedTypes(`${e}`);
-    });
-  }
-
-  export function parseUserMappingOptionsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUserMappingOptions(`${e}`);
-    });
-  }
-
-  export function parseUserMappingsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseUserMappings(`${e}`);
-    });
-  }
-
-  export function parseViewColumnUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseViewColumnUsage(`${e}`);
-    });
-  }
-
-  export function parseViewRoutineUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseViewRoutineUsage(`${e}`);
-    });
-  }
-
-  export function parseViewTableUsageArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseViewTableUsage(`${e}`);
-    });
-  }
-
-  export function parseViewsArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseViews(`${e}`);
-    });
-  }
-
-  export function parseYesOrNoArray(from: string | null) {
-    if (from === null) return null;
-    const rawArray = JSON.parse(from);
-    return rawArray.map((e: unknown) => {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      return parseYesOrNo(`${e}`);
-    });
-  }
-
-  export function parseAdministrableRoleAuthorizations(from: string | null) {
-    return from;
-  }
-
-  export function parseApplicableRoles(from: string | null) {
-    return from;
-  }
-
-  export function parseAttributes(from: string | null) {
-    return from;
-  }
-
-  export function parseCardinalNumber(from: string | null) {
-    return from;
-  }
-
-  export function parseCharacterData(from: string | null) {
-    return from;
-  }
-
-  export function parseCharacterSets(from: string | null) {
-    return from;
-  }
-
-  export function parseCheckConstraintRoutineUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseCheckConstraints(from: string | null) {
-    return from;
-  }
-
-  export function parseCollationCharacterSetApplicability(from: string | null) {
-    return from;
-  }
-
-  export function parseCollations(from: string | null) {
-    return from;
-  }
-
-  export function parseColumnColumnUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseColumnDomainUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseColumnOptions(from: string | null) {
-    return from;
-  }
-
-  export function parseColumnPrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseColumnUdtUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseColumns(from: string | null) {
-    return from;
-  }
-
-  export function parseConstraintColumnUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseConstraintTableUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseDataTypePrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseDomainConstraints(from: string | null) {
-    return from;
-  }
-
-  export function parseDomainUdtUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseDomains(from: string | null) {
-    return from;
-  }
-
-  export function parseElementTypes(from: string | null) {
-    return from;
-  }
-
-  export function parseEnabledRoles(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignDataWrapperOptions(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignDataWrappers(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignServerOptions(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignServers(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignTableOptions(from: string | null) {
-    return from;
-  }
-
-  export function parseForeignTables(from: string | null) {
-    return from;
-  }
-
-  export function parseInformationSchemaCatalogName(from: string | null) {
-    return from;
-  }
-
-  export function parseKeyColumnUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseParameters(from: string | null) {
-    return from;
-  }
-
-  export function parseReferentialConstraints(from: string | null) {
-    return from;
-  }
-
-  export function parseRoleColumnGrants(from: string | null) {
-    return from;
-  }
-
-  export function parseRoleRoutineGrants(from: string | null) {
-    return from;
-  }
-
-  export function parseRoleTableGrants(from: string | null) {
-    return from;
-  }
-
-  export function parseRoleUdtGrants(from: string | null) {
-    return from;
-  }
-
-  export function parseRoleUsageGrants(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutineColumnUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutinePrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutineRoutineUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutineSequenceUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutineTableUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseRoutines(from: string | null) {
-    return from;
-  }
-
-  export function parseSchemata(from: string | null) {
-    return from;
-  }
-
-  export function parseSequences(from: string | null) {
-    return from;
-  }
-
-  export function parseSqlFeatures(from: string | null) {
-    return from;
-  }
-
-  export function parseSqlIdentifier(from: string | null) {
-    return from;
-  }
-
-  export function parseSqlImplementationInfo(from: string | null) {
-    return from;
-  }
-
-  export function parseSqlParts(from: string | null) {
-    return from;
-  }
-
-  export function parseSqlSizing(from: string | null) {
-    return from;
-  }
-
-  export function parseTableConstraints(from: string | null) {
-    return from;
-  }
-
-  export function parseTablePrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseTables(from: string | null) {
-    return from;
-  }
-
-  export function parseTimeStamp(from: string | null) {
-    return from;
-  }
-
-  export function parseTransforms(from: string | null) {
-    return from;
-  }
-
-  export function parseTriggeredUpdateColumns(from: string | null) {
-    return from;
-  }
-
-  export function parseTriggers(from: string | null) {
-    return from;
-  }
-
-  export function parseUdtPrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseUsagePrivileges(from: string | null) {
-    return from;
-  }
-
-  export function parseUserDefinedTypes(from: string | null) {
-    return from;
-  }
-
-  export function parseUserMappingOptions(from: string | null) {
-    return from;
-  }
-
-  export function parseUserMappings(from: string | null) {
-    return from;
-  }
-
-  export function parseViewColumnUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseViewRoutineUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseViewTableUsage(from: string | null) {
-    return from;
-  }
-
-  export function parseViews(from: string | null) {
-    return from;
-  }
-
-  export function parseYesOrNo(from: string | null) {
-    return from;
+  export namespace AdministrableRoleAuthorizationsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.AdministrableRoleAuthorizations.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ApplicableRolesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ApplicableRoles.parse(`${e}`);
+      });
+    }
+  }
+  export namespace AttributesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Attributes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CardinalNumberArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CardinalNumber.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CharacterDataArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CharacterData.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CharacterSetsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CharacterSets.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CheckConstraintRoutineUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CheckConstraintRoutineUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CheckConstraintsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CheckConstraints.parse(`${e}`);
+      });
+    }
+  }
+  export namespace CollationCharacterSetApplicabilityArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.CollationCharacterSetApplicability.parse(
+          `${e}`,
+        );
+      });
+    }
+  }
+  export namespace CollationsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Collations.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnColumnUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ColumnColumnUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnDomainUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ColumnDomainUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnOptionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ColumnOptions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnPrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ColumnPrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnUdtUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ColumnUdtUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ColumnsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Columns.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ConstraintColumnUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ConstraintColumnUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ConstraintTableUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ConstraintTableUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DataTypePrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.DataTypePrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DomainConstraintsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.DomainConstraints.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DomainUdtUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.DomainUdtUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace DomainsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Domains.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ElementTypesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ElementTypes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace EnabledRolesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.EnabledRoles.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignDataWrapperOptionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignDataWrapperOptions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignDataWrappersArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignDataWrappers.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignServerOptionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignServerOptions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignServersArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignServers.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignTableOptionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignTableOptions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ForeignTablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ForeignTables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace InformationSchemaCatalogNameArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.InformationSchemaCatalogName.parse(`${e}`);
+      });
+    }
+  }
+  export namespace KeyColumnUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.KeyColumnUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ParametersArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Parameters.parse(`${e}`);
+      });
+    }
+  }
+  export namespace PgForeignDataWrappers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignServers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignTableColumns {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgForeignTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace PgUserMappings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ReferentialConstraintsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ReferentialConstraints.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoleColumnGrantsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoleColumnGrants.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoleRoutineGrantsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoleRoutineGrants.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoleTableGrantsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoleTableGrants.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoleUdtGrantsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoleUdtGrants.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoleUsageGrantsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoleUsageGrants.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutineColumnUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoutineColumnUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutinePrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoutinePrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutineRoutineUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoutineRoutineUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutineSequenceUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoutineSequenceUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutineTableUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.RoutineTableUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace RoutinesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Routines.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SchemataArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Schemata.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SequencesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Sequences.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SqlFeaturesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.SqlFeatures.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SqlIdentifierArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.SqlIdentifier.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SqlImplementationInfoArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.SqlImplementationInfo.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SqlPartsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.SqlParts.parse(`${e}`);
+      });
+    }
+  }
+  export namespace SqlSizingArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.SqlSizing.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TableConstraintsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.TableConstraints.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TablePrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.TablePrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TablesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Tables.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TimeStampArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.TimeStamp.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TransformsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Transforms.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TriggeredUpdateColumnsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.TriggeredUpdateColumns.parse(`${e}`);
+      });
+    }
+  }
+  export namespace TriggersArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Triggers.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UdtPrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.UdtPrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UsagePrivilegesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.UsagePrivileges.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UserDefinedTypesArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.UserDefinedTypes.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UserMappingOptionsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.UserMappingOptions.parse(`${e}`);
+      });
+    }
+  }
+  export namespace UserMappingsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.UserMappings.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ViewColumnUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ViewColumnUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ViewRoutineUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ViewRoutineUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ViewTableUsageArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.ViewTableUsage.parse(`${e}`);
+      });
+    }
+  }
+  export namespace ViewsArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.Views.parse(`${e}`);
+      });
+    }
+  }
+  export namespace YesOrNoArray {
+    export function parse(from: string | null) {
+      if (from === null) return null;
+      const rawArray = JSON.parse(from);
+      return rawArray.map((e: unknown) => {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return InformationSchema.YesOrNo.parse(`${e}`);
+      });
+    }
+  }
+  export namespace AdministrableRoleAuthorizations {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ApplicableRoles {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Attributes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CardinalNumber {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CharacterData {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CharacterSets {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CheckConstraintRoutineUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CheckConstraints {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace CollationCharacterSetApplicability {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Collations {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ColumnColumnUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ColumnDomainUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ColumnOptions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ColumnPrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ColumnUdtUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Columns {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ConstraintColumnUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ConstraintTableUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace DataTypePrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace DomainConstraints {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace DomainUdtUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Domains {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ElementTypes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace EnabledRoles {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignDataWrapperOptions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignDataWrappers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignServerOptions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignServers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignTableOptions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ForeignTables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace InformationSchemaCatalogName {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace KeyColumnUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Parameters {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ReferentialConstraints {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoleColumnGrants {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoleRoutineGrants {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoleTableGrants {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoleUdtGrants {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoleUsageGrants {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoutineColumnUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoutinePrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoutineRoutineUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoutineSequenceUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace RoutineTableUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Routines {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Schemata {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Sequences {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace SqlFeatures {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace SqlIdentifier {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace SqlImplementationInfo {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace SqlParts {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace SqlSizing {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TableConstraints {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TablePrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Tables {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TimeStamp {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Transforms {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace TriggeredUpdateColumns {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Triggers {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace UdtPrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace UsagePrivileges {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace UserDefinedTypes {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace UserMappingOptions {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace UserMappings {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ViewColumnUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ViewRoutineUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace ViewTableUsage {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace Views {
+    export function parse(from: string | null) {
+      return from;
+    }
+  }
+  export namespace YesOrNo {
+    export function parse(from: string | null) {
+      return from;
+    }
   }
 }
 // end string parsers
+
 // begin primary key pickers
 export namespace Public {
-  export function pickPrimaryKeyFromFilmActor(value: FilmActor): string {
-    return JSON.stringify({
-      actorId: value.actorId,
-      filmId: value.filmId,
-    });
+  export namespace FilmActor {
+    export function primaryKeyFrom(value: FilmActor): string {
+      return JSON.stringify({
+        actorId: value.actorId,
+        filmId: value.filmId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromAddress(value: Address): string {
-    return JSON.stringify({
-      addressId: value.addressId,
-    });
+  export namespace Address {
+    export function primaryKeyFrom(value: Address): string {
+      return JSON.stringify({
+        addressId: value.addressId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromCity(value: City): string {
-    return JSON.stringify({
-      cityId: value.cityId,
-    });
+  export namespace City {
+    export function primaryKeyFrom(value: City): string {
+      return JSON.stringify({
+        cityId: value.cityId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromCustomer(value: Customer): string {
-    return JSON.stringify({
-      customerId: value.customerId,
-    });
+  export namespace Customer {
+    export function primaryKeyFrom(value: Customer): string {
+      return JSON.stringify({
+        customerId: value.customerId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromActor(value: Actor): string {
-    return JSON.stringify({
-      actorId: value.actorId,
-    });
+  export namespace Actor {
+    export function primaryKeyFrom(value: Actor): string {
+      return JSON.stringify({
+        actorId: value.actorId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromFilmCategory(value: FilmCategory): string {
-    return JSON.stringify({
-      filmId: value.filmId,
-      categoryId: value.categoryId,
-    });
+  export namespace FilmCategory {
+    export function primaryKeyFrom(value: FilmCategory): string {
+      return JSON.stringify({
+        filmId: value.filmId,
+        categoryId: value.categoryId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromInventory(value: Inventory): string {
-    return JSON.stringify({
-      inventoryId: value.inventoryId,
-    });
+  export namespace Inventory {
+    export function primaryKeyFrom(value: Inventory): string {
+      return JSON.stringify({
+        inventoryId: value.inventoryId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromCategory(value: Category): string {
-    return JSON.stringify({
-      categoryId: value.categoryId,
-    });
+  export namespace Category {
+    export function primaryKeyFrom(value: Category): string {
+      return JSON.stringify({
+        categoryId: value.categoryId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromCountry(value: Country): string {
-    return JSON.stringify({
-      countryId: value.countryId,
-    });
+  export namespace Country {
+    export function primaryKeyFrom(value: Country): string {
+      return JSON.stringify({
+        countryId: value.countryId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromLanguage(value: Language): string {
-    return JSON.stringify({
-      languageId: value.languageId,
-    });
+  export namespace Language {
+    export function primaryKeyFrom(value: Language): string {
+      return JSON.stringify({
+        languageId: value.languageId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromRental(value: Rental): string {
-    return JSON.stringify({
-      rentalId: value.rentalId,
-    });
+  export namespace Rental {
+    export function primaryKeyFrom(value: Rental): string {
+      return JSON.stringify({
+        rentalId: value.rentalId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromStaff(value: Staff): string {
-    return JSON.stringify({
-      staffId: value.staffId,
-    });
+  export namespace Staff {
+    export function primaryKeyFrom(value: Staff): string {
+      return JSON.stringify({
+        staffId: value.staffId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromStore(value: Store): string {
-    return JSON.stringify({
-      storeId: value.storeId,
-    });
+  export namespace Store {
+    export function primaryKeyFrom(value: Store): string {
+      return JSON.stringify({
+        storeId: value.storeId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromPayment(value: Payment): string {
-    return JSON.stringify({
-      paymentId: value.paymentId,
-    });
+  export namespace Payment {
+    export function primaryKeyFrom(value: Payment): string {
+      return JSON.stringify({
+        paymentId: value.paymentId,
+      });
+    }
   }
-
-  export function pickPrimaryKeyFromFilm(value: Film): string {
-    return JSON.stringify({
-      filmId: value.filmId,
-    });
+  export namespace Film {
+    export function primaryKeyFrom(value: Film): string {
+      return JSON.stringify({
+        filmId: value.filmId,
+      });
+    }
   }
 }
 // end primary key pickers
