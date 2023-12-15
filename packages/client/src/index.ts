@@ -1,6 +1,8 @@
 import { EmbraceSQLRequest, EmbraceSQLResponse } from "@embracesql/shared";
 
-type EmbraceSQLClientProps = {
+export * from "./typescript/generateClient";
+
+export type EmbraceSQLClientProps = {
   /**
    * Connect to a server here.
    */
@@ -58,5 +60,20 @@ export class EmbraceSQLClient {
 
     // it'll be JSON back or an exception
     return (await response.json()) as unknown as EmbraceSQLResponse<Response>;
+  }
+}
+
+interface _HasClient {
+  client: EmbraceSQLClient;
+}
+/**
+ * A class with a contained client. This is used for nested class creation
+ * when generating type specific client libraries.
+ */
+export class HasClient implements _HasClient {
+  constructor(private hasClient: _HasClient) {}
+
+  get client() {
+    return this.hasClient.client;
   }
 }

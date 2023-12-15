@@ -1,5 +1,6 @@
 #!/usr/bin/env tsx
 import { Command } from "@commander-js/extra-typings";
+import { generateClient } from "@embracesql/client";
 import { generateExpressApp } from "@embracesql/express/src/typescript/generateExpressApp";
 import { initializeContext } from "@embracesql/postgres";
 import {
@@ -88,6 +89,26 @@ addOptions(
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
   generationBuffer.push(await generateOperationDispatcher(combinedContext));
   generationBuffer.push(await generateExpressApp());
+  process.stdout.write(await formatSource(generationBuffer.join("\n")));
+  await context.sql.end();
+});
+
+addOptions(
+  generate
+    .command("browser")
+    .description("TypeScript code for use in browser."),
+).action(async (options) => {
+  const context = await initializeContext(options.database);
+  const generationBuffer: string[] = [];
+
+  const combinedContext = {
+    ...context,
+    sqlScriptsFrom: options.sqlScriptsFrom,
+    skipSchemas: options.skipSchemas,
+  };
+
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateClient(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@commander-js/extra-typings": "^11.1.0",
+    "@embracesql/client": "^0.0.4",
     "@embracesql/express": "^0.0.4",
     "@embracesql/postgres": "^0.0.4",
     "@embracesql/react": "^0.0.4",

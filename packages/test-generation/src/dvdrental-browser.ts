@@ -4258,6 +4258,695 @@ export namespace PgCatalog {
   }
 }
 
+export namespace Public {
+  export type ActorArray = Array<Actor>;
+
+  export type ActorInfoArray = Array<ActorInfo>;
+
+  export type AddressArray = Array<Address>;
+
+  export type CategoryArray = Array<Category>;
+
+  export type CityArray = Array<City>;
+
+  export type CountryArray = Array<Country>;
+
+  export type CustomerArray = Array<Customer>;
+
+  export type CustomerListArray = Array<CustomerList>;
+
+  export type FilmArray = Array<Film>;
+
+  export type FilmActorArray = Array<FilmActor>;
+
+  export type FilmCategoryArray = Array<FilmCategory>;
+
+  export type FilmListArray = Array<FilmList>;
+
+  export type InventoryArray = Array<Inventory>;
+
+  export type LanguageArray = Array<Language>;
+
+  export type MpaaRatingArray = Array<MpaaRating>;
+
+  export type NicerButSlowerFilmListArray = Array<NicerButSlowerFilmList>;
+
+  export type PaymentArray = Array<Payment>;
+
+  export type RentalArray = Array<Rental>;
+
+  export type SalesByFilmCategoryArray = Array<SalesByFilmCategory>;
+
+  export type SalesByStoreArray = Array<SalesByStore>;
+
+  export type StaffArray = Array<Staff>;
+
+  export type StaffListArray = Array<StaffList>;
+
+  export type StoreArray = Array<Store>;
+
+  export type YearArray = Array<Year>;
+
+  export interface Actor {
+    actorId?: PgCatalog.Int4;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface ActorNotPrimaryKey {
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesActorPrimaryKey(
+    value: Partial<Actor>,
+  ): value is Actor {
+    return value.actorId !== undefined;
+  }
+
+  export interface ActorInfo {
+    actorId?: Nullable<PgCatalog.Int4>;
+    firstName?: Nullable<PgCatalog.Varchar>;
+    lastName?: Nullable<PgCatalog.Varchar>;
+    filmInfo?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Address {
+    addressId?: PgCatalog.Int4;
+    address: PgCatalog.Varchar;
+    address2?: Nullable<PgCatalog.Varchar>;
+    district: PgCatalog.Varchar;
+    cityId: PgCatalog.Int2;
+    postalCode?: Nullable<PgCatalog.Varchar>;
+    phone: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface AddressNotPrimaryKey {
+    address: PgCatalog.Varchar;
+    address2?: Nullable<PgCatalog.Varchar>;
+    district: PgCatalog.Varchar;
+    cityId: PgCatalog.Int2;
+    postalCode?: Nullable<PgCatalog.Varchar>;
+    phone: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesAddressPrimaryKey(
+    value: Partial<Address>,
+  ): value is Address {
+    return value.addressId !== undefined;
+  }
+
+  export interface Category {
+    categoryId?: PgCatalog.Int4;
+    name: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CategoryNotPrimaryKey {
+    name: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesCategoryPrimaryKey(
+    value: Partial<Category>,
+  ): value is Category {
+    return value.categoryId !== undefined;
+  }
+
+  export interface City {
+    cityId?: PgCatalog.Int4;
+    city: PgCatalog.Varchar;
+    countryId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CityNotPrimaryKey {
+    city: PgCatalog.Varchar;
+    countryId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesCityPrimaryKey(value: Partial<City>): value is City {
+    return value.cityId !== undefined;
+  }
+
+  export interface Country {
+    countryId?: PgCatalog.Int4;
+    country: PgCatalog.Varchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface CountryNotPrimaryKey {
+    country: PgCatalog.Varchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesCountryPrimaryKey(
+    value: Partial<Country>,
+  ): value is Country {
+    return value.countryId !== undefined;
+  }
+
+  export interface Customer {
+    customerId?: PgCatalog.Int4;
+    storeId: PgCatalog.Int2;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    email?: Nullable<PgCatalog.Varchar>;
+    addressId: PgCatalog.Int2;
+    activebool?: PgCatalog.Bool;
+    createDate?: PgCatalog.Date;
+    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    active?: Nullable<PgCatalog.Int4>;
+  }
+
+  export interface CustomerNotPrimaryKey {
+    storeId: PgCatalog.Int2;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    email?: Nullable<PgCatalog.Varchar>;
+    addressId: PgCatalog.Int2;
+    activebool: PgCatalog.Bool;
+    createDate: PgCatalog.Date;
+    lastUpdate?: Nullable<PgCatalog.Timestamp>;
+    active?: Nullable<PgCatalog.Int4>;
+  }
+
+  export function includesCustomerPrimaryKey(
+    value: Partial<Customer>,
+  ): value is Customer {
+    return value.customerId !== undefined;
+  }
+
+  export interface CustomerList {
+    id?: Nullable<PgCatalog.Int4>;
+    name?: Nullable<PgCatalog.Text>;
+    address?: Nullable<PgCatalog.Varchar>;
+    zipCode?: Nullable<PgCatalog.Varchar>;
+    phone?: Nullable<PgCatalog.Varchar>;
+    city?: Nullable<PgCatalog.Varchar>;
+    country?: Nullable<PgCatalog.Varchar>;
+    notes?: Nullable<PgCatalog.Text>;
+    sid?: Nullable<PgCatalog.Int2>;
+  }
+
+  export interface Film {
+    filmId?: PgCatalog.Int4;
+    title: PgCatalog.Varchar;
+    description?: Nullable<PgCatalog.Text>;
+    releaseYear?: Nullable<Year>;
+    languageId: PgCatalog.Int2;
+    rentalDuration?: PgCatalog.Int2;
+    rentalRate?: PgCatalog.Numeric;
+    length?: Nullable<PgCatalog.Int2>;
+    replacementCost?: PgCatalog.Numeric;
+    rating?: Nullable<MpaaRating>;
+    lastUpdate?: PgCatalog.Timestamp;
+    specialFeatures?: Nullable<PgCatalog.TextArray>;
+    fulltext: PgCatalog.Tsvector;
+  }
+
+  export interface FilmNotPrimaryKey {
+    title: PgCatalog.Varchar;
+    description?: Nullable<PgCatalog.Text>;
+    releaseYear?: Nullable<Year>;
+    languageId: PgCatalog.Int2;
+    rentalDuration: PgCatalog.Int2;
+    rentalRate: PgCatalog.Numeric;
+    length?: Nullable<PgCatalog.Int2>;
+    replacementCost: PgCatalog.Numeric;
+    rating?: Nullable<MpaaRating>;
+    lastUpdate: PgCatalog.Timestamp;
+    specialFeatures?: Nullable<PgCatalog.TextArray>;
+    fulltext: PgCatalog.Tsvector;
+  }
+
+  export function includesFilmPrimaryKey(value: Partial<Film>): value is Film {
+    return value.filmId !== undefined;
+  }
+
+  export interface FilmActor {
+    actorId: PgCatalog.Int2;
+    filmId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface FilmActorNotPrimaryKey {
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesFilmActorPrimaryKey(
+    value: Partial<FilmActor>,
+  ): value is FilmActor {
+    return value.actorId !== undefined && value.filmId !== undefined;
+  }
+
+  export interface FilmCategory {
+    filmId: PgCatalog.Int2;
+    categoryId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface FilmCategoryNotPrimaryKey {
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesFilmCategoryPrimaryKey(
+    value: Partial<FilmCategory>,
+  ): value is FilmCategory {
+    return value.filmId !== undefined && value.categoryId !== undefined;
+  }
+
+  export interface FilmList {
+    fid?: Nullable<PgCatalog.Int4>;
+    title?: Nullable<PgCatalog.Varchar>;
+    description?: Nullable<PgCatalog.Text>;
+    category?: Nullable<PgCatalog.Varchar>;
+    price?: Nullable<PgCatalog.Numeric>;
+    length?: Nullable<PgCatalog.Int2>;
+    rating?: Nullable<MpaaRating>;
+    actors?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Inventory {
+    inventoryId?: PgCatalog.Int4;
+    filmId: PgCatalog.Int2;
+    storeId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface InventoryNotPrimaryKey {
+    filmId: PgCatalog.Int2;
+    storeId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesInventoryPrimaryKey(
+    value: Partial<Inventory>,
+  ): value is Inventory {
+    return value.inventoryId !== undefined;
+  }
+
+  export interface Language {
+    languageId?: PgCatalog.Int4;
+    name: PgCatalog.Bpchar;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface LanguageNotPrimaryKey {
+    name: PgCatalog.Bpchar;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesLanguagePrimaryKey(
+    value: Partial<Language>,
+  ): value is Language {
+    return value.languageId !== undefined;
+  }
+
+  export enum MpaaRating {
+    G = "G",
+    PG = "PG",
+    PG_13 = "PG-13",
+    R = "R",
+    NC_17 = "NC-17",
+  }
+
+  export interface NicerButSlowerFilmList {
+    fid?: Nullable<PgCatalog.Int4>;
+    title?: Nullable<PgCatalog.Varchar>;
+    description?: Nullable<PgCatalog.Text>;
+    category?: Nullable<PgCatalog.Varchar>;
+    price?: Nullable<PgCatalog.Numeric>;
+    length?: Nullable<PgCatalog.Int2>;
+    rating?: Nullable<MpaaRating>;
+    actors?: Nullable<PgCatalog.Text>;
+  }
+
+  export interface Payment {
+    paymentId?: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
+    staffId: PgCatalog.Int2;
+    rentalId: PgCatalog.Int4;
+    amount: PgCatalog.Numeric;
+    paymentDate: PgCatalog.Timestamp;
+  }
+
+  export interface PaymentNotPrimaryKey {
+    customerId: PgCatalog.Int2;
+    staffId: PgCatalog.Int2;
+    rentalId: PgCatalog.Int4;
+    amount: PgCatalog.Numeric;
+    paymentDate: PgCatalog.Timestamp;
+  }
+
+  export function includesPaymentPrimaryKey(
+    value: Partial<Payment>,
+  ): value is Payment {
+    return value.paymentId !== undefined;
+  }
+
+  export interface Rental {
+    rentalId?: PgCatalog.Int4;
+    rentalDate: PgCatalog.Timestamp;
+    inventoryId: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
+    returnDate?: Nullable<PgCatalog.Timestamp>;
+    staffId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface RentalNotPrimaryKey {
+    rentalDate: PgCatalog.Timestamp;
+    inventoryId: PgCatalog.Int4;
+    customerId: PgCatalog.Int2;
+    returnDate?: Nullable<PgCatalog.Timestamp>;
+    staffId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesRentalPrimaryKey(
+    value: Partial<Rental>,
+  ): value is Rental {
+    return value.rentalId !== undefined;
+  }
+
+  export interface SalesByFilmCategory {
+    category?: Nullable<PgCatalog.Varchar>;
+    totalSales?: Nullable<PgCatalog.Numeric>;
+  }
+
+  export interface SalesByStore {
+    store?: Nullable<PgCatalog.Text>;
+    manager?: Nullable<PgCatalog.Text>;
+    totalSales?: Nullable<PgCatalog.Numeric>;
+  }
+
+  export interface Staff {
+    staffId?: PgCatalog.Int4;
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    addressId: PgCatalog.Int2;
+    email?: Nullable<PgCatalog.Varchar>;
+    storeId: PgCatalog.Int2;
+    active?: PgCatalog.Bool;
+    username: PgCatalog.Varchar;
+    password?: Nullable<PgCatalog.Varchar>;
+    lastUpdate?: PgCatalog.Timestamp;
+    picture?: Nullable<PgCatalog.Bytea>;
+  }
+
+  export interface StaffNotPrimaryKey {
+    firstName: PgCatalog.Varchar;
+    lastName: PgCatalog.Varchar;
+    addressId: PgCatalog.Int2;
+    email?: Nullable<PgCatalog.Varchar>;
+    storeId: PgCatalog.Int2;
+    active: PgCatalog.Bool;
+    username: PgCatalog.Varchar;
+    password?: Nullable<PgCatalog.Varchar>;
+    lastUpdate: PgCatalog.Timestamp;
+    picture?: Nullable<PgCatalog.Bytea>;
+  }
+
+  export function includesStaffPrimaryKey(
+    value: Partial<Staff>,
+  ): value is Staff {
+    return value.staffId !== undefined;
+  }
+
+  export interface StaffList {
+    id?: Nullable<PgCatalog.Int4>;
+    name?: Nullable<PgCatalog.Text>;
+    address?: Nullable<PgCatalog.Varchar>;
+    zipCode?: Nullable<PgCatalog.Varchar>;
+    phone?: Nullable<PgCatalog.Varchar>;
+    city?: Nullable<PgCatalog.Varchar>;
+    country?: Nullable<PgCatalog.Varchar>;
+    sid?: Nullable<PgCatalog.Int2>;
+  }
+
+  export interface Store {
+    storeId?: PgCatalog.Int4;
+    managerStaffId: PgCatalog.Int2;
+    addressId: PgCatalog.Int2;
+    lastUpdate?: PgCatalog.Timestamp;
+  }
+
+  export interface StoreNotPrimaryKey {
+    managerStaffId: PgCatalog.Int2;
+    addressId: PgCatalog.Int2;
+    lastUpdate: PgCatalog.Timestamp;
+  }
+
+  export function includesStorePrimaryKey(
+    value: Partial<Store>,
+  ): value is Store {
+    return value.storeId !== undefined;
+  }
+
+  export type Year = PgCatalog.Int4;
+
+  export interface FilmInStockArguments {
+    pFilmId: Nullable<PgCatalog.Int4>;
+    pStoreId: Nullable<PgCatalog.Int4>;
+  }
+
+  interface FilmInStockResponseRecord {
+    pFilmCount: PgCatalog.Int4;
+  }
+  export type FilmInStockSingleResultsetRecord = FilmInStockResponseRecord;
+
+  export type FilmInStockResultset = FilmInStockSingleResultsetRecord[];
+
+  export interface FilmNotInStockArguments {
+    pFilmId: Nullable<PgCatalog.Int4>;
+    pStoreId: Nullable<PgCatalog.Int4>;
+  }
+
+  interface FilmNotInStockResponseRecord {
+    pFilmCount: PgCatalog.Int4;
+  }
+  export type FilmNotInStockSingleResultsetRecord =
+    FilmNotInStockResponseRecord;
+
+  export type FilmNotInStockResultset = FilmNotInStockSingleResultsetRecord[];
+
+  export interface GetCustomerBalanceArguments {
+    pCustomerId: Nullable<PgCatalog.Int4>;
+    pEffectiveDate: Nullable<PgCatalog.Timestamp>;
+  }
+
+  export type GetCustomerBalanceSingleResultsetRecord = PgCatalog.Numeric;
+
+  export type GetCustomerBalanceResultset =
+    GetCustomerBalanceSingleResultsetRecord[];
+
+  export interface InventoryHeldByCustomerArguments {
+    pInventoryId: Nullable<PgCatalog.Int4>;
+  }
+
+  export type InventoryHeldByCustomerSingleResultsetRecord = PgCatalog.Int4;
+
+  export type InventoryHeldByCustomerResultset =
+    InventoryHeldByCustomerSingleResultsetRecord[];
+
+  export interface InventoryInStockArguments {
+    pInventoryId: Nullable<PgCatalog.Int4>;
+  }
+
+  export type InventoryInStockSingleResultsetRecord = PgCatalog.Bool;
+
+  export type InventoryInStockResultset =
+    InventoryInStockSingleResultsetRecord[];
+
+  export interface LastDayArguments {
+    _0: Nullable<PgCatalog.Timestamp>;
+  }
+
+  export type LastDaySingleResultsetRecord = PgCatalog.Date;
+
+  export type LastDayResultset = LastDaySingleResultsetRecord[];
+
+  export interface RewardsReportArguments {
+    minMonthlyPurchases: Nullable<PgCatalog.Int4>;
+    minDollarAmountPurchased: Nullable<PgCatalog.Numeric>;
+  }
+
+  export type RewardsReportSingleResultsetRecord = Customer;
+
+  export type RewardsReportResultset = RewardsReportSingleResultsetRecord[];
+
+  export namespace Tables {
+    export namespace FilmActor {
+      export interface ByActorIdFilmId {
+        actorId: Nullable<PgCatalog.Int2>;
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByFilmId {
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Address {
+      export interface ByAddressId {
+        addressId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByCityId {
+        cityId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace City {
+      export interface ByCityId {
+        cityId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByCountryId {
+        countryId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Customer {
+      export interface ByAddressId {
+        addressId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByCustomerId {
+        customerId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByLastName {
+        lastName: Nullable<PgCatalog.Varchar>;
+      }
+
+      export interface ByStoreId {
+        storeId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Actor {
+      export interface ByActorId {
+        actorId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByLastName {
+        lastName: Nullable<PgCatalog.Varchar>;
+      }
+    }
+
+    export namespace FilmCategory {
+      export interface ByFilmIdCategoryId {
+        filmId: Nullable<PgCatalog.Int2>;
+        categoryId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Inventory {
+      export interface ByInventoryId {
+        inventoryId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByStoreIdFilmId {
+        storeId: Nullable<PgCatalog.Int2>;
+        filmId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Category {
+      export interface ByCategoryId {
+        categoryId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Country {
+      export interface ByCountryId {
+        countryId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Language {
+      export interface ByLanguageId {
+        languageId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Rental {
+      export interface ByInventoryId {
+        inventoryId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByRentalDateInventoryIdCustomerId {
+        rentalDate: Nullable<PgCatalog.Timestamp>;
+        inventoryId: Nullable<PgCatalog.Int4>;
+        customerId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByRentalId {
+        rentalId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Staff {
+      export interface ByStaffId {
+        staffId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Store {
+      export interface ByManagerStaffId {
+        managerStaffId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByStoreId {
+        storeId: Nullable<PgCatalog.Int4>;
+      }
+    }
+
+    export namespace Payment {
+      export interface ByCustomerId {
+        customerId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByPaymentId {
+        paymentId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByRentalId {
+        rentalId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByStaffId {
+        staffId: Nullable<PgCatalog.Int2>;
+      }
+    }
+
+    export namespace Film {
+      export interface ByFilmId {
+        filmId: Nullable<PgCatalog.Int4>;
+      }
+
+      export interface ByFulltext {
+        fulltext: Nullable<PgCatalog.Gtsvector>;
+      }
+
+      export interface ByLanguageId {
+        languageId: Nullable<PgCatalog.Int2>;
+      }
+
+      export interface ByTitle {
+        title: Nullable<PgCatalog.Varchar>;
+      }
+    }
+  }
+}
+
 export namespace InformationSchema {
   export type AdministrableRoleAuthorizationsArray =
     Array<AdministrableRoleAuthorizations>;
@@ -5326,471 +6015,6 @@ export namespace InformationSchema {
   }
 }
 
-export namespace Public {
-  export type CubeArray = Array<Cube>;
-
-  export type SlugArray = Array<Slug>;
-
-  export type Cube = Float32Array;
-
-  export interface Slug {
-    slugId?: PgCatalog.Int4;
-  }
-
-  export interface SlugNotPrimaryKey {}
-
-  export function includesSlugPrimaryKey(value: Partial<Slug>): value is Slug {
-    return value.slugId !== undefined;
-  }
-
-  export interface CubeInArguments {
-    _0: Nullable<PgCatalog.Cstring>;
-  }
-
-  export type CubeInSingleResultsetRecord = Cube;
-
-  export type CubeInResultset = CubeInSingleResultsetRecord[];
-
-  export interface Cube9c45Arguments {
-    _0: Nullable<PgCatalog.Float8Array>;
-    _1: Nullable<PgCatalog.Float8Array>;
-  }
-
-  export type Cube9c45SingleResultsetRecord = Cube;
-
-  export type Cube9c45Resultset = Cube9c45SingleResultsetRecord[];
-
-  export interface Cube2e6dArguments {
-    _0: Nullable<PgCatalog.Float8Array>;
-  }
-
-  export type Cube2e6dSingleResultsetRecord = Cube;
-
-  export type Cube2e6dResultset = Cube2e6dSingleResultsetRecord[];
-
-  export interface CubeOutArguments {
-    _0: Nullable<Cube>;
-  }
-
-  export type CubeOutSingleResultsetRecord = PgCatalog.Cstring;
-
-  export type CubeOutResultset = CubeOutSingleResultsetRecord[];
-
-  export interface CubeEqArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeEqSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeEqResultset = CubeEqSingleResultsetRecord[];
-
-  export interface CubeNeArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeNeSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeNeResultset = CubeNeSingleResultsetRecord[];
-
-  export interface CubeLtArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeLtSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeLtResultset = CubeLtSingleResultsetRecord[];
-
-  export interface CubeGtArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeGtSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeGtResultset = CubeGtSingleResultsetRecord[];
-
-  export interface CubeLeArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeLeSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeLeResultset = CubeLeSingleResultsetRecord[];
-
-  export interface CubeGeArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeGeSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeGeResultset = CubeGeSingleResultsetRecord[];
-
-  export interface CubeCmpArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeCmpSingleResultsetRecord = PgCatalog.Int4;
-
-  export type CubeCmpResultset = CubeCmpSingleResultsetRecord[];
-
-  export interface CubeContainsArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeContainsSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeContainsResultset = CubeContainsSingleResultsetRecord[];
-
-  export interface CubeContainedArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeContainedSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeContainedResultset = CubeContainedSingleResultsetRecord[];
-
-  export interface CubeOverlapArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeOverlapSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeOverlapResultset = CubeOverlapSingleResultsetRecord[];
-
-  export interface CubeUnionArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeUnionSingleResultsetRecord = Cube;
-
-  export type CubeUnionResultset = CubeUnionSingleResultsetRecord[];
-
-  export interface CubeInterArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeInterSingleResultsetRecord = Cube;
-
-  export type CubeInterResultset = CubeInterSingleResultsetRecord[];
-
-  export interface CubeSizeArguments {
-    _0: Nullable<Cube>;
-  }
-
-  export type CubeSizeSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeSizeResultset = CubeSizeSingleResultsetRecord[];
-
-  export interface CubeSubsetArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Int4Array>;
-  }
-
-  export type CubeSubsetSingleResultsetRecord = Cube;
-
-  export type CubeSubsetResultset = CubeSubsetSingleResultsetRecord[];
-
-  export interface CubeDistanceArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type CubeDistanceSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeDistanceResultset = CubeDistanceSingleResultsetRecord[];
-
-  export interface DistanceChebyshevArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type DistanceChebyshevSingleResultsetRecord = PgCatalog.Float8;
-
-  export type DistanceChebyshevResultset =
-    DistanceChebyshevSingleResultsetRecord[];
-
-  export interface DistanceTaxicabArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-  }
-
-  export type DistanceTaxicabSingleResultsetRecord = PgCatalog.Float8;
-
-  export type DistanceTaxicabResultset = DistanceTaxicabSingleResultsetRecord[];
-
-  export interface CubeDimArguments {
-    _0: Nullable<Cube>;
-  }
-
-  export type CubeDimSingleResultsetRecord = PgCatalog.Int4;
-
-  export type CubeDimResultset = CubeDimSingleResultsetRecord[];
-
-  export interface CubeLlCoordArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Int4>;
-  }
-
-  export type CubeLlCoordSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeLlCoordResultset = CubeLlCoordSingleResultsetRecord[];
-
-  export interface CubeUrCoordArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Int4>;
-  }
-
-  export type CubeUrCoordSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeUrCoordResultset = CubeUrCoordSingleResultsetRecord[];
-
-  export interface CubeCoordArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Int4>;
-  }
-
-  export type CubeCoordSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeCoordResultset = CubeCoordSingleResultsetRecord[];
-
-  export interface CubeCoordLlurArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Int4>;
-  }
-
-  export type CubeCoordLlurSingleResultsetRecord = PgCatalog.Float8;
-
-  export type CubeCoordLlurResultset = CubeCoordLlurSingleResultsetRecord[];
-
-  export interface Cubea5b3Arguments {
-    _0: Nullable<PgCatalog.Float8>;
-  }
-
-  export type Cubea5b3SingleResultsetRecord = Cube;
-
-  export type Cubea5b3Resultset = Cubea5b3SingleResultsetRecord[];
-
-  export interface Cube0aecArguments {
-    _0: Nullable<PgCatalog.Float8>;
-    _1: Nullable<PgCatalog.Float8>;
-  }
-
-  export type Cube0aecSingleResultsetRecord = Cube;
-
-  export type Cube0aecResultset = Cube0aecSingleResultsetRecord[];
-
-  export interface Cube39d2Arguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Float8>;
-  }
-
-  export type Cube39d2SingleResultsetRecord = Cube;
-
-  export type Cube39d2Resultset = Cube39d2SingleResultsetRecord[];
-
-  export interface Cubea7ebArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Float8>;
-    _2?: Nullable<PgCatalog.Float8>;
-  }
-
-  export type Cubea7ebSingleResultsetRecord = Cube;
-
-  export type Cubea7ebResultset = Cubea7ebSingleResultsetRecord[];
-
-  export interface CubeIsPointArguments {
-    _0: Nullable<Cube>;
-  }
-
-  export type CubeIsPointSingleResultsetRecord = PgCatalog.Bool;
-
-  export type CubeIsPointResultset = CubeIsPointSingleResultsetRecord[];
-
-  export interface CubeEnlargeArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<PgCatalog.Float8>;
-    _2?: Nullable<PgCatalog.Int4>;
-  }
-
-  export type CubeEnlargeSingleResultsetRecord = Cube;
-
-  export type CubeEnlargeResultset = CubeEnlargeSingleResultsetRecord[];
-
-  export interface GCubeConsistentArguments {
-    _0: Nullable<PgCatalog.Internal>;
-    _1: Nullable<Cube>;
-    _2?: Nullable<PgCatalog.Int2>;
-    _3?: Nullable<PgCatalog.Oid>;
-    _4?: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubeConsistentSingleResultsetRecord = PgCatalog.Bool;
-
-  export type GCubeConsistentResultset = GCubeConsistentSingleResultsetRecord[];
-
-  export interface GCubePenaltyArguments {
-    _0: Nullable<PgCatalog.Internal>;
-    _1: Nullable<PgCatalog.Internal>;
-    _2?: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubePenaltySingleResultsetRecord = PgCatalog.Internal;
-
-  export type GCubePenaltyResultset = GCubePenaltySingleResultsetRecord[];
-
-  export interface GCubePicksplitArguments {
-    _0: Nullable<PgCatalog.Internal>;
-    _1: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubePicksplitSingleResultsetRecord = PgCatalog.Internal;
-
-  export type GCubePicksplitResultset = GCubePicksplitSingleResultsetRecord[];
-
-  export interface GCubeUnionArguments {
-    _0: Nullable<PgCatalog.Internal>;
-    _1: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubeUnionSingleResultsetRecord = Cube;
-
-  export type GCubeUnionResultset = GCubeUnionSingleResultsetRecord[];
-
-  export interface GCubeSameArguments {
-    _0: Nullable<Cube>;
-    _1: Nullable<Cube>;
-    _2?: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubeSameSingleResultsetRecord = PgCatalog.Internal;
-
-  export type GCubeSameResultset = GCubeSameSingleResultsetRecord[];
-
-  export interface GCubeDistanceArguments {
-    _0: Nullable<PgCatalog.Internal>;
-    _1: Nullable<Cube>;
-    _2?: Nullable<PgCatalog.Int2>;
-    _3?: Nullable<PgCatalog.Oid>;
-    _4?: Nullable<PgCatalog.Internal>;
-  }
-
-  export type GCubeDistanceSingleResultsetRecord = PgCatalog.Float8;
-
-  export type GCubeDistanceResultset = GCubeDistanceSingleResultsetRecord[];
-
-  export interface CubeRecvArguments {
-    _0: Nullable<PgCatalog.Internal>;
-  }
-
-  export type CubeRecvSingleResultsetRecord = Cube;
-
-  export type CubeRecvResultset = CubeRecvSingleResultsetRecord[];
-
-  export interface CubeSendArguments {
-    _0: Nullable<Cube>;
-  }
-
-  export type CubeSendSingleResultsetRecord = PgCatalog.Bytea;
-
-  export type CubeSendResultset = CubeSendSingleResultsetRecord[];
-
-  export namespace Tables {
-    export namespace Slug {
-      export interface BySlugId {
-        slugId: Nullable<PgCatalog.Int4>;
-      }
-    }
-  }
-}
-
-export namespace Api {
-  export type EchoTypeArray = Array<EchoType>;
-
-  export type EchoTypeNestedArray = Array<EchoTypeNested>;
-
-  export interface EchoType {
-    echomessage?: Nullable<PgCatalog.Text>;
-    at?: Nullable<PgCatalog.Timestamptz>;
-  }
-
-  export interface EchoTypeNested {
-    echoes?: Nullable<EchoTypeArray>;
-  }
-
-  export interface EchoArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoResultset = EchoSingleResultsetRecord[];
-
-  export interface EchoSetArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSetSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoSetResultset = EchoSetSingleResultsetRecord[];
-
-  export interface EchoTableArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  interface EchoTableResponseRecord {
-    echomessage: PgCatalog.Text;
-    at: PgCatalog.Timestamptz;
-  }
-  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
-
-  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
-
-  export interface EchoTypeArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeSingleResultsetRecord = EchoType;
-
-  export type EchoTypeResultset = EchoTypeSingleResultsetRecord[];
-
-  export interface EchoTypeArrayArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeArraySingleResultsetRecord = EchoTypeArray;
-
-  export type EchoTypeArrayResultset = EchoTypeArraySingleResultsetRecord[];
-
-  export interface EchoTypeNestedArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeNestedSingleResultsetRecord = EchoTypeNested;
-
-  export type EchoTypeNestedResultset = EchoTypeNestedSingleResultsetRecord[];
-
-  export interface EchoTypeSetArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoTypeSetSingleResultsetRecord = EchoType;
-
-  export type EchoTypeSetResultset = EchoTypeSetSingleResultsetRecord[];
-
-  export namespace Tables {}
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -6262,6 +6486,54 @@ export interface PostgresTypecasts {
   pg_catalog_xid: Typecast;
   pg_catalog_xid8: Typecast;
   pg_catalog_xml: Typecast;
+  public__actor: Typecast;
+  public__actor_info: Typecast;
+  public__address: Typecast;
+  public__category: Typecast;
+  public__city: Typecast;
+  public__country: Typecast;
+  public__customer: Typecast;
+  public__customer_list: Typecast;
+  public__film: Typecast;
+  public__film_actor: Typecast;
+  public__film_category: Typecast;
+  public__film_list: Typecast;
+  public__inventory: Typecast;
+  public__language: Typecast;
+  public__mpaa_rating: Typecast;
+  public__nicer_but_slower_film_list: Typecast;
+  public__payment: Typecast;
+  public__rental: Typecast;
+  public__sales_by_film_category: Typecast;
+  public__sales_by_store: Typecast;
+  public__staff: Typecast;
+  public__staff_list: Typecast;
+  public__store: Typecast;
+  public__year: Typecast;
+  public_actor: Typecast;
+  public_actor_info: Typecast;
+  public_address: Typecast;
+  public_category: Typecast;
+  public_city: Typecast;
+  public_country: Typecast;
+  public_customer: Typecast;
+  public_customer_list: Typecast;
+  public_film: Typecast;
+  public_film_actor: Typecast;
+  public_film_category: Typecast;
+  public_film_list: Typecast;
+  public_inventory: Typecast;
+  public_language: Typecast;
+  public_mpaa_rating: Typecast;
+  public_nicer_but_slower_film_list: Typecast;
+  public_payment: Typecast;
+  public_rental: Typecast;
+  public_sales_by_film_category: Typecast;
+  public_sales_by_store: Typecast;
+  public_staff: Typecast;
+  public_staff_list: Typecast;
+  public_store: Typecast;
+  public_year: Typecast;
   information_schema__administrable_role_authorizations: Typecast;
   information_schema__applicable_roles: Typecast;
   information_schema__attributes: Typecast;
@@ -6405,14 +6677,18 @@ export interface PostgresTypecasts {
   information_schema_view_table_usage: Typecast;
   information_schema_views: Typecast;
   information_schema_yes_or_no: Typecast;
-  public__cube: Typecast;
-  public__slug: Typecast;
-  public_cube: Typecast;
-  public_slug: Typecast;
-  api__echo_type: Typecast;
-  api__echo_type_nested: Typecast;
-  api_echo_type: Typecast;
-  api_echo_type_nested: Typecast;
+}
+
+export namespace ScriptTypes {
+  export namespace Sql {
+    export namespace Sample {
+      export interface pickParameters {
+        _1: PgCatalog.Text;
+      }
+
+      export namespace Film {}
+    }
+  }
 }
 
 // begin string parsers
@@ -10335,6 +10611,418 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Types {
+    export namespace ActorArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Actor.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace ActorInfoArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return ActorInfo.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace AddressArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Address.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace CategoryArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Category.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace CityArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return City.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace CountryArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Country.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace CustomerArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Customer.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace CustomerListArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return CustomerList.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace FilmArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Film.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace FilmActorArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return FilmActor.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace FilmCategoryArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return FilmCategory.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace FilmListArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return FilmList.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace InventoryArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Inventory.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace LanguageArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Language.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace MpaaRatingArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return MpaaRating.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace NicerButSlowerFilmListArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return NicerButSlowerFilmList.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace PaymentArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Payment.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace RentalArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Rental.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace SalesByFilmCategoryArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return SalesByFilmCategory.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace SalesByStoreArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return SalesByStore.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace StaffArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Staff.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace StaffListArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return StaffList.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace StoreArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Store.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace YearArray {
+      export function parse(from: string | null) {
+        if (from === null) return null;
+        const rawArray = JSON.parse(from);
+        return rawArray.map((e: unknown) => {
+          return Year.parse(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `${e}`,
+          );
+        });
+      }
+    }
+    export namespace Actor {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace ActorInfo {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Address {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Category {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace City {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Country {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Customer {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace CustomerList {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Film {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace FilmActor {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace FilmCategory {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace FilmList {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Inventory {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Language {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace MpaaRating {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace NicerButSlowerFilmList {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Payment {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Rental {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace SalesByFilmCategory {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace SalesByStore {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Staff {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace StaffList {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Store {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+    export namespace Year {
+      export function parse(from: string | null) {
+        return from;
+      }
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
@@ -11531,86 +12219,6 @@ export namespace InformationSchema {
       }
     }
     export namespace YesOrNo {
-      export function parse(from: string | null) {
-        return from;
-      }
-    }
-  }
-}
-export namespace Public {
-  export namespace Types {
-    export namespace CubeArray {
-      export function parse(from: string | null) {
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Cube.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
-      }
-    }
-    export namespace SlugArray {
-      export function parse(from: string | null) {
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Slug.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
-      }
-    }
-    export namespace Cube {
-      export function parse(from: string | null) {
-        if (from === null) return null;
-        const source = Array.isArray(from)
-          ? new Float32Array(from)
-          : JSON.parse(from);
-        return new Float32Array(source);
-      }
-    }
-    export namespace Slug {
-      export function parse(from: string | null) {
-        return from;
-      }
-    }
-  }
-}
-export namespace Api {
-  export namespace Types {
-    export namespace EchoTypeArray {
-      export function parse(from: string | null) {
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return EchoType.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
-      }
-    }
-    export namespace EchoTypeNestedArray {
-      export function parse(from: string | null) {
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return EchoTypeNested.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
-      }
-    }
-    export namespace EchoType {
-      export function parse(from: string | null) {
-        return from;
-      }
-    }
-    export namespace EchoTypeNested {
       export function parse(from: string | null) {
         return from;
       }
@@ -13538,6 +14146,298 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Address {
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Address {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Address2 {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace District {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace PostalCode {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Phone {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace City {
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace City {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Customer {
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Activebool {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace CreateDate {
+        export const parse = PgCatalog.Types.Date.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+    }
+    export namespace Actor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace FilmCategory {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Inventory {
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Category {
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Country {
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Country {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Language {
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Bpchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Rental {
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace RentalDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReturnDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Staff {
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Username {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Password {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Picture {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
+    }
+    export namespace Store {
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace ManagerStaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Payment {
+      export namespace PaymentId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Amount {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace PaymentDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Film {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Title {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Description {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace ReleaseYear {
+        export const parse = Public.Types.Year.parse;
+      }
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalDuration {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalRate {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Length {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReplacementCost {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Rating {
+        export const parse = Public.Types.MpaaRating.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace SpecialFeatures {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Fulltext {
+        export const parse = PgCatalog.Types.Tsvector.parse;
+      }
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
@@ -13613,1075 +14513,162 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Public {
-  export namespace Tables {
-    export namespace Slug {
-      export namespace SlugId {
-        export const parse = PgCatalog.Types.Int4.parse;
-      }
-    }
-  }
-}
-export namespace Api {
-  export namespace Tables {}
-}
 // end string parsers
 
 // begin primary key pickers
 export namespace Public {
-  export namespace Slug {
-    export function primaryKeyFrom(value: Slug): string {
+  export namespace FilmActor {
+    export function primaryKeyFrom(value: FilmActor): string {
       return JSON.stringify({
-        slugId: value.slugId,
+        actorId: value.actorId,
+        filmId: value.filmId,
+      });
+    }
+  }
+  export namespace Address {
+    export function primaryKeyFrom(value: Address): string {
+      return JSON.stringify({
+        addressId: value.addressId,
+      });
+    }
+  }
+  export namespace City {
+    export function primaryKeyFrom(value: City): string {
+      return JSON.stringify({
+        cityId: value.cityId,
+      });
+    }
+  }
+  export namespace Customer {
+    export function primaryKeyFrom(value: Customer): string {
+      return JSON.stringify({
+        customerId: value.customerId,
+      });
+    }
+  }
+  export namespace Actor {
+    export function primaryKeyFrom(value: Actor): string {
+      return JSON.stringify({
+        actorId: value.actorId,
+      });
+    }
+  }
+  export namespace FilmCategory {
+    export function primaryKeyFrom(value: FilmCategory): string {
+      return JSON.stringify({
+        filmId: value.filmId,
+        categoryId: value.categoryId,
+      });
+    }
+  }
+  export namespace Inventory {
+    export function primaryKeyFrom(value: Inventory): string {
+      return JSON.stringify({
+        inventoryId: value.inventoryId,
+      });
+    }
+  }
+  export namespace Category {
+    export function primaryKeyFrom(value: Category): string {
+      return JSON.stringify({
+        categoryId: value.categoryId,
+      });
+    }
+  }
+  export namespace Country {
+    export function primaryKeyFrom(value: Country): string {
+      return JSON.stringify({
+        countryId: value.countryId,
+      });
+    }
+  }
+  export namespace Language {
+    export function primaryKeyFrom(value: Language): string {
+      return JSON.stringify({
+        languageId: value.languageId,
+      });
+    }
+  }
+  export namespace Rental {
+    export function primaryKeyFrom(value: Rental): string {
+      return JSON.stringify({
+        rentalId: value.rentalId,
+      });
+    }
+  }
+  export namespace Staff {
+    export function primaryKeyFrom(value: Staff): string {
+      return JSON.stringify({
+        staffId: value.staffId,
+      });
+    }
+  }
+  export namespace Store {
+    export function primaryKeyFrom(value: Store): string {
+      return JSON.stringify({
+        storeId: value.storeId,
+      });
+    }
+  }
+  export namespace Payment {
+    export function primaryKeyFrom(value: Payment): string {
+      return JSON.stringify({
+        paymentId: value.paymentId,
+      });
+    }
+  }
+  export namespace Film {
+    export function primaryKeyFrom(value: Film): string {
+      return JSON.stringify({
+        filmId: value.filmId,
       });
     }
   }
 }
-export namespace Api {}
 // end primary key pickers
+// begin fetch client
+import {
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
 
-// BEGIN - Node side database connectivity layer
-import { Context, initializeContext } from "@embracesql/postgres";
-import postgres from "postgres";
-
-interface HasDatabase {
-  database: Database;
-}
-
-export class Database {
-  /**
-   * Connect to your database server via URL, and return
-   * a fully typed database you can use to access it.
-   */
-  static async connect(postgresUrl: string) {
-    return new Database(await initializeContext(postgresUrl));
+export class EmbraceSQLClient extends BaseClient {
+  constructor(props: EmbraceSQLClientProps) {
+    super(props);
   }
 
-  private constructor(public context: Context) {}
+  public Public = new (class extends HasClient {
+    public Tables = new (class extends HasClient {
+      public FilmActor = new (class extends HasClient {})(this);
 
-  /**
-   * Clean up the connection.
-   */
-  public async disconnect() {
-    await this.context.sql.end();
-  }
+      public Address = new (class extends HasClient {})(this);
 
-  /**
-   * Use the database inside a transaction.
-   *
-   * A successful return is a commit.
-   * An escaping exception is a rollback.
-   */
-  async withTransaction<T>(body: (database: Database) => Promise<T>) {
-    if (this.context.sql.begin) {
-      // root transaction
-      return await this.context.sql.begin(
-        async (sql) => await body(new Database({ ...this.context, sql })),
-      );
-    } else {
-      // nested transaction
-      const nested = this.context.sql as postgres.TransactionSql;
-      return await nested.savepoint(
-        async (sql) => await body(new Database({ ...this.context, sql })),
-      );
-    }
-  }
+      public City = new (class extends HasClient {})(this);
 
-  /**
-   * Returns a database scoped to a new transaction.
-   * You must explicitly call `rollback` or `commit`.
-   */
-  async beginTransaction() {
-    return await new Promise<{
-      database: Database;
-      commit: () => void;
-      rollback: (message?: string) => void;
-    }>((resolveReady) => {
-      const complete = new Promise((resolve, reject) => {
-        this.context.sql
-          .begin(async (sql) => {
-            resolveReady({
-              database: new Database({ ...this.context, sql }),
-              commit: () => resolve(true),
-              rollback: (message?: string) => reject(message),
-            });
-            await complete;
-          })
-          .catch((reason) => reason);
-      });
-    });
-  }
+      public Customer = new (class extends HasClient {})(this);
 
-  public Public = new (class implements HasDatabase {
-    constructor(public database: Database) {}
+      public Actor = new (class extends HasClient {})(this);
 
-    async CubeIn(parameters: Public.CubeInArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_in( ${typed.pg_catalog_cstring(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_in as unknown as Public.CubeInSingleResultsetRecord;
-      return responseBody;
-    }
-    async Cube9c45(parameters: Public.Cube9c45Arguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.pg_catalog__float8(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog__float8(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cube9c45SingleResultsetRecord;
-      return responseBody;
-    }
-    async Cube2e6d(parameters: Public.Cube2e6dArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.pg_catalog__float8(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cube2e6dSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeOut(parameters: Public.CubeOutArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_out( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_out as unknown as Public.CubeOutSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeEq(parameters: Public.CubeEqArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_eq( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_eq as unknown as Public.CubeEqSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeNe(parameters: Public.CubeNeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_ne( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ne as unknown as Public.CubeNeSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeLt(parameters: Public.CubeLtArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_lt( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_lt as unknown as Public.CubeLtSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeGt(parameters: Public.CubeGtArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_gt( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_gt as unknown as Public.CubeGtSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeLe(parameters: Public.CubeLeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_le( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_le as unknown as Public.CubeLeSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeGe(parameters: Public.CubeGeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_ge( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ge as unknown as Public.CubeGeSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeCmp(parameters: Public.CubeCmpArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_cmp( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_cmp as unknown as Public.CubeCmpSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeContains(parameters: Public.CubeContainsArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_contains( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_contains as unknown as Public.CubeContainsSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeContained(parameters: Public.CubeContainedArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_contained( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_contained as unknown as Public.CubeContainedSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeOverlap(parameters: Public.CubeOverlapArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_overlap( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_overlap as unknown as Public.CubeOverlapSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeUnion(parameters: Public.CubeUnionArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_union( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_union as unknown as Public.CubeUnionSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeInter(parameters: Public.CubeInterArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_inter( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_inter as unknown as Public.CubeInterSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeSize(parameters: Public.CubeSizeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_size( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_size as unknown as Public.CubeSizeSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeSubset(parameters: Public.CubeSubsetArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_subset( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog__int4(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_subset as unknown as Public.CubeSubsetSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeDistance(parameters: Public.CubeDistanceArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_distance( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_distance as unknown as Public.CubeDistanceSingleResultsetRecord;
-      return responseBody;
-    }
-    async DistanceChebyshev(parameters: Public.DistanceChebyshevArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.distance_chebyshev( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .distance_chebyshev as unknown as Public.DistanceChebyshevSingleResultsetRecord;
-      return responseBody;
-    }
-    async DistanceTaxicab(parameters: Public.DistanceTaxicabArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.distance_taxicab( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .distance_taxicab as unknown as Public.DistanceTaxicabSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeDim(parameters: Public.CubeDimArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_dim( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_dim as unknown as Public.CubeDimSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeLlCoord(parameters: Public.CubeLlCoordArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_ll_coord( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ll_coord as unknown as Public.CubeLlCoordSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeUrCoord(parameters: Public.CubeUrCoordArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_ur_coord( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ur_coord as unknown as Public.CubeUrCoordSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeCoord(parameters: Public.CubeCoordArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_coord( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_coord as unknown as Public.CubeCoordSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeCoordLlur(parameters: Public.CubeCoordLlurArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_coord_llur( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_coord_llur as unknown as Public.CubeCoordLlurSingleResultsetRecord;
-      return responseBody;
-    }
-    async Cubea5b3(parameters: Public.Cubea5b3Arguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cubea5b3SingleResultsetRecord;
-      return responseBody;
-    }
-    async Cube0aec(parameters: Public.Cube0aecArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cube0aecSingleResultsetRecord;
-      return responseBody;
-    }
-    async Cube39d2(parameters: Public.Cube39d2Arguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cube39d2SingleResultsetRecord;
-      return responseBody;
-    }
-    async Cubea7eb(parameters: Public.Cubea7ebArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._2),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Cubea7ebSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeIsPoint(parameters: Public.CubeIsPointArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_is_point( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_is_point as unknown as Public.CubeIsPointSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeEnlarge(parameters: Public.CubeEnlargeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_enlarge( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_float8(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._2))});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_enlarge as unknown as Public.CubeEnlargeSingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubeConsistent(parameters: Public.GCubeConsistentArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_consistent( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_int2(
-                    undefinedIsNull(parameters._2),
-                  )}, ${typed.pg_catalog_oid(
-                    undefinedIsNull(parameters._3),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._4),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_consistent as unknown as Public.GCubeConsistentSingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubePenalty(parameters: Public.GCubePenaltyArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_penalty( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._2),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_penalty as unknown as Public.GCubePenaltySingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubePicksplit(parameters: Public.GCubePicksplitArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_picksplit( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_picksplit as unknown as Public.GCubePicksplitSingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubeUnion(parameters: Public.GCubeUnionArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_union( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._1),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_union as unknown as Public.GCubeUnionSingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubeSame(parameters: Public.GCubeSameArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_same( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._2),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_same as unknown as Public.GCubeSameSingleResultsetRecord;
-      return responseBody;
-    }
-    async GCubeDistance(parameters: Public.GCubeDistanceArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.g_cube_distance( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )}, ${typed.public_cube(
-                    undefinedIsNull(parameters._1),
-                  )}, ${typed.pg_catalog_int2(
-                    undefinedIsNull(parameters._2),
-                  )}, ${typed.pg_catalog_oid(
-                    undefinedIsNull(parameters._3),
-                  )}, ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._4),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_distance as unknown as Public.GCubeDistanceSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeRecv(parameters: Public.CubeRecvArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_recv( ${typed.pg_catalog_internal(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_recv as unknown as Public.CubeRecvSingleResultsetRecord;
-      return responseBody;
-    }
-    async CubeSend(parameters: Public.CubeSendArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  public.cube_send( ${typed.public_cube(
-                    undefinedIsNull(parameters._0),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_send as unknown as Public.CubeSendSingleResultsetRecord;
-      return responseBody;
-    }
+      public FilmCategory = new (class extends HasClient {})(this);
 
-    public Slug = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Inventory = new (class extends HasClient {})(this);
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+      public Category = new (class extends HasClient {})(this);
 
-      async bySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+      public Country = new (class extends HasClient {})(this);
 
-        const response =
-          await sql`SELECT slug_id FROM public.slug WHERE slug_id = ${
-            parameters.slugId === undefined
-              ? sql("slug_id")
-              : typed.pg_catalog_int4(parameters.slugId)
-          }`;
+      public Language = new (class extends HasClient {})(this);
 
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
+      public Rental = new (class extends HasClient {})(this);
 
-      async deleteBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+      public Staff = new (class extends HasClient {})(this);
 
-        const response = await sql`DELETE FROM public.slug WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id
-      `;
+      public Store = new (class extends HasClient {})(this);
 
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
+      public Payment = new (class extends HasClient {})(this);
 
-      async updateBySlugId(
-        parameters: Public.Tables.Slug.BySlugId,
-        values: Partial<Public.Slug>,
-      ): Promise<Public.Slug> {
-        console.assert(parameters);
-        console.assert(values);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        const response = await sql`UPDATE public.slug SET slug_id = ${
-          values.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(values.slugId)
-        } WHERE slug_id = ${
-          parameters.slugId === undefined
-            ? sql("slug_id")
-            : typed.pg_catalog_int4(parameters.slugId)
-        } RETURNING slug_id`;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
-
-      async create(
-        values: Public.Slug | Public.SlugNotPrimaryKey,
-      ): Promise<Public.Slug> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-
-        if (Public.includesSlugPrimaryKey(values)) {
-          const response = await sql`INSERT INTO public.slug (slug_id)
-    VALUES (${
-      values.slugId === undefined
-        ? sql`DEFAULT`
-        : typed.pg_catalog_int4(values.slugId)
-    })
-    ON CONFLICT (slug_id) DO UPDATE
-    SET 
-    RETURNING slug_id
-    `;
-
-          const results = response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }));
-          return results[0];
-        }
-        const response = await sql`INSERT INTO public.slug ()
-    VALUES ()
-    RETURNING slug_id
-    `;
-
-        const results = response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }));
-        return results[0];
-      }
+      public Film = new (class extends HasClient {})(this);
     })(this);
-  })(this);
-
-  public Api = new (class implements HasDatabase {
-    constructor(public database: Database) {}
-
-    async Echo(parameters: Api.EchoArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo as unknown as Api.EchoSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoSet(parameters: Api.EchoSetArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_set(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_set,
-      ) as unknown as Api.EchoSetResultset;
-      return responseBody;
-    }
-    async EchoTable(parameters: Api.EchoTableArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_table(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map((x) =>
-        this.parseEchoTableResult(this.database.context, x.echo_table),
-      ) as unknown as Api.EchoTableResultset;
-      return responseBody;
-    }
-
-    parseEchoTableResult = (
-      context: Context,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      result: any,
-    ): Api.EchoTableSingleResultsetRecord => {
-      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
-        context,
-        result,
-      ) as unknown as Api.EchoTableSingleResultsetRecord;
-    };
-
-    async EchoType(parameters: Api.EchoTypeArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type as unknown as Api.EchoTypeSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeArray(parameters: Api.EchoTypeArrayArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_array(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_array as unknown as Api.EchoTypeArraySingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeNested(parameters: Api.EchoTypeNestedArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_nested(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_nested as unknown as Api.EchoTypeNestedSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTypeSet(parameters: Api.EchoTypeSetArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_type_set(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_type_set,
-      ) as unknown as Api.EchoTypeSetResultset;
-      return responseBody;
-    }
-  })(this);
+  })({ client: this });
 }
