@@ -1,5 +1,5 @@
 {
-  "name": "vite-starter",
+  "name": "@embracesql/vite-express-project",
   "private": true,
   "version": "0.0.3",
   "type": "module",

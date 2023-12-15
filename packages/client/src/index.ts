@@ -1,5 +1,4 @@
 import { EmbraceSQLRequest, EmbraceSQLResponse } from "@embracesql/shared";
-import "cross-fetch/polyfill";
 
 type EmbraceSQLClientProps = {
   /**
