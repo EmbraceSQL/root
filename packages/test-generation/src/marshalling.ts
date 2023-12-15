@@ -5590,24 +5590,24 @@ export namespace Public {
 
   export type Cube0aecResultset = Cube0aecSingleResultsetRecord[];
 
-  export interface Cube39d2Arguments {
+  export interface Cubeffa3Arguments {
     _0: Nullable<Cube>;
     _1: Nullable<PgCatalog.Float8>;
   }
 
-  export type Cube39d2SingleResultsetRecord = Cube;
+  export type Cubeffa3SingleResultsetRecord = Cube;
 
-  export type Cube39d2Resultset = Cube39d2SingleResultsetRecord[];
+  export type Cubeffa3Resultset = Cubeffa3SingleResultsetRecord[];
 
-  export interface Cubea7ebArguments {
+  export interface Cube908dArguments {
     _0: Nullable<Cube>;
     _1: Nullable<PgCatalog.Float8>;
     _2?: Nullable<PgCatalog.Float8>;
   }
 
-  export type Cubea7ebSingleResultsetRecord = Cube;
+  export type Cube908dSingleResultsetRecord = Cube;
 
-  export type Cubea7ebResultset = Cubea7ebSingleResultsetRecord[];
+  export type Cube908dResultset = Cube908dSingleResultsetRecord[];
 
   export interface CubeIsPointArguments {
     _0: Nullable<Cube>;
@@ -5728,14 +5728,6 @@ export namespace Api {
     echoes?: Nullable<EchoTypeArray>;
   }
 
-  export interface EchoArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoResultset = EchoSingleResultsetRecord[];
-
   export interface EchoSetArguments {
     message: Nullable<PgCatalog.Text>;
   }
@@ -5743,18 +5735,6 @@ export namespace Api {
   export type EchoSetSingleResultsetRecord = PgCatalog.Text;
 
   export type EchoSetResultset = EchoSetSingleResultsetRecord[];
-
-  export interface EchoTableArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  interface EchoTableResponseRecord {
-    echomessage: PgCatalog.Text;
-    at: PgCatalog.Timestamptz;
-  }
-  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
-
-  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export interface EchoTypeArguments {
     message: Nullable<PgCatalog.Text>;
@@ -5787,6 +5767,26 @@ export namespace Api {
   export type EchoTypeSetSingleResultsetRecord = EchoType;
 
   export type EchoTypeSetResultset = EchoTypeSetSingleResultsetRecord[];
+
+  export interface EchoArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  export type EchoSingleResultsetRecord = PgCatalog.Text;
+
+  export type EchoResultset = EchoSingleResultsetRecord[];
+
+  export interface EchoTableArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  interface EchoTableResponseRecord {
+    echomessage: PgCatalog.Text;
+    at: PgCatalog.Timestamptz;
+  }
+  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
+
+  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export namespace Tables {}
 }
@@ -6423,7 +6423,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Aclitem.parse(
+          return Aclitem.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6435,7 +6435,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Bit.parse(
+          return Bit.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6447,7 +6447,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Bool.parse(
+          return Bool.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6459,7 +6459,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Box.parse(
+          return Box.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6471,7 +6471,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Bpchar.parse(
+          return Bpchar.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6483,7 +6483,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Bytea.parse(
+          return Bytea.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6495,7 +6495,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Char.parse(
+          return Char.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6507,7 +6507,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Cid.parse(
+          return Cid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6519,7 +6519,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Cidr.parse(
+          return Cidr.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6531,7 +6531,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Circle.parse(
+          return Circle.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6543,7 +6543,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Cstring.parse(
+          return Cstring.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6555,7 +6555,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Date.parse(
+          return Date.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6567,7 +6567,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Datemultirange.parse(
+          return Datemultirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6579,7 +6579,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Daterange.parse(
+          return Daterange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6591,7 +6591,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Float4.parse(
+          return Float4.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6603,7 +6603,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Float8.parse(
+          return Float8.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6615,7 +6615,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Gtsvector.parse(
+          return Gtsvector.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6627,7 +6627,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Inet.parse(
+          return Inet.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6639,7 +6639,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int2.parse(
+          return Int2.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6651,7 +6651,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int2vector.parse(
+          return Int2vector.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6663,7 +6663,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int4.parse(
+          return Int4.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6675,7 +6675,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int4multirange.parse(
+          return Int4multirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6687,7 +6687,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int4range.parse(
+          return Int4range.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6699,7 +6699,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int8.parse(
+          return Int8.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6711,7 +6711,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int8multirange.parse(
+          return Int8multirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6723,7 +6723,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Int8range.parse(
+          return Int8range.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6735,7 +6735,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Interval.parse(
+          return Interval.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6747,7 +6747,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Json.parse(
+          return Json.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6759,7 +6759,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Jsonb.parse(
+          return Jsonb.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6771,7 +6771,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Jsonpath.parse(
+          return Jsonpath.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6783,7 +6783,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Line.parse(
+          return Line.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6795,7 +6795,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Lseg.parse(
+          return Lseg.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6807,7 +6807,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Macaddr.parse(
+          return Macaddr.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6819,7 +6819,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Macaddr8.parse(
+          return Macaddr8.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6831,7 +6831,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Money.parse(
+          return Money.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6843,7 +6843,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Name.parse(
+          return Name.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6855,7 +6855,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Numeric.parse(
+          return Numeric.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6867,7 +6867,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Nummultirange.parse(
+          return Nummultirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6879,7 +6879,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Numrange.parse(
+          return Numrange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6891,7 +6891,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Oid.parse(
+          return Oid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6903,7 +6903,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Oidvector.parse(
+          return Oidvector.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6915,7 +6915,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Path.parse(
+          return Path.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6927,7 +6927,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAggregate.parse(
+          return PgAggregate.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6939,7 +6939,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAm.parse(
+          return PgAm.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6951,7 +6951,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAmop.parse(
+          return PgAmop.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6963,7 +6963,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAmproc.parse(
+          return PgAmproc.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6975,7 +6975,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAttrdef.parse(
+          return PgAttrdef.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6987,7 +6987,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAttribute.parse(
+          return PgAttribute.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -6999,7 +6999,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAuthMembers.parse(
+          return PgAuthMembers.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7011,7 +7011,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAuthid.parse(
+          return PgAuthid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7023,7 +7023,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAvailableExtensionVersions.parse(
+          return PgAvailableExtensionVersions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7035,7 +7035,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgAvailableExtensions.parse(
+          return PgAvailableExtensions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7047,7 +7047,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgBackendMemoryContexts.parse(
+          return PgBackendMemoryContexts.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7059,7 +7059,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgCast.parse(
+          return PgCast.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7071,7 +7071,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgClass.parse(
+          return PgClass.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7083,7 +7083,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgCollation.parse(
+          return PgCollation.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7095,7 +7095,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgConfig.parse(
+          return PgConfig.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7107,7 +7107,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgConstraint.parse(
+          return PgConstraint.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7119,7 +7119,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgConversion.parse(
+          return PgConversion.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7131,7 +7131,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgCursors.parse(
+          return PgCursors.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7143,7 +7143,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgDatabase.parse(
+          return PgDatabase.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7155,7 +7155,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgDbRoleSetting.parse(
+          return PgDbRoleSetting.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7167,7 +7167,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgDefaultAcl.parse(
+          return PgDefaultAcl.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7179,7 +7179,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgDepend.parse(
+          return PgDepend.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7191,7 +7191,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgDescription.parse(
+          return PgDescription.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7203,7 +7203,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgEnum.parse(
+          return PgEnum.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7215,7 +7215,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgEventTrigger.parse(
+          return PgEventTrigger.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7227,7 +7227,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgExtension.parse(
+          return PgExtension.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7239,7 +7239,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgFileSettings.parse(
+          return PgFileSettings.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7251,7 +7251,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgForeignDataWrapper.parse(
+          return PgForeignDataWrapper.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7263,7 +7263,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgForeignServer.parse(
+          return PgForeignServer.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7275,7 +7275,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgForeignTable.parse(
+          return PgForeignTable.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7287,7 +7287,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgGroup.parse(
+          return PgGroup.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7299,7 +7299,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgHbaFileRules.parse(
+          return PgHbaFileRules.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7311,7 +7311,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgIdentFileMappings.parse(
+          return PgIdentFileMappings.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7323,7 +7323,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgIndex.parse(
+          return PgIndex.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7335,7 +7335,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgIndexes.parse(
+          return PgIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7347,7 +7347,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgInherits.parse(
+          return PgInherits.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7359,7 +7359,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgInitPrivs.parse(
+          return PgInitPrivs.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7371,7 +7371,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgLanguage.parse(
+          return PgLanguage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7383,7 +7383,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgLargeobject.parse(
+          return PgLargeobject.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7395,7 +7395,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgLargeobjectMetadata.parse(
+          return PgLargeobjectMetadata.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7407,7 +7407,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgLocks.parse(
+          return PgLocks.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7419,7 +7419,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgLsn.parse(
+          return PgLsn.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7431,7 +7431,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgMatviews.parse(
+          return PgMatviews.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7443,7 +7443,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgNamespace.parse(
+          return PgNamespace.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7455,7 +7455,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgOpclass.parse(
+          return PgOpclass.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7467,7 +7467,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgOperator.parse(
+          return PgOperator.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7479,7 +7479,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgOpfamily.parse(
+          return PgOpfamily.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7491,7 +7491,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgParameterAcl.parse(
+          return PgParameterAcl.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7503,7 +7503,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPartitionedTable.parse(
+          return PgPartitionedTable.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7515,7 +7515,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPolicies.parse(
+          return PgPolicies.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7527,7 +7527,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPolicy.parse(
+          return PgPolicy.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7539,7 +7539,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPreparedStatements.parse(
+          return PgPreparedStatements.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7551,7 +7551,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPreparedXacts.parse(
+          return PgPreparedXacts.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7563,7 +7563,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgProc.parse(
+          return PgProc.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7575,7 +7575,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPublication.parse(
+          return PgPublication.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7587,7 +7587,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPublicationNamespace.parse(
+          return PgPublicationNamespace.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7599,7 +7599,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPublicationRel.parse(
+          return PgPublicationRel.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7611,7 +7611,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgPublicationTables.parse(
+          return PgPublicationTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7623,7 +7623,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgRange.parse(
+          return PgRange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7635,7 +7635,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgReplicationOrigin.parse(
+          return PgReplicationOrigin.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7647,7 +7647,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgReplicationOriginStatus.parse(
+          return PgReplicationOriginStatus.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7659,7 +7659,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgReplicationSlots.parse(
+          return PgReplicationSlots.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7671,7 +7671,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgRewrite.parse(
+          return PgRewrite.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7683,7 +7683,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgRoles.parse(
+          return PgRoles.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7695,7 +7695,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgRules.parse(
+          return PgRules.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7707,7 +7707,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSeclabel.parse(
+          return PgSeclabel.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7719,7 +7719,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSeclabels.parse(
+          return PgSeclabels.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7731,7 +7731,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSequence.parse(
+          return PgSequence.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7743,7 +7743,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSequences.parse(
+          return PgSequences.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7755,7 +7755,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSettings.parse(
+          return PgSettings.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7767,7 +7767,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgShadow.parse(
+          return PgShadow.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7779,7 +7779,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgShdepend.parse(
+          return PgShdepend.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7791,7 +7791,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgShdescription.parse(
+          return PgShdescription.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7803,7 +7803,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgShmemAllocations.parse(
+          return PgShmemAllocations.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7815,7 +7815,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgShseclabel.parse(
+          return PgShseclabel.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7827,7 +7827,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSnapshot.parse(
+          return PgSnapshot.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7839,7 +7839,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatActivity.parse(
+          return PgStatActivity.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7851,7 +7851,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatAllIndexes.parse(
+          return PgStatAllIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7863,7 +7863,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatAllTables.parse(
+          return PgStatAllTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7875,7 +7875,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatArchiver.parse(
+          return PgStatArchiver.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7887,7 +7887,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatBgwriter.parse(
+          return PgStatBgwriter.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7899,7 +7899,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatDatabase.parse(
+          return PgStatDatabase.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7911,7 +7911,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatDatabaseConflicts.parse(
+          return PgStatDatabaseConflicts.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7923,7 +7923,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatGssapi.parse(
+          return PgStatGssapi.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7935,7 +7935,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatIo.parse(
+          return PgStatIo.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7947,7 +7947,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressAnalyze.parse(
+          return PgStatProgressAnalyze.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7959,7 +7959,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressBasebackup.parse(
+          return PgStatProgressBasebackup.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7971,7 +7971,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressCluster.parse(
+          return PgStatProgressCluster.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7983,7 +7983,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressCopy.parse(
+          return PgStatProgressCopy.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -7995,7 +7995,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressCreateIndex.parse(
+          return PgStatProgressCreateIndex.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8007,7 +8007,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatProgressVacuum.parse(
+          return PgStatProgressVacuum.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8019,7 +8019,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatRecoveryPrefetch.parse(
+          return PgStatRecoveryPrefetch.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8031,7 +8031,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatReplication.parse(
+          return PgStatReplication.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8043,7 +8043,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatReplicationSlots.parse(
+          return PgStatReplicationSlots.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8055,7 +8055,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSlru.parse(
+          return PgStatSlru.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8067,7 +8067,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSsl.parse(
+          return PgStatSsl.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8079,7 +8079,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSubscription.parse(
+          return PgStatSubscription.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8091,7 +8091,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSubscriptionStats.parse(
+          return PgStatSubscriptionStats.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8103,7 +8103,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSysIndexes.parse(
+          return PgStatSysIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8115,7 +8115,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatSysTables.parse(
+          return PgStatSysTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8127,7 +8127,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatUserFunctions.parse(
+          return PgStatUserFunctions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8139,7 +8139,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatUserIndexes.parse(
+          return PgStatUserIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8151,7 +8151,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatUserTables.parse(
+          return PgStatUserTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8163,7 +8163,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatWal.parse(
+          return PgStatWal.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8175,7 +8175,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatWalReceiver.parse(
+          return PgStatWalReceiver.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8187,7 +8187,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatXactAllTables.parse(
+          return PgStatXactAllTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8199,7 +8199,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatXactSysTables.parse(
+          return PgStatXactSysTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8211,7 +8211,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatXactUserFunctions.parse(
+          return PgStatXactUserFunctions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8223,7 +8223,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatXactUserTables.parse(
+          return PgStatXactUserTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8235,7 +8235,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioAllIndexes.parse(
+          return PgStatioAllIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8247,7 +8247,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioAllSequences.parse(
+          return PgStatioAllSequences.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8259,7 +8259,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioAllTables.parse(
+          return PgStatioAllTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8271,7 +8271,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioSysIndexes.parse(
+          return PgStatioSysIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8283,7 +8283,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioSysSequences.parse(
+          return PgStatioSysSequences.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8295,7 +8295,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioSysTables.parse(
+          return PgStatioSysTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8307,7 +8307,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioUserIndexes.parse(
+          return PgStatioUserIndexes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8319,7 +8319,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioUserSequences.parse(
+          return PgStatioUserSequences.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8331,7 +8331,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatioUserTables.parse(
+          return PgStatioUserTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8343,7 +8343,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatistic.parse(
+          return PgStatistic.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8355,7 +8355,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatisticExt.parse(
+          return PgStatisticExt.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8367,7 +8367,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatisticExtData.parse(
+          return PgStatisticExtData.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8379,7 +8379,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStats.parse(
+          return PgStats.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8391,7 +8391,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatsExt.parse(
+          return PgStatsExt.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8403,7 +8403,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgStatsExtExprs.parse(
+          return PgStatsExtExprs.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8415,7 +8415,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSubscription.parse(
+          return PgSubscription.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8427,7 +8427,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgSubscriptionRel.parse(
+          return PgSubscriptionRel.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8439,7 +8439,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTables.parse(
+          return PgTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8451,7 +8451,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTablespace.parse(
+          return PgTablespace.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8463,7 +8463,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTimezoneAbbrevs.parse(
+          return PgTimezoneAbbrevs.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8475,7 +8475,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTimezoneNames.parse(
+          return PgTimezoneNames.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8487,7 +8487,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTransform.parse(
+          return PgTransform.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8499,7 +8499,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTrigger.parse(
+          return PgTrigger.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8511,7 +8511,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTsConfig.parse(
+          return PgTsConfig.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8523,7 +8523,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTsConfigMap.parse(
+          return PgTsConfigMap.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8535,7 +8535,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTsDict.parse(
+          return PgTsDict.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8547,7 +8547,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTsParser.parse(
+          return PgTsParser.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8559,7 +8559,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgTsTemplate.parse(
+          return PgTsTemplate.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8571,7 +8571,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgType.parse(
+          return PgType.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8583,7 +8583,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgUser.parse(
+          return PgUser.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8595,7 +8595,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgUserMapping.parse(
+          return PgUserMapping.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8607,7 +8607,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgUserMappings.parse(
+          return PgUserMappings.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8619,7 +8619,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.PgViews.parse(
+          return PgViews.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8631,7 +8631,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Point.parse(
+          return Point.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8643,7 +8643,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Polygon.parse(
+          return Polygon.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8655,7 +8655,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Record.parse(
+          return Record.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8667,7 +8667,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Refcursor.parse(
+          return Refcursor.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8679,7 +8679,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regclass.parse(
+          return Regclass.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8691,7 +8691,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regcollation.parse(
+          return Regcollation.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8703,7 +8703,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regconfig.parse(
+          return Regconfig.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8715,7 +8715,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regdictionary.parse(
+          return Regdictionary.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8727,7 +8727,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regnamespace.parse(
+          return Regnamespace.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8739,7 +8739,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regoper.parse(
+          return Regoper.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8751,7 +8751,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regoperator.parse(
+          return Regoperator.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8763,7 +8763,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regproc.parse(
+          return Regproc.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8775,7 +8775,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regprocedure.parse(
+          return Regprocedure.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8787,7 +8787,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regrole.parse(
+          return Regrole.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8799,7 +8799,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Regtype.parse(
+          return Regtype.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8811,7 +8811,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Text.parse(
+          return Text.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8823,7 +8823,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tid.parse(
+          return Tid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8835,7 +8835,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Time.parse(
+          return Time.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8847,7 +8847,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Timestamp.parse(
+          return Timestamp.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8859,7 +8859,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Timestamptz.parse(
+          return Timestamptz.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8871,7 +8871,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Timetz.parse(
+          return Timetz.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8883,7 +8883,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tsmultirange.parse(
+          return Tsmultirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8895,7 +8895,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tsquery.parse(
+          return Tsquery.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8907,7 +8907,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tsrange.parse(
+          return Tsrange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8919,7 +8919,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tstzmultirange.parse(
+          return Tstzmultirange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8931,7 +8931,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tstzrange.parse(
+          return Tstzrange.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8943,7 +8943,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Tsvector.parse(
+          return Tsvector.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8955,7 +8955,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.TxidSnapshot.parse(
+          return TxidSnapshot.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8967,7 +8967,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Uuid.parse(
+          return Uuid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8979,7 +8979,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Varbit.parse(
+          return Varbit.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -8991,7 +8991,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Varchar.parse(
+          return Varchar.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -9003,7 +9003,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Xid.parse(
+          return Xid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -9015,7 +9015,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Xid8.parse(
+          return Xid8.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -9027,7 +9027,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Xml.parse(
+          return Xml.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -9353,7 +9353,7 @@ export namespace PgCatalog {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return PgCatalog.Types.Oid.parse(
+          return Oid.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10342,7 +10342,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.AdministrableRoleAuthorizations.parse(
+          return AdministrableRoleAuthorizations.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10354,7 +10354,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ApplicableRoles.parse(
+          return ApplicableRoles.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10366,7 +10366,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Attributes.parse(
+          return Attributes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10378,7 +10378,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CardinalNumber.parse(
+          return CardinalNumber.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10390,7 +10390,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CharacterData.parse(
+          return CharacterData.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10402,7 +10402,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CharacterSets.parse(
+          return CharacterSets.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10414,7 +10414,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CheckConstraintRoutineUsage.parse(
+          return CheckConstraintRoutineUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10426,7 +10426,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CheckConstraints.parse(
+          return CheckConstraints.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10438,7 +10438,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.CollationCharacterSetApplicability.parse(
+          return CollationCharacterSetApplicability.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10450,7 +10450,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Collations.parse(
+          return Collations.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10462,7 +10462,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ColumnColumnUsage.parse(
+          return ColumnColumnUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10474,7 +10474,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ColumnDomainUsage.parse(
+          return ColumnDomainUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10486,7 +10486,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ColumnOptions.parse(
+          return ColumnOptions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10498,7 +10498,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ColumnPrivileges.parse(
+          return ColumnPrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10510,7 +10510,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ColumnUdtUsage.parse(
+          return ColumnUdtUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10522,7 +10522,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Columns.parse(
+          return Columns.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10534,7 +10534,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ConstraintColumnUsage.parse(
+          return ConstraintColumnUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10546,7 +10546,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ConstraintTableUsage.parse(
+          return ConstraintTableUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10558,7 +10558,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.DataTypePrivileges.parse(
+          return DataTypePrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10570,7 +10570,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.DomainConstraints.parse(
+          return DomainConstraints.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10582,7 +10582,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.DomainUdtUsage.parse(
+          return DomainUdtUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10594,7 +10594,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Domains.parse(
+          return Domains.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10606,7 +10606,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ElementTypes.parse(
+          return ElementTypes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10618,7 +10618,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.EnabledRoles.parse(
+          return EnabledRoles.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10630,7 +10630,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignDataWrapperOptions.parse(
+          return ForeignDataWrapperOptions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10642,7 +10642,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignDataWrappers.parse(
+          return ForeignDataWrappers.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10654,7 +10654,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignServerOptions.parse(
+          return ForeignServerOptions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10666,7 +10666,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignServers.parse(
+          return ForeignServers.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10678,7 +10678,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignTableOptions.parse(
+          return ForeignTableOptions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10690,7 +10690,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ForeignTables.parse(
+          return ForeignTables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10702,7 +10702,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.InformationSchemaCatalogName.parse(
+          return InformationSchemaCatalogName.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10714,7 +10714,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.KeyColumnUsage.parse(
+          return KeyColumnUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10726,7 +10726,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Parameters.parse(
+          return Parameters.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10763,7 +10763,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ReferentialConstraints.parse(
+          return ReferentialConstraints.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10775,7 +10775,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoleColumnGrants.parse(
+          return RoleColumnGrants.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10787,7 +10787,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoleRoutineGrants.parse(
+          return RoleRoutineGrants.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10799,7 +10799,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoleTableGrants.parse(
+          return RoleTableGrants.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10811,7 +10811,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoleUdtGrants.parse(
+          return RoleUdtGrants.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10823,7 +10823,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoleUsageGrants.parse(
+          return RoleUsageGrants.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10835,7 +10835,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoutineColumnUsage.parse(
+          return RoutineColumnUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10847,7 +10847,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoutinePrivileges.parse(
+          return RoutinePrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10859,7 +10859,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoutineRoutineUsage.parse(
+          return RoutineRoutineUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10871,7 +10871,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoutineSequenceUsage.parse(
+          return RoutineSequenceUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10883,7 +10883,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.RoutineTableUsage.parse(
+          return RoutineTableUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10895,7 +10895,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Routines.parse(
+          return Routines.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10907,7 +10907,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Schemata.parse(
+          return Schemata.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10919,7 +10919,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Sequences.parse(
+          return Sequences.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10931,7 +10931,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.SqlFeatures.parse(
+          return SqlFeatures.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10943,7 +10943,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.SqlIdentifier.parse(
+          return SqlIdentifier.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10955,7 +10955,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.SqlImplementationInfo.parse(
+          return SqlImplementationInfo.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10967,7 +10967,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.SqlParts.parse(
+          return SqlParts.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10979,7 +10979,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.SqlSizing.parse(
+          return SqlSizing.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -10991,7 +10991,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.TableConstraints.parse(
+          return TableConstraints.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11003,7 +11003,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.TablePrivileges.parse(
+          return TablePrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11015,7 +11015,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Tables.parse(
+          return Tables.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11027,7 +11027,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.TimeStamp.parse(
+          return TimeStamp.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11039,7 +11039,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Transforms.parse(
+          return Transforms.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11051,7 +11051,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.TriggeredUpdateColumns.parse(
+          return TriggeredUpdateColumns.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11063,7 +11063,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Triggers.parse(
+          return Triggers.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11075,7 +11075,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.UdtPrivileges.parse(
+          return UdtPrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11087,7 +11087,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.UsagePrivileges.parse(
+          return UsagePrivileges.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11099,7 +11099,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.UserDefinedTypes.parse(
+          return UserDefinedTypes.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11111,7 +11111,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.UserMappingOptions.parse(
+          return UserMappingOptions.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11123,7 +11123,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.UserMappings.parse(
+          return UserMappings.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11135,7 +11135,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ViewColumnUsage.parse(
+          return ViewColumnUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11147,7 +11147,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ViewRoutineUsage.parse(
+          return ViewRoutineUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11159,7 +11159,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.ViewTableUsage.parse(
+          return ViewTableUsage.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11171,7 +11171,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.Views.parse(
+          return Views.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11183,7 +11183,7 @@ export namespace InformationSchema {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return InformationSchema.Types.YesOrNo.parse(
+          return YesOrNo.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11544,7 +11544,7 @@ export namespace Public {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return Public.Types.Cube.parse(
+          return Cube.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11556,7 +11556,7 @@ export namespace Public {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return Public.Types.Slug.parse(
+          return Slug.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11586,7 +11586,7 @@ export namespace Api {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return Api.Types.EchoType.parse(
+          return EchoType.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11598,7 +11598,7 @@ export namespace Api {
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
-          return Api.Types.EchoTypeNested.parse(
+          return EchoTypeNested.parse(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${e}`,
           );
@@ -11616,6 +11616,2014 @@ export namespace Api {
       }
     }
   }
+}
+// begin table column parser mapping
+export namespace PgCatalog {
+  export namespace Tables {
+    export namespace PgStatistic {
+      export namespace Starelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Staattnum {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Stainherit {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Stanullfrac {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Stawidth {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Stadistinct {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Stakind1 {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Stakind2 {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Stakind3 {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Stakind4 {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Stakind5 {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Staop1 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Staop2 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Staop3 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Staop4 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Staop5 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stacoll1 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stacoll2 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stacoll3 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stacoll4 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stacoll5 {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stanumbers1 {
+        export const parse = PgCatalog.Types.Float4Array.parse;
+      }
+      export namespace Stanumbers2 {
+        export const parse = PgCatalog.Types.Float4Array.parse;
+      }
+      export namespace Stanumbers3 {
+        export const parse = PgCatalog.Types.Float4Array.parse;
+      }
+      export namespace Stanumbers4 {
+        export const parse = PgCatalog.Types.Float4Array.parse;
+      }
+      export namespace Stanumbers5 {
+        export const parse = PgCatalog.Types.Float4Array.parse;
+      }
+      export namespace Stavalues1 {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+      export namespace Stavalues2 {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+      export namespace Stavalues3 {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+      export namespace Stavalues4 {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+      export namespace Stavalues5 {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+    }
+    export namespace PgType {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Typnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typlen {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Typbyval {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Typtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Typcategory {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Typispreferred {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Typisdefined {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Typdelim {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Typrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typsubscript {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typelem {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typarray {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typinput {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typoutput {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typreceive {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typsend {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typmodin {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typmodout {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typanalyze {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Typalign {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Typstorage {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Typnotnull {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Typbasetype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typtypmod {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Typndims {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Typcollation {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Typdefaultbin {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Typdefault {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Typacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgForeignTable {
+      export namespace Ftrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Ftserver {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Ftoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgAuthid {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rolname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Rolsuper {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolinherit {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolcreaterole {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolcreatedb {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolcanlogin {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolreplication {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolbypassrls {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Rolconnlimit {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Rolpassword {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Rolvaliduntil {
+        export const parse = PgCatalog.Types.Timestamptz.parse;
+      }
+    }
+    export namespace PgStatisticExtData {
+      export namespace Stxoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stxdinherit {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Stxdndistinct {
+        export const parse = PgCatalog.Types.PgNdistinct.parse;
+      }
+      export namespace Stxddependencies {
+        export const parse = PgCatalog.Types.PgDependencies.parse;
+      }
+      export namespace Stxdmcv {
+        export const parse = PgCatalog.Types.PgMcvList.parse;
+      }
+      export namespace Stxdexpr {
+        export const parse = PgCatalog.Types.PgStatisticArray.parse;
+      }
+    }
+    export namespace PgUserMapping {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Umuser {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Umserver {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Umoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgSubscription {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Subdbid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Subskiplsn {
+        export const parse = PgCatalog.Types.PgLsn.parse;
+      }
+      export namespace Subname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Subowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Subenabled {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Subbinary {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Substream {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Subtwophasestate {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Subdisableonerr {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Subpasswordrequired {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Subrunasowner {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Subconninfo {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Subslotname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Subsynccommit {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Subpublications {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Suborigin {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgAttribute {
+      export namespace Attrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Attname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Atttypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Attlen {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Attnum {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Attcacheoff {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Atttypmod {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Attndims {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Attbyval {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Attalign {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Attstorage {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Attcompression {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Attnotnull {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Atthasdef {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Atthasmissing {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Attidentity {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Attgenerated {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Attisdropped {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Attislocal {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Attinhcount {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Attstattarget {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Attcollation {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Attacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+      export namespace Attoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Attfdwoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Attmissingval {
+        export const parse = PgCatalog.Types.Anyarray.parse;
+      }
+    }
+    export namespace PgProc {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Proname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Pronamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Proowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prolang {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Procost {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Prorows {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Provariadic {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prosupport {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Prokind {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Prosecdef {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Proleakproof {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Proisstrict {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Proretset {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Provolatile {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Proparallel {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Pronargs {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Pronargdefaults {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Prorettype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Proargtypes {
+        export const parse = PgCatalog.Types.Oidvector.parse;
+      }
+      export namespace Proallargtypes {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Proargmodes {
+        export const parse = PgCatalog.Types.CharArray.parse;
+      }
+      export namespace Proargnames {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Proargdefaults {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Protrftypes {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Prosrc {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Probin {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Prosqlbody {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Proconfig {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Proacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgClass {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Relnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Reltype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Reloftype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relam {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relfilenode {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Reltablespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relpages {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Reltuples {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Relallvisible {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Reltoastrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relhasindex {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relisshared {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relpersistence {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Relkind {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Relnatts {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Relchecks {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Relhasrules {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relhastriggers {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relhassubclass {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relrowsecurity {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relforcerowsecurity {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relispopulated {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relreplident {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Relispartition {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Relrewrite {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Relfrozenxid {
+        export const parse = PgCatalog.Types.Xid.parse;
+      }
+      export namespace Relminmxid {
+        export const parse = PgCatalog.Types.Xid.parse;
+      }
+      export namespace Relacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+      export namespace Reloptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Relpartbound {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgAttrdef {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Adrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Adnum {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Adbin {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgConstraint {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Connamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Contype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Condeferrable {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Condeferred {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Convalidated {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Conrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Contypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conindid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conparentid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Confrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Confupdtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Confdeltype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Confmatchtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Conislocal {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Coninhcount {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Connoinherit {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Conkey {
+        export const parse = PgCatalog.Types.Int2Array.parse;
+      }
+      export namespace Confkey {
+        export const parse = PgCatalog.Types.Int2Array.parse;
+      }
+      export namespace Conpfeqop {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Conppeqop {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Conffeqop {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Confdelsetcols {
+        export const parse = PgCatalog.Types.Int2Array.parse;
+      }
+      export namespace Conexclop {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Conbin {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgInherits {
+      export namespace Inhrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Inhparent {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Inhseqno {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Inhdetachpending {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+    }
+    export namespace PgIndex {
+      export namespace Indexrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Indrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Indnatts {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Indnkeyatts {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Indisunique {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indnullsnotdistinct {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisprimary {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisexclusion {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indimmediate {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisclustered {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisvalid {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indcheckxmin {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisready {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indislive {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indisreplident {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Indkey {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+      export namespace Indcollation {
+        export const parse = PgCatalog.Types.Oidvector.parse;
+      }
+      export namespace Indclass {
+        export const parse = PgCatalog.Types.Oidvector.parse;
+      }
+      export namespace Indoption {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+      export namespace Indexprs {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Indpred {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgOperator {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Oprnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprkind {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Oprcanmerge {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Oprcanhash {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Oprleft {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprright {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprresult {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprcom {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprnegate {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Oprcode {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Oprrest {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Oprjoin {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgOpfamily {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opfmethod {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opfname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Opfnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opfowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgOpclass {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcmethod {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Opcnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcfamily {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcintype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Opcdefault {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Opckeytype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgAm {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Amhandler {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Amtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+    }
+    export namespace PgAmop {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amopfamily {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amoplefttype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amoprighttype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amopstrategy {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Amoppurpose {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Amopopr {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amopmethod {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amopsortfamily {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgAmproc {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amprocfamily {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amproclefttype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amprocrighttype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Amprocnum {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Amproc {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgLanguage {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lanname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Lanowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lanispl {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Lanpltrusted {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Lanplcallfoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Laninline {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lanvalidator {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lanacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgLargeobjectMetadata {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lomowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Lomacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgAggregate {
+      export namespace Aggfnoid {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggkind {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Aggnumdirectargs {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Aggtransfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggfinalfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggcombinefn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggserialfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggdeserialfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggmtransfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggminvtransfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggmfinalfn {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Aggfinalextra {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Aggmfinalextra {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Aggfinalmodify {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Aggmfinalmodify {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Aggsortop {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Aggtranstype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Aggtransspace {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Aggmtranstype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Aggmtransspace {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Agginitval {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Aggminitval {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgStatisticExt {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stxrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stxname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Stxnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stxowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Stxstattarget {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Stxkeys {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+      export namespace Stxkind {
+        export const parse = PgCatalog.Types.CharArray.parse;
+      }
+      export namespace Stxexprs {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgRewrite {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rulename {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace EvClass {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace EvType {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace EvEnabled {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace IsInstead {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace EvQual {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace EvAction {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgTrigger {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgparentid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Tgfoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgtype {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Tgenabled {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Tgisinternal {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Tgconstrrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgconstrindid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgconstraint {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tgdeferrable {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Tginitdeferred {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Tgnargs {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Tgattr {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+      export namespace Tgargs {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
+      export namespace Tgqual {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Tgoldtable {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Tgnewtable {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+    }
+    export namespace PgEventTrigger {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Evtname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Evtevent {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Evtowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Evtfoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Evtenabled {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Evttags {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgDescription {
+      export namespace Objoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Description {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgCast {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Castsource {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Casttarget {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Castfunc {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Castcontext {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Castmethod {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+    }
+    export namespace PgEnum {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Enumtypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Enumsortorder {
+        export const parse = PgCatalog.Types.Float4.parse;
+      }
+      export namespace Enumlabel {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+    }
+    export namespace PgNamespace {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Nspname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Nspowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Nspacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgConversion {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Connamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Conforencoding {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Contoencoding {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Conproc {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Condefault {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+    }
+    export namespace PgDepend {
+      export namespace Classid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Refclassid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Refobjid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Refobjsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Deptype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+    }
+    export namespace PgDatabase {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Datname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Datdba {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Encoding {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Datlocprovider {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Datistemplate {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Datallowconn {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Datconnlimit {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Datfrozenxid {
+        export const parse = PgCatalog.Types.Xid.parse;
+      }
+      export namespace Datminmxid {
+        export const parse = PgCatalog.Types.Xid.parse;
+      }
+      export namespace Dattablespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Datcollate {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Datctype {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Daticulocale {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Daticurules {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Datcollversion {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Datacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgDbRoleSetting {
+      export namespace Setdatabase {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Setrole {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Setconfig {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgTablespace {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Spcname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Spcowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Spcacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+      export namespace Spcoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgAuthMembers {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Roleid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Member {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Grantor {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace AdminOption {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace InheritOption {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace SetOption {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+    }
+    export namespace PgShdepend {
+      export namespace Dbid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Refclassid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Refobjid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Deptype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+    }
+    export namespace PgShdescription {
+      export namespace Objoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Description {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgTsConfig {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Cfgname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Cfgnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Cfgowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Cfgparser {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgTsConfigMap {
+      export namespace Mapcfg {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Maptokentype {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Mapseqno {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Mapdict {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgTsDict {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Dictname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Dictnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Dictowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Dicttemplate {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Dictinitoption {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgTsParser {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prsname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Prsnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prsstart {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Prstoken {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Prsend {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Prsheadline {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Prslextype {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgTsTemplate {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tmplname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Tmplnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Tmplinit {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Tmpllexize {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgExtension {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Extname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Extowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Extnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Extrelocatable {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Extversion {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Extconfig {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Extcondition {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgForeignDataWrapper {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Fdwname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Fdwowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Fdwhandler {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Fdwvalidator {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Fdwacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+      export namespace Fdwoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgForeignServer {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Srvname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Srvowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Srvfdw {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Srvtype {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Srvversion {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Srvacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+      export namespace Srvoptions {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+    }
+    export namespace PgPolicy {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Polname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Polrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Polcmd {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Polpermissive {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Polroles {
+        export const parse = PgCatalog.Types.OidArray.parse;
+      }
+      export namespace Polqual {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Polwithcheck {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgReplicationOrigin {
+      export namespace Roident {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Roname {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgDefaultAcl {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Defaclrole {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Defaclnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Defaclobjtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Defaclacl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgInitPrivs {
+      export namespace Objoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Privtype {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Initprivs {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgSeclabel {
+      export namespace Objoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Objsubid {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Provider {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Label {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgShseclabel {
+      export namespace Objoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Classoid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Provider {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Label {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgCollation {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Collname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Collnamespace {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Collowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Collprovider {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Collisdeterministic {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Collencoding {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Collcollate {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Collctype {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Colliculocale {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Collicurules {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Collversion {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+    }
+    export namespace PgParameterAcl {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Parname {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Paracl {
+        export const parse = PgCatalog.Types.AclitemArray.parse;
+      }
+    }
+    export namespace PgPartitionedTable {
+      export namespace Partrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Partstrat {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Partnatts {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Partdefid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Partattrs {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+      export namespace Partclass {
+        export const parse = PgCatalog.Types.Oidvector.parse;
+      }
+      export namespace Partcollation {
+        export const parse = PgCatalog.Types.Oidvector.parse;
+      }
+      export namespace Partexprs {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+    }
+    export namespace PgRange {
+      export namespace Rngtypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rngsubtype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rngmultitypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rngcollation {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rngsubopc {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Rngcanonical {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Rngsubdiff {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgTransform {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Trftype {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Trflang {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Trffromsql {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+      export namespace Trftosql {
+        export const parse = PgCatalog.Types.Regproc.parse;
+      }
+    }
+    export namespace PgSequence {
+      export namespace Seqrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Seqtypid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Seqstart {
+        export const parse = PgCatalog.Types.Int8.parse;
+      }
+      export namespace Seqincrement {
+        export const parse = PgCatalog.Types.Int8.parse;
+      }
+      export namespace Seqmax {
+        export const parse = PgCatalog.Types.Int8.parse;
+      }
+      export namespace Seqmin {
+        export const parse = PgCatalog.Types.Int8.parse;
+      }
+      export namespace Seqcache {
+        export const parse = PgCatalog.Types.Int8.parse;
+      }
+      export namespace Seqcycle {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+    }
+    export namespace PgPublication {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Pubname {
+        export const parse = PgCatalog.Types.Name.parse;
+      }
+      export namespace Pubowner {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Puballtables {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Pubinsert {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Pubupdate {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Pubdelete {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Pubtruncate {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Pubviaroot {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+    }
+    export namespace PgPublicationNamespace {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Pnpubid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Pnnspid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+    }
+    export namespace PgPublicationRel {
+      export namespace Oid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prpubid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Prqual {
+        export const parse = PgCatalog.Types.PgNodeTree.parse;
+      }
+      export namespace Prattrs {
+        export const parse = PgCatalog.Types.Int2vector.parse;
+      }
+    }
+    export namespace PgSubscriptionRel {
+      export namespace Srsubid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Srrelid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Srsubstate {
+        export const parse = PgCatalog.Types.Char.parse;
+      }
+      export namespace Srsublsn {
+        export const parse = PgCatalog.Types.PgLsn.parse;
+      }
+    }
+    export namespace PgLargeobject {
+      export namespace Loid {
+        export const parse = PgCatalog.Types.Oid.parse;
+      }
+      export namespace Pageno {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Data {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
+    }
+  }
+}
+export namespace InformationSchema {
+  export namespace Tables {
+    export namespace SqlFeatures {
+      export namespace FeatureId {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace FeatureName {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace SubFeatureId {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace SubFeatureName {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace IsSupported {
+        export const parse = InformationSchema.Types.YesOrNo.parse;
+      }
+      export namespace IsVerifiedBy {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace Comments {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+    }
+    export namespace SqlImplementationInfo {
+      export namespace ImplementationInfoId {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace ImplementationInfoName {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace IntegerValue {
+        export const parse = InformationSchema.Types.CardinalNumber.parse;
+      }
+      export namespace CharacterValue {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace Comments {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+    }
+    export namespace SqlParts {
+      export namespace FeatureId {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace FeatureName {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace IsSupported {
+        export const parse = InformationSchema.Types.YesOrNo.parse;
+      }
+      export namespace IsVerifiedBy {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace Comments {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+    }
+    export namespace SqlSizing {
+      export namespace SizingId {
+        export const parse = InformationSchema.Types.CardinalNumber.parse;
+      }
+      export namespace SizingName {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+      export namespace SupportedValue {
+        export const parse = InformationSchema.Types.CardinalNumber.parse;
+      }
+      export namespace Comments {
+        export const parse = InformationSchema.Types.CharacterData.parse;
+      }
+    }
+  }
+}
+export namespace Public {
+  export namespace Tables {
+    export namespace Slug {
+      export namespace SlugId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+    }
+  }
+}
+export namespace Api {
+  export namespace Tables {}
 }
 // end string parsers
 
@@ -12189,7 +14197,7 @@ export class Database {
         .cube as unknown as Public.Cube0aecSingleResultsetRecord;
       return responseBody;
     }
-    async Cube39d2(parameters: Public.Cube39d2Arguments) {
+    async Cubeffa3(parameters: Public.Cubeffa3Arguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12205,10 +14213,10 @@ export class Database {
       });
       const results = response;
       const responseBody = results?.[0]
-        .cube as unknown as Public.Cube39d2SingleResultsetRecord;
+        .cube as unknown as Public.Cubeffa3SingleResultsetRecord;
       return responseBody;
     }
-    async Cubea7eb(parameters: Public.Cubea7ebArguments) {
+    async Cube908d(parameters: Public.Cube908dArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -12226,7 +14234,7 @@ export class Database {
       });
       const results = response;
       const responseBody = results?.[0]
-        .cube as unknown as Public.Cubea7ebSingleResultsetRecord;
+        .cube as unknown as Public.Cube908dSingleResultsetRecord;
       return responseBody;
     }
     async CubeIsPoint(parameters: Public.CubeIsPointArguments) {
@@ -12541,23 +14549,6 @@ export class Database {
   public Api = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
-    async Echo(parameters: Api.EchoArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results?.[0]
-        .echo as unknown as Api.EchoSingleResultsetRecord;
-      return responseBody;
-    }
     async EchoSet(parameters: Api.EchoSetArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -12576,36 +14567,6 @@ export class Database {
       ) as unknown as Api.EchoSetResultset;
       return responseBody;
     }
-    async EchoTable(parameters: Api.EchoTableArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
-                  SELECT
-                  api.echo_table(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      });
-      const results = response;
-      const responseBody = results.map((x) =>
-        this.parseEchoTableResult(this.database.context, x.echo_table),
-      ) as unknown as Api.EchoTableResultset;
-      return responseBody;
-    }
-
-    parseEchoTableResult = (
-      context: Context,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      result: any,
-    ): Api.EchoTableSingleResultsetRecord => {
-      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
-        context,
-        result,
-      ) as unknown as Api.EchoTableSingleResultsetRecord;
-    };
-
     async EchoType(parameters: Api.EchoTypeArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -12675,5 +14636,51 @@ export class Database {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
+    async Echo(parameters: Api.EchoArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  api.echo(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results?.[0]
+        .echo as unknown as Api.EchoSingleResultsetRecord;
+      return responseBody;
+    }
+    async EchoTable(parameters: Api.EchoTableArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql.begin(async (sql: postgres.Sql) => {
+        return await sql`
+                  SELECT
+                  api.echo_table(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      });
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseEchoTableResult(this.database.context, x.echo_table),
+      ) as unknown as Api.EchoTableResultset;
+      return responseBody;
+    }
+
+    parseEchoTableResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): Api.EchoTableSingleResultsetRecord => {
+      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as Api.EchoTableSingleResultsetRecord;
+    };
   })(this);
 }

@@ -1,13 +1,13 @@
 #!/usr/bin/env tsx
 import { Command } from "@commander-js/extra-typings";
 import { generateExpressApp } from "@embracesql/express/src/typescript/generateExpressApp";
-import { initializeContext } from "@embracesql/postgres/src/context";
+import { initializeContext } from "@embracesql/postgres";
 import {
   generateDatabaseRoot,
   formatSource,
   generateOperationDispatcher,
   generateSchemaDefinitions,
-} from "@embracesql/postgres/src/generator";
+} from "@embracesql/postgres";
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import chalk from "chalk";
 import figlet from "figlet";

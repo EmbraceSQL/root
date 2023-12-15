@@ -57,6 +57,5 @@ export const NamespaceVisitor: Visitor<ASTNode> = {
  * the actual type or `null`.
  */
 export interface GeneratesTypeScriptParser {
-  typescriptName: string;
   typescriptTypeParser(context: GenerationContext): string;
 }

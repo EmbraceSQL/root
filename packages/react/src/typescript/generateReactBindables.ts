@@ -56,7 +56,7 @@ export const generateReactBindables = async (context: GenerationContext) => {
           `change${pascalCase(node.name)}(event: ChangeEvent) {`,
         );
         generationBuffer.push(
-          `const parsedValue = ${node.type.typescriptNamespacedName}.parse(event.target.value);`,
+          `const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
         );
         generationBuffer.push(
           `ret.${camelCase(

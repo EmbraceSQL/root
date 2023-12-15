@@ -32,7 +32,7 @@ export class PGTypeArray extends PGCatalogType {
       if (from === null) return null;
       const rawArray = JSON.parse(from);
       return rawArray.map((e:unknown) => {
-        return ${elementType.typescriptNamespacedName}.parse(
+        return ${elementType.typescriptName}.parse(
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           \`\${e}\`
         );

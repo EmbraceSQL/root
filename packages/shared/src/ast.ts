@@ -90,7 +90,7 @@ export type VisitorMap = {
 export abstract class ASTNode {
   constructor(
     public kind: ASTKind,
-    public parent?: ASTNode,
+    public parent?: NamedASTNode,
   ) {}
 
   async visit<T extends this>(context: GenerationContext): Promise<string> {
@@ -113,19 +113,41 @@ export abstract class ASTNode {
 }
 
 /**
- * Represents a database as an AST for code generation.
+ * Nodes often have names -- nodes that are important enough
+ * to have a change to appear in the generated source as types.
  */
-export abstract class ContainerNode
-  extends ASTNode
-  implements IsNamed, IsContainer
-{
-  children: ASTNode[] = [];
+export abstract class NamedASTNode extends ASTNode implements IsNamed {
   constructor(
     public name: string,
     kind: ASTKind,
-    parent?: ASTNode,
+    parent?: NamedASTNode,
   ) {
     super(kind, parent);
+  }
+
+  get typescriptName() {
+    return `${pascalCase(this.name)}`;
+  }
+
+  get typescriptNamespacedName(): string {
+    if (this.parent) {
+      return `${this.parent.typescriptNamespacedName}.${this.typescriptName}`;
+    } else {
+      return `${this.typescriptName}`;
+    }
+  }
+}
+
+/**
+ * Represents a database as an AST for code generation.
+ */
+export abstract class ContainerNode
+  extends NamedASTNode
+  implements IsContainer
+{
+  children: ASTNode[] = [];
+  constructor(name: string, kind: ASTKind, parent?: ContainerNode) {
+    super(name, kind, parent);
   }
 
   async visit<T extends this>(context: GenerationContext): Promise<string> {
@@ -145,10 +167,6 @@ export abstract class ContainerNode
     );
 
     return generationBuffer.filter((line) => line).join("\n");
-  }
-
-  get typescriptName() {
-    return `${pascalCase(this.name)}`;
   }
 }
 
@@ -199,6 +217,7 @@ export class SchemaNode extends ContainerNode {
   }
 
   get typescriptNamespacedName() {
+    // not returning the database above, schema serves as a backstop
     return this.typescriptName;
   }
 }
@@ -210,10 +229,6 @@ export class TypesNode extends ContainerNode {
   constructor(schema: SchemaNode) {
     super("Types", ASTKind.Types, schema);
   }
-  get typescriptNamespacedName() {
-    const schema = this.parent as SchemaNode;
-    return `${schema.typescriptName}.${this.typescriptName}`;
-  }
 }
 
 /**
@@ -221,24 +236,14 @@ export class TypesNode extends ContainerNode {
  *
  * These are grouped by schema.
  */
-export class TypeNode extends ASTNode implements IsNamed {
-  public name: string;
+export class TypeNode extends NamedASTNode {
   constructor(
+    name: string,
     types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScriptParser,
   ) {
-    super(ASTKind.Type, types);
-    this.name = parser.typescriptName;
-  }
-
-  get typescriptName() {
-    return `${pascalCase(this.name)}`;
-  }
-
-  get typescriptNamespacedName() {
-    const types = this.parent as TypesNode;
-    return `${types.typescriptNamespacedName}.${this.typescriptName}`;
+    super(name, ASTKind.Type, types);
   }
 }
 
@@ -290,12 +295,6 @@ export class ColumnNode extends ContainerNode {
     public type: TypeNode,
   ) {
     super(name, ASTKind.Column, table);
-  }
-
-  get typescriptName() {
-    return `${pascalCase(this.schema.name)}.${pascalCase(
-      this.table.name,
-    )}.${pascalCase(this.name)}`;
   }
 
   get schema() {

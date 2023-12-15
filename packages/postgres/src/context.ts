@@ -178,7 +178,7 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
     schema.children.push(types);
     // all types in the namespace
     n.types.forEach((t) => {
-      const type = new TypeNode(types, t.oid, t);
+      const type = new TypeNode(t.typescriptName, types, t.oid, t);
       database.registerType(type.id, type);
       types.children.push(type);
     });
