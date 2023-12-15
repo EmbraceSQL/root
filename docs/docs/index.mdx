@@ -2,6 +2,10 @@
 sidebar_position: 0
 ---
 
+import TsConfigSource from "!!raw-loader!../../samples/node/tsconfig.json";
+import MainSource from "!!raw-loader!../../samples/node/src/main.ts";
+import CodeBlock from "@theme/CodeBlock";
+
 # Introduction
 
 Love SQL? Love TypeScript? Hate ORMs. You're 🏡.
@@ -28,25 +32,29 @@ Going with this dvdrental example, assuming you are in the root directory
 of your typescript project.
 
 ```shell
+npm install @embracesql/express
+npm pkg set type=module
 mkdir -p ./src
 npx embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 
 ```
 
+Preconfigured ready to go TypeScript config.
+
+<CodeBlock language="json" title="tsconfig.json">
+  {TsConfigSource}
+</CodeBlock>
+
 Now you can use your fully typed database from TypeScript in Node.
 
-```typescript
-// import the generated database access object
-import { Database } from "./src/dvdrental";
+<CodeBlock language="typescript" title="./src/main.ts">
+  {MainSource}
+</CodeBlock>
 
-// connect with a good old fashioned Postgres connection string
-const db = await Database.connect(
-  "postgres://postgres:postgres@localhost:5432/dvdrental",
-);
-// calling a stored database function with positional, typed arguments.
-const value = await db.Public.LastDay({ _0: new Date() });
-// bye now 👋
-await db.disconnect();
+And run it!
+
+```shell
+npx tsx ./src/main.ts
 ```
 
 Learn about [AutoCRUD](./autocrud.mdx) to get at all the tables in your database

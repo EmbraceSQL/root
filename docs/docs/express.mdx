@@ -10,13 +10,14 @@ with [`listen`](https://expressjs.com/en/api.html#app.listen).
 
 ## Example
 
-You can look in the [intro](./index.md) to see how to generate the dvdrental code
+You can look in the [intro](./index.mdx) to see how to generate the dvdrental code
 used in these example snippets.
 
 Once you have a database, you can generate the express application:
 
 ```shell
 npm install @embracesql/express
+npm pkg set type=module
 mkdir -p ./src
 npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```
