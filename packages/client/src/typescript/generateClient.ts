@@ -65,10 +65,14 @@ export async function generateClient(context: GenerationContext) {
         const valuesType = node.table.primaryKey
           ? `${node.table.typescriptNamespacedName}.Record | ${node.table.typescriptNamespacedName}.RecordNotPrimaryKey`
           : `${node.table.typescriptNamespacedName}.Record`;
+        // TODO: restore .Tables
         return `
           public async create(values: ${valuesType}) {
             const response = await this.client.invoke<never, ${valuesType}, ${valuesType}>({
-              operation: "${node.typescriptNamespacedName}",
+              operation: "${node.typescriptNamespacedName.replace(
+                ".Tables",
+                "",
+              )}",
               values
             });
             return response.results;
@@ -84,18 +88,22 @@ export async function generateClient(context: GenerationContext) {
         const resultType = node.index.unique
           ? `${node.index.table.typescriptNamespacedName}.Record[]`
           : `${node.index.table.typescriptNamespacedName}.Record | undefined`;
+        // TODO: restore .Tables
         const generationBuffer = [
           `
           public async ${node.typescriptName}(parameters: ${parametersType}) {
             const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
-              operation: "${node.typescriptNamespacedName}",
+              operation: "${node.typescriptNamespacedName.replace(
+                ".Tables",
+                "",
+              )}",
               parameters
             });
         `,
         ];
         generationBuffer.push(
           node.index.unique
-            ? `return response.results?.length ? response.results[0] : undefined`
+            ? `return response.results ? response.results : undefined`
             : `return response.results ? response.results : []`,
         );
         return generationBuffer.join("\n");

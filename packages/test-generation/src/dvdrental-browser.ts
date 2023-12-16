@@ -15001,7 +15001,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.FilmActor.Record
             | Public.Tables.FilmActor.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.FilmActor.create",
+            operation: "Public.FilmActor.create",
             values,
           });
           return response.results;
@@ -15015,11 +15015,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.FilmActor.Record[]
           >({
-            operation: "Public.Tables.FilmActor.byActorIdFilmId",
+            operation: "Public.FilmActor.byActorIdFilmId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
@@ -15028,7 +15028,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.FilmActor.Record | undefined
           >({
-            operation: "Public.Tables.FilmActor.byFilmId",
+            operation: "Public.FilmActor.byFilmId",
             parameters,
           });
 
@@ -15049,7 +15049,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Address.Record
             | Public.Tables.Address.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Address.create",
+            operation: "Public.Address.create",
             values,
           });
           return response.results;
@@ -15063,11 +15063,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Address.Record[]
           >({
-            operation: "Public.Tables.Address.byAddressId",
+            operation: "Public.Address.byAddressId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byCityId(parameters: Public.Tables.Address.ByCityId) {
@@ -15076,7 +15076,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Address.Record | undefined
           >({
-            operation: "Public.Tables.Address.byCityId",
+            operation: "Public.Address.byCityId",
             parameters,
           });
 
@@ -15095,7 +15095,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.City.Record | Public.Tables.City.RecordNotPrimaryKey,
             Public.Tables.City.Record | Public.Tables.City.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.City.create",
+            operation: "Public.City.create",
             values,
           });
           return response.results;
@@ -15107,11 +15107,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.City.Record[]
           >({
-            operation: "Public.Tables.City.byCityId",
+            operation: "Public.City.byCityId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byCountryId(parameters: Public.Tables.City.ByCountryId) {
@@ -15120,7 +15120,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.City.Record | undefined
           >({
-            operation: "Public.Tables.City.byCountryId",
+            operation: "Public.City.byCountryId",
             parameters,
           });
 
@@ -15141,7 +15141,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Customer.Record
             | Public.Tables.Customer.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Customer.create",
+            operation: "Public.Customer.create",
             values,
           });
           return response.results;
@@ -15155,7 +15155,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Customer.Record | undefined
           >({
-            operation: "Public.Tables.Customer.byAddressId",
+            operation: "Public.Customer.byAddressId",
             parameters,
           });
 
@@ -15170,11 +15170,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Customer.Record[]
           >({
-            operation: "Public.Tables.Customer.byCustomerId",
+            operation: "Public.Customer.byCustomerId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byLastName(parameters: Public.Tables.Customer.ByLastName) {
@@ -15183,7 +15183,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Customer.Record | undefined
           >({
-            operation: "Public.Tables.Customer.byLastName",
+            operation: "Public.Customer.byLastName",
             parameters,
           });
 
@@ -15196,7 +15196,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Customer.Record | undefined
           >({
-            operation: "Public.Tables.Customer.byStoreId",
+            operation: "Public.Customer.byStoreId",
             parameters,
           });
 
@@ -15216,7 +15216,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Actor.RecordNotPrimaryKey,
             Public.Tables.Actor.Record | Public.Tables.Actor.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Actor.create",
+            operation: "Public.Actor.create",
             values,
           });
           return response.results;
@@ -15228,11 +15228,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Actor.Record[]
           >({
-            operation: "Public.Tables.Actor.byActorId",
+            operation: "Public.Actor.byActorId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byLastName(parameters: Public.Tables.Actor.ByLastName) {
@@ -15241,7 +15241,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Actor.Record | undefined
           >({
-            operation: "Public.Tables.Actor.byLastName",
+            operation: "Public.Actor.byLastName",
             parameters,
           });
 
@@ -15262,7 +15262,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.FilmCategory.Record
             | Public.Tables.FilmCategory.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.FilmCategory.create",
+            operation: "Public.FilmCategory.create",
             values,
           });
           return response.results;
@@ -15276,11 +15276,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.FilmCategory.Record[]
           >({
-            operation: "Public.Tables.FilmCategory.byFilmIdCategoryId",
+            operation: "Public.FilmCategory.byFilmIdCategoryId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15297,7 +15297,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Inventory.Record
             | Public.Tables.Inventory.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Inventory.create",
+            operation: "Public.Inventory.create",
             values,
           });
           return response.results;
@@ -15311,11 +15311,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Inventory.Record[]
           >({
-            operation: "Public.Tables.Inventory.byInventoryId",
+            operation: "Public.Inventory.byInventoryId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byStoreIdFilmId(
@@ -15326,7 +15326,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Inventory.Record | undefined
           >({
-            operation: "Public.Tables.Inventory.byStoreIdFilmId",
+            operation: "Public.Inventory.byStoreIdFilmId",
             parameters,
           });
 
@@ -15347,7 +15347,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Category.Record
             | Public.Tables.Category.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Category.create",
+            operation: "Public.Category.create",
             values,
           });
           return response.results;
@@ -15361,11 +15361,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Category.Record[]
           >({
-            operation: "Public.Tables.Category.byCategoryId",
+            operation: "Public.Category.byCategoryId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15382,7 +15382,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Country.Record
             | Public.Tables.Country.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Country.create",
+            operation: "Public.Country.create",
             values,
           });
           return response.results;
@@ -15396,11 +15396,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Country.Record[]
           >({
-            operation: "Public.Tables.Country.byCountryId",
+            operation: "Public.Country.byCountryId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15417,7 +15417,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Language.Record
             | Public.Tables.Language.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Language.create",
+            operation: "Public.Language.create",
             values,
           });
           return response.results;
@@ -15431,11 +15431,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Language.Record[]
           >({
-            operation: "Public.Tables.Language.byLanguageId",
+            operation: "Public.Language.byLanguageId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15452,7 +15452,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Rental.Record
             | Public.Tables.Rental.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Rental.create",
+            operation: "Public.Rental.create",
             values,
           });
           return response.results;
@@ -15466,7 +15466,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Rental.Record | undefined
           >({
-            operation: "Public.Tables.Rental.byInventoryId",
+            operation: "Public.Rental.byInventoryId",
             parameters,
           });
 
@@ -15481,11 +15481,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Rental.Record[]
           >({
-            operation: "Public.Tables.Rental.byRentalDateInventoryIdCustomerId",
+            operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byRentalId(parameters: Public.Tables.Rental.ByRentalId) {
@@ -15494,11 +15494,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Rental.Record[]
           >({
-            operation: "Public.Tables.Rental.byRentalId",
+            operation: "Public.Rental.byRentalId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15514,7 +15514,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Staff.RecordNotPrimaryKey,
             Public.Tables.Staff.Record | Public.Tables.Staff.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Staff.create",
+            operation: "Public.Staff.create",
             values,
           });
           return response.results;
@@ -15526,11 +15526,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Staff.Record[]
           >({
-            operation: "Public.Tables.Staff.byStaffId",
+            operation: "Public.Staff.byStaffId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15546,7 +15546,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Store.RecordNotPrimaryKey,
             Public.Tables.Store.Record | Public.Tables.Store.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Store.create",
+            operation: "Public.Store.create",
             values,
           });
           return response.results;
@@ -15560,11 +15560,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Store.Record[]
           >({
-            operation: "Public.Tables.Store.byManagerStaffId",
+            operation: "Public.Store.byManagerStaffId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byStoreId(parameters: Public.Tables.Store.ByStoreId) {
@@ -15573,11 +15573,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Store.Record[]
           >({
-            operation: "Public.Tables.Store.byStoreId",
+            operation: "Public.Store.byStoreId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
       })(this);
 
@@ -15594,7 +15594,7 @@ export class EmbraceSQLClient extends BaseClient {
             | Public.Tables.Payment.Record
             | Public.Tables.Payment.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Payment.create",
+            operation: "Public.Payment.create",
             values,
           });
           return response.results;
@@ -15608,7 +15608,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Payment.Record | undefined
           >({
-            operation: "Public.Tables.Payment.byCustomerId",
+            operation: "Public.Payment.byCustomerId",
             parameters,
           });
 
@@ -15623,11 +15623,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Payment.Record[]
           >({
-            operation: "Public.Tables.Payment.byPaymentId",
+            operation: "Public.Payment.byPaymentId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byRentalId(parameters: Public.Tables.Payment.ByRentalId) {
@@ -15636,7 +15636,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Payment.Record | undefined
           >({
-            operation: "Public.Tables.Payment.byRentalId",
+            operation: "Public.Payment.byRentalId",
             parameters,
           });
 
@@ -15649,7 +15649,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Payment.Record | undefined
           >({
-            operation: "Public.Tables.Payment.byStaffId",
+            operation: "Public.Payment.byStaffId",
             parameters,
           });
 
@@ -15668,7 +15668,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Film.Record | Public.Tables.Film.RecordNotPrimaryKey,
             Public.Tables.Film.Record | Public.Tables.Film.RecordNotPrimaryKey
           >({
-            operation: "Public.Tables.Film.create",
+            operation: "Public.Film.create",
             values,
           });
           return response.results;
@@ -15680,11 +15680,11 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Film.Record[]
           >({
-            operation: "Public.Tables.Film.byFilmId",
+            operation: "Public.Film.byFilmId",
             parameters,
           });
 
-          return response.results?.length ? response.results[0] : undefined;
+          return response.results ? response.results : undefined;
         }
 
         public async byFulltext(parameters: Public.Tables.Film.ByFulltext) {
@@ -15693,7 +15693,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Film.Record | undefined
           >({
-            operation: "Public.Tables.Film.byFulltext",
+            operation: "Public.Film.byFulltext",
             parameters,
           });
 
@@ -15706,7 +15706,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Film.Record | undefined
           >({
-            operation: "Public.Tables.Film.byLanguageId",
+            operation: "Public.Film.byLanguageId",
             parameters,
           });
 
@@ -15719,7 +15719,7 @@ export class EmbraceSQLClient extends BaseClient {
             never,
             Public.Tables.Film.Record | undefined
           >({
-            operation: "Public.Tables.Film.byTitle",
+            operation: "Public.Film.byTitle",
             parameters,
           });
 

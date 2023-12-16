@@ -12,7 +12,7 @@ export const generateOperationDispatcher = async (
   // start off a new class foor the dispatcher
   const generationBuffer = [
     `
-    // BEGIN - Node side operation dispatcher for HTTP/S endpoints
+    // begin - operation dispatch map
     import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
     export class OperationDispatcher {
       private dispatchMap: Record<string, OperationDispatchMethod>;
