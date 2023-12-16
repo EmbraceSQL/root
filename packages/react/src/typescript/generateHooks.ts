@@ -31,7 +31,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
 
         // request - this is the actual doing
         generationBuffer.push(`const request = {`);
-        generationBuffer.push(`operation: "${node.dispatchName()}",`);
+        generationBuffer.push(`operation: "${node.typescriptNamespacedName}",`);
         generationBuffer.push(`parameters,`);
         generationBuffer.push(`}`);
         // dispatching the request
@@ -49,9 +49,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
         );
         // callback on updates
         generationBuffer.push(
-          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.parent?.dispatchName(
-            ".create",
-          )}", results, setResults});`,
+          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.table.createOperation?.typescriptNamespacedName}", results, setResults});`,
         );
         // buffer up intercepted responses
         generationBuffer.push(

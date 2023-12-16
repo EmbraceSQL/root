@@ -15973,7 +15973,7 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.FilmActor.byActorIdFilmId",
+          operation: "Public.Tables.FilmActor.byActorIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -15988,7 +15988,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmActor,
           Public.FilmActor
-        >({ operation: "Public.FilmActor.create", results, setResults });
+        >({ operation: "Public.Tables.FilmActor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmActor>>();
         React.useEffect(() => {
@@ -16013,7 +16013,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.FilmActor.byFilmId",
+          operation: "Public.Tables.FilmActor.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
@@ -16026,7 +16026,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmActor,
           Public.FilmActor[]
-        >({ operation: "Public.FilmActor.create", results, setResults });
+        >({ operation: "Public.Tables.FilmActor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmActor>[]>();
         React.useEffect(() => {
@@ -16060,7 +16060,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Address.byAddressId",
+          operation: "Public.Tables.Address.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
@@ -16073,7 +16073,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Address,
           Public.Address
-        >({ operation: "Public.Address.create", results, setResults });
+        >({ operation: "Public.Tables.Address.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Address>>();
         React.useEffect(() => {
@@ -16095,7 +16095,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Address.byCityId",
+          operation: "Public.Tables.Address.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
@@ -16108,7 +16108,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Address,
           Public.Address[]
-        >({ operation: "Public.Address.create", results, setResults });
+        >({ operation: "Public.Tables.Address.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Address>[]>();
         React.useEffect(() => {
@@ -16138,7 +16138,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.City.byCityId",
+          operation: "Public.Tables.City.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
@@ -16151,7 +16151,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.City,
           Public.City
-        >({ operation: "Public.City.create", results, setResults });
+        >({ operation: "Public.Tables.City.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.City>>();
         React.useEffect(() => {
@@ -16173,7 +16173,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.City.byCountryId",
+          operation: "Public.Tables.City.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
@@ -16186,7 +16186,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.City,
           Public.City[]
-        >({ operation: "Public.City.create", results, setResults });
+        >({ operation: "Public.Tables.City.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.City>[]>();
         React.useEffect(() => {
@@ -16222,7 +16222,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Customer.byAddressId",
+          operation: "Public.Tables.Customer.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16237,7 +16237,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16261,7 +16261,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Customer.byCustomerId",
+          operation: "Public.Tables.Customer.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
@@ -16274,7 +16274,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>>();
         React.useEffect(() => {
@@ -16296,7 +16296,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Customer.byLastName",
+          operation: "Public.Tables.Customer.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
@@ -16309,7 +16309,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16333,7 +16333,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Customer.byStoreId",
+          operation: "Public.Tables.Customer.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
@@ -16346,7 +16346,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16376,7 +16376,7 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Actor.byActorId",
+          operation: "Public.Tables.Actor.byActorId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
@@ -16389,7 +16389,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Actor,
           Public.Actor
-        >({ operation: "Public.Actor.create", results, setResults });
+        >({ operation: "Public.Tables.Actor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Actor>>();
         React.useEffect(() => {
@@ -16411,7 +16411,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Actor.byLastName",
+          operation: "Public.Tables.Actor.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
@@ -16424,7 +16424,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Actor,
           Public.Actor[]
-        >({ operation: "Public.Actor.create", results, setResults });
+        >({ operation: "Public.Tables.Actor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Actor>[]>();
         React.useEffect(() => {
@@ -16453,7 +16453,7 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.FilmCategory.byFilmIdCategoryId",
+          operation: "Public.Tables.FilmCategory.byFilmIdCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16468,7 +16468,11 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmCategory,
           Public.FilmCategory
-        >({ operation: "Public.FilmCategory.create", results, setResults });
+        >({
+          operation: "Public.Tables.FilmCategory.create",
+          results,
+          setResults,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmCategory>>();
         React.useEffect(() => {
@@ -16499,7 +16503,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Inventory.byInventoryId",
+          operation: "Public.Tables.Inventory.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16514,7 +16518,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Inventory,
           Public.Inventory
-        >({ operation: "Public.Inventory.create", results, setResults });
+        >({ operation: "Public.Tables.Inventory.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Inventory>>();
         React.useEffect(() => {
@@ -16539,7 +16543,7 @@ export namespace Public {
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Inventory.byStoreIdFilmId",
+          operation: "Public.Tables.Inventory.byStoreIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16554,7 +16558,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Inventory,
           Public.Inventory[]
-        >({ operation: "Public.Inventory.create", results, setResults });
+        >({ operation: "Public.Tables.Inventory.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Inventory>[]>();
         React.useEffect(() => {
@@ -16583,7 +16587,7 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Category.byCategoryId",
+          operation: "Public.Tables.Category.byCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
@@ -16596,7 +16600,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Category,
           Public.Category
-        >({ operation: "Public.Category.create", results, setResults });
+        >({ operation: "Public.Tables.Category.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Category>>();
         React.useEffect(() => {
@@ -16623,7 +16627,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Country.byCountryId",
+          operation: "Public.Tables.Country.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
@@ -16636,7 +16640,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Country,
           Public.Country
-        >({ operation: "Public.Country.create", results, setResults });
+        >({ operation: "Public.Tables.Country.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Country>>();
         React.useEffect(() => {
@@ -16663,7 +16667,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Language.byLanguageId",
+          operation: "Public.Tables.Language.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
@@ -16676,7 +16680,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Language,
           Public.Language
-        >({ operation: "Public.Language.create", results, setResults });
+        >({ operation: "Public.Tables.Language.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Language>>();
         React.useEffect(() => {
@@ -16707,7 +16711,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Rental.byInventoryId",
+          operation: "Public.Tables.Rental.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16722,7 +16726,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental[]
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>[]>();
         React.useEffect(() => {
@@ -16748,7 +16752,7 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
+          operation: "Public.Tables.Rental.byRentalDateInventoryIdCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16763,7 +16767,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
@@ -16785,7 +16789,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Rental.byRentalId",
+          operation: "Public.Tables.Rental.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
@@ -16798,7 +16802,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
@@ -16833,7 +16837,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Staff.byStaffId",
+          operation: "Public.Tables.Staff.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
@@ -16846,7 +16850,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Staff,
           Public.Staff
-        >({ operation: "Public.Staff.create", results, setResults });
+        >({ operation: "Public.Tables.Staff.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Staff>>();
         React.useEffect(() => {
@@ -16874,7 +16878,7 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Store.byManagerStaffId",
+          operation: "Public.Tables.Store.byManagerStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16889,7 +16893,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Store,
           Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
+        >({ operation: "Public.Tables.Store.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
@@ -16911,7 +16915,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Store.byStoreId",
+          operation: "Public.Tables.Store.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
@@ -16924,7 +16928,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Store,
           Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
+        >({ operation: "Public.Tables.Store.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
@@ -16954,7 +16958,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Payment.byCustomerId",
+          operation: "Public.Tables.Payment.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16969,7 +16973,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -16993,7 +16997,7 @@ export namespace Public {
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Payment.byPaymentId",
+          operation: "Public.Tables.Payment.byPaymentId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
@@ -17006,7 +17010,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>>();
         React.useEffect(() => {
@@ -17028,7 +17032,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Payment.byRentalId",
+          operation: "Public.Tables.Payment.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
@@ -17041,7 +17045,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -17065,7 +17069,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Payment.byStaffId",
+          operation: "Public.Tables.Payment.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
@@ -17078,7 +17082,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -17117,7 +17121,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Film.byFilmId",
+          operation: "Public.Tables.Film.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
@@ -17130,7 +17134,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>>();
         React.useEffect(() => {
@@ -17152,7 +17156,7 @@ export namespace Public {
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Film.byFulltext",
+          operation: "Public.Tables.Film.byFulltext",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
@@ -17165,7 +17169,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
@@ -17189,7 +17193,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Film.byLanguageId",
+          operation: "Public.Tables.Film.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
@@ -17202,7 +17206,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
@@ -17226,7 +17230,7 @@ export namespace Public {
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Film.byTitle",
+          operation: "Public.Tables.Film.byTitle",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(
@@ -17239,7 +17243,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {

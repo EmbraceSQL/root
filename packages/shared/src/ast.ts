@@ -1,6 +1,6 @@
 import { GeneratesTypeScriptParser, GenerationContext } from ".";
 import { DispatchOperation } from "./index";
-import { camelCase, pascalCase } from "change-case";
+import { pascalCase } from "change-case";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.
@@ -19,6 +19,7 @@ export const enum ASTKind {
   IndexColumn,
   Types,
   Type,
+  CreateOperation,
 }
 
 /**
@@ -78,7 +79,8 @@ export type VisitorMap = {
   [ASTKind.Index]?: Visitor<IndexNode>;
   [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
   [ASTKind.Type]?: Visitor<TypeNode>;
-  [ASTKind.Types]?: Visitor<TypeNode>;
+  [ASTKind.Types]?: Visitor<TypesNode>;
+  [ASTKind.CreateOperation]?: Visitor<CreateOperationNode>;
 };
 
 /**
@@ -272,6 +274,13 @@ export class TableNode extends ContainerNode {
     public name: string,
   ) {
     super(name, ASTKind.Table, tables);
+    this.children.push(new CreateOperationNode(this));
+  }
+
+  get createOperation() {
+    return this.children.find(
+      (c) => c.kind === ASTKind.CreateOperation,
+    ) as CreateOperationNode;
   }
 
   dispatchName(operation: DispatchOperation = "") {
@@ -323,8 +332,14 @@ export class IndexNode extends ContainerNode {
     super(name, ASTKind.Index, table);
   }
 
-  dispatchName(operation: DispatchOperation = "") {
-    return `${this.parent?.dispatchName()}.${camelCase(this.name)}${operation}`;
+  get table() {
+    return this.parent as TableNode;
+  }
+
+  get typescriptName() {
+    return `by${pascalCase(
+      this.columns.map((c) => c.typescriptName).join("_"),
+    )}`;
   }
 
   get columns(): IndexColumnNode[] {
@@ -339,10 +354,26 @@ export class IndexNode extends ContainerNode {
  */
 export class IndexColumnNode extends ContainerNode {
   constructor(
-    table: IndexNode,
+    index: IndexNode,
     public name: string,
     public type: TypeNode,
   ) {
-    super(name, ASTKind.IndexColumn, table);
+    super(name, ASTKind.IndexColumn, index);
+  }
+}
+
+// operations
+
+/**
+ * Operation to create a new row in a table. Each table gets one creator.
+ */
+export class CreateOperationNode extends NamedASTNode {
+  constructor(table: TableNode) {
+    super("create", ASTKind.CreateOperation, table);
+  }
+
+  get typescriptName() {
+    // no special case
+    return this.name;
   }
 }
