@@ -57,6 +57,25 @@ export async function generateClient(context: GenerationContext) {
         return `}(this)`;
       },
     },
+
+    [ASTKind.CreateOperation]: {
+      before: async (_, node) => {
+        // creating can be an upsert, so you can pass with and
+        // without a primary key
+        const valuesType = node.table.primaryKey
+          ? `${node.table.typescriptNamespacedName}.Record | ${node.table.typescriptNamespacedName}.RecordNotPrimaryKey`
+          : `${node.table.typescriptNamespacedName}.Record`;
+        return `
+          public async create(values: ${valuesType}) {
+            const response = await this.client.invoke<never, ${valuesType}, ${valuesType}>({
+              operation: "${node.typescriptNamespacedName}",
+              values
+            });
+            return response.results;
+          }
+        `;
+      },
+    },
   };
 
   generationBuffer.push(await context.database.visit(context));

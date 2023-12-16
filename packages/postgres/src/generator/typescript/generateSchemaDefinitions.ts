@@ -4,6 +4,7 @@ import {
   SqlScriptOperations,
 } from "../operations/sqlscript";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
+import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
 
 /**
@@ -82,6 +83,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
   generationBuffer.push(await generateTypeParsers(context));
   generationBuffer.push(await generatePrimaryKeyPickers(context));
+  generationBuffer.push(await generateTableTypeAliases(context));
 
   return generationBuffer.join("\n");
 };

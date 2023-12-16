@@ -14627,6 +14627,354 @@ export namespace Public {
 }
 // end primary key pickers
 
+// begin table type aliases
+export namespace PgCatalog {
+  export namespace Tables {
+    export namespace PgStatistic {
+      export type Record = PgCatalog.PgStatistic;
+      export type RecordNotPrimaryKey = PgCatalog.PgStatisticNotPrimaryKey;
+    }
+    export namespace PgType {
+      export type Record = PgCatalog.PgType;
+      export type RecordNotPrimaryKey = PgCatalog.PgTypeNotPrimaryKey;
+    }
+    export namespace PgForeignTable {
+      export type Record = PgCatalog.PgForeignTable;
+      export type RecordNotPrimaryKey = PgCatalog.PgForeignTableNotPrimaryKey;
+    }
+    export namespace PgAuthid {
+      export type Record = PgCatalog.PgAuthid;
+      export type RecordNotPrimaryKey = PgCatalog.PgAuthidNotPrimaryKey;
+    }
+    export namespace PgStatisticExtData {
+      export type Record = PgCatalog.PgStatisticExtData;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgStatisticExtDataNotPrimaryKey;
+    }
+    export namespace PgUserMapping {
+      export type Record = PgCatalog.PgUserMapping;
+      export type RecordNotPrimaryKey = PgCatalog.PgUserMappingNotPrimaryKey;
+    }
+    export namespace PgSubscription {
+      export type Record = PgCatalog.PgSubscription;
+      export type RecordNotPrimaryKey = PgCatalog.PgSubscriptionNotPrimaryKey;
+    }
+    export namespace PgAttribute {
+      export type Record = PgCatalog.PgAttribute;
+      export type RecordNotPrimaryKey = PgCatalog.PgAttributeNotPrimaryKey;
+    }
+    export namespace PgProc {
+      export type Record = PgCatalog.PgProc;
+      export type RecordNotPrimaryKey = PgCatalog.PgProcNotPrimaryKey;
+    }
+    export namespace PgClass {
+      export type Record = PgCatalog.PgClass;
+      export type RecordNotPrimaryKey = PgCatalog.PgClassNotPrimaryKey;
+    }
+    export namespace PgAttrdef {
+      export type Record = PgCatalog.PgAttrdef;
+      export type RecordNotPrimaryKey = PgCatalog.PgAttrdefNotPrimaryKey;
+    }
+    export namespace PgConstraint {
+      export type Record = PgCatalog.PgConstraint;
+      export type RecordNotPrimaryKey = PgCatalog.PgConstraintNotPrimaryKey;
+    }
+    export namespace PgInherits {
+      export type Record = PgCatalog.PgInherits;
+      export type RecordNotPrimaryKey = PgCatalog.PgInheritsNotPrimaryKey;
+    }
+    export namespace PgIndex {
+      export type Record = PgCatalog.PgIndex;
+      export type RecordNotPrimaryKey = PgCatalog.PgIndexNotPrimaryKey;
+    }
+    export namespace PgOperator {
+      export type Record = PgCatalog.PgOperator;
+      export type RecordNotPrimaryKey = PgCatalog.PgOperatorNotPrimaryKey;
+    }
+    export namespace PgOpfamily {
+      export type Record = PgCatalog.PgOpfamily;
+      export type RecordNotPrimaryKey = PgCatalog.PgOpfamilyNotPrimaryKey;
+    }
+    export namespace PgOpclass {
+      export type Record = PgCatalog.PgOpclass;
+      export type RecordNotPrimaryKey = PgCatalog.PgOpclassNotPrimaryKey;
+    }
+    export namespace PgAm {
+      export type Record = PgCatalog.PgAm;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmNotPrimaryKey;
+    }
+    export namespace PgAmop {
+      export type Record = PgCatalog.PgAmop;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmopNotPrimaryKey;
+    }
+    export namespace PgAmproc {
+      export type Record = PgCatalog.PgAmproc;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmprocNotPrimaryKey;
+    }
+    export namespace PgLanguage {
+      export type Record = PgCatalog.PgLanguage;
+      export type RecordNotPrimaryKey = PgCatalog.PgLanguageNotPrimaryKey;
+    }
+    export namespace PgLargeobjectMetadata {
+      export type Record = PgCatalog.PgLargeobjectMetadata;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgLargeobjectMetadataNotPrimaryKey;
+    }
+    export namespace PgAggregate {
+      export type Record = PgCatalog.PgAggregate;
+      export type RecordNotPrimaryKey = PgCatalog.PgAggregateNotPrimaryKey;
+    }
+    export namespace PgStatisticExt {
+      export type Record = PgCatalog.PgStatisticExt;
+      export type RecordNotPrimaryKey = PgCatalog.PgStatisticExtNotPrimaryKey;
+    }
+    export namespace PgRewrite {
+      export type Record = PgCatalog.PgRewrite;
+      export type RecordNotPrimaryKey = PgCatalog.PgRewriteNotPrimaryKey;
+    }
+    export namespace PgTrigger {
+      export type Record = PgCatalog.PgTrigger;
+      export type RecordNotPrimaryKey = PgCatalog.PgTriggerNotPrimaryKey;
+    }
+    export namespace PgEventTrigger {
+      export type Record = PgCatalog.PgEventTrigger;
+      export type RecordNotPrimaryKey = PgCatalog.PgEventTriggerNotPrimaryKey;
+    }
+    export namespace PgDescription {
+      export type Record = PgCatalog.PgDescription;
+      export type RecordNotPrimaryKey = PgCatalog.PgDescriptionNotPrimaryKey;
+    }
+    export namespace PgCast {
+      export type Record = PgCatalog.PgCast;
+      export type RecordNotPrimaryKey = PgCatalog.PgCastNotPrimaryKey;
+    }
+    export namespace PgEnum {
+      export type Record = PgCatalog.PgEnum;
+      export type RecordNotPrimaryKey = PgCatalog.PgEnumNotPrimaryKey;
+    }
+    export namespace PgNamespace {
+      export type Record = PgCatalog.PgNamespace;
+      export type RecordNotPrimaryKey = PgCatalog.PgNamespaceNotPrimaryKey;
+    }
+    export namespace PgConversion {
+      export type Record = PgCatalog.PgConversion;
+      export type RecordNotPrimaryKey = PgCatalog.PgConversionNotPrimaryKey;
+    }
+    export namespace PgDepend {
+      export type Record = PgCatalog.PgDepend;
+    }
+    export namespace PgDatabase {
+      export type Record = PgCatalog.PgDatabase;
+      export type RecordNotPrimaryKey = PgCatalog.PgDatabaseNotPrimaryKey;
+    }
+    export namespace PgDbRoleSetting {
+      export type Record = PgCatalog.PgDbRoleSetting;
+      export type RecordNotPrimaryKey = PgCatalog.PgDbRoleSettingNotPrimaryKey;
+    }
+    export namespace PgTablespace {
+      export type Record = PgCatalog.PgTablespace;
+      export type RecordNotPrimaryKey = PgCatalog.PgTablespaceNotPrimaryKey;
+    }
+    export namespace PgAuthMembers {
+      export type Record = PgCatalog.PgAuthMembers;
+      export type RecordNotPrimaryKey = PgCatalog.PgAuthMembersNotPrimaryKey;
+    }
+    export namespace PgShdepend {
+      export type Record = PgCatalog.PgShdepend;
+    }
+    export namespace PgShdescription {
+      export type Record = PgCatalog.PgShdescription;
+      export type RecordNotPrimaryKey = PgCatalog.PgShdescriptionNotPrimaryKey;
+    }
+    export namespace PgTsConfig {
+      export type Record = PgCatalog.PgTsConfig;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsConfigNotPrimaryKey;
+    }
+    export namespace PgTsConfigMap {
+      export type Record = PgCatalog.PgTsConfigMap;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsConfigMapNotPrimaryKey;
+    }
+    export namespace PgTsDict {
+      export type Record = PgCatalog.PgTsDict;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsDictNotPrimaryKey;
+    }
+    export namespace PgTsParser {
+      export type Record = PgCatalog.PgTsParser;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsParserNotPrimaryKey;
+    }
+    export namespace PgTsTemplate {
+      export type Record = PgCatalog.PgTsTemplate;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsTemplateNotPrimaryKey;
+    }
+    export namespace PgExtension {
+      export type Record = PgCatalog.PgExtension;
+      export type RecordNotPrimaryKey = PgCatalog.PgExtensionNotPrimaryKey;
+    }
+    export namespace PgForeignDataWrapper {
+      export type Record = PgCatalog.PgForeignDataWrapper;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgForeignDataWrapperNotPrimaryKey;
+    }
+    export namespace PgForeignServer {
+      export type Record = PgCatalog.PgForeignServer;
+      export type RecordNotPrimaryKey = PgCatalog.PgForeignServerNotPrimaryKey;
+    }
+    export namespace PgPolicy {
+      export type Record = PgCatalog.PgPolicy;
+      export type RecordNotPrimaryKey = PgCatalog.PgPolicyNotPrimaryKey;
+    }
+    export namespace PgReplicationOrigin {
+      export type Record = PgCatalog.PgReplicationOrigin;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgReplicationOriginNotPrimaryKey;
+    }
+    export namespace PgDefaultAcl {
+      export type Record = PgCatalog.PgDefaultAcl;
+      export type RecordNotPrimaryKey = PgCatalog.PgDefaultAclNotPrimaryKey;
+    }
+    export namespace PgInitPrivs {
+      export type Record = PgCatalog.PgInitPrivs;
+      export type RecordNotPrimaryKey = PgCatalog.PgInitPrivsNotPrimaryKey;
+    }
+    export namespace PgSeclabel {
+      export type Record = PgCatalog.PgSeclabel;
+      export type RecordNotPrimaryKey = PgCatalog.PgSeclabelNotPrimaryKey;
+    }
+    export namespace PgShseclabel {
+      export type Record = PgCatalog.PgShseclabel;
+      export type RecordNotPrimaryKey = PgCatalog.PgShseclabelNotPrimaryKey;
+    }
+    export namespace PgCollation {
+      export type Record = PgCatalog.PgCollation;
+      export type RecordNotPrimaryKey = PgCatalog.PgCollationNotPrimaryKey;
+    }
+    export namespace PgParameterAcl {
+      export type Record = PgCatalog.PgParameterAcl;
+      export type RecordNotPrimaryKey = PgCatalog.PgParameterAclNotPrimaryKey;
+    }
+    export namespace PgPartitionedTable {
+      export type Record = PgCatalog.PgPartitionedTable;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgPartitionedTableNotPrimaryKey;
+    }
+    export namespace PgRange {
+      export type Record = PgCatalog.PgRange;
+      export type RecordNotPrimaryKey = PgCatalog.PgRangeNotPrimaryKey;
+    }
+    export namespace PgTransform {
+      export type Record = PgCatalog.PgTransform;
+      export type RecordNotPrimaryKey = PgCatalog.PgTransformNotPrimaryKey;
+    }
+    export namespace PgSequence {
+      export type Record = PgCatalog.PgSequence;
+      export type RecordNotPrimaryKey = PgCatalog.PgSequenceNotPrimaryKey;
+    }
+    export namespace PgPublication {
+      export type Record = PgCatalog.PgPublication;
+      export type RecordNotPrimaryKey = PgCatalog.PgPublicationNotPrimaryKey;
+    }
+    export namespace PgPublicationNamespace {
+      export type Record = PgCatalog.PgPublicationNamespace;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgPublicationNamespaceNotPrimaryKey;
+    }
+    export namespace PgPublicationRel {
+      export type Record = PgCatalog.PgPublicationRel;
+      export type RecordNotPrimaryKey = PgCatalog.PgPublicationRelNotPrimaryKey;
+    }
+    export namespace PgSubscriptionRel {
+      export type Record = PgCatalog.PgSubscriptionRel;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgSubscriptionRelNotPrimaryKey;
+    }
+    export namespace PgLargeobject {
+      export type Record = PgCatalog.PgLargeobject;
+      export type RecordNotPrimaryKey = PgCatalog.PgLargeobjectNotPrimaryKey;
+    }
+  }
+}
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Record = Public.FilmActor;
+      export type RecordNotPrimaryKey = Public.FilmActorNotPrimaryKey;
+    }
+    export namespace Address {
+      export type Record = Public.Address;
+      export type RecordNotPrimaryKey = Public.AddressNotPrimaryKey;
+    }
+    export namespace City {
+      export type Record = Public.City;
+      export type RecordNotPrimaryKey = Public.CityNotPrimaryKey;
+    }
+    export namespace Customer {
+      export type Record = Public.Customer;
+      export type RecordNotPrimaryKey = Public.CustomerNotPrimaryKey;
+    }
+    export namespace Actor {
+      export type Record = Public.Actor;
+      export type RecordNotPrimaryKey = Public.ActorNotPrimaryKey;
+    }
+    export namespace FilmCategory {
+      export type Record = Public.FilmCategory;
+      export type RecordNotPrimaryKey = Public.FilmCategoryNotPrimaryKey;
+    }
+    export namespace Inventory {
+      export type Record = Public.Inventory;
+      export type RecordNotPrimaryKey = Public.InventoryNotPrimaryKey;
+    }
+    export namespace Category {
+      export type Record = Public.Category;
+      export type RecordNotPrimaryKey = Public.CategoryNotPrimaryKey;
+    }
+    export namespace Country {
+      export type Record = Public.Country;
+      export type RecordNotPrimaryKey = Public.CountryNotPrimaryKey;
+    }
+    export namespace Language {
+      export type Record = Public.Language;
+      export type RecordNotPrimaryKey = Public.LanguageNotPrimaryKey;
+    }
+    export namespace Rental {
+      export type Record = Public.Rental;
+      export type RecordNotPrimaryKey = Public.RentalNotPrimaryKey;
+    }
+    export namespace Staff {
+      export type Record = Public.Staff;
+      export type RecordNotPrimaryKey = Public.StaffNotPrimaryKey;
+    }
+    export namespace Store {
+      export type Record = Public.Store;
+      export type RecordNotPrimaryKey = Public.StoreNotPrimaryKey;
+    }
+    export namespace Payment {
+      export type Record = Public.Payment;
+      export type RecordNotPrimaryKey = Public.PaymentNotPrimaryKey;
+    }
+    export namespace Film {
+      export type Record = Public.Film;
+      export type RecordNotPrimaryKey = Public.FilmNotPrimaryKey;
+    }
+  }
+}
+export namespace InformationSchema {
+  export namespace Tables {
+    export namespace SqlFeatures {
+      export type Record = InformationSchema.SqlFeatures;
+    }
+    export namespace SqlImplementationInfo {
+      export type Record = InformationSchema.SqlImplementationInfo;
+    }
+    export namespace SqlParts {
+      export type Record = InformationSchema.SqlParts;
+    }
+    export namespace SqlSizing {
+      export type Record = InformationSchema.SqlSizing;
+    }
+  }
+}
+// end string parsers
+
 // BEGIN - Node side database connectivity layer
 import { Context, initializeContext } from "@embracesql/postgres";
 import postgres from "postgres";

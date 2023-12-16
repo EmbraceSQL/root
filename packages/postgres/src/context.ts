@@ -193,7 +193,11 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
       schema.children.push(tables);
       n.tables.forEach((t) => {
         // the table and ...
-        const table = new TableNode(tables, t.table.relname);
+        const table = new TableNode(
+          tables,
+          t.table.relname,
+          database.resolveType(t.table.tabletypeoid)!,
+        );
         tables.children.push(table);
         // it's columns
         t.tableType.attributes.forEach((a) => {

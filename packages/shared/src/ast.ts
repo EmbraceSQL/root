@@ -108,10 +108,6 @@ export abstract class ASTNode {
 
     return generationBuffer.filter((line) => line).join("\n");
   }
-
-  dispatchName(operation: DispatchOperation = ""): string {
-    return operation;
-  }
 }
 
 /**
@@ -241,7 +237,7 @@ export class TypesNode extends ContainerNode {
 export class TypeNode extends NamedASTNode {
   constructor(
     name: string,
-    types: TypesNode,
+    public types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScriptParser,
   ) {
@@ -253,12 +249,8 @@ export class TypeNode extends NamedASTNode {
  * Collects all tables in a schema in a database.
  */
 export class TablesNode extends ContainerNode {
-  constructor(schema: SchemaNode) {
+  constructor(public schema: SchemaNode) {
     super("Tables", ASTKind.Tables, schema);
-  }
-
-  dispatchName(operation: DispatchOperation = "") {
-    return this.parent?.dispatchName(operation) ?? "";
   }
 }
 
@@ -272,6 +264,7 @@ export class TableNode extends ContainerNode {
   constructor(
     tables: TablesNode,
     public name: string,
+    public type: TypeNode,
   ) {
     super(name, ASTKind.Table, tables);
     this.children.push(new CreateOperationNode(this));
@@ -281,12 +274,6 @@ export class TableNode extends ContainerNode {
     return this.children.find(
       (c) => c.kind === ASTKind.CreateOperation,
     ) as CreateOperationNode;
-  }
-
-  dispatchName(operation: DispatchOperation = "") {
-    return `${this.parent?.dispatchName()}.${pascalCase(
-      this.name,
-    )}${operation}`;
   }
 
   get primaryKey(): IndexNode | undefined {
@@ -324,16 +311,12 @@ export class ColumnNode extends ContainerNode {
  */
 export class IndexNode extends ContainerNode {
   constructor(
-    table: TableNode,
+    public table: TableNode,
     public name: string,
     public unique: boolean,
     public primaryKey: boolean,
   ) {
     super(name, ASTKind.Index, table);
-  }
-
-  get table() {
-    return this.parent as TableNode;
   }
 
   get typescriptName() {
@@ -354,7 +337,7 @@ export class IndexNode extends ContainerNode {
  */
 export class IndexColumnNode extends ContainerNode {
   constructor(
-    index: IndexNode,
+    public index: IndexNode,
     public name: string,
     public type: TypeNode,
   ) {
@@ -368,7 +351,7 @@ export class IndexColumnNode extends ContainerNode {
  * Operation to create a new row in a table. Each table gets one creator.
  */
 export class CreateOperationNode extends NamedASTNode {
-  constructor(table: TableNode) {
+  constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
   }
 

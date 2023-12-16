@@ -14614,6 +14614,354 @@ export namespace Public {
   }
 }
 // end primary key pickers
+
+// begin table type aliases
+export namespace PgCatalog {
+  export namespace Tables {
+    export namespace PgStatistic {
+      export type Record = PgCatalog.PgStatistic;
+      export type RecordNotPrimaryKey = PgCatalog.PgStatisticNotPrimaryKey;
+    }
+    export namespace PgType {
+      export type Record = PgCatalog.PgType;
+      export type RecordNotPrimaryKey = PgCatalog.PgTypeNotPrimaryKey;
+    }
+    export namespace PgForeignTable {
+      export type Record = PgCatalog.PgForeignTable;
+      export type RecordNotPrimaryKey = PgCatalog.PgForeignTableNotPrimaryKey;
+    }
+    export namespace PgAuthid {
+      export type Record = PgCatalog.PgAuthid;
+      export type RecordNotPrimaryKey = PgCatalog.PgAuthidNotPrimaryKey;
+    }
+    export namespace PgStatisticExtData {
+      export type Record = PgCatalog.PgStatisticExtData;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgStatisticExtDataNotPrimaryKey;
+    }
+    export namespace PgUserMapping {
+      export type Record = PgCatalog.PgUserMapping;
+      export type RecordNotPrimaryKey = PgCatalog.PgUserMappingNotPrimaryKey;
+    }
+    export namespace PgSubscription {
+      export type Record = PgCatalog.PgSubscription;
+      export type RecordNotPrimaryKey = PgCatalog.PgSubscriptionNotPrimaryKey;
+    }
+    export namespace PgAttribute {
+      export type Record = PgCatalog.PgAttribute;
+      export type RecordNotPrimaryKey = PgCatalog.PgAttributeNotPrimaryKey;
+    }
+    export namespace PgProc {
+      export type Record = PgCatalog.PgProc;
+      export type RecordNotPrimaryKey = PgCatalog.PgProcNotPrimaryKey;
+    }
+    export namespace PgClass {
+      export type Record = PgCatalog.PgClass;
+      export type RecordNotPrimaryKey = PgCatalog.PgClassNotPrimaryKey;
+    }
+    export namespace PgAttrdef {
+      export type Record = PgCatalog.PgAttrdef;
+      export type RecordNotPrimaryKey = PgCatalog.PgAttrdefNotPrimaryKey;
+    }
+    export namespace PgConstraint {
+      export type Record = PgCatalog.PgConstraint;
+      export type RecordNotPrimaryKey = PgCatalog.PgConstraintNotPrimaryKey;
+    }
+    export namespace PgInherits {
+      export type Record = PgCatalog.PgInherits;
+      export type RecordNotPrimaryKey = PgCatalog.PgInheritsNotPrimaryKey;
+    }
+    export namespace PgIndex {
+      export type Record = PgCatalog.PgIndex;
+      export type RecordNotPrimaryKey = PgCatalog.PgIndexNotPrimaryKey;
+    }
+    export namespace PgOperator {
+      export type Record = PgCatalog.PgOperator;
+      export type RecordNotPrimaryKey = PgCatalog.PgOperatorNotPrimaryKey;
+    }
+    export namespace PgOpfamily {
+      export type Record = PgCatalog.PgOpfamily;
+      export type RecordNotPrimaryKey = PgCatalog.PgOpfamilyNotPrimaryKey;
+    }
+    export namespace PgOpclass {
+      export type Record = PgCatalog.PgOpclass;
+      export type RecordNotPrimaryKey = PgCatalog.PgOpclassNotPrimaryKey;
+    }
+    export namespace PgAm {
+      export type Record = PgCatalog.PgAm;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmNotPrimaryKey;
+    }
+    export namespace PgAmop {
+      export type Record = PgCatalog.PgAmop;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmopNotPrimaryKey;
+    }
+    export namespace PgAmproc {
+      export type Record = PgCatalog.PgAmproc;
+      export type RecordNotPrimaryKey = PgCatalog.PgAmprocNotPrimaryKey;
+    }
+    export namespace PgLanguage {
+      export type Record = PgCatalog.PgLanguage;
+      export type RecordNotPrimaryKey = PgCatalog.PgLanguageNotPrimaryKey;
+    }
+    export namespace PgLargeobjectMetadata {
+      export type Record = PgCatalog.PgLargeobjectMetadata;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgLargeobjectMetadataNotPrimaryKey;
+    }
+    export namespace PgAggregate {
+      export type Record = PgCatalog.PgAggregate;
+      export type RecordNotPrimaryKey = PgCatalog.PgAggregateNotPrimaryKey;
+    }
+    export namespace PgStatisticExt {
+      export type Record = PgCatalog.PgStatisticExt;
+      export type RecordNotPrimaryKey = PgCatalog.PgStatisticExtNotPrimaryKey;
+    }
+    export namespace PgRewrite {
+      export type Record = PgCatalog.PgRewrite;
+      export type RecordNotPrimaryKey = PgCatalog.PgRewriteNotPrimaryKey;
+    }
+    export namespace PgTrigger {
+      export type Record = PgCatalog.PgTrigger;
+      export type RecordNotPrimaryKey = PgCatalog.PgTriggerNotPrimaryKey;
+    }
+    export namespace PgEventTrigger {
+      export type Record = PgCatalog.PgEventTrigger;
+      export type RecordNotPrimaryKey = PgCatalog.PgEventTriggerNotPrimaryKey;
+    }
+    export namespace PgDescription {
+      export type Record = PgCatalog.PgDescription;
+      export type RecordNotPrimaryKey = PgCatalog.PgDescriptionNotPrimaryKey;
+    }
+    export namespace PgCast {
+      export type Record = PgCatalog.PgCast;
+      export type RecordNotPrimaryKey = PgCatalog.PgCastNotPrimaryKey;
+    }
+    export namespace PgEnum {
+      export type Record = PgCatalog.PgEnum;
+      export type RecordNotPrimaryKey = PgCatalog.PgEnumNotPrimaryKey;
+    }
+    export namespace PgNamespace {
+      export type Record = PgCatalog.PgNamespace;
+      export type RecordNotPrimaryKey = PgCatalog.PgNamespaceNotPrimaryKey;
+    }
+    export namespace PgConversion {
+      export type Record = PgCatalog.PgConversion;
+      export type RecordNotPrimaryKey = PgCatalog.PgConversionNotPrimaryKey;
+    }
+    export namespace PgDepend {
+      export type Record = PgCatalog.PgDepend;
+    }
+    export namespace PgDatabase {
+      export type Record = PgCatalog.PgDatabase;
+      export type RecordNotPrimaryKey = PgCatalog.PgDatabaseNotPrimaryKey;
+    }
+    export namespace PgDbRoleSetting {
+      export type Record = PgCatalog.PgDbRoleSetting;
+      export type RecordNotPrimaryKey = PgCatalog.PgDbRoleSettingNotPrimaryKey;
+    }
+    export namespace PgTablespace {
+      export type Record = PgCatalog.PgTablespace;
+      export type RecordNotPrimaryKey = PgCatalog.PgTablespaceNotPrimaryKey;
+    }
+    export namespace PgAuthMembers {
+      export type Record = PgCatalog.PgAuthMembers;
+      export type RecordNotPrimaryKey = PgCatalog.PgAuthMembersNotPrimaryKey;
+    }
+    export namespace PgShdepend {
+      export type Record = PgCatalog.PgShdepend;
+    }
+    export namespace PgShdescription {
+      export type Record = PgCatalog.PgShdescription;
+      export type RecordNotPrimaryKey = PgCatalog.PgShdescriptionNotPrimaryKey;
+    }
+    export namespace PgTsConfig {
+      export type Record = PgCatalog.PgTsConfig;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsConfigNotPrimaryKey;
+    }
+    export namespace PgTsConfigMap {
+      export type Record = PgCatalog.PgTsConfigMap;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsConfigMapNotPrimaryKey;
+    }
+    export namespace PgTsDict {
+      export type Record = PgCatalog.PgTsDict;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsDictNotPrimaryKey;
+    }
+    export namespace PgTsParser {
+      export type Record = PgCatalog.PgTsParser;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsParserNotPrimaryKey;
+    }
+    export namespace PgTsTemplate {
+      export type Record = PgCatalog.PgTsTemplate;
+      export type RecordNotPrimaryKey = PgCatalog.PgTsTemplateNotPrimaryKey;
+    }
+    export namespace PgExtension {
+      export type Record = PgCatalog.PgExtension;
+      export type RecordNotPrimaryKey = PgCatalog.PgExtensionNotPrimaryKey;
+    }
+    export namespace PgForeignDataWrapper {
+      export type Record = PgCatalog.PgForeignDataWrapper;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgForeignDataWrapperNotPrimaryKey;
+    }
+    export namespace PgForeignServer {
+      export type Record = PgCatalog.PgForeignServer;
+      export type RecordNotPrimaryKey = PgCatalog.PgForeignServerNotPrimaryKey;
+    }
+    export namespace PgPolicy {
+      export type Record = PgCatalog.PgPolicy;
+      export type RecordNotPrimaryKey = PgCatalog.PgPolicyNotPrimaryKey;
+    }
+    export namespace PgReplicationOrigin {
+      export type Record = PgCatalog.PgReplicationOrigin;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgReplicationOriginNotPrimaryKey;
+    }
+    export namespace PgDefaultAcl {
+      export type Record = PgCatalog.PgDefaultAcl;
+      export type RecordNotPrimaryKey = PgCatalog.PgDefaultAclNotPrimaryKey;
+    }
+    export namespace PgInitPrivs {
+      export type Record = PgCatalog.PgInitPrivs;
+      export type RecordNotPrimaryKey = PgCatalog.PgInitPrivsNotPrimaryKey;
+    }
+    export namespace PgSeclabel {
+      export type Record = PgCatalog.PgSeclabel;
+      export type RecordNotPrimaryKey = PgCatalog.PgSeclabelNotPrimaryKey;
+    }
+    export namespace PgShseclabel {
+      export type Record = PgCatalog.PgShseclabel;
+      export type RecordNotPrimaryKey = PgCatalog.PgShseclabelNotPrimaryKey;
+    }
+    export namespace PgCollation {
+      export type Record = PgCatalog.PgCollation;
+      export type RecordNotPrimaryKey = PgCatalog.PgCollationNotPrimaryKey;
+    }
+    export namespace PgParameterAcl {
+      export type Record = PgCatalog.PgParameterAcl;
+      export type RecordNotPrimaryKey = PgCatalog.PgParameterAclNotPrimaryKey;
+    }
+    export namespace PgPartitionedTable {
+      export type Record = PgCatalog.PgPartitionedTable;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgPartitionedTableNotPrimaryKey;
+    }
+    export namespace PgRange {
+      export type Record = PgCatalog.PgRange;
+      export type RecordNotPrimaryKey = PgCatalog.PgRangeNotPrimaryKey;
+    }
+    export namespace PgTransform {
+      export type Record = PgCatalog.PgTransform;
+      export type RecordNotPrimaryKey = PgCatalog.PgTransformNotPrimaryKey;
+    }
+    export namespace PgSequence {
+      export type Record = PgCatalog.PgSequence;
+      export type RecordNotPrimaryKey = PgCatalog.PgSequenceNotPrimaryKey;
+    }
+    export namespace PgPublication {
+      export type Record = PgCatalog.PgPublication;
+      export type RecordNotPrimaryKey = PgCatalog.PgPublicationNotPrimaryKey;
+    }
+    export namespace PgPublicationNamespace {
+      export type Record = PgCatalog.PgPublicationNamespace;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgPublicationNamespaceNotPrimaryKey;
+    }
+    export namespace PgPublicationRel {
+      export type Record = PgCatalog.PgPublicationRel;
+      export type RecordNotPrimaryKey = PgCatalog.PgPublicationRelNotPrimaryKey;
+    }
+    export namespace PgSubscriptionRel {
+      export type Record = PgCatalog.PgSubscriptionRel;
+      export type RecordNotPrimaryKey =
+        PgCatalog.PgSubscriptionRelNotPrimaryKey;
+    }
+    export namespace PgLargeobject {
+      export type Record = PgCatalog.PgLargeobject;
+      export type RecordNotPrimaryKey = PgCatalog.PgLargeobjectNotPrimaryKey;
+    }
+  }
+}
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Record = Public.FilmActor;
+      export type RecordNotPrimaryKey = Public.FilmActorNotPrimaryKey;
+    }
+    export namespace Address {
+      export type Record = Public.Address;
+      export type RecordNotPrimaryKey = Public.AddressNotPrimaryKey;
+    }
+    export namespace City {
+      export type Record = Public.City;
+      export type RecordNotPrimaryKey = Public.CityNotPrimaryKey;
+    }
+    export namespace Customer {
+      export type Record = Public.Customer;
+      export type RecordNotPrimaryKey = Public.CustomerNotPrimaryKey;
+    }
+    export namespace Actor {
+      export type Record = Public.Actor;
+      export type RecordNotPrimaryKey = Public.ActorNotPrimaryKey;
+    }
+    export namespace FilmCategory {
+      export type Record = Public.FilmCategory;
+      export type RecordNotPrimaryKey = Public.FilmCategoryNotPrimaryKey;
+    }
+    export namespace Inventory {
+      export type Record = Public.Inventory;
+      export type RecordNotPrimaryKey = Public.InventoryNotPrimaryKey;
+    }
+    export namespace Category {
+      export type Record = Public.Category;
+      export type RecordNotPrimaryKey = Public.CategoryNotPrimaryKey;
+    }
+    export namespace Country {
+      export type Record = Public.Country;
+      export type RecordNotPrimaryKey = Public.CountryNotPrimaryKey;
+    }
+    export namespace Language {
+      export type Record = Public.Language;
+      export type RecordNotPrimaryKey = Public.LanguageNotPrimaryKey;
+    }
+    export namespace Rental {
+      export type Record = Public.Rental;
+      export type RecordNotPrimaryKey = Public.RentalNotPrimaryKey;
+    }
+    export namespace Staff {
+      export type Record = Public.Staff;
+      export type RecordNotPrimaryKey = Public.StaffNotPrimaryKey;
+    }
+    export namespace Store {
+      export type Record = Public.Store;
+      export type RecordNotPrimaryKey = Public.StoreNotPrimaryKey;
+    }
+    export namespace Payment {
+      export type Record = Public.Payment;
+      export type RecordNotPrimaryKey = Public.PaymentNotPrimaryKey;
+    }
+    export namespace Film {
+      export type Record = Public.Film;
+      export type RecordNotPrimaryKey = Public.FilmNotPrimaryKey;
+    }
+  }
+}
+export namespace InformationSchema {
+  export namespace Tables {
+    export namespace SqlFeatures {
+      export type Record = InformationSchema.SqlFeatures;
+    }
+    export namespace SqlImplementationInfo {
+      export type Record = InformationSchema.SqlImplementationInfo;
+    }
+    export namespace SqlParts {
+      export type Record = InformationSchema.SqlParts;
+    }
+    export namespace SqlSizing {
+      export type Record = InformationSchema.SqlSizing;
+    }
+  }
+}
+// end string parsers
 // Begin React generated section
 import React from "react";
 export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
@@ -15961,7 +16309,7 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.FilmActor.byActorIdFilmId",
+          operation: "Public.Tables.FilmActor.byActorIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -15976,7 +16324,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmActor,
           Public.FilmActor
-        >({ operation: "Public.FilmActor.create", results, setResults });
+        >({ operation: "Public.Tables.FilmActor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmActor>>();
         React.useEffect(() => {
@@ -16001,7 +16349,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.FilmActor.byFilmId",
+          operation: "Public.Tables.FilmActor.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
@@ -16014,7 +16362,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmActor,
           Public.FilmActor[]
-        >({ operation: "Public.FilmActor.create", results, setResults });
+        >({ operation: "Public.Tables.FilmActor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmActor>[]>();
         React.useEffect(() => {
@@ -16048,7 +16396,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Address.byAddressId",
+          operation: "Public.Tables.Address.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
@@ -16061,7 +16409,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Address,
           Public.Address
-        >({ operation: "Public.Address.create", results, setResults });
+        >({ operation: "Public.Tables.Address.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Address>>();
         React.useEffect(() => {
@@ -16083,7 +16431,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Address.byCityId",
+          operation: "Public.Tables.Address.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
@@ -16096,7 +16444,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Address,
           Public.Address[]
-        >({ operation: "Public.Address.create", results, setResults });
+        >({ operation: "Public.Tables.Address.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Address>[]>();
         React.useEffect(() => {
@@ -16126,7 +16474,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.City.byCityId",
+          operation: "Public.Tables.City.byCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
@@ -16139,7 +16487,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.City,
           Public.City
-        >({ operation: "Public.City.create", results, setResults });
+        >({ operation: "Public.Tables.City.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.City>>();
         React.useEffect(() => {
@@ -16161,7 +16509,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.City.byCountryId",
+          operation: "Public.Tables.City.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
@@ -16174,7 +16522,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.City,
           Public.City[]
-        >({ operation: "Public.City.create", results, setResults });
+        >({ operation: "Public.Tables.City.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.City>[]>();
         React.useEffect(() => {
@@ -16210,7 +16558,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Customer.byAddressId",
+          operation: "Public.Tables.Customer.byAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16225,7 +16573,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16249,7 +16597,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Customer.byCustomerId",
+          operation: "Public.Tables.Customer.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
@@ -16262,7 +16610,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>>();
         React.useEffect(() => {
@@ -16284,7 +16632,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Customer.byLastName",
+          operation: "Public.Tables.Customer.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
@@ -16297,7 +16645,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16321,7 +16669,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Customer.byStoreId",
+          operation: "Public.Tables.Customer.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
@@ -16334,7 +16682,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Customer,
           Public.Customer[]
-        >({ operation: "Public.Customer.create", results, setResults });
+        >({ operation: "Public.Tables.Customer.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Customer>[]>();
         React.useEffect(() => {
@@ -16364,7 +16712,7 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Actor.byActorId",
+          operation: "Public.Tables.Actor.byActorId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
@@ -16377,7 +16725,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Actor,
           Public.Actor
-        >({ operation: "Public.Actor.create", results, setResults });
+        >({ operation: "Public.Tables.Actor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Actor>>();
         React.useEffect(() => {
@@ -16399,7 +16747,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Actor.byLastName",
+          operation: "Public.Tables.Actor.byLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
@@ -16412,7 +16760,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Actor,
           Public.Actor[]
-        >({ operation: "Public.Actor.create", results, setResults });
+        >({ operation: "Public.Tables.Actor.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Actor>[]>();
         React.useEffect(() => {
@@ -16441,7 +16789,7 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.FilmCategory.byFilmIdCategoryId",
+          operation: "Public.Tables.FilmCategory.byFilmIdCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16456,7 +16804,11 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.FilmCategory,
           Public.FilmCategory
-        >({ operation: "Public.FilmCategory.create", results, setResults });
+        >({
+          operation: "Public.Tables.FilmCategory.create",
+          results,
+          setResults,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.FilmCategory>>();
         React.useEffect(() => {
@@ -16487,7 +16839,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Inventory.byInventoryId",
+          operation: "Public.Tables.Inventory.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16502,7 +16854,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Inventory,
           Public.Inventory
-        >({ operation: "Public.Inventory.create", results, setResults });
+        >({ operation: "Public.Tables.Inventory.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Inventory>>();
         React.useEffect(() => {
@@ -16527,7 +16879,7 @@ export namespace Public {
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Inventory.byStoreIdFilmId",
+          operation: "Public.Tables.Inventory.byStoreIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16542,7 +16894,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Inventory,
           Public.Inventory[]
-        >({ operation: "Public.Inventory.create", results, setResults });
+        >({ operation: "Public.Tables.Inventory.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Inventory>[]>();
         React.useEffect(() => {
@@ -16571,7 +16923,7 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Category.byCategoryId",
+          operation: "Public.Tables.Category.byCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
@@ -16584,7 +16936,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Category,
           Public.Category
-        >({ operation: "Public.Category.create", results, setResults });
+        >({ operation: "Public.Tables.Category.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Category>>();
         React.useEffect(() => {
@@ -16611,7 +16963,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Country.byCountryId",
+          operation: "Public.Tables.Country.byCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
@@ -16624,7 +16976,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Country,
           Public.Country
-        >({ operation: "Public.Country.create", results, setResults });
+        >({ operation: "Public.Tables.Country.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Country>>();
         React.useEffect(() => {
@@ -16651,7 +17003,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Language.byLanguageId",
+          operation: "Public.Tables.Language.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
@@ -16664,7 +17016,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Language,
           Public.Language
-        >({ operation: "Public.Language.create", results, setResults });
+        >({ operation: "Public.Tables.Language.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Language>>();
         React.useEffect(() => {
@@ -16695,7 +17047,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Rental.byInventoryId",
+          operation: "Public.Tables.Rental.byInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16710,7 +17062,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental[]
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>[]>();
         React.useEffect(() => {
@@ -16736,7 +17088,7 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
+          operation: "Public.Tables.Rental.byRentalDateInventoryIdCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16751,7 +17103,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
@@ -16773,7 +17125,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Rental.byRentalId",
+          operation: "Public.Tables.Rental.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
@@ -16786,7 +17138,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Rental,
           Public.Rental
-        >({ operation: "Public.Rental.create", results, setResults });
+        >({ operation: "Public.Tables.Rental.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Rental>>();
         React.useEffect(() => {
@@ -16821,7 +17173,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Staff.byStaffId",
+          operation: "Public.Tables.Staff.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
@@ -16834,7 +17186,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Staff,
           Public.Staff
-        >({ operation: "Public.Staff.create", results, setResults });
+        >({ operation: "Public.Tables.Staff.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Staff>>();
         React.useEffect(() => {
@@ -16862,7 +17214,7 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Store.byManagerStaffId",
+          operation: "Public.Tables.Store.byManagerStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16877,7 +17229,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Store,
           Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
+        >({ operation: "Public.Tables.Store.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
@@ -16899,7 +17251,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Store.byStoreId",
+          operation: "Public.Tables.Store.byStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
@@ -16912,7 +17264,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Store,
           Public.Store
-        >({ operation: "Public.Store.create", results, setResults });
+        >({ operation: "Public.Tables.Store.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Store>>();
         React.useEffect(() => {
@@ -16942,7 +17294,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Payment.byCustomerId",
+          operation: "Public.Tables.Payment.byCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16957,7 +17309,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -16981,7 +17333,7 @@ export namespace Public {
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Payment.byPaymentId",
+          operation: "Public.Tables.Payment.byPaymentId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
@@ -16994,7 +17346,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>>();
         React.useEffect(() => {
@@ -17016,7 +17368,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Payment.byRentalId",
+          operation: "Public.Tables.Payment.byRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
@@ -17029,7 +17381,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -17053,7 +17405,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Payment.byStaffId",
+          operation: "Public.Tables.Payment.byStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
@@ -17066,7 +17418,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Payment,
           Public.Payment[]
-        >({ operation: "Public.Payment.create", results, setResults });
+        >({ operation: "Public.Tables.Payment.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Payment>[]>();
         React.useEffect(() => {
@@ -17105,7 +17457,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Film.byFilmId",
+          operation: "Public.Tables.Film.byFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
@@ -17118,7 +17470,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>>();
         React.useEffect(() => {
@@ -17140,7 +17492,7 @@ export namespace Public {
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Film.byFulltext",
+          operation: "Public.Tables.Film.byFulltext",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
@@ -17153,7 +17505,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
@@ -17177,7 +17529,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Film.byLanguageId",
+          operation: "Public.Tables.Film.byLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
@@ -17190,7 +17542,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
@@ -17214,7 +17566,7 @@ export namespace Public {
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Film.byTitle",
+          operation: "Public.Tables.Film.byTitle",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(
@@ -17227,7 +17579,7 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Film,
           Public.Film[]
-        >({ operation: "Public.Film.create", results, setResults });
+        >({ operation: "Public.Tables.Film.create", results, setResults });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Film>[]>();
         React.useEffect(() => {
