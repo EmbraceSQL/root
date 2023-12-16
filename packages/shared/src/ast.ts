@@ -1,6 +1,6 @@
 import { GeneratesTypeScriptParser, GenerationContext } from ".";
 import { DispatchOperation } from "./index";
-import { pascalCase } from "change-case";
+import { camelCase, pascalCase } from "change-case";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.
@@ -20,6 +20,15 @@ export const enum ASTKind {
   Types,
   Type,
   CreateOperation,
+  ReadOperation,
+}
+
+/**
+ * A named type -- it's column like.
+ */
+export interface NamedType {
+  name: string;
+  type: TypeNode;
 }
 
 /**
@@ -81,6 +90,7 @@ export type VisitorMap = {
   [ASTKind.Type]?: Visitor<TypeNode>;
   [ASTKind.Types]?: Visitor<TypesNode>;
   [ASTKind.CreateOperation]?: Visitor<CreateOperationNode>;
+  [ASTKind.ReadOperation]?: Visitor<ReadOperationNode>;
 };
 
 /**
@@ -315,12 +325,19 @@ export class IndexNode extends ContainerNode {
     public name: string,
     public unique: boolean,
     public primaryKey: boolean,
+    attributes: NamedType[],
   ) {
     super(name, ASTKind.Index, table);
+    attributes.forEach((a) =>
+      this.children.push(new IndexColumnNode(this, a.name, a.type)),
+    );
+    // important that the operations go after the attributes
+    // so that we can have a well defined `typescriptName`
+    this.children.push(new ReadOperationNode(this));
   }
 
   get typescriptName() {
-    return `by${pascalCase(
+    return `By${pascalCase(
       this.columns.map((c) => c.typescriptName).join("_"),
     )}`;
   }
@@ -347,16 +364,46 @@ export class IndexColumnNode extends ContainerNode {
 
 // operations
 
+abstract class OperationNode extends NamedASTNode {
+  get typescriptName() {
+    // method style naming for operation
+    return camelCase(this.name);
+  }
+}
+
 /**
  * Operation to create a new row in a table. Each table gets one creator.
  */
-export class CreateOperationNode extends NamedASTNode {
+export class CreateOperationNode extends OperationNode {
   constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
   }
+}
 
+abstract class IndexOperationNode extends OperationNode {
+  constructor(
+    name: string,
+    kind: ASTKind,
+    public index: IndexNode,
+  ) {
+    super(name, kind, index);
+  }
   get typescriptName() {
-    // no special case
-    return this.name;
+    // method style naming for operation
+    return camelCase(`${this.name}${this.index.typescriptName}`);
+  }
+  get typescriptNamespacedName() {
+    // bypass to the table to not get a doubling of the apparent
+    // index name
+    return `${this.index.table.typescriptNamespacedName}.${this.typescriptName}`;
+  }
+}
+
+/**
+ * Operation to read row(s) by index.
+ */
+export class ReadOperationNode extends IndexOperationNode {
+  constructor(public index: IndexNode) {
+    super("", ASTKind.ReadOperation, index);
   }
 }

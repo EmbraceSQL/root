@@ -76,6 +76,34 @@ export async function generateClient(context: GenerationContext) {
         `;
       },
     },
+
+    [ASTKind.ReadOperation]: {
+      before: async (_, node) => {
+        // will return a single record on a unique index
+        const parametersType = node.index.typescriptNamespacedName;
+        const resultType = node.index.unique
+          ? `${node.index.table.typescriptNamespacedName}.Record[]`
+          : `${node.index.table.typescriptNamespacedName}.Record | undefined`;
+        const generationBuffer = [
+          `
+          public async ${node.typescriptName}(parameters: ${parametersType}) {
+            const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
+              operation: "${node.typescriptNamespacedName}",
+              parameters
+            });
+        `,
+        ];
+        generationBuffer.push(
+          node.index.unique
+            ? `return response.results?.length ? response.results[0] : undefined`
+            : `return response.results ? response.results : []`,
+        );
+        return generationBuffer.join("\n");
+      },
+      after: async () => {
+        return `}`;
+      },
+    },
   };
 
   generationBuffer.push(await context.database.visit(context));

@@ -16321,7 +16321,7 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.Tables.FilmActor.byActorIdFilmId",
+          operation: "Public.Tables.FilmActor.ByActorIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16361,7 +16361,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Tables.FilmActor.byFilmId",
+          operation: "Public.Tables.FilmActor.ByFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.FilmActor[]>(
@@ -16408,7 +16408,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Tables.Address.byAddressId",
+          operation: "Public.Tables.Address.ByAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByAddressId, never, Public.Address>(
@@ -16443,7 +16443,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Tables.Address.byCityId",
+          operation: "Public.Tables.Address.ByCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.Address[]>(
@@ -16486,7 +16486,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Tables.City.byCityId",
+          operation: "Public.Tables.City.ByCityId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCityId, never, Public.City>(
@@ -16521,7 +16521,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Tables.City.byCountryId",
+          operation: "Public.Tables.City.ByCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.City[]>(
@@ -16570,7 +16570,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Tables.Customer.byAddressId",
+          operation: "Public.Tables.Customer.ByAddressId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16609,7 +16609,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Tables.Customer.byCustomerId",
+          operation: "Public.Tables.Customer.ByCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCustomerId, never, Public.Customer>(
@@ -16644,7 +16644,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Tables.Customer.byLastName",
+          operation: "Public.Tables.Customer.ByLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Customer[]>(
@@ -16681,7 +16681,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Tables.Customer.byStoreId",
+          operation: "Public.Tables.Customer.ByStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Customer[]>(
@@ -16724,7 +16724,7 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Tables.Actor.byActorId",
+          operation: "Public.Tables.Actor.ByActorId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByActorId, never, Public.Actor>(
@@ -16759,7 +16759,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Tables.Actor.byLastName",
+          operation: "Public.Tables.Actor.ByLastName",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLastName, never, Public.Actor[]>(
@@ -16801,7 +16801,7 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.Tables.FilmCategory.byFilmIdCategoryId",
+          operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16851,7 +16851,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Tables.Inventory.byInventoryId",
+          operation: "Public.Tables.Inventory.ByInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16891,7 +16891,7 @@ export namespace Public {
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Tables.Inventory.byStoreIdFilmId",
+          operation: "Public.Tables.Inventory.ByStoreIdFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -16935,7 +16935,7 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Tables.Category.byCategoryId",
+          operation: "Public.Tables.Category.ByCategoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCategoryId, never, Public.Category>(
@@ -16975,7 +16975,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Tables.Country.byCountryId",
+          operation: "Public.Tables.Country.ByCountryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByCountryId, never, Public.Country>(
@@ -17015,7 +17015,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Tables.Language.byLanguageId",
+          operation: "Public.Tables.Language.ByLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Language>(
@@ -17059,7 +17059,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Tables.Rental.byInventoryId",
+          operation: "Public.Tables.Rental.ByInventoryId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -17100,7 +17100,7 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Tables.Rental.byRentalDateInventoryIdCustomerId",
+          operation: "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -17137,7 +17137,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Tables.Rental.byRentalId",
+          operation: "Public.Tables.Rental.ByRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Rental>(
@@ -17185,7 +17185,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Tables.Staff.byStaffId",
+          operation: "Public.Tables.Staff.ByStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Staff>(
@@ -17226,7 +17226,7 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Tables.Store.byManagerStaffId",
+          operation: "Public.Tables.Store.ByManagerStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -17263,7 +17263,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Tables.Store.byStoreId",
+          operation: "Public.Tables.Store.ByStoreId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStoreId, never, Public.Store>(
@@ -17306,7 +17306,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Tables.Payment.byCustomerId",
+          operation: "Public.Tables.Payment.ByCustomerId",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -17345,7 +17345,7 @@ export namespace Public {
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Tables.Payment.byPaymentId",
+          operation: "Public.Tables.Payment.ByPaymentId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByPaymentId, never, Public.Payment>(
@@ -17380,7 +17380,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Tables.Payment.byRentalId",
+          operation: "Public.Tables.Payment.ByRentalId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByRentalId, never, Public.Payment[]>(
@@ -17417,7 +17417,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Tables.Payment.byStaffId",
+          operation: "Public.Tables.Payment.ByStaffId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByStaffId, never, Public.Payment[]>(
@@ -17469,7 +17469,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Tables.Film.byFilmId",
+          operation: "Public.Tables.Film.ByFilmId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFilmId, never, Public.Film>(
@@ -17504,7 +17504,7 @@ export namespace Public {
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Tables.Film.byFulltext",
+          operation: "Public.Tables.Film.ByFulltext",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByFulltext, never, Public.Film[]>(
@@ -17541,7 +17541,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Tables.Film.byLanguageId",
+          operation: "Public.Tables.Film.ByLanguageId",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByLanguageId, never, Public.Film[]>(
@@ -17578,7 +17578,7 @@ export namespace Public {
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Tables.Film.byTitle",
+          operation: "Public.Tables.Film.ByTitle",
           parameters,
         };
         const done = useEmbraceSQLRequest<ByTitle, never, Public.Film[]>(

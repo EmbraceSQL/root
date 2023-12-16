@@ -9,7 +9,6 @@ import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import {
   ColumnNode,
   DatabaseNode,
-  IndexColumnNode,
   IndexNode,
   IsNamed,
   SchemaNode,
@@ -217,17 +216,17 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
             i.name,
             i.index.indisunique,
             i.index.indisprimary,
+            i.attributes.map((a) => {
+              const typeNode = database.resolveType(a.attribute.atttypid);
+              if (typeNode) {
+                return { name: a.name, type: typeNode };
+              } else {
+                throw new Error(
+                  `${a.name} cannot find type ${a.attribute.atttypid}`,
+                );
+              }
+            }),
           );
-          i.attributes.forEach((a) => {
-            const typeNode = database.resolveType(a.attribute.atttypid);
-            if (typeNode) {
-              index.children.push(new IndexColumnNode(index, a.name, typeNode));
-            } else {
-              throw new Error(
-                `${a.name} cannot find type ${a.attribute.atttypid}`,
-              );
-            }
-          });
           table.children.push(index);
         });
       });

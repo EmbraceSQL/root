@@ -15006,6 +15006,34 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byActorIdFilmId(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByActorIdFilmId,
+            never,
+            Public.Tables.FilmActor.Record[]
+          >({
+            operation: "Public.Tables.FilmActor.byActorIdFilmId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByFilmId,
+            never,
+            Public.Tables.FilmActor.Record | undefined
+          >({
+            operation: "Public.Tables.FilmActor.byFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
       })(this);
 
       public Address = new (class extends HasClient {
@@ -15026,6 +15054,34 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byAddressId(
+          parameters: Public.Tables.Address.ByAddressId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByAddressId,
+            never,
+            Public.Tables.Address.Record[]
+          >({
+            operation: "Public.Tables.Address.byAddressId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byCityId(parameters: Public.Tables.Address.ByCityId) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByCityId,
+            never,
+            Public.Tables.Address.Record | undefined
+          >({
+            operation: "Public.Tables.Address.byCityId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
       })(this);
 
       public City = new (class extends HasClient {
@@ -15043,6 +15099,32 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byCityId(parameters: Public.Tables.City.ByCityId) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCityId,
+            never,
+            Public.Tables.City.Record[]
+          >({
+            operation: "Public.Tables.City.byCityId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byCountryId(parameters: Public.Tables.City.ByCountryId) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCountryId,
+            never,
+            Public.Tables.City.Record | undefined
+          >({
+            operation: "Public.Tables.City.byCountryId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
         }
       })(this);
 
@@ -15064,6 +15146,62 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byAddressId(
+          parameters: Public.Tables.Customer.ByAddressId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByAddressId,
+            never,
+            Public.Tables.Customer.Record | undefined
+          >({
+            operation: "Public.Tables.Customer.byAddressId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byCustomerId(
+          parameters: Public.Tables.Customer.ByCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByCustomerId,
+            never,
+            Public.Tables.Customer.Record[]
+          >({
+            operation: "Public.Tables.Customer.byCustomerId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byLastName(parameters: Public.Tables.Customer.ByLastName) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByLastName,
+            never,
+            Public.Tables.Customer.Record | undefined
+          >({
+            operation: "Public.Tables.Customer.byLastName",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byStoreId(parameters: Public.Tables.Customer.ByStoreId) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByStoreId,
+            never,
+            Public.Tables.Customer.Record | undefined
+          >({
+            operation: "Public.Tables.Customer.byStoreId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
       })(this);
 
       public Actor = new (class extends HasClient {
@@ -15082,6 +15220,32 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byActorId(parameters: Public.Tables.Actor.ByActorId) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByActorId,
+            never,
+            Public.Tables.Actor.Record[]
+          >({
+            operation: "Public.Tables.Actor.byActorId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byLastName(parameters: Public.Tables.Actor.ByLastName) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByLastName,
+            never,
+            Public.Tables.Actor.Record | undefined
+          >({
+            operation: "Public.Tables.Actor.byLastName",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
         }
       })(this);
 
@@ -15103,6 +15267,21 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byFilmIdCategoryId(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            never,
+            Public.Tables.FilmCategory.Record[]
+          >({
+            operation: "Public.Tables.FilmCategory.byFilmIdCategoryId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
       })(this);
 
       public Inventory = new (class extends HasClient {
@@ -15122,6 +15301,36 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byInventoryId(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByInventoryId,
+            never,
+            Public.Tables.Inventory.Record[]
+          >({
+            operation: "Public.Tables.Inventory.byInventoryId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byStoreIdFilmId(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByStoreIdFilmId,
+            never,
+            Public.Tables.Inventory.Record | undefined
+          >({
+            operation: "Public.Tables.Inventory.byStoreIdFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
         }
       })(this);
 
@@ -15143,6 +15352,21 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byCategoryId(
+          parameters: Public.Tables.Category.ByCategoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Category.ByCategoryId,
+            never,
+            Public.Tables.Category.Record[]
+          >({
+            operation: "Public.Tables.Category.byCategoryId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
       })(this);
 
       public Country = new (class extends HasClient {
@@ -15162,6 +15386,21 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byCountryId(
+          parameters: Public.Tables.Country.ByCountryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Country.ByCountryId,
+            never,
+            Public.Tables.Country.Record[]
+          >({
+            operation: "Public.Tables.Country.byCountryId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
         }
       })(this);
 
@@ -15183,6 +15422,21 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byLanguageId(
+          parameters: Public.Tables.Language.ByLanguageId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Language.ByLanguageId,
+            never,
+            Public.Tables.Language.Record[]
+          >({
+            operation: "Public.Tables.Language.byLanguageId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
       })(this);
 
       public Rental = new (class extends HasClient {
@@ -15203,6 +15457,49 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byInventoryId(
+          parameters: Public.Tables.Rental.ByInventoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByInventoryId,
+            never,
+            Public.Tables.Rental.Record | undefined
+          >({
+            operation: "Public.Tables.Rental.byInventoryId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byRentalDateInventoryIdCustomerId(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            never,
+            Public.Tables.Rental.Record[]
+          >({
+            operation: "Public.Tables.Rental.byRentalDateInventoryIdCustomerId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byRentalId(parameters: Public.Tables.Rental.ByRentalId) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalId,
+            never,
+            Public.Tables.Rental.Record[]
+          >({
+            operation: "Public.Tables.Rental.byRentalId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
       })(this);
 
       public Staff = new (class extends HasClient {
@@ -15222,6 +15519,19 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byStaffId(parameters: Public.Tables.Staff.ByStaffId) {
+          const response = await this.client.invoke<
+            Public.Tables.Staff.ByStaffId,
+            never,
+            Public.Tables.Staff.Record[]
+          >({
+            operation: "Public.Tables.Staff.byStaffId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
       })(this);
 
       public Store = new (class extends HasClient {
@@ -15240,6 +15550,34 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byManagerStaffId(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByManagerStaffId,
+            never,
+            Public.Tables.Store.Record[]
+          >({
+            operation: "Public.Tables.Store.byManagerStaffId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byStoreId(parameters: Public.Tables.Store.ByStoreId) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByStoreId,
+            never,
+            Public.Tables.Store.Record[]
+          >({
+            operation: "Public.Tables.Store.byStoreId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
         }
       })(this);
 
@@ -15261,6 +15599,62 @@ export class EmbraceSQLClient extends BaseClient {
           });
           return response.results;
         }
+
+        public async byCustomerId(
+          parameters: Public.Tables.Payment.ByCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByCustomerId,
+            never,
+            Public.Tables.Payment.Record | undefined
+          >({
+            operation: "Public.Tables.Payment.byCustomerId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byPaymentId(
+          parameters: Public.Tables.Payment.ByPaymentId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByPaymentId,
+            never,
+            Public.Tables.Payment.Record[]
+          >({
+            operation: "Public.Tables.Payment.byPaymentId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byRentalId(parameters: Public.Tables.Payment.ByRentalId) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByRentalId,
+            never,
+            Public.Tables.Payment.Record | undefined
+          >({
+            operation: "Public.Tables.Payment.byRentalId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byStaffId(parameters: Public.Tables.Payment.ByStaffId) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByStaffId,
+            never,
+            Public.Tables.Payment.Record | undefined
+          >({
+            operation: "Public.Tables.Payment.byStaffId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
       })(this);
 
       public Film = new (class extends HasClient {
@@ -15278,6 +15672,58 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async byFilmId(parameters: Public.Tables.Film.ByFilmId) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFilmId,
+            never,
+            Public.Tables.Film.Record[]
+          >({
+            operation: "Public.Tables.Film.byFilmId",
+            parameters,
+          });
+
+          return response.results?.length ? response.results[0] : undefined;
+        }
+
+        public async byFulltext(parameters: Public.Tables.Film.ByFulltext) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFulltext,
+            never,
+            Public.Tables.Film.Record | undefined
+          >({
+            operation: "Public.Tables.Film.byFulltext",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byLanguageId(parameters: Public.Tables.Film.ByLanguageId) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByLanguageId,
+            never,
+            Public.Tables.Film.Record | undefined
+          >({
+            operation: "Public.Tables.Film.byLanguageId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async byTitle(parameters: Public.Tables.Film.ByTitle) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByTitle,
+            never,
+            Public.Tables.Film.Record | undefined
+          >({
+            operation: "Public.Tables.Film.byTitle",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
         }
       })(this);
     })(this);
