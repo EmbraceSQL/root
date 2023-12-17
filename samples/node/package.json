@@ -6,6 +6,8 @@
   "scripts": {
     "generate": "npx embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts",
     "start": "npx tsx  ./src/main.ts",
+    "autocrud": "npx tsx ./src/autocrud.ts",
+    "transactions": "npx tsx ./src/transactions.ts",
     "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",

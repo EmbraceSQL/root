@@ -7,6 +7,7 @@ import "./main.css";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
 
+// connect to where we mounted EmbraceSQL
 const client = new EmbraceSQLClient({
   url: "http://localhost:3000/embracesql",
 });

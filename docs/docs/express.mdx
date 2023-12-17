@@ -2,6 +2,7 @@ import ClientSource from "!!raw-loader!../../samples/express/src/client.ts";
 import ExpressSource from "!!raw-loader!../../samples/express/src/express.ts";
 import TsConfigSource from "!!raw-loader!../../samples/express/tsconfig.json";
 import CodeBlock from "@theme/CodeBlock";
+import Requirements from '../includes/sample_requirements.mdx';
 
 # Express
 
@@ -12,31 +13,13 @@ with [`listen`](https://expressjs.com/en/api.html#app.listen).
 This server provides full access to [AutoCRUD](./autocrud) and can be
 extended with your own [SQL](./sql).
 
-## Requirements
+<Requirements/>
 
-You are going to need:
-
-* NodeJs >= 18
-* PostgreSQL >= 14
-
-These examples assume you are running locally with your shell able to connect
-to your PostgreSQL with:
-
-```shell
-psql
-```
 
 ## Steps
 
 Here is a step by step guide to create an `Express` server and a `fetch` client.
 
-### Create a Sample Database
-
-Create a new database `dvdrental` on your local PostgeSQL server.
-
-```shell
-curl "https://embracesql.github.io/dvdrental.sql" | psql
-```
 
 ### Generate an Express Server
 

@@ -1,3 +1,10 @@
+import ClientSource from "!!raw-loader!../../samples/node/src/autocrud.ts";
+import TransactionsSource from "!!raw-loader!../../samples/node/src/transactions.ts";
+import TsConfigSource from "!!raw-loader!../../samples/node/tsconfig.json";
+import CodeBlock from "@theme/CodeBlock";
+import Requirements from '../includes/sample_requirements.mdx';
+
+
 # AutoCRUD
 
 AutoCRUD looks at tables, and their indexes and creates a functional interface
@@ -13,40 +20,45 @@ creates flexible database access:
 
 All you need are tables with indexes. Yes, primary keys count!
 
-## Example
+<Requirements/>
 
-You can look in the [intro](./) to see how to generate the dvdrental code
-used in these example snippets.
+## Steps
 
-We're assuming a top level await here.
+Here is a step by step guide to create a command line node program
+to access the dvdrental sample database.
 
-```typescript
-import { Database } from "./src/dvdrental";
 
-// connect
-const database = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
-// read by primary key
-const actor = await database.Public.Actor.byActorId({ actorId: 1 });
-// delete by primary key -- yep, the object read back has a the same property name!
-await database.Public.Actor.deleteByActorId(actor); // or {actorId: 1}
-// update along an index
-const deactivatedCustomer = await database.Public.Customer.updateByCustomerId(
-    {
-    customerId: 1,
-    },
-    { activebool: false },
-);
-const convenientReadBack = deactivatedCustomer.activebool; // this is now false, no additional read needed
+### Generate an Node Database
 
-// creating a new record
-const theBob = await database.Public.Actor.create({
-    firstName: "Bob",
-    lastName: "Hope",
-});
+Go into a nice blank directory.
 
-// or upserting -- no new record, turns into an update
-theBob.firstName = "Robert";
-const theRobert = await database.Public.Actor.create(theBob);
+```shell
+npm install @embracesql/express
+npm pkg set type=module
+mkdir -p ./src
+npx embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
+```
+
+### Code up a Node Program
+We provide handy tsconfig settings that work great with `tsx` and `typescript` 5+.
+
+Create two files as shown.
+
+<CodeBlock language="json" title="tsconfig.json">
+  {TsConfigSource}
+</CodeBlock>
+
+
+<CodeBlock language="typescript" title="./src/autocrud.ts">
+  {ClientSource}
+</CodeBlock>
+
+### Test It!
+
+Start that server:
+
+```shell
+npx tsx ./src/autocrud.ts
 ```
 
 ## Details
@@ -151,32 +163,6 @@ What would a database library be without transactions?
 
 Just pass a callback function, throw to abort, return clean to commit.
 
-`./src/autocrud.ts`
-```typescript
-import { Database } from "./dvdrental";
-
-// connect
-const database = await Database.connect("postgres://postgres:postgres@localhost:5432/dvdrental");
-
-// update -- commits when the block exists
-const updatedCustomer = await database.withTransaction(async (db) => {
-    return await db.Public.Customer.updateByCustomerId(
-    {
-        customerId: 1,
-    },
-    { activebool: false, email: null },
-    );
-});
-const yepNull = updatedCustomer.email;
-
-// or to not update
-await database.withTransaction(async (db) => {
-    await db.Public.Customer.updateByCustomerId(
-        {
-        customerId: 1,
-        },
-        { activebool: false, email: null },
-    );
-    throw new Error("aha");
-});
-```
+<CodeBlock language="typescript" title="./src/transactions.ts">
+  {TransactionsSource}
+</CodeBlock>

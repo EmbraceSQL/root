@@ -5590,24 +5590,24 @@ export namespace Public {
 
   export type Cube0aecResultset = Cube0aecSingleResultsetRecord[];
 
-  export interface Cubeffa3Arguments {
+  export interface Cube39d2Arguments {
     _0: Nullable<Cube>;
     _1: Nullable<PgCatalog.Float8>;
   }
 
-  export type Cubeffa3SingleResultsetRecord = Cube;
+  export type Cube39d2SingleResultsetRecord = Cube;
 
-  export type Cubeffa3Resultset = Cubeffa3SingleResultsetRecord[];
+  export type Cube39d2Resultset = Cube39d2SingleResultsetRecord[];
 
-  export interface Cube908dArguments {
+  export interface Cubea7ebArguments {
     _0: Nullable<Cube>;
     _1: Nullable<PgCatalog.Float8>;
     _2?: Nullable<PgCatalog.Float8>;
   }
 
-  export type Cube908dSingleResultsetRecord = Cube;
+  export type Cubea7ebSingleResultsetRecord = Cube;
 
-  export type Cube908dResultset = Cube908dSingleResultsetRecord[];
+  export type Cubea7ebResultset = Cubea7ebSingleResultsetRecord[];
 
   export interface CubeIsPointArguments {
     _0: Nullable<Cube>;
@@ -5728,6 +5728,14 @@ export namespace Api {
     echoes?: Nullable<EchoTypeArray>;
   }
 
+  export interface EchoArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  export type EchoSingleResultsetRecord = PgCatalog.Text;
+
+  export type EchoResultset = EchoSingleResultsetRecord[];
+
   export interface EchoSetArguments {
     message: Nullable<PgCatalog.Text>;
   }
@@ -5735,6 +5743,18 @@ export namespace Api {
   export type EchoSetSingleResultsetRecord = PgCatalog.Text;
 
   export type EchoSetResultset = EchoSetSingleResultsetRecord[];
+
+  export interface EchoTableArguments {
+    message: Nullable<PgCatalog.Text>;
+  }
+
+  interface EchoTableResponseRecord {
+    echomessage: PgCatalog.Text;
+    at: PgCatalog.Timestamptz;
+  }
+  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
+
+  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export interface EchoTypeArguments {
     message: Nullable<PgCatalog.Text>;
@@ -5767,26 +5787,6 @@ export namespace Api {
   export type EchoTypeSetSingleResultsetRecord = EchoType;
 
   export type EchoTypeSetResultset = EchoTypeSetSingleResultsetRecord[];
-
-  export interface EchoArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  export type EchoSingleResultsetRecord = PgCatalog.Text;
-
-  export type EchoResultset = EchoSingleResultsetRecord[];
-
-  export interface EchoTableArguments {
-    message: Nullable<PgCatalog.Text>;
-  }
-
-  interface EchoTableResponseRecord {
-    echomessage: PgCatalog.Text;
-    at: PgCatalog.Timestamptz;
-  }
-  export type EchoTableSingleResultsetRecord = EchoTableResponseRecord;
-
-  export type EchoTableResultset = EchoTableSingleResultsetRecord[];
 
   export namespace Tables {}
 }
@@ -14406,7 +14406,7 @@ export class Database extends PostgresDatabase {
         .cube as unknown as Public.Cube0aecSingleResultsetRecord;
       return responseBody;
     }
-    async Cubeffa3(parameters: Public.Cubeffa3Arguments) {
+    async Cube39d2(parameters: Public.Cube39d2Arguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14420,10 +14420,10 @@ export class Database extends PostgresDatabase {
                   `;
       const results = response;
       const responseBody = results?.[0]
-        .cube as unknown as Public.Cubeffa3SingleResultsetRecord;
+        .cube as unknown as Public.Cube39d2SingleResultsetRecord;
       return responseBody;
     }
-    async Cube908d(parameters: Public.Cube908dArguments) {
+    async Cubea7eb(parameters: Public.Cubea7ebArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -14439,7 +14439,7 @@ export class Database extends PostgresDatabase {
                   `;
       const results = response;
       const responseBody = results?.[0]
-        .cube as unknown as Public.Cube908dSingleResultsetRecord;
+        .cube as unknown as Public.Cubea7ebSingleResultsetRecord;
       return responseBody;
     }
     async CubeIsPoint(parameters: Public.CubeIsPointArguments) {
@@ -14734,6 +14734,21 @@ export class Database extends PostgresDatabase {
   public Api = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
+    async Echo(parameters: Api.EchoArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql`
+                  SELECT
+                  api.echo(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      const results = response;
+      const responseBody = results?.[0]
+        .echo as unknown as Api.EchoSingleResultsetRecord;
+      return responseBody;
+    }
     async EchoSet(parameters: Api.EchoSetArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -14750,6 +14765,34 @@ export class Database extends PostgresDatabase {
       ) as unknown as Api.EchoSetResultset;
       return responseBody;
     }
+    async EchoTable(parameters: Api.EchoTableArguments) {
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const response = await sql`
+                  SELECT
+                  api.echo_table(message => ${typed.pg_catalog_text(
+                    undefinedIsNull(parameters.message),
+                  )});
+                  `;
+      const results = response;
+      const responseBody = results.map((x) =>
+        this.parseEchoTableResult(this.database.context, x.echo_table),
+      ) as unknown as Api.EchoTableResultset;
+      return responseBody;
+    }
+
+    parseEchoTableResult = (
+      context: Context,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      result: any,
+    ): Api.EchoTableSingleResultsetRecord => {
+      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
+        context,
+        result,
+      ) as unknown as Api.EchoTableSingleResultsetRecord;
+    };
+
     async EchoType(parameters: Api.EchoTypeArguments) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -14811,47 +14854,5 @@ export class Database extends PostgresDatabase {
       ) as unknown as Api.EchoTypeSetResultset;
       return responseBody;
     }
-    async Echo(parameters: Api.EchoArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  api.echo(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      const results = response;
-      const responseBody = results?.[0]
-        .echo as unknown as Api.EchoSingleResultsetRecord;
-      return responseBody;
-    }
-    async EchoTable(parameters: Api.EchoTableArguments) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  api.echo_table(message => ${typed.pg_catalog_text(
-                    undefinedIsNull(parameters.message),
-                  )});
-                  `;
-      const results = response;
-      const responseBody = results.map((x) =>
-        this.parseEchoTableResult(this.database.context, x.echo_table),
-      ) as unknown as Api.EchoTableResultset;
-      return responseBody;
-    }
-
-    parseEchoTableResult = (
-      context: Context,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      result: any,
-    ): Api.EchoTableSingleResultsetRecord => {
-      return context.procTypes.api_echo_table.parseFromPostgresIfRecord(
-        context,
-        result,
-      ) as unknown as Api.EchoTableSingleResultsetRecord;
-    };
   })(this);
 }
