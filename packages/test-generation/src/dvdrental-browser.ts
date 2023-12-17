@@ -14993,13 +14993,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.FilmActor.Record
             | Public.Tables.FilmActor.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.FilmActor.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.FilmActor.Record
             | Public.Tables.FilmActor.RecordNotPrimaryKey,
-            | Public.Tables.FilmActor.Record
-            | Public.Tables.FilmActor.RecordNotPrimaryKey
+            Public.Tables.FilmActor.Record
           >({
             operation: "Public.FilmActor.create",
             values,
@@ -15013,7 +15012,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.FilmActor.ByActorIdFilmId,
             never,
-            Public.Tables.FilmActor.Record[]
+            Public.Tables.FilmActor.Record | undefined
           >({
             operation: "Public.FilmActor.byActorIdFilmId",
             parameters,
@@ -15026,7 +15025,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.FilmActor.ByFilmId,
             never,
-            Public.Tables.FilmActor.Record | undefined
+            Public.Tables.FilmActor.Record[] | undefined
           >({
             operation: "Public.FilmActor.byFilmId",
             parameters,
@@ -15041,13 +15040,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Address.Record
             | Public.Tables.Address.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Address.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Address.Record
             | Public.Tables.Address.RecordNotPrimaryKey,
-            | Public.Tables.Address.Record
-            | Public.Tables.Address.RecordNotPrimaryKey
+            Public.Tables.Address.Record
           >({
             operation: "Public.Address.create",
             values,
@@ -15061,7 +15059,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Address.ByAddressId,
             never,
-            Public.Tables.Address.Record[]
+            Public.Tables.Address.Record | undefined
           >({
             operation: "Public.Address.byAddressId",
             parameters,
@@ -15074,7 +15072,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Address.ByCityId,
             never,
-            Public.Tables.Address.Record | undefined
+            Public.Tables.Address.Record[] | undefined
           >({
             operation: "Public.Address.byCityId",
             parameters,
@@ -15089,11 +15087,11 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.City.Record
             | Public.Tables.City.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.City.Record | undefined> {
           const response = await this.client.invoke<
             never,
             Public.Tables.City.Record | Public.Tables.City.RecordNotPrimaryKey,
-            Public.Tables.City.Record | Public.Tables.City.RecordNotPrimaryKey
+            Public.Tables.City.Record
           >({
             operation: "Public.City.create",
             values,
@@ -15105,7 +15103,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.City.ByCityId,
             never,
-            Public.Tables.City.Record[]
+            Public.Tables.City.Record | undefined
           >({
             operation: "Public.City.byCityId",
             parameters,
@@ -15118,7 +15116,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.City.ByCountryId,
             never,
-            Public.Tables.City.Record | undefined
+            Public.Tables.City.Record[] | undefined
           >({
             operation: "Public.City.byCountryId",
             parameters,
@@ -15133,13 +15131,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Customer.Record
             | Public.Tables.Customer.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Customer.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Customer.Record
             | Public.Tables.Customer.RecordNotPrimaryKey,
-            | Public.Tables.Customer.Record
-            | Public.Tables.Customer.RecordNotPrimaryKey
+            Public.Tables.Customer.Record
           >({
             operation: "Public.Customer.create",
             values,
@@ -15153,7 +15150,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByAddressId,
             never,
-            Public.Tables.Customer.Record | undefined
+            Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.byAddressId",
             parameters,
@@ -15168,7 +15165,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByCustomerId,
             never,
-            Public.Tables.Customer.Record[]
+            Public.Tables.Customer.Record | undefined
           >({
             operation: "Public.Customer.byCustomerId",
             parameters,
@@ -15181,7 +15178,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByLastName,
             never,
-            Public.Tables.Customer.Record | undefined
+            Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.byLastName",
             parameters,
@@ -15194,7 +15191,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByStoreId,
             never,
-            Public.Tables.Customer.Record | undefined
+            Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.byStoreId",
             parameters,
@@ -15209,12 +15206,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Actor.Record
             | Public.Tables.Actor.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Actor.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Actor.Record
             | Public.Tables.Actor.RecordNotPrimaryKey,
-            Public.Tables.Actor.Record | Public.Tables.Actor.RecordNotPrimaryKey
+            Public.Tables.Actor.Record
           >({
             operation: "Public.Actor.create",
             values,
@@ -15226,7 +15223,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Actor.ByActorId,
             never,
-            Public.Tables.Actor.Record[]
+            Public.Tables.Actor.Record | undefined
           >({
             operation: "Public.Actor.byActorId",
             parameters,
@@ -15239,7 +15236,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Actor.ByLastName,
             never,
-            Public.Tables.Actor.Record | undefined
+            Public.Tables.Actor.Record[] | undefined
           >({
             operation: "Public.Actor.byLastName",
             parameters,
@@ -15254,13 +15251,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.FilmCategory.Record
             | Public.Tables.FilmCategory.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.FilmCategory.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.FilmCategory.Record
             | Public.Tables.FilmCategory.RecordNotPrimaryKey,
-            | Public.Tables.FilmCategory.Record
-            | Public.Tables.FilmCategory.RecordNotPrimaryKey
+            Public.Tables.FilmCategory.Record
           >({
             operation: "Public.FilmCategory.create",
             values,
@@ -15274,7 +15270,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.FilmCategory.ByFilmIdCategoryId,
             never,
-            Public.Tables.FilmCategory.Record[]
+            Public.Tables.FilmCategory.Record | undefined
           >({
             operation: "Public.FilmCategory.byFilmIdCategoryId",
             parameters,
@@ -15289,13 +15285,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Inventory.Record
             | Public.Tables.Inventory.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Inventory.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Inventory.Record
             | Public.Tables.Inventory.RecordNotPrimaryKey,
-            | Public.Tables.Inventory.Record
-            | Public.Tables.Inventory.RecordNotPrimaryKey
+            Public.Tables.Inventory.Record
           >({
             operation: "Public.Inventory.create",
             values,
@@ -15309,7 +15304,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Inventory.ByInventoryId,
             never,
-            Public.Tables.Inventory.Record[]
+            Public.Tables.Inventory.Record | undefined
           >({
             operation: "Public.Inventory.byInventoryId",
             parameters,
@@ -15324,7 +15319,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Inventory.ByStoreIdFilmId,
             never,
-            Public.Tables.Inventory.Record | undefined
+            Public.Tables.Inventory.Record[] | undefined
           >({
             operation: "Public.Inventory.byStoreIdFilmId",
             parameters,
@@ -15339,13 +15334,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Category.Record
             | Public.Tables.Category.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Category.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Category.Record
             | Public.Tables.Category.RecordNotPrimaryKey,
-            | Public.Tables.Category.Record
-            | Public.Tables.Category.RecordNotPrimaryKey
+            Public.Tables.Category.Record
           >({
             operation: "Public.Category.create",
             values,
@@ -15359,7 +15353,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Category.ByCategoryId,
             never,
-            Public.Tables.Category.Record[]
+            Public.Tables.Category.Record | undefined
           >({
             operation: "Public.Category.byCategoryId",
             parameters,
@@ -15374,13 +15368,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Country.Record
             | Public.Tables.Country.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Country.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Country.Record
             | Public.Tables.Country.RecordNotPrimaryKey,
-            | Public.Tables.Country.Record
-            | Public.Tables.Country.RecordNotPrimaryKey
+            Public.Tables.Country.Record
           >({
             operation: "Public.Country.create",
             values,
@@ -15394,7 +15387,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Country.ByCountryId,
             never,
-            Public.Tables.Country.Record[]
+            Public.Tables.Country.Record | undefined
           >({
             operation: "Public.Country.byCountryId",
             parameters,
@@ -15409,13 +15402,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Language.Record
             | Public.Tables.Language.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Language.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Language.Record
             | Public.Tables.Language.RecordNotPrimaryKey,
-            | Public.Tables.Language.Record
-            | Public.Tables.Language.RecordNotPrimaryKey
+            Public.Tables.Language.Record
           >({
             operation: "Public.Language.create",
             values,
@@ -15429,7 +15421,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Language.ByLanguageId,
             never,
-            Public.Tables.Language.Record[]
+            Public.Tables.Language.Record | undefined
           >({
             operation: "Public.Language.byLanguageId",
             parameters,
@@ -15444,13 +15436,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Rental.Record
             | Public.Tables.Rental.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Rental.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Rental.Record
             | Public.Tables.Rental.RecordNotPrimaryKey,
-            | Public.Tables.Rental.Record
-            | Public.Tables.Rental.RecordNotPrimaryKey
+            Public.Tables.Rental.Record
           >({
             operation: "Public.Rental.create",
             values,
@@ -15464,7 +15455,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByInventoryId,
             never,
-            Public.Tables.Rental.Record | undefined
+            Public.Tables.Rental.Record[] | undefined
           >({
             operation: "Public.Rental.byInventoryId",
             parameters,
@@ -15479,7 +15470,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
             never,
-            Public.Tables.Rental.Record[]
+            Public.Tables.Rental.Record | undefined
           >({
             operation: "Public.Rental.byRentalDateInventoryIdCustomerId",
             parameters,
@@ -15492,7 +15483,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByRentalId,
             never,
-            Public.Tables.Rental.Record[]
+            Public.Tables.Rental.Record | undefined
           >({
             operation: "Public.Rental.byRentalId",
             parameters,
@@ -15507,12 +15498,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Staff.Record
             | Public.Tables.Staff.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Staff.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Staff.Record
             | Public.Tables.Staff.RecordNotPrimaryKey,
-            Public.Tables.Staff.Record | Public.Tables.Staff.RecordNotPrimaryKey
+            Public.Tables.Staff.Record
           >({
             operation: "Public.Staff.create",
             values,
@@ -15524,7 +15515,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Staff.ByStaffId,
             never,
-            Public.Tables.Staff.Record[]
+            Public.Tables.Staff.Record | undefined
           >({
             operation: "Public.Staff.byStaffId",
             parameters,
@@ -15539,12 +15530,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Store.Record
             | Public.Tables.Store.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Store.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Store.Record
             | Public.Tables.Store.RecordNotPrimaryKey,
-            Public.Tables.Store.Record | Public.Tables.Store.RecordNotPrimaryKey
+            Public.Tables.Store.Record
           >({
             operation: "Public.Store.create",
             values,
@@ -15558,7 +15549,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Store.ByManagerStaffId,
             never,
-            Public.Tables.Store.Record[]
+            Public.Tables.Store.Record | undefined
           >({
             operation: "Public.Store.byManagerStaffId",
             parameters,
@@ -15571,7 +15562,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Store.ByStoreId,
             never,
-            Public.Tables.Store.Record[]
+            Public.Tables.Store.Record | undefined
           >({
             operation: "Public.Store.byStoreId",
             parameters,
@@ -15586,13 +15577,12 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Payment.Record
             | Public.Tables.Payment.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Payment.Record | undefined> {
           const response = await this.client.invoke<
             never,
             | Public.Tables.Payment.Record
             | Public.Tables.Payment.RecordNotPrimaryKey,
-            | Public.Tables.Payment.Record
-            | Public.Tables.Payment.RecordNotPrimaryKey
+            Public.Tables.Payment.Record
           >({
             operation: "Public.Payment.create",
             values,
@@ -15606,7 +15596,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByCustomerId,
             never,
-            Public.Tables.Payment.Record | undefined
+            Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.byCustomerId",
             parameters,
@@ -15621,7 +15611,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByPaymentId,
             never,
-            Public.Tables.Payment.Record[]
+            Public.Tables.Payment.Record | undefined
           >({
             operation: "Public.Payment.byPaymentId",
             parameters,
@@ -15634,7 +15624,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByRentalId,
             never,
-            Public.Tables.Payment.Record | undefined
+            Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.byRentalId",
             parameters,
@@ -15647,7 +15637,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByStaffId,
             never,
-            Public.Tables.Payment.Record | undefined
+            Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.byStaffId",
             parameters,
@@ -15662,11 +15652,11 @@ export class EmbraceSQLClient extends BaseClient {
           values:
             | Public.Tables.Film.Record
             | Public.Tables.Film.RecordNotPrimaryKey,
-        ) {
+        ): Promise<Public.Tables.Film.Record | undefined> {
           const response = await this.client.invoke<
             never,
             Public.Tables.Film.Record | Public.Tables.Film.RecordNotPrimaryKey,
-            Public.Tables.Film.Record | Public.Tables.Film.RecordNotPrimaryKey
+            Public.Tables.Film.Record
           >({
             operation: "Public.Film.create",
             values,
@@ -15678,7 +15668,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFilmId,
             never,
-            Public.Tables.Film.Record[]
+            Public.Tables.Film.Record | undefined
           >({
             operation: "Public.Film.byFilmId",
             parameters,
@@ -15691,7 +15681,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFulltext,
             never,
-            Public.Tables.Film.Record | undefined
+            Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.byFulltext",
             parameters,
@@ -15704,7 +15694,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Film.ByLanguageId,
             never,
-            Public.Tables.Film.Record | undefined
+            Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.byLanguageId",
             parameters,
@@ -15717,7 +15707,7 @@ export class EmbraceSQLClient extends BaseClient {
           const response = await this.client.invoke<
             Public.Tables.Film.ByTitle,
             never,
-            Public.Tables.Film.Record | undefined
+            Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.byTitle",
             parameters,

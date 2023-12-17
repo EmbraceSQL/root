@@ -43,7 +43,20 @@ describe("EmbraceSQLExpress can", () => {
       actorId: 1,
       firstName: "Penelope",
       lastName: "Guiness",
-      lastUpdate: "2013-05-26T19:47:57.620Z",
     });
+  });
+
+  it("answer an upsert", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const initial = await client.Public.Tables.Actor.byActorId({ actorId: 1 });
+    expect(initial).toBeTruthy();
+    const response = await client.Public.Tables.Actor.create(initial!);
+    expect(response).toMatchObject({
+      actorId: 1,
+      firstName: "Penelope",
+      lastName: "Guiness",
+    });
+    // db has an update trigger so
+    expect(response?.lastUpdate).not.toEqual(initial?.lastUpdate);
   });
 });

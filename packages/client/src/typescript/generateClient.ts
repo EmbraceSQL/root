@@ -65,10 +65,11 @@ export async function generateClient(context: GenerationContext) {
         const valuesType = node.table.primaryKey
           ? `${node.table.typescriptNamespacedName}.Record | ${node.table.typescriptNamespacedName}.RecordNotPrimaryKey`
           : `${node.table.typescriptNamespacedName}.Record`;
+        const returnType = `${node.table.typescriptNamespacedName}.Record`;
         // TODO: restore .Tables
         return `
-          public async create(values: ${valuesType}) {
-            const response = await this.client.invoke<never, ${valuesType}, ${valuesType}>({
+          public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<never, ${valuesType}, ${returnType}>({
               operation: "${node.typescriptNamespacedName.replace(
                 ".Tables",
                 "",
@@ -86,8 +87,8 @@ export async function generateClient(context: GenerationContext) {
         // will return a single record on a unique index
         const parametersType = node.index.typescriptNamespacedName;
         const resultType = node.index.unique
-          ? `${node.index.table.typescriptNamespacedName}.Record[]`
-          : `${node.index.table.typescriptNamespacedName}.Record | undefined`;
+          ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
+          : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
         // TODO: restore .Tables
         const generationBuffer = [
           `
