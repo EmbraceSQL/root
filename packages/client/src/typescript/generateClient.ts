@@ -1,4 +1,40 @@
-import { ASTKind, GenerationContext } from "@embracesql/shared";
+import {
+  ASTKind,
+  GenerationContext,
+  IndexOperationNode,
+} from "@embracesql/shared";
+
+const indexOperation = {
+  before: async (_: GenerationContext, node: IndexOperationNode) => {
+    // will return a single record on a unique index
+    const parametersType = node.index.typescriptNamespacedName;
+    const resultType = node.index.unique
+      ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
+      : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
+    // TODO: restore .Tables
+    const generationBuffer = [
+      `
+          public async ${node.typescriptName}(parameters: ${parametersType}) {
+            const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
+              operation: "${node.typescriptNamespacedName.replace(
+                ".Tables",
+                "",
+              )}",
+              parameters
+            });
+        `,
+    ];
+    generationBuffer.push(
+      node.index.unique
+        ? `return response.results ? response.results : undefined`
+        : `return response.results ? response.results : []`,
+    );
+    return generationBuffer.join("\n");
+  },
+  after: async () => {
+    return `}`;
+  },
+};
 
 /**
  * Generates a strongly typed client to invoke server operations over
@@ -82,37 +118,9 @@ export async function generateClient(context: GenerationContext) {
       },
     },
 
-    [ASTKind.ReadOperation]: {
-      before: async (_, node) => {
-        // will return a single record on a unique index
-        const parametersType = node.index.typescriptNamespacedName;
-        const resultType = node.index.unique
-          ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
-          : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
-        // TODO: restore .Tables
-        const generationBuffer = [
-          `
-          public async ${node.typescriptName}(parameters: ${parametersType}) {
-            const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
-              operation: "${node.typescriptNamespacedName.replace(
-                ".Tables",
-                "",
-              )}",
-              parameters
-            });
-        `,
-        ];
-        generationBuffer.push(
-          node.index.unique
-            ? `return response.results ? response.results : undefined`
-            : `return response.results ? response.results : []`,
-        );
-        return generationBuffer.join("\n");
-      },
-      after: async () => {
-        return `}`;
-      },
-    },
+    // with the `returns` deletes and reads have the same structure
+    [ASTKind.ReadOperation]: indexOperation,
+    [ASTKind.DeleteOperation]: indexOperation,
   };
 
   generationBuffer.push(await context.database.visit(context));

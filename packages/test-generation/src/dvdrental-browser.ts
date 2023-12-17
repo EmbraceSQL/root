@@ -15021,6 +15021,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByActorIdFilmId(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByActorIdFilmId,
+            never,
+            Public.Tables.FilmActor.Record | undefined
+          >({
+            operation: "Public.FilmActor.deleteByActorIdFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byFilmId(parameters: Public.Tables.FilmActor.ByFilmId) {
           const response = await this.client.invoke<
             Public.Tables.FilmActor.ByFilmId,
@@ -15028,6 +15043,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.FilmActor.Record[] | undefined
           >({
             operation: "Public.FilmActor.byFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByFilmId(
+          parameters: Public.Tables.FilmActor.ByFilmId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByFilmId,
+            never,
+            Public.Tables.FilmActor.Record[] | undefined
+          >({
+            operation: "Public.FilmActor.deleteByFilmId",
             parameters,
           });
 
@@ -15068,6 +15098,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByAddressId(
+          parameters: Public.Tables.Address.ByAddressId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByAddressId,
+            never,
+            Public.Tables.Address.Record | undefined
+          >({
+            operation: "Public.Address.deleteByAddressId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byCityId(parameters: Public.Tables.Address.ByCityId) {
           const response = await this.client.invoke<
             Public.Tables.Address.ByCityId,
@@ -15075,6 +15120,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Address.Record[] | undefined
           >({
             operation: "Public.Address.byCityId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByCityId(
+          parameters: Public.Tables.Address.ByCityId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByCityId,
+            never,
+            Public.Tables.Address.Record[] | undefined
+          >({
+            operation: "Public.Address.deleteByCityId",
             parameters,
           });
 
@@ -15112,6 +15172,19 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByCityId(parameters: Public.Tables.City.ByCityId) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCityId,
+            never,
+            Public.Tables.City.Record | undefined
+          >({
+            operation: "Public.City.deleteByCityId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byCountryId(parameters: Public.Tables.City.ByCountryId) {
           const response = await this.client.invoke<
             Public.Tables.City.ByCountryId,
@@ -15119,6 +15192,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.City.Record[] | undefined
           >({
             operation: "Public.City.byCountryId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByCountryId(
+          parameters: Public.Tables.City.ByCountryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCountryId,
+            never,
+            Public.Tables.City.Record[] | undefined
+          >({
+            operation: "Public.City.deleteByCountryId",
             parameters,
           });
 
@@ -15159,6 +15247,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByAddressId(
+          parameters: Public.Tables.Customer.ByAddressId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByAddressId,
+            never,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.deleteByAddressId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byCustomerId(
           parameters: Public.Tables.Customer.ByCustomerId,
         ) {
@@ -15168,6 +15271,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Customer.Record | undefined
           >({
             operation: "Public.Customer.byCustomerId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByCustomerId(
+          parameters: Public.Tables.Customer.ByCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByCustomerId,
+            never,
+            Public.Tables.Customer.Record | undefined
+          >({
+            operation: "Public.Customer.deleteByCustomerId",
             parameters,
           });
 
@@ -15187,6 +15305,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByLastName(
+          parameters: Public.Tables.Customer.ByLastName,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByLastName,
+            never,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.deleteByLastName",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byStoreId(parameters: Public.Tables.Customer.ByStoreId) {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByStoreId,
@@ -15194,6 +15327,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.byStoreId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByStoreId(
+          parameters: Public.Tables.Customer.ByStoreId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByStoreId,
+            never,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.deleteByStoreId",
             parameters,
           });
 
@@ -15232,6 +15380,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByActorId(
+          parameters: Public.Tables.Actor.ByActorId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByActorId,
+            never,
+            Public.Tables.Actor.Record | undefined
+          >({
+            operation: "Public.Actor.deleteByActorId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byLastName(parameters: Public.Tables.Actor.ByLastName) {
           const response = await this.client.invoke<
             Public.Tables.Actor.ByLastName,
@@ -15239,6 +15402,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Actor.Record[] | undefined
           >({
             operation: "Public.Actor.byLastName",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByLastName(
+          parameters: Public.Tables.Actor.ByLastName,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByLastName,
+            never,
+            Public.Tables.Actor.Record[] | undefined
+          >({
+            operation: "Public.Actor.deleteByLastName",
             parameters,
           });
 
@@ -15273,6 +15451,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.FilmCategory.Record | undefined
           >({
             operation: "Public.FilmCategory.byFilmIdCategoryId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByFilmIdCategoryId(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            never,
+            Public.Tables.FilmCategory.Record | undefined
+          >({
+            operation: "Public.FilmCategory.deleteByFilmIdCategoryId",
             parameters,
           });
 
@@ -15313,6 +15506,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByInventoryId(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByInventoryId,
+            never,
+            Public.Tables.Inventory.Record | undefined
+          >({
+            operation: "Public.Inventory.deleteByInventoryId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byStoreIdFilmId(
           parameters: Public.Tables.Inventory.ByStoreIdFilmId,
         ) {
@@ -15322,6 +15530,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Inventory.Record[] | undefined
           >({
             operation: "Public.Inventory.byStoreIdFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByStoreIdFilmId(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByStoreIdFilmId,
+            never,
+            Public.Tables.Inventory.Record[] | undefined
+          >({
+            operation: "Public.Inventory.deleteByStoreIdFilmId",
             parameters,
           });
 
@@ -15361,6 +15584,21 @@ export class EmbraceSQLClient extends BaseClient {
 
           return response.results ? response.results : undefined;
         }
+
+        public async deleteByCategoryId(
+          parameters: Public.Tables.Category.ByCategoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Category.ByCategoryId,
+            never,
+            Public.Tables.Category.Record | undefined
+          >({
+            operation: "Public.Category.deleteByCategoryId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
       })(this);
 
       public Country = new (class extends HasClient {
@@ -15395,6 +15633,21 @@ export class EmbraceSQLClient extends BaseClient {
 
           return response.results ? response.results : undefined;
         }
+
+        public async deleteByCountryId(
+          parameters: Public.Tables.Country.ByCountryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Country.ByCountryId,
+            never,
+            Public.Tables.Country.Record | undefined
+          >({
+            operation: "Public.Country.deleteByCountryId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
       })(this);
 
       public Language = new (class extends HasClient {
@@ -15424,6 +15677,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Language.Record | undefined
           >({
             operation: "Public.Language.byLanguageId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByLanguageId(
+          parameters: Public.Tables.Language.ByLanguageId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Language.ByLanguageId,
+            never,
+            Public.Tables.Language.Record | undefined
+          >({
+            operation: "Public.Language.deleteByLanguageId",
             parameters,
           });
 
@@ -15464,6 +15732,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByInventoryId(
+          parameters: Public.Tables.Rental.ByInventoryId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByInventoryId,
+            never,
+            Public.Tables.Rental.Record[] | undefined
+          >({
+            operation: "Public.Rental.deleteByInventoryId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byRentalDateInventoryIdCustomerId(
           parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         ) {
@@ -15479,6 +15762,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByRentalDateInventoryIdCustomerId(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            never,
+            Public.Tables.Rental.Record | undefined
+          >({
+            operation: "Public.Rental.deleteByRentalDateInventoryIdCustomerId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byRentalId(parameters: Public.Tables.Rental.ByRentalId) {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByRentalId,
@@ -15486,6 +15784,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Rental.Record | undefined
           >({
             operation: "Public.Rental.byRentalId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByRentalId(
+          parameters: Public.Tables.Rental.ByRentalId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalId,
+            never,
+            Public.Tables.Rental.Record | undefined
+          >({
+            operation: "Public.Rental.deleteByRentalId",
             parameters,
           });
 
@@ -15518,6 +15831,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Staff.Record | undefined
           >({
             operation: "Public.Staff.byStaffId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByStaffId(
+          parameters: Public.Tables.Staff.ByStaffId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Staff.ByStaffId,
+            never,
+            Public.Tables.Staff.Record | undefined
+          >({
+            operation: "Public.Staff.deleteByStaffId",
             parameters,
           });
 
@@ -15558,6 +15886,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByManagerStaffId(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByManagerStaffId,
+            never,
+            Public.Tables.Store.Record | undefined
+          >({
+            operation: "Public.Store.deleteByManagerStaffId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byStoreId(parameters: Public.Tables.Store.ByStoreId) {
           const response = await this.client.invoke<
             Public.Tables.Store.ByStoreId,
@@ -15565,6 +15908,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Store.Record | undefined
           >({
             operation: "Public.Store.byStoreId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByStoreId(
+          parameters: Public.Tables.Store.ByStoreId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByStoreId,
+            never,
+            Public.Tables.Store.Record | undefined
+          >({
+            operation: "Public.Store.deleteByStoreId",
             parameters,
           });
 
@@ -15605,6 +15963,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByCustomerId(
+          parameters: Public.Tables.Payment.ByCustomerId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByCustomerId,
+            never,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.deleteByCustomerId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byPaymentId(
           parameters: Public.Tables.Payment.ByPaymentId,
         ) {
@@ -15614,6 +15987,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Payment.Record | undefined
           >({
             operation: "Public.Payment.byPaymentId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async deleteByPaymentId(
+          parameters: Public.Tables.Payment.ByPaymentId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByPaymentId,
+            never,
+            Public.Tables.Payment.Record | undefined
+          >({
+            operation: "Public.Payment.deleteByPaymentId",
             parameters,
           });
 
@@ -15633,6 +16021,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByRentalId(
+          parameters: Public.Tables.Payment.ByRentalId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByRentalId,
+            never,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.deleteByRentalId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byStaffId(parameters: Public.Tables.Payment.ByStaffId) {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByStaffId,
@@ -15640,6 +16043,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.byStaffId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByStaffId(
+          parameters: Public.Tables.Payment.ByStaffId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByStaffId,
+            never,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.deleteByStaffId",
             parameters,
           });
 
@@ -15677,6 +16095,19 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async deleteByFilmId(parameters: Public.Tables.Film.ByFilmId) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFilmId,
+            never,
+            Public.Tables.Film.Record | undefined
+          >({
+            operation: "Public.Film.deleteByFilmId",
+            parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async byFulltext(parameters: Public.Tables.Film.ByFulltext) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFulltext,
@@ -15684,6 +16115,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.byFulltext",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByFulltext(
+          parameters: Public.Tables.Film.ByFulltext,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFulltext,
+            never,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.deleteByFulltext",
             parameters,
           });
 
@@ -15703,6 +16149,21 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async deleteByLanguageId(
+          parameters: Public.Tables.Film.ByLanguageId,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByLanguageId,
+            never,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.deleteByLanguageId",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async byTitle(parameters: Public.Tables.Film.ByTitle) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByTitle,
@@ -15710,6 +16171,19 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.byTitle",
+            parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async deleteByTitle(parameters: Public.Tables.Film.ByTitle) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByTitle,
+            never,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.deleteByTitle",
             parameters,
           });
 

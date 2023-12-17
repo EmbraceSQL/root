@@ -48,6 +48,16 @@ describe("EmbraceSQLExpress can", () => {
     });
   });
 
+  it("answer a typed create", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const sample = {
+      firstName: "Smurf",
+      lastName: "Powers",
+    };
+    const response = await client.Public.Tables.Actor.create(sample);
+    expect(response).toMatchObject(sample);
+  });
+
   it("answer a typed read", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
     const response = await client.Public.Tables.Actor.byActorId({ actorId: 1 });
@@ -70,5 +80,15 @@ describe("EmbraceSQLExpress can", () => {
     });
     // db has an update trigger so
     expect(response?.lastUpdate).not.toEqual(initial?.lastUpdate);
+  });
+
+  it("answer a typed delete", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Public.Tables.Payment.deleteByPaymentId({
+      paymentId: 17503,
+    });
+    expect(response).toMatchObject({
+      paymentId: 17503,
+    });
   });
 });
