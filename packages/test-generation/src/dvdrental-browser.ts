@@ -15021,6 +15021,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByActorIdFilmId(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          values: Partial<Public.Tables.FilmActor.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByActorIdFilmId,
+            Partial<Public.Tables.FilmActor.Record>,
+            Public.Tables.FilmActor.Record | undefined
+          >({
+            operation: "Public.FilmActor.updateByActorIdFilmId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByActorIdFilmId(
           parameters: Public.Tables.FilmActor.ByActorIdFilmId,
         ) {
@@ -15044,6 +15061,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.FilmActor.byFilmId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByFilmId(
+          parameters: Public.Tables.FilmActor.ByFilmId,
+          values: Partial<Public.Tables.FilmActor.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmActor.ByFilmId,
+            Partial<Public.Tables.FilmActor.Record>,
+            Public.Tables.FilmActor.Record[] | undefined
+          >({
+            operation: "Public.FilmActor.updateByFilmId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15098,6 +15132,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByAddressId(
+          parameters: Public.Tables.Address.ByAddressId,
+          values: Partial<Public.Tables.Address.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByAddressId,
+            Partial<Public.Tables.Address.Record>,
+            Public.Tables.Address.Record | undefined
+          >({
+            operation: "Public.Address.updateByAddressId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByAddressId(
           parameters: Public.Tables.Address.ByAddressId,
         ) {
@@ -15121,6 +15172,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Address.byCityId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByCityId(
+          parameters: Public.Tables.Address.ByCityId,
+          values: Partial<Public.Tables.Address.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Address.ByCityId,
+            Partial<Public.Tables.Address.Record>,
+            Public.Tables.Address.Record[] | undefined
+          >({
+            operation: "Public.Address.updateByCityId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15172,6 +15240,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByCityId(
+          parameters: Public.Tables.City.ByCityId,
+          values: Partial<Public.Tables.City.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCityId,
+            Partial<Public.Tables.City.Record>,
+            Public.Tables.City.Record | undefined
+          >({
+            operation: "Public.City.updateByCityId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByCityId(parameters: Public.Tables.City.ByCityId) {
           const response = await this.client.invoke<
             Public.Tables.City.ByCityId,
@@ -15193,6 +15278,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.City.byCountryId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByCountryId(
+          parameters: Public.Tables.City.ByCountryId,
+          values: Partial<Public.Tables.City.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.City.ByCountryId,
+            Partial<Public.Tables.City.Record>,
+            Public.Tables.City.Record[] | undefined
+          >({
+            operation: "Public.City.updateByCountryId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15247,6 +15349,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByAddressId(
+          parameters: Public.Tables.Customer.ByAddressId,
+          values: Partial<Public.Tables.Customer.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByAddressId,
+            Partial<Public.Tables.Customer.Record>,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.updateByAddressId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByAddressId(
           parameters: Public.Tables.Customer.ByAddressId,
         ) {
@@ -15272,6 +15391,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Customer.byCustomerId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByCustomerId(
+          parameters: Public.Tables.Customer.ByCustomerId,
+          values: Partial<Public.Tables.Customer.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByCustomerId,
+            Partial<Public.Tables.Customer.Record>,
+            Public.Tables.Customer.Record | undefined
+          >({
+            operation: "Public.Customer.updateByCustomerId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -15305,6 +15441,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByLastName(
+          parameters: Public.Tables.Customer.ByLastName,
+          values: Partial<Public.Tables.Customer.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByLastName,
+            Partial<Public.Tables.Customer.Record>,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.updateByLastName",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByLastName(
           parameters: Public.Tables.Customer.ByLastName,
         ) {
@@ -15328,6 +15481,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Customer.byStoreId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByStoreId(
+          parameters: Public.Tables.Customer.ByStoreId,
+          values: Partial<Public.Tables.Customer.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Customer.ByStoreId,
+            Partial<Public.Tables.Customer.Record>,
+            Public.Tables.Customer.Record[] | undefined
+          >({
+            operation: "Public.Customer.updateByStoreId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15380,6 +15550,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByActorId(
+          parameters: Public.Tables.Actor.ByActorId,
+          values: Partial<Public.Tables.Actor.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByActorId,
+            Partial<Public.Tables.Actor.Record>,
+            Public.Tables.Actor.Record | undefined
+          >({
+            operation: "Public.Actor.updateByActorId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByActorId(
           parameters: Public.Tables.Actor.ByActorId,
         ) {
@@ -15403,6 +15590,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Actor.byLastName",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByLastName(
+          parameters: Public.Tables.Actor.ByLastName,
+          values: Partial<Public.Tables.Actor.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Actor.ByLastName,
+            Partial<Public.Tables.Actor.Record>,
+            Public.Tables.Actor.Record[] | undefined
+          >({
+            operation: "Public.Actor.updateByLastName",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15457,6 +15661,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByFilmIdCategoryId(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          values: Partial<Public.Tables.FilmCategory.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            Partial<Public.Tables.FilmCategory.Record>,
+            Public.Tables.FilmCategory.Record | undefined
+          >({
+            operation: "Public.FilmCategory.updateByFilmIdCategoryId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByFilmIdCategoryId(
           parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
         ) {
@@ -15506,6 +15727,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByInventoryId(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+          values: Partial<Public.Tables.Inventory.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByInventoryId,
+            Partial<Public.Tables.Inventory.Record>,
+            Public.Tables.Inventory.Record | undefined
+          >({
+            operation: "Public.Inventory.updateByInventoryId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByInventoryId(
           parameters: Public.Tables.Inventory.ByInventoryId,
         ) {
@@ -15531,6 +15769,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Inventory.byStoreIdFilmId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByStoreIdFilmId(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          values: Partial<Public.Tables.Inventory.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Inventory.ByStoreIdFilmId,
+            Partial<Public.Tables.Inventory.Record>,
+            Public.Tables.Inventory.Record[] | undefined
+          >({
+            operation: "Public.Inventory.updateByStoreIdFilmId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -15585,6 +15840,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByCategoryId(
+          parameters: Public.Tables.Category.ByCategoryId,
+          values: Partial<Public.Tables.Category.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Category.ByCategoryId,
+            Partial<Public.Tables.Category.Record>,
+            Public.Tables.Category.Record | undefined
+          >({
+            operation: "Public.Category.updateByCategoryId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByCategoryId(
           parameters: Public.Tables.Category.ByCategoryId,
         ) {
@@ -15629,6 +15901,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Country.byCountryId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByCountryId(
+          parameters: Public.Tables.Country.ByCountryId,
+          values: Partial<Public.Tables.Country.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Country.ByCountryId,
+            Partial<Public.Tables.Country.Record>,
+            Public.Tables.Country.Record | undefined
+          >({
+            operation: "Public.Country.updateByCountryId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -15683,6 +15972,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByLanguageId(
+          parameters: Public.Tables.Language.ByLanguageId,
+          values: Partial<Public.Tables.Language.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Language.ByLanguageId,
+            Partial<Public.Tables.Language.Record>,
+            Public.Tables.Language.Record | undefined
+          >({
+            operation: "Public.Language.updateByLanguageId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByLanguageId(
           parameters: Public.Tables.Language.ByLanguageId,
         ) {
@@ -15732,6 +16038,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByInventoryId(
+          parameters: Public.Tables.Rental.ByInventoryId,
+          values: Partial<Public.Tables.Rental.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByInventoryId,
+            Partial<Public.Tables.Rental.Record>,
+            Public.Tables.Rental.Record[] | undefined
+          >({
+            operation: "Public.Rental.updateByInventoryId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByInventoryId(
           parameters: Public.Tables.Rental.ByInventoryId,
         ) {
@@ -15762,6 +16085,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByRentalDateInventoryIdCustomerId(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          values: Partial<Public.Tables.Rental.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            Partial<Public.Tables.Rental.Record>,
+            Public.Tables.Rental.Record | undefined
+          >({
+            operation: "Public.Rental.updateByRentalDateInventoryIdCustomerId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByRentalDateInventoryIdCustomerId(
           parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
         ) {
@@ -15785,6 +16125,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Rental.byRentalId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByRentalId(
+          parameters: Public.Tables.Rental.ByRentalId,
+          values: Partial<Public.Tables.Rental.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Rental.ByRentalId,
+            Partial<Public.Tables.Rental.Record>,
+            Public.Tables.Rental.Record | undefined
+          >({
+            operation: "Public.Rental.updateByRentalId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -15832,6 +16189,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Staff.byStaffId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByStaffId(
+          parameters: Public.Tables.Staff.ByStaffId,
+          values: Partial<Public.Tables.Staff.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Staff.ByStaffId,
+            Partial<Public.Tables.Staff.Record>,
+            Public.Tables.Staff.Record | undefined
+          >({
+            operation: "Public.Staff.updateByStaffId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -15886,6 +16260,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByManagerStaffId(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+          values: Partial<Public.Tables.Store.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByManagerStaffId,
+            Partial<Public.Tables.Store.Record>,
+            Public.Tables.Store.Record | undefined
+          >({
+            operation: "Public.Store.updateByManagerStaffId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByManagerStaffId(
           parameters: Public.Tables.Store.ByManagerStaffId,
         ) {
@@ -15909,6 +16300,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Store.byStoreId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByStoreId(
+          parameters: Public.Tables.Store.ByStoreId,
+          values: Partial<Public.Tables.Store.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Store.ByStoreId,
+            Partial<Public.Tables.Store.Record>,
+            Public.Tables.Store.Record | undefined
+          >({
+            operation: "Public.Store.updateByStoreId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -15963,6 +16371,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByCustomerId(
+          parameters: Public.Tables.Payment.ByCustomerId,
+          values: Partial<Public.Tables.Payment.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByCustomerId,
+            Partial<Public.Tables.Payment.Record>,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.updateByCustomerId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByCustomerId(
           parameters: Public.Tables.Payment.ByCustomerId,
         ) {
@@ -15988,6 +16413,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Payment.byPaymentId",
             parameters,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
+        public async updateByPaymentId(
+          parameters: Public.Tables.Payment.ByPaymentId,
+          values: Partial<Public.Tables.Payment.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByPaymentId,
+            Partial<Public.Tables.Payment.Record>,
+            Public.Tables.Payment.Record | undefined
+          >({
+            operation: "Public.Payment.updateByPaymentId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : undefined;
@@ -16021,6 +16463,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByRentalId(
+          parameters: Public.Tables.Payment.ByRentalId,
+          values: Partial<Public.Tables.Payment.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByRentalId,
+            Partial<Public.Tables.Payment.Record>,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.updateByRentalId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByRentalId(
           parameters: Public.Tables.Payment.ByRentalId,
         ) {
@@ -16044,6 +16503,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Payment.byStaffId",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByStaffId(
+          parameters: Public.Tables.Payment.ByStaffId,
+          values: Partial<Public.Tables.Payment.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Payment.ByStaffId,
+            Partial<Public.Tables.Payment.Record>,
+            Public.Tables.Payment.Record[] | undefined
+          >({
+            operation: "Public.Payment.updateByStaffId",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -16095,6 +16571,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : undefined;
         }
 
+        public async updateByFilmId(
+          parameters: Public.Tables.Film.ByFilmId,
+          values: Partial<Public.Tables.Film.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFilmId,
+            Partial<Public.Tables.Film.Record>,
+            Public.Tables.Film.Record | undefined
+          >({
+            operation: "Public.Film.updateByFilmId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : undefined;
+        }
+
         public async deleteByFilmId(parameters: Public.Tables.Film.ByFilmId) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFilmId,
@@ -16116,6 +16609,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Film.byFulltext",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByFulltext(
+          parameters: Public.Tables.Film.ByFulltext,
+          values: Partial<Public.Tables.Film.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByFulltext,
+            Partial<Public.Tables.Film.Record>,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.updateByFulltext",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];
@@ -16149,6 +16659,23 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results ? response.results : [];
         }
 
+        public async updateByLanguageId(
+          parameters: Public.Tables.Film.ByLanguageId,
+          values: Partial<Public.Tables.Film.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByLanguageId,
+            Partial<Public.Tables.Film.Record>,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.updateByLanguageId",
+            parameters,
+            values,
+          });
+
+          return response.results ? response.results : [];
+        }
+
         public async deleteByLanguageId(
           parameters: Public.Tables.Film.ByLanguageId,
         ) {
@@ -16172,6 +16699,23 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Film.byTitle",
             parameters,
+          });
+
+          return response.results ? response.results : [];
+        }
+
+        public async updateByTitle(
+          parameters: Public.Tables.Film.ByTitle,
+          values: Partial<Public.Tables.Film.Record>,
+        ) {
+          const response = await this.client.invoke<
+            Public.Tables.Film.ByTitle,
+            Partial<Public.Tables.Film.Record>,
+            Public.Tables.Film.Record[] | undefined
+          >({
+            operation: "Public.Film.updateByTitle",
+            parameters,
+            values,
           });
 
           return response.results ? response.results : [];

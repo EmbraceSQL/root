@@ -21,6 +21,7 @@ export const enum ASTKind {
   Type,
   CreateOperation,
   ReadOperation,
+  UpdateOperation,
   DeleteOperation,
 }
 
@@ -92,6 +93,7 @@ export type VisitorMap = {
   [ASTKind.Types]?: Visitor<TypesNode>;
   [ASTKind.CreateOperation]?: Visitor<CreateOperationNode>;
   [ASTKind.ReadOperation]?: Visitor<ReadOperationNode>;
+  [ASTKind.UpdateOperation]?: Visitor<UpdateOperationNode>;
   [ASTKind.DeleteOperation]?: Visitor<DeleteOperationNode>;
 };
 
@@ -336,6 +338,7 @@ export class IndexNode extends ContainerNode {
     // important that the operations go after the attributes
     // so that we can have a well defined `typescriptName`
     this.children.push(new ReadOperationNode(this));
+    this.children.push(new UpdateOperationNode(this));
     this.children.push(new DeleteOperationNode(this));
   }
 
@@ -422,5 +425,14 @@ export class ReadOperationNode extends IndexOperationNode {
 export class DeleteOperationNode extends IndexOperationNode {
   constructor(public index: IndexNode) {
     super("delete", ASTKind.DeleteOperation, index);
+  }
+}
+
+/**
+ * Update row(s) by index.
+ */
+export class UpdateOperationNode extends IndexOperationNode {
+  constructor(public index: IndexNode) {
+    super("update", ASTKind.UpdateOperation, index);
   }
 }

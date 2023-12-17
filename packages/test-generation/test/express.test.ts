@@ -68,6 +68,18 @@ describe("EmbraceSQLExpress can", () => {
     });
   });
 
+  it("answer a typed update", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Public.Tables.Actor.updateByActorId(
+      { actorId: 2 },
+      { firstName: "🐶" },
+    );
+    expect(response).toMatchObject({
+      actorId: 2,
+      firstName: "🐶",
+    });
+  });
+
   it("answer an upsert", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
     const initial = await client.Public.Tables.Actor.byActorId({ actorId: 1 });
