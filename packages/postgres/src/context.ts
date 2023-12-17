@@ -87,7 +87,7 @@ export type TypeFactoryContext = {
 const DEFAULT_POSTGRES_URL =
   "postgres://postgres:postgres@localhost:5432/postgres";
 
-type ConnectionProps = {
+type ConnectionStringProps = {
   [Property in keyof pgconnectionstring.ConnectionOptions]: NonNullable<
     pgconnectionstring.ConnectionOptions[Property]
   >;
@@ -102,8 +102,11 @@ type ConnectionProps = {
  * PGHOST, PHPORT, PGDATABASE, PGUSERNAME, PGPASSWORD so -- chance are
  * this will 'just work'.
  */
-export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
-  const parsed = pgconnectionstring.parse(postgresUrl) as ConnectionProps;
+export const initializeContext = async (
+  postgresUrl = DEFAULT_POSTGRES_URL,
+  props?: postgres.Options<never>,
+) => {
+  const parsed = pgconnectionstring.parse(postgresUrl) as ConnectionStringProps;
   // little tweaks of types
   const connection = {
     ...parsed,
@@ -114,6 +117,7 @@ export const initializeContext = async (postgresUrl = DEFAULT_POSTGRES_URL) => {
   let sql = postgres({
     ...connection,
     prepare: false,
+    ...(props ?? {}),
   });
   /**
    * Time to get that catalog -- this is the way we make sure our type

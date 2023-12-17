@@ -41,14 +41,13 @@ export class ProcOperation implements Operation {
               console.assert(parameters);
               const sql = this.database.context.sql;
               const typed = sql.typed as unknown as PostgresTypecasts;
-              const response = (await sql.begin(async (sql: postgres.Sql) => {
-                  return await sql\`
+              const response = 
+                  await sql\`
                   SELECT
                   ${
                     this.proc.postgresName
                   }${this.proc.typescriptProcedureCallArguments(context)};
-                  \`
-              }));
+                  \`;
               const results = response;
               const responseBody = ( ${(() => {
                 // pseudo record -- which is always a table type but needs more parsing

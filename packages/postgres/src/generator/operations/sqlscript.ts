@@ -92,12 +92,11 @@ class SqlScriptOperation implements Operation {
     // main call body
     generationBuffer.push(`
          async ${this.typescriptName} (${parameters}) {
-            const response = (await this.database.context.sql.begin(async (sql: postgres.Sql) =>{
-                return await sql.unsafe(\`
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(\`
                 ${preparedSql}
                 
                 \`${parameterPasses});
-            }))
             return response.map(record => ({ ${recordPieceBuilders.join(
               ",",
             )} }));

@@ -14976,29 +14976,24 @@ export namespace InformationSchema {
 // end string parsers
 
 // BEGIN - Node side database connectivity layer
-import { Context, initializeContext } from "@embracesql/postgres";
+import {
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
 import postgres from "postgres";
 
 interface HasDatabase {
   database: Database;
 }
 
-export class Database {
+export class Database extends PostgresDatabase {
   /**
    * Connect to your database server via URL, and return
    * a fully typed database you can use to access it.
    */
-  static async connect(postgresUrl: string) {
-    return new Database(await initializeContext(postgresUrl));
-  }
-
-  private constructor(public context: Context) {}
-
-  /**
-   * Clean up the connection.
-   */
-  public async disconnect() {
-    await this.context.sql.end();
+  static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+    return new Database(await initializeContext(postgresUrl, props));
   }
 
   /**
@@ -15022,31 +15017,6 @@ export class Database {
     }
   }
 
-  /**
-   * Returns a database scoped to a new transaction.
-   * You must explicitly call `rollback` or `commit`.
-   */
-  async beginTransaction() {
-    return await new Promise<{
-      database: Database;
-      commit: () => void;
-      rollback: (message?: string) => void;
-    }>((resolveReady) => {
-      const complete = new Promise((resolve, reject) => {
-        this.context.sql
-          .begin(async (sql) => {
-            resolveReady({
-              database: new Database({ ...this.context, sql }),
-              commit: () => resolve(true),
-              rollback: (message?: string) => reject(message),
-            });
-            await complete;
-          })
-          .catch((reason) => reason);
-      });
-    });
-  }
-
   public Public = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
@@ -15054,8 +15024,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.film_in_stock(pFilmId => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.pFilmId),
@@ -15063,7 +15032,6 @@ export class Database {
                     undefinedIsNull(parameters.pStoreId),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map((x) =>
         this.parseFilmInStockResult(this.database.context, x.film_in_stock),
@@ -15086,8 +15054,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.film_not_in_stock(pFilmId => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.pFilmId),
@@ -15095,7 +15062,6 @@ export class Database {
                     undefinedIsNull(parameters.pStoreId),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map((x) =>
         this.parseFilmNotInStockResult(
@@ -15121,8 +15087,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.get_customer_balance(pCustomerId => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.pCustomerId),
@@ -15130,7 +15095,6 @@ export class Database {
                     undefinedIsNull(parameters.pEffectiveDate),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .get_customer_balance as unknown as Public.GetCustomerBalanceSingleResultsetRecord;
@@ -15142,14 +15106,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.inventory_held_by_customer(pInventoryId => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.pInventoryId),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .inventory_held_by_customer as unknown as Public.InventoryHeldByCustomerSingleResultsetRecord;
@@ -15159,14 +15121,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.inventory_in_stock(pInventoryId => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.pInventoryId),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .inventory_in_stock as unknown as Public.InventoryInStockSingleResultsetRecord;
@@ -15176,14 +15136,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.last_day( ${typed.pg_catalog_timestamp(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .last_day as unknown as Public.LastDaySingleResultsetRecord;
@@ -15193,8 +15151,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.rewards_report(minMonthlyPurchases => ${typed.pg_catalog_int4(
                     undefinedIsNull(parameters.minMonthlyPurchases),
@@ -15202,7 +15159,6 @@ export class Database {
                     undefinedIsNull(parameters.minDollarAmountPurchased),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map(
         (x) => x.rewards_report,
@@ -20019,9 +19975,8 @@ export class Database {
       }
 
       async tally() {
-        const response = await this.database.context.sql.begin(
-          async (sql: postgres.Sql) => {
-            return await sql.unsafe(`
+        const sql = this.database.context.sql;
+        const response = await sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
@@ -20029,8 +19984,6 @@ FROM
 
                 
                 `);
-          },
-        );
         return response.map((record) => ({
           count: undefinedIsNull(record.count),
         }));
@@ -20044,10 +19997,9 @@ FROM
         }
 
         async pick(parameters: ScriptTypes.Sql.Sample.pickParameters) {
-          const response = await this.database.context.sql.begin(
-            async (sql: postgres.Sql) => {
-              return await sql.unsafe(
-                `
+          const sql = this.database.context.sql;
+          const response = await sql.unsafe(
+            `
                 SELECT
     *
 FROM
@@ -20056,9 +20008,7 @@ WHERE
     title = $1
                 
                 `,
-                [parameters._1],
-              );
-            },
+            [parameters._1],
           );
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
@@ -20085,9 +20035,8 @@ WHERE
           }
 
           async tally() {
-            const response = await this.database.context.sql.begin(
-              async (sql: postgres.Sql) => {
-                return await sql.unsafe(`
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
@@ -20095,8 +20044,6 @@ FROM
 
                 
                 `);
-              },
-            );
             return response.map((record) => ({
               count: undefinedIsNull(record.count),
             }));

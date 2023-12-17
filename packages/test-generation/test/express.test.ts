@@ -1,14 +1,23 @@
 import { EmbraceSQLClient } from "../src/dvdrental-browser";
-import { EmbraceSQLExpressApp } from "../src/dvdrental-express";
+import { EmbraceSQLExpressApp, Database } from "../src/dvdrental-express";
 import { Express } from "express";
 import { Server } from "http";
 
 describe("EmbraceSQLExpress can", () => {
   let app: Express;
   let server: Server;
+  let database: Database;
+  let databaseInTransaction: Awaited<ReturnType<Database["beginTransaction"]>>;
   beforeAll(async () => {
+    const postgresUrl = "postgres://postgres:postgres@localhost:5432/dvdrental";
+    database = await Database.connect(postgresUrl, {
+      max: 1,
+    });
+    databaseInTransaction = await database.beginTransaction();
+    // going to set up a transacted database
     app = await EmbraceSQLExpressApp(
       "postgres://postgres:postgres@localhost:5432/dvdrental",
+      databaseInTransaction.database,
     );
     return new Promise<void>((resolve) => {
       server = app.listen(4444, () => {
@@ -17,6 +26,9 @@ describe("EmbraceSQLExpress can", () => {
     });
   });
   afterAll(async () => {
+    // transactional testing, database will restore to initial state
+    databaseInTransaction.rollback();
+    await database.disconnect();
     return new Promise<void>((resolve) => {
       server.close(() => resolve());
     });

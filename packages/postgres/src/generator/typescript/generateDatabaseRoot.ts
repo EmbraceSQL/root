@@ -15,7 +15,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   const generationBuffer = [
     `
         // BEGIN - Node side database connectivity layer
-        import { Context, initializeContext } from "@embracesql/postgres";
+        import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
         import postgres from "postgres";
     `,
   ];
@@ -28,29 +28,15 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
   `);
 
   // class start
-  generationBuffer.push(`export class Database { `);
+  generationBuffer.push(`export class Database extends PostgresDatabase { `);
   generationBuffer.push(`
 
     /**
      * Connect to your database server via URL, and return 
      * a fully typed database you can use to access it.
      */
-    static async connect(postgresUrl: string) {
-        return new Database(await initializeContext(postgresUrl));
-    }
-
-    private constructor(public context: Context) {`);
-
-  // constructor body currently empty
-
-  generationBuffer.push(`
-    }
-
-    /**
-     * Clean up the connection.
-     */
-    async public disconnect() {
-      await this.context.sql.end()
+    static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+        return new Database(await initializeContext(postgresUrl, props));
     }
     
     `);
@@ -74,28 +60,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       }
     }
 
-  /**
-   * Returns a database scoped to a new transaction.
-   * You must explicitly call \`rollback\` or \`commit\`.
-   */
-  async beginTransaction() {
-    return await new Promise<{
-      database: Database;
-      commit: () => void;
-      rollback: (message?: string) => void;
-    }>((resolveReady) => {
-      const complete = new Promise((resolve, reject) => {
-        this.context.sql.begin(async (sql) => {
-          resolveReady({
-            database: new Database({ ...this.context, sql }),
-            commit: () => resolve(true),
-            rollback: (message?: string) => reject(message),
-          });
-          await complete;
-        }).catch((reason) => reason);
-      });
-    });
-  }
   `);
   // wheel through every namespace, and every proc and generate calls
   // each schema / namespace turns into a .<Schema> grouping

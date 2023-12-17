@@ -13936,29 +13936,24 @@ export namespace Api {
 // end string parsers
 
 // BEGIN - Node side database connectivity layer
-import { Context, initializeContext } from "@embracesql/postgres";
+import {
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
 import postgres from "postgres";
 
 interface HasDatabase {
   database: Database;
 }
 
-export class Database {
+export class Database extends PostgresDatabase {
   /**
    * Connect to your database server via URL, and return
    * a fully typed database you can use to access it.
    */
-  static async connect(postgresUrl: string) {
-    return new Database(await initializeContext(postgresUrl));
-  }
-
-  private constructor(public context: Context) {}
-
-  /**
-   * Clean up the connection.
-   */
-  public async disconnect() {
-    await this.context.sql.end();
+  static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+    return new Database(await initializeContext(postgresUrl, props));
   }
 
   /**
@@ -13982,31 +13977,6 @@ export class Database {
     }
   }
 
-  /**
-   * Returns a database scoped to a new transaction.
-   * You must explicitly call `rollback` or `commit`.
-   */
-  async beginTransaction() {
-    return await new Promise<{
-      database: Database;
-      commit: () => void;
-      rollback: (message?: string) => void;
-    }>((resolveReady) => {
-      const complete = new Promise((resolve, reject) => {
-        this.context.sql
-          .begin(async (sql) => {
-            resolveReady({
-              database: new Database({ ...this.context, sql }),
-              commit: () => resolve(true),
-              rollback: (message?: string) => reject(message),
-            });
-            await complete;
-          })
-          .catch((reason) => reason);
-      });
-    });
-  }
-
   public Public = new (class implements HasDatabase {
     constructor(public database: Database) {}
 
@@ -14014,14 +13984,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_in( ${typed.pg_catalog_cstring(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_in as unknown as Public.CubeInSingleResultsetRecord;
@@ -14031,8 +13999,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.pg_catalog__float8(
                     undefinedIsNull(parameters._0),
@@ -14040,7 +14007,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cube9c45SingleResultsetRecord;
@@ -14050,14 +14016,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.pg_catalog__float8(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cube2e6dSingleResultsetRecord;
@@ -14067,14 +14031,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_out( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_out as unknown as Public.CubeOutSingleResultsetRecord;
@@ -14084,14 +14046,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_eq( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_eq as unknown as Public.CubeEqSingleResultsetRecord;
@@ -14101,14 +14061,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_ne( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_ne as unknown as Public.CubeNeSingleResultsetRecord;
@@ -14118,14 +14076,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_lt( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_lt as unknown as Public.CubeLtSingleResultsetRecord;
@@ -14135,14 +14091,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_gt( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_gt as unknown as Public.CubeGtSingleResultsetRecord;
@@ -14152,14 +14106,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_le( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_le as unknown as Public.CubeLeSingleResultsetRecord;
@@ -14169,14 +14121,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_ge( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_ge as unknown as Public.CubeGeSingleResultsetRecord;
@@ -14186,14 +14136,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_cmp( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_cmp as unknown as Public.CubeCmpSingleResultsetRecord;
@@ -14203,14 +14151,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_contains( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_contains as unknown as Public.CubeContainsSingleResultsetRecord;
@@ -14220,14 +14166,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_contained( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_contained as unknown as Public.CubeContainedSingleResultsetRecord;
@@ -14237,14 +14181,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_overlap( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_overlap as unknown as Public.CubeOverlapSingleResultsetRecord;
@@ -14254,14 +14196,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_union( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_union as unknown as Public.CubeUnionSingleResultsetRecord;
@@ -14271,14 +14211,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_inter( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_inter as unknown as Public.CubeInterSingleResultsetRecord;
@@ -14288,14 +14226,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_size( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_size as unknown as Public.CubeSizeSingleResultsetRecord;
@@ -14305,8 +14241,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_subset( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
@@ -14314,7 +14249,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_subset as unknown as Public.CubeSubsetSingleResultsetRecord;
@@ -14324,14 +14258,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_distance( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_distance as unknown as Public.CubeDistanceSingleResultsetRecord;
@@ -14341,14 +14273,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.distance_chebyshev( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .distance_chebyshev as unknown as Public.DistanceChebyshevSingleResultsetRecord;
@@ -14358,14 +14288,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.distance_taxicab( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.public_cube(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .distance_taxicab as unknown as Public.DistanceTaxicabSingleResultsetRecord;
@@ -14375,14 +14303,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_dim( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_dim as unknown as Public.CubeDimSingleResultsetRecord;
@@ -14392,14 +14318,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_ll_coord( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_ll_coord as unknown as Public.CubeLlCoordSingleResultsetRecord;
@@ -14409,14 +14333,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_ur_coord( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_ur_coord as unknown as Public.CubeUrCoordSingleResultsetRecord;
@@ -14426,14 +14348,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_coord( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_coord as unknown as Public.CubeCoordSingleResultsetRecord;
@@ -14443,14 +14363,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_coord_llur( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._1))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_coord_llur as unknown as Public.CubeCoordLlurSingleResultsetRecord;
@@ -14460,14 +14378,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.pg_catalog_float8(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cubea5b3SingleResultsetRecord;
@@ -14477,8 +14393,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.pg_catalog_float8(
                     undefinedIsNull(parameters._0),
@@ -14486,7 +14401,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cube0aecSingleResultsetRecord;
@@ -14496,8 +14410,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
@@ -14505,7 +14418,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cubeffa3SingleResultsetRecord;
@@ -14515,8 +14427,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
@@ -14526,7 +14437,6 @@ export class Database {
                     undefinedIsNull(parameters._2),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube as unknown as Public.Cube908dSingleResultsetRecord;
@@ -14536,14 +14446,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_is_point( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_is_point as unknown as Public.CubeIsPointSingleResultsetRecord;
@@ -14553,8 +14461,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_enlarge( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
@@ -14562,7 +14469,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )}, ${typed.pg_catalog_int4(undefinedIsNull(parameters._2))});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_enlarge as unknown as Public.CubeEnlargeSingleResultsetRecord;
@@ -14572,8 +14478,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_consistent( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
@@ -14587,7 +14492,6 @@ export class Database {
                     undefinedIsNull(parameters._4),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_consistent as unknown as Public.GCubeConsistentSingleResultsetRecord;
@@ -14597,8 +14501,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_penalty( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
@@ -14608,7 +14511,6 @@ export class Database {
                     undefinedIsNull(parameters._2),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_penalty as unknown as Public.GCubePenaltySingleResultsetRecord;
@@ -14618,8 +14520,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_picksplit( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
@@ -14627,7 +14528,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_picksplit as unknown as Public.GCubePicksplitSingleResultsetRecord;
@@ -14637,8 +14537,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_union( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
@@ -14646,7 +14545,6 @@ export class Database {
                     undefinedIsNull(parameters._1),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_union as unknown as Public.GCubeUnionSingleResultsetRecord;
@@ -14656,8 +14554,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_same( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
@@ -14667,7 +14564,6 @@ export class Database {
                     undefinedIsNull(parameters._2),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_same as unknown as Public.GCubeSameSingleResultsetRecord;
@@ -14677,8 +14573,7 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.g_cube_distance( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
@@ -14692,7 +14587,6 @@ export class Database {
                     undefinedIsNull(parameters._4),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .g_cube_distance as unknown as Public.GCubeDistanceSingleResultsetRecord;
@@ -14702,14 +14596,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_recv( ${typed.pg_catalog_internal(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_recv as unknown as Public.CubeRecvSingleResultsetRecord;
@@ -14719,14 +14611,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   public.cube_send( ${typed.public_cube(
                     undefinedIsNull(parameters._0),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .cube_send as unknown as Public.CubeSendSingleResultsetRecord;
@@ -14848,14 +14738,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_set(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map(
         (x) => x.echo_set,
@@ -14866,14 +14754,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_type(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .echo_type as unknown as Api.EchoTypeSingleResultsetRecord;
@@ -14883,14 +14769,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_type_array(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .echo_type_array as unknown as Api.EchoTypeArraySingleResultsetRecord;
@@ -14900,14 +14784,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_type_nested(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .echo_type_nested as unknown as Api.EchoTypeNestedSingleResultsetRecord;
@@ -14917,14 +14799,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_type_set(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map(
         (x) => x.echo_type_set,
@@ -14935,14 +14815,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results?.[0]
         .echo as unknown as Api.EchoSingleResultsetRecord;
@@ -14952,14 +14830,12 @@ export class Database {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql.begin(async (sql: postgres.Sql) => {
-        return await sql`
+      const response = await sql`
                   SELECT
                   api.echo_table(message => ${typed.pg_catalog_text(
                     undefinedIsNull(parameters.message),
                   )});
                   `;
-      });
       const results = response;
       const responseBody = results.map((x) =>
         this.parseEchoTableResult(this.database.context, x.echo_table),

@@ -8,9 +8,9 @@ export const generateExpressApp = async () => {
     `import {EmbraceSQLExpress} from "@embracesql/express"`,
   ];
   generationBuffer.push(`
-  export const EmbraceSQLExpressApp = async (postgresUrl: string) => {
-    const database = await Database.connect(postgresUrl);
-    const dispatcher = new OperationDispatcher(database);
+  export const EmbraceSQLExpressApp = async (postgresUrl: string, database?: Database) => {
+    const dispatchToDatabase = database ?? await Database.connect(postgresUrl);
+    const dispatcher = new OperationDispatcher(dispatchToDatabase);
     return EmbraceSQLExpress(dispatcher);
   }
   `);
