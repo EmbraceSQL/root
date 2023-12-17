@@ -4,13 +4,15 @@
   "version": "0.0.4",
   "type": "module",
   "scripts": {
-    "generate": "npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts",
+    "generate": "./bin/generate",
     "start": "npx tsx watch ./src/express.ts",
+    "invoke": "npx tsx ./src/client.ts",
     "check": "tsc --noEmit"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/express": "^0.0.4"
+    "@embracesql/client": "*",
+    "@embracesql/express": "*"
   }
 }

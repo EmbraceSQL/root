@@ -1,3 +1,4 @@
+import ClientSource from "!!raw-loader!../../samples/express/src/client.ts";
 import ExpressSource from "!!raw-loader!../../samples/express/src/express.ts";
 import TsConfigSource from "!!raw-loader!../../samples/express/tsconfig.json";
 import CodeBlock from "@theme/CodeBlock";
@@ -8,12 +9,38 @@ EmbraceSQL generates an Express [`Application`](https://expressjs.com/en/api.htm
 at any location with [`use`](https://expressjs.com/en/api.html#app.use) into an existing express setup, or run directly
 with [`listen`](https://expressjs.com/en/api.html#app.listen).
 
-## Example
+This server provides full access to [AutoCRUD](./autocrud) and can be
+extended with your own [SQL](./sql).
 
-You can look in the [intro](./index.mdx) to see how to generate the dvdrental code
-used in these example snippets.
+## Requirements
 
-Once you have a database, you can generate the express application:
+You are going to need:
+
+* NodeJs >= 18
+* PostgreSQL >= 14
+
+These examples assume you are running locally with your shell able to connect
+to your PostgreSQL with:
+
+```shell
+psql
+```
+
+## Steps
+
+Here is a step by step guide to create an `Express` server and a `fetch` client.
+
+### Create a Sample Database
+
+Create a new database `dvdrental` on your local PostgeSQL server.
+
+```shell
+curl "https://embracesql.github.io/dvdrental.sql" | psql
+```
+
+### Generate an Express Server
+
+Go into a nice blank directory.
 
 ```shell
 npm install @embracesql/express
@@ -22,17 +49,25 @@ mkdir -p ./src
 npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental.ts
 ```
 
-And a very simple express server `index.ts`, assumes top level `await` -- put `"type": "module"`
-in your package json. And, provided handy tsconfig settings that work great with
-`tsx` and `typescript` 5+.
+Notice that this creates a `module` type for you `package.json`. This matches
+the `tsconfig.json` defaults provided.
+
+### Code up an Express Server
+
+We provide handy tsconfig settings that work great with `tsx` and `typescript` 5+.
+
+Create two files as shown.
 
 <CodeBlock language="json" title="tsconfig.json">
   {TsConfigSource}
 </CodeBlock>
 
+
 <CodeBlock language="typescript" title="./src/express.ts">
   {ExpressSource}
 </CodeBlock>
+
+### Test your Express
 
 Start that server:
 
@@ -46,4 +81,30 @@ And curl for some data:
 curl -X POST http://localhost:3000 \
    -H 'Content-Type: application/json' \
    -d '{"operation":"Public.Actor.byActorId","parameters":{"actorId": 1}}'
+```
+
+### Generate a Client
+
+It's fun to `curl` and all, but TypeScript is about types and autocompletion.
+
+Generate a fully typed `fetch` wrapping client.
+
+```shell
+npm install @embracesql/client
+npx embracesqlcli generate client --database postgres://postgres:postgres@localhost/dvdrental > ./src/dvdrental-browser.ts
+```
+
+### Test your Client
+
+Create one file as shown. For fun, try typing it to get a sense of
+the autocomplete.
+
+<CodeBlock language="typescript" title="./src/client.ts">
+  {ClientSource}
+</CodeBlock>
+
+Now run it!
+
+```shell
+npx tsx ./src/client.ts
 ```

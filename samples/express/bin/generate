@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -exo pipefail
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ${SCRIPT_DIR}/../src/dvdrental.ts
+npx embracesqlcli generate client --database postgres://postgres:postgres@localhost/dvdrental > ${SCRIPT_DIR}/../src/dvdrental-browser.ts

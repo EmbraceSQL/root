@@ -4,4 +4,4 @@ import { EmbraceSQLExpressApp } from "./dvdrental";
 const app = await EmbraceSQLExpressApp(
   "postgres://postgres:postgres@localhost/dvdrental",
 );
-app.listen(3000);
+app.listen(4444);

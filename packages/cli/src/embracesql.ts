@@ -94,9 +94,7 @@ addOptions(
 });
 
 addOptions(
-  generate
-    .command("browser")
-    .description("TypeScript code for use in browser."),
+  generate.command("client").description("TypeScript code for use via fetch."),
 ).action(async (options) => {
   const context = await initializeContext(options.database);
   const generationBuffer: string[] = [];

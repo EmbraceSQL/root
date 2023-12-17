@@ -18,14 +18,14 @@ Then [Get Started](#getting-started).
 
 You will need:
 
-This example assumes a sample DVD rental database, source at [dvdrental.sql](./dvdrental.sql).
+This example assumes a sample DVD rental database, source at [dvdrental.sql](/dvdrental.sql).
 
 You can use this database for testing with a local postgres, such as [Postgres.app](https://postgresapp.com).
 
 Create a sample dvdrental database if you like with:
 
 ```shell
-psql --file dvdrental.sql
+curl "https://embracesql.github.io/dvdrental.sql" | psql
 ```
 
 Going with this dvdrental example, assuming you are in the root directory
