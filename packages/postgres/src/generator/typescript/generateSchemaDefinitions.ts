@@ -6,6 +6,7 @@ import {
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
+import { ASTKind } from "@embracesql/shared";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -38,6 +39,36 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
     `,
   ];
+
+  // overall type map -- define all possible types discovered
+  // these are flattened names -- no namespacing
+  context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentToPostgres = any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentFromPostgres = any;
+        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+        export interface PostgresTypecasts { 
+      `;
+      },
+      after: async () => {
+        return `}`;
+      },
+    },
+    [ASTKind.Type]: {
+      before: async (_, node) => {
+        return `${node.marshallName}: Typecast;`;
+      },
+    },
+  };
+  // include all schemas -- need those built in types
+  generationBuffer.push(
+    await context.database.visit({ ...context, skipSchemas: [] }),
+  );
+
   // each postgres namespace gets a typescript namespace -- generates itself
   // this includes all namespaces in order to get all types which can
   // be used by user defined schemas
@@ -50,22 +81,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         }),
       );
     }),
-  );
-  // all typecasts collected into a single interface
-  generationBuffer.push(
-    `
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    type ArgumentToPostgres = any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    type ArgumentFromPostgres = any;
-    type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-    export interface PostgresTypecasts {
-      ${context.namespaces
-        .flatMap((n) => n.types)
-        .map((t) => `${t.postgresMarshallName}: Typecast`)
-        .join(";\n")}
-    }
-  `,
   );
   // script parameter and return types
   // holder for all scripts provides a .Scripts grouping
