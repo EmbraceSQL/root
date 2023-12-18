@@ -6,6 +6,7 @@
     "database": "psql --file var/data/dvdrental/dvdrental.sql && psql --file var/data/marshalling/marshalling.sql",
     "lint": "eslint .",
     "check": "npm run check --workspaces",
+    "pretest": "npm run generate",
     "test": "npm run test --workspaces --if-present",
     "prepare": "husky install",
     "generate": "npm run generate --workspaces --if-present"
