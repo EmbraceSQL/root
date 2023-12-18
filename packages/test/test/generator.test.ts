@@ -2,6 +2,7 @@ import { Context, initializeContext } from "@embracesql/postgres/src/context";
 import {
   generateDatabaseRoot,
   generateOperationDispatcher,
+  generateSchemaDefinitions,
 } from "@embracesql/postgres/src/generator";
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import path from "path";
@@ -61,6 +62,16 @@ describe("The generator can", () => {
     expect(compiled).toBeTruthy();
   });
   it("create TypeScript definitions for marshalling sample", async () => {
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/marshalling",
+    );
+    const source = await generateSchemaDefinitions(context);
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.CommonJS },
+    });
+    expect(compiled).toBeTruthy();
+  });
+  it("create TypeScript Database for marshalling sample", async () => {
     context = await initializeContext(
       "postgres://postgres:postgres@localhost/marshalling",
     );

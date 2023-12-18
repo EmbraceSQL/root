@@ -251,6 +251,7 @@ export class TypesNode extends ContainerNode {
 export class TypeNode extends NamedASTNode {
   constructor(
     name: string,
+    public marshallName: string,
     public types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScriptParser,
