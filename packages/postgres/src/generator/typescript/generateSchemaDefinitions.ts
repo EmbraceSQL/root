@@ -7,7 +7,6 @@ import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
 import { generateTypecastMap } from "./generateTypecastMap";
-import { ASTKind } from "@embracesql/shared";
 
 /**
  * Generate TypeScript type definitions for all types available
