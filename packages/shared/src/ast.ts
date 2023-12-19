@@ -199,7 +199,12 @@ export class DatabaseNode extends ContainerNode {
   }
 
   registerType(id: string | number, type: TypeNode) {
+    const existing = this.types.get(`${id}`);
+    if (existing) return existing;
+    // mapped and in the children
     this.types.set(`${id}`, type);
+    this.resolveSchema(type.types.schema.name).types.children.push(type);
+    return type;
   }
 
   resolveType(id: string | number) {
@@ -212,6 +217,16 @@ export class DatabaseNode extends ContainerNode {
 
   resolveTable(id: string | number) {
     return this.tables.get(`${id}`);
+  }
+
+  resolveSchema(name: string) {
+    const exists = this.children.find(
+      (c) => (c as unknown as IsNamed)?.name === name,
+    ) as SchemaNode;
+    if (exists) return exists;
+    const schema = new SchemaNode(this, name);
+    this.children.push(schema);
+    return schema;
   }
 }
 
@@ -227,6 +242,11 @@ export class SchemaNode extends ContainerNode {
     public name: string,
   ) {
     super(name, ASTKind.Schema, database);
+    this.children.push(new TypesNode(this));
+  }
+
+  get types() {
+    return this.children.find((c) => c.kind === ASTKind.Types) as TypesNode;
   }
 
   async visit(context: GenerationContext): Promise<string> {
@@ -251,7 +271,7 @@ export class SchemaNode extends ContainerNode {
  * Collects all types in a schema in a database.
  */
 export class TypesNode extends ContainerNode {
-  constructor(schema: SchemaNode) {
+  constructor(public schema: SchemaNode) {
     super("Types", ASTKind.Types, schema);
   }
 }

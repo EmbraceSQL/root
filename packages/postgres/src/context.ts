@@ -6,17 +6,7 @@ import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
-import {
-  ColumnNode,
-  DatabaseNode,
-  IndexNode,
-  IsNamed,
-  SchemaNode,
-  TableNode,
-  TablesNode,
-  TypeNode,
-  TypesNode,
-} from "@embracesql/shared";
+import { DatabaseNode } from "@embracesql/shared";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
 
@@ -171,81 +161,21 @@ export const initializeContext = async (
 
   // abstract database representation
   const database = new DatabaseNode(databaseName);
+  const generationContext = {
+    database,
+  };
   // ok, this is a bit tricky since - tables and types can cross namespaces
   // so the first pass will set up all the schemas from catalog namespaces
   // along with their types
   namespaces.forEach((n) => {
-    const schema = new SchemaNode(database, n.namespace);
-    database.children.push(schema);
-    const types = new TypesNode(schema);
-    schema.children.push(types);
     // all types in the namespace
-    n.types.forEach((t) => {
-      const type = new TypeNode(
-        t.typescriptName,
-        t.postgresMarshallName,
-        types,
-        t.oid,
-        t,
-      );
-      database.registerType(type.id, type);
-      types.children.push(type);
-    });
+    n.types.forEach((t) => t.loadAST(generationContext));
   });
-  // ok -- we now know all types -- now we have enough information to make tables
-  namespaces.forEach((n) => {
-    const schema = database.children.find(
-      (c) => (c as unknown as IsNamed)?.name === n.namespace,
-    ) as SchemaNode;
-    if (schema) {
-      const tables = new TablesNode(schema);
-      schema.children.push(tables);
-      n.tables.forEach((t) => {
-        // the table and ...
-        const table = new TableNode(
-          tables,
-          t.table.relname,
-          database.resolveType(t.table.tabletypeoid)!,
-        );
-        // hash lookup of all tables
-        database.registerTable(table.type.id, table);
-        tables.children.push(table);
-        // it's columns
-        t.tableType.attributes.forEach((a) => {
-          const typeNode = database.resolveType(a.attribute.atttypid);
-          if (typeNode) {
-            table.children.push(new ColumnNode(table, a.name, typeNode));
-          } else {
-            throw new Error(
-              `${a.name} cannot find type ${a.attribute.atttypid}`,
-            );
-          }
-        });
-        // indexes go on the table as well
-        t.indexes.forEach((i) => {
-          const index = new IndexNode(
-            table,
-            i.name,
-            i.index.indisunique,
-            i.index.indisprimary,
-            i.attributes.map((a) => {
-              const typeNode = database.resolveType(a.attribute.atttypid);
-              if (typeNode) {
-                return { name: a.name, type: typeNode };
-              } else {
-                throw new Error(
-                  `${a.name} cannot find type ${a.attribute.atttypid}`,
-                );
-              }
-            }),
-          );
-          table.children.push(index);
-        });
-      });
-    } else {
-      throw new Error(`cannot find namespace ${n.namespace}`);
-    }
-  });
+  // now we have an initial generation context that can resolve types
+
+  // we now know all types -- now we have enough information to load the
+  // AST with database schema objects - tables, columns, indexes
+  namespaces.forEach((n) => n.loadAST(generationContext));
 
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete
@@ -269,7 +199,8 @@ export const initializeContext = async (
     database,
   };
 
-  // expand out the type resolvers for all types
+  // expand out the type resolvers for all types -- these are used by
+  // the postgres driver to encode/decodej
   typeCatalog.types.forEach(
     (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context)),
   );

@@ -3,7 +3,7 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGProc, PGProcs } from "./pgproc/pgproc";
 import { PGTable, PGTables } from "./pgtable";
 import { PGTypes } from "./pgtype";
-import { GenerationContext } from "@embracesql/shared";
+import { GenerationContext, TablesNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
 /**
@@ -60,6 +60,15 @@ export class PGNamespace {
     public tables: PGTable[],
     public procs: PGProc[],
   ) {}
+
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.nspname);
+    const tables = new TablesNode(schema);
+    schema.children.push(tables);
+    this.tables.forEach((t) => {
+      t.loadAST(context, tables);
+    });
+  }
 
   get typescriptName() {
     return PGNamespace.typescriptName(this.namespace);

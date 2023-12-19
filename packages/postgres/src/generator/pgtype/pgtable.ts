@@ -2,7 +2,12 @@ import { Context, TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
-import { GenerationContext } from "@embracesql/shared";
+import {
+  ColumnNode,
+  GenerationContext,
+  TableNode,
+  TablesNode,
+} from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -55,6 +60,29 @@ export class PGTable {
     this.tableType = context.typeCatalog.typesByOid[
       table.tabletypeoid
     ] as PGTypeComposite;
+  }
+
+  loadAST(context: GenerationContext, tables: TablesNode) {
+    const table = new TableNode(
+      tables,
+      this.table.relname,
+      context.database.resolveType(this.table.tabletypeoid)!,
+    );
+    // hash lookup of all tables
+    context.database.registerTable(table.type.id, table);
+    tables.children.push(table);
+    // columns -- derived from the table type
+    this.tableType.attributes.forEach((a) => {
+      const typeNode = context.database.resolveType(a.attribute.atttypid);
+      if (typeNode) {
+        table.children.push(new ColumnNode(table, a.name, typeNode));
+      } else {
+        throw new Error(`${a.name} cannot find type ${a.attribute.atttypid}`);
+      }
+    });
+
+    // and the indexes
+    this.indexes.forEach((i) => i.loadAST(context, table));
   }
 
   get typescriptName() {

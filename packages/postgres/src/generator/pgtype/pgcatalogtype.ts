@@ -3,6 +3,7 @@ import { CatalogRow } from "./pgtype";
 import {
   GeneratesTypeScriptParser,
   GenerationContext,
+  TypeNode,
 } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
@@ -19,6 +20,19 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
     public catalog: CatalogRow,
     public comment = "",
   ) {}
+
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    const type = new TypeNode(
+      this.typescriptName,
+      this.postgresMarshallName,
+      schema.types,
+      this.oid,
+      this,
+    );
+    context.database.registerType(type.id, type);
+  }
 
   /**
    * The all powerful oid.

@@ -13465,7 +13465,6 @@ export namespace InformationSchema {
     }
   }
 }
-// end string parsers
 
 // begin primary key pickers
 export namespace Public {
@@ -13695,7 +13694,6 @@ export namespace Public {
     }
   }
 }
-// end primary key pickers
 
 // begin table type aliases
 export namespace PgCatalog {
@@ -14072,7 +14070,6 @@ export namespace InformationSchema {
     }
   }
 }
-// end string parsers
 // begin fetch client
 import {
   EmbraceSQLClient as BaseClient,

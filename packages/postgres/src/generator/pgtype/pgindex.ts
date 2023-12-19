@@ -3,7 +3,7 @@ import { groupBy } from "../../util";
 import { PGAttribute, PGAttributes } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeComposite } from "./pgtypecomposite";
-import { GenerationContext } from "@embracesql/shared";
+import { GenerationContext, IndexNode, TableNode } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -64,6 +64,20 @@ export class PGIndex {
     } else {
       this.attributes = attributes as PGAttribute[];
     }
+  }
+
+  loadAST(context: GenerationContext, table: TableNode) {
+    const index = new IndexNode(
+      table,
+      this.name,
+      this.index.indisunique,
+      this.index.indisprimary,
+      this.attributes.map((a) => {
+        const typeNode = context.database.resolveType(a.attribute.atttypid)!;
+        return { name: a.name, type: typeNode };
+      }),
+    );
+    table.children.push(index);
   }
 
   get name() {
