@@ -1,7 +1,6 @@
 import {
   ASTKind,
   GenerationContext,
-  IsNamed,
   NamespaceVisitor,
 } from "@embracesql/shared";
 import { pascalCase } from "change-case";
@@ -18,10 +17,10 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Column]: NamespaceVisitor,
     [ASTKind.Index]: {
       before: async (_, node) => {
-        const tableTypeName = `${pascalCase(
-          (node.parent?.parent?.parent as unknown as IsNamed)?.name,
-        )}.${pascalCase((node.parent as unknown as IsNamed)?.name)}`;
-        const resultsTypeName = `${tableTypeName}${node.unique ? "" : "[]"}`;
+        const tableTypeName = `${node.table.typescriptNamespacedName}.Record`;
+        const resultsTypeName = `${node.table.typescriptNamespacedName}.Record${
+          node.unique ? "" : "[]"
+        }`;
         const generationBuffer = [""];
         generationBuffer.push(
           `export function use${pascalCase(node.name)}(parameters: ${pascalCase(
@@ -63,11 +62,11 @@ export const generateReactHooks = async (context: GenerationContext) => {
         // result type, with setters attached
         if (node.unique) {
           generationBuffer.push(
-            `setInterceptedResults(${tableTypeName}Interceptor(done.response.results, updateCallback));`,
+            `setInterceptedResults(${node.table.typescriptNamespacedName}.interceptor(done.response.results, updateCallback));`,
           );
         } else {
           generationBuffer.push(
-            `setInterceptedResults((results ?? []).map((r, i) => ${tableTypeName}Interceptor(r, updateCallback, i)));`,
+            `setInterceptedResults((results ?? []).map((r, i) => ${node.table.typescriptNamespacedName}.interceptor(r, updateCallback, i)));`,
           );
         }
         generationBuffer.push(`} else { setResults(undefined);}`);

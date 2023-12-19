@@ -1,7 +1,8 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { TypeFactoryContext } from "../../context";
 import { cleanIdentifierForTypescript, groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
+import { GenerationContext } from "@embracesql/shared";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -43,7 +44,7 @@ export class PGTypeEnum extends PGCatalogType {
     this.values = context.enumValues.enumValuesByTypeId[catalog.oid];
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     const namedValues = this.values.map(
       (a) => `${cleanIdentifierForTypescript(a.enumlabel)} = "${a.enumlabel}"`,

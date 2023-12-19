@@ -1,11 +1,14 @@
-import { Context } from "../../../context";
 import { PGProc } from "./pgproc";
+import { GenerationContext } from "@embracesql/shared";
 import { camelCase } from "change-case";
 
 /**
  * Generate return type TS code from PG catalog definitions.
  */
-export const generateResponseType = (proc: PGProc, context: Context) => {
+export const generateResponseType = (
+  proc: PGProc,
+  context: GenerationContext,
+) => {
   const recordString = (() => {
     // build up the response type -- treating sets as arrays
     // -- there might be a pseudo-type record
@@ -14,9 +17,7 @@ export const generateResponseType = (proc: PGProc, context: Context) => {
         .pseudoTypeAttributes(context)
         .map(
           (a) =>
-            `${camelCase(a.name)}: ${
-              a.type?.typescriptNameWithNamespace(context) ?? ""
-            };`,
+            `${camelCase(a.name)}: ${a.type?.typescriptNamespacedName ?? ""};`,
         );
       return `
         interface ${proc.typescriptNameForResponse()}Record {

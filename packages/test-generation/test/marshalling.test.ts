@@ -241,7 +241,6 @@ describe("The database can marshall base types", () => {
     for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
       roundTrip(
         "pg_catalog_int2vector",
-        // TODO: int2vector is a vector, though an odd built in one -- don't generate Array for these
         PgCatalog.Types.Int2vector.parse,
         val as string,
       );

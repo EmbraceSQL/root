@@ -10,7 +10,7 @@ class PGUUID extends PGCatalogType {
       return from ? new UUID(from) : null;
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = UUID;

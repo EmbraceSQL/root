@@ -2,6 +2,7 @@ import { Context, TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
+import { GenerationContext } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -63,7 +64,7 @@ export class PGTable {
   get postgresName() {
     return `${this.table.nspname}.${this.table.relname}`;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export namespace ${this.typescriptName}  {

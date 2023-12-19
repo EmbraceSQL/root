@@ -51,13 +51,12 @@ export class PGTypeArray extends PGCatalogType {
     }`;
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Array<${
-      context
-        .resolveType(this.catalog.typelem)
-        ?.typescriptNameWithNamespace(context) ?? "void"
+      context.database.resolveType(this.catalog.typelem)
+        ?.typescriptNamespacedName ?? "void"
     }>;
     `;
   }

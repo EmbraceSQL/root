@@ -15,13 +15,8 @@ export class UpdateOperations extends TableIndexOperations {
 
 class UpdateOperation extends TableIndexOperation {
   typescriptValuesType(context: GenerationContext) {
-    const tableType = context.resolveType<PGTypeComposite>(
-      this.table.table.tabletypeoid,
-    );
-    const namespace = context.namespaces.find(
-      (n) => n.nspname === this.table.table.nspname,
-    );
-    return `Partial<${namespace?.typescriptName}.${tableType.typescriptName}>`;
+    const table = context.database.resolveTable(this.table.table.tabletypeoid)!;
+    return `Partial<${table.typescriptNamespacedName}.Record>`;
   }
 
   dispatchName(context: GenerationContext): string {
@@ -61,9 +56,9 @@ class UpdateOperation extends TableIndexOperation {
     } SET ${this.table.sqlSetExpressions(
       context,
       "values",
-    )} WHERE ${this.index.sqlPredicate(
-      context,
-    )} RETURNING ${tableType.sqlColumns(context)}`;
+    )} WHERE ${this.index.sqlPredicate(context)} RETURNING ${
+      tableType.sqlColumns
+    }`;
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(

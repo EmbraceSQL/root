@@ -50,7 +50,7 @@ export abstract class TableOperation implements Operation {
     const generationBuffer = [""];
     // add in some types
     generationBuffer.push(
-      `const results = ${tableType.postgresResultRecordToTypescript(context)}`,
+      `const results = ${tableType.postgresResultRecordToTypescript}`,
     );
     generationBuffer.push(`return results[0]`);
     return generationBuffer.join("\n");
@@ -90,18 +90,13 @@ export class TableIndexOperation extends TableOperation {
   /**
    * Return type declaration based on the index.
    */
-  protected typescriptReturnType(context: Context): string {
-    const namespace = context.namespaces.find(
-      (n) => n.nspname === this.table.table.nspname,
-    );
-    const tableType = context.resolveType<PGTypeComposite>(
-      this.table.table.tabletypeoid,
-    );
+  protected typescriptReturnType(context: GenerationContext): string {
+    const table = context.database.resolveTable(this.table.table.tabletypeoid)!;
 
     if (this.index.unique) {
-      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}>`;
+      return `Promise<${table.typescriptNamespacedName}.Record>`;
     } else {
-      return `Promise<${namespace?.typescriptName}.${tableType.typescriptName}[]>`;
+      return `Promise<${table.typescriptNamespacedName}.Record[]>`;
     }
   }
 
@@ -117,7 +112,7 @@ export class TableIndexOperation extends TableOperation {
     const generationBuffer = [""];
     // add in some types
     generationBuffer.push(
-      `const results = ${tableType.postgresResultRecordToTypescript(context)}`,
+      `const results = ${tableType.postgresResultRecordToTypescript}`,
     );
     // if this is a unique index, pull back a single record
     // which makes this way more KV like than always having an array back

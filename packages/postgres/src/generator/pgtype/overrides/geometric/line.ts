@@ -1,9 +1,9 @@
-import { Context } from "../../../../context";
 import { PGCatalogType } from "../../pgcatalogtype";
 import { registerOverride } from "../_overrides";
+import { GenerationContext } from "@embracesql/shared";
 
 class PGLine extends PGCatalogType {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = {

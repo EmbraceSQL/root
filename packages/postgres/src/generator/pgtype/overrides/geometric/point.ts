@@ -1,9 +1,9 @@
-import { Context } from "../../../../context";
 import { PGCatalogType } from "../../pgcatalogtype";
 import { registerOverride } from "../_overrides";
+import { GenerationContext } from "@embracesql/shared";
 
 class PGTypePoint extends PGCatalogType {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = {
@@ -15,7 +15,7 @@ class PGTypePoint extends PGCatalogType {
 }
 
 class PGTypePointArray extends PGCatalogType {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Array<Point>;

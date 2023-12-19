@@ -12,7 +12,7 @@ class PGTypeInt2Vector extends PGCatalogType {
       return new Uint16Array(source);
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Uint16Array;
@@ -40,7 +40,7 @@ class PGTypeVector extends PGCatalogType {
       return new Float32Array(source);
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Float32Array;

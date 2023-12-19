@@ -207,6 +207,8 @@ export const initializeContext = async (
           t.table.relname,
           database.resolveType(t.table.tabletypeoid)!,
         );
+        // hash lookup of all tables
+        database.registerTable(table.type.id, table);
         tables.children.push(table);
         // it's columns
         t.tableType.attributes.forEach((a) => {

@@ -74,6 +74,7 @@ interface VisitationHandler<T extends ASTNode> {
  */
 export interface Visitor<T extends ASTNode> {
   before?: VisitationHandler<T>;
+  during?: VisitationHandler<T>;
   after?: VisitationHandler<T>;
 }
 
@@ -168,6 +169,9 @@ export abstract class ContainerNode
     generationBuffer.push(
       visitor?.before ? await visitor?.before(context, this as T) : "",
     );
+    generationBuffer.push(
+      visitor?.during ? await visitor?.during(context, this as T) : "",
+    );
 
     // and here is that recursion
     for (const child of this.children) {
@@ -188,6 +192,7 @@ export abstract class ContainerNode
 export class DatabaseNode extends ContainerNode {
   // keep track of all types, these get used across schemas
   private types = new Map<string | number, TypeNode>();
+  private tables = new Map<string | number, TableNode>();
 
   constructor(public name: string) {
     super(name, ASTKind.Database);
@@ -199,6 +204,14 @@ export class DatabaseNode extends ContainerNode {
 
   resolveType(id: string | number) {
     return this.types.get(`${id}`);
+  }
+
+  registerTable(id: string | number, table: TableNode) {
+    this.tables.set(`${id}`, table);
+  }
+
+  resolveTable(id: string | number) {
+    return this.tables.get(`${id}`);
   }
 }
 

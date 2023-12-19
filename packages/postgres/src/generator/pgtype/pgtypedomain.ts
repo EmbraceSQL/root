@@ -1,6 +1,7 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
+import { GenerationContext } from "@embracesql/shared";
 
 /**
  * Domain types are renaming of other types.
@@ -12,12 +13,11 @@ export class PGTypeDomain extends PGCatalogType {
     super(catalog);
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     return `
     export type ${this.typescriptName} = ${
-      context
-        .resolveType(this.catalog.typbasetype)
-        ?.typescriptNameWithNamespace(context) ?? "void"
+      context.database.resolveType(this.catalog.typbasetype)
+        ?.typescriptNamespacedName ?? "void"
     };
     `;
   }

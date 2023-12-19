@@ -116,11 +116,13 @@ class SqlScriptOperation implements Operation {
       ];
 
       // snippet will build the ordered parameter list
-      this.metadata.types.forEach((oid, i) =>
+      this.metadata.types.forEach((oid, i) => {
         generationBuffer.push(
-          `_${i + 1}: PgCatalog.${context.resolveType(oid).typescriptName};`,
-        ),
-      );
+          `_${i + 1}: ${
+            context.database.resolveType(oid)!.typescriptNamespacedName
+          };`,
+        );
+      });
 
       // close off the interface
       generationBuffer.push(`}`);

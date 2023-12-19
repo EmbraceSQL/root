@@ -1,5 +1,5 @@
 import { GenerationContext } from ".";
-import { ASTNode, Visitor, isNamed } from "./ast";
+import { ASTNode, isNamed } from "./ast";
 import { pascalCase } from "change-case";
 
 /**
@@ -31,15 +31,15 @@ export function typescriptFullyQualifiedTypeName(node: ASTNode): string {
 /**
  * This is a really simple visitor that names the node into a namespace.
  */
-export const NamespaceVisitor: Visitor<ASTNode> = {
-  before: async (_, node) => {
+export const NamespaceVisitor = {
+  before: async (_: GenerationContext, node: ASTNode) => {
     if (isNamed(node)) {
       return `export namespace ${typescriptTypeName(node)} {`;
     } else {
       return "";
     }
   },
-  after: async (_, node) => {
+  after: async (_: GenerationContext, node: ASTNode) => {
     if (isNamed(node)) {
       return "}";
     } else {

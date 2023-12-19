@@ -19,7 +19,7 @@ export class PGTypeBool extends PGCatalogType {
       return false;
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = boolean;

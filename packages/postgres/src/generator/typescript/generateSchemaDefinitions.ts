@@ -1,4 +1,5 @@
 import { GenerationContext } from "..";
+import { Context } from "../..";
 import {
   SCRIPT_TYPES_NAMESPACE,
   SqlScriptOperations,
@@ -6,6 +7,7 @@ import {
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
+import { ASTKind, NamespaceVisitor } from "@embracesql/shared";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -39,6 +41,25 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     `,
   ];
 
+  generationBuffer.push(`// begin type definitions`);
+  context.handlers = {
+    [ASTKind.Schema]: NamespaceVisitor,
+    [ASTKind.Types]: NamespaceVisitor,
+    [ASTKind.Type]: {
+      before: async (context, node) => {
+        // TODO: this is a cheat going to the postgres types not the AST
+        const postgresType = (context as Context).resolveType(
+          node.id as number,
+        );
+        return postgresType.typescriptTypeDefinition(context);
+      },
+    },
+  };
+  // no skipping schemas for parsing
+  generationBuffer.push(
+    await context.database.visit({ ...context, skipSchemas: [] }),
+  );
+
   // each postgres namespace gets a typescript namespace -- generates itself
   // this includes all namespaces in order to get all types which can
   // be used by user defined schemas
@@ -47,7 +68,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       generationBuffer.push(
         n.typescriptTypeDefinition({
           ...context,
-          currentNamespace: n.namespace,
         }),
       );
     }),

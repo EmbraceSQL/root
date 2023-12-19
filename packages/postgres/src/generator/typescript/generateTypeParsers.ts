@@ -13,9 +13,7 @@ export async function generateTypeParsers(context: GenerationContext) {
     [ASTKind.Types]: NamespaceVisitor,
     [ASTKind.Type]: {
       before: async (context, node) => {
-        const generationBuffer = [
-          await NamespaceVisitor.before!(context, node),
-        ];
+        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         generationBuffer.push(`export function parse(from: string|null) {`);
         generationBuffer.push(`${node.parser.typescriptTypeParser(context)}`);
         generationBuffer.push(`}`);
@@ -36,9 +34,7 @@ export async function generateTypeParsers(context: GenerationContext) {
     [ASTKind.Table]: NamespaceVisitor,
     [ASTKind.Column]: {
       before: async (context, node) => {
-        const generationBuffer = [
-          await NamespaceVisitor.before!(context, node),
-        ];
+        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         generationBuffer.push(
           `export const parse = ${node.type.typescriptNamespacedName}.parse;`,
         );

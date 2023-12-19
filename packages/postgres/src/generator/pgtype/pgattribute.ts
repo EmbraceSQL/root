@@ -1,6 +1,7 @@
 import { Context } from "../../context";
 import { groupBy } from "../../util";
 import { PGTypeComposite } from "./pgtypecomposite";
+import { GenerationContext } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -83,12 +84,11 @@ export class PGAttribute {
     return this.attribute.attname;
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     // nullability, but otherwise delegate to the type of the attribute
     const underlyingType =
-      context
-        .resolveType(this.attribute.atttypid)
-        ?.typescriptNameWithNamespace(context) ?? "void";
+      context.database.resolveType(this.attribute.atttypid)
+        ?.typescriptNamespacedName ?? "void";
     if (this.attribute.attnotnull) {
       return underlyingType;
     } else {

@@ -15,7 +15,7 @@ class PGTypeCube extends PGCatalogType {
       return new Float32Array(source);
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Float32Array;

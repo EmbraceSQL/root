@@ -15,22 +15,13 @@ export async function generateTableTypeAliases(context: GenerationContext) {
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const generationBuffer = [
-          await NamespaceVisitor.before!(context, node),
-        ];
-        // TODO: restore .Types
+        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         generationBuffer.push(
-          `export type Record = ${node.type.typescriptNamespacedName.replace(
-            ".Types",
-            "",
-          )};`,
+          `export type Record = ${node.type.typescriptNamespacedName};`,
         );
         if (node.primaryKey) {
           generationBuffer.push(
-            `export type RecordNotPrimaryKey = ${node.type.typescriptNamespacedName.replace(
-              ".Types",
-              "",
-            )}NotPrimaryKey;`,
+            `export type RecordNotPrimaryKey = ${node.type.typescriptNamespacedName}NotPrimaryKey;`,
           );
         }
         return generationBuffer.join("\n");

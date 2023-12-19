@@ -1,7 +1,6 @@
 import {
   ASTKind,
   GenerationContext,
-  IsNamed,
   NamespaceVisitor,
 } from "@embracesql/shared";
 import { pascalCase, camelCase } from "change-case";
@@ -13,30 +12,29 @@ export const generateReactBindables = async (context: GenerationContext) => {
   const generationBuffer = [""];
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
+    [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
-      before: async (_, node) => {
-        const tableTypeName = `${pascalCase(
-          (node as unknown as IsNamed)?.name,
-        )}`;
-        const generationBuffer = [""];
+      before: async (context, node) => {
+        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         generationBuffer.push(
-          `export function ${tableTypeName}Interceptor(uninterceptedValue: ${tableTypeName}, callback: InterceptorCallback<${tableTypeName}>, index?: number) : Intercepted<${tableTypeName}>{`,
+          `export function interceptor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, index?: number) : Intercepted<${node.typescriptNamespacedName}.Record>{`,
         );
         generationBuffer.push(`const ret = {`);
 
         return generationBuffer.join("\n");
       },
-      after: async () => {
-        return `
+      after: async (context, node) => {
+        return (
+          `
           };
           return ret;
         }
-          `;
+          ` + (await NamespaceVisitor.after(context, node))
+        );
       },
     },
     [ASTKind.Column]: {
       before: async (_, node) => {
-        const tableTypeName = `${pascalCase(node.table?.name)}`;
         const generationBuffer = [""];
         generationBuffer.push(
           `get ${camelCase(
@@ -59,9 +57,9 @@ export const generateReactBindables = async (context: GenerationContext) => {
           `const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
         );
         generationBuffer.push(
-          `ret.${camelCase(
-            node.name,
-          )} = parsedValue as ${tableTypeName}["${camelCase(node.name)}"] ;`,
+          `ret.${camelCase(node.name)} = parsedValue as ${
+            node.table.typescriptNamespacedName
+          }.Record["${camelCase(node.name)}"] ;`,
         );
         generationBuffer.push(`},`);
         return generationBuffer.join("\n");

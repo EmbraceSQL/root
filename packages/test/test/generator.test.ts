@@ -21,7 +21,7 @@ describe("The generator can", () => {
   afterEach(async () => {
     await context.sql.end();
   });
-  it("create TypeScript definitions for dvdrental sample", async () => {
+  it("create TypeScript database for dvdrental sample", async () => {
     context = await initializeContext(
       "postgres://postgres:postgres@localhost/dvdrental",
     );

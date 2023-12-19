@@ -3,6 +3,7 @@ import { groupBy } from "../../util";
 import { PGAttribute, PGAttributes } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeComposite } from "./pgtypecomposite";
+import { GenerationContext } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -98,7 +99,7 @@ export class PGIndex {
     )}`;
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     const namedValues = this.attributes.map(
       (a) => `${a.typescriptName}: ${a.typescriptTypeDefinition(context)} ;`,
     );

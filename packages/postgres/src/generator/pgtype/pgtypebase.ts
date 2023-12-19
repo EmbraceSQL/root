@@ -1,5 +1,4 @@
-import { Context, TypeFactoryContext } from "../../context";
-import { asDocComment } from "../../util";
+import { TypeFactoryContext } from "../../context";
 import { PGTypeBool } from "./base/bool";
 import { PGTypeBigInt, PGTypeBytea, PGTypeNumber } from "./base/number";
 import { PGTypeText, PGTypeTextArray } from "./base/text";
@@ -7,6 +6,7 @@ import { PGTypeUri } from "./base/uri";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 import { PGTypeArray } from "./pgtypearray";
+import { GenerationContext } from "@embracesql/shared";
 
 /**
  * Base types defined by PostgreSQL.
@@ -84,7 +84,7 @@ export class PGTypeBase extends PGCatalogType {
 }
 
 class PGTypeTid extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = {
@@ -96,10 +96,9 @@ class PGTypeTid extends PGTypeBase {
 }
 
 class PGTypeInet extends PGTypeBase {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = string;
     `;
   }

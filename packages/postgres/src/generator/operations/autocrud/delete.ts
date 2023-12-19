@@ -46,9 +46,9 @@ class DeleteOperation extends TableIndexOperation {
     // query using postgres driver bindings to the index
     const sql = `DELETE FROM ${
       tableType.postgresName
-    } WHERE ${this.index.sqlPredicate(
-      context,
-    )} RETURNING ${tableType.sqlColumns(context)}
+    } WHERE ${this.index.sqlPredicate(context)} RETURNING ${
+      tableType.sqlColumns
+    }
       `;
     generationBuffer.push(`const response = await sql\`${sql}\``);
 

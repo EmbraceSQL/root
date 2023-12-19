@@ -1,9 +1,9 @@
-import { Context } from "../../context";
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGProc, PGProcs } from "./pgproc/pgproc";
 import { PGTable, PGTables } from "./pgtable";
 import { PGTypes } from "./pgtype";
+import { GenerationContext } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
 /**
@@ -72,10 +72,9 @@ export class PGNamespace {
   /**
    * Generate typescript source for this namespace.
    */
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     return `
       export namespace ${this.typescriptName} {
-      ${this.types.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
       ${this.procs.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
         export namespace Tables {
         ${this.tables

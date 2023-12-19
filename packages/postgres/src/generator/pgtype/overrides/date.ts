@@ -12,7 +12,7 @@ class PGDate extends PGCatalogType {
       return new global.Date(from);
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     // date ends up with a type alias
     return `

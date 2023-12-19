@@ -5,6 +5,7 @@ import { PGIndex } from "./pgindex";
 import { CatalogRow } from "./pgtype";
 import {
   DELIMITER,
+  GenerationContext,
   compositeAttribute,
   escapeCompositeValue,
   parseObjectWithAttributes,
@@ -67,7 +68,7 @@ export class PGTypeComposite extends PGCatalogType {
     return this.attributes[attnum - 1];
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     const generationBuffer = [``];
     // all the fields -- and a partial type to allow filling out with
     // various sub selects
@@ -97,41 +98,22 @@ export class PGTypeComposite extends PGCatalogType {
       ${nameAndType.join("\n")}
     };
     `);
-
-      const primaryKeyNames =
-        this.primaryKey?.attributes.map(
-          (a) => `value.${a.typescriptName} !== undefined`,
-        ) || [];
-      generationBuffer.push(`
-      export function includes${this.typescriptName}PrimaryKey(value: Partial<${
-        this.typescriptName
-      }>): value is ${this.typescriptName}{
-        return ${primaryKeyNames.join(" && ")}
-      }
-      `);
     }
 
     return generationBuffer.join("\n");
   }
 
-  sqlColumns(context: Context) {
-    console.assert(context);
+  get sqlColumns() {
     return this.attributes.map((a) => a.postgresName).join(",");
   }
 
-  postgresResultRecordToTypescript(
-    context: Context,
-    resultsetName = "response",
-  ) {
-    console.assert(context);
+  get postgresResultRecordToTypescript() {
     // snippet will pick resultset fields to type map
     const recordPieceBuilders = this.attributes.map(
       (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
     );
     // all the fields in the resultset mapped out to an inferred type array
-    return `${resultsetName}.map(record => ({ ${recordPieceBuilders.join(
-      ",",
-    )} }))`;
+    return `response.map(record => ({ ${recordPieceBuilders.join(",")} }))`;
   }
 
   serializeToPostgres(context: Context, x: unknown) {

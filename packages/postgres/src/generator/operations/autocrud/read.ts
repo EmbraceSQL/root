@@ -44,7 +44,7 @@ class ReadOperation extends TableIndexOperation {
       `,
     );
     // query using postgres driver bindings to the index
-    const sql = `SELECT ${tableType.sqlColumns(context)} FROM ${
+    const sql = `SELECT ${tableType.sqlColumns} FROM ${
       tableType.postgresName
     } WHERE ${this.index.sqlPredicate(context)}`;
     generationBuffer.push(`const response = await sql\`${sql}\``);

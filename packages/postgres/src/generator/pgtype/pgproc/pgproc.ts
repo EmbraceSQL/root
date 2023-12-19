@@ -5,6 +5,7 @@ import { PGTypes } from "../pgtype";
 import { generateRequestType } from "./generateRequestType";
 import { generateResponseType } from "./generateResponseType";
 import {
+  GenerationContext,
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
@@ -148,12 +149,12 @@ export class PGProc implements PostgresProcTypecast {
     );
   }
 
-  pseudoTypeAttributes(context: Context) {
+  pseudoTypeAttributes(context: GenerationContext) {
     const skipThisMany = this.proc.proargtypes.flatMap((x) => x).length;
     return this.proc.proallargtypes
       .flatMap((x) => x)
       .map((oid, i) => {
-        const type = context.resolveType(oid);
+        const type = context.database.resolveType(oid);
         return {
           name: this.proc.proargnames[i],
           type,
@@ -173,16 +174,17 @@ export class PGProc implements PostgresProcTypecast {
   parseFromPostgresIfRecord(context: Context, x: string) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     // have parsimmon pick out an object right from our metadata
-    const attributes = this.pseudoTypeAttributes(context).map(
-      (a) =>
-        [
-          camelCase(a.name),
-          compositeAttribute.map((parsedAttributeText) =>
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-            a.type.parseFromPostgres(context, parsedAttributeText),
-          ),
-        ] as [string, parsimmon.Parser<string | null>],
-    );
+    const attributes = this.pseudoTypeAttributes(context).map((a) => {
+      // need to postgres side type to get the postgres protocol parser
+      const postgresAttribute = context.resolveType(a.type?.id as number);
+      return [
+        camelCase(a.name),
+        compositeAttribute.map((parsedAttributeText) =>
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          postgresAttribute.parseFromPostgres(context, parsedAttributeText),
+        ),
+      ] as [string, parsimmon.Parser<string | null>];
+    });
 
     return parseObjectWithAttributes(attributes, x);
   }
@@ -193,7 +195,7 @@ export class PGProc implements PostgresProcTypecast {
    * - response messages from a proc's return
    *
    */
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     return `
     ${generateRequestType(this, context)}
     ${generateResponseType(this, context)}
@@ -233,11 +235,11 @@ export class PGProc implements PostgresProcTypecast {
    * These can be scalars or arrays.
    *
    */
-  typescriptReturnType(context: Context) {
-    const resultType = context.resolveType(this.proc.prorettype);
+  typescriptReturnType(context: GenerationContext) {
+    const resultType = context.database.resolveType(this.proc.prorettype);
     const typeString = this.returnsPseudoTypeRecord
       ? `${this.typescriptNameForResponse()}Record`
-      : `${resultType.typescriptNameWithNamespace(context)}`;
+      : `${resultType?.typescriptNamespacedName}`;
     return typeString;
   }
 }

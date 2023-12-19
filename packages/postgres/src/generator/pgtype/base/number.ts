@@ -9,7 +9,7 @@ import { GenerationContext } from "@embracesql/shared";
  * one number type. Postgres is closer to C byte width style numerics.
  */
 export class PGTypeNumber extends PGCatalogType {
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = number;
@@ -58,7 +58,7 @@ export class PGTypeBigInt extends PGTypeNumber {
     `;
   }
 
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = bigint;
@@ -81,7 +81,7 @@ export class PGTypeBytea extends PGCatalogType {
       return from ? new Uint8Array(JSON.parse(from)) : null;
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = Uint8Array;

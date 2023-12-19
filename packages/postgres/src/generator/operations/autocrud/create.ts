@@ -1,39 +1,33 @@
-import { GenerationContext } from "../..";
+import { Context } from "../../..";
 import { PGTypeComposite } from "../../pgtype/pgtypecomposite";
 import { TableOperation } from "../table";
+import { GenerationContext } from "@embracesql/shared";
 
 /**
  * AutoCRUD creates or upserts a record by table.
  */
 export class CreateOperation extends TableOperation {
   typescriptValuesType(context: GenerationContext) {
-    const tableType = context.resolveType<PGTypeComposite>(
-      this.table.table.tabletypeoid,
-    );
-    const namespace = context.namespaces.find(
-      (n) => n.nspname === this.table.table.nspname,
-    );
-    return tableType.hasPrimaryKey
-      ? `${namespace?.typescriptName}.${this.table.typescriptName} | ${namespace?.typescriptName}.${this.table.typescriptName}NotPrimaryKey`
-      : `${namespace?.typescriptName}.${this.table.typescriptName}`;
+    const table = context.database.resolveTable(this.table.table.tabletypeoid)!;
+    return table.primaryKey
+      ? `${table.typescriptNamespacedName}.Record | ${table.typescriptNamespacedName}.RecordNotPrimaryKey`
+      : `${table.typescriptNamespacedName}.Record`;
   }
 
   dispatchName(context: GenerationContext): string {
-    return `${super.dispatchName(context)}.create`;
+    return `${super.dispatchName(context as Context)}.create`;
   }
 
   typescriptDefinition(context: GenerationContext): string {
+    const table = context.database.resolveTable(this.table.table.tabletypeoid)!;
+    const postgresTable = (context as Context).resolveType<PGTypeComposite>(
+      table.type.id as number,
+    );
     const generationBuffer = [""];
-    const tableType = context.resolveType<PGTypeComposite>(
-      this.table.table.tabletypeoid,
-    );
-    const namespace = context.namespaces.find(
-      (n) => n.nspname === this.table.table.nspname,
-    );
     const values = `values: ${this.typescriptValuesType(context)}`;
 
     generationBuffer.push(
-      `async create(${values}): Promise<${namespace?.typescriptName}.${this.table.typescriptName}>{`,
+      `async create(${values}): Promise<${table.typescriptNamespacedName}.Record>{`,
     );
     generationBuffer.push(
       `
@@ -42,28 +36,30 @@ export class CreateOperation extends TableOperation {
       `,
     );
     // when the passed values have the primary key -- upsert style is prepared
-    if (tableType.hasPrimaryKey) {
+    if (table.primaryKey) {
       generationBuffer.push(`
-      if (${namespace?.typescriptName}.includes${this.table.typescriptName}PrimaryKey(values)) {
+      if (${table.typescriptNamespacedName}.includesPrimaryKey(values)) {
       `);
-      const sql = `INSERT INTO ${
-        tableType.postgresName
-      } (${tableType.sqlColumns(context)})
-    VALUES (${tableType.attributes
-      .map((a) => a.postgresValueExpression(context, "values", false))
+      const sql = `INSERT INTO ${postgresTable.postgresName} (${
+        postgresTable.sqlColumns
+      })
+    VALUES (${postgresTable.attributes
+      .map((a) =>
+        a.postgresValueExpression(context as Context, "values", false),
+      )
       .join(",")})
-    ON CONFLICT (${tableType.primaryKeyAttributes
+    ON CONFLICT (${postgresTable.primaryKeyAttributes
       .map((a) => a.postgresName)
       .join(",")}) DO UPDATE
-    SET ${tableType.notPrimaryKeyAttributes
+    SET ${postgresTable.notPrimaryKeyAttributes
       .map((a) => `${a.postgresName} = EXCLUDED.${a.postgresName}`)
       .join(",")}
-    RETURNING ${tableType.sqlColumns(context)}
+    RETURNING ${postgresTable.sqlColumns}
     `;
       generationBuffer.push(`const response = await sql\`${sql}\``);
 
       generationBuffer.push(
-        this.typescriptTableReturnStatementsFromResponse(context),
+        this.typescriptTableReturnStatementsFromResponse(context as Context),
       );
 
       // close out the primary key case
@@ -72,19 +68,21 @@ export class CreateOperation extends TableOperation {
 
     // default / fallthrough case when no primary key is included
     const sql = `INSERT INTO ${
-      tableType.postgresName
-    } (${tableType.notPrimaryKeyAttributes
+      postgresTable.postgresName
+    } (${postgresTable.notPrimaryKeyAttributes
       .map((a) => a.postgresName)
       .join(",")})
-    VALUES (${tableType.notPrimaryKeyAttributes
-      .map((a) => a.postgresValueExpression(context, "values", false))
+    VALUES (${postgresTable.notPrimaryKeyAttributes
+      .map((a) =>
+        a.postgresValueExpression(context as Context, "values", false),
+      )
       .join(",")})
-    RETURNING ${tableType.sqlColumns(context)}
+    RETURNING ${postgresTable.sqlColumns}
     `;
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(
-      this.typescriptTableReturnStatementsFromResponse(context),
+      this.typescriptTableReturnStatementsFromResponse(context as Context),
     );
 
     // close out the create function

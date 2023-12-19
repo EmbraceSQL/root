@@ -1,6 +1,6 @@
 import { GenerationContext } from "..";
-import { ASTKind, IsNamed, NamespaceVisitor } from "@embracesql/shared";
-import { camelCase, pascalCase } from "change-case";
+import { ASTKind, NamespaceVisitor } from "@embracesql/shared";
+import { camelCase } from "change-case";
 
 /**
  * Primary key pickers extract properties from row objects
@@ -15,18 +15,15 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
   generationBuffer.push(`// begin primary key pickers`);
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
+    [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const tableTypeName = `${pascalCase(
-          (node as unknown as IsNamed)?.name,
-        )}`;
-        const generationBuffer = [
-          await NamespaceVisitor.before!(context, node),
-        ];
+        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         const primaryKey = node.primaryKey;
         if (primaryKey) {
+          // extract primary key
           generationBuffer.push(
-            `export function primaryKeyFrom(value: ${tableTypeName}) : string {`,
+            `export function primaryKeyFrom(value: ${node.typescriptNamespacedName}.Record) : string {`,
           );
           generationBuffer.push(`return JSON.stringify({`);
           primaryKey.columns.forEach((c) =>
@@ -36,6 +33,18 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
           );
           generationBuffer.push(`});`);
           generationBuffer.push(`}`);
+          // boolean guard on primary key
+          const primaryKeyNames =
+            primaryKey.columns.map(
+              (a) => `value.${camelCase(a.typescriptName)} !== undefined`,
+            ) || [];
+          generationBuffer.push(`
+      export function includesPrimaryKey(value: Partial<${
+        node.typescriptNamespacedName
+      }.Record>): value is ${node.typescriptNamespacedName}.Record{
+        return ${primaryKeyNames.join(" && ")}
+      }
+      `);
         }
 
         return generationBuffer.join("\n");

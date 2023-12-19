@@ -1,5 +1,4 @@
 import { Context, PostgresTypecast } from "../../context";
-import { asDocComment } from "../../util";
 import { CatalogRow } from "./pgtype";
 import {
   GeneratesTypeScriptParser,
@@ -53,14 +52,6 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
     return formatted;
   }
 
-  typescriptNameWithNamespace(context: Context) {
-    if (this.catalog.nspname === context.currentNamespace) {
-      return this.typescriptName;
-    } else {
-      return `${this.typescriptNamespaceName}.${this.typescriptName}`;
-    }
-  }
-
   /**
    * Convention is snake case in PG, separating namespace(schema) from
    * the object (type, table, proc...) with a `.`.
@@ -87,10 +78,9 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
    *
    * You are gonna need to override this.
    */
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    ${asDocComment(this.comment)}
     export type ${this.typescriptName} = void;
     `;
   }

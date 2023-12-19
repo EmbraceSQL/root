@@ -1,5 +1,4 @@
 import { GenerationContext } from "../..";
-import { Context } from "../../..";
 import { PGCatalogType } from "../pgcatalogtype";
 
 export class PGTypeUri extends PGCatalogType {
@@ -9,7 +8,7 @@ export class PGTypeUri extends PGCatalogType {
         return from ? new URL(from) : null;
     `;
   }
-  typescriptTypeDefinition(context: Context) {
+  typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
     export type ${this.typescriptName} = URL;
