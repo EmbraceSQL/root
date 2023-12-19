@@ -41,8 +41,12 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     `,
   ];
 
-  generationBuffer.push(`// begin type definitions`);
   context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `// begin type definitions`;
+      },
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Types]: NamespaceVisitor,
     [ASTKind.Type]: {

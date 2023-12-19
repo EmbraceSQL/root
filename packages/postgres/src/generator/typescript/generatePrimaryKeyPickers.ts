@@ -12,8 +12,12 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
   const generationBuffer = [""];
 
   // primary key 'pickers' used to debounce and hash objects
-  generationBuffer.push(`// begin primary key pickers`);
   context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `// begin primary key pickers`;
+      },
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
@@ -53,6 +57,5 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
     },
   };
   generationBuffer.push(await context.database.visit(context));
-  generationBuffer.push(`// end primary key pickers`);
   return generationBuffer.join("\n");
 }

@@ -9,8 +9,12 @@ import { ASTKind, NamespaceVisitor } from "@embracesql/shared";
 export async function generateTableTypeAliases(context: GenerationContext) {
   const generationBuffer = [""];
 
-  generationBuffer.push(`// begin table type aliases`);
   context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `// begin table type aliases`;
+      },
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
@@ -33,7 +37,6 @@ export async function generateTableTypeAliases(context: GenerationContext) {
   generationBuffer.push(
     await context.database.visit({ ...context, skipSchemas: [] }),
   );
-  generationBuffer.push(`// end string parsers`);
 
   return generationBuffer.join("\n");
 }

@@ -7,8 +7,12 @@ import { ASTKind, NamespaceVisitor } from "@embracesql/shared";
 export async function generateTypeParsers(context: GenerationContext) {
   const generationBuffer = [""];
 
-  generationBuffer.push(`// begin string parsers`);
   context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `// begin string parsers`;
+      },
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Types]: NamespaceVisitor,
     [ASTKind.Type]: {
@@ -27,8 +31,12 @@ export async function generateTypeParsers(context: GenerationContext) {
     await context.database.visit({ ...context, skipSchemas: [] }),
   );
 
-  generationBuffer.push(`// begin table column parser mapping`);
   context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return `// begin table column parser mapping`;
+      },
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: NamespaceVisitor,
@@ -47,7 +55,6 @@ export async function generateTypeParsers(context: GenerationContext) {
   generationBuffer.push(
     await context.database.visit({ ...context, skipSchemas: [] }),
   );
-  generationBuffer.push(`// end string parsers`);
 
   return generationBuffer.join("\n");
 }

@@ -12711,7 +12711,6 @@ export namespace Public {
 export namespace Api {
   export namespace Tables {}
 }
-// end string parsers
 
 // begin primary key pickers
 export namespace Public {
@@ -12734,7 +12733,6 @@ export namespace Public {
 export namespace Api {
   export namespace Tables {}
 }
-// end primary key pickers
 
 // begin table type aliases
 export namespace PgCatalog {
@@ -13058,7 +13056,6 @@ export namespace Public {
 export namespace Api {
   export namespace Tables {}
 }
-// end string parsers
 
 // BEGIN - Node side database connectivity layer
 import {
