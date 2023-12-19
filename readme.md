@@ -12,5 +12,3 @@ See the [docs](https://embracesql.github.io/docs).
 // TODO: paginate multiple rows
 
 // TODO: sort multiple rows by column
-
-// TODO: no need for PostgresTypecast except on server

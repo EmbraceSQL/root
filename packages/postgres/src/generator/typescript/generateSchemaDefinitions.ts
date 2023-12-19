@@ -6,7 +6,6 @@ import {
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
-import { generateTypecastMap } from "./generateTypecastMap";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -39,9 +38,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
     `,
   ];
-
-  // include all schemas -- need those built in types
-  generationBuffer.push(await generateTypecastMap(context));
 
   // each postgres namespace gets a typescript namespace -- generates itself
   // this includes all namespaces in order to get all types which can

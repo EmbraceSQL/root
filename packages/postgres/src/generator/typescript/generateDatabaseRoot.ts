@@ -1,6 +1,7 @@
 import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
+import { generateTypecastMap } from "./generateTypecastMap";
 
 /**
  * Generate a root object class that serves as 'the database'.
@@ -19,6 +20,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         import postgres from "postgres";
     `,
   ];
+  // include all schemas -- need those built in types
+  generationBuffer.push(await generateTypecastMap(context));
   // the schema
   // common database interface
   generationBuffer.push(`
