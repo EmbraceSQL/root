@@ -489,12 +489,12 @@ export class ScriptsNode extends ContainerNode {
    * Asynchronous factory method uses IO to expand the current
    * `database` AST in the context.
    */
-  static async factory(context: GenerationContext) {
+  static async loadAST(context: GenerationContext) {
     if (context.sqlScriptsFrom) {
       const rootPath = path.parse(path.join(context.sqlScriptsFrom));
       const scriptsNode = new ScriptsNode(context.database, rootPath);
       context.database.children.push(scriptsNode);
-      await ScriptFolderNode.factory(context, rootPath, scriptsNode);
+      await ScriptFolderNode.loadAST(context, rootPath, scriptsNode);
       return scriptsNode;
     } else {
       return undefined;
@@ -515,7 +515,7 @@ export class ScriptFolderNode extends ContainerNode {
   /**
    * Asynchronous factory builds from a folder path on disk.
    */
-  static async factory(
+  static async loadAST(
     context: GenerationContext,
     searchPath: path.ParsedPath,
     addToNode: ContainerNode,
@@ -533,9 +533,9 @@ export class ScriptFolderNode extends ContainerNode {
           path.parse(path.join(entry.path, entry.name)),
         );
         addToNode.children.push(folder);
-        await ScriptFolderNode.factory(context, folder.path, folder);
+        await ScriptFolderNode.loadAST(context, folder.path, folder);
       } else if (entry.name.endsWith(".sql")) {
-        await ScriptNode.factory(
+        await ScriptNode.loadAST(
           context,
           path.parse(path.join(entry.path, entry.name)),
           addToNode,
@@ -556,7 +556,7 @@ export class ScriptNode extends NamedASTNode {
   /**
    * Asynchronous factory builds from a sql file on disk.
    */
-  static async factory(
+  static async loadAST(
     context: GenerationContext,
     scriptPath: path.ParsedPath,
     addToNode: ContainerNode,

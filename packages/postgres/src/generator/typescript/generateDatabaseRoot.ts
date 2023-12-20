@@ -1,7 +1,9 @@
 import { GenerationContext } from "..";
+import { Context } from "../..";
 import { DatabaseOperation } from "../operations/database";
 import { SqlScriptOperations } from "../operations/sqlscript";
 import { generateTypecastMap } from "./generateTypecastMap";
+import { ASTKind } from "@embracesql/shared";
 
 /**
  * Generate a root object class that serves as 'the database'.
@@ -11,63 +13,81 @@ import { generateTypecastMap } from "./generateTypecastMap";
  * proc or query you want to call!
  */
 export const generateDatabaseRoot = async (context: GenerationContext) => {
-  // starting off with all the imports, append to this list
-  // and it will be the final output
-  const generationBuffer = [
-    `
-        // BEGIN - Node side database connectivity layer
-        import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
-        import postgres from "postgres";
-    `,
-  ];
-  // include all schemas -- need those built in types
-  generationBuffer.push(await generateTypecastMap(context));
-  // the schema
-  // common database interface
-  generationBuffer.push(`
-  interface HasDatabase {
-    database: Database;
-  }
-  `);
+  const generationBuffer = [""];
+  context.handlers = {
+    [ASTKind.Database]: {
+      before: async () => {
+        return [
+          // starting off with all the imports, append to this list
+          // and it will be the final output
+          `
+            // BEGIN - Node side database connectivity layer
+            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
+            import postgres from "postgres";
+          `,
+          // include all schemas -- need those built in types
+          await generateTypecastMap({ ...context, skipSchemas: [] }),
+          // common database interface
+          `
+            interface HasDatabase {
+              database: Database;
+            }
+          `,
+          // typecast map for postgres driver codec.
 
-  // class start
-  generationBuffer.push(`export class Database extends PostgresDatabase { `);
-  generationBuffer.push(`
+          // generated database class starts here
+          `export class Database extends PostgresDatabase { `,
+          // I have no idea how to 'new' a subclass in a static, so this
+          // is generated
+          // TODO: get this into the base class
+          `
+          /**
+           * Connect to your database server via URL, and return 
+           * a fully typed database you can use to access it.
+           */
+          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+              return new Database(await initializeContext(postgresUrl, props));
+          }
+        
+        `,
+          // TODO: convert to AST
+          (await DatabaseOperation.factory(context)).typescriptDefinition(
+            context,
+          ),
+        ].join("\n");
+      },
+      after: async () => {
+        return [
+          // database class end
+          `}`,
+        ].join("\n");
+      },
+    },
+    [ASTKind.Scripts]: {
+      before: async (context) => {
+        // TODO: convert to ast
+        // holder for all scripts provides a .Scripts grouping
+        if (context.sqlScriptsFrom?.length) {
+          const scripts = await SqlScriptOperations.factory(
+            context as Context,
+            context.sqlScriptsFrom,
+          );
+          return [
+            `
+    public Scripts = new class implements HasDatabase {
+       		constructor(public database: Database) {}
+        `,
+            scripts.typescriptDefinition(context as Context),
 
-    /**
-     * Connect to your database server via URL, and return 
-     * a fully typed database you can use to access it.
-     */
-    static async connect(postgresUrl: string, props?: postgres.Options<never>) {
-        return new Database(await initializeContext(postgresUrl, props));
-    }
-    
-    `);
-
-  // transaction support is a nested context
-  generationBuffer.push(`
-    /**
-     * Use the database inside a transaction. 
-     * 
-     * A successful return is a commit.
-     * An escaping exception is a rollback.
-     */
-    async withTransaction<T>(body: (database: Database) => Promise<T>) {
-      if(this.context.sql.begin) {
-        // root transaction
-        return await this.context.sql.begin(async (sql) => await body(new Database({...this.context, sql})));
-      } else {
-        // nested transaction
-        const nested = this.context.sql as postgres.TransactionSql
-        return await nested.savepoint(async (sql) => await body(new Database({...this.context, sql})));
-      }
-    }
-
-  `);
-  // wheel through every namespace, and every proc and generate calls
-  // each schema / namespace turns into a .<Schema> grouping
-  const operations = await DatabaseOperation.factory(context);
-  generationBuffer.push(operations.typescriptDefinition(context));
+            // close off Scripts outer scope
+            `}(this)`,
+          ].join("\n");
+        } else {
+          return "";
+        }
+      },
+    },
+  };
 
   // holder for all scripts provides a .Scripts grouping
   if (context.sqlScriptsFrom?.length) {
@@ -85,7 +105,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     generationBuffer.push(`}(this)`);
   }
 
-  //class end
-  generationBuffer.push(`}`);
-  return generationBuffer.join("\n");
+  // include all schemas -- need those built in types
+  return await context.database.visit({ ...context });
 };

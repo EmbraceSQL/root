@@ -4,6 +4,8 @@ import {
   IndexOperationNode,
 } from "@embracesql/shared";
 
+// TODO: generate client for sql scripts
+
 const indexOperation = {
   before: async (_: GenerationContext, node: IndexOperationNode) => {
     // will return a single record on a unique index

@@ -190,7 +190,9 @@ export const initializeContext = async (
   namespaces.forEach((n) => n.loadAST(generationContext));
 
   // stored scripts
-  await ScriptsNode.factory(generationContext);
+  await ScriptsNode.loadAST(generationContext);
+
+  // TODO: scripts need metadata
 
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete
