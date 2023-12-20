@@ -1,6 +1,8 @@
 import { GeneratesTypeScriptParser, GenerationContext } from ".";
 import { DispatchOperation } from "./index";
 import { camelCase, pascalCase } from "change-case";
+import * as fs from "fs";
+import * as path from "path";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.
@@ -23,6 +25,9 @@ export const enum ASTKind {
   ReadOperation,
   UpdateOperation,
   DeleteOperation,
+  Scripts,
+  ScriptFolder,
+  Script,
 }
 
 /**
@@ -96,6 +101,9 @@ export type VisitorMap = {
   [ASTKind.ReadOperation]?: Visitor<ReadOperationNode>;
   [ASTKind.UpdateOperation]?: Visitor<UpdateOperationNode>;
   [ASTKind.DeleteOperation]?: Visitor<DeleteOperationNode>;
+  [ASTKind.Scripts]?: Visitor<ScriptsNode>;
+  [ASTKind.ScriptFolder]?: Visitor<ScriptFolderNode>;
+  [ASTKind.Script]?: Visitor<ScriptNode>;
 };
 
 /**
@@ -468,5 +476,109 @@ export class DeleteOperationNode extends IndexOperationNode {
 export class UpdateOperationNode extends IndexOperationNode {
   constructor(public index: IndexNode) {
     super("update", ASTKind.UpdateOperation, index);
+  }
+}
+
+/**
+ * Collects scripts into a hierarchy sourced from a
+ * folder tree on disk.
+ */
+export class ScriptsNode extends ContainerNode {
+  static SCRIPTS = "Scripts";
+  /**
+   * Asynchronous factory method uses IO to expand the current
+   * `database` AST in the context.
+   */
+  static async factory(context: GenerationContext) {
+    if (context.sqlScriptsFrom) {
+      const rootPath = path.parse(path.join(context.sqlScriptsFrom));
+      const scriptsNode = new ScriptsNode(context.database, rootPath);
+      context.database.children.push(scriptsNode);
+      await ScriptFolderNode.factory(context, rootPath, scriptsNode);
+      return scriptsNode;
+    } else {
+      return undefined;
+    }
+  }
+  constructor(
+    public database: DatabaseNode,
+    public path: path.ParsedPath,
+  ) {
+    super("Scripts", ASTKind.Scripts, database);
+  }
+}
+
+/**
+ * A single folder of scripts on disk.
+ */
+export class ScriptFolderNode extends ContainerNode {
+  /**
+   * Asynchronous factory builds from a folder path on disk.
+   */
+  static async factory(
+    context: GenerationContext,
+    searchPath: path.ParsedPath,
+    addToNode: ContainerNode,
+  ) {
+    // reading the whole directory
+    const inPath = await fs.promises.readdir(
+      path.join(searchPath.dir, searchPath.base),
+      {
+        withFileTypes: true,
+      },
+    );
+    for (const entry of inPath) {
+      if (entry.isDirectory()) {
+        const folder = new ScriptFolderNode(
+          path.parse(path.join(entry.path, entry.name)),
+        );
+        addToNode.children.push(folder);
+        await ScriptFolderNode.factory(context, folder.path, folder);
+      } else if (entry.name.endsWith(".sql")) {
+        await ScriptNode.factory(
+          context,
+          path.parse(path.join(entry.path, entry.name)),
+          addToNode,
+        );
+      }
+    }
+  }
+
+  constructor(public path: path.ParsedPath) {
+    super(path.name, ASTKind.ScriptFolder);
+  }
+}
+
+/**
+ * A single script that is source from a .sql file on disk.
+ */
+export class ScriptNode extends NamedASTNode {
+  /**
+   * Asynchronous factory builds from a sql file on disk.
+   */
+  static async factory(
+    context: GenerationContext,
+    scriptPath: path.ParsedPath,
+    addToNode: ContainerNode,
+  ) {
+    const script = new ScriptNode(
+      scriptPath,
+      await fs.promises.readFile(path.join(scriptPath.dir, scriptPath.base), {
+        encoding: "utf8",
+      }),
+    );
+    addToNode.children.push(script);
+  }
+
+  constructor(
+    public path: path.ParsedPath,
+    public script: string,
+  ) {
+    super(path.name, ASTKind.Script);
+  }
+
+  get typescriptName() {
+    // method style naming for operation
+    return camelCase(this.name);
   }
 }

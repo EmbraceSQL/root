@@ -69,7 +69,7 @@ program.addHelpText("beforeAll", logo());
 addOptions(
   generate.command("node").description("TypeScript code for use in nodejs."),
 ).action(async (options) => {
-  const context = await initializeContext(options.database);
+  const context = await initializeContext(options.database, options);
   const generationBuffer: string[] = [];
 
   const combinedContext = {
@@ -88,7 +88,7 @@ addOptions(
     .command("express")
     .description("TypeScript code for use with Express."),
 ).action(async (options) => {
-  const context = await initializeContext(options.database);
+  const context = await initializeContext(options.database, options);
   const generationBuffer: string[] = [];
 
   const combinedContext = {
@@ -108,7 +108,7 @@ addOptions(
 addOptions(
   generate.command("client").description("TypeScript code for use via fetch."),
 ).action(async (options) => {
-  const context = await initializeContext(options.database);
+  const context = await initializeContext(options.database, options);
   const generationBuffer: string[] = [];
 
   const combinedContext = {
@@ -126,7 +126,7 @@ addOptions(
 addOptions(
   generate.command("react").description("TypeScript code for use with React."),
 ).action(async (options) => {
-  const context = await initializeContext(options.database);
+  const context = await initializeContext(options.database, options);
   const generationBuffer: string[] = [];
 
   const combinedContext = {

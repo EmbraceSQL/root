@@ -24,11 +24,11 @@ describe("The generator can", () => {
   it("create TypeScript database for dvdrental sample", async () => {
     context = await initializeContext(
       "postgres://postgres:postgres@localhost/dvdrental",
+      {
+        sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
+      },
     );
-    const source = await generateDatabaseRoot({
-      ...context,
-      sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
-    });
+    const source = await generateDatabaseRoot(context);
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },
     });
@@ -37,11 +37,11 @@ describe("The generator can", () => {
   it("create Express dispatcher TypeScript definitions for dvdrental sample", async () => {
     context = await initializeContext(
       "postgres://postgres:postgres@localhost/dvdrental",
+      {
+        sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
+      },
     );
-    const source = await generateOperationDispatcher({
-      ...context,
-      sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
-    });
+    const source = await generateOperationDispatcher(context);
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },
     });
@@ -50,12 +50,12 @@ describe("The generator can", () => {
   it("create React  TypeScript definitions for dvdrental sample", async () => {
     context = await initializeContext(
       "postgres://postgres:postgres@localhost/dvdrental",
+      {
+        sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
+        skipSchemas: ["pg_catalog", "information_schema"],
+      },
     );
-    const source = await generateReactComponents({
-      ...context,
-      sqlScriptsFrom: path.join(__dirname, "../../../var/data/dvdrental/sql"),
-      skipSchemas: ["pg_catalog", "information_schema"],
-    });
+    const source = await generateReactComponents(context);
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },
     });

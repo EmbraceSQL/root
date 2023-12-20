@@ -6,7 +6,11 @@ import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
-import { DatabaseNode } from "@embracesql/shared";
+import {
+  DatabaseNode,
+  GenerationContextProps,
+  ScriptsNode,
+} from "@embracesql/shared";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
 
@@ -83,6 +87,9 @@ type ConnectionStringProps = {
   >;
 };
 
+type InitializeContextProps = postgres.Options<never> &
+  Partial<GenerationContextProps>;
+
 /**
  * A single context is passed through as a shared blackboard to
  * collect data from the postgres catalog. This shared data is then used
@@ -94,8 +101,12 @@ type ConnectionStringProps = {
  */
 export const initializeContext = async (
   postgresUrl = DEFAULT_POSTGRES_URL,
-  props?: postgres.Options<never>,
+  props?: InitializeContextProps,
 ) => {
+  // props leaking in .database will cause a connection failure that is
+  // confusing to read -- it'll look like a proper URL that really does
+  // exist, trouble is it just doesn't match the arguments to `postgres`
+  delete props?.database;
   const parsed = pgconnectionstring.parse(postgresUrl) as ConnectionStringProps;
   // little tweaks of types
   const connection = {
@@ -162,6 +173,7 @@ export const initializeContext = async (
   // abstract database representation
   const database = new DatabaseNode(databaseName);
   const generationContext = {
+    ...props,
     database,
   };
   // ok, this is a bit tricky since - tables and types can cross namespaces
@@ -176,6 +188,9 @@ export const initializeContext = async (
   // we now know all types -- now we have enough information to load the
   // AST with database schema objects - tables, columns, indexes
   namespaces.forEach((n) => n.loadAST(generationContext));
+
+  // stored scripts
+  await ScriptsNode.factory(generationContext);
 
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete

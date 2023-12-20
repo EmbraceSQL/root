@@ -34,12 +34,15 @@ export type OperationDispatchMethod = (
   request: EmbraceSQLRequest<object, object>,
 ) => Promise<unknown>;
 
+export type GenerationContextProps = {
+  skipSchemas?: string[];
+  sqlScriptsFrom?: string;
+};
+
 /**
  * Shared context for the generation sequence.
  */
-export type GenerationContext = {
-  sqlScriptsFrom?: string;
-  skipSchemas?: string[];
+export type GenerationContext = GenerationContextProps & {
   database: DatabaseNode;
   handlers?: VisitorMap;
 };
