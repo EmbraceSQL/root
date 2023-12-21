@@ -100,9 +100,7 @@ export async function generateClient(context: GenerationContext) {
       before: async (_, node) => {
         // creating can be an upsert, so you can pass with and
         // without a primary key
-        const valuesType = node.table.primaryKey
-          ? `${node.table.typescriptNamespacedName}.Record | ${node.table.typescriptNamespacedName}.RecordNotPrimaryKey`
-          : `${node.table.typescriptNamespacedName}.Record`;
+        const valuesType = `${node.table.type.typescriptNamespacedName}`;
         const returnType = `${node.table.typescriptNamespacedName}.Record`;
         // TODO: restore .Tables
         return `
@@ -127,7 +125,7 @@ export async function generateClient(context: GenerationContext) {
       before: async (_: GenerationContext, node) => {
         // will return a single record on a unique index
         const parametersType = node.index.typescriptNamespacedName;
-        const valuesType = `Partial<${node.index.table.typescriptNamespacedName}.Record>`;
+        const valuesType = `Partial<${node.index.table.type.typescriptNamespacedName}>`;
         const resultType = node.index.unique
           ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
           : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;

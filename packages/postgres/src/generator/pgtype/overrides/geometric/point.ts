@@ -6,10 +6,10 @@ class PGTypePoint extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    export type ${this.typescriptName} = {
+     {
       x: number;
       y: number;
-    };
+    }
     `;
   }
 }
@@ -17,9 +17,7 @@ class PGTypePoint extends PGCatalogType {
 class PGTypePointArray extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = Array<Point>;
-    `;
+    return `Array<Point>`;
   }
 }
 

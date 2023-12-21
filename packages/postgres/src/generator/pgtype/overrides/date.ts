@@ -15,9 +15,7 @@ class PGDate extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     // date ends up with a type alias
-    return `
-    export type ${this.typescriptName} = JsDate;
-    `;
+    return `JsDate`;
   }
 
   serializeToPostgres(context: Context, x: unknown) {

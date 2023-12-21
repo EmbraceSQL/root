@@ -39,7 +39,7 @@ describe("EmbraceSQLExpress can", () => {
     const response = await client.invoke({
       operation: "Public.LastDay",
       parameters: {
-        _0: new Date("12/1/2023"),
+        argument_0: new Date("12/1/2023"),
       },
     });
     expect(response).toMatchObject({

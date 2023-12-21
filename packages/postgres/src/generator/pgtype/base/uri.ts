@@ -10,8 +10,6 @@ export class PGTypeUri extends PGCatalogType {
   }
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = URL;
-    `;
+    return `URL`;
   }
 }

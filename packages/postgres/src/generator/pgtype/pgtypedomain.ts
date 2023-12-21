@@ -14,12 +14,10 @@ export class PGTypeDomain extends PGCatalogType {
   }
 
   typescriptTypeDefinition(context: GenerationContext) {
-    return `
-    export type ${this.typescriptName} = ${
+    return `${
       context.database.resolveType(this.catalog.typbasetype)
         ?.typescriptNamespacedName ?? "void"
-    };
-    `;
+    }`;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -113,17 +113,6 @@ export class PGIndex {
     )}`;
   }
 
-  typescriptTypeDefinition(context: GenerationContext) {
-    const namedValues = this.attributes.map(
-      (a) => `${a.typescriptName}: ${a.typescriptTypeDefinition(context)} ;`,
-    );
-    return `
-    export interface ${this.typescriptName}  {
-      ${namedValues.join("\n")}
-    };
-    `;
-  }
-
   /**
    * Code generation builder for an exact index match.
    */

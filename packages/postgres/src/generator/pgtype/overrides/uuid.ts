@@ -12,9 +12,7 @@ class PGUUID extends PGCatalogType {
   }
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = UUID;
-    `;
+    return `UUID`;
   }
 
   serializeToPostgres(context: Context, x: unknown) {

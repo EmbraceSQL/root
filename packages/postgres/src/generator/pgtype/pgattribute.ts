@@ -1,7 +1,7 @@
 import { Context } from "../../context";
 import { groupBy } from "../../util";
 import { PGTypeComposite } from "./pgtypecomposite";
-import { GenerationContext } from "@embracesql/shared";
+import { cleanIdentifierForTypescript } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
@@ -77,23 +77,11 @@ export class PGAttribute {
 
   get typescriptName() {
     // camel case -- this is a 'property like'
-    return `${camelCase(this.attribute.attname)}`;
+    return `${camelCase(cleanIdentifierForTypescript(this.attribute.attname))}`;
   }
 
   get postgresName() {
     return this.attribute.attname;
-  }
-
-  typescriptTypeDefinition(context: GenerationContext) {
-    // nullability, but otherwise delegate to the type of the attribute
-    const underlyingType =
-      context.database.resolveType(this.attribute.atttypid)
-        ?.typescriptNamespacedName ?? "void";
-    if (this.attribute.attnotnull) {
-      return underlyingType;
-    } else {
-      return `Nullable<${underlyingType}>`;
-    }
   }
 
   /**

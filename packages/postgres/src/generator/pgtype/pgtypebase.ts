@@ -74,6 +74,7 @@ export class PGTypeBase extends PGCatalogType {
           case "S":
             return new PGTypeText(catalog);
           default:
+            // TODO: handle types that map to any
             return new PGTypeText(
               catalog,
               `FIXME: ${catalog.typname} did not resolve to a base type`,
@@ -87,10 +88,10 @@ class PGTypeTid extends PGTypeBase {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    export type ${this.typescriptName} = {
+    {
       blockNumber: number;
       tupleIndex: number;
-    };
+    }
     `;
   }
 }
@@ -98,8 +99,6 @@ class PGTypeTid extends PGTypeBase {
 class PGTypeInet extends PGTypeBase {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = string;
-    `;
+    return `string`;
   }
 }

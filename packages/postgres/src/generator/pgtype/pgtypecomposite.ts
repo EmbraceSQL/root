@@ -6,6 +6,7 @@ import { CatalogRow } from "./pgtype";
 import {
   DELIMITER,
   GenerationContext,
+  cleanIdentifierForTypescript,
   compositeAttribute,
   escapeCompositeValue,
   parseObjectWithAttributes,
@@ -69,38 +70,21 @@ export class PGTypeComposite extends PGCatalogType {
   }
 
   typescriptTypeDefinition(context: GenerationContext) {
-    const generationBuffer = [``];
     // all the fields -- and a partial type to allow filling out with
     // various sub selects
-    const nameAndType = this.attributes.map(
-      (a) =>
-        `${a.typescriptName}${
-          a.isOptional ? "?" : ""
-        }: ${a.typescriptTypeDefinition(context)};`,
-    );
-    generationBuffer.push(`
-    export interface ${this.typescriptName}  {
-      ${nameAndType.join("\n")}
-    };
-    `);
-
-    if (this.hasPrimaryKey) {
-      // without the primary key, used to create rows when there
-      // is a default value in the database on the primary key
-      const nameAndType = this.notPrimaryKeyAttributes.map(
-        (a) =>
-          `${a.typescriptName}${
-            a.attribute.attnotnull ? "" : "?"
-          }: ${a.typescriptTypeDefinition(context)};`,
-      );
-      generationBuffer.push(`
-    export interface ${this.typescriptName}NotPrimaryKey  {
-      ${nameAndType.join("\n")}
-    };
-    `);
-    }
-
-    return generationBuffer.join("\n");
+    const nameAndType = this.attributes.map((a) => {
+      const attributeType = context.database.resolveType(a.attribute.atttypid)!;
+      const attributeName = `${camelCase(
+        cleanIdentifierForTypescript(a.attribute.attname),
+      )}`;
+      const attributeTypeName = a.notNull
+        ? attributeType.typescriptNamespacedName
+        : `Nullable<${attributeType.typescriptNamespacedName}>`;
+      return `${attributeName}${
+        a.isOptional ? "?" : ""
+      }: ${attributeTypeName};`;
+    });
+    return `{${nameAndType.join(" ")}}`;
   }
 
   get sqlColumns() {

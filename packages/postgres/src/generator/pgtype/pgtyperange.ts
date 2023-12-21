@@ -17,8 +17,6 @@ export class PGTypeRange extends PGCatalogType {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const type = context.database.resolveType(this.catalog.rngsubtype)!;
     // array with two elements is the nearst-to-a-tuple in JS
-    return `
-    export type ${this.typescriptName} = [${type.typescriptNamespacedName}, ${type.typescriptNamespacedName}];
-    `;
+    return `[${type.typescriptNamespacedName}, ${type.typescriptNamespacedName}]`;
   }
 }

@@ -1,5 +1,4 @@
 import { GenerationContext } from "..";
-import { Context } from "../..";
 import {
   SCRIPT_TYPES_NAMESPACE,
   SqlScriptOperations,
@@ -7,7 +6,14 @@ import {
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
-import { ASTKind, NamespaceVisitor } from "@embracesql/shared";
+import {
+  ASTKind,
+  AbstractTypeNode,
+  NamespaceVisitor,
+  ProcedureArgumentNode,
+  cleanIdentifierForTypescript,
+} from "@embracesql/shared";
+import { GenerationContext as GC } from "@embracesql/shared";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -32,50 +38,91 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
          * These types are node/browser isomorphic and are used by all other
          * EmbraceSQL generated code.
          */
-        
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         /* eslint-disable @typescript-eslint/no-empty-interface */
         /* eslint-disable @typescript-eslint/no-namespace */
         /* eslint-disable @typescript-eslint/no-unused-vars */
+        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
 
     `,
   ];
 
-  context.handlers = {
-    [ASTKind.Database]: {
-      before: async () => {
-        return `// begin type definitions`;
-      },
-    },
-    [ASTKind.Schema]: NamespaceVisitor,
-    [ASTKind.Types]: NamespaceVisitor,
-    [ASTKind.Type]: {
-      before: async (context, node) => {
-        // TODO: this is a cheat going to the postgres types not the AST
-        const postgresType = (context as Context).resolveType(
-          node.id as number,
-        );
-        return postgresType.typescriptTypeDefinition(context);
-      },
+  const TypeDefiner = {
+    before: async (context: GC, node: AbstractTypeNode) => {
+      return `export type ${
+        node.typescriptName
+      } = ${node.parser.typescriptTypeDefinition(context)};`;
     },
   };
-  // no skipping schemas for parsing
-  generationBuffer.push(
-    await context.database.visit({ ...context, skipSchemas: [] }),
-  );
 
-  // each postgres namespace gets a typescript namespace -- generates itself
-  // this includes all namespaces in order to get all types which can
-  // be used by user defined schemas
-  await Promise.all(
-    context.namespaces.map((n) => {
-      generationBuffer.push(
-        n.typescriptTypeDefinition({
-          ...context,
-        }),
-      );
+  // no skipping schemas while generating the type definitions - schemas
+  // can reference on another, particularly pg_catalog base types
+  generationBuffer.push(
+    await context.database.visit({
+      ...context,
+      skipSchemas: [],
+      handlers: {
+        [ASTKind.Database]: {
+          before: async () => {
+            return `// begin type definitions`;
+          },
+        },
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Types]: NamespaceVisitor,
+        [ASTKind.Type]: TypeDefiner,
+        [ASTKind.Enum]: {
+          before: async (_, node) => {
+            const namedValues = node.values.map(
+              (a) => `${cleanIdentifierForTypescript(a)} = "${a}"`,
+            );
+            return `
+              export enum ${node.typescriptName} {
+                ${namedValues.join(",")}
+              };
+            `;
+          },
+        },
+        [ASTKind.Tables]: NamespaceVisitor,
+        [ASTKind.Table]: NamespaceVisitor,
+        [ASTKind.Index]: {
+          before: async (_, node) => `export type ${node.typescriptName} = {`,
+          after: async () => `}`,
+        },
+        [ASTKind.IndexColumn]: {
+          before: async (_, node) =>
+            `${node.typescriptPropertyName}: ${node.type.typescriptNamespacedName} ;`,
+        },
+        [ASTKind.Procedures]: NamespaceVisitor,
+        [ASTKind.Procedure]: {
+          before: async (context, node) => {
+            return [
+              await NamespaceVisitor.before(context, node),
+              `export type Arguments = {`,
+              ...node.children
+                .filter<ProcedureArgumentNode>(
+                  (n): n is ProcedureArgumentNode =>
+                    n.kind === ASTKind.ProcedureArgument,
+                )
+                .map(
+                  (n) =>
+                    `${n.typescriptPropertyName}: ${n.type.typescriptNamespacedName};`,
+                ),
+              "};",
+              `export type Results = ${node.returnType.typescriptNamespacedName};`,
+            ].join("\n");
+          },
+          after: NamespaceVisitor.after,
+        },
+        [ASTKind.ProcedureResultType]: TypeDefiner,
+      },
     }),
   );
+
+  // TODO: types for procs
+  // TODO: types for tables
+  // TODO: types for indexes
+
   // script parameter and return types
   // holder for all scripts provides a .Scripts grouping
   if (context.sqlScriptsFrom?.length) {

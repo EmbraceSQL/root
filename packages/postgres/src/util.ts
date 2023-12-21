@@ -1,5 +1,4 @@
 import { PGProc } from "./generator/pgtype/pgproc/pgproc";
-import { camelCase } from "change-case";
 
 /**
  * Handy utility to group up a list by a predicate that picks part of a list
@@ -22,30 +21,17 @@ export const groupBy = <T, TT, K extends string | number>(
     {} as Record<K, TT[]>,
   );
 
-// identifier legalizer?
-const notLegalInIdentifiers = /[^\w$]/g;
-
-/**
- * Clean identifiers to be only legal characters.
- */
-export const cleanIdentifierForTypescript = (identifier: string) => {
-  return identifier.replace(notLegalInIdentifiers, "_");
-};
-
 /**
  * Procs in postgres can have parameters without names -- positional parameters.
  *
  * In postgres sql, these get 'numerical' names, so we'll follow along
  * for numerical style typescript parameter names.
  */
-export const buildTypescriptParameterName = (
-  proc: PGProc,
-  parameterIndex: number,
-) => {
+export const buildParameterName = (proc: PGProc, parameterIndex: number) => {
   if (proc.proc.proargnames[parameterIndex] !== undefined) {
-    return camelCase(proc.proc.proargnames[parameterIndex]);
+    return proc.proc.proargnames[parameterIndex];
   } else {
-    return `_${parameterIndex}`;
+    return `argument_${parameterIndex}`;
   }
 };
 

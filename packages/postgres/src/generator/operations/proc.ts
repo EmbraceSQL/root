@@ -31,6 +31,10 @@ export class ProcOperation implements Operation {
   }
 
   typescriptDefinition(context: GenerationContext): string {
+    const resultType = `${this.proc.procNode?.returnType
+      .typescriptNamespacedName}${
+      this.proc.returnsPseudoTypeRecord || this.proc.returnsSet ? "[]" : ""
+    }`;
     const generationBuffer = [
       ` async ${
         this.proc.typescriptName
@@ -60,9 +64,7 @@ export class ProcOperation implements Operation {
                 }
                 // pick out the scalar case
                 return `results?.[0].${this.proc.resultsetName}`;
-              })()} ) as unknown as ${this.proc.typescriptNameForPostgresResult(
-                true,
-              )};
+              })()} ) as unknown as ${resultType};
               return responseBody;
 
     `);
@@ -72,14 +74,8 @@ export class ProcOperation implements Operation {
       generationBuffer.push(`
             const parse${this.proc.typescriptName}Result = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              result: any) : ${this.proc.typescriptNameForPostgresResultsetRecord(
-                true,
-              )} => {
-              return context.procTypes.${
-                this.proc.postgresMarshallName
-              }.parseFromPostgresIfRecord(context, result) as unknown as ${this.proc.typescriptNameForPostgresResultsetRecord(
-                true,
-              )};
+              result: any)  => {
+              return context.procTypes.${this.proc.postgresMarshallName}.parseFromPostgresIfRecord(context, result) as unknown as ${this.proc.procNode?.returnType.typescriptNamespacedName};
             } 
      `);
     }

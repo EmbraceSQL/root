@@ -9,9 +9,7 @@ import { GenerationContext } from "@embracesql/shared";
 export class CreateOperation extends TableOperation {
   typescriptValuesType(context: GenerationContext) {
     const table = context.database.resolveTable(this.table.table.tabletypeoid)!;
-    return table.primaryKey
-      ? `${table.typescriptNamespacedName}.Record | ${table.typescriptNamespacedName}.RecordNotPrimaryKey`
-      : `${table.typescriptNamespacedName}.Record`;
+    return table.type.typescriptNamespacedName;
   }
 
   dispatchName(context: GenerationContext): string {

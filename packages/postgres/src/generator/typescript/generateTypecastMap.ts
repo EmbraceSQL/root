@@ -28,6 +28,11 @@ export async function generateTypecastMap(context: GenerationContext) {
         return `${node.marshallName}: Typecast;`;
       },
     },
+    [ASTKind.Enum]: {
+      before: async (_, node) => {
+        return `${node.marshallName}: Typecast;`;
+      },
+    },
   };
   // include all schemas -- need those built in types
   return await context.database.visit({ ...context, skipSchemas: [] });

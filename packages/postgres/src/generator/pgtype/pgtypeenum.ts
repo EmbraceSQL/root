@@ -1,8 +1,8 @@
 import { TypeFactoryContext } from "../../context";
-import { cleanIdentifierForTypescript, groupBy } from "../../util";
+import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
-import { GenerationContext } from "@embracesql/shared";
+import { EnumNode, GenerationContext } from "@embracesql/shared";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -42,17 +42,23 @@ export class PGTypeEnum extends PGCatalogType {
   constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
     this.values = context.enumValues.enumValuesByTypeId[catalog.oid];
+    this.values.toSorted((l, r) => l.enumsortorder - r.enumsortorder);
   }
 
-  typescriptTypeDefinition(context: GenerationContext) {
-    console.assert(context);
-    const namedValues = this.values.map(
-      (a) => `${cleanIdentifierForTypescript(a.enumlabel)} = "${a.enumlabel}"`,
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    const type = new EnumNode(
+      this.typescriptName,
+      this.postgresMarshallName,
+      this.values.map((v) => v.enumlabel),
+      schema.types,
+      this.oid,
+      this,
     );
-    return `
-    export enum ${this.typescriptName} {
-      ${namedValues.join(",")}
-    };
-    `;
+    context.database.registerType(type.id, type);
   }
+
+  // TODO: add unit test with enum in a query
+  // TODO: add unit test with enums with different base types
 }

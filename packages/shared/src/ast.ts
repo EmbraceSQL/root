@@ -1,4 +1,8 @@
-import { GeneratesTypeScriptParser, GenerationContext } from ".";
+import {
+  GeneratesTypeScript,
+  GenerationContext,
+  cleanIdentifierForTypescript,
+} from ".";
 import { DispatchOperation } from "./index";
 import { camelCase, pascalCase } from "change-case";
 import * as fs from "fs";
@@ -21,6 +25,7 @@ export const enum ASTKind {
   IndexColumn,
   Types,
   Type,
+  Enum,
   CreateOperation,
   ReadOperation,
   UpdateOperation,
@@ -28,6 +33,10 @@ export const enum ASTKind {
   Scripts,
   ScriptFolder,
   Script,
+  Procedures,
+  Procedure,
+  ProcedureArgument,
+  ProcedureResultType,
 }
 
 /**
@@ -95,8 +104,9 @@ export type VisitorMap = {
   [ASTKind.Column]?: Visitor<ColumnNode>;
   [ASTKind.Index]?: Visitor<IndexNode>;
   [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
-  [ASTKind.Type]?: Visitor<TypeNode>;
   [ASTKind.Types]?: Visitor<TypesNode>;
+  [ASTKind.Type]?: Visitor<TypeNode>;
+  [ASTKind.Enum]?: Visitor<EnumNode>;
   [ASTKind.CreateOperation]?: Visitor<CreateOperationNode>;
   [ASTKind.ReadOperation]?: Visitor<ReadOperationNode>;
   [ASTKind.UpdateOperation]?: Visitor<UpdateOperationNode>;
@@ -104,6 +114,10 @@ export type VisitorMap = {
   [ASTKind.Scripts]?: Visitor<ScriptsNode>;
   [ASTKind.ScriptFolder]?: Visitor<ScriptFolderNode>;
   [ASTKind.Script]?: Visitor<ScriptNode>;
+  [ASTKind.Procedures]?: Visitor<ProceduresNode>;
+  [ASTKind.Procedure]?: Visitor<ProcedureNode>;
+  [ASTKind.ProcedureArgument]?: Visitor<ProcedureArgumentNode>;
+  [ASTKind.ProcedureResultType]?: Visitor<ProcedureResultTypeNode>;
 };
 
 /**
@@ -157,6 +171,10 @@ export abstract class NamedASTNode extends ASTNode implements IsNamed {
       return `${this.typescriptName}`;
     }
   }
+
+  get typescriptPropertyName() {
+    return camelCase(cleanIdentifierForTypescript(this.name));
+  }
 }
 
 /**
@@ -206,7 +224,7 @@ export class DatabaseNode extends ContainerNode {
     super(name, ASTKind.Database);
   }
 
-  registerType(id: string | number, type: TypeNode) {
+  registerType(id: string | number, type: AbstractTypeNode) {
     const existing = this.types.get(`${id}`);
     if (existing) return existing;
     // mapped and in the children
@@ -251,10 +269,17 @@ export class SchemaNode extends ContainerNode {
   ) {
     super(name, ASTKind.Schema, database);
     this.children.push(new TypesNode(this));
+    this.children.push(new ProceduresNode(this));
   }
 
   get types() {
     return this.children.find((c) => c.kind === ASTKind.Types) as TypesNode;
+  }
+
+  get procedures() {
+    return this.children.find(
+      (c) => c.kind === ASTKind.Procedures,
+    ) as ProceduresNode;
   }
 
   async visit(context: GenerationContext): Promise<string> {
@@ -285,19 +310,51 @@ export class TypesNode extends ContainerNode {
 }
 
 /**
- * Represents a single type inside of postgres.
+ * Shared base for type nodes.
  *
- * These are grouped by schema.
+ * These differ on their enumerated type kind
  */
-export class TypeNode extends NamedASTNode {
+export class AbstractTypeNode extends NamedASTNode {
+  constructor(
+    name: string,
+    kind: ASTKind,
+    public marshallName: string,
+    public types: TypesNode,
+    public id: string | number,
+    public parser: GeneratesTypeScript,
+  ) {
+    super(name, kind, types);
+  }
+}
+
+/**
+ * Represents a single type from a database.
+ */
+export class TypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     public marshallName: string,
     public types: TypesNode,
     public id: string | number,
-    public parser: GeneratesTypeScriptParser,
+    public parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.Type, types);
+    super(name, ASTKind.Type, marshallName, types, id, parser);
+  }
+}
+
+/**
+ * Represents a single enum from a database.
+ */
+export class EnumNode extends AbstractTypeNode {
+  constructor(
+    name: string,
+    public marshallName: string,
+    public values: string[],
+    public types: TypesNode,
+    public id: string | number,
+    public parser: GeneratesTypeScript,
+  ) {
+    super(name, ASTKind.Enum, marshallName, types, id, parser);
   }
 }
 
@@ -412,7 +469,7 @@ export class IndexColumnNode extends ContainerNode {
 
 // operations
 
-abstract class OperationNode extends NamedASTNode {
+abstract class OperationNode extends ContainerNode {
   get typescriptName() {
     // method style naming for operation
     return camelCase(this.name);
@@ -561,6 +618,7 @@ export class ScriptNode extends NamedASTNode {
     scriptPath: path.ParsedPath,
     addToNode: ContainerNode,
   ) {
+    console.assert(context);
     const script = new ScriptNode(
       scriptPath,
       await fs.promises.readFile(path.join(scriptPath.dir, scriptPath.base), {
@@ -580,5 +638,55 @@ export class ScriptNode extends NamedASTNode {
   get typescriptName() {
     // method style naming for operation
     return camelCase(this.name);
+  }
+}
+
+/**
+ * Collects all procedures in a schema in a database.
+ */
+export class ProceduresNode extends ContainerNode {
+  constructor(public schema: SchemaNode) {
+    super("Procedures", ASTKind.Procedures, schema);
+  }
+}
+
+/**
+ * A single stored procedure or function.
+ */
+export class ProcedureNode extends OperationNode {
+  constructor(
+    name: string,
+    public procedures: ProceduresNode,
+    public returnType: AbstractTypeNode,
+  ) {
+    super(name, ASTKind.Procedure, procedures);
+  }
+}
+/**
+ * A single argument to a procedure. This is a 'named type'
+ */
+export class ProcedureArgumentNode extends NamedASTNode {
+  constructor(
+    name: string,
+    public procedure: ProcedureNode,
+    public type: TypeNode,
+    public hasDefault: boolean,
+  ) {
+    super(name, ASTKind.ProcedureArgument, procedure);
+  }
+}
+
+/**
+ * A reutrn type, when the return type is catalog defined.
+ */
+export class ProcedureResultTypeNode extends AbstractTypeNode {
+  constructor(
+    name: string,
+    marshallName: string,
+    types: TypesNode,
+    id: string | number,
+    parser: GeneratesTypeScript,
+  ) {
+    super(name, ASTKind.ProcedureResultType, marshallName, types, id, parser);
   }
 }

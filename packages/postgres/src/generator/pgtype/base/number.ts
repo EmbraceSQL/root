@@ -11,9 +11,7 @@ import { GenerationContext } from "@embracesql/shared";
 export class PGTypeNumber extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = number;
-    `;
+    return `number`;
   }
 
   typescriptTypeParser(context: GenerationContext) {
@@ -60,9 +58,7 @@ export class PGTypeBigInt extends PGTypeNumber {
 
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = bigint;
-    `;
+    return `bigint`;
   }
 
   parseFromPostgres(context: Context, x: unknown) {
@@ -83,8 +79,6 @@ export class PGTypeBytea extends PGCatalogType {
   }
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = Uint8Array;
-    `;
+    return `Uint8Array`;
   }
 }

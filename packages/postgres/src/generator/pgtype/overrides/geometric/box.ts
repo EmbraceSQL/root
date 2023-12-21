@@ -6,10 +6,10 @@ class PGTypeBox extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    export type ${this.typescriptName} = {
+    {
       upperRight: Point;
       lowerLeft: Point;
-    };
+    }
     `;
   }
 }

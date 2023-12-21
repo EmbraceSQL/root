@@ -21,13 +21,9 @@ export async function generateTableTypeAliases(context: GenerationContext) {
       before: async (context, node) => {
         const generationBuffer = [await NamespaceVisitor.before(context, node)];
         generationBuffer.push(
-          `export type Record = ${node.type.typescriptNamespacedName};`,
+          `export type Record = Required<${node.type.typescriptNamespacedName}>;`,
         );
-        if (node.primaryKey) {
-          generationBuffer.push(
-            `export type RecordNotPrimaryKey = ${node.type.typescriptNamespacedName}NotPrimaryKey;`,
-          );
-        }
+
         return generationBuffer.join("\n");
       },
       after: NamespaceVisitor.after,

@@ -8,9 +8,7 @@ import { GenerationContext } from "@embracesql/shared";
 export class PGTypeText extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = string;
-    `;
+    return `string`;
   }
 }
 
@@ -20,8 +18,6 @@ export class PGTypeText extends PGCatalogType {
 export class PGTypeTextArray extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = Array<string>;
-    `;
+    return `Array<string>`;
   }
 }

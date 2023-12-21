@@ -44,8 +44,8 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
             ) || [];
           generationBuffer.push(`
       export function includesPrimaryKey(value: Partial<${
-        node.typescriptNamespacedName
-      }.Record>): value is ${node.typescriptNamespacedName}.Record{
+        node.type.typescriptNamespacedName
+      }>){
         return ${primaryKeyNames.join(" && ")}
       }
       `);

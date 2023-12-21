@@ -1,7 +1,7 @@
 import { Context, PostgresTypecast } from "../../context";
 import { CatalogRow } from "./pgtype";
 import {
-  GeneratesTypeScriptParser,
+  GeneratesTypeScript,
   GenerationContext,
   TypeNode,
 } from "@embracesql/shared";
@@ -10,11 +10,9 @@ import { pascalCase } from "change-case";
 /**
  * All types come from here.
  */
-export class PGCatalogType implements GeneratesTypeScriptParser {
+export class PGCatalogType implements GeneratesTypeScript {
   /**
    * Base constructions picks out the name.
-   *
-   * @param catalog
    */
   constructor(
     public catalog: CatalogRow,
@@ -87,16 +85,11 @@ export class PGCatalogType implements GeneratesTypeScriptParser {
    * TypeScript source code for a type definition for this database
    * type.
    *
-   * Good news is -- nested types can be referenced by name, so there
-   * is no need for a 'global' type catalog to make this work.
-   *
    * You are gonna need to override this.
    */
-  typescriptTypeDefinition(context: GenerationContext) {
+  typescriptTypeDefinition(context: GenerationContext): string {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = void;
-    `;
+    return `any`;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

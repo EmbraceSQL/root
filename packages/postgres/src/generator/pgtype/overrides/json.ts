@@ -9,9 +9,7 @@ import { GenerationContext } from "@embracesql/shared";
 class PGJson extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = JSONObject;
-    `;
+    return `JSONObject`;
   }
 
   serializeToPostgres(context: Context, x: unknown) {

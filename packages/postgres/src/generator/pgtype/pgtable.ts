@@ -92,14 +92,6 @@ export class PGTable {
   get postgresName() {
     return `${this.table.nspname}.${this.table.relname}`;
   }
-  typescriptTypeDefinition(context: GenerationContext) {
-    console.assert(context);
-    return `
-    export namespace ${this.typescriptName}  {
-      ${this.indexes.map((i) => i.typescriptTypeDefinition(context)).join("\n")}
-    };
-    `;
-  }
 
   /**
    * Code generation builder for all fields updating.

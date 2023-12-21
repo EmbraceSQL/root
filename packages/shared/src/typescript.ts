@@ -56,6 +56,13 @@ export const NamespaceVisitor = {
  * will turn a single input parameter `from: string|null` into
  * the actual type or `null`.
  */
-export interface GeneratesTypeScriptParser {
+export interface GeneratesTypeScript {
+  /**
+   * Generate code that parses a string into a typed value.
+   */
   typescriptTypeParser(context: GenerationContext): string;
+  /**
+   * Generate code that defines the right hand side of a `type =` statement.
+   */
+  typescriptTypeDefinition(context: GenerationContext): string;
 }

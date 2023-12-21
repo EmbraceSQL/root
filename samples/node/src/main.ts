@@ -6,7 +6,7 @@ const db = await Database.connect(
   "postgres://postgres:postgres@localhost:5432/dvdrental",
 );
 // calling a stored database function with positional, typed arguments.
-const value = await db.Public.LastDay({ _0: new Date() });
+const value = await db.Public.LastDay({ argument_0: new Date() });
 console.log(value);
 // bye now 👋
 await db.disconnect();

@@ -14,9 +14,7 @@ class PGTypeInt2Vector extends PGCatalogType {
   }
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = Uint16Array;
-    `;
+    return `Uint16Array`;
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   parseFromPostgres(context: Context, x: any) {
@@ -42,9 +40,7 @@ class PGTypeVector extends PGCatalogType {
   }
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-    export type ${this.typescriptName} = Float32Array;
-    `;
+    return `Float32Array`;
   }
 
   parseFromPostgres(context: Context, x: unknown) {

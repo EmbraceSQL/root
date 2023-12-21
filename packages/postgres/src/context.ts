@@ -194,6 +194,8 @@ export const initializeContext = async (
 
   // TODO: scripts need metadata
 
+  await procCatalog.loadAST(generationContext);
+
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete
   await sql.end();

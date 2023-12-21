@@ -101,4 +101,14 @@ export * from "./uuid";
  */
 export type DispatchOperation = "" | ".create";
 
-export type { GeneratesTypeScriptParser } from "./typescript";
+export type { GeneratesTypeScript as GeneratesTypeScriptParser } from "./typescript";
+
+// identifier legalizer?
+const notLegalInIdentifiers = /[^\w$]/g;
+
+/**
+ * Clean identifiers to be only legal characters.
+ */
+export const cleanIdentifierForTypescript = (identifier: string) => {
+  return identifier.replace(notLegalInIdentifiers, "_");
+};

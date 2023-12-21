@@ -20,7 +20,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  */
 export type CatalogRow = {
   oid: number;
-  fullname: string;
   nspname: string;
   typname: string;
   typbasetype: number;
@@ -30,7 +29,6 @@ export type CatalogRow = {
   typrelid: number;
   typoutput: string;
   typcategory: string;
-  description: string;
 };
 
 /**

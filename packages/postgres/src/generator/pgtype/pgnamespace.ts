@@ -1,6 +1,6 @@
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
-import { PGProc, PGProcs } from "./pgproc/pgproc";
+import { PGProc, PGProcPseudoType, PGProcs } from "./pgproc/pgproc";
 import { PGTable, PGTables } from "./pgtable";
 import { PGTypes } from "./pgtype";
 import { GenerationContext, TablesNode } from "@embracesql/shared";
@@ -35,15 +35,19 @@ export class PGNamespace {
       (r) => r.proc.nspname,
       (r) => r,
     );
-    return Object.keys(typesByNamespace).map(
-      (namespace) =>
-        new PGNamespace(
-          namespace,
-          typesByNamespace[namespace] ?? [],
-          tablesByNamespace[namespace] ?? [],
-          procsByNamespace[namespace] ?? [],
-        ),
-    );
+    return Object.keys(typesByNamespace).map((namespace): PGNamespace => {
+      return new PGNamespace(
+        namespace,
+        [
+          ...typesByNamespace[namespace],
+          ...(procsByNamespace[namespace] ?? [])
+            .filter((p) => p.returnsPseudoTypeRecord)
+            .map((p) => new PGProcPseudoType(p)),
+        ] ?? [],
+        tablesByNamespace[namespace] ?? [],
+        procsByNamespace[namespace] ?? [],
+      );
+    });
   }
 
   /**
@@ -63,6 +67,7 @@ export class PGNamespace {
 
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.nspname);
+    // TODO: add prop to schema, move to constructor
     const tables = new TablesNode(schema);
     schema.children.push(tables);
     this.tables.forEach((t) => {
@@ -76,21 +81,5 @@ export class PGNamespace {
 
   get nspname() {
     return this.namespace;
-  }
-
-  /**
-   * Generate typescript source for this namespace.
-   */
-  typescriptTypeDefinition(context: GenerationContext) {
-    return `
-      export namespace ${this.typescriptName} {
-      ${this.procs.map((t) => t.typescriptTypeDefinition(context)).join("\n")}
-        export namespace Tables {
-        ${this.tables
-          .map((t) => t.typescriptTypeDefinition(context))
-          .join("\n")}
-        }
-      }
-    `;
   }
 }

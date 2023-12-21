@@ -6,7 +6,7 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-empty-interface */
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -24,618 +24,341 @@ import {
 export namespace PgCatalog {
   export namespace Types {
     export type AclitemArray = Array<PgCatalog.Types.Aclitem>;
-
     export type BitArray = Array<PgCatalog.Types.Bit>;
-
     export type BoolArray = Array<PgCatalog.Types.Bool>;
-
     export type BoxArray = Array<PgCatalog.Types.Box>;
-
     export type BpcharArray = Array<PgCatalog.Types.Bpchar>;
-
     export type ByteaArray = Array<PgCatalog.Types.Bytea>;
-
     export type CharArray = Array<PgCatalog.Types.Char>;
-
     export type CidArray = Array<PgCatalog.Types.Cid>;
-
     export type CidrArray = Array<PgCatalog.Types.Cidr>;
-
     export type CircleArray = Array<PgCatalog.Types.Circle>;
-
     export type CstringArray = Array<PgCatalog.Types.Cstring>;
-
     export type DateArray = Array<PgCatalog.Types.Date>;
-
     export type DatemultirangeArray = Array<PgCatalog.Types.Datemultirange>;
-
     export type DaterangeArray = Array<PgCatalog.Types.Daterange>;
-
     export type Float4Array = Array<PgCatalog.Types.Float4>;
-
     export type Float8Array = Array<PgCatalog.Types.Float8>;
-
     export type GtsvectorArray = Array<PgCatalog.Types.Gtsvector>;
-
     export type InetArray = Array<PgCatalog.Types.Inet>;
-
     export type Int2Array = Array<PgCatalog.Types.Int2>;
-
     export type Int2vectorArray = Array<PgCatalog.Types.Int2vector>;
-
     export type Int4Array = Array<PgCatalog.Types.Int4>;
-
     export type Int4multirangeArray = Array<PgCatalog.Types.Int4multirange>;
-
     export type Int4rangeArray = Array<PgCatalog.Types.Int4range>;
-
     export type Int8Array = Array<PgCatalog.Types.Int8>;
-
     export type Int8multirangeArray = Array<PgCatalog.Types.Int8multirange>;
-
     export type Int8rangeArray = Array<PgCatalog.Types.Int8range>;
-
     export type IntervalArray = Array<PgCatalog.Types.Interval>;
-
     export type JsonArray = Array<PgCatalog.Types.Json>;
-
     export type JsonbArray = Array<PgCatalog.Types.Jsonb>;
-
     export type JsonpathArray = Array<PgCatalog.Types.Jsonpath>;
-
     export type LineArray = Array<PgCatalog.Types.Line>;
-
     export type LsegArray = Array<PgCatalog.Types.Lseg>;
-
     export type MacaddrArray = Array<PgCatalog.Types.Macaddr>;
-
     export type Macaddr8Array = Array<PgCatalog.Types.Macaddr8>;
-
     export type MoneyArray = Array<PgCatalog.Types.Money>;
-
     export type NameArray = Array<PgCatalog.Types.Name>;
-
     export type NumericArray = Array<PgCatalog.Types.Numeric>;
-
     export type NummultirangeArray = Array<PgCatalog.Types.Nummultirange>;
-
     export type NumrangeArray = Array<PgCatalog.Types.Numrange>;
-
     export type OidArray = Array<PgCatalog.Types.Oid>;
-
     export type OidvectorArray = Array<PgCatalog.Types.Oidvector>;
-
     export type PathArray = Array<PgCatalog.Types.Path>;
-
     export type PgAggregateArray = Array<PgCatalog.Types.PgAggregate>;
-
     export type PgAmArray = Array<PgCatalog.Types.PgAm>;
-
     export type PgAmopArray = Array<PgCatalog.Types.PgAmop>;
-
     export type PgAmprocArray = Array<PgCatalog.Types.PgAmproc>;
-
     export type PgAttrdefArray = Array<PgCatalog.Types.PgAttrdef>;
-
     export type PgAttributeArray = Array<PgCatalog.Types.PgAttribute>;
-
     export type PgAuthMembersArray = Array<PgCatalog.Types.PgAuthMembers>;
-
     export type PgAuthidArray = Array<PgCatalog.Types.PgAuthid>;
-
     export type PgAvailableExtensionVersionsArray =
       Array<PgCatalog.Types.PgAvailableExtensionVersions>;
-
     export type PgAvailableExtensionsArray =
       Array<PgCatalog.Types.PgAvailableExtensions>;
-
     export type PgBackendMemoryContextsArray =
       Array<PgCatalog.Types.PgBackendMemoryContexts>;
-
     export type PgCastArray = Array<PgCatalog.Types.PgCast>;
-
     export type PgClassArray = Array<PgCatalog.Types.PgClass>;
-
     export type PgCollationArray = Array<PgCatalog.Types.PgCollation>;
-
     export type PgConfigArray = Array<PgCatalog.Types.PgConfig>;
-
     export type PgConstraintArray = Array<PgCatalog.Types.PgConstraint>;
-
     export type PgConversionArray = Array<PgCatalog.Types.PgConversion>;
-
     export type PgCursorsArray = Array<PgCatalog.Types.PgCursors>;
-
     export type PgDatabaseArray = Array<PgCatalog.Types.PgDatabase>;
-
     export type PgDbRoleSettingArray = Array<PgCatalog.Types.PgDbRoleSetting>;
-
     export type PgDefaultAclArray = Array<PgCatalog.Types.PgDefaultAcl>;
-
     export type PgDependArray = Array<PgCatalog.Types.PgDepend>;
-
     export type PgDescriptionArray = Array<PgCatalog.Types.PgDescription>;
-
     export type PgEnumArray = Array<PgCatalog.Types.PgEnum>;
-
     export type PgEventTriggerArray = Array<PgCatalog.Types.PgEventTrigger>;
-
     export type PgExtensionArray = Array<PgCatalog.Types.PgExtension>;
-
     export type PgFileSettingsArray = Array<PgCatalog.Types.PgFileSettings>;
-
     export type PgForeignDataWrapperArray =
       Array<PgCatalog.Types.PgForeignDataWrapper>;
-
     export type PgForeignServerArray = Array<PgCatalog.Types.PgForeignServer>;
-
     export type PgForeignTableArray = Array<PgCatalog.Types.PgForeignTable>;
-
     export type PgGroupArray = Array<PgCatalog.Types.PgGroup>;
-
     export type PgHbaFileRulesArray = Array<PgCatalog.Types.PgHbaFileRules>;
-
     export type PgIdentFileMappingsArray =
       Array<PgCatalog.Types.PgIdentFileMappings>;
-
     export type PgIndexArray = Array<PgCatalog.Types.PgIndex>;
-
     export type PgIndexesArray = Array<PgCatalog.Types.PgIndexes>;
-
     export type PgInheritsArray = Array<PgCatalog.Types.PgInherits>;
-
     export type PgInitPrivsArray = Array<PgCatalog.Types.PgInitPrivs>;
-
     export type PgLanguageArray = Array<PgCatalog.Types.PgLanguage>;
-
     export type PgLargeobjectArray = Array<PgCatalog.Types.PgLargeobject>;
-
     export type PgLargeobjectMetadataArray =
       Array<PgCatalog.Types.PgLargeobjectMetadata>;
-
     export type PgLocksArray = Array<PgCatalog.Types.PgLocks>;
-
     export type PgLsnArray = Array<PgCatalog.Types.PgLsn>;
-
     export type PgMatviewsArray = Array<PgCatalog.Types.PgMatviews>;
-
     export type PgNamespaceArray = Array<PgCatalog.Types.PgNamespace>;
-
     export type PgOpclassArray = Array<PgCatalog.Types.PgOpclass>;
-
     export type PgOperatorArray = Array<PgCatalog.Types.PgOperator>;
-
     export type PgOpfamilyArray = Array<PgCatalog.Types.PgOpfamily>;
-
     export type PgParameterAclArray = Array<PgCatalog.Types.PgParameterAcl>;
-
     export type PgPartitionedTableArray =
       Array<PgCatalog.Types.PgPartitionedTable>;
-
     export type PgPoliciesArray = Array<PgCatalog.Types.PgPolicies>;
-
     export type PgPolicyArray = Array<PgCatalog.Types.PgPolicy>;
-
     export type PgPreparedStatementsArray =
       Array<PgCatalog.Types.PgPreparedStatements>;
-
     export type PgPreparedXactsArray = Array<PgCatalog.Types.PgPreparedXacts>;
-
     export type PgProcArray = Array<PgCatalog.Types.PgProc>;
-
     export type PgPublicationArray = Array<PgCatalog.Types.PgPublication>;
-
     export type PgPublicationNamespaceArray =
       Array<PgCatalog.Types.PgPublicationNamespace>;
-
     export type PgPublicationRelArray = Array<PgCatalog.Types.PgPublicationRel>;
-
     export type PgPublicationTablesArray =
       Array<PgCatalog.Types.PgPublicationTables>;
-
     export type PgRangeArray = Array<PgCatalog.Types.PgRange>;
-
     export type PgReplicationOriginArray =
       Array<PgCatalog.Types.PgReplicationOrigin>;
-
     export type PgReplicationOriginStatusArray =
       Array<PgCatalog.Types.PgReplicationOriginStatus>;
-
     export type PgReplicationSlotsArray =
       Array<PgCatalog.Types.PgReplicationSlots>;
-
     export type PgRewriteArray = Array<PgCatalog.Types.PgRewrite>;
-
     export type PgRolesArray = Array<PgCatalog.Types.PgRoles>;
-
     export type PgRulesArray = Array<PgCatalog.Types.PgRules>;
-
     export type PgSeclabelArray = Array<PgCatalog.Types.PgSeclabel>;
-
     export type PgSeclabelsArray = Array<PgCatalog.Types.PgSeclabels>;
-
     export type PgSequenceArray = Array<PgCatalog.Types.PgSequence>;
-
     export type PgSequencesArray = Array<PgCatalog.Types.PgSequences>;
-
     export type PgSettingsArray = Array<PgCatalog.Types.PgSettings>;
-
     export type PgShadowArray = Array<PgCatalog.Types.PgShadow>;
-
     export type PgShdependArray = Array<PgCatalog.Types.PgShdepend>;
-
     export type PgShdescriptionArray = Array<PgCatalog.Types.PgShdescription>;
-
     export type PgShmemAllocationsArray =
       Array<PgCatalog.Types.PgShmemAllocations>;
-
     export type PgShseclabelArray = Array<PgCatalog.Types.PgShseclabel>;
-
     export type PgSnapshotArray = Array<PgCatalog.Types.PgSnapshot>;
-
     export type PgStatActivityArray = Array<PgCatalog.Types.PgStatActivity>;
-
     export type PgStatAllIndexesArray = Array<PgCatalog.Types.PgStatAllIndexes>;
-
     export type PgStatAllTablesArray = Array<PgCatalog.Types.PgStatAllTables>;
-
     export type PgStatArchiverArray = Array<PgCatalog.Types.PgStatArchiver>;
-
     export type PgStatBgwriterArray = Array<PgCatalog.Types.PgStatBgwriter>;
-
     export type PgStatDatabaseArray = Array<PgCatalog.Types.PgStatDatabase>;
-
     export type PgStatDatabaseConflictsArray =
       Array<PgCatalog.Types.PgStatDatabaseConflicts>;
-
     export type PgStatGssapiArray = Array<PgCatalog.Types.PgStatGssapi>;
-
     export type PgStatIoArray = Array<PgCatalog.Types.PgStatIo>;
-
     export type PgStatProgressAnalyzeArray =
       Array<PgCatalog.Types.PgStatProgressAnalyze>;
-
     export type PgStatProgressBasebackupArray =
       Array<PgCatalog.Types.PgStatProgressBasebackup>;
-
     export type PgStatProgressClusterArray =
       Array<PgCatalog.Types.PgStatProgressCluster>;
-
     export type PgStatProgressCopyArray =
       Array<PgCatalog.Types.PgStatProgressCopy>;
-
     export type PgStatProgressCreateIndexArray =
       Array<PgCatalog.Types.PgStatProgressCreateIndex>;
-
     export type PgStatProgressVacuumArray =
       Array<PgCatalog.Types.PgStatProgressVacuum>;
-
     export type PgStatRecoveryPrefetchArray =
       Array<PgCatalog.Types.PgStatRecoveryPrefetch>;
-
     export type PgStatReplicationArray =
       Array<PgCatalog.Types.PgStatReplication>;
-
     export type PgStatReplicationSlotsArray =
       Array<PgCatalog.Types.PgStatReplicationSlots>;
-
     export type PgStatSlruArray = Array<PgCatalog.Types.PgStatSlru>;
-
     export type PgStatSslArray = Array<PgCatalog.Types.PgStatSsl>;
-
     export type PgStatSubscriptionArray =
       Array<PgCatalog.Types.PgStatSubscription>;
-
     export type PgStatSubscriptionStatsArray =
       Array<PgCatalog.Types.PgStatSubscriptionStats>;
-
     export type PgStatSysIndexesArray = Array<PgCatalog.Types.PgStatSysIndexes>;
-
     export type PgStatSysTablesArray = Array<PgCatalog.Types.PgStatSysTables>;
-
     export type PgStatUserFunctionsArray =
       Array<PgCatalog.Types.PgStatUserFunctions>;
-
     export type PgStatUserIndexesArray =
       Array<PgCatalog.Types.PgStatUserIndexes>;
-
     export type PgStatUserTablesArray = Array<PgCatalog.Types.PgStatUserTables>;
-
     export type PgStatWalArray = Array<PgCatalog.Types.PgStatWal>;
-
     export type PgStatWalReceiverArray =
       Array<PgCatalog.Types.PgStatWalReceiver>;
-
     export type PgStatXactAllTablesArray =
       Array<PgCatalog.Types.PgStatXactAllTables>;
-
     export type PgStatXactSysTablesArray =
       Array<PgCatalog.Types.PgStatXactSysTables>;
-
     export type PgStatXactUserFunctionsArray =
       Array<PgCatalog.Types.PgStatXactUserFunctions>;
-
     export type PgStatXactUserTablesArray =
       Array<PgCatalog.Types.PgStatXactUserTables>;
-
     export type PgStatioAllIndexesArray =
       Array<PgCatalog.Types.PgStatioAllIndexes>;
-
     export type PgStatioAllSequencesArray =
       Array<PgCatalog.Types.PgStatioAllSequences>;
-
     export type PgStatioAllTablesArray =
       Array<PgCatalog.Types.PgStatioAllTables>;
-
     export type PgStatioSysIndexesArray =
       Array<PgCatalog.Types.PgStatioSysIndexes>;
-
     export type PgStatioSysSequencesArray =
       Array<PgCatalog.Types.PgStatioSysSequences>;
-
     export type PgStatioSysTablesArray =
       Array<PgCatalog.Types.PgStatioSysTables>;
-
     export type PgStatioUserIndexesArray =
       Array<PgCatalog.Types.PgStatioUserIndexes>;
-
     export type PgStatioUserSequencesArray =
       Array<PgCatalog.Types.PgStatioUserSequences>;
-
     export type PgStatioUserTablesArray =
       Array<PgCatalog.Types.PgStatioUserTables>;
-
     export type PgStatisticArray = Array<PgCatalog.Types.PgStatistic>;
-
     export type PgStatisticExtArray = Array<PgCatalog.Types.PgStatisticExt>;
-
     export type PgStatisticExtDataArray =
       Array<PgCatalog.Types.PgStatisticExtData>;
-
     export type PgStatsArray = Array<PgCatalog.Types.PgStats>;
-
     export type PgStatsExtArray = Array<PgCatalog.Types.PgStatsExt>;
-
     export type PgStatsExtExprsArray = Array<PgCatalog.Types.PgStatsExtExprs>;
-
     export type PgSubscriptionArray = Array<PgCatalog.Types.PgSubscription>;
-
     export type PgSubscriptionRelArray =
       Array<PgCatalog.Types.PgSubscriptionRel>;
-
     export type PgTablesArray = Array<PgCatalog.Types.PgTables>;
-
     export type PgTablespaceArray = Array<PgCatalog.Types.PgTablespace>;
-
     export type PgTimezoneAbbrevsArray =
       Array<PgCatalog.Types.PgTimezoneAbbrevs>;
-
     export type PgTimezoneNamesArray = Array<PgCatalog.Types.PgTimezoneNames>;
-
     export type PgTransformArray = Array<PgCatalog.Types.PgTransform>;
-
     export type PgTriggerArray = Array<PgCatalog.Types.PgTrigger>;
-
     export type PgTsConfigArray = Array<PgCatalog.Types.PgTsConfig>;
-
     export type PgTsConfigMapArray = Array<PgCatalog.Types.PgTsConfigMap>;
-
     export type PgTsDictArray = Array<PgCatalog.Types.PgTsDict>;
-
     export type PgTsParserArray = Array<PgCatalog.Types.PgTsParser>;
-
     export type PgTsTemplateArray = Array<PgCatalog.Types.PgTsTemplate>;
-
     export type PgTypeArray = Array<PgCatalog.Types.PgType>;
-
     export type PgUserArray = Array<PgCatalog.Types.PgUser>;
-
     export type PgUserMappingArray = Array<PgCatalog.Types.PgUserMapping>;
-
     export type PgUserMappingsArray = Array<PgCatalog.Types.PgUserMappings>;
-
     export type PgViewsArray = Array<PgCatalog.Types.PgViews>;
-
     export type PointArray = Array<PgCatalog.Types.Point>;
-
     export type PolygonArray = Array<PgCatalog.Types.Polygon>;
-
     export type RecordArray = Array<PgCatalog.Types.Record>;
-
     export type RefcursorArray = Array<PgCatalog.Types.Refcursor>;
-
     export type RegclassArray = Array<PgCatalog.Types.Regclass>;
-
     export type RegcollationArray = Array<PgCatalog.Types.Regcollation>;
-
     export type RegconfigArray = Array<PgCatalog.Types.Regconfig>;
-
     export type RegdictionaryArray = Array<PgCatalog.Types.Regdictionary>;
-
     export type RegnamespaceArray = Array<PgCatalog.Types.Regnamespace>;
-
     export type RegoperArray = Array<PgCatalog.Types.Regoper>;
-
     export type RegoperatorArray = Array<PgCatalog.Types.Regoperator>;
-
     export type RegprocArray = Array<PgCatalog.Types.Regproc>;
-
     export type RegprocedureArray = Array<PgCatalog.Types.Regprocedure>;
-
     export type RegroleArray = Array<PgCatalog.Types.Regrole>;
-
     export type RegtypeArray = Array<PgCatalog.Types.Regtype>;
-
     export type TextArray = Array<PgCatalog.Types.Text>;
-
     export type TidArray = Array<PgCatalog.Types.Tid>;
-
     export type TimeArray = Array<PgCatalog.Types.Time>;
-
     export type TimestampArray = Array<PgCatalog.Types.Timestamp>;
-
     export type TimestamptzArray = Array<PgCatalog.Types.Timestamptz>;
-
     export type TimetzArray = Array<PgCatalog.Types.Timetz>;
-
     export type TsmultirangeArray = Array<PgCatalog.Types.Tsmultirange>;
-
     export type TsqueryArray = Array<PgCatalog.Types.Tsquery>;
-
     export type TsrangeArray = Array<PgCatalog.Types.Tsrange>;
-
     export type TstzmultirangeArray = Array<PgCatalog.Types.Tstzmultirange>;
-
     export type TstzrangeArray = Array<PgCatalog.Types.Tstzrange>;
-
     export type TsvectorArray = Array<PgCatalog.Types.Tsvector>;
-
     export type TxidSnapshotArray = Array<PgCatalog.Types.TxidSnapshot>;
-
     export type UuidArray = Array<PgCatalog.Types.Uuid>;
-
     export type VarbitArray = Array<PgCatalog.Types.Varbit>;
-
     export type VarcharArray = Array<PgCatalog.Types.Varchar>;
-
     export type XidArray = Array<PgCatalog.Types.Xid>;
-
     export type Xid8Array = Array<PgCatalog.Types.Xid8>;
-
     export type XmlArray = Array<PgCatalog.Types.Xml>;
-
     export type Aclitem = string;
-
-    export type Any = void;
-
-    export type Anyarray = void;
-
-    export type Anycompatible = void;
-
-    export type Anycompatiblearray = void;
-
-    export type Anycompatiblemultirange = void;
-
-    export type Anycompatiblenonarray = void;
-
-    export type Anycompatiblerange = void;
-
-    export type Anyelement = void;
-
-    export type Anyenum = void;
-
-    export type Anymultirange = void;
-
-    export type Anynonarray = void;
-
-    export type Anyrange = void;
-
+    export type Any = any;
+    export type Anyarray = any;
+    export type Anycompatible = any;
+    export type Anycompatiblearray = any;
+    export type Anycompatiblemultirange = any;
+    export type Anycompatiblenonarray = any;
+    export type Anycompatiblerange = any;
+    export type Anyelement = any;
+    export type Anyenum = any;
+    export type Anymultirange = any;
+    export type Anynonarray = any;
+    export type Anyrange = any;
     export type Bit = boolean;
-
     export type Bool = boolean;
-
     export type Box = {
       upperRight: Point;
       lowerLeft: Point;
     };
-
     export type Bpchar = string;
-
     export type Bytea = Uint8Array;
-
     export type Char = string;
-
     export type Cid = string;
-
     export type Cidr = Uint8Array;
-
     export type Circle = {
       center: Point;
       radius: number;
     };
-
-    export type Cstring = void;
-
+    export type Cstring = any;
     export type Date = JsDate;
-
-    export type Datemultirange = void;
-
+    export type Datemultirange = any;
     export type Daterange = [PgCatalog.Types.Date, PgCatalog.Types.Date];
-
-    export type EventTrigger = void;
-
-    export type FdwHandler = void;
-
+    export type EventTrigger = any;
+    export type FdwHandler = any;
     export type Float4 = number;
-
     export type Float8 = number;
-
     export type Gtsvector = Array<string>;
-
-    export type IndexAmHandler = void;
-
+    export type IndexAmHandler = any;
     export type Inet = string;
-
     export type Int2 = number;
-
     export type Int2vector = Uint16Array;
-
     export type Int4 = number;
-
-    export type Int4multirange = void;
-
+    export type Int4multirange = any;
     export type Int4range = [PgCatalog.Types.Int4, PgCatalog.Types.Int4];
-
     export type Int8 = number;
-
-    export type Int8multirange = void;
-
+    export type Int8multirange = any;
     export type Int8range = [PgCatalog.Types.Int8, PgCatalog.Types.Int8];
-
-    export type Internal = void;
-
+    export type Internal = any;
     export type Interval = number;
-
     export type Json = JSONObject;
-
     export type Jsonb = JSONObject;
-
     export type Jsonpath = string;
-
-    export type LanguageHandler = void;
-
+    export type LanguageHandler = any;
     export type Line = {
       a: number;
       b: number;
       c: number;
     };
-
     export type Lseg = {
       from: Point;
       to: Point;
     };
-
     export type Macaddr = Uint8Array;
-
     export type Macaddr8 = Uint8Array;
-
     export type Money = number;
-
     export type Name = string;
-
     export type Numeric = number;
-
-    export type Nummultirange = void;
-
+    export type Nummultirange = any;
     export type Numrange = [PgCatalog.Types.Numeric, PgCatalog.Types.Numeric];
-
     export type Oid = number;
-
     export type Oidvector = Array<PgCatalog.Types.Oid>;
-
     export type Path = Array<Point>;
-
-    export interface PgAggregate {
+    export type PgAggregate = {
       aggfnoid: PgCatalog.Types.Regproc;
       aggkind: PgCatalog.Types.Char;
       aggnumdirectargs: PgCatalog.Types.Int2;
@@ -658,46 +381,14 @@ export namespace PgCatalog {
       aggmtransspace: PgCatalog.Types.Int4;
       agginitval?: Nullable<PgCatalog.Types.Text>;
       aggminitval?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgAggregateNotPrimaryKey {
-      aggkind: PgCatalog.Types.Char;
-      aggnumdirectargs: PgCatalog.Types.Int2;
-      aggtransfn: PgCatalog.Types.Regproc;
-      aggfinalfn: PgCatalog.Types.Regproc;
-      aggcombinefn: PgCatalog.Types.Regproc;
-      aggserialfn: PgCatalog.Types.Regproc;
-      aggdeserialfn: PgCatalog.Types.Regproc;
-      aggmtransfn: PgCatalog.Types.Regproc;
-      aggminvtransfn: PgCatalog.Types.Regproc;
-      aggmfinalfn: PgCatalog.Types.Regproc;
-      aggfinalextra: PgCatalog.Types.Bool;
-      aggmfinalextra: PgCatalog.Types.Bool;
-      aggfinalmodify: PgCatalog.Types.Char;
-      aggmfinalmodify: PgCatalog.Types.Char;
-      aggsortop: PgCatalog.Types.Oid;
-      aggtranstype: PgCatalog.Types.Oid;
-      aggtransspace: PgCatalog.Types.Int4;
-      aggmtranstype: PgCatalog.Types.Oid;
-      aggmtransspace: PgCatalog.Types.Int4;
-      agginitval?: Nullable<PgCatalog.Types.Text>;
-      aggminitval?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgAm {
+    };
+    export type PgAm = {
       oid: PgCatalog.Types.Oid;
       amname: PgCatalog.Types.Name;
       amhandler: PgCatalog.Types.Regproc;
       amtype: PgCatalog.Types.Char;
-    }
-
-    export interface PgAmNotPrimaryKey {
-      amname: PgCatalog.Types.Name;
-      amhandler: PgCatalog.Types.Regproc;
-      amtype: PgCatalog.Types.Char;
-    }
-
-    export interface PgAmop {
+    };
+    export type PgAmop = {
       oid: PgCatalog.Types.Oid;
       amopfamily: PgCatalog.Types.Oid;
       amoplefttype: PgCatalog.Types.Oid;
@@ -707,50 +398,22 @@ export namespace PgCatalog {
       amopopr: PgCatalog.Types.Oid;
       amopmethod: PgCatalog.Types.Oid;
       amopsortfamily: PgCatalog.Types.Oid;
-    }
-
-    export interface PgAmopNotPrimaryKey {
-      amopfamily: PgCatalog.Types.Oid;
-      amoplefttype: PgCatalog.Types.Oid;
-      amoprighttype: PgCatalog.Types.Oid;
-      amopstrategy: PgCatalog.Types.Int2;
-      amoppurpose: PgCatalog.Types.Char;
-      amopopr: PgCatalog.Types.Oid;
-      amopmethod: PgCatalog.Types.Oid;
-      amopsortfamily: PgCatalog.Types.Oid;
-    }
-
-    export interface PgAmproc {
+    };
+    export type PgAmproc = {
       oid: PgCatalog.Types.Oid;
       amprocfamily: PgCatalog.Types.Oid;
       amproclefttype: PgCatalog.Types.Oid;
       amprocrighttype: PgCatalog.Types.Oid;
       amprocnum: PgCatalog.Types.Int2;
       amproc: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgAmprocNotPrimaryKey {
-      amprocfamily: PgCatalog.Types.Oid;
-      amproclefttype: PgCatalog.Types.Oid;
-      amprocrighttype: PgCatalog.Types.Oid;
-      amprocnum: PgCatalog.Types.Int2;
-      amproc: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgAttrdef {
+    };
+    export type PgAttrdef = {
       oid: PgCatalog.Types.Oid;
       adrelid: PgCatalog.Types.Oid;
       adnum: PgCatalog.Types.Int2;
       adbin: PgCatalog.Types.PgNodeTree;
-    }
-
-    export interface PgAttrdefNotPrimaryKey {
-      adrelid: PgCatalog.Types.Oid;
-      adnum: PgCatalog.Types.Int2;
-      adbin: PgCatalog.Types.PgNodeTree;
-    }
-
-    export interface PgAttribute {
+    };
+    export type PgAttribute = {
       attrelid: PgCatalog.Types.Oid;
       attname: PgCatalog.Types.Name;
       atttypid: PgCatalog.Types.Oid;
@@ -777,36 +440,8 @@ export namespace PgCatalog {
       attoptions?: Nullable<PgCatalog.Types.TextArray>;
       attfdwoptions?: Nullable<PgCatalog.Types.TextArray>;
       attmissingval?: Nullable<PgCatalog.Types.Anyarray>;
-    }
-
-    export interface PgAttributeNotPrimaryKey {
-      attname: PgCatalog.Types.Name;
-      atttypid: PgCatalog.Types.Oid;
-      attlen: PgCatalog.Types.Int2;
-      attcacheoff: PgCatalog.Types.Int4;
-      atttypmod: PgCatalog.Types.Int4;
-      attndims: PgCatalog.Types.Int2;
-      attbyval: PgCatalog.Types.Bool;
-      attalign: PgCatalog.Types.Char;
-      attstorage: PgCatalog.Types.Char;
-      attcompression: PgCatalog.Types.Char;
-      attnotnull: PgCatalog.Types.Bool;
-      atthasdef: PgCatalog.Types.Bool;
-      atthasmissing: PgCatalog.Types.Bool;
-      attidentity: PgCatalog.Types.Char;
-      attgenerated: PgCatalog.Types.Char;
-      attisdropped: PgCatalog.Types.Bool;
-      attislocal: PgCatalog.Types.Bool;
-      attinhcount: PgCatalog.Types.Int2;
-      attstattarget: PgCatalog.Types.Int2;
-      attcollation: PgCatalog.Types.Oid;
-      attacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      attoptions?: Nullable<PgCatalog.Types.TextArray>;
-      attfdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-      attmissingval?: Nullable<PgCatalog.Types.Anyarray>;
-    }
-
-    export interface PgAuthMembers {
+    };
+    export type PgAuthMembers = {
       oid: PgCatalog.Types.Oid;
       roleid: PgCatalog.Types.Oid;
       member: PgCatalog.Types.Oid;
@@ -814,18 +449,8 @@ export namespace PgCatalog {
       adminOption: PgCatalog.Types.Bool;
       inheritOption: PgCatalog.Types.Bool;
       setOption: PgCatalog.Types.Bool;
-    }
-
-    export interface PgAuthMembersNotPrimaryKey {
-      roleid: PgCatalog.Types.Oid;
-      member: PgCatalog.Types.Oid;
-      grantor: PgCatalog.Types.Oid;
-      adminOption: PgCatalog.Types.Bool;
-      inheritOption: PgCatalog.Types.Bool;
-      setOption: PgCatalog.Types.Bool;
-    }
-
-    export interface PgAuthid {
+    };
+    export type PgAuthid = {
       oid: PgCatalog.Types.Oid;
       rolname: PgCatalog.Types.Name;
       rolsuper: PgCatalog.Types.Bool;
@@ -838,23 +463,8 @@ export namespace PgCatalog {
       rolconnlimit: PgCatalog.Types.Int4;
       rolpassword?: Nullable<PgCatalog.Types.Text>;
       rolvaliduntil?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgAuthidNotPrimaryKey {
-      rolname: PgCatalog.Types.Name;
-      rolsuper: PgCatalog.Types.Bool;
-      rolinherit: PgCatalog.Types.Bool;
-      rolcreaterole: PgCatalog.Types.Bool;
-      rolcreatedb: PgCatalog.Types.Bool;
-      rolcanlogin: PgCatalog.Types.Bool;
-      rolreplication: PgCatalog.Types.Bool;
-      rolbypassrls: PgCatalog.Types.Bool;
-      rolconnlimit: PgCatalog.Types.Int4;
-      rolpassword?: Nullable<PgCatalog.Types.Text>;
-      rolvaliduntil?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgAvailableExtensionVersions {
+    };
+    export type PgAvailableExtensionVersions = {
       name?: Nullable<PgCatalog.Types.Name>;
       version?: Nullable<PgCatalog.Types.Text>;
       installed?: Nullable<PgCatalog.Types.Bool>;
@@ -864,16 +474,14 @@ export namespace PgCatalog {
       schema?: Nullable<PgCatalog.Types.Name>;
       requires?: Nullable<PgCatalog.Types.NameArray>;
       comment?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgAvailableExtensions {
+    };
+    export type PgAvailableExtensions = {
       name?: Nullable<PgCatalog.Types.Name>;
       defaultVersion?: Nullable<PgCatalog.Types.Text>;
       installedVersion?: Nullable<PgCatalog.Types.Text>;
       comment?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgBackendMemoryContexts {
+    };
+    export type PgBackendMemoryContexts = {
       name?: Nullable<PgCatalog.Types.Text>;
       ident?: Nullable<PgCatalog.Types.Text>;
       parent?: Nullable<PgCatalog.Types.Text>;
@@ -883,30 +491,18 @@ export namespace PgCatalog {
       freeBytes?: Nullable<PgCatalog.Types.Int8>;
       freeChunks?: Nullable<PgCatalog.Types.Int8>;
       usedBytes?: Nullable<PgCatalog.Types.Int8>;
-    }
-
+    };
     export type PgBrinBloomSummary = string;
-
     export type PgBrinMinmaxMultiSummary = string;
-
-    export interface PgCast {
+    export type PgCast = {
       oid: PgCatalog.Types.Oid;
       castsource: PgCatalog.Types.Oid;
       casttarget: PgCatalog.Types.Oid;
       castfunc: PgCatalog.Types.Oid;
       castcontext: PgCatalog.Types.Char;
       castmethod: PgCatalog.Types.Char;
-    }
-
-    export interface PgCastNotPrimaryKey {
-      castsource: PgCatalog.Types.Oid;
-      casttarget: PgCatalog.Types.Oid;
-      castfunc: PgCatalog.Types.Oid;
-      castcontext: PgCatalog.Types.Char;
-      castmethod: PgCatalog.Types.Char;
-    }
-
-    export interface PgClass {
+    };
+    export type PgClass = {
       oid: PgCatalog.Types.Oid;
       relname: PgCatalog.Types.Name;
       relnamespace: PgCatalog.Types.Oid;
@@ -940,44 +536,8 @@ export namespace PgCatalog {
       relacl?: Nullable<PgCatalog.Types.AclitemArray>;
       reloptions?: Nullable<PgCatalog.Types.TextArray>;
       relpartbound?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgClassNotPrimaryKey {
-      relname: PgCatalog.Types.Name;
-      relnamespace: PgCatalog.Types.Oid;
-      reltype: PgCatalog.Types.Oid;
-      reloftype: PgCatalog.Types.Oid;
-      relowner: PgCatalog.Types.Oid;
-      relam: PgCatalog.Types.Oid;
-      relfilenode: PgCatalog.Types.Oid;
-      reltablespace: PgCatalog.Types.Oid;
-      relpages: PgCatalog.Types.Int4;
-      reltuples: PgCatalog.Types.Float4;
-      relallvisible: PgCatalog.Types.Int4;
-      reltoastrelid: PgCatalog.Types.Oid;
-      relhasindex: PgCatalog.Types.Bool;
-      relisshared: PgCatalog.Types.Bool;
-      relpersistence: PgCatalog.Types.Char;
-      relkind: PgCatalog.Types.Char;
-      relnatts: PgCatalog.Types.Int2;
-      relchecks: PgCatalog.Types.Int2;
-      relhasrules: PgCatalog.Types.Bool;
-      relhastriggers: PgCatalog.Types.Bool;
-      relhassubclass: PgCatalog.Types.Bool;
-      relrowsecurity: PgCatalog.Types.Bool;
-      relforcerowsecurity: PgCatalog.Types.Bool;
-      relispopulated: PgCatalog.Types.Bool;
-      relreplident: PgCatalog.Types.Char;
-      relispartition: PgCatalog.Types.Bool;
-      relrewrite: PgCatalog.Types.Oid;
-      relfrozenxid: PgCatalog.Types.Xid;
-      relminmxid: PgCatalog.Types.Xid;
-      relacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      reloptions?: Nullable<PgCatalog.Types.TextArray>;
-      relpartbound?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgCollation {
+    };
+    export type PgCollation = {
       oid: PgCatalog.Types.Oid;
       collname: PgCatalog.Types.Name;
       collnamespace: PgCatalog.Types.Oid;
@@ -990,28 +550,12 @@ export namespace PgCatalog {
       colliculocale?: Nullable<PgCatalog.Types.Text>;
       collicurules?: Nullable<PgCatalog.Types.Text>;
       collversion?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgCollationNotPrimaryKey {
-      collname: PgCatalog.Types.Name;
-      collnamespace: PgCatalog.Types.Oid;
-      collowner: PgCatalog.Types.Oid;
-      collprovider: PgCatalog.Types.Char;
-      collisdeterministic: PgCatalog.Types.Bool;
-      collencoding: PgCatalog.Types.Int4;
-      collcollate?: Nullable<PgCatalog.Types.Text>;
-      collctype?: Nullable<PgCatalog.Types.Text>;
-      colliculocale?: Nullable<PgCatalog.Types.Text>;
-      collicurules?: Nullable<PgCatalog.Types.Text>;
-      collversion?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgConfig {
+    };
+    export type PgConfig = {
       name?: Nullable<PgCatalog.Types.Text>;
       setting?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgConstraint {
+    };
+    export type PgConstraint = {
       oid: PgCatalog.Types.Oid;
       conname: PgCatalog.Types.Name;
       connamespace: PgCatalog.Types.Oid;
@@ -1038,37 +582,8 @@ export namespace PgCatalog {
       confdelsetcols?: Nullable<PgCatalog.Types.Int2Array>;
       conexclop?: Nullable<PgCatalog.Types.OidArray>;
       conbin?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgConstraintNotPrimaryKey {
-      conname: PgCatalog.Types.Name;
-      connamespace: PgCatalog.Types.Oid;
-      contype: PgCatalog.Types.Char;
-      condeferrable: PgCatalog.Types.Bool;
-      condeferred: PgCatalog.Types.Bool;
-      convalidated: PgCatalog.Types.Bool;
-      conrelid: PgCatalog.Types.Oid;
-      contypid: PgCatalog.Types.Oid;
-      conindid: PgCatalog.Types.Oid;
-      conparentid: PgCatalog.Types.Oid;
-      confrelid: PgCatalog.Types.Oid;
-      confupdtype: PgCatalog.Types.Char;
-      confdeltype: PgCatalog.Types.Char;
-      confmatchtype: PgCatalog.Types.Char;
-      conislocal: PgCatalog.Types.Bool;
-      coninhcount: PgCatalog.Types.Int2;
-      connoinherit: PgCatalog.Types.Bool;
-      conkey?: Nullable<PgCatalog.Types.Int2Array>;
-      confkey?: Nullable<PgCatalog.Types.Int2Array>;
-      conpfeqop?: Nullable<PgCatalog.Types.OidArray>;
-      conppeqop?: Nullable<PgCatalog.Types.OidArray>;
-      conffeqop?: Nullable<PgCatalog.Types.OidArray>;
-      confdelsetcols?: Nullable<PgCatalog.Types.Int2Array>;
-      conexclop?: Nullable<PgCatalog.Types.OidArray>;
-      conbin?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgConversion {
+    };
+    export type PgConversion = {
       oid: PgCatalog.Types.Oid;
       conname: PgCatalog.Types.Name;
       connamespace: PgCatalog.Types.Oid;
@@ -1077,28 +592,16 @@ export namespace PgCatalog {
       contoencoding: PgCatalog.Types.Int4;
       conproc: PgCatalog.Types.Regproc;
       condefault: PgCatalog.Types.Bool;
-    }
-
-    export interface PgConversionNotPrimaryKey {
-      conname: PgCatalog.Types.Name;
-      connamespace: PgCatalog.Types.Oid;
-      conowner: PgCatalog.Types.Oid;
-      conforencoding: PgCatalog.Types.Int4;
-      contoencoding: PgCatalog.Types.Int4;
-      conproc: PgCatalog.Types.Regproc;
-      condefault: PgCatalog.Types.Bool;
-    }
-
-    export interface PgCursors {
+    };
+    export type PgCursors = {
       name?: Nullable<PgCatalog.Types.Text>;
       statement?: Nullable<PgCatalog.Types.Text>;
       isHoldable?: Nullable<PgCatalog.Types.Bool>;
       isBinary?: Nullable<PgCatalog.Types.Bool>;
       isScrollable?: Nullable<PgCatalog.Types.Bool>;
       creationTime?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgDatabase {
+    };
+    export type PgDatabase = {
       oid: PgCatalog.Types.Oid;
       datname: PgCatalog.Types.Name;
       datdba: PgCatalog.Types.Oid;
@@ -1116,55 +619,21 @@ export namespace PgCatalog {
       daticurules?: Nullable<PgCatalog.Types.Text>;
       datcollversion?: Nullable<PgCatalog.Types.Text>;
       datacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgDatabaseNotPrimaryKey {
-      datname: PgCatalog.Types.Name;
-      datdba: PgCatalog.Types.Oid;
-      encoding: PgCatalog.Types.Int4;
-      datlocprovider: PgCatalog.Types.Char;
-      datistemplate: PgCatalog.Types.Bool;
-      datallowconn: PgCatalog.Types.Bool;
-      datconnlimit: PgCatalog.Types.Int4;
-      datfrozenxid: PgCatalog.Types.Xid;
-      datminmxid: PgCatalog.Types.Xid;
-      dattablespace: PgCatalog.Types.Oid;
-      datcollate: PgCatalog.Types.Text;
-      datctype: PgCatalog.Types.Text;
-      daticulocale?: Nullable<PgCatalog.Types.Text>;
-      daticurules?: Nullable<PgCatalog.Types.Text>;
-      datcollversion?: Nullable<PgCatalog.Types.Text>;
-      datacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgDbRoleSetting {
+    };
+    export type PgDbRoleSetting = {
       setdatabase: PgCatalog.Types.Oid;
       setrole: PgCatalog.Types.Oid;
       setconfig?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgDbRoleSettingNotPrimaryKey {
-      setconfig?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export type PgDdlCommand = void;
-
-    export interface PgDefaultAcl {
+    };
+    export type PgDdlCommand = any;
+    export type PgDefaultAcl = {
       oid: PgCatalog.Types.Oid;
       defaclrole: PgCatalog.Types.Oid;
       defaclnamespace: PgCatalog.Types.Oid;
       defaclobjtype: PgCatalog.Types.Char;
       defaclacl: PgCatalog.Types.AclitemArray;
-    }
-
-    export interface PgDefaultAclNotPrimaryKey {
-      defaclrole: PgCatalog.Types.Oid;
-      defaclnamespace: PgCatalog.Types.Oid;
-      defaclobjtype: PgCatalog.Types.Char;
-      defaclacl: PgCatalog.Types.AclitemArray;
-    }
-
-    export interface PgDepend {
+    };
+    export type PgDepend = {
       classid: PgCatalog.Types.Oid;
       objid: PgCatalog.Types.Oid;
       objsubid: PgCatalog.Types.Int4;
@@ -1172,35 +641,21 @@ export namespace PgCatalog {
       refobjid: PgCatalog.Types.Oid;
       refobjsubid: PgCatalog.Types.Int4;
       deptype: PgCatalog.Types.Char;
-    }
-
+    };
     export type PgDependencies = string;
-
-    export interface PgDescription {
+    export type PgDescription = {
       objoid: PgCatalog.Types.Oid;
       classoid: PgCatalog.Types.Oid;
       objsubid: PgCatalog.Types.Int4;
       description: PgCatalog.Types.Text;
-    }
-
-    export interface PgDescriptionNotPrimaryKey {
-      description: PgCatalog.Types.Text;
-    }
-
-    export interface PgEnum {
+    };
+    export type PgEnum = {
       oid: PgCatalog.Types.Oid;
       enumtypid: PgCatalog.Types.Oid;
       enumsortorder: PgCatalog.Types.Float4;
       enumlabel: PgCatalog.Types.Name;
-    }
-
-    export interface PgEnumNotPrimaryKey {
-      enumtypid: PgCatalog.Types.Oid;
-      enumsortorder: PgCatalog.Types.Float4;
-      enumlabel: PgCatalog.Types.Name;
-    }
-
-    export interface PgEventTrigger {
+    };
+    export type PgEventTrigger = {
       oid: PgCatalog.Types.Oid;
       evtname: PgCatalog.Types.Name;
       evtevent: PgCatalog.Types.Name;
@@ -1208,18 +663,8 @@ export namespace PgCatalog {
       evtfoid: PgCatalog.Types.Oid;
       evtenabled: PgCatalog.Types.Char;
       evttags?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgEventTriggerNotPrimaryKey {
-      evtname: PgCatalog.Types.Name;
-      evtevent: PgCatalog.Types.Name;
-      evtowner: PgCatalog.Types.Oid;
-      evtfoid: PgCatalog.Types.Oid;
-      evtenabled: PgCatalog.Types.Char;
-      evttags?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgExtension {
+    };
+    export type PgExtension = {
       oid: PgCatalog.Types.Oid;
       extname: PgCatalog.Types.Name;
       extowner: PgCatalog.Types.Oid;
@@ -1228,19 +673,8 @@ export namespace PgCatalog {
       extversion: PgCatalog.Types.Text;
       extconfig?: Nullable<PgCatalog.Types.OidArray>;
       extcondition?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgExtensionNotPrimaryKey {
-      extname: PgCatalog.Types.Name;
-      extowner: PgCatalog.Types.Oid;
-      extnamespace: PgCatalog.Types.Oid;
-      extrelocatable: PgCatalog.Types.Bool;
-      extversion: PgCatalog.Types.Text;
-      extconfig?: Nullable<PgCatalog.Types.OidArray>;
-      extcondition?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgFileSettings {
+    };
+    export type PgFileSettings = {
       sourcefile?: Nullable<PgCatalog.Types.Text>;
       sourceline?: Nullable<PgCatalog.Types.Int4>;
       seqno?: Nullable<PgCatalog.Types.Int4>;
@@ -1248,9 +682,8 @@ export namespace PgCatalog {
       setting?: Nullable<PgCatalog.Types.Text>;
       applied?: Nullable<PgCatalog.Types.Bool>;
       error?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgForeignDataWrapper {
+    };
+    export type PgForeignDataWrapper = {
       oid: PgCatalog.Types.Oid;
       fdwname: PgCatalog.Types.Name;
       fdwowner: PgCatalog.Types.Oid;
@@ -1258,18 +691,8 @@ export namespace PgCatalog {
       fdwvalidator: PgCatalog.Types.Oid;
       fdwacl?: Nullable<PgCatalog.Types.AclitemArray>;
       fdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignDataWrapperNotPrimaryKey {
-      fdwname: PgCatalog.Types.Name;
-      fdwowner: PgCatalog.Types.Oid;
-      fdwhandler: PgCatalog.Types.Oid;
-      fdwvalidator: PgCatalog.Types.Oid;
-      fdwacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      fdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignServer {
+    };
+    export type PgForeignServer = {
       oid: PgCatalog.Types.Oid;
       srvname: PgCatalog.Types.Name;
       srvowner: PgCatalog.Types.Oid;
@@ -1278,36 +701,18 @@ export namespace PgCatalog {
       srvversion?: Nullable<PgCatalog.Types.Text>;
       srvacl?: Nullable<PgCatalog.Types.AclitemArray>;
       srvoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignServerNotPrimaryKey {
-      srvname: PgCatalog.Types.Name;
-      srvowner: PgCatalog.Types.Oid;
-      srvfdw: PgCatalog.Types.Oid;
-      srvtype?: Nullable<PgCatalog.Types.Text>;
-      srvversion?: Nullable<PgCatalog.Types.Text>;
-      srvacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      srvoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignTable {
+    };
+    export type PgForeignTable = {
       ftrelid: PgCatalog.Types.Oid;
       ftserver: PgCatalog.Types.Oid;
       ftoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignTableNotPrimaryKey {
-      ftserver: PgCatalog.Types.Oid;
-      ftoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgGroup {
+    };
+    export type PgGroup = {
       groname?: Nullable<PgCatalog.Types.Name>;
       grosysid?: Nullable<PgCatalog.Types.Oid>;
       grolist?: Nullable<PgCatalog.Types.OidArray>;
-    }
-
-    export interface PgHbaFileRules {
+    };
+    export type PgHbaFileRules = {
       ruleNumber?: Nullable<PgCatalog.Types.Int4>;
       fileName?: Nullable<PgCatalog.Types.Text>;
       lineNumber?: Nullable<PgCatalog.Types.Int4>;
@@ -1319,9 +724,8 @@ export namespace PgCatalog {
       authMethod?: Nullable<PgCatalog.Types.Text>;
       options?: Nullable<PgCatalog.Types.TextArray>;
       error?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgIdentFileMappings {
+    };
+    export type PgIdentFileMappings = {
       mapNumber?: Nullable<PgCatalog.Types.Int4>;
       fileName?: Nullable<PgCatalog.Types.Text>;
       lineNumber?: Nullable<PgCatalog.Types.Int4>;
@@ -1329,9 +733,8 @@ export namespace PgCatalog {
       sysName?: Nullable<PgCatalog.Types.Text>;
       pgUsername?: Nullable<PgCatalog.Types.Text>;
       error?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgIndex {
+    };
+    export type PgIndex = {
       indexrelid: PgCatalog.Types.Oid;
       indrelid: PgCatalog.Types.Oid;
       indnatts: PgCatalog.Types.Int2;
@@ -1353,65 +756,28 @@ export namespace PgCatalog {
       indoption: PgCatalog.Types.Int2vector;
       indexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
       indpred?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgIndexNotPrimaryKey {
-      indrelid: PgCatalog.Types.Oid;
-      indnatts: PgCatalog.Types.Int2;
-      indnkeyatts: PgCatalog.Types.Int2;
-      indisunique: PgCatalog.Types.Bool;
-      indnullsnotdistinct: PgCatalog.Types.Bool;
-      indisprimary: PgCatalog.Types.Bool;
-      indisexclusion: PgCatalog.Types.Bool;
-      indimmediate: PgCatalog.Types.Bool;
-      indisclustered: PgCatalog.Types.Bool;
-      indisvalid: PgCatalog.Types.Bool;
-      indcheckxmin: PgCatalog.Types.Bool;
-      indisready: PgCatalog.Types.Bool;
-      indislive: PgCatalog.Types.Bool;
-      indisreplident: PgCatalog.Types.Bool;
-      indkey: PgCatalog.Types.Int2vector;
-      indcollation: PgCatalog.Types.Oidvector;
-      indclass: PgCatalog.Types.Oidvector;
-      indoption: PgCatalog.Types.Int2vector;
-      indexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-      indpred?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgIndexes {
+    };
+    export type PgIndexes = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       indexname?: Nullable<PgCatalog.Types.Name>;
       tablespace?: Nullable<PgCatalog.Types.Name>;
       indexdef?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgInherits {
+    };
+    export type PgInherits = {
       inhrelid: PgCatalog.Types.Oid;
       inhparent: PgCatalog.Types.Oid;
       inhseqno: PgCatalog.Types.Int4;
       inhdetachpending: PgCatalog.Types.Bool;
-    }
-
-    export interface PgInheritsNotPrimaryKey {
-      inhparent: PgCatalog.Types.Oid;
-      inhdetachpending: PgCatalog.Types.Bool;
-    }
-
-    export interface PgInitPrivs {
+    };
+    export type PgInitPrivs = {
       objoid: PgCatalog.Types.Oid;
       classoid: PgCatalog.Types.Oid;
       objsubid: PgCatalog.Types.Int4;
       privtype: PgCatalog.Types.Char;
       initprivs: PgCatalog.Types.AclitemArray;
-    }
-
-    export interface PgInitPrivsNotPrimaryKey {
-      privtype: PgCatalog.Types.Char;
-      initprivs: PgCatalog.Types.AclitemArray;
-    }
-
-    export interface PgLanguage {
+    };
+    export type PgLanguage = {
       oid: PgCatalog.Types.Oid;
       lanname: PgCatalog.Types.Name;
       lanowner: PgCatalog.Types.Oid;
@@ -1421,41 +787,18 @@ export namespace PgCatalog {
       laninline: PgCatalog.Types.Oid;
       lanvalidator: PgCatalog.Types.Oid;
       lanacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgLanguageNotPrimaryKey {
-      lanname: PgCatalog.Types.Name;
-      lanowner: PgCatalog.Types.Oid;
-      lanispl: PgCatalog.Types.Bool;
-      lanpltrusted: PgCatalog.Types.Bool;
-      lanplcallfoid: PgCatalog.Types.Oid;
-      laninline: PgCatalog.Types.Oid;
-      lanvalidator: PgCatalog.Types.Oid;
-      lanacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgLargeobject {
+    };
+    export type PgLargeobject = {
       loid: PgCatalog.Types.Oid;
       pageno: PgCatalog.Types.Int4;
       data: PgCatalog.Types.Bytea;
-    }
-
-    export interface PgLargeobjectNotPrimaryKey {
-      data: PgCatalog.Types.Bytea;
-    }
-
-    export interface PgLargeobjectMetadata {
+    };
+    export type PgLargeobjectMetadata = {
       oid: PgCatalog.Types.Oid;
       lomowner: PgCatalog.Types.Oid;
       lomacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgLargeobjectMetadataNotPrimaryKey {
-      lomowner: PgCatalog.Types.Oid;
-      lomacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgLocks {
+    };
+    export type PgLocks = {
       locktype?: Nullable<PgCatalog.Types.Text>;
       database?: Nullable<PgCatalog.Types.Oid>;
       relation?: Nullable<PgCatalog.Types.Oid>;
@@ -1472,11 +815,9 @@ export namespace PgCatalog {
       granted?: Nullable<PgCatalog.Types.Bool>;
       fastpath?: Nullable<PgCatalog.Types.Bool>;
       waitstart?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
+    };
     export type PgLsn = bigint;
-
-    export interface PgMatviews {
+    export type PgMatviews = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       matviewname?: Nullable<PgCatalog.Types.Name>;
       matviewowner?: Nullable<PgCatalog.Types.Name>;
@@ -1484,28 +825,17 @@ export namespace PgCatalog {
       hasindexes?: Nullable<PgCatalog.Types.Bool>;
       ispopulated?: Nullable<PgCatalog.Types.Bool>;
       definition?: Nullable<PgCatalog.Types.Text>;
-    }
-
+    };
     export type PgMcvList = string;
-
-    export interface PgNamespace {
+    export type PgNamespace = {
       oid: PgCatalog.Types.Oid;
       nspname: PgCatalog.Types.Name;
       nspowner: PgCatalog.Types.Oid;
       nspacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgNamespaceNotPrimaryKey {
-      nspname: PgCatalog.Types.Name;
-      nspowner: PgCatalog.Types.Oid;
-      nspacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
+    };
     export type PgNdistinct = string;
-
     export type PgNodeTree = string;
-
-    export interface PgOpclass {
+    export type PgOpclass = {
       oid: PgCatalog.Types.Oid;
       opcmethod: PgCatalog.Types.Oid;
       opcname: PgCatalog.Types.Name;
@@ -1515,20 +845,8 @@ export namespace PgCatalog {
       opcintype: PgCatalog.Types.Oid;
       opcdefault: PgCatalog.Types.Bool;
       opckeytype: PgCatalog.Types.Oid;
-    }
-
-    export interface PgOpclassNotPrimaryKey {
-      opcmethod: PgCatalog.Types.Oid;
-      opcname: PgCatalog.Types.Name;
-      opcnamespace: PgCatalog.Types.Oid;
-      opcowner: PgCatalog.Types.Oid;
-      opcfamily: PgCatalog.Types.Oid;
-      opcintype: PgCatalog.Types.Oid;
-      opcdefault: PgCatalog.Types.Bool;
-      opckeytype: PgCatalog.Types.Oid;
-    }
-
-    export interface PgOperator {
+    };
+    export type PgOperator = {
       oid: PgCatalog.Types.Oid;
       oprname: PgCatalog.Types.Name;
       oprnamespace: PgCatalog.Types.Oid;
@@ -1544,52 +862,20 @@ export namespace PgCatalog {
       oprcode: PgCatalog.Types.Regproc;
       oprrest: PgCatalog.Types.Regproc;
       oprjoin: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgOperatorNotPrimaryKey {
-      oprname: PgCatalog.Types.Name;
-      oprnamespace: PgCatalog.Types.Oid;
-      oprowner: PgCatalog.Types.Oid;
-      oprkind: PgCatalog.Types.Char;
-      oprcanmerge: PgCatalog.Types.Bool;
-      oprcanhash: PgCatalog.Types.Bool;
-      oprleft: PgCatalog.Types.Oid;
-      oprright: PgCatalog.Types.Oid;
-      oprresult: PgCatalog.Types.Oid;
-      oprcom: PgCatalog.Types.Oid;
-      oprnegate: PgCatalog.Types.Oid;
-      oprcode: PgCatalog.Types.Regproc;
-      oprrest: PgCatalog.Types.Regproc;
-      oprjoin: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgOpfamily {
+    };
+    export type PgOpfamily = {
       oid: PgCatalog.Types.Oid;
       opfmethod: PgCatalog.Types.Oid;
       opfname: PgCatalog.Types.Name;
       opfnamespace: PgCatalog.Types.Oid;
       opfowner: PgCatalog.Types.Oid;
-    }
-
-    export interface PgOpfamilyNotPrimaryKey {
-      opfmethod: PgCatalog.Types.Oid;
-      opfname: PgCatalog.Types.Name;
-      opfnamespace: PgCatalog.Types.Oid;
-      opfowner: PgCatalog.Types.Oid;
-    }
-
-    export interface PgParameterAcl {
+    };
+    export type PgParameterAcl = {
       oid: PgCatalog.Types.Oid;
       parname: PgCatalog.Types.Text;
       paracl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgParameterAclNotPrimaryKey {
-      parname: PgCatalog.Types.Text;
-      paracl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgPartitionedTable {
+    };
+    export type PgPartitionedTable = {
       partrelid: PgCatalog.Types.Oid;
       partstrat: PgCatalog.Types.Char;
       partnatts: PgCatalog.Types.Int2;
@@ -1598,19 +884,8 @@ export namespace PgCatalog {
       partclass: PgCatalog.Types.Oidvector;
       partcollation: PgCatalog.Types.Oidvector;
       partexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgPartitionedTableNotPrimaryKey {
-      partstrat: PgCatalog.Types.Char;
-      partnatts: PgCatalog.Types.Int2;
-      partdefid: PgCatalog.Types.Oid;
-      partattrs: PgCatalog.Types.Int2vector;
-      partclass: PgCatalog.Types.Oidvector;
-      partcollation: PgCatalog.Types.Oidvector;
-      partexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgPolicies {
+    };
+    export type PgPolicies = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       policyname?: Nullable<PgCatalog.Types.Name>;
@@ -1619,9 +894,8 @@ export namespace PgCatalog {
       cmd?: Nullable<PgCatalog.Types.Text>;
       qual?: Nullable<PgCatalog.Types.Text>;
       withCheck?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgPolicy {
+    };
+    export type PgPolicy = {
       oid: PgCatalog.Types.Oid;
       polname: PgCatalog.Types.Name;
       polrelid: PgCatalog.Types.Oid;
@@ -1630,19 +904,8 @@ export namespace PgCatalog {
       polroles: PgCatalog.Types.OidArray;
       polqual?: Nullable<PgCatalog.Types.PgNodeTree>;
       polwithcheck?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgPolicyNotPrimaryKey {
-      polname: PgCatalog.Types.Name;
-      polrelid: PgCatalog.Types.Oid;
-      polcmd: PgCatalog.Types.Char;
-      polpermissive: PgCatalog.Types.Bool;
-      polroles: PgCatalog.Types.OidArray;
-      polqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      polwithcheck?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgPreparedStatements {
+    };
+    export type PgPreparedStatements = {
       name?: Nullable<PgCatalog.Types.Text>;
       statement?: Nullable<PgCatalog.Types.Text>;
       prepareTime?: Nullable<PgCatalog.Types.Timestamptz>;
@@ -1651,17 +914,15 @@ export namespace PgCatalog {
       fromSql?: Nullable<PgCatalog.Types.Bool>;
       genericPlans?: Nullable<PgCatalog.Types.Int8>;
       customPlans?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgPreparedXacts {
+    };
+    export type PgPreparedXacts = {
       transaction?: Nullable<PgCatalog.Types.Xid>;
       gid?: Nullable<PgCatalog.Types.Text>;
       prepared?: Nullable<PgCatalog.Types.Timestamptz>;
       owner?: Nullable<PgCatalog.Types.Name>;
       database?: Nullable<PgCatalog.Types.Name>;
-    }
-
-    export interface PgProc {
+    };
+    export type PgProc = {
       oid: PgCatalog.Types.Oid;
       proname: PgCatalog.Types.Name;
       pronamespace: PgCatalog.Types.Oid;
@@ -1692,41 +953,8 @@ export namespace PgCatalog {
       prosqlbody?: Nullable<PgCatalog.Types.PgNodeTree>;
       proconfig?: Nullable<PgCatalog.Types.TextArray>;
       proacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgProcNotPrimaryKey {
-      proname: PgCatalog.Types.Name;
-      pronamespace: PgCatalog.Types.Oid;
-      proowner: PgCatalog.Types.Oid;
-      prolang: PgCatalog.Types.Oid;
-      procost: PgCatalog.Types.Float4;
-      prorows: PgCatalog.Types.Float4;
-      provariadic: PgCatalog.Types.Oid;
-      prosupport: PgCatalog.Types.Regproc;
-      prokind: PgCatalog.Types.Char;
-      prosecdef: PgCatalog.Types.Bool;
-      proleakproof: PgCatalog.Types.Bool;
-      proisstrict: PgCatalog.Types.Bool;
-      proretset: PgCatalog.Types.Bool;
-      provolatile: PgCatalog.Types.Char;
-      proparallel: PgCatalog.Types.Char;
-      pronargs: PgCatalog.Types.Int2;
-      pronargdefaults: PgCatalog.Types.Int2;
-      prorettype: PgCatalog.Types.Oid;
-      proargtypes: PgCatalog.Types.Oidvector;
-      proallargtypes?: Nullable<PgCatalog.Types.OidArray>;
-      proargmodes?: Nullable<PgCatalog.Types.CharArray>;
-      proargnames?: Nullable<PgCatalog.Types.TextArray>;
-      proargdefaults?: Nullable<PgCatalog.Types.PgNodeTree>;
-      protrftypes?: Nullable<PgCatalog.Types.OidArray>;
-      prosrc: PgCatalog.Types.Text;
-      probin?: Nullable<PgCatalog.Types.Text>;
-      prosqlbody?: Nullable<PgCatalog.Types.PgNodeTree>;
-      proconfig?: Nullable<PgCatalog.Types.TextArray>;
-      proacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgPublication {
+    };
+    export type PgPublication = {
       oid: PgCatalog.Types.Oid;
       pubname: PgCatalog.Types.Name;
       pubowner: PgCatalog.Types.Oid;
@@ -1736,54 +964,27 @@ export namespace PgCatalog {
       pubdelete: PgCatalog.Types.Bool;
       pubtruncate: PgCatalog.Types.Bool;
       pubviaroot: PgCatalog.Types.Bool;
-    }
-
-    export interface PgPublicationNotPrimaryKey {
-      pubname: PgCatalog.Types.Name;
-      pubowner: PgCatalog.Types.Oid;
-      puballtables: PgCatalog.Types.Bool;
-      pubinsert: PgCatalog.Types.Bool;
-      pubupdate: PgCatalog.Types.Bool;
-      pubdelete: PgCatalog.Types.Bool;
-      pubtruncate: PgCatalog.Types.Bool;
-      pubviaroot: PgCatalog.Types.Bool;
-    }
-
-    export interface PgPublicationNamespace {
+    };
+    export type PgPublicationNamespace = {
       oid: PgCatalog.Types.Oid;
       pnpubid: PgCatalog.Types.Oid;
       pnnspid: PgCatalog.Types.Oid;
-    }
-
-    export interface PgPublicationNamespaceNotPrimaryKey {
-      pnpubid: PgCatalog.Types.Oid;
-      pnnspid: PgCatalog.Types.Oid;
-    }
-
-    export interface PgPublicationRel {
+    };
+    export type PgPublicationRel = {
       oid: PgCatalog.Types.Oid;
       prpubid: PgCatalog.Types.Oid;
       prrelid: PgCatalog.Types.Oid;
       prqual?: Nullable<PgCatalog.Types.PgNodeTree>;
       prattrs?: Nullable<PgCatalog.Types.Int2vector>;
-    }
-
-    export interface PgPublicationRelNotPrimaryKey {
-      prpubid: PgCatalog.Types.Oid;
-      prrelid: PgCatalog.Types.Oid;
-      prqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      prattrs?: Nullable<PgCatalog.Types.Int2vector>;
-    }
-
-    export interface PgPublicationTables {
+    };
+    export type PgPublicationTables = {
       pubname?: Nullable<PgCatalog.Types.Name>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       attnames?: Nullable<PgCatalog.Types.NameArray>;
       rowfilter?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgRange {
+    };
+    export type PgRange = {
       rngtypid: PgCatalog.Types.Oid;
       rngsubtype: PgCatalog.Types.Oid;
       rngmultitypid: PgCatalog.Types.Oid;
@@ -1791,34 +992,18 @@ export namespace PgCatalog {
       rngsubopc: PgCatalog.Types.Oid;
       rngcanonical: PgCatalog.Types.Regproc;
       rngsubdiff: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgRangeNotPrimaryKey {
-      rngsubtype: PgCatalog.Types.Oid;
-      rngmultitypid: PgCatalog.Types.Oid;
-      rngcollation: PgCatalog.Types.Oid;
-      rngsubopc: PgCatalog.Types.Oid;
-      rngcanonical: PgCatalog.Types.Regproc;
-      rngsubdiff: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgReplicationOrigin {
+    };
+    export type PgReplicationOrigin = {
       roident: PgCatalog.Types.Oid;
       roname: PgCatalog.Types.Text;
-    }
-
-    export interface PgReplicationOriginNotPrimaryKey {
-      roname: PgCatalog.Types.Text;
-    }
-
-    export interface PgReplicationOriginStatus {
+    };
+    export type PgReplicationOriginStatus = {
       localId?: Nullable<PgCatalog.Types.Oid>;
       externalId?: Nullable<PgCatalog.Types.Text>;
       remoteLsn?: Nullable<PgCatalog.Types.PgLsn>;
       localLsn?: Nullable<PgCatalog.Types.PgLsn>;
-    }
-
-    export interface PgReplicationSlots {
+    };
+    export type PgReplicationSlots = {
       slotName?: Nullable<PgCatalog.Types.Name>;
       plugin?: Nullable<PgCatalog.Types.Name>;
       slotType?: Nullable<PgCatalog.Types.Text>;
@@ -1835,9 +1020,8 @@ export namespace PgCatalog {
       safeWalSize?: Nullable<PgCatalog.Types.Int8>;
       twoPhase?: Nullable<PgCatalog.Types.Bool>;
       conflicting?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgRewrite {
+    };
+    export type PgRewrite = {
       oid: PgCatalog.Types.Oid;
       rulename: PgCatalog.Types.Name;
       evClass: PgCatalog.Types.Oid;
@@ -1846,19 +1030,8 @@ export namespace PgCatalog {
       isInstead: PgCatalog.Types.Bool;
       evQual: PgCatalog.Types.PgNodeTree;
       evAction: PgCatalog.Types.PgNodeTree;
-    }
-
-    export interface PgRewriteNotPrimaryKey {
-      rulename: PgCatalog.Types.Name;
-      evClass: PgCatalog.Types.Oid;
-      evType: PgCatalog.Types.Char;
-      evEnabled: PgCatalog.Types.Char;
-      isInstead: PgCatalog.Types.Bool;
-      evQual: PgCatalog.Types.PgNodeTree;
-      evAction: PgCatalog.Types.PgNodeTree;
-    }
-
-    export interface PgRoles {
+    };
+    export type PgRoles = {
       rolname?: Nullable<PgCatalog.Types.Name>;
       rolsuper?: Nullable<PgCatalog.Types.Bool>;
       rolinherit?: Nullable<PgCatalog.Types.Bool>;
@@ -1872,28 +1045,21 @@ export namespace PgCatalog {
       rolbypassrls?: Nullable<PgCatalog.Types.Bool>;
       rolconfig?: Nullable<PgCatalog.Types.TextArray>;
       oid?: Nullable<PgCatalog.Types.Oid>;
-    }
-
-    export interface PgRules {
+    };
+    export type PgRules = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       rulename?: Nullable<PgCatalog.Types.Name>;
       definition?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgSeclabel {
+    };
+    export type PgSeclabel = {
       objoid: PgCatalog.Types.Oid;
       classoid: PgCatalog.Types.Oid;
       objsubid: PgCatalog.Types.Int4;
       provider: PgCatalog.Types.Text;
       label: PgCatalog.Types.Text;
-    }
-
-    export interface PgSeclabelNotPrimaryKey {
-      label: PgCatalog.Types.Text;
-    }
-
-    export interface PgSeclabels {
+    };
+    export type PgSeclabels = {
       objoid?: Nullable<PgCatalog.Types.Oid>;
       classoid?: Nullable<PgCatalog.Types.Oid>;
       objsubid?: Nullable<PgCatalog.Types.Int4>;
@@ -1902,9 +1068,8 @@ export namespace PgCatalog {
       objname?: Nullable<PgCatalog.Types.Text>;
       provider?: Nullable<PgCatalog.Types.Text>;
       label?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgSequence {
+    };
+    export type PgSequence = {
       seqrelid: PgCatalog.Types.Oid;
       seqtypid: PgCatalog.Types.Oid;
       seqstart: PgCatalog.Types.Int8;
@@ -1913,19 +1078,8 @@ export namespace PgCatalog {
       seqmin: PgCatalog.Types.Int8;
       seqcache: PgCatalog.Types.Int8;
       seqcycle: PgCatalog.Types.Bool;
-    }
-
-    export interface PgSequenceNotPrimaryKey {
-      seqtypid: PgCatalog.Types.Oid;
-      seqstart: PgCatalog.Types.Int8;
-      seqincrement: PgCatalog.Types.Int8;
-      seqmax: PgCatalog.Types.Int8;
-      seqmin: PgCatalog.Types.Int8;
-      seqcache: PgCatalog.Types.Int8;
-      seqcycle: PgCatalog.Types.Bool;
-    }
-
-    export interface PgSequences {
+    };
+    export type PgSequences = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       sequencename?: Nullable<PgCatalog.Types.Name>;
       sequenceowner?: Nullable<PgCatalog.Types.Name>;
@@ -1937,9 +1091,8 @@ export namespace PgCatalog {
       cycle?: Nullable<PgCatalog.Types.Bool>;
       cacheSize?: Nullable<PgCatalog.Types.Int8>;
       lastValue?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgSettings {
+    };
+    export type PgSettings = {
       name?: Nullable<PgCatalog.Types.Text>;
       setting?: Nullable<PgCatalog.Types.Text>;
       unit?: Nullable<PgCatalog.Types.Text>;
@@ -1957,9 +1110,8 @@ export namespace PgCatalog {
       sourcefile?: Nullable<PgCatalog.Types.Text>;
       sourceline?: Nullable<PgCatalog.Types.Int4>;
       pendingRestart?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgShadow {
+    };
+    export type PgShadow = {
       usename?: Nullable<PgCatalog.Types.Name>;
       usesysid?: Nullable<PgCatalog.Types.Oid>;
       usecreatedb?: Nullable<PgCatalog.Types.Bool>;
@@ -1969,9 +1121,8 @@ export namespace PgCatalog {
       passwd?: Nullable<PgCatalog.Types.Text>;
       valuntil?: Nullable<PgCatalog.Types.Timestamptz>;
       useconfig?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgShdepend {
+    };
+    export type PgShdepend = {
       dbid: PgCatalog.Types.Oid;
       classid: PgCatalog.Types.Oid;
       objid: PgCatalog.Types.Oid;
@@ -1979,39 +1130,26 @@ export namespace PgCatalog {
       refclassid: PgCatalog.Types.Oid;
       refobjid: PgCatalog.Types.Oid;
       deptype: PgCatalog.Types.Char;
-    }
-
-    export interface PgShdescription {
+    };
+    export type PgShdescription = {
       objoid: PgCatalog.Types.Oid;
       classoid: PgCatalog.Types.Oid;
       description: PgCatalog.Types.Text;
-    }
-
-    export interface PgShdescriptionNotPrimaryKey {
-      description: PgCatalog.Types.Text;
-    }
-
-    export interface PgShmemAllocations {
+    };
+    export type PgShmemAllocations = {
       name?: Nullable<PgCatalog.Types.Text>;
       off?: Nullable<PgCatalog.Types.Int8>;
       size?: Nullable<PgCatalog.Types.Int8>;
       allocatedSize?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgShseclabel {
+    };
+    export type PgShseclabel = {
       objoid: PgCatalog.Types.Oid;
       classoid: PgCatalog.Types.Oid;
       provider: PgCatalog.Types.Text;
       label: PgCatalog.Types.Text;
-    }
-
-    export interface PgShseclabelNotPrimaryKey {
-      label: PgCatalog.Types.Text;
-    }
-
+    };
     export type PgSnapshot = string;
-
-    export interface PgStatActivity {
+    export type PgStatActivity = {
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
       pid?: Nullable<PgCatalog.Types.Int4>;
@@ -2034,9 +1172,8 @@ export namespace PgCatalog {
       queryId?: Nullable<PgCatalog.Types.Int8>;
       query?: Nullable<PgCatalog.Types.Text>;
       backendType?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgStatAllIndexes {
+    };
+    export type PgStatAllIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2046,9 +1183,8 @@ export namespace PgCatalog {
       lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
       idxTupRead?: Nullable<PgCatalog.Types.Int8>;
       idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatAllTables {
+    };
+    export type PgStatAllTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2075,9 +1211,8 @@ export namespace PgCatalog {
       autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
       analyzeCount?: Nullable<PgCatalog.Types.Int8>;
       autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatArchiver {
+    };
+    export type PgStatArchiver = {
       archivedCount?: Nullable<PgCatalog.Types.Int8>;
       lastArchivedWal?: Nullable<PgCatalog.Types.Text>;
       lastArchivedTime?: Nullable<PgCatalog.Types.Timestamptz>;
@@ -2085,9 +1220,8 @@ export namespace PgCatalog {
       lastFailedWal?: Nullable<PgCatalog.Types.Text>;
       lastFailedTime?: Nullable<PgCatalog.Types.Timestamptz>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatBgwriter {
+    };
+    export type PgStatBgwriter = {
       checkpointsTimed?: Nullable<PgCatalog.Types.Int8>;
       checkpointsReq?: Nullable<PgCatalog.Types.Int8>;
       checkpointWriteTime?: Nullable<PgCatalog.Types.Float8>;
@@ -2099,9 +1233,8 @@ export namespace PgCatalog {
       buffersBackendFsync?: Nullable<PgCatalog.Types.Int8>;
       buffersAlloc?: Nullable<PgCatalog.Types.Int8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatDatabase {
+    };
+    export type PgStatDatabase = {
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
       numbackends?: Nullable<PgCatalog.Types.Int4>;
@@ -2130,9 +1263,8 @@ export namespace PgCatalog {
       sessionsFatal?: Nullable<PgCatalog.Types.Int8>;
       sessionsKilled?: Nullable<PgCatalog.Types.Int8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatDatabaseConflicts {
+    };
+    export type PgStatDatabaseConflicts = {
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
       conflTablespace?: Nullable<PgCatalog.Types.Int8>;
@@ -2141,17 +1273,15 @@ export namespace PgCatalog {
       conflBufferpin?: Nullable<PgCatalog.Types.Int8>;
       conflDeadlock?: Nullable<PgCatalog.Types.Int8>;
       conflActiveLogicalslot?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatGssapi {
+    };
+    export type PgStatGssapi = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       gssAuthenticated?: Nullable<PgCatalog.Types.Bool>;
       principal?: Nullable<PgCatalog.Types.Text>;
       encrypted?: Nullable<PgCatalog.Types.Bool>;
       credentialsDelegated?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgStatIo {
+    };
+    export type PgStatIo = {
       backendType?: Nullable<PgCatalog.Types.Text>;
       object?: Nullable<PgCatalog.Types.Text>;
       context?: Nullable<PgCatalog.Types.Text>;
@@ -2170,9 +1300,8 @@ export namespace PgCatalog {
       fsyncs?: Nullable<PgCatalog.Types.Int8>;
       fsyncTime?: Nullable<PgCatalog.Types.Float8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatProgressAnalyze {
+    };
+    export type PgStatProgressAnalyze = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
@@ -2185,18 +1314,16 @@ export namespace PgCatalog {
       childTablesTotal?: Nullable<PgCatalog.Types.Int8>;
       childTablesDone?: Nullable<PgCatalog.Types.Int8>;
       currentChildTableRelid?: Nullable<PgCatalog.Types.Oid>;
-    }
-
-    export interface PgStatProgressBasebackup {
+    };
+    export type PgStatProgressBasebackup = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       phase?: Nullable<PgCatalog.Types.Text>;
       backupTotal?: Nullable<PgCatalog.Types.Int8>;
       backupStreamed?: Nullable<PgCatalog.Types.Int8>;
       tablespacesTotal?: Nullable<PgCatalog.Types.Int8>;
       tablespacesStreamed?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatProgressCluster {
+    };
+    export type PgStatProgressCluster = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
@@ -2209,9 +1336,8 @@ export namespace PgCatalog {
       heapBlksTotal?: Nullable<PgCatalog.Types.Int8>;
       heapBlksScanned?: Nullable<PgCatalog.Types.Int8>;
       indexRebuildCount?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatProgressCopy {
+    };
+    export type PgStatProgressCopy = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
@@ -2222,9 +1348,8 @@ export namespace PgCatalog {
       bytesTotal?: Nullable<PgCatalog.Types.Int8>;
       tuplesProcessed?: Nullable<PgCatalog.Types.Int8>;
       tuplesExcluded?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatProgressCreateIndex {
+    };
+    export type PgStatProgressCreateIndex = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
@@ -2241,9 +1366,8 @@ export namespace PgCatalog {
       tuplesDone?: Nullable<PgCatalog.Types.Int8>;
       partitionsTotal?: Nullable<PgCatalog.Types.Int8>;
       partitionsDone?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatProgressVacuum {
+    };
+    export type PgStatProgressVacuum = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       datid?: Nullable<PgCatalog.Types.Oid>;
       datname?: Nullable<PgCatalog.Types.Name>;
@@ -2255,9 +1379,8 @@ export namespace PgCatalog {
       indexVacuumCount?: Nullable<PgCatalog.Types.Int8>;
       maxDeadTuples?: Nullable<PgCatalog.Types.Int8>;
       numDeadTuples?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatRecoveryPrefetch {
+    };
+    export type PgStatRecoveryPrefetch = {
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
       prefetch?: Nullable<PgCatalog.Types.Int8>;
       hit?: Nullable<PgCatalog.Types.Int8>;
@@ -2268,9 +1391,8 @@ export namespace PgCatalog {
       walDistance?: Nullable<PgCatalog.Types.Int4>;
       blockDistance?: Nullable<PgCatalog.Types.Int4>;
       ioDepth?: Nullable<PgCatalog.Types.Int4>;
-    }
-
-    export interface PgStatReplication {
+    };
+    export type PgStatReplication = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       usesysid?: Nullable<PgCatalog.Types.Oid>;
       usename?: Nullable<PgCatalog.Types.Name>;
@@ -2291,9 +1413,8 @@ export namespace PgCatalog {
       syncPriority?: Nullable<PgCatalog.Types.Int4>;
       syncState?: Nullable<PgCatalog.Types.Text>;
       replyTime?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatReplicationSlots {
+    };
+    export type PgStatReplicationSlots = {
       slotName?: Nullable<PgCatalog.Types.Text>;
       spillTxns?: Nullable<PgCatalog.Types.Int8>;
       spillCount?: Nullable<PgCatalog.Types.Int8>;
@@ -2304,9 +1425,8 @@ export namespace PgCatalog {
       totalTxns?: Nullable<PgCatalog.Types.Int8>;
       totalBytes?: Nullable<PgCatalog.Types.Int8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatSlru {
+    };
+    export type PgStatSlru = {
       name?: Nullable<PgCatalog.Types.Text>;
       blksZeroed?: Nullable<PgCatalog.Types.Int8>;
       blksHit?: Nullable<PgCatalog.Types.Int8>;
@@ -2316,9 +1436,8 @@ export namespace PgCatalog {
       flushes?: Nullable<PgCatalog.Types.Int8>;
       truncates?: Nullable<PgCatalog.Types.Int8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatSsl {
+    };
+    export type PgStatSsl = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       ssl?: Nullable<PgCatalog.Types.Bool>;
       version?: Nullable<PgCatalog.Types.Text>;
@@ -2327,9 +1446,8 @@ export namespace PgCatalog {
       clientDn?: Nullable<PgCatalog.Types.Text>;
       clientSerial?: Nullable<PgCatalog.Types.Numeric>;
       issuerDn?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgStatSubscription {
+    };
+    export type PgStatSubscription = {
       subid?: Nullable<PgCatalog.Types.Oid>;
       subname?: Nullable<PgCatalog.Types.Name>;
       pid?: Nullable<PgCatalog.Types.Int4>;
@@ -2340,17 +1458,15 @@ export namespace PgCatalog {
       lastMsgReceiptTime?: Nullable<PgCatalog.Types.Timestamptz>;
       latestEndLsn?: Nullable<PgCatalog.Types.PgLsn>;
       latestEndTime?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatSubscriptionStats {
+    };
+    export type PgStatSubscriptionStats = {
       subid?: Nullable<PgCatalog.Types.Oid>;
       subname?: Nullable<PgCatalog.Types.Name>;
       applyErrorCount?: Nullable<PgCatalog.Types.Int8>;
       syncErrorCount?: Nullable<PgCatalog.Types.Int8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatSysIndexes {
+    };
+    export type PgStatSysIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2360,9 +1476,8 @@ export namespace PgCatalog {
       lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
       idxTupRead?: Nullable<PgCatalog.Types.Int8>;
       idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatSysTables {
+    };
+    export type PgStatSysTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2389,18 +1504,16 @@ export namespace PgCatalog {
       autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
       analyzeCount?: Nullable<PgCatalog.Types.Int8>;
       autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatUserFunctions {
+    };
+    export type PgStatUserFunctions = {
       funcid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       funcname?: Nullable<PgCatalog.Types.Name>;
       calls?: Nullable<PgCatalog.Types.Int8>;
       totalTime?: Nullable<PgCatalog.Types.Float8>;
       selfTime?: Nullable<PgCatalog.Types.Float8>;
-    }
-
-    export interface PgStatUserIndexes {
+    };
+    export type PgStatUserIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2410,9 +1523,8 @@ export namespace PgCatalog {
       lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
       idxTupRead?: Nullable<PgCatalog.Types.Int8>;
       idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatUserTables {
+    };
+    export type PgStatUserTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2439,9 +1551,8 @@ export namespace PgCatalog {
       autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
       analyzeCount?: Nullable<PgCatalog.Types.Int8>;
       autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatWal {
+    };
+    export type PgStatWal = {
       walRecords?: Nullable<PgCatalog.Types.Int8>;
       walFpi?: Nullable<PgCatalog.Types.Int8>;
       walBytes?: Nullable<PgCatalog.Types.Numeric>;
@@ -2451,9 +1562,8 @@ export namespace PgCatalog {
       walWriteTime?: Nullable<PgCatalog.Types.Float8>;
       walSyncTime?: Nullable<PgCatalog.Types.Float8>;
       statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-    }
-
-    export interface PgStatWalReceiver {
+    };
+    export type PgStatWalReceiver = {
       pid?: Nullable<PgCatalog.Types.Int4>;
       status?: Nullable<PgCatalog.Types.Text>;
       receiveStartLsn?: Nullable<PgCatalog.Types.PgLsn>;
@@ -2469,9 +1579,8 @@ export namespace PgCatalog {
       senderHost?: Nullable<PgCatalog.Types.Text>;
       senderPort?: Nullable<PgCatalog.Types.Int4>;
       conninfo?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgStatXactAllTables {
+    };
+    export type PgStatXactAllTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2484,9 +1593,8 @@ export namespace PgCatalog {
       nTupDel?: Nullable<PgCatalog.Types.Int8>;
       nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
       nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatXactSysTables {
+    };
+    export type PgStatXactSysTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2499,18 +1607,16 @@ export namespace PgCatalog {
       nTupDel?: Nullable<PgCatalog.Types.Int8>;
       nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
       nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatXactUserFunctions {
+    };
+    export type PgStatXactUserFunctions = {
       funcid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       funcname?: Nullable<PgCatalog.Types.Name>;
       calls?: Nullable<PgCatalog.Types.Int8>;
       totalTime?: Nullable<PgCatalog.Types.Float8>;
       selfTime?: Nullable<PgCatalog.Types.Float8>;
-    }
-
-    export interface PgStatXactUserTables {
+    };
+    export type PgStatXactUserTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2523,9 +1629,8 @@ export namespace PgCatalog {
       nTupDel?: Nullable<PgCatalog.Types.Int8>;
       nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
       nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioAllIndexes {
+    };
+    export type PgStatioAllIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2533,17 +1638,15 @@ export namespace PgCatalog {
       indexrelname?: Nullable<PgCatalog.Types.Name>;
       idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioAllSequences {
+    };
+    export type PgStatioAllSequences = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
       blksRead?: Nullable<PgCatalog.Types.Int8>;
       blksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioAllTables {
+    };
+    export type PgStatioAllTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2555,9 +1658,8 @@ export namespace PgCatalog {
       toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioSysIndexes {
+    };
+    export type PgStatioSysIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2565,17 +1667,15 @@ export namespace PgCatalog {
       indexrelname?: Nullable<PgCatalog.Types.Name>;
       idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioSysSequences {
+    };
+    export type PgStatioSysSequences = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
       blksRead?: Nullable<PgCatalog.Types.Int8>;
       blksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioSysTables {
+    };
+    export type PgStatioSysTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2587,9 +1687,8 @@ export namespace PgCatalog {
       toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioUserIndexes {
+    };
+    export type PgStatioUserIndexes = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       indexrelid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2597,17 +1696,15 @@ export namespace PgCatalog {
       indexrelname?: Nullable<PgCatalog.Types.Name>;
       idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioUserSequences {
+    };
+    export type PgStatioUserSequences = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
       blksRead?: Nullable<PgCatalog.Types.Int8>;
       blksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatioUserTables {
+    };
+    export type PgStatioUserTables = {
       relid?: Nullable<PgCatalog.Types.Oid>;
       schemaname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
@@ -2619,9 +1716,8 @@ export namespace PgCatalog {
       toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
       tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-    }
-
-    export interface PgStatistic {
+    };
+    export type PgStatistic = {
       starelid: PgCatalog.Types.Oid;
       staattnum: PgCatalog.Types.Int2;
       stainherit: PgCatalog.Types.Bool;
@@ -2653,40 +1749,8 @@ export namespace PgCatalog {
       stavalues3?: Nullable<PgCatalog.Types.Anyarray>;
       stavalues4?: Nullable<PgCatalog.Types.Anyarray>;
       stavalues5?: Nullable<PgCatalog.Types.Anyarray>;
-    }
-
-    export interface PgStatisticNotPrimaryKey {
-      stanullfrac: PgCatalog.Types.Float4;
-      stawidth: PgCatalog.Types.Int4;
-      stadistinct: PgCatalog.Types.Float4;
-      stakind1: PgCatalog.Types.Int2;
-      stakind2: PgCatalog.Types.Int2;
-      stakind3: PgCatalog.Types.Int2;
-      stakind4: PgCatalog.Types.Int2;
-      stakind5: PgCatalog.Types.Int2;
-      staop1: PgCatalog.Types.Oid;
-      staop2: PgCatalog.Types.Oid;
-      staop3: PgCatalog.Types.Oid;
-      staop4: PgCatalog.Types.Oid;
-      staop5: PgCatalog.Types.Oid;
-      stacoll1: PgCatalog.Types.Oid;
-      stacoll2: PgCatalog.Types.Oid;
-      stacoll3: PgCatalog.Types.Oid;
-      stacoll4: PgCatalog.Types.Oid;
-      stacoll5: PgCatalog.Types.Oid;
-      stanumbers1?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers2?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers3?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers4?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers5?: Nullable<PgCatalog.Types.Float4Array>;
-      stavalues1?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues2?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues3?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues4?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues5?: Nullable<PgCatalog.Types.Anyarray>;
-    }
-
-    export interface PgStatisticExt {
+    };
+    export type PgStatisticExt = {
       oid: PgCatalog.Types.Oid;
       stxrelid: PgCatalog.Types.Oid;
       stxname: PgCatalog.Types.Name;
@@ -2696,36 +1760,16 @@ export namespace PgCatalog {
       stxkeys: PgCatalog.Types.Int2vector;
       stxkind: PgCatalog.Types.CharArray;
       stxexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgStatisticExtNotPrimaryKey {
-      stxrelid: PgCatalog.Types.Oid;
-      stxname: PgCatalog.Types.Name;
-      stxnamespace: PgCatalog.Types.Oid;
-      stxowner: PgCatalog.Types.Oid;
-      stxstattarget: PgCatalog.Types.Int4;
-      stxkeys: PgCatalog.Types.Int2vector;
-      stxkind: PgCatalog.Types.CharArray;
-      stxexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-    }
-
-    export interface PgStatisticExtData {
+    };
+    export type PgStatisticExtData = {
       stxoid: PgCatalog.Types.Oid;
       stxdinherit: PgCatalog.Types.Bool;
       stxdndistinct?: Nullable<PgCatalog.Types.PgNdistinct>;
       stxddependencies?: Nullable<PgCatalog.Types.PgDependencies>;
       stxdmcv?: Nullable<PgCatalog.Types.PgMcvList>;
       stxdexpr?: Nullable<PgCatalog.Types.PgStatisticArray>;
-    }
-
-    export interface PgStatisticExtDataNotPrimaryKey {
-      stxdndistinct?: Nullable<PgCatalog.Types.PgNdistinct>;
-      stxddependencies?: Nullable<PgCatalog.Types.PgDependencies>;
-      stxdmcv?: Nullable<PgCatalog.Types.PgMcvList>;
-      stxdexpr?: Nullable<PgCatalog.Types.PgStatisticArray>;
-    }
-
-    export interface PgStats {
+    };
+    export type PgStats = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       attname?: Nullable<PgCatalog.Types.Name>;
@@ -2740,9 +1784,8 @@ export namespace PgCatalog {
       mostCommonElems?: Nullable<PgCatalog.Types.Anyarray>;
       mostCommonElemFreqs?: Nullable<PgCatalog.Types.Float4Array>;
       elemCountHistogram?: Nullable<PgCatalog.Types.Float4Array>;
-    }
-
-    export interface PgStatsExt {
+    };
+    export type PgStatsExt = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       statisticsSchemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2758,9 +1801,8 @@ export namespace PgCatalog {
       mostCommonValNulls?: Nullable<PgCatalog.Types.BoolArray>;
       mostCommonFreqs?: Nullable<PgCatalog.Types.Float8Array>;
       mostCommonBaseFreqs?: Nullable<PgCatalog.Types.Float8Array>;
-    }
-
-    export interface PgStatsExtExprs {
+    };
+    export type PgStatsExtExprs = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       statisticsSchemaname?: Nullable<PgCatalog.Types.Name>;
@@ -2778,9 +1820,8 @@ export namespace PgCatalog {
       mostCommonElems?: Nullable<PgCatalog.Types.Anyarray>;
       mostCommonElemFreqs?: Nullable<PgCatalog.Types.Float4Array>;
       elemCountHistogram?: Nullable<PgCatalog.Types.Float4Array>;
-    }
-
-    export interface PgSubscription {
+    };
+    export type PgSubscription = {
       oid: PgCatalog.Types.Oid;
       subdbid: PgCatalog.Types.Oid;
       subskiplsn: PgCatalog.Types.PgLsn;
@@ -2798,40 +1839,14 @@ export namespace PgCatalog {
       subsynccommit: PgCatalog.Types.Text;
       subpublications: PgCatalog.Types.TextArray;
       suborigin?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgSubscriptionNotPrimaryKey {
-      subdbid: PgCatalog.Types.Oid;
-      subskiplsn: PgCatalog.Types.PgLsn;
-      subname: PgCatalog.Types.Name;
-      subowner: PgCatalog.Types.Oid;
-      subenabled: PgCatalog.Types.Bool;
-      subbinary: PgCatalog.Types.Bool;
-      substream: PgCatalog.Types.Char;
-      subtwophasestate: PgCatalog.Types.Char;
-      subdisableonerr: PgCatalog.Types.Bool;
-      subpasswordrequired: PgCatalog.Types.Bool;
-      subrunasowner: PgCatalog.Types.Bool;
-      subconninfo: PgCatalog.Types.Text;
-      subslotname?: Nullable<PgCatalog.Types.Name>;
-      subsynccommit: PgCatalog.Types.Text;
-      subpublications: PgCatalog.Types.TextArray;
-      suborigin?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgSubscriptionRel {
+    };
+    export type PgSubscriptionRel = {
       srsubid: PgCatalog.Types.Oid;
       srrelid: PgCatalog.Types.Oid;
       srsubstate: PgCatalog.Types.Char;
       srsublsn?: Nullable<PgCatalog.Types.PgLsn>;
-    }
-
-    export interface PgSubscriptionRelNotPrimaryKey {
-      srsubstate: PgCatalog.Types.Char;
-      srsublsn?: Nullable<PgCatalog.Types.PgLsn>;
-    }
-
-    export interface PgTables {
+    };
+    export type PgTables = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       tablename?: Nullable<PgCatalog.Types.Name>;
       tableowner?: Nullable<PgCatalog.Types.Name>;
@@ -2840,52 +1855,33 @@ export namespace PgCatalog {
       hasrules?: Nullable<PgCatalog.Types.Bool>;
       hastriggers?: Nullable<PgCatalog.Types.Bool>;
       rowsecurity?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgTablespace {
+    };
+    export type PgTablespace = {
       oid: PgCatalog.Types.Oid;
       spcname: PgCatalog.Types.Name;
       spcowner: PgCatalog.Types.Oid;
       spcacl?: Nullable<PgCatalog.Types.AclitemArray>;
       spcoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgTablespaceNotPrimaryKey {
-      spcname: PgCatalog.Types.Name;
-      spcowner: PgCatalog.Types.Oid;
-      spcacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      spcoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgTimezoneAbbrevs {
+    };
+    export type PgTimezoneAbbrevs = {
       abbrev?: Nullable<PgCatalog.Types.Text>;
       utcOffset?: Nullable<PgCatalog.Types.Interval>;
       isDst?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgTimezoneNames {
+    };
+    export type PgTimezoneNames = {
       name?: Nullable<PgCatalog.Types.Text>;
       abbrev?: Nullable<PgCatalog.Types.Text>;
       utcOffset?: Nullable<PgCatalog.Types.Interval>;
       isDst?: Nullable<PgCatalog.Types.Bool>;
-    }
-
-    export interface PgTransform {
+    };
+    export type PgTransform = {
       oid: PgCatalog.Types.Oid;
       trftype: PgCatalog.Types.Oid;
       trflang: PgCatalog.Types.Oid;
       trffromsql: PgCatalog.Types.Regproc;
       trftosql: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgTransformNotPrimaryKey {
-      trftype: PgCatalog.Types.Oid;
-      trflang: PgCatalog.Types.Oid;
-      trffromsql: PgCatalog.Types.Regproc;
-      trftosql: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgTrigger {
+    };
+    export type PgTrigger = {
       oid: PgCatalog.Types.Oid;
       tgrelid: PgCatalog.Types.Oid;
       tgparentid: PgCatalog.Types.Oid;
@@ -2905,73 +1901,29 @@ export namespace PgCatalog {
       tgqual?: Nullable<PgCatalog.Types.PgNodeTree>;
       tgoldtable?: Nullable<PgCatalog.Types.Name>;
       tgnewtable?: Nullable<PgCatalog.Types.Name>;
-    }
-
-    export interface PgTriggerNotPrimaryKey {
-      tgrelid: PgCatalog.Types.Oid;
-      tgparentid: PgCatalog.Types.Oid;
-      tgname: PgCatalog.Types.Name;
-      tgfoid: PgCatalog.Types.Oid;
-      tgtype: PgCatalog.Types.Int2;
-      tgenabled: PgCatalog.Types.Char;
-      tgisinternal: PgCatalog.Types.Bool;
-      tgconstrrelid: PgCatalog.Types.Oid;
-      tgconstrindid: PgCatalog.Types.Oid;
-      tgconstraint: PgCatalog.Types.Oid;
-      tgdeferrable: PgCatalog.Types.Bool;
-      tginitdeferred: PgCatalog.Types.Bool;
-      tgnargs: PgCatalog.Types.Int2;
-      tgattr: PgCatalog.Types.Int2vector;
-      tgargs: PgCatalog.Types.Bytea;
-      tgqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      tgoldtable?: Nullable<PgCatalog.Types.Name>;
-      tgnewtable?: Nullable<PgCatalog.Types.Name>;
-    }
-
-    export interface PgTsConfig {
+    };
+    export type PgTsConfig = {
       oid: PgCatalog.Types.Oid;
       cfgname: PgCatalog.Types.Name;
       cfgnamespace: PgCatalog.Types.Oid;
       cfgowner: PgCatalog.Types.Oid;
       cfgparser: PgCatalog.Types.Oid;
-    }
-
-    export interface PgTsConfigNotPrimaryKey {
-      cfgname: PgCatalog.Types.Name;
-      cfgnamespace: PgCatalog.Types.Oid;
-      cfgowner: PgCatalog.Types.Oid;
-      cfgparser: PgCatalog.Types.Oid;
-    }
-
-    export interface PgTsConfigMap {
+    };
+    export type PgTsConfigMap = {
       mapcfg: PgCatalog.Types.Oid;
       maptokentype: PgCatalog.Types.Int4;
       mapseqno: PgCatalog.Types.Int4;
       mapdict: PgCatalog.Types.Oid;
-    }
-
-    export interface PgTsConfigMapNotPrimaryKey {
-      mapdict: PgCatalog.Types.Oid;
-    }
-
-    export interface PgTsDict {
+    };
+    export type PgTsDict = {
       oid: PgCatalog.Types.Oid;
       dictname: PgCatalog.Types.Name;
       dictnamespace: PgCatalog.Types.Oid;
       dictowner: PgCatalog.Types.Oid;
       dicttemplate: PgCatalog.Types.Oid;
       dictinitoption?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgTsDictNotPrimaryKey {
-      dictname: PgCatalog.Types.Name;
-      dictnamespace: PgCatalog.Types.Oid;
-      dictowner: PgCatalog.Types.Oid;
-      dicttemplate: PgCatalog.Types.Oid;
-      dictinitoption?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface PgTsParser {
+    };
+    export type PgTsParser = {
       oid: PgCatalog.Types.Oid;
       prsname: PgCatalog.Types.Name;
       prsnamespace: PgCatalog.Types.Oid;
@@ -2980,34 +1932,15 @@ export namespace PgCatalog {
       prsend: PgCatalog.Types.Regproc;
       prsheadline: PgCatalog.Types.Regproc;
       prslextype: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgTsParserNotPrimaryKey {
-      prsname: PgCatalog.Types.Name;
-      prsnamespace: PgCatalog.Types.Oid;
-      prsstart: PgCatalog.Types.Regproc;
-      prstoken: PgCatalog.Types.Regproc;
-      prsend: PgCatalog.Types.Regproc;
-      prsheadline: PgCatalog.Types.Regproc;
-      prslextype: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgTsTemplate {
+    };
+    export type PgTsTemplate = {
       oid: PgCatalog.Types.Oid;
       tmplname: PgCatalog.Types.Name;
       tmplnamespace: PgCatalog.Types.Oid;
       tmplinit: PgCatalog.Types.Regproc;
       tmpllexize: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgTsTemplateNotPrimaryKey {
-      tmplname: PgCatalog.Types.Name;
-      tmplnamespace: PgCatalog.Types.Oid;
-      tmplinit: PgCatalog.Types.Regproc;
-      tmpllexize: PgCatalog.Types.Regproc;
-    }
-
-    export interface PgType {
+    };
+    export type PgType = {
       oid: PgCatalog.Types.Oid;
       typname: PgCatalog.Types.Name;
       typnamespace: PgCatalog.Types.Oid;
@@ -3040,43 +1973,8 @@ export namespace PgCatalog {
       typdefaultbin?: Nullable<PgCatalog.Types.PgNodeTree>;
       typdefault?: Nullable<PgCatalog.Types.Text>;
       typacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgTypeNotPrimaryKey {
-      typname: PgCatalog.Types.Name;
-      typnamespace: PgCatalog.Types.Oid;
-      typowner: PgCatalog.Types.Oid;
-      typlen: PgCatalog.Types.Int2;
-      typbyval: PgCatalog.Types.Bool;
-      typtype: PgCatalog.Types.Char;
-      typcategory: PgCatalog.Types.Char;
-      typispreferred: PgCatalog.Types.Bool;
-      typisdefined: PgCatalog.Types.Bool;
-      typdelim: PgCatalog.Types.Char;
-      typrelid: PgCatalog.Types.Oid;
-      typsubscript: PgCatalog.Types.Regproc;
-      typelem: PgCatalog.Types.Oid;
-      typarray: PgCatalog.Types.Oid;
-      typinput: PgCatalog.Types.Regproc;
-      typoutput: PgCatalog.Types.Regproc;
-      typreceive: PgCatalog.Types.Regproc;
-      typsend: PgCatalog.Types.Regproc;
-      typmodin: PgCatalog.Types.Regproc;
-      typmodout: PgCatalog.Types.Regproc;
-      typanalyze: PgCatalog.Types.Regproc;
-      typalign: PgCatalog.Types.Char;
-      typstorage: PgCatalog.Types.Char;
-      typnotnull: PgCatalog.Types.Bool;
-      typbasetype: PgCatalog.Types.Oid;
-      typtypmod: PgCatalog.Types.Int4;
-      typndims: PgCatalog.Types.Int4;
-      typcollation: PgCatalog.Types.Oid;
-      typdefaultbin?: Nullable<PgCatalog.Types.PgNodeTree>;
-      typdefault?: Nullable<PgCatalog.Types.Text>;
-      typacl?: Nullable<PgCatalog.Types.AclitemArray>;
-    }
-
-    export interface PgUser {
+    };
+    export type PgUser = {
       usename?: Nullable<PgCatalog.Types.Name>;
       usesysid?: Nullable<PgCatalog.Types.Oid>;
       usecreatedb?: Nullable<PgCatalog.Types.Bool>;
@@ -3086,201 +1984,705 @@ export namespace PgCatalog {
       passwd?: Nullable<PgCatalog.Types.Text>;
       valuntil?: Nullable<PgCatalog.Types.Timestamptz>;
       useconfig?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgUserMapping {
+    };
+    export type PgUserMapping = {
       oid: PgCatalog.Types.Oid;
       umuser: PgCatalog.Types.Oid;
       umserver: PgCatalog.Types.Oid;
       umoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgUserMappingNotPrimaryKey {
-      umuser: PgCatalog.Types.Oid;
-      umserver: PgCatalog.Types.Oid;
-      umoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgUserMappings {
+    };
+    export type PgUserMappings = {
       umid?: Nullable<PgCatalog.Types.Oid>;
       srvid?: Nullable<PgCatalog.Types.Oid>;
       srvname?: Nullable<PgCatalog.Types.Name>;
       umuser?: Nullable<PgCatalog.Types.Oid>;
       usename?: Nullable<PgCatalog.Types.Name>;
       umoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgViews {
+    };
+    export type PgViews = {
       schemaname?: Nullable<PgCatalog.Types.Name>;
       viewname?: Nullable<PgCatalog.Types.Name>;
       viewowner?: Nullable<PgCatalog.Types.Name>;
       definition?: Nullable<PgCatalog.Types.Text>;
-    }
-
+    };
     export type Point = {
       x: number;
       y: number;
     };
-
     export type Polygon = string;
-
-    export type Record = void;
-
+    export type Record = any;
     export type Refcursor = string;
-
     export type Regclass = number;
-
     export type Regcollation = number;
-
     export type Regconfig = number;
-
     export type Regdictionary = number;
-
     export type Regnamespace = number;
-
     export type Regoper = number;
-
     export type Regoperator = number;
-
     export type Regproc = number;
-
     export type Regprocedure = number;
-
     export type Regrole = number;
-
     export type Regtype = number;
-
-    export type TableAmHandler = void;
-
+    export type TableAmHandler = any;
     export type Text = string;
-
     export type Tid = {
       blockNumber: number;
       tupleIndex: number;
     };
-
     export type Time = JsDate;
-
     export type Timestamp = JsDate;
-
     export type Timestamptz = JsDate;
-
     export type Timetz = JsDate;
-
-    export type Trigger = void;
-
-    export type TsmHandler = void;
-
-    export type Tsmultirange = void;
-
+    export type Trigger = any;
+    export type TsmHandler = any;
+    export type Tsmultirange = any;
     export type Tsquery = string;
-
     export type Tsrange = [
       PgCatalog.Types.Timestamp,
       PgCatalog.Types.Timestamp,
     ];
-
-    export type Tstzmultirange = void;
-
+    export type Tstzmultirange = any;
     export type Tstzrange = [
       PgCatalog.Types.Timestamptz,
       PgCatalog.Types.Timestamptz,
     ];
-
     export type Tsvector = string;
-
     export type TxidSnapshot = string;
-
-    export type Unknown = void;
-
+    export type Unknown = any;
     export type Uuid = UUID;
-
     export type Varbit = boolean;
-
     export type Varchar = string;
-
-    export type Void = void;
-
+    export type Void = any;
     export type Xid = string;
-
     export type Xid8 = string;
-
     export type Xml = string;
+  }
+  export namespace Procedures {}
+  export namespace Tables {
+    export namespace PgStatistic {
+      export type ByStarelidStaattnumStainherit = {
+        starelid: PgCatalog.Types.Oid;
+        staattnum: PgCatalog.Types.Int2;
+        stainherit: PgCatalog.Types.Bool;
+      };
+    }
+    export namespace PgType {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByTypnameTypnamespace = {
+        typname: PgCatalog.Types.Cstring;
+        typnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgForeignTable {
+      export type ByFtrelid = {
+        ftrelid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAuthid {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByRolname = {
+        rolname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgStatisticExtData {
+      export type ByStxoidStxdinherit = {
+        stxoid: PgCatalog.Types.Oid;
+        stxdinherit: PgCatalog.Types.Bool;
+      };
+    }
+    export namespace PgUserMapping {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByUmuserUmserver = {
+        umuser: PgCatalog.Types.Oid;
+        umserver: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgSubscription {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type BySubdbidSubname = {
+        subdbid: PgCatalog.Types.Oid;
+        subname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgAttribute {
+      export type ByAttrelidAttname = {
+        attrelid: PgCatalog.Types.Oid;
+        attname: PgCatalog.Types.Cstring;
+      };
+      export type ByAttrelidAttnum = {
+        attrelid: PgCatalog.Types.Oid;
+        attnum: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace PgProc {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPronameProargtypesPronamespace = {
+        proname: PgCatalog.Types.Cstring;
+        proargtypes: PgCatalog.Types.Oidvector;
+        pronamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgClass {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByRelnameRelnamespace = {
+        relname: PgCatalog.Types.Cstring;
+        relnamespace: PgCatalog.Types.Oid;
+      };
+      export type ByReltablespaceRelfilenode = {
+        reltablespace: PgCatalog.Types.Oid;
+        relfilenode: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAttrdef {
+      export type ByAdrelidAdnum = {
+        adrelid: PgCatalog.Types.Oid;
+        adnum: PgCatalog.Types.Int2;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgConstraint {
+      export type ByConnameConnamespace = {
+        conname: PgCatalog.Types.Cstring;
+        connamespace: PgCatalog.Types.Oid;
+      };
+      export type ByConparentid = {
+        conparentid: PgCatalog.Types.Oid;
+      };
+      export type ByConrelidContypidConname = {
+        conrelid: PgCatalog.Types.Oid;
+        contypid: PgCatalog.Types.Oid;
+        conname: PgCatalog.Types.Cstring;
+      };
+      export type ByContypid = {
+        contypid: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgInherits {
+      export type ByInhparent = {
+        inhparent: PgCatalog.Types.Oid;
+      };
+      export type ByInhrelidInhseqno = {
+        inhrelid: PgCatalog.Types.Oid;
+        inhseqno: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace PgIndex {
+      export type ByIndexrelid = {
+        indexrelid: PgCatalog.Types.Oid;
+      };
+      export type ByIndrelid = {
+        indrelid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgOperator {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByOprnameOprleftOprrightOprnamespace = {
+        oprname: PgCatalog.Types.Cstring;
+        oprleft: PgCatalog.Types.Oid;
+        oprright: PgCatalog.Types.Oid;
+        oprnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgOpfamily {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByOpfmethodOpfnameOpfnamespace = {
+        opfmethod: PgCatalog.Types.Oid;
+        opfname: PgCatalog.Types.Cstring;
+        opfnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgOpclass {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByOpcmethodOpcnameOpcnamespace = {
+        opcmethod: PgCatalog.Types.Oid;
+        opcname: PgCatalog.Types.Cstring;
+        opcnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAm {
+      export type ByAmname = {
+        amname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAmop {
+      export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
+        amopfamily: PgCatalog.Types.Oid;
+        amoplefttype: PgCatalog.Types.Oid;
+        amoprighttype: PgCatalog.Types.Oid;
+        amopstrategy: PgCatalog.Types.Int2;
+      };
+      export type ByAmopoprAmoppurposeAmopfamily = {
+        amopopr: PgCatalog.Types.Oid;
+        amoppurpose: PgCatalog.Types.Char;
+        amopfamily: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAmproc {
+      export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
+        amprocfamily: PgCatalog.Types.Oid;
+        amproclefttype: PgCatalog.Types.Oid;
+        amprocrighttype: PgCatalog.Types.Oid;
+        amprocnum: PgCatalog.Types.Int2;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgLanguage {
+      export type ByLanname = {
+        lanname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgLargeobjectMetadata {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgAggregate {
+      export type ByAggfnoid = {
+        aggfnoid: PgCatalog.Types.Regproc;
+      };
+    }
+    export namespace PgStatisticExt {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByStxnameStxnamespace = {
+        stxname: PgCatalog.Types.Cstring;
+        stxnamespace: PgCatalog.Types.Oid;
+      };
+      export type ByStxrelid = {
+        stxrelid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgRewrite {
+      export type ByEvClassRulename = {
+        evClass: PgCatalog.Types.Oid;
+        rulename: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTrigger {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByTgconstraint = {
+        tgconstraint: PgCatalog.Types.Oid;
+      };
+      export type ByTgrelidTgname = {
+        tgrelid: PgCatalog.Types.Oid;
+        tgname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgEventTrigger {
+      export type ByEvtname = {
+        evtname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgDescription {
+      export type ByObjoidClassoidObjsubid = {
+        objoid: PgCatalog.Types.Oid;
+        classoid: PgCatalog.Types.Oid;
+        objsubid: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace PgCast {
+      export type ByCastsourceCasttarget = {
+        castsource: PgCatalog.Types.Oid;
+        casttarget: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgEnum {
+      export type ByEnumtypidEnumlabel = {
+        enumtypid: PgCatalog.Types.Oid;
+        enumlabel: PgCatalog.Types.Cstring;
+      };
+      export type ByEnumtypidEnumsortorder = {
+        enumtypid: PgCatalog.Types.Oid;
+        enumsortorder: PgCatalog.Types.Float4;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgNamespace {
+      export type ByNspname = {
+        nspname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgConversion {
+      export type ByConnameConnamespace = {
+        conname: PgCatalog.Types.Cstring;
+        connamespace: PgCatalog.Types.Oid;
+      };
+      export type ByConnamespaceConforencodingContoencodingOid = {
+        connamespace: PgCatalog.Types.Oid;
+        conforencoding: PgCatalog.Types.Int4;
+        contoencoding: PgCatalog.Types.Int4;
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgDepend {
+      export type ByClassidObjidObjsubid = {
+        classid: PgCatalog.Types.Oid;
+        objid: PgCatalog.Types.Oid;
+        objsubid: PgCatalog.Types.Int4;
+      };
+      export type ByRefclassidRefobjidRefobjsubid = {
+        refclassid: PgCatalog.Types.Oid;
+        refobjid: PgCatalog.Types.Oid;
+        refobjsubid: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace PgDatabase {
+      export type ByDatname = {
+        datname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgDbRoleSetting {
+      export type BySetdatabaseSetrole = {
+        setdatabase: PgCatalog.Types.Oid;
+        setrole: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTablespace {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type BySpcname = {
+        spcname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgAuthMembers {
+      export type ByGrantor = {
+        grantor: PgCatalog.Types.Oid;
+      };
+      export type ByMemberRoleidGrantor = {
+        member: PgCatalog.Types.Oid;
+        roleid: PgCatalog.Types.Oid;
+        grantor: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByRoleidMemberGrantor = {
+        roleid: PgCatalog.Types.Oid;
+        member: PgCatalog.Types.Oid;
+        grantor: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgShdepend {
+      export type ByDbidClassidObjidObjsubid = {
+        dbid: PgCatalog.Types.Oid;
+        classid: PgCatalog.Types.Oid;
+        objid: PgCatalog.Types.Oid;
+        objsubid: PgCatalog.Types.Int4;
+      };
+      export type ByRefclassidRefobjid = {
+        refclassid: PgCatalog.Types.Oid;
+        refobjid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgShdescription {
+      export type ByObjoidClassoid = {
+        objoid: PgCatalog.Types.Oid;
+        classoid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTsConfig {
+      export type ByCfgnameCfgnamespace = {
+        cfgname: PgCatalog.Types.Cstring;
+        cfgnamespace: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTsConfigMap {
+      export type ByMapcfgMaptokentypeMapseqno = {
+        mapcfg: PgCatalog.Types.Oid;
+        maptokentype: PgCatalog.Types.Int4;
+        mapseqno: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace PgTsDict {
+      export type ByDictnameDictnamespace = {
+        dictname: PgCatalog.Types.Cstring;
+        dictnamespace: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTsParser {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPrsnamePrsnamespace = {
+        prsname: PgCatalog.Types.Cstring;
+        prsnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTsTemplate {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByTmplnameTmplnamespace = {
+        tmplname: PgCatalog.Types.Cstring;
+        tmplnamespace: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgExtension {
+      export type ByExtname = {
+        extname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgForeignDataWrapper {
+      export type ByFdwname = {
+        fdwname: PgCatalog.Types.Cstring;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgForeignServer {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type BySrvname = {
+        srvname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgPolicy {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPolrelidPolname = {
+        polrelid: PgCatalog.Types.Oid;
+        polname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgReplicationOrigin {
+      export type ByRoident = {
+        roident: PgCatalog.Types.Oid;
+      };
+      export type ByRoname = {
+        roname: PgCatalog.Types.Text;
+      };
+    }
+    export namespace PgDefaultAcl {
+      export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
+        defaclrole: PgCatalog.Types.Oid;
+        defaclnamespace: PgCatalog.Types.Oid;
+        defaclobjtype: PgCatalog.Types.Char;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgInitPrivs {
+      export type ByObjoidClassoidObjsubid = {
+        objoid: PgCatalog.Types.Oid;
+        classoid: PgCatalog.Types.Oid;
+        objsubid: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace PgSeclabel {
+      export type ByObjoidClassoidObjsubidProvider = {
+        objoid: PgCatalog.Types.Oid;
+        classoid: PgCatalog.Types.Oid;
+        objsubid: PgCatalog.Types.Int4;
+        provider: PgCatalog.Types.Text;
+      };
+    }
+    export namespace PgShseclabel {
+      export type ByObjoidClassoidProvider = {
+        objoid: PgCatalog.Types.Oid;
+        classoid: PgCatalog.Types.Oid;
+        provider: PgCatalog.Types.Text;
+      };
+    }
+    export namespace PgCollation {
+      export type ByCollnameCollencodingCollnamespace = {
+        collname: PgCatalog.Types.Cstring;
+        collencoding: PgCatalog.Types.Int4;
+        collnamespace: PgCatalog.Types.Oid;
+      };
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgParameterAcl {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByParname = {
+        parname: PgCatalog.Types.Text;
+      };
+    }
+    export namespace PgPartitionedTable {
+      export type ByPartrelid = {
+        partrelid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgRange {
+      export type ByRngmultitypid = {
+        rngmultitypid: PgCatalog.Types.Oid;
+      };
+      export type ByRngtypid = {
+        rngtypid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgTransform {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByTrftypeTrflang = {
+        trftype: PgCatalog.Types.Oid;
+        trflang: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgSequence {
+      export type BySeqrelid = {
+        seqrelid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgPublication {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPubname = {
+        pubname: PgCatalog.Types.Cstring;
+      };
+    }
+    export namespace PgPublicationNamespace {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPnnspidPnpubid = {
+        pnnspid: PgCatalog.Types.Oid;
+        pnpubid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgPublicationRel {
+      export type ByOid = {
+        oid: PgCatalog.Types.Oid;
+      };
+      export type ByPrpubid = {
+        prpubid: PgCatalog.Types.Oid;
+      };
+      export type ByPrrelidPrpubid = {
+        prrelid: PgCatalog.Types.Oid;
+        prpubid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgSubscriptionRel {
+      export type BySrrelidSrsubid = {
+        srrelid: PgCatalog.Types.Oid;
+        srsubid: PgCatalog.Types.Oid;
+      };
+    }
+    export namespace PgLargeobject {
+      export type ByLoidPageno = {
+        loid: PgCatalog.Types.Oid;
+        pageno: PgCatalog.Types.Int4;
+      };
+    }
   }
 }
 export namespace Public {
   export namespace Types {
     export type ActorArray = Array<Public.Types.Actor>;
-
     export type ActorInfoArray = Array<Public.Types.ActorInfo>;
-
     export type AddressArray = Array<Public.Types.Address>;
-
     export type CategoryArray = Array<Public.Types.Category>;
-
     export type CityArray = Array<Public.Types.City>;
-
     export type CountryArray = Array<Public.Types.Country>;
-
     export type CustomerArray = Array<Public.Types.Customer>;
-
     export type CustomerListArray = Array<Public.Types.CustomerList>;
-
     export type FilmArray = Array<Public.Types.Film>;
-
     export type FilmActorArray = Array<Public.Types.FilmActor>;
-
     export type FilmCategoryArray = Array<Public.Types.FilmCategory>;
-
     export type FilmListArray = Array<Public.Types.FilmList>;
-
     export type InventoryArray = Array<Public.Types.Inventory>;
-
     export type LanguageArray = Array<Public.Types.Language>;
-
     export type MpaaRatingArray = Array<Public.Types.MpaaRating>;
-
     export type NicerButSlowerFilmListArray =
       Array<Public.Types.NicerButSlowerFilmList>;
-
     export type PaymentArray = Array<Public.Types.Payment>;
-
     export type RentalArray = Array<Public.Types.Rental>;
-
     export type SalesByFilmCategoryArray =
       Array<Public.Types.SalesByFilmCategory>;
-
     export type SalesByStoreArray = Array<Public.Types.SalesByStore>;
-
     export type StaffArray = Array<Public.Types.Staff>;
-
     export type StaffListArray = Array<Public.Types.StaffList>;
-
     export type StoreArray = Array<Public.Types.Store>;
-
     export type YearArray = Array<Public.Types.Year>;
-
-    export interface Actor {
+    export type Actor = {
       actorId?: PgCatalog.Types.Int4;
       firstName: PgCatalog.Types.Varchar;
       lastName: PgCatalog.Types.Varchar;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface ActorNotPrimaryKey {
-      firstName: PgCatalog.Types.Varchar;
-      lastName: PgCatalog.Types.Varchar;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface ActorInfo {
+    };
+    export type ActorInfo = {
       actorId?: Nullable<PgCatalog.Types.Int4>;
       firstName?: Nullable<PgCatalog.Types.Varchar>;
       lastName?: Nullable<PgCatalog.Types.Varchar>;
       filmInfo?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface Address {
+    };
+    export type Address = {
       addressId?: PgCatalog.Types.Int4;
       address: PgCatalog.Types.Varchar;
       address2?: Nullable<PgCatalog.Types.Varchar>;
@@ -3289,54 +2691,24 @@ export namespace Public {
       postalCode?: Nullable<PgCatalog.Types.Varchar>;
       phone: PgCatalog.Types.Varchar;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface AddressNotPrimaryKey {
-      address: PgCatalog.Types.Varchar;
-      address2?: Nullable<PgCatalog.Types.Varchar>;
-      district: PgCatalog.Types.Varchar;
-      cityId: PgCatalog.Types.Int2;
-      postalCode?: Nullable<PgCatalog.Types.Varchar>;
-      phone: PgCatalog.Types.Varchar;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface Category {
+    };
+    export type Category = {
       categoryId?: PgCatalog.Types.Int4;
       name: PgCatalog.Types.Varchar;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface CategoryNotPrimaryKey {
-      name: PgCatalog.Types.Varchar;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface City {
+    };
+    export type City = {
       cityId?: PgCatalog.Types.Int4;
       city: PgCatalog.Types.Varchar;
       countryId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface CityNotPrimaryKey {
-      city: PgCatalog.Types.Varchar;
-      countryId: PgCatalog.Types.Int2;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface Country {
+    };
+    export type Country = {
       countryId?: PgCatalog.Types.Int4;
       country: PgCatalog.Types.Varchar;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface CountryNotPrimaryKey {
-      country: PgCatalog.Types.Varchar;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface Customer {
+    };
+    export type Customer = {
       customerId?: PgCatalog.Types.Int4;
       storeId: PgCatalog.Types.Int2;
       firstName: PgCatalog.Types.Varchar;
@@ -3347,21 +2719,8 @@ export namespace Public {
       createDate?: PgCatalog.Types.Date;
       lastUpdate?: Nullable<PgCatalog.Types.Timestamp>;
       active?: Nullable<PgCatalog.Types.Int4>;
-    }
-
-    export interface CustomerNotPrimaryKey {
-      storeId: PgCatalog.Types.Int2;
-      firstName: PgCatalog.Types.Varchar;
-      lastName: PgCatalog.Types.Varchar;
-      email?: Nullable<PgCatalog.Types.Varchar>;
-      addressId: PgCatalog.Types.Int2;
-      activebool: PgCatalog.Types.Bool;
-      createDate: PgCatalog.Types.Date;
-      lastUpdate?: Nullable<PgCatalog.Types.Timestamp>;
-      active?: Nullable<PgCatalog.Types.Int4>;
-    }
-
-    export interface CustomerList {
+    };
+    export type CustomerList = {
       id?: Nullable<PgCatalog.Types.Int4>;
       name?: Nullable<PgCatalog.Types.Text>;
       address?: Nullable<PgCatalog.Types.Varchar>;
@@ -3371,9 +2730,8 @@ export namespace Public {
       country?: Nullable<PgCatalog.Types.Varchar>;
       notes?: Nullable<PgCatalog.Types.Text>;
       sid?: Nullable<PgCatalog.Types.Int2>;
-    }
-
-    export interface Film {
+    };
+    export type Film = {
       filmId?: PgCatalog.Types.Int4;
       title: PgCatalog.Types.Varchar;
       description?: Nullable<PgCatalog.Types.Text>;
@@ -3387,44 +2745,18 @@ export namespace Public {
       lastUpdate?: PgCatalog.Types.Timestamp;
       specialFeatures?: Nullable<PgCatalog.Types.TextArray>;
       fulltext: PgCatalog.Types.Tsvector;
-    }
-
-    export interface FilmNotPrimaryKey {
-      title: PgCatalog.Types.Varchar;
-      description?: Nullable<PgCatalog.Types.Text>;
-      releaseYear?: Nullable<Public.Types.Year>;
-      languageId: PgCatalog.Types.Int2;
-      rentalDuration: PgCatalog.Types.Int2;
-      rentalRate: PgCatalog.Types.Numeric;
-      length?: Nullable<PgCatalog.Types.Int2>;
-      replacementCost: PgCatalog.Types.Numeric;
-      rating?: Nullable<Public.Types.MpaaRating>;
-      lastUpdate: PgCatalog.Types.Timestamp;
-      specialFeatures?: Nullable<PgCatalog.Types.TextArray>;
-      fulltext: PgCatalog.Types.Tsvector;
-    }
-
-    export interface FilmActor {
+    };
+    export type FilmActor = {
       actorId: PgCatalog.Types.Int2;
       filmId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface FilmActorNotPrimaryKey {
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface FilmCategory {
+    };
+    export type FilmCategory = {
       filmId: PgCatalog.Types.Int2;
       categoryId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface FilmCategoryNotPrimaryKey {
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface FilmList {
+    };
+    export type FilmList = {
       fid?: Nullable<PgCatalog.Types.Int4>;
       title?: Nullable<PgCatalog.Types.Varchar>;
       description?: Nullable<PgCatalog.Types.Text>;
@@ -3433,31 +2765,18 @@ export namespace Public {
       length?: Nullable<PgCatalog.Types.Int2>;
       rating?: Nullable<Public.Types.MpaaRating>;
       actors?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface Inventory {
+    };
+    export type Inventory = {
       inventoryId?: PgCatalog.Types.Int4;
       filmId: PgCatalog.Types.Int2;
       storeId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface InventoryNotPrimaryKey {
-      filmId: PgCatalog.Types.Int2;
-      storeId: PgCatalog.Types.Int2;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface Language {
+    };
+    export type Language = {
       languageId?: PgCatalog.Types.Int4;
       name: PgCatalog.Types.Bpchar;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface LanguageNotPrimaryKey {
-      name: PgCatalog.Types.Bpchar;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
+    };
 
     export enum MpaaRating {
       G = "G",
@@ -3467,7 +2786,7 @@ export namespace Public {
       NC_17 = "NC-17",
     }
 
-    export interface NicerButSlowerFilmList {
+    export type NicerButSlowerFilmList = {
       fid?: Nullable<PgCatalog.Types.Int4>;
       title?: Nullable<PgCatalog.Types.Varchar>;
       description?: Nullable<PgCatalog.Types.Text>;
@@ -3476,26 +2795,16 @@ export namespace Public {
       length?: Nullable<PgCatalog.Types.Int2>;
       rating?: Nullable<Public.Types.MpaaRating>;
       actors?: Nullable<PgCatalog.Types.Text>;
-    }
-
-    export interface Payment {
+    };
+    export type Payment = {
       paymentId?: PgCatalog.Types.Int4;
       customerId: PgCatalog.Types.Int2;
       staffId: PgCatalog.Types.Int2;
       rentalId: PgCatalog.Types.Int4;
       amount: PgCatalog.Types.Numeric;
       paymentDate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface PaymentNotPrimaryKey {
-      customerId: PgCatalog.Types.Int2;
-      staffId: PgCatalog.Types.Int2;
-      rentalId: PgCatalog.Types.Int4;
-      amount: PgCatalog.Types.Numeric;
-      paymentDate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface Rental {
+    };
+    export type Rental = {
       rentalId?: PgCatalog.Types.Int4;
       rentalDate: PgCatalog.Types.Timestamp;
       inventoryId: PgCatalog.Types.Int4;
@@ -3503,29 +2812,17 @@ export namespace Public {
       returnDate?: Nullable<PgCatalog.Types.Timestamp>;
       staffId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface RentalNotPrimaryKey {
-      rentalDate: PgCatalog.Types.Timestamp;
-      inventoryId: PgCatalog.Types.Int4;
-      customerId: PgCatalog.Types.Int2;
-      returnDate?: Nullable<PgCatalog.Types.Timestamp>;
-      staffId: PgCatalog.Types.Int2;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
-    export interface SalesByFilmCategory {
+    };
+    export type SalesByFilmCategory = {
       category?: Nullable<PgCatalog.Types.Varchar>;
       totalSales?: Nullable<PgCatalog.Types.Numeric>;
-    }
-
-    export interface SalesByStore {
+    };
+    export type SalesByStore = {
       store?: Nullable<PgCatalog.Types.Text>;
       manager?: Nullable<PgCatalog.Types.Text>;
       totalSales?: Nullable<PgCatalog.Types.Numeric>;
-    }
-
-    export interface Staff {
+    };
+    export type Staff = {
       staffId?: PgCatalog.Types.Int4;
       firstName: PgCatalog.Types.Varchar;
       lastName: PgCatalog.Types.Varchar;
@@ -3537,22 +2834,8 @@ export namespace Public {
       password?: Nullable<PgCatalog.Types.Varchar>;
       lastUpdate?: PgCatalog.Types.Timestamp;
       picture?: Nullable<PgCatalog.Types.Bytea>;
-    }
-
-    export interface StaffNotPrimaryKey {
-      firstName: PgCatalog.Types.Varchar;
-      lastName: PgCatalog.Types.Varchar;
-      addressId: PgCatalog.Types.Int2;
-      email?: Nullable<PgCatalog.Types.Varchar>;
-      storeId: PgCatalog.Types.Int2;
-      active: PgCatalog.Types.Bool;
-      username: PgCatalog.Types.Varchar;
-      password?: Nullable<PgCatalog.Types.Varchar>;
-      lastUpdate: PgCatalog.Types.Timestamp;
-      picture?: Nullable<PgCatalog.Types.Bytea>;
-    }
-
-    export interface StaffList {
+    };
+    export type StaffList = {
       id?: Nullable<PgCatalog.Types.Int4>;
       name?: Nullable<PgCatalog.Types.Text>;
       address?: Nullable<PgCatalog.Types.Varchar>;
@@ -3561,119 +2844,261 @@ export namespace Public {
       city?: Nullable<PgCatalog.Types.Varchar>;
       country?: Nullable<PgCatalog.Types.Varchar>;
       sid?: Nullable<PgCatalog.Types.Int2>;
-    }
-
-    export interface Store {
+    };
+    export type Store = {
       storeId?: PgCatalog.Types.Int4;
       managerStaffId: PgCatalog.Types.Int2;
       addressId: PgCatalog.Types.Int2;
       lastUpdate?: PgCatalog.Types.Timestamp;
-    }
-
-    export interface StoreNotPrimaryKey {
-      managerStaffId: PgCatalog.Types.Int2;
-      addressId: PgCatalog.Types.Int2;
-      lastUpdate: PgCatalog.Types.Timestamp;
-    }
-
+    };
     export type Year = PgCatalog.Types.Int4;
+    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
+    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export type Arguments = {
+        pFilmId: PgCatalog.Types.Int4;
+        pStoreId: PgCatalog.Types.Int4;
+      };
+      export type Results = Public.Types.FilmInStockResults;
+    }
+    export namespace FilmNotInStock {
+      export type Arguments = {
+        pFilmId: PgCatalog.Types.Int4;
+        pStoreId: PgCatalog.Types.Int4;
+      };
+      export type Results = Public.Types.FilmNotInStockResults;
+    }
+    export namespace GetCustomerBalance {
+      export type Arguments = {
+        pCustomerId: PgCatalog.Types.Int4;
+        pEffectiveDate: PgCatalog.Types.Timestamp;
+      };
+      export type Results = PgCatalog.Types.Numeric;
+    }
+    export namespace InventoryHeldByCustomer {
+      export type Arguments = {
+        pInventoryId: PgCatalog.Types.Int4;
+      };
+      export type Results = PgCatalog.Types.Int4;
+    }
+    export namespace InventoryInStock {
+      export type Arguments = {
+        pInventoryId: PgCatalog.Types.Int4;
+      };
+      export type Results = PgCatalog.Types.Bool;
+    }
+    export namespace LastDay {
+      export type Arguments = {
+        argument_0: PgCatalog.Types.Timestamp;
+      };
+      export type Results = PgCatalog.Types.Date;
+    }
+    export namespace RewardsReport {
+      export type Arguments = {
+        minMonthlyPurchases: PgCatalog.Types.Int4;
+        minDollarAmountPurchased: PgCatalog.Types.Numeric;
+      };
+      export type Results = Public.Types.Customer;
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export type ByActorIdFilmId = {
+        actorId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Address {
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int4;
+      };
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace City {
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int4;
+      };
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Customer {
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int2;
+      };
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int4;
+      };
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Actor {
+      export type ByActorId = {
+        actorId: PgCatalog.Types.Int4;
+      };
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+    }
+    export namespace FilmCategory {
+      export type ByFilmIdCategoryId = {
+        filmId: PgCatalog.Types.Int2;
+        categoryId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Inventory {
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+      export type ByStoreIdFilmId = {
+        storeId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Category {
+      export type ByCategoryId = {
+        categoryId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Country {
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Language {
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Rental {
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+      export type ByRentalDateInventoryIdCustomerId = {
+        rentalDate: PgCatalog.Types.Timestamp;
+        inventoryId: PgCatalog.Types.Int4;
+        customerId: PgCatalog.Types.Int2;
+      };
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Staff {
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Store {
+      export type ByManagerStaffId = {
+        managerStaffId: PgCatalog.Types.Int2;
+      };
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int4;
+      };
+    }
+    export namespace Payment {
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int2;
+      };
+      export type ByPaymentId = {
+        paymentId: PgCatalog.Types.Int4;
+      };
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int2;
+      };
+    }
+    export namespace Film {
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int4;
+      };
+      export type ByFulltext = {
+        fulltext: PgCatalog.Types.Gtsvector;
+      };
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int2;
+      };
+      export type ByTitle = {
+        title: PgCatalog.Types.Varchar;
+      };
+    }
   }
 }
 export namespace InformationSchema {
   export namespace Types {
     export type AdministrableRoleAuthorizationsArray =
       Array<InformationSchema.Types.AdministrableRoleAuthorizations>;
-
     export type ApplicableRolesArray =
       Array<InformationSchema.Types.ApplicableRoles>;
-
     export type AttributesArray = Array<InformationSchema.Types.Attributes>;
-
     export type CardinalNumberArray =
       Array<InformationSchema.Types.CardinalNumber>;
-
     export type CharacterDataArray =
       Array<InformationSchema.Types.CharacterData>;
-
     export type CharacterSetsArray =
       Array<InformationSchema.Types.CharacterSets>;
-
     export type CheckConstraintRoutineUsageArray =
       Array<InformationSchema.Types.CheckConstraintRoutineUsage>;
-
     export type CheckConstraintsArray =
       Array<InformationSchema.Types.CheckConstraints>;
-
     export type CollationCharacterSetApplicabilityArray =
       Array<InformationSchema.Types.CollationCharacterSetApplicability>;
-
     export type CollationsArray = Array<InformationSchema.Types.Collations>;
-
     export type ColumnColumnUsageArray =
       Array<InformationSchema.Types.ColumnColumnUsage>;
-
     export type ColumnDomainUsageArray =
       Array<InformationSchema.Types.ColumnDomainUsage>;
-
     export type ColumnOptionsArray =
       Array<InformationSchema.Types.ColumnOptions>;
-
     export type ColumnPrivilegesArray =
       Array<InformationSchema.Types.ColumnPrivileges>;
-
     export type ColumnUdtUsageArray =
       Array<InformationSchema.Types.ColumnUdtUsage>;
-
     export type ColumnsArray = Array<InformationSchema.Types.Columns>;
-
     export type ConstraintColumnUsageArray =
       Array<InformationSchema.Types.ConstraintColumnUsage>;
-
     export type ConstraintTableUsageArray =
       Array<InformationSchema.Types.ConstraintTableUsage>;
-
     export type DataTypePrivilegesArray =
       Array<InformationSchema.Types.DataTypePrivileges>;
-
     export type DomainConstraintsArray =
       Array<InformationSchema.Types.DomainConstraints>;
-
     export type DomainUdtUsageArray =
       Array<InformationSchema.Types.DomainUdtUsage>;
-
     export type DomainsArray = Array<InformationSchema.Types.Domains>;
-
     export type ElementTypesArray = Array<InformationSchema.Types.ElementTypes>;
-
     export type EnabledRolesArray = Array<InformationSchema.Types.EnabledRoles>;
-
     export type ForeignDataWrapperOptionsArray =
       Array<InformationSchema.Types.ForeignDataWrapperOptions>;
-
     export type ForeignDataWrappersArray =
       Array<InformationSchema.Types.ForeignDataWrappers>;
-
     export type ForeignServerOptionsArray =
       Array<InformationSchema.Types.ForeignServerOptions>;
-
     export type ForeignServersArray =
       Array<InformationSchema.Types.ForeignServers>;
-
     export type ForeignTableOptionsArray =
       Array<InformationSchema.Types.ForeignTableOptions>;
-
     export type ForeignTablesArray =
       Array<InformationSchema.Types.ForeignTables>;
-
     export type InformationSchemaCatalogNameArray =
       Array<InformationSchema.Types.InformationSchemaCatalogName>;
-
     export type KeyColumnUsageArray =
       Array<InformationSchema.Types.KeyColumnUsage>;
-
     export type ParametersArray = Array<InformationSchema.Types.Parameters>;
-
-    export interface PgForeignDataWrappers {
+    export type PgForeignDataWrappers = {
       oid?: Nullable<PgCatalog.Types.Oid>;
       fdwowner?: Nullable<PgCatalog.Types.Oid>;
       fdwoptions?: Nullable<PgCatalog.Types.TextArray>;
@@ -3681,9 +3106,8 @@ export namespace InformationSchema {
       foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperLanguage?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface PgForeignServers {
+    };
+    export type PgForeignServers = {
       oid?: Nullable<PgCatalog.Types.Oid>;
       srvoptions?: Nullable<PgCatalog.Types.TextArray>;
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3693,16 +3117,14 @@ export namespace InformationSchema {
       foreignServerType?: Nullable<InformationSchema.Types.CharacterData>;
       foreignServerVersion?: Nullable<InformationSchema.Types.CharacterData>;
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface PgForeignTableColumns {
+    };
+    export type PgForeignTableColumns = {
       nspname?: Nullable<PgCatalog.Types.Name>;
       relname?: Nullable<PgCatalog.Types.Name>;
       attname?: Nullable<PgCatalog.Types.Name>;
       attfdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-    }
-
-    export interface PgForeignTables {
+    };
+    export type PgForeignTables = {
       foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3710,9 +3132,8 @@ export namespace InformationSchema {
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface PgUserMappings {
+    };
+    export type PgUserMappings = {
       oid?: Nullable<PgCatalog.Types.Oid>;
       umoptions?: Nullable<PgCatalog.Types.TextArray>;
       umuser?: Nullable<PgCatalog.Types.Oid>;
@@ -3720,116 +3141,77 @@ export namespace InformationSchema {
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       srvowner?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
+    };
     export type ReferentialConstraintsArray =
       Array<InformationSchema.Types.ReferentialConstraints>;
-
     export type RoleColumnGrantsArray =
       Array<InformationSchema.Types.RoleColumnGrants>;
-
     export type RoleRoutineGrantsArray =
       Array<InformationSchema.Types.RoleRoutineGrants>;
-
     export type RoleTableGrantsArray =
       Array<InformationSchema.Types.RoleTableGrants>;
-
     export type RoleUdtGrantsArray =
       Array<InformationSchema.Types.RoleUdtGrants>;
-
     export type RoleUsageGrantsArray =
       Array<InformationSchema.Types.RoleUsageGrants>;
-
     export type RoutineColumnUsageArray =
       Array<InformationSchema.Types.RoutineColumnUsage>;
-
     export type RoutinePrivilegesArray =
       Array<InformationSchema.Types.RoutinePrivileges>;
-
     export type RoutineRoutineUsageArray =
       Array<InformationSchema.Types.RoutineRoutineUsage>;
-
     export type RoutineSequenceUsageArray =
       Array<InformationSchema.Types.RoutineSequenceUsage>;
-
     export type RoutineTableUsageArray =
       Array<InformationSchema.Types.RoutineTableUsage>;
-
     export type RoutinesArray = Array<InformationSchema.Types.Routines>;
-
     export type SchemataArray = Array<InformationSchema.Types.Schemata>;
-
     export type SequencesArray = Array<InformationSchema.Types.Sequences>;
-
     export type SqlFeaturesArray = Array<InformationSchema.Types.SqlFeatures>;
-
     export type SqlIdentifierArray =
       Array<InformationSchema.Types.SqlIdentifier>;
-
     export type SqlImplementationInfoArray =
       Array<InformationSchema.Types.SqlImplementationInfo>;
-
     export type SqlPartsArray = Array<InformationSchema.Types.SqlParts>;
-
     export type SqlSizingArray = Array<InformationSchema.Types.SqlSizing>;
-
     export type TableConstraintsArray =
       Array<InformationSchema.Types.TableConstraints>;
-
     export type TablePrivilegesArray =
       Array<InformationSchema.Types.TablePrivileges>;
-
     export type TablesArray = Array<InformationSchema.Types.Tables>;
-
     export type TimeStampArray = Array<InformationSchema.Types.TimeStamp>;
-
     export type TransformsArray = Array<InformationSchema.Types.Transforms>;
-
     export type TriggeredUpdateColumnsArray =
       Array<InformationSchema.Types.TriggeredUpdateColumns>;
-
     export type TriggersArray = Array<InformationSchema.Types.Triggers>;
-
     export type UdtPrivilegesArray =
       Array<InformationSchema.Types.UdtPrivileges>;
-
     export type UsagePrivilegesArray =
       Array<InformationSchema.Types.UsagePrivileges>;
-
     export type UserDefinedTypesArray =
       Array<InformationSchema.Types.UserDefinedTypes>;
-
     export type UserMappingOptionsArray =
       Array<InformationSchema.Types.UserMappingOptions>;
-
     export type UserMappingsArray = Array<InformationSchema.Types.UserMappings>;
-
     export type ViewColumnUsageArray =
       Array<InformationSchema.Types.ViewColumnUsage>;
-
     export type ViewRoutineUsageArray =
       Array<InformationSchema.Types.ViewRoutineUsage>;
-
     export type ViewTableUsageArray =
       Array<InformationSchema.Types.ViewTableUsage>;
-
     export type ViewsArray = Array<InformationSchema.Types.Views>;
-
     export type YesOrNoArray = Array<InformationSchema.Types.YesOrNo>;
-
-    export interface AdministrableRoleAuthorizations {
+    export type AdministrableRoleAuthorizations = {
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface ApplicableRoles {
+    };
+    export type ApplicableRoles = {
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface Attributes {
+    };
+    export type Attributes = {
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3861,13 +3243,10 @@ export namespace InformationSchema {
       maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
       dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       isDerivedReferenceAttribute?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
+    };
     export type CardinalNumber = PgCatalog.Types.Int4;
-
     export type CharacterData = PgCatalog.Types.Varchar;
-
-    export interface CharacterSets {
+    export type CharacterSets = {
       characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3876,49 +3255,43 @@ export namespace InformationSchema {
       defaultCollateCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       defaultCollateSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       defaultCollateName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface CheckConstraintRoutineUsage {
+    };
+    export type CheckConstraintRoutineUsage = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface CheckConstraints {
+    };
+    export type CheckConstraints = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       checkClause?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface CollationCharacterSetApplicability {
+    };
+    export type CollationCharacterSetApplicability = {
       collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Collations {
+    };
+    export type Collations = {
       collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       padAttribute?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ColumnColumnUsage {
+    };
+    export type ColumnColumnUsage = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       dependentColumn?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ColumnDomainUsage {
+    };
+    export type ColumnDomainUsage = {
       domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3926,18 +3299,16 @@ export namespace InformationSchema {
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ColumnOptions {
+    };
+    export type ColumnOptions = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionValue?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ColumnPrivileges {
+    };
+    export type ColumnPrivileges = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3946,9 +3317,8 @@ export namespace InformationSchema {
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface ColumnUdtUsage {
+    };
+    export type ColumnUdtUsage = {
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -3956,9 +3326,8 @@ export namespace InformationSchema {
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Columns {
+    };
+    export type Columns = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4003,9 +3372,8 @@ export namespace InformationSchema {
       isGenerated?: Nullable<InformationSchema.Types.CharacterData>;
       generationExpression?: Nullable<InformationSchema.Types.CharacterData>;
       isUpdatable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface ConstraintColumnUsage {
+    };
+    export type ConstraintColumnUsage = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4013,26 +3381,23 @@ export namespace InformationSchema {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ConstraintTableUsage {
+    };
+    export type ConstraintTableUsage = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface DataTypePrivileges {
+    };
+    export type DataTypePrivileges = {
       objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectType?: Nullable<InformationSchema.Types.CharacterData>;
       dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface DomainConstraints {
+    };
+    export type DomainConstraints = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4041,18 +3406,16 @@ export namespace InformationSchema {
       domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       isDeferrable?: Nullable<InformationSchema.Types.YesOrNo>;
       initiallyDeferred?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface DomainUdtUsage {
+    };
+    export type DomainUdtUsage = {
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Domains {
+    };
+    export type Domains = {
       domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4080,9 +3443,8 @@ export namespace InformationSchema {
       scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
       dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ElementTypes {
+    };
+    export type ElementTypes = {
       objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4112,35 +3474,30 @@ export namespace InformationSchema {
       scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
       dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface EnabledRoles {
+    };
+    export type EnabledRoles = {
       roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ForeignDataWrapperOptions {
+    };
+    export type ForeignDataWrapperOptions = {
       foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionValue?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ForeignDataWrappers {
+    };
+    export type ForeignDataWrappers = {
       foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       libraryName?: Nullable<InformationSchema.Types.CharacterData>;
       foreignDataWrapperLanguage?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ForeignServerOptions {
+    };
+    export type ForeignServerOptions = {
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionValue?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ForeignServers {
+    };
+    export type ForeignServers = {
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4148,29 +3505,25 @@ export namespace InformationSchema {
       foreignServerType?: Nullable<InformationSchema.Types.CharacterData>;
       foreignServerVersion?: Nullable<InformationSchema.Types.CharacterData>;
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ForeignTableOptions {
+    };
+    export type ForeignTableOptions = {
       foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionValue?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ForeignTables {
+    };
+    export type ForeignTables = {
       foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface InformationSchemaCatalogName {
+    };
+    export type InformationSchemaCatalogName = {
       catalogName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface KeyColumnUsage {
+    };
+    export type KeyColumnUsage = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4180,9 +3533,8 @@ export namespace InformationSchema {
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       ordinalPosition?: Nullable<InformationSchema.Types.CardinalNumber>;
       positionInUniqueConstraint?: Nullable<InformationSchema.Types.CardinalNumber>;
-    }
-
-    export interface Parameters {
+    };
+    export type Parameters = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4215,9 +3567,8 @@ export namespace InformationSchema {
       maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
       dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       parameterDefault?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface ReferentialConstraints {
+    };
+    export type ReferentialConstraints = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4227,9 +3578,8 @@ export namespace InformationSchema {
       matchOption?: Nullable<InformationSchema.Types.CharacterData>;
       updateRule?: Nullable<InformationSchema.Types.CharacterData>;
       deleteRule?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface RoleColumnGrants {
+    };
+    export type RoleColumnGrants = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4238,9 +3588,8 @@ export namespace InformationSchema {
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoleRoutineGrants {
+    };
+    export type RoleRoutineGrants = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4251,9 +3600,8 @@ export namespace InformationSchema {
       routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoleTableGrants {
+    };
+    export type RoleTableGrants = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4262,9 +3610,8 @@ export namespace InformationSchema {
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
       withHierarchy?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoleUdtGrants {
+    };
+    export type RoleUdtGrants = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4272,9 +3619,8 @@ export namespace InformationSchema {
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoleUsageGrants {
+    };
+    export type RoleUsageGrants = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4283,9 +3629,8 @@ export namespace InformationSchema {
       objectType?: Nullable<InformationSchema.Types.CharacterData>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoutineColumnUsage {
+    };
+    export type RoutineColumnUsage = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4296,9 +3641,8 @@ export namespace InformationSchema {
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface RoutinePrivileges {
+    };
+    export type RoutinePrivileges = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4309,18 +3653,16 @@ export namespace InformationSchema {
       routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface RoutineRoutineUsage {
+    };
+    export type RoutineRoutineUsage = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface RoutineSequenceUsage {
+    };
+    export type RoutineSequenceUsage = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4330,9 +3672,8 @@ export namespace InformationSchema {
       sequenceCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       sequenceSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       sequenceName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface RoutineTableUsage {
+    };
+    export type RoutineTableUsage = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4342,9 +3683,8 @@ export namespace InformationSchema {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Routines {
+    };
+    export type Routines = {
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4427,9 +3767,8 @@ export namespace InformationSchema {
       resultCastScopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       resultCastMaximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
       resultCastDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Schemata {
+    };
+    export type Schemata = {
       catalogName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       schemaName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       schemaOwner?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4437,9 +3776,8 @@ export namespace InformationSchema {
       defaultCharacterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       defaultCharacterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       sqlPath?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface Sequences {
+    };
+    export type Sequences = {
       sequenceCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       sequenceSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       sequenceName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4452,9 +3790,8 @@ export namespace InformationSchema {
       maximumValue?: Nullable<InformationSchema.Types.CharacterData>;
       increment?: Nullable<InformationSchema.Types.CharacterData>;
       cycleOption?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface SqlFeatures {
+    };
+    export type SqlFeatures = {
       featureId?: Nullable<InformationSchema.Types.CharacterData>;
       featureName?: Nullable<InformationSchema.Types.CharacterData>;
       subFeatureId?: Nullable<InformationSchema.Types.CharacterData>;
@@ -4462,34 +3799,29 @@ export namespace InformationSchema {
       isSupported?: Nullable<InformationSchema.Types.YesOrNo>;
       isVerifiedBy?: Nullable<InformationSchema.Types.CharacterData>;
       comments?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
+    };
     export type SqlIdentifier = PgCatalog.Types.Name;
-
-    export interface SqlImplementationInfo {
+    export type SqlImplementationInfo = {
       implementationInfoId?: Nullable<InformationSchema.Types.CharacterData>;
       implementationInfoName?: Nullable<InformationSchema.Types.CharacterData>;
       integerValue?: Nullable<InformationSchema.Types.CardinalNumber>;
       characterValue?: Nullable<InformationSchema.Types.CharacterData>;
       comments?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface SqlParts {
+    };
+    export type SqlParts = {
       featureId?: Nullable<InformationSchema.Types.CharacterData>;
       featureName?: Nullable<InformationSchema.Types.CharacterData>;
       isSupported?: Nullable<InformationSchema.Types.YesOrNo>;
       isVerifiedBy?: Nullable<InformationSchema.Types.CharacterData>;
       comments?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface SqlSizing {
+    };
+    export type SqlSizing = {
       sizingId?: Nullable<InformationSchema.Types.CardinalNumber>;
       sizingName?: Nullable<InformationSchema.Types.CharacterData>;
       supportedValue?: Nullable<InformationSchema.Types.CardinalNumber>;
       comments?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface TableConstraints {
+    };
+    export type TableConstraints = {
       constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4501,9 +3833,8 @@ export namespace InformationSchema {
       initiallyDeferred?: Nullable<InformationSchema.Types.YesOrNo>;
       enforced?: Nullable<InformationSchema.Types.YesOrNo>;
       nullsDistinct?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface TablePrivileges {
+    };
+    export type TablePrivileges = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4512,9 +3843,8 @@ export namespace InformationSchema {
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
       withHierarchy?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface Tables {
+    };
+    export type Tables = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4527,11 +3857,9 @@ export namespace InformationSchema {
       isInsertableInto?: Nullable<InformationSchema.Types.YesOrNo>;
       isTyped?: Nullable<InformationSchema.Types.YesOrNo>;
       commitAction?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
+    };
     export type TimeStamp = PgCatalog.Types.Timestamptz;
-
-    export interface Transforms {
+    export type Transforms = {
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4540,9 +3868,8 @@ export namespace InformationSchema {
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       groupName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       transformType?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface TriggeredUpdateColumns {
+    };
+    export type TriggeredUpdateColumns = {
       triggerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       triggerSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       triggerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4550,9 +3877,8 @@ export namespace InformationSchema {
       eventObjectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       eventObjectTable?: Nullable<InformationSchema.Types.SqlIdentifier>;
       eventObjectColumn?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Triggers {
+    };
+    export type Triggers = {
       triggerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       triggerSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       triggerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4570,9 +3896,8 @@ export namespace InformationSchema {
       actionReferenceOldRow?: Nullable<InformationSchema.Types.SqlIdentifier>;
       actionReferenceNewRow?: Nullable<InformationSchema.Types.SqlIdentifier>;
       created?: Nullable<InformationSchema.Types.TimeStamp>;
-    }
-
-    export interface UdtPrivileges {
+    };
+    export type UdtPrivileges = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4580,9 +3905,8 @@ export namespace InformationSchema {
       udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface UsagePrivileges {
+    };
+    export type UsagePrivileges = {
       grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
       grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
       objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4591,9 +3915,8 @@ export namespace InformationSchema {
       objectType?: Nullable<InformationSchema.Types.CharacterData>;
       privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
       isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
-    export interface UserDefinedTypes {
+    };
+    export type UserDefinedTypes = {
       userDefinedTypeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       userDefinedTypeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       userDefinedTypeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4623,23 +3946,20 @@ export namespace InformationSchema {
       intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
       sourceDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       refDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface UserMappingOptions {
+    };
+    export type UserMappingOptions = {
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       optionValue?: Nullable<InformationSchema.Types.CharacterData>;
-    }
-
-    export interface UserMappings {
+    };
+    export type UserMappings = {
       authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ViewColumnUsage {
+    };
+    export type ViewColumnUsage = {
       viewCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       viewSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       viewName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4647,27 +3967,24 @@ export namespace InformationSchema {
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ViewRoutineUsage {
+    };
+    export type ViewRoutineUsage = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface ViewTableUsage {
+    };
+    export type ViewTableUsage = {
       viewCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       viewSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       viewName?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-    }
-
-    export interface Views {
+    };
+    export type Views = {
       tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
       tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -4678,971 +3995,17 @@ export namespace InformationSchema {
       isTriggerUpdatable?: Nullable<InformationSchema.Types.YesOrNo>;
       isTriggerDeletable?: Nullable<InformationSchema.Types.YesOrNo>;
       isTriggerInsertableInto?: Nullable<InformationSchema.Types.YesOrNo>;
-    }
-
+    };
     export type YesOrNo = PgCatalog.Types.Varchar;
   }
-}
-
-export namespace PgCatalog {
-  export namespace Tables {
-    export namespace PgStatistic {
-      export interface ByStarelidStaattnumStainherit {
-        starelid: Nullable<PgCatalog.Types.Oid>;
-        staattnum: Nullable<PgCatalog.Types.Int2>;
-        stainherit: Nullable<PgCatalog.Types.Bool>;
-      }
-    }
-
-    export namespace PgType {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByTypnameTypnamespace {
-        typname: Nullable<PgCatalog.Types.Cstring>;
-        typnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgForeignTable {
-      export interface ByFtrelid {
-        ftrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAuthid {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByRolname {
-        rolname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgStatisticExtData {
-      export interface ByStxoidStxdinherit {
-        stxoid: Nullable<PgCatalog.Types.Oid>;
-        stxdinherit: Nullable<PgCatalog.Types.Bool>;
-      }
-    }
-
-    export namespace PgUserMapping {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByUmuserUmserver {
-        umuser: Nullable<PgCatalog.Types.Oid>;
-        umserver: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgSubscription {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface BySubdbidSubname {
-        subdbid: Nullable<PgCatalog.Types.Oid>;
-        subname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgAttribute {
-      export interface ByAttrelidAttname {
-        attrelid: Nullable<PgCatalog.Types.Oid>;
-        attname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByAttrelidAttnum {
-        attrelid: Nullable<PgCatalog.Types.Oid>;
-        attnum: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace PgProc {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPronameProargtypesPronamespace {
-        proname: Nullable<PgCatalog.Types.Cstring>;
-        proargtypes: Nullable<PgCatalog.Types.Oidvector>;
-        pronamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgClass {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByRelnameRelnamespace {
-        relname: Nullable<PgCatalog.Types.Cstring>;
-        relnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByReltablespaceRelfilenode {
-        reltablespace: Nullable<PgCatalog.Types.Oid>;
-        relfilenode: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAttrdef {
-      export interface ByAdrelidAdnum {
-        adrelid: Nullable<PgCatalog.Types.Oid>;
-        adnum: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgConstraint {
-      export interface ByConnameConnamespace {
-        conname: Nullable<PgCatalog.Types.Cstring>;
-        connamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByConparentid {
-        conparentid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByConrelidContypidConname {
-        conrelid: Nullable<PgCatalog.Types.Oid>;
-        contypid: Nullable<PgCatalog.Types.Oid>;
-        conname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByContypid {
-        contypid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgInherits {
-      export interface ByInhparent {
-        inhparent: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByInhrelidInhseqno {
-        inhrelid: Nullable<PgCatalog.Types.Oid>;
-        inhseqno: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace PgIndex {
-      export interface ByIndexrelid {
-        indexrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByIndrelid {
-        indrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgOperator {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOprnameOprleftOprrightOprnamespace {
-        oprname: Nullable<PgCatalog.Types.Cstring>;
-        oprleft: Nullable<PgCatalog.Types.Oid>;
-        oprright: Nullable<PgCatalog.Types.Oid>;
-        oprnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgOpfamily {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOpfmethodOpfnameOpfnamespace {
-        opfmethod: Nullable<PgCatalog.Types.Oid>;
-        opfname: Nullable<PgCatalog.Types.Cstring>;
-        opfnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgOpclass {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOpcmethodOpcnameOpcnamespace {
-        opcmethod: Nullable<PgCatalog.Types.Oid>;
-        opcname: Nullable<PgCatalog.Types.Cstring>;
-        opcnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAm {
-      export interface ByAmname {
-        amname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAmop {
-      export interface ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy {
-        amopfamily: Nullable<PgCatalog.Types.Oid>;
-        amoplefttype: Nullable<PgCatalog.Types.Oid>;
-        amoprighttype: Nullable<PgCatalog.Types.Oid>;
-        amopstrategy: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByAmopoprAmoppurposeAmopfamily {
-        amopopr: Nullable<PgCatalog.Types.Oid>;
-        amoppurpose: Nullable<PgCatalog.Types.Char>;
-        amopfamily: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAmproc {
-      export interface ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum {
-        amprocfamily: Nullable<PgCatalog.Types.Oid>;
-        amproclefttype: Nullable<PgCatalog.Types.Oid>;
-        amprocrighttype: Nullable<PgCatalog.Types.Oid>;
-        amprocnum: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgLanguage {
-      export interface ByLanname {
-        lanname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgLargeobjectMetadata {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgAggregate {
-      export interface ByAggfnoid {
-        aggfnoid: Nullable<PgCatalog.Types.Regproc>;
-      }
-    }
-
-    export namespace PgStatisticExt {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByStxnameStxnamespace {
-        stxname: Nullable<PgCatalog.Types.Cstring>;
-        stxnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByStxrelid {
-        stxrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgRewrite {
-      export interface ByEvClassRulename {
-        evClass: Nullable<PgCatalog.Types.Oid>;
-        rulename: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTrigger {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByTgconstraint {
-        tgconstraint: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByTgrelidTgname {
-        tgrelid: Nullable<PgCatalog.Types.Oid>;
-        tgname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgEventTrigger {
-      export interface ByEvtname {
-        evtname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgDescription {
-      export interface ByObjoidClassoidObjsubid {
-        objoid: Nullable<PgCatalog.Types.Oid>;
-        classoid: Nullable<PgCatalog.Types.Oid>;
-        objsubid: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace PgCast {
-      export interface ByCastsourceCasttarget {
-        castsource: Nullable<PgCatalog.Types.Oid>;
-        casttarget: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgEnum {
-      export interface ByEnumtypidEnumlabel {
-        enumtypid: Nullable<PgCatalog.Types.Oid>;
-        enumlabel: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByEnumtypidEnumsortorder {
-        enumtypid: Nullable<PgCatalog.Types.Oid>;
-        enumsortorder: Nullable<PgCatalog.Types.Float4>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgNamespace {
-      export interface ByNspname {
-        nspname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgConversion {
-      export interface ByConnameConnamespace {
-        conname: Nullable<PgCatalog.Types.Cstring>;
-        connamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByConnamespaceConforencodingContoencodingOid {
-        connamespace: Nullable<PgCatalog.Types.Oid>;
-        conforencoding: Nullable<PgCatalog.Types.Int4>;
-        contoencoding: Nullable<PgCatalog.Types.Int4>;
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgDepend {
-      export interface ByClassidObjidObjsubid {
-        classid: Nullable<PgCatalog.Types.Oid>;
-        objid: Nullable<PgCatalog.Types.Oid>;
-        objsubid: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByRefclassidRefobjidRefobjsubid {
-        refclassid: Nullable<PgCatalog.Types.Oid>;
-        refobjid: Nullable<PgCatalog.Types.Oid>;
-        refobjsubid: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace PgDatabase {
-      export interface ByDatname {
-        datname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgDbRoleSetting {
-      export interface BySetdatabaseSetrole {
-        setdatabase: Nullable<PgCatalog.Types.Oid>;
-        setrole: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTablespace {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface BySpcname {
-        spcname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgAuthMembers {
-      export interface ByGrantor {
-        grantor: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByMemberRoleidGrantor {
-        member: Nullable<PgCatalog.Types.Oid>;
-        roleid: Nullable<PgCatalog.Types.Oid>;
-        grantor: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByRoleidMemberGrantor {
-        roleid: Nullable<PgCatalog.Types.Oid>;
-        member: Nullable<PgCatalog.Types.Oid>;
-        grantor: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgShdepend {
-      export interface ByDbidClassidObjidObjsubid {
-        dbid: Nullable<PgCatalog.Types.Oid>;
-        classid: Nullable<PgCatalog.Types.Oid>;
-        objid: Nullable<PgCatalog.Types.Oid>;
-        objsubid: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByRefclassidRefobjid {
-        refclassid: Nullable<PgCatalog.Types.Oid>;
-        refobjid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgShdescription {
-      export interface ByObjoidClassoid {
-        objoid: Nullable<PgCatalog.Types.Oid>;
-        classoid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTsConfig {
-      export interface ByCfgnameCfgnamespace {
-        cfgname: Nullable<PgCatalog.Types.Cstring>;
-        cfgnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTsConfigMap {
-      export interface ByMapcfgMaptokentypeMapseqno {
-        mapcfg: Nullable<PgCatalog.Types.Oid>;
-        maptokentype: Nullable<PgCatalog.Types.Int4>;
-        mapseqno: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace PgTsDict {
-      export interface ByDictnameDictnamespace {
-        dictname: Nullable<PgCatalog.Types.Cstring>;
-        dictnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTsParser {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPrsnamePrsnamespace {
-        prsname: Nullable<PgCatalog.Types.Cstring>;
-        prsnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTsTemplate {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByTmplnameTmplnamespace {
-        tmplname: Nullable<PgCatalog.Types.Cstring>;
-        tmplnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgExtension {
-      export interface ByExtname {
-        extname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgForeignDataWrapper {
-      export interface ByFdwname {
-        fdwname: Nullable<PgCatalog.Types.Cstring>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgForeignServer {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface BySrvname {
-        srvname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgPolicy {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPolrelidPolname {
-        polrelid: Nullable<PgCatalog.Types.Oid>;
-        polname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgReplicationOrigin {
-      export interface ByRoident {
-        roident: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByRoname {
-        roname: Nullable<PgCatalog.Types.Text>;
-      }
-    }
-
-    export namespace PgDefaultAcl {
-      export interface ByDefaclroleDefaclnamespaceDefaclobjtype {
-        defaclrole: Nullable<PgCatalog.Types.Oid>;
-        defaclnamespace: Nullable<PgCatalog.Types.Oid>;
-        defaclobjtype: Nullable<PgCatalog.Types.Char>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgInitPrivs {
-      export interface ByObjoidClassoidObjsubid {
-        objoid: Nullable<PgCatalog.Types.Oid>;
-        classoid: Nullable<PgCatalog.Types.Oid>;
-        objsubid: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace PgSeclabel {
-      export interface ByObjoidClassoidObjsubidProvider {
-        objoid: Nullable<PgCatalog.Types.Oid>;
-        classoid: Nullable<PgCatalog.Types.Oid>;
-        objsubid: Nullable<PgCatalog.Types.Int4>;
-        provider: Nullable<PgCatalog.Types.Text>;
-      }
-    }
-
-    export namespace PgShseclabel {
-      export interface ByObjoidClassoidProvider {
-        objoid: Nullable<PgCatalog.Types.Oid>;
-        classoid: Nullable<PgCatalog.Types.Oid>;
-        provider: Nullable<PgCatalog.Types.Text>;
-      }
-    }
-
-    export namespace PgCollation {
-      export interface ByCollnameCollencodingCollnamespace {
-        collname: Nullable<PgCatalog.Types.Cstring>;
-        collencoding: Nullable<PgCatalog.Types.Int4>;
-        collnamespace: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgParameterAcl {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByParname {
-        parname: Nullable<PgCatalog.Types.Text>;
-      }
-    }
-
-    export namespace PgPartitionedTable {
-      export interface ByPartrelid {
-        partrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgRange {
-      export interface ByRngmultitypid {
-        rngmultitypid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByRngtypid {
-        rngtypid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgTransform {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByTrftypeTrflang {
-        trftype: Nullable<PgCatalog.Types.Oid>;
-        trflang: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgSequence {
-      export interface BySeqrelid {
-        seqrelid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgPublication {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPubname {
-        pubname: Nullable<PgCatalog.Types.Cstring>;
-      }
-    }
-
-    export namespace PgPublicationNamespace {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPnnspidPnpubid {
-        pnnspid: Nullable<PgCatalog.Types.Oid>;
-        pnpubid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgPublicationRel {
-      export interface ByOid {
-        oid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPrpubid {
-        prpubid: Nullable<PgCatalog.Types.Oid>;
-      }
-
-      export interface ByPrrelidPrpubid {
-        prrelid: Nullable<PgCatalog.Types.Oid>;
-        prpubid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgSubscriptionRel {
-      export interface BySrrelidSrsubid {
-        srrelid: Nullable<PgCatalog.Types.Oid>;
-        srsubid: Nullable<PgCatalog.Types.Oid>;
-      }
-    }
-
-    export namespace PgLargeobject {
-      export interface ByLoidPageno {
-        loid: Nullable<PgCatalog.Types.Oid>;
-        pageno: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-  }
-}
-
-export namespace Public {
-  export interface FilmInStockArguments {
-    pFilmId: Nullable<PgCatalog.Types.Int4>;
-    pStoreId: Nullable<PgCatalog.Types.Int4>;
-  }
-
-  interface FilmInStockResponseRecord {
-    pFilmCount: PgCatalog.Types.Int4;
-  }
-  export type FilmInStockSingleResultsetRecord = FilmInStockResponseRecord;
-
-  export type FilmInStockResultset = FilmInStockSingleResultsetRecord[];
-
-  export interface FilmNotInStockArguments {
-    pFilmId: Nullable<PgCatalog.Types.Int4>;
-    pStoreId: Nullable<PgCatalog.Types.Int4>;
-  }
-
-  interface FilmNotInStockResponseRecord {
-    pFilmCount: PgCatalog.Types.Int4;
-  }
-  export type FilmNotInStockSingleResultsetRecord =
-    FilmNotInStockResponseRecord;
-
-  export type FilmNotInStockResultset = FilmNotInStockSingleResultsetRecord[];
-
-  export interface GetCustomerBalanceArguments {
-    pCustomerId: Nullable<PgCatalog.Types.Int4>;
-    pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
-  }
-
-  export type GetCustomerBalanceSingleResultsetRecord = PgCatalog.Types.Numeric;
-
-  export type GetCustomerBalanceResultset =
-    GetCustomerBalanceSingleResultsetRecord[];
-
-  export interface InventoryHeldByCustomerArguments {
-    pInventoryId: Nullable<PgCatalog.Types.Int4>;
-  }
-
-  export type InventoryHeldByCustomerSingleResultsetRecord =
-    PgCatalog.Types.Int4;
-
-  export type InventoryHeldByCustomerResultset =
-    InventoryHeldByCustomerSingleResultsetRecord[];
-
-  export interface InventoryInStockArguments {
-    pInventoryId: Nullable<PgCatalog.Types.Int4>;
-  }
-
-  export type InventoryInStockSingleResultsetRecord = PgCatalog.Types.Bool;
-
-  export type InventoryInStockResultset =
-    InventoryInStockSingleResultsetRecord[];
-
-  export interface LastDayArguments {
-    _0: Nullable<PgCatalog.Types.Timestamp>;
-  }
-
-  export type LastDaySingleResultsetRecord = PgCatalog.Types.Date;
-
-  export type LastDayResultset = LastDaySingleResultsetRecord[];
-
-  export interface RewardsReportArguments {
-    minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
-    minDollarAmountPurchased: Nullable<PgCatalog.Types.Numeric>;
-  }
-
-  export type RewardsReportSingleResultsetRecord = Public.Types.Customer;
-
-  export type RewardsReportResultset = RewardsReportSingleResultsetRecord[];
-
-  export namespace Tables {
-    export namespace FilmActor {
-      export interface ByActorIdFilmId {
-        actorId: Nullable<PgCatalog.Types.Int2>;
-        filmId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByFilmId {
-        filmId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Address {
-      export interface ByAddressId {
-        addressId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByCityId {
-        cityId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace City {
-      export interface ByCityId {
-        cityId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByCountryId {
-        countryId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Customer {
-      export interface ByAddressId {
-        addressId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByCustomerId {
-        customerId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByLastName {
-        lastName: Nullable<PgCatalog.Types.Varchar>;
-      }
-
-      export interface ByStoreId {
-        storeId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Actor {
-      export interface ByActorId {
-        actorId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByLastName {
-        lastName: Nullable<PgCatalog.Types.Varchar>;
-      }
-    }
-
-    export namespace FilmCategory {
-      export interface ByFilmIdCategoryId {
-        filmId: Nullable<PgCatalog.Types.Int2>;
-        categoryId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Inventory {
-      export interface ByInventoryId {
-        inventoryId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByStoreIdFilmId {
-        storeId: Nullable<PgCatalog.Types.Int2>;
-        filmId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Category {
-      export interface ByCategoryId {
-        categoryId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Country {
-      export interface ByCountryId {
-        countryId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Language {
-      export interface ByLanguageId {
-        languageId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Rental {
-      export interface ByInventoryId {
-        inventoryId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByRentalDateInventoryIdCustomerId {
-        rentalDate: Nullable<PgCatalog.Types.Timestamp>;
-        inventoryId: Nullable<PgCatalog.Types.Int4>;
-        customerId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByRentalId {
-        rentalId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Staff {
-      export interface ByStaffId {
-        staffId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Store {
-      export interface ByManagerStaffId {
-        managerStaffId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByStoreId {
-        storeId: Nullable<PgCatalog.Types.Int4>;
-      }
-    }
-
-    export namespace Payment {
-      export interface ByCustomerId {
-        customerId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByPaymentId {
-        paymentId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByRentalId {
-        rentalId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByStaffId {
-        staffId: Nullable<PgCatalog.Types.Int2>;
-      }
-    }
-
-    export namespace Film {
-      export interface ByFilmId {
-        filmId: Nullable<PgCatalog.Types.Int4>;
-      }
-
-      export interface ByFulltext {
-        fulltext: Nullable<PgCatalog.Types.Gtsvector>;
-      }
-
-      export interface ByLanguageId {
-        languageId: Nullable<PgCatalog.Types.Int2>;
-      }
-
-      export interface ByTitle {
-        title: Nullable<PgCatalog.Types.Varchar>;
-      }
-    }
-  }
-}
-
-export namespace InformationSchema {
+  export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {}
-
     export namespace SqlImplementationInfo {}
-
     export namespace SqlParts {}
-
     export namespace SqlSizing {}
   }
 }
-
 export namespace ScriptTypes {
   export namespace Sql {
     export namespace Sample {
@@ -13492,8 +11855,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.FilmActor.Record>,
-      ): value is Public.Tables.FilmActor.Record {
+        value: Partial<Public.Types.FilmActor>,
+      ) {
         return value.actorId !== undefined && value.filmId !== undefined;
       }
     }
@@ -13506,9 +11869,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Address.Record>,
-      ): value is Public.Tables.Address.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Address>) {
         return value.addressId !== undefined;
       }
     }
@@ -13519,9 +11880,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.City.Record>,
-      ): value is Public.Tables.City.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.City>) {
         return value.cityId !== undefined;
       }
     }
@@ -13535,8 +11894,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.Customer.Record>,
-      ): value is Public.Tables.Customer.Record {
+        value: Partial<Public.Types.Customer>,
+      ) {
         return value.customerId !== undefined;
       }
     }
@@ -13549,9 +11908,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Actor.Record>,
-      ): value is Public.Tables.Actor.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Actor>) {
         return value.actorId !== undefined;
       }
     }
@@ -13566,8 +11923,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.FilmCategory.Record>,
-      ): value is Public.Tables.FilmCategory.Record {
+        value: Partial<Public.Types.FilmCategory>,
+      ) {
         return value.filmId !== undefined && value.categoryId !== undefined;
       }
     }
@@ -13581,8 +11938,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.Inventory.Record>,
-      ): value is Public.Tables.Inventory.Record {
+        value: Partial<Public.Types.Inventory>,
+      ) {
         return value.inventoryId !== undefined;
       }
     }
@@ -13596,8 +11953,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.Category.Record>,
-      ): value is Public.Tables.Category.Record {
+        value: Partial<Public.Types.Category>,
+      ) {
         return value.categoryId !== undefined;
       }
     }
@@ -13610,9 +11967,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Country.Record>,
-      ): value is Public.Tables.Country.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Country>) {
         return value.countryId !== undefined;
       }
     }
@@ -13626,8 +11981,8 @@ export namespace Public {
       }
 
       export function includesPrimaryKey(
-        value: Partial<Public.Tables.Language.Record>,
-      ): value is Public.Tables.Language.Record {
+        value: Partial<Public.Types.Language>,
+      ) {
         return value.languageId !== undefined;
       }
     }
@@ -13640,9 +11995,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Rental.Record>,
-      ): value is Public.Tables.Rental.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Rental>) {
         return value.rentalId !== undefined;
       }
     }
@@ -13655,9 +12008,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Staff.Record>,
-      ): value is Public.Tables.Staff.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Staff>) {
         return value.staffId !== undefined;
       }
     }
@@ -13670,9 +12021,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Store.Record>,
-      ): value is Public.Tables.Store.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Store>) {
         return value.storeId !== undefined;
       }
     }
@@ -13685,9 +12034,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Payment.Record>,
-      ): value is Public.Tables.Payment.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Payment>) {
         return value.paymentId !== undefined;
       }
     }
@@ -13698,9 +12045,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Tables.Film.Record>,
-      ): value is Public.Tables.Film.Record {
+      export function includesPrimaryKey(value: Partial<Public.Types.Film>) {
         return value.filmId !== undefined;
       }
     }
@@ -13711,374 +12056,262 @@ export namespace Public {
 export namespace PgCatalog {
   export namespace Tables {
     export namespace PgStatistic {
-      export type Record = PgCatalog.Types.PgStatistic;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgStatisticNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgStatistic>;
     }
     export namespace PgType {
-      export type Record = PgCatalog.Types.PgType;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgTypeNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgType>;
     }
     export namespace PgForeignTable {
-      export type Record = PgCatalog.Types.PgForeignTable;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgForeignTableNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgForeignTable>;
     }
     export namespace PgAuthid {
-      export type Record = PgCatalog.Types.PgAuthid;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgAuthidNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAuthid>;
     }
     export namespace PgStatisticExtData {
-      export type Record = PgCatalog.Types.PgStatisticExtData;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgStatisticExtDataNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
     }
     export namespace PgUserMapping {
-      export type Record = PgCatalog.Types.PgUserMapping;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgUserMappingNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgUserMapping>;
     }
     export namespace PgSubscription {
-      export type Record = PgCatalog.Types.PgSubscription;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgSubscriptionNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgSubscription>;
     }
     export namespace PgAttribute {
-      export type Record = PgCatalog.Types.PgAttribute;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgAttributeNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAttribute>;
     }
     export namespace PgProc {
-      export type Record = PgCatalog.Types.PgProc;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgProcNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgProc>;
     }
     export namespace PgClass {
-      export type Record = PgCatalog.Types.PgClass;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgClassNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgClass>;
     }
     export namespace PgAttrdef {
-      export type Record = PgCatalog.Types.PgAttrdef;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgAttrdefNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAttrdef>;
     }
     export namespace PgConstraint {
-      export type Record = PgCatalog.Types.PgConstraint;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgConstraintNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgConstraint>;
     }
     export namespace PgInherits {
-      export type Record = PgCatalog.Types.PgInherits;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgInheritsNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgInherits>;
     }
     export namespace PgIndex {
-      export type Record = PgCatalog.Types.PgIndex;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgIndexNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgIndex>;
     }
     export namespace PgOperator {
-      export type Record = PgCatalog.Types.PgOperator;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgOperatorNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgOperator>;
     }
     export namespace PgOpfamily {
-      export type Record = PgCatalog.Types.PgOpfamily;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgOpfamilyNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgOpfamily>;
     }
     export namespace PgOpclass {
-      export type Record = PgCatalog.Types.PgOpclass;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgOpclassNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgOpclass>;
     }
     export namespace PgAm {
-      export type Record = PgCatalog.Types.PgAm;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgAmNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAm>;
     }
     export namespace PgAmop {
-      export type Record = PgCatalog.Types.PgAmop;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgAmopNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAmop>;
     }
     export namespace PgAmproc {
-      export type Record = PgCatalog.Types.PgAmproc;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgAmprocNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAmproc>;
     }
     export namespace PgLanguage {
-      export type Record = PgCatalog.Types.PgLanguage;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgLanguageNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgLanguage>;
     }
     export namespace PgLargeobjectMetadata {
-      export type Record = PgCatalog.Types.PgLargeobjectMetadata;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgLargeobjectMetadataNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
     }
     export namespace PgAggregate {
-      export type Record = PgCatalog.Types.PgAggregate;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgAggregateNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAggregate>;
     }
     export namespace PgStatisticExt {
-      export type Record = PgCatalog.Types.PgStatisticExt;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgStatisticExtNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgStatisticExt>;
     }
     export namespace PgRewrite {
-      export type Record = PgCatalog.Types.PgRewrite;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgRewriteNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgRewrite>;
     }
     export namespace PgTrigger {
-      export type Record = PgCatalog.Types.PgTrigger;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgTriggerNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTrigger>;
     }
     export namespace PgEventTrigger {
-      export type Record = PgCatalog.Types.PgEventTrigger;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgEventTriggerNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgEventTrigger>;
     }
     export namespace PgDescription {
-      export type Record = PgCatalog.Types.PgDescription;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgDescriptionNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgDescription>;
     }
     export namespace PgCast {
-      export type Record = PgCatalog.Types.PgCast;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgCastNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgCast>;
     }
     export namespace PgEnum {
-      export type Record = PgCatalog.Types.PgEnum;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgEnumNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgEnum>;
     }
     export namespace PgNamespace {
-      export type Record = PgCatalog.Types.PgNamespace;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgNamespaceNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgNamespace>;
     }
     export namespace PgConversion {
-      export type Record = PgCatalog.Types.PgConversion;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgConversionNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgConversion>;
     }
     export namespace PgDepend {
-      export type Record = PgCatalog.Types.PgDepend;
+      export type Record = Required<PgCatalog.Types.PgDepend>;
     }
     export namespace PgDatabase {
-      export type Record = PgCatalog.Types.PgDatabase;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgDatabaseNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgDatabase>;
     }
     export namespace PgDbRoleSetting {
-      export type Record = PgCatalog.Types.PgDbRoleSetting;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgDbRoleSettingNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
     }
     export namespace PgTablespace {
-      export type Record = PgCatalog.Types.PgTablespace;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgTablespaceNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTablespace>;
     }
     export namespace PgAuthMembers {
-      export type Record = PgCatalog.Types.PgAuthMembers;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgAuthMembersNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgAuthMembers>;
     }
     export namespace PgShdepend {
-      export type Record = PgCatalog.Types.PgShdepend;
+      export type Record = Required<PgCatalog.Types.PgShdepend>;
     }
     export namespace PgShdescription {
-      export type Record = PgCatalog.Types.PgShdescription;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgShdescriptionNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgShdescription>;
     }
     export namespace PgTsConfig {
-      export type Record = PgCatalog.Types.PgTsConfig;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgTsConfigNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTsConfig>;
     }
     export namespace PgTsConfigMap {
-      export type Record = PgCatalog.Types.PgTsConfigMap;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgTsConfigMapNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
     }
     export namespace PgTsDict {
-      export type Record = PgCatalog.Types.PgTsDict;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgTsDictNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTsDict>;
     }
     export namespace PgTsParser {
-      export type Record = PgCatalog.Types.PgTsParser;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgTsParserNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTsParser>;
     }
     export namespace PgTsTemplate {
-      export type Record = PgCatalog.Types.PgTsTemplate;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgTsTemplateNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTsTemplate>;
     }
     export namespace PgExtension {
-      export type Record = PgCatalog.Types.PgExtension;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgExtensionNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgExtension>;
     }
     export namespace PgForeignDataWrapper {
-      export type Record = PgCatalog.Types.PgForeignDataWrapper;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgForeignDataWrapperNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
     }
     export namespace PgForeignServer {
-      export type Record = PgCatalog.Types.PgForeignServer;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgForeignServerNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgForeignServer>;
     }
     export namespace PgPolicy {
-      export type Record = PgCatalog.Types.PgPolicy;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgPolicyNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgPolicy>;
     }
     export namespace PgReplicationOrigin {
-      export type Record = PgCatalog.Types.PgReplicationOrigin;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgReplicationOriginNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
     }
     export namespace PgDefaultAcl {
-      export type Record = PgCatalog.Types.PgDefaultAcl;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgDefaultAclNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
     }
     export namespace PgInitPrivs {
-      export type Record = PgCatalog.Types.PgInitPrivs;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgInitPrivsNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgInitPrivs>;
     }
     export namespace PgSeclabel {
-      export type Record = PgCatalog.Types.PgSeclabel;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgSeclabelNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgSeclabel>;
     }
     export namespace PgShseclabel {
-      export type Record = PgCatalog.Types.PgShseclabel;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgShseclabelNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgShseclabel>;
     }
     export namespace PgCollation {
-      export type Record = PgCatalog.Types.PgCollation;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgCollationNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgCollation>;
     }
     export namespace PgParameterAcl {
-      export type Record = PgCatalog.Types.PgParameterAcl;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgParameterAclNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgParameterAcl>;
     }
     export namespace PgPartitionedTable {
-      export type Record = PgCatalog.Types.PgPartitionedTable;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgPartitionedTableNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
     }
     export namespace PgRange {
-      export type Record = PgCatalog.Types.PgRange;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgRangeNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgRange>;
     }
     export namespace PgTransform {
-      export type Record = PgCatalog.Types.PgTransform;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgTransformNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgTransform>;
     }
     export namespace PgSequence {
-      export type Record = PgCatalog.Types.PgSequence;
-      export type RecordNotPrimaryKey = PgCatalog.Types.PgSequenceNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgSequence>;
     }
     export namespace PgPublication {
-      export type Record = PgCatalog.Types.PgPublication;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgPublicationNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgPublication>;
     }
     export namespace PgPublicationNamespace {
-      export type Record = PgCatalog.Types.PgPublicationNamespace;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgPublicationNamespaceNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
     }
     export namespace PgPublicationRel {
-      export type Record = PgCatalog.Types.PgPublicationRel;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgPublicationRelNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgPublicationRel>;
     }
     export namespace PgSubscriptionRel {
-      export type Record = PgCatalog.Types.PgSubscriptionRel;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgSubscriptionRelNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
     }
     export namespace PgLargeobject {
-      export type Record = PgCatalog.Types.PgLargeobject;
-      export type RecordNotPrimaryKey =
-        PgCatalog.Types.PgLargeobjectNotPrimaryKey;
+      export type Record = Required<PgCatalog.Types.PgLargeobject>;
     }
   }
 }
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
-      export type Record = Public.Types.FilmActor;
-      export type RecordNotPrimaryKey = Public.Types.FilmActorNotPrimaryKey;
+      export type Record = Required<Public.Types.FilmActor>;
     }
     export namespace Address {
-      export type Record = Public.Types.Address;
-      export type RecordNotPrimaryKey = Public.Types.AddressNotPrimaryKey;
+      export type Record = Required<Public.Types.Address>;
     }
     export namespace City {
-      export type Record = Public.Types.City;
-      export type RecordNotPrimaryKey = Public.Types.CityNotPrimaryKey;
+      export type Record = Required<Public.Types.City>;
     }
     export namespace Customer {
-      export type Record = Public.Types.Customer;
-      export type RecordNotPrimaryKey = Public.Types.CustomerNotPrimaryKey;
+      export type Record = Required<Public.Types.Customer>;
     }
     export namespace Actor {
-      export type Record = Public.Types.Actor;
-      export type RecordNotPrimaryKey = Public.Types.ActorNotPrimaryKey;
+      export type Record = Required<Public.Types.Actor>;
     }
     export namespace FilmCategory {
-      export type Record = Public.Types.FilmCategory;
-      export type RecordNotPrimaryKey = Public.Types.FilmCategoryNotPrimaryKey;
+      export type Record = Required<Public.Types.FilmCategory>;
     }
     export namespace Inventory {
-      export type Record = Public.Types.Inventory;
-      export type RecordNotPrimaryKey = Public.Types.InventoryNotPrimaryKey;
+      export type Record = Required<Public.Types.Inventory>;
     }
     export namespace Category {
-      export type Record = Public.Types.Category;
-      export type RecordNotPrimaryKey = Public.Types.CategoryNotPrimaryKey;
+      export type Record = Required<Public.Types.Category>;
     }
     export namespace Country {
-      export type Record = Public.Types.Country;
-      export type RecordNotPrimaryKey = Public.Types.CountryNotPrimaryKey;
+      export type Record = Required<Public.Types.Country>;
     }
     export namespace Language {
-      export type Record = Public.Types.Language;
-      export type RecordNotPrimaryKey = Public.Types.LanguageNotPrimaryKey;
+      export type Record = Required<Public.Types.Language>;
     }
     export namespace Rental {
-      export type Record = Public.Types.Rental;
-      export type RecordNotPrimaryKey = Public.Types.RentalNotPrimaryKey;
+      export type Record = Required<Public.Types.Rental>;
     }
     export namespace Staff {
-      export type Record = Public.Types.Staff;
-      export type RecordNotPrimaryKey = Public.Types.StaffNotPrimaryKey;
+      export type Record = Required<Public.Types.Staff>;
     }
     export namespace Store {
-      export type Record = Public.Types.Store;
-      export type RecordNotPrimaryKey = Public.Types.StoreNotPrimaryKey;
+      export type Record = Required<Public.Types.Store>;
     }
     export namespace Payment {
-      export type Record = Public.Types.Payment;
-      export type RecordNotPrimaryKey = Public.Types.PaymentNotPrimaryKey;
+      export type Record = Required<Public.Types.Payment>;
     }
     export namespace Film {
-      export type Record = Public.Types.Film;
-      export type RecordNotPrimaryKey = Public.Types.FilmNotPrimaryKey;
+      export type Record = Required<Public.Types.Film>;
     }
   }
 }
 export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
-      export type Record = InformationSchema.Types.SqlFeatures;
+      export type Record = Required<InformationSchema.Types.SqlFeatures>;
     }
     export namespace SqlImplementationInfo {
-      export type Record = InformationSchema.Types.SqlImplementationInfo;
+      export type Record =
+        Required<InformationSchema.Types.SqlImplementationInfo>;
     }
     export namespace SqlParts {
-      export type Record = InformationSchema.Types.SqlParts;
+      export type Record = Required<InformationSchema.Types.SqlParts>;
     }
     export namespace SqlSizing {
-      export type Record = InformationSchema.Types.SqlSizing;
+      export type Record = Required<InformationSchema.Types.SqlSizing>;
     }
   }
 }
@@ -14098,14 +12331,11 @@ export class EmbraceSQLClient extends BaseClient {
     public Tables = new (class extends HasClient {
       public FilmActor = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.FilmActor.Record
-            | Public.Tables.FilmActor.RecordNotPrimaryKey,
+          values: Public.Types.FilmActor,
         ): Promise<Public.Tables.FilmActor.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.FilmActor.Record
-            | Public.Tables.FilmActor.RecordNotPrimaryKey,
+            Public.Types.FilmActor,
             Public.Tables.FilmActor.Record
           >({
             operation: "Public.FilmActor.create",
@@ -14131,11 +12361,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByActorIdFilmId(
           parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-          values: Partial<Public.Tables.FilmActor.Record>,
+          values: Partial<Public.Types.FilmActor>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.FilmActor.ByActorIdFilmId,
-            Partial<Public.Tables.FilmActor.Record>,
+            Partial<Public.Types.FilmActor>,
             Public.Tables.FilmActor.Record | undefined
           >({
             operation: "Public.FilmActor.updateByActorIdFilmId",
@@ -14176,11 +12406,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByFilmId(
           parameters: Public.Tables.FilmActor.ByFilmId,
-          values: Partial<Public.Tables.FilmActor.Record>,
+          values: Partial<Public.Types.FilmActor>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.FilmActor.ByFilmId,
-            Partial<Public.Tables.FilmActor.Record>,
+            Partial<Public.Types.FilmActor>,
             Public.Tables.FilmActor.Record[] | undefined
           >({
             operation: "Public.FilmActor.updateByFilmId",
@@ -14209,14 +12439,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Address = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Address.Record
-            | Public.Tables.Address.RecordNotPrimaryKey,
+          values: Public.Types.Address,
         ): Promise<Public.Tables.Address.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Address.Record
-            | Public.Tables.Address.RecordNotPrimaryKey,
+            Public.Types.Address,
             Public.Tables.Address.Record
           >({
             operation: "Public.Address.create",
@@ -14242,11 +12469,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByAddressId(
           parameters: Public.Tables.Address.ByAddressId,
-          values: Partial<Public.Tables.Address.Record>,
+          values: Partial<Public.Types.Address>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Address.ByAddressId,
-            Partial<Public.Tables.Address.Record>,
+            Partial<Public.Types.Address>,
             Public.Tables.Address.Record | undefined
           >({
             operation: "Public.Address.updateByAddressId",
@@ -14287,11 +12514,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCityId(
           parameters: Public.Tables.Address.ByCityId,
-          values: Partial<Public.Tables.Address.Record>,
+          values: Partial<Public.Types.Address>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Address.ByCityId,
-            Partial<Public.Tables.Address.Record>,
+            Partial<Public.Types.Address>,
             Public.Tables.Address.Record[] | undefined
           >({
             operation: "Public.Address.updateByCityId",
@@ -14320,13 +12547,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public City = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.City.Record
-            | Public.Tables.City.RecordNotPrimaryKey,
+          values: Public.Types.City,
         ): Promise<Public.Tables.City.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.City.Record | Public.Tables.City.RecordNotPrimaryKey,
+            Public.Types.City,
             Public.Tables.City.Record
           >({
             operation: "Public.City.create",
@@ -14350,11 +12575,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCityId(
           parameters: Public.Tables.City.ByCityId,
-          values: Partial<Public.Tables.City.Record>,
+          values: Partial<Public.Types.City>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.City.ByCityId,
-            Partial<Public.Tables.City.Record>,
+            Partial<Public.Types.City>,
             Public.Tables.City.Record | undefined
           >({
             operation: "Public.City.updateByCityId",
@@ -14393,11 +12618,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCountryId(
           parameters: Public.Tables.City.ByCountryId,
-          values: Partial<Public.Tables.City.Record>,
+          values: Partial<Public.Types.City>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.City.ByCountryId,
-            Partial<Public.Tables.City.Record>,
+            Partial<Public.Types.City>,
             Public.Tables.City.Record[] | undefined
           >({
             operation: "Public.City.updateByCountryId",
@@ -14426,14 +12651,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Customer = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Customer.Record
-            | Public.Tables.Customer.RecordNotPrimaryKey,
+          values: Public.Types.Customer,
         ): Promise<Public.Tables.Customer.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Customer.Record
-            | Public.Tables.Customer.RecordNotPrimaryKey,
+            Public.Types.Customer,
             Public.Tables.Customer.Record
           >({
             operation: "Public.Customer.create",
@@ -14459,11 +12681,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByAddressId(
           parameters: Public.Tables.Customer.ByAddressId,
-          values: Partial<Public.Tables.Customer.Record>,
+          values: Partial<Public.Types.Customer>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByAddressId,
-            Partial<Public.Tables.Customer.Record>,
+            Partial<Public.Types.Customer>,
             Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.updateByAddressId",
@@ -14506,11 +12728,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCustomerId(
           parameters: Public.Tables.Customer.ByCustomerId,
-          values: Partial<Public.Tables.Customer.Record>,
+          values: Partial<Public.Types.Customer>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByCustomerId,
-            Partial<Public.Tables.Customer.Record>,
+            Partial<Public.Types.Customer>,
             Public.Tables.Customer.Record | undefined
           >({
             operation: "Public.Customer.updateByCustomerId",
@@ -14551,11 +12773,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByLastName(
           parameters: Public.Tables.Customer.ByLastName,
-          values: Partial<Public.Tables.Customer.Record>,
+          values: Partial<Public.Types.Customer>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByLastName,
-            Partial<Public.Tables.Customer.Record>,
+            Partial<Public.Types.Customer>,
             Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.updateByLastName",
@@ -14596,11 +12818,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByStoreId(
           parameters: Public.Tables.Customer.ByStoreId,
-          values: Partial<Public.Tables.Customer.Record>,
+          values: Partial<Public.Types.Customer>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Customer.ByStoreId,
-            Partial<Public.Tables.Customer.Record>,
+            Partial<Public.Types.Customer>,
             Public.Tables.Customer.Record[] | undefined
           >({
             operation: "Public.Customer.updateByStoreId",
@@ -14629,14 +12851,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Actor = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Actor.Record
-            | Public.Tables.Actor.RecordNotPrimaryKey,
+          values: Public.Types.Actor,
         ): Promise<Public.Tables.Actor.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Actor.Record
-            | Public.Tables.Actor.RecordNotPrimaryKey,
+            Public.Types.Actor,
             Public.Tables.Actor.Record
           >({
             operation: "Public.Actor.create",
@@ -14660,11 +12879,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByActorId(
           parameters: Public.Tables.Actor.ByActorId,
-          values: Partial<Public.Tables.Actor.Record>,
+          values: Partial<Public.Types.Actor>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Actor.ByActorId,
-            Partial<Public.Tables.Actor.Record>,
+            Partial<Public.Types.Actor>,
             Public.Tables.Actor.Record | undefined
           >({
             operation: "Public.Actor.updateByActorId",
@@ -14705,11 +12924,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByLastName(
           parameters: Public.Tables.Actor.ByLastName,
-          values: Partial<Public.Tables.Actor.Record>,
+          values: Partial<Public.Types.Actor>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Actor.ByLastName,
-            Partial<Public.Tables.Actor.Record>,
+            Partial<Public.Types.Actor>,
             Public.Tables.Actor.Record[] | undefined
           >({
             operation: "Public.Actor.updateByLastName",
@@ -14738,14 +12957,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public FilmCategory = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.FilmCategory.Record
-            | Public.Tables.FilmCategory.RecordNotPrimaryKey,
+          values: Public.Types.FilmCategory,
         ): Promise<Public.Tables.FilmCategory.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.FilmCategory.Record
-            | Public.Tables.FilmCategory.RecordNotPrimaryKey,
+            Public.Types.FilmCategory,
             Public.Tables.FilmCategory.Record
           >({
             operation: "Public.FilmCategory.create",
@@ -14771,11 +12987,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByFilmIdCategoryId(
           parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-          values: Partial<Public.Tables.FilmCategory.Record>,
+          values: Partial<Public.Types.FilmCategory>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.FilmCategory.ByFilmIdCategoryId,
-            Partial<Public.Tables.FilmCategory.Record>,
+            Partial<Public.Types.FilmCategory>,
             Public.Tables.FilmCategory.Record | undefined
           >({
             operation: "Public.FilmCategory.updateByFilmIdCategoryId",
@@ -14804,14 +13020,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Inventory = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Inventory.Record
-            | Public.Tables.Inventory.RecordNotPrimaryKey,
+          values: Public.Types.Inventory,
         ): Promise<Public.Tables.Inventory.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Inventory.Record
-            | Public.Tables.Inventory.RecordNotPrimaryKey,
+            Public.Types.Inventory,
             Public.Tables.Inventory.Record
           >({
             operation: "Public.Inventory.create",
@@ -14837,11 +13050,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByInventoryId(
           parameters: Public.Tables.Inventory.ByInventoryId,
-          values: Partial<Public.Tables.Inventory.Record>,
+          values: Partial<Public.Types.Inventory>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Inventory.ByInventoryId,
-            Partial<Public.Tables.Inventory.Record>,
+            Partial<Public.Types.Inventory>,
             Public.Tables.Inventory.Record | undefined
           >({
             operation: "Public.Inventory.updateByInventoryId",
@@ -14884,11 +13097,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByStoreIdFilmId(
           parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-          values: Partial<Public.Tables.Inventory.Record>,
+          values: Partial<Public.Types.Inventory>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Inventory.ByStoreIdFilmId,
-            Partial<Public.Tables.Inventory.Record>,
+            Partial<Public.Types.Inventory>,
             Public.Tables.Inventory.Record[] | undefined
           >({
             operation: "Public.Inventory.updateByStoreIdFilmId",
@@ -14917,14 +13130,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Category = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Category.Record
-            | Public.Tables.Category.RecordNotPrimaryKey,
+          values: Public.Types.Category,
         ): Promise<Public.Tables.Category.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Category.Record
-            | Public.Tables.Category.RecordNotPrimaryKey,
+            Public.Types.Category,
             Public.Tables.Category.Record
           >({
             operation: "Public.Category.create",
@@ -14950,11 +13160,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCategoryId(
           parameters: Public.Tables.Category.ByCategoryId,
-          values: Partial<Public.Tables.Category.Record>,
+          values: Partial<Public.Types.Category>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Category.ByCategoryId,
-            Partial<Public.Tables.Category.Record>,
+            Partial<Public.Types.Category>,
             Public.Tables.Category.Record | undefined
           >({
             operation: "Public.Category.updateByCategoryId",
@@ -14983,14 +13193,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Country = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Country.Record
-            | Public.Tables.Country.RecordNotPrimaryKey,
+          values: Public.Types.Country,
         ): Promise<Public.Tables.Country.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Country.Record
-            | Public.Tables.Country.RecordNotPrimaryKey,
+            Public.Types.Country,
             Public.Tables.Country.Record
           >({
             operation: "Public.Country.create",
@@ -15016,11 +13223,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCountryId(
           parameters: Public.Tables.Country.ByCountryId,
-          values: Partial<Public.Tables.Country.Record>,
+          values: Partial<Public.Types.Country>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Country.ByCountryId,
-            Partial<Public.Tables.Country.Record>,
+            Partial<Public.Types.Country>,
             Public.Tables.Country.Record | undefined
           >({
             operation: "Public.Country.updateByCountryId",
@@ -15049,14 +13256,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Language = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Language.Record
-            | Public.Tables.Language.RecordNotPrimaryKey,
+          values: Public.Types.Language,
         ): Promise<Public.Tables.Language.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Language.Record
-            | Public.Tables.Language.RecordNotPrimaryKey,
+            Public.Types.Language,
             Public.Tables.Language.Record
           >({
             operation: "Public.Language.create",
@@ -15082,11 +13286,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByLanguageId(
           parameters: Public.Tables.Language.ByLanguageId,
-          values: Partial<Public.Tables.Language.Record>,
+          values: Partial<Public.Types.Language>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Language.ByLanguageId,
-            Partial<Public.Tables.Language.Record>,
+            Partial<Public.Types.Language>,
             Public.Tables.Language.Record | undefined
           >({
             operation: "Public.Language.updateByLanguageId",
@@ -15115,14 +13319,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Rental = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Rental.Record
-            | Public.Tables.Rental.RecordNotPrimaryKey,
+          values: Public.Types.Rental,
         ): Promise<Public.Tables.Rental.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Rental.Record
-            | Public.Tables.Rental.RecordNotPrimaryKey,
+            Public.Types.Rental,
             Public.Tables.Rental.Record
           >({
             operation: "Public.Rental.create",
@@ -15148,11 +13349,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByInventoryId(
           parameters: Public.Tables.Rental.ByInventoryId,
-          values: Partial<Public.Tables.Rental.Record>,
+          values: Partial<Public.Types.Rental>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByInventoryId,
-            Partial<Public.Tables.Rental.Record>,
+            Partial<Public.Types.Rental>,
             Public.Tables.Rental.Record[] | undefined
           >({
             operation: "Public.Rental.updateByInventoryId",
@@ -15195,11 +13396,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByRentalDateInventoryIdCustomerId(
           parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-          values: Partial<Public.Tables.Rental.Record>,
+          values: Partial<Public.Types.Rental>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-            Partial<Public.Tables.Rental.Record>,
+            Partial<Public.Types.Rental>,
             Public.Tables.Rental.Record | undefined
           >({
             operation: "Public.Rental.updateByRentalDateInventoryIdCustomerId",
@@ -15240,11 +13441,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByRentalId(
           parameters: Public.Tables.Rental.ByRentalId,
-          values: Partial<Public.Tables.Rental.Record>,
+          values: Partial<Public.Types.Rental>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Rental.ByRentalId,
-            Partial<Public.Tables.Rental.Record>,
+            Partial<Public.Types.Rental>,
             Public.Tables.Rental.Record | undefined
           >({
             operation: "Public.Rental.updateByRentalId",
@@ -15273,14 +13474,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Staff = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Staff.Record
-            | Public.Tables.Staff.RecordNotPrimaryKey,
+          values: Public.Types.Staff,
         ): Promise<Public.Tables.Staff.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Staff.Record
-            | Public.Tables.Staff.RecordNotPrimaryKey,
+            Public.Types.Staff,
             Public.Tables.Staff.Record
           >({
             operation: "Public.Staff.create",
@@ -15304,11 +13502,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByStaffId(
           parameters: Public.Tables.Staff.ByStaffId,
-          values: Partial<Public.Tables.Staff.Record>,
+          values: Partial<Public.Types.Staff>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Staff.ByStaffId,
-            Partial<Public.Tables.Staff.Record>,
+            Partial<Public.Types.Staff>,
             Public.Tables.Staff.Record | undefined
           >({
             operation: "Public.Staff.updateByStaffId",
@@ -15337,14 +13535,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Store = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Store.Record
-            | Public.Tables.Store.RecordNotPrimaryKey,
+          values: Public.Types.Store,
         ): Promise<Public.Tables.Store.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Store.Record
-            | Public.Tables.Store.RecordNotPrimaryKey,
+            Public.Types.Store,
             Public.Tables.Store.Record
           >({
             operation: "Public.Store.create",
@@ -15370,11 +13565,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByManagerStaffId(
           parameters: Public.Tables.Store.ByManagerStaffId,
-          values: Partial<Public.Tables.Store.Record>,
+          values: Partial<Public.Types.Store>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Store.ByManagerStaffId,
-            Partial<Public.Tables.Store.Record>,
+            Partial<Public.Types.Store>,
             Public.Tables.Store.Record | undefined
           >({
             operation: "Public.Store.updateByManagerStaffId",
@@ -15415,11 +13610,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByStoreId(
           parameters: Public.Tables.Store.ByStoreId,
-          values: Partial<Public.Tables.Store.Record>,
+          values: Partial<Public.Types.Store>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Store.ByStoreId,
-            Partial<Public.Tables.Store.Record>,
+            Partial<Public.Types.Store>,
             Public.Tables.Store.Record | undefined
           >({
             operation: "Public.Store.updateByStoreId",
@@ -15448,14 +13643,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Payment = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Payment.Record
-            | Public.Tables.Payment.RecordNotPrimaryKey,
+          values: Public.Types.Payment,
         ): Promise<Public.Tables.Payment.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            | Public.Tables.Payment.Record
-            | Public.Tables.Payment.RecordNotPrimaryKey,
+            Public.Types.Payment,
             Public.Tables.Payment.Record
           >({
             operation: "Public.Payment.create",
@@ -15481,11 +13673,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByCustomerId(
           parameters: Public.Tables.Payment.ByCustomerId,
-          values: Partial<Public.Tables.Payment.Record>,
+          values: Partial<Public.Types.Payment>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByCustomerId,
-            Partial<Public.Tables.Payment.Record>,
+            Partial<Public.Types.Payment>,
             Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.updateByCustomerId",
@@ -15528,11 +13720,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByPaymentId(
           parameters: Public.Tables.Payment.ByPaymentId,
-          values: Partial<Public.Tables.Payment.Record>,
+          values: Partial<Public.Types.Payment>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByPaymentId,
-            Partial<Public.Tables.Payment.Record>,
+            Partial<Public.Types.Payment>,
             Public.Tables.Payment.Record | undefined
           >({
             operation: "Public.Payment.updateByPaymentId",
@@ -15573,11 +13765,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByRentalId(
           parameters: Public.Tables.Payment.ByRentalId,
-          values: Partial<Public.Tables.Payment.Record>,
+          values: Partial<Public.Types.Payment>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByRentalId,
-            Partial<Public.Tables.Payment.Record>,
+            Partial<Public.Types.Payment>,
             Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.updateByRentalId",
@@ -15618,11 +13810,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByStaffId(
           parameters: Public.Tables.Payment.ByStaffId,
-          values: Partial<Public.Tables.Payment.Record>,
+          values: Partial<Public.Types.Payment>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Payment.ByStaffId,
-            Partial<Public.Tables.Payment.Record>,
+            Partial<Public.Types.Payment>,
             Public.Tables.Payment.Record[] | undefined
           >({
             operation: "Public.Payment.updateByStaffId",
@@ -15651,13 +13843,11 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Film = new (class extends HasClient {
         public async create(
-          values:
-            | Public.Tables.Film.Record
-            | Public.Tables.Film.RecordNotPrimaryKey,
+          values: Public.Types.Film,
         ): Promise<Public.Tables.Film.Record | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Film.Record | Public.Tables.Film.RecordNotPrimaryKey,
+            Public.Types.Film,
             Public.Tables.Film.Record
           >({
             operation: "Public.Film.create",
@@ -15681,11 +13871,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByFilmId(
           parameters: Public.Tables.Film.ByFilmId,
-          values: Partial<Public.Tables.Film.Record>,
+          values: Partial<Public.Types.Film>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFilmId,
-            Partial<Public.Tables.Film.Record>,
+            Partial<Public.Types.Film>,
             Public.Tables.Film.Record | undefined
           >({
             operation: "Public.Film.updateByFilmId",
@@ -15724,11 +13914,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByFulltext(
           parameters: Public.Tables.Film.ByFulltext,
-          values: Partial<Public.Tables.Film.Record>,
+          values: Partial<Public.Types.Film>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByFulltext,
-            Partial<Public.Tables.Film.Record>,
+            Partial<Public.Types.Film>,
             Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.updateByFulltext",
@@ -15769,11 +13959,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByLanguageId(
           parameters: Public.Tables.Film.ByLanguageId,
-          values: Partial<Public.Tables.Film.Record>,
+          values: Partial<Public.Types.Film>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByLanguageId,
-            Partial<Public.Tables.Film.Record>,
+            Partial<Public.Types.Film>,
             Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.updateByLanguageId",
@@ -15814,11 +14004,11 @@ export class EmbraceSQLClient extends BaseClient {
 
         public async updateByTitle(
           parameters: Public.Tables.Film.ByTitle,
-          values: Partial<Public.Tables.Film.Record>,
+          values: Partial<Public.Types.Film>,
         ) {
           const response = await this.client.invoke<
             Public.Tables.Film.ByTitle,
-            Partial<Public.Tables.Film.Record>,
+            Partial<Public.Types.Film>,
             Public.Tables.Film.Record[] | undefined
           >({
             operation: "Public.Film.updateByTitle",

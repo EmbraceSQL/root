@@ -1,11 +1,13 @@
 import { Context, PostgresProcTypecast } from "../../../context";
-import { buildTypescriptParameterName } from "../../../util";
+import { buildParameterName } from "../../../util";
+import { PGCatalogType } from "../pgcatalogtype";
 import { PGNamespace } from "../pgnamespace";
 import { PGTypes } from "../pgtype";
-import { generateRequestType } from "./generateRequestType";
-import { generateResponseType } from "./generateResponseType";
 import {
   GenerationContext,
+  ProcedureArgumentNode,
+  ProcedureNode,
+  ProcedureResultTypeNode,
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
@@ -53,6 +55,32 @@ export class PGProcs {
   private constructor(context: PGProcsContext, procRows: ProcRow[]) {
     this.procs = procRows.map((r) => new PGProc(context, r));
   }
+
+  async loadAST(context: GenerationContext) {
+    for (const proc of this.procs) {
+      const schemaNode = context.database.resolveSchema(proc.nspname);
+      const procsNode = schemaNode.procedures;
+      const procReturnType = context.database.resolveType(
+        proc.returnsPseudoTypeRecord ? proc.proc.oid : proc.proc.prorettype,
+      )!;
+      const procNode = new ProcedureNode(proc.name, procsNode, procReturnType);
+      proc.proc.proargtypes
+        .flatMap((t) => t)
+        .forEach((oid, i) => {
+          const type = context.database.resolveType(oid)!;
+          procNode.children.push(
+            new ProcedureArgumentNode(
+              buildParameterName(proc, i),
+              procNode,
+              type,
+              i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
+            ),
+          );
+        });
+      procsNode.children.push(procNode);
+      proc.procNode = procNode;
+    }
+  }
 }
 
 /**
@@ -62,6 +90,9 @@ export class PGProcs {
  * group and fully qualify proc names.
  */
 export class PGProc implements PostgresProcTypecast {
+  // TODO: remove this shim
+  public procNode?: ProcedureNode;
+
   constructor(
     context: PGProcsContext,
     public proc: ProcRow,
@@ -75,10 +106,14 @@ export class PGProc implements PostgresProcTypecast {
     return this.proc.nspname;
   }
 
-  get typescriptName() {
-    const seed = pascalCase(this.proc.proname);
+  get name() {
+    const seed = this.proc.proname;
     const stem = hash(this.proc.proargtypes.flatMap((x) => x)).substring(0, 4);
-    return this.overloaded ? `${seed}${stem}` : seed;
+    return this.overloaded ? `${seed}_${stem}` : seed;
+  }
+
+  get typescriptName() {
+    return pascalCase(this.name);
   }
 
   get typescriptNameForNamespace() {
@@ -94,30 +129,8 @@ export class PGProc implements PostgresProcTypecast {
 
   typescriptNameForPostgresArguments(withNamespace = false) {
     return (
-      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
-      `${this.typescriptName}Arguments`
-    );
-  }
-
-  typescriptNameForPostgresResult(withNamespace = false) {
-    if (this.returnsPseudoTypeRecord || this.returnsSet) {
-      return this.typescriptNameForPostgresResultset(withNamespace);
-    } else {
-      return this.typescriptNameForPostgresResultsetRecord(withNamespace);
-    }
-  }
-
-  typescriptNameForPostgresResultsetRecord(withNamespace = false) {
-    return (
-      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
-      `${this.typescriptName}SingleResultsetRecord`
-    );
-  }
-
-  typescriptNameForPostgresResultset(withNamespace = false) {
-    return (
-      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
-      `${this.typescriptName}Resultset`
+      (withNamespace ? `${this.typescriptNameForNamespace}.Procedures.` : "") +
+      `${this.typescriptName}.Arguments`
     );
   }
 
@@ -139,7 +152,7 @@ export class PGProc implements PostgresProcTypecast {
    * This doesn't look very TypeScript-y on purpose so it stands out.
    */
   get postgresMarshallName() {
-    return `${this.proc.nspname}_${this.proc.proname}`;
+    return `${this.proc.nspname}_${this.name}`;
   }
 
   get returnsPseudoTypeRecord() {
@@ -147,20 +160,6 @@ export class PGProc implements PostgresProcTypecast {
       this.proc.proallargtypes.flatMap((x) => x).length >
       this.proc.proargtypes.flatMap((x) => x).length
     );
-  }
-
-  pseudoTypeAttributes(context: GenerationContext) {
-    const skipThisMany = this.proc.proargtypes.flatMap((x) => x).length;
-    return this.proc.proallargtypes
-      .flatMap((x) => x)
-      .map((oid, i) => {
-        const type = context.database.resolveType(oid);
-        return {
-          name: this.proc.proargnames[i],
-          type,
-        };
-      })
-      .slice(skipThisMany);
   }
 
   /**
@@ -174,32 +173,21 @@ export class PGProc implements PostgresProcTypecast {
   parseFromPostgresIfRecord(context: Context, x: string) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     // have parsimmon pick out an object right from our metadata
-    const attributes = this.pseudoTypeAttributes(context).map((a) => {
-      // need to postgres side type to get the postgres protocol parser
-      const postgresAttribute = context.resolveType(a.type?.id as number);
-      return [
-        camelCase(a.name),
-        compositeAttribute.map((parsedAttributeText) =>
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-          postgresAttribute.parseFromPostgres(context, parsedAttributeText),
-        ),
-      ] as [string, parsimmon.Parser<string | null>];
-    });
+    const attributes = new PGProcPseudoType(this)
+      .pseudoTypeAttributes(context)
+      .map((a) => {
+        // need to postgres side type to get the postgres protocol parser
+        const postgresAttribute = context.resolveType(a.type?.id as number);
+        return [
+          camelCase(a.name),
+          compositeAttribute.map((parsedAttributeText) =>
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            postgresAttribute.parseFromPostgres(context, parsedAttributeText),
+          ),
+        ] as [string, parsimmon.Parser<string | null>];
+      });
 
     return parseObjectWithAttributes(attributes, x);
-  }
-
-  /**
-   * TypeScript source code for:
-   * - request messages that encapsulates a proc's parameters
-   * - response messages from a proc's return
-   *
-   */
-  typescriptTypeDefinition(context: GenerationContext) {
-    return `
-    ${generateRequestType(this, context)}
-    ${generateResponseType(this, context)}
-    `;
   }
 
   /**
@@ -213,7 +201,7 @@ export class PGProc implements PostgresProcTypecast {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const type = context.resolveType(oid)!;
         return {
-          name: buildTypescriptParameterName(this, i),
+          name: buildParameterName(this, i),
           namedParameter: this.proc.proargnames[i] !== undefined,
           type,
         };
@@ -221,25 +209,66 @@ export class PGProc implements PostgresProcTypecast {
       .map(
         (a) =>
           (a.namedParameter ? `${a.name} =>` : ``) +
-          ` \${ typed.${a.type.postgresMarshallName}(undefinedIsNull(parameters.${a.name})) }`,
+          ` \${ typed.${
+            a.type.postgresMarshallName
+          }(undefinedIsNull(parameters.${camelCase(a.name)})) }`,
       );
     return `(${args.join(",")})`;
   }
+}
 
-  /**
-   * Build up a string that is the return type from a database proc.
-   *
-   * Functions can return types or pseudo record types defined by the
-   * pg_proc catalog.
-   *
-   * These can be scalars or arrays.
-   *
-   */
-  typescriptReturnType(context: GenerationContext) {
-    const resultType = context.database.resolveType(this.proc.prorettype);
-    const typeString = this.returnsPseudoTypeRecord
-      ? `${this.typescriptNameForResponse()}Record`
-      : `${resultType?.typescriptNamespacedName}`;
-    return typeString;
+/**
+ * This isn't a real catalog type, it's inferred from the parameters
+ * by picking apart the 'input' and 'output' parameters.
+ */
+export class PGProcPseudoType extends PGCatalogType {
+  constructor(public proc: PGProc) {
+    super({
+      oid: proc.proc.oid,
+      nspname: proc.proc.nspname,
+      typname: `${proc.proc.proname}_results`,
+      typbasetype: 0,
+      typelem: 0,
+      rngsubtype: 0,
+      typcategory: "",
+      typoutput: "",
+      typrelid: 0,
+      typtype: "",
+    });
+  }
+
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    const type = new ProcedureResultTypeNode(
+      this.typescriptName,
+      this.postgresMarshallName,
+      schema.types,
+      this.oid,
+      this,
+    );
+    context.database.registerType(type.id, type);
+  }
+
+  pseudoTypeAttributes(context: GenerationContext) {
+    const skipThisMany = this.proc.proc.proargtypes.flatMap((x) => x).length;
+    return this.proc.proc.proallargtypes
+      .flatMap((x) => x)
+      .map((oid, i) => {
+        const type = context.database.resolveType(oid)!;
+        return {
+          name: this.proc.proc.proargnames[i],
+          type,
+        };
+      })
+      .slice(skipThisMany);
+  }
+
+  typescriptTypeDefinition(context: GenerationContext): string {
+    console.assert(context);
+    const recordAttributes = this.pseudoTypeAttributes(context).map(
+      (a) => `${camelCase(a.name)}: ${a.type.typescriptNamespacedName};`,
+    );
+    return ` { ${recordAttributes.join("\n")} } `;
   }
 }

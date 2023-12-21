@@ -54,10 +54,10 @@ export class PGTypeArray extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     return `
-    export type ${this.typescriptName} = Array<${
-      context.database.resolveType(this.catalog.typelem)
-        ?.typescriptNamespacedName ?? "void"
-    }>;
+     Array<${
+       context.database.resolveType(this.catalog.typelem)
+         ?.typescriptNamespacedName ?? "void"
+     }>
     `;
   }
 

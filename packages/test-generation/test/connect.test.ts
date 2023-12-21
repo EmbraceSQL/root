@@ -17,7 +17,7 @@ describe("The database can", () => {
     expect(db).toBeTruthy();
   });
   it("call a proc", async () => {
-    const value = await db.Public.LastDay({ _0: new Date() });
+    const value = await db.Public.LastDay({ argument_0: new Date() });
     expect(value).toBeTruthy();
   });
 });
