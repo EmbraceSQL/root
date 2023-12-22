@@ -4,7 +4,6 @@ import {
   SqlScriptOperations,
 } from "../operations/sqlscript";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
-import { generateTableTypeAliases } from "./generateTableTypeAliases";
 import { generateTypeParsers } from "./generateTypeParsers";
 import {
   ASTKind,
@@ -84,7 +83,22 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           },
         },
         [ASTKind.Tables]: NamespaceVisitor,
-        [ASTKind.Table]: NamespaceVisitor,
+        // tables are defined by types -- but actual rows/records
+        // coming back from queries need a required so we get
+        // DBMS style value | null semantics -- no undefinded in SQL
+        [ASTKind.Table]: {
+          before: async (context, node) => {
+            const generationBuffer = [
+              await NamespaceVisitor.before(context, node),
+            ];
+            generationBuffer.push(
+              `export type Record = Required<${node.type.typescriptNamespacedName}>;`,
+            );
+
+            return generationBuffer.join("\n");
+          },
+          after: NamespaceVisitor.after,
+        },
         [ASTKind.Index]: {
           before: async (_, node) => `export type ${node.typescriptName} = {`,
           after: async () => `}`,
@@ -114,14 +128,13 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           },
           after: NamespaceVisitor.after,
         },
-        [ASTKind.ProcedureResultType]: TypeDefiner,
+        [ASTKind.QueryResultType]: TypeDefiner,
+        [ASTKind.Scripts]: NamespaceVisitor,
+        [ASTKind.ScriptFolder]: NamespaceVisitor,
+        [ASTKind.Script]: NamespaceVisitor,
       },
     }),
   );
-
-  // TODO: types for procs
-  // TODO: types for tables
-  // TODO: types for indexes
 
   // script parameter and return types
   // holder for all scripts provides a .Scripts grouping
@@ -139,7 +152,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
   generationBuffer.push(await generateTypeParsers(context));
   generationBuffer.push(await generatePrimaryKeyPickers(context));
-  generationBuffer.push(await generateTableTypeAliases(context));
 
   return generationBuffer.join("\n");
 };

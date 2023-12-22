@@ -36,7 +36,8 @@ export const enum ASTKind {
   Procedures,
   Procedure,
   ProcedureArgument,
-  ProcedureResultType,
+  QueryResultType,
+  QueryResultTypeColumn,
 }
 
 /**
@@ -93,31 +94,39 @@ export interface Visitor<T extends ASTNode> {
 }
 
 /**
- * And a big old map of visitors for each node type.
+ * And a big old map kinds to types.
+ */
+export type ASTKindMap = {
+  [ASTKind.Node]: ASTNode;
+  [ASTKind.Database]: DatabaseNode;
+  [ASTKind.Schema]: SchemaNode;
+  [ASTKind.Table]: TableNode;
+  [ASTKind.Tables]: TableNode;
+  [ASTKind.Column]: ColumnNode;
+  [ASTKind.Index]: IndexNode;
+  [ASTKind.IndexColumn]: IndexColumnNode;
+  [ASTKind.Types]: TypesNode;
+  [ASTKind.Type]: TypeNode;
+  [ASTKind.Enum]: EnumNode;
+  [ASTKind.CreateOperation]: CreateOperationNode;
+  [ASTKind.ReadOperation]: ReadOperationNode;
+  [ASTKind.UpdateOperation]: UpdateOperationNode;
+  [ASTKind.DeleteOperation]: DeleteOperationNode;
+  [ASTKind.Scripts]: ScriptsNode;
+  [ASTKind.ScriptFolder]: ScriptFolderNode;
+  [ASTKind.Script]: ScriptNode;
+  [ASTKind.Procedures]: ProceduresNode;
+  [ASTKind.Procedure]: ProcedureNode;
+  [ASTKind.ProcedureArgument]: ProcedureArgumentNode;
+  [ASTKind.QueryResultType]: QueryResultTypeNode;
+  [ASTKind.QueryResultTypeColumn]: QueryResultTypeColumnNode;
+};
+
+/**
+ * Mapping to set up visitors.
  */
 export type VisitorMap = {
-  [ASTKind.Node]?: Visitor<ASTNode>;
-  [ASTKind.Database]?: Visitor<DatabaseNode>;
-  [ASTKind.Schema]?: Visitor<SchemaNode>;
-  [ASTKind.Table]?: Visitor<TableNode>;
-  [ASTKind.Tables]?: Visitor<TableNode>;
-  [ASTKind.Column]?: Visitor<ColumnNode>;
-  [ASTKind.Index]?: Visitor<IndexNode>;
-  [ASTKind.IndexColumn]?: Visitor<IndexColumnNode>;
-  [ASTKind.Types]?: Visitor<TypesNode>;
-  [ASTKind.Type]?: Visitor<TypeNode>;
-  [ASTKind.Enum]?: Visitor<EnumNode>;
-  [ASTKind.CreateOperation]?: Visitor<CreateOperationNode>;
-  [ASTKind.ReadOperation]?: Visitor<ReadOperationNode>;
-  [ASTKind.UpdateOperation]?: Visitor<UpdateOperationNode>;
-  [ASTKind.DeleteOperation]?: Visitor<DeleteOperationNode>;
-  [ASTKind.Scripts]?: Visitor<ScriptsNode>;
-  [ASTKind.ScriptFolder]?: Visitor<ScriptFolderNode>;
-  [ASTKind.Script]?: Visitor<ScriptNode>;
-  [ASTKind.Procedures]?: Visitor<ProceduresNode>;
-  [ASTKind.Procedure]?: Visitor<ProcedureNode>;
-  [ASTKind.ProcedureArgument]?: Visitor<ProcedureArgumentNode>;
-  [ASTKind.ProcedureResultType]?: Visitor<ProcedureResultTypeNode>;
+  [Kind in keyof ASTKindMap]?: Visitor<ASTKindMap[Kind]>;
 };
 
 /**
@@ -144,6 +153,11 @@ export abstract class ASTNode {
     );
 
     return generationBuffer.filter((line) => line).join("\n");
+  }
+
+  lookUpTo(kind: ASTKind): ASTNode | undefined {
+    if (this.parent?.kind === kind) return this.parent;
+    else return this.parent?.lookUpTo(kind);
   }
 }
 
@@ -229,7 +243,7 @@ export class DatabaseNode extends ContainerNode {
     if (existing) return existing;
     // mapped and in the children
     this.types.set(`${id}`, type);
-    this.resolveSchema(type.types.schema.name).types.children.push(type);
+    (type.lookUpTo(ASTKind.Schema) as SchemaNode).types.children.push(type);
     return type;
   }
 
@@ -314,16 +328,16 @@ export class TypesNode extends ContainerNode {
  *
  * These differ on their enumerated type kind
  */
-export class AbstractTypeNode extends NamedASTNode {
+export class AbstractTypeNode extends ContainerNode {
   constructor(
     name: string,
     kind: ASTKind,
     public marshallName: string,
-    public types: TypesNode,
+    parent: ContainerNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
   ) {
-    super(name, kind, types);
+    super(name, kind, parent);
   }
 }
 
@@ -334,7 +348,7 @@ export class TypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     public marshallName: string,
-    public types: TypesNode,
+    types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
   ) {
@@ -350,7 +364,7 @@ export class EnumNode extends AbstractTypeNode {
     name: string,
     public marshallName: string,
     public values: string[],
-    public types: TypesNode,
+    types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
   ) {
@@ -543,8 +557,9 @@ export class UpdateOperationNode extends IndexOperationNode {
 export class ScriptsNode extends ContainerNode {
   static SCRIPTS = "Scripts";
   /**
-   * Asynchronous factory method uses IO to expand the current
-   * `database` AST in the context.
+   * Loading up the scripts node by file system traversal.
+   *
+   * Once done, all scripts will be visited and loaded into the AST.
    */
   static async loadAST(context: GenerationContext) {
     if (context.sqlScriptsFrom) {
@@ -609,7 +624,7 @@ export class ScriptFolderNode extends ContainerNode {
 /**
  * A single script that is source from a .sql file on disk.
  */
-export class ScriptNode extends NamedASTNode {
+export class ScriptNode extends ContainerNode {
   /**
    * Asynchronous factory builds from a sql file on disk.
    */
@@ -662,6 +677,7 @@ export class ProcedureNode extends OperationNode {
     super(name, ASTKind.Procedure, procedures);
   }
 }
+
 /**
  * A single argument to a procedure. This is a 'named type'
  */
@@ -677,16 +693,46 @@ export class ProcedureArgumentNode extends NamedASTNode {
 }
 
 /**
- * A reutrn type, when the return type is catalog defined.
+ * A query return type when the return type is *NOT* in the
+ * databsae catalog, but is implicitly defined by the query.
  */
-export class ProcedureResultTypeNode extends AbstractTypeNode {
+export class QueryResultTypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     marshallName: string,
-    types: TypesNode,
+    parent: ContainerNode,
     id: string | number,
-    parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.ProcedureResultType, marshallName, types, id, parser);
+    super(name, ASTKind.QueryResultType, marshallName, parent, id, {
+      typescriptTypeDefinition: () => {
+        const recordAttributes = this.children
+          .filter<QueryResultTypeColumnNode>(
+            (c): c is QueryResultTypeColumnNode =>
+              c.kind === ASTKind.QueryResultTypeColumn,
+          )
+          .map(
+            (a) => `${a.typescriptName}: ${a.type.typescriptNamespacedName};`,
+          );
+        return ` { ${recordAttributes.join("\n")} } `;
+      },
+      typescriptTypeParser: () => {
+        // no op type parser -- query results are expected to have
+        // already been parsed by the databse driver
+        return `return from`;
+      },
+    });
+  }
+}
+
+/**
+ * A single column on a single query result.
+ */
+export class QueryResultTypeColumnNode extends ContainerNode {
+  constructor(
+    public queryResultType: QueryResultTypeNode,
+    public name: string,
+    public type: TypeNode,
+  ) {
+    super(name, ASTKind.QueryResultTypeColumn, queryResultType);
   }
 }

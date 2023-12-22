@@ -7,10 +7,15 @@ import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import {
+  ASTKind,
   DatabaseNode,
   GenerationContextProps,
+  QueryResultTypeColumnNode,
+  QueryResultTypeNode,
   ScriptsNode,
+  cleanIdentifierForTypescript,
 } from "@embracesql/shared";
+import path from "path";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
 
@@ -189,10 +194,40 @@ export const initializeContext = async (
   // AST with database schema objects - tables, columns, indexes
   namespaces.forEach((n) => n.loadAST(generationContext));
 
-  // stored scripts
+  // stored scripts -- load up the AST
   await ScriptsNode.loadAST(generationContext);
-
-  // TODO: scripts need metadata
+  // visit all scripts and ask the database for metadata
+  // we'll be discarding the string results
+  await database.visit({
+    ...generationContext,
+    handlers: {
+      [ASTKind.Script]: {
+        before: async (context, node) => {
+          const scriptPath = path.join(node.path.dir, node.path.base);
+          const metadata = await sql.file(scriptPath).describe();
+          const type = new QueryResultTypeNode(
+            "Results",
+            cleanIdentifierForTypescript(scriptPath),
+            node,
+            // there is no actual database object or oid
+            "",
+          );
+          metadata.columns.forEach((a) =>
+            type.children.push(
+              new QueryResultTypeColumnNode(
+                type,
+                a.name,
+                context.database.resolveType(a.type)!,
+              ),
+            ),
+          );
+          node.children.push(type);
+          // these are not 'types' -- do not register them
+          return "";
+        },
+      },
+    },
+  });
 
   await procCatalog.loadAST(generationContext);
 

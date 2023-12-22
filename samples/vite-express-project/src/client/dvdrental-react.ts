@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 // ⚠️ generated - do not modify ⚠️
 
 /**
@@ -7,21 +6,11 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-  useEmbraceSQLRequest,
-  useEmbraceSQLUpdateCallback,
-  InterceptorCallback,
-  Intercepted,
-  ChangeEvent,
-} from "@embracesql/react";
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 import {
   UUID,
   JsDate,
@@ -31,8 +20,6 @@ import {
   Nullable,
   undefinedIsNull,
 } from "@embracesql/shared";
-// Begin React generated section
-import React from "react";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -2074,6 +2061,7 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
+      export type Record = Required<PgCatalog.Types.PgStatistic>;
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2081,6 +2069,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgType {
+      export type Record = Required<PgCatalog.Types.PgType>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2090,11 +2079,13 @@ export namespace PgCatalog {
       };
     }
     export namespace PgForeignTable {
+      export type Record = Required<PgCatalog.Types.PgForeignTable>;
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgAuthid {
+      export type Record = Required<PgCatalog.Types.PgAuthid>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2103,12 +2094,14 @@ export namespace PgCatalog {
       };
     }
     export namespace PgStatisticExtData {
+      export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
       };
     }
     export namespace PgUserMapping {
+      export type Record = Required<PgCatalog.Types.PgUserMapping>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2118,6 +2111,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgSubscription {
+      export type Record = Required<PgCatalog.Types.PgSubscription>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2127,6 +2121,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAttribute {
+      export type Record = Required<PgCatalog.Types.PgAttribute>;
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2137,6 +2132,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgProc {
+      export type Record = Required<PgCatalog.Types.PgProc>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2147,6 +2143,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgClass {
+      export type Record = Required<PgCatalog.Types.PgClass>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2160,6 +2157,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAttrdef {
+      export type Record = Required<PgCatalog.Types.PgAttrdef>;
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2169,6 +2167,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgConstraint {
+      export type Record = Required<PgCatalog.Types.PgConstraint>;
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2189,6 +2188,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgInherits {
+      export type Record = Required<PgCatalog.Types.PgInherits>;
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -2198,6 +2198,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgIndex {
+      export type Record = Required<PgCatalog.Types.PgIndex>;
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -2206,6 +2207,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgOperator {
+      export type Record = Required<PgCatalog.Types.PgOperator>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2217,6 +2219,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgOpfamily {
+      export type Record = Required<PgCatalog.Types.PgOpfamily>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2227,6 +2230,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgOpclass {
+      export type Record = Required<PgCatalog.Types.PgOpclass>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2237,6 +2241,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAm {
+      export type Record = Required<PgCatalog.Types.PgAm>;
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -2245,6 +2250,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAmop {
+      export type Record = Required<PgCatalog.Types.PgAmop>;
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -2261,6 +2267,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAmproc {
+      export type Record = Required<PgCatalog.Types.PgAmproc>;
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -2272,6 +2279,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgLanguage {
+      export type Record = Required<PgCatalog.Types.PgLanguage>;
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -2280,16 +2288,19 @@ export namespace PgCatalog {
       };
     }
     export namespace PgLargeobjectMetadata {
+      export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgAggregate {
+      export type Record = Required<PgCatalog.Types.PgAggregate>;
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
     }
     export namespace PgStatisticExt {
+      export type Record = Required<PgCatalog.Types.PgStatisticExt>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2302,6 +2313,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgRewrite {
+      export type Record = Required<PgCatalog.Types.PgRewrite>;
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -2311,6 +2323,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTrigger {
+      export type Record = Required<PgCatalog.Types.PgTrigger>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2323,6 +2336,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgEventTrigger {
+      export type Record = Required<PgCatalog.Types.PgEventTrigger>;
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -2331,6 +2345,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgDescription {
+      export type Record = Required<PgCatalog.Types.PgDescription>;
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2338,6 +2353,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgCast {
+      export type Record = Required<PgCatalog.Types.PgCast>;
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -2347,6 +2363,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgEnum {
+      export type Record = Required<PgCatalog.Types.PgEnum>;
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -2360,6 +2377,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgNamespace {
+      export type Record = Required<PgCatalog.Types.PgNamespace>;
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -2368,6 +2386,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgConversion {
+      export type Record = Required<PgCatalog.Types.PgConversion>;
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2383,6 +2402,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgDepend {
+      export type Record = Required<PgCatalog.Types.PgDepend>;
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -2395,6 +2415,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgDatabase {
+      export type Record = Required<PgCatalog.Types.PgDatabase>;
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -2403,12 +2424,14 @@ export namespace PgCatalog {
       };
     }
     export namespace PgDbRoleSetting {
+      export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
       };
     }
     export namespace PgTablespace {
+      export type Record = Required<PgCatalog.Types.PgTablespace>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2417,6 +2440,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgAuthMembers {
+      export type Record = Required<PgCatalog.Types.PgAuthMembers>;
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -2435,6 +2459,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgShdepend {
+      export type Record = Required<PgCatalog.Types.PgShdepend>;
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -2447,12 +2472,14 @@ export namespace PgCatalog {
       };
     }
     export namespace PgShdescription {
+      export type Record = Required<PgCatalog.Types.PgShdescription>;
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgTsConfig {
+      export type Record = Required<PgCatalog.Types.PgTsConfig>;
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -2462,6 +2489,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTsConfigMap {
+      export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -2469,6 +2497,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTsDict {
+      export type Record = Required<PgCatalog.Types.PgTsDict>;
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -2478,6 +2507,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTsParser {
+      export type Record = Required<PgCatalog.Types.PgTsParser>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2487,6 +2517,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTsTemplate {
+      export type Record = Required<PgCatalog.Types.PgTsTemplate>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2496,6 +2527,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgExtension {
+      export type Record = Required<PgCatalog.Types.PgExtension>;
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -2504,6 +2536,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgForeignDataWrapper {
+      export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -2512,6 +2545,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgForeignServer {
+      export type Record = Required<PgCatalog.Types.PgForeignServer>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2520,6 +2554,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgPolicy {
+      export type Record = Required<PgCatalog.Types.PgPolicy>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2529,6 +2564,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgReplicationOrigin {
+      export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -2537,6 +2573,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgDefaultAcl {
+      export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -2547,6 +2584,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgInitPrivs {
+      export type Record = Required<PgCatalog.Types.PgInitPrivs>;
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2554,6 +2592,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgSeclabel {
+      export type Record = Required<PgCatalog.Types.PgSeclabel>;
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2562,6 +2601,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgShseclabel {
+      export type Record = Required<PgCatalog.Types.PgShseclabel>;
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2569,6 +2609,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgCollation {
+      export type Record = Required<PgCatalog.Types.PgCollation>;
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -2579,6 +2620,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgParameterAcl {
+      export type Record = Required<PgCatalog.Types.PgParameterAcl>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2587,11 +2629,13 @@ export namespace PgCatalog {
       };
     }
     export namespace PgPartitionedTable {
+      export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgRange {
+      export type Record = Required<PgCatalog.Types.PgRange>;
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -2600,6 +2644,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgTransform {
+      export type Record = Required<PgCatalog.Types.PgTransform>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2609,11 +2654,13 @@ export namespace PgCatalog {
       };
     }
     export namespace PgSequence {
+      export type Record = Required<PgCatalog.Types.PgSequence>;
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgPublication {
+      export type Record = Required<PgCatalog.Types.PgPublication>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2622,6 +2669,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgPublicationNamespace {
+      export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2631,6 +2679,7 @@ export namespace PgCatalog {
       };
     }
     export namespace PgPublicationRel {
+      export type Record = Required<PgCatalog.Types.PgPublicationRel>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2643,12 +2692,14 @@ export namespace PgCatalog {
       };
     }
     export namespace PgSubscriptionRel {
+      export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
       };
     }
     export namespace PgLargeobject {
+      export type Record = Required<PgCatalog.Types.PgLargeobject>;
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -2866,8 +2917,8 @@ export namespace Public {
       lastUpdate?: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
-    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
-    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
+    export type FilmInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
+    export type FilmNotInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -2919,6 +2970,7 @@ export namespace Public {
   }
   export namespace Tables {
     export namespace FilmActor {
+      export type Record = Required<Public.Types.FilmActor>;
       export type ByActorIdFilmId = {
         actorId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
@@ -2928,6 +2980,7 @@ export namespace Public {
       };
     }
     export namespace Address {
+      export type Record = Required<Public.Types.Address>;
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int4;
       };
@@ -2936,6 +2989,7 @@ export namespace Public {
       };
     }
     export namespace City {
+      export type Record = Required<Public.Types.City>;
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
       };
@@ -2944,6 +2998,7 @@ export namespace Public {
       };
     }
     export namespace Customer {
+      export type Record = Required<Public.Types.Customer>;
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int2;
       };
@@ -2958,6 +3013,7 @@ export namespace Public {
       };
     }
     export namespace Actor {
+      export type Record = Required<Public.Types.Actor>;
       export type ByActorId = {
         actorId: PgCatalog.Types.Int4;
       };
@@ -2966,12 +3022,14 @@ export namespace Public {
       };
     }
     export namespace FilmCategory {
+      export type Record = Required<Public.Types.FilmCategory>;
       export type ByFilmIdCategoryId = {
         filmId: PgCatalog.Types.Int2;
         categoryId: PgCatalog.Types.Int2;
       };
     }
     export namespace Inventory {
+      export type Record = Required<Public.Types.Inventory>;
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -2981,21 +3039,25 @@ export namespace Public {
       };
     }
     export namespace Category {
+      export type Record = Required<Public.Types.Category>;
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
       };
     }
     export namespace Country {
+      export type Record = Required<Public.Types.Country>;
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
       };
     }
     export namespace Language {
+      export type Record = Required<Public.Types.Language>;
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
       };
     }
     export namespace Rental {
+      export type Record = Required<Public.Types.Rental>;
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -3009,11 +3071,13 @@ export namespace Public {
       };
     }
     export namespace Staff {
+      export type Record = Required<Public.Types.Staff>;
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int4;
       };
     }
     export namespace Store {
+      export type Record = Required<Public.Types.Store>;
       export type ByManagerStaffId = {
         managerStaffId: PgCatalog.Types.Int2;
       };
@@ -3022,6 +3086,7 @@ export namespace Public {
       };
     }
     export namespace Payment {
+      export type Record = Required<Public.Types.Payment>;
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int2;
       };
@@ -3036,6 +3101,7 @@ export namespace Public {
       };
     }
     export namespace Film {
+      export type Record = Required<Public.Types.Film>;
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int4;
       };
@@ -4014,10 +4080,19 @@ export namespace InformationSchema {
   }
   export namespace Procedures {}
   export namespace Tables {
-    export namespace SqlFeatures {}
-    export namespace SqlImplementationInfo {}
-    export namespace SqlParts {}
-    export namespace SqlSizing {}
+    export namespace SqlFeatures {
+      export type Record = Required<InformationSchema.Types.SqlFeatures>;
+    }
+    export namespace SqlImplementationInfo {
+      export type Record =
+        Required<InformationSchema.Types.SqlImplementationInfo>;
+    }
+    export namespace SqlParts {
+      export type Record = Required<InformationSchema.Types.SqlParts>;
+    }
+    export namespace SqlSizing {
+      export type Record = Required<InformationSchema.Types.SqlSizing>;
+    }
   }
 }
 
@@ -12054,272 +12129,16 @@ export namespace Public {
     }
   }
 }
-
-// begin table type aliases
-export namespace PgCatalog {
-  export namespace Tables {
-    export namespace PgStatistic {
-      export type Record = Required<PgCatalog.Types.PgStatistic>;
-    }
-    export namespace PgType {
-      export type Record = Required<PgCatalog.Types.PgType>;
-    }
-    export namespace PgForeignTable {
-      export type Record = Required<PgCatalog.Types.PgForeignTable>;
-    }
-    export namespace PgAuthid {
-      export type Record = Required<PgCatalog.Types.PgAuthid>;
-    }
-    export namespace PgStatisticExtData {
-      export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
-    }
-    export namespace PgUserMapping {
-      export type Record = Required<PgCatalog.Types.PgUserMapping>;
-    }
-    export namespace PgSubscription {
-      export type Record = Required<PgCatalog.Types.PgSubscription>;
-    }
-    export namespace PgAttribute {
-      export type Record = Required<PgCatalog.Types.PgAttribute>;
-    }
-    export namespace PgProc {
-      export type Record = Required<PgCatalog.Types.PgProc>;
-    }
-    export namespace PgClass {
-      export type Record = Required<PgCatalog.Types.PgClass>;
-    }
-    export namespace PgAttrdef {
-      export type Record = Required<PgCatalog.Types.PgAttrdef>;
-    }
-    export namespace PgConstraint {
-      export type Record = Required<PgCatalog.Types.PgConstraint>;
-    }
-    export namespace PgInherits {
-      export type Record = Required<PgCatalog.Types.PgInherits>;
-    }
-    export namespace PgIndex {
-      export type Record = Required<PgCatalog.Types.PgIndex>;
-    }
-    export namespace PgOperator {
-      export type Record = Required<PgCatalog.Types.PgOperator>;
-    }
-    export namespace PgOpfamily {
-      export type Record = Required<PgCatalog.Types.PgOpfamily>;
-    }
-    export namespace PgOpclass {
-      export type Record = Required<PgCatalog.Types.PgOpclass>;
-    }
-    export namespace PgAm {
-      export type Record = Required<PgCatalog.Types.PgAm>;
-    }
-    export namespace PgAmop {
-      export type Record = Required<PgCatalog.Types.PgAmop>;
-    }
-    export namespace PgAmproc {
-      export type Record = Required<PgCatalog.Types.PgAmproc>;
-    }
-    export namespace PgLanguage {
-      export type Record = Required<PgCatalog.Types.PgLanguage>;
-    }
-    export namespace PgLargeobjectMetadata {
-      export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
-    }
-    export namespace PgAggregate {
-      export type Record = Required<PgCatalog.Types.PgAggregate>;
-    }
-    export namespace PgStatisticExt {
-      export type Record = Required<PgCatalog.Types.PgStatisticExt>;
-    }
-    export namespace PgRewrite {
-      export type Record = Required<PgCatalog.Types.PgRewrite>;
-    }
-    export namespace PgTrigger {
-      export type Record = Required<PgCatalog.Types.PgTrigger>;
-    }
-    export namespace PgEventTrigger {
-      export type Record = Required<PgCatalog.Types.PgEventTrigger>;
-    }
-    export namespace PgDescription {
-      export type Record = Required<PgCatalog.Types.PgDescription>;
-    }
-    export namespace PgCast {
-      export type Record = Required<PgCatalog.Types.PgCast>;
-    }
-    export namespace PgEnum {
-      export type Record = Required<PgCatalog.Types.PgEnum>;
-    }
-    export namespace PgNamespace {
-      export type Record = Required<PgCatalog.Types.PgNamespace>;
-    }
-    export namespace PgConversion {
-      export type Record = Required<PgCatalog.Types.PgConversion>;
-    }
-    export namespace PgDepend {
-      export type Record = Required<PgCatalog.Types.PgDepend>;
-    }
-    export namespace PgDatabase {
-      export type Record = Required<PgCatalog.Types.PgDatabase>;
-    }
-    export namespace PgDbRoleSetting {
-      export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
-    }
-    export namespace PgTablespace {
-      export type Record = Required<PgCatalog.Types.PgTablespace>;
-    }
-    export namespace PgAuthMembers {
-      export type Record = Required<PgCatalog.Types.PgAuthMembers>;
-    }
-    export namespace PgShdepend {
-      export type Record = Required<PgCatalog.Types.PgShdepend>;
-    }
-    export namespace PgShdescription {
-      export type Record = Required<PgCatalog.Types.PgShdescription>;
-    }
-    export namespace PgTsConfig {
-      export type Record = Required<PgCatalog.Types.PgTsConfig>;
-    }
-    export namespace PgTsConfigMap {
-      export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
-    }
-    export namespace PgTsDict {
-      export type Record = Required<PgCatalog.Types.PgTsDict>;
-    }
-    export namespace PgTsParser {
-      export type Record = Required<PgCatalog.Types.PgTsParser>;
-    }
-    export namespace PgTsTemplate {
-      export type Record = Required<PgCatalog.Types.PgTsTemplate>;
-    }
-    export namespace PgExtension {
-      export type Record = Required<PgCatalog.Types.PgExtension>;
-    }
-    export namespace PgForeignDataWrapper {
-      export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
-    }
-    export namespace PgForeignServer {
-      export type Record = Required<PgCatalog.Types.PgForeignServer>;
-    }
-    export namespace PgPolicy {
-      export type Record = Required<PgCatalog.Types.PgPolicy>;
-    }
-    export namespace PgReplicationOrigin {
-      export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
-    }
-    export namespace PgDefaultAcl {
-      export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
-    }
-    export namespace PgInitPrivs {
-      export type Record = Required<PgCatalog.Types.PgInitPrivs>;
-    }
-    export namespace PgSeclabel {
-      export type Record = Required<PgCatalog.Types.PgSeclabel>;
-    }
-    export namespace PgShseclabel {
-      export type Record = Required<PgCatalog.Types.PgShseclabel>;
-    }
-    export namespace PgCollation {
-      export type Record = Required<PgCatalog.Types.PgCollation>;
-    }
-    export namespace PgParameterAcl {
-      export type Record = Required<PgCatalog.Types.PgParameterAcl>;
-    }
-    export namespace PgPartitionedTable {
-      export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
-    }
-    export namespace PgRange {
-      export type Record = Required<PgCatalog.Types.PgRange>;
-    }
-    export namespace PgTransform {
-      export type Record = Required<PgCatalog.Types.PgTransform>;
-    }
-    export namespace PgSequence {
-      export type Record = Required<PgCatalog.Types.PgSequence>;
-    }
-    export namespace PgPublication {
-      export type Record = Required<PgCatalog.Types.PgPublication>;
-    }
-    export namespace PgPublicationNamespace {
-      export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
-    }
-    export namespace PgPublicationRel {
-      export type Record = Required<PgCatalog.Types.PgPublicationRel>;
-    }
-    export namespace PgSubscriptionRel {
-      export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
-    }
-    export namespace PgLargeobject {
-      export type Record = Required<PgCatalog.Types.PgLargeobject>;
-    }
-  }
-}
-export namespace Public {
-  export namespace Tables {
-    export namespace FilmActor {
-      export type Record = Required<Public.Types.FilmActor>;
-    }
-    export namespace Address {
-      export type Record = Required<Public.Types.Address>;
-    }
-    export namespace City {
-      export type Record = Required<Public.Types.City>;
-    }
-    export namespace Customer {
-      export type Record = Required<Public.Types.Customer>;
-    }
-    export namespace Actor {
-      export type Record = Required<Public.Types.Actor>;
-    }
-    export namespace FilmCategory {
-      export type Record = Required<Public.Types.FilmCategory>;
-    }
-    export namespace Inventory {
-      export type Record = Required<Public.Types.Inventory>;
-    }
-    export namespace Category {
-      export type Record = Required<Public.Types.Category>;
-    }
-    export namespace Country {
-      export type Record = Required<Public.Types.Country>;
-    }
-    export namespace Language {
-      export type Record = Required<Public.Types.Language>;
-    }
-    export namespace Rental {
-      export type Record = Required<Public.Types.Rental>;
-    }
-    export namespace Staff {
-      export type Record = Required<Public.Types.Staff>;
-    }
-    export namespace Store {
-      export type Record = Required<Public.Types.Store>;
-    }
-    export namespace Payment {
-      export type Record = Required<Public.Types.Payment>;
-    }
-    export namespace Film {
-      export type Record = Required<Public.Types.Film>;
-    }
-  }
-}
-export namespace InformationSchema {
-  export namespace Tables {
-    export namespace SqlFeatures {
-      export type Record = Required<InformationSchema.Types.SqlFeatures>;
-    }
-    export namespace SqlImplementationInfo {
-      export type Record =
-        Required<InformationSchema.Types.SqlImplementationInfo>;
-    }
-    export namespace SqlParts {
-      export type Record = Required<InformationSchema.Types.SqlParts>;
-    }
-    export namespace SqlSizing {
-      export type Record = Required<InformationSchema.Types.SqlSizing>;
-    }
-  }
-}
-
+// Begin React generated section
+import React from "react";
 export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
+import {
+  useEmbraceSQLRequest,
+  useEmbraceSQLUpdateCallback,
+  InterceptorCallback,
+  Intercepted,
+  ChangeEvent,
+} from "@embracesql/react";
 
 export namespace Public {
   export namespace Tables {

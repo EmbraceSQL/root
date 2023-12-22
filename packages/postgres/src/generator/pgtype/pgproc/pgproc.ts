@@ -7,7 +7,8 @@ import {
   GenerationContext,
   ProcedureArgumentNode,
   ProcedureNode,
-  ProcedureResultTypeNode,
+  QueryResultTypeColumnNode,
+  QueryResultTypeNode,
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
@@ -240,12 +241,14 @@ export class PGProcPseudoType extends PGCatalogType {
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
-    const type = new ProcedureResultTypeNode(
+    const type = new QueryResultTypeNode(
       this.typescriptName,
       this.postgresMarshallName,
       schema.types,
       this.oid,
-      this,
+    );
+    this.pseudoTypeAttributes(context).forEach((a) =>
+      type.children.push(new QueryResultTypeColumnNode(type, a.name, a.type)),
     );
     context.database.registerType(type.id, type);
   }
@@ -262,13 +265,5 @@ export class PGProcPseudoType extends PGCatalogType {
         };
       })
       .slice(skipThisMany);
-  }
-
-  typescriptTypeDefinition(context: GenerationContext): string {
-    console.assert(context);
-    const recordAttributes = this.pseudoTypeAttributes(context).map(
-      (a) => `${camelCase(a.name)}: ${a.type.typescriptNamespacedName};`,
-    );
-    return ` { ${recordAttributes.join("\n")} } `;
   }
 }
