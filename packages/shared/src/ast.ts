@@ -36,8 +36,8 @@ export const enum ASTKind {
   Procedures,
   Procedure,
   ProcedureArgument,
-  QueryResultType,
-  QueryResultTypeColumn,
+  CompositeType,
+  AttributeType,
 }
 
 /**
@@ -118,8 +118,8 @@ export type ASTKindMap = {
   [ASTKind.Procedures]: ProceduresNode;
   [ASTKind.Procedure]: ProcedureNode;
   [ASTKind.ProcedureArgument]: ProcedureArgumentNode;
-  [ASTKind.QueryResultType]: QueryResultTypeNode;
-  [ASTKind.QueryResultTypeColumn]: QueryResultTypeColumnNode;
+  [ASTKind.CompositeType]: CompositeTypeNode;
+  [ASTKind.AttributeType]: AttributeTypeNode;
 };
 
 /**
@@ -693,46 +693,52 @@ export class ProcedureArgumentNode extends NamedASTNode {
 }
 
 /**
- * A query return type when the return type is *NOT* in the
- * databsae catalog, but is implicitly defined by the query.
+ * A composite type is built of named attributes, each with their own type.
  */
-export class QueryResultTypeNode extends AbstractTypeNode {
+export class CompositeTypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     marshallName: string,
     parent: ContainerNode,
     id: string | number,
   ) {
-    super(name, ASTKind.QueryResultType, marshallName, parent, id, {
-      typescriptTypeDefinition: () => {
-        const recordAttributes = this.children
-          .filter<QueryResultTypeColumnNode>(
-            (c): c is QueryResultTypeColumnNode =>
-              c.kind === ASTKind.QueryResultTypeColumn,
-          )
-          .map(
-            (a) => `${a.typescriptName}: ${a.type.typescriptNamespacedName};`,
-          );
-        return ` { ${recordAttributes.join("\n")} } `;
+    super(
+      name,
+      ASTKind.CompositeType,
+      marshallName,
+      parent,
+      id,
+      // inline code generation
+      {
+        typescriptTypeDefinition: () => {
+          const recordAttributes = this.children
+            .filter<AttributeTypeNode>(
+              (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+            )
+            .map(
+              (a) => `${a.typescriptName}: ${a.type.typescriptNamespacedName};`,
+            );
+          return ` { ${recordAttributes.join("\n")} } `;
+        },
+        typescriptTypeParser: () => {
+          // no op type parser -- query results are expected to have
+          // already been parsed by the databse driver
+          return `return from`;
+        },
       },
-      typescriptTypeParser: () => {
-        // no op type parser -- query results are expected to have
-        // already been parsed by the databse driver
-        return `return from`;
-      },
-    });
+    );
   }
 }
 
 /**
- * A single column on a single query result.
+ * A single named type.
  */
-export class QueryResultTypeColumnNode extends ContainerNode {
+export class AttributeTypeNode extends ContainerNode {
   constructor(
-    public queryResultType: QueryResultTypeNode,
+    public queryResultType: CompositeTypeNode,
     public name: string,
     public type: TypeNode,
   ) {
-    super(name, ASTKind.QueryResultTypeColumn, queryResultType);
+    super(name, ASTKind.AttributeType, queryResultType);
   }
 }

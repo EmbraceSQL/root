@@ -4100,6 +4100,7 @@ export namespace Scripts {
     export namespace Film {
       export namespace Tally {
         export type Results = { Count: PgCatalog.Types.Int8 };
+        export type Arguments = { Count: PgCatalog.Types.Int8 };
       }
     }
     export namespace Pick {
@@ -4118,10 +4119,26 @@ export namespace Scripts {
         SpecialFeatures: PgCatalog.Types.TextArray;
         Fulltext: PgCatalog.Types.Tsvector;
       };
+      export type Arguments = {
+        FilmId: PgCatalog.Types.Int4;
+        Title: PgCatalog.Types.Varchar;
+        Description: PgCatalog.Types.Text;
+        ReleaseYear: PgCatalog.Types.Int4;
+        LanguageId: PgCatalog.Types.Int2;
+        RentalDuration: PgCatalog.Types.Int2;
+        RentalRate: PgCatalog.Types.Numeric;
+        Length: PgCatalog.Types.Int2;
+        ReplacementCost: PgCatalog.Types.Numeric;
+        Rating: Public.Types.MpaaRating;
+        LastUpdate: PgCatalog.Types.Timestamp;
+        SpecialFeatures: PgCatalog.Types.TextArray;
+        Fulltext: PgCatalog.Types.Tsvector;
+      };
     }
   }
   export namespace Tally {
     export type Results = { Count: PgCatalog.Types.Int8 };
+    export type Arguments = { Count: PgCatalog.Types.Int8 };
   }
 }
 export namespace ScriptTypes {

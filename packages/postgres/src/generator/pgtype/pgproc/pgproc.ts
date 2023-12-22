@@ -4,11 +4,11 @@ import { PGCatalogType } from "../pgcatalogtype";
 import { PGNamespace } from "../pgnamespace";
 import { PGTypes } from "../pgtype";
 import {
+  AttributeTypeNode,
+  CompositeTypeNode,
   GenerationContext,
   ProcedureArgumentNode,
   ProcedureNode,
-  QueryResultTypeColumnNode,
-  QueryResultTypeNode,
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
@@ -241,14 +241,14 @@ export class PGProcPseudoType extends PGCatalogType {
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
-    const type = new QueryResultTypeNode(
+    const type = new CompositeTypeNode(
       this.typescriptName,
       this.postgresMarshallName,
       schema.types,
       this.oid,
     );
     this.pseudoTypeAttributes(context).forEach((a) =>
-      type.children.push(new QueryResultTypeColumnNode(type, a.name, a.type)),
+      type.children.push(new AttributeTypeNode(type, a.name, a.type)),
     );
     context.database.registerType(type.id, type);
   }

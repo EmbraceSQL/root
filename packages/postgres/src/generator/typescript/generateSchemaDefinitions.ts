@@ -128,7 +128,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           },
           after: NamespaceVisitor.after,
         },
-        [ASTKind.QueryResultType]: TypeDefiner,
+        [ASTKind.CompositeType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
         [ASTKind.Script]: NamespaceVisitor,

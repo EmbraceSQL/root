@@ -8,12 +8,11 @@ import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import {
   ASTKind,
+  AttributeTypeNode,
+  CompositeTypeNode,
   DatabaseNode,
   GenerationContextProps,
-  QueryResultTypeColumnNode,
-  QueryResultTypeNode,
   ScriptsNode,
-  cleanIdentifierForTypescript,
 } from "@embracesql/shared";
 import path from "path";
 import pgconnectionstring from "pg-connection-string";
@@ -203,26 +202,38 @@ export const initializeContext = async (
     handlers: {
       [ASTKind.Script]: {
         before: async (context, node) => {
+          // these are not 'data base catalog types'
+          // -- do not register them with the database
+          // there is no actual database object or oid
           const scriptPath = path.join(node.path.dir, node.path.base);
           const metadata = await sql.file(scriptPath).describe();
-          const type = new QueryResultTypeNode(
-            "Results",
-            cleanIdentifierForTypescript(scriptPath),
-            node,
-            // there is no actual database object or oid
-            "",
-          );
+          const resultsNode = new CompositeTypeNode("Results", "", node, "");
           metadata.columns.forEach((a) =>
-            type.children.push(
-              new QueryResultTypeColumnNode(
-                type,
+            resultsNode.children.push(
+              new AttributeTypeNode(
+                resultsNode,
                 a.name,
                 context.database.resolveType(a.type)!,
               ),
             ),
           );
-          node.children.push(type);
-          // these are not 'types' -- do not register them
+          node.children.push(resultsNode);
+          const argumentsNode = new CompositeTypeNode(
+            "Arguments",
+            "",
+            node,
+            "",
+          );
+          metadata.columns.forEach((a) =>
+            argumentsNode.children.push(
+              new AttributeTypeNode(
+                argumentsNode,
+                a.name,
+                context.database.resolveType(a.type)!,
+              ),
+            ),
+          );
+          node.children.push(argumentsNode);
           return "";
         },
       },
