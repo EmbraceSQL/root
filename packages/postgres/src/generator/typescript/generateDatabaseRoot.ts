@@ -1,7 +1,5 @@
 import { GenerationContext } from "..";
-import { Context } from "../..";
 import { DatabaseOperation } from "../operations/database";
-import { SqlScriptOperations } from "../operations/sqlscript";
 import { generateTypecastMap } from "./generateTypecastMap";
 import { ASTKind } from "@embracesql/shared";
 
@@ -13,7 +11,6 @@ import { ASTKind } from "@embracesql/shared";
  * proc or query you want to call!
  */
 export const generateDatabaseRoot = async (context: GenerationContext) => {
-  const generationBuffer = [""];
   context.handlers = {
     [ASTKind.Database]: {
       before: async () => {
@@ -65,45 +62,77 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
     },
     [ASTKind.Scripts]: {
       before: async (context) => {
-        // TODO: convert to ast
         // holder for all scripts provides a .Scripts grouping
         if (context.sqlScriptsFrom?.length) {
-          const scripts = await SqlScriptOperations.factory(
-            context as Context,
-            context.sqlScriptsFrom,
-          );
           return [
             `
     public Scripts = new class implements HasDatabase {
        		constructor(public database: Database) {}
         `,
-            scripts.typescriptDefinition(context as Context),
-
-            // close off Scripts outer scope
-            `}(this)`,
           ].join("\n");
         } else {
           return "";
         }
       },
+      after: async () => {
+        return `}(this)`;
+      },
+    },
+    [ASTKind.ScriptFolder]: {
+      before: async (_, node) => {
+        return `
+          public ${node.typescriptName} = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        `;
+      },
+      after: async () => {
+        return `}(this)`;
+      },
+    },
+    [ASTKind.Script]: {
+      before: async (context, node) => {
+        // passing in arguments
+        const parameterPasses = node.argumentsType?.attributes?.length
+          ? ", [" +
+            node.argumentsType.attributes
+              .map((a) => `parameters.${a.typescriptPropertyName}`)
+              .join(",") +
+            "]"
+          : "";
+        // just a bit of escaping of the passsed sql script
+        const preparedSql = node.script.replace("`", "\\`");
+
+        // pick results fields and add in null handling
+        const recordPieceBuilders =
+          node.resultsType?.attributes.map(
+            (c) =>
+              `${c.typescriptPropertyName}: undefinedIsNull(record.${c.typescriptPropertyName})`,
+          ) ?? [];
+        const parameters = node.argumentsType
+          ? `parameters: ${node.argumentsType.typescriptNamespacedName}`
+          : "";
+        return `
+         async ${node.typescriptPropertyName} (${parameters}) {
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(\`
+                ${preparedSql}
+                
+                \`${parameterPasses});
+            return response.map(record => ({ ${recordPieceBuilders.join(
+              ",",
+            )} }));
+        `;
+      },
+      after: async () => {
+        return `}`;
+      },
     },
   };
-
-  // holder for all scripts provides a .Scripts grouping
-  if (context.sqlScriptsFrom?.length) {
-    const scripts = await SqlScriptOperations.factory(
-      context,
-      context.sqlScriptsFrom,
-    );
-    generationBuffer.push(`
-    public Scripts = new class implements HasDatabase {
-       		constructor(public database: Database) {}
-        `);
-    generationBuffer.push(scripts.typescriptDefinition(context));
-
-    // close off Scripts outer scope
-    generationBuffer.push(`}(this)`);
-  }
 
   // include all schemas -- need those built in types
   return await context.database.visit({ ...context });

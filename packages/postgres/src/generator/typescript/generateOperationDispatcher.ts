@@ -1,6 +1,5 @@
 import { GenerationContext } from "..";
 import { DatabaseOperation } from "../operations/database";
-import { SqlScriptOperations } from "../operations/sqlscript";
 
 /**
  * Wrap up the database class in a hash style dispatch map for operation processing
@@ -43,14 +42,8 @@ export const generateOperationDispatcher = async (
       )}(${callee.join(",")}),`,
     );
   });
-  // all possible scripts
-  if (context.sqlScriptsFrom?.length) {
-    const scripts = await SqlScriptOperations.factory(
-      context,
-      context.sqlScriptsFrom,
-    );
-    console.assert(scripts);
-  }
+  // TODO: dispatch scripts all possible scripts
+  // TODO: add fetch-express script test
   // close constructor
   generationBuffer.push(`}}`);
 

@@ -3994,8 +3994,8 @@ export namespace Api {
     };
     export type EchoTypeNested = { echoes?: Nullable<Api.Types.EchoTypeArray> };
     export type EchoTableResults = {
-      Echomessage: PgCatalog.Types.Text;
-      At: PgCatalog.Types.Timestamptz;
+      echomessage: PgCatalog.Types.Text;
+      at: PgCatalog.Types.Timestamptz;
     };
   }
   export namespace Procedures {

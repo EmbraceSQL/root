@@ -7,11 +7,13 @@ import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import {
+  ARGUMENTS,
   ASTKind,
   AttributeTypeNode,
   CompositeTypeNode,
   DatabaseNode,
   GenerationContextProps,
+  RESULTS,
   ScriptsNode,
 } from "@embracesql/shared";
 import path from "path";
@@ -207,7 +209,7 @@ export const initializeContext = async (
           // there is no actual database object or oid
           const scriptPath = path.join(node.path.dir, node.path.base);
           const metadata = await sql.file(scriptPath).describe();
-          const resultsNode = new CompositeTypeNode("Results", "", node, "");
+          const resultsNode = new CompositeTypeNode(RESULTS, "", node, "");
           metadata.columns.forEach((a) =>
             resultsNode.children.push(
               new AttributeTypeNode(
@@ -218,22 +220,25 @@ export const initializeContext = async (
             ),
           );
           node.children.push(resultsNode);
-          const argumentsNode = new CompositeTypeNode(
-            "Arguments",
-            "",
-            node,
-            "",
-          );
-          metadata.columns.forEach((a) =>
-            argumentsNode.children.push(
-              new AttributeTypeNode(
-                argumentsNode,
-                a.name,
-                context.database.resolveType(a.type)!,
+          if (metadata.types.length) {
+            const argumentsNode = new CompositeTypeNode(
+              ARGUMENTS,
+              "",
+              node,
+              "",
+            );
+            metadata.types.forEach((a, i) =>
+              argumentsNode.children.push(
+                new AttributeTypeNode(
+                  argumentsNode,
+                  // postgres arguments in sql scripts are 1 based
+                  `argument_${i + 1}`,
+                  context.database.resolveType(a)!,
+                ),
               ),
-            ),
-          );
-          node.children.push(argumentsNode);
+            );
+            node.children.push(argumentsNode);
+          }
           return "";
         },
       },
@@ -241,6 +246,8 @@ export const initializeContext = async (
   });
 
   await procCatalog.loadAST(generationContext);
+
+  // TODO: sanity check AST for parenting
 
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete

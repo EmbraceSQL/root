@@ -1,8 +1,4 @@
 import { GenerationContext } from "..";
-import {
-  SCRIPT_TYPES_NAMESPACE,
-  SqlScriptOperations,
-} from "../operations/sqlscript";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeParsers } from "./generateTypeParsers";
 import {
@@ -135,20 +131,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       },
     }),
   );
-
-  // script parameter and return types
-  // holder for all scripts provides a .Scripts grouping
-  if (context.sqlScriptsFrom?.length) {
-    const scripts = await SqlScriptOperations.factory(
-      context,
-      context.sqlScriptsFrom,
-    );
-    generationBuffer.push(`export namespace ${SCRIPT_TYPES_NAMESPACE}{`);
-    generationBuffer.push(scripts.typescriptTypeDefinition(context));
-
-    // close off Scripts namespace
-    generationBuffer.push(`}`);
-  }
 
   generationBuffer.push(await generateTypeParsers(context));
   generationBuffer.push(await generatePrimaryKeyPickers(context));

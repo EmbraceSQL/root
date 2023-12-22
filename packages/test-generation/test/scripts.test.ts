@@ -14,15 +14,15 @@ describe("The database can run scripts", () => {
     await db.disconnect();
   });
   it("that just query", async () => {
-    const value = await db.Scripts.Sql.tally();
+    const value = await db.Scripts.tally();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
   it("that have nested namespaces", async () => {
-    const value = await db.Scripts.Sql.Sample.Film.tally();
+    const value = await db.Scripts.Sample.Film.tally();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
   it("that have positional parameters", async () => {
-    const value = await db.Scripts.Sql.Sample.pick({ _1: "Basic Easy" });
+    const value = await db.Scripts.Sample.pick({ argument_1: "Basic Easy" });
     expect(value.length).toEqual(1);
   });
 });

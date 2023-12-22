@@ -2917,8 +2917,8 @@ export namespace Public {
       lastUpdate?: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
-    export type FilmInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
-    export type FilmNotInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
+    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
+    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -4099,57 +4099,30 @@ export namespace Scripts {
   export namespace Sample {
     export namespace Film {
       export namespace Tally {
-        export type Results = { Count: PgCatalog.Types.Int8 };
-        export type Arguments = { Count: PgCatalog.Types.Int8 };
+        export type Results = { count: PgCatalog.Types.Int8 };
       }
     }
     export namespace Pick {
       export type Results = {
-        FilmId: PgCatalog.Types.Int4;
-        Title: PgCatalog.Types.Varchar;
-        Description: PgCatalog.Types.Text;
-        ReleaseYear: PgCatalog.Types.Int4;
-        LanguageId: PgCatalog.Types.Int2;
-        RentalDuration: PgCatalog.Types.Int2;
-        RentalRate: PgCatalog.Types.Numeric;
-        Length: PgCatalog.Types.Int2;
-        ReplacementCost: PgCatalog.Types.Numeric;
-        Rating: Public.Types.MpaaRating;
-        LastUpdate: PgCatalog.Types.Timestamp;
-        SpecialFeatures: PgCatalog.Types.TextArray;
-        Fulltext: PgCatalog.Types.Tsvector;
+        filmId: PgCatalog.Types.Int4;
+        title: PgCatalog.Types.Varchar;
+        description: PgCatalog.Types.Text;
+        releaseYear: PgCatalog.Types.Int4;
+        languageId: PgCatalog.Types.Int2;
+        rentalDuration: PgCatalog.Types.Int2;
+        rentalRate: PgCatalog.Types.Numeric;
+        length: PgCatalog.Types.Int2;
+        replacementCost: PgCatalog.Types.Numeric;
+        rating: Public.Types.MpaaRating;
+        lastUpdate: PgCatalog.Types.Timestamp;
+        specialFeatures: PgCatalog.Types.TextArray;
+        fulltext: PgCatalog.Types.Tsvector;
       };
-      export type Arguments = {
-        FilmId: PgCatalog.Types.Int4;
-        Title: PgCatalog.Types.Varchar;
-        Description: PgCatalog.Types.Text;
-        ReleaseYear: PgCatalog.Types.Int4;
-        LanguageId: PgCatalog.Types.Int2;
-        RentalDuration: PgCatalog.Types.Int2;
-        RentalRate: PgCatalog.Types.Numeric;
-        Length: PgCatalog.Types.Int2;
-        ReplacementCost: PgCatalog.Types.Numeric;
-        Rating: Public.Types.MpaaRating;
-        LastUpdate: PgCatalog.Types.Timestamp;
-        SpecialFeatures: PgCatalog.Types.TextArray;
-        Fulltext: PgCatalog.Types.Tsvector;
-      };
+      export type Arguments = { argument_1: PgCatalog.Types.Text };
     }
   }
   export namespace Tally {
-    export type Results = { Count: PgCatalog.Types.Int8 };
-    export type Arguments = { Count: PgCatalog.Types.Int8 };
-  }
-}
-export namespace ScriptTypes {
-  export namespace Sql {
-    export namespace Sample {
-      export interface pickParameters {
-        _1: PgCatalog.Types.Text;
-      }
-
-      export namespace Film {}
-    }
+    export type Results = { count: PgCatalog.Types.Int8 };
   }
 }
 

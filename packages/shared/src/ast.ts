@@ -9,6 +9,18 @@ import * as fs from "fs";
 import * as path from "path";
 
 /**
+ * Common name for return results.
+ *
+ * When you are looking for results... look here 🤪.
+ */
+export const RESULTS = "Results";
+
+/**
+ * Common name for passed arguments.
+ */
+export const ARGUMENTS = "Arguments";
+
+/**
  * Enumeration tags for quick type discrimination via `switch`.
  *
  * These will use conventional ANSI SQL naming rather than database
@@ -578,6 +590,11 @@ export class ScriptsNode extends ContainerNode {
   ) {
     super("Scripts", ASTKind.Scripts, database);
   }
+
+  get typescriptNamespacedName() {
+    // not returning the database above, scripts serves as a backstop
+    return this.typescriptName;
+  }
 }
 
 /**
@@ -603,6 +620,7 @@ export class ScriptFolderNode extends ContainerNode {
       if (entry.isDirectory()) {
         const folder = new ScriptFolderNode(
           path.parse(path.join(entry.path, entry.name)),
+          addToNode,
         );
         addToNode.children.push(folder);
         await ScriptFolderNode.loadAST(context, folder.path, folder);
@@ -616,8 +634,11 @@ export class ScriptFolderNode extends ContainerNode {
     }
   }
 
-  constructor(public path: path.ParsedPath) {
-    super(path.name, ASTKind.ScriptFolder);
+  constructor(
+    public path: path.ParsedPath,
+    parent: ContainerNode,
+  ) {
+    super(path.name, ASTKind.ScriptFolder, parent);
   }
 }
 
@@ -639,6 +660,7 @@ export class ScriptNode extends ContainerNode {
       await fs.promises.readFile(path.join(scriptPath.dir, scriptPath.base), {
         encoding: "utf8",
       }),
+      addToNode,
     );
     addToNode.children.push(script);
   }
@@ -646,13 +668,25 @@ export class ScriptNode extends ContainerNode {
   constructor(
     public path: path.ParsedPath,
     public script: string,
+    parent: ContainerNode,
   ) {
-    super(path.name, ASTKind.Script);
+    super(path.name, ASTKind.Script, parent);
   }
 
-  get typescriptName() {
-    // method style naming for operation
-    return camelCase(this.name);
+  get resultsType() {
+    return this.children
+      .filter<CompositeTypeNode>(
+        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
+      )
+      .find((c) => c.name === RESULTS);
+  }
+
+  get argumentsType() {
+    return this.children
+      .filter<CompositeTypeNode>(
+        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
+      )
+      .find((c) => c.name === ARGUMENTS);
   }
 }
 
@@ -716,7 +750,8 @@ export class CompositeTypeNode extends AbstractTypeNode {
               (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
             )
             .map(
-              (a) => `${a.typescriptName}: ${a.type.typescriptNamespacedName};`,
+              (a) =>
+                `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`,
             );
           return ` { ${recordAttributes.join("\n")} } `;
         },
@@ -726,6 +761,12 @@ export class CompositeTypeNode extends AbstractTypeNode {
           return `return from`;
         },
       },
+    );
+  }
+
+  get attributes() {
+    return this.children.filter<AttributeTypeNode>(
+      (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
     );
   }
 }

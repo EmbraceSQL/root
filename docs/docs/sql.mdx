@@ -48,6 +48,6 @@ import { Database } from "./src/dvdrental";
 const db = await Database.connect(
   "postgres://postgres:postgres@localhost:5432/dvdrental",
 );
-const value = await db.Scripts.Sql.Sample.pick({ _1: "Basic Easy" });
+const value = await db.Scripts.Sample.pick({ _1: "Basic Easy" });
 await db.disconnect();
 ```
