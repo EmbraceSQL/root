@@ -1,14 +1,15 @@
 import { Context, PostgresProcTypecast } from "../../../context";
-import { buildParameterName } from "../../../util";
 import { PGCatalogType } from "../pgcatalogtype";
 import { PGNamespace } from "../pgnamespace";
 import { PGTypes } from "../pgtype";
 import {
+  ARGUMENTS,
+  AliasTypeNode,
   AttributeTypeNode,
   CompositeTypeNode,
   GenerationContext,
-  ProcedureArgumentNode,
   ProcedureNode,
+  RESULTS,
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
@@ -64,21 +65,39 @@ export class PGProcs {
       const procReturnType = context.database.resolveType(
         proc.returnsPseudoTypeRecord ? proc.proc.oid : proc.proc.prorettype,
       )!;
-      const procNode = new ProcedureNode(proc.name, procsNode, procReturnType);
+      const procNode = new ProcedureNode(
+        proc.name,
+        procsNode,
+        proc.proc.oid,
+        proc.proc.proname,
+        proc.returnsPseudoTypeRecord || proc.returnsSet,
+        proc.returnsPseudoTypeRecord,
+      );
+      procsNode.children.push(procNode);
+
+      // inputs
+      const argumentsNode = new CompositeTypeNode(ARGUMENTS, procNode, "");
+      procNode.children.push(argumentsNode);
+
       proc.proc.proargtypes
         .flatMap((t) => t)
         .forEach((oid, i) => {
           const type = context.database.resolveType(oid)!;
-          procNode.children.push(
-            new ProcedureArgumentNode(
-              buildParameterName(proc, i),
-              procNode,
+          argumentsNode.children.push(
+            new AttributeTypeNode(
+              argumentsNode,
+              proc.proc.proargnames[i] ?? "",
+              i,
               type,
               i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
             ),
           );
         });
-      procsNode.children.push(procNode);
+      // outputs
+      procNode.children.push(
+        new AliasTypeNode(RESULTS, procReturnType, procNode),
+      );
+      // TODO: eliminate this shim
       proc.procNode = procNode;
     }
   }
@@ -147,15 +166,6 @@ export class PGProc implements PostgresProcTypecast {
     return this.proc.proretset;
   }
 
-  /**
-   * Marshalling name mashes the namespace and the type into one snake string.
-   *
-   * This doesn't look very TypeScript-y on purpose so it stands out.
-   */
-  get postgresMarshallName() {
-    return `${this.proc.nspname}_${this.name}`;
-  }
-
   get returnsPseudoTypeRecord() {
     return (
       this.proc.proallargtypes.flatMap((x) => x).length >
@@ -190,32 +200,6 @@ export class PGProc implements PostgresProcTypecast {
 
     return parseObjectWithAttributes(attributes, x);
   }
-
-  /**
-   * Build up the string that is the call / argument pass to a database proc.
-   */
-  typescriptProcedureCallArguments(context: Context) {
-    // won't be name value pairs in the call, but instead sql marshalling
-    const args = this.proc.proargtypes
-      .flatMap((t) => t)
-      .map((oid, i) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const type = context.resolveType(oid)!;
-        return {
-          name: buildParameterName(this, i),
-          namedParameter: this.proc.proargnames[i] !== undefined,
-          type,
-        };
-      })
-      .map(
-        (a) =>
-          (a.namedParameter ? `${a.name} =>` : ``) +
-          ` \${ typed.${
-            a.type.postgresMarshallName
-          }(undefinedIsNull(parameters.${camelCase(a.name)})) }`,
-      );
-    return `(${args.join(",")})`;
-  }
 }
 
 /**
@@ -243,12 +227,11 @@ export class PGProcPseudoType extends PGCatalogType {
 
     const type = new CompositeTypeNode(
       this.typescriptName,
-      this.postgresMarshallName,
       schema.types,
       this.oid,
     );
-    this.pseudoTypeAttributes(context).forEach((a) =>
-      type.children.push(new AttributeTypeNode(type, a.name, a.type)),
+    this.pseudoTypeAttributes(context).forEach((a, i) =>
+      type.children.push(new AttributeTypeNode(type, a.name, i, a.type, true)),
     );
     context.database.registerType(type.id, type);
   }

@@ -18,8 +18,8 @@ export function typescriptTypeName(node: ASTNode) {
  */
 export function typescriptFullyQualifiedTypeName(node: ASTNode): string {
   if (isNamed(node)) {
-    return node.parent
-      ? `${typescriptFullyQualifiedTypeName(node.parent)}.${pascalCase(
+    return node.onType
+      ? `${typescriptFullyQualifiedTypeName(node.onType)}.${pascalCase(
           node.name,
         )}`
       : `${pascalCase(node.name)}`;

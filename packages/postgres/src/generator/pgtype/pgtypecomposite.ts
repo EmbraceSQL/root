@@ -4,6 +4,8 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
 import { CatalogRow } from "./pgtype";
 import {
+  AttributeTypeNode,
+  CompositeTypeNode,
   DELIMITER,
   GenerationContext,
   cleanIdentifierForTypescript,
@@ -30,6 +32,33 @@ export class PGTypeComposite extends PGCatalogType {
     this.indexes = context.indexes
       .indexesForType(this)
       .map((i) => i.translateAttributes(context, this));
+  }
+
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    // there is no guarantee that the types of the attributes are loaded yet
+    const type = new CompositeTypeNode(
+      this.catalog.typname,
+      schema.types,
+      this.oid,
+    );
+    context.database.registerType(type.id, type);
+  }
+
+  finalizeAST(context: GenerationContext) {
+    const typeNode = context.database.resolveType<CompositeTypeNode>(this.oid);
+    this.attributes.forEach((a, i) =>
+      typeNode.children.push(
+        new AttributeTypeNode(
+          typeNode,
+          a.name,
+          i,
+          context.database.resolveType(a.attribute.atttypid),
+          !a.isOptional,
+        ),
+      ),
+    );
   }
 
   get hasPrimaryKey() {

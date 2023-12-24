@@ -112,3 +112,16 @@ const notLegalInIdentifiers = /[^\w$]/g;
 export const cleanIdentifierForTypescript = (identifier: string) => {
   return identifier.replace(notLegalInIdentifiers, "_");
 };
+
+type CommonKeys<S, T> = {
+  [K in keyof S & keyof T]: [S[K], T[K]] extends [T[K], S[K]] ? K : never;
+}[keyof S & keyof T];
+
+/**
+ * Make just SOME properties optional.
+ */
+export type PartiallyOptional<T, U> =
+  // keys in common -- these will be optional
+  Partial<Pick<T, CommonKeys<T, U>>> &
+    // keys not in common, these will remain as is from T
+    Omit<T, CommonKeys<T, U>>;

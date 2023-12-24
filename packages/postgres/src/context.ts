@@ -6,6 +6,7 @@ import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
+import { oneBasedArgumentNamefromZeroBasedIndex } from "./util";
 import {
   ARGUMENTS,
   ASTKind,
@@ -195,6 +196,12 @@ export const initializeContext = async (
   // AST with database schema objects - tables, columns, indexes
   namespaces.forEach((n) => n.loadAST(generationContext));
 
+  // second pass now that all types are registered
+  namespaces.forEach((n) => {
+    // all types in the namespace
+    n.types.forEach((t) => t.finalizeAST(generationContext));
+  });
+
   // stored scripts -- load up the AST
   await ScriptsNode.loadAST(generationContext);
   // visit all scripts and ask the database for metadata
@@ -209,31 +216,31 @@ export const initializeContext = async (
           // there is no actual database object or oid
           const scriptPath = path.join(node.path.dir, node.path.base);
           const metadata = await sql.file(scriptPath).describe();
-          const resultsNode = new CompositeTypeNode(RESULTS, "", node, "");
-          metadata.columns.forEach((a) =>
+          const resultsNode = new CompositeTypeNode(RESULTS, node, "");
+          metadata.columns.forEach((a, i) =>
             resultsNode.children.push(
               new AttributeTypeNode(
                 resultsNode,
                 a.name,
+                i,
                 context.database.resolveType(a.type)!,
+                true,
               ),
             ),
           );
           node.children.push(resultsNode);
           if (metadata.types.length) {
-            const argumentsNode = new CompositeTypeNode(
-              ARGUMENTS,
-              "",
-              node,
-              "",
-            );
+            const argumentsNode = new CompositeTypeNode(ARGUMENTS, node, "");
             metadata.types.forEach((a, i) =>
               argumentsNode.children.push(
                 new AttributeTypeNode(
                   argumentsNode,
-                  // postgres arguments in sql scripts are 1 based
-                  `argument_${i + 1}`,
+                  // these don't have natural names, just positions
+                  // so manufacture names
+                  oneBasedArgumentNamefromZeroBasedIndex(i),
+                  i,
                   context.database.resolveType(a)!,
+                  true,
                 ),
               ),
             );
@@ -273,15 +280,23 @@ export const initializeContext = async (
 
   // expand out the type resolvers for all types -- these are used by
   // the postgres driver to encode/decodej
-  typeCatalog.types.forEach(
-    (t) => (types[t.postgresMarshallName] = t.postgresTypecast(context)),
-  );
+  typeCatalog.types.forEach((t) => {
+    // by oid -- postgres style
+    types[t.oid] = t.postgresTypecast(context);
+    // by name -- typescript generated style
+    const typeNode = database.resolveType(t.oid);
+    types[typeNode.typescriptNamespacedName] = t.postgresTypecast(context);
+  });
   // and resolvers for procs, which have their own pseudo types as return types
   namespaces
     .flatMap((n) => n.procs)
     .filter((p) => p.returnsPseudoTypeRecord)
     .forEach((p) => {
-      procTypes[p.postgresMarshallName] = p;
+      // by oid -- postgres style
+      procTypes[p.proc.oid] = p;
+      // by name -- typescript generated style
+      const typeNode = database.resolveType(p.proc.oid);
+      procTypes[typeNode.typescriptNamespacedName] = p;
     });
 
   // no need to fetch types -- we're making our own

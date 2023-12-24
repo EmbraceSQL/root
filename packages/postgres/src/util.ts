@@ -1,5 +1,3 @@
-import { PGProc } from "./generator/pgtype/pgproc/pgproc";
-
 /**
  * Handy utility to group up a list by a predicate that picks part of a list
  * member to serve as the grouping key.
@@ -22,18 +20,11 @@ export const groupBy = <T, TT, K extends string | number>(
   );
 
 /**
- * Procs in postgres can have parameters without names -- positional parameters.
- *
- * In postgres sql, these get 'numerical' names, so we'll follow along
- * for numerical style typescript parameter names.
+ * Unnamed positional arguments in postgres are one based
  */
-export const buildParameterName = (proc: PGProc, parameterIndex: number) => {
-  if (proc.proc.proargnames[parameterIndex] !== undefined) {
-    return proc.proc.proargnames[parameterIndex];
-  } else {
-    return `argument_${parameterIndex}`;
-  }
-};
+export function oneBasedArgumentNamefromZeroBasedIndex(index: number) {
+  return `argument_${index + 1}`;
+}
 
 /**
  * Take a string and turn it into a doc comment.

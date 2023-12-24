@@ -4,6 +4,7 @@ import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import {
   ColumnNode,
+  CompositeTypeNode,
   GenerationContext,
   TableNode,
   TablesNode,
@@ -66,7 +67,7 @@ export class PGTable {
     const table = new TableNode(
       tables,
       this.table.relname,
-      context.database.resolveType(this.table.tabletypeoid)!,
+      context.database.resolveType(this.table.tabletypeoid),
     );
     // hash lookup of all tables
     context.database.registerTable(table.type.id, table);
@@ -75,7 +76,9 @@ export class PGTable {
     this.tableType.attributes.forEach((a) => {
       const typeNode = context.database.resolveType(a.attribute.atttypid);
       if (typeNode) {
-        table.children.push(new ColumnNode(table, a.name, typeNode));
+        table.children.push(
+          new ColumnNode(table, a.name, typeNode, a.hasDefault),
+        );
       } else {
         throw new Error(`${a.name} cannot find type ${a.attribute.atttypid}`);
       }

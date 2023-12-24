@@ -2917,8 +2917,8 @@ export namespace Public {
       lastUpdate?: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
-    export type FilmInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
-    export type FilmNotInStockResults = { PFilmCount: PgCatalog.Types.Int4 };
+    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
+    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
   }
   export namespace Procedures {
     export namespace FilmInStock {

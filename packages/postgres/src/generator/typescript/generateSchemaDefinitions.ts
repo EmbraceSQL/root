@@ -5,8 +5,9 @@ import {
   ASTKind,
   AbstractTypeNode,
   NamespaceVisitor,
-  ProcedureArgumentNode,
+  VALUES,
   cleanIdentifierForTypescript,
+  isNodeType,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
 
@@ -39,12 +40,22 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-unused-vars */
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
+        import type { PartiallyOptional } from "@embracesql/shared";
 
     `,
   ];
 
   const TypeDefiner = {
     before: async (context: GC, node: AbstractTypeNode) => {
+      if (
+        isNodeType(node, ASTKind.AliasType) &&
+        node.onType?.kind === ASTKind.CreateOperation &&
+        node.name === VALUES
+      ) {
+        // version for use when passed as `values` -- allows passing
+        // the minimum number of properties
+        return `export type ${VALUES} = PartiallyOptional<Record, Optional & PrimaryKey>;`;
+      }
       return `export type ${
         node.typescriptName
       } = ${node.parser.typescriptTypeDefinition(context)};`;
@@ -84,47 +95,46 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         // DBMS style value | null semantics -- no undefinded in SQL
         [ASTKind.Table]: {
           before: async (context, node) => {
-            const generationBuffer = [
+            return [
               await NamespaceVisitor.before(context, node),
-            ];
-            generationBuffer.push(
               `export type Record = Required<${node.type.typescriptNamespacedName}>;`,
-            );
-
-            return generationBuffer.join("\n");
+            ].join("\n");
           },
-          after: NamespaceVisitor.after,
+          after: async (context, node) => {
+            return [
+              // exhaustive -- if there is no primary key, say so explicitly
+              node.primaryKey ? "" : `export type PrimaryKey = never;`,
+              // optional columns -- won't always need to pass these
+              // ex: database has a default
+              // TODO: test with a nullable column
+              `export type Optional = Pick<Record,${
+                node.optionalColumns
+                  .map((c) => `"${c.typescriptPropertyName}"`)
+                  .join("|") || "never"
+              }>`,
+              await NamespaceVisitor.after(context, node),
+            ].join("\n");
+          },
         },
         [ASTKind.Index]: {
           before: async (_, node) => `export type ${node.typescriptName} = {`,
-          after: async () => `}`,
+          after: async (_, node) =>
+            [
+              `}`,
+              // alias primary key to the correct index
+              node.primaryKey
+                ? `export type PrimaryKey = ${node.typescriptName};`
+                : "",
+            ].join("\n"),
         },
         [ASTKind.IndexColumn]: {
           before: async (_, node) =>
             `${node.typescriptPropertyName}: ${node.type.typescriptNamespacedName} ;`,
         },
         [ASTKind.Procedures]: NamespaceVisitor,
-        [ASTKind.Procedure]: {
-          before: async (context, node) => {
-            return [
-              await NamespaceVisitor.before(context, node),
-              `export type Arguments = {`,
-              ...node.children
-                .filter<ProcedureArgumentNode>(
-                  (n): n is ProcedureArgumentNode =>
-                    n.kind === ASTKind.ProcedureArgument,
-                )
-                .map(
-                  (n) =>
-                    `${n.typescriptPropertyName}: ${n.type.typescriptNamespacedName};`,
-                ),
-              "};",
-              `export type Results = ${node.returnType.typescriptNamespacedName};`,
-            ].join("\n");
-          },
-          after: NamespaceVisitor.after,
-        },
+        [ASTKind.Procedure]: NamespaceVisitor,
         [ASTKind.CompositeType]: TypeDefiner,
+        [ASTKind.AliasType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
         [ASTKind.Script]: NamespaceVisitor,

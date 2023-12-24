@@ -101,7 +101,7 @@ export class PGAttribute {
     const undefinedExpression = selfEqual
       ? `sql("${this.postgresName}")`
       : "sql`DEFAULT`";
-    const valueExpression = `typed.${postgresType.postgresMarshallName}(${parameterHolder}.${this.typescriptName})`;
+    const valueExpression = `typed[${postgresType.oid}](${parameterHolder}.${this.typescriptName})`;
     const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? ${undefinedExpression} : ${valueExpression}`;
     return `\${ ${combinedExpression} }`;
   }

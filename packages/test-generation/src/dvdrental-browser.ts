@@ -20,6 +20,7 @@ import {
   Nullable,
   undefinedIsNull,
 } from "@embracesql/shared";
+import type { PartiallyOptional } from "@embracesql/shared";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -380,8 +381,8 @@ export namespace PgCatalog {
       aggtransspace: PgCatalog.Types.Int4;
       aggmtranstype: PgCatalog.Types.Oid;
       aggmtransspace: PgCatalog.Types.Int4;
-      agginitval?: Nullable<PgCatalog.Types.Text>;
-      aggminitval?: Nullable<PgCatalog.Types.Text>;
+      agginitval: PgCatalog.Types.Text;
+      aggminitval: PgCatalog.Types.Text;
     };
     export type PgAm = {
       oid: PgCatalog.Types.Oid;
@@ -437,10 +438,10 @@ export namespace PgCatalog {
       attinhcount: PgCatalog.Types.Int2;
       attstattarget: PgCatalog.Types.Int2;
       attcollation: PgCatalog.Types.Oid;
-      attacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      attoptions?: Nullable<PgCatalog.Types.TextArray>;
-      attfdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-      attmissingval?: Nullable<PgCatalog.Types.Anyarray>;
+      attacl: PgCatalog.Types.AclitemArray;
+      attoptions: PgCatalog.Types.TextArray;
+      attfdwoptions: PgCatalog.Types.TextArray;
+      attmissingval: PgCatalog.Types.Anyarray;
     };
     export type PgAuthMembers = {
       oid: PgCatalog.Types.Oid;
@@ -462,36 +463,36 @@ export namespace PgCatalog {
       rolreplication: PgCatalog.Types.Bool;
       rolbypassrls: PgCatalog.Types.Bool;
       rolconnlimit: PgCatalog.Types.Int4;
-      rolpassword?: Nullable<PgCatalog.Types.Text>;
-      rolvaliduntil?: Nullable<PgCatalog.Types.Timestamptz>;
+      rolpassword: PgCatalog.Types.Text;
+      rolvaliduntil: PgCatalog.Types.Timestamptz;
     };
     export type PgAvailableExtensionVersions = {
-      name?: Nullable<PgCatalog.Types.Name>;
-      version?: Nullable<PgCatalog.Types.Text>;
-      installed?: Nullable<PgCatalog.Types.Bool>;
-      superuser?: Nullable<PgCatalog.Types.Bool>;
-      trusted?: Nullable<PgCatalog.Types.Bool>;
-      relocatable?: Nullable<PgCatalog.Types.Bool>;
-      schema?: Nullable<PgCatalog.Types.Name>;
-      requires?: Nullable<PgCatalog.Types.NameArray>;
-      comment?: Nullable<PgCatalog.Types.Text>;
+      name: PgCatalog.Types.Name;
+      version: PgCatalog.Types.Text;
+      installed: PgCatalog.Types.Bool;
+      superuser: PgCatalog.Types.Bool;
+      trusted: PgCatalog.Types.Bool;
+      relocatable: PgCatalog.Types.Bool;
+      schema: PgCatalog.Types.Name;
+      requires: PgCatalog.Types.NameArray;
+      comment: PgCatalog.Types.Text;
     };
     export type PgAvailableExtensions = {
-      name?: Nullable<PgCatalog.Types.Name>;
-      defaultVersion?: Nullable<PgCatalog.Types.Text>;
-      installedVersion?: Nullable<PgCatalog.Types.Text>;
-      comment?: Nullable<PgCatalog.Types.Text>;
+      name: PgCatalog.Types.Name;
+      defaultVersion: PgCatalog.Types.Text;
+      installedVersion: PgCatalog.Types.Text;
+      comment: PgCatalog.Types.Text;
     };
     export type PgBackendMemoryContexts = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      ident?: Nullable<PgCatalog.Types.Text>;
-      parent?: Nullable<PgCatalog.Types.Text>;
-      level?: Nullable<PgCatalog.Types.Int4>;
-      totalBytes?: Nullable<PgCatalog.Types.Int8>;
-      totalNblocks?: Nullable<PgCatalog.Types.Int8>;
-      freeBytes?: Nullable<PgCatalog.Types.Int8>;
-      freeChunks?: Nullable<PgCatalog.Types.Int8>;
-      usedBytes?: Nullable<PgCatalog.Types.Int8>;
+      name: PgCatalog.Types.Text;
+      ident: PgCatalog.Types.Text;
+      parent: PgCatalog.Types.Text;
+      level: PgCatalog.Types.Int4;
+      totalBytes: PgCatalog.Types.Int8;
+      totalNblocks: PgCatalog.Types.Int8;
+      freeBytes: PgCatalog.Types.Int8;
+      freeChunks: PgCatalog.Types.Int8;
+      usedBytes: PgCatalog.Types.Int8;
     };
     export type PgBrinBloomSummary = string;
     export type PgBrinMinmaxMultiSummary = string;
@@ -534,9 +535,9 @@ export namespace PgCatalog {
       relrewrite: PgCatalog.Types.Oid;
       relfrozenxid: PgCatalog.Types.Xid;
       relminmxid: PgCatalog.Types.Xid;
-      relacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      reloptions?: Nullable<PgCatalog.Types.TextArray>;
-      relpartbound?: Nullable<PgCatalog.Types.PgNodeTree>;
+      relacl: PgCatalog.Types.AclitemArray;
+      reloptions: PgCatalog.Types.TextArray;
+      relpartbound: PgCatalog.Types.PgNodeTree;
     };
     export type PgCollation = {
       oid: PgCatalog.Types.Oid;
@@ -546,15 +547,15 @@ export namespace PgCatalog {
       collprovider: PgCatalog.Types.Char;
       collisdeterministic: PgCatalog.Types.Bool;
       collencoding: PgCatalog.Types.Int4;
-      collcollate?: Nullable<PgCatalog.Types.Text>;
-      collctype?: Nullable<PgCatalog.Types.Text>;
-      colliculocale?: Nullable<PgCatalog.Types.Text>;
-      collicurules?: Nullable<PgCatalog.Types.Text>;
-      collversion?: Nullable<PgCatalog.Types.Text>;
+      collcollate: PgCatalog.Types.Text;
+      collctype: PgCatalog.Types.Text;
+      colliculocale: PgCatalog.Types.Text;
+      collicurules: PgCatalog.Types.Text;
+      collversion: PgCatalog.Types.Text;
     };
     export type PgConfig = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      setting?: Nullable<PgCatalog.Types.Text>;
+      name: PgCatalog.Types.Text;
+      setting: PgCatalog.Types.Text;
     };
     export type PgConstraint = {
       oid: PgCatalog.Types.Oid;
@@ -575,14 +576,14 @@ export namespace PgCatalog {
       conislocal: PgCatalog.Types.Bool;
       coninhcount: PgCatalog.Types.Int2;
       connoinherit: PgCatalog.Types.Bool;
-      conkey?: Nullable<PgCatalog.Types.Int2Array>;
-      confkey?: Nullable<PgCatalog.Types.Int2Array>;
-      conpfeqop?: Nullable<PgCatalog.Types.OidArray>;
-      conppeqop?: Nullable<PgCatalog.Types.OidArray>;
-      conffeqop?: Nullable<PgCatalog.Types.OidArray>;
-      confdelsetcols?: Nullable<PgCatalog.Types.Int2Array>;
-      conexclop?: Nullable<PgCatalog.Types.OidArray>;
-      conbin?: Nullable<PgCatalog.Types.PgNodeTree>;
+      conkey: PgCatalog.Types.Int2Array;
+      confkey: PgCatalog.Types.Int2Array;
+      conpfeqop: PgCatalog.Types.OidArray;
+      conppeqop: PgCatalog.Types.OidArray;
+      conffeqop: PgCatalog.Types.OidArray;
+      confdelsetcols: PgCatalog.Types.Int2Array;
+      conexclop: PgCatalog.Types.OidArray;
+      conbin: PgCatalog.Types.PgNodeTree;
     };
     export type PgConversion = {
       oid: PgCatalog.Types.Oid;
@@ -595,12 +596,12 @@ export namespace PgCatalog {
       condefault: PgCatalog.Types.Bool;
     };
     export type PgCursors = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      statement?: Nullable<PgCatalog.Types.Text>;
-      isHoldable?: Nullable<PgCatalog.Types.Bool>;
-      isBinary?: Nullable<PgCatalog.Types.Bool>;
-      isScrollable?: Nullable<PgCatalog.Types.Bool>;
-      creationTime?: Nullable<PgCatalog.Types.Timestamptz>;
+      name: PgCatalog.Types.Text;
+      statement: PgCatalog.Types.Text;
+      isHoldable: PgCatalog.Types.Bool;
+      isBinary: PgCatalog.Types.Bool;
+      isScrollable: PgCatalog.Types.Bool;
+      creationTime: PgCatalog.Types.Timestamptz;
     };
     export type PgDatabase = {
       oid: PgCatalog.Types.Oid;
@@ -616,15 +617,15 @@ export namespace PgCatalog {
       dattablespace: PgCatalog.Types.Oid;
       datcollate: PgCatalog.Types.Text;
       datctype: PgCatalog.Types.Text;
-      daticulocale?: Nullable<PgCatalog.Types.Text>;
-      daticurules?: Nullable<PgCatalog.Types.Text>;
-      datcollversion?: Nullable<PgCatalog.Types.Text>;
-      datacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      daticulocale: PgCatalog.Types.Text;
+      daticurules: PgCatalog.Types.Text;
+      datcollversion: PgCatalog.Types.Text;
+      datacl: PgCatalog.Types.AclitemArray;
     };
     export type PgDbRoleSetting = {
       setdatabase: PgCatalog.Types.Oid;
       setrole: PgCatalog.Types.Oid;
-      setconfig?: Nullable<PgCatalog.Types.TextArray>;
+      setconfig: PgCatalog.Types.TextArray;
     };
     export type PgDdlCommand = any;
     export type PgDefaultAcl = {
@@ -663,7 +664,7 @@ export namespace PgCatalog {
       evtowner: PgCatalog.Types.Oid;
       evtfoid: PgCatalog.Types.Oid;
       evtenabled: PgCatalog.Types.Char;
-      evttags?: Nullable<PgCatalog.Types.TextArray>;
+      evttags: PgCatalog.Types.TextArray;
     };
     export type PgExtension = {
       oid: PgCatalog.Types.Oid;
@@ -672,17 +673,17 @@ export namespace PgCatalog {
       extnamespace: PgCatalog.Types.Oid;
       extrelocatable: PgCatalog.Types.Bool;
       extversion: PgCatalog.Types.Text;
-      extconfig?: Nullable<PgCatalog.Types.OidArray>;
-      extcondition?: Nullable<PgCatalog.Types.TextArray>;
+      extconfig: PgCatalog.Types.OidArray;
+      extcondition: PgCatalog.Types.TextArray;
     };
     export type PgFileSettings = {
-      sourcefile?: Nullable<PgCatalog.Types.Text>;
-      sourceline?: Nullable<PgCatalog.Types.Int4>;
-      seqno?: Nullable<PgCatalog.Types.Int4>;
-      name?: Nullable<PgCatalog.Types.Text>;
-      setting?: Nullable<PgCatalog.Types.Text>;
-      applied?: Nullable<PgCatalog.Types.Bool>;
-      error?: Nullable<PgCatalog.Types.Text>;
+      sourcefile: PgCatalog.Types.Text;
+      sourceline: PgCatalog.Types.Int4;
+      seqno: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Text;
+      setting: PgCatalog.Types.Text;
+      applied: PgCatalog.Types.Bool;
+      error: PgCatalog.Types.Text;
     };
     export type PgForeignDataWrapper = {
       oid: PgCatalog.Types.Oid;
@@ -690,50 +691,50 @@ export namespace PgCatalog {
       fdwowner: PgCatalog.Types.Oid;
       fdwhandler: PgCatalog.Types.Oid;
       fdwvalidator: PgCatalog.Types.Oid;
-      fdwacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      fdwoptions?: Nullable<PgCatalog.Types.TextArray>;
+      fdwacl: PgCatalog.Types.AclitemArray;
+      fdwoptions: PgCatalog.Types.TextArray;
     };
     export type PgForeignServer = {
       oid: PgCatalog.Types.Oid;
       srvname: PgCatalog.Types.Name;
       srvowner: PgCatalog.Types.Oid;
       srvfdw: PgCatalog.Types.Oid;
-      srvtype?: Nullable<PgCatalog.Types.Text>;
-      srvversion?: Nullable<PgCatalog.Types.Text>;
-      srvacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      srvoptions?: Nullable<PgCatalog.Types.TextArray>;
+      srvtype: PgCatalog.Types.Text;
+      srvversion: PgCatalog.Types.Text;
+      srvacl: PgCatalog.Types.AclitemArray;
+      srvoptions: PgCatalog.Types.TextArray;
     };
     export type PgForeignTable = {
       ftrelid: PgCatalog.Types.Oid;
       ftserver: PgCatalog.Types.Oid;
-      ftoptions?: Nullable<PgCatalog.Types.TextArray>;
+      ftoptions: PgCatalog.Types.TextArray;
     };
     export type PgGroup = {
-      groname?: Nullable<PgCatalog.Types.Name>;
-      grosysid?: Nullable<PgCatalog.Types.Oid>;
-      grolist?: Nullable<PgCatalog.Types.OidArray>;
+      groname: PgCatalog.Types.Name;
+      grosysid: PgCatalog.Types.Oid;
+      grolist: PgCatalog.Types.OidArray;
     };
     export type PgHbaFileRules = {
-      ruleNumber?: Nullable<PgCatalog.Types.Int4>;
-      fileName?: Nullable<PgCatalog.Types.Text>;
-      lineNumber?: Nullable<PgCatalog.Types.Int4>;
-      type?: Nullable<PgCatalog.Types.Text>;
-      database?: Nullable<PgCatalog.Types.TextArray>;
-      userName?: Nullable<PgCatalog.Types.TextArray>;
-      address?: Nullable<PgCatalog.Types.Text>;
-      netmask?: Nullable<PgCatalog.Types.Text>;
-      authMethod?: Nullable<PgCatalog.Types.Text>;
-      options?: Nullable<PgCatalog.Types.TextArray>;
-      error?: Nullable<PgCatalog.Types.Text>;
+      ruleNumber: PgCatalog.Types.Int4;
+      fileName: PgCatalog.Types.Text;
+      lineNumber: PgCatalog.Types.Int4;
+      type: PgCatalog.Types.Text;
+      database: PgCatalog.Types.TextArray;
+      userName: PgCatalog.Types.TextArray;
+      address: PgCatalog.Types.Text;
+      netmask: PgCatalog.Types.Text;
+      authMethod: PgCatalog.Types.Text;
+      options: PgCatalog.Types.TextArray;
+      error: PgCatalog.Types.Text;
     };
     export type PgIdentFileMappings = {
-      mapNumber?: Nullable<PgCatalog.Types.Int4>;
-      fileName?: Nullable<PgCatalog.Types.Text>;
-      lineNumber?: Nullable<PgCatalog.Types.Int4>;
-      mapName?: Nullable<PgCatalog.Types.Text>;
-      sysName?: Nullable<PgCatalog.Types.Text>;
-      pgUsername?: Nullable<PgCatalog.Types.Text>;
-      error?: Nullable<PgCatalog.Types.Text>;
+      mapNumber: PgCatalog.Types.Int4;
+      fileName: PgCatalog.Types.Text;
+      lineNumber: PgCatalog.Types.Int4;
+      mapName: PgCatalog.Types.Text;
+      sysName: PgCatalog.Types.Text;
+      pgUsername: PgCatalog.Types.Text;
+      error: PgCatalog.Types.Text;
     };
     export type PgIndex = {
       indexrelid: PgCatalog.Types.Oid;
@@ -755,15 +756,15 @@ export namespace PgCatalog {
       indcollation: PgCatalog.Types.Oidvector;
       indclass: PgCatalog.Types.Oidvector;
       indoption: PgCatalog.Types.Int2vector;
-      indexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
-      indpred?: Nullable<PgCatalog.Types.PgNodeTree>;
+      indexprs: PgCatalog.Types.PgNodeTree;
+      indpred: PgCatalog.Types.PgNodeTree;
     };
     export type PgIndexes = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      indexname?: Nullable<PgCatalog.Types.Name>;
-      tablespace?: Nullable<PgCatalog.Types.Name>;
-      indexdef?: Nullable<PgCatalog.Types.Text>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      indexname: PgCatalog.Types.Name;
+      tablespace: PgCatalog.Types.Name;
+      indexdef: PgCatalog.Types.Text;
     };
     export type PgInherits = {
       inhrelid: PgCatalog.Types.Oid;
@@ -787,7 +788,7 @@ export namespace PgCatalog {
       lanplcallfoid: PgCatalog.Types.Oid;
       laninline: PgCatalog.Types.Oid;
       lanvalidator: PgCatalog.Types.Oid;
-      lanacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      lanacl: PgCatalog.Types.AclitemArray;
     };
     export type PgLargeobject = {
       loid: PgCatalog.Types.Oid;
@@ -797,42 +798,42 @@ export namespace PgCatalog {
     export type PgLargeobjectMetadata = {
       oid: PgCatalog.Types.Oid;
       lomowner: PgCatalog.Types.Oid;
-      lomacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      lomacl: PgCatalog.Types.AclitemArray;
     };
     export type PgLocks = {
-      locktype?: Nullable<PgCatalog.Types.Text>;
-      database?: Nullable<PgCatalog.Types.Oid>;
-      relation?: Nullable<PgCatalog.Types.Oid>;
-      page?: Nullable<PgCatalog.Types.Int4>;
-      tuple?: Nullable<PgCatalog.Types.Int2>;
-      virtualxid?: Nullable<PgCatalog.Types.Text>;
-      transactionid?: Nullable<PgCatalog.Types.Xid>;
-      classid?: Nullable<PgCatalog.Types.Oid>;
-      objid?: Nullable<PgCatalog.Types.Oid>;
-      objsubid?: Nullable<PgCatalog.Types.Int2>;
-      virtualtransaction?: Nullable<PgCatalog.Types.Text>;
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      mode?: Nullable<PgCatalog.Types.Text>;
-      granted?: Nullable<PgCatalog.Types.Bool>;
-      fastpath?: Nullable<PgCatalog.Types.Bool>;
-      waitstart?: Nullable<PgCatalog.Types.Timestamptz>;
+      locktype: PgCatalog.Types.Text;
+      database: PgCatalog.Types.Oid;
+      relation: PgCatalog.Types.Oid;
+      page: PgCatalog.Types.Int4;
+      tuple: PgCatalog.Types.Int2;
+      virtualxid: PgCatalog.Types.Text;
+      transactionid: PgCatalog.Types.Xid;
+      classid: PgCatalog.Types.Oid;
+      objid: PgCatalog.Types.Oid;
+      objsubid: PgCatalog.Types.Int2;
+      virtualtransaction: PgCatalog.Types.Text;
+      pid: PgCatalog.Types.Int4;
+      mode: PgCatalog.Types.Text;
+      granted: PgCatalog.Types.Bool;
+      fastpath: PgCatalog.Types.Bool;
+      waitstart: PgCatalog.Types.Timestamptz;
     };
     export type PgLsn = bigint;
     export type PgMatviews = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      matviewname?: Nullable<PgCatalog.Types.Name>;
-      matviewowner?: Nullable<PgCatalog.Types.Name>;
-      tablespace?: Nullable<PgCatalog.Types.Name>;
-      hasindexes?: Nullable<PgCatalog.Types.Bool>;
-      ispopulated?: Nullable<PgCatalog.Types.Bool>;
-      definition?: Nullable<PgCatalog.Types.Text>;
+      schemaname: PgCatalog.Types.Name;
+      matviewname: PgCatalog.Types.Name;
+      matviewowner: PgCatalog.Types.Name;
+      tablespace: PgCatalog.Types.Name;
+      hasindexes: PgCatalog.Types.Bool;
+      ispopulated: PgCatalog.Types.Bool;
+      definition: PgCatalog.Types.Text;
     };
     export type PgMcvList = string;
     export type PgNamespace = {
       oid: PgCatalog.Types.Oid;
       nspname: PgCatalog.Types.Name;
       nspowner: PgCatalog.Types.Oid;
-      nspacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      nspacl: PgCatalog.Types.AclitemArray;
     };
     export type PgNdistinct = string;
     export type PgNodeTree = string;
@@ -874,7 +875,7 @@ export namespace PgCatalog {
     export type PgParameterAcl = {
       oid: PgCatalog.Types.Oid;
       parname: PgCatalog.Types.Text;
-      paracl?: Nullable<PgCatalog.Types.AclitemArray>;
+      paracl: PgCatalog.Types.AclitemArray;
     };
     export type PgPartitionedTable = {
       partrelid: PgCatalog.Types.Oid;
@@ -884,17 +885,17 @@ export namespace PgCatalog {
       partattrs: PgCatalog.Types.Int2vector;
       partclass: PgCatalog.Types.Oidvector;
       partcollation: PgCatalog.Types.Oidvector;
-      partexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
+      partexprs: PgCatalog.Types.PgNodeTree;
     };
     export type PgPolicies = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      policyname?: Nullable<PgCatalog.Types.Name>;
-      permissive?: Nullable<PgCatalog.Types.Text>;
-      roles?: Nullable<PgCatalog.Types.NameArray>;
-      cmd?: Nullable<PgCatalog.Types.Text>;
-      qual?: Nullable<PgCatalog.Types.Text>;
-      withCheck?: Nullable<PgCatalog.Types.Text>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      policyname: PgCatalog.Types.Name;
+      permissive: PgCatalog.Types.Text;
+      roles: PgCatalog.Types.NameArray;
+      cmd: PgCatalog.Types.Text;
+      qual: PgCatalog.Types.Text;
+      withCheck: PgCatalog.Types.Text;
     };
     export type PgPolicy = {
       oid: PgCatalog.Types.Oid;
@@ -903,25 +904,25 @@ export namespace PgCatalog {
       polcmd: PgCatalog.Types.Char;
       polpermissive: PgCatalog.Types.Bool;
       polroles: PgCatalog.Types.OidArray;
-      polqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      polwithcheck?: Nullable<PgCatalog.Types.PgNodeTree>;
+      polqual: PgCatalog.Types.PgNodeTree;
+      polwithcheck: PgCatalog.Types.PgNodeTree;
     };
     export type PgPreparedStatements = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      statement?: Nullable<PgCatalog.Types.Text>;
-      prepareTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      parameterTypes?: Nullable<PgCatalog.Types.RegtypeArray>;
-      resultTypes?: Nullable<PgCatalog.Types.RegtypeArray>;
-      fromSql?: Nullable<PgCatalog.Types.Bool>;
-      genericPlans?: Nullable<PgCatalog.Types.Int8>;
-      customPlans?: Nullable<PgCatalog.Types.Int8>;
+      name: PgCatalog.Types.Text;
+      statement: PgCatalog.Types.Text;
+      prepareTime: PgCatalog.Types.Timestamptz;
+      parameterTypes: PgCatalog.Types.RegtypeArray;
+      resultTypes: PgCatalog.Types.RegtypeArray;
+      fromSql: PgCatalog.Types.Bool;
+      genericPlans: PgCatalog.Types.Int8;
+      customPlans: PgCatalog.Types.Int8;
     };
     export type PgPreparedXacts = {
-      transaction?: Nullable<PgCatalog.Types.Xid>;
-      gid?: Nullable<PgCatalog.Types.Text>;
-      prepared?: Nullable<PgCatalog.Types.Timestamptz>;
-      owner?: Nullable<PgCatalog.Types.Name>;
-      database?: Nullable<PgCatalog.Types.Name>;
+      transaction: PgCatalog.Types.Xid;
+      gid: PgCatalog.Types.Text;
+      prepared: PgCatalog.Types.Timestamptz;
+      owner: PgCatalog.Types.Name;
+      database: PgCatalog.Types.Name;
     };
     export type PgProc = {
       oid: PgCatalog.Types.Oid;
@@ -944,16 +945,16 @@ export namespace PgCatalog {
       pronargdefaults: PgCatalog.Types.Int2;
       prorettype: PgCatalog.Types.Oid;
       proargtypes: PgCatalog.Types.Oidvector;
-      proallargtypes?: Nullable<PgCatalog.Types.OidArray>;
-      proargmodes?: Nullable<PgCatalog.Types.CharArray>;
-      proargnames?: Nullable<PgCatalog.Types.TextArray>;
-      proargdefaults?: Nullable<PgCatalog.Types.PgNodeTree>;
-      protrftypes?: Nullable<PgCatalog.Types.OidArray>;
+      proallargtypes: PgCatalog.Types.OidArray;
+      proargmodes: PgCatalog.Types.CharArray;
+      proargnames: PgCatalog.Types.TextArray;
+      proargdefaults: PgCatalog.Types.PgNodeTree;
+      protrftypes: PgCatalog.Types.OidArray;
       prosrc: PgCatalog.Types.Text;
-      probin?: Nullable<PgCatalog.Types.Text>;
-      prosqlbody?: Nullable<PgCatalog.Types.PgNodeTree>;
-      proconfig?: Nullable<PgCatalog.Types.TextArray>;
-      proacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      probin: PgCatalog.Types.Text;
+      prosqlbody: PgCatalog.Types.PgNodeTree;
+      proconfig: PgCatalog.Types.TextArray;
+      proacl: PgCatalog.Types.AclitemArray;
     };
     export type PgPublication = {
       oid: PgCatalog.Types.Oid;
@@ -975,15 +976,15 @@ export namespace PgCatalog {
       oid: PgCatalog.Types.Oid;
       prpubid: PgCatalog.Types.Oid;
       prrelid: PgCatalog.Types.Oid;
-      prqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      prattrs?: Nullable<PgCatalog.Types.Int2vector>;
+      prqual: PgCatalog.Types.PgNodeTree;
+      prattrs: PgCatalog.Types.Int2vector;
     };
     export type PgPublicationTables = {
-      pubname?: Nullable<PgCatalog.Types.Name>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      attnames?: Nullable<PgCatalog.Types.NameArray>;
-      rowfilter?: Nullable<PgCatalog.Types.Text>;
+      pubname: PgCatalog.Types.Name;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      attnames: PgCatalog.Types.NameArray;
+      rowfilter: PgCatalog.Types.Text;
     };
     export type PgRange = {
       rngtypid: PgCatalog.Types.Oid;
@@ -999,28 +1000,28 @@ export namespace PgCatalog {
       roname: PgCatalog.Types.Text;
     };
     export type PgReplicationOriginStatus = {
-      localId?: Nullable<PgCatalog.Types.Oid>;
-      externalId?: Nullable<PgCatalog.Types.Text>;
-      remoteLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      localLsn?: Nullable<PgCatalog.Types.PgLsn>;
+      localId: PgCatalog.Types.Oid;
+      externalId: PgCatalog.Types.Text;
+      remoteLsn: PgCatalog.Types.PgLsn;
+      localLsn: PgCatalog.Types.PgLsn;
     };
     export type PgReplicationSlots = {
-      slotName?: Nullable<PgCatalog.Types.Name>;
-      plugin?: Nullable<PgCatalog.Types.Name>;
-      slotType?: Nullable<PgCatalog.Types.Text>;
-      datoid?: Nullable<PgCatalog.Types.Oid>;
-      database?: Nullable<PgCatalog.Types.Name>;
-      temporary?: Nullable<PgCatalog.Types.Bool>;
-      active?: Nullable<PgCatalog.Types.Bool>;
-      activePid?: Nullable<PgCatalog.Types.Int4>;
-      xmin?: Nullable<PgCatalog.Types.Xid>;
-      catalogXmin?: Nullable<PgCatalog.Types.Xid>;
-      restartLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      confirmedFlushLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      walStatus?: Nullable<PgCatalog.Types.Text>;
-      safeWalSize?: Nullable<PgCatalog.Types.Int8>;
-      twoPhase?: Nullable<PgCatalog.Types.Bool>;
-      conflicting?: Nullable<PgCatalog.Types.Bool>;
+      slotName: PgCatalog.Types.Name;
+      plugin: PgCatalog.Types.Name;
+      slotType: PgCatalog.Types.Text;
+      datoid: PgCatalog.Types.Oid;
+      database: PgCatalog.Types.Name;
+      temporary: PgCatalog.Types.Bool;
+      active: PgCatalog.Types.Bool;
+      activePid: PgCatalog.Types.Int4;
+      xmin: PgCatalog.Types.Xid;
+      catalogXmin: PgCatalog.Types.Xid;
+      restartLsn: PgCatalog.Types.PgLsn;
+      confirmedFlushLsn: PgCatalog.Types.PgLsn;
+      walStatus: PgCatalog.Types.Text;
+      safeWalSize: PgCatalog.Types.Int8;
+      twoPhase: PgCatalog.Types.Bool;
+      conflicting: PgCatalog.Types.Bool;
     };
     export type PgRewrite = {
       oid: PgCatalog.Types.Oid;
@@ -1033,25 +1034,25 @@ export namespace PgCatalog {
       evAction: PgCatalog.Types.PgNodeTree;
     };
     export type PgRoles = {
-      rolname?: Nullable<PgCatalog.Types.Name>;
-      rolsuper?: Nullable<PgCatalog.Types.Bool>;
-      rolinherit?: Nullable<PgCatalog.Types.Bool>;
-      rolcreaterole?: Nullable<PgCatalog.Types.Bool>;
-      rolcreatedb?: Nullable<PgCatalog.Types.Bool>;
-      rolcanlogin?: Nullable<PgCatalog.Types.Bool>;
-      rolreplication?: Nullable<PgCatalog.Types.Bool>;
-      rolconnlimit?: Nullable<PgCatalog.Types.Int4>;
-      rolpassword?: Nullable<PgCatalog.Types.Text>;
-      rolvaliduntil?: Nullable<PgCatalog.Types.Timestamptz>;
-      rolbypassrls?: Nullable<PgCatalog.Types.Bool>;
-      rolconfig?: Nullable<PgCatalog.Types.TextArray>;
-      oid?: Nullable<PgCatalog.Types.Oid>;
+      rolname: PgCatalog.Types.Name;
+      rolsuper: PgCatalog.Types.Bool;
+      rolinherit: PgCatalog.Types.Bool;
+      rolcreaterole: PgCatalog.Types.Bool;
+      rolcreatedb: PgCatalog.Types.Bool;
+      rolcanlogin: PgCatalog.Types.Bool;
+      rolreplication: PgCatalog.Types.Bool;
+      rolconnlimit: PgCatalog.Types.Int4;
+      rolpassword: PgCatalog.Types.Text;
+      rolvaliduntil: PgCatalog.Types.Timestamptz;
+      rolbypassrls: PgCatalog.Types.Bool;
+      rolconfig: PgCatalog.Types.TextArray;
+      oid: PgCatalog.Types.Oid;
     };
     export type PgRules = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      rulename?: Nullable<PgCatalog.Types.Name>;
-      definition?: Nullable<PgCatalog.Types.Text>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      rulename: PgCatalog.Types.Name;
+      definition: PgCatalog.Types.Text;
     };
     export type PgSeclabel = {
       objoid: PgCatalog.Types.Oid;
@@ -1061,14 +1062,14 @@ export namespace PgCatalog {
       label: PgCatalog.Types.Text;
     };
     export type PgSeclabels = {
-      objoid?: Nullable<PgCatalog.Types.Oid>;
-      classoid?: Nullable<PgCatalog.Types.Oid>;
-      objsubid?: Nullable<PgCatalog.Types.Int4>;
-      objtype?: Nullable<PgCatalog.Types.Text>;
-      objnamespace?: Nullable<PgCatalog.Types.Oid>;
-      objname?: Nullable<PgCatalog.Types.Text>;
-      provider?: Nullable<PgCatalog.Types.Text>;
-      label?: Nullable<PgCatalog.Types.Text>;
+      objoid: PgCatalog.Types.Oid;
+      classoid: PgCatalog.Types.Oid;
+      objsubid: PgCatalog.Types.Int4;
+      objtype: PgCatalog.Types.Text;
+      objnamespace: PgCatalog.Types.Oid;
+      objname: PgCatalog.Types.Text;
+      provider: PgCatalog.Types.Text;
+      label: PgCatalog.Types.Text;
     };
     export type PgSequence = {
       seqrelid: PgCatalog.Types.Oid;
@@ -1081,47 +1082,47 @@ export namespace PgCatalog {
       seqcycle: PgCatalog.Types.Bool;
     };
     export type PgSequences = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      sequencename?: Nullable<PgCatalog.Types.Name>;
-      sequenceowner?: Nullable<PgCatalog.Types.Name>;
-      dataType?: Nullable<PgCatalog.Types.Regtype>;
-      startValue?: Nullable<PgCatalog.Types.Int8>;
-      minValue?: Nullable<PgCatalog.Types.Int8>;
-      maxValue?: Nullable<PgCatalog.Types.Int8>;
-      incrementBy?: Nullable<PgCatalog.Types.Int8>;
-      cycle?: Nullable<PgCatalog.Types.Bool>;
-      cacheSize?: Nullable<PgCatalog.Types.Int8>;
-      lastValue?: Nullable<PgCatalog.Types.Int8>;
+      schemaname: PgCatalog.Types.Name;
+      sequencename: PgCatalog.Types.Name;
+      sequenceowner: PgCatalog.Types.Name;
+      dataType: PgCatalog.Types.Regtype;
+      startValue: PgCatalog.Types.Int8;
+      minValue: PgCatalog.Types.Int8;
+      maxValue: PgCatalog.Types.Int8;
+      incrementBy: PgCatalog.Types.Int8;
+      cycle: PgCatalog.Types.Bool;
+      cacheSize: PgCatalog.Types.Int8;
+      lastValue: PgCatalog.Types.Int8;
     };
     export type PgSettings = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      setting?: Nullable<PgCatalog.Types.Text>;
-      unit?: Nullable<PgCatalog.Types.Text>;
-      category?: Nullable<PgCatalog.Types.Text>;
-      shortDesc?: Nullable<PgCatalog.Types.Text>;
-      extraDesc?: Nullable<PgCatalog.Types.Text>;
-      context?: Nullable<PgCatalog.Types.Text>;
-      vartype?: Nullable<PgCatalog.Types.Text>;
-      source?: Nullable<PgCatalog.Types.Text>;
-      minVal?: Nullable<PgCatalog.Types.Text>;
-      maxVal?: Nullable<PgCatalog.Types.Text>;
-      enumvals?: Nullable<PgCatalog.Types.TextArray>;
-      bootVal?: Nullable<PgCatalog.Types.Text>;
-      resetVal?: Nullable<PgCatalog.Types.Text>;
-      sourcefile?: Nullable<PgCatalog.Types.Text>;
-      sourceline?: Nullable<PgCatalog.Types.Int4>;
-      pendingRestart?: Nullable<PgCatalog.Types.Bool>;
+      name: PgCatalog.Types.Text;
+      setting: PgCatalog.Types.Text;
+      unit: PgCatalog.Types.Text;
+      category: PgCatalog.Types.Text;
+      shortDesc: PgCatalog.Types.Text;
+      extraDesc: PgCatalog.Types.Text;
+      context: PgCatalog.Types.Text;
+      vartype: PgCatalog.Types.Text;
+      source: PgCatalog.Types.Text;
+      minVal: PgCatalog.Types.Text;
+      maxVal: PgCatalog.Types.Text;
+      enumvals: PgCatalog.Types.TextArray;
+      bootVal: PgCatalog.Types.Text;
+      resetVal: PgCatalog.Types.Text;
+      sourcefile: PgCatalog.Types.Text;
+      sourceline: PgCatalog.Types.Int4;
+      pendingRestart: PgCatalog.Types.Bool;
     };
     export type PgShadow = {
-      usename?: Nullable<PgCatalog.Types.Name>;
-      usesysid?: Nullable<PgCatalog.Types.Oid>;
-      usecreatedb?: Nullable<PgCatalog.Types.Bool>;
-      usesuper?: Nullable<PgCatalog.Types.Bool>;
-      userepl?: Nullable<PgCatalog.Types.Bool>;
-      usebypassrls?: Nullable<PgCatalog.Types.Bool>;
-      passwd?: Nullable<PgCatalog.Types.Text>;
-      valuntil?: Nullable<PgCatalog.Types.Timestamptz>;
-      useconfig?: Nullable<PgCatalog.Types.TextArray>;
+      usename: PgCatalog.Types.Name;
+      usesysid: PgCatalog.Types.Oid;
+      usecreatedb: PgCatalog.Types.Bool;
+      usesuper: PgCatalog.Types.Bool;
+      userepl: PgCatalog.Types.Bool;
+      usebypassrls: PgCatalog.Types.Bool;
+      passwd: PgCatalog.Types.Text;
+      valuntil: PgCatalog.Types.Timestamptz;
+      useconfig: PgCatalog.Types.TextArray;
     };
     export type PgShdepend = {
       dbid: PgCatalog.Types.Oid;
@@ -1138,10 +1139,10 @@ export namespace PgCatalog {
       description: PgCatalog.Types.Text;
     };
     export type PgShmemAllocations = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      off?: Nullable<PgCatalog.Types.Int8>;
-      size?: Nullable<PgCatalog.Types.Int8>;
-      allocatedSize?: Nullable<PgCatalog.Types.Int8>;
+      name: PgCatalog.Types.Text;
+      off: PgCatalog.Types.Int8;
+      size: PgCatalog.Types.Int8;
+      allocatedSize: PgCatalog.Types.Int8;
     };
     export type PgShseclabel = {
       objoid: PgCatalog.Types.Oid;
@@ -1151,572 +1152,572 @@ export namespace PgCatalog {
     };
     export type PgSnapshot = string;
     export type PgStatActivity = {
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      leaderPid?: Nullable<PgCatalog.Types.Int4>;
-      usesysid?: Nullable<PgCatalog.Types.Oid>;
-      usename?: Nullable<PgCatalog.Types.Name>;
-      applicationName?: Nullable<PgCatalog.Types.Text>;
-      clientAddr?: Nullable<PgCatalog.Types.Inet>;
-      clientHostname?: Nullable<PgCatalog.Types.Text>;
-      clientPort?: Nullable<PgCatalog.Types.Int4>;
-      backendStart?: Nullable<PgCatalog.Types.Timestamptz>;
-      xactStart?: Nullable<PgCatalog.Types.Timestamptz>;
-      queryStart?: Nullable<PgCatalog.Types.Timestamptz>;
-      stateChange?: Nullable<PgCatalog.Types.Timestamptz>;
-      waitEventType?: Nullable<PgCatalog.Types.Text>;
-      waitEvent?: Nullable<PgCatalog.Types.Text>;
-      state?: Nullable<PgCatalog.Types.Text>;
-      backendXid?: Nullable<PgCatalog.Types.Xid>;
-      backendXmin?: Nullable<PgCatalog.Types.Xid>;
-      queryId?: Nullable<PgCatalog.Types.Int8>;
-      query?: Nullable<PgCatalog.Types.Text>;
-      backendType?: Nullable<PgCatalog.Types.Text>;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      pid: PgCatalog.Types.Int4;
+      leaderPid: PgCatalog.Types.Int4;
+      usesysid: PgCatalog.Types.Oid;
+      usename: PgCatalog.Types.Name;
+      applicationName: PgCatalog.Types.Text;
+      clientAddr: PgCatalog.Types.Inet;
+      clientHostname: PgCatalog.Types.Text;
+      clientPort: PgCatalog.Types.Int4;
+      backendStart: PgCatalog.Types.Timestamptz;
+      xactStart: PgCatalog.Types.Timestamptz;
+      queryStart: PgCatalog.Types.Timestamptz;
+      stateChange: PgCatalog.Types.Timestamptz;
+      waitEventType: PgCatalog.Types.Text;
+      waitEvent: PgCatalog.Types.Text;
+      state: PgCatalog.Types.Text;
+      backendXid: PgCatalog.Types.Xid;
+      backendXmin: PgCatalog.Types.Xid;
+      queryId: PgCatalog.Types.Int8;
+      query: PgCatalog.Types.Text;
+      backendType: PgCatalog.Types.Text;
     };
     export type PgStatAllIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupRead: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
     };
     export type PgStatAllTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      lastSeqScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-      nLiveTup?: Nullable<PgCatalog.Types.Int8>;
-      nDeadTup?: Nullable<PgCatalog.Types.Int8>;
-      nModSinceAnalyze?: Nullable<PgCatalog.Types.Int8>;
-      nInsSinceVacuum?: Nullable<PgCatalog.Types.Int8>;
-      lastVacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutovacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAnalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutoanalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      vacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      analyzeCount?: Nullable<PgCatalog.Types.Int8>;
-      autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      lastSeqScan: PgCatalog.Types.Timestamptz;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
+      nLiveTup: PgCatalog.Types.Int8;
+      nDeadTup: PgCatalog.Types.Int8;
+      nModSinceAnalyze: PgCatalog.Types.Int8;
+      nInsSinceVacuum: PgCatalog.Types.Int8;
+      lastVacuum: PgCatalog.Types.Timestamptz;
+      lastAutovacuum: PgCatalog.Types.Timestamptz;
+      lastAnalyze: PgCatalog.Types.Timestamptz;
+      lastAutoanalyze: PgCatalog.Types.Timestamptz;
+      vacuumCount: PgCatalog.Types.Int8;
+      autovacuumCount: PgCatalog.Types.Int8;
+      analyzeCount: PgCatalog.Types.Int8;
+      autoanalyzeCount: PgCatalog.Types.Int8;
     };
     export type PgStatArchiver = {
-      archivedCount?: Nullable<PgCatalog.Types.Int8>;
-      lastArchivedWal?: Nullable<PgCatalog.Types.Text>;
-      lastArchivedTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      failedCount?: Nullable<PgCatalog.Types.Int8>;
-      lastFailedWal?: Nullable<PgCatalog.Types.Text>;
-      lastFailedTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      archivedCount: PgCatalog.Types.Int8;
+      lastArchivedWal: PgCatalog.Types.Text;
+      lastArchivedTime: PgCatalog.Types.Timestamptz;
+      failedCount: PgCatalog.Types.Int8;
+      lastFailedWal: PgCatalog.Types.Text;
+      lastFailedTime: PgCatalog.Types.Timestamptz;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatBgwriter = {
-      checkpointsTimed?: Nullable<PgCatalog.Types.Int8>;
-      checkpointsReq?: Nullable<PgCatalog.Types.Int8>;
-      checkpointWriteTime?: Nullable<PgCatalog.Types.Float8>;
-      checkpointSyncTime?: Nullable<PgCatalog.Types.Float8>;
-      buffersCheckpoint?: Nullable<PgCatalog.Types.Int8>;
-      buffersClean?: Nullable<PgCatalog.Types.Int8>;
-      maxwrittenClean?: Nullable<PgCatalog.Types.Int8>;
-      buffersBackend?: Nullable<PgCatalog.Types.Int8>;
-      buffersBackendFsync?: Nullable<PgCatalog.Types.Int8>;
-      buffersAlloc?: Nullable<PgCatalog.Types.Int8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      checkpointsTimed: PgCatalog.Types.Int8;
+      checkpointsReq: PgCatalog.Types.Int8;
+      checkpointWriteTime: PgCatalog.Types.Float8;
+      checkpointSyncTime: PgCatalog.Types.Float8;
+      buffersCheckpoint: PgCatalog.Types.Int8;
+      buffersClean: PgCatalog.Types.Int8;
+      maxwrittenClean: PgCatalog.Types.Int8;
+      buffersBackend: PgCatalog.Types.Int8;
+      buffersBackendFsync: PgCatalog.Types.Int8;
+      buffersAlloc: PgCatalog.Types.Int8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatDatabase = {
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      numbackends?: Nullable<PgCatalog.Types.Int4>;
-      xactCommit?: Nullable<PgCatalog.Types.Int8>;
-      xactRollback?: Nullable<PgCatalog.Types.Int8>;
-      blksRead?: Nullable<PgCatalog.Types.Int8>;
-      blksHit?: Nullable<PgCatalog.Types.Int8>;
-      tupReturned?: Nullable<PgCatalog.Types.Int8>;
-      tupFetched?: Nullable<PgCatalog.Types.Int8>;
-      tupInserted?: Nullable<PgCatalog.Types.Int8>;
-      tupUpdated?: Nullable<PgCatalog.Types.Int8>;
-      tupDeleted?: Nullable<PgCatalog.Types.Int8>;
-      conflicts?: Nullable<PgCatalog.Types.Int8>;
-      tempFiles?: Nullable<PgCatalog.Types.Int8>;
-      tempBytes?: Nullable<PgCatalog.Types.Int8>;
-      deadlocks?: Nullable<PgCatalog.Types.Int8>;
-      checksumFailures?: Nullable<PgCatalog.Types.Int8>;
-      checksumLastFailure?: Nullable<PgCatalog.Types.Timestamptz>;
-      blkReadTime?: Nullable<PgCatalog.Types.Float8>;
-      blkWriteTime?: Nullable<PgCatalog.Types.Float8>;
-      sessionTime?: Nullable<PgCatalog.Types.Float8>;
-      activeTime?: Nullable<PgCatalog.Types.Float8>;
-      idleInTransactionTime?: Nullable<PgCatalog.Types.Float8>;
-      sessions?: Nullable<PgCatalog.Types.Int8>;
-      sessionsAbandoned?: Nullable<PgCatalog.Types.Int8>;
-      sessionsFatal?: Nullable<PgCatalog.Types.Int8>;
-      sessionsKilled?: Nullable<PgCatalog.Types.Int8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      numbackends: PgCatalog.Types.Int4;
+      xactCommit: PgCatalog.Types.Int8;
+      xactRollback: PgCatalog.Types.Int8;
+      blksRead: PgCatalog.Types.Int8;
+      blksHit: PgCatalog.Types.Int8;
+      tupReturned: PgCatalog.Types.Int8;
+      tupFetched: PgCatalog.Types.Int8;
+      tupInserted: PgCatalog.Types.Int8;
+      tupUpdated: PgCatalog.Types.Int8;
+      tupDeleted: PgCatalog.Types.Int8;
+      conflicts: PgCatalog.Types.Int8;
+      tempFiles: PgCatalog.Types.Int8;
+      tempBytes: PgCatalog.Types.Int8;
+      deadlocks: PgCatalog.Types.Int8;
+      checksumFailures: PgCatalog.Types.Int8;
+      checksumLastFailure: PgCatalog.Types.Timestamptz;
+      blkReadTime: PgCatalog.Types.Float8;
+      blkWriteTime: PgCatalog.Types.Float8;
+      sessionTime: PgCatalog.Types.Float8;
+      activeTime: PgCatalog.Types.Float8;
+      idleInTransactionTime: PgCatalog.Types.Float8;
+      sessions: PgCatalog.Types.Int8;
+      sessionsAbandoned: PgCatalog.Types.Int8;
+      sessionsFatal: PgCatalog.Types.Int8;
+      sessionsKilled: PgCatalog.Types.Int8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatDatabaseConflicts = {
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      conflTablespace?: Nullable<PgCatalog.Types.Int8>;
-      conflLock?: Nullable<PgCatalog.Types.Int8>;
-      conflSnapshot?: Nullable<PgCatalog.Types.Int8>;
-      conflBufferpin?: Nullable<PgCatalog.Types.Int8>;
-      conflDeadlock?: Nullable<PgCatalog.Types.Int8>;
-      conflActiveLogicalslot?: Nullable<PgCatalog.Types.Int8>;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      conflTablespace: PgCatalog.Types.Int8;
+      conflLock: PgCatalog.Types.Int8;
+      conflSnapshot: PgCatalog.Types.Int8;
+      conflBufferpin: PgCatalog.Types.Int8;
+      conflDeadlock: PgCatalog.Types.Int8;
+      conflActiveLogicalslot: PgCatalog.Types.Int8;
     };
     export type PgStatGssapi = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      gssAuthenticated?: Nullable<PgCatalog.Types.Bool>;
-      principal?: Nullable<PgCatalog.Types.Text>;
-      encrypted?: Nullable<PgCatalog.Types.Bool>;
-      credentialsDelegated?: Nullable<PgCatalog.Types.Bool>;
+      pid: PgCatalog.Types.Int4;
+      gssAuthenticated: PgCatalog.Types.Bool;
+      principal: PgCatalog.Types.Text;
+      encrypted: PgCatalog.Types.Bool;
+      credentialsDelegated: PgCatalog.Types.Bool;
     };
     export type PgStatIo = {
-      backendType?: Nullable<PgCatalog.Types.Text>;
-      object?: Nullable<PgCatalog.Types.Text>;
-      context?: Nullable<PgCatalog.Types.Text>;
-      reads?: Nullable<PgCatalog.Types.Int8>;
-      readTime?: Nullable<PgCatalog.Types.Float8>;
-      writes?: Nullable<PgCatalog.Types.Int8>;
-      writeTime?: Nullable<PgCatalog.Types.Float8>;
-      writebacks?: Nullable<PgCatalog.Types.Int8>;
-      writebackTime?: Nullable<PgCatalog.Types.Float8>;
-      extends?: Nullable<PgCatalog.Types.Int8>;
-      extendTime?: Nullable<PgCatalog.Types.Float8>;
-      opBytes?: Nullable<PgCatalog.Types.Int8>;
-      hits?: Nullable<PgCatalog.Types.Int8>;
-      evictions?: Nullable<PgCatalog.Types.Int8>;
-      reuses?: Nullable<PgCatalog.Types.Int8>;
-      fsyncs?: Nullable<PgCatalog.Types.Int8>;
-      fsyncTime?: Nullable<PgCatalog.Types.Float8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      backendType: PgCatalog.Types.Text;
+      object: PgCatalog.Types.Text;
+      context: PgCatalog.Types.Text;
+      reads: PgCatalog.Types.Int8;
+      readTime: PgCatalog.Types.Float8;
+      writes: PgCatalog.Types.Int8;
+      writeTime: PgCatalog.Types.Float8;
+      writebacks: PgCatalog.Types.Int8;
+      writebackTime: PgCatalog.Types.Float8;
+      extends: PgCatalog.Types.Int8;
+      extendTime: PgCatalog.Types.Float8;
+      opBytes: PgCatalog.Types.Int8;
+      hits: PgCatalog.Types.Int8;
+      evictions: PgCatalog.Types.Int8;
+      reuses: PgCatalog.Types.Int8;
+      fsyncs: PgCatalog.Types.Int8;
+      fsyncTime: PgCatalog.Types.Float8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatProgressAnalyze = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      phase?: Nullable<PgCatalog.Types.Text>;
-      sampleBlksTotal?: Nullable<PgCatalog.Types.Int8>;
-      sampleBlksScanned?: Nullable<PgCatalog.Types.Int8>;
-      extStatsTotal?: Nullable<PgCatalog.Types.Int8>;
-      extStatsComputed?: Nullable<PgCatalog.Types.Int8>;
-      childTablesTotal?: Nullable<PgCatalog.Types.Int8>;
-      childTablesDone?: Nullable<PgCatalog.Types.Int8>;
-      currentChildTableRelid?: Nullable<PgCatalog.Types.Oid>;
+      pid: PgCatalog.Types.Int4;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      relid: PgCatalog.Types.Oid;
+      phase: PgCatalog.Types.Text;
+      sampleBlksTotal: PgCatalog.Types.Int8;
+      sampleBlksScanned: PgCatalog.Types.Int8;
+      extStatsTotal: PgCatalog.Types.Int8;
+      extStatsComputed: PgCatalog.Types.Int8;
+      childTablesTotal: PgCatalog.Types.Int8;
+      childTablesDone: PgCatalog.Types.Int8;
+      currentChildTableRelid: PgCatalog.Types.Oid;
     };
     export type PgStatProgressBasebackup = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      phase?: Nullable<PgCatalog.Types.Text>;
-      backupTotal?: Nullable<PgCatalog.Types.Int8>;
-      backupStreamed?: Nullable<PgCatalog.Types.Int8>;
-      tablespacesTotal?: Nullable<PgCatalog.Types.Int8>;
-      tablespacesStreamed?: Nullable<PgCatalog.Types.Int8>;
+      pid: PgCatalog.Types.Int4;
+      phase: PgCatalog.Types.Text;
+      backupTotal: PgCatalog.Types.Int8;
+      backupStreamed: PgCatalog.Types.Int8;
+      tablespacesTotal: PgCatalog.Types.Int8;
+      tablespacesStreamed: PgCatalog.Types.Int8;
     };
     export type PgStatProgressCluster = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      command?: Nullable<PgCatalog.Types.Text>;
-      phase?: Nullable<PgCatalog.Types.Text>;
-      clusterIndexRelid?: Nullable<PgCatalog.Types.Oid>;
-      heapTuplesScanned?: Nullable<PgCatalog.Types.Int8>;
-      heapTuplesWritten?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksTotal?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksScanned?: Nullable<PgCatalog.Types.Int8>;
-      indexRebuildCount?: Nullable<PgCatalog.Types.Int8>;
+      pid: PgCatalog.Types.Int4;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      relid: PgCatalog.Types.Oid;
+      command: PgCatalog.Types.Text;
+      phase: PgCatalog.Types.Text;
+      clusterIndexRelid: PgCatalog.Types.Oid;
+      heapTuplesScanned: PgCatalog.Types.Int8;
+      heapTuplesWritten: PgCatalog.Types.Int8;
+      heapBlksTotal: PgCatalog.Types.Int8;
+      heapBlksScanned: PgCatalog.Types.Int8;
+      indexRebuildCount: PgCatalog.Types.Int8;
     };
     export type PgStatProgressCopy = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      command?: Nullable<PgCatalog.Types.Text>;
-      type?: Nullable<PgCatalog.Types.Text>;
-      bytesProcessed?: Nullable<PgCatalog.Types.Int8>;
-      bytesTotal?: Nullable<PgCatalog.Types.Int8>;
-      tuplesProcessed?: Nullable<PgCatalog.Types.Int8>;
-      tuplesExcluded?: Nullable<PgCatalog.Types.Int8>;
+      pid: PgCatalog.Types.Int4;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      relid: PgCatalog.Types.Oid;
+      command: PgCatalog.Types.Text;
+      type: PgCatalog.Types.Text;
+      bytesProcessed: PgCatalog.Types.Int8;
+      bytesTotal: PgCatalog.Types.Int8;
+      tuplesProcessed: PgCatalog.Types.Int8;
+      tuplesExcluded: PgCatalog.Types.Int8;
     };
     export type PgStatProgressCreateIndex = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexRelid?: Nullable<PgCatalog.Types.Oid>;
-      command?: Nullable<PgCatalog.Types.Text>;
-      phase?: Nullable<PgCatalog.Types.Text>;
-      lockersTotal?: Nullable<PgCatalog.Types.Int8>;
-      lockersDone?: Nullable<PgCatalog.Types.Int8>;
-      currentLockerPid?: Nullable<PgCatalog.Types.Int8>;
-      blocksTotal?: Nullable<PgCatalog.Types.Int8>;
-      blocksDone?: Nullable<PgCatalog.Types.Int8>;
-      tuplesTotal?: Nullable<PgCatalog.Types.Int8>;
-      tuplesDone?: Nullable<PgCatalog.Types.Int8>;
-      partitionsTotal?: Nullable<PgCatalog.Types.Int8>;
-      partitionsDone?: Nullable<PgCatalog.Types.Int8>;
+      pid: PgCatalog.Types.Int4;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      relid: PgCatalog.Types.Oid;
+      indexRelid: PgCatalog.Types.Oid;
+      command: PgCatalog.Types.Text;
+      phase: PgCatalog.Types.Text;
+      lockersTotal: PgCatalog.Types.Int8;
+      lockersDone: PgCatalog.Types.Int8;
+      currentLockerPid: PgCatalog.Types.Int8;
+      blocksTotal: PgCatalog.Types.Int8;
+      blocksDone: PgCatalog.Types.Int8;
+      tuplesTotal: PgCatalog.Types.Int8;
+      tuplesDone: PgCatalog.Types.Int8;
+      partitionsTotal: PgCatalog.Types.Int8;
+      partitionsDone: PgCatalog.Types.Int8;
     };
     export type PgStatProgressVacuum = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      datid?: Nullable<PgCatalog.Types.Oid>;
-      datname?: Nullable<PgCatalog.Types.Name>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      phase?: Nullable<PgCatalog.Types.Text>;
-      heapBlksTotal?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksScanned?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksVacuumed?: Nullable<PgCatalog.Types.Int8>;
-      indexVacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      maxDeadTuples?: Nullable<PgCatalog.Types.Int8>;
-      numDeadTuples?: Nullable<PgCatalog.Types.Int8>;
+      pid: PgCatalog.Types.Int4;
+      datid: PgCatalog.Types.Oid;
+      datname: PgCatalog.Types.Name;
+      relid: PgCatalog.Types.Oid;
+      phase: PgCatalog.Types.Text;
+      heapBlksTotal: PgCatalog.Types.Int8;
+      heapBlksScanned: PgCatalog.Types.Int8;
+      heapBlksVacuumed: PgCatalog.Types.Int8;
+      indexVacuumCount: PgCatalog.Types.Int8;
+      maxDeadTuples: PgCatalog.Types.Int8;
+      numDeadTuples: PgCatalog.Types.Int8;
     };
     export type PgStatRecoveryPrefetch = {
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
-      prefetch?: Nullable<PgCatalog.Types.Int8>;
-      hit?: Nullable<PgCatalog.Types.Int8>;
-      skipInit?: Nullable<PgCatalog.Types.Int8>;
-      skipNew?: Nullable<PgCatalog.Types.Int8>;
-      skipFpw?: Nullable<PgCatalog.Types.Int8>;
-      skipRep?: Nullable<PgCatalog.Types.Int8>;
-      walDistance?: Nullable<PgCatalog.Types.Int4>;
-      blockDistance?: Nullable<PgCatalog.Types.Int4>;
-      ioDepth?: Nullable<PgCatalog.Types.Int4>;
+      statsReset: PgCatalog.Types.Timestamptz;
+      prefetch: PgCatalog.Types.Int8;
+      hit: PgCatalog.Types.Int8;
+      skipInit: PgCatalog.Types.Int8;
+      skipNew: PgCatalog.Types.Int8;
+      skipFpw: PgCatalog.Types.Int8;
+      skipRep: PgCatalog.Types.Int8;
+      walDistance: PgCatalog.Types.Int4;
+      blockDistance: PgCatalog.Types.Int4;
+      ioDepth: PgCatalog.Types.Int4;
     };
     export type PgStatReplication = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      usesysid?: Nullable<PgCatalog.Types.Oid>;
-      usename?: Nullable<PgCatalog.Types.Name>;
-      applicationName?: Nullable<PgCatalog.Types.Text>;
-      clientAddr?: Nullable<PgCatalog.Types.Inet>;
-      clientHostname?: Nullable<PgCatalog.Types.Text>;
-      clientPort?: Nullable<PgCatalog.Types.Int4>;
-      backendStart?: Nullable<PgCatalog.Types.Timestamptz>;
-      backendXmin?: Nullable<PgCatalog.Types.Xid>;
-      state?: Nullable<PgCatalog.Types.Text>;
-      sentLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      writeLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      flushLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      replayLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      writeLag?: Nullable<PgCatalog.Types.Interval>;
-      flushLag?: Nullable<PgCatalog.Types.Interval>;
-      replayLag?: Nullable<PgCatalog.Types.Interval>;
-      syncPriority?: Nullable<PgCatalog.Types.Int4>;
-      syncState?: Nullable<PgCatalog.Types.Text>;
-      replyTime?: Nullable<PgCatalog.Types.Timestamptz>;
+      pid: PgCatalog.Types.Int4;
+      usesysid: PgCatalog.Types.Oid;
+      usename: PgCatalog.Types.Name;
+      applicationName: PgCatalog.Types.Text;
+      clientAddr: PgCatalog.Types.Inet;
+      clientHostname: PgCatalog.Types.Text;
+      clientPort: PgCatalog.Types.Int4;
+      backendStart: PgCatalog.Types.Timestamptz;
+      backendXmin: PgCatalog.Types.Xid;
+      state: PgCatalog.Types.Text;
+      sentLsn: PgCatalog.Types.PgLsn;
+      writeLsn: PgCatalog.Types.PgLsn;
+      flushLsn: PgCatalog.Types.PgLsn;
+      replayLsn: PgCatalog.Types.PgLsn;
+      writeLag: PgCatalog.Types.Interval;
+      flushLag: PgCatalog.Types.Interval;
+      replayLag: PgCatalog.Types.Interval;
+      syncPriority: PgCatalog.Types.Int4;
+      syncState: PgCatalog.Types.Text;
+      replyTime: PgCatalog.Types.Timestamptz;
     };
     export type PgStatReplicationSlots = {
-      slotName?: Nullable<PgCatalog.Types.Text>;
-      spillTxns?: Nullable<PgCatalog.Types.Int8>;
-      spillCount?: Nullable<PgCatalog.Types.Int8>;
-      spillBytes?: Nullable<PgCatalog.Types.Int8>;
-      streamTxns?: Nullable<PgCatalog.Types.Int8>;
-      streamCount?: Nullable<PgCatalog.Types.Int8>;
-      streamBytes?: Nullable<PgCatalog.Types.Int8>;
-      totalTxns?: Nullable<PgCatalog.Types.Int8>;
-      totalBytes?: Nullable<PgCatalog.Types.Int8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      slotName: PgCatalog.Types.Text;
+      spillTxns: PgCatalog.Types.Int8;
+      spillCount: PgCatalog.Types.Int8;
+      spillBytes: PgCatalog.Types.Int8;
+      streamTxns: PgCatalog.Types.Int8;
+      streamCount: PgCatalog.Types.Int8;
+      streamBytes: PgCatalog.Types.Int8;
+      totalTxns: PgCatalog.Types.Int8;
+      totalBytes: PgCatalog.Types.Int8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatSlru = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      blksZeroed?: Nullable<PgCatalog.Types.Int8>;
-      blksHit?: Nullable<PgCatalog.Types.Int8>;
-      blksRead?: Nullable<PgCatalog.Types.Int8>;
-      blksWritten?: Nullable<PgCatalog.Types.Int8>;
-      blksExists?: Nullable<PgCatalog.Types.Int8>;
-      flushes?: Nullable<PgCatalog.Types.Int8>;
-      truncates?: Nullable<PgCatalog.Types.Int8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      name: PgCatalog.Types.Text;
+      blksZeroed: PgCatalog.Types.Int8;
+      blksHit: PgCatalog.Types.Int8;
+      blksRead: PgCatalog.Types.Int8;
+      blksWritten: PgCatalog.Types.Int8;
+      blksExists: PgCatalog.Types.Int8;
+      flushes: PgCatalog.Types.Int8;
+      truncates: PgCatalog.Types.Int8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatSsl = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      ssl?: Nullable<PgCatalog.Types.Bool>;
-      version?: Nullable<PgCatalog.Types.Text>;
-      cipher?: Nullable<PgCatalog.Types.Text>;
-      bits?: Nullable<PgCatalog.Types.Int4>;
-      clientDn?: Nullable<PgCatalog.Types.Text>;
-      clientSerial?: Nullable<PgCatalog.Types.Numeric>;
-      issuerDn?: Nullable<PgCatalog.Types.Text>;
+      pid: PgCatalog.Types.Int4;
+      ssl: PgCatalog.Types.Bool;
+      version: PgCatalog.Types.Text;
+      cipher: PgCatalog.Types.Text;
+      bits: PgCatalog.Types.Int4;
+      clientDn: PgCatalog.Types.Text;
+      clientSerial: PgCatalog.Types.Numeric;
+      issuerDn: PgCatalog.Types.Text;
     };
     export type PgStatSubscription = {
-      subid?: Nullable<PgCatalog.Types.Oid>;
-      subname?: Nullable<PgCatalog.Types.Name>;
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      leaderPid?: Nullable<PgCatalog.Types.Int4>;
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      receivedLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      lastMsgSendTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastMsgReceiptTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      latestEndLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      latestEndTime?: Nullable<PgCatalog.Types.Timestamptz>;
+      subid: PgCatalog.Types.Oid;
+      subname: PgCatalog.Types.Name;
+      pid: PgCatalog.Types.Int4;
+      leaderPid: PgCatalog.Types.Int4;
+      relid: PgCatalog.Types.Oid;
+      receivedLsn: PgCatalog.Types.PgLsn;
+      lastMsgSendTime: PgCatalog.Types.Timestamptz;
+      lastMsgReceiptTime: PgCatalog.Types.Timestamptz;
+      latestEndLsn: PgCatalog.Types.PgLsn;
+      latestEndTime: PgCatalog.Types.Timestamptz;
     };
     export type PgStatSubscriptionStats = {
-      subid?: Nullable<PgCatalog.Types.Oid>;
-      subname?: Nullable<PgCatalog.Types.Name>;
-      applyErrorCount?: Nullable<PgCatalog.Types.Int8>;
-      syncErrorCount?: Nullable<PgCatalog.Types.Int8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      subid: PgCatalog.Types.Oid;
+      subname: PgCatalog.Types.Name;
+      applyErrorCount: PgCatalog.Types.Int8;
+      syncErrorCount: PgCatalog.Types.Int8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatSysIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupRead: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
     };
     export type PgStatSysTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      lastSeqScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-      nLiveTup?: Nullable<PgCatalog.Types.Int8>;
-      nDeadTup?: Nullable<PgCatalog.Types.Int8>;
-      nModSinceAnalyze?: Nullable<PgCatalog.Types.Int8>;
-      nInsSinceVacuum?: Nullable<PgCatalog.Types.Int8>;
-      lastVacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutovacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAnalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutoanalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      vacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      analyzeCount?: Nullable<PgCatalog.Types.Int8>;
-      autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      lastSeqScan: PgCatalog.Types.Timestamptz;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
+      nLiveTup: PgCatalog.Types.Int8;
+      nDeadTup: PgCatalog.Types.Int8;
+      nModSinceAnalyze: PgCatalog.Types.Int8;
+      nInsSinceVacuum: PgCatalog.Types.Int8;
+      lastVacuum: PgCatalog.Types.Timestamptz;
+      lastAutovacuum: PgCatalog.Types.Timestamptz;
+      lastAnalyze: PgCatalog.Types.Timestamptz;
+      lastAutoanalyze: PgCatalog.Types.Timestamptz;
+      vacuumCount: PgCatalog.Types.Int8;
+      autovacuumCount: PgCatalog.Types.Int8;
+      analyzeCount: PgCatalog.Types.Int8;
+      autoanalyzeCount: PgCatalog.Types.Int8;
     };
     export type PgStatUserFunctions = {
-      funcid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      funcname?: Nullable<PgCatalog.Types.Name>;
-      calls?: Nullable<PgCatalog.Types.Int8>;
-      totalTime?: Nullable<PgCatalog.Types.Float8>;
-      selfTime?: Nullable<PgCatalog.Types.Float8>;
+      funcid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      funcname: PgCatalog.Types.Name;
+      calls: PgCatalog.Types.Int8;
+      totalTime: PgCatalog.Types.Float8;
+      selfTime: PgCatalog.Types.Float8;
     };
     export type PgStatUserIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupRead: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
     };
     export type PgStatUserTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      lastSeqScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      lastIdxScan?: Nullable<PgCatalog.Types.Timestamptz>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
-      nLiveTup?: Nullable<PgCatalog.Types.Int8>;
-      nDeadTup?: Nullable<PgCatalog.Types.Int8>;
-      nModSinceAnalyze?: Nullable<PgCatalog.Types.Int8>;
-      nInsSinceVacuum?: Nullable<PgCatalog.Types.Int8>;
-      lastVacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutovacuum?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAnalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastAutoanalyze?: Nullable<PgCatalog.Types.Timestamptz>;
-      vacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      autovacuumCount?: Nullable<PgCatalog.Types.Int8>;
-      analyzeCount?: Nullable<PgCatalog.Types.Int8>;
-      autoanalyzeCount?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      lastSeqScan: PgCatalog.Types.Timestamptz;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      lastIdxScan: PgCatalog.Types.Timestamptz;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
+      nLiveTup: PgCatalog.Types.Int8;
+      nDeadTup: PgCatalog.Types.Int8;
+      nModSinceAnalyze: PgCatalog.Types.Int8;
+      nInsSinceVacuum: PgCatalog.Types.Int8;
+      lastVacuum: PgCatalog.Types.Timestamptz;
+      lastAutovacuum: PgCatalog.Types.Timestamptz;
+      lastAnalyze: PgCatalog.Types.Timestamptz;
+      lastAutoanalyze: PgCatalog.Types.Timestamptz;
+      vacuumCount: PgCatalog.Types.Int8;
+      autovacuumCount: PgCatalog.Types.Int8;
+      analyzeCount: PgCatalog.Types.Int8;
+      autoanalyzeCount: PgCatalog.Types.Int8;
     };
     export type PgStatWal = {
-      walRecords?: Nullable<PgCatalog.Types.Int8>;
-      walFpi?: Nullable<PgCatalog.Types.Int8>;
-      walBytes?: Nullable<PgCatalog.Types.Numeric>;
-      walBuffersFull?: Nullable<PgCatalog.Types.Int8>;
-      walWrite?: Nullable<PgCatalog.Types.Int8>;
-      walSync?: Nullable<PgCatalog.Types.Int8>;
-      walWriteTime?: Nullable<PgCatalog.Types.Float8>;
-      walSyncTime?: Nullable<PgCatalog.Types.Float8>;
-      statsReset?: Nullable<PgCatalog.Types.Timestamptz>;
+      walRecords: PgCatalog.Types.Int8;
+      walFpi: PgCatalog.Types.Int8;
+      walBytes: PgCatalog.Types.Numeric;
+      walBuffersFull: PgCatalog.Types.Int8;
+      walWrite: PgCatalog.Types.Int8;
+      walSync: PgCatalog.Types.Int8;
+      walWriteTime: PgCatalog.Types.Float8;
+      walSyncTime: PgCatalog.Types.Float8;
+      statsReset: PgCatalog.Types.Timestamptz;
     };
     export type PgStatWalReceiver = {
-      pid?: Nullable<PgCatalog.Types.Int4>;
-      status?: Nullable<PgCatalog.Types.Text>;
-      receiveStartLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      receiveStartTli?: Nullable<PgCatalog.Types.Int4>;
-      writtenLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      flushedLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      receivedTli?: Nullable<PgCatalog.Types.Int4>;
-      lastMsgSendTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      lastMsgReceiptTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      latestEndLsn?: Nullable<PgCatalog.Types.PgLsn>;
-      latestEndTime?: Nullable<PgCatalog.Types.Timestamptz>;
-      slotName?: Nullable<PgCatalog.Types.Text>;
-      senderHost?: Nullable<PgCatalog.Types.Text>;
-      senderPort?: Nullable<PgCatalog.Types.Int4>;
-      conninfo?: Nullable<PgCatalog.Types.Text>;
+      pid: PgCatalog.Types.Int4;
+      status: PgCatalog.Types.Text;
+      receiveStartLsn: PgCatalog.Types.PgLsn;
+      receiveStartTli: PgCatalog.Types.Int4;
+      writtenLsn: PgCatalog.Types.PgLsn;
+      flushedLsn: PgCatalog.Types.PgLsn;
+      receivedTli: PgCatalog.Types.Int4;
+      lastMsgSendTime: PgCatalog.Types.Timestamptz;
+      lastMsgReceiptTime: PgCatalog.Types.Timestamptz;
+      latestEndLsn: PgCatalog.Types.PgLsn;
+      latestEndTime: PgCatalog.Types.Timestamptz;
+      slotName: PgCatalog.Types.Text;
+      senderHost: PgCatalog.Types.Text;
+      senderPort: PgCatalog.Types.Int4;
+      conninfo: PgCatalog.Types.Text;
     };
     export type PgStatXactAllTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
     };
     export type PgStatXactSysTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
     };
     export type PgStatXactUserFunctions = {
-      funcid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      funcname?: Nullable<PgCatalog.Types.Name>;
-      calls?: Nullable<PgCatalog.Types.Int8>;
-      totalTime?: Nullable<PgCatalog.Types.Float8>;
-      selfTime?: Nullable<PgCatalog.Types.Float8>;
+      funcid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      funcname: PgCatalog.Types.Name;
+      calls: PgCatalog.Types.Int8;
+      totalTime: PgCatalog.Types.Float8;
+      selfTime: PgCatalog.Types.Float8;
     };
     export type PgStatXactUserTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      seqScan?: Nullable<PgCatalog.Types.Int8>;
-      seqTupRead?: Nullable<PgCatalog.Types.Int8>;
-      idxScan?: Nullable<PgCatalog.Types.Int8>;
-      idxTupFetch?: Nullable<PgCatalog.Types.Int8>;
-      nTupIns?: Nullable<PgCatalog.Types.Int8>;
-      nTupUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupDel?: Nullable<PgCatalog.Types.Int8>;
-      nTupHotUpd?: Nullable<PgCatalog.Types.Int8>;
-      nTupNewpageUpd?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      seqScan: PgCatalog.Types.Int8;
+      seqTupRead: PgCatalog.Types.Int8;
+      idxScan: PgCatalog.Types.Int8;
+      idxTupFetch: PgCatalog.Types.Int8;
+      nTupIns: PgCatalog.Types.Int8;
+      nTupUpd: PgCatalog.Types.Int8;
+      nTupDel: PgCatalog.Types.Int8;
+      nTupHotUpd: PgCatalog.Types.Int8;
+      nTupNewpageUpd: PgCatalog.Types.Int8;
     };
     export type PgStatioAllIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioAllSequences = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      blksRead?: Nullable<PgCatalog.Types.Int8>;
-      blksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      blksRead: PgCatalog.Types.Int8;
+      blksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioAllTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      heapBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      heapBlksRead: PgCatalog.Types.Int8;
+      heapBlksHit: PgCatalog.Types.Int8;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
+      toastBlksRead: PgCatalog.Types.Int8;
+      toastBlksHit: PgCatalog.Types.Int8;
+      tidxBlksRead: PgCatalog.Types.Int8;
+      tidxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioSysIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioSysSequences = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      blksRead?: Nullable<PgCatalog.Types.Int8>;
-      blksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      blksRead: PgCatalog.Types.Int8;
+      blksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioSysTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      heapBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      heapBlksRead: PgCatalog.Types.Int8;
+      heapBlksHit: PgCatalog.Types.Int8;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
+      toastBlksRead: PgCatalog.Types.Int8;
+      toastBlksHit: PgCatalog.Types.Int8;
+      tidxBlksRead: PgCatalog.Types.Int8;
+      tidxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioUserIndexes = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      indexrelid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      indexrelname?: Nullable<PgCatalog.Types.Name>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      indexrelid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      indexrelname: PgCatalog.Types.Name;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioUserSequences = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      blksRead?: Nullable<PgCatalog.Types.Int8>;
-      blksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      blksRead: PgCatalog.Types.Int8;
+      blksHit: PgCatalog.Types.Int8;
     };
     export type PgStatioUserTables = {
-      relid?: Nullable<PgCatalog.Types.Oid>;
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      heapBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      heapBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      idxBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      toastBlksHit?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksRead?: Nullable<PgCatalog.Types.Int8>;
-      tidxBlksHit?: Nullable<PgCatalog.Types.Int8>;
+      relid: PgCatalog.Types.Oid;
+      schemaname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      heapBlksRead: PgCatalog.Types.Int8;
+      heapBlksHit: PgCatalog.Types.Int8;
+      idxBlksRead: PgCatalog.Types.Int8;
+      idxBlksHit: PgCatalog.Types.Int8;
+      toastBlksRead: PgCatalog.Types.Int8;
+      toastBlksHit: PgCatalog.Types.Int8;
+      tidxBlksRead: PgCatalog.Types.Int8;
+      tidxBlksHit: PgCatalog.Types.Int8;
     };
     export type PgStatistic = {
       starelid: PgCatalog.Types.Oid;
@@ -1740,16 +1741,16 @@ export namespace PgCatalog {
       stacoll3: PgCatalog.Types.Oid;
       stacoll4: PgCatalog.Types.Oid;
       stacoll5: PgCatalog.Types.Oid;
-      stanumbers1?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers2?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers3?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers4?: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers5?: Nullable<PgCatalog.Types.Float4Array>;
-      stavalues1?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues2?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues3?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues4?: Nullable<PgCatalog.Types.Anyarray>;
-      stavalues5?: Nullable<PgCatalog.Types.Anyarray>;
+      stanumbers1: PgCatalog.Types.Float4Array;
+      stanumbers2: PgCatalog.Types.Float4Array;
+      stanumbers3: PgCatalog.Types.Float4Array;
+      stanumbers4: PgCatalog.Types.Float4Array;
+      stanumbers5: PgCatalog.Types.Float4Array;
+      stavalues1: PgCatalog.Types.Anyarray;
+      stavalues2: PgCatalog.Types.Anyarray;
+      stavalues3: PgCatalog.Types.Anyarray;
+      stavalues4: PgCatalog.Types.Anyarray;
+      stavalues5: PgCatalog.Types.Anyarray;
     };
     export type PgStatisticExt = {
       oid: PgCatalog.Types.Oid;
@@ -1760,67 +1761,67 @@ export namespace PgCatalog {
       stxstattarget: PgCatalog.Types.Int4;
       stxkeys: PgCatalog.Types.Int2vector;
       stxkind: PgCatalog.Types.CharArray;
-      stxexprs?: Nullable<PgCatalog.Types.PgNodeTree>;
+      stxexprs: PgCatalog.Types.PgNodeTree;
     };
     export type PgStatisticExtData = {
       stxoid: PgCatalog.Types.Oid;
       stxdinherit: PgCatalog.Types.Bool;
-      stxdndistinct?: Nullable<PgCatalog.Types.PgNdistinct>;
-      stxddependencies?: Nullable<PgCatalog.Types.PgDependencies>;
-      stxdmcv?: Nullable<PgCatalog.Types.PgMcvList>;
-      stxdexpr?: Nullable<PgCatalog.Types.PgStatisticArray>;
+      stxdndistinct: PgCatalog.Types.PgNdistinct;
+      stxddependencies: PgCatalog.Types.PgDependencies;
+      stxdmcv: PgCatalog.Types.PgMcvList;
+      stxdexpr: PgCatalog.Types.PgStatisticArray;
     };
     export type PgStats = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      attname?: Nullable<PgCatalog.Types.Name>;
-      inherited?: Nullable<PgCatalog.Types.Bool>;
-      nullFrac?: Nullable<PgCatalog.Types.Float4>;
-      avgWidth?: Nullable<PgCatalog.Types.Int4>;
-      nDistinct?: Nullable<PgCatalog.Types.Float4>;
-      mostCommonVals?: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonFreqs?: Nullable<PgCatalog.Types.Float4Array>;
-      histogramBounds?: Nullable<PgCatalog.Types.Anyarray>;
-      correlation?: Nullable<PgCatalog.Types.Float4>;
-      mostCommonElems?: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonElemFreqs?: Nullable<PgCatalog.Types.Float4Array>;
-      elemCountHistogram?: Nullable<PgCatalog.Types.Float4Array>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      attname: PgCatalog.Types.Name;
+      inherited: PgCatalog.Types.Bool;
+      nullFrac: PgCatalog.Types.Float4;
+      avgWidth: PgCatalog.Types.Int4;
+      nDistinct: PgCatalog.Types.Float4;
+      mostCommonVals: PgCatalog.Types.Anyarray;
+      mostCommonFreqs: PgCatalog.Types.Float4Array;
+      histogramBounds: PgCatalog.Types.Anyarray;
+      correlation: PgCatalog.Types.Float4;
+      mostCommonElems: PgCatalog.Types.Anyarray;
+      mostCommonElemFreqs: PgCatalog.Types.Float4Array;
+      elemCountHistogram: PgCatalog.Types.Float4Array;
     };
     export type PgStatsExt = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      statisticsSchemaname?: Nullable<PgCatalog.Types.Name>;
-      statisticsName?: Nullable<PgCatalog.Types.Name>;
-      statisticsOwner?: Nullable<PgCatalog.Types.Name>;
-      attnames?: Nullable<PgCatalog.Types.NameArray>;
-      exprs?: Nullable<PgCatalog.Types.TextArray>;
-      kinds?: Nullable<PgCatalog.Types.CharArray>;
-      inherited?: Nullable<PgCatalog.Types.Bool>;
-      nDistinct?: Nullable<PgCatalog.Types.PgNdistinct>;
-      dependencies?: Nullable<PgCatalog.Types.PgDependencies>;
-      mostCommonVals?: Nullable<PgCatalog.Types.TextArray>;
-      mostCommonValNulls?: Nullable<PgCatalog.Types.BoolArray>;
-      mostCommonFreqs?: Nullable<PgCatalog.Types.Float8Array>;
-      mostCommonBaseFreqs?: Nullable<PgCatalog.Types.Float8Array>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      statisticsSchemaname: PgCatalog.Types.Name;
+      statisticsName: PgCatalog.Types.Name;
+      statisticsOwner: PgCatalog.Types.Name;
+      attnames: PgCatalog.Types.NameArray;
+      exprs: PgCatalog.Types.TextArray;
+      kinds: PgCatalog.Types.CharArray;
+      inherited: PgCatalog.Types.Bool;
+      nDistinct: PgCatalog.Types.PgNdistinct;
+      dependencies: PgCatalog.Types.PgDependencies;
+      mostCommonVals: PgCatalog.Types.TextArray;
+      mostCommonValNulls: PgCatalog.Types.BoolArray;
+      mostCommonFreqs: PgCatalog.Types.Float8Array;
+      mostCommonBaseFreqs: PgCatalog.Types.Float8Array;
     };
     export type PgStatsExtExprs = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      statisticsSchemaname?: Nullable<PgCatalog.Types.Name>;
-      statisticsName?: Nullable<PgCatalog.Types.Name>;
-      statisticsOwner?: Nullable<PgCatalog.Types.Name>;
-      expr?: Nullable<PgCatalog.Types.Text>;
-      inherited?: Nullable<PgCatalog.Types.Bool>;
-      nullFrac?: Nullable<PgCatalog.Types.Float4>;
-      avgWidth?: Nullable<PgCatalog.Types.Int4>;
-      nDistinct?: Nullable<PgCatalog.Types.Float4>;
-      mostCommonVals?: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonFreqs?: Nullable<PgCatalog.Types.Float4Array>;
-      histogramBounds?: Nullable<PgCatalog.Types.Anyarray>;
-      correlation?: Nullable<PgCatalog.Types.Float4>;
-      mostCommonElems?: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonElemFreqs?: Nullable<PgCatalog.Types.Float4Array>;
-      elemCountHistogram?: Nullable<PgCatalog.Types.Float4Array>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      statisticsSchemaname: PgCatalog.Types.Name;
+      statisticsName: PgCatalog.Types.Name;
+      statisticsOwner: PgCatalog.Types.Name;
+      expr: PgCatalog.Types.Text;
+      inherited: PgCatalog.Types.Bool;
+      nullFrac: PgCatalog.Types.Float4;
+      avgWidth: PgCatalog.Types.Int4;
+      nDistinct: PgCatalog.Types.Float4;
+      mostCommonVals: PgCatalog.Types.Anyarray;
+      mostCommonFreqs: PgCatalog.Types.Float4Array;
+      histogramBounds: PgCatalog.Types.Anyarray;
+      correlation: PgCatalog.Types.Float4;
+      mostCommonElems: PgCatalog.Types.Anyarray;
+      mostCommonElemFreqs: PgCatalog.Types.Float4Array;
+      elemCountHistogram: PgCatalog.Types.Float4Array;
     };
     export type PgSubscription = {
       oid: PgCatalog.Types.Oid;
@@ -1836,44 +1837,44 @@ export namespace PgCatalog {
       subpasswordrequired: PgCatalog.Types.Bool;
       subrunasowner: PgCatalog.Types.Bool;
       subconninfo: PgCatalog.Types.Text;
-      subslotname?: Nullable<PgCatalog.Types.Name>;
+      subslotname: PgCatalog.Types.Name;
       subsynccommit: PgCatalog.Types.Text;
       subpublications: PgCatalog.Types.TextArray;
-      suborigin?: Nullable<PgCatalog.Types.Text>;
+      suborigin: PgCatalog.Types.Text;
     };
     export type PgSubscriptionRel = {
       srsubid: PgCatalog.Types.Oid;
       srrelid: PgCatalog.Types.Oid;
       srsubstate: PgCatalog.Types.Char;
-      srsublsn?: Nullable<PgCatalog.Types.PgLsn>;
+      srsublsn: PgCatalog.Types.PgLsn;
     };
     export type PgTables = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      tablename?: Nullable<PgCatalog.Types.Name>;
-      tableowner?: Nullable<PgCatalog.Types.Name>;
-      tablespace?: Nullable<PgCatalog.Types.Name>;
-      hasindexes?: Nullable<PgCatalog.Types.Bool>;
-      hasrules?: Nullable<PgCatalog.Types.Bool>;
-      hastriggers?: Nullable<PgCatalog.Types.Bool>;
-      rowsecurity?: Nullable<PgCatalog.Types.Bool>;
+      schemaname: PgCatalog.Types.Name;
+      tablename: PgCatalog.Types.Name;
+      tableowner: PgCatalog.Types.Name;
+      tablespace: PgCatalog.Types.Name;
+      hasindexes: PgCatalog.Types.Bool;
+      hasrules: PgCatalog.Types.Bool;
+      hastriggers: PgCatalog.Types.Bool;
+      rowsecurity: PgCatalog.Types.Bool;
     };
     export type PgTablespace = {
       oid: PgCatalog.Types.Oid;
       spcname: PgCatalog.Types.Name;
       spcowner: PgCatalog.Types.Oid;
-      spcacl?: Nullable<PgCatalog.Types.AclitemArray>;
-      spcoptions?: Nullable<PgCatalog.Types.TextArray>;
+      spcacl: PgCatalog.Types.AclitemArray;
+      spcoptions: PgCatalog.Types.TextArray;
     };
     export type PgTimezoneAbbrevs = {
-      abbrev?: Nullable<PgCatalog.Types.Text>;
-      utcOffset?: Nullable<PgCatalog.Types.Interval>;
-      isDst?: Nullable<PgCatalog.Types.Bool>;
+      abbrev: PgCatalog.Types.Text;
+      utcOffset: PgCatalog.Types.Interval;
+      isDst: PgCatalog.Types.Bool;
     };
     export type PgTimezoneNames = {
-      name?: Nullable<PgCatalog.Types.Text>;
-      abbrev?: Nullable<PgCatalog.Types.Text>;
-      utcOffset?: Nullable<PgCatalog.Types.Interval>;
-      isDst?: Nullable<PgCatalog.Types.Bool>;
+      name: PgCatalog.Types.Text;
+      abbrev: PgCatalog.Types.Text;
+      utcOffset: PgCatalog.Types.Interval;
+      isDst: PgCatalog.Types.Bool;
     };
     export type PgTransform = {
       oid: PgCatalog.Types.Oid;
@@ -1899,9 +1900,9 @@ export namespace PgCatalog {
       tgnargs: PgCatalog.Types.Int2;
       tgattr: PgCatalog.Types.Int2vector;
       tgargs: PgCatalog.Types.Bytea;
-      tgqual?: Nullable<PgCatalog.Types.PgNodeTree>;
-      tgoldtable?: Nullable<PgCatalog.Types.Name>;
-      tgnewtable?: Nullable<PgCatalog.Types.Name>;
+      tgqual: PgCatalog.Types.PgNodeTree;
+      tgoldtable: PgCatalog.Types.Name;
+      tgnewtable: PgCatalog.Types.Name;
     };
     export type PgTsConfig = {
       oid: PgCatalog.Types.Oid;
@@ -1922,7 +1923,7 @@ export namespace PgCatalog {
       dictnamespace: PgCatalog.Types.Oid;
       dictowner: PgCatalog.Types.Oid;
       dicttemplate: PgCatalog.Types.Oid;
-      dictinitoption?: Nullable<PgCatalog.Types.Text>;
+      dictinitoption: PgCatalog.Types.Text;
     };
     export type PgTsParser = {
       oid: PgCatalog.Types.Oid;
@@ -1971,40 +1972,40 @@ export namespace PgCatalog {
       typtypmod: PgCatalog.Types.Int4;
       typndims: PgCatalog.Types.Int4;
       typcollation: PgCatalog.Types.Oid;
-      typdefaultbin?: Nullable<PgCatalog.Types.PgNodeTree>;
-      typdefault?: Nullable<PgCatalog.Types.Text>;
-      typacl?: Nullable<PgCatalog.Types.AclitemArray>;
+      typdefaultbin: PgCatalog.Types.PgNodeTree;
+      typdefault: PgCatalog.Types.Text;
+      typacl: PgCatalog.Types.AclitemArray;
     };
     export type PgUser = {
-      usename?: Nullable<PgCatalog.Types.Name>;
-      usesysid?: Nullable<PgCatalog.Types.Oid>;
-      usecreatedb?: Nullable<PgCatalog.Types.Bool>;
-      usesuper?: Nullable<PgCatalog.Types.Bool>;
-      userepl?: Nullable<PgCatalog.Types.Bool>;
-      usebypassrls?: Nullable<PgCatalog.Types.Bool>;
-      passwd?: Nullable<PgCatalog.Types.Text>;
-      valuntil?: Nullable<PgCatalog.Types.Timestamptz>;
-      useconfig?: Nullable<PgCatalog.Types.TextArray>;
+      usename: PgCatalog.Types.Name;
+      usesysid: PgCatalog.Types.Oid;
+      usecreatedb: PgCatalog.Types.Bool;
+      usesuper: PgCatalog.Types.Bool;
+      userepl: PgCatalog.Types.Bool;
+      usebypassrls: PgCatalog.Types.Bool;
+      passwd: PgCatalog.Types.Text;
+      valuntil: PgCatalog.Types.Timestamptz;
+      useconfig: PgCatalog.Types.TextArray;
     };
     export type PgUserMapping = {
       oid: PgCatalog.Types.Oid;
       umuser: PgCatalog.Types.Oid;
       umserver: PgCatalog.Types.Oid;
-      umoptions?: Nullable<PgCatalog.Types.TextArray>;
+      umoptions: PgCatalog.Types.TextArray;
     };
     export type PgUserMappings = {
-      umid?: Nullable<PgCatalog.Types.Oid>;
-      srvid?: Nullable<PgCatalog.Types.Oid>;
-      srvname?: Nullable<PgCatalog.Types.Name>;
-      umuser?: Nullable<PgCatalog.Types.Oid>;
-      usename?: Nullable<PgCatalog.Types.Name>;
-      umoptions?: Nullable<PgCatalog.Types.TextArray>;
+      umid: PgCatalog.Types.Oid;
+      srvid: PgCatalog.Types.Oid;
+      srvname: PgCatalog.Types.Name;
+      umuser: PgCatalog.Types.Oid;
+      usename: PgCatalog.Types.Name;
+      umoptions: PgCatalog.Types.TextArray;
     };
     export type PgViews = {
-      schemaname?: Nullable<PgCatalog.Types.Name>;
-      viewname?: Nullable<PgCatalog.Types.Name>;
-      viewowner?: Nullable<PgCatalog.Types.Name>;
-      definition?: Nullable<PgCatalog.Types.Text>;
+      schemaname: PgCatalog.Types.Name;
+      viewname: PgCatalog.Types.Name;
+      viewowner: PgCatalog.Types.Name;
+      definition: PgCatalog.Types.Text;
     };
     export type Point = {
       x: number;
@@ -2062,648 +2063,1004 @@ export namespace PgCatalog {
   export namespace Tables {
     export namespace PgStatistic {
       export type Record = Required<PgCatalog.Types.PgStatistic>;
+      export type Results = PgCatalog.Types.PgStatistic;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
         stainherit: PgCatalog.Types.Bool;
       };
+      export type PrimaryKey = ByStarelidStaattnumStainherit;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgType {
       export type Record = Required<PgCatalog.Types.PgType>;
+      export type Results = PgCatalog.Types.PgType;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByTypnameTypnamespace = {
         typname: PgCatalog.Types.Cstring;
         typnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignTable {
       export type Record = Required<PgCatalog.Types.PgForeignTable>;
+      export type Results = PgCatalog.Types.PgForeignTable;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByFtrelid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthid {
       export type Record = Required<PgCatalog.Types.PgAuthid>;
+      export type Results = PgCatalog.Types.PgAuthid;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByRolname = {
         rolname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExtData {
       export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
+      export type Results = PgCatalog.Types.PgStatisticExtData;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
       };
+      export type PrimaryKey = ByStxoidStxdinherit;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgUserMapping {
       export type Record = Required<PgCatalog.Types.PgUserMapping>;
+      export type Results = PgCatalog.Types.PgUserMapping;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByUmuserUmserver = {
         umuser: PgCatalog.Types.Oid;
         umserver: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscription {
       export type Record = Required<PgCatalog.Types.PgSubscription>;
+      export type Results = PgCatalog.Types.PgSubscription;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type BySubdbidSubname = {
         subdbid: PgCatalog.Types.Oid;
         subname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAttribute {
       export type Record = Required<PgCatalog.Types.PgAttribute>;
+      export type Results = PgCatalog.Types.PgAttribute;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
       };
+
       export type ByAttrelidAttnum = {
         attrelid: PgCatalog.Types.Oid;
         attnum: PgCatalog.Types.Int2;
       };
+      export type PrimaryKey = ByAttrelidAttnum;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgProc {
       export type Record = Required<PgCatalog.Types.PgProc>;
+      export type Results = PgCatalog.Types.PgProc;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPronameProargtypesPronamespace = {
         proname: PgCatalog.Types.Cstring;
         proargtypes: PgCatalog.Types.Oidvector;
         pronamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgClass {
       export type Record = Required<PgCatalog.Types.PgClass>;
+      export type Results = PgCatalog.Types.PgClass;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByRelnameRelnamespace = {
         relname: PgCatalog.Types.Cstring;
         relnamespace: PgCatalog.Types.Oid;
       };
+
       export type ByReltablespaceRelfilenode = {
         reltablespace: PgCatalog.Types.Oid;
         relfilenode: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAttrdef {
       export type Record = Required<PgCatalog.Types.PgAttrdef>;
+      export type Results = PgCatalog.Types.PgAttrdef;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgConstraint {
       export type Record = Required<PgCatalog.Types.PgConstraint>;
+      export type Results = PgCatalog.Types.PgConstraint;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
       };
+
       export type ByConparentid = {
         conparentid: PgCatalog.Types.Oid;
       };
+
       export type ByConrelidContypidConname = {
         conrelid: PgCatalog.Types.Oid;
         contypid: PgCatalog.Types.Oid;
         conname: PgCatalog.Types.Cstring;
       };
+
       export type ByContypid = {
         contypid: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgInherits {
       export type Record = Required<PgCatalog.Types.PgInherits>;
+      export type Results = PgCatalog.Types.PgInherits;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
+
       export type ByInhrelidInhseqno = {
         inhrelid: PgCatalog.Types.Oid;
         inhseqno: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByInhrelidInhseqno;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgIndex {
       export type Record = Required<PgCatalog.Types.PgIndex>;
+      export type Results = PgCatalog.Types.PgIndex;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByIndexrelid;
       export type ByIndrelid = {
         indrelid: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgOperator {
       export type Record = Required<PgCatalog.Types.PgOperator>;
+      export type Results = PgCatalog.Types.PgOperator;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByOprnameOprleftOprrightOprnamespace = {
         oprname: PgCatalog.Types.Cstring;
         oprleft: PgCatalog.Types.Oid;
         oprright: PgCatalog.Types.Oid;
         oprnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgOpfamily {
       export type Record = Required<PgCatalog.Types.PgOpfamily>;
+      export type Results = PgCatalog.Types.PgOpfamily;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByOpfmethodOpfnameOpfnamespace = {
         opfmethod: PgCatalog.Types.Oid;
         opfname: PgCatalog.Types.Cstring;
         opfnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgOpclass {
       export type Record = Required<PgCatalog.Types.PgOpclass>;
+      export type Results = PgCatalog.Types.PgOpclass;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByOpcmethodOpcnameOpcnamespace = {
         opcmethod: PgCatalog.Types.Oid;
         opcname: PgCatalog.Types.Cstring;
         opcnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAm {
       export type Record = Required<PgCatalog.Types.PgAm>;
+      export type Results = PgCatalog.Types.PgAm;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAmop {
       export type Record = Required<PgCatalog.Types.PgAmop>;
+      export type Results = PgCatalog.Types.PgAmop;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
         amoprighttype: PgCatalog.Types.Oid;
         amopstrategy: PgCatalog.Types.Int2;
       };
+
       export type ByAmopoprAmoppurposeAmopfamily = {
         amopopr: PgCatalog.Types.Oid;
         amoppurpose: PgCatalog.Types.Char;
         amopfamily: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAmproc {
       export type Record = Required<PgCatalog.Types.PgAmproc>;
+      export type Results = PgCatalog.Types.PgAmproc;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
         amprocrighttype: PgCatalog.Types.Oid;
         amprocnum: PgCatalog.Types.Int2;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgLanguage {
       export type Record = Required<PgCatalog.Types.PgLanguage>;
+      export type Results = PgCatalog.Types.PgLanguage;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobjectMetadata {
       export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
+      export type Results = PgCatalog.Types.PgLargeobjectMetadata;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAggregate {
       export type Record = Required<PgCatalog.Types.PgAggregate>;
+      export type Results = PgCatalog.Types.PgAggregate;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
+      export type PrimaryKey = ByAggfnoid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExt {
       export type Record = Required<PgCatalog.Types.PgStatisticExt>;
+      export type Results = PgCatalog.Types.PgStatisticExt;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByStxnameStxnamespace = {
         stxname: PgCatalog.Types.Cstring;
         stxnamespace: PgCatalog.Types.Oid;
       };
+
       export type ByStxrelid = {
         stxrelid: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgRewrite {
       export type Record = Required<PgCatalog.Types.PgRewrite>;
+      export type Results = PgCatalog.Types.PgRewrite;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTrigger {
       export type Record = Required<PgCatalog.Types.PgTrigger>;
+      export type Results = PgCatalog.Types.PgTrigger;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByTgconstraint = {
         tgconstraint: PgCatalog.Types.Oid;
       };
+
       export type ByTgrelidTgname = {
         tgrelid: PgCatalog.Types.Oid;
         tgname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgEventTrigger {
       export type Record = Required<PgCatalog.Types.PgEventTrigger>;
+      export type Results = PgCatalog.Types.PgEventTrigger;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgDescription {
       export type Record = Required<PgCatalog.Types.PgDescription>;
+      export type Results = PgCatalog.Types.PgDescription;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByObjoidClassoidObjsubid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgCast {
       export type Record = Required<PgCatalog.Types.PgCast>;
+      export type Results = PgCatalog.Types.PgCast;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgEnum {
       export type Record = Required<PgCatalog.Types.PgEnum>;
+      export type Results = PgCatalog.Types.PgEnum;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
       };
+
       export type ByEnumtypidEnumsortorder = {
         enumtypid: PgCatalog.Types.Oid;
         enumsortorder: PgCatalog.Types.Float4;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgNamespace {
       export type Record = Required<PgCatalog.Types.PgNamespace>;
+      export type Results = PgCatalog.Types.PgNamespace;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgConversion {
       export type Record = Required<PgCatalog.Types.PgConversion>;
+      export type Results = PgCatalog.Types.PgConversion;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
       };
+
       export type ByConnamespaceConforencodingContoencodingOid = {
         connamespace: PgCatalog.Types.Oid;
         conforencoding: PgCatalog.Types.Int4;
         contoencoding: PgCatalog.Types.Int4;
         oid: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgDepend {
       export type Record = Required<PgCatalog.Types.PgDepend>;
+      export type Results = PgCatalog.Types.PgDepend;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
+
       export type ByRefclassidRefobjidRefobjsubid = {
         refclassid: PgCatalog.Types.Oid;
         refobjid: PgCatalog.Types.Oid;
         refobjsubid: PgCatalog.Types.Int4;
       };
+
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgDatabase {
       export type Record = Required<PgCatalog.Types.PgDatabase>;
+      export type Results = PgCatalog.Types.PgDatabase;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgDbRoleSetting {
       export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
+      export type Results = PgCatalog.Types.PgDbRoleSetting;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = BySetdatabaseSetrole;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTablespace {
       export type Record = Required<PgCatalog.Types.PgTablespace>;
+      export type Results = PgCatalog.Types.PgTablespace;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type BySpcname = {
         spcname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthMembers {
       export type Record = Required<PgCatalog.Types.PgAuthMembers>;
+      export type Results = PgCatalog.Types.PgAuthMembers;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
+
       export type ByMemberRoleidGrantor = {
         member: PgCatalog.Types.Oid;
         roleid: PgCatalog.Types.Oid;
         grantor: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByRoleidMemberGrantor = {
         roleid: PgCatalog.Types.Oid;
         member: PgCatalog.Types.Oid;
         grantor: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgShdepend {
       export type Record = Required<PgCatalog.Types.PgShdepend>;
+      export type Results = PgCatalog.Types.PgShdepend;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
+
       export type ByRefclassidRefobjid = {
         refclassid: PgCatalog.Types.Oid;
         refobjid: PgCatalog.Types.Oid;
       };
+
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgShdescription {
       export type Record = Required<PgCatalog.Types.PgShdescription>;
+      export type Results = PgCatalog.Types.PgShdescription;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByObjoidClassoid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfig {
       export type Record = Required<PgCatalog.Types.PgTsConfig>;
+      export type Results = PgCatalog.Types.PgTsConfig;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfigMap {
       export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
+      export type Results = PgCatalog.Types.PgTsConfigMap;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
         mapseqno: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByMapcfgMaptokentypeMapseqno;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTsDict {
       export type Record = Required<PgCatalog.Types.PgTsDict>;
+      export type Results = PgCatalog.Types.PgTsDict;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTsParser {
       export type Record = Required<PgCatalog.Types.PgTsParser>;
+      export type Results = PgCatalog.Types.PgTsParser;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPrsnamePrsnamespace = {
         prsname: PgCatalog.Types.Cstring;
         prsnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTsTemplate {
       export type Record = Required<PgCatalog.Types.PgTsTemplate>;
+      export type Results = PgCatalog.Types.PgTsTemplate;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByTmplnameTmplnamespace = {
         tmplname: PgCatalog.Types.Cstring;
         tmplnamespace: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgExtension {
       export type Record = Required<PgCatalog.Types.PgExtension>;
+      export type Results = PgCatalog.Types.PgExtension;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignDataWrapper {
       export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
+      export type Results = PgCatalog.Types.PgForeignDataWrapper;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignServer {
       export type Record = Required<PgCatalog.Types.PgForeignServer>;
+      export type Results = PgCatalog.Types.PgForeignServer;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type BySrvname = {
         srvname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgPolicy {
       export type Record = Required<PgCatalog.Types.PgPolicy>;
+      export type Results = PgCatalog.Types.PgPolicy;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPolrelidPolname = {
         polrelid: PgCatalog.Types.Oid;
         polname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgReplicationOrigin {
       export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
+      export type Results = PgCatalog.Types.PgReplicationOrigin;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByRoident;
       export type ByRoname = {
         roname: PgCatalog.Types.Text;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgDefaultAcl {
       export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
+      export type Results = PgCatalog.Types.PgDefaultAcl;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
         defaclobjtype: PgCatalog.Types.Char;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgInitPrivs {
       export type Record = Required<PgCatalog.Types.PgInitPrivs>;
+      export type Results = PgCatalog.Types.PgInitPrivs;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByObjoidClassoidObjsubid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgSeclabel {
       export type Record = Required<PgCatalog.Types.PgSeclabel>;
+      export type Results = PgCatalog.Types.PgSeclabel;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
         provider: PgCatalog.Types.Text;
       };
+      export type PrimaryKey = ByObjoidClassoidObjsubidProvider;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgShseclabel {
       export type Record = Required<PgCatalog.Types.PgShseclabel>;
+      export type Results = PgCatalog.Types.PgShseclabel;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
         provider: PgCatalog.Types.Text;
       };
+      export type PrimaryKey = ByObjoidClassoidProvider;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgCollation {
       export type Record = Required<PgCatalog.Types.PgCollation>;
+      export type Results = PgCatalog.Types.PgCollation;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
         collnamespace: PgCatalog.Types.Oid;
       };
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgParameterAcl {
       export type Record = Required<PgCatalog.Types.PgParameterAcl>;
+      export type Results = PgCatalog.Types.PgParameterAcl;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByParname = {
         parname: PgCatalog.Types.Text;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgPartitionedTable {
       export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
+      export type Results = PgCatalog.Types.PgPartitionedTable;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByPartrelid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgRange {
       export type Record = Required<PgCatalog.Types.PgRange>;
+      export type Results = PgCatalog.Types.PgRange;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
+
       export type ByRngtypid = {
         rngtypid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByRngtypid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgTransform {
       export type Record = Required<PgCatalog.Types.PgTransform>;
+      export type Results = PgCatalog.Types.PgTransform;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByTrftypeTrflang = {
         trftype: PgCatalog.Types.Oid;
         trflang: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgSequence {
       export type Record = Required<PgCatalog.Types.PgSequence>;
+      export type Results = PgCatalog.Types.PgSequence;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = BySeqrelid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgPublication {
       export type Record = Required<PgCatalog.Types.PgPublication>;
+      export type Results = PgCatalog.Types.PgPublication;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPubname = {
         pubname: PgCatalog.Types.Cstring;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationNamespace {
       export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
+      export type Results = PgCatalog.Types.PgPublicationNamespace;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPnnspidPnpubid = {
         pnnspid: PgCatalog.Types.Oid;
         pnpubid: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationRel {
       export type Record = Required<PgCatalog.Types.PgPublicationRel>;
+      export type Results = PgCatalog.Types.PgPublicationRel;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = ByOid;
       export type ByPrpubid = {
         prpubid: PgCatalog.Types.Oid;
       };
+
       export type ByPrrelidPrpubid = {
         prrelid: PgCatalog.Types.Oid;
         prpubid: PgCatalog.Types.Oid;
       };
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscriptionRel {
       export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
+      export type Results = PgCatalog.Types.PgSubscriptionRel;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
       };
+      export type PrimaryKey = BySrrelidSrsubid;
+
+      export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobject {
       export type Record = Required<PgCatalog.Types.PgLargeobject>;
+      export type Results = PgCatalog.Types.PgLargeobject;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByLoidPageno;
+
+      export type Optional = Pick<Record, never>;
     }
   }
 }
@@ -2736,111 +3093,111 @@ export namespace Public {
     export type StoreArray = Array<Public.Types.Store>;
     export type YearArray = Array<Public.Types.Year>;
     export type Actor = {
-      actorId?: PgCatalog.Types.Int4;
+      actorId: PgCatalog.Types.Int4;
       firstName: PgCatalog.Types.Varchar;
       lastName: PgCatalog.Types.Varchar;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type ActorInfo = {
-      actorId?: Nullable<PgCatalog.Types.Int4>;
-      firstName?: Nullable<PgCatalog.Types.Varchar>;
-      lastName?: Nullable<PgCatalog.Types.Varchar>;
-      filmInfo?: Nullable<PgCatalog.Types.Text>;
+      actorId: PgCatalog.Types.Int4;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      filmInfo: PgCatalog.Types.Text;
     };
     export type Address = {
-      addressId?: PgCatalog.Types.Int4;
+      addressId: PgCatalog.Types.Int4;
       address: PgCatalog.Types.Varchar;
-      address2?: Nullable<PgCatalog.Types.Varchar>;
+      address2: PgCatalog.Types.Varchar;
       district: PgCatalog.Types.Varchar;
       cityId: PgCatalog.Types.Int2;
-      postalCode?: Nullable<PgCatalog.Types.Varchar>;
+      postalCode: PgCatalog.Types.Varchar;
       phone: PgCatalog.Types.Varchar;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Category = {
-      categoryId?: PgCatalog.Types.Int4;
+      categoryId: PgCatalog.Types.Int4;
       name: PgCatalog.Types.Varchar;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type City = {
-      cityId?: PgCatalog.Types.Int4;
+      cityId: PgCatalog.Types.Int4;
       city: PgCatalog.Types.Varchar;
       countryId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Country = {
-      countryId?: PgCatalog.Types.Int4;
+      countryId: PgCatalog.Types.Int4;
       country: PgCatalog.Types.Varchar;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Customer = {
-      customerId?: PgCatalog.Types.Int4;
+      customerId: PgCatalog.Types.Int4;
       storeId: PgCatalog.Types.Int2;
       firstName: PgCatalog.Types.Varchar;
       lastName: PgCatalog.Types.Varchar;
-      email?: Nullable<PgCatalog.Types.Varchar>;
+      email: PgCatalog.Types.Varchar;
       addressId: PgCatalog.Types.Int2;
-      activebool?: PgCatalog.Types.Bool;
-      createDate?: PgCatalog.Types.Date;
-      lastUpdate?: Nullable<PgCatalog.Types.Timestamp>;
-      active?: Nullable<PgCatalog.Types.Int4>;
+      activebool: PgCatalog.Types.Bool;
+      createDate: PgCatalog.Types.Date;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      active: PgCatalog.Types.Int4;
     };
     export type CustomerList = {
-      id?: Nullable<PgCatalog.Types.Int4>;
-      name?: Nullable<PgCatalog.Types.Text>;
-      address?: Nullable<PgCatalog.Types.Varchar>;
-      zipCode?: Nullable<PgCatalog.Types.Varchar>;
-      phone?: Nullable<PgCatalog.Types.Varchar>;
-      city?: Nullable<PgCatalog.Types.Varchar>;
-      country?: Nullable<PgCatalog.Types.Varchar>;
-      notes?: Nullable<PgCatalog.Types.Text>;
-      sid?: Nullable<PgCatalog.Types.Int2>;
+      id: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Text;
+      address: PgCatalog.Types.Varchar;
+      zipCode: PgCatalog.Types.Varchar;
+      phone: PgCatalog.Types.Varchar;
+      city: PgCatalog.Types.Varchar;
+      country: PgCatalog.Types.Varchar;
+      notes: PgCatalog.Types.Text;
+      sid: PgCatalog.Types.Int2;
     };
     export type Film = {
-      filmId?: PgCatalog.Types.Int4;
+      filmId: PgCatalog.Types.Int4;
       title: PgCatalog.Types.Varchar;
-      description?: Nullable<PgCatalog.Types.Text>;
-      releaseYear?: Nullable<Public.Types.Year>;
+      description: PgCatalog.Types.Text;
+      releaseYear: Public.Types.Year;
       languageId: PgCatalog.Types.Int2;
-      rentalDuration?: PgCatalog.Types.Int2;
-      rentalRate?: PgCatalog.Types.Numeric;
-      length?: Nullable<PgCatalog.Types.Int2>;
-      replacementCost?: PgCatalog.Types.Numeric;
-      rating?: Nullable<Public.Types.MpaaRating>;
-      lastUpdate?: PgCatalog.Types.Timestamp;
-      specialFeatures?: Nullable<PgCatalog.Types.TextArray>;
+      rentalDuration: PgCatalog.Types.Int2;
+      rentalRate: PgCatalog.Types.Numeric;
+      length: PgCatalog.Types.Int2;
+      replacementCost: PgCatalog.Types.Numeric;
+      rating: Public.Types.MpaaRating;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      specialFeatures: PgCatalog.Types.TextArray;
       fulltext: PgCatalog.Types.Tsvector;
     };
     export type FilmActor = {
       actorId: PgCatalog.Types.Int2;
       filmId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type FilmCategory = {
       filmId: PgCatalog.Types.Int2;
       categoryId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type FilmList = {
-      fid?: Nullable<PgCatalog.Types.Int4>;
-      title?: Nullable<PgCatalog.Types.Varchar>;
-      description?: Nullable<PgCatalog.Types.Text>;
-      category?: Nullable<PgCatalog.Types.Varchar>;
-      price?: Nullable<PgCatalog.Types.Numeric>;
-      length?: Nullable<PgCatalog.Types.Int2>;
-      rating?: Nullable<Public.Types.MpaaRating>;
-      actors?: Nullable<PgCatalog.Types.Text>;
+      fid: PgCatalog.Types.Int4;
+      title: PgCatalog.Types.Varchar;
+      description: PgCatalog.Types.Text;
+      category: PgCatalog.Types.Varchar;
+      price: PgCatalog.Types.Numeric;
+      length: PgCatalog.Types.Int2;
+      rating: Public.Types.MpaaRating;
+      actors: PgCatalog.Types.Text;
     };
     export type Inventory = {
-      inventoryId?: PgCatalog.Types.Int4;
+      inventoryId: PgCatalog.Types.Int4;
       filmId: PgCatalog.Types.Int2;
       storeId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Language = {
-      languageId?: PgCatalog.Types.Int4;
+      languageId: PgCatalog.Types.Int4;
       name: PgCatalog.Types.Bpchar;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
 
     export enum MpaaRating {
@@ -2852,17 +3209,17 @@ export namespace Public {
     }
 
     export type NicerButSlowerFilmList = {
-      fid?: Nullable<PgCatalog.Types.Int4>;
-      title?: Nullable<PgCatalog.Types.Varchar>;
-      description?: Nullable<PgCatalog.Types.Text>;
-      category?: Nullable<PgCatalog.Types.Varchar>;
-      price?: Nullable<PgCatalog.Types.Numeric>;
-      length?: Nullable<PgCatalog.Types.Int2>;
-      rating?: Nullable<Public.Types.MpaaRating>;
-      actors?: Nullable<PgCatalog.Types.Text>;
+      fid: PgCatalog.Types.Int4;
+      title: PgCatalog.Types.Varchar;
+      description: PgCatalog.Types.Text;
+      category: PgCatalog.Types.Varchar;
+      price: PgCatalog.Types.Numeric;
+      length: PgCatalog.Types.Int2;
+      rating: Public.Types.MpaaRating;
+      actors: PgCatalog.Types.Text;
     };
     export type Payment = {
-      paymentId?: PgCatalog.Types.Int4;
+      paymentId: PgCatalog.Types.Int4;
       customerId: PgCatalog.Types.Int2;
       staffId: PgCatalog.Types.Int2;
       rentalId: PgCatalog.Types.Int4;
@@ -2870,51 +3227,51 @@ export namespace Public {
       paymentDate: PgCatalog.Types.Timestamp;
     };
     export type Rental = {
-      rentalId?: PgCatalog.Types.Int4;
+      rentalId: PgCatalog.Types.Int4;
       rentalDate: PgCatalog.Types.Timestamp;
       inventoryId: PgCatalog.Types.Int4;
       customerId: PgCatalog.Types.Int2;
-      returnDate?: Nullable<PgCatalog.Types.Timestamp>;
+      returnDate: PgCatalog.Types.Timestamp;
       staffId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type SalesByFilmCategory = {
-      category?: Nullable<PgCatalog.Types.Varchar>;
-      totalSales?: Nullable<PgCatalog.Types.Numeric>;
+      category: PgCatalog.Types.Varchar;
+      totalSales: PgCatalog.Types.Numeric;
     };
     export type SalesByStore = {
-      store?: Nullable<PgCatalog.Types.Text>;
-      manager?: Nullable<PgCatalog.Types.Text>;
-      totalSales?: Nullable<PgCatalog.Types.Numeric>;
+      store: PgCatalog.Types.Text;
+      manager: PgCatalog.Types.Text;
+      totalSales: PgCatalog.Types.Numeric;
     };
     export type Staff = {
-      staffId?: PgCatalog.Types.Int4;
+      staffId: PgCatalog.Types.Int4;
       firstName: PgCatalog.Types.Varchar;
       lastName: PgCatalog.Types.Varchar;
       addressId: PgCatalog.Types.Int2;
-      email?: Nullable<PgCatalog.Types.Varchar>;
+      email: PgCatalog.Types.Varchar;
       storeId: PgCatalog.Types.Int2;
-      active?: PgCatalog.Types.Bool;
+      active: PgCatalog.Types.Bool;
       username: PgCatalog.Types.Varchar;
-      password?: Nullable<PgCatalog.Types.Varchar>;
-      lastUpdate?: PgCatalog.Types.Timestamp;
-      picture?: Nullable<PgCatalog.Types.Bytea>;
+      password: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      picture: PgCatalog.Types.Bytea;
     };
     export type StaffList = {
-      id?: Nullable<PgCatalog.Types.Int4>;
-      name?: Nullable<PgCatalog.Types.Text>;
-      address?: Nullable<PgCatalog.Types.Varchar>;
-      zipCode?: Nullable<PgCatalog.Types.Varchar>;
-      phone?: Nullable<PgCatalog.Types.Varchar>;
-      city?: Nullable<PgCatalog.Types.Varchar>;
-      country?: Nullable<PgCatalog.Types.Varchar>;
-      sid?: Nullable<PgCatalog.Types.Int2>;
+      id: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Text;
+      address: PgCatalog.Types.Varchar;
+      zipCode: PgCatalog.Types.Varchar;
+      phone: PgCatalog.Types.Varchar;
+      city: PgCatalog.Types.Varchar;
+      country: PgCatalog.Types.Varchar;
+      sid: PgCatalog.Types.Int2;
     };
     export type Store = {
-      storeId?: PgCatalog.Types.Int4;
+      storeId: PgCatalog.Types.Int4;
       managerStaffId: PgCatalog.Types.Int2;
       addressId: PgCatalog.Types.Int2;
-      lastUpdate?: PgCatalog.Types.Timestamp;
+      lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
     export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
@@ -2943,21 +3300,15 @@ export namespace Public {
       export type Results = PgCatalog.Types.Numeric;
     }
     export namespace InventoryHeldByCustomer {
-      export type Arguments = {
-        pInventoryId: PgCatalog.Types.Int4;
-      };
+      export type Arguments = { pInventoryId: PgCatalog.Types.Int4 };
       export type Results = PgCatalog.Types.Int4;
     }
     export namespace InventoryInStock {
-      export type Arguments = {
-        pInventoryId: PgCatalog.Types.Int4;
-      };
+      export type Arguments = { pInventoryId: PgCatalog.Types.Int4 };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace LastDay {
-      export type Arguments = {
-        argument_0: PgCatalog.Types.Timestamp;
-      };
+      export type Arguments = { argument_0: PgCatalog.Types.Timestamp };
       export type Results = PgCatalog.Types.Date;
     }
     export namespace RewardsReport {
@@ -2971,149 +3322,244 @@ export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
       export type Record = Required<Public.Types.FilmActor>;
+      export type Results = Public.Types.FilmActor;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByActorIdFilmId = {
         actorId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
       };
+      export type PrimaryKey = ByActorIdFilmId;
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<Record, "lastUpdate">;
     }
     export namespace Address {
       export type Record = Required<Public.Types.Address>;
+      export type Results = Public.Types.Address;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByAddressId;
       export type ByCityId = {
         cityId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<Record, "addressId" | "lastUpdate">;
     }
     export namespace City {
       export type Record = Required<Public.Types.City>;
+      export type Results = Public.Types.City;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByCityId;
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<Record, "cityId" | "lastUpdate">;
     }
     export namespace Customer {
       export type Record = Required<Public.Types.Customer>;
+      export type Results = Public.Types.Customer;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int2;
       };
+
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByCustomerId;
       export type ByLastName = {
         lastName: PgCatalog.Types.Varchar;
       };
+
       export type ByStoreId = {
         storeId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<
+        Record,
+        "customerId" | "activebool" | "createDate" | "lastUpdate"
+      >;
     }
     export namespace Actor {
       export type Record = Required<Public.Types.Actor>;
+      export type Results = Public.Types.Actor;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByActorId = {
         actorId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByActorId;
       export type ByLastName = {
         lastName: PgCatalog.Types.Varchar;
       };
+
+      export type Optional = Pick<Record, "actorId" | "lastUpdate">;
     }
     export namespace FilmCategory {
       export type Record = Required<Public.Types.FilmCategory>;
+      export type Results = Public.Types.FilmCategory;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByFilmIdCategoryId = {
         filmId: PgCatalog.Types.Int2;
         categoryId: PgCatalog.Types.Int2;
       };
+      export type PrimaryKey = ByFilmIdCategoryId;
+
+      export type Optional = Pick<Record, "lastUpdate">;
     }
     export namespace Inventory {
       export type Record = Required<Public.Types.Inventory>;
+      export type Results = Public.Types.Inventory;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByInventoryId;
       export type ByStoreIdFilmId = {
         storeId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
     }
     export namespace Category {
       export type Record = Required<Public.Types.Category>;
+      export type Results = Public.Types.Category;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByCategoryId;
+
+      export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
     }
     export namespace Country {
       export type Record = Required<Public.Types.Country>;
+      export type Results = Public.Types.Country;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByCountryId;
+
+      export type Optional = Pick<Record, "countryId" | "lastUpdate">;
     }
     export namespace Language {
       export type Record = Required<Public.Types.Language>;
+      export type Results = Public.Types.Language;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByLanguageId;
+
+      export type Optional = Pick<Record, "languageId" | "lastUpdate">;
     }
     export namespace Rental {
       export type Record = Required<Public.Types.Rental>;
+      export type Results = Public.Types.Rental;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
+
       export type ByRentalDateInventoryIdCustomerId = {
         rentalDate: PgCatalog.Types.Timestamp;
         inventoryId: PgCatalog.Types.Int4;
         customerId: PgCatalog.Types.Int2;
       };
+
       export type ByRentalId = {
         rentalId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByRentalId;
+
+      export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
     }
     export namespace Staff {
       export type Record = Required<Public.Types.Staff>;
+      export type Results = Public.Types.Staff;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByStaffId;
+
+      export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
     }
     export namespace Store {
       export type Record = Required<Public.Types.Store>;
+      export type Results = Public.Types.Store;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByManagerStaffId = {
         managerStaffId: PgCatalog.Types.Int2;
       };
+
       export type ByStoreId = {
         storeId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByStoreId;
+
+      export type Optional = Pick<Record, "storeId" | "lastUpdate">;
     }
     export namespace Payment {
       export type Record = Required<Public.Types.Payment>;
+      export type Results = Public.Types.Payment;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int2;
       };
+
       export type ByPaymentId = {
         paymentId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByPaymentId;
       export type ByRentalId = {
         rentalId: PgCatalog.Types.Int4;
       };
+
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int2;
       };
+
+      export type Optional = Pick<Record, "paymentId">;
     }
     export namespace Film {
       export type Record = Required<Public.Types.Film>;
+      export type Results = Public.Types.Film;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int4;
       };
+      export type PrimaryKey = ByFilmId;
       export type ByFulltext = {
         fulltext: PgCatalog.Types.Gtsvector;
       };
+
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int2;
       };
+
       export type ByTitle = {
         title: PgCatalog.Types.Varchar;
       };
+
+      export type Optional = Pick<
+        Record,
+        | "filmId"
+        | "rentalDuration"
+        | "rentalRate"
+        | "replacementCost"
+        | "rating"
+        | "lastUpdate"
+      >;
     }
   }
 }
@@ -3179,48 +3625,48 @@ export namespace InformationSchema {
       Array<InformationSchema.Types.KeyColumnUsage>;
     export type ParametersArray = Array<InformationSchema.Types.Parameters>;
     export type PgForeignDataWrappers = {
-      oid?: Nullable<PgCatalog.Types.Oid>;
-      fdwowner?: Nullable<PgCatalog.Types.Oid>;
-      fdwoptions?: Nullable<PgCatalog.Types.TextArray>;
-      foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperLanguage?: Nullable<InformationSchema.Types.CharacterData>;
+      oid: PgCatalog.Types.Oid;
+      fdwowner: PgCatalog.Types.Oid;
+      fdwoptions: PgCatalog.Types.TextArray;
+      foreignDataWrapperCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperName: InformationSchema.Types.SqlIdentifier;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperLanguage: InformationSchema.Types.CharacterData;
     };
     export type PgForeignServers = {
-      oid?: Nullable<PgCatalog.Types.Oid>;
-      srvoptions?: Nullable<PgCatalog.Types.TextArray>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerType?: Nullable<InformationSchema.Types.CharacterData>;
-      foreignServerVersion?: Nullable<InformationSchema.Types.CharacterData>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      oid: PgCatalog.Types.Oid;
+      srvoptions: PgCatalog.Types.TextArray;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperName: InformationSchema.Types.SqlIdentifier;
+      foreignServerType: InformationSchema.Types.CharacterData;
+      foreignServerVersion: InformationSchema.Types.CharacterData;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type PgForeignTableColumns = {
-      nspname?: Nullable<PgCatalog.Types.Name>;
-      relname?: Nullable<PgCatalog.Types.Name>;
-      attname?: Nullable<PgCatalog.Types.Name>;
-      attfdwoptions?: Nullable<PgCatalog.Types.TextArray>;
+      nspname: PgCatalog.Types.Name;
+      relname: PgCatalog.Types.Name;
+      attname: PgCatalog.Types.Name;
+      attfdwoptions: PgCatalog.Types.TextArray;
     };
     export type PgForeignTables = {
-      foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ftoptions?: Nullable<PgCatalog.Types.TextArray>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      foreignTableCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignTableSchema: InformationSchema.Types.SqlIdentifier;
+      foreignTableName: InformationSchema.Types.SqlIdentifier;
+      ftoptions: PgCatalog.Types.TextArray;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type PgUserMappings = {
-      oid?: Nullable<PgCatalog.Types.Oid>;
-      umoptions?: Nullable<PgCatalog.Types.TextArray>;
-      umuser?: Nullable<PgCatalog.Types.Oid>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      srvowner?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      oid: PgCatalog.Types.Oid;
+      umoptions: PgCatalog.Types.TextArray;
+      umuser: PgCatalog.Types.Oid;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      srvowner: InformationSchema.Types.SqlIdentifier;
     };
     export type ReferentialConstraintsArray =
       Array<InformationSchema.Types.ReferentialConstraints>;
@@ -3282,799 +3728,799 @@ export namespace InformationSchema {
     export type ViewsArray = Array<InformationSchema.Types.Views>;
     export type YesOrNoArray = Array<InformationSchema.Types.YesOrNo>;
     export type AdministrableRoleAuthorizations = {
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      roleName: InformationSchema.Types.SqlIdentifier;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type ApplicableRoles = {
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      roleName: InformationSchema.Types.SqlIdentifier;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type Attributes = {
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      attributeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ordinalPosition?: Nullable<InformationSchema.Types.CardinalNumber>;
-      attributeDefault?: Nullable<InformationSchema.Types.CharacterData>;
-      isNullable?: Nullable<InformationSchema.Types.YesOrNo>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      attributeUdtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      attributeUdtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      attributeUdtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isDerivedReferenceAttribute?: Nullable<InformationSchema.Types.YesOrNo>;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      attributeName: InformationSchema.Types.SqlIdentifier;
+      ordinalPosition: InformationSchema.Types.CardinalNumber;
+      attributeDefault: InformationSchema.Types.CharacterData;
+      isNullable: InformationSchema.Types.YesOrNo;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      attributeUdtCatalog: InformationSchema.Types.SqlIdentifier;
+      attributeUdtSchema: InformationSchema.Types.SqlIdentifier;
+      attributeUdtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
+      isDerivedReferenceAttribute: InformationSchema.Types.YesOrNo;
     };
     export type CardinalNumber = PgCatalog.Types.Int4;
     export type CharacterData = PgCatalog.Types.Varchar;
     export type CharacterSets = {
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterRepertoire?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      formOfUse?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCollateCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCollateSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCollateName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      characterRepertoire: InformationSchema.Types.SqlIdentifier;
+      formOfUse: InformationSchema.Types.SqlIdentifier;
+      defaultCollateCatalog: InformationSchema.Types.SqlIdentifier;
+      defaultCollateSchema: InformationSchema.Types.SqlIdentifier;
+      defaultCollateName: InformationSchema.Types.SqlIdentifier;
     };
     export type CheckConstraintRoutineUsage = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
     };
     export type CheckConstraints = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      checkClause?: Nullable<InformationSchema.Types.CharacterData>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      checkClause: InformationSchema.Types.CharacterData;
     };
     export type CollationCharacterSetApplicability = {
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
     };
     export type Collations = {
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      padAttribute?: Nullable<InformationSchema.Types.CharacterData>;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      padAttribute: InformationSchema.Types.CharacterData;
     };
     export type ColumnColumnUsage = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dependentColumn?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      dependentColumn: InformationSchema.Types.SqlIdentifier;
     };
     export type ColumnDomainUsage = {
-      domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      domainCatalog: InformationSchema.Types.SqlIdentifier;
+      domainSchema: InformationSchema.Types.SqlIdentifier;
+      domainName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
     };
     export type ColumnOptions = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionValue?: Nullable<InformationSchema.Types.CharacterData>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      optionName: InformationSchema.Types.SqlIdentifier;
+      optionValue: InformationSchema.Types.CharacterData;
     };
     export type ColumnPrivileges = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type ColumnUdtUsage = {
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
     };
     export type Columns = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ordinalPosition?: Nullable<InformationSchema.Types.CardinalNumber>;
-      columnDefault?: Nullable<InformationSchema.Types.CharacterData>;
-      isNullable?: Nullable<InformationSchema.Types.YesOrNo>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isSelfReferencing?: Nullable<InformationSchema.Types.YesOrNo>;
-      isIdentity?: Nullable<InformationSchema.Types.YesOrNo>;
-      identityGeneration?: Nullable<InformationSchema.Types.CharacterData>;
-      identityStart?: Nullable<InformationSchema.Types.CharacterData>;
-      identityIncrement?: Nullable<InformationSchema.Types.CharacterData>;
-      identityMaximum?: Nullable<InformationSchema.Types.CharacterData>;
-      identityMinimum?: Nullable<InformationSchema.Types.CharacterData>;
-      identityCycle?: Nullable<InformationSchema.Types.YesOrNo>;
-      isGenerated?: Nullable<InformationSchema.Types.CharacterData>;
-      generationExpression?: Nullable<InformationSchema.Types.CharacterData>;
-      isUpdatable?: Nullable<InformationSchema.Types.YesOrNo>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      ordinalPosition: InformationSchema.Types.CardinalNumber;
+      columnDefault: InformationSchema.Types.CharacterData;
+      isNullable: InformationSchema.Types.YesOrNo;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      domainCatalog: InformationSchema.Types.SqlIdentifier;
+      domainSchema: InformationSchema.Types.SqlIdentifier;
+      domainName: InformationSchema.Types.SqlIdentifier;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
+      isSelfReferencing: InformationSchema.Types.YesOrNo;
+      isIdentity: InformationSchema.Types.YesOrNo;
+      identityGeneration: InformationSchema.Types.CharacterData;
+      identityStart: InformationSchema.Types.CharacterData;
+      identityIncrement: InformationSchema.Types.CharacterData;
+      identityMaximum: InformationSchema.Types.CharacterData;
+      identityMinimum: InformationSchema.Types.CharacterData;
+      identityCycle: InformationSchema.Types.YesOrNo;
+      isGenerated: InformationSchema.Types.CharacterData;
+      generationExpression: InformationSchema.Types.CharacterData;
+      isUpdatable: InformationSchema.Types.YesOrNo;
     };
     export type ConstraintColumnUsage = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
     };
     export type ConstraintTableUsage = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
     };
     export type DataTypePrivileges = {
-      objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectType?: Nullable<InformationSchema.Types.CharacterData>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      objectCatalog: InformationSchema.Types.SqlIdentifier;
+      objectSchema: InformationSchema.Types.SqlIdentifier;
+      objectName: InformationSchema.Types.SqlIdentifier;
+      objectType: InformationSchema.Types.CharacterData;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type DomainConstraints = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isDeferrable?: Nullable<InformationSchema.Types.YesOrNo>;
-      initiallyDeferred?: Nullable<InformationSchema.Types.YesOrNo>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      domainCatalog: InformationSchema.Types.SqlIdentifier;
+      domainSchema: InformationSchema.Types.SqlIdentifier;
+      domainName: InformationSchema.Types.SqlIdentifier;
+      isDeferrable: InformationSchema.Types.YesOrNo;
+      initiallyDeferred: InformationSchema.Types.YesOrNo;
     };
     export type DomainUdtUsage = {
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      domainCatalog: InformationSchema.Types.SqlIdentifier;
+      domainSchema: InformationSchema.Types.SqlIdentifier;
+      domainName: InformationSchema.Types.SqlIdentifier;
     };
     export type Domains = {
-      domainCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      domainName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      domainDefault?: Nullable<InformationSchema.Types.CharacterData>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      domainCatalog: InformationSchema.Types.SqlIdentifier;
+      domainSchema: InformationSchema.Types.SqlIdentifier;
+      domainName: InformationSchema.Types.SqlIdentifier;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      domainDefault: InformationSchema.Types.CharacterData;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type ElementTypes = {
-      objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectType?: Nullable<InformationSchema.Types.CharacterData>;
-      collectionTypeIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      domainDefault?: Nullable<InformationSchema.Types.CharacterData>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      objectCatalog: InformationSchema.Types.SqlIdentifier;
+      objectSchema: InformationSchema.Types.SqlIdentifier;
+      objectName: InformationSchema.Types.SqlIdentifier;
+      objectType: InformationSchema.Types.CharacterData;
+      collectionTypeIdentifier: InformationSchema.Types.SqlIdentifier;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      domainDefault: InformationSchema.Types.CharacterData;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type EnabledRoles = {
-      roleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      roleName: InformationSchema.Types.SqlIdentifier;
     };
     export type ForeignDataWrapperOptions = {
-      foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionValue?: Nullable<InformationSchema.Types.CharacterData>;
+      foreignDataWrapperCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperName: InformationSchema.Types.SqlIdentifier;
+      optionName: InformationSchema.Types.SqlIdentifier;
+      optionValue: InformationSchema.Types.CharacterData;
     };
     export type ForeignDataWrappers = {
-      foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      libraryName?: Nullable<InformationSchema.Types.CharacterData>;
-      foreignDataWrapperLanguage?: Nullable<InformationSchema.Types.CharacterData>;
+      foreignDataWrapperCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperName: InformationSchema.Types.SqlIdentifier;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
+      libraryName: InformationSchema.Types.CharacterData;
+      foreignDataWrapperLanguage: InformationSchema.Types.CharacterData;
     };
     export type ForeignServerOptions = {
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionValue?: Nullable<InformationSchema.Types.CharacterData>;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      optionName: InformationSchema.Types.SqlIdentifier;
+      optionValue: InformationSchema.Types.CharacterData;
     };
     export type ForeignServers = {
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignDataWrapperName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerType?: Nullable<InformationSchema.Types.CharacterData>;
-      foreignServerVersion?: Nullable<InformationSchema.Types.CharacterData>;
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignDataWrapperName: InformationSchema.Types.SqlIdentifier;
+      foreignServerType: InformationSchema.Types.CharacterData;
+      foreignServerVersion: InformationSchema.Types.CharacterData;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type ForeignTableOptions = {
-      foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionValue?: Nullable<InformationSchema.Types.CharacterData>;
+      foreignTableCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignTableSchema: InformationSchema.Types.SqlIdentifier;
+      foreignTableName: InformationSchema.Types.SqlIdentifier;
+      optionName: InformationSchema.Types.SqlIdentifier;
+      optionValue: InformationSchema.Types.CharacterData;
     };
     export type ForeignTables = {
-      foreignTableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignTableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      foreignTableCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignTableSchema: InformationSchema.Types.SqlIdentifier;
+      foreignTableName: InformationSchema.Types.SqlIdentifier;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
     };
     export type InformationSchemaCatalogName = {
-      catalogName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      catalogName: InformationSchema.Types.SqlIdentifier;
     };
     export type KeyColumnUsage = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ordinalPosition?: Nullable<InformationSchema.Types.CardinalNumber>;
-      positionInUniqueConstraint?: Nullable<InformationSchema.Types.CardinalNumber>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      ordinalPosition: InformationSchema.Types.CardinalNumber;
+      positionInUniqueConstraint: InformationSchema.Types.CardinalNumber;
     };
     export type Parameters = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ordinalPosition?: Nullable<InformationSchema.Types.CardinalNumber>;
-      parameterMode?: Nullable<InformationSchema.Types.CharacterData>;
-      isResult?: Nullable<InformationSchema.Types.YesOrNo>;
-      asLocator?: Nullable<InformationSchema.Types.YesOrNo>;
-      parameterName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      parameterDefault?: Nullable<InformationSchema.Types.CharacterData>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      ordinalPosition: InformationSchema.Types.CardinalNumber;
+      parameterMode: InformationSchema.Types.CharacterData;
+      isResult: InformationSchema.Types.YesOrNo;
+      asLocator: InformationSchema.Types.YesOrNo;
+      parameterName: InformationSchema.Types.SqlIdentifier;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
+      parameterDefault: InformationSchema.Types.CharacterData;
     };
     export type ReferentialConstraints = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      uniqueConstraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      uniqueConstraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      uniqueConstraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      matchOption?: Nullable<InformationSchema.Types.CharacterData>;
-      updateRule?: Nullable<InformationSchema.Types.CharacterData>;
-      deleteRule?: Nullable<InformationSchema.Types.CharacterData>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      uniqueConstraintCatalog: InformationSchema.Types.SqlIdentifier;
+      uniqueConstraintSchema: InformationSchema.Types.SqlIdentifier;
+      uniqueConstraintName: InformationSchema.Types.SqlIdentifier;
+      matchOption: InformationSchema.Types.CharacterData;
+      updateRule: InformationSchema.Types.CharacterData;
+      deleteRule: InformationSchema.Types.CharacterData;
     };
     export type RoleColumnGrants = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type RoleRoutineGrants = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type RoleTableGrants = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-      withHierarchy?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
+      withHierarchy: InformationSchema.Types.YesOrNo;
     };
     export type RoleUdtGrants = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type RoleUsageGrants = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectType?: Nullable<InformationSchema.Types.CharacterData>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      objectCatalog: InformationSchema.Types.SqlIdentifier;
+      objectSchema: InformationSchema.Types.SqlIdentifier;
+      objectName: InformationSchema.Types.SqlIdentifier;
+      objectType: InformationSchema.Types.CharacterData;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type RoutineColumnUsage = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
     };
     export type RoutinePrivileges = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type RoutineRoutineUsage = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
     };
     export type RoutineSequenceUsage = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sequenceCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sequenceSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sequenceName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      sequenceCatalog: InformationSchema.Types.SqlIdentifier;
+      sequenceSchema: InformationSchema.Types.SqlIdentifier;
+      sequenceName: InformationSchema.Types.SqlIdentifier;
     };
     export type RoutineTableUsage = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
     };
     export type Routines = {
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineType?: Nullable<InformationSchema.Types.CharacterData>;
-      moduleCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      moduleSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      moduleName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      typeUdtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      typeUdtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      typeUdtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      scopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      maximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      dtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      routineBody?: Nullable<InformationSchema.Types.CharacterData>;
-      routineDefinition?: Nullable<InformationSchema.Types.CharacterData>;
-      externalName?: Nullable<InformationSchema.Types.CharacterData>;
-      externalLanguage?: Nullable<InformationSchema.Types.CharacterData>;
-      parameterStyle?: Nullable<InformationSchema.Types.CharacterData>;
-      isDeterministic?: Nullable<InformationSchema.Types.YesOrNo>;
-      sqlDataAccess?: Nullable<InformationSchema.Types.CharacterData>;
-      isNullCall?: Nullable<InformationSchema.Types.YesOrNo>;
-      sqlPath?: Nullable<InformationSchema.Types.CharacterData>;
-      schemaLevelRoutine?: Nullable<InformationSchema.Types.YesOrNo>;
-      maxDynamicResultSets?: Nullable<InformationSchema.Types.CardinalNumber>;
-      isUserDefinedCast?: Nullable<InformationSchema.Types.YesOrNo>;
-      isImplicitlyInvocable?: Nullable<InformationSchema.Types.YesOrNo>;
-      securityType?: Nullable<InformationSchema.Types.CharacterData>;
-      toSqlSpecificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      toSqlSpecificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      toSqlSpecificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      asLocator?: Nullable<InformationSchema.Types.YesOrNo>;
-      created?: Nullable<InformationSchema.Types.TimeStamp>;
-      lastAltered?: Nullable<InformationSchema.Types.TimeStamp>;
-      newSavepointLevel?: Nullable<InformationSchema.Types.YesOrNo>;
-      isUdtDependent?: Nullable<InformationSchema.Types.YesOrNo>;
-      resultCastFromDataType?: Nullable<InformationSchema.Types.CharacterData>;
-      resultCastAsLocator?: Nullable<InformationSchema.Types.YesOrNo>;
-      resultCastCharMaxLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastCharOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastCharSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastCharSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastCharSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastCollationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastCollationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastCollationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastNumericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastNumericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastNumericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastDatetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastIntervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      resultCastIntervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastTypeUdtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastTypeUdtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastTypeUdtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastScopeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastScopeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastScopeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      resultCastMaximumCardinality?: Nullable<InformationSchema.Types.CardinalNumber>;
-      resultCastDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      routineCatalog: InformationSchema.Types.SqlIdentifier;
+      routineSchema: InformationSchema.Types.SqlIdentifier;
+      routineName: InformationSchema.Types.SqlIdentifier;
+      routineType: InformationSchema.Types.CharacterData;
+      moduleCatalog: InformationSchema.Types.SqlIdentifier;
+      moduleSchema: InformationSchema.Types.SqlIdentifier;
+      moduleName: InformationSchema.Types.SqlIdentifier;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      typeUdtCatalog: InformationSchema.Types.SqlIdentifier;
+      typeUdtSchema: InformationSchema.Types.SqlIdentifier;
+      typeUdtName: InformationSchema.Types.SqlIdentifier;
+      scopeCatalog: InformationSchema.Types.SqlIdentifier;
+      scopeSchema: InformationSchema.Types.SqlIdentifier;
+      scopeName: InformationSchema.Types.SqlIdentifier;
+      maximumCardinality: InformationSchema.Types.CardinalNumber;
+      dtdIdentifier: InformationSchema.Types.SqlIdentifier;
+      routineBody: InformationSchema.Types.CharacterData;
+      routineDefinition: InformationSchema.Types.CharacterData;
+      externalName: InformationSchema.Types.CharacterData;
+      externalLanguage: InformationSchema.Types.CharacterData;
+      parameterStyle: InformationSchema.Types.CharacterData;
+      isDeterministic: InformationSchema.Types.YesOrNo;
+      sqlDataAccess: InformationSchema.Types.CharacterData;
+      isNullCall: InformationSchema.Types.YesOrNo;
+      sqlPath: InformationSchema.Types.CharacterData;
+      schemaLevelRoutine: InformationSchema.Types.YesOrNo;
+      maxDynamicResultSets: InformationSchema.Types.CardinalNumber;
+      isUserDefinedCast: InformationSchema.Types.YesOrNo;
+      isImplicitlyInvocable: InformationSchema.Types.YesOrNo;
+      securityType: InformationSchema.Types.CharacterData;
+      toSqlSpecificCatalog: InformationSchema.Types.SqlIdentifier;
+      toSqlSpecificSchema: InformationSchema.Types.SqlIdentifier;
+      toSqlSpecificName: InformationSchema.Types.SqlIdentifier;
+      asLocator: InformationSchema.Types.YesOrNo;
+      created: InformationSchema.Types.TimeStamp;
+      lastAltered: InformationSchema.Types.TimeStamp;
+      newSavepointLevel: InformationSchema.Types.YesOrNo;
+      isUdtDependent: InformationSchema.Types.YesOrNo;
+      resultCastFromDataType: InformationSchema.Types.CharacterData;
+      resultCastAsLocator: InformationSchema.Types.YesOrNo;
+      resultCastCharMaxLength: InformationSchema.Types.CardinalNumber;
+      resultCastCharOctetLength: InformationSchema.Types.CardinalNumber;
+      resultCastCharSetCatalog: InformationSchema.Types.SqlIdentifier;
+      resultCastCharSetSchema: InformationSchema.Types.SqlIdentifier;
+      resultCastCharSetName: InformationSchema.Types.SqlIdentifier;
+      resultCastCollationCatalog: InformationSchema.Types.SqlIdentifier;
+      resultCastCollationSchema: InformationSchema.Types.SqlIdentifier;
+      resultCastCollationName: InformationSchema.Types.SqlIdentifier;
+      resultCastNumericPrecision: InformationSchema.Types.CardinalNumber;
+      resultCastNumericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      resultCastNumericScale: InformationSchema.Types.CardinalNumber;
+      resultCastDatetimePrecision: InformationSchema.Types.CardinalNumber;
+      resultCastIntervalType: InformationSchema.Types.CharacterData;
+      resultCastIntervalPrecision: InformationSchema.Types.CardinalNumber;
+      resultCastTypeUdtCatalog: InformationSchema.Types.SqlIdentifier;
+      resultCastTypeUdtSchema: InformationSchema.Types.SqlIdentifier;
+      resultCastTypeUdtName: InformationSchema.Types.SqlIdentifier;
+      resultCastScopeCatalog: InformationSchema.Types.SqlIdentifier;
+      resultCastScopeSchema: InformationSchema.Types.SqlIdentifier;
+      resultCastScopeName: InformationSchema.Types.SqlIdentifier;
+      resultCastMaximumCardinality: InformationSchema.Types.CardinalNumber;
+      resultCastDtdIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type Schemata = {
-      catalogName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      schemaName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      schemaOwner?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCharacterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCharacterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      defaultCharacterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sqlPath?: Nullable<InformationSchema.Types.CharacterData>;
+      catalogName: InformationSchema.Types.SqlIdentifier;
+      schemaName: InformationSchema.Types.SqlIdentifier;
+      schemaOwner: InformationSchema.Types.SqlIdentifier;
+      defaultCharacterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      defaultCharacterSetSchema: InformationSchema.Types.SqlIdentifier;
+      defaultCharacterSetName: InformationSchema.Types.SqlIdentifier;
+      sqlPath: InformationSchema.Types.CharacterData;
     };
     export type Sequences = {
-      sequenceCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sequenceSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      sequenceName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      startValue?: Nullable<InformationSchema.Types.CharacterData>;
-      minimumValue?: Nullable<InformationSchema.Types.CharacterData>;
-      maximumValue?: Nullable<InformationSchema.Types.CharacterData>;
-      increment?: Nullable<InformationSchema.Types.CharacterData>;
-      cycleOption?: Nullable<InformationSchema.Types.YesOrNo>;
+      sequenceCatalog: InformationSchema.Types.SqlIdentifier;
+      sequenceSchema: InformationSchema.Types.SqlIdentifier;
+      sequenceName: InformationSchema.Types.SqlIdentifier;
+      dataType: InformationSchema.Types.CharacterData;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      startValue: InformationSchema.Types.CharacterData;
+      minimumValue: InformationSchema.Types.CharacterData;
+      maximumValue: InformationSchema.Types.CharacterData;
+      increment: InformationSchema.Types.CharacterData;
+      cycleOption: InformationSchema.Types.YesOrNo;
     };
     export type SqlFeatures = {
-      featureId?: Nullable<InformationSchema.Types.CharacterData>;
-      featureName?: Nullable<InformationSchema.Types.CharacterData>;
-      subFeatureId?: Nullable<InformationSchema.Types.CharacterData>;
-      subFeatureName?: Nullable<InformationSchema.Types.CharacterData>;
-      isSupported?: Nullable<InformationSchema.Types.YesOrNo>;
-      isVerifiedBy?: Nullable<InformationSchema.Types.CharacterData>;
-      comments?: Nullable<InformationSchema.Types.CharacterData>;
+      featureId: InformationSchema.Types.CharacterData;
+      featureName: InformationSchema.Types.CharacterData;
+      subFeatureId: InformationSchema.Types.CharacterData;
+      subFeatureName: InformationSchema.Types.CharacterData;
+      isSupported: InformationSchema.Types.YesOrNo;
+      isVerifiedBy: InformationSchema.Types.CharacterData;
+      comments: InformationSchema.Types.CharacterData;
     };
     export type SqlIdentifier = PgCatalog.Types.Name;
     export type SqlImplementationInfo = {
-      implementationInfoId?: Nullable<InformationSchema.Types.CharacterData>;
-      implementationInfoName?: Nullable<InformationSchema.Types.CharacterData>;
-      integerValue?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterValue?: Nullable<InformationSchema.Types.CharacterData>;
-      comments?: Nullable<InformationSchema.Types.CharacterData>;
+      implementationInfoId: InformationSchema.Types.CharacterData;
+      implementationInfoName: InformationSchema.Types.CharacterData;
+      integerValue: InformationSchema.Types.CardinalNumber;
+      characterValue: InformationSchema.Types.CharacterData;
+      comments: InformationSchema.Types.CharacterData;
     };
     export type SqlParts = {
-      featureId?: Nullable<InformationSchema.Types.CharacterData>;
-      featureName?: Nullable<InformationSchema.Types.CharacterData>;
-      isSupported?: Nullable<InformationSchema.Types.YesOrNo>;
-      isVerifiedBy?: Nullable<InformationSchema.Types.CharacterData>;
-      comments?: Nullable<InformationSchema.Types.CharacterData>;
+      featureId: InformationSchema.Types.CharacterData;
+      featureName: InformationSchema.Types.CharacterData;
+      isSupported: InformationSchema.Types.YesOrNo;
+      isVerifiedBy: InformationSchema.Types.CharacterData;
+      comments: InformationSchema.Types.CharacterData;
     };
     export type SqlSizing = {
-      sizingId?: Nullable<InformationSchema.Types.CardinalNumber>;
-      sizingName?: Nullable<InformationSchema.Types.CharacterData>;
-      supportedValue?: Nullable<InformationSchema.Types.CardinalNumber>;
-      comments?: Nullable<InformationSchema.Types.CharacterData>;
+      sizingId: InformationSchema.Types.CardinalNumber;
+      sizingName: InformationSchema.Types.CharacterData;
+      supportedValue: InformationSchema.Types.CardinalNumber;
+      comments: InformationSchema.Types.CharacterData;
     };
     export type TableConstraints = {
-      constraintCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      constraintType?: Nullable<InformationSchema.Types.CharacterData>;
-      isDeferrable?: Nullable<InformationSchema.Types.YesOrNo>;
-      initiallyDeferred?: Nullable<InformationSchema.Types.YesOrNo>;
-      enforced?: Nullable<InformationSchema.Types.YesOrNo>;
-      nullsDistinct?: Nullable<InformationSchema.Types.YesOrNo>;
+      constraintCatalog: InformationSchema.Types.SqlIdentifier;
+      constraintSchema: InformationSchema.Types.SqlIdentifier;
+      constraintName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      constraintType: InformationSchema.Types.CharacterData;
+      isDeferrable: InformationSchema.Types.YesOrNo;
+      initiallyDeferred: InformationSchema.Types.YesOrNo;
+      enforced: InformationSchema.Types.YesOrNo;
+      nullsDistinct: InformationSchema.Types.YesOrNo;
     };
     export type TablePrivileges = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
-      withHierarchy?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
+      withHierarchy: InformationSchema.Types.YesOrNo;
     };
     export type Tables = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableType?: Nullable<InformationSchema.Types.CharacterData>;
-      selfReferencingColumnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      referenceGeneration?: Nullable<InformationSchema.Types.CharacterData>;
-      userDefinedTypeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      userDefinedTypeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      userDefinedTypeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      isInsertableInto?: Nullable<InformationSchema.Types.YesOrNo>;
-      isTyped?: Nullable<InformationSchema.Types.YesOrNo>;
-      commitAction?: Nullable<InformationSchema.Types.CharacterData>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      tableType: InformationSchema.Types.CharacterData;
+      selfReferencingColumnName: InformationSchema.Types.SqlIdentifier;
+      referenceGeneration: InformationSchema.Types.CharacterData;
+      userDefinedTypeCatalog: InformationSchema.Types.SqlIdentifier;
+      userDefinedTypeSchema: InformationSchema.Types.SqlIdentifier;
+      userDefinedTypeName: InformationSchema.Types.SqlIdentifier;
+      isInsertableInto: InformationSchema.Types.YesOrNo;
+      isTyped: InformationSchema.Types.YesOrNo;
+      commitAction: InformationSchema.Types.CharacterData;
     };
     export type TimeStamp = PgCatalog.Types.Timestamptz;
     export type Transforms = {
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      groupName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      transformType?: Nullable<InformationSchema.Types.CharacterData>;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
+      groupName: InformationSchema.Types.SqlIdentifier;
+      transformType: InformationSchema.Types.CharacterData;
     };
     export type TriggeredUpdateColumns = {
-      triggerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      triggerSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      triggerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectTable?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectColumn?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      triggerCatalog: InformationSchema.Types.SqlIdentifier;
+      triggerSchema: InformationSchema.Types.SqlIdentifier;
+      triggerName: InformationSchema.Types.SqlIdentifier;
+      eventObjectCatalog: InformationSchema.Types.SqlIdentifier;
+      eventObjectSchema: InformationSchema.Types.SqlIdentifier;
+      eventObjectTable: InformationSchema.Types.SqlIdentifier;
+      eventObjectColumn: InformationSchema.Types.SqlIdentifier;
     };
     export type Triggers = {
-      triggerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      triggerSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      triggerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventManipulation?: Nullable<InformationSchema.Types.CharacterData>;
-      eventObjectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      eventObjectTable?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      actionOrder?: Nullable<InformationSchema.Types.CardinalNumber>;
-      actionCondition?: Nullable<InformationSchema.Types.CharacterData>;
-      actionStatement?: Nullable<InformationSchema.Types.CharacterData>;
-      actionOrientation?: Nullable<InformationSchema.Types.CharacterData>;
-      actionTiming?: Nullable<InformationSchema.Types.CharacterData>;
-      actionReferenceOldTable?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      actionReferenceNewTable?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      actionReferenceOldRow?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      actionReferenceNewRow?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      created?: Nullable<InformationSchema.Types.TimeStamp>;
+      triggerCatalog: InformationSchema.Types.SqlIdentifier;
+      triggerSchema: InformationSchema.Types.SqlIdentifier;
+      triggerName: InformationSchema.Types.SqlIdentifier;
+      eventManipulation: InformationSchema.Types.CharacterData;
+      eventObjectCatalog: InformationSchema.Types.SqlIdentifier;
+      eventObjectSchema: InformationSchema.Types.SqlIdentifier;
+      eventObjectTable: InformationSchema.Types.SqlIdentifier;
+      actionOrder: InformationSchema.Types.CardinalNumber;
+      actionCondition: InformationSchema.Types.CharacterData;
+      actionStatement: InformationSchema.Types.CharacterData;
+      actionOrientation: InformationSchema.Types.CharacterData;
+      actionTiming: InformationSchema.Types.CharacterData;
+      actionReferenceOldTable: InformationSchema.Types.SqlIdentifier;
+      actionReferenceNewTable: InformationSchema.Types.SqlIdentifier;
+      actionReferenceOldRow: InformationSchema.Types.SqlIdentifier;
+      actionReferenceNewRow: InformationSchema.Types.SqlIdentifier;
+      created: InformationSchema.Types.TimeStamp;
     };
     export type UdtPrivileges = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      udtName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      udtCatalog: InformationSchema.Types.SqlIdentifier;
+      udtSchema: InformationSchema.Types.SqlIdentifier;
+      udtName: InformationSchema.Types.SqlIdentifier;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type UsagePrivileges = {
-      grantor?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      grantee?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      objectType?: Nullable<InformationSchema.Types.CharacterData>;
-      privilegeType?: Nullable<InformationSchema.Types.CharacterData>;
-      isGrantable?: Nullable<InformationSchema.Types.YesOrNo>;
+      grantor: InformationSchema.Types.SqlIdentifier;
+      grantee: InformationSchema.Types.SqlIdentifier;
+      objectCatalog: InformationSchema.Types.SqlIdentifier;
+      objectSchema: InformationSchema.Types.SqlIdentifier;
+      objectName: InformationSchema.Types.SqlIdentifier;
+      objectType: InformationSchema.Types.CharacterData;
+      privilegeType: InformationSchema.Types.CharacterData;
+      isGrantable: InformationSchema.Types.YesOrNo;
     };
     export type UserDefinedTypes = {
-      userDefinedTypeCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      userDefinedTypeSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      userDefinedTypeName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      userDefinedTypeCategory?: Nullable<InformationSchema.Types.CharacterData>;
-      isInstantiable?: Nullable<InformationSchema.Types.YesOrNo>;
-      isFinal?: Nullable<InformationSchema.Types.YesOrNo>;
-      orderingForm?: Nullable<InformationSchema.Types.CharacterData>;
-      orderingCategory?: Nullable<InformationSchema.Types.CharacterData>;
-      orderingRoutineCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      orderingRoutineSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      orderingRoutineName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      referenceType?: Nullable<InformationSchema.Types.CharacterData>;
-      dataType?: Nullable<InformationSchema.Types.CharacterData>;
-      characterMaximumLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterOctetLength?: Nullable<InformationSchema.Types.CardinalNumber>;
-      characterSetCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      characterSetName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      collationName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      numericPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericPrecisionRadix?: Nullable<InformationSchema.Types.CardinalNumber>;
-      numericScale?: Nullable<InformationSchema.Types.CardinalNumber>;
-      datetimePrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      intervalType?: Nullable<InformationSchema.Types.CharacterData>;
-      intervalPrecision?: Nullable<InformationSchema.Types.CardinalNumber>;
-      sourceDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      refDtdIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      userDefinedTypeCatalog: InformationSchema.Types.SqlIdentifier;
+      userDefinedTypeSchema: InformationSchema.Types.SqlIdentifier;
+      userDefinedTypeName: InformationSchema.Types.SqlIdentifier;
+      userDefinedTypeCategory: InformationSchema.Types.CharacterData;
+      isInstantiable: InformationSchema.Types.YesOrNo;
+      isFinal: InformationSchema.Types.YesOrNo;
+      orderingForm: InformationSchema.Types.CharacterData;
+      orderingCategory: InformationSchema.Types.CharacterData;
+      orderingRoutineCatalog: InformationSchema.Types.SqlIdentifier;
+      orderingRoutineSchema: InformationSchema.Types.SqlIdentifier;
+      orderingRoutineName: InformationSchema.Types.SqlIdentifier;
+      referenceType: InformationSchema.Types.CharacterData;
+      dataType: InformationSchema.Types.CharacterData;
+      characterMaximumLength: InformationSchema.Types.CardinalNumber;
+      characterOctetLength: InformationSchema.Types.CardinalNumber;
+      characterSetCatalog: InformationSchema.Types.SqlIdentifier;
+      characterSetSchema: InformationSchema.Types.SqlIdentifier;
+      characterSetName: InformationSchema.Types.SqlIdentifier;
+      collationCatalog: InformationSchema.Types.SqlIdentifier;
+      collationSchema: InformationSchema.Types.SqlIdentifier;
+      collationName: InformationSchema.Types.SqlIdentifier;
+      numericPrecision: InformationSchema.Types.CardinalNumber;
+      numericPrecisionRadix: InformationSchema.Types.CardinalNumber;
+      numericScale: InformationSchema.Types.CardinalNumber;
+      datetimePrecision: InformationSchema.Types.CardinalNumber;
+      intervalType: InformationSchema.Types.CharacterData;
+      intervalPrecision: InformationSchema.Types.CardinalNumber;
+      sourceDtdIdentifier: InformationSchema.Types.SqlIdentifier;
+      refDtdIdentifier: InformationSchema.Types.SqlIdentifier;
     };
     export type UserMappingOptions = {
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      optionValue?: Nullable<InformationSchema.Types.CharacterData>;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
+      optionName: InformationSchema.Types.SqlIdentifier;
+      optionValue: InformationSchema.Types.CharacterData;
     };
     export type UserMappings = {
-      authorizationIdentifier?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      foreignServerName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      authorizationIdentifier: InformationSchema.Types.SqlIdentifier;
+      foreignServerCatalog: InformationSchema.Types.SqlIdentifier;
+      foreignServerName: InformationSchema.Types.SqlIdentifier;
     };
     export type ViewColumnUsage = {
-      viewCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      viewSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      viewName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      columnName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      viewCatalog: InformationSchema.Types.SqlIdentifier;
+      viewSchema: InformationSchema.Types.SqlIdentifier;
+      viewName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      columnName: InformationSchema.Types.SqlIdentifier;
     };
     export type ViewRoutineUsage = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      specificName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      specificCatalog: InformationSchema.Types.SqlIdentifier;
+      specificSchema: InformationSchema.Types.SqlIdentifier;
+      specificName: InformationSchema.Types.SqlIdentifier;
     };
     export type ViewTableUsage = {
-      viewCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      viewSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      viewName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
+      viewCatalog: InformationSchema.Types.SqlIdentifier;
+      viewSchema: InformationSchema.Types.SqlIdentifier;
+      viewName: InformationSchema.Types.SqlIdentifier;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
     };
     export type Views = {
-      tableCatalog?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableSchema?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      tableName?: Nullable<InformationSchema.Types.SqlIdentifier>;
-      viewDefinition?: Nullable<InformationSchema.Types.CharacterData>;
-      checkOption?: Nullable<InformationSchema.Types.CharacterData>;
-      isUpdatable?: Nullable<InformationSchema.Types.YesOrNo>;
-      isInsertableInto?: Nullable<InformationSchema.Types.YesOrNo>;
-      isTriggerUpdatable?: Nullable<InformationSchema.Types.YesOrNo>;
-      isTriggerDeletable?: Nullable<InformationSchema.Types.YesOrNo>;
-      isTriggerInsertableInto?: Nullable<InformationSchema.Types.YesOrNo>;
+      tableCatalog: InformationSchema.Types.SqlIdentifier;
+      tableSchema: InformationSchema.Types.SqlIdentifier;
+      tableName: InformationSchema.Types.SqlIdentifier;
+      viewDefinition: InformationSchema.Types.CharacterData;
+      checkOption: InformationSchema.Types.CharacterData;
+      isUpdatable: InformationSchema.Types.YesOrNo;
+      isInsertableInto: InformationSchema.Types.YesOrNo;
+      isTriggerUpdatable: InformationSchema.Types.YesOrNo;
+      isTriggerDeletable: InformationSchema.Types.YesOrNo;
+      isTriggerInsertableInto: InformationSchema.Types.YesOrNo;
     };
     export type YesOrNo = PgCatalog.Types.Varchar;
   }
@@ -4082,16 +4528,32 @@ export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
       export type Record = Required<InformationSchema.Types.SqlFeatures>;
+      export type Results = InformationSchema.Types.SqlFeatures;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
     export namespace SqlImplementationInfo {
       export type Record =
         Required<InformationSchema.Types.SqlImplementationInfo>;
+      export type Results = InformationSchema.Types.SqlImplementationInfo;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
     export namespace SqlParts {
       export type Record = Required<InformationSchema.Types.SqlParts>;
+      export type Results = InformationSchema.Types.SqlParts;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
     export namespace SqlSizing {
       export type Record = Required<InformationSchema.Types.SqlSizing>;
+      export type Results = InformationSchema.Types.SqlSizing;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type PrimaryKey = never;
+      export type Optional = Pick<Record, never>;
     }
   }
 }
@@ -4131,6 +4593,8 @@ export namespace PgCatalog {
   export namespace Types {
     export namespace AclitemArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.AclitemArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4143,6 +4607,8 @@ export namespace PgCatalog {
     }
     export namespace BitArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.BitArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4155,6 +4621,8 @@ export namespace PgCatalog {
     }
     export namespace BoolArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.BoolArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4167,6 +4635,8 @@ export namespace PgCatalog {
     }
     export namespace BoxArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.BoxArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4179,6 +4649,8 @@ export namespace PgCatalog {
     }
     export namespace BpcharArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.BpcharArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4191,6 +4663,8 @@ export namespace PgCatalog {
     }
     export namespace ByteaArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.ByteaArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4203,6 +4677,8 @@ export namespace PgCatalog {
     }
     export namespace CharArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.CharArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4215,6 +4691,8 @@ export namespace PgCatalog {
     }
     export namespace CidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.CidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4227,6 +4705,8 @@ export namespace PgCatalog {
     }
     export namespace CidrArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.CidrArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4239,6 +4719,8 @@ export namespace PgCatalog {
     }
     export namespace CircleArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.CircleArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4251,6 +4733,8 @@ export namespace PgCatalog {
     }
     export namespace CstringArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.CstringArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4263,6 +4747,8 @@ export namespace PgCatalog {
     }
     export namespace DateArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.DateArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4275,6 +4761,8 @@ export namespace PgCatalog {
     }
     export namespace DatemultirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.DatemultirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4287,6 +4775,8 @@ export namespace PgCatalog {
     }
     export namespace DaterangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.DaterangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4299,6 +4789,8 @@ export namespace PgCatalog {
     }
     export namespace Float4Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Float4Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4311,6 +4803,8 @@ export namespace PgCatalog {
     }
     export namespace Float8Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Float8Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4323,6 +4817,8 @@ export namespace PgCatalog {
     }
     export namespace GtsvectorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.GtsvectorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4335,6 +4831,8 @@ export namespace PgCatalog {
     }
     export namespace InetArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.InetArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4347,6 +4845,8 @@ export namespace PgCatalog {
     }
     export namespace Int2Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int2Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4359,6 +4859,8 @@ export namespace PgCatalog {
     }
     export namespace Int2vectorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int2vectorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4371,6 +4873,8 @@ export namespace PgCatalog {
     }
     export namespace Int4Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4383,6 +4887,8 @@ export namespace PgCatalog {
     }
     export namespace Int4multirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4multirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4395,6 +4901,8 @@ export namespace PgCatalog {
     }
     export namespace Int4rangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4rangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4407,6 +4915,8 @@ export namespace PgCatalog {
     }
     export namespace Int8Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4419,6 +4929,8 @@ export namespace PgCatalog {
     }
     export namespace Int8multirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8multirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4431,6 +4943,8 @@ export namespace PgCatalog {
     }
     export namespace Int8rangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8rangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4443,6 +4957,8 @@ export namespace PgCatalog {
     }
     export namespace IntervalArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.IntervalArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4455,6 +4971,8 @@ export namespace PgCatalog {
     }
     export namespace JsonArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.JsonArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4467,6 +4985,8 @@ export namespace PgCatalog {
     }
     export namespace JsonbArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.JsonbArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4479,6 +4999,8 @@ export namespace PgCatalog {
     }
     export namespace JsonpathArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.JsonpathArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4491,6 +5013,8 @@ export namespace PgCatalog {
     }
     export namespace LineArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.LineArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4503,6 +5027,8 @@ export namespace PgCatalog {
     }
     export namespace LsegArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.LsegArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4515,6 +5041,8 @@ export namespace PgCatalog {
     }
     export namespace MacaddrArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.MacaddrArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4527,6 +5055,8 @@ export namespace PgCatalog {
     }
     export namespace Macaddr8Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Macaddr8Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4539,6 +5069,8 @@ export namespace PgCatalog {
     }
     export namespace MoneyArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.MoneyArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4551,6 +5083,8 @@ export namespace PgCatalog {
     }
     export namespace NameArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.NameArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4563,6 +5097,8 @@ export namespace PgCatalog {
     }
     export namespace NumericArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.NumericArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4575,6 +5111,8 @@ export namespace PgCatalog {
     }
     export namespace NummultirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.NummultirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4587,6 +5125,8 @@ export namespace PgCatalog {
     }
     export namespace NumrangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.NumrangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4599,6 +5139,8 @@ export namespace PgCatalog {
     }
     export namespace OidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.OidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4611,6 +5153,8 @@ export namespace PgCatalog {
     }
     export namespace OidvectorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.OidvectorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4623,6 +5167,8 @@ export namespace PgCatalog {
     }
     export namespace PathArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PathArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4635,6 +5181,8 @@ export namespace PgCatalog {
     }
     export namespace PgAggregateArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAggregateArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4647,6 +5195,8 @@ export namespace PgCatalog {
     }
     export namespace PgAmArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAmArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4659,6 +5209,8 @@ export namespace PgCatalog {
     }
     export namespace PgAmopArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAmopArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4671,6 +5223,8 @@ export namespace PgCatalog {
     }
     export namespace PgAmprocArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAmprocArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4683,6 +5237,8 @@ export namespace PgCatalog {
     }
     export namespace PgAttrdefArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAttrdefArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4695,6 +5251,8 @@ export namespace PgCatalog {
     }
     export namespace PgAttributeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAttributeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4707,6 +5265,8 @@ export namespace PgCatalog {
     }
     export namespace PgAuthMembersArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAuthMembersArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4719,6 +5279,8 @@ export namespace PgCatalog {
     }
     export namespace PgAuthidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAuthidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4731,6 +5293,8 @@ export namespace PgCatalog {
     }
     export namespace PgAvailableExtensionVersionsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAvailableExtensionVersionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4743,6 +5307,8 @@ export namespace PgCatalog {
     }
     export namespace PgAvailableExtensionsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgAvailableExtensionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4755,6 +5321,8 @@ export namespace PgCatalog {
     }
     export namespace PgBackendMemoryContextsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgBackendMemoryContextsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4767,6 +5335,8 @@ export namespace PgCatalog {
     }
     export namespace PgCastArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgCastArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4779,6 +5349,8 @@ export namespace PgCatalog {
     }
     export namespace PgClassArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgClassArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4791,6 +5363,8 @@ export namespace PgCatalog {
     }
     export namespace PgCollationArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgCollationArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4803,6 +5377,8 @@ export namespace PgCatalog {
     }
     export namespace PgConfigArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgConfigArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4815,6 +5391,8 @@ export namespace PgCatalog {
     }
     export namespace PgConstraintArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgConstraintArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4827,6 +5405,8 @@ export namespace PgCatalog {
     }
     export namespace PgConversionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgConversionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4839,6 +5419,8 @@ export namespace PgCatalog {
     }
     export namespace PgCursorsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgCursorsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4851,6 +5433,8 @@ export namespace PgCatalog {
     }
     export namespace PgDatabaseArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDatabaseArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4863,6 +5447,8 @@ export namespace PgCatalog {
     }
     export namespace PgDbRoleSettingArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDbRoleSettingArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4875,6 +5461,8 @@ export namespace PgCatalog {
     }
     export namespace PgDefaultAclArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDefaultAclArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4887,6 +5475,8 @@ export namespace PgCatalog {
     }
     export namespace PgDependArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDependArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4899,6 +5489,8 @@ export namespace PgCatalog {
     }
     export namespace PgDescriptionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDescriptionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4911,6 +5503,8 @@ export namespace PgCatalog {
     }
     export namespace PgEnumArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgEnumArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4923,6 +5517,8 @@ export namespace PgCatalog {
     }
     export namespace PgEventTriggerArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgEventTriggerArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4935,6 +5531,8 @@ export namespace PgCatalog {
     }
     export namespace PgExtensionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgExtensionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4947,6 +5545,8 @@ export namespace PgCatalog {
     }
     export namespace PgFileSettingsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgFileSettingsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4959,6 +5559,8 @@ export namespace PgCatalog {
     }
     export namespace PgForeignDataWrapperArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgForeignDataWrapperArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4971,6 +5573,8 @@ export namespace PgCatalog {
     }
     export namespace PgForeignServerArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgForeignServerArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4983,6 +5587,8 @@ export namespace PgCatalog {
     }
     export namespace PgForeignTableArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgForeignTableArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -4995,6 +5601,8 @@ export namespace PgCatalog {
     }
     export namespace PgGroupArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgGroupArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5007,6 +5615,8 @@ export namespace PgCatalog {
     }
     export namespace PgHbaFileRulesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgHbaFileRulesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5019,6 +5629,8 @@ export namespace PgCatalog {
     }
     export namespace PgIdentFileMappingsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgIdentFileMappingsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5031,6 +5643,8 @@ export namespace PgCatalog {
     }
     export namespace PgIndexArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgIndexArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5043,6 +5657,8 @@ export namespace PgCatalog {
     }
     export namespace PgIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5055,6 +5671,8 @@ export namespace PgCatalog {
     }
     export namespace PgInheritsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgInheritsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5067,6 +5685,8 @@ export namespace PgCatalog {
     }
     export namespace PgInitPrivsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgInitPrivsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5079,6 +5699,8 @@ export namespace PgCatalog {
     }
     export namespace PgLanguageArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLanguageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5091,6 +5713,8 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobjectArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLargeobjectArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5103,6 +5727,8 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobjectMetadataArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLargeobjectMetadataArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5115,6 +5741,8 @@ export namespace PgCatalog {
     }
     export namespace PgLocksArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLocksArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5127,6 +5755,8 @@ export namespace PgCatalog {
     }
     export namespace PgLsnArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLsnArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5139,6 +5769,8 @@ export namespace PgCatalog {
     }
     export namespace PgMatviewsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgMatviewsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5151,6 +5783,8 @@ export namespace PgCatalog {
     }
     export namespace PgNamespaceArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgNamespaceArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5163,6 +5797,8 @@ export namespace PgCatalog {
     }
     export namespace PgOpclassArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgOpclassArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5175,6 +5811,8 @@ export namespace PgCatalog {
     }
     export namespace PgOperatorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgOperatorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5187,6 +5825,8 @@ export namespace PgCatalog {
     }
     export namespace PgOpfamilyArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgOpfamilyArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5199,6 +5839,8 @@ export namespace PgCatalog {
     }
     export namespace PgParameterAclArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgParameterAclArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5211,6 +5853,8 @@ export namespace PgCatalog {
     }
     export namespace PgPartitionedTableArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPartitionedTableArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5223,6 +5867,8 @@ export namespace PgCatalog {
     }
     export namespace PgPoliciesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPoliciesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5235,6 +5881,8 @@ export namespace PgCatalog {
     }
     export namespace PgPolicyArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPolicyArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5247,6 +5895,8 @@ export namespace PgCatalog {
     }
     export namespace PgPreparedStatementsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPreparedStatementsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5259,6 +5909,8 @@ export namespace PgCatalog {
     }
     export namespace PgPreparedXactsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPreparedXactsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5271,6 +5923,8 @@ export namespace PgCatalog {
     }
     export namespace PgProcArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgProcArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5283,6 +5937,8 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPublicationArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5295,6 +5951,8 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationNamespaceArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPublicationNamespaceArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5307,6 +5965,8 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationRelArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPublicationRelArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5319,6 +5979,8 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgPublicationTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5331,6 +5993,8 @@ export namespace PgCatalog {
     }
     export namespace PgRangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgRangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5343,6 +6007,8 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOriginArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgReplicationOriginArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5355,6 +6021,8 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOriginStatusArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgReplicationOriginStatusArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5367,6 +6035,8 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationSlotsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgReplicationSlotsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5379,6 +6049,8 @@ export namespace PgCatalog {
     }
     export namespace PgRewriteArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgRewriteArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5391,6 +6063,8 @@ export namespace PgCatalog {
     }
     export namespace PgRolesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgRolesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5403,6 +6077,8 @@ export namespace PgCatalog {
     }
     export namespace PgRulesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgRulesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5415,6 +6091,8 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabelArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSeclabelArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5427,6 +6105,8 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabelsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSeclabelsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5439,6 +6119,8 @@ export namespace PgCatalog {
     }
     export namespace PgSequenceArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSequenceArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5451,6 +6133,8 @@ export namespace PgCatalog {
     }
     export namespace PgSequencesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSequencesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5463,6 +6147,8 @@ export namespace PgCatalog {
     }
     export namespace PgSettingsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSettingsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5475,6 +6161,8 @@ export namespace PgCatalog {
     }
     export namespace PgShadowArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgShadowArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5487,6 +6175,8 @@ export namespace PgCatalog {
     }
     export namespace PgShdependArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgShdependArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5499,6 +6189,8 @@ export namespace PgCatalog {
     }
     export namespace PgShdescriptionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgShdescriptionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5511,6 +6203,8 @@ export namespace PgCatalog {
     }
     export namespace PgShmemAllocationsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgShmemAllocationsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5523,6 +6217,8 @@ export namespace PgCatalog {
     }
     export namespace PgShseclabelArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgShseclabelArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5535,6 +6231,8 @@ export namespace PgCatalog {
     }
     export namespace PgSnapshotArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSnapshotArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5547,6 +6245,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatActivityArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatActivityArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5559,6 +6259,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatAllIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatAllIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5571,6 +6273,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatAllTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatAllTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5583,6 +6287,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatArchiverArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatArchiverArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5595,6 +6301,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatBgwriterArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatBgwriterArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5607,6 +6315,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatDatabaseArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatDatabaseArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5619,6 +6329,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatDatabaseConflictsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatDatabaseConflictsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5631,6 +6343,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatGssapiArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatGssapiArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5643,6 +6357,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatIoArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatIoArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5655,6 +6371,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressAnalyzeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressAnalyzeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5667,6 +6385,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressBasebackupArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressBasebackupArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5679,6 +6399,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressClusterArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressClusterArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5691,6 +6413,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressCopyArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressCopyArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5703,6 +6427,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressCreateIndexArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressCreateIndexArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5715,6 +6441,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressVacuumArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatProgressVacuumArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5727,6 +6455,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatRecoveryPrefetchArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatRecoveryPrefetchArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5739,6 +6469,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatReplicationArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatReplicationArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5751,6 +6483,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatReplicationSlotsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatReplicationSlotsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5763,6 +6497,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSlruArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSlruArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5775,6 +6511,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSslArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSslArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5787,6 +6525,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSubscriptionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSubscriptionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5799,6 +6539,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSubscriptionStatsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSubscriptionStatsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5811,6 +6553,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSysIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSysIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5823,6 +6567,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatSysTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatSysTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5835,6 +6581,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserFunctionsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatUserFunctionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5847,6 +6595,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatUserIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5859,6 +6609,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatUserTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5871,6 +6623,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatWalArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatWalArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5883,6 +6637,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatWalReceiverArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatWalReceiverArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5895,6 +6651,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactAllTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatXactAllTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5907,6 +6665,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactSysTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatXactSysTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5919,6 +6679,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactUserFunctionsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatXactUserFunctionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5931,6 +6693,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactUserTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatXactUserTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5943,6 +6707,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioAllIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5955,6 +6721,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllSequencesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioAllSequencesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5967,6 +6735,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioAllTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5979,6 +6749,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioSysIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -5991,6 +6763,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysSequencesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioSysSequencesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6003,6 +6777,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioSysTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6015,6 +6791,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserIndexesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioUserIndexesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6027,6 +6805,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserSequencesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioUserSequencesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6039,6 +6819,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatioUserTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6051,6 +6833,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatisticArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6063,6 +6847,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExtArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatisticExtArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6075,6 +6861,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExtDataArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatisticExtDataArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6087,6 +6875,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6099,6 +6889,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatsExtArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatsExtArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6111,6 +6903,8 @@ export namespace PgCatalog {
     }
     export namespace PgStatsExtExprsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgStatsExtExprsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6123,6 +6917,8 @@ export namespace PgCatalog {
     }
     export namespace PgSubscriptionArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSubscriptionArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6135,6 +6931,8 @@ export namespace PgCatalog {
     }
     export namespace PgSubscriptionRelArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSubscriptionRelArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6147,6 +6945,8 @@ export namespace PgCatalog {
     }
     export namespace PgTablesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6159,6 +6959,8 @@ export namespace PgCatalog {
     }
     export namespace PgTablespaceArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTablespaceArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6171,6 +6973,8 @@ export namespace PgCatalog {
     }
     export namespace PgTimezoneAbbrevsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTimezoneAbbrevsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6183,6 +6987,8 @@ export namespace PgCatalog {
     }
     export namespace PgTimezoneNamesArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTimezoneNamesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6195,6 +7001,8 @@ export namespace PgCatalog {
     }
     export namespace PgTransformArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTransformArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6207,6 +7015,8 @@ export namespace PgCatalog {
     }
     export namespace PgTriggerArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTriggerArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6219,6 +7029,8 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfigArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTsConfigArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6231,6 +7043,8 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfigMapArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTsConfigMapArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6243,6 +7057,8 @@ export namespace PgCatalog {
     }
     export namespace PgTsDictArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTsDictArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6255,6 +7071,8 @@ export namespace PgCatalog {
     }
     export namespace PgTsParserArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTsParserArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6267,6 +7085,8 @@ export namespace PgCatalog {
     }
     export namespace PgTsTemplateArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTsTemplateArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6279,6 +7099,8 @@ export namespace PgCatalog {
     }
     export namespace PgTypeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgTypeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6291,6 +7113,8 @@ export namespace PgCatalog {
     }
     export namespace PgUserArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgUserArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6303,6 +7127,8 @@ export namespace PgCatalog {
     }
     export namespace PgUserMappingArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgUserMappingArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6315,6 +7141,8 @@ export namespace PgCatalog {
     }
     export namespace PgUserMappingsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgUserMappingsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6327,6 +7155,8 @@ export namespace PgCatalog {
     }
     export namespace PgViewsArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgViewsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6339,6 +7169,8 @@ export namespace PgCatalog {
     }
     export namespace PointArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PointArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6351,6 +7183,8 @@ export namespace PgCatalog {
     }
     export namespace PolygonArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PolygonArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6363,6 +7197,8 @@ export namespace PgCatalog {
     }
     export namespace RecordArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RecordArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6375,6 +7211,8 @@ export namespace PgCatalog {
     }
     export namespace RefcursorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RefcursorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6387,6 +7225,8 @@ export namespace PgCatalog {
     }
     export namespace RegclassArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegclassArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6399,6 +7239,8 @@ export namespace PgCatalog {
     }
     export namespace RegcollationArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegcollationArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6411,6 +7253,8 @@ export namespace PgCatalog {
     }
     export namespace RegconfigArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegconfigArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6423,6 +7267,8 @@ export namespace PgCatalog {
     }
     export namespace RegdictionaryArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegdictionaryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6435,6 +7281,8 @@ export namespace PgCatalog {
     }
     export namespace RegnamespaceArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegnamespaceArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6447,6 +7295,8 @@ export namespace PgCatalog {
     }
     export namespace RegoperArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegoperArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6459,6 +7309,8 @@ export namespace PgCatalog {
     }
     export namespace RegoperatorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegoperatorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6471,6 +7323,8 @@ export namespace PgCatalog {
     }
     export namespace RegprocArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegprocArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6483,6 +7337,8 @@ export namespace PgCatalog {
     }
     export namespace RegprocedureArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegprocedureArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6495,6 +7351,8 @@ export namespace PgCatalog {
     }
     export namespace RegroleArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegroleArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6507,6 +7365,8 @@ export namespace PgCatalog {
     }
     export namespace RegtypeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.RegtypeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6519,6 +7379,8 @@ export namespace PgCatalog {
     }
     export namespace TextArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TextArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6531,6 +7393,8 @@ export namespace PgCatalog {
     }
     export namespace TidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6543,6 +7407,8 @@ export namespace PgCatalog {
     }
     export namespace TimeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TimeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6555,6 +7421,8 @@ export namespace PgCatalog {
     }
     export namespace TimestampArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TimestampArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6567,6 +7435,8 @@ export namespace PgCatalog {
     }
     export namespace TimestamptzArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TimestamptzArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6579,6 +7449,8 @@ export namespace PgCatalog {
     }
     export namespace TimetzArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TimetzArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6591,6 +7463,8 @@ export namespace PgCatalog {
     }
     export namespace TsmultirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TsmultirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6603,6 +7477,8 @@ export namespace PgCatalog {
     }
     export namespace TsqueryArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TsqueryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6615,6 +7491,8 @@ export namespace PgCatalog {
     }
     export namespace TsrangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TsrangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6627,6 +7505,8 @@ export namespace PgCatalog {
     }
     export namespace TstzmultirangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TstzmultirangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6639,6 +7519,8 @@ export namespace PgCatalog {
     }
     export namespace TstzrangeArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TstzrangeArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6651,6 +7533,8 @@ export namespace PgCatalog {
     }
     export namespace TsvectorArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TsvectorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6663,6 +7547,8 @@ export namespace PgCatalog {
     }
     export namespace TxidSnapshotArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TxidSnapshotArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6675,6 +7561,8 @@ export namespace PgCatalog {
     }
     export namespace UuidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.UuidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6687,6 +7575,8 @@ export namespace PgCatalog {
     }
     export namespace VarbitArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.VarbitArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6699,6 +7589,8 @@ export namespace PgCatalog {
     }
     export namespace VarcharArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.VarcharArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6711,6 +7603,8 @@ export namespace PgCatalog {
     }
     export namespace XidArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.XidArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6723,6 +7617,8 @@ export namespace PgCatalog {
     }
     export namespace Xid8Array {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Xid8Array
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6735,6 +7631,8 @@ export namespace PgCatalog {
     }
     export namespace XmlArray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.XmlArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -6747,71 +7645,99 @@ export namespace PgCatalog {
     }
     export namespace Aclitem {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Aclitem
+
         return from;
       }
     }
     export namespace Any {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Any
+
         return from;
       }
     }
     export namespace Anyarray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anyarray
+
         return from;
       }
     }
     export namespace Anycompatible {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anycompatible
+
         return from;
       }
     }
     export namespace Anycompatiblearray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anycompatiblearray
+
         return from;
       }
     }
     export namespace Anycompatiblemultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anycompatiblemultirange
+
         return from;
       }
     }
     export namespace Anycompatiblenonarray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anycompatiblenonarray
+
         return from;
       }
     }
     export namespace Anycompatiblerange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anycompatiblerange
+
         return from;
       }
     }
     export namespace Anyelement {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anyelement
+
         return from;
       }
     }
     export namespace Anyenum {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anyenum
+
         return from;
       }
     }
     export namespace Anymultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anymultirange
+
         return from;
       }
     }
     export namespace Anynonarray {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anynonarray
+
         return from;
       }
     }
     export namespace Anyrange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Anyrange
+
         return from;
       }
     }
     export namespace Bit {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Bit
+
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
@@ -6824,6 +7750,8 @@ export namespace PgCatalog {
     }
     export namespace Bool {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Bool
+
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
@@ -6836,46 +7764,64 @@ export namespace PgCatalog {
     }
     export namespace Box {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Box
+
         return from;
       }
     }
     export namespace Bpchar {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Bpchar
+
         return from;
       }
     }
     export namespace Bytea {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Bytea
+
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Char {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Char
+
         return from;
       }
     }
     export namespace Cid {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Cid
+
         return from;
       }
     }
     export namespace Cidr {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Cidr
+
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Circle {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Circle
+
         return from;
       }
     }
     export namespace Cstring {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Cstring
+
         return from;
       }
     }
     export namespace Date {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Date
+
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
@@ -6883,59 +7829,81 @@ export namespace PgCatalog {
     }
     export namespace Datemultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Datemultirange
+
         return from;
       }
     }
     export namespace Daterange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Daterange
+
         return from;
       }
     }
     export namespace EventTrigger {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.EventTrigger
+
         return from;
       }
     }
     export namespace FdwHandler {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.FdwHandler
+
         return from;
       }
     }
     export namespace Float4 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Float4
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Float8 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Float8
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Gtsvector {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Gtsvector
+
         return from;
       }
     }
     export namespace IndexAmHandler {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.IndexAmHandler
+
         return from;
       }
     }
     export namespace Inet {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Inet
+
         return from;
       }
     }
     export namespace Int2 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int2
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int2vector {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int2vector
+
         if (from === null) return null;
         const source = Array.isArray(from)
           ? new Uint16Array(from)
@@ -6945,122 +7913,168 @@ export namespace PgCatalog {
     }
     export namespace Int4 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int4multirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4multirange
+
         return from;
       }
     }
     export namespace Int4range {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int4range
+
         return from;
       }
     }
     export namespace Int8 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int8multirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8multirange
+
         return from;
       }
     }
     export namespace Int8range {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Int8range
+
         return from;
       }
     }
     export namespace Internal {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Internal
+
         return from;
       }
     }
     export namespace Interval {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Interval
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Json {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Json
+
         return from;
       }
     }
     export namespace Jsonb {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Jsonb
+
         return from;
       }
     }
     export namespace Jsonpath {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Jsonpath
+
         return from;
       }
     }
     export namespace LanguageHandler {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.LanguageHandler
+
         return from;
       }
     }
     export namespace Line {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Line
+
         return from;
       }
     }
     export namespace Lseg {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Lseg
+
         return from;
       }
     }
     export namespace Macaddr {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Macaddr
+
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Macaddr8 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Macaddr8
+
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Money {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Money
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Name {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Name
+
         return from;
       }
     }
     export namespace Numeric {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Numeric
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Nummultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Nummultirange
+
         return from;
       }
     }
     export namespace Numrange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Numrange
+
         return from;
       }
     }
     export namespace Oid {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Oid
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Oidvector {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Oidvector
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -7073,236 +8087,289 @@ export namespace PgCatalog {
     }
     export namespace Path {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Path
+
         return from;
       }
     }
     export namespace PgAggregate {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAggregate
         return from;
       }
     }
     export namespace PgAm {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAm
         return from;
       }
     }
     export namespace PgAmop {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAmop
         return from;
       }
     }
     export namespace PgAmproc {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAmproc
         return from;
       }
     }
     export namespace PgAttrdef {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAttrdef
         return from;
       }
     }
     export namespace PgAttribute {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAttribute
         return from;
       }
     }
     export namespace PgAuthMembers {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAuthMembers
         return from;
       }
     }
     export namespace PgAuthid {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAuthid
         return from;
       }
     }
     export namespace PgAvailableExtensionVersions {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAvailableExtensionVersions
         return from;
       }
     }
     export namespace PgAvailableExtensions {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgAvailableExtensions
         return from;
       }
     }
     export namespace PgBackendMemoryContexts {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgBackendMemoryContexts
         return from;
       }
     }
     export namespace PgBrinBloomSummary {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgBrinBloomSummary
+
         return from;
       }
     }
     export namespace PgBrinMinmaxMultiSummary {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgBrinMinmaxMultiSummary
+
         return from;
       }
     }
     export namespace PgCast {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgCast
         return from;
       }
     }
     export namespace PgClass {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgClass
         return from;
       }
     }
     export namespace PgCollation {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgCollation
         return from;
       }
     }
     export namespace PgConfig {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgConfig
         return from;
       }
     }
     export namespace PgConstraint {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgConstraint
         return from;
       }
     }
     export namespace PgConversion {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgConversion
         return from;
       }
     }
     export namespace PgCursors {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgCursors
         return from;
       }
     }
     export namespace PgDatabase {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgDatabase
         return from;
       }
     }
     export namespace PgDbRoleSetting {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgDbRoleSetting
         return from;
       }
     }
     export namespace PgDdlCommand {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDdlCommand
+
         return from;
       }
     }
     export namespace PgDefaultAcl {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgDefaultAcl
         return from;
       }
     }
     export namespace PgDepend {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgDepend
         return from;
       }
     }
     export namespace PgDependencies {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgDependencies
+
         return from;
       }
     }
     export namespace PgDescription {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgDescription
         return from;
       }
     }
     export namespace PgEnum {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgEnum
         return from;
       }
     }
     export namespace PgEventTrigger {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgEventTrigger
         return from;
       }
     }
     export namespace PgExtension {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgExtension
         return from;
       }
     }
     export namespace PgFileSettings {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgFileSettings
         return from;
       }
     }
     export namespace PgForeignDataWrapper {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgForeignDataWrapper
         return from;
       }
     }
     export namespace PgForeignServer {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgForeignServer
         return from;
       }
     }
     export namespace PgForeignTable {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgForeignTable
         return from;
       }
     }
     export namespace PgGroup {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgGroup
         return from;
       }
     }
     export namespace PgHbaFileRules {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgHbaFileRules
         return from;
       }
     }
     export namespace PgIdentFileMappings {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgIdentFileMappings
         return from;
       }
     }
     export namespace PgIndex {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgIndex
         return from;
       }
     }
     export namespace PgIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgIndexes
         return from;
       }
     }
     export namespace PgInherits {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgInherits
         return from;
       }
     }
     export namespace PgInitPrivs {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgInitPrivs
         return from;
       }
     }
     export namespace PgLanguage {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgLanguage
         return from;
       }
     }
     export namespace PgLargeobject {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgLargeobject
         return from;
       }
     }
     export namespace PgLargeobjectMetadata {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgLargeobjectMetadata
         return from;
       }
     }
     export namespace PgLocks {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgLocks
         return from;
       }
     }
     export namespace PgLsn {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgLsn
+
         if (from === null) return null;
         if (from === "") return null;
         return BigInt(from);
@@ -7310,622 +8377,767 @@ export namespace PgCatalog {
     }
     export namespace PgMatviews {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgMatviews
         return from;
       }
     }
     export namespace PgMcvList {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgMcvList
+
         return from;
       }
     }
     export namespace PgNamespace {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgNamespace
         return from;
       }
     }
     export namespace PgNdistinct {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgNdistinct
+
         return from;
       }
     }
     export namespace PgNodeTree {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgNodeTree
+
         return from;
       }
     }
     export namespace PgOpclass {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgOpclass
         return from;
       }
     }
     export namespace PgOperator {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgOperator
         return from;
       }
     }
     export namespace PgOpfamily {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgOpfamily
         return from;
       }
     }
     export namespace PgParameterAcl {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgParameterAcl
         return from;
       }
     }
     export namespace PgPartitionedTable {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPartitionedTable
         return from;
       }
     }
     export namespace PgPolicies {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPolicies
         return from;
       }
     }
     export namespace PgPolicy {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPolicy
         return from;
       }
     }
     export namespace PgPreparedStatements {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPreparedStatements
         return from;
       }
     }
     export namespace PgPreparedXacts {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPreparedXacts
         return from;
       }
     }
     export namespace PgProc {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgProc
         return from;
       }
     }
     export namespace PgPublication {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPublication
         return from;
       }
     }
     export namespace PgPublicationNamespace {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPublicationNamespace
         return from;
       }
     }
     export namespace PgPublicationRel {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPublicationRel
         return from;
       }
     }
     export namespace PgPublicationTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgPublicationTables
         return from;
       }
     }
     export namespace PgRange {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgRange
         return from;
       }
     }
     export namespace PgReplicationOrigin {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgReplicationOrigin
         return from;
       }
     }
     export namespace PgReplicationOriginStatus {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgReplicationOriginStatus
         return from;
       }
     }
     export namespace PgReplicationSlots {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgReplicationSlots
         return from;
       }
     }
     export namespace PgRewrite {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgRewrite
         return from;
       }
     }
     export namespace PgRoles {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgRoles
         return from;
       }
     }
     export namespace PgRules {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgRules
         return from;
       }
     }
     export namespace PgSeclabel {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSeclabel
         return from;
       }
     }
     export namespace PgSeclabels {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSeclabels
         return from;
       }
     }
     export namespace PgSequence {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSequence
         return from;
       }
     }
     export namespace PgSequences {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSequences
         return from;
       }
     }
     export namespace PgSettings {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSettings
         return from;
       }
     }
     export namespace PgShadow {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgShadow
         return from;
       }
     }
     export namespace PgShdepend {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgShdepend
         return from;
       }
     }
     export namespace PgShdescription {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgShdescription
         return from;
       }
     }
     export namespace PgShmemAllocations {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgShmemAllocations
         return from;
       }
     }
     export namespace PgShseclabel {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgShseclabel
         return from;
       }
     }
     export namespace PgSnapshot {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.PgSnapshot
+
         return from;
       }
     }
     export namespace PgStatActivity {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatActivity
         return from;
       }
     }
     export namespace PgStatAllIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatAllIndexes
         return from;
       }
     }
     export namespace PgStatAllTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatAllTables
         return from;
       }
     }
     export namespace PgStatArchiver {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatArchiver
         return from;
       }
     }
     export namespace PgStatBgwriter {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatBgwriter
         return from;
       }
     }
     export namespace PgStatDatabase {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatDatabase
         return from;
       }
     }
     export namespace PgStatDatabaseConflicts {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatDatabaseConflicts
         return from;
       }
     }
     export namespace PgStatGssapi {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatGssapi
         return from;
       }
     }
     export namespace PgStatIo {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatIo
         return from;
       }
     }
     export namespace PgStatProgressAnalyze {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressAnalyze
         return from;
       }
     }
     export namespace PgStatProgressBasebackup {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressBasebackup
         return from;
       }
     }
     export namespace PgStatProgressCluster {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressCluster
         return from;
       }
     }
     export namespace PgStatProgressCopy {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressCopy
         return from;
       }
     }
     export namespace PgStatProgressCreateIndex {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressCreateIndex
         return from;
       }
     }
     export namespace PgStatProgressVacuum {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatProgressVacuum
         return from;
       }
     }
     export namespace PgStatRecoveryPrefetch {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatRecoveryPrefetch
         return from;
       }
     }
     export namespace PgStatReplication {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatReplication
         return from;
       }
     }
     export namespace PgStatReplicationSlots {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatReplicationSlots
         return from;
       }
     }
     export namespace PgStatSlru {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSlru
         return from;
       }
     }
     export namespace PgStatSsl {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSsl
         return from;
       }
     }
     export namespace PgStatSubscription {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSubscription
         return from;
       }
     }
     export namespace PgStatSubscriptionStats {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSubscriptionStats
         return from;
       }
     }
     export namespace PgStatSysIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSysIndexes
         return from;
       }
     }
     export namespace PgStatSysTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatSysTables
         return from;
       }
     }
     export namespace PgStatUserFunctions {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatUserFunctions
         return from;
       }
     }
     export namespace PgStatUserIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatUserIndexes
         return from;
       }
     }
     export namespace PgStatUserTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatUserTables
         return from;
       }
     }
     export namespace PgStatWal {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatWal
         return from;
       }
     }
     export namespace PgStatWalReceiver {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatWalReceiver
         return from;
       }
     }
     export namespace PgStatXactAllTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatXactAllTables
         return from;
       }
     }
     export namespace PgStatXactSysTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatXactSysTables
         return from;
       }
     }
     export namespace PgStatXactUserFunctions {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatXactUserFunctions
         return from;
       }
     }
     export namespace PgStatXactUserTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatXactUserTables
         return from;
       }
     }
     export namespace PgStatioAllIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioAllIndexes
         return from;
       }
     }
     export namespace PgStatioAllSequences {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioAllSequences
         return from;
       }
     }
     export namespace PgStatioAllTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioAllTables
         return from;
       }
     }
     export namespace PgStatioSysIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioSysIndexes
         return from;
       }
     }
     export namespace PgStatioSysSequences {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioSysSequences
         return from;
       }
     }
     export namespace PgStatioSysTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioSysTables
         return from;
       }
     }
     export namespace PgStatioUserIndexes {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioUserIndexes
         return from;
       }
     }
     export namespace PgStatioUserSequences {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioUserSequences
         return from;
       }
     }
     export namespace PgStatioUserTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatioUserTables
         return from;
       }
     }
     export namespace PgStatistic {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatistic
         return from;
       }
     }
     export namespace PgStatisticExt {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatisticExt
         return from;
       }
     }
     export namespace PgStatisticExtData {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatisticExtData
         return from;
       }
     }
     export namespace PgStats {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStats
         return from;
       }
     }
     export namespace PgStatsExt {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatsExt
         return from;
       }
     }
     export namespace PgStatsExtExprs {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgStatsExtExprs
         return from;
       }
     }
     export namespace PgSubscription {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSubscription
         return from;
       }
     }
     export namespace PgSubscriptionRel {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgSubscriptionRel
         return from;
       }
     }
     export namespace PgTables {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTables
         return from;
       }
     }
     export namespace PgTablespace {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTablespace
         return from;
       }
     }
     export namespace PgTimezoneAbbrevs {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTimezoneAbbrevs
         return from;
       }
     }
     export namespace PgTimezoneNames {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTimezoneNames
         return from;
       }
     }
     export namespace PgTransform {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTransform
         return from;
       }
     }
     export namespace PgTrigger {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTrigger
         return from;
       }
     }
     export namespace PgTsConfig {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTsConfig
         return from;
       }
     }
     export namespace PgTsConfigMap {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTsConfigMap
         return from;
       }
     }
     export namespace PgTsDict {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTsDict
         return from;
       }
     }
     export namespace PgTsParser {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTsParser
         return from;
       }
     }
     export namespace PgTsTemplate {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgTsTemplate
         return from;
       }
     }
     export namespace PgType {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgType
         return from;
       }
     }
     export namespace PgUser {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgUser
         return from;
       }
     }
     export namespace PgUserMapping {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgUserMapping
         return from;
       }
     }
     export namespace PgUserMappings {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgUserMappings
         return from;
       }
     }
     export namespace PgViews {
       export function parse(from: string | null) {
+        // CompositeType PgCatalog.Types.PgViews
         return from;
       }
     }
     export namespace Point {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Point
+
         return from;
       }
     }
     export namespace Polygon {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Polygon
+
         return from;
       }
     }
     export namespace Record {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Record
+
         return from;
       }
     }
     export namespace Refcursor {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Refcursor
+
         return from;
       }
     }
     export namespace Regclass {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regclass
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regcollation {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regcollation
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regconfig {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regconfig
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regdictionary {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regdictionary
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regnamespace {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regnamespace
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regoper {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regoper
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regoperator {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regoperator
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regproc {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regproc
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regprocedure {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regprocedure
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regrole {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regrole
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regtype {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Regtype
+
         if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace TableAmHandler {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TableAmHandler
+
         return from;
       }
     }
     export namespace Text {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Text
+
         return from;
       }
     }
     export namespace Tid {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tid
+
         return from;
       }
     }
     export namespace Time {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Time
+
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
@@ -7933,6 +9145,8 @@ export namespace PgCatalog {
     }
     export namespace Timestamp {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Timestamp
+
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
@@ -7940,6 +9154,8 @@ export namespace PgCatalog {
     }
     export namespace Timestamptz {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Timestamptz
+
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
@@ -7947,6 +9163,8 @@ export namespace PgCatalog {
     }
     export namespace Timetz {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Timetz
+
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
@@ -7954,61 +9172,85 @@ export namespace PgCatalog {
     }
     export namespace Trigger {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Trigger
+
         return from;
       }
     }
     export namespace TsmHandler {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TsmHandler
+
         return from;
       }
     }
     export namespace Tsmultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tsmultirange
+
         return from;
       }
     }
     export namespace Tsquery {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tsquery
+
         return from;
       }
     }
     export namespace Tsrange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tsrange
+
         return from;
       }
     }
     export namespace Tstzmultirange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tstzmultirange
+
         return from;
       }
     }
     export namespace Tstzrange {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tstzrange
+
         return from;
       }
     }
     export namespace Tsvector {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Tsvector
+
         return from;
       }
     }
     export namespace TxidSnapshot {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.TxidSnapshot
+
         return from;
       }
     }
     export namespace Unknown {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Unknown
+
         return from;
       }
     }
     export namespace Uuid {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Uuid
+
         return from ? new UUID(from) : null;
       }
     }
     export namespace Varbit {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Varbit
+
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
@@ -8021,27 +9263,1064 @@ export namespace PgCatalog {
     }
     export namespace Varchar {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Varchar
+
         return from;
       }
     }
     export namespace Void {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Void
+
         return from;
       }
     }
     export namespace Xid {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Xid
+
         return from;
       }
     }
     export namespace Xid8 {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Xid8
+
         return from;
       }
     }
     export namespace Xml {
       export function parse(from: string | null) {
+        // Type PgCatalog.Types.Xml
+
         return from;
+      }
+    }
+  }
+  export namespace Procedures {}
+  export namespace Tables {
+    export namespace PgStatistic {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatistic.Create.Results
+            PgCatalog.Types.PgStatistic.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatistic.Create.Values
+            PgCatalog.Types.PgStatistic.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgType {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgType.Create.Results
+            PgCatalog.Types.PgType.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgType.Create.Values
+            PgCatalog.Types.PgType.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgForeignTable {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignTable.Create.Results
+            PgCatalog.Types.PgForeignTable.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignTable.Create.Values
+            PgCatalog.Types.PgForeignTable.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAuthid {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAuthid.Create.Results
+            PgCatalog.Types.PgAuthid.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAuthid.Create.Values
+            PgCatalog.Types.PgAuthid.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgStatisticExtData {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Results
+            PgCatalog.Types.PgStatisticExtData.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Values
+            PgCatalog.Types.PgStatisticExtData.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgUserMapping {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgUserMapping.Create.Results
+            PgCatalog.Types.PgUserMapping.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgUserMapping.Create.Values
+            PgCatalog.Types.PgUserMapping.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgSubscription {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSubscription.Create.Results
+            PgCatalog.Types.PgSubscription.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSubscription.Create.Values
+            PgCatalog.Types.PgSubscription.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAttribute {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAttribute.Create.Results
+            PgCatalog.Types.PgAttribute.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAttribute.Create.Values
+            PgCatalog.Types.PgAttribute.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgProc {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgProc.Create.Results
+            PgCatalog.Types.PgProc.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgProc.Create.Values
+            PgCatalog.Types.PgProc.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgClass {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgClass.Create.Results
+            PgCatalog.Types.PgClass.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgClass.Create.Values
+            PgCatalog.Types.PgClass.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAttrdef {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAttrdef.Create.Results
+            PgCatalog.Types.PgAttrdef.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAttrdef.Create.Values
+            PgCatalog.Types.PgAttrdef.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgConstraint {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgConstraint.Create.Results
+            PgCatalog.Types.PgConstraint.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgConstraint.Create.Values
+            PgCatalog.Types.PgConstraint.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgInherits {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgInherits.Create.Results
+            PgCatalog.Types.PgInherits.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgInherits.Create.Values
+            PgCatalog.Types.PgInherits.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgIndex {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgIndex.Create.Results
+            PgCatalog.Types.PgIndex.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgIndex.Create.Values
+            PgCatalog.Types.PgIndex.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgOperator {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOperator.Create.Results
+            PgCatalog.Types.PgOperator.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOperator.Create.Values
+            PgCatalog.Types.PgOperator.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgOpfamily {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOpfamily.Create.Results
+            PgCatalog.Types.PgOpfamily.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOpfamily.Create.Values
+            PgCatalog.Types.PgOpfamily.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgOpclass {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOpclass.Create.Results
+            PgCatalog.Types.PgOpclass.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgOpclass.Create.Values
+            PgCatalog.Types.PgOpclass.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAm {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAm.Create.Results
+            PgCatalog.Types.PgAm.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAm.Create.Values
+            PgCatalog.Types.PgAm.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAmop {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAmop.Create.Results
+            PgCatalog.Types.PgAmop.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAmop.Create.Values
+            PgCatalog.Types.PgAmop.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAmproc {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAmproc.Create.Results
+            PgCatalog.Types.PgAmproc.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAmproc.Create.Values
+            PgCatalog.Types.PgAmproc.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgLanguage {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLanguage.Create.Results
+            PgCatalog.Types.PgLanguage.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLanguage.Create.Values
+            PgCatalog.Types.PgLanguage.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgLargeobjectMetadata {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Results
+            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Values
+            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAggregate {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAggregate.Create.Results
+            PgCatalog.Types.PgAggregate.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAggregate.Create.Values
+            PgCatalog.Types.PgAggregate.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgStatisticExt {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Results
+            PgCatalog.Types.PgStatisticExt.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Values
+            PgCatalog.Types.PgStatisticExt.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgRewrite {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgRewrite.Create.Results
+            PgCatalog.Types.PgRewrite.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgRewrite.Create.Values
+            PgCatalog.Types.PgRewrite.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTrigger {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTrigger.Create.Results
+            PgCatalog.Types.PgTrigger.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTrigger.Create.Values
+            PgCatalog.Types.PgTrigger.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgEventTrigger {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Results
+            PgCatalog.Types.PgEventTrigger.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Values
+            PgCatalog.Types.PgEventTrigger.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgDescription {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDescription.Create.Results
+            PgCatalog.Types.PgDescription.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDescription.Create.Values
+            PgCatalog.Types.PgDescription.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgCast {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgCast.Create.Results
+            PgCatalog.Types.PgCast.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgCast.Create.Values
+            PgCatalog.Types.PgCast.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgEnum {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgEnum.Create.Results
+            PgCatalog.Types.PgEnum.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgEnum.Create.Values
+            PgCatalog.Types.PgEnum.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgNamespace {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgNamespace.Create.Results
+            PgCatalog.Types.PgNamespace.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgNamespace.Create.Values
+            PgCatalog.Types.PgNamespace.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgConversion {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgConversion.Create.Results
+            PgCatalog.Types.PgConversion.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgConversion.Create.Values
+            PgCatalog.Types.PgConversion.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgDepend {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDepend.Create.Results
+            PgCatalog.Types.PgDepend.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDepend.Create.Values
+            PgCatalog.Types.PgDepend.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgDatabase {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDatabase.Create.Results
+            PgCatalog.Types.PgDatabase.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDatabase.Create.Values
+            PgCatalog.Types.PgDatabase.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgDbRoleSetting {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Results
+            PgCatalog.Types.PgDbRoleSetting.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Values
+            PgCatalog.Types.PgDbRoleSetting.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTablespace {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTablespace.Create.Results
+            PgCatalog.Types.PgTablespace.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTablespace.Create.Values
+            PgCatalog.Types.PgTablespace.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgAuthMembers {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Results
+            PgCatalog.Types.PgAuthMembers.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Values
+            PgCatalog.Types.PgAuthMembers.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgShdepend {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShdepend.Create.Results
+            PgCatalog.Types.PgShdepend.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShdepend.Create.Values
+            PgCatalog.Types.PgShdepend.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgShdescription {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShdescription.Create.Results
+            PgCatalog.Types.PgShdescription.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShdescription.Create.Values
+            PgCatalog.Types.PgShdescription.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTsConfig {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsConfig.Create.Results
+            PgCatalog.Types.PgTsConfig.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsConfig.Create.Values
+            PgCatalog.Types.PgTsConfig.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTsConfigMap {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Results
+            PgCatalog.Types.PgTsConfigMap.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Values
+            PgCatalog.Types.PgTsConfigMap.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTsDict {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsDict.Create.Results
+            PgCatalog.Types.PgTsDict.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsDict.Create.Values
+            PgCatalog.Types.PgTsDict.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTsParser {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsParser.Create.Results
+            PgCatalog.Types.PgTsParser.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsParser.Create.Values
+            PgCatalog.Types.PgTsParser.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTsTemplate {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Results
+            PgCatalog.Types.PgTsTemplate.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Values
+            PgCatalog.Types.PgTsTemplate.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgExtension {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgExtension.Create.Results
+            PgCatalog.Types.PgExtension.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgExtension.Create.Values
+            PgCatalog.Types.PgExtension.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgForeignDataWrapper {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Results
+            PgCatalog.Types.PgForeignDataWrapper.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Values
+            PgCatalog.Types.PgForeignDataWrapper.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgForeignServer {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignServer.Create.Results
+            PgCatalog.Types.PgForeignServer.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgForeignServer.Create.Values
+            PgCatalog.Types.PgForeignServer.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgPolicy {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPolicy.Create.Results
+            PgCatalog.Types.PgPolicy.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPolicy.Create.Values
+            PgCatalog.Types.PgPolicy.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgReplicationOrigin {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Results
+            PgCatalog.Types.PgReplicationOrigin.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Values
+            PgCatalog.Types.PgReplicationOrigin.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgDefaultAcl {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Results
+            PgCatalog.Types.PgDefaultAcl.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Values
+            PgCatalog.Types.PgDefaultAcl.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgInitPrivs {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Results
+            PgCatalog.Types.PgInitPrivs.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Values
+            PgCatalog.Types.PgInitPrivs.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgSeclabel {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSeclabel.Create.Results
+            PgCatalog.Types.PgSeclabel.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSeclabel.Create.Values
+            PgCatalog.Types.PgSeclabel.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgShseclabel {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShseclabel.Create.Results
+            PgCatalog.Types.PgShseclabel.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgShseclabel.Create.Values
+            PgCatalog.Types.PgShseclabel.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgCollation {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgCollation.Create.Results
+            PgCatalog.Types.PgCollation.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgCollation.Create.Values
+            PgCatalog.Types.PgCollation.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgParameterAcl {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Results
+            PgCatalog.Types.PgParameterAcl.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Values
+            PgCatalog.Types.PgParameterAcl.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgPartitionedTable {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Results
+            PgCatalog.Types.PgPartitionedTable.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Values
+            PgCatalog.Types.PgPartitionedTable.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgRange {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgRange.Create.Results
+            PgCatalog.Types.PgRange.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgRange.Create.Values
+            PgCatalog.Types.PgRange.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgTransform {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTransform.Create.Results
+            PgCatalog.Types.PgTransform.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgTransform.Create.Values
+            PgCatalog.Types.PgTransform.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgSequence {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSequence.Create.Results
+            PgCatalog.Types.PgSequence.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSequence.Create.Values
+            PgCatalog.Types.PgSequence.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgPublication {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublication.Create.Results
+            PgCatalog.Types.PgPublication.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublication.Create.Values
+            PgCatalog.Types.PgPublication.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgPublicationNamespace {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Results
+            PgCatalog.Types.PgPublicationNamespace.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Values
+            PgCatalog.Types.PgPublicationNamespace.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgPublicationRel {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Results
+            PgCatalog.Types.PgPublicationRel.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Values
+            PgCatalog.Types.PgPublicationRel.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgSubscriptionRel {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Results
+            PgCatalog.Types.PgSubscriptionRel.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Values
+            PgCatalog.Types.PgSubscriptionRel.parse(from);
+          }
+        }
+      }
+    }
+    export namespace PgLargeobject {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLargeobject.Create.Results
+            PgCatalog.Types.PgLargeobject.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType PgCatalog.Tables.PgLargeobject.Create.Values
+            PgCatalog.Types.PgLargeobject.parse(from);
+          }
+        }
       }
     }
   }
@@ -8050,6 +10329,8 @@ export namespace Public {
   export namespace Types {
     export namespace ActorArray {
       export function parse(from: string | null) {
+        // Type Public.Types.ActorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8062,6 +10343,8 @@ export namespace Public {
     }
     export namespace ActorInfoArray {
       export function parse(from: string | null) {
+        // Type Public.Types.ActorInfoArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8074,6 +10357,8 @@ export namespace Public {
     }
     export namespace AddressArray {
       export function parse(from: string | null) {
+        // Type Public.Types.AddressArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8086,6 +10371,8 @@ export namespace Public {
     }
     export namespace CategoryArray {
       export function parse(from: string | null) {
+        // Type Public.Types.CategoryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8098,6 +10385,8 @@ export namespace Public {
     }
     export namespace CityArray {
       export function parse(from: string | null) {
+        // Type Public.Types.CityArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8110,6 +10399,8 @@ export namespace Public {
     }
     export namespace CountryArray {
       export function parse(from: string | null) {
+        // Type Public.Types.CountryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8122,6 +10413,8 @@ export namespace Public {
     }
     export namespace CustomerArray {
       export function parse(from: string | null) {
+        // Type Public.Types.CustomerArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8134,6 +10427,8 @@ export namespace Public {
     }
     export namespace CustomerListArray {
       export function parse(from: string | null) {
+        // Type Public.Types.CustomerListArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8146,6 +10441,8 @@ export namespace Public {
     }
     export namespace FilmArray {
       export function parse(from: string | null) {
+        // Type Public.Types.FilmArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8158,6 +10455,8 @@ export namespace Public {
     }
     export namespace FilmActorArray {
       export function parse(from: string | null) {
+        // Type Public.Types.FilmActorArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8170,6 +10469,8 @@ export namespace Public {
     }
     export namespace FilmCategoryArray {
       export function parse(from: string | null) {
+        // Type Public.Types.FilmCategoryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8182,6 +10483,8 @@ export namespace Public {
     }
     export namespace FilmListArray {
       export function parse(from: string | null) {
+        // Type Public.Types.FilmListArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8194,6 +10497,8 @@ export namespace Public {
     }
     export namespace InventoryArray {
       export function parse(from: string | null) {
+        // Type Public.Types.InventoryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8206,6 +10511,8 @@ export namespace Public {
     }
     export namespace LanguageArray {
       export function parse(from: string | null) {
+        // Type Public.Types.LanguageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8218,6 +10525,8 @@ export namespace Public {
     }
     export namespace MpaaRatingArray {
       export function parse(from: string | null) {
+        // Type Public.Types.MpaaRatingArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8230,6 +10539,8 @@ export namespace Public {
     }
     export namespace NicerButSlowerFilmListArray {
       export function parse(from: string | null) {
+        // Type Public.Types.NicerButSlowerFilmListArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8242,6 +10553,8 @@ export namespace Public {
     }
     export namespace PaymentArray {
       export function parse(from: string | null) {
+        // Type Public.Types.PaymentArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8254,6 +10567,8 @@ export namespace Public {
     }
     export namespace RentalArray {
       export function parse(from: string | null) {
+        // Type Public.Types.RentalArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8266,6 +10581,8 @@ export namespace Public {
     }
     export namespace SalesByFilmCategoryArray {
       export function parse(from: string | null) {
+        // Type Public.Types.SalesByFilmCategoryArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8278,6 +10595,8 @@ export namespace Public {
     }
     export namespace SalesByStoreArray {
       export function parse(from: string | null) {
+        // Type Public.Types.SalesByStoreArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8290,6 +10609,8 @@ export namespace Public {
     }
     export namespace StaffArray {
       export function parse(from: string | null) {
+        // Type Public.Types.StaffArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8302,6 +10623,8 @@ export namespace Public {
     }
     export namespace StaffListArray {
       export function parse(from: string | null) {
+        // Type Public.Types.StaffListArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8314,6 +10637,8 @@ export namespace Public {
     }
     export namespace StoreArray {
       export function parse(from: string | null) {
+        // Type Public.Types.StoreArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8326,6 +10651,8 @@ export namespace Public {
     }
     export namespace YearArray {
       export function parse(from: string | null) {
+        // Type Public.Types.YearArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8338,122 +10665,502 @@ export namespace Public {
     }
     export namespace Actor {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Actor
         return from;
       }
     }
     export namespace ActorInfo {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.ActorInfo
         return from;
       }
     }
     export namespace Address {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Address
         return from;
       }
     }
     export namespace Category {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Category
         return from;
       }
     }
     export namespace City {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.City
         return from;
       }
     }
     export namespace Country {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Country
         return from;
       }
     }
     export namespace Customer {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Customer
         return from;
       }
     }
     export namespace CustomerList {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.CustomerList
         return from;
       }
     }
     export namespace Film {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Film
         return from;
       }
     }
     export namespace FilmActor {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.FilmActor
         return from;
       }
     }
     export namespace FilmCategory {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.FilmCategory
         return from;
       }
     }
     export namespace FilmList {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.FilmList
         return from;
       }
     }
     export namespace Inventory {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Inventory
         return from;
       }
     }
     export namespace Language {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Language
         return from;
       }
     }
     export namespace MpaaRating {
       export function parse(from: string | null) {
+        // Enum Public.Types.MpaaRating
+
         return from;
       }
     }
     export namespace NicerButSlowerFilmList {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.NicerButSlowerFilmList
         return from;
       }
     }
     export namespace Payment {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Payment
         return from;
       }
     }
     export namespace Rental {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Rental
         return from;
       }
     }
     export namespace SalesByFilmCategory {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.SalesByFilmCategory
         return from;
       }
     }
     export namespace SalesByStore {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.SalesByStore
         return from;
       }
     }
     export namespace Staff {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Staff
         return from;
       }
     }
     export namespace StaffList {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.StaffList
         return from;
       }
     }
     export namespace Store {
       export function parse(from: string | null) {
+        // CompositeType Public.Types.Store
         return from;
       }
     }
     export namespace Year {
       export function parse(from: string | null) {
+        // Type Public.Types.Year
+
         return from;
+      }
+    }
+    export namespace FilmInStockResults {
+      export function parse(from: string | null) {
+        // CompositeType Public.Types.FilmInStockResults
+        return from;
+      }
+    }
+    export namespace FilmNotInStockResults {
+      export function parse(from: string | null) {
+        // CompositeType Public.Types.FilmNotInStockResults
+        return from;
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.FilmInStock.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.FilmInStock.Results
+          Public.Types.FilmInStockResults.parse(from);
+        }
+      }
+    }
+    export namespace FilmNotInStock {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.FilmNotInStock.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.FilmNotInStock.Results
+          Public.Types.FilmNotInStockResults.parse(from);
+        }
+      }
+    }
+    export namespace GetCustomerBalance {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.GetCustomerBalance.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.GetCustomerBalance.Results
+          PgCatalog.Types.Numeric.parse(from);
+        }
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.InventoryHeldByCustomer.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.InventoryHeldByCustomer.Results
+          PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace InventoryInStock {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.InventoryInStock.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.InventoryInStock.Results
+          PgCatalog.Types.Bool.parse(from);
+        }
+      }
+    }
+    export namespace LastDay {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.LastDay.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.LastDay.Results
+          PgCatalog.Types.Date.parse(from);
+        }
+      }
+    }
+    export namespace RewardsReport {
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Public.Procedures.RewardsReport.Arguments
+          return from;
+        }
+      }
+      export namespace Results {
+        export function parse(from: string | null) {
+          // AliasType Public.Procedures.RewardsReport.Results
+          Public.Types.Customer.parse(from);
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.FilmActor.Create.Results
+            Public.Types.FilmActor.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.FilmActor.Create.Values
+            Public.Types.FilmActor.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Address {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Address.Create.Results
+            Public.Types.Address.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Address.Create.Values
+            Public.Types.Address.parse(from);
+          }
+        }
+      }
+    }
+    export namespace City {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.City.Create.Results
+            Public.Types.City.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.City.Create.Values
+            Public.Types.City.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Customer {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Customer.Create.Results
+            Public.Types.Customer.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Customer.Create.Values
+            Public.Types.Customer.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Actor {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Actor.Create.Results
+            Public.Types.Actor.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Actor.Create.Values
+            Public.Types.Actor.parse(from);
+          }
+        }
+      }
+    }
+    export namespace FilmCategory {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.FilmCategory.Create.Results
+            Public.Types.FilmCategory.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.FilmCategory.Create.Values
+            Public.Types.FilmCategory.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Inventory {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Inventory.Create.Results
+            Public.Types.Inventory.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Inventory.Create.Values
+            Public.Types.Inventory.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Category {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Category.Create.Results
+            Public.Types.Category.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Category.Create.Values
+            Public.Types.Category.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Country {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Country.Create.Results
+            Public.Types.Country.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Country.Create.Values
+            Public.Types.Country.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Language {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Language.Create.Results
+            Public.Types.Language.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Language.Create.Values
+            Public.Types.Language.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Rental {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Rental.Create.Results
+            Public.Types.Rental.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Rental.Create.Values
+            Public.Types.Rental.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Staff {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Staff.Create.Results
+            Public.Types.Staff.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Staff.Create.Values
+            Public.Types.Staff.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Store {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Store.Create.Results
+            Public.Types.Store.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Store.Create.Values
+            Public.Types.Store.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Payment {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Payment.Create.Results
+            Public.Types.Payment.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Payment.Create.Values
+            Public.Types.Payment.parse(from);
+          }
+        }
+      }
+    }
+    export namespace Film {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Film.Create.Results
+            Public.Types.Film.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType Public.Tables.Film.Create.Values
+            Public.Types.Film.parse(from);
+          }
+        }
       }
     }
   }
@@ -8462,6 +11169,8 @@ export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.AdministrableRoleAuthorizationsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8474,6 +11183,8 @@ export namespace InformationSchema {
     }
     export namespace ApplicableRolesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ApplicableRolesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8486,6 +11197,8 @@ export namespace InformationSchema {
     }
     export namespace AttributesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.AttributesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8498,6 +11211,8 @@ export namespace InformationSchema {
     }
     export namespace CardinalNumberArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CardinalNumberArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8510,6 +11225,8 @@ export namespace InformationSchema {
     }
     export namespace CharacterDataArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CharacterDataArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8522,6 +11239,8 @@ export namespace InformationSchema {
     }
     export namespace CharacterSetsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CharacterSetsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8534,6 +11253,8 @@ export namespace InformationSchema {
     }
     export namespace CheckConstraintRoutineUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CheckConstraintRoutineUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8546,6 +11267,8 @@ export namespace InformationSchema {
     }
     export namespace CheckConstraintsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CheckConstraintsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8558,6 +11281,8 @@ export namespace InformationSchema {
     }
     export namespace CollationCharacterSetApplicabilityArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CollationCharacterSetApplicabilityArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8570,6 +11295,8 @@ export namespace InformationSchema {
     }
     export namespace CollationsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CollationsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8582,6 +11309,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnColumnUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnColumnUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8594,6 +11323,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnDomainUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnDomainUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8606,6 +11337,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnOptionsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnOptionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8618,6 +11351,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnPrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnPrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8630,6 +11365,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnUdtUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnUdtUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8642,6 +11379,8 @@ export namespace InformationSchema {
     }
     export namespace ColumnsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ColumnsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8654,6 +11393,8 @@ export namespace InformationSchema {
     }
     export namespace ConstraintColumnUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ConstraintColumnUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8666,6 +11407,8 @@ export namespace InformationSchema {
     }
     export namespace ConstraintTableUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ConstraintTableUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8678,6 +11421,8 @@ export namespace InformationSchema {
     }
     export namespace DataTypePrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.DataTypePrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8690,6 +11435,8 @@ export namespace InformationSchema {
     }
     export namespace DomainConstraintsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.DomainConstraintsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8702,6 +11449,8 @@ export namespace InformationSchema {
     }
     export namespace DomainUdtUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.DomainUdtUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8714,6 +11463,8 @@ export namespace InformationSchema {
     }
     export namespace DomainsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.DomainsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8726,6 +11477,8 @@ export namespace InformationSchema {
     }
     export namespace ElementTypesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ElementTypesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8738,6 +11491,8 @@ export namespace InformationSchema {
     }
     export namespace EnabledRolesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.EnabledRolesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8750,6 +11505,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignDataWrapperOptionsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignDataWrapperOptionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8762,6 +11519,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignDataWrappersArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignDataWrappersArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8774,6 +11533,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignServerOptionsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignServerOptionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8786,6 +11547,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignServersArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignServersArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8798,6 +11561,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignTableOptionsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignTableOptionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8810,6 +11575,8 @@ export namespace InformationSchema {
     }
     export namespace ForeignTablesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ForeignTablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8822,6 +11589,8 @@ export namespace InformationSchema {
     }
     export namespace InformationSchemaCatalogNameArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.InformationSchemaCatalogNameArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8834,6 +11603,8 @@ export namespace InformationSchema {
     }
     export namespace KeyColumnUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.KeyColumnUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8846,6 +11617,8 @@ export namespace InformationSchema {
     }
     export namespace ParametersArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ParametersArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8858,31 +11631,38 @@ export namespace InformationSchema {
     }
     export namespace PgForeignDataWrappers {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.PgForeignDataWrappers
         return from;
       }
     }
     export namespace PgForeignServers {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.PgForeignServers
         return from;
       }
     }
     export namespace PgForeignTableColumns {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.PgForeignTableColumns
         return from;
       }
     }
     export namespace PgForeignTables {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.PgForeignTables
         return from;
       }
     }
     export namespace PgUserMappings {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.PgUserMappings
         return from;
       }
     }
     export namespace ReferentialConstraintsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ReferentialConstraintsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8895,6 +11675,8 @@ export namespace InformationSchema {
     }
     export namespace RoleColumnGrantsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoleColumnGrantsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8907,6 +11689,8 @@ export namespace InformationSchema {
     }
     export namespace RoleRoutineGrantsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoleRoutineGrantsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8919,6 +11703,8 @@ export namespace InformationSchema {
     }
     export namespace RoleTableGrantsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoleTableGrantsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8931,6 +11717,8 @@ export namespace InformationSchema {
     }
     export namespace RoleUdtGrantsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoleUdtGrantsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8943,6 +11731,8 @@ export namespace InformationSchema {
     }
     export namespace RoleUsageGrantsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoleUsageGrantsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8955,6 +11745,8 @@ export namespace InformationSchema {
     }
     export namespace RoutineColumnUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutineColumnUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8967,6 +11759,8 @@ export namespace InformationSchema {
     }
     export namespace RoutinePrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutinePrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8979,6 +11773,8 @@ export namespace InformationSchema {
     }
     export namespace RoutineRoutineUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutineRoutineUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -8991,6 +11787,8 @@ export namespace InformationSchema {
     }
     export namespace RoutineSequenceUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutineSequenceUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9003,6 +11801,8 @@ export namespace InformationSchema {
     }
     export namespace RoutineTableUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutineTableUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9015,6 +11815,8 @@ export namespace InformationSchema {
     }
     export namespace RoutinesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.RoutinesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9027,6 +11829,8 @@ export namespace InformationSchema {
     }
     export namespace SchemataArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SchemataArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9039,6 +11843,8 @@ export namespace InformationSchema {
     }
     export namespace SequencesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SequencesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9051,6 +11857,8 @@ export namespace InformationSchema {
     }
     export namespace SqlFeaturesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlFeaturesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9063,6 +11871,8 @@ export namespace InformationSchema {
     }
     export namespace SqlIdentifierArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlIdentifierArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9075,6 +11885,8 @@ export namespace InformationSchema {
     }
     export namespace SqlImplementationInfoArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlImplementationInfoArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9087,6 +11899,8 @@ export namespace InformationSchema {
     }
     export namespace SqlPartsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlPartsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9099,6 +11913,8 @@ export namespace InformationSchema {
     }
     export namespace SqlSizingArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlSizingArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9111,6 +11927,8 @@ export namespace InformationSchema {
     }
     export namespace TableConstraintsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TableConstraintsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9123,6 +11941,8 @@ export namespace InformationSchema {
     }
     export namespace TablePrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TablePrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9135,6 +11955,8 @@ export namespace InformationSchema {
     }
     export namespace TablesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TablesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9147,6 +11969,8 @@ export namespace InformationSchema {
     }
     export namespace TimeStampArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TimeStampArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9159,6 +11983,8 @@ export namespace InformationSchema {
     }
     export namespace TransformsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TransformsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9171,6 +11997,8 @@ export namespace InformationSchema {
     }
     export namespace TriggeredUpdateColumnsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TriggeredUpdateColumnsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9183,6 +12011,8 @@ export namespace InformationSchema {
     }
     export namespace TriggersArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TriggersArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9195,6 +12025,8 @@ export namespace InformationSchema {
     }
     export namespace UdtPrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.UdtPrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9207,6 +12039,8 @@ export namespace InformationSchema {
     }
     export namespace UsagePrivilegesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.UsagePrivilegesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9219,6 +12053,8 @@ export namespace InformationSchema {
     }
     export namespace UserDefinedTypesArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.UserDefinedTypesArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9231,6 +12067,8 @@ export namespace InformationSchema {
     }
     export namespace UserMappingOptionsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.UserMappingOptionsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9243,6 +12081,8 @@ export namespace InformationSchema {
     }
     export namespace UserMappingsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.UserMappingsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9255,6 +12095,8 @@ export namespace InformationSchema {
     }
     export namespace ViewColumnUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ViewColumnUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9267,6 +12109,8 @@ export namespace InformationSchema {
     }
     export namespace ViewRoutineUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ViewRoutineUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9279,6 +12123,8 @@ export namespace InformationSchema {
     }
     export namespace ViewTableUsageArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ViewTableUsageArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9291,6 +12137,8 @@ export namespace InformationSchema {
     }
     export namespace ViewsArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.ViewsArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9303,6 +12151,8 @@ export namespace InformationSchema {
     }
     export namespace YesOrNoArray {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.YesOrNoArray
+
         if (from === null) return null;
         const rawArray = JSON.parse(from);
         return rawArray.map((e: unknown) => {
@@ -9315,346 +12165,523 @@ export namespace InformationSchema {
     }
     export namespace AdministrableRoleAuthorizations {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.AdministrableRoleAuthorizations
         return from;
       }
     }
     export namespace ApplicableRoles {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ApplicableRoles
         return from;
       }
     }
     export namespace Attributes {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Attributes
         return from;
       }
     }
     export namespace CardinalNumber {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CardinalNumber
+
         return from;
       }
     }
     export namespace CharacterData {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.CharacterData
+
         return from;
       }
     }
     export namespace CharacterSets {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.CharacterSets
         return from;
       }
     }
     export namespace CheckConstraintRoutineUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.CheckConstraintRoutineUsage
         return from;
       }
     }
     export namespace CheckConstraints {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.CheckConstraints
         return from;
       }
     }
     export namespace CollationCharacterSetApplicability {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.CollationCharacterSetApplicability
         return from;
       }
     }
     export namespace Collations {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Collations
         return from;
       }
     }
     export namespace ColumnColumnUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ColumnColumnUsage
         return from;
       }
     }
     export namespace ColumnDomainUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ColumnDomainUsage
         return from;
       }
     }
     export namespace ColumnOptions {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ColumnOptions
         return from;
       }
     }
     export namespace ColumnPrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ColumnPrivileges
         return from;
       }
     }
     export namespace ColumnUdtUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ColumnUdtUsage
         return from;
       }
     }
     export namespace Columns {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Columns
         return from;
       }
     }
     export namespace ConstraintColumnUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ConstraintColumnUsage
         return from;
       }
     }
     export namespace ConstraintTableUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ConstraintTableUsage
         return from;
       }
     }
     export namespace DataTypePrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.DataTypePrivileges
         return from;
       }
     }
     export namespace DomainConstraints {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.DomainConstraints
         return from;
       }
     }
     export namespace DomainUdtUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.DomainUdtUsage
         return from;
       }
     }
     export namespace Domains {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Domains
         return from;
       }
     }
     export namespace ElementTypes {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ElementTypes
         return from;
       }
     }
     export namespace EnabledRoles {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.EnabledRoles
         return from;
       }
     }
     export namespace ForeignDataWrapperOptions {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignDataWrapperOptions
         return from;
       }
     }
     export namespace ForeignDataWrappers {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignDataWrappers
         return from;
       }
     }
     export namespace ForeignServerOptions {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignServerOptions
         return from;
       }
     }
     export namespace ForeignServers {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignServers
         return from;
       }
     }
     export namespace ForeignTableOptions {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignTableOptions
         return from;
       }
     }
     export namespace ForeignTables {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ForeignTables
         return from;
       }
     }
     export namespace InformationSchemaCatalogName {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.InformationSchemaCatalogName
         return from;
       }
     }
     export namespace KeyColumnUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.KeyColumnUsage
         return from;
       }
     }
     export namespace Parameters {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Parameters
         return from;
       }
     }
     export namespace ReferentialConstraints {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ReferentialConstraints
         return from;
       }
     }
     export namespace RoleColumnGrants {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoleColumnGrants
         return from;
       }
     }
     export namespace RoleRoutineGrants {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoleRoutineGrants
         return from;
       }
     }
     export namespace RoleTableGrants {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoleTableGrants
         return from;
       }
     }
     export namespace RoleUdtGrants {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoleUdtGrants
         return from;
       }
     }
     export namespace RoleUsageGrants {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoleUsageGrants
         return from;
       }
     }
     export namespace RoutineColumnUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoutineColumnUsage
         return from;
       }
     }
     export namespace RoutinePrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoutinePrivileges
         return from;
       }
     }
     export namespace RoutineRoutineUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoutineRoutineUsage
         return from;
       }
     }
     export namespace RoutineSequenceUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoutineSequenceUsage
         return from;
       }
     }
     export namespace RoutineTableUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.RoutineTableUsage
         return from;
       }
     }
     export namespace Routines {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Routines
         return from;
       }
     }
     export namespace Schemata {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Schemata
         return from;
       }
     }
     export namespace Sequences {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Sequences
         return from;
       }
     }
     export namespace SqlFeatures {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.SqlFeatures
         return from;
       }
     }
     export namespace SqlIdentifier {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.SqlIdentifier
+
         return from;
       }
     }
     export namespace SqlImplementationInfo {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.SqlImplementationInfo
         return from;
       }
     }
     export namespace SqlParts {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.SqlParts
         return from;
       }
     }
     export namespace SqlSizing {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.SqlSizing
         return from;
       }
     }
     export namespace TableConstraints {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.TableConstraints
         return from;
       }
     }
     export namespace TablePrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.TablePrivileges
         return from;
       }
     }
     export namespace Tables {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Tables
         return from;
       }
     }
     export namespace TimeStamp {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.TimeStamp
+
         return from;
       }
     }
     export namespace Transforms {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Transforms
         return from;
       }
     }
     export namespace TriggeredUpdateColumns {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.TriggeredUpdateColumns
         return from;
       }
     }
     export namespace Triggers {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Triggers
         return from;
       }
     }
     export namespace UdtPrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.UdtPrivileges
         return from;
       }
     }
     export namespace UsagePrivileges {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.UsagePrivileges
         return from;
       }
     }
     export namespace UserDefinedTypes {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.UserDefinedTypes
         return from;
       }
     }
     export namespace UserMappingOptions {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.UserMappingOptions
         return from;
       }
     }
     export namespace UserMappings {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.UserMappings
         return from;
       }
     }
     export namespace ViewColumnUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ViewColumnUsage
         return from;
       }
     }
     export namespace ViewRoutineUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ViewRoutineUsage
         return from;
       }
     }
     export namespace ViewTableUsage {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.ViewTableUsage
         return from;
       }
     }
     export namespace Views {
       export function parse(from: string | null) {
+        // CompositeType InformationSchema.Types.Views
         return from;
       }
     }
     export namespace YesOrNo {
       export function parse(from: string | null) {
+        // Type InformationSchema.Types.YesOrNo
+
+        return from;
+      }
+    }
+  }
+  export namespace Procedures {}
+  export namespace Tables {
+    export namespace SqlFeatures {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlFeatures.Create.Results
+            InformationSchema.Types.SqlFeatures.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlFeatures.Create.Values
+            InformationSchema.Types.SqlFeatures.parse(from);
+          }
+        }
+      }
+    }
+    export namespace SqlImplementationInfo {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Results
+            InformationSchema.Types.SqlImplementationInfo.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Values
+            InformationSchema.Types.SqlImplementationInfo.parse(from);
+          }
+        }
+      }
+    }
+    export namespace SqlParts {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlParts.Create.Results
+            InformationSchema.Types.SqlParts.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlParts.Create.Values
+            InformationSchema.Types.SqlParts.parse(from);
+          }
+        }
+      }
+    }
+    export namespace SqlSizing {
+      export namespace Create {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlSizing.Create.Results
+            InformationSchema.Types.SqlSizing.parse(from);
+          }
+        }
+        export namespace Values {
+          export function parse(from: string | null) {
+            // AliasType InformationSchema.Tables.SqlSizing.Create.Values
+            InformationSchema.Types.SqlSizing.parse(from);
+          }
+        }
+      }
+    }
+  }
+}
+export namespace Scripts {
+  export namespace Sample {
+    export namespace Film {
+      export namespace Tally {
+        export namespace Results {
+          export function parse(from: string | null) {
+            // CompositeType Scripts.Sample.Film.Tally.Results
+            return from;
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export namespace Results {
+        export function parse(from: string | null) {
+          // CompositeType Scripts.Sample.Pick.Results
+          return from;
+        }
+      }
+      export namespace Arguments {
+        export function parse(from: string | null) {
+          // CompositeType Scripts.Sample.Pick.Arguments
+          return from;
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export namespace Results {
+      export function parse(from: string | null) {
+        // CompositeType Scripts.Tally.Results
         return from;
       }
     }
@@ -12182,7 +15209,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.FilmActor,
             Public.Tables.FilmActor.Record
           >({
-            operation: "Public.FilmActor.create",
+            operation: "Public.FilmActor.Create",
             values,
           });
           return response.results;
@@ -12290,7 +15317,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Address,
             Public.Tables.Address.Record
           >({
-            operation: "Public.Address.create",
+            operation: "Public.Address.Create",
             values,
           });
           return response.results;
@@ -12398,7 +15425,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.City,
             Public.Tables.City.Record
           >({
-            operation: "Public.City.create",
+            operation: "Public.City.Create",
             values,
           });
           return response.results;
@@ -12502,7 +15529,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Customer,
             Public.Tables.Customer.Record
           >({
-            operation: "Public.Customer.create",
+            operation: "Public.Customer.Create",
             values,
           });
           return response.results;
@@ -12702,7 +15729,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Actor,
             Public.Tables.Actor.Record
           >({
-            operation: "Public.Actor.create",
+            operation: "Public.Actor.Create",
             values,
           });
           return response.results;
@@ -12808,7 +15835,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.FilmCategory,
             Public.Tables.FilmCategory.Record
           >({
-            operation: "Public.FilmCategory.create",
+            operation: "Public.FilmCategory.Create",
             values,
           });
           return response.results;
@@ -12871,7 +15898,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Inventory,
             Public.Tables.Inventory.Record
           >({
-            operation: "Public.Inventory.create",
+            operation: "Public.Inventory.Create",
             values,
           });
           return response.results;
@@ -12981,7 +16008,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Category,
             Public.Tables.Category.Record
           >({
-            operation: "Public.Category.create",
+            operation: "Public.Category.Create",
             values,
           });
           return response.results;
@@ -13044,7 +16071,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Country,
             Public.Tables.Country.Record
           >({
-            operation: "Public.Country.create",
+            operation: "Public.Country.Create",
             values,
           });
           return response.results;
@@ -13107,7 +16134,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Language,
             Public.Tables.Language.Record
           >({
-            operation: "Public.Language.create",
+            operation: "Public.Language.Create",
             values,
           });
           return response.results;
@@ -13170,7 +16197,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Rental,
             Public.Tables.Rental.Record
           >({
-            operation: "Public.Rental.create",
+            operation: "Public.Rental.Create",
             values,
           });
           return response.results;
@@ -13325,7 +16352,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Staff,
             Public.Tables.Staff.Record
           >({
-            operation: "Public.Staff.create",
+            operation: "Public.Staff.Create",
             values,
           });
           return response.results;
@@ -13386,7 +16413,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Store,
             Public.Tables.Store.Record
           >({
-            operation: "Public.Store.create",
+            operation: "Public.Store.Create",
             values,
           });
           return response.results;
@@ -13494,7 +16521,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Payment,
             Public.Tables.Payment.Record
           >({
-            operation: "Public.Payment.create",
+            operation: "Public.Payment.Create",
             values,
           });
           return response.results;
@@ -13694,7 +16721,7 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Types.Film,
             Public.Tables.Film.Record
           >({
-            operation: "Public.Film.create",
+            operation: "Public.Film.Create",
             values,
           });
           return response.results;

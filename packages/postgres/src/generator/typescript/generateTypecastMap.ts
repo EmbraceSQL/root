@@ -1,4 +1,17 @@
-import { ASTKind, GenerationContext } from "@embracesql/shared";
+import {
+  ASTKind,
+  AbstractTypeNode,
+  GenerationContext,
+} from "@embracesql/shared";
+
+const TypecastEntry = {
+  before: async (_: GenerationContext, node: AbstractTypeNode) => {
+    return [
+      `[${node.id}]: Typecast;`,
+      `["${node.typescriptNamespacedName}"]: Typecast`,
+    ].join("\n");
+  },
+};
 
 /**
  * Generate an overall flat namespace mapping. This is used
@@ -23,16 +36,8 @@ export async function generateTypecastMap(context: GenerationContext) {
         return `}`;
       },
     },
-    [ASTKind.Type]: {
-      before: async (_, node) => {
-        return `${node.marshallName}: Typecast;`;
-      },
-    },
-    [ASTKind.Enum]: {
-      before: async (_, node) => {
-        return `${node.marshallName}: Typecast;`;
-      },
-    },
+    [ASTKind.Type]: TypecastEntry,
+    [ASTKind.Enum]: TypecastEntry,
   };
   // include all schemas -- need those built in types
   return await context.database.visit({ ...context, skipSchemas: [] });

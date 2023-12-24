@@ -15,6 +15,9 @@ export async function generateTypeParsers(context: GenerationContext) {
     before: async (context: GenerationContext, node: AbstractTypeNode) => {
       const generationBuffer = [await NamespaceVisitor.before(context, node)];
       generationBuffer.push(`export function parse(from: string|null) {`);
+      generationBuffer.push(
+        `// ${ASTKind[node.kind]} ${node.typescriptNamespacedName}`,
+      );
       generationBuffer.push(`${node.parser.typescriptTypeParser(context)}`);
       generationBuffer.push(`}`);
       return generationBuffer.join("\n");
@@ -34,35 +37,50 @@ export async function generateTypeParsers(context: GenerationContext) {
         },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
+        [ASTKind.Procedures]: NamespaceVisitor,
+        [ASTKind.Procedure]: NamespaceVisitor,
+        [ASTKind.Tables]: NamespaceVisitor,
+        [ASTKind.Table]: NamespaceVisitor,
+        [ASTKind.Scripts]: NamespaceVisitor,
+        [ASTKind.ScriptFolder]: NamespaceVisitor,
+        [ASTKind.Script]: NamespaceVisitor,
+        [ASTKind.CreateOperation]: NamespaceVisitor,
         [ASTKind.Type]: ParseVisitor,
+        [ASTKind.CompositeType]: ParseVisitor,
+        [ASTKind.AliasType]: ParseVisitor,
         [ASTKind.Enum]: ParseVisitor,
       },
     }),
   );
 
-  context.handlers = {
-    [ASTKind.Database]: {
-      before: async () => {
-        return `// begin table column parser mapping`;
-      },
-    },
-    [ASTKind.Schema]: NamespaceVisitor,
-    [ASTKind.Tables]: NamespaceVisitor,
-    [ASTKind.Table]: NamespaceVisitor,
-    [ASTKind.Column]: {
-      before: async (context, node) => {
-        const generationBuffer = [await NamespaceVisitor.before(context, node)];
-        generationBuffer.push(
-          `export const parse = ${node.type.typescriptNamespacedName}.parse;`,
-        );
-        return generationBuffer.join("\n");
-      },
-      after: NamespaceVisitor.after,
-    },
-  };
   // no skipping schemas for parsing
   generationBuffer.push(
-    await context.database.visit({ ...context, skipSchemas: [] }),
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Database]: {
+          before: async () => {
+            return `// begin table column parser mapping`;
+          },
+        },
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Tables]: NamespaceVisitor,
+        [ASTKind.Table]: NamespaceVisitor,
+        [ASTKind.Column]: {
+          before: async (context, node) => {
+            const generationBuffer = [
+              await NamespaceVisitor.before(context, node),
+            ];
+            generationBuffer.push(
+              `export const parse = ${node.type.typescriptNamespacedName}.parse;`,
+            );
+            return generationBuffer.join("\n");
+          },
+          after: NamespaceVisitor.after,
+        },
+      },
+      skipSchemas: [],
+    }),
   );
 
   return generationBuffer.join("\n");

@@ -21,12 +21,17 @@ export const RESULTS = "Results";
 export const ARGUMENTS = "Arguments";
 
 /**
+ * Common name for passed in values.
+ */
+export const VALUES = "Values";
+
+/**
  * Enumeration tags for quick type discrimination via `switch`.
  *
  * These will use conventional ANSI SQL naming rather than database
  * specific catalog naming.
  */
-export const enum ASTKind {
+export enum ASTKind {
   Node,
   Database,
   Schema,
@@ -49,7 +54,18 @@ export const enum ASTKind {
   Procedure,
   ProcedureArgument,
   CompositeType,
+  AliasType,
   AttributeType,
+}
+
+interface DatabaseNamed {
+  /**
+   * Fully qualified name as expected to exist in the database.
+   *
+   * Given that we are connecting to a single database, the names
+   * are of the form <schema>.<table>
+   */
+  databaseName: string;
 }
 
 /**
@@ -132,7 +148,20 @@ export type ASTKindMap = {
   [ASTKind.ProcedureArgument]: ProcedureArgumentNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
   [ASTKind.AttributeType]: AttributeTypeNode;
+  [ASTKind.AliasType]: AliasTypeNode;
 };
+
+/**
+ * Node type predicate.
+ */
+export function isNodeType<T extends ASTKind>(
+  node: ASTNode | undefined,
+  kind: T,
+): node is ASTKindMap[T] {
+  return node?.kind === kind;
+}
+
+export type z = ASTKindMap[ASTKind.CompositeType];
 
 /**
  * Mapping to set up visitors.
@@ -150,7 +179,7 @@ export type VisitorMap = {
 export abstract class ASTNode {
   constructor(
     public kind: ASTKind,
-    public parent?: NamedASTNode,
+    public onType?: NamedASTNode,
   ) {}
 
   async visit<T extends this>(context: GenerationContext): Promise<string> {
@@ -167,9 +196,9 @@ export abstract class ASTNode {
     return generationBuffer.filter((line) => line).join("\n");
   }
 
-  lookUpTo(kind: ASTKind): ASTNode | undefined {
-    if (this.parent?.kind === kind) return this.parent;
-    else return this.parent?.lookUpTo(kind);
+  lookUpTo<T extends ASTKind>(kind: T): ASTKindMap[T] | undefined {
+    if (isNodeType(this.onType, kind)) return this.onType;
+    else return this.onType?.lookUpTo(kind);
   }
 }
 
@@ -191,8 +220,8 @@ export abstract class NamedASTNode extends ASTNode implements IsNamed {
   }
 
   get typescriptNamespacedName(): string {
-    if (this.parent) {
-      return `${this.parent.typescriptNamespacedName}.${this.typescriptName}`;
+    if (this.onType) {
+      return `${this.onType.typescriptNamespacedName}.${this.typescriptName}`;
     } else {
       return `${this.typescriptName}`;
     }
@@ -200,6 +229,14 @@ export abstract class NamedASTNode extends ASTNode implements IsNamed {
 
   get typescriptPropertyName() {
     return camelCase(cleanIdentifierForTypescript(this.name));
+  }
+
+  get typescriptNamespacedPropertyName(): string {
+    if (this.onType) {
+      return `${this.onType.typescriptNamespacedName}.${this.typescriptPropertyName}`;
+    } else {
+      return `${this.typescriptPropertyName}`;
+    }
   }
 }
 
@@ -259,8 +296,8 @@ export class DatabaseNode extends ContainerNode {
     return type;
   }
 
-  resolveType(id: string | number) {
-    return this.types.get(`${id}`);
+  resolveType<T extends AbstractTypeNode>(id: string | number) {
+    return this.types.get(`${id}`) as T;
   }
 
   registerTable(id: string | number, table: TableNode) {
@@ -344,7 +381,6 @@ export class AbstractTypeNode extends ContainerNode {
   constructor(
     name: string,
     kind: ASTKind,
-    public marshallName: string,
     parent: ContainerNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
@@ -359,12 +395,11 @@ export class AbstractTypeNode extends ContainerNode {
 export class TypeNode extends AbstractTypeNode {
   constructor(
     name: string,
-    public marshallName: string,
     types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.Type, marshallName, types, id, parser);
+    super(name, ASTKind.Type, types, id, parser);
   }
 }
 
@@ -374,13 +409,12 @@ export class TypeNode extends AbstractTypeNode {
 export class EnumNode extends AbstractTypeNode {
   constructor(
     name: string,
-    public marshallName: string,
     public values: string[],
     types: TypesNode,
     public id: string | number,
     public parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.Enum, marshallName, types, id, parser);
+    super(name, ASTKind.Enum, types, id, parser);
   }
 }
 
@@ -399,14 +433,18 @@ export class TablesNode extends ContainerNode {
  * This is for 'real' tables, the normal old thing you would call
  * a table in SQL. Not a view, not a reltype, but a place were rows go to 🛌.
  */
-export class TableNode extends ContainerNode {
+export class TableNode extends ContainerNode implements DatabaseNamed {
   constructor(
-    tables: TablesNode,
+    public tables: TablesNode,
     public name: string,
-    public type: TypeNode,
+    public type: CompositeTypeNode,
   ) {
     super(name, ASTKind.Table, tables);
     this.children.push(new CreateOperationNode(this));
+  }
+
+  get databaseName() {
+    return `${this.tables.schema.name}.${this.name}`;
   }
 
   get createOperation() {
@@ -418,6 +456,28 @@ export class TableNode extends ContainerNode {
   get primaryKey(): IndexNode | undefined {
     return this.children.find((n) => (n as IndexNode).primaryKey) as IndexNode;
   }
+
+  get attributesInPrimaryKey(): AttributeTypeNode[] {
+    const primaryKeyNames = this.primaryKey
+      ? this.primaryKey.columns.map((c) => c.name)
+      : [];
+    return this.type.attributes.filter((a) => primaryKeyNames.includes(a.name));
+  }
+
+  get attributesNotInPrimaryKey(): AttributeTypeNode[] {
+    const primaryKeyNames = this.primaryKey
+      ? this.primaryKey.columns.map((c) => c.name)
+      : [];
+    return this.type.attributes.filter(
+      (a) => !primaryKeyNames.includes(a.name),
+    );
+  }
+
+  get optionalColumns(): ColumnNode[] {
+    return this.children
+      .filter<ColumnNode>((n): n is ColumnNode => isNodeType(n, ASTKind.Column))
+      .filter((c) => c.hasDefault);
+  }
 }
 
 /**
@@ -428,20 +488,21 @@ export class ColumnNode extends ContainerNode {
     table: TableNode,
     public name: string,
     public type: TypeNode,
+    public hasDefault: boolean,
   ) {
     super(name, ASTKind.Column, table);
   }
 
   get schema() {
-    return this.parent?.parent?.parent as SchemaNode;
+    return this.onType?.onType?.onType as SchemaNode;
   }
 
   get tables() {
-    return this.parent?.parent as TablesNode;
+    return this.onType?.onType as TablesNode;
   }
 
   get table() {
-    return this.parent as TableNode;
+    return this.onType as TableNode;
   }
 }
 
@@ -495,10 +556,47 @@ export class IndexColumnNode extends ContainerNode {
 
 // operations
 
-abstract class OperationNode extends ContainerNode {
-  get typescriptName() {
-    // method style naming for operation
-    return camelCase(this.name);
+export abstract class OperationNode extends ContainerNode {
+  /**
+   * Operations have results, which are each of this type.
+   *
+   * An operation can return either a single value or arrary of this type.
+   */
+  get resultsType() {
+    return this.children
+      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
+        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
+      )
+      .find((c) => c.name === RESULTS);
+  }
+
+  // TODO: move resolve into abstract type and allow resolving ANY type, which many just return this
+  /**
+   * The results type might be an alias -- resolve it to the target
+   * final type.
+   */
+  get resultsResolvedType() {
+    const typeNode = this.resultsType;
+    // resolve type alias to a composite
+    return typeNode?.kind === ASTKind.AliasType
+      ? (typeNode as AliasTypeNode).type
+      : typeNode;
+  }
+
+  get argumentsType() {
+    return this.children
+      .filter<CompositeTypeNode>(
+        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
+      )
+      .find((c) => c.name === ARGUMENTS);
+  }
+
+  get valuesType() {
+    return this.children
+      .filter<CompositeTypeNode>(
+        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
+      )
+      .find((c) => c.name === VALUES);
   }
 }
 
@@ -508,6 +606,8 @@ abstract class OperationNode extends ContainerNode {
 export class CreateOperationNode extends OperationNode {
   constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
+    this.children.push(new AliasTypeNode(RESULTS, table.type, this));
+    this.children.push(new AliasTypeNode(VALUES, table.type, this));
   }
 }
 
@@ -645,7 +745,7 @@ export class ScriptFolderNode extends ContainerNode {
 /**
  * A single script that is source from a .sql file on disk.
  */
-export class ScriptNode extends ContainerNode {
+export class ScriptNode extends OperationNode {
   /**
    * Asynchronous factory builds from a sql file on disk.
    */
@@ -672,22 +772,6 @@ export class ScriptNode extends ContainerNode {
   ) {
     super(path.name, ASTKind.Script, parent);
   }
-
-  get resultsType() {
-    return this.children
-      .filter<CompositeTypeNode>(
-        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
-      )
-      .find((c) => c.name === RESULTS);
-  }
-
-  get argumentsType() {
-    return this.children
-      .filter<CompositeTypeNode>(
-        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
-      )
-      .find((c) => c.name === ARGUMENTS);
-  }
 }
 
 /**
@@ -702,13 +786,20 @@ export class ProceduresNode extends ContainerNode {
 /**
  * A single stored procedure or function.
  */
-export class ProcedureNode extends OperationNode {
+export class ProcedureNode extends OperationNode implements DatabaseNamed {
   constructor(
     name: string,
     public procedures: ProceduresNode,
-    public returnType: AbstractTypeNode,
+    public id: string | number,
+    public nameInDatabase: string,
+    public returnsMany: boolean,
+    public isPseudoType: boolean,
   ) {
     super(name, ASTKind.Procedure, procedures);
+  }
+
+  get databaseName() {
+    return `${this.procedures.schema.name}.${this.nameInDatabase}`;
   }
 }
 
@@ -730,16 +821,10 @@ export class ProcedureArgumentNode extends NamedASTNode {
  * A composite type is built of named attributes, each with their own type.
  */
 export class CompositeTypeNode extends AbstractTypeNode {
-  constructor(
-    name: string,
-    marshallName: string,
-    parent: ContainerNode,
-    id: string | number,
-  ) {
+  constructor(name: string, parent: ContainerNode, id: string | number) {
     super(
       name,
       ASTKind.CompositeType,
-      marshallName,
       parent,
       id,
       // inline code generation
@@ -776,10 +861,42 @@ export class CompositeTypeNode extends AbstractTypeNode {
  */
 export class AttributeTypeNode extends ContainerNode {
   constructor(
-    public queryResultType: CompositeTypeNode,
+    public onType: CompositeTypeNode,
+    public name: string,
+    public index: number,
+    public type: TypeNode,
+    public required: boolean,
+  ) {
+    super(name, ASTKind.AttributeType, onType);
+  }
+
+  /**
+   * Generate a synthetic name based on the index
+   * when no name is provided.
+   */
+  get typescriptPropertyName(): string {
+    if (this.name) return super.typescriptPropertyName;
+    else return `argument_${this.index}`;
+  }
+}
+
+/**
+ * Rename a type, useful in namespaces to allow consistent
+ * code generation.
+ */
+export class AliasTypeNode extends AbstractTypeNode {
+  constructor(
     public name: string,
     public type: TypeNode,
+    parent: ContainerNode,
   ) {
-    super(name, ASTKind.AttributeType, queryResultType);
+    super(name, ASTKind.AliasType, parent, type.id, {
+      typescriptTypeDefinition() {
+        return `${type.typescriptNamespacedName}`;
+      },
+      typescriptTypeParser() {
+        return `${type.typescriptNamespacedName}.parse(from)`;
+      },
+    });
   }
 }

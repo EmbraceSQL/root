@@ -50,7 +50,6 @@ export class PGTypeEnum extends PGCatalogType {
 
     const type = new EnumNode(
       this.typescriptName,
-      this.postgresMarshallName,
       this.values.map((v) => v.enumlabel),
       schema.types,
       this.oid,

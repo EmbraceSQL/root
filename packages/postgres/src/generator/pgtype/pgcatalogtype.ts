@@ -24,12 +24,20 @@ export class PGCatalogType implements GeneratesTypeScript {
 
     const type = new TypeNode(
       this.typescriptName,
-      this.postgresMarshallName,
       schema.types,
       this.oid,
       this,
     );
     context.database.registerType(type.id, type);
+  }
+
+  /**
+   * Types are a connected graph, not just a tree, so two passes
+   * are required to build cross references and back links.
+   */
+  finalizeAST(context: GenerationContext) {
+    console.assert(context);
+    // default is no operation
   }
 
   /**
@@ -70,15 +78,6 @@ export class PGCatalogType implements GeneratesTypeScript {
    */
   get postgresName() {
     return `${this.catalog.nspname}.${this.catalog.typname}`;
-  }
-
-  /**
-   * Marshalling name mashes the namespace and the type into one snake string.
-   *
-   * This doesn't look very TypeScript-y on purpose so it stands out.
-   */
-  get postgresMarshallName() {
-    return `${this.catalog.nspname}_${this.catalog.typname}`;
   }
 
   /**

@@ -12,7 +12,7 @@ const emptyIsNull = parsimmon.string("").result(null);
  * ... To put a double quote or backslash in a quoted composite field value, precede it with a backslash. (Also, a pair of double quotes within a double-quoted field value is taken to represent a double quote character, analogously to the rules for single quotes in SQL literal strings.)
  * ...Alternatively, you can avoid quoting and use backslash-escaping to protect all data characters that would otherwise be taken as composite syntax.
  */
-const SEPARATORS = `(),`;
+const SEPARATORS = `{}(),`;
 const separators = parsimmon.oneOf(SEPARATORS);
 const startComposite = parsimmon.string("(");
 const endComposite = parsimmon.string(")");

@@ -8,7 +8,8 @@ import parsimmon from "parsimmon";
 const startArray = parsimmon.string("{");
 const endArray = parsimmon.string("}");
 
-const separators = parsimmon.oneOf("{},");
+const arraySeparators = parsimmon.oneOf("{},");
+const compositeSeparators = parsimmon.oneOf("()");
 
 /**
  * Here is a simple one -- from the docs:
@@ -50,7 +51,7 @@ const bareString = parsimmon
  * is the common case.
  */
 const quotedString = parsimmon
-  .alt(neverRequiresEscape, parseEscapedArrayValue, separators)
+  .alt(neverRequiresEscape, parseEscapedArrayValue, arraySeparators)
   .many()
   .wrap(parsimmon.string('"'), parsimmon.string('"'))
   .tie();

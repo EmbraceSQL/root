@@ -18,61 +18,37 @@ describe("The database can marshall complex types", () => {
   afterAll(async () => {
     await db.disconnect();
   });
-  it("that are structured objects", () => {
-    const sample = String.raw`{"(\"howdy y'all\",\"2022-07-02 09:35:31.966868+00\")"}`;
-    expect(db.context.types.api__echo_type.parse(sample)).toEqual([
-      {
-        echomessage: "howdy y'all",
-        at: new Date("2022-07-02 09:35:31.966868+00"),
-      },
-    ]);
-  });
-  it("that are nested array records", () => {
-    const sample = String.raw`("{""(\\""howdy y'all\\"",\\""2022-07-02 10:13:05.840209+00\\"")""}")`;
-    interface HasEchoes {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      echoes: any[];
-    }
-    expect(
-      (db.context.types.api_echo_type_nested.parse(sample) as HasEchoes).echoes,
-    ).toEqual([
-      {
-        echomessage: "howdy y'all",
-        at: new Date("2022-07-02 10:13:05.840209+00"),
-      },
-    ]);
-  });
   it("that are from an echo function", async () => {
-    const ret = await db.Api.Echo({ message: "Hi" });
+    const ret = await db.Api.echo({ message: "Hi" });
     expect(ret).toEqual("Hi");
   });
   it("that are from an echoset function", async () => {
-    const ret = await db.Api.EchoSet({ message: "Hi" });
+    const ret = await db.Api.echoSet({ message: "Hi" });
     expect(ret).toMatchObject(["Hi"]);
   });
   it("that are from an echotable function", async () => {
-    const ret = await db.Api.EchoTable({ message: "Hi" });
+    const ret = await db.Api.echoTable({ message: "Hi" });
     expect(ret).toMatchObject([{ echomessage: "Hi" }]);
   });
   it("that are from an echotype function", async () => {
-    const ret = await db.Api.EchoType({ message: "Hi" });
+    const ret = await db.Api.echoType({ message: "Hi" });
     expect(ret.echomessage).toEqual("Hi");
     expect(ret.at).toBeTruthy();
   });
   it("that are from an echotype function", async () => {
-    const ret = await db.Api.EchoTypeArray({ message: "Hi" });
+    const ret = await db.Api.echoTypeArray({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();
   });
   it("that are from an echotypenested function", async () => {
-    const ret = await db.Api.EchoTypeNested({ message: "Hi" });
+    const ret = await db.Api.echoTypeNested({ message: "Hi" });
     expect(ret.echoes?.length).toEqual(1);
-    expect(ret.echoes![0].echomessage).toEqual("Hi");
-    expect(ret.echoes![0].at).toBeTruthy();
+    expect(ret.echoes[0].echomessage).toEqual("Hi");
+    expect(ret.echoes[0].at).toBeTruthy();
   });
   it("that are from an echotypeset function", async () => {
-    const ret = await db.Api.EchoTypeSet({ message: "Hi" });
+    const ret = await db.Api.echoTypeSet({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();
@@ -107,21 +83,29 @@ describe("The database can marshall base types", () => {
   };
   it("that are UUIDs", () => {
     for (const val of [null, "24562c58-c8d1-4c39-9073-6f956e08eb8b"]) {
-      roundTrip("pg_catalog_uuid", PgCatalog.Types.Uuid.parse, val);
+      roundTrip("PgCatalog.Types.Uuid", PgCatalog.Types.Uuid.parse, val);
     }
   });
   it("that are bools", () => {
     for (const val of ["t", "true", 1, "1"]) {
-      roundTrip("pg_catalog_bool", PgCatalog.Types.Bool.parse, val as string);
+      roundTrip(
+        "PgCatalog.Types.Bool",
+        PgCatalog.Types.Bool.parse,
+        val as string,
+      );
     }
     for (const val of ["f", "false", 0, "0"]) {
-      roundTrip("pg_catalog_bool", PgCatalog.Types.Bool.parse, val as string);
+      roundTrip(
+        "PgCatalog.Types.Bool",
+        PgCatalog.Types.Bool.parse,
+        val as string,
+      );
     }
   });
   it("that are numbers", () => {
     for (const val of ["0", 0, "1.5", 1.5, "-1", -1]) {
       roundTrip(
-        "pg_catalog_numeric",
+        "PgCatalog.Types.Numeric",
         PgCatalog.Types.Numeric.parse,
         val as string,
       );
@@ -129,7 +113,7 @@ describe("The database can marshall base types", () => {
   });
   it("that are text", () => {
     for (const val of ["0", "1.5", "hello 🌎"]) {
-      roundTrip("pg_catalog_text", PgCatalog.Types.Text.parse, val);
+      roundTrip("PgCatalog.Types.Text", PgCatalog.Types.Text.parse, val);
     }
   });
   it("that are points", () => {
@@ -138,7 +122,7 @@ describe("The database can marshall base types", () => {
       JSON.stringify({ x: 0, y: 0 }),
       JSON.stringify({ x: 1.5, y: 100 }),
     ]) {
-      roundTrip("pg_catalog_point", PgCatalog.Types.Point.parse, val);
+      roundTrip("PgCatalog.Types.Point", PgCatalog.Types.Point.parse, val);
     }
   });
   it("that are line segments", () => {
@@ -149,7 +133,7 @@ describe("The database can marshall base types", () => {
         to: { x: 1.5, y: 100 },
       }),
     ]) {
-      roundTrip("pg_catalog_lseg", PgCatalog.Types.Lseg.parse, val);
+      roundTrip("PgCatalog.Types.Lseg", PgCatalog.Types.Lseg.parse, val);
     }
   });
   it("that are lines", () => {
@@ -158,7 +142,7 @@ describe("The database can marshall base types", () => {
       JSON.stringify({ a: 0, b: 0, c: 0 }),
       JSON.stringify({ a: 1, b: 2, c: 3 }),
     ]) {
-      roundTrip("pg_catalog_line", PgCatalog.Types.Line.parse, val);
+      roundTrip("PgCatalog.Types.Line", PgCatalog.Types.Line.parse, val);
     }
   });
   it("that are boxes", () => {
@@ -169,7 +153,7 @@ describe("The database can marshall base types", () => {
         upperRight: { x: 1.5, y: 100 },
       }),
     ]) {
-      roundTrip("pg_catalog_box", PgCatalog.Types.Box.parse, val);
+      roundTrip("PgCatalog.Types.Box", PgCatalog.Types.Box.parse, val);
     }
   });
   it("that are paths", () => {
@@ -180,7 +164,7 @@ describe("The database can marshall base types", () => {
         { x: 1.5, y: 100 },
       ]),
     ]) {
-      roundTrip("pg_catalog_path", PgCatalog.Types.Path.parse, val);
+      roundTrip("PgCatalog.Types.Path", PgCatalog.Types.Path.parse, val);
     }
   });
   it("that are polygons", () => {
@@ -191,7 +175,7 @@ describe("The database can marshall base types", () => {
         { x: 1.5, y: 100 },
       ]),
     ]) {
-      roundTrip("pg_catalog_polygon", PgCatalog.Types.Polygon.parse, val);
+      roundTrip("PgCatalog.Types.Polygon", PgCatalog.Types.Polygon.parse, val);
     }
   });
   it("that are circles", () => {
@@ -206,12 +190,16 @@ describe("The database can marshall base types", () => {
         radius: 3.5,
       }),
     ]) {
-      roundTrip("pg_catalog_circle", PgCatalog.Types.Circle.parse, val);
+      roundTrip("PgCatalog.Types.Circle", PgCatalog.Types.Circle.parse, val);
     }
   });
   it("that are oids", () => {
     for (const val of ["0", 0, "1", 2]) {
-      roundTrip("pg_catalog_oid", PgCatalog.Types.Oid.parse, val as string);
+      roundTrip(
+        "PgCatalog.Types.Oid",
+        PgCatalog.Types.Oid.parse,
+        val as string,
+      );
     }
   });
   it("that are oidvectors", () => {
@@ -220,18 +208,22 @@ describe("The database can marshall base types", () => {
       JSON.stringify([]),
       JSON.stringify([null]),
     ]) {
-      roundTrip("pg_catalog_oidvector", PgCatalog.Types.Oidvector.parse, val);
+      roundTrip(
+        "PgCatalog.Types.Oidvector",
+        PgCatalog.Types.Oidvector.parse,
+        val,
+      );
     }
   });
   it("that are names", () => {
     for (const val of [null, "", "0", "hello 🌎 "]) {
-      roundTrip("pg_catalog_name", PgCatalog.Types.Name.parse, val);
+      roundTrip("PgCatalog.Types.Name", PgCatalog.Types.Name.parse, val);
     }
   });
   it("that are big numbers", () => {
     for (const val of [null, "", "0", "123456789", 123456789]) {
       roundTrip(
-        "pg_catalog_pg_lsn",
+        "PgCatalog.Types.PgLsn",
         PgCatalog.Types.PgLsn.parse,
         val as string,
       );
@@ -240,7 +232,7 @@ describe("The database can marshall base types", () => {
   it("that are vectors", () => {
     for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
       roundTrip(
-        "pg_catalog_int2vector",
+        "PgCatalog.Types.Int2vector",
         PgCatalog.Types.Int2vector.parse,
         val as string,
       );
@@ -248,12 +240,16 @@ describe("The database can marshall base types", () => {
   });
   it("that are cubes", () => {
     for (const val of [null, "[1, 1, 2]", [1, 2, 3]]) {
-      roundTrip("public_cube", Public.Types.Cube.parse, val as string);
+      roundTrip("Public.Types.Cube", Public.Types.Cube.parse, val as string);
     }
   });
   it("that are dates", () => {
     for (const val of [new Date(), "2000-01-01"]) {
-      roundTrip("pg_catalog_date", PgCatalog.Types.Date.parse, val as string);
+      roundTrip(
+        "PgCatalog.Types.Date",
+        PgCatalog.Types.Date.parse,
+        val as string,
+      );
     }
   });
 });
