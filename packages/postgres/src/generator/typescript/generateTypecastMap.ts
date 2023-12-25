@@ -7,7 +7,7 @@ import {
 const TypecastEntry = {
   before: async (_: GenerationContext, node: AbstractTypeNode) => {
     return [
-      `[${node.id}]: Typecast;`,
+      node.id ? `[${node.id}]: Typecast;` : "",
       `["${node.typescriptNamespacedName}"]: Typecast`,
     ].join("\n");
   },
@@ -38,6 +38,8 @@ export async function generateTypecastMap(context: GenerationContext) {
     },
     [ASTKind.Type]: TypecastEntry,
     [ASTKind.Enum]: TypecastEntry,
+    [ASTKind.CompositeType]: TypecastEntry,
+    [ASTKind.DomainType]: TypecastEntry,
   };
   // include all schemas -- need those built in types
   return await context.database.visit({ ...context, skipSchemas: [] });

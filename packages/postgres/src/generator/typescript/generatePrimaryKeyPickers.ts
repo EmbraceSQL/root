@@ -43,9 +43,7 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
               (a) => `value.${camelCase(a.typescriptName)} !== undefined`,
             ) || [];
           generationBuffer.push(`
-      export function includesPrimaryKey(value: Partial<${
-        node.type.typescriptNamespacedName
-      }>){
+      export function includesPrimaryKey(value: Partial<Record>){
         return ${primaryKeyNames.join(" && ")}
       }
       `);

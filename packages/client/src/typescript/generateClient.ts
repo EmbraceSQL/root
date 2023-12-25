@@ -2,26 +2,38 @@ import {
   ASTKind,
   GenerationContext,
   IndexOperationNode,
+  NamedASTNode,
 } from "@embracesql/shared";
 
-// TODO: generate client for sql scripts
+export const NestedNamedClassVisitor = {
+  before: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    return `
+          public ${node.typescriptName} = new class extends HasClient {
+        `;
+  },
+  after: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return `}(this)`;
+  },
+};
 
-const indexOperation = {
+// TODO: generate client for sql scripts
+// TODO: test client with sql scripts
+
+const IndexOperation = {
   before: async (_: GenerationContext, node: IndexOperationNode) => {
     // will return a single record on a unique index
     const parametersType = node.index.typescriptNamespacedName;
     const resultType = node.index.unique
       ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
       : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
-    // TODO: restore .Tables
     const generationBuffer = [
       `
-          public async ${node.typescriptName}(parameters: ${parametersType}) {
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) {
             const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
-              operation: "${node.typescriptNamespacedName.replace(
-                ".Tables",
-                "",
-              )}",
+              operation: "${node.typescriptNamespacedName}",
               parameters
             });
         `,
@@ -63,53 +75,24 @@ export async function generateClient(context: GenerationContext) {
   `);
 
   context.handlers = {
-    [ASTKind.Schema]: {
-      before: async (_, node) => {
-        return `
-          public ${node.typescriptName} = new class extends HasClient {
-        `;
-      },
-      after: async () => {
-        return `}({client: this})`;
-      },
-    },
+    [ASTKind.Schema]: NestedNamedClassVisitor,
 
-    [ASTKind.Tables]: {
-      before: async (_, node) => {
-        return `
-          public ${node.typescriptName} = new class extends HasClient {
-        `;
-      },
-      after: async () => {
-        return `}(this)`;
-      },
-    },
+    [ASTKind.Tables]: NestedNamedClassVisitor,
 
-    [ASTKind.Table]: {
-      before: async (_, node) => {
-        return `
-          public ${node.typescriptName} = new class extends HasClient {
-        `;
-      },
-      after: async () => {
-        return `}(this)`;
-      },
-    },
+    [ASTKind.Table]: NestedNamedClassVisitor,
+    [ASTKind.Index]: NestedNamedClassVisitor,
 
+    // C R U D
     [ASTKind.CreateOperation]: {
       before: async (_, node) => {
         // creating can be an upsert, so you can pass with and
         // without a primary key
-        const valuesType = `${node.table.type.typescriptNamespacedName}`;
+        const valuesType = `${node.table.typescriptNamespacedName}.Values`;
         const returnType = `${node.table.typescriptNamespacedName}.Record`;
-        // TODO: restore .Tables
         return `
           public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
             const response = await this.client.invoke<never, ${valuesType}, ${returnType}>({
-              operation: "${node.typescriptNamespacedName.replace(
-                ".Tables",
-                "",
-              )}",
+              operation: "${node.typescriptNamespacedName}",
               values
             });
             return response.results;
@@ -119,8 +102,8 @@ export async function generateClient(context: GenerationContext) {
     },
 
     // with the `returns` deletes and reads have the same structure
-    [ASTKind.ReadOperation]: indexOperation,
-    [ASTKind.DeleteOperation]: indexOperation,
+    [ASTKind.ReadOperation]: IndexOperation,
+    [ASTKind.DeleteOperation]: IndexOperation,
     [ASTKind.UpdateOperation]: {
       before: async (_: GenerationContext, node) => {
         // will return a single record on a unique index
@@ -129,17 +112,11 @@ export async function generateClient(context: GenerationContext) {
         const resultType = node.index.unique
           ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
           : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
-        // TODO: restore .Tables
         const generationBuffer = [
           `
-          public async ${
-            node.typescriptName
-          }(parameters: ${parametersType}, values: ${valuesType}) {
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}) {
             const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}>({
-              operation: "${node.typescriptNamespacedName.replace(
-                ".Tables",
-                "",
-              )}",
+              operation: "${node.typescriptNamespacedName}",
               parameters,
               values
             });

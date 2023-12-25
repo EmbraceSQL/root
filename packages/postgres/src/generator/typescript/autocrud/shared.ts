@@ -6,14 +6,17 @@ import {
   ARGUMENTS,
   ASTKind,
   AbstractTypeNode,
-  AttributeTypeNode,
   GenerationContext,
+  IndexNode,
+  NamedASTNode,
+  NamedType,
+  TableNode,
   VALUES,
   isNodeType,
 } from "@embracesql/shared";
 import { camelCase } from "change-case";
 
-export async function postgresResultRecordToTypescript(
+export function postgresResultRecordToTypescript(
   context: GenerationContext,
   node: AbstractTypeNode,
 ) {
@@ -39,11 +42,12 @@ export async function postgresResultRecordToTypescript(
  * parameterHolder in calling typescript -- allows partial updates.
  *
  */
-export async function postgresValueExpression(
+export function postgresValueExpression(
   context: GenerationContext,
-  node: AttributeTypeNode,
+  node: NamedType & NamedASTNode,
   holder: typeof ARGUMENTS | typeof VALUES,
 ) {
+  console.assert(context);
   const undefinedExpression = "sql`DEFAULT`";
   const valueExpression = `typed[${node.type.id}](${camelCase(holder)}.${
     node.typescriptPropertyName
@@ -52,4 +56,36 @@ export async function postgresValueExpression(
     node.typescriptPropertyName
   } === undefined ? ${undefinedExpression} : ${valueExpression}`;
   return `\${ ${combinedExpression} }`;
+}
+
+/**
+ * Code generation builder for an exact index match.
+ */
+export function sqlPredicate(
+  context: GenerationContext,
+  node: IndexNode,
+  holder: typeof ARGUMENTS | typeof VALUES,
+) {
+  return node.columns
+    .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
+    .join(" AND ");
+}
+
+/**
+ * Code generation builder for all fields updating.
+ *
+ * This will do self assignment for undefined properties, allowing
+ * partial updates in typescript by omitting properties corresponding to
+ * columns.
+ *
+ * Nulls in the passed typescript turn into SQL NULL.
+ */
+export function sqlSetExpressions(
+  context: GenerationContext,
+  node: TableNode,
+  holder: typeof ARGUMENTS | typeof VALUES,
+) {
+  return node.allColumns
+    .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
+    .join(" , ");
 }

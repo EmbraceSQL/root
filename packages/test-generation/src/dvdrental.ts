@@ -11,6 +11,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+// eslint-disable @typescript-eslint/no-redundant-type-constituents
 import {
   UUID,
   JsDate,
@@ -2062,9 +2063,42 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export type Record = Required<PgCatalog.Types.PgStatistic>;
-      export type Results = PgCatalog.Types.PgStatistic;
+      export type Record = {
+        starelid: PgCatalog.Types.PgStatistic["starelid"];
+        staattnum: PgCatalog.Types.PgStatistic["staattnum"];
+        stainherit: PgCatalog.Types.PgStatistic["stainherit"];
+        stanullfrac: PgCatalog.Types.PgStatistic["stanullfrac"];
+        stawidth: PgCatalog.Types.PgStatistic["stawidth"];
+        stadistinct: PgCatalog.Types.PgStatistic["stadistinct"];
+        stakind1: PgCatalog.Types.PgStatistic["stakind1"];
+        stakind2: PgCatalog.Types.PgStatistic["stakind2"];
+        stakind3: PgCatalog.Types.PgStatistic["stakind3"];
+        stakind4: PgCatalog.Types.PgStatistic["stakind4"];
+        stakind5: PgCatalog.Types.PgStatistic["stakind5"];
+        staop1: PgCatalog.Types.PgStatistic["staop1"];
+        staop2: PgCatalog.Types.PgStatistic["staop2"];
+        staop3: PgCatalog.Types.PgStatistic["staop3"];
+        staop4: PgCatalog.Types.PgStatistic["staop4"];
+        staop5: PgCatalog.Types.PgStatistic["staop5"];
+        stacoll1: PgCatalog.Types.PgStatistic["stacoll1"];
+        stacoll2: PgCatalog.Types.PgStatistic["stacoll2"];
+        stacoll3: PgCatalog.Types.PgStatistic["stacoll3"];
+        stacoll4: PgCatalog.Types.PgStatistic["stacoll4"];
+        stacoll5: PgCatalog.Types.PgStatistic["stacoll5"];
+        stanumbers1: PgCatalog.Types.PgStatistic["stanumbers1"] | null;
+        stanumbers2: PgCatalog.Types.PgStatistic["stanumbers2"] | null;
+        stanumbers3: PgCatalog.Types.PgStatistic["stanumbers3"] | null;
+        stanumbers4: PgCatalog.Types.PgStatistic["stanumbers4"] | null;
+        stanumbers5: PgCatalog.Types.PgStatistic["stanumbers5"] | null;
+        stavalues1: PgCatalog.Types.PgStatistic["stavalues1"] | null;
+        stavalues2: PgCatalog.Types.PgStatistic["stavalues2"] | null;
+        stavalues3: PgCatalog.Types.PgStatistic["stavalues3"] | null;
+        stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
+        stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2075,9 +2109,43 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgType {
-      export type Record = Required<PgCatalog.Types.PgType>;
-      export type Results = PgCatalog.Types.PgType;
+      export type Record = {
+        oid: PgCatalog.Types.PgType["oid"];
+        typname: PgCatalog.Types.PgType["typname"];
+        typnamespace: PgCatalog.Types.PgType["typnamespace"];
+        typowner: PgCatalog.Types.PgType["typowner"];
+        typlen: PgCatalog.Types.PgType["typlen"];
+        typbyval: PgCatalog.Types.PgType["typbyval"];
+        typtype: PgCatalog.Types.PgType["typtype"];
+        typcategory: PgCatalog.Types.PgType["typcategory"];
+        typispreferred: PgCatalog.Types.PgType["typispreferred"];
+        typisdefined: PgCatalog.Types.PgType["typisdefined"];
+        typdelim: PgCatalog.Types.PgType["typdelim"];
+        typrelid: PgCatalog.Types.PgType["typrelid"];
+        typsubscript: PgCatalog.Types.PgType["typsubscript"];
+        typelem: PgCatalog.Types.PgType["typelem"];
+        typarray: PgCatalog.Types.PgType["typarray"];
+        typinput: PgCatalog.Types.PgType["typinput"];
+        typoutput: PgCatalog.Types.PgType["typoutput"];
+        typreceive: PgCatalog.Types.PgType["typreceive"];
+        typsend: PgCatalog.Types.PgType["typsend"];
+        typmodin: PgCatalog.Types.PgType["typmodin"];
+        typmodout: PgCatalog.Types.PgType["typmodout"];
+        typanalyze: PgCatalog.Types.PgType["typanalyze"];
+        typalign: PgCatalog.Types.PgType["typalign"];
+        typstorage: PgCatalog.Types.PgType["typstorage"];
+        typnotnull: PgCatalog.Types.PgType["typnotnull"];
+        typbasetype: PgCatalog.Types.PgType["typbasetype"];
+        typtypmod: PgCatalog.Types.PgType["typtypmod"];
+        typndims: PgCatalog.Types.PgType["typndims"];
+        typcollation: PgCatalog.Types.PgType["typcollation"];
+        typdefaultbin: PgCatalog.Types.PgType["typdefaultbin"] | null;
+        typdefault: PgCatalog.Types.PgType["typdefault"] | null;
+        typacl: PgCatalog.Types.PgType["typacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2090,9 +2158,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignTable {
-      export type Record = Required<PgCatalog.Types.PgForeignTable>;
-      export type Results = PgCatalog.Types.PgForeignTable;
+      export type Record = {
+        ftrelid: PgCatalog.Types.PgForeignTable["ftrelid"];
+        ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
+        ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
@@ -2101,9 +2174,23 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthid {
-      export type Record = Required<PgCatalog.Types.PgAuthid>;
-      export type Results = PgCatalog.Types.PgAuthid;
+      export type Record = {
+        oid: PgCatalog.Types.PgAuthid["oid"];
+        rolname: PgCatalog.Types.PgAuthid["rolname"];
+        rolsuper: PgCatalog.Types.PgAuthid["rolsuper"];
+        rolinherit: PgCatalog.Types.PgAuthid["rolinherit"];
+        rolcreaterole: PgCatalog.Types.PgAuthid["rolcreaterole"];
+        rolcreatedb: PgCatalog.Types.PgAuthid["rolcreatedb"];
+        rolcanlogin: PgCatalog.Types.PgAuthid["rolcanlogin"];
+        rolreplication: PgCatalog.Types.PgAuthid["rolreplication"];
+        rolbypassrls: PgCatalog.Types.PgAuthid["rolbypassrls"];
+        rolconnlimit: PgCatalog.Types.PgAuthid["rolconnlimit"];
+        rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
+        rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2115,9 +2202,21 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExtData {
-      export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
-      export type Results = PgCatalog.Types.PgStatisticExtData;
+      export type Record = {
+        stxoid: PgCatalog.Types.PgStatisticExtData["stxoid"];
+        stxdinherit: PgCatalog.Types.PgStatisticExtData["stxdinherit"];
+        stxdndistinct:
+          | PgCatalog.Types.PgStatisticExtData["stxdndistinct"]
+          | null;
+        stxddependencies:
+          | PgCatalog.Types.PgStatisticExtData["stxddependencies"]
+          | null;
+        stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
+        stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
@@ -2127,9 +2226,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgUserMapping {
-      export type Record = Required<PgCatalog.Types.PgUserMapping>;
-      export type Results = PgCatalog.Types.PgUserMapping;
+      export type Record = {
+        oid: PgCatalog.Types.PgUserMapping["oid"];
+        umuser: PgCatalog.Types.PgUserMapping["umuser"];
+        umserver: PgCatalog.Types.PgUserMapping["umserver"];
+        umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2142,9 +2247,28 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscription {
-      export type Record = Required<PgCatalog.Types.PgSubscription>;
-      export type Results = PgCatalog.Types.PgSubscription;
+      export type Record = {
+        oid: PgCatalog.Types.PgSubscription["oid"];
+        subdbid: PgCatalog.Types.PgSubscription["subdbid"];
+        subskiplsn: PgCatalog.Types.PgSubscription["subskiplsn"];
+        subname: PgCatalog.Types.PgSubscription["subname"];
+        subowner: PgCatalog.Types.PgSubscription["subowner"];
+        subenabled: PgCatalog.Types.PgSubscription["subenabled"];
+        subbinary: PgCatalog.Types.PgSubscription["subbinary"];
+        substream: PgCatalog.Types.PgSubscription["substream"];
+        subtwophasestate: PgCatalog.Types.PgSubscription["subtwophasestate"];
+        subdisableonerr: PgCatalog.Types.PgSubscription["subdisableonerr"];
+        subpasswordrequired: PgCatalog.Types.PgSubscription["subpasswordrequired"];
+        subrunasowner: PgCatalog.Types.PgSubscription["subrunasowner"];
+        subconninfo: PgCatalog.Types.PgSubscription["subconninfo"];
+        subslotname: PgCatalog.Types.PgSubscription["subslotname"] | null;
+        subsynccommit: PgCatalog.Types.PgSubscription["subsynccommit"];
+        subpublications: PgCatalog.Types.PgSubscription["subpublications"];
+        suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2157,9 +2281,37 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAttribute {
-      export type Record = Required<PgCatalog.Types.PgAttribute>;
-      export type Results = PgCatalog.Types.PgAttribute;
+      export type Record = {
+        attrelid: PgCatalog.Types.PgAttribute["attrelid"];
+        attname: PgCatalog.Types.PgAttribute["attname"];
+        atttypid: PgCatalog.Types.PgAttribute["atttypid"];
+        attlen: PgCatalog.Types.PgAttribute["attlen"];
+        attnum: PgCatalog.Types.PgAttribute["attnum"];
+        attcacheoff: PgCatalog.Types.PgAttribute["attcacheoff"];
+        atttypmod: PgCatalog.Types.PgAttribute["atttypmod"];
+        attndims: PgCatalog.Types.PgAttribute["attndims"];
+        attbyval: PgCatalog.Types.PgAttribute["attbyval"];
+        attalign: PgCatalog.Types.PgAttribute["attalign"];
+        attstorage: PgCatalog.Types.PgAttribute["attstorage"];
+        attcompression: PgCatalog.Types.PgAttribute["attcompression"];
+        attnotnull: PgCatalog.Types.PgAttribute["attnotnull"];
+        atthasdef: PgCatalog.Types.PgAttribute["atthasdef"];
+        atthasmissing: PgCatalog.Types.PgAttribute["atthasmissing"];
+        attidentity: PgCatalog.Types.PgAttribute["attidentity"];
+        attgenerated: PgCatalog.Types.PgAttribute["attgenerated"];
+        attisdropped: PgCatalog.Types.PgAttribute["attisdropped"];
+        attislocal: PgCatalog.Types.PgAttribute["attislocal"];
+        attinhcount: PgCatalog.Types.PgAttribute["attinhcount"];
+        attstattarget: PgCatalog.Types.PgAttribute["attstattarget"];
+        attcollation: PgCatalog.Types.PgAttribute["attcollation"];
+        attacl: PgCatalog.Types.PgAttribute["attacl"] | null;
+        attoptions: PgCatalog.Types.PgAttribute["attoptions"] | null;
+        attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
+        attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2174,9 +2326,41 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgProc {
-      export type Record = Required<PgCatalog.Types.PgProc>;
-      export type Results = PgCatalog.Types.PgProc;
+      export type Record = {
+        oid: PgCatalog.Types.PgProc["oid"];
+        proname: PgCatalog.Types.PgProc["proname"];
+        pronamespace: PgCatalog.Types.PgProc["pronamespace"];
+        proowner: PgCatalog.Types.PgProc["proowner"];
+        prolang: PgCatalog.Types.PgProc["prolang"];
+        procost: PgCatalog.Types.PgProc["procost"];
+        prorows: PgCatalog.Types.PgProc["prorows"];
+        provariadic: PgCatalog.Types.PgProc["provariadic"];
+        prosupport: PgCatalog.Types.PgProc["prosupport"];
+        prokind: PgCatalog.Types.PgProc["prokind"];
+        prosecdef: PgCatalog.Types.PgProc["prosecdef"];
+        proleakproof: PgCatalog.Types.PgProc["proleakproof"];
+        proisstrict: PgCatalog.Types.PgProc["proisstrict"];
+        proretset: PgCatalog.Types.PgProc["proretset"];
+        provolatile: PgCatalog.Types.PgProc["provolatile"];
+        proparallel: PgCatalog.Types.PgProc["proparallel"];
+        pronargs: PgCatalog.Types.PgProc["pronargs"];
+        pronargdefaults: PgCatalog.Types.PgProc["pronargdefaults"];
+        prorettype: PgCatalog.Types.PgProc["prorettype"];
+        proargtypes: PgCatalog.Types.PgProc["proargtypes"];
+        proallargtypes: PgCatalog.Types.PgProc["proallargtypes"] | null;
+        proargmodes: PgCatalog.Types.PgProc["proargmodes"] | null;
+        proargnames: PgCatalog.Types.PgProc["proargnames"] | null;
+        proargdefaults: PgCatalog.Types.PgProc["proargdefaults"] | null;
+        protrftypes: PgCatalog.Types.PgProc["protrftypes"] | null;
+        prosrc: PgCatalog.Types.PgProc["prosrc"];
+        probin: PgCatalog.Types.PgProc["probin"] | null;
+        prosqlbody: PgCatalog.Types.PgProc["prosqlbody"] | null;
+        proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
+        proacl: PgCatalog.Types.PgProc["proacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2190,9 +2374,44 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgClass {
-      export type Record = Required<PgCatalog.Types.PgClass>;
-      export type Results = PgCatalog.Types.PgClass;
+      export type Record = {
+        oid: PgCatalog.Types.PgClass["oid"];
+        relname: PgCatalog.Types.PgClass["relname"];
+        relnamespace: PgCatalog.Types.PgClass["relnamespace"];
+        reltype: PgCatalog.Types.PgClass["reltype"];
+        reloftype: PgCatalog.Types.PgClass["reloftype"];
+        relowner: PgCatalog.Types.PgClass["relowner"];
+        relam: PgCatalog.Types.PgClass["relam"];
+        relfilenode: PgCatalog.Types.PgClass["relfilenode"];
+        reltablespace: PgCatalog.Types.PgClass["reltablespace"];
+        relpages: PgCatalog.Types.PgClass["relpages"];
+        reltuples: PgCatalog.Types.PgClass["reltuples"];
+        relallvisible: PgCatalog.Types.PgClass["relallvisible"];
+        reltoastrelid: PgCatalog.Types.PgClass["reltoastrelid"];
+        relhasindex: PgCatalog.Types.PgClass["relhasindex"];
+        relisshared: PgCatalog.Types.PgClass["relisshared"];
+        relpersistence: PgCatalog.Types.PgClass["relpersistence"];
+        relkind: PgCatalog.Types.PgClass["relkind"];
+        relnatts: PgCatalog.Types.PgClass["relnatts"];
+        relchecks: PgCatalog.Types.PgClass["relchecks"];
+        relhasrules: PgCatalog.Types.PgClass["relhasrules"];
+        relhastriggers: PgCatalog.Types.PgClass["relhastriggers"];
+        relhassubclass: PgCatalog.Types.PgClass["relhassubclass"];
+        relrowsecurity: PgCatalog.Types.PgClass["relrowsecurity"];
+        relforcerowsecurity: PgCatalog.Types.PgClass["relforcerowsecurity"];
+        relispopulated: PgCatalog.Types.PgClass["relispopulated"];
+        relreplident: PgCatalog.Types.PgClass["relreplident"];
+        relispartition: PgCatalog.Types.PgClass["relispartition"];
+        relrewrite: PgCatalog.Types.PgClass["relrewrite"];
+        relfrozenxid: PgCatalog.Types.PgClass["relfrozenxid"];
+        relminmxid: PgCatalog.Types.PgClass["relminmxid"];
+        relacl: PgCatalog.Types.PgClass["relacl"] | null;
+        reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
+        relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2210,9 +2429,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAttrdef {
-      export type Record = Required<PgCatalog.Types.PgAttrdef>;
-      export type Results = PgCatalog.Types.PgAttrdef;
+      export type Record = {
+        oid: PgCatalog.Types.PgAttrdef["oid"];
+        adrelid: PgCatalog.Types.PgAttrdef["adrelid"];
+        adnum: PgCatalog.Types.PgAttrdef["adnum"];
+        adbin: PgCatalog.Types.PgAttrdef["adbin"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2226,9 +2451,37 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgConstraint {
-      export type Record = Required<PgCatalog.Types.PgConstraint>;
-      export type Results = PgCatalog.Types.PgConstraint;
+      export type Record = {
+        oid: PgCatalog.Types.PgConstraint["oid"];
+        conname: PgCatalog.Types.PgConstraint["conname"];
+        connamespace: PgCatalog.Types.PgConstraint["connamespace"];
+        contype: PgCatalog.Types.PgConstraint["contype"];
+        condeferrable: PgCatalog.Types.PgConstraint["condeferrable"];
+        condeferred: PgCatalog.Types.PgConstraint["condeferred"];
+        convalidated: PgCatalog.Types.PgConstraint["convalidated"];
+        conrelid: PgCatalog.Types.PgConstraint["conrelid"];
+        contypid: PgCatalog.Types.PgConstraint["contypid"];
+        conindid: PgCatalog.Types.PgConstraint["conindid"];
+        conparentid: PgCatalog.Types.PgConstraint["conparentid"];
+        confrelid: PgCatalog.Types.PgConstraint["confrelid"];
+        confupdtype: PgCatalog.Types.PgConstraint["confupdtype"];
+        confdeltype: PgCatalog.Types.PgConstraint["confdeltype"];
+        confmatchtype: PgCatalog.Types.PgConstraint["confmatchtype"];
+        conislocal: PgCatalog.Types.PgConstraint["conislocal"];
+        coninhcount: PgCatalog.Types.PgConstraint["coninhcount"];
+        connoinherit: PgCatalog.Types.PgConstraint["connoinherit"];
+        conkey: PgCatalog.Types.PgConstraint["conkey"] | null;
+        confkey: PgCatalog.Types.PgConstraint["confkey"] | null;
+        conpfeqop: PgCatalog.Types.PgConstraint["conpfeqop"] | null;
+        conppeqop: PgCatalog.Types.PgConstraint["conppeqop"] | null;
+        conffeqop: PgCatalog.Types.PgConstraint["conffeqop"] | null;
+        confdelsetcols: PgCatalog.Types.PgConstraint["confdelsetcols"] | null;
+        conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
+        conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2256,9 +2509,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgInherits {
-      export type Record = Required<PgCatalog.Types.PgInherits>;
-      export type Results = PgCatalog.Types.PgInherits;
+      export type Record = {
+        inhrelid: PgCatalog.Types.PgInherits["inhrelid"];
+        inhparent: PgCatalog.Types.PgInherits["inhparent"];
+        inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
+        inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -2272,9 +2531,32 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgIndex {
-      export type Record = Required<PgCatalog.Types.PgIndex>;
-      export type Results = PgCatalog.Types.PgIndex;
+      export type Record = {
+        indexrelid: PgCatalog.Types.PgIndex["indexrelid"];
+        indrelid: PgCatalog.Types.PgIndex["indrelid"];
+        indnatts: PgCatalog.Types.PgIndex["indnatts"];
+        indnkeyatts: PgCatalog.Types.PgIndex["indnkeyatts"];
+        indisunique: PgCatalog.Types.PgIndex["indisunique"];
+        indnullsnotdistinct: PgCatalog.Types.PgIndex["indnullsnotdistinct"];
+        indisprimary: PgCatalog.Types.PgIndex["indisprimary"];
+        indisexclusion: PgCatalog.Types.PgIndex["indisexclusion"];
+        indimmediate: PgCatalog.Types.PgIndex["indimmediate"];
+        indisclustered: PgCatalog.Types.PgIndex["indisclustered"];
+        indisvalid: PgCatalog.Types.PgIndex["indisvalid"];
+        indcheckxmin: PgCatalog.Types.PgIndex["indcheckxmin"];
+        indisready: PgCatalog.Types.PgIndex["indisready"];
+        indislive: PgCatalog.Types.PgIndex["indislive"];
+        indisreplident: PgCatalog.Types.PgIndex["indisreplident"];
+        indkey: PgCatalog.Types.PgIndex["indkey"];
+        indcollation: PgCatalog.Types.PgIndex["indcollation"];
+        indclass: PgCatalog.Types.PgIndex["indclass"];
+        indoption: PgCatalog.Types.PgIndex["indoption"];
+        indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
+        indpred: PgCatalog.Types.PgIndex["indpred"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -2286,9 +2568,26 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOperator {
-      export type Record = Required<PgCatalog.Types.PgOperator>;
-      export type Results = PgCatalog.Types.PgOperator;
+      export type Record = {
+        oid: PgCatalog.Types.PgOperator["oid"];
+        oprname: PgCatalog.Types.PgOperator["oprname"];
+        oprnamespace: PgCatalog.Types.PgOperator["oprnamespace"];
+        oprowner: PgCatalog.Types.PgOperator["oprowner"];
+        oprkind: PgCatalog.Types.PgOperator["oprkind"];
+        oprcanmerge: PgCatalog.Types.PgOperator["oprcanmerge"];
+        oprcanhash: PgCatalog.Types.PgOperator["oprcanhash"];
+        oprleft: PgCatalog.Types.PgOperator["oprleft"];
+        oprright: PgCatalog.Types.PgOperator["oprright"];
+        oprresult: PgCatalog.Types.PgOperator["oprresult"];
+        oprcom: PgCatalog.Types.PgOperator["oprcom"];
+        oprnegate: PgCatalog.Types.PgOperator["oprnegate"];
+        oprcode: PgCatalog.Types.PgOperator["oprcode"];
+        oprrest: PgCatalog.Types.PgOperator["oprrest"];
+        oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2303,9 +2602,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOpfamily {
-      export type Record = Required<PgCatalog.Types.PgOpfamily>;
-      export type Results = PgCatalog.Types.PgOpfamily;
+      export type Record = {
+        oid: PgCatalog.Types.PgOpfamily["oid"];
+        opfmethod: PgCatalog.Types.PgOpfamily["opfmethod"];
+        opfname: PgCatalog.Types.PgOpfamily["opfname"];
+        opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
+        opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2319,9 +2625,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOpclass {
-      export type Record = Required<PgCatalog.Types.PgOpclass>;
-      export type Results = PgCatalog.Types.PgOpclass;
+      export type Record = {
+        oid: PgCatalog.Types.PgOpclass["oid"];
+        opcmethod: PgCatalog.Types.PgOpclass["opcmethod"];
+        opcname: PgCatalog.Types.PgOpclass["opcname"];
+        opcnamespace: PgCatalog.Types.PgOpclass["opcnamespace"];
+        opcowner: PgCatalog.Types.PgOpclass["opcowner"];
+        opcfamily: PgCatalog.Types.PgOpclass["opcfamily"];
+        opcintype: PgCatalog.Types.PgOpclass["opcintype"];
+        opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
+        opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2335,9 +2652,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAm {
-      export type Record = Required<PgCatalog.Types.PgAm>;
-      export type Results = PgCatalog.Types.PgAm;
+      export type Record = {
+        oid: PgCatalog.Types.PgAm["oid"];
+        amname: PgCatalog.Types.PgAm["amname"];
+        amhandler: PgCatalog.Types.PgAm["amhandler"];
+        amtype: PgCatalog.Types.PgAm["amtype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -2350,9 +2673,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAmop {
-      export type Record = Required<PgCatalog.Types.PgAmop>;
-      export type Results = PgCatalog.Types.PgAmop;
+      export type Record = {
+        oid: PgCatalog.Types.PgAmop["oid"];
+        amopfamily: PgCatalog.Types.PgAmop["amopfamily"];
+        amoplefttype: PgCatalog.Types.PgAmop["amoplefttype"];
+        amoprighttype: PgCatalog.Types.PgAmop["amoprighttype"];
+        amopstrategy: PgCatalog.Types.PgAmop["amopstrategy"];
+        amoppurpose: PgCatalog.Types.PgAmop["amoppurpose"];
+        amopopr: PgCatalog.Types.PgAmop["amopopr"];
+        amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
+        amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -2374,9 +2708,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAmproc {
-      export type Record = Required<PgCatalog.Types.PgAmproc>;
-      export type Results = PgCatalog.Types.PgAmproc;
+      export type Record = {
+        oid: PgCatalog.Types.PgAmproc["oid"];
+        amprocfamily: PgCatalog.Types.PgAmproc["amprocfamily"];
+        amproclefttype: PgCatalog.Types.PgAmproc["amproclefttype"];
+        amprocrighttype: PgCatalog.Types.PgAmproc["amprocrighttype"];
+        amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
+        amproc: PgCatalog.Types.PgAmproc["amproc"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -2392,9 +2734,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLanguage {
-      export type Record = Required<PgCatalog.Types.PgLanguage>;
-      export type Results = PgCatalog.Types.PgLanguage;
+      export type Record = {
+        oid: PgCatalog.Types.PgLanguage["oid"];
+        lanname: PgCatalog.Types.PgLanguage["lanname"];
+        lanowner: PgCatalog.Types.PgLanguage["lanowner"];
+        lanispl: PgCatalog.Types.PgLanguage["lanispl"];
+        lanpltrusted: PgCatalog.Types.PgLanguage["lanpltrusted"];
+        lanplcallfoid: PgCatalog.Types.PgLanguage["lanplcallfoid"];
+        laninline: PgCatalog.Types.PgLanguage["laninline"];
+        lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
+        lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -2407,9 +2760,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobjectMetadata {
-      export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
-      export type Results = PgCatalog.Types.PgLargeobjectMetadata;
+      export type Record = {
+        oid: PgCatalog.Types.PgLargeobjectMetadata["oid"];
+        lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
+        lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2418,9 +2776,33 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAggregate {
-      export type Record = Required<PgCatalog.Types.PgAggregate>;
-      export type Results = PgCatalog.Types.PgAggregate;
+      export type Record = {
+        aggfnoid: PgCatalog.Types.PgAggregate["aggfnoid"];
+        aggkind: PgCatalog.Types.PgAggregate["aggkind"];
+        aggnumdirectargs: PgCatalog.Types.PgAggregate["aggnumdirectargs"];
+        aggtransfn: PgCatalog.Types.PgAggregate["aggtransfn"];
+        aggfinalfn: PgCatalog.Types.PgAggregate["aggfinalfn"];
+        aggcombinefn: PgCatalog.Types.PgAggregate["aggcombinefn"];
+        aggserialfn: PgCatalog.Types.PgAggregate["aggserialfn"];
+        aggdeserialfn: PgCatalog.Types.PgAggregate["aggdeserialfn"];
+        aggmtransfn: PgCatalog.Types.PgAggregate["aggmtransfn"];
+        aggminvtransfn: PgCatalog.Types.PgAggregate["aggminvtransfn"];
+        aggmfinalfn: PgCatalog.Types.PgAggregate["aggmfinalfn"];
+        aggfinalextra: PgCatalog.Types.PgAggregate["aggfinalextra"];
+        aggmfinalextra: PgCatalog.Types.PgAggregate["aggmfinalextra"];
+        aggfinalmodify: PgCatalog.Types.PgAggregate["aggfinalmodify"];
+        aggmfinalmodify: PgCatalog.Types.PgAggregate["aggmfinalmodify"];
+        aggsortop: PgCatalog.Types.PgAggregate["aggsortop"];
+        aggtranstype: PgCatalog.Types.PgAggregate["aggtranstype"];
+        aggtransspace: PgCatalog.Types.PgAggregate["aggtransspace"];
+        aggmtranstype: PgCatalog.Types.PgAggregate["aggmtranstype"];
+        aggmtransspace: PgCatalog.Types.PgAggregate["aggmtransspace"];
+        agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
+        aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
@@ -2429,9 +2811,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExt {
-      export type Record = Required<PgCatalog.Types.PgStatisticExt>;
-      export type Results = PgCatalog.Types.PgStatisticExt;
+      export type Record = {
+        oid: PgCatalog.Types.PgStatisticExt["oid"];
+        stxrelid: PgCatalog.Types.PgStatisticExt["stxrelid"];
+        stxname: PgCatalog.Types.PgStatisticExt["stxname"];
+        stxnamespace: PgCatalog.Types.PgStatisticExt["stxnamespace"];
+        stxowner: PgCatalog.Types.PgStatisticExt["stxowner"];
+        stxstattarget: PgCatalog.Types.PgStatisticExt["stxstattarget"];
+        stxkeys: PgCatalog.Types.PgStatisticExt["stxkeys"];
+        stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
+        stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2448,9 +2841,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgRewrite {
-      export type Record = Required<PgCatalog.Types.PgRewrite>;
-      export type Results = PgCatalog.Types.PgRewrite;
+      export type Record = {
+        oid: PgCatalog.Types.PgRewrite["oid"];
+        rulename: PgCatalog.Types.PgRewrite["rulename"];
+        evClass: PgCatalog.Types.PgRewrite["evClass"];
+        evType: PgCatalog.Types.PgRewrite["evType"];
+        evEnabled: PgCatalog.Types.PgRewrite["evEnabled"];
+        isInstead: PgCatalog.Types.PgRewrite["isInstead"];
+        evQual: PgCatalog.Types.PgRewrite["evQual"];
+        evAction: PgCatalog.Types.PgRewrite["evAction"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -2464,9 +2867,30 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTrigger {
-      export type Record = Required<PgCatalog.Types.PgTrigger>;
-      export type Results = PgCatalog.Types.PgTrigger;
+      export type Record = {
+        oid: PgCatalog.Types.PgTrigger["oid"];
+        tgrelid: PgCatalog.Types.PgTrigger["tgrelid"];
+        tgparentid: PgCatalog.Types.PgTrigger["tgparentid"];
+        tgname: PgCatalog.Types.PgTrigger["tgname"];
+        tgfoid: PgCatalog.Types.PgTrigger["tgfoid"];
+        tgtype: PgCatalog.Types.PgTrigger["tgtype"];
+        tgenabled: PgCatalog.Types.PgTrigger["tgenabled"];
+        tgisinternal: PgCatalog.Types.PgTrigger["tgisinternal"];
+        tgconstrrelid: PgCatalog.Types.PgTrigger["tgconstrrelid"];
+        tgconstrindid: PgCatalog.Types.PgTrigger["tgconstrindid"];
+        tgconstraint: PgCatalog.Types.PgTrigger["tgconstraint"];
+        tgdeferrable: PgCatalog.Types.PgTrigger["tgdeferrable"];
+        tginitdeferred: PgCatalog.Types.PgTrigger["tginitdeferred"];
+        tgnargs: PgCatalog.Types.PgTrigger["tgnargs"];
+        tgattr: PgCatalog.Types.PgTrigger["tgattr"];
+        tgargs: PgCatalog.Types.PgTrigger["tgargs"];
+        tgqual: PgCatalog.Types.PgTrigger["tgqual"] | null;
+        tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
+        tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2483,9 +2907,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgEventTrigger {
-      export type Record = Required<PgCatalog.Types.PgEventTrigger>;
-      export type Results = PgCatalog.Types.PgEventTrigger;
+      export type Record = {
+        oid: PgCatalog.Types.PgEventTrigger["oid"];
+        evtname: PgCatalog.Types.PgEventTrigger["evtname"];
+        evtevent: PgCatalog.Types.PgEventTrigger["evtevent"];
+        evtowner: PgCatalog.Types.PgEventTrigger["evtowner"];
+        evtfoid: PgCatalog.Types.PgEventTrigger["evtfoid"];
+        evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
+        evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -2498,9 +2931,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDescription {
-      export type Record = Required<PgCatalog.Types.PgDescription>;
-      export type Results = PgCatalog.Types.PgDescription;
+      export type Record = {
+        objoid: PgCatalog.Types.PgDescription["objoid"];
+        classoid: PgCatalog.Types.PgDescription["classoid"];
+        objsubid: PgCatalog.Types.PgDescription["objsubid"];
+        description: PgCatalog.Types.PgDescription["description"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2511,9 +2950,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgCast {
-      export type Record = Required<PgCatalog.Types.PgCast>;
-      export type Results = PgCatalog.Types.PgCast;
+      export type Record = {
+        oid: PgCatalog.Types.PgCast["oid"];
+        castsource: PgCatalog.Types.PgCast["castsource"];
+        casttarget: PgCatalog.Types.PgCast["casttarget"];
+        castfunc: PgCatalog.Types.PgCast["castfunc"];
+        castcontext: PgCatalog.Types.PgCast["castcontext"];
+        castmethod: PgCatalog.Types.PgCast["castmethod"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -2527,9 +2974,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgEnum {
-      export type Record = Required<PgCatalog.Types.PgEnum>;
-      export type Results = PgCatalog.Types.PgEnum;
+      export type Record = {
+        oid: PgCatalog.Types.PgEnum["oid"];
+        enumtypid: PgCatalog.Types.PgEnum["enumtypid"];
+        enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
+        enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -2548,9 +3001,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgNamespace {
-      export type Record = Required<PgCatalog.Types.PgNamespace>;
-      export type Results = PgCatalog.Types.PgNamespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgNamespace["oid"];
+        nspname: PgCatalog.Types.PgNamespace["nspname"];
+        nspowner: PgCatalog.Types.PgNamespace["nspowner"];
+        nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -2563,9 +3022,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgConversion {
-      export type Record = Required<PgCatalog.Types.PgConversion>;
-      export type Results = PgCatalog.Types.PgConversion;
+      export type Record = {
+        oid: PgCatalog.Types.PgConversion["oid"];
+        conname: PgCatalog.Types.PgConversion["conname"];
+        connamespace: PgCatalog.Types.PgConversion["connamespace"];
+        conowner: PgCatalog.Types.PgConversion["conowner"];
+        conforencoding: PgCatalog.Types.PgConversion["conforencoding"];
+        contoencoding: PgCatalog.Types.PgConversion["contoencoding"];
+        conproc: PgCatalog.Types.PgConversion["conproc"];
+        condefault: PgCatalog.Types.PgConversion["condefault"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2586,9 +3055,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDepend {
-      export type Record = Required<PgCatalog.Types.PgDepend>;
-      export type Results = PgCatalog.Types.PgDepend;
+      export type Record = {
+        classid: PgCatalog.Types.PgDepend["classid"];
+        objid: PgCatalog.Types.PgDepend["objid"];
+        objsubid: PgCatalog.Types.PgDepend["objsubid"];
+        refclassid: PgCatalog.Types.PgDepend["refclassid"];
+        refobjid: PgCatalog.Types.PgDepend["refobjid"];
+        refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
+        deptype: PgCatalog.Types.PgDepend["deptype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -2605,9 +3083,28 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDatabase {
-      export type Record = Required<PgCatalog.Types.PgDatabase>;
-      export type Results = PgCatalog.Types.PgDatabase;
+      export type Record = {
+        oid: PgCatalog.Types.PgDatabase["oid"];
+        datname: PgCatalog.Types.PgDatabase["datname"];
+        datdba: PgCatalog.Types.PgDatabase["datdba"];
+        encoding: PgCatalog.Types.PgDatabase["encoding"];
+        datlocprovider: PgCatalog.Types.PgDatabase["datlocprovider"];
+        datistemplate: PgCatalog.Types.PgDatabase["datistemplate"];
+        datallowconn: PgCatalog.Types.PgDatabase["datallowconn"];
+        datconnlimit: PgCatalog.Types.PgDatabase["datconnlimit"];
+        datfrozenxid: PgCatalog.Types.PgDatabase["datfrozenxid"];
+        datminmxid: PgCatalog.Types.PgDatabase["datminmxid"];
+        dattablespace: PgCatalog.Types.PgDatabase["dattablespace"];
+        datcollate: PgCatalog.Types.PgDatabase["datcollate"];
+        datctype: PgCatalog.Types.PgDatabase["datctype"];
+        daticulocale: PgCatalog.Types.PgDatabase["daticulocale"] | null;
+        daticurules: PgCatalog.Types.PgDatabase["daticurules"] | null;
+        datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
+        datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -2620,9 +3117,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDbRoleSetting {
-      export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
-      export type Results = PgCatalog.Types.PgDbRoleSetting;
+      export type Record = {
+        setdatabase: PgCatalog.Types.PgDbRoleSetting["setdatabase"];
+        setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
+        setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
@@ -2632,9 +3134,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTablespace {
-      export type Record = Required<PgCatalog.Types.PgTablespace>;
-      export type Results = PgCatalog.Types.PgTablespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgTablespace["oid"];
+        spcname: PgCatalog.Types.PgTablespace["spcname"];
+        spcowner: PgCatalog.Types.PgTablespace["spcowner"];
+        spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
+        spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2646,9 +3155,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthMembers {
-      export type Record = Required<PgCatalog.Types.PgAuthMembers>;
-      export type Results = PgCatalog.Types.PgAuthMembers;
+      export type Record = {
+        oid: PgCatalog.Types.PgAuthMembers["oid"];
+        roleid: PgCatalog.Types.PgAuthMembers["roleid"];
+        member: PgCatalog.Types.PgAuthMembers["member"];
+        grantor: PgCatalog.Types.PgAuthMembers["grantor"];
+        adminOption: PgCatalog.Types.PgAuthMembers["adminOption"];
+        inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
+        setOption: PgCatalog.Types.PgAuthMembers["setOption"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -2672,9 +3190,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShdepend {
-      export type Record = Required<PgCatalog.Types.PgShdepend>;
-      export type Results = PgCatalog.Types.PgShdepend;
+      export type Record = {
+        dbid: PgCatalog.Types.PgShdepend["dbid"];
+        classid: PgCatalog.Types.PgShdepend["classid"];
+        objid: PgCatalog.Types.PgShdepend["objid"];
+        objsubid: PgCatalog.Types.PgShdepend["objsubid"];
+        refclassid: PgCatalog.Types.PgShdepend["refclassid"];
+        refobjid: PgCatalog.Types.PgShdepend["refobjid"];
+        deptype: PgCatalog.Types.PgShdepend["deptype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -2691,9 +3218,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShdescription {
-      export type Record = Required<PgCatalog.Types.PgShdescription>;
-      export type Results = PgCatalog.Types.PgShdescription;
+      export type Record = {
+        objoid: PgCatalog.Types.PgShdescription["objoid"];
+        classoid: PgCatalog.Types.PgShdescription["classoid"];
+        description: PgCatalog.Types.PgShdescription["description"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2703,9 +3235,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfig {
-      export type Record = Required<PgCatalog.Types.PgTsConfig>;
-      export type Results = PgCatalog.Types.PgTsConfig;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsConfig["oid"];
+        cfgname: PgCatalog.Types.PgTsConfig["cfgname"];
+        cfgnamespace: PgCatalog.Types.PgTsConfig["cfgnamespace"];
+        cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
+        cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -2719,9 +3258,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfigMap {
-      export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
-      export type Results = PgCatalog.Types.PgTsConfigMap;
+      export type Record = {
+        mapcfg: PgCatalog.Types.PgTsConfigMap["mapcfg"];
+        maptokentype: PgCatalog.Types.PgTsConfigMap["maptokentype"];
+        mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
+        mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -2732,9 +3277,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsDict {
-      export type Record = Required<PgCatalog.Types.PgTsDict>;
-      export type Results = PgCatalog.Types.PgTsDict;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsDict["oid"];
+        dictname: PgCatalog.Types.PgTsDict["dictname"];
+        dictnamespace: PgCatalog.Types.PgTsDict["dictnamespace"];
+        dictowner: PgCatalog.Types.PgTsDict["dictowner"];
+        dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
+        dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -2748,9 +3301,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsParser {
-      export type Record = Required<PgCatalog.Types.PgTsParser>;
-      export type Results = PgCatalog.Types.PgTsParser;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsParser["oid"];
+        prsname: PgCatalog.Types.PgTsParser["prsname"];
+        prsnamespace: PgCatalog.Types.PgTsParser["prsnamespace"];
+        prsstart: PgCatalog.Types.PgTsParser["prsstart"];
+        prstoken: PgCatalog.Types.PgTsParser["prstoken"];
+        prsend: PgCatalog.Types.PgTsParser["prsend"];
+        prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
+        prslextype: PgCatalog.Types.PgTsParser["prslextype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2763,9 +3326,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsTemplate {
-      export type Record = Required<PgCatalog.Types.PgTsTemplate>;
-      export type Results = PgCatalog.Types.PgTsTemplate;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsTemplate["oid"];
+        tmplname: PgCatalog.Types.PgTsTemplate["tmplname"];
+        tmplnamespace: PgCatalog.Types.PgTsTemplate["tmplnamespace"];
+        tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
+        tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2778,9 +3348,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgExtension {
-      export type Record = Required<PgCatalog.Types.PgExtension>;
-      export type Results = PgCatalog.Types.PgExtension;
+      export type Record = {
+        oid: PgCatalog.Types.PgExtension["oid"];
+        extname: PgCatalog.Types.PgExtension["extname"];
+        extowner: PgCatalog.Types.PgExtension["extowner"];
+        extnamespace: PgCatalog.Types.PgExtension["extnamespace"];
+        extrelocatable: PgCatalog.Types.PgExtension["extrelocatable"];
+        extversion: PgCatalog.Types.PgExtension["extversion"];
+        extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
+        extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -2793,9 +3373,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignDataWrapper {
-      export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
-      export type Results = PgCatalog.Types.PgForeignDataWrapper;
+      export type Record = {
+        oid: PgCatalog.Types.PgForeignDataWrapper["oid"];
+        fdwname: PgCatalog.Types.PgForeignDataWrapper["fdwname"];
+        fdwowner: PgCatalog.Types.PgForeignDataWrapper["fdwowner"];
+        fdwhandler: PgCatalog.Types.PgForeignDataWrapper["fdwhandler"];
+        fdwvalidator: PgCatalog.Types.PgForeignDataWrapper["fdwvalidator"];
+        fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
+        fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -2808,9 +3397,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignServer {
-      export type Record = Required<PgCatalog.Types.PgForeignServer>;
-      export type Results = PgCatalog.Types.PgForeignServer;
+      export type Record = {
+        oid: PgCatalog.Types.PgForeignServer["oid"];
+        srvname: PgCatalog.Types.PgForeignServer["srvname"];
+        srvowner: PgCatalog.Types.PgForeignServer["srvowner"];
+        srvfdw: PgCatalog.Types.PgForeignServer["srvfdw"];
+        srvtype: PgCatalog.Types.PgForeignServer["srvtype"] | null;
+        srvversion: PgCatalog.Types.PgForeignServer["srvversion"] | null;
+        srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
+        srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2822,9 +3421,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPolicy {
-      export type Record = Required<PgCatalog.Types.PgPolicy>;
-      export type Results = PgCatalog.Types.PgPolicy;
+      export type Record = {
+        oid: PgCatalog.Types.PgPolicy["oid"];
+        polname: PgCatalog.Types.PgPolicy["polname"];
+        polrelid: PgCatalog.Types.PgPolicy["polrelid"];
+        polcmd: PgCatalog.Types.PgPolicy["polcmd"];
+        polpermissive: PgCatalog.Types.PgPolicy["polpermissive"];
+        polroles: PgCatalog.Types.PgPolicy["polroles"];
+        polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
+        polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2837,9 +3446,13 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgReplicationOrigin {
-      export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
-      export type Results = PgCatalog.Types.PgReplicationOrigin;
+      export type Record = {
+        roident: PgCatalog.Types.PgReplicationOrigin["roident"];
+        roname: PgCatalog.Types.PgReplicationOrigin["roname"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -2851,9 +3464,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDefaultAcl {
-      export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
-      export type Results = PgCatalog.Types.PgDefaultAcl;
+      export type Record = {
+        oid: PgCatalog.Types.PgDefaultAcl["oid"];
+        defaclrole: PgCatalog.Types.PgDefaultAcl["defaclrole"];
+        defaclnamespace: PgCatalog.Types.PgDefaultAcl["defaclnamespace"];
+        defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
+        defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -2868,9 +3488,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgInitPrivs {
-      export type Record = Required<PgCatalog.Types.PgInitPrivs>;
-      export type Results = PgCatalog.Types.PgInitPrivs;
+      export type Record = {
+        objoid: PgCatalog.Types.PgInitPrivs["objoid"];
+        classoid: PgCatalog.Types.PgInitPrivs["classoid"];
+        objsubid: PgCatalog.Types.PgInitPrivs["objsubid"];
+        privtype: PgCatalog.Types.PgInitPrivs["privtype"];
+        initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2881,9 +3508,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSeclabel {
-      export type Record = Required<PgCatalog.Types.PgSeclabel>;
-      export type Results = PgCatalog.Types.PgSeclabel;
+      export type Record = {
+        objoid: PgCatalog.Types.PgSeclabel["objoid"];
+        classoid: PgCatalog.Types.PgSeclabel["classoid"];
+        objsubid: PgCatalog.Types.PgSeclabel["objsubid"];
+        provider: PgCatalog.Types.PgSeclabel["provider"];
+        label: PgCatalog.Types.PgSeclabel["label"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2895,9 +3529,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShseclabel {
-      export type Record = Required<PgCatalog.Types.PgShseclabel>;
-      export type Results = PgCatalog.Types.PgShseclabel;
+      export type Record = {
+        objoid: PgCatalog.Types.PgShseclabel["objoid"];
+        classoid: PgCatalog.Types.PgShseclabel["classoid"];
+        provider: PgCatalog.Types.PgShseclabel["provider"];
+        label: PgCatalog.Types.PgShseclabel["label"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2908,9 +3548,23 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgCollation {
-      export type Record = Required<PgCatalog.Types.PgCollation>;
-      export type Results = PgCatalog.Types.PgCollation;
+      export type Record = {
+        oid: PgCatalog.Types.PgCollation["oid"];
+        collname: PgCatalog.Types.PgCollation["collname"];
+        collnamespace: PgCatalog.Types.PgCollation["collnamespace"];
+        collowner: PgCatalog.Types.PgCollation["collowner"];
+        collprovider: PgCatalog.Types.PgCollation["collprovider"];
+        collisdeterministic: PgCatalog.Types.PgCollation["collisdeterministic"];
+        collencoding: PgCatalog.Types.PgCollation["collencoding"];
+        collcollate: PgCatalog.Types.PgCollation["collcollate"] | null;
+        collctype: PgCatalog.Types.PgCollation["collctype"] | null;
+        colliculocale: PgCatalog.Types.PgCollation["colliculocale"] | null;
+        collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
+        collversion: PgCatalog.Types.PgCollation["collversion"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -2925,9 +3579,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgParameterAcl {
-      export type Record = Required<PgCatalog.Types.PgParameterAcl>;
-      export type Results = PgCatalog.Types.PgParameterAcl;
+      export type Record = {
+        oid: PgCatalog.Types.PgParameterAcl["oid"];
+        parname: PgCatalog.Types.PgParameterAcl["parname"];
+        paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2939,9 +3598,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPartitionedTable {
-      export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
-      export type Results = PgCatalog.Types.PgPartitionedTable;
+      export type Record = {
+        partrelid: PgCatalog.Types.PgPartitionedTable["partrelid"];
+        partstrat: PgCatalog.Types.PgPartitionedTable["partstrat"];
+        partnatts: PgCatalog.Types.PgPartitionedTable["partnatts"];
+        partdefid: PgCatalog.Types.PgPartitionedTable["partdefid"];
+        partattrs: PgCatalog.Types.PgPartitionedTable["partattrs"];
+        partclass: PgCatalog.Types.PgPartitionedTable["partclass"];
+        partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
+        partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
@@ -2950,9 +3619,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgRange {
-      export type Record = Required<PgCatalog.Types.PgRange>;
-      export type Results = PgCatalog.Types.PgRange;
+      export type Record = {
+        rngtypid: PgCatalog.Types.PgRange["rngtypid"];
+        rngsubtype: PgCatalog.Types.PgRange["rngsubtype"];
+        rngmultitypid: PgCatalog.Types.PgRange["rngmultitypid"];
+        rngcollation: PgCatalog.Types.PgRange["rngcollation"];
+        rngsubopc: PgCatalog.Types.PgRange["rngsubopc"];
+        rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
+        rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -2965,9 +3643,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTransform {
-      export type Record = Required<PgCatalog.Types.PgTransform>;
-      export type Results = PgCatalog.Types.PgTransform;
+      export type Record = {
+        oid: PgCatalog.Types.PgTransform["oid"];
+        trftype: PgCatalog.Types.PgTransform["trftype"];
+        trflang: PgCatalog.Types.PgTransform["trflang"];
+        trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
+        trftosql: PgCatalog.Types.PgTransform["trftosql"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2980,9 +3665,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSequence {
-      export type Record = Required<PgCatalog.Types.PgSequence>;
-      export type Results = PgCatalog.Types.PgSequence;
+      export type Record = {
+        seqrelid: PgCatalog.Types.PgSequence["seqrelid"];
+        seqtypid: PgCatalog.Types.PgSequence["seqtypid"];
+        seqstart: PgCatalog.Types.PgSequence["seqstart"];
+        seqincrement: PgCatalog.Types.PgSequence["seqincrement"];
+        seqmax: PgCatalog.Types.PgSequence["seqmax"];
+        seqmin: PgCatalog.Types.PgSequence["seqmin"];
+        seqcache: PgCatalog.Types.PgSequence["seqcache"];
+        seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
@@ -2991,9 +3686,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublication {
-      export type Record = Required<PgCatalog.Types.PgPublication>;
-      export type Results = PgCatalog.Types.PgPublication;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublication["oid"];
+        pubname: PgCatalog.Types.PgPublication["pubname"];
+        pubowner: PgCatalog.Types.PgPublication["pubowner"];
+        puballtables: PgCatalog.Types.PgPublication["puballtables"];
+        pubinsert: PgCatalog.Types.PgPublication["pubinsert"];
+        pubupdate: PgCatalog.Types.PgPublication["pubupdate"];
+        pubdelete: PgCatalog.Types.PgPublication["pubdelete"];
+        pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
+        pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3005,9 +3711,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationNamespace {
-      export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
-      export type Results = PgCatalog.Types.PgPublicationNamespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublicationNamespace["oid"];
+        pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
+        pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3020,9 +3731,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationRel {
-      export type Record = Required<PgCatalog.Types.PgPublicationRel>;
-      export type Results = PgCatalog.Types.PgPublicationRel;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublicationRel["oid"];
+        prpubid: PgCatalog.Types.PgPublicationRel["prpubid"];
+        prrelid: PgCatalog.Types.PgPublicationRel["prrelid"];
+        prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
+        prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3039,9 +3757,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscriptionRel {
-      export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
-      export type Results = PgCatalog.Types.PgSubscriptionRel;
+      export type Record = {
+        srsubid: PgCatalog.Types.PgSubscriptionRel["srsubid"];
+        srrelid: PgCatalog.Types.PgSubscriptionRel["srrelid"];
+        srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
+        srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
@@ -3051,9 +3775,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobject {
-      export type Record = Required<PgCatalog.Types.PgLargeobject>;
-      export type Results = PgCatalog.Types.PgLargeobject;
+      export type Record = {
+        loid: PgCatalog.Types.PgLargeobject["loid"];
+        pageno: PgCatalog.Types.PgLargeobject["pageno"];
+        data: PgCatalog.Types.PgLargeobject["data"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -3279,40 +4008,40 @@ export namespace Public {
   }
   export namespace Procedures {
     export namespace FilmInStock {
-      export type Arguments = {
+      export type Parameters = {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
       export type Results = Public.Types.FilmInStockResults;
     }
     export namespace FilmNotInStock {
-      export type Arguments = {
+      export type Parameters = {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
       export type Results = Public.Types.FilmNotInStockResults;
     }
     export namespace GetCustomerBalance {
-      export type Arguments = {
+      export type Parameters = {
         pCustomerId: PgCatalog.Types.Int4;
         pEffectiveDate: PgCatalog.Types.Timestamp;
       };
       export type Results = PgCatalog.Types.Numeric;
     }
     export namespace InventoryHeldByCustomer {
-      export type Arguments = { pInventoryId: PgCatalog.Types.Int4 };
+      export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
       export type Results = PgCatalog.Types.Int4;
     }
     export namespace InventoryInStock {
-      export type Arguments = { pInventoryId: PgCatalog.Types.Int4 };
+      export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace LastDay {
-      export type Arguments = { argument_0: PgCatalog.Types.Timestamp };
+      export type Parameters = { argument_0: PgCatalog.Types.Timestamp };
       export type Results = PgCatalog.Types.Date;
     }
     export namespace RewardsReport {
-      export type Arguments = {
+      export type Parameters = {
         minMonthlyPurchases: PgCatalog.Types.Int4;
         minDollarAmountPurchased: PgCatalog.Types.Numeric;
       };
@@ -3321,9 +4050,14 @@ export namespace Public {
   }
   export namespace Tables {
     export namespace FilmActor {
-      export type Record = Required<Public.Types.FilmActor>;
-      export type Results = Public.Types.FilmActor;
+      export type Record = {
+        actorId: Public.Types.FilmActor["actorId"];
+        filmId: Public.Types.FilmActor["filmId"];
+        lastUpdate: Public.Types.FilmActor["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByActorIdFilmId = {
         actorId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
@@ -3336,9 +4070,19 @@ export namespace Public {
       export type Optional = Pick<Record, "lastUpdate">;
     }
     export namespace Address {
-      export type Record = Required<Public.Types.Address>;
-      export type Results = Public.Types.Address;
+      export type Record = {
+        addressId: Public.Types.Address["addressId"];
+        address: Public.Types.Address["address"];
+        address2: Public.Types.Address["address2"] | null;
+        district: Public.Types.Address["district"];
+        cityId: Public.Types.Address["cityId"];
+        postalCode: Public.Types.Address["postalCode"] | null;
+        phone: Public.Types.Address["phone"];
+        lastUpdate: Public.Types.Address["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int4;
       };
@@ -3350,9 +4094,15 @@ export namespace Public {
       export type Optional = Pick<Record, "addressId" | "lastUpdate">;
     }
     export namespace City {
-      export type Record = Required<Public.Types.City>;
-      export type Results = Public.Types.City;
+      export type Record = {
+        cityId: Public.Types.City["cityId"];
+        city: Public.Types.City["city"];
+        countryId: Public.Types.City["countryId"];
+        lastUpdate: Public.Types.City["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
       };
@@ -3364,9 +4114,21 @@ export namespace Public {
       export type Optional = Pick<Record, "cityId" | "lastUpdate">;
     }
     export namespace Customer {
-      export type Record = Required<Public.Types.Customer>;
-      export type Results = Public.Types.Customer;
+      export type Record = {
+        customerId: Public.Types.Customer["customerId"];
+        storeId: Public.Types.Customer["storeId"];
+        firstName: Public.Types.Customer["firstName"];
+        lastName: Public.Types.Customer["lastName"];
+        email: Public.Types.Customer["email"] | null;
+        addressId: Public.Types.Customer["addressId"];
+        activebool: Public.Types.Customer["activebool"];
+        createDate: Public.Types.Customer["createDate"];
+        lastUpdate: Public.Types.Customer["lastUpdate"] | null;
+        active: Public.Types.Customer["active"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int2;
       };
@@ -3389,9 +4151,15 @@ export namespace Public {
       >;
     }
     export namespace Actor {
-      export type Record = Required<Public.Types.Actor>;
-      export type Results = Public.Types.Actor;
+      export type Record = {
+        actorId: Public.Types.Actor["actorId"];
+        firstName: Public.Types.Actor["firstName"];
+        lastName: Public.Types.Actor["lastName"];
+        lastUpdate: Public.Types.Actor["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByActorId = {
         actorId: PgCatalog.Types.Int4;
       };
@@ -3403,9 +4171,14 @@ export namespace Public {
       export type Optional = Pick<Record, "actorId" | "lastUpdate">;
     }
     export namespace FilmCategory {
-      export type Record = Required<Public.Types.FilmCategory>;
-      export type Results = Public.Types.FilmCategory;
+      export type Record = {
+        filmId: Public.Types.FilmCategory["filmId"];
+        categoryId: Public.Types.FilmCategory["categoryId"];
+        lastUpdate: Public.Types.FilmCategory["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFilmIdCategoryId = {
         filmId: PgCatalog.Types.Int2;
         categoryId: PgCatalog.Types.Int2;
@@ -3415,9 +4188,15 @@ export namespace Public {
       export type Optional = Pick<Record, "lastUpdate">;
     }
     export namespace Inventory {
-      export type Record = Required<Public.Types.Inventory>;
-      export type Results = Public.Types.Inventory;
+      export type Record = {
+        inventoryId: Public.Types.Inventory["inventoryId"];
+        filmId: Public.Types.Inventory["filmId"];
+        storeId: Public.Types.Inventory["storeId"];
+        lastUpdate: Public.Types.Inventory["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -3430,9 +4209,14 @@ export namespace Public {
       export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
     }
     export namespace Category {
-      export type Record = Required<Public.Types.Category>;
-      export type Results = Public.Types.Category;
+      export type Record = {
+        categoryId: Public.Types.Category["categoryId"];
+        name: Public.Types.Category["name"];
+        lastUpdate: Public.Types.Category["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
       };
@@ -3441,9 +4225,14 @@ export namespace Public {
       export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
     }
     export namespace Country {
-      export type Record = Required<Public.Types.Country>;
-      export type Results = Public.Types.Country;
+      export type Record = {
+        countryId: Public.Types.Country["countryId"];
+        country: Public.Types.Country["country"];
+        lastUpdate: Public.Types.Country["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
       };
@@ -3452,9 +4241,14 @@ export namespace Public {
       export type Optional = Pick<Record, "countryId" | "lastUpdate">;
     }
     export namespace Language {
-      export type Record = Required<Public.Types.Language>;
-      export type Results = Public.Types.Language;
+      export type Record = {
+        languageId: Public.Types.Language["languageId"];
+        name: Public.Types.Language["name"];
+        lastUpdate: Public.Types.Language["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
       };
@@ -3463,9 +4257,18 @@ export namespace Public {
       export type Optional = Pick<Record, "languageId" | "lastUpdate">;
     }
     export namespace Rental {
-      export type Record = Required<Public.Types.Rental>;
-      export type Results = Public.Types.Rental;
+      export type Record = {
+        rentalId: Public.Types.Rental["rentalId"];
+        rentalDate: Public.Types.Rental["rentalDate"];
+        inventoryId: Public.Types.Rental["inventoryId"];
+        customerId: Public.Types.Rental["customerId"];
+        returnDate: Public.Types.Rental["returnDate"] | null;
+        staffId: Public.Types.Rental["staffId"];
+        lastUpdate: Public.Types.Rental["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -3484,9 +4287,22 @@ export namespace Public {
       export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
     }
     export namespace Staff {
-      export type Record = Required<Public.Types.Staff>;
-      export type Results = Public.Types.Staff;
+      export type Record = {
+        staffId: Public.Types.Staff["staffId"];
+        firstName: Public.Types.Staff["firstName"];
+        lastName: Public.Types.Staff["lastName"];
+        addressId: Public.Types.Staff["addressId"];
+        email: Public.Types.Staff["email"] | null;
+        storeId: Public.Types.Staff["storeId"];
+        active: Public.Types.Staff["active"];
+        username: Public.Types.Staff["username"];
+        password: Public.Types.Staff["password"] | null;
+        lastUpdate: Public.Types.Staff["lastUpdate"];
+        picture: Public.Types.Staff["picture"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int4;
       };
@@ -3495,9 +4311,15 @@ export namespace Public {
       export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
     }
     export namespace Store {
-      export type Record = Required<Public.Types.Store>;
-      export type Results = Public.Types.Store;
+      export type Record = {
+        storeId: Public.Types.Store["storeId"];
+        managerStaffId: Public.Types.Store["managerStaffId"];
+        addressId: Public.Types.Store["addressId"];
+        lastUpdate: Public.Types.Store["lastUpdate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByManagerStaffId = {
         managerStaffId: PgCatalog.Types.Int2;
       };
@@ -3510,9 +4332,17 @@ export namespace Public {
       export type Optional = Pick<Record, "storeId" | "lastUpdate">;
     }
     export namespace Payment {
-      export type Record = Required<Public.Types.Payment>;
-      export type Results = Public.Types.Payment;
+      export type Record = {
+        paymentId: Public.Types.Payment["paymentId"];
+        customerId: Public.Types.Payment["customerId"];
+        staffId: Public.Types.Payment["staffId"];
+        rentalId: Public.Types.Payment["rentalId"];
+        amount: Public.Types.Payment["amount"];
+        paymentDate: Public.Types.Payment["paymentDate"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int2;
       };
@@ -3532,9 +4362,24 @@ export namespace Public {
       export type Optional = Pick<Record, "paymentId">;
     }
     export namespace Film {
-      export type Record = Required<Public.Types.Film>;
-      export type Results = Public.Types.Film;
+      export type Record = {
+        filmId: Public.Types.Film["filmId"];
+        title: Public.Types.Film["title"];
+        description: Public.Types.Film["description"] | null;
+        releaseYear: Public.Types.Film["releaseYear"] | null;
+        languageId: Public.Types.Film["languageId"];
+        rentalDuration: Public.Types.Film["rentalDuration"];
+        rentalRate: Public.Types.Film["rentalRate"];
+        length: Public.Types.Film["length"] | null;
+        replacementCost: Public.Types.Film["replacementCost"];
+        rating: Public.Types.Film["rating"] | null;
+        lastUpdate: Public.Types.Film["lastUpdate"];
+        specialFeatures: Public.Types.Film["specialFeatures"] | null;
+        fulltext: Public.Types.Film["fulltext"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int4;
       };
@@ -4527,31 +5372,77 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export type Record = Required<InformationSchema.Types.SqlFeatures>;
-      export type Results = InformationSchema.Types.SqlFeatures;
+      export type Record = {
+        featureId: InformationSchema.Types.SqlFeatures["featureId"] | null;
+        featureName: InformationSchema.Types.SqlFeatures["featureName"] | null;
+        subFeatureId:
+          | InformationSchema.Types.SqlFeatures["subFeatureId"]
+          | null;
+        subFeatureName:
+          | InformationSchema.Types.SqlFeatures["subFeatureName"]
+          | null;
+        isSupported: InformationSchema.Types.SqlFeatures["isSupported"] | null;
+        isVerifiedBy:
+          | InformationSchema.Types.SqlFeatures["isVerifiedBy"]
+          | null;
+        comments: InformationSchema.Types.SqlFeatures["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlImplementationInfo {
-      export type Record =
-        Required<InformationSchema.Types.SqlImplementationInfo>;
-      export type Results = InformationSchema.Types.SqlImplementationInfo;
+      export type Record = {
+        implementationInfoId:
+          | InformationSchema.Types.SqlImplementationInfo["implementationInfoId"]
+          | null;
+        implementationInfoName:
+          | InformationSchema.Types.SqlImplementationInfo["implementationInfoName"]
+          | null;
+        integerValue:
+          | InformationSchema.Types.SqlImplementationInfo["integerValue"]
+          | null;
+        characterValue:
+          | InformationSchema.Types.SqlImplementationInfo["characterValue"]
+          | null;
+        comments:
+          | InformationSchema.Types.SqlImplementationInfo["comments"]
+          | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlParts {
-      export type Record = Required<InformationSchema.Types.SqlParts>;
-      export type Results = InformationSchema.Types.SqlParts;
+      export type Record = {
+        featureId: InformationSchema.Types.SqlParts["featureId"] | null;
+        featureName: InformationSchema.Types.SqlParts["featureName"] | null;
+        isSupported: InformationSchema.Types.SqlParts["isSupported"] | null;
+        isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
+        comments: InformationSchema.Types.SqlParts["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlSizing {
-      export type Record = Required<InformationSchema.Types.SqlSizing>;
-      export type Results = InformationSchema.Types.SqlSizing;
+      export type Record = {
+        sizingId: InformationSchema.Types.SqlSizing["sizingId"] | null;
+        sizingName: InformationSchema.Types.SqlSizing["sizingName"] | null;
+        supportedValue:
+          | InformationSchema.Types.SqlSizing["supportedValue"]
+          | null;
+        comments: InformationSchema.Types.SqlSizing["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
@@ -4580,7 +5471,7 @@ export namespace Scripts {
         specialFeatures: PgCatalog.Types.TextArray;
         fulltext: PgCatalog.Types.Tsvector;
       };
-      export type Arguments = { argument_1: PgCatalog.Types.Text };
+      export type Parameters = { argument_1: PgCatalog.Types.Text };
     }
   }
   export namespace Tally {
@@ -9301,12 +10192,6 @@ export namespace PgCatalog {
   export namespace Tables {
     export namespace PgStatistic {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatistic.Create.Results
-            PgCatalog.Types.PgStatistic.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatistic.Create.Values
@@ -9317,12 +10202,6 @@ export namespace PgCatalog {
     }
     export namespace PgType {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgType.Create.Results
-            PgCatalog.Types.PgType.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgType.Create.Values
@@ -9333,12 +10212,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignTable {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignTable.Create.Results
-            PgCatalog.Types.PgForeignTable.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignTable.Create.Values
@@ -9349,12 +10222,6 @@ export namespace PgCatalog {
     }
     export namespace PgAuthid {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthid.Create.Results
-            PgCatalog.Types.PgAuthid.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAuthid.Create.Values
@@ -9365,12 +10232,6 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExtData {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Results
-            PgCatalog.Types.PgStatisticExtData.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Values
@@ -9381,12 +10242,6 @@ export namespace PgCatalog {
     }
     export namespace PgUserMapping {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgUserMapping.Create.Results
-            PgCatalog.Types.PgUserMapping.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgUserMapping.Create.Values
@@ -9397,12 +10252,6 @@ export namespace PgCatalog {
     }
     export namespace PgSubscription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscription.Create.Results
-            PgCatalog.Types.PgSubscription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSubscription.Create.Values
@@ -9413,12 +10262,6 @@ export namespace PgCatalog {
     }
     export namespace PgAttribute {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttribute.Create.Results
-            PgCatalog.Types.PgAttribute.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAttribute.Create.Values
@@ -9429,12 +10272,6 @@ export namespace PgCatalog {
     }
     export namespace PgProc {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgProc.Create.Results
-            PgCatalog.Types.PgProc.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgProc.Create.Values
@@ -9445,12 +10282,6 @@ export namespace PgCatalog {
     }
     export namespace PgClass {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgClass.Create.Results
-            PgCatalog.Types.PgClass.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgClass.Create.Values
@@ -9461,12 +10292,6 @@ export namespace PgCatalog {
     }
     export namespace PgAttrdef {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttrdef.Create.Results
-            PgCatalog.Types.PgAttrdef.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAttrdef.Create.Values
@@ -9477,12 +10302,6 @@ export namespace PgCatalog {
     }
     export namespace PgConstraint {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConstraint.Create.Results
-            PgCatalog.Types.PgConstraint.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgConstraint.Create.Values
@@ -9493,12 +10312,6 @@ export namespace PgCatalog {
     }
     export namespace PgInherits {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInherits.Create.Results
-            PgCatalog.Types.PgInherits.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgInherits.Create.Values
@@ -9509,12 +10322,6 @@ export namespace PgCatalog {
     }
     export namespace PgIndex {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgIndex.Create.Results
-            PgCatalog.Types.PgIndex.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgIndex.Create.Values
@@ -9525,12 +10332,6 @@ export namespace PgCatalog {
     }
     export namespace PgOperator {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOperator.Create.Results
-            PgCatalog.Types.PgOperator.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOperator.Create.Values
@@ -9541,12 +10342,6 @@ export namespace PgCatalog {
     }
     export namespace PgOpfamily {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpfamily.Create.Results
-            PgCatalog.Types.PgOpfamily.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOpfamily.Create.Values
@@ -9557,12 +10352,6 @@ export namespace PgCatalog {
     }
     export namespace PgOpclass {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpclass.Create.Results
-            PgCatalog.Types.PgOpclass.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOpclass.Create.Values
@@ -9573,12 +10362,6 @@ export namespace PgCatalog {
     }
     export namespace PgAm {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAm.Create.Results
-            PgCatalog.Types.PgAm.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAm.Create.Values
@@ -9589,12 +10372,6 @@ export namespace PgCatalog {
     }
     export namespace PgAmop {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmop.Create.Results
-            PgCatalog.Types.PgAmop.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAmop.Create.Values
@@ -9605,12 +10382,6 @@ export namespace PgCatalog {
     }
     export namespace PgAmproc {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmproc.Create.Results
-            PgCatalog.Types.PgAmproc.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAmproc.Create.Values
@@ -9621,12 +10392,6 @@ export namespace PgCatalog {
     }
     export namespace PgLanguage {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLanguage.Create.Results
-            PgCatalog.Types.PgLanguage.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLanguage.Create.Values
@@ -9637,12 +10402,6 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobjectMetadata {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Results
-            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Values
@@ -9653,12 +10412,6 @@ export namespace PgCatalog {
     }
     export namespace PgAggregate {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAggregate.Create.Results
-            PgCatalog.Types.PgAggregate.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAggregate.Create.Values
@@ -9669,12 +10422,6 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExt {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Results
-            PgCatalog.Types.PgStatisticExt.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatisticExt.Create.Values
@@ -9685,12 +10432,6 @@ export namespace PgCatalog {
     }
     export namespace PgRewrite {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRewrite.Create.Results
-            PgCatalog.Types.PgRewrite.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgRewrite.Create.Values
@@ -9701,12 +10442,6 @@ export namespace PgCatalog {
     }
     export namespace PgTrigger {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTrigger.Create.Results
-            PgCatalog.Types.PgTrigger.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTrigger.Create.Values
@@ -9717,12 +10452,6 @@ export namespace PgCatalog {
     }
     export namespace PgEventTrigger {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Results
-            PgCatalog.Types.PgEventTrigger.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgEventTrigger.Create.Values
@@ -9733,12 +10462,6 @@ export namespace PgCatalog {
     }
     export namespace PgDescription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDescription.Create.Results
-            PgCatalog.Types.PgDescription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDescription.Create.Values
@@ -9749,12 +10472,6 @@ export namespace PgCatalog {
     }
     export namespace PgCast {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCast.Create.Results
-            PgCatalog.Types.PgCast.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgCast.Create.Values
@@ -9765,12 +10482,6 @@ export namespace PgCatalog {
     }
     export namespace PgEnum {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEnum.Create.Results
-            PgCatalog.Types.PgEnum.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgEnum.Create.Values
@@ -9781,12 +10492,6 @@ export namespace PgCatalog {
     }
     export namespace PgNamespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgNamespace.Create.Results
-            PgCatalog.Types.PgNamespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgNamespace.Create.Values
@@ -9797,12 +10502,6 @@ export namespace PgCatalog {
     }
     export namespace PgConversion {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConversion.Create.Results
-            PgCatalog.Types.PgConversion.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgConversion.Create.Values
@@ -9813,12 +10512,6 @@ export namespace PgCatalog {
     }
     export namespace PgDepend {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDepend.Create.Results
-            PgCatalog.Types.PgDepend.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDepend.Create.Values
@@ -9829,12 +10522,6 @@ export namespace PgCatalog {
     }
     export namespace PgDatabase {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDatabase.Create.Results
-            PgCatalog.Types.PgDatabase.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDatabase.Create.Values
@@ -9845,12 +10532,6 @@ export namespace PgCatalog {
     }
     export namespace PgDbRoleSetting {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Results
-            PgCatalog.Types.PgDbRoleSetting.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Values
@@ -9861,12 +10542,6 @@ export namespace PgCatalog {
     }
     export namespace PgTablespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTablespace.Create.Results
-            PgCatalog.Types.PgTablespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTablespace.Create.Values
@@ -9877,12 +10552,6 @@ export namespace PgCatalog {
     }
     export namespace PgAuthMembers {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Results
-            PgCatalog.Types.PgAuthMembers.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAuthMembers.Create.Values
@@ -9893,12 +10562,6 @@ export namespace PgCatalog {
     }
     export namespace PgShdepend {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdepend.Create.Results
-            PgCatalog.Types.PgShdepend.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShdepend.Create.Values
@@ -9909,12 +10572,6 @@ export namespace PgCatalog {
     }
     export namespace PgShdescription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdescription.Create.Results
-            PgCatalog.Types.PgShdescription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShdescription.Create.Values
@@ -9925,12 +10582,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfig {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfig.Create.Results
-            PgCatalog.Types.PgTsConfig.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsConfig.Create.Values
@@ -9941,12 +10592,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfigMap {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Results
-            PgCatalog.Types.PgTsConfigMap.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Values
@@ -9957,12 +10602,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsDict {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsDict.Create.Results
-            PgCatalog.Types.PgTsDict.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsDict.Create.Values
@@ -9973,12 +10612,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsParser {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsParser.Create.Results
-            PgCatalog.Types.PgTsParser.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsParser.Create.Values
@@ -9989,12 +10622,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsTemplate {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Results
-            PgCatalog.Types.PgTsTemplate.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsTemplate.Create.Values
@@ -10005,12 +10632,6 @@ export namespace PgCatalog {
     }
     export namespace PgExtension {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgExtension.Create.Results
-            PgCatalog.Types.PgExtension.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgExtension.Create.Values
@@ -10021,12 +10642,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignDataWrapper {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Results
-            PgCatalog.Types.PgForeignDataWrapper.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Values
@@ -10037,12 +10652,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignServer {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignServer.Create.Results
-            PgCatalog.Types.PgForeignServer.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignServer.Create.Values
@@ -10053,12 +10662,6 @@ export namespace PgCatalog {
     }
     export namespace PgPolicy {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPolicy.Create.Results
-            PgCatalog.Types.PgPolicy.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPolicy.Create.Values
@@ -10069,12 +10672,6 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOrigin {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Results
-            PgCatalog.Types.PgReplicationOrigin.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Values
@@ -10085,12 +10682,6 @@ export namespace PgCatalog {
     }
     export namespace PgDefaultAcl {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Results
-            PgCatalog.Types.PgDefaultAcl.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Values
@@ -10101,12 +10692,6 @@ export namespace PgCatalog {
     }
     export namespace PgInitPrivs {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Results
-            PgCatalog.Types.PgInitPrivs.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgInitPrivs.Create.Values
@@ -10117,12 +10702,6 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSeclabel.Create.Results
-            PgCatalog.Types.PgSeclabel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSeclabel.Create.Values
@@ -10133,12 +10712,6 @@ export namespace PgCatalog {
     }
     export namespace PgShseclabel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShseclabel.Create.Results
-            PgCatalog.Types.PgShseclabel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShseclabel.Create.Values
@@ -10149,12 +10722,6 @@ export namespace PgCatalog {
     }
     export namespace PgCollation {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCollation.Create.Results
-            PgCatalog.Types.PgCollation.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgCollation.Create.Values
@@ -10165,12 +10732,6 @@ export namespace PgCatalog {
     }
     export namespace PgParameterAcl {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Results
-            PgCatalog.Types.PgParameterAcl.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgParameterAcl.Create.Values
@@ -10181,12 +10742,6 @@ export namespace PgCatalog {
     }
     export namespace PgPartitionedTable {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Results
-            PgCatalog.Types.PgPartitionedTable.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Values
@@ -10197,12 +10752,6 @@ export namespace PgCatalog {
     }
     export namespace PgRange {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRange.Create.Results
-            PgCatalog.Types.PgRange.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgRange.Create.Values
@@ -10213,12 +10762,6 @@ export namespace PgCatalog {
     }
     export namespace PgTransform {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTransform.Create.Results
-            PgCatalog.Types.PgTransform.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTransform.Create.Values
@@ -10229,12 +10772,6 @@ export namespace PgCatalog {
     }
     export namespace PgSequence {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSequence.Create.Results
-            PgCatalog.Types.PgSequence.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSequence.Create.Values
@@ -10245,12 +10782,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublication {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublication.Create.Results
-            PgCatalog.Types.PgPublication.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublication.Create.Values
@@ -10261,12 +10792,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationNamespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Results
-            PgCatalog.Types.PgPublicationNamespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Values
@@ -10277,12 +10802,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationRel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Results
-            PgCatalog.Types.PgPublicationRel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublicationRel.Create.Values
@@ -10293,12 +10812,6 @@ export namespace PgCatalog {
     }
     export namespace PgSubscriptionRel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Results
-            PgCatalog.Types.PgSubscriptionRel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Values
@@ -10309,12 +10822,6 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobject {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobject.Create.Results
-            PgCatalog.Types.PgLargeobject.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLargeobject.Create.Values
@@ -10804,9 +11311,8 @@ export namespace Public {
     }
     export namespace Year {
       export function parse(from: string | null) {
-        // Type Public.Types.Year
-
-        return from;
+        // DomainType Public.Types.Year
+        return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace FilmInStockResults {
@@ -10824,9 +11330,9 @@ export namespace Public {
   }
   export namespace Procedures {
     export namespace FilmInStock {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.FilmInStock.Arguments
+          // CompositeType Public.Procedures.FilmInStock.Parameters
           return from;
         }
       }
@@ -10838,9 +11344,9 @@ export namespace Public {
       }
     }
     export namespace FilmNotInStock {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.FilmNotInStock.Arguments
+          // CompositeType Public.Procedures.FilmNotInStock.Parameters
           return from;
         }
       }
@@ -10852,9 +11358,9 @@ export namespace Public {
       }
     }
     export namespace GetCustomerBalance {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GetCustomerBalance.Arguments
+          // CompositeType Public.Procedures.GetCustomerBalance.Parameters
           return from;
         }
       }
@@ -10866,9 +11372,9 @@ export namespace Public {
       }
     }
     export namespace InventoryHeldByCustomer {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.InventoryHeldByCustomer.Arguments
+          // CompositeType Public.Procedures.InventoryHeldByCustomer.Parameters
           return from;
         }
       }
@@ -10880,9 +11386,9 @@ export namespace Public {
       }
     }
     export namespace InventoryInStock {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.InventoryInStock.Arguments
+          // CompositeType Public.Procedures.InventoryInStock.Parameters
           return from;
         }
       }
@@ -10894,9 +11400,9 @@ export namespace Public {
       }
     }
     export namespace LastDay {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.LastDay.Arguments
+          // CompositeType Public.Procedures.LastDay.Parameters
           return from;
         }
       }
@@ -10908,9 +11414,9 @@ export namespace Public {
       }
     }
     export namespace RewardsReport {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.RewardsReport.Arguments
+          // CompositeType Public.Procedures.RewardsReport.Parameters
           return from;
         }
       }
@@ -10925,12 +11431,6 @@ export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.FilmActor.Create.Results
-            Public.Types.FilmActor.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.FilmActor.Create.Values
@@ -10941,12 +11441,6 @@ export namespace Public {
     }
     export namespace Address {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Address.Create.Results
-            Public.Types.Address.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Address.Create.Values
@@ -10957,12 +11451,6 @@ export namespace Public {
     }
     export namespace City {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.City.Create.Results
-            Public.Types.City.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.City.Create.Values
@@ -10973,12 +11461,6 @@ export namespace Public {
     }
     export namespace Customer {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Customer.Create.Results
-            Public.Types.Customer.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Customer.Create.Values
@@ -10989,12 +11471,6 @@ export namespace Public {
     }
     export namespace Actor {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Actor.Create.Results
-            Public.Types.Actor.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Actor.Create.Values
@@ -11005,12 +11481,6 @@ export namespace Public {
     }
     export namespace FilmCategory {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.FilmCategory.Create.Results
-            Public.Types.FilmCategory.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.FilmCategory.Create.Values
@@ -11021,12 +11491,6 @@ export namespace Public {
     }
     export namespace Inventory {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Inventory.Create.Results
-            Public.Types.Inventory.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Inventory.Create.Values
@@ -11037,12 +11501,6 @@ export namespace Public {
     }
     export namespace Category {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Category.Create.Results
-            Public.Types.Category.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Category.Create.Values
@@ -11053,12 +11511,6 @@ export namespace Public {
     }
     export namespace Country {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Country.Create.Results
-            Public.Types.Country.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Country.Create.Values
@@ -11069,12 +11521,6 @@ export namespace Public {
     }
     export namespace Language {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Language.Create.Results
-            Public.Types.Language.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Language.Create.Values
@@ -11085,12 +11531,6 @@ export namespace Public {
     }
     export namespace Rental {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Rental.Create.Results
-            Public.Types.Rental.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Rental.Create.Values
@@ -11101,12 +11541,6 @@ export namespace Public {
     }
     export namespace Staff {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Staff.Create.Results
-            Public.Types.Staff.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Staff.Create.Values
@@ -11117,12 +11551,6 @@ export namespace Public {
     }
     export namespace Store {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Store.Create.Results
-            Public.Types.Store.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Store.Create.Values
@@ -11133,12 +11561,6 @@ export namespace Public {
     }
     export namespace Payment {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Payment.Create.Results
-            Public.Types.Payment.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Payment.Create.Values
@@ -11149,12 +11571,6 @@ export namespace Public {
     }
     export namespace Film {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Film.Create.Results
-            Public.Types.Film.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Film.Create.Values
@@ -12183,16 +12599,14 @@ export namespace InformationSchema {
     }
     export namespace CardinalNumber {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.CardinalNumber
-
-        return from;
+        // DomainType InformationSchema.Types.CardinalNumber
+        return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace CharacterData {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.CharacterData
-
-        return from;
+        // DomainType InformationSchema.Types.CharacterData
+        return PgCatalog.Types.Varchar.parse(from);
       }
     }
     export namespace CharacterSets {
@@ -12455,9 +12869,8 @@ export namespace InformationSchema {
     }
     export namespace SqlIdentifier {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.SqlIdentifier
-
-        return from;
+        // DomainType InformationSchema.Types.SqlIdentifier
+        return PgCatalog.Types.Name.parse(from);
       }
     }
     export namespace SqlImplementationInfo {
@@ -12498,9 +12911,8 @@ export namespace InformationSchema {
     }
     export namespace TimeStamp {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.TimeStamp
-
-        return from;
+        // DomainType InformationSchema.Types.TimeStamp
+        return PgCatalog.Types.Timestamptz.parse(from);
       }
     }
     export namespace Transforms {
@@ -12577,9 +12989,8 @@ export namespace InformationSchema {
     }
     export namespace YesOrNo {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.YesOrNo
-
-        return from;
+        // DomainType InformationSchema.Types.YesOrNo
+        return PgCatalog.Types.Varchar.parse(from);
       }
     }
   }
@@ -12587,12 +12998,6 @@ export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlFeatures.Create.Results
-            InformationSchema.Types.SqlFeatures.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlFeatures.Create.Values
@@ -12603,12 +13008,6 @@ export namespace InformationSchema {
     }
     export namespace SqlImplementationInfo {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Results
-            InformationSchema.Types.SqlImplementationInfo.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Values
@@ -12619,12 +13018,6 @@ export namespace InformationSchema {
     }
     export namespace SqlParts {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlParts.Create.Results
-            InformationSchema.Types.SqlParts.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlParts.Create.Values
@@ -12635,12 +13028,6 @@ export namespace InformationSchema {
     }
     export namespace SqlSizing {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlSizing.Create.Results
-            InformationSchema.Types.SqlSizing.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlSizing.Create.Values
@@ -12670,9 +13057,9 @@ export namespace Scripts {
           return from;
         }
       }
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Scripts.Sample.Pick.Arguments
+          // CompositeType Scripts.Sample.Pick.Parameters
           return from;
         }
       }
@@ -14989,9 +15376,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.FilmActor>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.actorId !== undefined && value.filmId !== undefined;
       }
     }
@@ -15004,7 +15389,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Address>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.addressId !== undefined;
       }
     }
@@ -15015,7 +15400,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.City>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.cityId !== undefined;
       }
     }
@@ -15028,9 +15413,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.Customer>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.customerId !== undefined;
       }
     }
@@ -15043,7 +15426,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Actor>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.actorId !== undefined;
       }
     }
@@ -15057,9 +15440,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.FilmCategory>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.filmId !== undefined && value.categoryId !== undefined;
       }
     }
@@ -15072,9 +15453,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.Inventory>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.inventoryId !== undefined;
       }
     }
@@ -15087,9 +15466,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.Category>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.categoryId !== undefined;
       }
     }
@@ -15102,7 +15479,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Country>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.countryId !== undefined;
       }
     }
@@ -15115,9 +15492,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(
-        value: Partial<Public.Types.Language>,
-      ) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.languageId !== undefined;
       }
     }
@@ -15130,7 +15505,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Rental>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.rentalId !== undefined;
       }
     }
@@ -15143,7 +15518,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Staff>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.staffId !== undefined;
       }
     }
@@ -15156,7 +15531,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Store>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.storeId !== undefined;
       }
     }
@@ -15169,7 +15544,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Payment>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.paymentId !== undefined;
       }
     }
@@ -15180,7 +15555,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Film>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.filmId !== undefined;
       }
     }
@@ -15755,24 +16130,304 @@ export interface PostgresTypecasts {
   ["PgCatalog.Types.Oidvector"]: Typecast;
   [602]: Typecast;
   ["PgCatalog.Types.Path"]: Typecast;
+  [10027]: Typecast;
+  ["PgCatalog.Types.PgAggregate"]: Typecast;
+  [10015]: Typecast;
+  ["PgCatalog.Types.PgAm"]: Typecast;
+  [10017]: Typecast;
+  ["PgCatalog.Types.PgAmop"]: Typecast;
+  [10019]: Typecast;
+  ["PgCatalog.Types.PgAmproc"]: Typecast;
+  [10001]: Typecast;
+  ["PgCatalog.Types.PgAttrdef"]: Typecast;
+  [75]: Typecast;
+  ["PgCatalog.Types.PgAttribute"]: Typecast;
+  [2843]: Typecast;
+  ["PgCatalog.Types.PgAuthMembers"]: Typecast;
+  [2842]: Typecast;
+  ["PgCatalog.Types.PgAuthid"]: Typecast;
+  [12087]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast;
+  [12083]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensions"]: Typecast;
+  [12140]: Typecast;
+  ["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast;
   [4600]: Typecast;
   ["PgCatalog.Types.PgBrinBloomSummary"]: Typecast;
   [4601]: Typecast;
   ["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast;
+  [10043]: Typecast;
+  ["PgCatalog.Types.PgCast"]: Typecast;
+  [83]: Typecast;
+  ["PgCatalog.Types.PgClass"]: Typecast;
+  [10095]: Typecast;
+  ["PgCatalog.Types.PgCollation"]: Typecast;
+  [12132]: Typecast;
+  ["PgCatalog.Types.PgConfig"]: Typecast;
+  [10003]: Typecast;
+  ["PgCatalog.Types.PgConstraint"]: Typecast;
+  [10049]: Typecast;
+  ["PgCatalog.Types.PgConversion"]: Typecast;
+  [12079]: Typecast;
+  ["PgCatalog.Types.PgCursors"]: Typecast;
+  [1248]: Typecast;
+  ["PgCatalog.Types.PgDatabase"]: Typecast;
+  [10054]: Typecast;
+  ["PgCatalog.Types.PgDbRoleSetting"]: Typecast;
   [32]: Typecast;
   ["PgCatalog.Types.PgDdlCommand"]: Typecast;
+  [10088]: Typecast;
+  ["PgCatalog.Types.PgDefaultAcl"]: Typecast;
+  [10051]: Typecast;
+  ["PgCatalog.Types.PgDepend"]: Typecast;
   [3402]: Typecast;
   ["PgCatalog.Types.PgDependencies"]: Typecast;
+  [10041]: Typecast;
+  ["PgCatalog.Types.PgDescription"]: Typecast;
+  [10045]: Typecast;
+  ["PgCatalog.Types.PgEnum"]: Typecast;
+  [10039]: Typecast;
+  ["PgCatalog.Types.PgEventTrigger"]: Typecast;
+  [10074]: Typecast;
+  ["PgCatalog.Types.PgExtension"]: Typecast;
+  [12112]: Typecast;
+  ["PgCatalog.Types.PgFileSettings"]: Typecast;
+  [10076]: Typecast;
+  ["PgCatalog.Types.PgForeignDataWrapper"]: Typecast;
+  [10078]: Typecast;
+  ["PgCatalog.Types.PgForeignServer"]: Typecast;
+  [10082]: Typecast;
+  ["PgCatalog.Types.PgForeignTable"]: Typecast;
+  [12012]: Typecast;
+  ["PgCatalog.Types.PgGroup"]: Typecast;
+  [12116]: Typecast;
+  ["PgCatalog.Types.PgHbaFileRules"]: Typecast;
+  [12120]: Typecast;
+  ["PgCatalog.Types.PgIdentFileMappings"]: Typecast;
+  [10007]: Typecast;
+  ["PgCatalog.Types.PgIndex"]: Typecast;
+  [12045]: Typecast;
+  ["PgCatalog.Types.PgIndexes"]: Typecast;
+  [10005]: Typecast;
+  ["PgCatalog.Types.PgInherits"]: Typecast;
+  [10090]: Typecast;
+  ["PgCatalog.Types.PgInitPrivs"]: Typecast;
+  [10021]: Typecast;
+  ["PgCatalog.Types.PgLanguage"]: Typecast;
+  [10025]: Typecast;
+  ["PgCatalog.Types.PgLargeobject"]: Typecast;
+  [10023]: Typecast;
+  ["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast;
+  [12075]: Typecast;
+  ["PgCatalog.Types.PgLocks"]: Typecast;
   [3220]: Typecast;
   ["PgCatalog.Types.PgLsn"]: Typecast;
+  [12040]: Typecast;
+  ["PgCatalog.Types.PgMatviews"]: Typecast;
   [5017]: Typecast;
   ["PgCatalog.Types.PgMcvList"]: Typecast;
+  [10047]: Typecast;
+  ["PgCatalog.Types.PgNamespace"]: Typecast;
   [3361]: Typecast;
   ["PgCatalog.Types.PgNdistinct"]: Typecast;
   [194]: Typecast;
   ["PgCatalog.Types.PgNodeTree"]: Typecast;
+  [10013]: Typecast;
+  ["PgCatalog.Types.PgOpclass"]: Typecast;
+  [10009]: Typecast;
+  ["PgCatalog.Types.PgOperator"]: Typecast;
+  [10011]: Typecast;
+  ["PgCatalog.Types.PgOpfamily"]: Typecast;
+  [10097]: Typecast;
+  ["PgCatalog.Types.PgParameterAcl"]: Typecast;
+  [10099]: Typecast;
+  ["PgCatalog.Types.PgPartitionedTable"]: Typecast;
+  [12020]: Typecast;
+  ["PgCatalog.Types.PgPolicies"]: Typecast;
+  [10084]: Typecast;
+  ["PgCatalog.Types.PgPolicy"]: Typecast;
+  [12097]: Typecast;
+  ["PgCatalog.Types.PgPreparedStatements"]: Typecast;
+  [12092]: Typecast;
+  ["PgCatalog.Types.PgPreparedXacts"]: Typecast;
+  [81]: Typecast;
+  ["PgCatalog.Types.PgProc"]: Typecast;
+  [10107]: Typecast;
+  ["PgCatalog.Types.PgPublication"]: Typecast;
+  [10109]: Typecast;
+  ["PgCatalog.Types.PgPublicationNamespace"]: Typecast;
+  [10111]: Typecast;
+  ["PgCatalog.Types.PgPublicationRel"]: Typecast;
+  [12070]: Typecast;
+  ["PgCatalog.Types.PgPublicationTables"]: Typecast;
+  [10101]: Typecast;
+  ["PgCatalog.Types.PgRange"]: Typecast;
+  [10086]: Typecast;
+  ["PgCatalog.Types.PgReplicationOrigin"]: Typecast;
+  [12338]: Typecast;
+  ["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast;
+  [12259]: Typecast;
+  ["PgCatalog.Types.PgReplicationSlots"]: Typecast;
+  [10035]: Typecast;
+  ["PgCatalog.Types.PgRewrite"]: Typecast;
+  [12002]: Typecast;
+  ["PgCatalog.Types.PgRoles"]: Typecast;
+  [12025]: Typecast;
+  ["PgCatalog.Types.PgRules"]: Typecast;
+  [10092]: Typecast;
+  ["PgCatalog.Types.PgSeclabel"]: Typecast;
+  [12101]: Typecast;
+  ["PgCatalog.Types.PgSeclabels"]: Typecast;
+  [10105]: Typecast;
+  ["PgCatalog.Types.PgSequence"]: Typecast;
+  [12050]: Typecast;
+  ["PgCatalog.Types.PgSequences"]: Typecast;
+  [12106]: Typecast;
+  ["PgCatalog.Types.PgSettings"]: Typecast;
+  [12007]: Typecast;
+  ["PgCatalog.Types.PgShadow"]: Typecast;
+  [10060]: Typecast;
+  ["PgCatalog.Types.PgShdepend"]: Typecast;
+  [10062]: Typecast;
+  ["PgCatalog.Types.PgShdescription"]: Typecast;
+  [12136]: Typecast;
+  ["PgCatalog.Types.PgShmemAllocations"]: Typecast;
+  [4066]: Typecast;
+  ["PgCatalog.Types.PgShseclabel"]: Typecast;
   [5038]: Typecast;
   ["PgCatalog.Types.PgSnapshot"]: Typecast;
+  [12224]: Typecast;
+  ["PgCatalog.Types.PgStatActivity"]: Typecast;
+  [12185]: Typecast;
+  ["PgCatalog.Types.PgStatAllIndexes"]: Typecast;
+  [12144]: Typecast;
+  ["PgCatalog.Types.PgStatAllTables"]: Typecast;
+  [12287]: Typecast;
+  ["PgCatalog.Types.PgStatArchiver"]: Typecast;
+  [12291]: Typecast;
+  ["PgCatalog.Types.PgStatBgwriter"]: Typecast;
+  [12268]: Typecast;
+  ["PgCatalog.Types.PgStatDatabase"]: Typecast;
+  [12273]: Typecast;
+  ["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast;
+  [12255]: Typecast;
+  ["PgCatalog.Types.PgStatGssapi"]: Typecast;
+  [12295]: Typecast;
+  ["PgCatalog.Types.PgStatIo"]: Typecast;
+  [12303]: Typecast;
+  ["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast;
+  [12323]: Typecast;
+  ["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast;
+  [12313]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCluster"]: Typecast;
+  [12328]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCopy"]: Typecast;
+  [12318]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast;
+  [12308]: Typecast;
+  ["PgCatalog.Types.PgStatProgressVacuum"]: Typecast;
+  [12242]: Typecast;
+  ["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast;
+  [12229]: Typecast;
+  ["PgCatalog.Types.PgStatReplication"]: Typecast;
+  [12264]: Typecast;
+  ["PgCatalog.Types.PgStatReplicationSlots"]: Typecast;
+  [12234]: Typecast;
+  ["PgCatalog.Types.PgStatSlru"]: Typecast;
+  [12251]: Typecast;
+  ["PgCatalog.Types.PgStatSsl"]: Typecast;
+  [12246]: Typecast;
+  ["PgCatalog.Types.PgStatSubscription"]: Typecast;
+  [12342]: Typecast;
+  ["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast;
+  [12190]: Typecast;
+  ["PgCatalog.Types.PgStatSysIndexes"]: Typecast;
+  [12154]: Typecast;
+  ["PgCatalog.Types.PgStatSysTables"]: Typecast;
+  [12277]: Typecast;
+  ["PgCatalog.Types.PgStatUserFunctions"]: Typecast;
+  [12194]: Typecast;
+  ["PgCatalog.Types.PgStatUserIndexes"]: Typecast;
+  [12163]: Typecast;
+  ["PgCatalog.Types.PgStatUserTables"]: Typecast;
+  [12299]: Typecast;
+  ["PgCatalog.Types.PgStatWal"]: Typecast;
+  [12238]: Typecast;
+  ["PgCatalog.Types.PgStatWalReceiver"]: Typecast;
+  [12149]: Typecast;
+  ["PgCatalog.Types.PgStatXactAllTables"]: Typecast;
+  [12159]: Typecast;
+  ["PgCatalog.Types.PgStatXactSysTables"]: Typecast;
+  [12282]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast;
+  [12168]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserTables"]: Typecast;
+  [12198]: Typecast;
+  ["PgCatalog.Types.PgStatioAllIndexes"]: Typecast;
+  [12211]: Typecast;
+  ["PgCatalog.Types.PgStatioAllSequences"]: Typecast;
+  [12172]: Typecast;
+  ["PgCatalog.Types.PgStatioAllTables"]: Typecast;
+  [12203]: Typecast;
+  ["PgCatalog.Types.PgStatioSysIndexes"]: Typecast;
+  [12216]: Typecast;
+  ["PgCatalog.Types.PgStatioSysSequences"]: Typecast;
+  [12177]: Typecast;
+  ["PgCatalog.Types.PgStatioSysTables"]: Typecast;
+  [12207]: Typecast;
+  ["PgCatalog.Types.PgStatioUserIndexes"]: Typecast;
+  [12220]: Typecast;
+  ["PgCatalog.Types.PgStatioUserSequences"]: Typecast;
+  [12181]: Typecast;
+  ["PgCatalog.Types.PgStatioUserTables"]: Typecast;
+  [10029]: Typecast;
+  ["PgCatalog.Types.PgStatistic"]: Typecast;
+  [10031]: Typecast;
+  ["PgCatalog.Types.PgStatisticExt"]: Typecast;
+  [10033]: Typecast;
+  ["PgCatalog.Types.PgStatisticExtData"]: Typecast;
+  [12055]: Typecast;
+  ["PgCatalog.Types.PgStats"]: Typecast;
+  [12060]: Typecast;
+  ["PgCatalog.Types.PgStatsExt"]: Typecast;
+  [12065]: Typecast;
+  ["PgCatalog.Types.PgStatsExtExprs"]: Typecast;
+  [6101]: Typecast;
+  ["PgCatalog.Types.PgSubscription"]: Typecast;
+  [10114]: Typecast;
+  ["PgCatalog.Types.PgSubscriptionRel"]: Typecast;
+  [12035]: Typecast;
+  ["PgCatalog.Types.PgTables"]: Typecast;
+  [10056]: Typecast;
+  ["PgCatalog.Types.PgTablespace"]: Typecast;
+  [12124]: Typecast;
+  ["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast;
+  [12128]: Typecast;
+  ["PgCatalog.Types.PgTimezoneNames"]: Typecast;
+  [10103]: Typecast;
+  ["PgCatalog.Types.PgTransform"]: Typecast;
+  [10037]: Typecast;
+  ["PgCatalog.Types.PgTrigger"]: Typecast;
+  [10064]: Typecast;
+  ["PgCatalog.Types.PgTsConfig"]: Typecast;
+  [10066]: Typecast;
+  ["PgCatalog.Types.PgTsConfigMap"]: Typecast;
+  [10068]: Typecast;
+  ["PgCatalog.Types.PgTsDict"]: Typecast;
+  [10070]: Typecast;
+  ["PgCatalog.Types.PgTsParser"]: Typecast;
+  [10072]: Typecast;
+  ["PgCatalog.Types.PgTsTemplate"]: Typecast;
+  [71]: Typecast;
+  ["PgCatalog.Types.PgType"]: Typecast;
+  [12016]: Typecast;
+  ["PgCatalog.Types.PgUser"]: Typecast;
+  [10080]: Typecast;
+  ["PgCatalog.Types.PgUserMapping"]: Typecast;
+  [12333]: Typecast;
+  ["PgCatalog.Types.PgUserMappings"]: Typecast;
+  [12030]: Typecast;
+  ["PgCatalog.Types.PgViews"]: Typecast;
   [600]: Typecast;
   ["PgCatalog.Types.Point"]: Typecast;
   [604]: Typecast;
@@ -15899,10 +16554,72 @@ export interface PostgresTypecasts {
   ["Public.Types.StoreArray"]: Typecast;
   [25153]: Typecast;
   ["Public.Types.YearArray"]: Typecast;
+  [25177]: Typecast;
+  ["Public.Types.Actor"]: Typecast;
+  [25208]: Typecast;
+  ["Public.Types.ActorInfo"]: Typecast;
+  [25214]: Typecast;
+  ["Public.Types.Address"]: Typecast;
+  [25183]: Typecast;
+  ["Public.Types.Category"]: Typecast;
+  [25220]: Typecast;
+  ["Public.Types.City"]: Typecast;
+  [25226]: Typecast;
+  ["Public.Types.Country"]: Typecast;
+  [25167]: Typecast;
+  ["Public.Types.Customer"]: Typecast;
+  [25231]: Typecast;
+  ["Public.Types.CustomerList"]: Typecast;
+  [25189]: Typecast;
+  ["Public.Types.Film"]: Typecast;
+  [25200]: Typecast;
+  ["Public.Types.FilmActor"]: Typecast;
+  [25204]: Typecast;
+  ["Public.Types.FilmCategory"]: Typecast;
+  [25236]: Typecast;
+  ["Public.Types.FilmList"]: Typecast;
+  [25242]: Typecast;
+  ["Public.Types.Inventory"]: Typecast;
+  [25248]: Typecast;
+  ["Public.Types.Language"]: Typecast;
   [25143]: Typecast;
   ["Public.Types.MpaaRating"]: Typecast;
+  [25253]: Typecast;
+  ["Public.Types.NicerButSlowerFilmList"]: Typecast;
+  [25259]: Typecast;
+  ["Public.Types.Payment"]: Typecast;
+  [25264]: Typecast;
+  ["Public.Types.Rental"]: Typecast;
+  [25269]: Typecast;
+  ["Public.Types.SalesByFilmCategory"]: Typecast;
+  [25289]: Typecast;
+  ["Public.Types.SalesByStore"]: Typecast;
+  [25275]: Typecast;
+  ["Public.Types.Staff"]: Typecast;
+  [25294]: Typecast;
+  ["Public.Types.StaffList"]: Typecast;
+  [25284]: Typecast;
+  ["Public.Types.Store"]: Typecast;
   [25154]: Typecast;
   ["Public.Types.Year"]: Typecast;
+  [25157]: Typecast;
+  ["Public.Types.FilmInStockResults"]: Typecast;
+  [25158]: Typecast;
+  ["Public.Types.FilmNotInStockResults"]: Typecast;
+
+  ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.FilmNotInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.GetCustomerBalance.Parameters"]: Typecast;
+
+  ["Public.Procedures.InventoryHeldByCustomer.Parameters"]: Typecast;
+
+  ["Public.Procedures.InventoryInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.LastDay.Parameters"]: Typecast;
+
+  ["Public.Procedures.RewardsReport.Parameters"]: Typecast;
   [13509]: Typecast;
   ["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast;
   [13504]: Typecast;
@@ -15969,6 +16686,16 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.KeyColumnUsageArray"]: Typecast;
   [13602]: Typecast;
   ["InformationSchema.Types.ParametersArray"]: Typecast;
+  [13776]: Typecast;
+  ["InformationSchema.Types.PgForeignDataWrappers"]: Typecast;
+  [13788]: Typecast;
+  ["InformationSchema.Types.PgForeignServers"]: Typecast;
+  [13767]: Typecast;
+  ["InformationSchema.Types.PgForeignTableColumns"]: Typecast;
+  [13801]: Typecast;
+  ["InformationSchema.Types.PgForeignTables"]: Typecast;
+  [13814]: Typecast;
+  ["InformationSchema.Types.PgUserMappings"]: Typecast;
   [13607]: Typecast;
   ["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast;
   [13612]: Typecast;
@@ -16041,16 +16768,152 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.ViewsArray"]: Typecast;
   [13500]: Typecast;
   ["InformationSchema.Types.YesOrNoArray"]: Typecast;
+  [13510]: Typecast;
+  ["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast;
+  [13505]: Typecast;
+  ["InformationSchema.Types.ApplicableRoles"]: Typecast;
+  [13514]: Typecast;
+  ["InformationSchema.Types.Attributes"]: Typecast;
   [13488]: Typecast;
   ["InformationSchema.Types.CardinalNumber"]: Typecast;
   [13491]: Typecast;
   ["InformationSchema.Types.CharacterData"]: Typecast;
+  [13519]: Typecast;
+  ["InformationSchema.Types.CharacterSets"]: Typecast;
+  [13524]: Typecast;
+  ["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast;
+  [13529]: Typecast;
+  ["InformationSchema.Types.CheckConstraints"]: Typecast;
+  [13539]: Typecast;
+  ["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast;
+  [13534]: Typecast;
+  ["InformationSchema.Types.Collations"]: Typecast;
+  [13544]: Typecast;
+  ["InformationSchema.Types.ColumnColumnUsage"]: Typecast;
+  [13549]: Typecast;
+  ["InformationSchema.Types.ColumnDomainUsage"]: Typecast;
+  [13772]: Typecast;
+  ["InformationSchema.Types.ColumnOptions"]: Typecast;
+  [13554]: Typecast;
+  ["InformationSchema.Types.ColumnPrivileges"]: Typecast;
+  [13559]: Typecast;
+  ["InformationSchema.Types.ColumnUdtUsage"]: Typecast;
+  [13564]: Typecast;
+  ["InformationSchema.Types.Columns"]: Typecast;
+  [13569]: Typecast;
+  ["InformationSchema.Types.ConstraintColumnUsage"]: Typecast;
+  [13574]: Typecast;
+  ["InformationSchema.Types.ConstraintTableUsage"]: Typecast;
+  [13757]: Typecast;
+  ["InformationSchema.Types.DataTypePrivileges"]: Typecast;
+  [13579]: Typecast;
+  ["InformationSchema.Types.DomainConstraints"]: Typecast;
+  [13584]: Typecast;
+  ["InformationSchema.Types.DomainUdtUsage"]: Typecast;
+  [13589]: Typecast;
+  ["InformationSchema.Types.Domains"]: Typecast;
+  [13762]: Typecast;
+  ["InformationSchema.Types.ElementTypes"]: Typecast;
+  [13594]: Typecast;
+  ["InformationSchema.Types.EnabledRoles"]: Typecast;
+  [13780]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast;
+  [13784]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrappers"]: Typecast;
+  [13793]: Typecast;
+  ["InformationSchema.Types.ForeignServerOptions"]: Typecast;
+  [13797]: Typecast;
+  ["InformationSchema.Types.ForeignServers"]: Typecast;
+  [13806]: Typecast;
+  ["InformationSchema.Types.ForeignTableOptions"]: Typecast;
+  [13810]: Typecast;
+  ["InformationSchema.Types.ForeignTables"]: Typecast;
+  [13496]: Typecast;
+  ["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast;
+  [13598]: Typecast;
+  ["InformationSchema.Types.KeyColumnUsage"]: Typecast;
+  [13603]: Typecast;
+  ["InformationSchema.Types.Parameters"]: Typecast;
+  [13608]: Typecast;
+  ["InformationSchema.Types.ReferentialConstraints"]: Typecast;
+  [13613]: Typecast;
+  ["InformationSchema.Types.RoleColumnGrants"]: Typecast;
+  [13627]: Typecast;
+  ["InformationSchema.Types.RoleRoutineGrants"]: Typecast;
+  [13690]: Typecast;
+  ["InformationSchema.Types.RoleTableGrants"]: Typecast;
+  [13719]: Typecast;
+  ["InformationSchema.Types.RoleUdtGrants"]: Typecast;
+  [13728]: Typecast;
+  ["InformationSchema.Types.RoleUsageGrants"]: Typecast;
+  [13617]: Typecast;
+  ["InformationSchema.Types.RoutineColumnUsage"]: Typecast;
+  [13622]: Typecast;
+  ["InformationSchema.Types.RoutinePrivileges"]: Typecast;
+  [13631]: Typecast;
+  ["InformationSchema.Types.RoutineRoutineUsage"]: Typecast;
+  [13636]: Typecast;
+  ["InformationSchema.Types.RoutineSequenceUsage"]: Typecast;
+  [13641]: Typecast;
+  ["InformationSchema.Types.RoutineTableUsage"]: Typecast;
+  [13646]: Typecast;
+  ["InformationSchema.Types.Routines"]: Typecast;
+  [13651]: Typecast;
+  ["InformationSchema.Types.Schemata"]: Typecast;
+  [13655]: Typecast;
+  ["InformationSchema.Types.Sequences"]: Typecast;
+  [13660]: Typecast;
+  ["InformationSchema.Types.SqlFeatures"]: Typecast;
   [13493]: Typecast;
   ["InformationSchema.Types.SqlIdentifier"]: Typecast;
+  [13665]: Typecast;
+  ["InformationSchema.Types.SqlImplementationInfo"]: Typecast;
+  [13670]: Typecast;
+  ["InformationSchema.Types.SqlParts"]: Typecast;
+  [13675]: Typecast;
+  ["InformationSchema.Types.SqlSizing"]: Typecast;
+  [13680]: Typecast;
+  ["InformationSchema.Types.TableConstraints"]: Typecast;
+  [13685]: Typecast;
+  ["InformationSchema.Types.TablePrivileges"]: Typecast;
+  [13694]: Typecast;
+  ["InformationSchema.Types.Tables"]: Typecast;
   [13499]: Typecast;
   ["InformationSchema.Types.TimeStamp"]: Typecast;
+  [13699]: Typecast;
+  ["InformationSchema.Types.Transforms"]: Typecast;
+  [13704]: Typecast;
+  ["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast;
+  [13709]: Typecast;
+  ["InformationSchema.Types.Triggers"]: Typecast;
+  [13714]: Typecast;
+  ["InformationSchema.Types.UdtPrivileges"]: Typecast;
+  [13723]: Typecast;
+  ["InformationSchema.Types.UsagePrivileges"]: Typecast;
+  [13732]: Typecast;
+  ["InformationSchema.Types.UserDefinedTypes"]: Typecast;
+  [13819]: Typecast;
+  ["InformationSchema.Types.UserMappingOptions"]: Typecast;
+  [13824]: Typecast;
+  ["InformationSchema.Types.UserMappings"]: Typecast;
+  [13737]: Typecast;
+  ["InformationSchema.Types.ViewColumnUsage"]: Typecast;
+  [13742]: Typecast;
+  ["InformationSchema.Types.ViewRoutineUsage"]: Typecast;
+  [13747]: Typecast;
+  ["InformationSchema.Types.ViewTableUsage"]: Typecast;
+  [13752]: Typecast;
+  ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
+
+  ["Scripts.Sample.Film.Tally.Results"]: Typecast;
+
+  ["Scripts.Sample.Pick.Results"]: Typecast;
+
+  ["Scripts.Sample.Pick.Parameters"]: Typecast;
+
+  ["Scripts.Tally.Results"]: Typecast;
 }
 
 interface HasDatabase {
@@ -16077,7 +16940,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async filmInStock(parameters: Public.Procedures.FilmInStock.Arguments) {
+    async filmInStock(parameters: Public.Procedures.FilmInStock.Parameters) {
       const parseResult = (
         context: Context,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16106,7 +16969,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async filmNotInStock(
-      parameters: Public.Procedures.FilmNotInStock.Arguments,
+      parameters: Public.Procedures.FilmNotInStock.Parameters,
     ) {
       const parseResult = (
         context: Context,
@@ -16136,7 +16999,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async getCustomerBalance(
-      parameters: Public.Procedures.GetCustomerBalance.Arguments,
+      parameters: Public.Procedures.GetCustomerBalance.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -16154,7 +17017,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async inventoryHeldByCustomer(
-      parameters: Public.Procedures.InventoryHeldByCustomer.Arguments,
+      parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -16170,7 +17033,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async inventoryInStock(
-      parameters: Public.Procedures.InventoryInStock.Arguments,
+      parameters: Public.Procedures.InventoryInStock.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -16185,7 +17048,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .inventory_in_stock as unknown as Public.Procedures.InventoryInStock.Results;
       return responseBody;
     }
-    async lastDay(parameters: Public.Procedures.LastDay.Arguments) {
+    async lastDay(parameters: Public.Procedures.LastDay.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16199,7 +17062,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .last_day as unknown as Public.Procedures.LastDay.Results;
       return responseBody;
     }
-    async rewardsReport(parameters: Public.Procedures.RewardsReport.Arguments) {
+    async rewardsReport(
+      parameters: Public.Procedures.RewardsReport.Parameters,
+    ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -16231,12 +17096,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.FilmActor.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.film_actor (actor_id,film_id,last_update)
-    VALUES (actor_id,film_id,last_update)
-    ON CONFLICT (actor_id,film_id) DO UPDATE
-    SET last_update = EXCLUDED.last_update
-    RETURNING actor_id,film_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.film_actor 
+        (actor_id,film_id,last_update)
+      VALUES
+        (actor_id,film_id,last_update)
+      ON CONFLICT (actor_id,film_id) DO UPDATE
+      SET
+        last_update = EXCLUDED.last_update
+      RETURNING
+        actor_id,film_id,last_update
     `;
           return response.map((record) => ({
             actorId: undefinedIsNull(record.actor_id),
@@ -16245,7 +17116,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
         const response = await sql`INSERT INTO actor_id,film_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+    },${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING actor_id,film_id,last_update
     `;
         return response.map((record) => ({
@@ -16254,6 +17133,212 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByActorIdFilmId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+        ): Promise<Public.Tables.FilmActor.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          values: Partial<Public.Tables.FilmActor.Values>,
+        ): Promise<Public.Tables.FilmActor.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film_actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+        ): Promise<Public.Tables.FilmActor.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film_actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByFilmId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.FilmActor.ByFilmId,
+        ): Promise<Public.Tables.FilmActor.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.FilmActor.ByFilmId,
+          values: Partial<Public.Tables.FilmActor.Values>,
+        ): Promise<Public.Tables.FilmActor.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film_actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.FilmActor.ByFilmId,
+        ): Promise<Public.Tables.FilmActor.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film_actor 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
     })(this);
 
     public Address = new (class implements HasDatabase {
@@ -16270,12 +17355,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Address.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
-    VALUES (address_id,address,address2,district,city_id,postal_code,phone,last_update)
-    ON CONFLICT (address_id) DO UPDATE
-    SET address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.address 
+        (address_id,address,address2,district,city_id,postal_code,phone,last_update)
+      VALUES
+        (address_id,address,address2,district,city_id,postal_code,phone,last_update)
+      ON CONFLICT (address_id) DO UPDATE
+      SET
+        address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
+      RETURNING
+        address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
           return response.map((record) => ({
             addressId: undefinedIsNull(record.address_id),
@@ -16290,7 +17381,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO address_id,address,address2,district,city_id,postal_code,phone,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.addressId)
+    },${
+      values.address === undefined ? sql`DEFAULT` : typed[1043](values.address)
+    },${
+      values.address2 === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.address2)
+    },${
+      values.district === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.district)
+    },${
+      values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+    },${
+      values.postalCode === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.postalCode)
+    },${
+      values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
         return response.map((record) => ({
@@ -16304,6 +17421,270 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByAddressId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Address.ByAddressId,
+        ): Promise<Public.Tables.Address.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    `;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Address.ByAddressId,
+          values: Partial<Public.Tables.Address.Values>,
+        ): Promise<Public.Tables.Address.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.address 
+    SET
+      address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.addressId)
+      } , address = ${
+        values.address === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address)
+      } , address2 = ${
+        values.address2 === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address2)
+      } , district = ${
+        values.district === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.district)
+      } , city_id = ${
+        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+      } , postal_code = ${
+        values.postalCode === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.postalCode)
+      } , phone = ${
+        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Address.ByAddressId,
+        ): Promise<Public.Tables.Address.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.address 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByCityId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Address.ByCityId,
+        ): Promise<Public.Tables.Address.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    `;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Address.ByCityId,
+          values: Partial<Public.Tables.Address.Values>,
+        ): Promise<Public.Tables.Address.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.address 
+    SET
+      address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.addressId)
+      } , address = ${
+        values.address === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address)
+      } , address2 = ${
+        values.address2 === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address2)
+      } , district = ${
+        values.district === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.district)
+      } , city_id = ${
+        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+      } , postal_code = ${
+        values.postalCode === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.postalCode)
+      } , phone = ${
+        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Address.ByCityId,
+        ): Promise<Public.Tables.Address.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.address 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
     })(this);
 
     public City = new (class implements HasDatabase {
@@ -16320,12 +17701,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.City.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.city (city_id,city,country_id,last_update)
-    VALUES (city_id,city,country_id,last_update)
-    ON CONFLICT (city_id) DO UPDATE
-    SET city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
-    RETURNING city_id,city,country_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.city 
+        (city_id,city,country_id,last_update)
+      VALUES
+        (city_id,city,country_id,last_update)
+      ON CONFLICT (city_id) DO UPDATE
+      SET
+        city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
+      RETURNING
+        city_id,city,country_id,last_update
     `;
           return response.map((record) => ({
             cityId: undefinedIsNull(record.city_id),
@@ -16336,7 +17723,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO city_id,city,country_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+    },${values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)},${
+      values.countryId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.countryId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING city_id,city,country_id,last_update
     `;
         return response.map((record) => ({
@@ -16346,6 +17743,214 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByCityId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.City.ByCityId,
+        ): Promise<Public.Tables.City.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    `;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.City.ByCityId,
+          values: Partial<Public.Tables.City.Values>,
+        ): Promise<Public.Tables.City.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.city 
+    SET
+      city_id = ${
+        values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+      } , city = ${
+        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+      } , country_id = ${
+        values.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.countryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.City.ByCityId,
+        ): Promise<Public.Tables.City.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.city 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByCountryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.City.ByCountryId,
+        ): Promise<Public.Tables.City.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    `;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.City.ByCountryId,
+          values: Partial<Public.Tables.City.Values>,
+        ): Promise<Public.Tables.City.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.city 
+    SET
+      city_id = ${
+        values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+      } , city = ${
+        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+      } , country_id = ${
+        values.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.countryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.City.ByCountryId,
+        ): Promise<Public.Tables.City.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.city 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
     })(this);
 
     public Customer = new (class implements HasDatabase {
@@ -16362,12 +17967,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Customer.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-    VALUES (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-    ON CONFLICT (customer_id) DO UPDATE
-    SET store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
+          const response = await sql`
+      --
+      INSERT INTO
+        public.customer 
+        (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+      VALUES
+        (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+      ON CONFLICT (customer_id) DO UPDATE
+      SET
+        store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
+      RETURNING
+        customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
           return response.map((record) => ({
             customerId: undefinedIsNull(record.customer_id),
@@ -16384,7 +17995,39 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.customerId)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.activebool === undefined
+        ? sql`DEFAULT`
+        : typed[16](values.activebool)
+    },${
+      values.createDate === undefined
+        ? sql`DEFAULT`
+        : typed[1082](values.createDate)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${values.active === undefined ? sql`DEFAULT` : typed[23](values.active)})
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
         return response.map((record) => ({
@@ -16400,6 +18043,582 @@ export class Database extends PostgresDatabase implements HasDatabase {
           active: undefinedIsNull(record.active),
         }))[0];
       }
+
+      public ByAddressId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Customer.ByAddressId,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Customer.ByAddressId,
+          values: Partial<Public.Tables.Customer.Values>,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      } 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Customer.ByAddressId,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+      })(this);
+
+      public ByCustomerId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Customer.ByCustomerId,
+        ): Promise<Public.Tables.Customer.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Customer.ByCustomerId,
+          values: Partial<Public.Tables.Customer.Values>,
+        ): Promise<Public.Tables.Customer.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      } 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Customer.ByCustomerId,
+        ): Promise<Public.Tables.Customer.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }))[0];
+        }
+      })(this);
+
+      public ByLastName = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Customer.ByLastName,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Customer.ByLastName,
+          values: Partial<Public.Tables.Customer.Values>,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      } 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Customer.ByLastName,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+      })(this);
+
+      public ByStoreId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Customer.ByStoreId,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Customer.ByStoreId,
+          values: Partial<Public.Tables.Customer.Values>,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Customer.ByStoreId,
+        ): Promise<Public.Tables.Customer.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+      })(this);
     })(this);
 
     public Actor = new (class implements HasDatabase {
@@ -16416,12 +18635,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Actor.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.actor (actor_id,first_name,last_name,last_update)
-    VALUES (actor_id,first_name,last_name,last_update)
-    ON CONFLICT (actor_id) DO UPDATE
-    SET first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
-    RETURNING actor_id,first_name,last_name,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.actor 
+        (actor_id,first_name,last_name,last_update)
+      VALUES
+        (actor_id,first_name,last_name,last_update)
+      ON CONFLICT (actor_id) DO UPDATE
+      SET
+        first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
+      RETURNING
+        actor_id,first_name,last_name,last_update
     `;
           return response.map((record) => ({
             actorId: undefinedIsNull(record.actor_id),
@@ -16432,7 +18657,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO actor_id,first_name,last_name,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING actor_id,first_name,last_name,last_update
     `;
         return response.map((record) => ({
@@ -16442,6 +18681,218 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByActorId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Actor.ByActorId,
+        ): Promise<Public.Tables.Actor.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Actor.ByActorId,
+          values: Partial<Public.Tables.Actor.Values>,
+        ): Promise<Public.Tables.Actor.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Actor.ByActorId,
+        ): Promise<Public.Tables.Actor.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByLastName = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Actor.ByLastName,
+        ): Promise<Public.Tables.Actor.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Actor.ByLastName,
+          values: Partial<Public.Tables.Actor.Values>,
+        ): Promise<Public.Tables.Actor.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Actor.ByLastName,
+        ): Promise<Public.Tables.Actor.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.actor 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
     })(this);
 
     public FilmCategory = new (class implements HasDatabase {
@@ -16458,12 +18909,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.FilmCategory.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.film_category (film_id,category_id,last_update)
-    VALUES (film_id,category_id,last_update)
-    ON CONFLICT (film_id,category_id) DO UPDATE
-    SET last_update = EXCLUDED.last_update
-    RETURNING film_id,category_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.film_category 
+        (film_id,category_id,last_update)
+      VALUES
+        (film_id,category_id,last_update)
+      ON CONFLICT (film_id,category_id) DO UPDATE
+      SET
+        last_update = EXCLUDED.last_update
+      RETURNING
+        film_id,category_id,last_update
     `;
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
@@ -16472,7 +18929,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
         const response = await sql`INSERT INTO film_id,category_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.categoryId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.categoryId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING film_id,category_id,last_update
     `;
         return response.map((record) => ({
@@ -16481,6 +18948,117 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByFilmIdCategoryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ): Promise<Public.Tables.FilmCategory.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,category_id,last_update 
+    FROM
+      public.film_category 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          values: Partial<Public.Tables.FilmCategory.Values>,
+        ): Promise<Public.Tables.FilmCategory.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film_category 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      } , category_id = ${
+        values.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.categoryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    RETURNING film_id,category_id,last_update`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ): Promise<Public.Tables.FilmCategory.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film_category 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    RETURNING film_id,category_id,last_update`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Inventory = new (class implements HasDatabase {
@@ -16497,12 +19075,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Inventory.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.inventory (inventory_id,film_id,store_id,last_update)
-    VALUES (inventory_id,film_id,store_id,last_update)
-    ON CONFLICT (inventory_id) DO UPDATE
-    SET film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
-    RETURNING inventory_id,film_id,store_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.inventory 
+        (inventory_id,film_id,store_id,last_update)
+      VALUES
+        (inventory_id,film_id,store_id,last_update)
+      ON CONFLICT (inventory_id) DO UPDATE
+      SET
+        film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
+      RETURNING
+        inventory_id,film_id,store_id,last_update
     `;
           return response.map((record) => ({
             inventoryId: undefinedIsNull(record.inventory_id),
@@ -16513,7 +19097,19 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO inventory_id,film_id,store_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.inventoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.inventoryId)
+    },${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING inventory_id,film_id,store_id,last_update
     `;
         return response.map((record) => ({
@@ -16523,6 +19119,226 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByInventoryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+        ): Promise<Public.Tables.Inventory.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    `;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+          values: Partial<Public.Tables.Inventory.Values>,
+        ): Promise<Public.Tables.Inventory.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.inventory 
+    SET
+      inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Inventory.ByInventoryId,
+        ): Promise<Public.Tables.Inventory.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.inventory 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByStoreIdFilmId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+        ): Promise<Public.Tables.Inventory.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          values: Partial<Public.Tables.Inventory.Values>,
+        ): Promise<Public.Tables.Inventory.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.inventory 
+    SET
+      inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+        ): Promise<Public.Tables.Inventory.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.inventory 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
     })(this);
 
     public Category = new (class implements HasDatabase {
@@ -16539,12 +19355,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Category.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.category (category_id,name,last_update)
-    VALUES (category_id,name,last_update)
-    ON CONFLICT (category_id) DO UPDATE
-    SET name = EXCLUDED.name,last_update = EXCLUDED.last_update
-    RETURNING category_id,name,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.category 
+        (category_id,name,last_update)
+      VALUES
+        (category_id,name,last_update)
+      ON CONFLICT (category_id) DO UPDATE
+      SET
+        name = EXCLUDED.name,last_update = EXCLUDED.last_update
+      RETURNING
+        category_id,name,last_update
     `;
           return response.map((record) => ({
             categoryId: undefinedIsNull(record.category_id),
@@ -16553,7 +19375,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
         const response = await sql`INSERT INTO category_id,name,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.categoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.categoryId)
+    },${values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)},${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING category_id,name,last_update
     `;
         return response.map((record) => ({
@@ -16562,6 +19392,105 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByCategoryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Category.ByCategoryId,
+        ): Promise<Public.Tables.Category.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      category_id,name,last_update 
+    FROM
+      public.category 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    `;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Category.ByCategoryId,
+          values: Partial<Public.Tables.Category.Values>,
+        ): Promise<Public.Tables.Category.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.category 
+    SET
+      category_id = ${
+        values.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.categoryId)
+      } , name = ${
+        values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    RETURNING category_id,name,last_update`;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Category.ByCategoryId,
+        ): Promise<Public.Tables.Category.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.category 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    RETURNING category_id,name,last_update`;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Country = new (class implements HasDatabase {
@@ -16578,12 +19507,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Country.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.country (country_id,country,last_update)
-    VALUES (country_id,country,last_update)
-    ON CONFLICT (country_id) DO UPDATE
-    SET country = EXCLUDED.country,last_update = EXCLUDED.last_update
-    RETURNING country_id,country,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.country 
+        (country_id,country,last_update)
+      VALUES
+        (country_id,country,last_update)
+      ON CONFLICT (country_id) DO UPDATE
+      SET
+        country = EXCLUDED.country,last_update = EXCLUDED.last_update
+      RETURNING
+        country_id,country,last_update
     `;
           return response.map((record) => ({
             countryId: undefinedIsNull(record.country_id),
@@ -16592,7 +19527,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
         const response = await sql`INSERT INTO country_id,country,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.countryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.countryId)
+    },${
+      values.country === undefined ? sql`DEFAULT` : typed[1043](values.country)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING country_id,country,last_update
     `;
         return response.map((record) => ({
@@ -16601,6 +19546,107 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByCountryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Country.ByCountryId,
+        ): Promise<Public.Tables.Country.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      country_id,country,last_update 
+    FROM
+      public.country 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    `;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Country.ByCountryId,
+          values: Partial<Public.Tables.Country.Values>,
+        ): Promise<Public.Tables.Country.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.country 
+    SET
+      country_id = ${
+        values.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.countryId)
+      } , country = ${
+        values.country === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.country)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    RETURNING country_id,country,last_update`;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Country.ByCountryId,
+        ): Promise<Public.Tables.Country.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.country 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    RETURNING country_id,country,last_update`;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Language = new (class implements HasDatabase {
@@ -16617,12 +19663,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Language.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.language (language_id,name,last_update)
-    VALUES (language_id,name,last_update)
-    ON CONFLICT (language_id) DO UPDATE
-    SET name = EXCLUDED.name,last_update = EXCLUDED.last_update
-    RETURNING language_id,name,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.language 
+        (language_id,name,last_update)
+      VALUES
+        (language_id,name,last_update)
+      ON CONFLICT (language_id) DO UPDATE
+      SET
+        name = EXCLUDED.name,last_update = EXCLUDED.last_update
+      RETURNING
+        language_id,name,last_update
     `;
           return response.map((record) => ({
             languageId: undefinedIsNull(record.language_id),
@@ -16631,7 +19683,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
         const response = await sql`INSERT INTO language_id,name,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.languageId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.languageId)
+    },${values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)},${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING language_id,name,last_update
     `;
         return response.map((record) => ({
@@ -16640,6 +19700,105 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByLanguageId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Language.ByLanguageId,
+        ): Promise<Public.Tables.Language.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      language_id,name,last_update 
+    FROM
+      public.language 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    `;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Language.ByLanguageId,
+          values: Partial<Public.Tables.Language.Values>,
+        ): Promise<Public.Tables.Language.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.language 
+    SET
+      language_id = ${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.languageId)
+      } , name = ${
+        values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    RETURNING language_id,name,last_update`;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Language.ByLanguageId,
+        ): Promise<Public.Tables.Language.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.language 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    RETURNING language_id,name,last_update`;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Rental = new (class implements HasDatabase {
@@ -16656,12 +19815,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Rental.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-    VALUES (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-    ON CONFLICT (rental_id) DO UPDATE
-    SET rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.rental 
+        (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+      VALUES
+        (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+      ON CONFLICT (rental_id) DO UPDATE
+      SET
+        rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
+      RETURNING
+        rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
           return response.map((record) => ({
             rentalId: undefinedIsNull(record.rental_id),
@@ -16675,7 +19840,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
+    },${
+      values.rentalDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.rentalDate)
+    },${
+      values.inventoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.inventoryId)
+    },${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.customerId)
+    },${
+      values.returnDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.returnDate)
+    },${
+      values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
         return response.map((record) => ({
@@ -16688,6 +19877,413 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByInventoryId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Rental.ByInventoryId,
+        ): Promise<Public.Tables.Rental.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Rental.ByInventoryId,
+          values: Partial<Public.Tables.Rental.Values>,
+        ): Promise<Public.Tables.Rental.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Rental.ByInventoryId,
+        ): Promise<Public.Tables.Rental.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+      })(this);
+
+      public ByRentalDateInventoryIdCustomerId = new (class
+        implements HasDatabase
+      {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          values: Partial<Public.Tables.Rental.Values>,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByRentalId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Rental.ByRentalId,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Rental.ByRentalId,
+          values: Partial<Public.Tables.Rental.Values>,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Rental.ByRentalId,
+        ): Promise<Public.Tables.Rental.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Staff = new (class implements HasDatabase {
@@ -16704,12 +20300,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Staff.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-    VALUES (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-    ON CONFLICT (staff_id) DO UPDATE
-    SET first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
+          const response = await sql`
+      --
+      INSERT INTO
+        public.staff 
+        (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+      VALUES
+        (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+      ON CONFLICT (staff_id) DO UPDATE
+      SET
+        first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
+      RETURNING
+        staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
           return response.map((record) => ({
             staffId: undefinedIsNull(record.staff_id),
@@ -16727,7 +20329,41 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+    },${
+      values.username === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.username)
+    },${
+      values.password === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.password)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${
+      values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+    })
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
         return response.map((record) => ({
@@ -16744,6 +20380,153 @@ export class Database extends PostgresDatabase implements HasDatabase {
           picture: undefinedIsNull(record.picture),
         }))[0];
       }
+
+      public ByStaffId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Staff.ByStaffId,
+        ): Promise<Public.Tables.Staff.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
+    FROM
+      public.staff 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    `;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Staff.ByStaffId,
+          values: Partial<Public.Tables.Staff.Values>,
+        ): Promise<Public.Tables.Staff.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.staff 
+    SET
+      staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+      } , username = ${
+        values.username === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.username)
+      } , password = ${
+        values.password === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.password)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , picture = ${
+        values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+      } 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Staff.ByStaffId,
+        ): Promise<Public.Tables.Staff.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.staff 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Store = new (class implements HasDatabase {
@@ -16760,12 +20543,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Store.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.store (store_id,manager_staff_id,address_id,last_update)
-    VALUES (store_id,manager_staff_id,address_id,last_update)
-    ON CONFLICT (store_id) DO UPDATE
-    SET manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
-    RETURNING store_id,manager_staff_id,address_id,last_update
+          const response = await sql`
+      --
+      INSERT INTO
+        public.store 
+        (store_id,manager_staff_id,address_id,last_update)
+      VALUES
+        (store_id,manager_staff_id,address_id,last_update)
+      ON CONFLICT (store_id) DO UPDATE
+      SET
+        manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
+      RETURNING
+        store_id,manager_staff_id,address_id,last_update
     `;
           return response.map((record) => ({
             storeId: undefinedIsNull(record.store_id),
@@ -16776,7 +20565,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO store_id,manager_staff_id,address_id,last_update)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+    },${
+      values.managerStaffId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.managerStaffId)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
     RETURNING store_id,manager_staff_id,address_id,last_update
     `;
         return response.map((record) => ({
@@ -16786,6 +20589,218 @@ export class Database extends PostgresDatabase implements HasDatabase {
           lastUpdate: undefinedIsNull(record.last_update),
         }))[0];
       }
+
+      public ByManagerStaffId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    `;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+          values: Partial<Public.Tables.Store.Values>,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.store 
+    SET
+      store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+      } , manager_staff_id = ${
+        values.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.managerStaffId)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Store.ByManagerStaffId,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.store 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
+
+      public ByStoreId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Store.ByStoreId,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    `;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Store.ByStoreId,
+          values: Partial<Public.Tables.Store.Values>,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.store 
+    SET
+      store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+      } , manager_staff_id = ${
+        values.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.managerStaffId)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Store.ByStoreId,
+        ): Promise<Public.Tables.Store.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.store 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+      })(this);
     })(this);
 
     public Payment = new (class implements HasDatabase {
@@ -16802,12 +20817,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Payment.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-    VALUES (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-    ON CONFLICT (payment_id) DO UPDATE
-    SET customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
+          const response = await sql`
+      --
+      INSERT INTO
+        public.payment 
+        (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
+      VALUES
+        (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
+      ON CONFLICT (payment_id) DO UPDATE
+      SET
+        customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
+      RETURNING
+        payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
           return response.map((record) => ({
             paymentId: undefinedIsNull(record.payment_id),
@@ -16820,7 +20841,25 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.paymentId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.paymentId)
+    },${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.customerId)
+    },${
+      values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+    },${
+      values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
+    },${
+      values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+    },${
+      values.paymentDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.paymentDate)
+    })
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
         return response.map((record) => ({
@@ -16832,6 +20871,478 @@ export class Database extends PostgresDatabase implements HasDatabase {
           paymentDate: undefinedIsNull(record.payment_date),
         }))[0];
       }
+
+      public ByCustomerId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Payment.ByCustomerId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Payment.ByCustomerId,
+          values: Partial<Public.Tables.Payment.Values>,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Payment.ByCustomerId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+      })(this);
+
+      public ByPaymentId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Payment.ByPaymentId,
+        ): Promise<Public.Tables.Payment.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Payment.ByPaymentId,
+          values: Partial<Public.Tables.Payment.Values>,
+        ): Promise<Public.Tables.Payment.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Payment.ByPaymentId,
+        ): Promise<Public.Tables.Payment.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }))[0];
+        }
+      })(this);
+
+      public ByRentalId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Payment.ByRentalId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Payment.ByRentalId,
+          values: Partial<Public.Tables.Payment.Values>,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Payment.ByRentalId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+      })(this);
+
+      public ByStaffId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Payment.ByStaffId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Payment.ByStaffId,
+          values: Partial<Public.Tables.Payment.Values>,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Payment.ByStaffId,
+        ): Promise<Public.Tables.Payment.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+      })(this);
     })(this);
 
     public Film = new (class implements HasDatabase {
@@ -16848,12 +21359,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Film.includesPrimaryKey(values)) {
-          const response =
-            await sql`INSERT INTO public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    ON CONFLICT (film_id) DO UPDATE
-    SET title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
+          const response = await sql`
+      --
+      INSERT INTO
+        public.film 
+        (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+      VALUES
+        (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+      ON CONFLICT (film_id) DO UPDATE
+      SET
+        title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
+      RETURNING
+        film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
@@ -16873,7 +21390,51 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
         const response =
           await sql`INSERT INTO film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES ([object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise],[object Promise])
+    VALUES (${
+      values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+    },${
+      values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+    },${
+      values.description === undefined
+        ? sql`DEFAULT`
+        : typed[25](values.description)
+    },${
+      values.releaseYear === undefined
+        ? sql`DEFAULT`
+        : typed[25154](values.releaseYear)
+    },${
+      values.languageId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.languageId)
+    },${
+      values.rentalDuration === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.rentalDuration)
+    },${
+      values.rentalRate === undefined
+        ? sql`DEFAULT`
+        : typed[1700](values.rentalRate)
+    },${
+      values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+    },${
+      values.replacementCost === undefined
+        ? sql`DEFAULT`
+        : typed[1700](values.replacementCost)
+    },${
+      values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${
+      values.specialFeatures === undefined
+        ? sql`DEFAULT`
+        : typed[1009](values.specialFeatures)
+    },${
+      values.fulltext === undefined
+        ? sql`DEFAULT`
+        : typed[3614](values.fulltext)
+    })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
         return response.map((record) => ({
@@ -16892,6 +21453,658 @@ export class Database extends PostgresDatabase implements HasDatabase {
           fulltext: undefinedIsNull(record.fulltext),
         }))[0];
       }
+
+      public ByFilmId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Film.ByFilmId,
+        ): Promise<Public.Tables.Film.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Film.ByFilmId,
+          values: Partial<Public.Tables.Film.Values>,
+        ): Promise<Public.Tables.Film.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[25154](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Film.ByFilmId,
+        ): Promise<Public.Tables.Film.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }))[0];
+        }
+      })(this);
+
+      public ByFulltext = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Film.ByFulltext,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Film.ByFulltext,
+          values: Partial<Public.Tables.Film.Values>,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[25154](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Film.ByFulltext,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+      })(this);
+
+      public ByLanguageId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Film.ByLanguageId,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Film.ByLanguageId,
+          values: Partial<Public.Tables.Film.Values>,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[25154](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Film.ByLanguageId,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+      })(this);
+
+      public ByTitle = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Film.ByTitle,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async update(
+          parameters: Public.Tables.Film.ByTitle,
+          values: Partial<Public.Tables.Film.Values>,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[25154](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        async delete(
+          parameters: Public.Tables.Film.ByTitle,
+        ): Promise<Public.Tables.Film.Record[]> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+      })(this);
     })(this);
   })(this);
 
@@ -16932,7 +22145,7 @@ FROM
         }
       })(this);
 
-      async pick(parameters: Scripts.Sample.Pick.Arguments) {
+      async pick(parameters: Scripts.Sample.Pick.Parameters) {
         const sql = this.database.context.sql;
         const response = await sql.unsafe(
           `

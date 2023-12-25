@@ -1,7 +1,7 @@
 import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
-import { GenerationContext } from "@embracesql/shared";
+import { DomainTypeNode, GenerationContext } from "@embracesql/shared";
 
 /**
  * Domain types are renaming of other types.
@@ -11,6 +11,23 @@ import { GenerationContext } from "@embracesql/shared";
 export class PGTypeDomain extends PGCatalogType {
   constructor(context: TypeFactoryContext, catalog: CatalogRow) {
     super(catalog);
+  }
+
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    // there is no guarantee that the types of the attributes are loaded yet
+    const type = new DomainTypeNode(
+      this.catalog.typname,
+      schema.types,
+      this.oid,
+    );
+    context.database.registerType(type.id, type);
+  }
+
+  finalizeAST(context: GenerationContext) {
+    const typeNode = context.database.resolveType<DomainTypeNode>(this.oid);
+    typeNode.baseType = context.database.resolveType(this.catalog.typbasetype);
   }
 
   typescriptTypeDefinition(context: GenerationContext) {

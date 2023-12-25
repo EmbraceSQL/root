@@ -19,7 +19,7 @@ describe("The database can AutoCRUD", () => {
   });
   it("in a nested transaction", async () => {
     const updatedCustomer = await database.withTransaction(async (db) => {
-      return await db.Public.Customer.updateByCustomerId(
+      return await db.Public.Customer.ByCustomerId.update(
         {
           customerId: 1,
         },
@@ -35,13 +35,13 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("in a nested transaction that rolls back", async () => {
-    await database.Public.Customer.updateByCustomerId(
+    await database.Public.Customer.ByCustomerId.update(
       { customerId: 1 },
       { activebool: true },
     );
     try {
       await database.withTransaction(async (db) => {
-        await db.Public.Customer.updateByCustomerId(
+        await db.Public.Customer.ByCustomerId.update(
           {
             customerId: 1,
           },
@@ -52,7 +52,7 @@ describe("The database can AutoCRUD", () => {
     } catch (e) {
       expect((e as Error).message).toBe("aha");
     }
-    const customer = await database.Public.Customer.byCustomerId({
+    const customer = await database.Public.Customer.ByCustomerId.read({
       customerId: 1,
     });
 
@@ -64,7 +64,7 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("a unique index read", async () => {
-    const value = await database.Public.Actor.byActorId({ actorId: 1 });
+    const value = await database.Public.Actor.ByActorId.read({ actorId: 1 });
     expect(value).toMatchObject({
       actorId: 1,
       firstName: "Penelope",
@@ -72,45 +72,45 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("a non unique index read", async () => {
-    const values = await database.Public.Actor.byLastName({
+    const values = await database.Public.Actor.ByLastName.read({
       lastName: "Akroyd",
     });
     expect(values.length).toBeGreaterThan(1);
   });
   it("a unique index delete", async () => {
-    const before = await database.Public.Payment.byPaymentId({
+    const before = await database.Public.Payment.ByPaymentId.read({
       paymentId: 17503,
     });
     expect(before).toBeTruthy();
-    const deleted = await database.Public.Payment.deleteByPaymentId({
+    const deleted = await database.Public.Payment.ByPaymentId.delete({
       paymentId: 17503,
     });
     expect(deleted).toMatchObject(before);
-    const after = await database.Public.Payment.byPaymentId({
+    const after = await database.Public.Payment.ByPaymentId.read({
       paymentId: 17503,
     });
     expect(after).toBeUndefined();
   });
   it("a non-unique index delete", async () => {
-    const before = await database.Public.Payment.byCustomerId({
+    const before = await database.Public.Payment.ByCustomerId.read({
       customerId: 341,
     });
     expect(before.length).toBeGreaterThan(0);
-    const deleted = await database.Public.Payment.deleteByCustomerId({
+    const deleted = await database.Public.Payment.ByCustomerId.delete({
       customerId: 341,
     });
     expect(deleted).toMatchObject(before);
-    const after = await database.Public.Payment.byCustomerId({
+    const after = await database.Public.Payment.ByCustomerId.read({
       customerId: 341,
     });
     expect(after.length).toBe(0);
   });
   it("a unique index update", async () => {
-    const before = await database.Public.Customer.byCustomerId({
+    const before = await database.Public.Customer.ByCustomerId.read({
       customerId: 1,
     });
     expect(before).toBeTruthy();
-    const updated = await database.Public.Customer.updateByCustomerId(
+    const updated = await database.Public.Customer.ByCustomerId.update(
       {
         customerId: 1,
       },
@@ -125,11 +125,11 @@ describe("The database can AutoCRUD", () => {
     expect(before).not.toMatchObject(updated);
   });
   it("a non-unique index update", async () => {
-    const before = await database.Public.Customer.byStoreId({
+    const before = await database.Public.Customer.ByStoreId.read({
       storeId: 1,
     });
     expect(before.filter((c) => c.activebool).length).toBeGreaterThan(300);
-    const updated = await database.Public.Customer.updateByStoreId(
+    const updated = await database.Public.Customer.ByStoreId.update(
       {
         storeId: 1,
       },

@@ -28,7 +28,7 @@ export type EmbraceSQLClientProps = {
  *
  * Pass in options, and you are connected.
  */
-export class EmbraceSQLClient {
+export class EmbraceSQLClient implements _HasClient {
   constructor(public props: EmbraceSQLClientProps) {}
 
   /**
@@ -60,6 +60,10 @@ export class EmbraceSQLClient {
 
     // it'll be JSON back or an exception
     return (await response.json()) as unknown as EmbraceSQLResponse<Response>;
+  }
+
+  get client() {
+    return this;
   }
 }
 

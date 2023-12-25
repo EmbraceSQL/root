@@ -37,22 +37,29 @@ export const CreateOperation = {
         VALUES,
       )})) {
       `);
-      const sql = `INSERT INTO ${node.table.databaseName} (${sqlColumnNames})
-    VALUES (${sqlColumnNames})
-    ON CONFLICT (${node.table.attributesInPrimaryKey
-      .map((a) => a.name)
-      .join(",")}) DO UPDATE
-    SET ${node.table.attributesNotInPrimaryKey
-      .map((a) => `${a.name} = EXCLUDED.${a.name}`)
-      .join(",")}
-    RETURNING ${sqlColumnNames}
+      const sql = `
+      --
+      INSERT INTO
+        ${node.table.databaseName} 
+        (${sqlColumnNames})
+      VALUES
+        (${sqlColumnNames})
+      ON CONFLICT (${node.table.attributesInPrimaryKey
+        .map((a) => a.name)
+        .join(",")}) DO UPDATE
+      SET
+        ${node.table.attributesNotInPrimaryKey
+          .map((a) => `${a.name} = EXCLUDED.${a.name}`)
+          .join(",")}
+      RETURNING
+        ${sqlColumnNames}
     `;
       generationBuffer.push(`const response = await sql\`${sql}\``);
 
       generationBuffer.push(
-        `return ${await postgresResultRecordToTypescript(
+        `return ${postgresResultRecordToTypescript(
           context,
-          node.resultsResolvedType!,
+          node.table.type,
         )}[0]`,
       );
 
@@ -71,10 +78,7 @@ export const CreateOperation = {
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(
-      `return ${await postgresResultRecordToTypescript(
-        context,
-        node.resultsResolvedType!,
-      )}[0]`,
+      `return ${postgresResultRecordToTypescript(context, node.table.type)}[0]`,
     );
 
     // close out the create function

@@ -1,50 +1,18 @@
-import { GenerationContext } from ".";
-import { ASTNode, isNamed } from "./ast";
-import { pascalCase } from "change-case";
-
-/**
- * Give that node a typescript style type name.
- */
-export function typescriptTypeName(node: ASTNode) {
-  if (isNamed(node)) {
-    return pascalCase(node.name);
-  } else {
-    return "";
-  }
-}
-
-/**
- * Give that node a typescript style type name.
- */
-export function typescriptFullyQualifiedTypeName(node: ASTNode): string {
-  if (isNamed(node)) {
-    return node.onType
-      ? `${typescriptFullyQualifiedTypeName(node.onType)}.${pascalCase(
-          node.name,
-        )}`
-      : `${pascalCase(node.name)}`;
-  } else {
-    return "";
-  }
-}
+import { GenerationContext, NamedASTNode } from ".";
 
 /**
  * This is a really simple visitor that names the node into a namespace.
  */
 export const NamespaceVisitor = {
-  before: async (_: GenerationContext, node: ASTNode) => {
-    if (isNamed(node)) {
-      return `export namespace ${typescriptTypeName(node)} {`;
-    } else {
-      return "";
-    }
+  before: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return `export namespace ${node.typescriptName} {`;
   },
-  after: async (_: GenerationContext, node: ASTNode) => {
-    if (isNamed(node)) {
-      return "}";
-    } else {
-      return "";
-    }
+  after: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return "}";
   },
 };
 

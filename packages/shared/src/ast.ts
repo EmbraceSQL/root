@@ -13,17 +13,23 @@ import * as path from "path";
  *
  * When you are looking for results... look here 🤪.
  */
-export const RESULTS = "Results";
+export const RESULTS = "results";
 
 /**
- * Common name for passed arguments.
+ * Common name for passed in parameters used to filter and search.
+ *
+ * Think -- things that go in a WHERE clause.
  */
-export const ARGUMENTS = "Arguments";
+export const ARGUMENTS = "parameters";
+// TODO rename to PARAMETERS
 
 /**
- * Common name for passed in values.
+ * Common name for passed in values to set or read.
+ *
+ * Think -- thinks that go in a SELECT <columns> clause
+ * or in the SET <column>=<value> clause.
  */
-export const VALUES = "Values";
+export const VALUES = "values";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.
@@ -56,6 +62,7 @@ export enum ASTKind {
   CompositeType,
   AliasType,
   AttributeType,
+  DomainType,
 }
 
 interface DatabaseNamed {
@@ -74,30 +81,6 @@ interface DatabaseNamed {
 export interface NamedType {
   name: string;
   type: TypeNode;
-}
-
-/**
- * Nameable items, which is going to be nearly everything
- * in the database.
- */
-export interface IsNamed {
-  name: string;
-  typescriptName: string;
-}
-
-export function isNamed(node: ASTNode | IsNamed): node is IsNamed {
-  return (node as IsNamed).name !== undefined;
-}
-
-/**
- * Some nodes are containers.
- */
-export interface IsContainer extends IsNamed {
-  children: ASTNode[];
-}
-
-export function isContainer(node: ASTNode | IsContainer): node is IsContainer {
-  return (node as IsContainer).children !== undefined;
 }
 
 /**
@@ -149,6 +132,7 @@ export type ASTKindMap = {
   [ASTKind.CompositeType]: CompositeTypeNode;
   [ASTKind.AttributeType]: AttributeTypeNode;
   [ASTKind.AliasType]: AliasTypeNode;
+  [ASTKind.DomainType]: DomainTypeNode;
 };
 
 /**
@@ -206,7 +190,7 @@ export abstract class ASTNode {
  * Nodes often have names -- nodes that are important enough
  * to have a change to appear in the generated source as types.
  */
-export abstract class NamedASTNode extends ASTNode implements IsNamed {
+export abstract class NamedASTNode extends ASTNode {
   constructor(
     public name: string,
     kind: ASTKind,
@@ -243,10 +227,7 @@ export abstract class NamedASTNode extends ASTNode implements IsNamed {
 /**
  * Represents a database as an AST for code generation.
  */
-export abstract class ContainerNode
-  extends NamedASTNode
-  implements IsContainer
-{
+export abstract class ContainerNode extends NamedASTNode {
   children: ASTNode[] = [];
   constructor(name: string, kind: ASTKind, parent?: ContainerNode) {
     super(name, kind, parent);
@@ -310,7 +291,7 @@ export class DatabaseNode extends ContainerNode {
 
   resolveSchema(name: string) {
     const exists = this.children.find(
-      (c) => (c as unknown as IsNamed)?.name === name,
+      (c) => (c as unknown as NamedASTNode)?.name === name,
     ) as SchemaNode;
     if (exists) return exists;
     const schema = new SchemaNode(this, name);
@@ -386,6 +367,19 @@ export class AbstractTypeNode extends ContainerNode {
     public parser: GeneratesTypeScript,
   ) {
     super(name, kind, parent);
+  }
+}
+
+export class Never extends AbstractTypeNode {
+  constructor(parent: ContainerNode) {
+    super("never", ASTKind.Type, parent, 0, {
+      typescriptTypeDefinition: () => {
+        return `never`;
+      },
+      typescriptTypeParser: () => {
+        return `return undefined;`;
+      },
+    });
   }
 }
 
@@ -478,6 +472,12 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
       .filter<ColumnNode>((n): n is ColumnNode => isNodeType(n, ASTKind.Column))
       .filter((c) => c.hasDefault);
   }
+
+  get allColumns(): ColumnNode[] {
+    return this.children.filter<ColumnNode>((n): n is ColumnNode =>
+      isNodeType(n, ASTKind.Column),
+    );
+  }
 }
 
 /**
@@ -489,6 +489,7 @@ export class ColumnNode extends ContainerNode {
     public name: string,
     public type: TypeNode,
     public hasDefault: boolean,
+    public allowsNull: boolean,
   ) {
     super(name, ASTKind.Column, table);
   }
@@ -544,7 +545,7 @@ export class IndexNode extends ContainerNode {
 /**
  * A single column on a single index in a schema in a database.
  */
-export class IndexColumnNode extends ContainerNode {
+export class IndexColumnNode extends ContainerNode implements NamedType {
   constructor(
     public index: IndexNode,
     public name: string,
@@ -557,32 +558,6 @@ export class IndexColumnNode extends ContainerNode {
 // operations
 
 export abstract class OperationNode extends ContainerNode {
-  /**
-   * Operations have results, which are each of this type.
-   *
-   * An operation can return either a single value or arrary of this type.
-   */
-  get resultsType() {
-    return this.children
-      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
-        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
-      )
-      .find((c) => c.name === RESULTS);
-  }
-
-  // TODO: move resolve into abstract type and allow resolving ANY type, which many just return this
-  /**
-   * The results type might be an alias -- resolve it to the target
-   * final type.
-   */
-  get resultsResolvedType() {
-    const typeNode = this.resultsType;
-    // resolve type alias to a composite
-    return typeNode?.kind === ASTKind.AliasType
-      ? (typeNode as AliasTypeNode).type
-      : typeNode;
-  }
-
   get argumentsType() {
     return this.children
       .filter<CompositeTypeNode>(
@@ -601,12 +576,41 @@ export abstract class OperationNode extends ContainerNode {
 }
 
 /**
- * Operation to create a new row in a table. Each table gets one creator.
+ * Function like operations -- scripts and procedures.
+ */
+abstract class FunctionOperationNode extends OperationNode {
+  /**
+   * Operations have results, which are each of this type.
+   *
+   * An operation can return either a single value or arrary of this type.
+   */
+  get resultsType() {
+    return this.children
+      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
+        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
+      )
+      .find((c) => c.name === RESULTS);
+  }
+  /**
+   * The results type might be an alias -- resolve it to the target
+   * final type.
+   */
+  get resultsResolvedType() {
+    const typeNode = this.resultsType;
+    // resolve type alias to a composite
+    return typeNode?.kind === ASTKind.AliasType
+      ? (typeNode as AliasTypeNode).type
+      : typeNode;
+  }
+}
+
+/**
+ * Operation to create a new row in a table. Each table gets one.
  */
 export class CreateOperationNode extends OperationNode {
   constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
-    this.children.push(new AliasTypeNode(RESULTS, table.type, this));
+    //this.children.push(new AliasTypeNode(RESULTS, table.type, this));
     this.children.push(new AliasTypeNode(VALUES, table.type, this));
   }
 }
@@ -624,10 +628,8 @@ export abstract class IndexOperationNode extends OperationNode {
   ) {
     super(name, kind, index);
   }
-  get typescriptName() {
-    // method style naming for operation
-    return camelCase(`${this.name}${this.index.typescriptName}`);
-  }
+
+  // TODO: remove
   get typescriptNamespacedName() {
     // bypass to the table to not get a doubling of the apparent
     // index name
@@ -640,7 +642,7 @@ export abstract class IndexOperationNode extends OperationNode {
  */
 export class ReadOperationNode extends IndexOperationNode {
   constructor(public index: IndexNode) {
-    super("", ASTKind.ReadOperation, index);
+    super("read", ASTKind.ReadOperation, index);
   }
 }
 
@@ -745,7 +747,7 @@ export class ScriptFolderNode extends ContainerNode {
 /**
  * A single script that is source from a .sql file on disk.
  */
-export class ScriptNode extends OperationNode {
+export class ScriptNode extends FunctionOperationNode {
   /**
    * Asynchronous factory builds from a sql file on disk.
    */
@@ -786,7 +788,10 @@ export class ProceduresNode extends ContainerNode {
 /**
  * A single stored procedure or function.
  */
-export class ProcedureNode extends OperationNode implements DatabaseNamed {
+export class ProcedureNode
+  extends FunctionOperationNode
+  implements DatabaseNamed
+{
   constructor(
     name: string,
     public procedures: ProceduresNode,
@@ -859,7 +864,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
 /**
  * A single named type.
  */
-export class AttributeTypeNode extends ContainerNode {
+export class AttributeTypeNode extends ContainerNode implements NamedType {
   constructor(
     public onType: CompositeTypeNode,
     public name: string,
@@ -879,6 +884,7 @@ export class AttributeTypeNode extends ContainerNode {
     else return `argument_${this.index}`;
   }
 }
+// TODO: rename AttributeNode, this is not a 'type'
 
 /**
  * Rename a type, useful in namespaces to allow consistent
@@ -898,5 +904,59 @@ export class AliasTypeNode extends AbstractTypeNode {
         return `${type.typescriptNamespacedName}.parse(from)`;
       },
     });
+  }
+}
+
+/**
+ * A domain type is much like an alias, in that it gives a new name
+ * to an existing type.
+ *
+ * The difference is that the database will narrow the range of acceptable
+ * values for a domain.
+ *
+ * For example, imagine a ... useless admittedly ... year type:
+ *
+ * ```sql
+ * CREATE DOMAIN year AS integer
+ * 	CONSTRAINT year_check CHECK (((VALUE >= 1901) AND (VALUE <= 2155)));
+ * ```
+ *
+ */
+export class DomainTypeNode extends AbstractTypeNode {
+  private _baseType: AbstractTypeNode;
+  constructor(name: string, parent: ContainerNode, id: string | number) {
+    super(
+      name,
+      ASTKind.DomainType,
+      parent,
+      id,
+      // this is a placeholder and will be replaced
+      {
+        typescriptTypeDefinition: () => {
+          return `never`;
+        },
+        typescriptTypeParser: () => {
+          return `return undefined;`;
+        },
+      },
+    );
+    this._baseType = new Never(parent);
+  }
+
+  set baseType(baseType: AbstractTypeNode) {
+    this._baseType = baseType;
+    this.parser = {
+      typescriptTypeDefinition: () => {
+        // just alias the base type
+        return `${baseType.typescriptNamespacedName}`;
+      },
+      typescriptTypeParser: () => {
+        // base type type parser
+        return `return ${baseType.typescriptNamespacedName}.parse(from);`;
+      },
+    };
+  }
+  get baseType() {
+    return this._baseType;
   }
 }

@@ -11,6 +11,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+// eslint-disable @typescript-eslint/no-redundant-type-constituents
 import {
   UUID,
   JsDate,
@@ -2062,9 +2063,42 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export type Record = Required<PgCatalog.Types.PgStatistic>;
-      export type Results = PgCatalog.Types.PgStatistic;
+      export type Record = {
+        starelid: PgCatalog.Types.PgStatistic["starelid"];
+        staattnum: PgCatalog.Types.PgStatistic["staattnum"];
+        stainherit: PgCatalog.Types.PgStatistic["stainherit"];
+        stanullfrac: PgCatalog.Types.PgStatistic["stanullfrac"];
+        stawidth: PgCatalog.Types.PgStatistic["stawidth"];
+        stadistinct: PgCatalog.Types.PgStatistic["stadistinct"];
+        stakind1: PgCatalog.Types.PgStatistic["stakind1"];
+        stakind2: PgCatalog.Types.PgStatistic["stakind2"];
+        stakind3: PgCatalog.Types.PgStatistic["stakind3"];
+        stakind4: PgCatalog.Types.PgStatistic["stakind4"];
+        stakind5: PgCatalog.Types.PgStatistic["stakind5"];
+        staop1: PgCatalog.Types.PgStatistic["staop1"];
+        staop2: PgCatalog.Types.PgStatistic["staop2"];
+        staop3: PgCatalog.Types.PgStatistic["staop3"];
+        staop4: PgCatalog.Types.PgStatistic["staop4"];
+        staop5: PgCatalog.Types.PgStatistic["staop5"];
+        stacoll1: PgCatalog.Types.PgStatistic["stacoll1"];
+        stacoll2: PgCatalog.Types.PgStatistic["stacoll2"];
+        stacoll3: PgCatalog.Types.PgStatistic["stacoll3"];
+        stacoll4: PgCatalog.Types.PgStatistic["stacoll4"];
+        stacoll5: PgCatalog.Types.PgStatistic["stacoll5"];
+        stanumbers1: PgCatalog.Types.PgStatistic["stanumbers1"] | null;
+        stanumbers2: PgCatalog.Types.PgStatistic["stanumbers2"] | null;
+        stanumbers3: PgCatalog.Types.PgStatistic["stanumbers3"] | null;
+        stanumbers4: PgCatalog.Types.PgStatistic["stanumbers4"] | null;
+        stanumbers5: PgCatalog.Types.PgStatistic["stanumbers5"] | null;
+        stavalues1: PgCatalog.Types.PgStatistic["stavalues1"] | null;
+        stavalues2: PgCatalog.Types.PgStatistic["stavalues2"] | null;
+        stavalues3: PgCatalog.Types.PgStatistic["stavalues3"] | null;
+        stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
+        stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2075,9 +2109,43 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgType {
-      export type Record = Required<PgCatalog.Types.PgType>;
-      export type Results = PgCatalog.Types.PgType;
+      export type Record = {
+        oid: PgCatalog.Types.PgType["oid"];
+        typname: PgCatalog.Types.PgType["typname"];
+        typnamespace: PgCatalog.Types.PgType["typnamespace"];
+        typowner: PgCatalog.Types.PgType["typowner"];
+        typlen: PgCatalog.Types.PgType["typlen"];
+        typbyval: PgCatalog.Types.PgType["typbyval"];
+        typtype: PgCatalog.Types.PgType["typtype"];
+        typcategory: PgCatalog.Types.PgType["typcategory"];
+        typispreferred: PgCatalog.Types.PgType["typispreferred"];
+        typisdefined: PgCatalog.Types.PgType["typisdefined"];
+        typdelim: PgCatalog.Types.PgType["typdelim"];
+        typrelid: PgCatalog.Types.PgType["typrelid"];
+        typsubscript: PgCatalog.Types.PgType["typsubscript"];
+        typelem: PgCatalog.Types.PgType["typelem"];
+        typarray: PgCatalog.Types.PgType["typarray"];
+        typinput: PgCatalog.Types.PgType["typinput"];
+        typoutput: PgCatalog.Types.PgType["typoutput"];
+        typreceive: PgCatalog.Types.PgType["typreceive"];
+        typsend: PgCatalog.Types.PgType["typsend"];
+        typmodin: PgCatalog.Types.PgType["typmodin"];
+        typmodout: PgCatalog.Types.PgType["typmodout"];
+        typanalyze: PgCatalog.Types.PgType["typanalyze"];
+        typalign: PgCatalog.Types.PgType["typalign"];
+        typstorage: PgCatalog.Types.PgType["typstorage"];
+        typnotnull: PgCatalog.Types.PgType["typnotnull"];
+        typbasetype: PgCatalog.Types.PgType["typbasetype"];
+        typtypmod: PgCatalog.Types.PgType["typtypmod"];
+        typndims: PgCatalog.Types.PgType["typndims"];
+        typcollation: PgCatalog.Types.PgType["typcollation"];
+        typdefaultbin: PgCatalog.Types.PgType["typdefaultbin"] | null;
+        typdefault: PgCatalog.Types.PgType["typdefault"] | null;
+        typacl: PgCatalog.Types.PgType["typacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2090,9 +2158,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignTable {
-      export type Record = Required<PgCatalog.Types.PgForeignTable>;
-      export type Results = PgCatalog.Types.PgForeignTable;
+      export type Record = {
+        ftrelid: PgCatalog.Types.PgForeignTable["ftrelid"];
+        ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
+        ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
@@ -2101,9 +2174,23 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthid {
-      export type Record = Required<PgCatalog.Types.PgAuthid>;
-      export type Results = PgCatalog.Types.PgAuthid;
+      export type Record = {
+        oid: PgCatalog.Types.PgAuthid["oid"];
+        rolname: PgCatalog.Types.PgAuthid["rolname"];
+        rolsuper: PgCatalog.Types.PgAuthid["rolsuper"];
+        rolinherit: PgCatalog.Types.PgAuthid["rolinherit"];
+        rolcreaterole: PgCatalog.Types.PgAuthid["rolcreaterole"];
+        rolcreatedb: PgCatalog.Types.PgAuthid["rolcreatedb"];
+        rolcanlogin: PgCatalog.Types.PgAuthid["rolcanlogin"];
+        rolreplication: PgCatalog.Types.PgAuthid["rolreplication"];
+        rolbypassrls: PgCatalog.Types.PgAuthid["rolbypassrls"];
+        rolconnlimit: PgCatalog.Types.PgAuthid["rolconnlimit"];
+        rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
+        rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2115,9 +2202,21 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExtData {
-      export type Record = Required<PgCatalog.Types.PgStatisticExtData>;
-      export type Results = PgCatalog.Types.PgStatisticExtData;
+      export type Record = {
+        stxoid: PgCatalog.Types.PgStatisticExtData["stxoid"];
+        stxdinherit: PgCatalog.Types.PgStatisticExtData["stxdinherit"];
+        stxdndistinct:
+          | PgCatalog.Types.PgStatisticExtData["stxdndistinct"]
+          | null;
+        stxddependencies:
+          | PgCatalog.Types.PgStatisticExtData["stxddependencies"]
+          | null;
+        stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
+        stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
@@ -2127,9 +2226,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgUserMapping {
-      export type Record = Required<PgCatalog.Types.PgUserMapping>;
-      export type Results = PgCatalog.Types.PgUserMapping;
+      export type Record = {
+        oid: PgCatalog.Types.PgUserMapping["oid"];
+        umuser: PgCatalog.Types.PgUserMapping["umuser"];
+        umserver: PgCatalog.Types.PgUserMapping["umserver"];
+        umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2142,9 +2247,28 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscription {
-      export type Record = Required<PgCatalog.Types.PgSubscription>;
-      export type Results = PgCatalog.Types.PgSubscription;
+      export type Record = {
+        oid: PgCatalog.Types.PgSubscription["oid"];
+        subdbid: PgCatalog.Types.PgSubscription["subdbid"];
+        subskiplsn: PgCatalog.Types.PgSubscription["subskiplsn"];
+        subname: PgCatalog.Types.PgSubscription["subname"];
+        subowner: PgCatalog.Types.PgSubscription["subowner"];
+        subenabled: PgCatalog.Types.PgSubscription["subenabled"];
+        subbinary: PgCatalog.Types.PgSubscription["subbinary"];
+        substream: PgCatalog.Types.PgSubscription["substream"];
+        subtwophasestate: PgCatalog.Types.PgSubscription["subtwophasestate"];
+        subdisableonerr: PgCatalog.Types.PgSubscription["subdisableonerr"];
+        subpasswordrequired: PgCatalog.Types.PgSubscription["subpasswordrequired"];
+        subrunasowner: PgCatalog.Types.PgSubscription["subrunasowner"];
+        subconninfo: PgCatalog.Types.PgSubscription["subconninfo"];
+        subslotname: PgCatalog.Types.PgSubscription["subslotname"] | null;
+        subsynccommit: PgCatalog.Types.PgSubscription["subsynccommit"];
+        subpublications: PgCatalog.Types.PgSubscription["subpublications"];
+        suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2157,9 +2281,37 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAttribute {
-      export type Record = Required<PgCatalog.Types.PgAttribute>;
-      export type Results = PgCatalog.Types.PgAttribute;
+      export type Record = {
+        attrelid: PgCatalog.Types.PgAttribute["attrelid"];
+        attname: PgCatalog.Types.PgAttribute["attname"];
+        atttypid: PgCatalog.Types.PgAttribute["atttypid"];
+        attlen: PgCatalog.Types.PgAttribute["attlen"];
+        attnum: PgCatalog.Types.PgAttribute["attnum"];
+        attcacheoff: PgCatalog.Types.PgAttribute["attcacheoff"];
+        atttypmod: PgCatalog.Types.PgAttribute["atttypmod"];
+        attndims: PgCatalog.Types.PgAttribute["attndims"];
+        attbyval: PgCatalog.Types.PgAttribute["attbyval"];
+        attalign: PgCatalog.Types.PgAttribute["attalign"];
+        attstorage: PgCatalog.Types.PgAttribute["attstorage"];
+        attcompression: PgCatalog.Types.PgAttribute["attcompression"];
+        attnotnull: PgCatalog.Types.PgAttribute["attnotnull"];
+        atthasdef: PgCatalog.Types.PgAttribute["atthasdef"];
+        atthasmissing: PgCatalog.Types.PgAttribute["atthasmissing"];
+        attidentity: PgCatalog.Types.PgAttribute["attidentity"];
+        attgenerated: PgCatalog.Types.PgAttribute["attgenerated"];
+        attisdropped: PgCatalog.Types.PgAttribute["attisdropped"];
+        attislocal: PgCatalog.Types.PgAttribute["attislocal"];
+        attinhcount: PgCatalog.Types.PgAttribute["attinhcount"];
+        attstattarget: PgCatalog.Types.PgAttribute["attstattarget"];
+        attcollation: PgCatalog.Types.PgAttribute["attcollation"];
+        attacl: PgCatalog.Types.PgAttribute["attacl"] | null;
+        attoptions: PgCatalog.Types.PgAttribute["attoptions"] | null;
+        attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
+        attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2174,9 +2326,41 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgProc {
-      export type Record = Required<PgCatalog.Types.PgProc>;
-      export type Results = PgCatalog.Types.PgProc;
+      export type Record = {
+        oid: PgCatalog.Types.PgProc["oid"];
+        proname: PgCatalog.Types.PgProc["proname"];
+        pronamespace: PgCatalog.Types.PgProc["pronamespace"];
+        proowner: PgCatalog.Types.PgProc["proowner"];
+        prolang: PgCatalog.Types.PgProc["prolang"];
+        procost: PgCatalog.Types.PgProc["procost"];
+        prorows: PgCatalog.Types.PgProc["prorows"];
+        provariadic: PgCatalog.Types.PgProc["provariadic"];
+        prosupport: PgCatalog.Types.PgProc["prosupport"];
+        prokind: PgCatalog.Types.PgProc["prokind"];
+        prosecdef: PgCatalog.Types.PgProc["prosecdef"];
+        proleakproof: PgCatalog.Types.PgProc["proleakproof"];
+        proisstrict: PgCatalog.Types.PgProc["proisstrict"];
+        proretset: PgCatalog.Types.PgProc["proretset"];
+        provolatile: PgCatalog.Types.PgProc["provolatile"];
+        proparallel: PgCatalog.Types.PgProc["proparallel"];
+        pronargs: PgCatalog.Types.PgProc["pronargs"];
+        pronargdefaults: PgCatalog.Types.PgProc["pronargdefaults"];
+        prorettype: PgCatalog.Types.PgProc["prorettype"];
+        proargtypes: PgCatalog.Types.PgProc["proargtypes"];
+        proallargtypes: PgCatalog.Types.PgProc["proallargtypes"] | null;
+        proargmodes: PgCatalog.Types.PgProc["proargmodes"] | null;
+        proargnames: PgCatalog.Types.PgProc["proargnames"] | null;
+        proargdefaults: PgCatalog.Types.PgProc["proargdefaults"] | null;
+        protrftypes: PgCatalog.Types.PgProc["protrftypes"] | null;
+        prosrc: PgCatalog.Types.PgProc["prosrc"];
+        probin: PgCatalog.Types.PgProc["probin"] | null;
+        prosqlbody: PgCatalog.Types.PgProc["prosqlbody"] | null;
+        proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
+        proacl: PgCatalog.Types.PgProc["proacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2190,9 +2374,44 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgClass {
-      export type Record = Required<PgCatalog.Types.PgClass>;
-      export type Results = PgCatalog.Types.PgClass;
+      export type Record = {
+        oid: PgCatalog.Types.PgClass["oid"];
+        relname: PgCatalog.Types.PgClass["relname"];
+        relnamespace: PgCatalog.Types.PgClass["relnamespace"];
+        reltype: PgCatalog.Types.PgClass["reltype"];
+        reloftype: PgCatalog.Types.PgClass["reloftype"];
+        relowner: PgCatalog.Types.PgClass["relowner"];
+        relam: PgCatalog.Types.PgClass["relam"];
+        relfilenode: PgCatalog.Types.PgClass["relfilenode"];
+        reltablespace: PgCatalog.Types.PgClass["reltablespace"];
+        relpages: PgCatalog.Types.PgClass["relpages"];
+        reltuples: PgCatalog.Types.PgClass["reltuples"];
+        relallvisible: PgCatalog.Types.PgClass["relallvisible"];
+        reltoastrelid: PgCatalog.Types.PgClass["reltoastrelid"];
+        relhasindex: PgCatalog.Types.PgClass["relhasindex"];
+        relisshared: PgCatalog.Types.PgClass["relisshared"];
+        relpersistence: PgCatalog.Types.PgClass["relpersistence"];
+        relkind: PgCatalog.Types.PgClass["relkind"];
+        relnatts: PgCatalog.Types.PgClass["relnatts"];
+        relchecks: PgCatalog.Types.PgClass["relchecks"];
+        relhasrules: PgCatalog.Types.PgClass["relhasrules"];
+        relhastriggers: PgCatalog.Types.PgClass["relhastriggers"];
+        relhassubclass: PgCatalog.Types.PgClass["relhassubclass"];
+        relrowsecurity: PgCatalog.Types.PgClass["relrowsecurity"];
+        relforcerowsecurity: PgCatalog.Types.PgClass["relforcerowsecurity"];
+        relispopulated: PgCatalog.Types.PgClass["relispopulated"];
+        relreplident: PgCatalog.Types.PgClass["relreplident"];
+        relispartition: PgCatalog.Types.PgClass["relispartition"];
+        relrewrite: PgCatalog.Types.PgClass["relrewrite"];
+        relfrozenxid: PgCatalog.Types.PgClass["relfrozenxid"];
+        relminmxid: PgCatalog.Types.PgClass["relminmxid"];
+        relacl: PgCatalog.Types.PgClass["relacl"] | null;
+        reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
+        relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2210,9 +2429,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAttrdef {
-      export type Record = Required<PgCatalog.Types.PgAttrdef>;
-      export type Results = PgCatalog.Types.PgAttrdef;
+      export type Record = {
+        oid: PgCatalog.Types.PgAttrdef["oid"];
+        adrelid: PgCatalog.Types.PgAttrdef["adrelid"];
+        adnum: PgCatalog.Types.PgAttrdef["adnum"];
+        adbin: PgCatalog.Types.PgAttrdef["adbin"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2226,9 +2451,37 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgConstraint {
-      export type Record = Required<PgCatalog.Types.PgConstraint>;
-      export type Results = PgCatalog.Types.PgConstraint;
+      export type Record = {
+        oid: PgCatalog.Types.PgConstraint["oid"];
+        conname: PgCatalog.Types.PgConstraint["conname"];
+        connamespace: PgCatalog.Types.PgConstraint["connamespace"];
+        contype: PgCatalog.Types.PgConstraint["contype"];
+        condeferrable: PgCatalog.Types.PgConstraint["condeferrable"];
+        condeferred: PgCatalog.Types.PgConstraint["condeferred"];
+        convalidated: PgCatalog.Types.PgConstraint["convalidated"];
+        conrelid: PgCatalog.Types.PgConstraint["conrelid"];
+        contypid: PgCatalog.Types.PgConstraint["contypid"];
+        conindid: PgCatalog.Types.PgConstraint["conindid"];
+        conparentid: PgCatalog.Types.PgConstraint["conparentid"];
+        confrelid: PgCatalog.Types.PgConstraint["confrelid"];
+        confupdtype: PgCatalog.Types.PgConstraint["confupdtype"];
+        confdeltype: PgCatalog.Types.PgConstraint["confdeltype"];
+        confmatchtype: PgCatalog.Types.PgConstraint["confmatchtype"];
+        conislocal: PgCatalog.Types.PgConstraint["conislocal"];
+        coninhcount: PgCatalog.Types.PgConstraint["coninhcount"];
+        connoinherit: PgCatalog.Types.PgConstraint["connoinherit"];
+        conkey: PgCatalog.Types.PgConstraint["conkey"] | null;
+        confkey: PgCatalog.Types.PgConstraint["confkey"] | null;
+        conpfeqop: PgCatalog.Types.PgConstraint["conpfeqop"] | null;
+        conppeqop: PgCatalog.Types.PgConstraint["conppeqop"] | null;
+        conffeqop: PgCatalog.Types.PgConstraint["conffeqop"] | null;
+        confdelsetcols: PgCatalog.Types.PgConstraint["confdelsetcols"] | null;
+        conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
+        conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2256,9 +2509,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgInherits {
-      export type Record = Required<PgCatalog.Types.PgInherits>;
-      export type Results = PgCatalog.Types.PgInherits;
+      export type Record = {
+        inhrelid: PgCatalog.Types.PgInherits["inhrelid"];
+        inhparent: PgCatalog.Types.PgInherits["inhparent"];
+        inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
+        inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -2272,9 +2531,32 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgIndex {
-      export type Record = Required<PgCatalog.Types.PgIndex>;
-      export type Results = PgCatalog.Types.PgIndex;
+      export type Record = {
+        indexrelid: PgCatalog.Types.PgIndex["indexrelid"];
+        indrelid: PgCatalog.Types.PgIndex["indrelid"];
+        indnatts: PgCatalog.Types.PgIndex["indnatts"];
+        indnkeyatts: PgCatalog.Types.PgIndex["indnkeyatts"];
+        indisunique: PgCatalog.Types.PgIndex["indisunique"];
+        indnullsnotdistinct: PgCatalog.Types.PgIndex["indnullsnotdistinct"];
+        indisprimary: PgCatalog.Types.PgIndex["indisprimary"];
+        indisexclusion: PgCatalog.Types.PgIndex["indisexclusion"];
+        indimmediate: PgCatalog.Types.PgIndex["indimmediate"];
+        indisclustered: PgCatalog.Types.PgIndex["indisclustered"];
+        indisvalid: PgCatalog.Types.PgIndex["indisvalid"];
+        indcheckxmin: PgCatalog.Types.PgIndex["indcheckxmin"];
+        indisready: PgCatalog.Types.PgIndex["indisready"];
+        indislive: PgCatalog.Types.PgIndex["indislive"];
+        indisreplident: PgCatalog.Types.PgIndex["indisreplident"];
+        indkey: PgCatalog.Types.PgIndex["indkey"];
+        indcollation: PgCatalog.Types.PgIndex["indcollation"];
+        indclass: PgCatalog.Types.PgIndex["indclass"];
+        indoption: PgCatalog.Types.PgIndex["indoption"];
+        indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
+        indpred: PgCatalog.Types.PgIndex["indpred"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -2286,9 +2568,26 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOperator {
-      export type Record = Required<PgCatalog.Types.PgOperator>;
-      export type Results = PgCatalog.Types.PgOperator;
+      export type Record = {
+        oid: PgCatalog.Types.PgOperator["oid"];
+        oprname: PgCatalog.Types.PgOperator["oprname"];
+        oprnamespace: PgCatalog.Types.PgOperator["oprnamespace"];
+        oprowner: PgCatalog.Types.PgOperator["oprowner"];
+        oprkind: PgCatalog.Types.PgOperator["oprkind"];
+        oprcanmerge: PgCatalog.Types.PgOperator["oprcanmerge"];
+        oprcanhash: PgCatalog.Types.PgOperator["oprcanhash"];
+        oprleft: PgCatalog.Types.PgOperator["oprleft"];
+        oprright: PgCatalog.Types.PgOperator["oprright"];
+        oprresult: PgCatalog.Types.PgOperator["oprresult"];
+        oprcom: PgCatalog.Types.PgOperator["oprcom"];
+        oprnegate: PgCatalog.Types.PgOperator["oprnegate"];
+        oprcode: PgCatalog.Types.PgOperator["oprcode"];
+        oprrest: PgCatalog.Types.PgOperator["oprrest"];
+        oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2303,9 +2602,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOpfamily {
-      export type Record = Required<PgCatalog.Types.PgOpfamily>;
-      export type Results = PgCatalog.Types.PgOpfamily;
+      export type Record = {
+        oid: PgCatalog.Types.PgOpfamily["oid"];
+        opfmethod: PgCatalog.Types.PgOpfamily["opfmethod"];
+        opfname: PgCatalog.Types.PgOpfamily["opfname"];
+        opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
+        opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2319,9 +2625,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgOpclass {
-      export type Record = Required<PgCatalog.Types.PgOpclass>;
-      export type Results = PgCatalog.Types.PgOpclass;
+      export type Record = {
+        oid: PgCatalog.Types.PgOpclass["oid"];
+        opcmethod: PgCatalog.Types.PgOpclass["opcmethod"];
+        opcname: PgCatalog.Types.PgOpclass["opcname"];
+        opcnamespace: PgCatalog.Types.PgOpclass["opcnamespace"];
+        opcowner: PgCatalog.Types.PgOpclass["opcowner"];
+        opcfamily: PgCatalog.Types.PgOpclass["opcfamily"];
+        opcintype: PgCatalog.Types.PgOpclass["opcintype"];
+        opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
+        opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2335,9 +2652,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAm {
-      export type Record = Required<PgCatalog.Types.PgAm>;
-      export type Results = PgCatalog.Types.PgAm;
+      export type Record = {
+        oid: PgCatalog.Types.PgAm["oid"];
+        amname: PgCatalog.Types.PgAm["amname"];
+        amhandler: PgCatalog.Types.PgAm["amhandler"];
+        amtype: PgCatalog.Types.PgAm["amtype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -2350,9 +2673,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAmop {
-      export type Record = Required<PgCatalog.Types.PgAmop>;
-      export type Results = PgCatalog.Types.PgAmop;
+      export type Record = {
+        oid: PgCatalog.Types.PgAmop["oid"];
+        amopfamily: PgCatalog.Types.PgAmop["amopfamily"];
+        amoplefttype: PgCatalog.Types.PgAmop["amoplefttype"];
+        amoprighttype: PgCatalog.Types.PgAmop["amoprighttype"];
+        amopstrategy: PgCatalog.Types.PgAmop["amopstrategy"];
+        amoppurpose: PgCatalog.Types.PgAmop["amoppurpose"];
+        amopopr: PgCatalog.Types.PgAmop["amopopr"];
+        amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
+        amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -2374,9 +2708,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAmproc {
-      export type Record = Required<PgCatalog.Types.PgAmproc>;
-      export type Results = PgCatalog.Types.PgAmproc;
+      export type Record = {
+        oid: PgCatalog.Types.PgAmproc["oid"];
+        amprocfamily: PgCatalog.Types.PgAmproc["amprocfamily"];
+        amproclefttype: PgCatalog.Types.PgAmproc["amproclefttype"];
+        amprocrighttype: PgCatalog.Types.PgAmproc["amprocrighttype"];
+        amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
+        amproc: PgCatalog.Types.PgAmproc["amproc"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -2392,9 +2734,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLanguage {
-      export type Record = Required<PgCatalog.Types.PgLanguage>;
-      export type Results = PgCatalog.Types.PgLanguage;
+      export type Record = {
+        oid: PgCatalog.Types.PgLanguage["oid"];
+        lanname: PgCatalog.Types.PgLanguage["lanname"];
+        lanowner: PgCatalog.Types.PgLanguage["lanowner"];
+        lanispl: PgCatalog.Types.PgLanguage["lanispl"];
+        lanpltrusted: PgCatalog.Types.PgLanguage["lanpltrusted"];
+        lanplcallfoid: PgCatalog.Types.PgLanguage["lanplcallfoid"];
+        laninline: PgCatalog.Types.PgLanguage["laninline"];
+        lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
+        lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -2407,9 +2760,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobjectMetadata {
-      export type Record = Required<PgCatalog.Types.PgLargeobjectMetadata>;
-      export type Results = PgCatalog.Types.PgLargeobjectMetadata;
+      export type Record = {
+        oid: PgCatalog.Types.PgLargeobjectMetadata["oid"];
+        lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
+        lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2418,9 +2776,33 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAggregate {
-      export type Record = Required<PgCatalog.Types.PgAggregate>;
-      export type Results = PgCatalog.Types.PgAggregate;
+      export type Record = {
+        aggfnoid: PgCatalog.Types.PgAggregate["aggfnoid"];
+        aggkind: PgCatalog.Types.PgAggregate["aggkind"];
+        aggnumdirectargs: PgCatalog.Types.PgAggregate["aggnumdirectargs"];
+        aggtransfn: PgCatalog.Types.PgAggregate["aggtransfn"];
+        aggfinalfn: PgCatalog.Types.PgAggregate["aggfinalfn"];
+        aggcombinefn: PgCatalog.Types.PgAggregate["aggcombinefn"];
+        aggserialfn: PgCatalog.Types.PgAggregate["aggserialfn"];
+        aggdeserialfn: PgCatalog.Types.PgAggregate["aggdeserialfn"];
+        aggmtransfn: PgCatalog.Types.PgAggregate["aggmtransfn"];
+        aggminvtransfn: PgCatalog.Types.PgAggregate["aggminvtransfn"];
+        aggmfinalfn: PgCatalog.Types.PgAggregate["aggmfinalfn"];
+        aggfinalextra: PgCatalog.Types.PgAggregate["aggfinalextra"];
+        aggmfinalextra: PgCatalog.Types.PgAggregate["aggmfinalextra"];
+        aggfinalmodify: PgCatalog.Types.PgAggregate["aggfinalmodify"];
+        aggmfinalmodify: PgCatalog.Types.PgAggregate["aggmfinalmodify"];
+        aggsortop: PgCatalog.Types.PgAggregate["aggsortop"];
+        aggtranstype: PgCatalog.Types.PgAggregate["aggtranstype"];
+        aggtransspace: PgCatalog.Types.PgAggregate["aggtransspace"];
+        aggmtranstype: PgCatalog.Types.PgAggregate["aggmtranstype"];
+        aggmtransspace: PgCatalog.Types.PgAggregate["aggmtransspace"];
+        agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
+        aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
@@ -2429,9 +2811,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgStatisticExt {
-      export type Record = Required<PgCatalog.Types.PgStatisticExt>;
-      export type Results = PgCatalog.Types.PgStatisticExt;
+      export type Record = {
+        oid: PgCatalog.Types.PgStatisticExt["oid"];
+        stxrelid: PgCatalog.Types.PgStatisticExt["stxrelid"];
+        stxname: PgCatalog.Types.PgStatisticExt["stxname"];
+        stxnamespace: PgCatalog.Types.PgStatisticExt["stxnamespace"];
+        stxowner: PgCatalog.Types.PgStatisticExt["stxowner"];
+        stxstattarget: PgCatalog.Types.PgStatisticExt["stxstattarget"];
+        stxkeys: PgCatalog.Types.PgStatisticExt["stxkeys"];
+        stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
+        stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2448,9 +2841,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgRewrite {
-      export type Record = Required<PgCatalog.Types.PgRewrite>;
-      export type Results = PgCatalog.Types.PgRewrite;
+      export type Record = {
+        oid: PgCatalog.Types.PgRewrite["oid"];
+        rulename: PgCatalog.Types.PgRewrite["rulename"];
+        evClass: PgCatalog.Types.PgRewrite["evClass"];
+        evType: PgCatalog.Types.PgRewrite["evType"];
+        evEnabled: PgCatalog.Types.PgRewrite["evEnabled"];
+        isInstead: PgCatalog.Types.PgRewrite["isInstead"];
+        evQual: PgCatalog.Types.PgRewrite["evQual"];
+        evAction: PgCatalog.Types.PgRewrite["evAction"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -2464,9 +2867,30 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTrigger {
-      export type Record = Required<PgCatalog.Types.PgTrigger>;
-      export type Results = PgCatalog.Types.PgTrigger;
+      export type Record = {
+        oid: PgCatalog.Types.PgTrigger["oid"];
+        tgrelid: PgCatalog.Types.PgTrigger["tgrelid"];
+        tgparentid: PgCatalog.Types.PgTrigger["tgparentid"];
+        tgname: PgCatalog.Types.PgTrigger["tgname"];
+        tgfoid: PgCatalog.Types.PgTrigger["tgfoid"];
+        tgtype: PgCatalog.Types.PgTrigger["tgtype"];
+        tgenabled: PgCatalog.Types.PgTrigger["tgenabled"];
+        tgisinternal: PgCatalog.Types.PgTrigger["tgisinternal"];
+        tgconstrrelid: PgCatalog.Types.PgTrigger["tgconstrrelid"];
+        tgconstrindid: PgCatalog.Types.PgTrigger["tgconstrindid"];
+        tgconstraint: PgCatalog.Types.PgTrigger["tgconstraint"];
+        tgdeferrable: PgCatalog.Types.PgTrigger["tgdeferrable"];
+        tginitdeferred: PgCatalog.Types.PgTrigger["tginitdeferred"];
+        tgnargs: PgCatalog.Types.PgTrigger["tgnargs"];
+        tgattr: PgCatalog.Types.PgTrigger["tgattr"];
+        tgargs: PgCatalog.Types.PgTrigger["tgargs"];
+        tgqual: PgCatalog.Types.PgTrigger["tgqual"] | null;
+        tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
+        tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2483,9 +2907,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgEventTrigger {
-      export type Record = Required<PgCatalog.Types.PgEventTrigger>;
-      export type Results = PgCatalog.Types.PgEventTrigger;
+      export type Record = {
+        oid: PgCatalog.Types.PgEventTrigger["oid"];
+        evtname: PgCatalog.Types.PgEventTrigger["evtname"];
+        evtevent: PgCatalog.Types.PgEventTrigger["evtevent"];
+        evtowner: PgCatalog.Types.PgEventTrigger["evtowner"];
+        evtfoid: PgCatalog.Types.PgEventTrigger["evtfoid"];
+        evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
+        evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -2498,9 +2931,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDescription {
-      export type Record = Required<PgCatalog.Types.PgDescription>;
-      export type Results = PgCatalog.Types.PgDescription;
+      export type Record = {
+        objoid: PgCatalog.Types.PgDescription["objoid"];
+        classoid: PgCatalog.Types.PgDescription["classoid"];
+        objsubid: PgCatalog.Types.PgDescription["objsubid"];
+        description: PgCatalog.Types.PgDescription["description"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2511,9 +2950,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgCast {
-      export type Record = Required<PgCatalog.Types.PgCast>;
-      export type Results = PgCatalog.Types.PgCast;
+      export type Record = {
+        oid: PgCatalog.Types.PgCast["oid"];
+        castsource: PgCatalog.Types.PgCast["castsource"];
+        casttarget: PgCatalog.Types.PgCast["casttarget"];
+        castfunc: PgCatalog.Types.PgCast["castfunc"];
+        castcontext: PgCatalog.Types.PgCast["castcontext"];
+        castmethod: PgCatalog.Types.PgCast["castmethod"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -2527,9 +2974,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgEnum {
-      export type Record = Required<PgCatalog.Types.PgEnum>;
-      export type Results = PgCatalog.Types.PgEnum;
+      export type Record = {
+        oid: PgCatalog.Types.PgEnum["oid"];
+        enumtypid: PgCatalog.Types.PgEnum["enumtypid"];
+        enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
+        enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -2548,9 +3001,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgNamespace {
-      export type Record = Required<PgCatalog.Types.PgNamespace>;
-      export type Results = PgCatalog.Types.PgNamespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgNamespace["oid"];
+        nspname: PgCatalog.Types.PgNamespace["nspname"];
+        nspowner: PgCatalog.Types.PgNamespace["nspowner"];
+        nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -2563,9 +3022,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgConversion {
-      export type Record = Required<PgCatalog.Types.PgConversion>;
-      export type Results = PgCatalog.Types.PgConversion;
+      export type Record = {
+        oid: PgCatalog.Types.PgConversion["oid"];
+        conname: PgCatalog.Types.PgConversion["conname"];
+        connamespace: PgCatalog.Types.PgConversion["connamespace"];
+        conowner: PgCatalog.Types.PgConversion["conowner"];
+        conforencoding: PgCatalog.Types.PgConversion["conforencoding"];
+        contoencoding: PgCatalog.Types.PgConversion["contoencoding"];
+        conproc: PgCatalog.Types.PgConversion["conproc"];
+        condefault: PgCatalog.Types.PgConversion["condefault"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2586,9 +3055,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDepend {
-      export type Record = Required<PgCatalog.Types.PgDepend>;
-      export type Results = PgCatalog.Types.PgDepend;
+      export type Record = {
+        classid: PgCatalog.Types.PgDepend["classid"];
+        objid: PgCatalog.Types.PgDepend["objid"];
+        objsubid: PgCatalog.Types.PgDepend["objsubid"];
+        refclassid: PgCatalog.Types.PgDepend["refclassid"];
+        refobjid: PgCatalog.Types.PgDepend["refobjid"];
+        refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
+        deptype: PgCatalog.Types.PgDepend["deptype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -2605,9 +3083,28 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDatabase {
-      export type Record = Required<PgCatalog.Types.PgDatabase>;
-      export type Results = PgCatalog.Types.PgDatabase;
+      export type Record = {
+        oid: PgCatalog.Types.PgDatabase["oid"];
+        datname: PgCatalog.Types.PgDatabase["datname"];
+        datdba: PgCatalog.Types.PgDatabase["datdba"];
+        encoding: PgCatalog.Types.PgDatabase["encoding"];
+        datlocprovider: PgCatalog.Types.PgDatabase["datlocprovider"];
+        datistemplate: PgCatalog.Types.PgDatabase["datistemplate"];
+        datallowconn: PgCatalog.Types.PgDatabase["datallowconn"];
+        datconnlimit: PgCatalog.Types.PgDatabase["datconnlimit"];
+        datfrozenxid: PgCatalog.Types.PgDatabase["datfrozenxid"];
+        datminmxid: PgCatalog.Types.PgDatabase["datminmxid"];
+        dattablespace: PgCatalog.Types.PgDatabase["dattablespace"];
+        datcollate: PgCatalog.Types.PgDatabase["datcollate"];
+        datctype: PgCatalog.Types.PgDatabase["datctype"];
+        daticulocale: PgCatalog.Types.PgDatabase["daticulocale"] | null;
+        daticurules: PgCatalog.Types.PgDatabase["daticurules"] | null;
+        datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
+        datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -2620,9 +3117,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDbRoleSetting {
-      export type Record = Required<PgCatalog.Types.PgDbRoleSetting>;
-      export type Results = PgCatalog.Types.PgDbRoleSetting;
+      export type Record = {
+        setdatabase: PgCatalog.Types.PgDbRoleSetting["setdatabase"];
+        setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
+        setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
@@ -2632,9 +3134,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTablespace {
-      export type Record = Required<PgCatalog.Types.PgTablespace>;
-      export type Results = PgCatalog.Types.PgTablespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgTablespace["oid"];
+        spcname: PgCatalog.Types.PgTablespace["spcname"];
+        spcowner: PgCatalog.Types.PgTablespace["spcowner"];
+        spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
+        spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2646,9 +3155,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgAuthMembers {
-      export type Record = Required<PgCatalog.Types.PgAuthMembers>;
-      export type Results = PgCatalog.Types.PgAuthMembers;
+      export type Record = {
+        oid: PgCatalog.Types.PgAuthMembers["oid"];
+        roleid: PgCatalog.Types.PgAuthMembers["roleid"];
+        member: PgCatalog.Types.PgAuthMembers["member"];
+        grantor: PgCatalog.Types.PgAuthMembers["grantor"];
+        adminOption: PgCatalog.Types.PgAuthMembers["adminOption"];
+        inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
+        setOption: PgCatalog.Types.PgAuthMembers["setOption"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -2672,9 +3190,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShdepend {
-      export type Record = Required<PgCatalog.Types.PgShdepend>;
-      export type Results = PgCatalog.Types.PgShdepend;
+      export type Record = {
+        dbid: PgCatalog.Types.PgShdepend["dbid"];
+        classid: PgCatalog.Types.PgShdepend["classid"];
+        objid: PgCatalog.Types.PgShdepend["objid"];
+        objsubid: PgCatalog.Types.PgShdepend["objsubid"];
+        refclassid: PgCatalog.Types.PgShdepend["refclassid"];
+        refobjid: PgCatalog.Types.PgShdepend["refobjid"];
+        deptype: PgCatalog.Types.PgShdepend["deptype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -2691,9 +3218,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShdescription {
-      export type Record = Required<PgCatalog.Types.PgShdescription>;
-      export type Results = PgCatalog.Types.PgShdescription;
+      export type Record = {
+        objoid: PgCatalog.Types.PgShdescription["objoid"];
+        classoid: PgCatalog.Types.PgShdescription["classoid"];
+        description: PgCatalog.Types.PgShdescription["description"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2703,9 +3235,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfig {
-      export type Record = Required<PgCatalog.Types.PgTsConfig>;
-      export type Results = PgCatalog.Types.PgTsConfig;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsConfig["oid"];
+        cfgname: PgCatalog.Types.PgTsConfig["cfgname"];
+        cfgnamespace: PgCatalog.Types.PgTsConfig["cfgnamespace"];
+        cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
+        cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -2719,9 +3258,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsConfigMap {
-      export type Record = Required<PgCatalog.Types.PgTsConfigMap>;
-      export type Results = PgCatalog.Types.PgTsConfigMap;
+      export type Record = {
+        mapcfg: PgCatalog.Types.PgTsConfigMap["mapcfg"];
+        maptokentype: PgCatalog.Types.PgTsConfigMap["maptokentype"];
+        mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
+        mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -2732,9 +3277,17 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsDict {
-      export type Record = Required<PgCatalog.Types.PgTsDict>;
-      export type Results = PgCatalog.Types.PgTsDict;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsDict["oid"];
+        dictname: PgCatalog.Types.PgTsDict["dictname"];
+        dictnamespace: PgCatalog.Types.PgTsDict["dictnamespace"];
+        dictowner: PgCatalog.Types.PgTsDict["dictowner"];
+        dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
+        dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -2748,9 +3301,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsParser {
-      export type Record = Required<PgCatalog.Types.PgTsParser>;
-      export type Results = PgCatalog.Types.PgTsParser;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsParser["oid"];
+        prsname: PgCatalog.Types.PgTsParser["prsname"];
+        prsnamespace: PgCatalog.Types.PgTsParser["prsnamespace"];
+        prsstart: PgCatalog.Types.PgTsParser["prsstart"];
+        prstoken: PgCatalog.Types.PgTsParser["prstoken"];
+        prsend: PgCatalog.Types.PgTsParser["prsend"];
+        prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
+        prslextype: PgCatalog.Types.PgTsParser["prslextype"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2763,9 +3326,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTsTemplate {
-      export type Record = Required<PgCatalog.Types.PgTsTemplate>;
-      export type Results = PgCatalog.Types.PgTsTemplate;
+      export type Record = {
+        oid: PgCatalog.Types.PgTsTemplate["oid"];
+        tmplname: PgCatalog.Types.PgTsTemplate["tmplname"];
+        tmplnamespace: PgCatalog.Types.PgTsTemplate["tmplnamespace"];
+        tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
+        tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2778,9 +3348,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgExtension {
-      export type Record = Required<PgCatalog.Types.PgExtension>;
-      export type Results = PgCatalog.Types.PgExtension;
+      export type Record = {
+        oid: PgCatalog.Types.PgExtension["oid"];
+        extname: PgCatalog.Types.PgExtension["extname"];
+        extowner: PgCatalog.Types.PgExtension["extowner"];
+        extnamespace: PgCatalog.Types.PgExtension["extnamespace"];
+        extrelocatable: PgCatalog.Types.PgExtension["extrelocatable"];
+        extversion: PgCatalog.Types.PgExtension["extversion"];
+        extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
+        extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -2793,9 +3373,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignDataWrapper {
-      export type Record = Required<PgCatalog.Types.PgForeignDataWrapper>;
-      export type Results = PgCatalog.Types.PgForeignDataWrapper;
+      export type Record = {
+        oid: PgCatalog.Types.PgForeignDataWrapper["oid"];
+        fdwname: PgCatalog.Types.PgForeignDataWrapper["fdwname"];
+        fdwowner: PgCatalog.Types.PgForeignDataWrapper["fdwowner"];
+        fdwhandler: PgCatalog.Types.PgForeignDataWrapper["fdwhandler"];
+        fdwvalidator: PgCatalog.Types.PgForeignDataWrapper["fdwvalidator"];
+        fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
+        fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -2808,9 +3397,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgForeignServer {
-      export type Record = Required<PgCatalog.Types.PgForeignServer>;
-      export type Results = PgCatalog.Types.PgForeignServer;
+      export type Record = {
+        oid: PgCatalog.Types.PgForeignServer["oid"];
+        srvname: PgCatalog.Types.PgForeignServer["srvname"];
+        srvowner: PgCatalog.Types.PgForeignServer["srvowner"];
+        srvfdw: PgCatalog.Types.PgForeignServer["srvfdw"];
+        srvtype: PgCatalog.Types.PgForeignServer["srvtype"] | null;
+        srvversion: PgCatalog.Types.PgForeignServer["srvversion"] | null;
+        srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
+        srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2822,9 +3421,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPolicy {
-      export type Record = Required<PgCatalog.Types.PgPolicy>;
-      export type Results = PgCatalog.Types.PgPolicy;
+      export type Record = {
+        oid: PgCatalog.Types.PgPolicy["oid"];
+        polname: PgCatalog.Types.PgPolicy["polname"];
+        polrelid: PgCatalog.Types.PgPolicy["polrelid"];
+        polcmd: PgCatalog.Types.PgPolicy["polcmd"];
+        polpermissive: PgCatalog.Types.PgPolicy["polpermissive"];
+        polroles: PgCatalog.Types.PgPolicy["polroles"];
+        polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
+        polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2837,9 +3446,13 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgReplicationOrigin {
-      export type Record = Required<PgCatalog.Types.PgReplicationOrigin>;
-      export type Results = PgCatalog.Types.PgReplicationOrigin;
+      export type Record = {
+        roident: PgCatalog.Types.PgReplicationOrigin["roident"];
+        roname: PgCatalog.Types.PgReplicationOrigin["roname"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -2851,9 +3464,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgDefaultAcl {
-      export type Record = Required<PgCatalog.Types.PgDefaultAcl>;
-      export type Results = PgCatalog.Types.PgDefaultAcl;
+      export type Record = {
+        oid: PgCatalog.Types.PgDefaultAcl["oid"];
+        defaclrole: PgCatalog.Types.PgDefaultAcl["defaclrole"];
+        defaclnamespace: PgCatalog.Types.PgDefaultAcl["defaclnamespace"];
+        defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
+        defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -2868,9 +3488,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgInitPrivs {
-      export type Record = Required<PgCatalog.Types.PgInitPrivs>;
-      export type Results = PgCatalog.Types.PgInitPrivs;
+      export type Record = {
+        objoid: PgCatalog.Types.PgInitPrivs["objoid"];
+        classoid: PgCatalog.Types.PgInitPrivs["classoid"];
+        objsubid: PgCatalog.Types.PgInitPrivs["objsubid"];
+        privtype: PgCatalog.Types.PgInitPrivs["privtype"];
+        initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2881,9 +3508,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSeclabel {
-      export type Record = Required<PgCatalog.Types.PgSeclabel>;
-      export type Results = PgCatalog.Types.PgSeclabel;
+      export type Record = {
+        objoid: PgCatalog.Types.PgSeclabel["objoid"];
+        classoid: PgCatalog.Types.PgSeclabel["classoid"];
+        objsubid: PgCatalog.Types.PgSeclabel["objsubid"];
+        provider: PgCatalog.Types.PgSeclabel["provider"];
+        label: PgCatalog.Types.PgSeclabel["label"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2895,9 +3529,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgShseclabel {
-      export type Record = Required<PgCatalog.Types.PgShseclabel>;
-      export type Results = PgCatalog.Types.PgShseclabel;
+      export type Record = {
+        objoid: PgCatalog.Types.PgShseclabel["objoid"];
+        classoid: PgCatalog.Types.PgShseclabel["classoid"];
+        provider: PgCatalog.Types.PgShseclabel["provider"];
+        label: PgCatalog.Types.PgShseclabel["label"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2908,9 +3548,23 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgCollation {
-      export type Record = Required<PgCatalog.Types.PgCollation>;
-      export type Results = PgCatalog.Types.PgCollation;
+      export type Record = {
+        oid: PgCatalog.Types.PgCollation["oid"];
+        collname: PgCatalog.Types.PgCollation["collname"];
+        collnamespace: PgCatalog.Types.PgCollation["collnamespace"];
+        collowner: PgCatalog.Types.PgCollation["collowner"];
+        collprovider: PgCatalog.Types.PgCollation["collprovider"];
+        collisdeterministic: PgCatalog.Types.PgCollation["collisdeterministic"];
+        collencoding: PgCatalog.Types.PgCollation["collencoding"];
+        collcollate: PgCatalog.Types.PgCollation["collcollate"] | null;
+        collctype: PgCatalog.Types.PgCollation["collctype"] | null;
+        colliculocale: PgCatalog.Types.PgCollation["colliculocale"] | null;
+        collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
+        collversion: PgCatalog.Types.PgCollation["collversion"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -2925,9 +3579,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgParameterAcl {
-      export type Record = Required<PgCatalog.Types.PgParameterAcl>;
-      export type Results = PgCatalog.Types.PgParameterAcl;
+      export type Record = {
+        oid: PgCatalog.Types.PgParameterAcl["oid"];
+        parname: PgCatalog.Types.PgParameterAcl["parname"];
+        paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2939,9 +3598,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPartitionedTable {
-      export type Record = Required<PgCatalog.Types.PgPartitionedTable>;
-      export type Results = PgCatalog.Types.PgPartitionedTable;
+      export type Record = {
+        partrelid: PgCatalog.Types.PgPartitionedTable["partrelid"];
+        partstrat: PgCatalog.Types.PgPartitionedTable["partstrat"];
+        partnatts: PgCatalog.Types.PgPartitionedTable["partnatts"];
+        partdefid: PgCatalog.Types.PgPartitionedTable["partdefid"];
+        partattrs: PgCatalog.Types.PgPartitionedTable["partattrs"];
+        partclass: PgCatalog.Types.PgPartitionedTable["partclass"];
+        partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
+        partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
@@ -2950,9 +3619,18 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgRange {
-      export type Record = Required<PgCatalog.Types.PgRange>;
-      export type Results = PgCatalog.Types.PgRange;
+      export type Record = {
+        rngtypid: PgCatalog.Types.PgRange["rngtypid"];
+        rngsubtype: PgCatalog.Types.PgRange["rngsubtype"];
+        rngmultitypid: PgCatalog.Types.PgRange["rngmultitypid"];
+        rngcollation: PgCatalog.Types.PgRange["rngcollation"];
+        rngsubopc: PgCatalog.Types.PgRange["rngsubopc"];
+        rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
+        rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -2965,9 +3643,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgTransform {
-      export type Record = Required<PgCatalog.Types.PgTransform>;
-      export type Results = PgCatalog.Types.PgTransform;
+      export type Record = {
+        oid: PgCatalog.Types.PgTransform["oid"];
+        trftype: PgCatalog.Types.PgTransform["trftype"];
+        trflang: PgCatalog.Types.PgTransform["trflang"];
+        trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
+        trftosql: PgCatalog.Types.PgTransform["trftosql"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2980,9 +3665,19 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSequence {
-      export type Record = Required<PgCatalog.Types.PgSequence>;
-      export type Results = PgCatalog.Types.PgSequence;
+      export type Record = {
+        seqrelid: PgCatalog.Types.PgSequence["seqrelid"];
+        seqtypid: PgCatalog.Types.PgSequence["seqtypid"];
+        seqstart: PgCatalog.Types.PgSequence["seqstart"];
+        seqincrement: PgCatalog.Types.PgSequence["seqincrement"];
+        seqmax: PgCatalog.Types.PgSequence["seqmax"];
+        seqmin: PgCatalog.Types.PgSequence["seqmin"];
+        seqcache: PgCatalog.Types.PgSequence["seqcache"];
+        seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
@@ -2991,9 +3686,20 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublication {
-      export type Record = Required<PgCatalog.Types.PgPublication>;
-      export type Results = PgCatalog.Types.PgPublication;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublication["oid"];
+        pubname: PgCatalog.Types.PgPublication["pubname"];
+        pubowner: PgCatalog.Types.PgPublication["pubowner"];
+        puballtables: PgCatalog.Types.PgPublication["puballtables"];
+        pubinsert: PgCatalog.Types.PgPublication["pubinsert"];
+        pubupdate: PgCatalog.Types.PgPublication["pubupdate"];
+        pubdelete: PgCatalog.Types.PgPublication["pubdelete"];
+        pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
+        pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3005,9 +3711,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationNamespace {
-      export type Record = Required<PgCatalog.Types.PgPublicationNamespace>;
-      export type Results = PgCatalog.Types.PgPublicationNamespace;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublicationNamespace["oid"];
+        pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
+        pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3020,9 +3731,16 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgPublicationRel {
-      export type Record = Required<PgCatalog.Types.PgPublicationRel>;
-      export type Results = PgCatalog.Types.PgPublicationRel;
+      export type Record = {
+        oid: PgCatalog.Types.PgPublicationRel["oid"];
+        prpubid: PgCatalog.Types.PgPublicationRel["prpubid"];
+        prrelid: PgCatalog.Types.PgPublicationRel["prrelid"];
+        prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
+        prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3039,9 +3757,15 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgSubscriptionRel {
-      export type Record = Required<PgCatalog.Types.PgSubscriptionRel>;
-      export type Results = PgCatalog.Types.PgSubscriptionRel;
+      export type Record = {
+        srsubid: PgCatalog.Types.PgSubscriptionRel["srsubid"];
+        srrelid: PgCatalog.Types.PgSubscriptionRel["srrelid"];
+        srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
+        srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
@@ -3051,9 +3775,14 @@ export namespace PgCatalog {
       export type Optional = Pick<Record, never>;
     }
     export namespace PgLargeobject {
-      export type Record = Required<PgCatalog.Types.PgLargeobject>;
-      export type Results = PgCatalog.Types.PgLargeobject;
+      export type Record = {
+        loid: PgCatalog.Types.PgLargeobject["loid"];
+        pageno: PgCatalog.Types.PgLargeobject["pageno"];
+        data: PgCatalog.Types.PgLargeobject["data"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -4028,31 +4757,77 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export type Record = Required<InformationSchema.Types.SqlFeatures>;
-      export type Results = InformationSchema.Types.SqlFeatures;
+      export type Record = {
+        featureId: InformationSchema.Types.SqlFeatures["featureId"] | null;
+        featureName: InformationSchema.Types.SqlFeatures["featureName"] | null;
+        subFeatureId:
+          | InformationSchema.Types.SqlFeatures["subFeatureId"]
+          | null;
+        subFeatureName:
+          | InformationSchema.Types.SqlFeatures["subFeatureName"]
+          | null;
+        isSupported: InformationSchema.Types.SqlFeatures["isSupported"] | null;
+        isVerifiedBy:
+          | InformationSchema.Types.SqlFeatures["isVerifiedBy"]
+          | null;
+        comments: InformationSchema.Types.SqlFeatures["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlImplementationInfo {
-      export type Record =
-        Required<InformationSchema.Types.SqlImplementationInfo>;
-      export type Results = InformationSchema.Types.SqlImplementationInfo;
+      export type Record = {
+        implementationInfoId:
+          | InformationSchema.Types.SqlImplementationInfo["implementationInfoId"]
+          | null;
+        implementationInfoName:
+          | InformationSchema.Types.SqlImplementationInfo["implementationInfoName"]
+          | null;
+        integerValue:
+          | InformationSchema.Types.SqlImplementationInfo["integerValue"]
+          | null;
+        characterValue:
+          | InformationSchema.Types.SqlImplementationInfo["characterValue"]
+          | null;
+        comments:
+          | InformationSchema.Types.SqlImplementationInfo["comments"]
+          | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlParts {
-      export type Record = Required<InformationSchema.Types.SqlParts>;
-      export type Results = InformationSchema.Types.SqlParts;
+      export type Record = {
+        featureId: InformationSchema.Types.SqlParts["featureId"] | null;
+        featureName: InformationSchema.Types.SqlParts["featureName"] | null;
+        isSupported: InformationSchema.Types.SqlParts["isSupported"] | null;
+        isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
+        comments: InformationSchema.Types.SqlParts["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
     export namespace SqlSizing {
-      export type Record = Required<InformationSchema.Types.SqlSizing>;
-      export type Results = InformationSchema.Types.SqlSizing;
+      export type Record = {
+        sizingId: InformationSchema.Types.SqlSizing["sizingId"] | null;
+        sizingName: InformationSchema.Types.SqlSizing["sizingName"] | null;
+        supportedValue:
+          | InformationSchema.Types.SqlSizing["supportedValue"]
+          | null;
+        comments: InformationSchema.Types.SqlSizing["comments"] | null;
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
     }
@@ -4067,192 +4842,192 @@ export namespace Public {
   }
   export namespace Procedures {
     export namespace CubeIn {
-      export type Arguments = { argument_0: PgCatalog.Types.Cstring };
+      export type Parameters = { argument_0: PgCatalog.Types.Cstring };
       export type Results = Public.Types.Cube;
     }
     export namespace Cube_9c45 {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Float8Array;
         argument_1: PgCatalog.Types.Float8Array;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace Cube_2e6d {
-      export type Arguments = { argument_0: PgCatalog.Types.Float8Array };
+      export type Parameters = { argument_0: PgCatalog.Types.Float8Array };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeOut {
-      export type Arguments = { argument_0: Public.Types.Cube };
+      export type Parameters = { argument_0: Public.Types.Cube };
       export type Results = PgCatalog.Types.Cstring;
     }
     export namespace CubeEq {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeNe {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeLt {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeGt {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeLe {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeGe {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeCmp {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Int4;
     }
     export namespace CubeContains {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeContained {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeOverlap {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeUnion {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeInter {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeSize {
-      export type Arguments = { argument_0: Public.Types.Cube };
+      export type Parameters = { argument_0: Public.Types.Cube };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeSubset {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4Array;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeDistance {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace DistanceChebyshev {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace DistanceTaxicab {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeDim {
-      export type Arguments = { argument_0: Public.Types.Cube };
+      export type Parameters = { argument_0: Public.Types.Cube };
       export type Results = PgCatalog.Types.Int4;
     }
     export namespace CubeLlCoord {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeUrCoord {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeCoord {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeCoordLlur {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeA5b3 {
-      export type Arguments = { argument_0: PgCatalog.Types.Float8 };
+      export type Parameters = { argument_0: PgCatalog.Types.Float8 };
       export type Results = Public.Types.Cube;
     }
     export namespace Cube_0aec {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Float8;
         argument_1: PgCatalog.Types.Float8;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace Cube_39d2 {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Float8;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeA7eb {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Float8;
         argument_2: PgCatalog.Types.Float8;
@@ -4260,11 +5035,11 @@ export namespace Public {
       export type Results = Public.Types.Cube;
     }
     export namespace CubeIsPoint {
-      export type Arguments = { argument_0: Public.Types.Cube };
+      export type Parameters = { argument_0: Public.Types.Cube };
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace CubeEnlarge {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Float8;
         argument_2: PgCatalog.Types.Int4;
@@ -4272,7 +5047,7 @@ export namespace Public {
       export type Results = Public.Types.Cube;
     }
     export namespace GCubeConsistent {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: Public.Types.Cube;
         argument_2: PgCatalog.Types.Int2;
@@ -4282,7 +5057,7 @@ export namespace Public {
       export type Results = PgCatalog.Types.Bool;
     }
     export namespace GCubePenalty {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: PgCatalog.Types.Internal;
         argument_2: PgCatalog.Types.Internal;
@@ -4290,21 +5065,21 @@ export namespace Public {
       export type Results = PgCatalog.Types.Internal;
     }
     export namespace GCubePicksplit {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: PgCatalog.Types.Internal;
       };
       export type Results = PgCatalog.Types.Internal;
     }
     export namespace GCubeUnion {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: PgCatalog.Types.Internal;
       };
       export type Results = Public.Types.Cube;
     }
     export namespace GCubeSame {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
         argument_2: PgCatalog.Types.Internal;
@@ -4312,7 +5087,7 @@ export namespace Public {
       export type Results = PgCatalog.Types.Internal;
     }
     export namespace GCubeDistance {
-      export type Arguments = {
+      export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: Public.Types.Cube;
         argument_2: PgCatalog.Types.Int2;
@@ -4322,19 +5097,22 @@ export namespace Public {
       export type Results = PgCatalog.Types.Float8;
     }
     export namespace CubeRecv {
-      export type Arguments = { argument_0: PgCatalog.Types.Internal };
+      export type Parameters = { argument_0: PgCatalog.Types.Internal };
       export type Results = Public.Types.Cube;
     }
     export namespace CubeSend {
-      export type Arguments = { argument_0: Public.Types.Cube };
+      export type Parameters = { argument_0: Public.Types.Cube };
       export type Results = PgCatalog.Types.Bytea;
     }
   }
   export namespace Tables {
     export namespace Slug {
-      export type Record = Required<Public.Types.Slug>;
-      export type Results = Public.Types.Slug;
+      export type Record = {
+        slugId: Public.Types.Slug["slugId"];
+      };
+
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+
       export type BySlugId = {
         slugId: PgCatalog.Types.Int4;
       };
@@ -4360,31 +5138,31 @@ export namespace Api {
   }
   export namespace Procedures {
     export namespace Echo {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = PgCatalog.Types.Text;
     }
     export namespace EchoSet {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = PgCatalog.Types.Text;
     }
     export namespace EchoTable {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = Api.Types.EchoTableResults;
     }
     export namespace EchoType {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = Api.Types.EchoType;
     }
     export namespace EchoTypeArray {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = Api.Types.EchoTypeArray;
     }
     export namespace EchoTypeNested {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = Api.Types.EchoTypeNested;
     }
     export namespace EchoTypeSet {
-      export type Arguments = { message: PgCatalog.Types.Text };
+      export type Parameters = { message: PgCatalog.Types.Text };
       export type Results = Api.Types.EchoType;
     }
   }
@@ -9104,12 +9882,6 @@ export namespace PgCatalog {
   export namespace Tables {
     export namespace PgStatistic {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatistic.Create.Results
-            PgCatalog.Types.PgStatistic.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatistic.Create.Values
@@ -9120,12 +9892,6 @@ export namespace PgCatalog {
     }
     export namespace PgType {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgType.Create.Results
-            PgCatalog.Types.PgType.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgType.Create.Values
@@ -9136,12 +9902,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignTable {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignTable.Create.Results
-            PgCatalog.Types.PgForeignTable.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignTable.Create.Values
@@ -9152,12 +9912,6 @@ export namespace PgCatalog {
     }
     export namespace PgAuthid {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthid.Create.Results
-            PgCatalog.Types.PgAuthid.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAuthid.Create.Values
@@ -9168,12 +9922,6 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExtData {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Results
-            PgCatalog.Types.PgStatisticExtData.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Values
@@ -9184,12 +9932,6 @@ export namespace PgCatalog {
     }
     export namespace PgUserMapping {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgUserMapping.Create.Results
-            PgCatalog.Types.PgUserMapping.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgUserMapping.Create.Values
@@ -9200,12 +9942,6 @@ export namespace PgCatalog {
     }
     export namespace PgSubscription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscription.Create.Results
-            PgCatalog.Types.PgSubscription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSubscription.Create.Values
@@ -9216,12 +9952,6 @@ export namespace PgCatalog {
     }
     export namespace PgAttribute {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttribute.Create.Results
-            PgCatalog.Types.PgAttribute.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAttribute.Create.Values
@@ -9232,12 +9962,6 @@ export namespace PgCatalog {
     }
     export namespace PgProc {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgProc.Create.Results
-            PgCatalog.Types.PgProc.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgProc.Create.Values
@@ -9248,12 +9972,6 @@ export namespace PgCatalog {
     }
     export namespace PgClass {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgClass.Create.Results
-            PgCatalog.Types.PgClass.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgClass.Create.Values
@@ -9264,12 +9982,6 @@ export namespace PgCatalog {
     }
     export namespace PgAttrdef {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttrdef.Create.Results
-            PgCatalog.Types.PgAttrdef.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAttrdef.Create.Values
@@ -9280,12 +9992,6 @@ export namespace PgCatalog {
     }
     export namespace PgConstraint {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConstraint.Create.Results
-            PgCatalog.Types.PgConstraint.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgConstraint.Create.Values
@@ -9296,12 +10002,6 @@ export namespace PgCatalog {
     }
     export namespace PgInherits {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInherits.Create.Results
-            PgCatalog.Types.PgInherits.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgInherits.Create.Values
@@ -9312,12 +10012,6 @@ export namespace PgCatalog {
     }
     export namespace PgIndex {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgIndex.Create.Results
-            PgCatalog.Types.PgIndex.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgIndex.Create.Values
@@ -9328,12 +10022,6 @@ export namespace PgCatalog {
     }
     export namespace PgOperator {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOperator.Create.Results
-            PgCatalog.Types.PgOperator.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOperator.Create.Values
@@ -9344,12 +10032,6 @@ export namespace PgCatalog {
     }
     export namespace PgOpfamily {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpfamily.Create.Results
-            PgCatalog.Types.PgOpfamily.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOpfamily.Create.Values
@@ -9360,12 +10042,6 @@ export namespace PgCatalog {
     }
     export namespace PgOpclass {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpclass.Create.Results
-            PgCatalog.Types.PgOpclass.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgOpclass.Create.Values
@@ -9376,12 +10052,6 @@ export namespace PgCatalog {
     }
     export namespace PgAm {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAm.Create.Results
-            PgCatalog.Types.PgAm.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAm.Create.Values
@@ -9392,12 +10062,6 @@ export namespace PgCatalog {
     }
     export namespace PgAmop {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmop.Create.Results
-            PgCatalog.Types.PgAmop.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAmop.Create.Values
@@ -9408,12 +10072,6 @@ export namespace PgCatalog {
     }
     export namespace PgAmproc {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmproc.Create.Results
-            PgCatalog.Types.PgAmproc.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAmproc.Create.Values
@@ -9424,12 +10082,6 @@ export namespace PgCatalog {
     }
     export namespace PgLanguage {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLanguage.Create.Results
-            PgCatalog.Types.PgLanguage.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLanguage.Create.Values
@@ -9440,12 +10092,6 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobjectMetadata {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Results
-            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Values
@@ -9456,12 +10102,6 @@ export namespace PgCatalog {
     }
     export namespace PgAggregate {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAggregate.Create.Results
-            PgCatalog.Types.PgAggregate.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAggregate.Create.Values
@@ -9472,12 +10112,6 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExt {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Results
-            PgCatalog.Types.PgStatisticExt.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgStatisticExt.Create.Values
@@ -9488,12 +10122,6 @@ export namespace PgCatalog {
     }
     export namespace PgRewrite {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRewrite.Create.Results
-            PgCatalog.Types.PgRewrite.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgRewrite.Create.Values
@@ -9504,12 +10132,6 @@ export namespace PgCatalog {
     }
     export namespace PgTrigger {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTrigger.Create.Results
-            PgCatalog.Types.PgTrigger.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTrigger.Create.Values
@@ -9520,12 +10142,6 @@ export namespace PgCatalog {
     }
     export namespace PgEventTrigger {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Results
-            PgCatalog.Types.PgEventTrigger.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgEventTrigger.Create.Values
@@ -9536,12 +10152,6 @@ export namespace PgCatalog {
     }
     export namespace PgDescription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDescription.Create.Results
-            PgCatalog.Types.PgDescription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDescription.Create.Values
@@ -9552,12 +10162,6 @@ export namespace PgCatalog {
     }
     export namespace PgCast {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCast.Create.Results
-            PgCatalog.Types.PgCast.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgCast.Create.Values
@@ -9568,12 +10172,6 @@ export namespace PgCatalog {
     }
     export namespace PgEnum {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEnum.Create.Results
-            PgCatalog.Types.PgEnum.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgEnum.Create.Values
@@ -9584,12 +10182,6 @@ export namespace PgCatalog {
     }
     export namespace PgNamespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgNamespace.Create.Results
-            PgCatalog.Types.PgNamespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgNamespace.Create.Values
@@ -9600,12 +10192,6 @@ export namespace PgCatalog {
     }
     export namespace PgConversion {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConversion.Create.Results
-            PgCatalog.Types.PgConversion.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgConversion.Create.Values
@@ -9616,12 +10202,6 @@ export namespace PgCatalog {
     }
     export namespace PgDepend {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDepend.Create.Results
-            PgCatalog.Types.PgDepend.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDepend.Create.Values
@@ -9632,12 +10212,6 @@ export namespace PgCatalog {
     }
     export namespace PgDatabase {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDatabase.Create.Results
-            PgCatalog.Types.PgDatabase.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDatabase.Create.Values
@@ -9648,12 +10222,6 @@ export namespace PgCatalog {
     }
     export namespace PgDbRoleSetting {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Results
-            PgCatalog.Types.PgDbRoleSetting.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Values
@@ -9664,12 +10232,6 @@ export namespace PgCatalog {
     }
     export namespace PgTablespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTablespace.Create.Results
-            PgCatalog.Types.PgTablespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTablespace.Create.Values
@@ -9680,12 +10242,6 @@ export namespace PgCatalog {
     }
     export namespace PgAuthMembers {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Results
-            PgCatalog.Types.PgAuthMembers.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgAuthMembers.Create.Values
@@ -9696,12 +10252,6 @@ export namespace PgCatalog {
     }
     export namespace PgShdepend {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdepend.Create.Results
-            PgCatalog.Types.PgShdepend.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShdepend.Create.Values
@@ -9712,12 +10262,6 @@ export namespace PgCatalog {
     }
     export namespace PgShdescription {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdescription.Create.Results
-            PgCatalog.Types.PgShdescription.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShdescription.Create.Values
@@ -9728,12 +10272,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfig {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfig.Create.Results
-            PgCatalog.Types.PgTsConfig.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsConfig.Create.Values
@@ -9744,12 +10282,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfigMap {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Results
-            PgCatalog.Types.PgTsConfigMap.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Values
@@ -9760,12 +10292,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsDict {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsDict.Create.Results
-            PgCatalog.Types.PgTsDict.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsDict.Create.Values
@@ -9776,12 +10302,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsParser {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsParser.Create.Results
-            PgCatalog.Types.PgTsParser.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsParser.Create.Values
@@ -9792,12 +10312,6 @@ export namespace PgCatalog {
     }
     export namespace PgTsTemplate {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Results
-            PgCatalog.Types.PgTsTemplate.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTsTemplate.Create.Values
@@ -9808,12 +10322,6 @@ export namespace PgCatalog {
     }
     export namespace PgExtension {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgExtension.Create.Results
-            PgCatalog.Types.PgExtension.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgExtension.Create.Values
@@ -9824,12 +10332,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignDataWrapper {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Results
-            PgCatalog.Types.PgForeignDataWrapper.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Values
@@ -9840,12 +10342,6 @@ export namespace PgCatalog {
     }
     export namespace PgForeignServer {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignServer.Create.Results
-            PgCatalog.Types.PgForeignServer.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgForeignServer.Create.Values
@@ -9856,12 +10352,6 @@ export namespace PgCatalog {
     }
     export namespace PgPolicy {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPolicy.Create.Results
-            PgCatalog.Types.PgPolicy.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPolicy.Create.Values
@@ -9872,12 +10362,6 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOrigin {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Results
-            PgCatalog.Types.PgReplicationOrigin.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Values
@@ -9888,12 +10372,6 @@ export namespace PgCatalog {
     }
     export namespace PgDefaultAcl {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Results
-            PgCatalog.Types.PgDefaultAcl.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Values
@@ -9904,12 +10382,6 @@ export namespace PgCatalog {
     }
     export namespace PgInitPrivs {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Results
-            PgCatalog.Types.PgInitPrivs.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgInitPrivs.Create.Values
@@ -9920,12 +10392,6 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSeclabel.Create.Results
-            PgCatalog.Types.PgSeclabel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSeclabel.Create.Values
@@ -9936,12 +10402,6 @@ export namespace PgCatalog {
     }
     export namespace PgShseclabel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShseclabel.Create.Results
-            PgCatalog.Types.PgShseclabel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgShseclabel.Create.Values
@@ -9952,12 +10412,6 @@ export namespace PgCatalog {
     }
     export namespace PgCollation {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCollation.Create.Results
-            PgCatalog.Types.PgCollation.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgCollation.Create.Values
@@ -9968,12 +10422,6 @@ export namespace PgCatalog {
     }
     export namespace PgParameterAcl {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Results
-            PgCatalog.Types.PgParameterAcl.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgParameterAcl.Create.Values
@@ -9984,12 +10432,6 @@ export namespace PgCatalog {
     }
     export namespace PgPartitionedTable {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Results
-            PgCatalog.Types.PgPartitionedTable.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Values
@@ -10000,12 +10442,6 @@ export namespace PgCatalog {
     }
     export namespace PgRange {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRange.Create.Results
-            PgCatalog.Types.PgRange.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgRange.Create.Values
@@ -10016,12 +10452,6 @@ export namespace PgCatalog {
     }
     export namespace PgTransform {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTransform.Create.Results
-            PgCatalog.Types.PgTransform.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgTransform.Create.Values
@@ -10032,12 +10462,6 @@ export namespace PgCatalog {
     }
     export namespace PgSequence {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSequence.Create.Results
-            PgCatalog.Types.PgSequence.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSequence.Create.Values
@@ -10048,12 +10472,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublication {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublication.Create.Results
-            PgCatalog.Types.PgPublication.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublication.Create.Values
@@ -10064,12 +10482,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationNamespace {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Results
-            PgCatalog.Types.PgPublicationNamespace.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Values
@@ -10080,12 +10492,6 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationRel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Results
-            PgCatalog.Types.PgPublicationRel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgPublicationRel.Create.Values
@@ -10096,12 +10502,6 @@ export namespace PgCatalog {
     }
     export namespace PgSubscriptionRel {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Results
-            PgCatalog.Types.PgSubscriptionRel.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Values
@@ -10112,12 +10512,6 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobject {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobject.Create.Results
-            PgCatalog.Types.PgLargeobject.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType PgCatalog.Tables.PgLargeobject.Create.Values
@@ -11146,16 +11540,14 @@ export namespace InformationSchema {
     }
     export namespace CardinalNumber {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.CardinalNumber
-
-        return from;
+        // DomainType InformationSchema.Types.CardinalNumber
+        return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace CharacterData {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.CharacterData
-
-        return from;
+        // DomainType InformationSchema.Types.CharacterData
+        return PgCatalog.Types.Varchar.parse(from);
       }
     }
     export namespace CharacterSets {
@@ -11418,9 +11810,8 @@ export namespace InformationSchema {
     }
     export namespace SqlIdentifier {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.SqlIdentifier
-
-        return from;
+        // DomainType InformationSchema.Types.SqlIdentifier
+        return PgCatalog.Types.Name.parse(from);
       }
     }
     export namespace SqlImplementationInfo {
@@ -11461,9 +11852,8 @@ export namespace InformationSchema {
     }
     export namespace TimeStamp {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.TimeStamp
-
-        return from;
+        // DomainType InformationSchema.Types.TimeStamp
+        return PgCatalog.Types.Timestamptz.parse(from);
       }
     }
     export namespace Transforms {
@@ -11540,9 +11930,8 @@ export namespace InformationSchema {
     }
     export namespace YesOrNo {
       export function parse(from: string | null) {
-        // Type InformationSchema.Types.YesOrNo
-
-        return from;
+        // DomainType InformationSchema.Types.YesOrNo
+        return PgCatalog.Types.Varchar.parse(from);
       }
     }
   }
@@ -11550,12 +11939,6 @@ export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlFeatures.Create.Results
-            InformationSchema.Types.SqlFeatures.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlFeatures.Create.Values
@@ -11566,12 +11949,6 @@ export namespace InformationSchema {
     }
     export namespace SqlImplementationInfo {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Results
-            InformationSchema.Types.SqlImplementationInfo.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Values
@@ -11582,12 +11959,6 @@ export namespace InformationSchema {
     }
     export namespace SqlParts {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlParts.Create.Results
-            InformationSchema.Types.SqlParts.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlParts.Create.Values
@@ -11598,12 +11969,6 @@ export namespace InformationSchema {
     }
     export namespace SqlSizing {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlSizing.Create.Results
-            InformationSchema.Types.SqlSizing.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType InformationSchema.Tables.SqlSizing.Create.Values
@@ -11664,9 +12029,9 @@ export namespace Public {
   }
   export namespace Procedures {
     export namespace CubeIn {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeIn.Arguments
+          // CompositeType Public.Procedures.CubeIn.Parameters
           return from;
         }
       }
@@ -11678,9 +12043,9 @@ export namespace Public {
       }
     }
     export namespace Cube_9c45 {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.Cube_9c45.Arguments
+          // CompositeType Public.Procedures.Cube_9c45.Parameters
           return from;
         }
       }
@@ -11692,9 +12057,9 @@ export namespace Public {
       }
     }
     export namespace Cube_2e6d {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.Cube_2e6d.Arguments
+          // CompositeType Public.Procedures.Cube_2e6d.Parameters
           return from;
         }
       }
@@ -11706,9 +12071,9 @@ export namespace Public {
       }
     }
     export namespace CubeOut {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeOut.Arguments
+          // CompositeType Public.Procedures.CubeOut.Parameters
           return from;
         }
       }
@@ -11720,9 +12085,9 @@ export namespace Public {
       }
     }
     export namespace CubeEq {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeEq.Arguments
+          // CompositeType Public.Procedures.CubeEq.Parameters
           return from;
         }
       }
@@ -11734,9 +12099,9 @@ export namespace Public {
       }
     }
     export namespace CubeNe {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeNe.Arguments
+          // CompositeType Public.Procedures.CubeNe.Parameters
           return from;
         }
       }
@@ -11748,9 +12113,9 @@ export namespace Public {
       }
     }
     export namespace CubeLt {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeLt.Arguments
+          // CompositeType Public.Procedures.CubeLt.Parameters
           return from;
         }
       }
@@ -11762,9 +12127,9 @@ export namespace Public {
       }
     }
     export namespace CubeGt {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeGt.Arguments
+          // CompositeType Public.Procedures.CubeGt.Parameters
           return from;
         }
       }
@@ -11776,9 +12141,9 @@ export namespace Public {
       }
     }
     export namespace CubeLe {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeLe.Arguments
+          // CompositeType Public.Procedures.CubeLe.Parameters
           return from;
         }
       }
@@ -11790,9 +12155,9 @@ export namespace Public {
       }
     }
     export namespace CubeGe {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeGe.Arguments
+          // CompositeType Public.Procedures.CubeGe.Parameters
           return from;
         }
       }
@@ -11804,9 +12169,9 @@ export namespace Public {
       }
     }
     export namespace CubeCmp {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeCmp.Arguments
+          // CompositeType Public.Procedures.CubeCmp.Parameters
           return from;
         }
       }
@@ -11818,9 +12183,9 @@ export namespace Public {
       }
     }
     export namespace CubeContains {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeContains.Arguments
+          // CompositeType Public.Procedures.CubeContains.Parameters
           return from;
         }
       }
@@ -11832,9 +12197,9 @@ export namespace Public {
       }
     }
     export namespace CubeContained {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeContained.Arguments
+          // CompositeType Public.Procedures.CubeContained.Parameters
           return from;
         }
       }
@@ -11846,9 +12211,9 @@ export namespace Public {
       }
     }
     export namespace CubeOverlap {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeOverlap.Arguments
+          // CompositeType Public.Procedures.CubeOverlap.Parameters
           return from;
         }
       }
@@ -11860,9 +12225,9 @@ export namespace Public {
       }
     }
     export namespace CubeUnion {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeUnion.Arguments
+          // CompositeType Public.Procedures.CubeUnion.Parameters
           return from;
         }
       }
@@ -11874,9 +12239,9 @@ export namespace Public {
       }
     }
     export namespace CubeInter {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeInter.Arguments
+          // CompositeType Public.Procedures.CubeInter.Parameters
           return from;
         }
       }
@@ -11888,9 +12253,9 @@ export namespace Public {
       }
     }
     export namespace CubeSize {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeSize.Arguments
+          // CompositeType Public.Procedures.CubeSize.Parameters
           return from;
         }
       }
@@ -11902,9 +12267,9 @@ export namespace Public {
       }
     }
     export namespace CubeSubset {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeSubset.Arguments
+          // CompositeType Public.Procedures.CubeSubset.Parameters
           return from;
         }
       }
@@ -11916,9 +12281,9 @@ export namespace Public {
       }
     }
     export namespace CubeDistance {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeDistance.Arguments
+          // CompositeType Public.Procedures.CubeDistance.Parameters
           return from;
         }
       }
@@ -11930,9 +12295,9 @@ export namespace Public {
       }
     }
     export namespace DistanceChebyshev {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.DistanceChebyshev.Arguments
+          // CompositeType Public.Procedures.DistanceChebyshev.Parameters
           return from;
         }
       }
@@ -11944,9 +12309,9 @@ export namespace Public {
       }
     }
     export namespace DistanceTaxicab {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.DistanceTaxicab.Arguments
+          // CompositeType Public.Procedures.DistanceTaxicab.Parameters
           return from;
         }
       }
@@ -11958,9 +12323,9 @@ export namespace Public {
       }
     }
     export namespace CubeDim {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeDim.Arguments
+          // CompositeType Public.Procedures.CubeDim.Parameters
           return from;
         }
       }
@@ -11972,9 +12337,9 @@ export namespace Public {
       }
     }
     export namespace CubeLlCoord {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeLlCoord.Arguments
+          // CompositeType Public.Procedures.CubeLlCoord.Parameters
           return from;
         }
       }
@@ -11986,9 +12351,9 @@ export namespace Public {
       }
     }
     export namespace CubeUrCoord {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeUrCoord.Arguments
+          // CompositeType Public.Procedures.CubeUrCoord.Parameters
           return from;
         }
       }
@@ -12000,9 +12365,9 @@ export namespace Public {
       }
     }
     export namespace CubeCoord {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeCoord.Arguments
+          // CompositeType Public.Procedures.CubeCoord.Parameters
           return from;
         }
       }
@@ -12014,9 +12379,9 @@ export namespace Public {
       }
     }
     export namespace CubeCoordLlur {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeCoordLlur.Arguments
+          // CompositeType Public.Procedures.CubeCoordLlur.Parameters
           return from;
         }
       }
@@ -12028,9 +12393,9 @@ export namespace Public {
       }
     }
     export namespace CubeA5b3 {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeA5b3.Arguments
+          // CompositeType Public.Procedures.CubeA5b3.Parameters
           return from;
         }
       }
@@ -12042,9 +12407,9 @@ export namespace Public {
       }
     }
     export namespace Cube_0aec {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.Cube_0aec.Arguments
+          // CompositeType Public.Procedures.Cube_0aec.Parameters
           return from;
         }
       }
@@ -12056,9 +12421,9 @@ export namespace Public {
       }
     }
     export namespace Cube_39d2 {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.Cube_39d2.Arguments
+          // CompositeType Public.Procedures.Cube_39d2.Parameters
           return from;
         }
       }
@@ -12070,9 +12435,9 @@ export namespace Public {
       }
     }
     export namespace CubeA7eb {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeA7eb.Arguments
+          // CompositeType Public.Procedures.CubeA7eb.Parameters
           return from;
         }
       }
@@ -12084,9 +12449,9 @@ export namespace Public {
       }
     }
     export namespace CubeIsPoint {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeIsPoint.Arguments
+          // CompositeType Public.Procedures.CubeIsPoint.Parameters
           return from;
         }
       }
@@ -12098,9 +12463,9 @@ export namespace Public {
       }
     }
     export namespace CubeEnlarge {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeEnlarge.Arguments
+          // CompositeType Public.Procedures.CubeEnlarge.Parameters
           return from;
         }
       }
@@ -12112,9 +12477,9 @@ export namespace Public {
       }
     }
     export namespace GCubeConsistent {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubeConsistent.Arguments
+          // CompositeType Public.Procedures.GCubeConsistent.Parameters
           return from;
         }
       }
@@ -12126,9 +12491,9 @@ export namespace Public {
       }
     }
     export namespace GCubePenalty {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubePenalty.Arguments
+          // CompositeType Public.Procedures.GCubePenalty.Parameters
           return from;
         }
       }
@@ -12140,9 +12505,9 @@ export namespace Public {
       }
     }
     export namespace GCubePicksplit {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubePicksplit.Arguments
+          // CompositeType Public.Procedures.GCubePicksplit.Parameters
           return from;
         }
       }
@@ -12154,9 +12519,9 @@ export namespace Public {
       }
     }
     export namespace GCubeUnion {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubeUnion.Arguments
+          // CompositeType Public.Procedures.GCubeUnion.Parameters
           return from;
         }
       }
@@ -12168,9 +12533,9 @@ export namespace Public {
       }
     }
     export namespace GCubeSame {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubeSame.Arguments
+          // CompositeType Public.Procedures.GCubeSame.Parameters
           return from;
         }
       }
@@ -12182,9 +12547,9 @@ export namespace Public {
       }
     }
     export namespace GCubeDistance {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.GCubeDistance.Arguments
+          // CompositeType Public.Procedures.GCubeDistance.Parameters
           return from;
         }
       }
@@ -12196,9 +12561,9 @@ export namespace Public {
       }
     }
     export namespace CubeRecv {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeRecv.Arguments
+          // CompositeType Public.Procedures.CubeRecv.Parameters
           return from;
         }
       }
@@ -12210,9 +12575,9 @@ export namespace Public {
       }
     }
     export namespace CubeSend {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Public.Procedures.CubeSend.Arguments
+          // CompositeType Public.Procedures.CubeSend.Parameters
           return from;
         }
       }
@@ -12227,12 +12592,6 @@ export namespace Public {
   export namespace Tables {
     export namespace Slug {
       export namespace Create {
-        export namespace Results {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Slug.Create.Results
-            Public.Types.Slug.parse(from);
-          }
-        }
         export namespace Values {
           export function parse(from: string | null) {
             // AliasType Public.Tables.Slug.Create.Values
@@ -12294,9 +12653,9 @@ export namespace Api {
   }
   export namespace Procedures {
     export namespace Echo {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.Echo.Arguments
+          // CompositeType Api.Procedures.Echo.Parameters
           return from;
         }
       }
@@ -12308,9 +12667,9 @@ export namespace Api {
       }
     }
     export namespace EchoSet {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoSet.Arguments
+          // CompositeType Api.Procedures.EchoSet.Parameters
           return from;
         }
       }
@@ -12322,9 +12681,9 @@ export namespace Api {
       }
     }
     export namespace EchoTable {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoTable.Arguments
+          // CompositeType Api.Procedures.EchoTable.Parameters
           return from;
         }
       }
@@ -12336,9 +12695,9 @@ export namespace Api {
       }
     }
     export namespace EchoType {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoType.Arguments
+          // CompositeType Api.Procedures.EchoType.Parameters
           return from;
         }
       }
@@ -12350,9 +12709,9 @@ export namespace Api {
       }
     }
     export namespace EchoTypeArray {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoTypeArray.Arguments
+          // CompositeType Api.Procedures.EchoTypeArray.Parameters
           return from;
         }
       }
@@ -12364,9 +12723,9 @@ export namespace Api {
       }
     }
     export namespace EchoTypeNested {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoTypeNested.Arguments
+          // CompositeType Api.Procedures.EchoTypeNested.Parameters
           return from;
         }
       }
@@ -12378,9 +12737,9 @@ export namespace Api {
       }
     }
     export namespace EchoTypeSet {
-      export namespace Arguments {
+      export namespace Parameters {
         export function parse(from: string | null) {
-          // CompositeType Api.Procedures.EchoTypeSet.Arguments
+          // CompositeType Api.Procedures.EchoTypeSet.Parameters
           return from;
         }
       }
@@ -14413,7 +14772,7 @@ export namespace Public {
         });
       }
 
-      export function includesPrimaryKey(value: Partial<Public.Types.Slug>) {
+      export function includesPrimaryKey(value: Partial<Record>) {
         return value.slugId !== undefined;
       }
     }
@@ -14991,24 +15350,304 @@ export interface PostgresTypecasts {
   ["PgCatalog.Types.Oidvector"]: Typecast;
   [602]: Typecast;
   ["PgCatalog.Types.Path"]: Typecast;
+  [10027]: Typecast;
+  ["PgCatalog.Types.PgAggregate"]: Typecast;
+  [10015]: Typecast;
+  ["PgCatalog.Types.PgAm"]: Typecast;
+  [10017]: Typecast;
+  ["PgCatalog.Types.PgAmop"]: Typecast;
+  [10019]: Typecast;
+  ["PgCatalog.Types.PgAmproc"]: Typecast;
+  [10001]: Typecast;
+  ["PgCatalog.Types.PgAttrdef"]: Typecast;
+  [75]: Typecast;
+  ["PgCatalog.Types.PgAttribute"]: Typecast;
+  [2843]: Typecast;
+  ["PgCatalog.Types.PgAuthMembers"]: Typecast;
+  [2842]: Typecast;
+  ["PgCatalog.Types.PgAuthid"]: Typecast;
+  [12087]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast;
+  [12083]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensions"]: Typecast;
+  [12140]: Typecast;
+  ["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast;
   [4600]: Typecast;
   ["PgCatalog.Types.PgBrinBloomSummary"]: Typecast;
   [4601]: Typecast;
   ["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast;
+  [10043]: Typecast;
+  ["PgCatalog.Types.PgCast"]: Typecast;
+  [83]: Typecast;
+  ["PgCatalog.Types.PgClass"]: Typecast;
+  [10095]: Typecast;
+  ["PgCatalog.Types.PgCollation"]: Typecast;
+  [12132]: Typecast;
+  ["PgCatalog.Types.PgConfig"]: Typecast;
+  [10003]: Typecast;
+  ["PgCatalog.Types.PgConstraint"]: Typecast;
+  [10049]: Typecast;
+  ["PgCatalog.Types.PgConversion"]: Typecast;
+  [12079]: Typecast;
+  ["PgCatalog.Types.PgCursors"]: Typecast;
+  [1248]: Typecast;
+  ["PgCatalog.Types.PgDatabase"]: Typecast;
+  [10054]: Typecast;
+  ["PgCatalog.Types.PgDbRoleSetting"]: Typecast;
   [32]: Typecast;
   ["PgCatalog.Types.PgDdlCommand"]: Typecast;
+  [10088]: Typecast;
+  ["PgCatalog.Types.PgDefaultAcl"]: Typecast;
+  [10051]: Typecast;
+  ["PgCatalog.Types.PgDepend"]: Typecast;
   [3402]: Typecast;
   ["PgCatalog.Types.PgDependencies"]: Typecast;
+  [10041]: Typecast;
+  ["PgCatalog.Types.PgDescription"]: Typecast;
+  [10045]: Typecast;
+  ["PgCatalog.Types.PgEnum"]: Typecast;
+  [10039]: Typecast;
+  ["PgCatalog.Types.PgEventTrigger"]: Typecast;
+  [10074]: Typecast;
+  ["PgCatalog.Types.PgExtension"]: Typecast;
+  [12112]: Typecast;
+  ["PgCatalog.Types.PgFileSettings"]: Typecast;
+  [10076]: Typecast;
+  ["PgCatalog.Types.PgForeignDataWrapper"]: Typecast;
+  [10078]: Typecast;
+  ["PgCatalog.Types.PgForeignServer"]: Typecast;
+  [10082]: Typecast;
+  ["PgCatalog.Types.PgForeignTable"]: Typecast;
+  [12012]: Typecast;
+  ["PgCatalog.Types.PgGroup"]: Typecast;
+  [12116]: Typecast;
+  ["PgCatalog.Types.PgHbaFileRules"]: Typecast;
+  [12120]: Typecast;
+  ["PgCatalog.Types.PgIdentFileMappings"]: Typecast;
+  [10007]: Typecast;
+  ["PgCatalog.Types.PgIndex"]: Typecast;
+  [12045]: Typecast;
+  ["PgCatalog.Types.PgIndexes"]: Typecast;
+  [10005]: Typecast;
+  ["PgCatalog.Types.PgInherits"]: Typecast;
+  [10090]: Typecast;
+  ["PgCatalog.Types.PgInitPrivs"]: Typecast;
+  [10021]: Typecast;
+  ["PgCatalog.Types.PgLanguage"]: Typecast;
+  [10025]: Typecast;
+  ["PgCatalog.Types.PgLargeobject"]: Typecast;
+  [10023]: Typecast;
+  ["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast;
+  [12075]: Typecast;
+  ["PgCatalog.Types.PgLocks"]: Typecast;
   [3220]: Typecast;
   ["PgCatalog.Types.PgLsn"]: Typecast;
+  [12040]: Typecast;
+  ["PgCatalog.Types.PgMatviews"]: Typecast;
   [5017]: Typecast;
   ["PgCatalog.Types.PgMcvList"]: Typecast;
+  [10047]: Typecast;
+  ["PgCatalog.Types.PgNamespace"]: Typecast;
   [3361]: Typecast;
   ["PgCatalog.Types.PgNdistinct"]: Typecast;
   [194]: Typecast;
   ["PgCatalog.Types.PgNodeTree"]: Typecast;
+  [10013]: Typecast;
+  ["PgCatalog.Types.PgOpclass"]: Typecast;
+  [10009]: Typecast;
+  ["PgCatalog.Types.PgOperator"]: Typecast;
+  [10011]: Typecast;
+  ["PgCatalog.Types.PgOpfamily"]: Typecast;
+  [10097]: Typecast;
+  ["PgCatalog.Types.PgParameterAcl"]: Typecast;
+  [10099]: Typecast;
+  ["PgCatalog.Types.PgPartitionedTable"]: Typecast;
+  [12020]: Typecast;
+  ["PgCatalog.Types.PgPolicies"]: Typecast;
+  [10084]: Typecast;
+  ["PgCatalog.Types.PgPolicy"]: Typecast;
+  [12097]: Typecast;
+  ["PgCatalog.Types.PgPreparedStatements"]: Typecast;
+  [12092]: Typecast;
+  ["PgCatalog.Types.PgPreparedXacts"]: Typecast;
+  [81]: Typecast;
+  ["PgCatalog.Types.PgProc"]: Typecast;
+  [10107]: Typecast;
+  ["PgCatalog.Types.PgPublication"]: Typecast;
+  [10109]: Typecast;
+  ["PgCatalog.Types.PgPublicationNamespace"]: Typecast;
+  [10111]: Typecast;
+  ["PgCatalog.Types.PgPublicationRel"]: Typecast;
+  [12070]: Typecast;
+  ["PgCatalog.Types.PgPublicationTables"]: Typecast;
+  [10101]: Typecast;
+  ["PgCatalog.Types.PgRange"]: Typecast;
+  [10086]: Typecast;
+  ["PgCatalog.Types.PgReplicationOrigin"]: Typecast;
+  [12338]: Typecast;
+  ["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast;
+  [12259]: Typecast;
+  ["PgCatalog.Types.PgReplicationSlots"]: Typecast;
+  [10035]: Typecast;
+  ["PgCatalog.Types.PgRewrite"]: Typecast;
+  [12002]: Typecast;
+  ["PgCatalog.Types.PgRoles"]: Typecast;
+  [12025]: Typecast;
+  ["PgCatalog.Types.PgRules"]: Typecast;
+  [10092]: Typecast;
+  ["PgCatalog.Types.PgSeclabel"]: Typecast;
+  [12101]: Typecast;
+  ["PgCatalog.Types.PgSeclabels"]: Typecast;
+  [10105]: Typecast;
+  ["PgCatalog.Types.PgSequence"]: Typecast;
+  [12050]: Typecast;
+  ["PgCatalog.Types.PgSequences"]: Typecast;
+  [12106]: Typecast;
+  ["PgCatalog.Types.PgSettings"]: Typecast;
+  [12007]: Typecast;
+  ["PgCatalog.Types.PgShadow"]: Typecast;
+  [10060]: Typecast;
+  ["PgCatalog.Types.PgShdepend"]: Typecast;
+  [10062]: Typecast;
+  ["PgCatalog.Types.PgShdescription"]: Typecast;
+  [12136]: Typecast;
+  ["PgCatalog.Types.PgShmemAllocations"]: Typecast;
+  [4066]: Typecast;
+  ["PgCatalog.Types.PgShseclabel"]: Typecast;
   [5038]: Typecast;
   ["PgCatalog.Types.PgSnapshot"]: Typecast;
+  [12224]: Typecast;
+  ["PgCatalog.Types.PgStatActivity"]: Typecast;
+  [12185]: Typecast;
+  ["PgCatalog.Types.PgStatAllIndexes"]: Typecast;
+  [12144]: Typecast;
+  ["PgCatalog.Types.PgStatAllTables"]: Typecast;
+  [12287]: Typecast;
+  ["PgCatalog.Types.PgStatArchiver"]: Typecast;
+  [12291]: Typecast;
+  ["PgCatalog.Types.PgStatBgwriter"]: Typecast;
+  [12268]: Typecast;
+  ["PgCatalog.Types.PgStatDatabase"]: Typecast;
+  [12273]: Typecast;
+  ["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast;
+  [12255]: Typecast;
+  ["PgCatalog.Types.PgStatGssapi"]: Typecast;
+  [12295]: Typecast;
+  ["PgCatalog.Types.PgStatIo"]: Typecast;
+  [12303]: Typecast;
+  ["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast;
+  [12323]: Typecast;
+  ["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast;
+  [12313]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCluster"]: Typecast;
+  [12328]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCopy"]: Typecast;
+  [12318]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast;
+  [12308]: Typecast;
+  ["PgCatalog.Types.PgStatProgressVacuum"]: Typecast;
+  [12242]: Typecast;
+  ["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast;
+  [12229]: Typecast;
+  ["PgCatalog.Types.PgStatReplication"]: Typecast;
+  [12264]: Typecast;
+  ["PgCatalog.Types.PgStatReplicationSlots"]: Typecast;
+  [12234]: Typecast;
+  ["PgCatalog.Types.PgStatSlru"]: Typecast;
+  [12251]: Typecast;
+  ["PgCatalog.Types.PgStatSsl"]: Typecast;
+  [12246]: Typecast;
+  ["PgCatalog.Types.PgStatSubscription"]: Typecast;
+  [12342]: Typecast;
+  ["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast;
+  [12190]: Typecast;
+  ["PgCatalog.Types.PgStatSysIndexes"]: Typecast;
+  [12154]: Typecast;
+  ["PgCatalog.Types.PgStatSysTables"]: Typecast;
+  [12277]: Typecast;
+  ["PgCatalog.Types.PgStatUserFunctions"]: Typecast;
+  [12194]: Typecast;
+  ["PgCatalog.Types.PgStatUserIndexes"]: Typecast;
+  [12163]: Typecast;
+  ["PgCatalog.Types.PgStatUserTables"]: Typecast;
+  [12299]: Typecast;
+  ["PgCatalog.Types.PgStatWal"]: Typecast;
+  [12238]: Typecast;
+  ["PgCatalog.Types.PgStatWalReceiver"]: Typecast;
+  [12149]: Typecast;
+  ["PgCatalog.Types.PgStatXactAllTables"]: Typecast;
+  [12159]: Typecast;
+  ["PgCatalog.Types.PgStatXactSysTables"]: Typecast;
+  [12282]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast;
+  [12168]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserTables"]: Typecast;
+  [12198]: Typecast;
+  ["PgCatalog.Types.PgStatioAllIndexes"]: Typecast;
+  [12211]: Typecast;
+  ["PgCatalog.Types.PgStatioAllSequences"]: Typecast;
+  [12172]: Typecast;
+  ["PgCatalog.Types.PgStatioAllTables"]: Typecast;
+  [12203]: Typecast;
+  ["PgCatalog.Types.PgStatioSysIndexes"]: Typecast;
+  [12216]: Typecast;
+  ["PgCatalog.Types.PgStatioSysSequences"]: Typecast;
+  [12177]: Typecast;
+  ["PgCatalog.Types.PgStatioSysTables"]: Typecast;
+  [12207]: Typecast;
+  ["PgCatalog.Types.PgStatioUserIndexes"]: Typecast;
+  [12220]: Typecast;
+  ["PgCatalog.Types.PgStatioUserSequences"]: Typecast;
+  [12181]: Typecast;
+  ["PgCatalog.Types.PgStatioUserTables"]: Typecast;
+  [10029]: Typecast;
+  ["PgCatalog.Types.PgStatistic"]: Typecast;
+  [10031]: Typecast;
+  ["PgCatalog.Types.PgStatisticExt"]: Typecast;
+  [10033]: Typecast;
+  ["PgCatalog.Types.PgStatisticExtData"]: Typecast;
+  [12055]: Typecast;
+  ["PgCatalog.Types.PgStats"]: Typecast;
+  [12060]: Typecast;
+  ["PgCatalog.Types.PgStatsExt"]: Typecast;
+  [12065]: Typecast;
+  ["PgCatalog.Types.PgStatsExtExprs"]: Typecast;
+  [6101]: Typecast;
+  ["PgCatalog.Types.PgSubscription"]: Typecast;
+  [10114]: Typecast;
+  ["PgCatalog.Types.PgSubscriptionRel"]: Typecast;
+  [12035]: Typecast;
+  ["PgCatalog.Types.PgTables"]: Typecast;
+  [10056]: Typecast;
+  ["PgCatalog.Types.PgTablespace"]: Typecast;
+  [12124]: Typecast;
+  ["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast;
+  [12128]: Typecast;
+  ["PgCatalog.Types.PgTimezoneNames"]: Typecast;
+  [10103]: Typecast;
+  ["PgCatalog.Types.PgTransform"]: Typecast;
+  [10037]: Typecast;
+  ["PgCatalog.Types.PgTrigger"]: Typecast;
+  [10064]: Typecast;
+  ["PgCatalog.Types.PgTsConfig"]: Typecast;
+  [10066]: Typecast;
+  ["PgCatalog.Types.PgTsConfigMap"]: Typecast;
+  [10068]: Typecast;
+  ["PgCatalog.Types.PgTsDict"]: Typecast;
+  [10070]: Typecast;
+  ["PgCatalog.Types.PgTsParser"]: Typecast;
+  [10072]: Typecast;
+  ["PgCatalog.Types.PgTsTemplate"]: Typecast;
+  [71]: Typecast;
+  ["PgCatalog.Types.PgType"]: Typecast;
+  [12016]: Typecast;
+  ["PgCatalog.Types.PgUser"]: Typecast;
+  [10080]: Typecast;
+  ["PgCatalog.Types.PgUserMapping"]: Typecast;
+  [12333]: Typecast;
+  ["PgCatalog.Types.PgUserMappings"]: Typecast;
+  [12030]: Typecast;
+  ["PgCatalog.Types.PgViews"]: Typecast;
   [600]: Typecast;
   ["PgCatalog.Types.Point"]: Typecast;
   [604]: Typecast;
@@ -15153,6 +15792,16 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.KeyColumnUsageArray"]: Typecast;
   [13602]: Typecast;
   ["InformationSchema.Types.ParametersArray"]: Typecast;
+  [13776]: Typecast;
+  ["InformationSchema.Types.PgForeignDataWrappers"]: Typecast;
+  [13788]: Typecast;
+  ["InformationSchema.Types.PgForeignServers"]: Typecast;
+  [13767]: Typecast;
+  ["InformationSchema.Types.PgForeignTableColumns"]: Typecast;
+  [13801]: Typecast;
+  ["InformationSchema.Types.PgForeignTables"]: Typecast;
+  [13814]: Typecast;
+  ["InformationSchema.Types.PgUserMappings"]: Typecast;
   [13607]: Typecast;
   ["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast;
   [13612]: Typecast;
@@ -15225,14 +15874,142 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.ViewsArray"]: Typecast;
   [13500]: Typecast;
   ["InformationSchema.Types.YesOrNoArray"]: Typecast;
+  [13510]: Typecast;
+  ["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast;
+  [13505]: Typecast;
+  ["InformationSchema.Types.ApplicableRoles"]: Typecast;
+  [13514]: Typecast;
+  ["InformationSchema.Types.Attributes"]: Typecast;
   [13488]: Typecast;
   ["InformationSchema.Types.CardinalNumber"]: Typecast;
   [13491]: Typecast;
   ["InformationSchema.Types.CharacterData"]: Typecast;
+  [13519]: Typecast;
+  ["InformationSchema.Types.CharacterSets"]: Typecast;
+  [13524]: Typecast;
+  ["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast;
+  [13529]: Typecast;
+  ["InformationSchema.Types.CheckConstraints"]: Typecast;
+  [13539]: Typecast;
+  ["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast;
+  [13534]: Typecast;
+  ["InformationSchema.Types.Collations"]: Typecast;
+  [13544]: Typecast;
+  ["InformationSchema.Types.ColumnColumnUsage"]: Typecast;
+  [13549]: Typecast;
+  ["InformationSchema.Types.ColumnDomainUsage"]: Typecast;
+  [13772]: Typecast;
+  ["InformationSchema.Types.ColumnOptions"]: Typecast;
+  [13554]: Typecast;
+  ["InformationSchema.Types.ColumnPrivileges"]: Typecast;
+  [13559]: Typecast;
+  ["InformationSchema.Types.ColumnUdtUsage"]: Typecast;
+  [13564]: Typecast;
+  ["InformationSchema.Types.Columns"]: Typecast;
+  [13569]: Typecast;
+  ["InformationSchema.Types.ConstraintColumnUsage"]: Typecast;
+  [13574]: Typecast;
+  ["InformationSchema.Types.ConstraintTableUsage"]: Typecast;
+  [13757]: Typecast;
+  ["InformationSchema.Types.DataTypePrivileges"]: Typecast;
+  [13579]: Typecast;
+  ["InformationSchema.Types.DomainConstraints"]: Typecast;
+  [13584]: Typecast;
+  ["InformationSchema.Types.DomainUdtUsage"]: Typecast;
+  [13589]: Typecast;
+  ["InformationSchema.Types.Domains"]: Typecast;
+  [13762]: Typecast;
+  ["InformationSchema.Types.ElementTypes"]: Typecast;
+  [13594]: Typecast;
+  ["InformationSchema.Types.EnabledRoles"]: Typecast;
+  [13780]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast;
+  [13784]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrappers"]: Typecast;
+  [13793]: Typecast;
+  ["InformationSchema.Types.ForeignServerOptions"]: Typecast;
+  [13797]: Typecast;
+  ["InformationSchema.Types.ForeignServers"]: Typecast;
+  [13806]: Typecast;
+  ["InformationSchema.Types.ForeignTableOptions"]: Typecast;
+  [13810]: Typecast;
+  ["InformationSchema.Types.ForeignTables"]: Typecast;
+  [13496]: Typecast;
+  ["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast;
+  [13598]: Typecast;
+  ["InformationSchema.Types.KeyColumnUsage"]: Typecast;
+  [13603]: Typecast;
+  ["InformationSchema.Types.Parameters"]: Typecast;
+  [13608]: Typecast;
+  ["InformationSchema.Types.ReferentialConstraints"]: Typecast;
+  [13613]: Typecast;
+  ["InformationSchema.Types.RoleColumnGrants"]: Typecast;
+  [13627]: Typecast;
+  ["InformationSchema.Types.RoleRoutineGrants"]: Typecast;
+  [13690]: Typecast;
+  ["InformationSchema.Types.RoleTableGrants"]: Typecast;
+  [13719]: Typecast;
+  ["InformationSchema.Types.RoleUdtGrants"]: Typecast;
+  [13728]: Typecast;
+  ["InformationSchema.Types.RoleUsageGrants"]: Typecast;
+  [13617]: Typecast;
+  ["InformationSchema.Types.RoutineColumnUsage"]: Typecast;
+  [13622]: Typecast;
+  ["InformationSchema.Types.RoutinePrivileges"]: Typecast;
+  [13631]: Typecast;
+  ["InformationSchema.Types.RoutineRoutineUsage"]: Typecast;
+  [13636]: Typecast;
+  ["InformationSchema.Types.RoutineSequenceUsage"]: Typecast;
+  [13641]: Typecast;
+  ["InformationSchema.Types.RoutineTableUsage"]: Typecast;
+  [13646]: Typecast;
+  ["InformationSchema.Types.Routines"]: Typecast;
+  [13651]: Typecast;
+  ["InformationSchema.Types.Schemata"]: Typecast;
+  [13655]: Typecast;
+  ["InformationSchema.Types.Sequences"]: Typecast;
+  [13660]: Typecast;
+  ["InformationSchema.Types.SqlFeatures"]: Typecast;
   [13493]: Typecast;
   ["InformationSchema.Types.SqlIdentifier"]: Typecast;
+  [13665]: Typecast;
+  ["InformationSchema.Types.SqlImplementationInfo"]: Typecast;
+  [13670]: Typecast;
+  ["InformationSchema.Types.SqlParts"]: Typecast;
+  [13675]: Typecast;
+  ["InformationSchema.Types.SqlSizing"]: Typecast;
+  [13680]: Typecast;
+  ["InformationSchema.Types.TableConstraints"]: Typecast;
+  [13685]: Typecast;
+  ["InformationSchema.Types.TablePrivileges"]: Typecast;
+  [13694]: Typecast;
+  ["InformationSchema.Types.Tables"]: Typecast;
   [13499]: Typecast;
   ["InformationSchema.Types.TimeStamp"]: Typecast;
+  [13699]: Typecast;
+  ["InformationSchema.Types.Transforms"]: Typecast;
+  [13704]: Typecast;
+  ["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast;
+  [13709]: Typecast;
+  ["InformationSchema.Types.Triggers"]: Typecast;
+  [13714]: Typecast;
+  ["InformationSchema.Types.UdtPrivileges"]: Typecast;
+  [13723]: Typecast;
+  ["InformationSchema.Types.UsagePrivileges"]: Typecast;
+  [13732]: Typecast;
+  ["InformationSchema.Types.UserDefinedTypes"]: Typecast;
+  [13819]: Typecast;
+  ["InformationSchema.Types.UserMappingOptions"]: Typecast;
+  [13824]: Typecast;
+  ["InformationSchema.Types.UserMappings"]: Typecast;
+  [13737]: Typecast;
+  ["InformationSchema.Types.ViewColumnUsage"]: Typecast;
+  [13742]: Typecast;
+  ["InformationSchema.Types.ViewRoutineUsage"]: Typecast;
+  [13747]: Typecast;
+  ["InformationSchema.Types.ViewTableUsage"]: Typecast;
+  [13752]: Typecast;
+  ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
   [25456]: Typecast;
@@ -15241,10 +16018,112 @@ export interface PostgresTypecasts {
   ["Public.Types.SlugArray"]: Typecast;
   [25451]: Typecast;
   ["Public.Types.Cube"]: Typecast;
+  [25542]: Typecast;
+  ["Public.Types.Slug"]: Typecast;
+
+  ["Public.Procedures.CubeIn.Parameters"]: Typecast;
+
+  ["Public.Procedures.Cube_9c45.Parameters"]: Typecast;
+
+  ["Public.Procedures.Cube_2e6d.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeOut.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeEq.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeNe.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeLt.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeGt.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeLe.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeGe.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeCmp.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeContains.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeContained.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeOverlap.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeUnion.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeInter.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeSize.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeSubset.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeDistance.Parameters"]: Typecast;
+
+  ["Public.Procedures.DistanceChebyshev.Parameters"]: Typecast;
+
+  ["Public.Procedures.DistanceTaxicab.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeDim.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeLlCoord.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeUrCoord.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeCoord.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeCoordLlur.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeA5b3.Parameters"]: Typecast;
+
+  ["Public.Procedures.Cube_0aec.Parameters"]: Typecast;
+
+  ["Public.Procedures.Cube_39d2.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeA7eb.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeEnlarge.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubeConsistent.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubePenalty.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubePicksplit.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubeUnion.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubeSame.Parameters"]: Typecast;
+
+  ["Public.Procedures.GCubeDistance.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeRecv.Parameters"]: Typecast;
+
+  ["Public.Procedures.CubeSend.Parameters"]: Typecast;
   [25551]: Typecast;
   ["Api.Types.EchoTypeArray"]: Typecast;
   [25554]: Typecast;
   ["Api.Types.EchoTypeNestedArray"]: Typecast;
+  [25552]: Typecast;
+  ["Api.Types.EchoType"]: Typecast;
+  [25555]: Typecast;
+  ["Api.Types.EchoTypeNested"]: Typecast;
+  [25549]: Typecast;
+  ["Api.Types.EchoTableResults"]: Typecast;
+
+  ["Api.Procedures.Echo.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoSet.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoTable.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoType.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoTypeArray.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoTypeNested.Parameters"]: Typecast;
+
+  ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast;
 }
 
 interface HasDatabase {
@@ -15271,7 +16150,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async cubeIn(parameters: Public.Procedures.CubeIn.Arguments) {
+    async cubeIn(parameters: Public.Procedures.CubeIn.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15285,7 +16164,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_in as unknown as Public.Procedures.CubeIn.Results;
       return responseBody;
     }
-    async cube_9c45(parameters: Public.Procedures.Cube_9c45.Arguments) {
+    async cube_9c45(parameters: Public.Procedures.Cube_9c45.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15299,7 +16178,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.Cube_9c45.Results;
       return responseBody;
     }
-    async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Arguments) {
+    async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15313,7 +16192,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.Cube_2e6d.Results;
       return responseBody;
     }
-    async cubeOut(parameters: Public.Procedures.CubeOut.Arguments) {
+    async cubeOut(parameters: Public.Procedures.CubeOut.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15327,7 +16206,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_out as unknown as Public.Procedures.CubeOut.Results;
       return responseBody;
     }
-    async cubeEq(parameters: Public.Procedures.CubeEq.Arguments) {
+    async cubeEq(parameters: Public.Procedures.CubeEq.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15341,7 +16220,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_eq as unknown as Public.Procedures.CubeEq.Results;
       return responseBody;
     }
-    async cubeNe(parameters: Public.Procedures.CubeNe.Arguments) {
+    async cubeNe(parameters: Public.Procedures.CubeNe.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15355,7 +16234,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_ne as unknown as Public.Procedures.CubeNe.Results;
       return responseBody;
     }
-    async cubeLt(parameters: Public.Procedures.CubeLt.Arguments) {
+    async cubeLt(parameters: Public.Procedures.CubeLt.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15369,7 +16248,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_lt as unknown as Public.Procedures.CubeLt.Results;
       return responseBody;
     }
-    async cubeGt(parameters: Public.Procedures.CubeGt.Arguments) {
+    async cubeGt(parameters: Public.Procedures.CubeGt.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15383,7 +16262,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_gt as unknown as Public.Procedures.CubeGt.Results;
       return responseBody;
     }
-    async cubeLe(parameters: Public.Procedures.CubeLe.Arguments) {
+    async cubeLe(parameters: Public.Procedures.CubeLe.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15397,7 +16276,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_le as unknown as Public.Procedures.CubeLe.Results;
       return responseBody;
     }
-    async cubeGe(parameters: Public.Procedures.CubeGe.Arguments) {
+    async cubeGe(parameters: Public.Procedures.CubeGe.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15411,7 +16290,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_ge as unknown as Public.Procedures.CubeGe.Results;
       return responseBody;
     }
-    async cubeCmp(parameters: Public.Procedures.CubeCmp.Arguments) {
+    async cubeCmp(parameters: Public.Procedures.CubeCmp.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15425,7 +16304,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_cmp as unknown as Public.Procedures.CubeCmp.Results;
       return responseBody;
     }
-    async cubeContains(parameters: Public.Procedures.CubeContains.Arguments) {
+    async cubeContains(parameters: Public.Procedures.CubeContains.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15439,7 +16318,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_contains as unknown as Public.Procedures.CubeContains.Results;
       return responseBody;
     }
-    async cubeContained(parameters: Public.Procedures.CubeContained.Arguments) {
+    async cubeContained(
+      parameters: Public.Procedures.CubeContained.Parameters,
+    ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15453,7 +16334,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_contained as unknown as Public.Procedures.CubeContained.Results;
       return responseBody;
     }
-    async cubeOverlap(parameters: Public.Procedures.CubeOverlap.Arguments) {
+    async cubeOverlap(parameters: Public.Procedures.CubeOverlap.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15467,7 +16348,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_overlap as unknown as Public.Procedures.CubeOverlap.Results;
       return responseBody;
     }
-    async cubeUnion(parameters: Public.Procedures.CubeUnion.Arguments) {
+    async cubeUnion(parameters: Public.Procedures.CubeUnion.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15481,7 +16362,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_union as unknown as Public.Procedures.CubeUnion.Results;
       return responseBody;
     }
-    async cubeInter(parameters: Public.Procedures.CubeInter.Arguments) {
+    async cubeInter(parameters: Public.Procedures.CubeInter.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15495,7 +16376,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_inter as unknown as Public.Procedures.CubeInter.Results;
       return responseBody;
     }
-    async cubeSize(parameters: Public.Procedures.CubeSize.Arguments) {
+    async cubeSize(parameters: Public.Procedures.CubeSize.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15509,7 +16390,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_size as unknown as Public.Procedures.CubeSize.Results;
       return responseBody;
     }
-    async cubeSubset(parameters: Public.Procedures.CubeSubset.Arguments) {
+    async cubeSubset(parameters: Public.Procedures.CubeSubset.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15523,7 +16404,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_subset as unknown as Public.Procedures.CubeSubset.Results;
       return responseBody;
     }
-    async cubeDistance(parameters: Public.Procedures.CubeDistance.Arguments) {
+    async cubeDistance(parameters: Public.Procedures.CubeDistance.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15538,7 +16419,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async distanceChebyshev(
-      parameters: Public.Procedures.DistanceChebyshev.Arguments,
+      parameters: Public.Procedures.DistanceChebyshev.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -15554,7 +16435,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async distanceTaxicab(
-      parameters: Public.Procedures.DistanceTaxicab.Arguments,
+      parameters: Public.Procedures.DistanceTaxicab.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -15569,7 +16450,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .distance_taxicab as unknown as Public.Procedures.DistanceTaxicab.Results;
       return responseBody;
     }
-    async cubeDim(parameters: Public.Procedures.CubeDim.Arguments) {
+    async cubeDim(parameters: Public.Procedures.CubeDim.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15583,7 +16464,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_dim as unknown as Public.Procedures.CubeDim.Results;
       return responseBody;
     }
-    async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Arguments) {
+    async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15597,7 +16478,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_ll_coord as unknown as Public.Procedures.CubeLlCoord.Results;
       return responseBody;
     }
-    async cubeUrCoord(parameters: Public.Procedures.CubeUrCoord.Arguments) {
+    async cubeUrCoord(parameters: Public.Procedures.CubeUrCoord.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15611,7 +16492,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_ur_coord as unknown as Public.Procedures.CubeUrCoord.Results;
       return responseBody;
     }
-    async cubeCoord(parameters: Public.Procedures.CubeCoord.Arguments) {
+    async cubeCoord(parameters: Public.Procedures.CubeCoord.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15625,7 +16506,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_coord as unknown as Public.Procedures.CubeCoord.Results;
       return responseBody;
     }
-    async cubeCoordLlur(parameters: Public.Procedures.CubeCoordLlur.Arguments) {
+    async cubeCoordLlur(
+      parameters: Public.Procedures.CubeCoordLlur.Parameters,
+    ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15639,7 +16522,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_coord_llur as unknown as Public.Procedures.CubeCoordLlur.Results;
       return responseBody;
     }
-    async cubeA5b3(parameters: Public.Procedures.CubeA5b3.Arguments) {
+    async cubeA5b3(parameters: Public.Procedures.CubeA5b3.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15653,7 +16536,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.CubeA5b3.Results;
       return responseBody;
     }
-    async cube_0aec(parameters: Public.Procedures.Cube_0aec.Arguments) {
+    async cube_0aec(parameters: Public.Procedures.Cube_0aec.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15667,7 +16550,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.Cube_0aec.Results;
       return responseBody;
     }
-    async cube_39d2(parameters: Public.Procedures.Cube_39d2.Arguments) {
+    async cube_39d2(parameters: Public.Procedures.Cube_39d2.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15681,7 +16564,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.Cube_39d2.Results;
       return responseBody;
     }
-    async cubeA7eb(parameters: Public.Procedures.CubeA7eb.Arguments) {
+    async cubeA7eb(parameters: Public.Procedures.CubeA7eb.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15697,7 +16580,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube as unknown as Public.Procedures.CubeA7eb.Results;
       return responseBody;
     }
-    async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Arguments) {
+    async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15711,7 +16594,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_is_point as unknown as Public.Procedures.CubeIsPoint.Results;
       return responseBody;
     }
-    async cubeEnlarge(parameters: Public.Procedures.CubeEnlarge.Arguments) {
+    async cubeEnlarge(parameters: Public.Procedures.CubeEnlarge.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15728,7 +16611,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async gCubeConsistent(
-      parameters: Public.Procedures.GCubeConsistent.Arguments,
+      parameters: Public.Procedures.GCubeConsistent.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -15749,7 +16632,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .g_cube_consistent as unknown as Public.Procedures.GCubeConsistent.Results;
       return responseBody;
     }
-    async gCubePenalty(parameters: Public.Procedures.GCubePenalty.Arguments) {
+    async gCubePenalty(parameters: Public.Procedures.GCubePenalty.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15766,7 +16649,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return responseBody;
     }
     async gCubePicksplit(
-      parameters: Public.Procedures.GCubePicksplit.Arguments,
+      parameters: Public.Procedures.GCubePicksplit.Parameters,
     ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -15781,7 +16664,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .g_cube_picksplit as unknown as Public.Procedures.GCubePicksplit.Results;
       return responseBody;
     }
-    async gCubeUnion(parameters: Public.Procedures.GCubeUnion.Arguments) {
+    async gCubeUnion(parameters: Public.Procedures.GCubeUnion.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15795,7 +16678,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .g_cube_union as unknown as Public.Procedures.GCubeUnion.Results;
       return responseBody;
     }
-    async gCubeSame(parameters: Public.Procedures.GCubeSame.Arguments) {
+    async gCubeSame(parameters: Public.Procedures.GCubeSame.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15811,7 +16694,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .g_cube_same as unknown as Public.Procedures.GCubeSame.Results;
       return responseBody;
     }
-    async gCubeDistance(parameters: Public.Procedures.GCubeDistance.Arguments) {
+    async gCubeDistance(
+      parameters: Public.Procedures.GCubeDistance.Parameters,
+    ) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15831,7 +16716,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .g_cube_distance as unknown as Public.Procedures.GCubeDistance.Results;
       return responseBody;
     }
-    async cubeRecv(parameters: Public.Procedures.CubeRecv.Arguments) {
+    async cubeRecv(parameters: Public.Procedures.CubeRecv.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15845,7 +16730,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .cube_recv as unknown as Public.Procedures.CubeRecv.Results;
       return responseBody;
     }
-    async cubeSend(parameters: Public.Procedures.CubeSend.Arguments) {
+    async cubeSend(parameters: Public.Procedures.CubeSend.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15874,24 +16759,118 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
 
         if (Public.Tables.Slug.includesPrimaryKey(values)) {
-          const response = await sql`INSERT INTO public.slug (slug_id)
-    VALUES (slug_id)
-    ON CONFLICT (slug_id) DO UPDATE
-    SET 
-    RETURNING slug_id
+          const response = await sql`
+      --
+      INSERT INTO
+        public.slug 
+        (slug_id)
+      VALUES
+        (slug_id)
+      ON CONFLICT (slug_id) DO UPDATE
+      SET
+        
+      RETURNING
+        slug_id
     `;
           return response.map((record) => ({
             slugId: undefinedIsNull(record.slug_id),
           }))[0];
         }
         const response = await sql`INSERT INTO slug_id)
-    VALUES ([object Promise])
+    VALUES (${
+      values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
+    })
     RETURNING slug_id
     `;
         return response.map((record) => ({
           slugId: undefinedIsNull(record.slug_id),
         }))[0];
       }
+
+      public BySlugId = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async read(
+          parameters: Public.Tables.Slug.BySlugId,
+        ): Promise<Public.Tables.Slug.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      slug_id 
+    FROM
+      public.slug 
+    WHERE
+      slug_id = ${
+        parameters.slugId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.slugId)
+      }
+    `;
+          return response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }))[0];
+        }
+
+        async update(
+          parameters: Public.Tables.Slug.BySlugId,
+          values: Partial<Public.Tables.Slug.Values>,
+        ): Promise<Public.Tables.Slug.Record> {
+          console.assert(parameters);
+          console.assert(values);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    UPDATE 
+      public.slug 
+    SET
+      slug_id = ${
+        values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
+      } 
+    WHERE
+      slug_id = ${
+        parameters.slugId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.slugId)
+      }
+    RETURNING slug_id`;
+          return response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }))[0];
+        }
+
+        async delete(
+          parameters: Public.Tables.Slug.BySlugId,
+        ): Promise<Public.Tables.Slug.Record> {
+          console.assert(parameters);
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    --
+    DELETE FROM 
+      public.slug 
+    WHERE
+      slug_id = ${
+        parameters.slugId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.slugId)
+      }
+    RETURNING slug_id`;
+          return response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }))[0];
+        }
+      })(this);
     })(this);
   })(this);
 
@@ -15902,7 +16881,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async echo(parameters: Api.Procedures.Echo.Arguments) {
+    async echo(parameters: Api.Procedures.Echo.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15916,7 +16895,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .echo as unknown as Api.Procedures.Echo.Results;
       return responseBody;
     }
-    async echoSet(parameters: Api.Procedures.EchoSet.Arguments) {
+    async echoSet(parameters: Api.Procedures.EchoSet.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15931,7 +16910,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       ) as unknown as Api.Procedures.EchoSet.Results[];
       return responseBody;
     }
-    async echoTable(parameters: Api.Procedures.EchoTable.Arguments) {
+    async echoTable(parameters: Api.Procedures.EchoTable.Parameters) {
       const parseResult = (
         context: Context,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15957,7 +16936,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       ) as unknown as Api.Procedures.EchoTable.Results[];
       return responseBody;
     }
-    async echoType(parameters: Api.Procedures.EchoType.Arguments) {
+    async echoType(parameters: Api.Procedures.EchoType.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15971,7 +16950,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .echo_type as unknown as Api.Procedures.EchoType.Results;
       return responseBody;
     }
-    async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Arguments) {
+    async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15985,7 +16964,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .echo_type_array as unknown as Api.Procedures.EchoTypeArray.Results;
       return responseBody;
     }
-    async echoTypeNested(parameters: Api.Procedures.EchoTypeNested.Arguments) {
+    async echoTypeNested(parameters: Api.Procedures.EchoTypeNested.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -15999,7 +16978,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         .echo_type_nested as unknown as Api.Procedures.EchoTypeNested.Results;
       return responseBody;
     }
-    async echoTypeSet(parameters: Api.Procedures.EchoTypeSet.Arguments) {
+    async echoTypeSet(parameters: Api.Procedures.EchoTypeSet.Parameters) {
       console.assert(parameters);
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;

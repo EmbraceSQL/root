@@ -60,7 +60,9 @@ describe("EmbraceSQLExpress can", () => {
 
   it("answer a typed read", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Public.Tables.Actor.byActorId({ actorId: 1 });
+    const response = await client.Public.Tables.Actor.ByActorId.read({
+      actorId: 1,
+    });
     expect(response).toMatchObject({
       actorId: 1,
       firstName: "Penelope",
@@ -70,7 +72,7 @@ describe("EmbraceSQLExpress can", () => {
 
   it("answer a typed update", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Public.Tables.Actor.updateByActorId(
+    const response = await client.Public.Tables.Actor.ByActorId.update(
       { actorId: 2 },
       { firstName: "🐶" },
     );
@@ -82,7 +84,9 @@ describe("EmbraceSQLExpress can", () => {
 
   it("answer an upsert", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const initial = await client.Public.Tables.Actor.byActorId({ actorId: 1 });
+    const initial = await client.Public.Tables.Actor.ByActorId.read({
+      actorId: 1,
+    });
     expect(initial).toBeTruthy();
     const response = await client.Public.Tables.Actor.create(initial!);
     expect(response).toMatchObject({
@@ -96,7 +100,7 @@ describe("EmbraceSQLExpress can", () => {
 
   it("answer a typed delete", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Public.Tables.Payment.deleteByPaymentId({
+    const response = await client.Public.Tables.Payment.ByPaymentId.delete({
       paymentId: 17503,
     });
     expect(response).toMatchObject({

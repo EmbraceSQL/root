@@ -1,13 +1,20 @@
-import { GenerationContext } from "..";
 import { CreateOperation } from "./autocrud/create";
+import { DeleteOperation } from "./autocrud/delete";
+import { ReadOperation } from "./autocrud/read";
+import { UpdateOperation } from "./autocrud/update";
 import { generateTypecastMap } from "./generateTypecastMap";
-import { ASTKind, CompositeTypeNode, ScriptsNode } from "@embracesql/shared";
+import {
+  ASTKind,
+  CompositeTypeNode,
+  GenerationContext,
+  NamedASTNode,
+} from "@embracesql/shared";
 
-function nestedNamedClassVisitor(name: string) {
-  return {
-    before: async () => {
-      return `
-          public ${name} = new class implements HasDatabase {
+export const NestedNamedClassVisitor = {
+  before: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    return `
+          public ${node.typescriptName} = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -15,12 +22,13 @@ function nestedNamedClassVisitor(name: string) {
               return this.hasDatabase.database;
             }
         `;
-    },
-    after: async () => {
-      return `}(this)`;
-    },
-  };
-}
+  },
+  after: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return `}(this)`;
+  },
+};
 
 /**
  * Generate a root object class that serves as 'the database'.
@@ -78,19 +86,9 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           ].join("\n");
         },
       },
-      [ASTKind.Schema]: {
-        before: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).before(),
-        after: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).after(),
-      },
-      [ASTKind.Scripts]: nestedNamedClassVisitor(ScriptsNode.SCRIPTS),
-      [ASTKind.ScriptFolder]: {
-        before: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).before(),
-        after: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).after(),
-      },
+      [ASTKind.Schema]: NestedNamedClassVisitor,
+      [ASTKind.Scripts]: NestedNamedClassVisitor,
+      [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
       [ASTKind.Script]: {
         before: async (context, node) => {
           // passing in arguments
@@ -195,14 +193,15 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           return generationBuffer.join("\n");
         },
       },
-      // tables host AutoCRUD
-      [ASTKind.Table]: {
-        before: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).before(),
-        after: async (_, node) =>
-          nestedNamedClassVisitor(node.typescriptName).after(),
-      },
+      // tables and indexes host AutoCRUD
+      [ASTKind.Table]: NestedNamedClassVisitor,
+      [ASTKind.Index]: NestedNamedClassVisitor,
+
+      // C R U D - AutoCRUD!
       [ASTKind.CreateOperation]: CreateOperation,
+      [ASTKind.ReadOperation]: ReadOperation,
+      [ASTKind.UpdateOperation]: UpdateOperation,
+      [ASTKind.DeleteOperation]: DeleteOperation,
     },
   });
 };

@@ -10,6 +10,7 @@ import {
   isNodeType,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
+import { pascalCase } from "change-case";
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -39,6 +40,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-namespace */
         /* eslint-disable @typescript-eslint/no-unused-vars */
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+        // eslint-disable @typescript-eslint/no-redundant-type-constituents
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
         import type { PartiallyOptional } from "@embracesql/shared";
 
@@ -54,7 +56,11 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       ) {
         // version for use when passed as `values` -- allows passing
         // the minimum number of properties
-        return `export type ${VALUES} = PartiallyOptional<Record, Optional & PrimaryKey>;`;
+        return `
+        export type ${pascalCase(
+          VALUES,
+        )} = PartiallyOptional<Record, Optional & PrimaryKey>;
+        `;
       }
       return `export type ${
         node.typescriptName
@@ -97,7 +103,18 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           before: async (context, node) => {
             return [
               await NamespaceVisitor.before(context, node),
-              `export type Record = Required<${node.type.typescriptNamespacedName}>;`,
+              `export type Record = {`,
+              node.allColumns
+                .map(
+                  (c) =>
+                    `${c.typescriptPropertyName}: ${
+                      node.type.typescriptNamespacedName
+                    }["${c.typescriptPropertyName}"] ${
+                      c.allowsNull ? " | null" : ""
+                    }`,
+                )
+                .join(";"),
+              `};`,
             ].join("\n");
           },
           after: async (context, node) => {
@@ -134,6 +151,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         [ASTKind.Procedures]: NamespaceVisitor,
         [ASTKind.Procedure]: NamespaceVisitor,
         [ASTKind.CompositeType]: TypeDefiner,
+        [ASTKind.DomainType]: TypeDefiner,
         [ASTKind.AliasType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,

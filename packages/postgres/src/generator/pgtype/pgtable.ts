@@ -4,7 +4,6 @@ import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import {
   ColumnNode,
-  CompositeTypeNode,
   GenerationContext,
   TableNode,
   TablesNode,
@@ -77,7 +76,7 @@ export class PGTable {
       const typeNode = context.database.resolveType(a.attribute.atttypid);
       if (typeNode) {
         table.children.push(
-          new ColumnNode(table, a.name, typeNode, a.hasDefault),
+          new ColumnNode(table, a.name, typeNode, a.hasDefault, a.allowsNull),
         );
       } else {
         throw new Error(`${a.name} cannot find type ${a.attribute.atttypid}`);
@@ -91,10 +90,7 @@ export class PGTable {
   get typescriptName() {
     return pascalCase(this.table.relname);
   }
-
-  get postgresName() {
-    return `${this.table.nspname}.${this.table.relname}`;
-  }
+  // TODO: remove
 
   /**
    * Code generation builder for all fields updating.
@@ -119,4 +115,5 @@ export class PGTable {
       )
       .join(" , ");
   }
+  // TODO: remove
 }
