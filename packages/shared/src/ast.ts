@@ -556,7 +556,6 @@ export class IndexColumnNode extends ContainerNode implements NamedType {
 // operations
 
 export abstract class OperationNode extends ContainerNode {
-  // TODO: remove
   get argumentsType() {
     return this.children
       .filter<CompositeTypeNode>(

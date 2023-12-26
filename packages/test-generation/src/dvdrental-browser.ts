@@ -11,7 +11,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-// eslint-disable @typescript-eslint/no-redundant-type-constituents
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+/* @typescript-eslint/no-redundant-type-constituents */
 import {
   UUID,
   JsDate,
@@ -14827,6 +14828,8 @@ export class EmbraceSQLClient extends BaseClient {
   }
 
   public Public = new (class extends HasClient {
+    public Procedures = new (class extends HasClient {})(this);
+
     public Tables = new (class extends HasClient {
       public FilmActor = new (class extends HasClient {
         public async create(
@@ -16532,5 +16535,49 @@ export class EmbraceSQLClient extends BaseClient {
         })(this);
       })(this);
     })(this);
+  })(this);
+
+  public Scripts = new (class extends HasClient {
+    public Sample = new (class extends HasClient {
+      public Film = new (class extends HasClient {
+        public async tally(): Promise<
+          Scripts.Sample.Film.Tally.Results[] | undefined
+        > {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Scripts.Sample.Film.Tally.Results[]
+          >({
+            operation: "Scripts.Sample.Film.tally",
+          });
+          return response.results;
+        }
+      })(this);
+
+      public async pick(
+        parameters: Scripts.Sample.Pick.Parameters,
+      ): Promise<Scripts.Sample.Pick.Results[] | undefined> {
+        const response = await this.client.invoke<
+          Scripts.Sample.Pick.Parameters,
+          never,
+          Scripts.Sample.Pick.Results[]
+        >({
+          operation: "Scripts.Sample.pick",
+          parameters,
+        });
+        return response.results;
+      }
+    })(this);
+
+    public async tally(): Promise<Scripts.Tally.Results[] | undefined> {
+      const response = await this.client.invoke<
+        never,
+        never,
+        Scripts.Tally.Results[]
+      >({
+        operation: "Scripts.tally",
+      });
+      return response.results;
+    }
   })(this);
 }

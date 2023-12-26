@@ -107,4 +107,18 @@ describe("EmbraceSQLExpress can", () => {
       paymentId: 17503,
     });
   });
+
+  it("answer a script with no parameters", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Scripts.tally();
+    expect(response![0].count).toBeGreaterThan(100);
+  });
+
+  it("answer a script with parameters", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Scripts.Sample.pick({
+      argument_1: "Basic Easy",
+    });
+    expect(response![0].title).toBe("Basic Easy");
+  });
 });

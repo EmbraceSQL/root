@@ -11,7 +11,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-// eslint-disable @typescript-eslint/no-redundant-type-constituents
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+/* @typescript-eslint/no-redundant-type-constituents */
 import {
   UUID,
   JsDate,
@@ -14761,6 +14762,8 @@ export class EmbraceSQLClient extends BaseClient {
   }
 
   public Public = new (class extends HasClient {
+    public Procedures = new (class extends HasClient {})(this);
+
     public Tables = new (class extends HasClient {
       public FilmActor = new (class extends HasClient {
         public async create(

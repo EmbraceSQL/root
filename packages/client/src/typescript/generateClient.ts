@@ -19,9 +19,6 @@ export const NestedNamedClassVisitor = {
   },
 };
 
-// TODO: generate client for sql scripts
-// TODO: test client with sql scripts
-
 const IndexOperation = {
   before: async (_: GenerationContext, node: IndexOperationNode) => {
     // will return a single record on a unique index
@@ -81,6 +78,37 @@ export async function generateClient(context: GenerationContext) {
 
     [ASTKind.Table]: NestedNamedClassVisitor,
     [ASTKind.Index]: NestedNamedClassVisitor,
+    [ASTKind.Scripts]: NestedNamedClassVisitor,
+    [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
+    [ASTKind.Script]: {
+      before: async (_, node) => {
+        // scripts are always a query result, there is no 'good' way
+        // to predict that only one or zero rows will return
+        const returnType = `${node.resultsType?.typescriptNamespacedName}[]`;
+        if (node.argumentsType) {
+          const parametersType = `${node.argumentsType.typescriptNamespacedName}`;
+          return `
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<${parametersType}, never, ${returnType}>({
+              operation: "${node.typescriptNamespacedPropertyName}",
+              parameters
+            });
+            return response.results;
+          }
+        `;
+        } else {
+          return `
+          public async ${node.typescriptPropertyName}() : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<never, never, ${returnType}>({
+              operation: "${node.typescriptNamespacedPropertyName}",
+            });
+            return response.results;
+          }
+        `;
+        }
+      },
+    },
+    [ASTKind.Procedures]: NestedNamedClassVisitor,
 
     // C R U D
     [ASTKind.CreateOperation]: {
