@@ -16289,28 +16289,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.FilmActor.includesPrimaryKey(values)) {
-            const response = await sql`
-      --
-      INSERT INTO
-        public.film_actor 
-        (actor_id,film_id,last_update)
-      VALUES
-        (actor_id,film_id,last_update)
-      ON CONFLICT (actor_id,film_id) DO UPDATE
-      SET
-        last_update = EXCLUDED.last_update
-      RETURNING
-        actor_id,film_id,last_update
-    `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
-            }))[0];
-          }
-          const response =
-            await sql`INSERT INTO public.film_actor (actor_id,film_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.film_actor (actor_id,film_id,last_update)
     VALUES (${
       values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
     },${
@@ -16320,7 +16301,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING actor_id,film_id,last_update
+    ON CONFLICT (actor_id,film_id) DO UPDATE
+    SET
+      last_update = EXCLUDED.last_update
+    RETURNING
+      actor_id,film_id,last_update
     `;
           return response.map((record) => ({
             actorId: undefinedIsNull(record.actor_id),
@@ -16382,12 +16367,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film_actor 
     SET
       actor_id = ${
-        values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+        values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId)
       } , film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -16487,12 +16472,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film_actor 
     SET
       actor_id = ${
-        values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+        values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId)
       } , film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -16549,17 +16534,36 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Address.includesPrimaryKey(values)) {
+          if (!Public.Tables.Address.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.address 
-        (address_id,address,address2,district,city_id,postal_code,phone,last_update)
-      VALUES
-        (address_id,address,address2,district,city_id,postal_code,phone,last_update)
-      ON CONFLICT (address_id) DO UPDATE
-      SET
-        address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
+        public.address (address,address2,district,city_id,postal_code,phone,last_update)
+      VALUES (${
+        values.address === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address)
+      },${
+        values.address2 === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address2)
+      },${
+        values.district === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.district)
+      },${
+        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+      },${
+        values.postalCode === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.postalCode)
+      },${
+        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
@@ -16574,8 +16578,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
     VALUES (${
       values.addressId === undefined
         ? sql`DEFAULT`
@@ -16603,7 +16608,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
+    ON CONFLICT (address_id) DO UPDATE
+    SET
+      address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
+    RETURNING
+      address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
           return response.map((record) => ({
             addressId: undefinedIsNull(record.address_id),
@@ -16672,31 +16681,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[23](values.addressId)
       } , address = ${
         values.address === undefined
-          ? sql`DEFAULT`
+          ? sql`address`
           : typed[1043](values.address)
       } , address2 = ${
         values.address2 === undefined
-          ? sql`DEFAULT`
+          ? sql`address2`
           : typed[1043](values.address2)
       } , district = ${
         values.district === undefined
-          ? sql`DEFAULT`
+          ? sql`district`
           : typed[1043](values.district)
       } , city_id = ${
-        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+        values.cityId === undefined ? sql`city_id` : typed[21](values.cityId)
       } , postal_code = ${
         values.postalCode === undefined
-          ? sql`DEFAULT`
+          ? sql`postal_code`
           : typed[1043](values.postalCode)
       } , phone = ${
-        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+        values.phone === undefined ? sql`phone` : typed[1043](values.phone)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -16804,31 +16813,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[23](values.addressId)
       } , address = ${
         values.address === undefined
-          ? sql`DEFAULT`
+          ? sql`address`
           : typed[1043](values.address)
       } , address2 = ${
         values.address2 === undefined
-          ? sql`DEFAULT`
+          ? sql`address2`
           : typed[1043](values.address2)
       } , district = ${
         values.district === undefined
-          ? sql`DEFAULT`
+          ? sql`district`
           : typed[1043](values.district)
       } , city_id = ${
-        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+        values.cityId === undefined ? sql`city_id` : typed[21](values.cityId)
       } , postal_code = ${
         values.postalCode === undefined
-          ? sql`DEFAULT`
+          ? sql`postal_code`
           : typed[1043](values.postalCode)
       } , phone = ${
-        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+        values.phone === undefined ? sql`phone` : typed[1043](values.phone)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -16895,17 +16904,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.City.includesPrimaryKey(values)) {
+          if (!Public.Tables.City.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.city 
-        (city_id,city,country_id,last_update)
-      VALUES
-        (city_id,city,country_id,last_update)
-      ON CONFLICT (city_id) DO UPDATE
-      SET
-        city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
+        public.city (city,country_id,last_update)
+      VALUES (${
+        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+      },${
+        values.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.countryId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         city_id,city,country_id,last_update
     `;
@@ -16916,8 +16930,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.city (city_id,city,country_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.city (city_id,city,country_id,last_update)
     VALUES (${
       values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
     },${values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)},${
@@ -16929,7 +16944,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING city_id,city,country_id,last_update
+    ON CONFLICT (city_id) DO UPDATE
+    SET
+      city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
+    RETURNING
+      city_id,city,country_id,last_update
     `;
           return response.map((record) => ({
             cityId: undefinedIsNull(record.city_id),
@@ -16989,16 +17008,16 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.city 
     SET
       city_id = ${
-        values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+        values.cityId === undefined ? sql`city_id` : typed[23](values.cityId)
       } , city = ${
-        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+        values.city === undefined ? sql`city` : typed[1043](values.city)
       } , country_id = ${
         values.countryId === undefined
-          ? sql`DEFAULT`
+          ? sql`country_id`
           : typed[21](values.countryId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -17093,16 +17112,16 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.city 
     SET
       city_id = ${
-        values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+        values.cityId === undefined ? sql`city_id` : typed[23](values.cityId)
       } , city = ${
-        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+        values.city === undefined ? sql`city` : typed[1043](values.city)
       } , country_id = ${
         values.countryId === undefined
-          ? sql`DEFAULT`
+          ? sql`country_id`
           : typed[21](values.countryId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -17161,17 +17180,42 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Customer.includesPrimaryKey(values)) {
+          if (!Public.Tables.Customer.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.customer 
-        (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-      VALUES
-        (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-      ON CONFLICT (customer_id) DO UPDATE
-      SET
-        store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
+        public.customer (store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+      VALUES (${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      },${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      })
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
@@ -17188,8 +17232,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               active: undefinedIsNull(record.active),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+          const response = await sql`
+    INSERT INTO
+      public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
     VALUES (${
       values.customerId === undefined
         ? sql`DEFAULT`
@@ -17223,7 +17268,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     },${values.active === undefined ? sql`DEFAULT` : typed[23](values.active)})
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
+    ON CONFLICT (customer_id) DO UPDATE
+    SET
+      store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
+    RETURNING
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
           return response.map((record) => ({
             customerId: undefinedIsNull(record.customer_id),
@@ -17296,38 +17345,38 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[23](values.customerId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+        values.email === undefined ? sql`email` : typed[1043](values.email)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , activebool = ${
         values.activebool === undefined
-          ? sql`DEFAULT`
+          ? sql`activebool`
           : typed[16](values.activebool)
       } , create_date = ${
         values.createDate === undefined
-          ? sql`DEFAULT`
+          ? sql`create_date`
           : typed[1082](values.createDate)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+        values.active === undefined ? sql`active` : typed[23](values.active)
       } 
     WHERE
       address_id = ${
@@ -17440,38 +17489,38 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[23](values.customerId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+        values.email === undefined ? sql`email` : typed[1043](values.email)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , activebool = ${
         values.activebool === undefined
-          ? sql`DEFAULT`
+          ? sql`activebool`
           : typed[16](values.activebool)
       } , create_date = ${
         values.createDate === undefined
-          ? sql`DEFAULT`
+          ? sql`create_date`
           : typed[1082](values.createDate)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+        values.active === undefined ? sql`active` : typed[23](values.active)
       } 
     WHERE
       customer_id = ${
@@ -17584,38 +17633,38 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[23](values.customerId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+        values.email === undefined ? sql`email` : typed[1043](values.email)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , activebool = ${
         values.activebool === undefined
-          ? sql`DEFAULT`
+          ? sql`activebool`
           : typed[16](values.activebool)
       } , create_date = ${
         values.createDate === undefined
-          ? sql`DEFAULT`
+          ? sql`create_date`
           : typed[1082](values.createDate)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+        values.active === undefined ? sql`active` : typed[23](values.active)
       } 
     WHERE
       last_name = ${
@@ -17728,38 +17777,38 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[23](values.customerId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+        values.email === undefined ? sql`email` : typed[1043](values.email)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , activebool = ${
         values.activebool === undefined
-          ? sql`DEFAULT`
+          ? sql`activebool`
           : typed[16](values.activebool)
       } , create_date = ${
         values.createDate === undefined
-          ? sql`DEFAULT`
+          ? sql`create_date`
           : typed[1082](values.createDate)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+        values.active === undefined ? sql`active` : typed[23](values.active)
       } 
     WHERE
       store_id = ${
@@ -17829,17 +17878,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Actor.includesPrimaryKey(values)) {
+          if (!Public.Tables.Actor.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.actor 
-        (actor_id,first_name,last_name,last_update)
-      VALUES
-        (actor_id,first_name,last_name,last_update)
-      ON CONFLICT (actor_id) DO UPDATE
-      SET
-        first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
+        public.actor (first_name,last_name,last_update)
+      VALUES (${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         actor_id,first_name,last_name,last_update
     `;
@@ -17850,8 +17906,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.actor (actor_id,first_name,last_name,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.actor (actor_id,first_name,last_name,last_update)
     VALUES (${
       values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
     },${
@@ -17867,7 +17924,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING actor_id,first_name,last_name,last_update
+    ON CONFLICT (actor_id) DO UPDATE
+    SET
+      first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
+    RETURNING
+      actor_id,first_name,last_name,last_update
     `;
           return response.map((record) => ({
             actorId: undefinedIsNull(record.actor_id),
@@ -17927,18 +17988,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.actor 
     SET
       actor_id = ${
-        values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+        values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18033,18 +18094,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.actor 
     SET
       actor_id = ${
-        values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+        values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18103,28 +18164,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.FilmCategory.includesPrimaryKey(values)) {
-            const response = await sql`
-      --
-      INSERT INTO
-        public.film_category 
-        (film_id,category_id,last_update)
-      VALUES
-        (film_id,category_id,last_update)
-      ON CONFLICT (film_id,category_id) DO UPDATE
-      SET
-        last_update = EXCLUDED.last_update
-      RETURNING
-        film_id,category_id,last_update
-    `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              categoryId: undefinedIsNull(record.category_id),
-              lastUpdate: undefinedIsNull(record.last_update),
-            }))[0];
-          }
-          const response =
-            await sql`INSERT INTO public.film_category (film_id,category_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.film_category (film_id,category_id,last_update)
     VALUES (${
       values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
     },${
@@ -18136,7 +18178,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING film_id,category_id,last_update
+    ON CONFLICT (film_id,category_id) DO UPDATE
+    SET
+      last_update = EXCLUDED.last_update
+    RETURNING
+      film_id,category_id,last_update
     `;
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
@@ -18198,14 +18244,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film_category 
     SET
       film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
       } , category_id = ${
         values.categoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`category_id`
           : typed[21](values.categoryId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18270,17 +18316,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Inventory.includesPrimaryKey(values)) {
+          if (!Public.Tables.Inventory.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.inventory 
-        (inventory_id,film_id,store_id,last_update)
-      VALUES
-        (inventory_id,film_id,store_id,last_update)
-      ON CONFLICT (inventory_id) DO UPDATE
-      SET
-        film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
+        public.inventory (film_id,store_id,last_update)
+      VALUES (${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      },${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         inventory_id,film_id,store_id,last_update
     `;
@@ -18291,8 +18340,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.inventory (inventory_id,film_id,store_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.inventory (inventory_id,film_id,store_id,last_update)
     VALUES (${
       values.inventoryId === undefined
         ? sql`DEFAULT`
@@ -18306,7 +18356,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING inventory_id,film_id,store_id,last_update
+    ON CONFLICT (inventory_id) DO UPDATE
+    SET
+      film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
+    RETURNING
+      inventory_id,film_id,store_id,last_update
     `;
           return response.map((record) => ({
             inventoryId: undefinedIsNull(record.inventory_id),
@@ -18367,15 +18421,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       inventory_id = ${
         values.inventoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`inventory_id`
           : typed[23](values.inventoryId)
       } , film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18475,15 +18529,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       inventory_id = ${
         values.inventoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`inventory_id`
           : typed[23](values.inventoryId)
       } , film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18550,17 +18604,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Category.includesPrimaryKey(values)) {
+          if (!Public.Tables.Category.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.category 
-        (category_id,name,last_update)
-      VALUES
-        (category_id,name,last_update)
-      ON CONFLICT (category_id) DO UPDATE
-      SET
-        name = EXCLUDED.name,last_update = EXCLUDED.last_update
+        public.category (name,last_update)
+      VALUES (${
+        values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         category_id,name,last_update
     `;
@@ -18570,8 +18625,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.category (category_id,name,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.category (category_id,name,last_update)
     VALUES (${
       values.categoryId === undefined
         ? sql`DEFAULT`
@@ -18581,7 +18637,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING category_id,name,last_update
+    ON CONFLICT (category_id) DO UPDATE
+    SET
+      name = EXCLUDED.name,last_update = EXCLUDED.last_update
+    RETURNING
+      category_id,name,last_update
     `;
           return response.map((record) => ({
             categoryId: undefinedIsNull(record.category_id),
@@ -18640,13 +18700,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       category_id = ${
         values.categoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`category_id`
           : typed[23](values.categoryId)
       } , name = ${
-        values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)
+        values.name === undefined ? sql`name` : typed[1043](values.name)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18703,17 +18763,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Country.includesPrimaryKey(values)) {
+          if (!Public.Tables.Country.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.country 
-        (country_id,country,last_update)
-      VALUES
-        (country_id,country,last_update)
-      ON CONFLICT (country_id) DO UPDATE
-      SET
-        country = EXCLUDED.country,last_update = EXCLUDED.last_update
+        public.country (country,last_update)
+      VALUES (${
+        values.country === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.country)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         country_id,country,last_update
     `;
@@ -18723,8 +18786,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.country (country_id,country,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.country (country_id,country,last_update)
     VALUES (${
       values.countryId === undefined
         ? sql`DEFAULT`
@@ -18736,7 +18800,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING country_id,country,last_update
+    ON CONFLICT (country_id) DO UPDATE
+    SET
+      country = EXCLUDED.country,last_update = EXCLUDED.last_update
+    RETURNING
+      country_id,country,last_update
     `;
           return response.map((record) => ({
             countryId: undefinedIsNull(record.country_id),
@@ -18795,15 +18863,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       country_id = ${
         values.countryId === undefined
-          ? sql`DEFAULT`
+          ? sql`country_id`
           : typed[23](values.countryId)
       } , country = ${
         values.country === undefined
-          ? sql`DEFAULT`
+          ? sql`country`
           : typed[1043](values.country)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -18860,17 +18928,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Language.includesPrimaryKey(values)) {
+          if (!Public.Tables.Language.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.language 
-        (language_id,name,last_update)
-      VALUES
-        (language_id,name,last_update)
-      ON CONFLICT (language_id) DO UPDATE
-      SET
-        name = EXCLUDED.name,last_update = EXCLUDED.last_update
+        public.language (name,last_update)
+      VALUES (${
+        values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         language_id,name,last_update
     `;
@@ -18880,8 +18949,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.language (language_id,name,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.language (language_id,name,last_update)
     VALUES (${
       values.languageId === undefined
         ? sql`DEFAULT`
@@ -18891,7 +18961,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING language_id,name,last_update
+    ON CONFLICT (language_id) DO UPDATE
+    SET
+      name = EXCLUDED.name,last_update = EXCLUDED.last_update
+    RETURNING
+      language_id,name,last_update
     `;
           return response.map((record) => ({
             languageId: undefinedIsNull(record.language_id),
@@ -18950,13 +19024,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       language_id = ${
         values.languageId === undefined
-          ? sql`DEFAULT`
+          ? sql`language_id`
           : typed[23](values.languageId)
       } , name = ${
-        values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)
+        values.name === undefined ? sql`name` : typed[1042](values.name)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -19013,17 +19087,34 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Rental.includesPrimaryKey(values)) {
+          if (!Public.Tables.Rental.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.rental 
-        (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-      VALUES
-        (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-      ON CONFLICT (rental_id) DO UPDATE
-      SET
-        rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
+        public.rental (rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+      VALUES (${
+        values.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.rentalDate)
+      },${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      },${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      },${
+        values.returnDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.returnDate)
+      },${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
@@ -19037,8 +19128,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
     VALUES (${
       values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
     },${
@@ -19064,7 +19156,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
+    ON CONFLICT (rental_id) DO UPDATE
+    SET
+      rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
+    RETURNING
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
           return response.map((record) => ({
             rentalId: undefinedIsNull(record.rental_id),
@@ -19131,29 +19227,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , rental_date = ${
         values.rentalDate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_date`
           : typed[1114](values.rentalDate)
       } , inventory_id = ${
         values.inventoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`inventory_id`
           : typed[23](values.inventoryId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , return_date = ${
         values.returnDate === undefined
-          ? sql`DEFAULT`
+          ? sql`return_date`
           : typed[1114](values.returnDate)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -19268,29 +19364,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , rental_date = ${
         values.rentalDate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_date`
           : typed[1114](values.rentalDate)
       } , inventory_id = ${
         values.inventoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`inventory_id`
           : typed[23](values.inventoryId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , return_date = ${
         values.returnDate === undefined
-          ? sql`DEFAULT`
+          ? sql`return_date`
           : typed[1114](values.returnDate)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -19411,29 +19507,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , rental_date = ${
         values.rentalDate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_date`
           : typed[1114](values.rentalDate)
       } , inventory_id = ${
         values.inventoryId === undefined
-          ? sql`DEFAULT`
+          ? sql`inventory_id`
           : typed[23](values.inventoryId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , return_date = ${
         values.returnDate === undefined
-          ? sql`DEFAULT`
+          ? sql`return_date`
           : typed[1114](values.returnDate)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -19498,17 +19594,44 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Staff.includesPrimaryKey(values)) {
+          if (!Public.Tables.Staff.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.staff 
-        (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-      VALUES
-        (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-      ON CONFLICT (staff_id) DO UPDATE
-      SET
-        first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
+        public.staff (first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+      VALUES (${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      },${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+      },${
+        values.username === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.username)
+      },${
+        values.password === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.password)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+      })
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
@@ -19526,8 +19649,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               picture: undefinedIsNull(record.picture),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+          const response = await sql`
+    INSERT INTO
+      public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
     VALUES (${
       values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
     },${
@@ -19563,7 +19687,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     },${
       values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
     })
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
+    ON CONFLICT (staff_id) DO UPDATE
+    SET
+      first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
+    RETURNING
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
           return response.map((record) => ({
             staffId: undefinedIsNull(record.staff_id),
@@ -19637,39 +19765,39 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.staff 
     SET
       staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[23](values.staffId)
       } , first_name = ${
         values.firstName === undefined
-          ? sql`DEFAULT`
+          ? sql`first_name`
           : typed[1043](values.firstName)
       } , last_name = ${
         values.lastName === undefined
-          ? sql`DEFAULT`
+          ? sql`last_name`
           : typed[1043](values.lastName)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+        values.email === undefined ? sql`email` : typed[1043](values.email)
       } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
       } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+        values.active === undefined ? sql`active` : typed[16](values.active)
       } , username = ${
         values.username === undefined
-          ? sql`DEFAULT`
+          ? sql`username`
           : typed[1043](values.username)
       } , password = ${
         values.password === undefined
-          ? sql`DEFAULT`
+          ? sql`password`
           : typed[1043](values.password)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , picture = ${
-        values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+        values.picture === undefined ? sql`picture` : typed[17](values.picture)
       } 
     WHERE
       staff_id = ${
@@ -19741,17 +19869,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Store.includesPrimaryKey(values)) {
+          if (!Public.Tables.Store.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.store 
-        (store_id,manager_staff_id,address_id,last_update)
-      VALUES
-        (store_id,manager_staff_id,address_id,last_update)
-      ON CONFLICT (store_id) DO UPDATE
-      SET
-        manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
+        public.store (manager_staff_id,address_id,last_update)
+      VALUES (${
+        values.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.managerStaffId)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
       RETURNING
         store_id,manager_staff_id,address_id,last_update
     `;
@@ -19762,8 +19897,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               lastUpdate: undefinedIsNull(record.last_update),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.store (store_id,manager_staff_id,address_id,last_update)
+          const response = await sql`
+    INSERT INTO
+      public.store (store_id,manager_staff_id,address_id,last_update)
     VALUES (${
       values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
     },${
@@ -19779,7 +19915,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.lastUpdate)
     })
-    RETURNING store_id,manager_staff_id,address_id,last_update
+    ON CONFLICT (store_id) DO UPDATE
+    SET
+      manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
+    RETURNING
+      store_id,manager_staff_id,address_id,last_update
     `;
           return response.map((record) => ({
             storeId: undefinedIsNull(record.store_id),
@@ -19839,18 +19979,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.store 
     SET
       store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[23](values.storeId)
       } , manager_staff_id = ${
         values.managerStaffId === undefined
-          ? sql`DEFAULT`
+          ? sql`manager_staff_id`
           : typed[21](values.managerStaffId)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -19945,18 +20085,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.store 
     SET
       store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+        values.storeId === undefined ? sql`store_id` : typed[23](values.storeId)
       } , manager_staff_id = ${
         values.managerStaffId === undefined
-          ? sql`DEFAULT`
+          ? sql`manager_staff_id`
           : typed[21](values.managerStaffId)
       } , address_id = ${
         values.addressId === undefined
-          ? sql`DEFAULT`
+          ? sql`address_id`
           : typed[21](values.addressId)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } 
     WHERE
@@ -20015,17 +20155,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Payment.includesPrimaryKey(values)) {
+          if (!Public.Tables.Payment.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.payment 
-        (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-      VALUES
-        (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-      ON CONFLICT (payment_id) DO UPDATE
-      SET
-        customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
+        public.payment (customer_id,staff_id,rental_id,amount,payment_date)
+      VALUES (${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      },${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      },${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      },${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      },${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      })
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
@@ -20038,8 +20189,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               paymentDate: undefinedIsNull(record.payment_date),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
+          const response = await sql`
+    INSERT INTO
+      public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
     VALUES (${
       values.paymentId === undefined
         ? sql`DEFAULT`
@@ -20059,7 +20211,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1114](values.paymentDate)
     })
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
+    ON CONFLICT (payment_id) DO UPDATE
+    SET
+      customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
+    RETURNING
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
           return response.map((record) => ({
             paymentId: undefinedIsNull(record.payment_id),
@@ -20124,23 +20280,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       payment_id = ${
         values.paymentId === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_id`
           : typed[23](values.paymentId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , amount = ${
-        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
       } , payment_date = ${
         values.paymentDate === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_date`
           : typed[1114](values.paymentDate)
       } 
     WHERE
@@ -20242,23 +20398,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       payment_id = ${
         values.paymentId === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_id`
           : typed[23](values.paymentId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , amount = ${
-        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
       } , payment_date = ${
         values.paymentDate === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_date`
           : typed[1114](values.paymentDate)
       } 
     WHERE
@@ -20360,23 +20516,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       payment_id = ${
         values.paymentId === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_id`
           : typed[23](values.paymentId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , amount = ${
-        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
       } , payment_date = ${
         values.paymentDate === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_date`
           : typed[1114](values.paymentDate)
       } 
     WHERE
@@ -20478,23 +20634,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
     SET
       payment_id = ${
         values.paymentId === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_id`
           : typed[23](values.paymentId)
       } , customer_id = ${
         values.customerId === undefined
-          ? sql`DEFAULT`
+          ? sql`customer_id`
           : typed[21](values.customerId)
       } , staff_id = ${
-        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
       } , rental_id = ${
         values.rentalId === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_id`
           : typed[23](values.rentalId)
       } , amount = ${
-        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
       } , payment_date = ${
         values.paymentDate === undefined
-          ? sql`DEFAULT`
+          ? sql`payment_date`
           : typed[1114](values.paymentDate)
       } 
     WHERE
@@ -20557,17 +20713,54 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Film.includesPrimaryKey(values)) {
+          if (!Public.Tables.Film.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.film 
-        (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      VALUES
-        (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      ON CONFLICT (film_id) DO UPDATE
-      SET
-        title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
+        public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+      VALUES (${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      },${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      },${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[25154](values.releaseYear)
+      },${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      },${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      },${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      },${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      },${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      },${
+        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      },${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
@@ -20587,8 +20780,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
               fulltext: undefinedIsNull(record.fulltext),
             }))[0];
           }
-          const response =
-            await sql`INSERT INTO public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+          const response = await sql`
+    INSERT INTO
+      public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
     VALUES (${
       values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
     },${
@@ -20634,7 +20828,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[3614](values.fulltext)
     })
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
+    ON CONFLICT (film_id) DO UPDATE
+    SET
+      title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
+    RETURNING
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
@@ -20712,48 +20910,48 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film 
     SET
       film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
       } , title = ${
-        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+        values.title === undefined ? sql`title` : typed[1043](values.title)
       } , description = ${
         values.description === undefined
-          ? sql`DEFAULT`
+          ? sql`description`
           : typed[25](values.description)
       } , release_year = ${
         values.releaseYear === undefined
-          ? sql`DEFAULT`
+          ? sql`release_year`
           : typed[25154](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
-          ? sql`DEFAULT`
+          ? sql`language_id`
           : typed[21](values.languageId)
       } , rental_duration = ${
         values.rentalDuration === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_duration`
           : typed[21](values.rentalDuration)
       } , rental_rate = ${
         values.rentalRate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_rate`
           : typed[1700](values.rentalRate)
       } , length = ${
-        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+        values.length === undefined ? sql`length` : typed[21](values.length)
       } , replacement_cost = ${
         values.replacementCost === undefined
-          ? sql`DEFAULT`
+          ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , special_features = ${
         values.specialFeatures === undefined
-          ? sql`DEFAULT`
+          ? sql`special_features`
           : typed[1009](values.specialFeatures)
       } , fulltext = ${
         values.fulltext === undefined
-          ? sql`DEFAULT`
+          ? sql`fulltext`
           : typed[3614](values.fulltext)
       } 
     WHERE
@@ -20875,48 +21073,48 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film 
     SET
       film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
       } , title = ${
-        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+        values.title === undefined ? sql`title` : typed[1043](values.title)
       } , description = ${
         values.description === undefined
-          ? sql`DEFAULT`
+          ? sql`description`
           : typed[25](values.description)
       } , release_year = ${
         values.releaseYear === undefined
-          ? sql`DEFAULT`
+          ? sql`release_year`
           : typed[25154](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
-          ? sql`DEFAULT`
+          ? sql`language_id`
           : typed[21](values.languageId)
       } , rental_duration = ${
         values.rentalDuration === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_duration`
           : typed[21](values.rentalDuration)
       } , rental_rate = ${
         values.rentalRate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_rate`
           : typed[1700](values.rentalRate)
       } , length = ${
-        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+        values.length === undefined ? sql`length` : typed[21](values.length)
       } , replacement_cost = ${
         values.replacementCost === undefined
-          ? sql`DEFAULT`
+          ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , special_features = ${
         values.specialFeatures === undefined
-          ? sql`DEFAULT`
+          ? sql`special_features`
           : typed[1009](values.specialFeatures)
       } , fulltext = ${
         values.fulltext === undefined
-          ? sql`DEFAULT`
+          ? sql`fulltext`
           : typed[3614](values.fulltext)
       } 
     WHERE
@@ -21038,48 +21236,48 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film 
     SET
       film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
       } , title = ${
-        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+        values.title === undefined ? sql`title` : typed[1043](values.title)
       } , description = ${
         values.description === undefined
-          ? sql`DEFAULT`
+          ? sql`description`
           : typed[25](values.description)
       } , release_year = ${
         values.releaseYear === undefined
-          ? sql`DEFAULT`
+          ? sql`release_year`
           : typed[25154](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
-          ? sql`DEFAULT`
+          ? sql`language_id`
           : typed[21](values.languageId)
       } , rental_duration = ${
         values.rentalDuration === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_duration`
           : typed[21](values.rentalDuration)
       } , rental_rate = ${
         values.rentalRate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_rate`
           : typed[1700](values.rentalRate)
       } , length = ${
-        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+        values.length === undefined ? sql`length` : typed[21](values.length)
       } , replacement_cost = ${
         values.replacementCost === undefined
-          ? sql`DEFAULT`
+          ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , special_features = ${
         values.specialFeatures === undefined
-          ? sql`DEFAULT`
+          ? sql`special_features`
           : typed[1009](values.specialFeatures)
       } , fulltext = ${
         values.fulltext === undefined
-          ? sql`DEFAULT`
+          ? sql`fulltext`
           : typed[3614](values.fulltext)
       } 
     WHERE
@@ -21201,48 +21399,48 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.film 
     SET
       film_id = ${
-        values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
       } , title = ${
-        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+        values.title === undefined ? sql`title` : typed[1043](values.title)
       } , description = ${
         values.description === undefined
-          ? sql`DEFAULT`
+          ? sql`description`
           : typed[25](values.description)
       } , release_year = ${
         values.releaseYear === undefined
-          ? sql`DEFAULT`
+          ? sql`release_year`
           : typed[25154](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
-          ? sql`DEFAULT`
+          ? sql`language_id`
           : typed[21](values.languageId)
       } , rental_duration = ${
         values.rentalDuration === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_duration`
           : typed[21](values.rentalDuration)
       } , rental_rate = ${
         values.rentalRate === undefined
-          ? sql`DEFAULT`
+          ? sql`rental_rate`
           : typed[1700](values.rentalRate)
       } , length = ${
-        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+        values.length === undefined ? sql`length` : typed[21](values.length)
       } , replacement_cost = ${
         values.replacementCost === undefined
-          ? sql`DEFAULT`
+          ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
-          ? sql`DEFAULT`
+          ? sql`last_update`
           : typed[1114](values.lastUpdate)
       } , special_features = ${
         values.specialFeatures === undefined
-          ? sql`DEFAULT`
+          ? sql`special_features`
           : typed[1009](values.specialFeatures)
       } , fulltext = ${
         values.fulltext === undefined
-          ? sql`DEFAULT`
+          ? sql`fulltext`
           : typed[3614](values.fulltext)
       } 
     WHERE

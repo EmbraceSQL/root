@@ -451,20 +451,18 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
     return this.children.find((n) => (n as IndexNode).primaryKey) as IndexNode;
   }
 
-  get attributesInPrimaryKey(): AttributeTypeNode[] {
+  get columnsInPrimaryKey(): ColumnNode[] {
     const primaryKeyNames = this.primaryKey
       ? this.primaryKey.columns.map((c) => c.name)
       : [];
-    return this.type.attributes.filter((a) => primaryKeyNames.includes(a.name));
+    return this.allColumns.filter((a) => primaryKeyNames.includes(a.name));
   }
 
-  get attributesNotInPrimaryKey(): AttributeTypeNode[] {
+  get columnsNotInPrimaryKey(): ColumnNode[] {
     const primaryKeyNames = this.primaryKey
       ? this.primaryKey.columns.map((c) => c.name)
       : [];
-    return this.type.attributes.filter(
-      (a) => !primaryKeyNames.includes(a.name),
-    );
+    return this.allColumns.filter((a) => !primaryKeyNames.includes(a.name));
   }
 
   get optionalColumns(): ColumnNode[] {
@@ -558,6 +556,7 @@ export class IndexColumnNode extends ContainerNode implements NamedType {
 // operations
 
 export abstract class OperationNode extends ContainerNode {
+  // TODO: remove
   get argumentsType() {
     return this.children
       .filter<CompositeTypeNode>(
@@ -566,6 +565,7 @@ export abstract class OperationNode extends ContainerNode {
       .find((c) => c.name === ARGUMENTS);
   }
 
+  // TODO: remove
   get valuesType() {
     const typeNode = this.children
       .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>

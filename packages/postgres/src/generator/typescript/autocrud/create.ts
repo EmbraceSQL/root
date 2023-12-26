@@ -27,32 +27,33 @@ export const CreateOperation = {
       const typed = sql.typed as unknown as PostgresTypecasts;
       `,
     );
-    const sqlColumnNames = node.table.type.attributes
+    const allSqlColumnNames = node.table.allColumns
       .map((a) => a.name)
       .join(",");
-    // when the passed values have the primary key -- upsert style is prepared
-    if (node.table.primaryKey) {
+    const sqlColumnNamesWithoutPrimaryKey = node.table.columnsNotInPrimaryKey
+      .map((a) => a.name)
+      .join(",");
+    // if there is a primary key with defaults
+    // have the 'create with defaults' generated, meaning you can skip passing
+    // in primary key values
+    if (
+      node.table.primaryKey &&
+      node.table.columnsInPrimaryKey.every((c) => c.hasDefault)
+    ) {
       generationBuffer.push(`
-      if (${node.table.typescriptNamespacedName}.includesPrimaryKey(${camelCase(
-        VALUES,
-      )})) {
+      if (!${
+        node.table.typescriptNamespacedName
+      }.includesPrimaryKey(${camelCase(VALUES)})) {
       `);
       const sql = `
       --
       INSERT INTO
-        ${node.table.databaseName} 
-        (${sqlColumnNames})
-      VALUES
-        (${sqlColumnNames})
-      ON CONFLICT (${node.table.attributesInPrimaryKey
-        .map((a) => a.name)
-        .join(",")}) DO UPDATE
-      SET
-        ${node.table.attributesNotInPrimaryKey
-          .map((a) => `${a.name} = EXCLUDED.${a.name}`)
-          .join(",")}
+        ${node.table.databaseName} (${sqlColumnNamesWithoutPrimaryKey})
+      VALUES (${node.table.columnsNotInPrimaryKey
+        .map((a) => postgresValueExpression(context, a, VALUES))
+        .join(",")})
       RETURNING
-        ${sqlColumnNames}
+        ${allSqlColumnNames}
     `;
       generationBuffer.push(`const response = await sql\`${sql}\``);
 
@@ -67,12 +68,22 @@ export const CreateOperation = {
       generationBuffer.push(`}`);
     }
 
-    // default / fallthrough case when no primary key is included
-    const sql = `INSERT INTO ${node.table.databaseName} (${sqlColumnNames})
+    // default / fallthrough case -- all columns
+    const sql = `
+    INSERT INTO
+      ${node.table.databaseName} (${allSqlColumnNames})
     VALUES (${node.table.type.attributes
       .map((a) => postgresValueExpression(context, a, VALUES))
       .join(",")})
-    RETURNING ${sqlColumnNames}
+    ON CONFLICT (${node.table.columnsInPrimaryKey
+      .map((a) => a.name)
+      .join(",")}) DO UPDATE
+    SET
+      ${node.table.columnsNotInPrimaryKey
+        .map((a) => `${a.name} = EXCLUDED.${a.name}`)
+        .join(",")}
+    RETURNING
+      ${allSqlColumnNames}
     `;
     // run that SQL
     generationBuffer.push(`const response = await sql\`${sql}\``);

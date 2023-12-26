@@ -46,9 +46,12 @@ export function postgresValueExpression(
   context: GenerationContext,
   node: NamedType & NamedASTNode,
   holder: typeof ARGUMENTS | typeof VALUES,
+  defaultToSelfAssign = false,
 ) {
   console.assert(context);
-  const undefinedExpression = "sql`DEFAULT`";
+  const undefinedExpression = defaultToSelfAssign
+    ? `sql\`${node.name}\``
+    : "sql`DEFAULT`";
   const valueExpression = `typed[${node.type.id}](${camelCase(holder)}.${
     node.typescriptPropertyName
   })`;
@@ -84,8 +87,17 @@ export function sqlSetExpressions(
   context: GenerationContext,
   node: TableNode,
   holder: typeof ARGUMENTS | typeof VALUES,
+  defaultToSelfAssign = false,
 ) {
   return node.allColumns
-    .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
+    .map(
+      (a) =>
+        `${a.name} = ${postgresValueExpression(
+          context,
+          a,
+          holder,
+          defaultToSelfAssign,
+        )}`,
+    )
     .join(" , ");
 }

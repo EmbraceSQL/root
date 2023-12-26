@@ -16152,17 +16152,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (Public.Tables.Slug.includesPrimaryKey(values)) {
+          if (!Public.Tables.Slug.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.slug 
-        (slug_id)
-      VALUES
-        (slug_id)
-      ON CONFLICT (slug_id) DO UPDATE
-      SET
-        
+        public.slug ()
+      VALUES ()
       RETURNING
         slug_id
     `;
@@ -16170,11 +16165,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
               slugId: undefinedIsNull(record.slug_id),
             }))[0];
           }
-          const response = await sql`INSERT INTO public.slug (slug_id)
+          const response = await sql`
+    INSERT INTO
+      public.slug (slug_id)
     VALUES (${
       values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
     })
-    RETURNING slug_id
+    ON CONFLICT (slug_id) DO UPDATE
+    SET
+      
+    RETURNING
+      slug_id
     `;
           return response.map((record) => ({
             slugId: undefinedIsNull(record.slug_id),
@@ -16228,7 +16229,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       public.slug 
     SET
       slug_id = ${
-        values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
+        values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId)
       } 
     WHERE
       slug_id = ${

@@ -46,7 +46,7 @@ export const UpdateOperation = {
     UPDATE 
       ${node.index.table.databaseName} 
     SET
-      ${sqlSetExpressions(context, node.index.table, VALUES)} 
+      ${sqlSetExpressions(context, node.index.table, VALUES, true)} 
     WHERE
       ${sqlPredicate(context, node.index, ARGUMENTS)}
     RETURNING ${sqlColumnNames}`;
