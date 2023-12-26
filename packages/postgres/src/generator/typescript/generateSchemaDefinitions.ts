@@ -7,7 +7,6 @@ import {
   NamespaceVisitor,
   VALUES,
   cleanIdentifierForTypescript,
-  isNodeType,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
 import { pascalCase } from "change-case";
@@ -40,7 +39,8 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-namespace */
         /* eslint-disable @typescript-eslint/no-unused-vars */
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        // eslint-disable @typescript-eslint/no-redundant-type-constituents
+        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+        /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
         import type { PartiallyOptional } from "@embracesql/shared";
 

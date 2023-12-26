@@ -4,7 +4,6 @@ import {
   GenerationContext,
   ReadOperationNode,
 } from "@embracesql/shared";
-import { camelCase } from "change-case";
 
 /**
  * AutoCRUD reads record(s) by index.

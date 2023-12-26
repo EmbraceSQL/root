@@ -37,13 +37,13 @@ describe("EmbraceSQLExpress can", () => {
   it("answer a raw invoke", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
     const response = await client.invoke({
-      operation: "Public.LastDay",
+      operation: "Public.Procedures.lastDay",
       parameters: {
         argument_0: new Date("12/1/2023"),
       },
     });
     expect(response).toMatchObject({
-      operation: "Public.LastDay",
+      operation: "Public.Procedures.lastDay",
       results: "2023-12-31T00:00:00.000Z",
     });
   });

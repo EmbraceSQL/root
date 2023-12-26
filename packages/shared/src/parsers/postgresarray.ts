@@ -9,7 +9,6 @@ const startArray = parsimmon.string("{");
 const endArray = parsimmon.string("}");
 
 const arraySeparators = parsimmon.oneOf("{},");
-const compositeSeparators = parsimmon.oneOf("()");
 
 /**
  * Here is a simple one -- from the docs:

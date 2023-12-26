@@ -53,6 +53,9 @@ export const generateOperationDispatcher = async (
             `}`, // constructor
             `
             async dispatch(request: EmbraceSQLRequest<object, object>) {
+              if (!this.dispatchMap[request.operation]) {
+                throw new Error(\`\${request.operation} not available\`);
+              }
               return this.dispatchMap[request.operation](request);
             }
             `,
