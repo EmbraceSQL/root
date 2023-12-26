@@ -2096,9 +2096,6 @@ export namespace PgCatalog {
         stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
         stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2107,6 +2104,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByStarelidStaattnumStainherit;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgType {
       export type Record = {
@@ -2143,9 +2141,6 @@ export namespace PgCatalog {
         typdefault: PgCatalog.Types.PgType["typdefault"] | null;
         typacl: PgCatalog.Types.PgType["typacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2156,6 +2151,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignTable {
       export type Record = {
@@ -2163,15 +2159,13 @@ export namespace PgCatalog {
         ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByFtrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAuthid {
       export type Record = {
@@ -2188,9 +2182,6 @@ export namespace PgCatalog {
         rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
         rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2200,6 +2191,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgStatisticExtData {
       export type Record = {
@@ -2214,9 +2206,6 @@ export namespace PgCatalog {
         stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
         stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
@@ -2224,6 +2213,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByStxoidStxdinherit;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgUserMapping {
       export type Record = {
@@ -2232,9 +2222,6 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.PgUserMapping["umserver"];
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2245,6 +2232,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSubscription {
       export type Record = {
@@ -2266,9 +2254,6 @@ export namespace PgCatalog {
         subpublications: PgCatalog.Types.PgSubscription["subpublications"];
         suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2279,6 +2264,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAttribute {
       export type Record = {
@@ -2309,9 +2295,6 @@ export namespace PgCatalog {
         attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
         attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2324,6 +2307,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByAttrelidAttnum;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgProc {
       export type Record = {
@@ -2358,9 +2342,6 @@ export namespace PgCatalog {
         proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
         proacl: PgCatalog.Types.PgProc["proacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2372,6 +2353,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgClass {
       export type Record = {
@@ -2409,9 +2391,6 @@ export namespace PgCatalog {
         reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
         relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2427,6 +2406,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAttrdef {
       export type Record = {
@@ -2435,9 +2415,6 @@ export namespace PgCatalog {
         adnum: PgCatalog.Types.PgAttrdef["adnum"];
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2449,6 +2426,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgConstraint {
       export type Record = {
@@ -2479,9 +2457,6 @@ export namespace PgCatalog {
         conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
         conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2507,6 +2482,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgInherits {
       export type Record = {
@@ -2515,9 +2491,6 @@ export namespace PgCatalog {
         inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
         inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -2529,6 +2502,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByInhrelidInhseqno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgIndex {
       export type Record = {
@@ -2554,9 +2528,6 @@ export namespace PgCatalog {
         indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
         indpred: PgCatalog.Types.PgIndex["indpred"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -2566,6 +2537,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOperator {
       export type Record = {
@@ -2585,9 +2557,6 @@ export namespace PgCatalog {
         oprrest: PgCatalog.Types.PgOperator["oprrest"];
         oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2600,6 +2569,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOpfamily {
       export type Record = {
@@ -2609,9 +2579,6 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
         opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2623,6 +2590,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOpclass {
       export type Record = {
@@ -2636,9 +2604,6 @@ export namespace PgCatalog {
         opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
         opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2650,6 +2615,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAm {
       export type Record = {
@@ -2658,9 +2624,6 @@ export namespace PgCatalog {
         amhandler: PgCatalog.Types.PgAm["amhandler"];
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -2671,6 +2634,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAmop {
       export type Record = {
@@ -2684,9 +2648,6 @@ export namespace PgCatalog {
         amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
         amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -2706,6 +2667,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAmproc {
       export type Record = {
@@ -2716,9 +2678,6 @@ export namespace PgCatalog {
         amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
         amproc: PgCatalog.Types.PgAmproc["amproc"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -2732,6 +2691,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLanguage {
       export type Record = {
@@ -2745,9 +2705,6 @@ export namespace PgCatalog {
         lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
         lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -2758,6 +2715,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLargeobjectMetadata {
       export type Record = {
@@ -2765,15 +2723,13 @@ export namespace PgCatalog {
         lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAggregate {
       export type Record = {
@@ -2800,15 +2756,13 @@ export namespace PgCatalog {
         agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
         aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
       export type PrimaryKey = ByAggfnoid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgStatisticExt {
       export type Record = {
@@ -2822,9 +2776,6 @@ export namespace PgCatalog {
         stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
         stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2839,6 +2790,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgRewrite {
       export type Record = {
@@ -2851,9 +2803,6 @@ export namespace PgCatalog {
         evQual: PgCatalog.Types.PgRewrite["evQual"];
         evAction: PgCatalog.Types.PgRewrite["evAction"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -2865,6 +2814,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTrigger {
       export type Record = {
@@ -2888,9 +2838,6 @@ export namespace PgCatalog {
         tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
         tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2905,6 +2852,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgEventTrigger {
       export type Record = {
@@ -2916,9 +2864,6 @@ export namespace PgCatalog {
         evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
         evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -2929,6 +2874,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDescription {
       export type Record = {
@@ -2937,9 +2883,6 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.PgDescription["objsubid"];
         description: PgCatalog.Types.PgDescription["description"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2948,6 +2891,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgCast {
       export type Record = {
@@ -2958,9 +2902,6 @@ export namespace PgCatalog {
         castcontext: PgCatalog.Types.PgCast["castcontext"];
         castmethod: PgCatalog.Types.PgCast["castmethod"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -2972,6 +2913,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgEnum {
       export type Record = {
@@ -2980,9 +2922,6 @@ export namespace PgCatalog {
         enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
         enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -2999,6 +2938,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgNamespace {
       export type Record = {
@@ -3007,9 +2947,6 @@ export namespace PgCatalog {
         nspowner: PgCatalog.Types.PgNamespace["nspowner"];
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -3020,6 +2957,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgConversion {
       export type Record = {
@@ -3032,9 +2970,6 @@ export namespace PgCatalog {
         conproc: PgCatalog.Types.PgConversion["conproc"];
         condefault: PgCatalog.Types.PgConversion["condefault"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -3053,6 +2988,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDepend {
       export type Record = {
@@ -3064,9 +3000,6 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
         deptype: PgCatalog.Types.PgDepend["deptype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -3081,6 +3014,7 @@ export namespace PgCatalog {
 
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDatabase {
       export type Record = {
@@ -3102,9 +3036,6 @@ export namespace PgCatalog {
         datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
         datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -3115,6 +3046,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDbRoleSetting {
       export type Record = {
@@ -3122,9 +3054,6 @@ export namespace PgCatalog {
         setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
@@ -3132,6 +3061,7 @@ export namespace PgCatalog {
       export type PrimaryKey = BySetdatabaseSetrole;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTablespace {
       export type Record = {
@@ -3141,9 +3071,6 @@ export namespace PgCatalog {
         spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
         spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3153,6 +3080,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAuthMembers {
       export type Record = {
@@ -3164,9 +3092,6 @@ export namespace PgCatalog {
         inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
         setOption: PgCatalog.Types.PgAuthMembers["setOption"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -3188,6 +3113,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShdepend {
       export type Record = {
@@ -3199,9 +3125,6 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.PgShdepend["refobjid"];
         deptype: PgCatalog.Types.PgShdepend["deptype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -3216,6 +3139,7 @@ export namespace PgCatalog {
 
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShdescription {
       export type Record = {
@@ -3223,9 +3147,6 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.PgShdescription["classoid"];
         description: PgCatalog.Types.PgShdescription["description"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3233,6 +3154,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsConfig {
       export type Record = {
@@ -3242,9 +3164,6 @@ export namespace PgCatalog {
         cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
         cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -3256,6 +3175,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsConfigMap {
       export type Record = {
@@ -3264,9 +3184,6 @@ export namespace PgCatalog {
         mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
         mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -3275,6 +3192,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsDict {
       export type Record = {
@@ -3285,9 +3203,6 @@ export namespace PgCatalog {
         dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
         dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -3299,6 +3214,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsParser {
       export type Record = {
@@ -3311,9 +3227,6 @@ export namespace PgCatalog {
         prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
         prslextype: PgCatalog.Types.PgTsParser["prslextype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3324,6 +3237,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsTemplate {
       export type Record = {
@@ -3333,9 +3247,6 @@ export namespace PgCatalog {
         tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
         tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3346,6 +3257,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgExtension {
       export type Record = {
@@ -3358,9 +3270,6 @@ export namespace PgCatalog {
         extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
         extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -3371,6 +3280,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignDataWrapper {
       export type Record = {
@@ -3382,9 +3292,6 @@ export namespace PgCatalog {
         fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
         fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -3395,6 +3302,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignServer {
       export type Record = {
@@ -3407,9 +3315,6 @@ export namespace PgCatalog {
         srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
         srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3419,6 +3324,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPolicy {
       export type Record = {
@@ -3431,9 +3337,6 @@ export namespace PgCatalog {
         polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
         polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3444,15 +3347,13 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgReplicationOrigin {
       export type Record = {
         roident: PgCatalog.Types.PgReplicationOrigin["roident"];
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -3462,6 +3363,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDefaultAcl {
       export type Record = {
@@ -3471,9 +3373,6 @@ export namespace PgCatalog {
         defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
         defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -3486,6 +3385,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgInitPrivs {
       export type Record = {
@@ -3495,9 +3395,6 @@ export namespace PgCatalog {
         privtype: PgCatalog.Types.PgInitPrivs["privtype"];
         initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3506,6 +3403,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSeclabel {
       export type Record = {
@@ -3515,9 +3413,6 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgSeclabel["provider"];
         label: PgCatalog.Types.PgSeclabel["label"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3527,6 +3422,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubidProvider;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShseclabel {
       export type Record = {
@@ -3535,9 +3431,6 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgShseclabel["provider"];
         label: PgCatalog.Types.PgShseclabel["label"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3546,6 +3439,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidProvider;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgCollation {
       export type Record = {
@@ -3562,9 +3456,6 @@ export namespace PgCatalog {
         collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
         collversion: PgCatalog.Types.PgCollation["collversion"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -3577,6 +3468,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgParameterAcl {
       export type Record = {
@@ -3584,9 +3476,6 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.PgParameterAcl["parname"];
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3596,6 +3485,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPartitionedTable {
       export type Record = {
@@ -3608,15 +3498,13 @@ export namespace PgCatalog {
         partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
         partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByPartrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgRange {
       export type Record = {
@@ -3628,9 +3516,6 @@ export namespace PgCatalog {
         rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
         rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -3641,6 +3526,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByRngtypid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTransform {
       export type Record = {
@@ -3650,9 +3536,6 @@ export namespace PgCatalog {
         trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
         trftosql: PgCatalog.Types.PgTransform["trftosql"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3663,6 +3546,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSequence {
       export type Record = {
@@ -3675,15 +3559,13 @@ export namespace PgCatalog {
         seqcache: PgCatalog.Types.PgSequence["seqcache"];
         seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = BySeqrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublication {
       export type Record = {
@@ -3697,9 +3579,6 @@ export namespace PgCatalog {
         pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
         pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3709,6 +3588,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublicationNamespace {
       export type Record = {
@@ -3716,9 +3596,6 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3729,6 +3606,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublicationRel {
       export type Record = {
@@ -3738,9 +3616,6 @@ export namespace PgCatalog {
         prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
         prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3755,6 +3630,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSubscriptionRel {
       export type Record = {
@@ -3763,9 +3639,6 @@ export namespace PgCatalog {
         srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
         srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
@@ -3773,6 +3646,7 @@ export namespace PgCatalog {
       export type PrimaryKey = BySrrelidSrsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLargeobject {
       export type Record = {
@@ -3780,9 +3654,6 @@ export namespace PgCatalog {
         pageno: PgCatalog.Types.PgLargeobject["pageno"];
         data: PgCatalog.Types.PgLargeobject["data"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -3790,6 +3661,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByLoidPageno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -4055,9 +3927,6 @@ export namespace Public {
         filmId: Public.Types.FilmActor["filmId"];
         lastUpdate: Public.Types.FilmActor["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByActorIdFilmId = {
         actorId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
@@ -4068,6 +3937,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Address {
       export type Record = {
@@ -4080,9 +3950,6 @@ export namespace Public {
         phone: Public.Types.Address["phone"];
         lastUpdate: Public.Types.Address["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int4;
       };
@@ -4092,6 +3959,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "addressId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace City {
       export type Record = {
@@ -4100,9 +3968,6 @@ export namespace Public {
         countryId: Public.Types.City["countryId"];
         lastUpdate: Public.Types.City["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
       };
@@ -4112,6 +3977,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "cityId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Customer {
       export type Record = {
@@ -4126,9 +3992,6 @@ export namespace Public {
         lastUpdate: Public.Types.Customer["lastUpdate"] | null;
         active: Public.Types.Customer["active"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int2;
       };
@@ -4149,6 +4012,7 @@ export namespace Public {
         Record,
         "customerId" | "activebool" | "createDate" | "lastUpdate"
       >;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Actor {
       export type Record = {
@@ -4157,9 +4021,6 @@ export namespace Public {
         lastName: Public.Types.Actor["lastName"];
         lastUpdate: Public.Types.Actor["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByActorId = {
         actorId: PgCatalog.Types.Int4;
       };
@@ -4169,6 +4030,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "actorId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace FilmCategory {
       export type Record = {
@@ -4176,9 +4038,6 @@ export namespace Public {
         categoryId: Public.Types.FilmCategory["categoryId"];
         lastUpdate: Public.Types.FilmCategory["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFilmIdCategoryId = {
         filmId: PgCatalog.Types.Int2;
         categoryId: PgCatalog.Types.Int2;
@@ -4186,6 +4045,7 @@ export namespace Public {
       export type PrimaryKey = ByFilmIdCategoryId;
 
       export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Inventory {
       export type Record = {
@@ -4194,9 +4054,6 @@ export namespace Public {
         storeId: Public.Types.Inventory["storeId"];
         lastUpdate: Public.Types.Inventory["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -4207,6 +4064,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Category {
       export type Record = {
@@ -4214,15 +4072,13 @@ export namespace Public {
         name: Public.Types.Category["name"];
         lastUpdate: Public.Types.Category["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
       };
       export type PrimaryKey = ByCategoryId;
 
       export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Country {
       export type Record = {
@@ -4230,15 +4086,13 @@ export namespace Public {
         country: Public.Types.Country["country"];
         lastUpdate: Public.Types.Country["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
       };
       export type PrimaryKey = ByCountryId;
 
       export type Optional = Pick<Record, "countryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Language {
       export type Record = {
@@ -4246,15 +4100,13 @@ export namespace Public {
         name: Public.Types.Language["name"];
         lastUpdate: Public.Types.Language["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
       };
       export type PrimaryKey = ByLanguageId;
 
       export type Optional = Pick<Record, "languageId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Rental {
       export type Record = {
@@ -4266,9 +4118,6 @@ export namespace Public {
         staffId: Public.Types.Rental["staffId"];
         lastUpdate: Public.Types.Rental["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
@@ -4285,6 +4134,7 @@ export namespace Public {
       export type PrimaryKey = ByRentalId;
 
       export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Staff {
       export type Record = {
@@ -4300,15 +4150,13 @@ export namespace Public {
         lastUpdate: Public.Types.Staff["lastUpdate"];
         picture: Public.Types.Staff["picture"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int4;
       };
       export type PrimaryKey = ByStaffId;
 
       export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Store {
       export type Record = {
@@ -4317,9 +4165,6 @@ export namespace Public {
         addressId: Public.Types.Store["addressId"];
         lastUpdate: Public.Types.Store["lastUpdate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByManagerStaffId = {
         managerStaffId: PgCatalog.Types.Int2;
       };
@@ -4330,6 +4175,7 @@ export namespace Public {
       export type PrimaryKey = ByStoreId;
 
       export type Optional = Pick<Record, "storeId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Payment {
       export type Record = {
@@ -4340,9 +4186,6 @@ export namespace Public {
         amount: Public.Types.Payment["amount"];
         paymentDate: Public.Types.Payment["paymentDate"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int2;
       };
@@ -4360,6 +4203,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "paymentId">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace Film {
       export type Record = {
@@ -4377,9 +4221,6 @@ export namespace Public {
         specialFeatures: Public.Types.Film["specialFeatures"] | null;
         fulltext: Public.Types.Film["fulltext"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int4;
       };
@@ -4405,6 +4246,7 @@ export namespace Public {
         | "rating"
         | "lastUpdate"
       >;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -5387,11 +5229,9 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlFeatures["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlImplementationInfo {
       export type Record = {
@@ -5411,11 +5251,9 @@ export namespace InformationSchema {
           | InformationSchema.Types.SqlImplementationInfo["comments"]
           | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlParts {
       export type Record = {
@@ -5425,11 +5263,9 @@ export namespace InformationSchema {
         isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
         comments: InformationSchema.Types.SqlParts["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlSizing {
       export type Record = {
@@ -5440,11 +5276,9 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlSizing["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -10161,644 +9995,196 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatistic.Create.Values
-            PgCatalog.Types.PgStatistic.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgType {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgType.Create.Values
-            PgCatalog.Types.PgType.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignTable {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignTable.Create.Values
-            PgCatalog.Types.PgForeignTable.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAuthid {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthid.Create.Values
-            PgCatalog.Types.PgAuthid.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgStatisticExtData {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Values
-            PgCatalog.Types.PgStatisticExtData.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgUserMapping {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgUserMapping.Create.Values
-            PgCatalog.Types.PgUserMapping.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSubscription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscription.Create.Values
-            PgCatalog.Types.PgSubscription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAttribute {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttribute.Create.Values
-            PgCatalog.Types.PgAttribute.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgProc {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgProc.Create.Values
-            PgCatalog.Types.PgProc.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgClass {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgClass.Create.Values
-            PgCatalog.Types.PgClass.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAttrdef {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttrdef.Create.Values
-            PgCatalog.Types.PgAttrdef.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgConstraint {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConstraint.Create.Values
-            PgCatalog.Types.PgConstraint.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgInherits {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInherits.Create.Values
-            PgCatalog.Types.PgInherits.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgIndex {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgIndex.Create.Values
-            PgCatalog.Types.PgIndex.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOperator {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOperator.Create.Values
-            PgCatalog.Types.PgOperator.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOpfamily {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpfamily.Create.Values
-            PgCatalog.Types.PgOpfamily.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOpclass {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpclass.Create.Values
-            PgCatalog.Types.PgOpclass.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAm {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAm.Create.Values
-            PgCatalog.Types.PgAm.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAmop {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmop.Create.Values
-            PgCatalog.Types.PgAmop.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAmproc {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmproc.Create.Values
-            PgCatalog.Types.PgAmproc.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLanguage {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLanguage.Create.Values
-            PgCatalog.Types.PgLanguage.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLargeobjectMetadata {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Values
-            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAggregate {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAggregate.Create.Values
-            PgCatalog.Types.PgAggregate.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgStatisticExt {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Values
-            PgCatalog.Types.PgStatisticExt.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgRewrite {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRewrite.Create.Values
-            PgCatalog.Types.PgRewrite.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTrigger {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTrigger.Create.Values
-            PgCatalog.Types.PgTrigger.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgEventTrigger {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Values
-            PgCatalog.Types.PgEventTrigger.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDescription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDescription.Create.Values
-            PgCatalog.Types.PgDescription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgCast {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCast.Create.Values
-            PgCatalog.Types.PgCast.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgEnum {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEnum.Create.Values
-            PgCatalog.Types.PgEnum.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgNamespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgNamespace.Create.Values
-            PgCatalog.Types.PgNamespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgConversion {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConversion.Create.Values
-            PgCatalog.Types.PgConversion.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDepend {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDepend.Create.Values
-            PgCatalog.Types.PgDepend.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDatabase {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDatabase.Create.Values
-            PgCatalog.Types.PgDatabase.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDbRoleSetting {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Values
-            PgCatalog.Types.PgDbRoleSetting.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTablespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTablespace.Create.Values
-            PgCatalog.Types.PgTablespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAuthMembers {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Values
-            PgCatalog.Types.PgAuthMembers.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShdepend {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdepend.Create.Values
-            PgCatalog.Types.PgShdepend.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShdescription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdescription.Create.Values
-            PgCatalog.Types.PgShdescription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsConfig {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfig.Create.Values
-            PgCatalog.Types.PgTsConfig.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsConfigMap {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Values
-            PgCatalog.Types.PgTsConfigMap.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsDict {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsDict.Create.Values
-            PgCatalog.Types.PgTsDict.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsParser {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsParser.Create.Values
-            PgCatalog.Types.PgTsParser.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsTemplate {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Values
-            PgCatalog.Types.PgTsTemplate.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgExtension {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgExtension.Create.Values
-            PgCatalog.Types.PgExtension.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignDataWrapper {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Values
-            PgCatalog.Types.PgForeignDataWrapper.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignServer {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignServer.Create.Values
-            PgCatalog.Types.PgForeignServer.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPolicy {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPolicy.Create.Values
-            PgCatalog.Types.PgPolicy.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgReplicationOrigin {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Values
-            PgCatalog.Types.PgReplicationOrigin.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDefaultAcl {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Values
-            PgCatalog.Types.PgDefaultAcl.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgInitPrivs {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Values
-            PgCatalog.Types.PgInitPrivs.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSeclabel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSeclabel.Create.Values
-            PgCatalog.Types.PgSeclabel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShseclabel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShseclabel.Create.Values
-            PgCatalog.Types.PgShseclabel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgCollation {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCollation.Create.Values
-            PgCatalog.Types.PgCollation.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgParameterAcl {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Values
-            PgCatalog.Types.PgParameterAcl.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPartitionedTable {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Values
-            PgCatalog.Types.PgPartitionedTable.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgRange {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRange.Create.Values
-            PgCatalog.Types.PgRange.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTransform {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTransform.Create.Values
-            PgCatalog.Types.PgTransform.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSequence {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSequence.Create.Values
-            PgCatalog.Types.PgSequence.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublication {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublication.Create.Values
-            PgCatalog.Types.PgPublication.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublicationNamespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Values
-            PgCatalog.Types.PgPublicationNamespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublicationRel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Values
-            PgCatalog.Types.PgPublicationRel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSubscriptionRel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Values
-            PgCatalog.Types.PgSubscriptionRel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLargeobject {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobject.Create.Values
-            PgCatalog.Types.PgLargeobject.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -11400,154 +10786,49 @@ export namespace Public {
   }
   export namespace Tables {
     export namespace FilmActor {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.FilmActor.Create.Values
-            Public.Types.FilmActor.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Address {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Address.Create.Values
-            Public.Types.Address.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace City {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.City.Create.Values
-            Public.Types.City.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Customer {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Customer.Create.Values
-            Public.Types.Customer.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Actor {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Actor.Create.Values
-            Public.Types.Actor.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace FilmCategory {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.FilmCategory.Create.Values
-            Public.Types.FilmCategory.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Inventory {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Inventory.Create.Values
-            Public.Types.Inventory.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Category {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Category.Create.Values
-            Public.Types.Category.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Country {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Country.Create.Values
-            Public.Types.Country.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Language {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Language.Create.Values
-            Public.Types.Language.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Rental {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Rental.Create.Values
-            Public.Types.Rental.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Staff {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Staff.Create.Values
-            Public.Types.Staff.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Store {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Store.Create.Values
-            Public.Types.Store.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Payment {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Payment.Create.Values
-            Public.Types.Payment.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace Film {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Film.Create.Values
-            Public.Types.Film.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -12967,44 +12248,16 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlFeatures.Create.Values
-            InformationSchema.Types.SqlFeatures.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlImplementationInfo {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Values
-            InformationSchema.Types.SqlImplementationInfo.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlParts {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlParts.Create.Values
-            InformationSchema.Types.SqlParts.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlSizing {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlSizing.Create.Values
-            InformationSchema.Types.SqlSizing.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -16866,163 +16119,178 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async filmInStock(parameters: Public.Procedures.FilmInStock.Parameters) {
-      const parseResult = (
-        context: Context,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        result: any,
-      ) => {
-        return context.procTypes[25157].parseFromPostgresIfRecord(
-          context,
-          result,
-        ) as unknown as Public.Procedures.FilmInStock.Results;
-      };
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.film_in_stock(p_film_id => ${typed[23](
-                    undefinedIsNull(parameters.pFilmId),
-                  )},p_store_id => ${typed[23](
-                    undefinedIsNull(parameters.pStoreId),
-                  )})`;
-      const results = response;
-      const responseBody = results.map((x) =>
-        parseResult(this.database.context, x.film_in_stock),
-      ) as unknown as Public.Procedures.FilmInStock.Results[];
-      return responseBody;
-    }
-    async filmNotInStock(
-      parameters: Public.Procedures.FilmNotInStock.Parameters,
-    ) {
-      const parseResult = (
-        context: Context,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        result: any,
-      ) => {
-        return context.procTypes[25158].parseFromPostgresIfRecord(
-          context,
-          result,
-        ) as unknown as Public.Procedures.FilmNotInStock.Results;
-      };
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.film_not_in_stock(p_film_id => ${typed[23](
-                    undefinedIsNull(parameters.pFilmId),
-                  )},p_store_id => ${typed[23](
-                    undefinedIsNull(parameters.pStoreId),
-                  )})`;
-      const results = response;
-      const responseBody = results.map((x) =>
-        parseResult(this.database.context, x.film_not_in_stock),
-      ) as unknown as Public.Procedures.FilmNotInStock.Results[];
-      return responseBody;
-    }
-    async getCustomerBalance(
-      parameters: Public.Procedures.GetCustomerBalance.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.get_customer_balance(p_customer_id => ${typed[23](
-                    undefinedIsNull(parameters.pCustomerId),
-                  )},p_effective_date => ${typed[1114](
-                    undefinedIsNull(parameters.pEffectiveDate),
-                  )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .get_customer_balance as unknown as Public.Procedures.GetCustomerBalance.Results;
-      return responseBody;
-    }
-    async inventoryHeldByCustomer(
-      parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.inventory_held_by_customer(p_inventory_id => ${typed[23](
-                    undefinedIsNull(parameters.pInventoryId),
-                  )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .inventory_held_by_customer as unknown as Public.Procedures.InventoryHeldByCustomer.Results;
-      return responseBody;
-    }
-    async inventoryInStock(
-      parameters: Public.Procedures.InventoryInStock.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.inventory_in_stock(p_inventory_id => ${typed[23](
-                    undefinedIsNull(parameters.pInventoryId),
-                  )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .inventory_in_stock as unknown as Public.Procedures.InventoryInStock.Results;
-      return responseBody;
-    }
-    async lastDay(parameters: Public.Procedures.LastDay.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.last_day( ${typed[1114](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .last_day as unknown as Public.Procedures.LastDay.Results;
-      return responseBody;
-    }
-    async rewardsReport(
-      parameters: Public.Procedures.RewardsReport.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
-                  SELECT
-                  public.rewards_report(min_monthly_purchases => ${typed[23](
-                    undefinedIsNull(parameters.minMonthlyPurchases),
-                  )},min_dollar_amount_purchased => ${typed[1700](
-                    undefinedIsNull(parameters.minDollarAmountPurchased),
-                  )})`;
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.rewards_report,
-      ) as unknown as Public.Procedures.RewardsReport.Results[];
-      return responseBody;
-    }
-
-    public FilmActor = new (class implements HasDatabase {
+    public Procedures = new (class implements HasDatabase {
       constructor(private hasDatabase: HasDatabase) {}
 
       get database() {
         return this.hasDatabase.database;
       }
 
-      async create(
-        values: Public.Tables.FilmActor.Values,
-      ): Promise<Public.Tables.FilmActor.Record> {
+      async filmInStock(parameters: Public.Procedures.FilmInStock.Parameters) {
+        const parseResult = (
+          context: Context,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          result: any,
+        ) => {
+          return context.procTypes[25157].parseFromPostgresIfRecord(
+            context,
+            result,
+          ) as unknown as Public.Types.FilmInStockResults;
+        };
+
+        console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.film_in_stock(p_film_id => ${typed[23](
+                    undefinedIsNull(parameters.pFilmId),
+                  )},p_store_id => ${typed[23](
+                    undefinedIsNull(parameters.pStoreId),
+                  )})`;
+        const results = response;
+        const responseBody = results.map((x) =>
+          parseResult(this.database.context, x.film_in_stock),
+        ) as unknown as Public.Types.FilmInStockResults[];
+        return responseBody;
+      }
+      async filmNotInStock(
+        parameters: Public.Procedures.FilmNotInStock.Parameters,
+      ) {
+        const parseResult = (
+          context: Context,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          result: any,
+        ) => {
+          return context.procTypes[25158].parseFromPostgresIfRecord(
+            context,
+            result,
+          ) as unknown as Public.Types.FilmNotInStockResults;
+        };
 
-        if (Public.Tables.FilmActor.includesPrimaryKey(values)) {
-          const response = await sql`
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.film_not_in_stock(p_film_id => ${typed[23](
+                    undefinedIsNull(parameters.pFilmId),
+                  )},p_store_id => ${typed[23](
+                    undefinedIsNull(parameters.pStoreId),
+                  )})`;
+        const results = response;
+        const responseBody = results.map((x) =>
+          parseResult(this.database.context, x.film_not_in_stock),
+        ) as unknown as Public.Types.FilmNotInStockResults[];
+        return responseBody;
+      }
+      async getCustomerBalance(
+        parameters: Public.Procedures.GetCustomerBalance.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.get_customer_balance(p_customer_id => ${typed[23](
+                    undefinedIsNull(parameters.pCustomerId),
+                  )},p_effective_date => ${typed[1114](
+                    undefinedIsNull(parameters.pEffectiveDate),
+                  )})`;
+        const results = response;
+        const responseBody = results?.[0]
+          .get_customer_balance as unknown as PgCatalog.Types.Numeric;
+        return responseBody;
+      }
+      async inventoryHeldByCustomer(
+        parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.inventory_held_by_customer(p_inventory_id => ${typed[23](
+                    undefinedIsNull(parameters.pInventoryId),
+                  )})`;
+        const results = response;
+        const responseBody = results?.[0]
+          .inventory_held_by_customer as unknown as PgCatalog.Types.Int4;
+        return responseBody;
+      }
+      async inventoryInStock(
+        parameters: Public.Procedures.InventoryInStock.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.inventory_in_stock(p_inventory_id => ${typed[23](
+                    undefinedIsNull(parameters.pInventoryId),
+                  )})`;
+        const results = response;
+        const responseBody = results?.[0]
+          .inventory_in_stock as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async lastDay(parameters: Public.Procedures.LastDay.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.last_day( ${typed[1114](
+                    undefinedIsNull(parameters.argument_0),
+                  )})`;
+        const results = response;
+        const responseBody = results?.[0]
+          .last_day as unknown as PgCatalog.Types.Date;
+        return responseBody;
+      }
+      async rewardsReport(
+        parameters: Public.Procedures.RewardsReport.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.rewards_report(min_monthly_purchases => ${typed[23](
+                    undefinedIsNull(parameters.minMonthlyPurchases),
+                  )},min_dollar_amount_purchased => ${typed[1700](
+                    undefinedIsNull(parameters.minDollarAmountPurchased),
+                  )})`;
+        const results = response;
+        const responseBody = results.map(
+          (x) => x.rewards_report,
+        ) as unknown as Public.Types.Customer[];
+        return responseBody;
+      }
+    })(this);
+
+    public Tables = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      public FilmActor = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.FilmActor.Values,
+        ): Promise<Public.Tables.FilmActor.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (Public.Tables.FilmActor.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.film_actor 
@@ -17035,13 +16303,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         actor_id,film_id,last_update
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO actor_id,film_id,last_update)
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.film_actor (actor_id,film_id,last_update)
     VALUES (${
       values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
     },${
@@ -17053,28 +16322,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING actor_id,film_id,last_update
     `;
-        return response.map((record) => ({
-          actorId: undefinedIsNull(record.actor_id),
-          filmId: undefinedIsNull(record.film_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByActorIdFilmId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-        ): Promise<Public.Tables.FilmActor.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByActorIdFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          ): Promise<Public.Tables.FilmActor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -17091,23 +16360,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-          values: Partial<Public.Tables.FilmActor.Values>,
-        ): Promise<Public.Tables.FilmActor.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+            values: Partial<Public.Tables.FilmActor.Values>,
+          ): Promise<Public.Tables.FilmActor.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film_actor 
@@ -17132,21 +16401,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.FilmActor.ByActorIdFilmId,
-        ): Promise<Public.Tables.FilmActor.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          ): Promise<Public.Tables.FilmActor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film_actor 
@@ -17161,29 +16430,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByFilmId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.FilmActor.ByFilmId,
-        ): Promise<Public.Tables.FilmActor.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+          ): Promise<Public.Tables.FilmActor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -17196,23 +16465,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.FilmActor.ByFilmId,
-          values: Partial<Public.Tables.FilmActor.Values>,
-        ): Promise<Public.Tables.FilmActor.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+            values: Partial<Public.Tables.FilmActor.Values>,
+          ): Promise<Public.Tables.FilmActor.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film_actor 
@@ -17233,21 +16502,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.FilmActor.ByFilmId,
-        ): Promise<Public.Tables.FilmActor.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+          ): Promise<Public.Tables.FilmActor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film_actor 
@@ -17258,30 +16527,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Address = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Address = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Address.Values,
-      ): Promise<Public.Tables.Address.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Address.Values,
+        ): Promise<Public.Tables.Address.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Address.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Address.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.address 
@@ -17294,19 +16563,19 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO address_id,address,address2,district,city_id,postal_code,phone,last_update)
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
     VALUES (${
       values.addressId === undefined
         ? sql`DEFAULT`
@@ -17336,45 +16605,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
-        return response.map((record) => ({
-          addressId: undefinedIsNull(record.address_id),
-          address: undefinedIsNull(record.address),
-          address2: undefinedIsNull(record.address2),
-          district: undefinedIsNull(record.district),
-          cityId: undefinedIsNull(record.city_id),
-          postalCode: undefinedIsNull(record.postal_code),
-          phone: undefinedIsNull(record.phone),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByAddressId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async read(
-          parameters: Public.Tables.Address.ByAddressId,
-        ): Promise<Public.Tables.Address.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      address_id,address,address2,district,city_id,postal_code,phone,last_update 
-    FROM
-      public.address 
-    WHERE
-      address_id = ${
-        parameters.addressId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.addressId)
-      }
-    `;
           return response.map((record) => ({
             addressId: undefinedIsNull(record.address_id),
             address: undefinedIsNull(record.address),
@@ -17387,16 +16617,55 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
 
-        async update(
-          parameters: Public.Tables.Address.ByAddressId,
-          values: Partial<Public.Tables.Address.Values>,
-        ): Promise<Public.Tables.Address.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByAddressId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Address.ByAddressId,
+          ): Promise<Public.Tables.Address.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    `;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Address.ByAddressId,
+            values: Partial<Public.Tables.Address.Values>,
+          ): Promise<Public.Tables.Address.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     --
     UPDATE 
       public.address 
@@ -17437,26 +16706,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.addressId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Address.ByAddressId,
-        ): Promise<Public.Tables.Address.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Address.ByAddressId,
+          ): Promise<Public.Tables.Address.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.address 
@@ -17467,34 +16736,34 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.addressId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByCityId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByCityId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Address.ByCityId,
-        ): Promise<Public.Tables.Address.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Address.ByCityId,
+          ): Promise<Public.Tables.Address.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
@@ -17507,28 +16776,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     `;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Address.ByCityId,
-          values: Partial<Public.Tables.Address.Values>,
-        ): Promise<Public.Tables.Address.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Address.ByCityId,
+            values: Partial<Public.Tables.Address.Values>,
+          ): Promise<Public.Tables.Address.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.address 
@@ -17569,26 +16838,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Address.ByCityId,
-        ): Promise<Public.Tables.Address.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Address.ByCityId,
+          ): Promise<Public.Tables.Address.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.address 
@@ -17599,35 +16868,35 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public City = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public City = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.City.Values,
-      ): Promise<Public.Tables.City.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.City.Values,
+        ): Promise<Public.Tables.City.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.City.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.City.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.city 
@@ -17640,15 +16909,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         city_id,city,country_id,last_update
     `;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO city_id,city,country_id,last_update)
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.city (city_id,city,country_id,last_update)
     VALUES (${
       values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
     },${values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)},${
@@ -17662,29 +16931,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING city_id,city,country_id,last_update
     `;
-        return response.map((record) => ({
-          cityId: undefinedIsNull(record.city_id),
-          city: undefinedIsNull(record.city),
-          countryId: undefinedIsNull(record.country_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByCityId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.City.ByCityId,
-        ): Promise<Public.Tables.City.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByCityId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.City.ByCityId,
+          ): Promise<Public.Tables.City.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -17697,24 +16966,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     `;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.City.ByCityId,
-          values: Partial<Public.Tables.City.Values>,
-        ): Promise<Public.Tables.City.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.City.ByCityId,
+            values: Partial<Public.Tables.City.Values>,
+          ): Promise<Public.Tables.City.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.city 
@@ -17739,22 +17008,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     RETURNING city_id,city,country_id,last_update`;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.City.ByCityId,
-        ): Promise<Public.Tables.City.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.City.ByCityId,
+          ): Promise<Public.Tables.City.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.city 
@@ -17765,30 +17034,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     RETURNING city_id,city,country_id,last_update`;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByCountryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByCountryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.City.ByCountryId,
-        ): Promise<Public.Tables.City.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.City.ByCountryId,
+          ): Promise<Public.Tables.City.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -17801,24 +17070,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     `;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.City.ByCountryId,
-          values: Partial<Public.Tables.City.Values>,
-        ): Promise<Public.Tables.City.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.City.ByCountryId,
+            values: Partial<Public.Tables.City.Values>,
+          ): Promise<Public.Tables.City.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.city 
@@ -17843,22 +17112,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     RETURNING city_id,city,country_id,last_update`;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.City.ByCountryId,
-        ): Promise<Public.Tables.City.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.City.ByCountryId,
+          ): Promise<Public.Tables.City.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.city 
@@ -17869,31 +17138,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     RETURNING city_id,city,country_id,last_update`;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Customer = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Customer = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Customer.Values,
-      ): Promise<Public.Tables.Customer.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Customer.Values,
+        ): Promise<Public.Tables.Customer.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Customer.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Customer.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.customer 
@@ -17906,21 +17175,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
     VALUES (${
       values.customerId === undefined
         ? sql`DEFAULT`
@@ -17956,191 +17225,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
     },${values.active === undefined ? sql`DEFAULT` : typed[23](values.active)})
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
-        return response.map((record) => ({
-          customerId: undefinedIsNull(record.customer_id),
-          storeId: undefinedIsNull(record.store_id),
-          firstName: undefinedIsNull(record.first_name),
-          lastName: undefinedIsNull(record.last_name),
-          email: undefinedIsNull(record.email),
-          addressId: undefinedIsNull(record.address_id),
-          activebool: undefinedIsNull(record.activebool),
-          createDate: undefinedIsNull(record.create_date),
-          lastUpdate: undefinedIsNull(record.last_update),
-          active: undefinedIsNull(record.active),
-        }))[0];
-      }
-
-      public ByAddressId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async read(
-          parameters: Public.Tables.Customer.ByAddressId,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
-    FROM
-      public.customer 
-    WHERE
-      address_id = ${
-        parameters.addressId === undefined
-          ? sql`DEFAULT`
-          : typed[21](parameters.addressId)
-      }
-    `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
-
-        async update(
-          parameters: Public.Tables.Customer.ByAddressId,
-          values: Partial<Public.Tables.Customer.Values>,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    --
-    UPDATE 
-      public.customer 
-    SET
-      customer_id = ${
-        values.customerId === undefined
-          ? sql`DEFAULT`
-          : typed[23](values.customerId)
-      } , store_id = ${
-        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
-      } , first_name = ${
-        values.firstName === undefined
-          ? sql`DEFAULT`
-          : typed[1043](values.firstName)
-      } , last_name = ${
-        values.lastName === undefined
-          ? sql`DEFAULT`
-          : typed[1043](values.lastName)
-      } , email = ${
-        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
-      } , address_id = ${
-        values.addressId === undefined
-          ? sql`DEFAULT`
-          : typed[21](values.addressId)
-      } , activebool = ${
-        values.activebool === undefined
-          ? sql`DEFAULT`
-          : typed[16](values.activebool)
-      } , create_date = ${
-        values.createDate === undefined
-          ? sql`DEFAULT`
-          : typed[1082](values.createDate)
-      } , last_update = ${
-        values.lastUpdate === undefined
-          ? sql`DEFAULT`
-          : typed[1114](values.lastUpdate)
-      } , active = ${
-        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
-      } 
-    WHERE
-      address_id = ${
-        parameters.addressId === undefined
-          ? sql`DEFAULT`
-          : typed[21](parameters.addressId)
-      }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
-
-        async delete(
-          parameters: Public.Tables.Customer.ByAddressId,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    --
-    DELETE FROM 
-      public.customer 
-    WHERE
-      address_id = ${
-        parameters.addressId === undefined
-          ? sql`DEFAULT`
-          : typed[21](parameters.addressId)
-      }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
-      })(this);
-
-      public ByCustomerId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async read(
-          parameters: Public.Tables.Customer.ByCustomerId,
-        ): Promise<Public.Tables.Customer.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
-    FROM
-      public.customer 
-    WHERE
-      customer_id = ${
-        parameters.customerId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.customerId)
-      }
-    `;
           return response.map((record) => ({
             customerId: undefinedIsNull(record.customer_id),
             storeId: undefinedIsNull(record.store_id),
@@ -18155,16 +17239,201 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
 
-        async update(
-          parameters: Public.Tables.Customer.ByCustomerId,
-          values: Partial<Public.Tables.Customer.Values>,
-        ): Promise<Public.Tables.Customer.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByAddressId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByAddressId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByAddressId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      } 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+
+          async delete(
+            parameters: Public.Tables.Customer.ByAddressId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
+
+        public ByCustomerId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByCustomerId,
+          ): Promise<Public.Tables.Customer.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByCustomerId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     --
     UPDATE 
       public.customer 
@@ -18211,28 +17480,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.customerId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }))[0];
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Customer.ByCustomerId,
-        ): Promise<Public.Tables.Customer.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Customer.ByCustomerId,
+          ): Promise<Public.Tables.Customer.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.customer 
@@ -18243,36 +17512,36 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.customerId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+        })(this);
 
-      public ByLastName = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByLastName = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Customer.ByLastName,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Customer.ByLastName,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -18285,30 +17554,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Customer.ByLastName,
-          values: Partial<Public.Tables.Customer.Values>,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Customer.ByLastName,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.customer 
@@ -18355,28 +17624,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Customer.ByLastName,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Customer.ByLastName,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.customer 
@@ -18387,36 +17656,36 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
 
-      public ByStoreId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByStoreId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Customer.ByStoreId,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Customer.ByStoreId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -18429,30 +17698,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Customer.ByStoreId,
-          values: Partial<Public.Tables.Customer.Values>,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Customer.ByStoreId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.customer 
@@ -18499,28 +17768,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Customer.ByStoreId,
-        ): Promise<Public.Tables.Customer.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Customer.ByStoreId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.customer 
@@ -18531,37 +17800,37 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
-          }));
-        }
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Actor = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Actor = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Actor.Values,
-      ): Promise<Public.Tables.Actor.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Actor.Values,
+        ): Promise<Public.Tables.Actor.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Actor.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Actor.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.actor 
@@ -18574,15 +17843,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         actor_id,first_name,last_name,last_update
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO actor_id,first_name,last_name,last_update)
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.actor (actor_id,first_name,last_name,last_update)
     VALUES (${
       values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
     },${
@@ -18600,29 +17869,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING actor_id,first_name,last_name,last_update
     `;
-        return response.map((record) => ({
-          actorId: undefinedIsNull(record.actor_id),
-          firstName: undefinedIsNull(record.first_name),
-          lastName: undefinedIsNull(record.last_name),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByActorId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Actor.ByActorId,
-        ): Promise<Public.Tables.Actor.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByActorId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Actor.ByActorId,
+          ): Promise<Public.Tables.Actor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -18635,24 +17904,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Actor.ByActorId,
-          values: Partial<Public.Tables.Actor.Values>,
-        ): Promise<Public.Tables.Actor.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Actor.ByActorId,
+            values: Partial<Public.Tables.Actor.Values>,
+          ): Promise<Public.Tables.Actor.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.actor 
@@ -18679,22 +17948,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Actor.ByActorId,
-        ): Promise<Public.Tables.Actor.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Actor.ByActorId,
+          ): Promise<Public.Tables.Actor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.actor 
@@ -18705,30 +17974,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByLastName = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByLastName = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Actor.ByLastName,
-        ): Promise<Public.Tables.Actor.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Actor.ByLastName,
+          ): Promise<Public.Tables.Actor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -18741,24 +18010,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Actor.ByLastName,
-          values: Partial<Public.Tables.Actor.Values>,
-        ): Promise<Public.Tables.Actor.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Actor.ByLastName,
+            values: Partial<Public.Tables.Actor.Values>,
+          ): Promise<Public.Tables.Actor.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.actor 
@@ -18785,22 +18054,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Actor.ByLastName,
-        ): Promise<Public.Tables.Actor.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Actor.ByLastName,
+          ): Promise<Public.Tables.Actor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.actor 
@@ -18811,31 +18080,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public FilmCategory = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public FilmCategory = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.FilmCategory.Values,
-      ): Promise<Public.Tables.FilmCategory.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.FilmCategory.Values,
+        ): Promise<Public.Tables.FilmCategory.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.FilmCategory.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.FilmCategory.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.film_category 
@@ -18848,13 +18117,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         film_id,category_id,last_update
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO film_id,category_id,last_update)
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.film_category (film_id,category_id,last_update)
     VALUES (${
       values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
     },${
@@ -18868,28 +18138,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING film_id,category_id,last_update
     `;
-        return response.map((record) => ({
-          filmId: undefinedIsNull(record.film_id),
-          categoryId: undefinedIsNull(record.category_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByFilmIdCategoryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-        ): Promise<Public.Tables.FilmCategory.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByFilmIdCategoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ): Promise<Public.Tables.FilmCategory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       film_id,category_id,last_update 
@@ -18906,23 +18176,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-          values: Partial<Public.Tables.FilmCategory.Values>,
-        ): Promise<Public.Tables.FilmCategory.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            values: Partial<Public.Tables.FilmCategory.Values>,
+          ): Promise<Public.Tables.FilmCategory.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film_category 
@@ -18949,21 +18219,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     RETURNING film_id,category_id,last_update`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
-        ): Promise<Public.Tables.FilmCategory.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ): Promise<Public.Tables.FilmCategory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film_category 
@@ -18978,30 +18248,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     RETURNING film_id,category_id,last_update`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Inventory = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Inventory = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Inventory.Values,
-      ): Promise<Public.Tables.Inventory.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Inventory.Values,
+        ): Promise<Public.Tables.Inventory.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Inventory.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Inventory.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.inventory 
@@ -19014,15 +18284,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         inventory_id,film_id,store_id,last_update
     `;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO inventory_id,film_id,store_id,last_update)
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.inventory (inventory_id,film_id,store_id,last_update)
     VALUES (${
       values.inventoryId === undefined
         ? sql`DEFAULT`
@@ -19038,29 +18308,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING inventory_id,film_id,store_id,last_update
     `;
-        return response.map((record) => ({
-          inventoryId: undefinedIsNull(record.inventory_id),
-          filmId: undefinedIsNull(record.film_id),
-          storeId: undefinedIsNull(record.store_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByInventoryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Inventory.ByInventoryId,
-        ): Promise<Public.Tables.Inventory.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByInventoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+          ): Promise<Public.Tables.Inventory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -19073,24 +18343,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     `;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Inventory.ByInventoryId,
-          values: Partial<Public.Tables.Inventory.Values>,
-        ): Promise<Public.Tables.Inventory.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+            values: Partial<Public.Tables.Inventory.Values>,
+          ): Promise<Public.Tables.Inventory.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.inventory 
@@ -19115,22 +18385,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Inventory.ByInventoryId,
-        ): Promise<Public.Tables.Inventory.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+          ): Promise<Public.Tables.Inventory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.inventory 
@@ -19141,30 +18411,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByStoreIdFilmId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByStoreIdFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-        ): Promise<Public.Tables.Inventory.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          ): Promise<Public.Tables.Inventory.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -19181,24 +18451,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-          values: Partial<Public.Tables.Inventory.Values>,
-        ): Promise<Public.Tables.Inventory.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+            values: Partial<Public.Tables.Inventory.Values>,
+          ): Promise<Public.Tables.Inventory.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.inventory 
@@ -19227,22 +18497,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Inventory.ByStoreIdFilmId,
-        ): Promise<Public.Tables.Inventory.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          ): Promise<Public.Tables.Inventory.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.inventory 
@@ -19257,31 +18527,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Category = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Category = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Category.Values,
-      ): Promise<Public.Tables.Category.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Category.Values,
+        ): Promise<Public.Tables.Category.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Category.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Category.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.category 
@@ -19294,13 +18564,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         category_id,name,last_update
     `;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO category_id,name,last_update)
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.category (category_id,name,last_update)
     VALUES (${
       values.categoryId === undefined
         ? sql`DEFAULT`
@@ -19312,28 +18583,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING category_id,name,last_update
     `;
-        return response.map((record) => ({
-          categoryId: undefinedIsNull(record.category_id),
-          name: undefinedIsNull(record.name),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByCategoryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Category.ByCategoryId,
-        ): Promise<Public.Tables.Category.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByCategoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Category.ByCategoryId,
+          ): Promise<Public.Tables.Category.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       category_id,name,last_update 
@@ -19346,23 +18617,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     `;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Category.ByCategoryId,
-          values: Partial<Public.Tables.Category.Values>,
-        ): Promise<Public.Tables.Category.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Category.ByCategoryId,
+            values: Partial<Public.Tables.Category.Values>,
+          ): Promise<Public.Tables.Category.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.category 
@@ -19385,21 +18656,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     RETURNING category_id,name,last_update`;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Category.ByCategoryId,
-        ): Promise<Public.Tables.Category.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Category.ByCategoryId,
+          ): Promise<Public.Tables.Category.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.category 
@@ -19410,30 +18681,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     RETURNING category_id,name,last_update`;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Country = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Country = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Country.Values,
-      ): Promise<Public.Tables.Country.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Country.Values,
+        ): Promise<Public.Tables.Country.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Country.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Country.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.country 
@@ -19446,13 +18717,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         country_id,country,last_update
     `;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO country_id,country,last_update)
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.country (country_id,country,last_update)
     VALUES (${
       values.countryId === undefined
         ? sql`DEFAULT`
@@ -19466,28 +18738,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING country_id,country,last_update
     `;
-        return response.map((record) => ({
-          countryId: undefinedIsNull(record.country_id),
-          country: undefinedIsNull(record.country),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByCountryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Country.ByCountryId,
-        ): Promise<Public.Tables.Country.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByCountryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Country.ByCountryId,
+          ): Promise<Public.Tables.Country.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       country_id,country,last_update 
@@ -19500,23 +18772,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     `;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Country.ByCountryId,
-          values: Partial<Public.Tables.Country.Values>,
-        ): Promise<Public.Tables.Country.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Country.ByCountryId,
+            values: Partial<Public.Tables.Country.Values>,
+          ): Promise<Public.Tables.Country.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.country 
@@ -19541,21 +18813,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     RETURNING country_id,country,last_update`;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Country.ByCountryId,
-        ): Promise<Public.Tables.Country.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Country.ByCountryId,
+          ): Promise<Public.Tables.Country.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.country 
@@ -19566,30 +18838,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     RETURNING country_id,country,last_update`;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Language = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Language = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Language.Values,
-      ): Promise<Public.Tables.Language.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Language.Values,
+        ): Promise<Public.Tables.Language.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Language.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Language.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.language 
@@ -19602,13 +18874,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         language_id,name,last_update
     `;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO language_id,name,last_update)
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.language (language_id,name,last_update)
     VALUES (${
       values.languageId === undefined
         ? sql`DEFAULT`
@@ -19620,28 +18893,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING language_id,name,last_update
     `;
-        return response.map((record) => ({
-          languageId: undefinedIsNull(record.language_id),
-          name: undefinedIsNull(record.name),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByLanguageId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Language.ByLanguageId,
-        ): Promise<Public.Tables.Language.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByLanguageId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Language.ByLanguageId,
+          ): Promise<Public.Tables.Language.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       language_id,name,last_update 
@@ -19654,23 +18927,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     `;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Language.ByLanguageId,
-          values: Partial<Public.Tables.Language.Values>,
-        ): Promise<Public.Tables.Language.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Language.ByLanguageId,
+            values: Partial<Public.Tables.Language.Values>,
+          ): Promise<Public.Tables.Language.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.language 
@@ -19693,21 +18966,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     RETURNING language_id,name,last_update`;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Language.ByLanguageId,
-        ): Promise<Public.Tables.Language.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Language.ByLanguageId,
+          ): Promise<Public.Tables.Language.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.language 
@@ -19718,30 +18991,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     RETURNING language_id,name,last_update`;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Rental = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Rental = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Rental.Values,
-      ): Promise<Public.Tables.Rental.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Rental.Values,
+        ): Promise<Public.Tables.Rental.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Rental.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Rental.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.rental 
@@ -19754,18 +19027,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
     VALUES (${
       values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
     },${
@@ -19793,32 +19066,32 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
-        return response.map((record) => ({
-          rentalId: undefinedIsNull(record.rental_id),
-          rentalDate: undefinedIsNull(record.rental_date),
-          inventoryId: undefinedIsNull(record.inventory_id),
-          customerId: undefinedIsNull(record.customer_id),
-          returnDate: undefinedIsNull(record.return_date),
-          staffId: undefinedIsNull(record.staff_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByInventoryId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Rental.ByInventoryId,
-        ): Promise<Public.Tables.Rental.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByInventoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Rental.ByInventoryId,
+          ): Promise<Public.Tables.Rental.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -19831,27 +19104,27 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Rental.ByInventoryId,
-          values: Partial<Public.Tables.Rental.Values>,
-        ): Promise<Public.Tables.Rental.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Rental.ByInventoryId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.rental 
@@ -19890,25 +19163,25 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Rental.ByInventoryId,
-        ): Promise<Public.Tables.Rental.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Rental.ByInventoryId,
+          ): Promise<Public.Tables.Rental.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.rental 
@@ -19919,35 +19192,35 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
 
-      public ByRentalDateInventoryIdCustomerId = new (class
-        implements HasDatabase
-      {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByRentalDateInventoryIdCustomerId = new (class
+          implements HasDatabase
+        {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -19968,27 +19241,27 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-          values: Partial<Public.Tables.Rental.Values>,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.rental 
@@ -20035,25 +19308,25 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.rental 
@@ -20072,33 +19345,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByRentalId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByRentalId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Rental.ByRentalId,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Rental.ByRentalId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -20111,27 +19384,27 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Rental.ByRentalId,
-          values: Partial<Public.Tables.Rental.Values>,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Rental.ByRentalId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.rental 
@@ -20170,25 +19443,25 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Rental.ByRentalId,
-        ): Promise<Public.Tables.Rental.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Rental.ByRentalId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.rental 
@@ -20199,34 +19472,34 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Staff = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Staff = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Staff.Values,
-      ): Promise<Public.Tables.Staff.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Staff.Values,
+        ): Promise<Public.Tables.Staff.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Staff.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Staff.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.staff 
@@ -20239,22 +19512,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
-          return response.map((record) => ({
-            staffId: undefinedIsNull(record.staff_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            addressId: undefinedIsNull(record.address_id),
-            email: undefinedIsNull(record.email),
-            storeId: undefinedIsNull(record.store_id),
-            active: undefinedIsNull(record.active),
-            username: undefinedIsNull(record.username),
-            password: undefinedIsNull(record.password),
-            lastUpdate: undefinedIsNull(record.last_update),
-            picture: undefinedIsNull(record.picture),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
     VALUES (${
       values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
     },${
@@ -20292,48 +19565,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
-        return response.map((record) => ({
-          staffId: undefinedIsNull(record.staff_id),
-          firstName: undefinedIsNull(record.first_name),
-          lastName: undefinedIsNull(record.last_name),
-          addressId: undefinedIsNull(record.address_id),
-          email: undefinedIsNull(record.email),
-          storeId: undefinedIsNull(record.store_id),
-          active: undefinedIsNull(record.active),
-          username: undefinedIsNull(record.username),
-          password: undefinedIsNull(record.password),
-          lastUpdate: undefinedIsNull(record.last_update),
-          picture: undefinedIsNull(record.picture),
-        }))[0];
-      }
-
-      public ByStaffId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async read(
-          parameters: Public.Tables.Staff.ByStaffId,
-        ): Promise<Public.Tables.Staff.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
-    FROM
-      public.staff 
-    WHERE
-      staff_id = ${
-        parameters.staffId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.staffId)
-      }
-    `;
           return response.map((record) => ({
             staffId: undefinedIsNull(record.staff_id),
             firstName: undefinedIsNull(record.first_name),
@@ -20349,16 +19580,58 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
 
-        async update(
-          parameters: Public.Tables.Staff.ByStaffId,
-          values: Partial<Public.Tables.Staff.Values>,
-        ): Promise<Public.Tables.Staff.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Staff.ByStaffId,
+          ): Promise<Public.Tables.Staff.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
+    FROM
+      public.staff 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    `;
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Staff.ByStaffId,
+            values: Partial<Public.Tables.Staff.Values>,
+          ): Promise<Public.Tables.Staff.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     --
     UPDATE 
       public.staff 
@@ -20405,29 +19678,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.staffId)
       }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
-          return response.map((record) => ({
-            staffId: undefinedIsNull(record.staff_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            addressId: undefinedIsNull(record.address_id),
-            email: undefinedIsNull(record.email),
-            storeId: undefinedIsNull(record.store_id),
-            active: undefinedIsNull(record.active),
-            username: undefinedIsNull(record.username),
-            password: undefinedIsNull(record.password),
-            lastUpdate: undefinedIsNull(record.last_update),
-            picture: undefinedIsNull(record.picture),
-          }))[0];
-        }
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Staff.ByStaffId,
-        ): Promise<Public.Tables.Staff.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Staff.ByStaffId,
+          ): Promise<Public.Tables.Staff.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.staff 
@@ -20438,38 +19711,38 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.staffId)
       }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
-          return response.map((record) => ({
-            staffId: undefinedIsNull(record.staff_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            addressId: undefinedIsNull(record.address_id),
-            email: undefinedIsNull(record.email),
-            storeId: undefinedIsNull(record.store_id),
-            active: undefinedIsNull(record.active),
-            username: undefinedIsNull(record.username),
-            password: undefinedIsNull(record.password),
-            lastUpdate: undefinedIsNull(record.last_update),
-            picture: undefinedIsNull(record.picture),
-          }))[0];
-        }
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Store = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Store = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Store.Values,
-      ): Promise<Public.Tables.Store.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Store.Values,
+        ): Promise<Public.Tables.Store.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Store.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Store.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.store 
@@ -20482,15 +19755,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         store_id,manager_staff_id,address_id,last_update
     `;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO store_id,manager_staff_id,address_id,last_update)
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.store (store_id,manager_staff_id,address_id,last_update)
     VALUES (${
       values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
     },${
@@ -20508,29 +19781,29 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING store_id,manager_staff_id,address_id,last_update
     `;
-        return response.map((record) => ({
-          storeId: undefinedIsNull(record.store_id),
-          managerStaffId: undefinedIsNull(record.manager_staff_id),
-          addressId: undefinedIsNull(record.address_id),
-          lastUpdate: undefinedIsNull(record.last_update),
-        }))[0];
-      }
-
-      public ByManagerStaffId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Store.ByManagerStaffId,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByManagerStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -20543,24 +19816,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     `;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Store.ByManagerStaffId,
-          values: Partial<Public.Tables.Store.Values>,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+            values: Partial<Public.Tables.Store.Values>,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.store 
@@ -20587,22 +19860,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Store.ByManagerStaffId,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.store 
@@ -20613,30 +19886,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
 
-      public ByStoreId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByStoreId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Store.ByStoreId,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Store.ByStoreId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -20649,24 +19922,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     `;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Store.ByStoreId,
-          values: Partial<Public.Tables.Store.Values>,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Store.ByStoreId,
+            values: Partial<Public.Tables.Store.Values>,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.store 
@@ -20693,22 +19966,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Store.ByStoreId,
-        ): Promise<Public.Tables.Store.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Store.ByStoreId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.store 
@@ -20719,31 +19992,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
-          }))[0];
-        }
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Payment = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Payment = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Payment.Values,
-      ): Promise<Public.Tables.Payment.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Payment.Values,
+        ): Promise<Public.Tables.Payment.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Payment.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Payment.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.payment 
@@ -20756,17 +20029,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO payment_id,customer_id,staff_id,rental_id,amount,payment_date)
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
     VALUES (${
       values.paymentId === undefined
         ? sql`DEFAULT`
@@ -20788,31 +20061,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
-        return response.map((record) => ({
-          paymentId: undefinedIsNull(record.payment_id),
-          customerId: undefinedIsNull(record.customer_id),
-          staffId: undefinedIsNull(record.staff_id),
-          rentalId: undefinedIsNull(record.rental_id),
-          amount: undefinedIsNull(record.amount),
-          paymentDate: undefinedIsNull(record.payment_date),
-        }))[0];
-      }
-
-      public ByCustomerId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Payment.ByCustomerId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByCustomerId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Payment.ByCustomerId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -20825,26 +20098,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Payment.ByCustomerId,
-          values: Partial<Public.Tables.Payment.Values>,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Payment.ByCustomerId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.payment 
@@ -20877,24 +20150,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Payment.ByCustomerId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Payment.ByCustomerId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.payment 
@@ -20905,32 +20178,32 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
 
-      public ByPaymentId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByPaymentId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Payment.ByPaymentId,
-        ): Promise<Public.Tables.Payment.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Payment.ByPaymentId,
+          ): Promise<Public.Tables.Payment.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -20943,26 +20216,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }))[0];
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Payment.ByPaymentId,
-          values: Partial<Public.Tables.Payment.Values>,
-        ): Promise<Public.Tables.Payment.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Payment.ByPaymentId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.payment 
@@ -20995,24 +20268,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }))[0];
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Payment.ByPaymentId,
-        ): Promise<Public.Tables.Payment.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Payment.ByPaymentId,
+          ): Promise<Public.Tables.Payment.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.payment 
@@ -21023,32 +20296,32 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+        })(this);
 
-      public ByRentalId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByRentalId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Payment.ByRentalId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Payment.ByRentalId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -21061,26 +20334,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Payment.ByRentalId,
-          values: Partial<Public.Tables.Payment.Values>,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Payment.ByRentalId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.payment 
@@ -21113,24 +20386,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Payment.ByRentalId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Payment.ByRentalId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.payment 
@@ -21141,32 +20414,32 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
 
-      public ByStaffId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Payment.ByStaffId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Payment.ByStaffId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -21179,26 +20452,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Payment.ByStaffId,
-          values: Partial<Public.Tables.Payment.Values>,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Payment.ByStaffId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.payment 
@@ -21231,24 +20504,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Payment.ByStaffId,
-        ): Promise<Public.Tables.Payment.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Payment.ByStaffId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.payment 
@@ -21259,33 +20532,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
-          }));
-        }
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
       })(this);
-    })(this);
 
-    public Film = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+      public Film = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-      get database() {
-        return this.hasDatabase.database;
-      }
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-      async create(
-        values: Public.Tables.Film.Values,
-      ): Promise<Public.Tables.Film.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+        async create(
+          values: Public.Tables.Film.Values,
+        ): Promise<Public.Tables.Film.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
 
-        if (Public.Tables.Film.includesPrimaryKey(values)) {
-          const response = await sql`
+          if (Public.Tables.Film.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.film 
@@ -21298,24 +20571,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }))[0];
-        }
-        const response =
-          await sql`INSERT INTO film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+          const response =
+            await sql`INSERT INTO public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
     VALUES (${
       values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
     },${
@@ -21363,50 +20636,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
-        return response.map((record) => ({
-          filmId: undefinedIsNull(record.film_id),
-          title: undefinedIsNull(record.title),
-          description: undefinedIsNull(record.description),
-          releaseYear: undefinedIsNull(record.release_year),
-          languageId: undefinedIsNull(record.language_id),
-          rentalDuration: undefinedIsNull(record.rental_duration),
-          rentalRate: undefinedIsNull(record.rental_rate),
-          length: undefinedIsNull(record.length),
-          replacementCost: undefinedIsNull(record.replacement_cost),
-          rating: undefinedIsNull(record.rating),
-          lastUpdate: undefinedIsNull(record.last_update),
-          specialFeatures: undefinedIsNull(record.special_features),
-          fulltext: undefinedIsNull(record.fulltext),
-        }))[0];
-      }
-
-      public ByFilmId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async read(
-          parameters: Public.Tables.Film.ByFilmId,
-        ): Promise<Public.Tables.Film.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
-    FROM
-      public.film 
-    WHERE
-      film_id = ${
-        parameters.filmId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.filmId)
-      }
-    `;
           return response.map((record) => ({
             filmId: undefinedIsNull(record.film_id),
             title: undefinedIsNull(record.title),
@@ -21424,16 +20653,60 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }))[0];
         }
 
-        async update(
-          parameters: Public.Tables.Film.ByFilmId,
-          values: Partial<Public.Tables.Film.Values>,
-        ): Promise<Public.Tables.Film.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public ByFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Film.ByFilmId,
+          ): Promise<Public.Tables.Film.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Film.ByFilmId,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     --
     UPDATE 
       public.film 
@@ -21490,31 +20763,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.filmId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }))[0];
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Film.ByFilmId,
-        ): Promise<Public.Tables.Film.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Film.ByFilmId,
+          ): Promise<Public.Tables.Film.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film 
@@ -21525,39 +20798,39 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.filmId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }))[0];
-        }
-      })(this);
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+        })(this);
 
-      public ByFulltext = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByFulltext = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Film.ByFulltext,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Film.ByFulltext,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -21570,33 +20843,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Film.ByFulltext,
-          values: Partial<Public.Tables.Film.Values>,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Film.ByFulltext,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film 
@@ -21653,31 +20926,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Film.ByFulltext,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Film.ByFulltext,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film 
@@ -21688,39 +20961,39 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
 
-      public ByLanguageId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByLanguageId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Film.ByLanguageId,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Film.ByLanguageId,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -21733,33 +21006,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Film.ByLanguageId,
-          values: Partial<Public.Tables.Film.Values>,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Film.ByLanguageId,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film 
@@ -21816,31 +21089,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Film.ByLanguageId,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Film.ByLanguageId,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film 
@@ -21851,39 +21124,39 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
-      })(this);
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
 
-      public ByTitle = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
+        public ByTitle = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-        get database() {
-          return this.hasDatabase.database;
-        }
+          get database() {
+            return this.hasDatabase.database;
+          }
 
-        async read(
-          parameters: Public.Tables.Film.ByTitle,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async read(
+            parameters: Public.Tables.Film.ByTitle,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -21896,33 +21169,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async update(
-          parameters: Public.Tables.Film.ByTitle,
-          values: Partial<Public.Tables.Film.Values>,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Film.ByTitle,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.film 
@@ -21979,31 +21252,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
 
-        async delete(
-          parameters: Public.Tables.Film.ByTitle,
-        ): Promise<Public.Tables.Film.Record[]> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Film.ByTitle,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.film 
@@ -22014,22 +21287,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
-          }));
-        }
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
       })(this);
     })(this);
   })(this);

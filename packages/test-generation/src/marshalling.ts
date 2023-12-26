@@ -2096,9 +2096,6 @@ export namespace PgCatalog {
         stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
         stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2107,6 +2104,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByStarelidStaattnumStainherit;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgType {
       export type Record = {
@@ -2143,9 +2141,6 @@ export namespace PgCatalog {
         typdefault: PgCatalog.Types.PgType["typdefault"] | null;
         typacl: PgCatalog.Types.PgType["typacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2156,6 +2151,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignTable {
       export type Record = {
@@ -2163,15 +2159,13 @@ export namespace PgCatalog {
         ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByFtrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAuthid {
       export type Record = {
@@ -2188,9 +2182,6 @@ export namespace PgCatalog {
         rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
         rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2200,6 +2191,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgStatisticExtData {
       export type Record = {
@@ -2214,9 +2206,6 @@ export namespace PgCatalog {
         stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
         stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
@@ -2224,6 +2213,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByStxoidStxdinherit;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgUserMapping {
       export type Record = {
@@ -2232,9 +2222,6 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.PgUserMapping["umserver"];
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2245,6 +2232,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSubscription {
       export type Record = {
@@ -2266,9 +2254,6 @@ export namespace PgCatalog {
         subpublications: PgCatalog.Types.PgSubscription["subpublications"];
         suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2279,6 +2264,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAttribute {
       export type Record = {
@@ -2309,9 +2295,6 @@ export namespace PgCatalog {
         attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
         attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2324,6 +2307,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByAttrelidAttnum;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgProc {
       export type Record = {
@@ -2358,9 +2342,6 @@ export namespace PgCatalog {
         proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
         proacl: PgCatalog.Types.PgProc["proacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2372,6 +2353,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgClass {
       export type Record = {
@@ -2409,9 +2391,6 @@ export namespace PgCatalog {
         reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
         relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2427,6 +2406,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAttrdef {
       export type Record = {
@@ -2435,9 +2415,6 @@ export namespace PgCatalog {
         adnum: PgCatalog.Types.PgAttrdef["adnum"];
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2449,6 +2426,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgConstraint {
       export type Record = {
@@ -2479,9 +2457,6 @@ export namespace PgCatalog {
         conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
         conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2507,6 +2482,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgInherits {
       export type Record = {
@@ -2515,9 +2491,6 @@ export namespace PgCatalog {
         inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
         inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -2529,6 +2502,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByInhrelidInhseqno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgIndex {
       export type Record = {
@@ -2554,9 +2528,6 @@ export namespace PgCatalog {
         indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
         indpred: PgCatalog.Types.PgIndex["indpred"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -2566,6 +2537,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOperator {
       export type Record = {
@@ -2585,9 +2557,6 @@ export namespace PgCatalog {
         oprrest: PgCatalog.Types.PgOperator["oprrest"];
         oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2600,6 +2569,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOpfamily {
       export type Record = {
@@ -2609,9 +2579,6 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
         opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2623,6 +2590,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgOpclass {
       export type Record = {
@@ -2636,9 +2604,6 @@ export namespace PgCatalog {
         opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
         opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2650,6 +2615,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAm {
       export type Record = {
@@ -2658,9 +2624,6 @@ export namespace PgCatalog {
         amhandler: PgCatalog.Types.PgAm["amhandler"];
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -2671,6 +2634,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAmop {
       export type Record = {
@@ -2684,9 +2648,6 @@ export namespace PgCatalog {
         amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
         amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -2706,6 +2667,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAmproc {
       export type Record = {
@@ -2716,9 +2678,6 @@ export namespace PgCatalog {
         amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
         amproc: PgCatalog.Types.PgAmproc["amproc"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -2732,6 +2691,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLanguage {
       export type Record = {
@@ -2745,9 +2705,6 @@ export namespace PgCatalog {
         lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
         lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -2758,6 +2715,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLargeobjectMetadata {
       export type Record = {
@@ -2765,15 +2723,13 @@ export namespace PgCatalog {
         lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAggregate {
       export type Record = {
@@ -2800,15 +2756,13 @@ export namespace PgCatalog {
         agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
         aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
       export type PrimaryKey = ByAggfnoid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgStatisticExt {
       export type Record = {
@@ -2822,9 +2776,6 @@ export namespace PgCatalog {
         stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
         stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2839,6 +2790,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgRewrite {
       export type Record = {
@@ -2851,9 +2803,6 @@ export namespace PgCatalog {
         evQual: PgCatalog.Types.PgRewrite["evQual"];
         evAction: PgCatalog.Types.PgRewrite["evAction"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -2865,6 +2814,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTrigger {
       export type Record = {
@@ -2888,9 +2838,6 @@ export namespace PgCatalog {
         tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
         tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2905,6 +2852,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgEventTrigger {
       export type Record = {
@@ -2916,9 +2864,6 @@ export namespace PgCatalog {
         evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
         evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -2929,6 +2874,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDescription {
       export type Record = {
@@ -2937,9 +2883,6 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.PgDescription["objsubid"];
         description: PgCatalog.Types.PgDescription["description"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -2948,6 +2891,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgCast {
       export type Record = {
@@ -2958,9 +2902,6 @@ export namespace PgCatalog {
         castcontext: PgCatalog.Types.PgCast["castcontext"];
         castmethod: PgCatalog.Types.PgCast["castmethod"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -2972,6 +2913,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgEnum {
       export type Record = {
@@ -2980,9 +2922,6 @@ export namespace PgCatalog {
         enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
         enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -2999,6 +2938,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgNamespace {
       export type Record = {
@@ -3007,9 +2947,6 @@ export namespace PgCatalog {
         nspowner: PgCatalog.Types.PgNamespace["nspowner"];
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -3020,6 +2957,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgConversion {
       export type Record = {
@@ -3032,9 +2970,6 @@ export namespace PgCatalog {
         conproc: PgCatalog.Types.PgConversion["conproc"];
         condefault: PgCatalog.Types.PgConversion["condefault"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -3053,6 +2988,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDepend {
       export type Record = {
@@ -3064,9 +3000,6 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
         deptype: PgCatalog.Types.PgDepend["deptype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -3081,6 +3014,7 @@ export namespace PgCatalog {
 
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDatabase {
       export type Record = {
@@ -3102,9 +3036,6 @@ export namespace PgCatalog {
         datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
         datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -3115,6 +3046,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDbRoleSetting {
       export type Record = {
@@ -3122,9 +3054,6 @@ export namespace PgCatalog {
         setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
@@ -3132,6 +3061,7 @@ export namespace PgCatalog {
       export type PrimaryKey = BySetdatabaseSetrole;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTablespace {
       export type Record = {
@@ -3141,9 +3071,6 @@ export namespace PgCatalog {
         spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
         spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3153,6 +3080,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgAuthMembers {
       export type Record = {
@@ -3164,9 +3092,6 @@ export namespace PgCatalog {
         inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
         setOption: PgCatalog.Types.PgAuthMembers["setOption"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -3188,6 +3113,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShdepend {
       export type Record = {
@@ -3199,9 +3125,6 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.PgShdepend["refobjid"];
         deptype: PgCatalog.Types.PgShdepend["deptype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -3216,6 +3139,7 @@ export namespace PgCatalog {
 
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShdescription {
       export type Record = {
@@ -3223,9 +3147,6 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.PgShdescription["classoid"];
         description: PgCatalog.Types.PgShdescription["description"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3233,6 +3154,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsConfig {
       export type Record = {
@@ -3242,9 +3164,6 @@ export namespace PgCatalog {
         cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
         cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -3256,6 +3175,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsConfigMap {
       export type Record = {
@@ -3264,9 +3184,6 @@ export namespace PgCatalog {
         mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
         mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -3275,6 +3192,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsDict {
       export type Record = {
@@ -3285,9 +3203,6 @@ export namespace PgCatalog {
         dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
         dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -3299,6 +3214,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsParser {
       export type Record = {
@@ -3311,9 +3227,6 @@ export namespace PgCatalog {
         prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
         prslextype: PgCatalog.Types.PgTsParser["prslextype"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3324,6 +3237,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTsTemplate {
       export type Record = {
@@ -3333,9 +3247,6 @@ export namespace PgCatalog {
         tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
         tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3346,6 +3257,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgExtension {
       export type Record = {
@@ -3358,9 +3270,6 @@ export namespace PgCatalog {
         extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
         extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -3371,6 +3280,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignDataWrapper {
       export type Record = {
@@ -3382,9 +3292,6 @@ export namespace PgCatalog {
         fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
         fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -3395,6 +3302,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgForeignServer {
       export type Record = {
@@ -3407,9 +3315,6 @@ export namespace PgCatalog {
         srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
         srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3419,6 +3324,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPolicy {
       export type Record = {
@@ -3431,9 +3337,6 @@ export namespace PgCatalog {
         polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
         polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3444,15 +3347,13 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgReplicationOrigin {
       export type Record = {
         roident: PgCatalog.Types.PgReplicationOrigin["roident"];
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -3462,6 +3363,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgDefaultAcl {
       export type Record = {
@@ -3471,9 +3373,6 @@ export namespace PgCatalog {
         defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
         defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -3486,6 +3385,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgInitPrivs {
       export type Record = {
@@ -3495,9 +3395,6 @@ export namespace PgCatalog {
         privtype: PgCatalog.Types.PgInitPrivs["privtype"];
         initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3506,6 +3403,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSeclabel {
       export type Record = {
@@ -3515,9 +3413,6 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgSeclabel["provider"];
         label: PgCatalog.Types.PgSeclabel["label"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3527,6 +3422,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidObjsubidProvider;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgShseclabel {
       export type Record = {
@@ -3535,9 +3431,6 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgShseclabel["provider"];
         label: PgCatalog.Types.PgShseclabel["label"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3546,6 +3439,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByObjoidClassoidProvider;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgCollation {
       export type Record = {
@@ -3562,9 +3456,6 @@ export namespace PgCatalog {
         collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
         collversion: PgCatalog.Types.PgCollation["collversion"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -3577,6 +3468,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgParameterAcl {
       export type Record = {
@@ -3584,9 +3476,6 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.PgParameterAcl["parname"];
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3596,6 +3485,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPartitionedTable {
       export type Record = {
@@ -3608,15 +3498,13 @@ export namespace PgCatalog {
         partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
         partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = ByPartrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgRange {
       export type Record = {
@@ -3628,9 +3516,6 @@ export namespace PgCatalog {
         rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
         rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -3641,6 +3526,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByRngtypid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgTransform {
       export type Record = {
@@ -3650,9 +3536,6 @@ export namespace PgCatalog {
         trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
         trftosql: PgCatalog.Types.PgTransform["trftosql"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3663,6 +3546,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSequence {
       export type Record = {
@@ -3675,15 +3559,13 @@ export namespace PgCatalog {
         seqcache: PgCatalog.Types.PgSequence["seqcache"];
         seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
       export type PrimaryKey = BySeqrelid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublication {
       export type Record = {
@@ -3697,9 +3579,6 @@ export namespace PgCatalog {
         pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
         pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3709,6 +3588,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublicationNamespace {
       export type Record = {
@@ -3716,9 +3596,6 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3729,6 +3606,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgPublicationRel {
       export type Record = {
@@ -3738,9 +3616,6 @@ export namespace PgCatalog {
         prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
         prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3755,6 +3630,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgSubscriptionRel {
       export type Record = {
@@ -3763,9 +3639,6 @@ export namespace PgCatalog {
         srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
         srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
@@ -3773,6 +3646,7 @@ export namespace PgCatalog {
       export type PrimaryKey = BySrrelidSrsubid;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace PgLargeobject {
       export type Record = {
@@ -3780,9 +3654,6 @@ export namespace PgCatalog {
         pageno: PgCatalog.Types.PgLargeobject["pageno"];
         data: PgCatalog.Types.PgLargeobject["data"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -3790,6 +3661,7 @@ export namespace PgCatalog {
       export type PrimaryKey = ByLoidPageno;
 
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -4772,11 +4644,9 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlFeatures["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlImplementationInfo {
       export type Record = {
@@ -4796,11 +4666,9 @@ export namespace InformationSchema {
           | InformationSchema.Types.SqlImplementationInfo["comments"]
           | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlParts {
       export type Record = {
@@ -4810,11 +4678,9 @@ export namespace InformationSchema {
         isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
         comments: InformationSchema.Types.SqlParts["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
     export namespace SqlSizing {
       export type Record = {
@@ -4825,11 +4691,9 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlSizing["comments"] | null;
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -5110,15 +4974,13 @@ export namespace Public {
       export type Record = {
         slugId: Public.Types.Slug["slugId"];
       };
-
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-
       export type BySlugId = {
         slugId: PgCatalog.Types.Int4;
       };
       export type PrimaryKey = BySlugId;
 
       export type Optional = Pick<Record, "slugId">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
 }
@@ -9881,644 +9743,196 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatistic.Create.Values
-            PgCatalog.Types.PgStatistic.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgType {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgType.Create.Values
-            PgCatalog.Types.PgType.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignTable {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignTable.Create.Values
-            PgCatalog.Types.PgForeignTable.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAuthid {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthid.Create.Values
-            PgCatalog.Types.PgAuthid.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgStatisticExtData {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExtData.Create.Values
-            PgCatalog.Types.PgStatisticExtData.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgUserMapping {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgUserMapping.Create.Values
-            PgCatalog.Types.PgUserMapping.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSubscription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscription.Create.Values
-            PgCatalog.Types.PgSubscription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAttribute {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttribute.Create.Values
-            PgCatalog.Types.PgAttribute.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgProc {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgProc.Create.Values
-            PgCatalog.Types.PgProc.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgClass {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgClass.Create.Values
-            PgCatalog.Types.PgClass.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAttrdef {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAttrdef.Create.Values
-            PgCatalog.Types.PgAttrdef.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgConstraint {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConstraint.Create.Values
-            PgCatalog.Types.PgConstraint.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgInherits {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInherits.Create.Values
-            PgCatalog.Types.PgInherits.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgIndex {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgIndex.Create.Values
-            PgCatalog.Types.PgIndex.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOperator {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOperator.Create.Values
-            PgCatalog.Types.PgOperator.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOpfamily {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpfamily.Create.Values
-            PgCatalog.Types.PgOpfamily.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgOpclass {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgOpclass.Create.Values
-            PgCatalog.Types.PgOpclass.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAm {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAm.Create.Values
-            PgCatalog.Types.PgAm.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAmop {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmop.Create.Values
-            PgCatalog.Types.PgAmop.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAmproc {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAmproc.Create.Values
-            PgCatalog.Types.PgAmproc.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLanguage {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLanguage.Create.Values
-            PgCatalog.Types.PgLanguage.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLargeobjectMetadata {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobjectMetadata.Create.Values
-            PgCatalog.Types.PgLargeobjectMetadata.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAggregate {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAggregate.Create.Values
-            PgCatalog.Types.PgAggregate.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgStatisticExt {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgStatisticExt.Create.Values
-            PgCatalog.Types.PgStatisticExt.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgRewrite {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRewrite.Create.Values
-            PgCatalog.Types.PgRewrite.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTrigger {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTrigger.Create.Values
-            PgCatalog.Types.PgTrigger.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgEventTrigger {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEventTrigger.Create.Values
-            PgCatalog.Types.PgEventTrigger.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDescription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDescription.Create.Values
-            PgCatalog.Types.PgDescription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgCast {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCast.Create.Values
-            PgCatalog.Types.PgCast.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgEnum {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgEnum.Create.Values
-            PgCatalog.Types.PgEnum.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgNamespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgNamespace.Create.Values
-            PgCatalog.Types.PgNamespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgConversion {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgConversion.Create.Values
-            PgCatalog.Types.PgConversion.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDepend {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDepend.Create.Values
-            PgCatalog.Types.PgDepend.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDatabase {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDatabase.Create.Values
-            PgCatalog.Types.PgDatabase.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDbRoleSetting {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDbRoleSetting.Create.Values
-            PgCatalog.Types.PgDbRoleSetting.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTablespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTablespace.Create.Values
-            PgCatalog.Types.PgTablespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgAuthMembers {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgAuthMembers.Create.Values
-            PgCatalog.Types.PgAuthMembers.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShdepend {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdepend.Create.Values
-            PgCatalog.Types.PgShdepend.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShdescription {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShdescription.Create.Values
-            PgCatalog.Types.PgShdescription.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsConfig {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfig.Create.Values
-            PgCatalog.Types.PgTsConfig.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsConfigMap {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsConfigMap.Create.Values
-            PgCatalog.Types.PgTsConfigMap.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsDict {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsDict.Create.Values
-            PgCatalog.Types.PgTsDict.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsParser {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsParser.Create.Values
-            PgCatalog.Types.PgTsParser.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTsTemplate {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTsTemplate.Create.Values
-            PgCatalog.Types.PgTsTemplate.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgExtension {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgExtension.Create.Values
-            PgCatalog.Types.PgExtension.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignDataWrapper {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignDataWrapper.Create.Values
-            PgCatalog.Types.PgForeignDataWrapper.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgForeignServer {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgForeignServer.Create.Values
-            PgCatalog.Types.PgForeignServer.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPolicy {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPolicy.Create.Values
-            PgCatalog.Types.PgPolicy.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgReplicationOrigin {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgReplicationOrigin.Create.Values
-            PgCatalog.Types.PgReplicationOrigin.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgDefaultAcl {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgDefaultAcl.Create.Values
-            PgCatalog.Types.PgDefaultAcl.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgInitPrivs {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgInitPrivs.Create.Values
-            PgCatalog.Types.PgInitPrivs.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSeclabel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSeclabel.Create.Values
-            PgCatalog.Types.PgSeclabel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgShseclabel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgShseclabel.Create.Values
-            PgCatalog.Types.PgShseclabel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgCollation {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgCollation.Create.Values
-            PgCatalog.Types.PgCollation.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgParameterAcl {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgParameterAcl.Create.Values
-            PgCatalog.Types.PgParameterAcl.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPartitionedTable {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPartitionedTable.Create.Values
-            PgCatalog.Types.PgPartitionedTable.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgRange {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgRange.Create.Values
-            PgCatalog.Types.PgRange.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgTransform {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgTransform.Create.Values
-            PgCatalog.Types.PgTransform.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSequence {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSequence.Create.Values
-            PgCatalog.Types.PgSequence.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublication {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublication.Create.Values
-            PgCatalog.Types.PgPublication.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublicationNamespace {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationNamespace.Create.Values
-            PgCatalog.Types.PgPublicationNamespace.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgPublicationRel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgPublicationRel.Create.Values
-            PgCatalog.Types.PgPublicationRel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgSubscriptionRel {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgSubscriptionRel.Create.Values
-            PgCatalog.Types.PgSubscriptionRel.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace PgLargeobject {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType PgCatalog.Tables.PgLargeobject.Create.Values
-            PgCatalog.Types.PgLargeobject.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -11938,44 +11352,16 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlFeatures.Create.Values
-            InformationSchema.Types.SqlFeatures.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlImplementationInfo {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlImplementationInfo.Create.Values
-            InformationSchema.Types.SqlImplementationInfo.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlParts {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlParts.Create.Values
-            InformationSchema.Types.SqlParts.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
     export namespace SqlSizing {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType InformationSchema.Tables.SqlSizing.Create.Values
-            InformationSchema.Types.SqlSizing.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -12591,14 +11977,7 @@ export namespace Public {
   }
   export namespace Tables {
     export namespace Slug {
-      export namespace Create {
-        export namespace Values {
-          export function parse(from: string | null) {
-            // AliasType Public.Tables.Slug.Create.Values
-            Public.Types.Slug.parse(from);
-          }
-        }
-      }
+      export namespace Create {}
     }
   }
 }
@@ -16150,473 +15529,478 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async cubeIn(parameters: Public.Procedures.CubeIn.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+    public Procedures = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async cubeIn(parameters: Public.Procedures.CubeIn.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_in( ${typed[2275](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_in as unknown as Public.Procedures.CubeIn.Results;
-      return responseBody;
-    }
-    async cube_9c45(parameters: Public.Procedures.Cube_9c45.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_in as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cube_9c45(parameters: Public.Procedures.Cube_9c45.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[1022](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1022](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.Cube_9c45.Results;
-      return responseBody;
-    }
-    async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[1022](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.Cube_2e6d.Results;
-      return responseBody;
-    }
-    async cubeOut(parameters: Public.Procedures.CubeOut.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeOut(parameters: Public.Procedures.CubeOut.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_out( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_out as unknown as Public.Procedures.CubeOut.Results;
-      return responseBody;
-    }
-    async cubeEq(parameters: Public.Procedures.CubeEq.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_out as unknown as PgCatalog.Types.Cstring;
+        return responseBody;
+      }
+      async cubeEq(parameters: Public.Procedures.CubeEq.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_eq( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_eq as unknown as Public.Procedures.CubeEq.Results;
-      return responseBody;
-    }
-    async cubeNe(parameters: Public.Procedures.CubeNe.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_eq as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeNe(parameters: Public.Procedures.CubeNe.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_ne( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ne as unknown as Public.Procedures.CubeNe.Results;
-      return responseBody;
-    }
-    async cubeLt(parameters: Public.Procedures.CubeLt.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_ne as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeLt(parameters: Public.Procedures.CubeLt.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_lt( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_lt as unknown as Public.Procedures.CubeLt.Results;
-      return responseBody;
-    }
-    async cubeGt(parameters: Public.Procedures.CubeGt.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_lt as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeGt(parameters: Public.Procedures.CubeGt.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_gt( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_gt as unknown as Public.Procedures.CubeGt.Results;
-      return responseBody;
-    }
-    async cubeLe(parameters: Public.Procedures.CubeLe.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_gt as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeLe(parameters: Public.Procedures.CubeLe.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_le( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_le as unknown as Public.Procedures.CubeLe.Results;
-      return responseBody;
-    }
-    async cubeGe(parameters: Public.Procedures.CubeGe.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_le as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeGe(parameters: Public.Procedures.CubeGe.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_ge( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ge as unknown as Public.Procedures.CubeGe.Results;
-      return responseBody;
-    }
-    async cubeCmp(parameters: Public.Procedures.CubeCmp.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_ge as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeCmp(parameters: Public.Procedures.CubeCmp.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_cmp( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_cmp as unknown as Public.Procedures.CubeCmp.Results;
-      return responseBody;
-    }
-    async cubeContains(parameters: Public.Procedures.CubeContains.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_cmp as unknown as PgCatalog.Types.Int4;
+        return responseBody;
+      }
+      async cubeContains(
+        parameters: Public.Procedures.CubeContains.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_contains( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_contains as unknown as Public.Procedures.CubeContains.Results;
-      return responseBody;
-    }
-    async cubeContained(
-      parameters: Public.Procedures.CubeContained.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_contains as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeContained(
+        parameters: Public.Procedures.CubeContained.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_contained( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_contained as unknown as Public.Procedures.CubeContained.Results;
-      return responseBody;
-    }
-    async cubeOverlap(parameters: Public.Procedures.CubeOverlap.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_contained as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeOverlap(parameters: Public.Procedures.CubeOverlap.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_overlap( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_overlap as unknown as Public.Procedures.CubeOverlap.Results;
-      return responseBody;
-    }
-    async cubeUnion(parameters: Public.Procedures.CubeUnion.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_overlap as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeUnion(parameters: Public.Procedures.CubeUnion.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_union( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_union as unknown as Public.Procedures.CubeUnion.Results;
-      return responseBody;
-    }
-    async cubeInter(parameters: Public.Procedures.CubeInter.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_union as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeInter(parameters: Public.Procedures.CubeInter.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_inter( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_inter as unknown as Public.Procedures.CubeInter.Results;
-      return responseBody;
-    }
-    async cubeSize(parameters: Public.Procedures.CubeSize.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_inter as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeSize(parameters: Public.Procedures.CubeSize.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_size( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_size as unknown as Public.Procedures.CubeSize.Results;
-      return responseBody;
-    }
-    async cubeSubset(parameters: Public.Procedures.CubeSubset.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_size as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeSubset(parameters: Public.Procedures.CubeSubset.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_subset( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1007](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_subset as unknown as Public.Procedures.CubeSubset.Results;
-      return responseBody;
-    }
-    async cubeDistance(parameters: Public.Procedures.CubeDistance.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_subset as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeDistance(
+        parameters: Public.Procedures.CubeDistance.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_distance( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_distance as unknown as Public.Procedures.CubeDistance.Results;
-      return responseBody;
-    }
-    async distanceChebyshev(
-      parameters: Public.Procedures.DistanceChebyshev.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_distance as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async distanceChebyshev(
+        parameters: Public.Procedures.DistanceChebyshev.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.distance_chebyshev( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .distance_chebyshev as unknown as Public.Procedures.DistanceChebyshev.Results;
-      return responseBody;
-    }
-    async distanceTaxicab(
-      parameters: Public.Procedures.DistanceTaxicab.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .distance_chebyshev as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async distanceTaxicab(
+        parameters: Public.Procedures.DistanceTaxicab.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.distance_taxicab( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .distance_taxicab as unknown as Public.Procedures.DistanceTaxicab.Results;
-      return responseBody;
-    }
-    async cubeDim(parameters: Public.Procedures.CubeDim.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .distance_taxicab as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeDim(parameters: Public.Procedures.CubeDim.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_dim( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_dim as unknown as Public.Procedures.CubeDim.Results;
-      return responseBody;
-    }
-    async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_dim as unknown as PgCatalog.Types.Int4;
+        return responseBody;
+      }
+      async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_ll_coord( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ll_coord as unknown as Public.Procedures.CubeLlCoord.Results;
-      return responseBody;
-    }
-    async cubeUrCoord(parameters: Public.Procedures.CubeUrCoord.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_ll_coord as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeUrCoord(parameters: Public.Procedures.CubeUrCoord.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_ur_coord( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_ur_coord as unknown as Public.Procedures.CubeUrCoord.Results;
-      return responseBody;
-    }
-    async cubeCoord(parameters: Public.Procedures.CubeCoord.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_ur_coord as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeCoord(parameters: Public.Procedures.CubeCoord.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_coord( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_coord as unknown as Public.Procedures.CubeCoord.Results;
-      return responseBody;
-    }
-    async cubeCoordLlur(
-      parameters: Public.Procedures.CubeCoordLlur.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_coord as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeCoordLlur(
+        parameters: Public.Procedures.CubeCoordLlur.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_coord_llur( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_coord_llur as unknown as Public.Procedures.CubeCoordLlur.Results;
-      return responseBody;
-    }
-    async cubeA5b3(parameters: Public.Procedures.CubeA5b3.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_coord_llur as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeA5b3(parameters: Public.Procedures.CubeA5b3.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[701](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.CubeA5b3.Results;
-      return responseBody;
-    }
-    async cube_0aec(parameters: Public.Procedures.Cube_0aec.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cube_0aec(parameters: Public.Procedures.Cube_0aec.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[701](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.Cube_0aec.Results;
-      return responseBody;
-    }
-    async cube_39d2(parameters: Public.Procedures.Cube_39d2.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cube_39d2(parameters: Public.Procedures.Cube_39d2.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.Cube_39d2.Results;
-      return responseBody;
-    }
-    async cubeA7eb(parameters: Public.Procedures.CubeA7eb.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeA7eb(parameters: Public.Procedures.CubeA7eb.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_2))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube as unknown as Public.Procedures.CubeA7eb.Results;
-      return responseBody;
-    }
-    async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0].cube as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_is_point( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_is_point as unknown as Public.Procedures.CubeIsPoint.Results;
-      return responseBody;
-    }
-    async cubeEnlarge(parameters: Public.Procedures.CubeEnlarge.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_is_point as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async cubeEnlarge(parameters: Public.Procedures.CubeEnlarge.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_enlarge( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_2))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_enlarge as unknown as Public.Procedures.CubeEnlarge.Results;
-      return responseBody;
-    }
-    async gCubeConsistent(
-      parameters: Public.Procedures.GCubeConsistent.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_enlarge as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async gCubeConsistent(
+        parameters: Public.Procedures.GCubeConsistent.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_consistent( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
@@ -16627,80 +16011,82 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   )}, ${typed[26](
                     undefinedIsNull(parameters.argument_3),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_consistent as unknown as Public.Procedures.GCubeConsistent.Results;
-      return responseBody;
-    }
-    async gCubePenalty(parameters: Public.Procedures.GCubePenalty.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_consistent as unknown as PgCatalog.Types.Bool;
+        return responseBody;
+      }
+      async gCubePenalty(
+        parameters: Public.Procedures.GCubePenalty.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_penalty( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[2281](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_penalty as unknown as Public.Procedures.GCubePenalty.Results;
-      return responseBody;
-    }
-    async gCubePicksplit(
-      parameters: Public.Procedures.GCubePicksplit.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_penalty as unknown as PgCatalog.Types.Internal;
+        return responseBody;
+      }
+      async gCubePicksplit(
+        parameters: Public.Procedures.GCubePicksplit.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_picksplit( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_picksplit as unknown as Public.Procedures.GCubePicksplit.Results;
-      return responseBody;
-    }
-    async gCubeUnion(parameters: Public.Procedures.GCubeUnion.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_picksplit as unknown as PgCatalog.Types.Internal;
+        return responseBody;
+      }
+      async gCubeUnion(parameters: Public.Procedures.GCubeUnion.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_union( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_union as unknown as Public.Procedures.GCubeUnion.Results;
-      return responseBody;
-    }
-    async gCubeSame(parameters: Public.Procedures.GCubeSame.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_union as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async gCubeSame(parameters: Public.Procedures.GCubeSame.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_same( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[25451](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_same as unknown as Public.Procedures.GCubeSame.Results;
-      return responseBody;
-    }
-    async gCubeDistance(
-      parameters: Public.Procedures.GCubeDistance.Parameters,
-    ) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_same as unknown as PgCatalog.Types.Internal;
+        return responseBody;
+      }
+      async gCubeDistance(
+        parameters: Public.Procedures.GCubeDistance.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.g_cube_distance( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
@@ -16711,55 +16097,63 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   )}, ${typed[26](
                     undefinedIsNull(parameters.argument_3),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .g_cube_distance as unknown as Public.Procedures.GCubeDistance.Results;
-      return responseBody;
-    }
-    async cubeRecv(parameters: Public.Procedures.CubeRecv.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .g_cube_distance as unknown as PgCatalog.Types.Float8;
+        return responseBody;
+      }
+      async cubeRecv(parameters: Public.Procedures.CubeRecv.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_recv( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_recv as unknown as Public.Procedures.CubeRecv.Results;
-      return responseBody;
-    }
-    async cubeSend(parameters: Public.Procedures.CubeSend.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_recv as unknown as Public.Types.Cube;
+        return responseBody;
+      }
+      async cubeSend(parameters: Public.Procedures.CubeSend.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   public.cube_send( ${typed[25451](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .cube_send as unknown as Public.Procedures.CubeSend.Results;
-      return responseBody;
-    }
+        const results = response;
+        const responseBody = results?.[0]
+          .cube_send as unknown as PgCatalog.Types.Bytea;
+        return responseBody;
+      }
+    })(this);
 
-    public Slug = new (class implements HasDatabase {
+    public Tables = new (class implements HasDatabase {
       constructor(private hasDatabase: HasDatabase) {}
 
       get database() {
         return this.hasDatabase.database;
       }
 
-      async create(
-        values: Public.Tables.Slug.Values,
-      ): Promise<Public.Tables.Slug.Record> {
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
+      public Slug = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-        if (Public.Tables.Slug.includesPrimaryKey(values)) {
-          const response = await sql`
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Slug.Values,
+        ): Promise<Public.Tables.Slug.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (Public.Tables.Slug.includesPrimaryKey(values)) {
+            const response = await sql`
       --
       INSERT INTO
         public.slug 
@@ -16772,36 +16166,36 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         slug_id
     `;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }))[0];
-        }
-        const response = await sql`INSERT INTO slug_id)
+            return response.map((record) => ({
+              slugId: undefinedIsNull(record.slug_id),
+            }))[0];
+          }
+          const response = await sql`INSERT INTO public.slug (slug_id)
     VALUES (${
       values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
     })
     RETURNING slug_id
     `;
-        return response.map((record) => ({
-          slugId: undefinedIsNull(record.slug_id),
-        }))[0];
-      }
-
-      public BySlugId = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+          return response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }))[0];
         }
 
-        async read(
-          parameters: Public.Tables.Slug.BySlugId,
-        ): Promise<Public.Tables.Slug.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+        public BySlugId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-          const response = await sql`
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Slug.BySlugId,
+          ): Promise<Public.Tables.Slug.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
     -- 
     SELECT 
       slug_id 
@@ -16814,21 +16208,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     `;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }))[0];
-        }
+            return response.map((record) => ({
+              slugId: undefinedIsNull(record.slug_id),
+            }))[0];
+          }
 
-        async update(
-          parameters: Public.Tables.Slug.BySlugId,
-          values: Partial<Public.Tables.Slug.Values>,
-        ): Promise<Public.Tables.Slug.Record> {
-          console.assert(parameters);
-          console.assert(values);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async update(
+            parameters: Public.Tables.Slug.BySlugId,
+            values: Partial<Public.Tables.Slug.Values>,
+          ): Promise<Public.Tables.Slug.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     UPDATE 
       public.slug 
@@ -16843,19 +16237,19 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     RETURNING slug_id`;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }))[0];
-        }
+            return response.map((record) => ({
+              slugId: undefinedIsNull(record.slug_id),
+            }))[0];
+          }
 
-        async delete(
-          parameters: Public.Tables.Slug.BySlugId,
-        ): Promise<Public.Tables.Slug.Record> {
-          console.assert(parameters);
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
+          async delete(
+            parameters: Public.Tables.Slug.BySlugId,
+          ): Promise<Public.Tables.Slug.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-          const response = await sql`
+            const response = await sql`
     --
     DELETE FROM 
       public.slug 
@@ -16866,10 +16260,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     RETURNING slug_id`;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }))[0];
-        }
+            return response.map((record) => ({
+              slugId: undefinedIsNull(record.slug_id),
+            }))[0];
+          }
+        })(this);
       })(this);
     })(this);
   })(this);
@@ -16881,117 +16276,135 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
-    async echo(parameters: Api.Procedures.Echo.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+    public Procedures = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async echo(parameters: Api.Procedures.Echo.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .echo as unknown as Api.Procedures.Echo.Results;
-      return responseBody;
-    }
-    async echoSet(parameters: Api.Procedures.EchoSet.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .echo as unknown as PgCatalog.Types.Text;
+        return responseBody;
+      }
+      async echoSet(parameters: Api.Procedures.EchoSet.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_set(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_set,
-      ) as unknown as Api.Procedures.EchoSet.Results[];
-      return responseBody;
-    }
-    async echoTable(parameters: Api.Procedures.EchoTable.Parameters) {
-      const parseResult = (
-        context: Context,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        result: any,
-      ) => {
-        return context.procTypes[25549].parseFromPostgresIfRecord(
-          context,
-          result,
-        ) as unknown as Api.Procedures.EchoTable.Results;
-      };
+        const results = response;
+        const responseBody = results.map(
+          (x) => x.echo_set,
+        ) as unknown as PgCatalog.Types.Text[];
+        return responseBody;
+      }
+      async echoTable(parameters: Api.Procedures.EchoTable.Parameters) {
+        const parseResult = (
+          context: Context,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          result: any,
+        ) => {
+          return context.procTypes[25549].parseFromPostgresIfRecord(
+            context,
+            result,
+          ) as unknown as Api.Types.EchoTableResults;
+        };
 
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_table(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results.map((x) =>
-        parseResult(this.database.context, x.echo_table),
-      ) as unknown as Api.Procedures.EchoTable.Results[];
-      return responseBody;
-    }
-    async echoType(parameters: Api.Procedures.EchoType.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results.map((x) =>
+          parseResult(this.database.context, x.echo_table),
+        ) as unknown as Api.Types.EchoTableResults[];
+        return responseBody;
+      }
+      async echoType(parameters: Api.Procedures.EchoType.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_type(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type as unknown as Api.Procedures.EchoType.Results;
-      return responseBody;
-    }
-    async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .echo_type as unknown as Api.Types.EchoType;
+        return responseBody;
+      }
+      async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_type_array(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_array as unknown as Api.Procedures.EchoTypeArray.Results;
-      return responseBody;
-    }
-    async echoTypeNested(parameters: Api.Procedures.EchoTypeNested.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .echo_type_array as unknown as Api.Types.EchoTypeArray;
+        return responseBody;
+      }
+      async echoTypeNested(
+        parameters: Api.Procedures.EchoTypeNested.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_type_nested(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results?.[0]
-        .echo_type_nested as unknown as Api.Procedures.EchoTypeNested.Results;
-      return responseBody;
-    }
-    async echoTypeSet(parameters: Api.Procedures.EchoTypeSet.Parameters) {
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const response = await sql`
+        const results = response;
+        const responseBody = results?.[0]
+          .echo_type_nested as unknown as Api.Types.EchoTypeNested;
+        return responseBody;
+      }
+      async echoTypeSet(parameters: Api.Procedures.EchoTypeSet.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
                   SELECT
                   api.echo_type_set(message => ${typed[25](
                     undefinedIsNull(parameters.message),
                   )})`;
-      const results = response;
-      const responseBody = results.map(
-        (x) => x.echo_type_set,
-      ) as unknown as Api.Procedures.EchoTypeSet.Results[];
-      return responseBody;
-    }
+        const results = response;
+        const responseBody = results.map(
+          (x) => x.echo_type_set,
+        ) as unknown as Api.Types.EchoType[];
+        return responseBody;
+      }
+    })(this);
+
+    public Tables = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+    })(this);
   })(this);
 }

@@ -8,7 +8,7 @@ const database = await Database.connect(
 // update -- auto commits when the block exists
 // this is a no-news-is-good-news transaction approach
 const updatedCustomer = await database.withTransaction(async (db) => {
-  return await db.Public.Customer.ByCustomerId.update(
+  return await db.Public.Tables.Customer.ByCustomerId.update(
     {
       customerId: 1,
     },
@@ -20,7 +20,7 @@ console.log(updatedCustomer);
 // or to not update in a 'failed' transaction
 try {
   await database.withTransaction(async (db) => {
-    await db.Public.Customer.ByCustomerId.update(
+    await db.Public.Tables.Customer.ByCustomerId.update(
       {
         customerId: 1,
       },
@@ -33,9 +33,10 @@ try {
 }
 
 // and let's verify that
-const notUpdatedCustomer = await database.Public.Customer.ByCustomerId.read({
-  customerId: 1,
-});
+const notUpdatedCustomer =
+  await database.Public.Tables.Customer.ByCustomerId.read({
+    customerId: 1,
+  });
 console.log(notUpdatedCustomer);
 
 await database.disconnect();

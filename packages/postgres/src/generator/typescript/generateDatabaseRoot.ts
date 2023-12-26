@@ -135,11 +135,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           return `}`;
         },
       },
+      [ASTKind.Procedures]: NestedNamedClassVisitor,
       [ASTKind.Procedure]: {
         before: async (_, node) => {
-          const resultType = `${node.resultsType?.typescriptNamespacedName}${
-            node.returnsMany ? "[]" : ""
-          }`;
+          const resultType = `${node.resultsResolvedType
+            ?.typescriptNamespacedName}${node.returnsMany ? "[]" : ""}`;
           // function call start, passing in parameters
           const generationBuffer = [
             ` async ${node.typescriptPropertyName}(parameters : ${node.argumentsType?.typescriptNamespacedName}){`,
@@ -159,7 +159,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             const parseResult = (context: Context,
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               result: any)  => {
-              return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsType?.typescriptNamespacedName};
+              return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsResolvedType?.typescriptNamespacedName};
             } 
           `);
           }
@@ -194,6 +194,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         },
       },
       // tables and indexes host AutoCRUD
+      [ASTKind.Tables]: NestedNamedClassVisitor,
       [ASTKind.Table]: NestedNamedClassVisitor,
       [ASTKind.Index]: NestedNamedClassVisitor,
 

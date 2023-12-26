@@ -19,36 +19,36 @@ describe("The database can marshall complex types", () => {
     await db.disconnect();
   });
   it("that are from an echo function", async () => {
-    const ret = await db.Api.echo({ message: "Hi" });
+    const ret = await db.Api.Procedures.echo({ message: "Hi" });
     expect(ret).toEqual("Hi");
   });
   it("that are from an echoset function", async () => {
-    const ret = await db.Api.echoSet({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoSet({ message: "Hi" });
     expect(ret).toMatchObject(["Hi"]);
   });
   it("that are from an echotable function", async () => {
-    const ret = await db.Api.echoTable({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoTable({ message: "Hi" });
     expect(ret).toMatchObject([{ echomessage: "Hi" }]);
   });
   it("that are from an echotype function", async () => {
-    const ret = await db.Api.echoType({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoType({ message: "Hi" });
     expect(ret.echomessage).toEqual("Hi");
     expect(ret.at).toBeTruthy();
   });
   it("that are from an echotype function", async () => {
-    const ret = await db.Api.echoTypeArray({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoTypeArray({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();
   });
   it("that are from an echotypenested function", async () => {
-    const ret = await db.Api.echoTypeNested({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoTypeNested({ message: "Hi" });
     expect(ret.echoes?.length).toEqual(1);
     expect(ret.echoes[0].echomessage).toEqual("Hi");
     expect(ret.echoes[0].at).toBeTruthy();
   });
   it("that are from an echotypeset function", async () => {
-    const ret = await db.Api.echoTypeSet({ message: "Hi" });
+    const ret = await db.Api.Procedures.echoTypeSet({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();

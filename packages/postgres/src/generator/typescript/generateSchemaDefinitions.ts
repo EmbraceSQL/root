@@ -49,19 +49,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
   const TypeDefiner = {
     before: async (context: GC, node: AbstractTypeNode) => {
-      if (
-        isNodeType(node, ASTKind.AliasType) &&
-        node.onType?.kind === ASTKind.CreateOperation &&
-        node.name === VALUES
-      ) {
-        // version for use when passed as `values` -- allows passing
-        // the minimum number of properties
-        return `
-        export type ${pascalCase(
-          VALUES,
-        )} = PartiallyOptional<Record, Optional & PrimaryKey>;
-        `;
-      }
       return `export type ${
         node.typescriptName
       } = ${node.parser.typescriptTypeDefinition(context)};`;
@@ -129,6 +116,10 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
                   .map((c) => `"${c.typescriptPropertyName}"`)
                   .join("|") || "never"
               }>`,
+              // values type -- used in create and update
+              `export type ${pascalCase(
+                VALUES,
+              )} = PartiallyOptional<Record, Optional & PrimaryKey>`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");
           },

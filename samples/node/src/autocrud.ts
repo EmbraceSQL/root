@@ -5,31 +5,31 @@ const database = await Database.connect(
   "postgres://postgres:postgres@localhost:5432/dvdrental",
 );
 // (C) creating a new record
-const theBob = await database.Public.Actor.create({
+const theBob = await database.Public.Tables.Actor.create({
   firstName: "Bob",
   lastName: "Hope",
 });
 console.log(theBob);
 // (R) read by primary key
-const theBobAgain = await database.Public.Actor.ByActorId.read({
+const theBobAgain = await database.Public.Tables.Actor.ByActorId.read({
   actorId: theBob.actorId,
 });
 console.log(theBobAgain);
 
 // (U) or upserting -- no new record, turns into an update
 theBob.firstName = "Robert";
-const theRobert = await database.Public.Actor.create(theBob);
+const theRobert = await database.Public.Tables.Actor.create(theBob);
 console.log(theRobert);
 
 // (U) or good old fashioned update by key
-const theRoberto = await database.Public.Actor.ByActorId.update(
+const theRoberto = await database.Public.Tables.Actor.ByActorId.update(
   { actorId: theRobert.actorId },
   { firstName: "Roberto" },
 );
 console.log(theRoberto);
 
 // (D) finally delete
-const deleted = await database.Public.Actor.ByActorId.delete({
+const deleted = await database.Public.Tables.Actor.ByActorId.delete({
   actorId: theRoberto.actorId,
 });
 // the modified record is always returned -- which is very convenient

@@ -68,7 +68,7 @@ export const CreateOperation = {
     }
 
     // default / fallthrough case when no primary key is included
-    const sql = `INSERT INTO ${sqlColumnNames})
+    const sql = `INSERT INTO ${node.table.databaseName} (${sqlColumnNames})
     VALUES (${node.table.type.attributes
       .map((a) => postgresValueExpression(context, a, VALUES))
       .join(",")})

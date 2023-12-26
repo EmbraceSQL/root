@@ -567,18 +567,22 @@ export abstract class OperationNode extends ContainerNode {
   }
 
   get valuesType() {
-    return this.children
-      .filter<CompositeTypeNode>(
-        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
+    const typeNode = this.children
+      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
+        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
       )
       .find((c) => c.name === VALUES);
+    // resolve type alias
+    return typeNode?.kind === ASTKind.AliasType
+      ? (typeNode as AliasTypeNode).type
+      : typeNode;
   }
 }
 
 /**
  * Function like operations -- scripts and procedures.
  */
-abstract class FunctionOperationNode extends OperationNode {
+export abstract class FunctionOperationNode extends OperationNode {
   /**
    * Operations have results, which are each of this type.
    *
@@ -610,8 +614,6 @@ abstract class FunctionOperationNode extends OperationNode {
 export class CreateOperationNode extends OperationNode {
   constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
-    //this.children.push(new AliasTypeNode(RESULTS, table.type, this));
-    this.children.push(new AliasTypeNode(VALUES, table.type, this));
   }
 }
 

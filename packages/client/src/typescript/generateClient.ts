@@ -33,7 +33,7 @@ const IndexOperation = {
       `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}) {
             const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
-              operation: "${node.typescriptNamespacedName}",
+              operation: "${node.typescriptNamespacedPropertyName}",
               parameters
             });
         `,
@@ -92,7 +92,7 @@ export async function generateClient(context: GenerationContext) {
         return `
           public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
             const response = await this.client.invoke<never, ${valuesType}, ${returnType}>({
-              operation: "${node.typescriptNamespacedName}",
+              operation: "${node.typescriptNamespacedPropertyName}",
               values
             });
             return response.results;
@@ -116,7 +116,7 @@ export async function generateClient(context: GenerationContext) {
           `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}) {
             const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}>({
-              operation: "${node.typescriptNamespacedName}",
+              operation: "${node.typescriptNamespacedPropertyName}",
               parameters,
               values
             });
