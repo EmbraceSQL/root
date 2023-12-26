@@ -121,4 +121,14 @@ describe("EmbraceSQLExpress can", () => {
     });
     expect(response![0].title).toBe("Basic Easy");
   });
+
+  it("answer a procedure with a single result", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Public.Procedures.lastDay({
+      argument_0: new Date("1/1/2000"),
+    });
+    expect(response?.getDate()).toBe(30);
+  });
+
+  // TODO: answer a procedure with multiple results
 });

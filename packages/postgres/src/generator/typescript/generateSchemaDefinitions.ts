@@ -1,5 +1,6 @@
 import { GenerationContext } from "..";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
+import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
 import {
   ASTKind,
@@ -41,7 +42,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull} from "@embracesql/shared";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull, nullIsUndefined} from "@embracesql/shared";
         import type { PartiallyOptional } from "@embracesql/shared";
 
     `,
@@ -51,7 +52,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
     before: async (context: GC, node: AbstractTypeNode) => {
       return `export type ${
         node.typescriptName
-      } = ${node.parser.typescriptTypeDefinition(context)};`;
+      } = ${node.typescriptTypeDefinition(context)};`;
     },
   };
 
@@ -153,6 +154,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
   generationBuffer.push(await generateTypeParsers(context));
   generationBuffer.push(await generatePrimaryKeyPickers(context));
+  generationBuffer.push(await generateTypeGuards(context));
 
   return generationBuffer.join("\n");
 };

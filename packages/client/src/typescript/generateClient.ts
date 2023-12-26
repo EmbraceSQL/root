@@ -1,5 +1,6 @@
 import {
   ASTKind,
+  FunctionOperationNode,
   GenerationContext,
   IndexOperationNode,
   NamedASTNode,
@@ -47,6 +48,42 @@ const IndexOperation = {
   },
 };
 
+const FunctionalOperation = {
+  before: async (context: GenerationContext, node: FunctionOperationNode) => {
+    const returnType = `${node.resultsType?.typescriptNamespacedName}${
+      node.returnsMany ? "[]" : ""
+    }`;
+
+    if (node.argumentsType) {
+      const parametersType = `${node.argumentsType.typescriptNamespacedName}`;
+      return `
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<${parametersType}, never, ${returnType}>({
+              operation: "${node.typescriptNamespacedPropertyName}",
+              parameters
+            });
+        `;
+    } else {
+      return `
+          public async ${node.typescriptPropertyName}() : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<never, never, ${returnType}>({
+              operation: "${node.typescriptNamespacedPropertyName}",
+            });
+        `;
+    }
+  },
+  after: async (context: GenerationContext, node: FunctionOperationNode) => {
+    console.assert(context);
+    console.assert(node);
+    return [
+      node.returnsMany
+        ? `return response.results?.map(r => ${node.resultsType?.typescriptNamespacedName}.parse(r)) ?? [];`
+        : `return response.results ? nullIsUndefined(${node.resultsType?.typescriptNamespacedName}.parse(response.results)) : undefined;`,
+      `}`,
+    ].join("\n");
+  },
+};
+
 /**
  * Generates a strongly typed client to invoke server operations over
  * HTTP/S.
@@ -80,35 +117,9 @@ export async function generateClient(context: GenerationContext) {
     [ASTKind.Index]: NestedNamedClassVisitor,
     [ASTKind.Scripts]: NestedNamedClassVisitor,
     [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
-    [ASTKind.Script]: {
-      before: async (_, node) => {
-        // scripts are always a query result, there is no 'good' way
-        // to predict that only one or zero rows will return
-        const returnType = `${node.resultsType?.typescriptNamespacedName}[]`;
-        if (node.argumentsType) {
-          const parametersType = `${node.argumentsType.typescriptNamespacedName}`;
-          return `
-          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) : Promise<${returnType}|undefined> {
-            const response = await this.client.invoke<${parametersType}, never, ${returnType}>({
-              operation: "${node.typescriptNamespacedPropertyName}",
-              parameters
-            });
-            return response.results;
-          }
-        `;
-        } else {
-          return `
-          public async ${node.typescriptPropertyName}() : Promise<${returnType}|undefined> {
-            const response = await this.client.invoke<never, never, ${returnType}>({
-              operation: "${node.typescriptNamespacedPropertyName}",
-            });
-            return response.results;
-          }
-        `;
-        }
-      },
-    },
+    [ASTKind.Script]: FunctionalOperation,
     [ASTKind.Procedures]: NestedNamedClassVisitor,
+    [ASTKind.Procedure]: FunctionalOperation,
 
     // C R U D
     [ASTKind.CreateOperation]: {

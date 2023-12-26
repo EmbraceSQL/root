@@ -10,7 +10,11 @@ import {
   NamedASTNode,
 } from "@embracesql/shared";
 
-export const NestedNamedClassVisitor = {
+/**
+ * Creating nested classes intead of namespaces to allow shared access
+ * to the `database`.
+ */
+const NestedNamedClassVisitor = {
   before: async (context: GenerationContext, node: NamedASTNode) => {
     console.assert(context);
     return `

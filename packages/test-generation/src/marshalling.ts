@@ -21,6 +21,7 @@ import {
   Empty,
   Nullable,
   undefinedIsNull,
+  nullIsUndefined,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
 
@@ -5036,7 +5037,7 @@ export namespace Api {
 export namespace PgCatalog {
   export namespace Types {
     export namespace AclitemArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.AclitemArray
 
         if (from === null) return null;
@@ -5050,7 +5051,7 @@ export namespace PgCatalog {
       }
     }
     export namespace BitArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.BitArray
 
         if (from === null) return null;
@@ -5064,7 +5065,7 @@ export namespace PgCatalog {
       }
     }
     export namespace BoolArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.BoolArray
 
         if (from === null) return null;
@@ -5078,7 +5079,7 @@ export namespace PgCatalog {
       }
     }
     export namespace BoxArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.BoxArray
 
         if (from === null) return null;
@@ -5092,7 +5093,7 @@ export namespace PgCatalog {
       }
     }
     export namespace BpcharArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.BpcharArray
 
         if (from === null) return null;
@@ -5106,7 +5107,7 @@ export namespace PgCatalog {
       }
     }
     export namespace ByteaArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.ByteaArray
 
         if (from === null) return null;
@@ -5120,7 +5121,7 @@ export namespace PgCatalog {
       }
     }
     export namespace CharArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.CharArray
 
         if (from === null) return null;
@@ -5134,7 +5135,7 @@ export namespace PgCatalog {
       }
     }
     export namespace CidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.CidArray
 
         if (from === null) return null;
@@ -5148,7 +5149,7 @@ export namespace PgCatalog {
       }
     }
     export namespace CidrArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.CidrArray
 
         if (from === null) return null;
@@ -5162,7 +5163,7 @@ export namespace PgCatalog {
       }
     }
     export namespace CircleArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.CircleArray
 
         if (from === null) return null;
@@ -5176,7 +5177,7 @@ export namespace PgCatalog {
       }
     }
     export namespace CstringArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.CstringArray
 
         if (from === null) return null;
@@ -5190,7 +5191,7 @@ export namespace PgCatalog {
       }
     }
     export namespace DateArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.DateArray
 
         if (from === null) return null;
@@ -5204,7 +5205,7 @@ export namespace PgCatalog {
       }
     }
     export namespace DatemultirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.DatemultirangeArray
 
         if (from === null) return null;
@@ -5218,7 +5219,7 @@ export namespace PgCatalog {
       }
     }
     export namespace DaterangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.DaterangeArray
 
         if (from === null) return null;
@@ -5232,7 +5233,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Float4Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Float4Array
 
         if (from === null) return null;
@@ -5246,7 +5247,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Float8Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Float8Array
 
         if (from === null) return null;
@@ -5260,7 +5261,7 @@ export namespace PgCatalog {
       }
     }
     export namespace GtsvectorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.GtsvectorArray
 
         if (from === null) return null;
@@ -5274,7 +5275,7 @@ export namespace PgCatalog {
       }
     }
     export namespace InetArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.InetArray
 
         if (from === null) return null;
@@ -5288,7 +5289,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int2Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int2Array
 
         if (from === null) return null;
@@ -5302,7 +5303,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int2vectorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int2vectorArray
 
         if (from === null) return null;
@@ -5316,7 +5317,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int4Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4Array
 
         if (from === null) return null;
@@ -5330,7 +5331,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int4multirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4multirangeArray
 
         if (from === null) return null;
@@ -5344,7 +5345,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int4rangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4rangeArray
 
         if (from === null) return null;
@@ -5358,7 +5359,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int8Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8Array
 
         if (from === null) return null;
@@ -5372,7 +5373,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int8multirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8multirangeArray
 
         if (from === null) return null;
@@ -5386,7 +5387,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int8rangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8rangeArray
 
         if (from === null) return null;
@@ -5400,7 +5401,7 @@ export namespace PgCatalog {
       }
     }
     export namespace IntervalArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.IntervalArray
 
         if (from === null) return null;
@@ -5414,7 +5415,7 @@ export namespace PgCatalog {
       }
     }
     export namespace JsonArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.JsonArray
 
         if (from === null) return null;
@@ -5428,7 +5429,7 @@ export namespace PgCatalog {
       }
     }
     export namespace JsonbArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.JsonbArray
 
         if (from === null) return null;
@@ -5442,7 +5443,7 @@ export namespace PgCatalog {
       }
     }
     export namespace JsonpathArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.JsonpathArray
 
         if (from === null) return null;
@@ -5456,7 +5457,7 @@ export namespace PgCatalog {
       }
     }
     export namespace LineArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.LineArray
 
         if (from === null) return null;
@@ -5470,7 +5471,7 @@ export namespace PgCatalog {
       }
     }
     export namespace LsegArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.LsegArray
 
         if (from === null) return null;
@@ -5484,7 +5485,7 @@ export namespace PgCatalog {
       }
     }
     export namespace MacaddrArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.MacaddrArray
 
         if (from === null) return null;
@@ -5498,7 +5499,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Macaddr8Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Macaddr8Array
 
         if (from === null) return null;
@@ -5512,7 +5513,7 @@ export namespace PgCatalog {
       }
     }
     export namespace MoneyArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.MoneyArray
 
         if (from === null) return null;
@@ -5526,7 +5527,7 @@ export namespace PgCatalog {
       }
     }
     export namespace NameArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.NameArray
 
         if (from === null) return null;
@@ -5540,7 +5541,7 @@ export namespace PgCatalog {
       }
     }
     export namespace NumericArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.NumericArray
 
         if (from === null) return null;
@@ -5554,7 +5555,7 @@ export namespace PgCatalog {
       }
     }
     export namespace NummultirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.NummultirangeArray
 
         if (from === null) return null;
@@ -5568,7 +5569,7 @@ export namespace PgCatalog {
       }
     }
     export namespace NumrangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.NumrangeArray
 
         if (from === null) return null;
@@ -5582,7 +5583,7 @@ export namespace PgCatalog {
       }
     }
     export namespace OidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.OidArray
 
         if (from === null) return null;
@@ -5596,7 +5597,7 @@ export namespace PgCatalog {
       }
     }
     export namespace OidvectorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.OidvectorArray
 
         if (from === null) return null;
@@ -5610,7 +5611,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PathArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PathArray
 
         if (from === null) return null;
@@ -5624,7 +5625,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAggregateArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAggregateArray
 
         if (from === null) return null;
@@ -5638,7 +5639,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAmArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAmArray
 
         if (from === null) return null;
@@ -5652,7 +5653,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAmopArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAmopArray
 
         if (from === null) return null;
@@ -5666,7 +5667,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAmprocArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAmprocArray
 
         if (from === null) return null;
@@ -5680,7 +5681,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAttrdefArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAttrdefArray
 
         if (from === null) return null;
@@ -5694,7 +5695,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAttributeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAttributeArray
 
         if (from === null) return null;
@@ -5708,7 +5709,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAuthMembersArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAuthMembersArray
 
         if (from === null) return null;
@@ -5722,7 +5723,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAuthidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAuthidArray
 
         if (from === null) return null;
@@ -5736,7 +5737,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAvailableExtensionVersionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAvailableExtensionVersionsArray
 
         if (from === null) return null;
@@ -5750,7 +5751,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgAvailableExtensionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgAvailableExtensionsArray
 
         if (from === null) return null;
@@ -5764,7 +5765,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgBackendMemoryContextsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgBackendMemoryContextsArray
 
         if (from === null) return null;
@@ -5778,7 +5779,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgCastArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgCastArray
 
         if (from === null) return null;
@@ -5792,7 +5793,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgClassArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgClassArray
 
         if (from === null) return null;
@@ -5806,7 +5807,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgCollationArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgCollationArray
 
         if (from === null) return null;
@@ -5820,7 +5821,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgConfigArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgConfigArray
 
         if (from === null) return null;
@@ -5834,7 +5835,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgConstraintArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgConstraintArray
 
         if (from === null) return null;
@@ -5848,7 +5849,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgConversionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgConversionArray
 
         if (from === null) return null;
@@ -5862,7 +5863,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgCursorsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgCursorsArray
 
         if (from === null) return null;
@@ -5876,7 +5877,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgDatabaseArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDatabaseArray
 
         if (from === null) return null;
@@ -5890,7 +5891,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgDbRoleSettingArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDbRoleSettingArray
 
         if (from === null) return null;
@@ -5904,7 +5905,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgDefaultAclArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDefaultAclArray
 
         if (from === null) return null;
@@ -5918,7 +5919,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgDependArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDependArray
 
         if (from === null) return null;
@@ -5932,7 +5933,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgDescriptionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDescriptionArray
 
         if (from === null) return null;
@@ -5946,7 +5947,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgEnumArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgEnumArray
 
         if (from === null) return null;
@@ -5960,7 +5961,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgEventTriggerArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgEventTriggerArray
 
         if (from === null) return null;
@@ -5974,7 +5975,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgExtensionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgExtensionArray
 
         if (from === null) return null;
@@ -5988,7 +5989,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgFileSettingsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgFileSettingsArray
 
         if (from === null) return null;
@@ -6002,7 +6003,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgForeignDataWrapperArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgForeignDataWrapperArray
 
         if (from === null) return null;
@@ -6016,7 +6017,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgForeignServerArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgForeignServerArray
 
         if (from === null) return null;
@@ -6030,7 +6031,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgForeignTableArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgForeignTableArray
 
         if (from === null) return null;
@@ -6044,7 +6045,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgGroupArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgGroupArray
 
         if (from === null) return null;
@@ -6058,7 +6059,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgHbaFileRulesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgHbaFileRulesArray
 
         if (from === null) return null;
@@ -6072,7 +6073,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgIdentFileMappingsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgIdentFileMappingsArray
 
         if (from === null) return null;
@@ -6086,7 +6087,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgIndexArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgIndexArray
 
         if (from === null) return null;
@@ -6100,7 +6101,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgIndexesArray
 
         if (from === null) return null;
@@ -6114,7 +6115,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgInheritsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgInheritsArray
 
         if (from === null) return null;
@@ -6128,7 +6129,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgInitPrivsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgInitPrivsArray
 
         if (from === null) return null;
@@ -6142,7 +6143,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgLanguageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLanguageArray
 
         if (from === null) return null;
@@ -6156,7 +6157,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgLargeobjectArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLargeobjectArray
 
         if (from === null) return null;
@@ -6170,7 +6171,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgLargeobjectMetadataArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLargeobjectMetadataArray
 
         if (from === null) return null;
@@ -6184,7 +6185,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgLocksArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLocksArray
 
         if (from === null) return null;
@@ -6198,7 +6199,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgLsnArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLsnArray
 
         if (from === null) return null;
@@ -6212,7 +6213,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgMatviewsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgMatviewsArray
 
         if (from === null) return null;
@@ -6226,7 +6227,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgNamespaceArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgNamespaceArray
 
         if (from === null) return null;
@@ -6240,7 +6241,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgOpclassArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgOpclassArray
 
         if (from === null) return null;
@@ -6254,7 +6255,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgOperatorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgOperatorArray
 
         if (from === null) return null;
@@ -6268,7 +6269,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgOpfamilyArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgOpfamilyArray
 
         if (from === null) return null;
@@ -6282,7 +6283,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgParameterAclArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgParameterAclArray
 
         if (from === null) return null;
@@ -6296,7 +6297,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPartitionedTableArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPartitionedTableArray
 
         if (from === null) return null;
@@ -6310,7 +6311,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPoliciesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPoliciesArray
 
         if (from === null) return null;
@@ -6324,7 +6325,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPolicyArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPolicyArray
 
         if (from === null) return null;
@@ -6338,7 +6339,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPreparedStatementsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPreparedStatementsArray
 
         if (from === null) return null;
@@ -6352,7 +6353,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPreparedXactsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPreparedXactsArray
 
         if (from === null) return null;
@@ -6366,7 +6367,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgProcArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgProcArray
 
         if (from === null) return null;
@@ -6380,7 +6381,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPublicationArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPublicationArray
 
         if (from === null) return null;
@@ -6394,7 +6395,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPublicationNamespaceArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPublicationNamespaceArray
 
         if (from === null) return null;
@@ -6408,7 +6409,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPublicationRelArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPublicationRelArray
 
         if (from === null) return null;
@@ -6422,7 +6423,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgPublicationTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgPublicationTablesArray
 
         if (from === null) return null;
@@ -6436,7 +6437,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgRangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgRangeArray
 
         if (from === null) return null;
@@ -6450,7 +6451,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgReplicationOriginArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgReplicationOriginArray
 
         if (from === null) return null;
@@ -6464,7 +6465,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgReplicationOriginStatusArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgReplicationOriginStatusArray
 
         if (from === null) return null;
@@ -6478,7 +6479,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgReplicationSlotsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgReplicationSlotsArray
 
         if (from === null) return null;
@@ -6492,7 +6493,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgRewriteArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgRewriteArray
 
         if (from === null) return null;
@@ -6506,7 +6507,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgRolesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgRolesArray
 
         if (from === null) return null;
@@ -6520,7 +6521,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgRulesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgRulesArray
 
         if (from === null) return null;
@@ -6534,7 +6535,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSeclabelArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSeclabelArray
 
         if (from === null) return null;
@@ -6548,7 +6549,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSeclabelsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSeclabelsArray
 
         if (from === null) return null;
@@ -6562,7 +6563,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSequenceArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSequenceArray
 
         if (from === null) return null;
@@ -6576,7 +6577,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSequencesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSequencesArray
 
         if (from === null) return null;
@@ -6590,7 +6591,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSettingsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSettingsArray
 
         if (from === null) return null;
@@ -6604,7 +6605,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgShadowArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgShadowArray
 
         if (from === null) return null;
@@ -6618,7 +6619,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgShdependArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgShdependArray
 
         if (from === null) return null;
@@ -6632,7 +6633,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgShdescriptionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgShdescriptionArray
 
         if (from === null) return null;
@@ -6646,7 +6647,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgShmemAllocationsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgShmemAllocationsArray
 
         if (from === null) return null;
@@ -6660,7 +6661,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgShseclabelArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgShseclabelArray
 
         if (from === null) return null;
@@ -6674,7 +6675,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSnapshotArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSnapshotArray
 
         if (from === null) return null;
@@ -6688,7 +6689,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatActivityArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatActivityArray
 
         if (from === null) return null;
@@ -6702,7 +6703,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatAllIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatAllIndexesArray
 
         if (from === null) return null;
@@ -6716,7 +6717,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatAllTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatAllTablesArray
 
         if (from === null) return null;
@@ -6730,7 +6731,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatArchiverArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatArchiverArray
 
         if (from === null) return null;
@@ -6744,7 +6745,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatBgwriterArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatBgwriterArray
 
         if (from === null) return null;
@@ -6758,7 +6759,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatDatabaseArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatDatabaseArray
 
         if (from === null) return null;
@@ -6772,7 +6773,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatDatabaseConflictsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatDatabaseConflictsArray
 
         if (from === null) return null;
@@ -6786,7 +6787,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatGssapiArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatGssapiArray
 
         if (from === null) return null;
@@ -6800,7 +6801,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatIoArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatIoArray
 
         if (from === null) return null;
@@ -6814,7 +6815,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressAnalyzeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressAnalyzeArray
 
         if (from === null) return null;
@@ -6828,7 +6829,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressBasebackupArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressBasebackupArray
 
         if (from === null) return null;
@@ -6842,7 +6843,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressClusterArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressClusterArray
 
         if (from === null) return null;
@@ -6856,7 +6857,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressCopyArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressCopyArray
 
         if (from === null) return null;
@@ -6870,7 +6871,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressCreateIndexArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressCreateIndexArray
 
         if (from === null) return null;
@@ -6884,7 +6885,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatProgressVacuumArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatProgressVacuumArray
 
         if (from === null) return null;
@@ -6898,7 +6899,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatRecoveryPrefetchArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatRecoveryPrefetchArray
 
         if (from === null) return null;
@@ -6912,7 +6913,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatReplicationArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatReplicationArray
 
         if (from === null) return null;
@@ -6926,7 +6927,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatReplicationSlotsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatReplicationSlotsArray
 
         if (from === null) return null;
@@ -6940,7 +6941,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSlruArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSlruArray
 
         if (from === null) return null;
@@ -6954,7 +6955,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSslArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSslArray
 
         if (from === null) return null;
@@ -6968,7 +6969,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSubscriptionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSubscriptionArray
 
         if (from === null) return null;
@@ -6982,7 +6983,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSubscriptionStatsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSubscriptionStatsArray
 
         if (from === null) return null;
@@ -6996,7 +6997,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSysIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSysIndexesArray
 
         if (from === null) return null;
@@ -7010,7 +7011,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatSysTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatSysTablesArray
 
         if (from === null) return null;
@@ -7024,7 +7025,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatUserFunctionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatUserFunctionsArray
 
         if (from === null) return null;
@@ -7038,7 +7039,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatUserIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatUserIndexesArray
 
         if (from === null) return null;
@@ -7052,7 +7053,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatUserTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatUserTablesArray
 
         if (from === null) return null;
@@ -7066,7 +7067,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatWalArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatWalArray
 
         if (from === null) return null;
@@ -7080,7 +7081,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatWalReceiverArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatWalReceiverArray
 
         if (from === null) return null;
@@ -7094,7 +7095,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatXactAllTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatXactAllTablesArray
 
         if (from === null) return null;
@@ -7108,7 +7109,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatXactSysTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatXactSysTablesArray
 
         if (from === null) return null;
@@ -7122,7 +7123,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatXactUserFunctionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatXactUserFunctionsArray
 
         if (from === null) return null;
@@ -7136,7 +7137,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatXactUserTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatXactUserTablesArray
 
         if (from === null) return null;
@@ -7150,7 +7151,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioAllIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioAllIndexesArray
 
         if (from === null) return null;
@@ -7164,7 +7165,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioAllSequencesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioAllSequencesArray
 
         if (from === null) return null;
@@ -7178,7 +7179,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioAllTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioAllTablesArray
 
         if (from === null) return null;
@@ -7192,7 +7193,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioSysIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioSysIndexesArray
 
         if (from === null) return null;
@@ -7206,7 +7207,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioSysSequencesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioSysSequencesArray
 
         if (from === null) return null;
@@ -7220,7 +7221,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioSysTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioSysTablesArray
 
         if (from === null) return null;
@@ -7234,7 +7235,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioUserIndexesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioUserIndexesArray
 
         if (from === null) return null;
@@ -7248,7 +7249,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioUserSequencesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioUserSequencesArray
 
         if (from === null) return null;
@@ -7262,7 +7263,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatioUserTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatioUserTablesArray
 
         if (from === null) return null;
@@ -7276,7 +7277,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatisticArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatisticArray
 
         if (from === null) return null;
@@ -7290,7 +7291,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatisticExtArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatisticExtArray
 
         if (from === null) return null;
@@ -7304,7 +7305,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatisticExtDataArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatisticExtDataArray
 
         if (from === null) return null;
@@ -7318,7 +7319,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatsArray
 
         if (from === null) return null;
@@ -7332,7 +7333,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatsExtArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatsExtArray
 
         if (from === null) return null;
@@ -7346,7 +7347,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgStatsExtExprsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgStatsExtExprsArray
 
         if (from === null) return null;
@@ -7360,7 +7361,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSubscriptionArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSubscriptionArray
 
         if (from === null) return null;
@@ -7374,7 +7375,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgSubscriptionRelArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSubscriptionRelArray
 
         if (from === null) return null;
@@ -7388,7 +7389,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTablesArray
 
         if (from === null) return null;
@@ -7402,7 +7403,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTablespaceArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTablespaceArray
 
         if (from === null) return null;
@@ -7416,7 +7417,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTimezoneAbbrevsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTimezoneAbbrevsArray
 
         if (from === null) return null;
@@ -7430,7 +7431,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTimezoneNamesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTimezoneNamesArray
 
         if (from === null) return null;
@@ -7444,7 +7445,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTransformArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTransformArray
 
         if (from === null) return null;
@@ -7458,7 +7459,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTriggerArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTriggerArray
 
         if (from === null) return null;
@@ -7472,7 +7473,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTsConfigArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTsConfigArray
 
         if (from === null) return null;
@@ -7486,7 +7487,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTsConfigMapArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTsConfigMapArray
 
         if (from === null) return null;
@@ -7500,7 +7501,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTsDictArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTsDictArray
 
         if (from === null) return null;
@@ -7514,7 +7515,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTsParserArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTsParserArray
 
         if (from === null) return null;
@@ -7528,7 +7529,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTsTemplateArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTsTemplateArray
 
         if (from === null) return null;
@@ -7542,7 +7543,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgTypeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgTypeArray
 
         if (from === null) return null;
@@ -7556,7 +7557,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgUserArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgUserArray
 
         if (from === null) return null;
@@ -7570,7 +7571,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgUserMappingArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgUserMappingArray
 
         if (from === null) return null;
@@ -7584,7 +7585,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgUserMappingsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgUserMappingsArray
 
         if (from === null) return null;
@@ -7598,7 +7599,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PgViewsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgViewsArray
 
         if (from === null) return null;
@@ -7612,7 +7613,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PointArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PointArray
 
         if (from === null) return null;
@@ -7626,7 +7627,7 @@ export namespace PgCatalog {
       }
     }
     export namespace PolygonArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PolygonArray
 
         if (from === null) return null;
@@ -7640,7 +7641,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RecordArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RecordArray
 
         if (from === null) return null;
@@ -7654,7 +7655,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RefcursorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RefcursorArray
 
         if (from === null) return null;
@@ -7668,7 +7669,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegclassArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegclassArray
 
         if (from === null) return null;
@@ -7682,7 +7683,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegcollationArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegcollationArray
 
         if (from === null) return null;
@@ -7696,7 +7697,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegconfigArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegconfigArray
 
         if (from === null) return null;
@@ -7710,7 +7711,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegdictionaryArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegdictionaryArray
 
         if (from === null) return null;
@@ -7724,7 +7725,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegnamespaceArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegnamespaceArray
 
         if (from === null) return null;
@@ -7738,7 +7739,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegoperArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegoperArray
 
         if (from === null) return null;
@@ -7752,7 +7753,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegoperatorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegoperatorArray
 
         if (from === null) return null;
@@ -7766,7 +7767,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegprocArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegprocArray
 
         if (from === null) return null;
@@ -7780,7 +7781,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegprocedureArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegprocedureArray
 
         if (from === null) return null;
@@ -7794,7 +7795,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegroleArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegroleArray
 
         if (from === null) return null;
@@ -7808,7 +7809,7 @@ export namespace PgCatalog {
       }
     }
     export namespace RegtypeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.RegtypeArray
 
         if (from === null) return null;
@@ -7822,7 +7823,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TextArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TextArray
 
         if (from === null) return null;
@@ -7836,7 +7837,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TidArray
 
         if (from === null) return null;
@@ -7850,7 +7851,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TimeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TimeArray
 
         if (from === null) return null;
@@ -7864,7 +7865,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TimestampArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TimestampArray
 
         if (from === null) return null;
@@ -7878,7 +7879,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TimestamptzArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TimestamptzArray
 
         if (from === null) return null;
@@ -7892,7 +7893,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TimetzArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TimetzArray
 
         if (from === null) return null;
@@ -7906,7 +7907,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TsmultirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TsmultirangeArray
 
         if (from === null) return null;
@@ -7920,7 +7921,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TsqueryArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TsqueryArray
 
         if (from === null) return null;
@@ -7934,7 +7935,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TsrangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TsrangeArray
 
         if (from === null) return null;
@@ -7948,7 +7949,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TstzmultirangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TstzmultirangeArray
 
         if (from === null) return null;
@@ -7962,7 +7963,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TstzrangeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TstzrangeArray
 
         if (from === null) return null;
@@ -7976,7 +7977,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TsvectorArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TsvectorArray
 
         if (from === null) return null;
@@ -7990,7 +7991,7 @@ export namespace PgCatalog {
       }
     }
     export namespace TxidSnapshotArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TxidSnapshotArray
 
         if (from === null) return null;
@@ -8004,7 +8005,7 @@ export namespace PgCatalog {
       }
     }
     export namespace UuidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.UuidArray
 
         if (from === null) return null;
@@ -8018,7 +8019,7 @@ export namespace PgCatalog {
       }
     }
     export namespace VarbitArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.VarbitArray
 
         if (from === null) return null;
@@ -8032,7 +8033,7 @@ export namespace PgCatalog {
       }
     }
     export namespace VarcharArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.VarcharArray
 
         if (from === null) return null;
@@ -8046,7 +8047,7 @@ export namespace PgCatalog {
       }
     }
     export namespace XidArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.XidArray
 
         if (from === null) return null;
@@ -8060,7 +8061,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Xid8Array {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Xid8Array
 
         if (from === null) return null;
@@ -8074,7 +8075,7 @@ export namespace PgCatalog {
       }
     }
     export namespace XmlArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.XmlArray
 
         if (from === null) return null;
@@ -8088,98 +8089,98 @@ export namespace PgCatalog {
       }
     }
     export namespace Aclitem {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Aclitem
 
         return from;
       }
     }
     export namespace Any {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Any
 
         return from;
       }
     }
     export namespace Anyarray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anyarray
 
         return from;
       }
     }
     export namespace Anycompatible {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anycompatible
 
         return from;
       }
     }
     export namespace Anycompatiblearray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anycompatiblearray
 
         return from;
       }
     }
     export namespace Anycompatiblemultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anycompatiblemultirange
 
         return from;
       }
     }
     export namespace Anycompatiblenonarray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anycompatiblenonarray
 
         return from;
       }
     }
     export namespace Anycompatiblerange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anycompatiblerange
 
         return from;
       }
     }
     export namespace Anyelement {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anyelement
 
         return from;
       }
     }
     export namespace Anyenum {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anyenum
 
         return from;
       }
     }
     export namespace Anymultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anymultirange
 
         return from;
       }
     }
     export namespace Anynonarray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anynonarray
 
         return from;
       }
     }
     export namespace Anyrange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Anyrange
 
         return from;
       }
     }
     export namespace Bit {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Bit
 
         if (from === null) return null;
@@ -8193,7 +8194,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Bool {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Bool
 
         if (from === null) return null;
@@ -8207,63 +8208,63 @@ export namespace PgCatalog {
       }
     }
     export namespace Box {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Box
 
         return from;
       }
     }
     export namespace Bpchar {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Bpchar
 
         return from;
       }
     }
     export namespace Bytea {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Bytea
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Char {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Char
 
         return from;
       }
     }
     export namespace Cid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Cid
 
         return from;
       }
     }
     export namespace Cidr {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Cidr
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Circle {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Circle
 
         return from;
       }
     }
     export namespace Cstring {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Cstring
 
         return from;
       }
     }
     export namespace Date {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Date
 
         if (from === null) return null;
@@ -8272,35 +8273,35 @@ export namespace PgCatalog {
       }
     }
     export namespace Datemultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Datemultirange
 
         return from;
       }
     }
     export namespace Daterange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Daterange
 
         return from;
       }
     }
     export namespace EventTrigger {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.EventTrigger
 
         return from;
       }
     }
     export namespace FdwHandler {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.FdwHandler
 
         return from;
       }
     }
     export namespace Float4 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Float4
 
         if (from === null) return null;
@@ -8308,7 +8309,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Float8 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Float8
 
         if (from === null) return null;
@@ -8316,28 +8317,28 @@ export namespace PgCatalog {
       }
     }
     export namespace Gtsvector {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Gtsvector
 
         return from;
       }
     }
     export namespace IndexAmHandler {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.IndexAmHandler
 
         return from;
       }
     }
     export namespace Inet {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Inet
 
         return from;
       }
     }
     export namespace Int2 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int2
 
         if (from === null) return null;
@@ -8345,7 +8346,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int2vector {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int2vector
 
         if (from === null) return null;
@@ -8356,7 +8357,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Int4 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4
 
         if (from === null) return null;
@@ -8364,21 +8365,21 @@ export namespace PgCatalog {
       }
     }
     export namespace Int4multirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4multirange
 
         return from;
       }
     }
     export namespace Int4range {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int4range
 
         return from;
       }
     }
     export namespace Int8 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8
 
         if (from === null) return null;
@@ -8386,28 +8387,28 @@ export namespace PgCatalog {
       }
     }
     export namespace Int8multirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8multirange
 
         return from;
       }
     }
     export namespace Int8range {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Int8range
 
         return from;
       }
     }
     export namespace Internal {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Internal
 
         return from;
       }
     }
     export namespace Interval {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Interval
 
         if (from === null) return null;
@@ -8415,63 +8416,63 @@ export namespace PgCatalog {
       }
     }
     export namespace Json {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Json
 
         return from;
       }
     }
     export namespace Jsonb {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Jsonb
 
         return from;
       }
     }
     export namespace Jsonpath {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Jsonpath
 
         return from;
       }
     }
     export namespace LanguageHandler {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.LanguageHandler
 
         return from;
       }
     }
     export namespace Line {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Line
 
         return from;
       }
     }
     export namespace Lseg {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Lseg
 
         return from;
       }
     }
     export namespace Macaddr {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Macaddr
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Macaddr8 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Macaddr8
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Money {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Money
 
         if (from === null) return null;
@@ -8479,14 +8480,14 @@ export namespace PgCatalog {
       }
     }
     export namespace Name {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Name
 
         return from;
       }
     }
     export namespace Numeric {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Numeric
 
         if (from === null) return null;
@@ -8494,21 +8495,21 @@ export namespace PgCatalog {
       }
     }
     export namespace Nummultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Nummultirange
 
         return from;
       }
     }
     export namespace Numrange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Numrange
 
         return from;
       }
     }
     export namespace Oid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Oid
 
         if (from === null) return null;
@@ -8516,7 +8517,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Oidvector {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Oidvector
 
         if (from === null) return null;
@@ -8530,288 +8531,411 @@ export namespace PgCatalog {
       }
     }
     export namespace Path {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Path
 
         return from;
       }
     }
     export namespace PgAggregate {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAggregate
-        return from;
+        if (PgCatalog.Types.PgAggregate.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAm {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAm
-        return from;
+        if (PgCatalog.Types.PgAm.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAmop {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAmop
-        return from;
+        if (PgCatalog.Types.PgAmop.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAmproc {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAmproc
-        return from;
+        if (PgCatalog.Types.PgAmproc.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAttrdef {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAttrdef
-        return from;
+        if (PgCatalog.Types.PgAttrdef.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAttribute {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAttribute
-        return from;
+        if (PgCatalog.Types.PgAttribute.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAuthMembers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAuthMembers
-        return from;
+        if (PgCatalog.Types.PgAuthMembers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAuthid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAuthid
-        return from;
+        if (PgCatalog.Types.PgAuthid.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAvailableExtensionVersions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAvailableExtensionVersions
-        return from;
+        if (PgCatalog.Types.PgAvailableExtensionVersions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgAvailableExtensions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgAvailableExtensions
-        return from;
+        if (PgCatalog.Types.PgAvailableExtensions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgBackendMemoryContexts {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgBackendMemoryContexts
-        return from;
+        if (PgCatalog.Types.PgBackendMemoryContexts.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgBrinBloomSummary {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgBrinBloomSummary
 
         return from;
       }
     }
     export namespace PgBrinMinmaxMultiSummary {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgBrinMinmaxMultiSummary
 
         return from;
       }
     }
     export namespace PgCast {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgCast
-        return from;
+        if (PgCatalog.Types.PgCast.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgClass {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgClass
-        return from;
+        if (PgCatalog.Types.PgClass.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgCollation {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgCollation
-        return from;
+        if (PgCatalog.Types.PgCollation.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgConfig {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgConfig
-        return from;
+        if (PgCatalog.Types.PgConfig.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgConstraint {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgConstraint
-        return from;
+        if (PgCatalog.Types.PgConstraint.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgConversion {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgConversion
-        return from;
+        if (PgCatalog.Types.PgConversion.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgCursors {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgCursors
-        return from;
+        if (PgCatalog.Types.PgCursors.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgDatabase {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgDatabase
-        return from;
+        if (PgCatalog.Types.PgDatabase.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgDbRoleSetting {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgDbRoleSetting
-        return from;
+        if (PgCatalog.Types.PgDbRoleSetting.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgDdlCommand {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDdlCommand
 
         return from;
       }
     }
     export namespace PgDefaultAcl {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgDefaultAcl
-        return from;
+        if (PgCatalog.Types.PgDefaultAcl.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgDepend {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgDepend
-        return from;
+        if (PgCatalog.Types.PgDepend.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgDependencies {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgDependencies
 
         return from;
       }
     }
     export namespace PgDescription {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgDescription
-        return from;
+        if (PgCatalog.Types.PgDescription.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgEnum {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgEnum
-        return from;
+        if (PgCatalog.Types.PgEnum.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgEventTrigger {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgEventTrigger
-        return from;
+        if (PgCatalog.Types.PgEventTrigger.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgExtension {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgExtension
-        return from;
+        if (PgCatalog.Types.PgExtension.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgFileSettings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgFileSettings
-        return from;
+        if (PgCatalog.Types.PgFileSettings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignDataWrapper {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgForeignDataWrapper
-        return from;
+        if (PgCatalog.Types.PgForeignDataWrapper.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignServer {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgForeignServer
-        return from;
+        if (PgCatalog.Types.PgForeignServer.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignTable {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgForeignTable
-        return from;
+        if (PgCatalog.Types.PgForeignTable.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgGroup {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgGroup
-        return from;
+        if (PgCatalog.Types.PgGroup.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgHbaFileRules {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgHbaFileRules
-        return from;
+        if (PgCatalog.Types.PgHbaFileRules.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgIdentFileMappings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgIdentFileMappings
-        return from;
+        if (PgCatalog.Types.PgIdentFileMappings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgIndex {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgIndex
-        return from;
+        if (PgCatalog.Types.PgIndex.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgIndexes
-        return from;
+        if (PgCatalog.Types.PgIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgInherits {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgInherits
-        return from;
+        if (PgCatalog.Types.PgInherits.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgInitPrivs {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgInitPrivs
-        return from;
+        if (PgCatalog.Types.PgInitPrivs.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgLanguage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgLanguage
-        return from;
+        if (PgCatalog.Types.PgLanguage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgLargeobject {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgLargeobject
-        return from;
+        if (PgCatalog.Types.PgLargeobject.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgLargeobjectMetadata {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgLargeobjectMetadata
-        return from;
+        if (PgCatalog.Types.PgLargeobjectMetadata.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgLocks {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgLocks
-        return from;
+        if (PgCatalog.Types.PgLocks.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgLsn {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgLsn
 
         if (from === null) return null;
@@ -8820,657 +8944,954 @@ export namespace PgCatalog {
       }
     }
     export namespace PgMatviews {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgMatviews
-        return from;
+        if (PgCatalog.Types.PgMatviews.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgMcvList {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgMcvList
 
         return from;
       }
     }
     export namespace PgNamespace {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgNamespace
-        return from;
+        if (PgCatalog.Types.PgNamespace.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgNdistinct {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgNdistinct
 
         return from;
       }
     }
     export namespace PgNodeTree {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgNodeTree
 
         return from;
       }
     }
     export namespace PgOpclass {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgOpclass
-        return from;
+        if (PgCatalog.Types.PgOpclass.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgOperator {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgOperator
-        return from;
+        if (PgCatalog.Types.PgOperator.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgOpfamily {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgOpfamily
-        return from;
+        if (PgCatalog.Types.PgOpfamily.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgParameterAcl {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgParameterAcl
-        return from;
+        if (PgCatalog.Types.PgParameterAcl.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPartitionedTable {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPartitionedTable
-        return from;
+        if (PgCatalog.Types.PgPartitionedTable.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPolicies {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPolicies
-        return from;
+        if (PgCatalog.Types.PgPolicies.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPolicy {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPolicy
-        return from;
+        if (PgCatalog.Types.PgPolicy.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPreparedStatements {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPreparedStatements
-        return from;
+        if (PgCatalog.Types.PgPreparedStatements.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPreparedXacts {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPreparedXacts
-        return from;
+        if (PgCatalog.Types.PgPreparedXacts.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgProc {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgProc
-        return from;
+        if (PgCatalog.Types.PgProc.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPublication {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPublication
-        return from;
+        if (PgCatalog.Types.PgPublication.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPublicationNamespace {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPublicationNamespace
-        return from;
+        if (PgCatalog.Types.PgPublicationNamespace.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPublicationRel {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPublicationRel
-        return from;
+        if (PgCatalog.Types.PgPublicationRel.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgPublicationTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgPublicationTables
-        return from;
+        if (PgCatalog.Types.PgPublicationTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgRange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgRange
-        return from;
+        if (PgCatalog.Types.PgRange.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgReplicationOrigin {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgReplicationOrigin
-        return from;
+        if (PgCatalog.Types.PgReplicationOrigin.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgReplicationOriginStatus {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgReplicationOriginStatus
-        return from;
+        if (PgCatalog.Types.PgReplicationOriginStatus.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgReplicationSlots {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgReplicationSlots
-        return from;
+        if (PgCatalog.Types.PgReplicationSlots.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgRewrite {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgRewrite
-        return from;
+        if (PgCatalog.Types.PgRewrite.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgRoles {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgRoles
-        return from;
+        if (PgCatalog.Types.PgRoles.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgRules {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgRules
-        return from;
+        if (PgCatalog.Types.PgRules.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSeclabel {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSeclabel
-        return from;
+        if (PgCatalog.Types.PgSeclabel.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSeclabels {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSeclabels
-        return from;
+        if (PgCatalog.Types.PgSeclabels.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSequence {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSequence
-        return from;
+        if (PgCatalog.Types.PgSequence.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSequences {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSequences
-        return from;
+        if (PgCatalog.Types.PgSequences.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSettings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSettings
-        return from;
+        if (PgCatalog.Types.PgSettings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgShadow {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgShadow
-        return from;
+        if (PgCatalog.Types.PgShadow.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgShdepend {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgShdepend
-        return from;
+        if (PgCatalog.Types.PgShdepend.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgShdescription {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgShdescription
-        return from;
+        if (PgCatalog.Types.PgShdescription.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgShmemAllocations {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgShmemAllocations
-        return from;
+        if (PgCatalog.Types.PgShmemAllocations.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgShseclabel {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgShseclabel
-        return from;
+        if (PgCatalog.Types.PgShseclabel.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSnapshot {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.PgSnapshot
 
         return from;
       }
     }
     export namespace PgStatActivity {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatActivity
-        return from;
+        if (PgCatalog.Types.PgStatActivity.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatAllIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatAllIndexes
-        return from;
+        if (PgCatalog.Types.PgStatAllIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatAllTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatAllTables
-        return from;
+        if (PgCatalog.Types.PgStatAllTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatArchiver {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatArchiver
-        return from;
+        if (PgCatalog.Types.PgStatArchiver.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatBgwriter {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatBgwriter
-        return from;
+        if (PgCatalog.Types.PgStatBgwriter.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatDatabase {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatDatabase
-        return from;
+        if (PgCatalog.Types.PgStatDatabase.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatDatabaseConflicts {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatDatabaseConflicts
-        return from;
+        if (PgCatalog.Types.PgStatDatabaseConflicts.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatGssapi {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatGssapi
-        return from;
+        if (PgCatalog.Types.PgStatGssapi.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatIo {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatIo
-        return from;
+        if (PgCatalog.Types.PgStatIo.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressAnalyze {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressAnalyze
-        return from;
+        if (PgCatalog.Types.PgStatProgressAnalyze.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressBasebackup {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressBasebackup
-        return from;
+        if (PgCatalog.Types.PgStatProgressBasebackup.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressCluster {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressCluster
-        return from;
+        if (PgCatalog.Types.PgStatProgressCluster.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressCopy {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressCopy
-        return from;
+        if (PgCatalog.Types.PgStatProgressCopy.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressCreateIndex {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressCreateIndex
-        return from;
+        if (PgCatalog.Types.PgStatProgressCreateIndex.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatProgressVacuum {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatProgressVacuum
-        return from;
+        if (PgCatalog.Types.PgStatProgressVacuum.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatRecoveryPrefetch {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatRecoveryPrefetch
-        return from;
+        if (PgCatalog.Types.PgStatRecoveryPrefetch.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatReplication {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatReplication
-        return from;
+        if (PgCatalog.Types.PgStatReplication.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatReplicationSlots {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatReplicationSlots
-        return from;
+        if (PgCatalog.Types.PgStatReplicationSlots.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSlru {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSlru
-        return from;
+        if (PgCatalog.Types.PgStatSlru.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSsl {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSsl
-        return from;
+        if (PgCatalog.Types.PgStatSsl.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSubscription {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSubscription
-        return from;
+        if (PgCatalog.Types.PgStatSubscription.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSubscriptionStats {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSubscriptionStats
-        return from;
+        if (PgCatalog.Types.PgStatSubscriptionStats.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSysIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSysIndexes
-        return from;
+        if (PgCatalog.Types.PgStatSysIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatSysTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatSysTables
-        return from;
+        if (PgCatalog.Types.PgStatSysTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatUserFunctions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatUserFunctions
-        return from;
+        if (PgCatalog.Types.PgStatUserFunctions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatUserIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatUserIndexes
-        return from;
+        if (PgCatalog.Types.PgStatUserIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatUserTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatUserTables
-        return from;
+        if (PgCatalog.Types.PgStatUserTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatWal {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatWal
-        return from;
+        if (PgCatalog.Types.PgStatWal.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatWalReceiver {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatWalReceiver
-        return from;
+        if (PgCatalog.Types.PgStatWalReceiver.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatXactAllTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatXactAllTables
-        return from;
+        if (PgCatalog.Types.PgStatXactAllTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatXactSysTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatXactSysTables
-        return from;
+        if (PgCatalog.Types.PgStatXactSysTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatXactUserFunctions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatXactUserFunctions
-        return from;
+        if (PgCatalog.Types.PgStatXactUserFunctions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatXactUserTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatXactUserTables
-        return from;
+        if (PgCatalog.Types.PgStatXactUserTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioAllIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioAllIndexes
-        return from;
+        if (PgCatalog.Types.PgStatioAllIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioAllSequences {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioAllSequences
-        return from;
+        if (PgCatalog.Types.PgStatioAllSequences.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioAllTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioAllTables
-        return from;
+        if (PgCatalog.Types.PgStatioAllTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioSysIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioSysIndexes
-        return from;
+        if (PgCatalog.Types.PgStatioSysIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioSysSequences {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioSysSequences
-        return from;
+        if (PgCatalog.Types.PgStatioSysSequences.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioSysTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioSysTables
-        return from;
+        if (PgCatalog.Types.PgStatioSysTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioUserIndexes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioUserIndexes
-        return from;
+        if (PgCatalog.Types.PgStatioUserIndexes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioUserSequences {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioUserSequences
-        return from;
+        if (PgCatalog.Types.PgStatioUserSequences.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatioUserTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatioUserTables
-        return from;
+        if (PgCatalog.Types.PgStatioUserTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatistic {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatistic
-        return from;
+        if (PgCatalog.Types.PgStatistic.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatisticExt {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatisticExt
-        return from;
+        if (PgCatalog.Types.PgStatisticExt.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatisticExtData {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatisticExtData
-        return from;
+        if (PgCatalog.Types.PgStatisticExtData.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStats {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStats
-        return from;
+        if (PgCatalog.Types.PgStats.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatsExt {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatsExt
-        return from;
+        if (PgCatalog.Types.PgStatsExt.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgStatsExtExprs {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgStatsExtExprs
-        return from;
+        if (PgCatalog.Types.PgStatsExtExprs.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSubscription {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSubscription
-        return from;
+        if (PgCatalog.Types.PgSubscription.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgSubscriptionRel {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgSubscriptionRel
-        return from;
+        if (PgCatalog.Types.PgSubscriptionRel.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTables
-        return from;
+        if (PgCatalog.Types.PgTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTablespace {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTablespace
-        return from;
+        if (PgCatalog.Types.PgTablespace.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTimezoneAbbrevs {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTimezoneAbbrevs
-        return from;
+        if (PgCatalog.Types.PgTimezoneAbbrevs.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTimezoneNames {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTimezoneNames
-        return from;
+        if (PgCatalog.Types.PgTimezoneNames.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTransform {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTransform
-        return from;
+        if (PgCatalog.Types.PgTransform.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTrigger {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTrigger
-        return from;
+        if (PgCatalog.Types.PgTrigger.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTsConfig {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTsConfig
-        return from;
+        if (PgCatalog.Types.PgTsConfig.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTsConfigMap {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTsConfigMap
-        return from;
+        if (PgCatalog.Types.PgTsConfigMap.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTsDict {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTsDict
-        return from;
+        if (PgCatalog.Types.PgTsDict.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTsParser {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTsParser
-        return from;
+        if (PgCatalog.Types.PgTsParser.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgTsTemplate {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgTsTemplate
-        return from;
+        if (PgCatalog.Types.PgTsTemplate.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgType {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgType
-        return from;
+        if (PgCatalog.Types.PgType.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgUser {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgUser
-        return from;
+        if (PgCatalog.Types.PgUser.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgUserMapping {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgUserMapping
-        return from;
+        if (PgCatalog.Types.PgUserMapping.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgUserMappings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgUserMappings
-        return from;
+        if (PgCatalog.Types.PgUserMappings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgViews {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType PgCatalog.Types.PgViews
-        return from;
+        if (PgCatalog.Types.PgViews.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Point {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Point
 
         return from;
       }
     }
     export namespace Polygon {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Polygon
 
         return from;
       }
     }
     export namespace Record {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Record
 
         return from;
       }
     }
     export namespace Refcursor {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Refcursor
 
         return from;
       }
     }
     export namespace Regclass {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regclass
 
         if (from === null) return null;
@@ -9478,7 +9899,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regcollation {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regcollation
 
         if (from === null) return null;
@@ -9486,7 +9907,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regconfig {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regconfig
 
         if (from === null) return null;
@@ -9494,7 +9915,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regdictionary {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regdictionary
 
         if (from === null) return null;
@@ -9502,7 +9923,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regnamespace {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regnamespace
 
         if (from === null) return null;
@@ -9510,7 +9931,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regoper {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regoper
 
         if (from === null) return null;
@@ -9518,7 +9939,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regoperator {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regoperator
 
         if (from === null) return null;
@@ -9526,7 +9947,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regproc {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regproc
 
         if (from === null) return null;
@@ -9534,7 +9955,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regprocedure {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regprocedure
 
         if (from === null) return null;
@@ -9542,7 +9963,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regrole {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regrole
 
         if (from === null) return null;
@@ -9550,7 +9971,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Regtype {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Regtype
 
         if (from === null) return null;
@@ -9558,28 +9979,28 @@ export namespace PgCatalog {
       }
     }
     export namespace TableAmHandler {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TableAmHandler
 
         return from;
       }
     }
     export namespace Text {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Text
 
         return from;
       }
     }
     export namespace Tid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tid
 
         return from;
       }
     }
     export namespace Time {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Time
 
         if (from === null) return null;
@@ -9588,7 +10009,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Timestamp {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Timestamp
 
         if (from === null) return null;
@@ -9597,7 +10018,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Timestamptz {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Timestamptz
 
         if (from === null) return null;
@@ -9606,7 +10027,7 @@ export namespace PgCatalog {
       }
     }
     export namespace Timetz {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Timetz
 
         if (from === null) return null;
@@ -9615,84 +10036,84 @@ export namespace PgCatalog {
       }
     }
     export namespace Trigger {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Trigger
 
         return from;
       }
     }
     export namespace TsmHandler {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TsmHandler
 
         return from;
       }
     }
     export namespace Tsmultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tsmultirange
 
         return from;
       }
     }
     export namespace Tsquery {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tsquery
 
         return from;
       }
     }
     export namespace Tsrange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tsrange
 
         return from;
       }
     }
     export namespace Tstzmultirange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tstzmultirange
 
         return from;
       }
     }
     export namespace Tstzrange {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tstzrange
 
         return from;
       }
     }
     export namespace Tsvector {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Tsvector
 
         return from;
       }
     }
     export namespace TxidSnapshot {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.TxidSnapshot
 
         return from;
       }
     }
     export namespace Unknown {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Unknown
 
         return from;
       }
     }
     export namespace Uuid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Uuid
 
         return from ? new UUID(from) : null;
       }
     }
     export namespace Varbit {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Varbit
 
         if (from === null) return null;
@@ -9706,35 +10127,35 @@ export namespace PgCatalog {
       }
     }
     export namespace Varchar {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Varchar
 
         return from;
       }
     }
     export namespace Void {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Void
 
         return from;
       }
     }
     export namespace Xid {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Xid
 
         return from;
       }
     }
     export namespace Xid8 {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Xid8
 
         return from;
       }
     }
     export namespace Xml {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type PgCatalog.Types.Xml
 
         return from;
@@ -9940,7 +10361,7 @@ export namespace PgCatalog {
 export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.AdministrableRoleAuthorizationsArray
 
         if (from === null) return null;
@@ -9954,7 +10375,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ApplicableRolesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ApplicableRolesArray
 
         if (from === null) return null;
@@ -9968,7 +10389,7 @@ export namespace InformationSchema {
       }
     }
     export namespace AttributesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.AttributesArray
 
         if (from === null) return null;
@@ -9982,7 +10403,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CardinalNumberArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CardinalNumberArray
 
         if (from === null) return null;
@@ -9996,7 +10417,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CharacterDataArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CharacterDataArray
 
         if (from === null) return null;
@@ -10010,7 +10431,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CharacterSetsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CharacterSetsArray
 
         if (from === null) return null;
@@ -10024,7 +10445,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CheckConstraintRoutineUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CheckConstraintRoutineUsageArray
 
         if (from === null) return null;
@@ -10038,7 +10459,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CheckConstraintsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CheckConstraintsArray
 
         if (from === null) return null;
@@ -10052,7 +10473,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CollationCharacterSetApplicabilityArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CollationCharacterSetApplicabilityArray
 
         if (from === null) return null;
@@ -10066,7 +10487,7 @@ export namespace InformationSchema {
       }
     }
     export namespace CollationsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.CollationsArray
 
         if (from === null) return null;
@@ -10080,7 +10501,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnColumnUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnColumnUsageArray
 
         if (from === null) return null;
@@ -10094,7 +10515,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnDomainUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnDomainUsageArray
 
         if (from === null) return null;
@@ -10108,7 +10529,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnOptionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnOptionsArray
 
         if (from === null) return null;
@@ -10122,7 +10543,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnPrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnPrivilegesArray
 
         if (from === null) return null;
@@ -10136,7 +10557,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnUdtUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnUdtUsageArray
 
         if (from === null) return null;
@@ -10150,7 +10571,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ColumnsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ColumnsArray
 
         if (from === null) return null;
@@ -10164,7 +10585,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ConstraintColumnUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ConstraintColumnUsageArray
 
         if (from === null) return null;
@@ -10178,7 +10599,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ConstraintTableUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ConstraintTableUsageArray
 
         if (from === null) return null;
@@ -10192,7 +10613,7 @@ export namespace InformationSchema {
       }
     }
     export namespace DataTypePrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.DataTypePrivilegesArray
 
         if (from === null) return null;
@@ -10206,7 +10627,7 @@ export namespace InformationSchema {
       }
     }
     export namespace DomainConstraintsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.DomainConstraintsArray
 
         if (from === null) return null;
@@ -10220,7 +10641,7 @@ export namespace InformationSchema {
       }
     }
     export namespace DomainUdtUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.DomainUdtUsageArray
 
         if (from === null) return null;
@@ -10234,7 +10655,7 @@ export namespace InformationSchema {
       }
     }
     export namespace DomainsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.DomainsArray
 
         if (from === null) return null;
@@ -10248,7 +10669,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ElementTypesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ElementTypesArray
 
         if (from === null) return null;
@@ -10262,7 +10683,7 @@ export namespace InformationSchema {
       }
     }
     export namespace EnabledRolesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.EnabledRolesArray
 
         if (from === null) return null;
@@ -10276,7 +10697,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignDataWrapperOptionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignDataWrapperOptionsArray
 
         if (from === null) return null;
@@ -10290,7 +10711,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignDataWrappersArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignDataWrappersArray
 
         if (from === null) return null;
@@ -10304,7 +10725,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignServerOptionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignServerOptionsArray
 
         if (from === null) return null;
@@ -10318,7 +10739,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignServersArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignServersArray
 
         if (from === null) return null;
@@ -10332,7 +10753,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignTableOptionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignTableOptionsArray
 
         if (from === null) return null;
@@ -10346,7 +10767,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ForeignTablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ForeignTablesArray
 
         if (from === null) return null;
@@ -10360,7 +10781,7 @@ export namespace InformationSchema {
       }
     }
     export namespace InformationSchemaCatalogNameArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.InformationSchemaCatalogNameArray
 
         if (from === null) return null;
@@ -10374,7 +10795,7 @@ export namespace InformationSchema {
       }
     }
     export namespace KeyColumnUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.KeyColumnUsageArray
 
         if (from === null) return null;
@@ -10388,7 +10809,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ParametersArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ParametersArray
 
         if (from === null) return null;
@@ -10402,37 +10823,52 @@ export namespace InformationSchema {
       }
     }
     export namespace PgForeignDataWrappers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.PgForeignDataWrappers
-        return from;
+        if (InformationSchema.Types.PgForeignDataWrappers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignServers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.PgForeignServers
-        return from;
+        if (InformationSchema.Types.PgForeignServers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignTableColumns {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.PgForeignTableColumns
-        return from;
+        if (InformationSchema.Types.PgForeignTableColumns.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgForeignTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.PgForeignTables
-        return from;
+        if (InformationSchema.Types.PgForeignTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace PgUserMappings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.PgUserMappings
-        return from;
+        if (InformationSchema.Types.PgUserMappings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ReferentialConstraintsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ReferentialConstraintsArray
 
         if (from === null) return null;
@@ -10446,7 +10882,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoleColumnGrantsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoleColumnGrantsArray
 
         if (from === null) return null;
@@ -10460,7 +10896,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoleRoutineGrantsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoleRoutineGrantsArray
 
         if (from === null) return null;
@@ -10474,7 +10910,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoleTableGrantsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoleTableGrantsArray
 
         if (from === null) return null;
@@ -10488,7 +10924,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoleUdtGrantsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoleUdtGrantsArray
 
         if (from === null) return null;
@@ -10502,7 +10938,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoleUsageGrantsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoleUsageGrantsArray
 
         if (from === null) return null;
@@ -10516,7 +10952,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutineColumnUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutineColumnUsageArray
 
         if (from === null) return null;
@@ -10530,7 +10966,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutinePrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutinePrivilegesArray
 
         if (from === null) return null;
@@ -10544,7 +10980,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutineRoutineUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutineRoutineUsageArray
 
         if (from === null) return null;
@@ -10558,7 +10994,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutineSequenceUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutineSequenceUsageArray
 
         if (from === null) return null;
@@ -10572,7 +11008,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutineTableUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutineTableUsageArray
 
         if (from === null) return null;
@@ -10586,7 +11022,7 @@ export namespace InformationSchema {
       }
     }
     export namespace RoutinesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.RoutinesArray
 
         if (from === null) return null;
@@ -10600,7 +11036,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SchemataArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SchemataArray
 
         if (from === null) return null;
@@ -10614,7 +11050,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SequencesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SequencesArray
 
         if (from === null) return null;
@@ -10628,7 +11064,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SqlFeaturesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SqlFeaturesArray
 
         if (from === null) return null;
@@ -10642,7 +11078,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SqlIdentifierArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SqlIdentifierArray
 
         if (from === null) return null;
@@ -10656,7 +11092,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SqlImplementationInfoArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SqlImplementationInfoArray
 
         if (from === null) return null;
@@ -10670,7 +11106,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SqlPartsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SqlPartsArray
 
         if (from === null) return null;
@@ -10684,7 +11120,7 @@ export namespace InformationSchema {
       }
     }
     export namespace SqlSizingArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.SqlSizingArray
 
         if (from === null) return null;
@@ -10698,7 +11134,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TableConstraintsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TableConstraintsArray
 
         if (from === null) return null;
@@ -10712,7 +11148,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TablePrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TablePrivilegesArray
 
         if (from === null) return null;
@@ -10726,7 +11162,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TablesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TablesArray
 
         if (from === null) return null;
@@ -10740,7 +11176,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TimeStampArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TimeStampArray
 
         if (from === null) return null;
@@ -10754,7 +11190,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TransformsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TransformsArray
 
         if (from === null) return null;
@@ -10768,7 +11204,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TriggeredUpdateColumnsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TriggeredUpdateColumnsArray
 
         if (from === null) return null;
@@ -10782,7 +11218,7 @@ export namespace InformationSchema {
       }
     }
     export namespace TriggersArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.TriggersArray
 
         if (from === null) return null;
@@ -10796,7 +11232,7 @@ export namespace InformationSchema {
       }
     }
     export namespace UdtPrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.UdtPrivilegesArray
 
         if (from === null) return null;
@@ -10810,7 +11246,7 @@ export namespace InformationSchema {
       }
     }
     export namespace UsagePrivilegesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.UsagePrivilegesArray
 
         if (from === null) return null;
@@ -10824,7 +11260,7 @@ export namespace InformationSchema {
       }
     }
     export namespace UserDefinedTypesArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.UserDefinedTypesArray
 
         if (from === null) return null;
@@ -10838,7 +11274,7 @@ export namespace InformationSchema {
       }
     }
     export namespace UserMappingOptionsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.UserMappingOptionsArray
 
         if (from === null) return null;
@@ -10852,7 +11288,7 @@ export namespace InformationSchema {
       }
     }
     export namespace UserMappingsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.UserMappingsArray
 
         if (from === null) return null;
@@ -10866,7 +11302,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ViewColumnUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ViewColumnUsageArray
 
         if (from === null) return null;
@@ -10880,7 +11316,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ViewRoutineUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ViewRoutineUsageArray
 
         if (from === null) return null;
@@ -10894,7 +11330,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ViewTableUsageArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ViewTableUsageArray
 
         if (from === null) return null;
@@ -10908,7 +11344,7 @@ export namespace InformationSchema {
       }
     }
     export namespace ViewsArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.ViewsArray
 
         if (from === null) return null;
@@ -10922,7 +11358,7 @@ export namespace InformationSchema {
       }
     }
     export namespace YesOrNoArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type InformationSchema.Types.YesOrNoArray
 
         if (from === null) return null;
@@ -10936,415 +11372,609 @@ export namespace InformationSchema {
       }
     }
     export namespace AdministrableRoleAuthorizations {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.AdministrableRoleAuthorizations
-        return from;
+        if (InformationSchema.Types.AdministrableRoleAuthorizations.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ApplicableRoles {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ApplicableRoles
-        return from;
+        if (InformationSchema.Types.ApplicableRoles.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Attributes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Attributes
-        return from;
+        if (InformationSchema.Types.Attributes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace CardinalNumber {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // DomainType InformationSchema.Types.CardinalNumber
         return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace CharacterData {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // DomainType InformationSchema.Types.CharacterData
         return PgCatalog.Types.Varchar.parse(from);
       }
     }
     export namespace CharacterSets {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.CharacterSets
-        return from;
+        if (InformationSchema.Types.CharacterSets.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace CheckConstraintRoutineUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.CheckConstraintRoutineUsage
-        return from;
+        if (InformationSchema.Types.CheckConstraintRoutineUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace CheckConstraints {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.CheckConstraints
-        return from;
+        if (InformationSchema.Types.CheckConstraints.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace CollationCharacterSetApplicability {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.CollationCharacterSetApplicability
-        return from;
+        if (
+          InformationSchema.Types.CollationCharacterSetApplicability.is(from)
+        ) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Collations {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Collations
-        return from;
+        if (InformationSchema.Types.Collations.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ColumnColumnUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ColumnColumnUsage
-        return from;
+        if (InformationSchema.Types.ColumnColumnUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ColumnDomainUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ColumnDomainUsage
-        return from;
+        if (InformationSchema.Types.ColumnDomainUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ColumnOptions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ColumnOptions
-        return from;
+        if (InformationSchema.Types.ColumnOptions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ColumnPrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ColumnPrivileges
-        return from;
+        if (InformationSchema.Types.ColumnPrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ColumnUdtUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ColumnUdtUsage
-        return from;
+        if (InformationSchema.Types.ColumnUdtUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Columns {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Columns
-        return from;
+        if (InformationSchema.Types.Columns.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ConstraintColumnUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ConstraintColumnUsage
-        return from;
+        if (InformationSchema.Types.ConstraintColumnUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ConstraintTableUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ConstraintTableUsage
-        return from;
+        if (InformationSchema.Types.ConstraintTableUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace DataTypePrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.DataTypePrivileges
-        return from;
+        if (InformationSchema.Types.DataTypePrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace DomainConstraints {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.DomainConstraints
-        return from;
+        if (InformationSchema.Types.DomainConstraints.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace DomainUdtUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.DomainUdtUsage
-        return from;
+        if (InformationSchema.Types.DomainUdtUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Domains {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Domains
-        return from;
+        if (InformationSchema.Types.Domains.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ElementTypes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ElementTypes
-        return from;
+        if (InformationSchema.Types.ElementTypes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace EnabledRoles {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.EnabledRoles
-        return from;
+        if (InformationSchema.Types.EnabledRoles.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignDataWrapperOptions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignDataWrapperOptions
-        return from;
+        if (InformationSchema.Types.ForeignDataWrapperOptions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignDataWrappers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignDataWrappers
-        return from;
+        if (InformationSchema.Types.ForeignDataWrappers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignServerOptions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignServerOptions
-        return from;
+        if (InformationSchema.Types.ForeignServerOptions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignServers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignServers
-        return from;
+        if (InformationSchema.Types.ForeignServers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignTableOptions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignTableOptions
-        return from;
+        if (InformationSchema.Types.ForeignTableOptions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ForeignTables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ForeignTables
-        return from;
+        if (InformationSchema.Types.ForeignTables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace InformationSchemaCatalogName {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.InformationSchemaCatalogName
-        return from;
+        if (InformationSchema.Types.InformationSchemaCatalogName.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace KeyColumnUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.KeyColumnUsage
-        return from;
+        if (InformationSchema.Types.KeyColumnUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Parameters {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Parameters
-        return from;
+        if (InformationSchema.Types.Parameters.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ReferentialConstraints {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ReferentialConstraints
-        return from;
+        if (InformationSchema.Types.ReferentialConstraints.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoleColumnGrants {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoleColumnGrants
-        return from;
+        if (InformationSchema.Types.RoleColumnGrants.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoleRoutineGrants {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoleRoutineGrants
-        return from;
+        if (InformationSchema.Types.RoleRoutineGrants.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoleTableGrants {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoleTableGrants
-        return from;
+        if (InformationSchema.Types.RoleTableGrants.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoleUdtGrants {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoleUdtGrants
-        return from;
+        if (InformationSchema.Types.RoleUdtGrants.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoleUsageGrants {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoleUsageGrants
-        return from;
+        if (InformationSchema.Types.RoleUsageGrants.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoutineColumnUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoutineColumnUsage
-        return from;
+        if (InformationSchema.Types.RoutineColumnUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoutinePrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoutinePrivileges
-        return from;
+        if (InformationSchema.Types.RoutinePrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoutineRoutineUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoutineRoutineUsage
-        return from;
+        if (InformationSchema.Types.RoutineRoutineUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoutineSequenceUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoutineSequenceUsage
-        return from;
+        if (InformationSchema.Types.RoutineSequenceUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace RoutineTableUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.RoutineTableUsage
-        return from;
+        if (InformationSchema.Types.RoutineTableUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Routines {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Routines
-        return from;
+        if (InformationSchema.Types.Routines.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Schemata {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Schemata
-        return from;
+        if (InformationSchema.Types.Schemata.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Sequences {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Sequences
-        return from;
+        if (InformationSchema.Types.Sequences.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace SqlFeatures {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.SqlFeatures
-        return from;
+        if (InformationSchema.Types.SqlFeatures.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace SqlIdentifier {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // DomainType InformationSchema.Types.SqlIdentifier
         return PgCatalog.Types.Name.parse(from);
       }
     }
     export namespace SqlImplementationInfo {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.SqlImplementationInfo
-        return from;
+        if (InformationSchema.Types.SqlImplementationInfo.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace SqlParts {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.SqlParts
-        return from;
+        if (InformationSchema.Types.SqlParts.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace SqlSizing {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.SqlSizing
-        return from;
+        if (InformationSchema.Types.SqlSizing.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace TableConstraints {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.TableConstraints
-        return from;
+        if (InformationSchema.Types.TableConstraints.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace TablePrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.TablePrivileges
-        return from;
+        if (InformationSchema.Types.TablePrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Tables {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Tables
-        return from;
+        if (InformationSchema.Types.Tables.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace TimeStamp {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // DomainType InformationSchema.Types.TimeStamp
         return PgCatalog.Types.Timestamptz.parse(from);
       }
     }
     export namespace Transforms {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Transforms
-        return from;
+        if (InformationSchema.Types.Transforms.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace TriggeredUpdateColumns {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.TriggeredUpdateColumns
-        return from;
+        if (InformationSchema.Types.TriggeredUpdateColumns.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Triggers {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Triggers
-        return from;
+        if (InformationSchema.Types.Triggers.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace UdtPrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.UdtPrivileges
-        return from;
+        if (InformationSchema.Types.UdtPrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace UsagePrivileges {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.UsagePrivileges
-        return from;
+        if (InformationSchema.Types.UsagePrivileges.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace UserDefinedTypes {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.UserDefinedTypes
-        return from;
+        if (InformationSchema.Types.UserDefinedTypes.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace UserMappingOptions {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.UserMappingOptions
-        return from;
+        if (InformationSchema.Types.UserMappingOptions.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace UserMappings {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.UserMappings
-        return from;
+        if (InformationSchema.Types.UserMappings.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ViewColumnUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ViewColumnUsage
-        return from;
+        if (InformationSchema.Types.ViewColumnUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ViewRoutineUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ViewRoutineUsage
-        return from;
+        if (InformationSchema.Types.ViewRoutineUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace ViewTableUsage {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.ViewTableUsage
-        return from;
+        if (InformationSchema.Types.ViewTableUsage.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace Views {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType InformationSchema.Types.Views
-        return from;
+        if (InformationSchema.Types.Views.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace YesOrNo {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // DomainType InformationSchema.Types.YesOrNo
         return PgCatalog.Types.Varchar.parse(from);
       }
@@ -11369,7 +11999,7 @@ export namespace InformationSchema {
 export namespace Public {
   export namespace Types {
     export namespace CubeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type Public.Types.CubeArray
 
         if (from === null) return null;
@@ -11383,7 +12013,7 @@ export namespace Public {
       }
     }
     export namespace SlugArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type Public.Types.SlugArray
 
         if (from === null) return null;
@@ -11397,7 +12027,7 @@ export namespace Public {
       }
     }
     export namespace Cube {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type Public.Types.Cube
 
         if (from === null) return null;
@@ -11408,570 +12038,693 @@ export namespace Public {
       }
     }
     export namespace Slug {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType Public.Types.Slug
-        return from;
+        if (Public.Types.Slug.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
   }
   export namespace Procedures {
     export namespace CubeIn {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeIn.Parameters
-          return from;
+          if (Public.Procedures.CubeIn.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeIn.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace Cube_9c45 {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.Cube_9c45.Parameters
-          return from;
+          if (Public.Procedures.Cube_9c45.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.Cube_9c45.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace Cube_2e6d {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.Cube_2e6d.Parameters
-          return from;
+          if (Public.Procedures.Cube_2e6d.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.Cube_2e6d.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeOut {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeOut.Parameters
-          return from;
+          if (Public.Procedures.CubeOut.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeOut.Results
-          PgCatalog.Types.Cstring.parse(from);
+          return PgCatalog.Types.Cstring.parse(from);
         }
       }
     }
     export namespace CubeEq {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeEq.Parameters
-          return from;
+          if (Public.Procedures.CubeEq.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeEq.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeNe {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeNe.Parameters
-          return from;
+          if (Public.Procedures.CubeNe.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeNe.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeLt {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeLt.Parameters
-          return from;
+          if (Public.Procedures.CubeLt.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeLt.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeGt {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeGt.Parameters
-          return from;
+          if (Public.Procedures.CubeGt.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeGt.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeLe {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeLe.Parameters
-          return from;
+          if (Public.Procedures.CubeLe.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeLe.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeGe {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeGe.Parameters
-          return from;
+          if (Public.Procedures.CubeGe.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeGe.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeCmp {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeCmp.Parameters
-          return from;
+          if (Public.Procedures.CubeCmp.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeCmp.Results
-          PgCatalog.Types.Int4.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
     export namespace CubeContains {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeContains.Parameters
-          return from;
+          if (Public.Procedures.CubeContains.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeContains.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeContained {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeContained.Parameters
-          return from;
+          if (Public.Procedures.CubeContained.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeContained.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeOverlap {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeOverlap.Parameters
-          return from;
+          if (Public.Procedures.CubeOverlap.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeOverlap.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeUnion {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeUnion.Parameters
-          return from;
+          if (Public.Procedures.CubeUnion.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeUnion.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeInter {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeInter.Parameters
-          return from;
+          if (Public.Procedures.CubeInter.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeInter.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeSize {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeSize.Parameters
-          return from;
+          if (Public.Procedures.CubeSize.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeSize.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeSubset {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeSubset.Parameters
-          return from;
+          if (Public.Procedures.CubeSubset.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeSubset.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeDistance {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeDistance.Parameters
-          return from;
+          if (Public.Procedures.CubeDistance.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeDistance.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace DistanceChebyshev {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.DistanceChebyshev.Parameters
-          return from;
+          if (Public.Procedures.DistanceChebyshev.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.DistanceChebyshev.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace DistanceTaxicab {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.DistanceTaxicab.Parameters
-          return from;
+          if (Public.Procedures.DistanceTaxicab.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.DistanceTaxicab.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeDim {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeDim.Parameters
-          return from;
+          if (Public.Procedures.CubeDim.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeDim.Results
-          PgCatalog.Types.Int4.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
     export namespace CubeLlCoord {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeLlCoord.Parameters
-          return from;
+          if (Public.Procedures.CubeLlCoord.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeLlCoord.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeUrCoord {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeUrCoord.Parameters
-          return from;
+          if (Public.Procedures.CubeUrCoord.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeUrCoord.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeCoord {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeCoord.Parameters
-          return from;
+          if (Public.Procedures.CubeCoord.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeCoord.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeCoordLlur {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeCoordLlur.Parameters
-          return from;
+          if (Public.Procedures.CubeCoordLlur.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeCoordLlur.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeA5b3 {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeA5b3.Parameters
-          return from;
+          if (Public.Procedures.CubeA5b3.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeA5b3.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace Cube_0aec {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.Cube_0aec.Parameters
-          return from;
+          if (Public.Procedures.Cube_0aec.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.Cube_0aec.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace Cube_39d2 {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.Cube_39d2.Parameters
-          return from;
+          if (Public.Procedures.Cube_39d2.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.Cube_39d2.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeA7eb {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeA7eb.Parameters
-          return from;
+          if (Public.Procedures.CubeA7eb.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeA7eb.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeIsPoint {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeIsPoint.Parameters
-          return from;
+          if (Public.Procedures.CubeIsPoint.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeIsPoint.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace CubeEnlarge {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeEnlarge.Parameters
-          return from;
+          if (Public.Procedures.CubeEnlarge.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeEnlarge.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace GCubeConsistent {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubeConsistent.Parameters
-          return from;
+          if (Public.Procedures.GCubeConsistent.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubeConsistent.Results
-          PgCatalog.Types.Bool.parse(from);
+          return PgCatalog.Types.Bool.parse(from);
         }
       }
     }
     export namespace GCubePenalty {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubePenalty.Parameters
-          return from;
+          if (Public.Procedures.GCubePenalty.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubePenalty.Results
-          PgCatalog.Types.Internal.parse(from);
+          return PgCatalog.Types.Internal.parse(from);
         }
       }
     }
     export namespace GCubePicksplit {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubePicksplit.Parameters
-          return from;
+          if (Public.Procedures.GCubePicksplit.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubePicksplit.Results
-          PgCatalog.Types.Internal.parse(from);
+          return PgCatalog.Types.Internal.parse(from);
         }
       }
     }
     export namespace GCubeUnion {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubeUnion.Parameters
-          return from;
+          if (Public.Procedures.GCubeUnion.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubeUnion.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace GCubeSame {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubeSame.Parameters
-          return from;
+          if (Public.Procedures.GCubeSame.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubeSame.Results
-          PgCatalog.Types.Internal.parse(from);
+          return PgCatalog.Types.Internal.parse(from);
         }
       }
     }
     export namespace GCubeDistance {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.GCubeDistance.Parameters
-          return from;
+          if (Public.Procedures.GCubeDistance.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.GCubeDistance.Results
-          PgCatalog.Types.Float8.parse(from);
+          return PgCatalog.Types.Float8.parse(from);
         }
       }
     }
     export namespace CubeRecv {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeRecv.Parameters
-          return from;
+          if (Public.Procedures.CubeRecv.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeRecv.Results
-          Public.Types.Cube.parse(from);
+          return Public.Types.Cube.parse(from);
         }
       }
     }
     export namespace CubeSend {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Public.Procedures.CubeSend.Parameters
-          return from;
+          if (Public.Procedures.CubeSend.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Public.Procedures.CubeSend.Results
-          PgCatalog.Types.Bytea.parse(from);
+          return PgCatalog.Types.Bytea.parse(from);
         }
       }
     }
@@ -11985,7 +12738,7 @@ export namespace Public {
 export namespace Api {
   export namespace Types {
     export namespace EchoTypeArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type Api.Types.EchoTypeArray
 
         if (from === null) return null;
@@ -11999,7 +12752,7 @@ export namespace Api {
       }
     }
     export namespace EchoTypeNestedArray {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // Type Api.Types.EchoTypeNestedArray
 
         if (from === null) return null;
@@ -12013,120 +12766,150 @@ export namespace Api {
       }
     }
     export namespace EchoType {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType Api.Types.EchoType
-        return from;
+        if (Api.Types.EchoType.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace EchoTypeNested {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType Api.Types.EchoTypeNested
-        return from;
+        if (Api.Types.EchoTypeNested.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
     export namespace EchoTableResults {
-      export function parse(from: string | null) {
+      export function parse(from: any) {
         // CompositeType Api.Types.EchoTableResults
-        return from;
+        if (Api.Types.EchoTableResults.is(from)) {
+          return from;
+        }
+        throw new Error(JSON.stringify(from));
       }
     }
   }
   export namespace Procedures {
     export namespace Echo {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.Echo.Parameters
-          return from;
+          if (Api.Procedures.Echo.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.Echo.Results
-          PgCatalog.Types.Text.parse(from);
+          return PgCatalog.Types.Text.parse(from);
         }
       }
     }
     export namespace EchoSet {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoSet.Parameters
-          return from;
+          if (Api.Procedures.EchoSet.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoSet.Results
-          PgCatalog.Types.Text.parse(from);
+          return PgCatalog.Types.Text.parse(from);
         }
       }
     }
     export namespace EchoTable {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoTable.Parameters
-          return from;
+          if (Api.Procedures.EchoTable.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoTable.Results
-          Api.Types.EchoTableResults.parse(from);
+          return Api.Types.EchoTableResults.parse(from);
         }
       }
     }
     export namespace EchoType {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoType.Parameters
-          return from;
+          if (Api.Procedures.EchoType.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoType.Results
-          Api.Types.EchoType.parse(from);
+          return Api.Types.EchoType.parse(from);
         }
       }
     }
     export namespace EchoTypeArray {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoTypeArray.Parameters
-          return from;
+          if (Api.Procedures.EchoTypeArray.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoTypeArray.Results
-          Api.Types.EchoTypeArray.parse(from);
+          return Api.Types.EchoTypeArray.parse(from);
         }
       }
     }
     export namespace EchoTypeNested {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoTypeNested.Parameters
-          return from;
+          if (Api.Procedures.EchoTypeNested.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoTypeNested.Results
-          Api.Types.EchoTypeNested.parse(from);
+          return Api.Types.EchoTypeNested.parse(from);
         }
       }
     }
     export namespace EchoTypeSet {
       export namespace Parameters {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // CompositeType Api.Procedures.EchoTypeSet.Parameters
-          return from;
+          if (Api.Procedures.EchoTypeSet.Parameters.is(from)) {
+            return from;
+          }
+          throw new Error(JSON.stringify(from));
         }
       }
       export namespace Results {
-        export function parse(from: string | null) {
+        export function parse(from: any) {
           // AliasType Api.Procedures.EchoTypeSet.Results
-          Api.Types.EchoType.parse(from);
+          return Api.Types.EchoType.parse(from);
         }
       }
     }
@@ -14159,6 +14942,4604 @@ export namespace Public {
   }
 }
 export namespace Api {
+  export namespace Tables {}
+}
+
+// begin type guards
+export namespace PgCatalog {
+  export namespace Types {
+    export namespace PgAggregate {
+      export function is(value: any): value is PgCatalog.Types.PgAggregate {
+        if (
+          value.aggfnoid !== undefined &&
+          value.aggkind !== undefined &&
+          value.aggnumdirectargs !== undefined &&
+          value.aggtransfn !== undefined &&
+          value.aggfinalfn !== undefined &&
+          value.aggcombinefn !== undefined &&
+          value.aggserialfn !== undefined &&
+          value.aggdeserialfn !== undefined &&
+          value.aggmtransfn !== undefined &&
+          value.aggminvtransfn !== undefined &&
+          value.aggmfinalfn !== undefined &&
+          value.aggfinalextra !== undefined &&
+          value.aggmfinalextra !== undefined &&
+          value.aggfinalmodify !== undefined &&
+          value.aggmfinalmodify !== undefined &&
+          value.aggsortop !== undefined &&
+          value.aggtranstype !== undefined &&
+          value.aggtransspace !== undefined &&
+          value.aggmtranstype !== undefined &&
+          value.aggmtransspace !== undefined &&
+          value.agginitval !== undefined &&
+          value.aggminitval !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAm {
+      export function is(value: any): value is PgCatalog.Types.PgAm {
+        if (
+          value.oid !== undefined &&
+          value.amname !== undefined &&
+          value.amhandler !== undefined &&
+          value.amtype !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAmop {
+      export function is(value: any): value is PgCatalog.Types.PgAmop {
+        if (
+          value.oid !== undefined &&
+          value.amopfamily !== undefined &&
+          value.amoplefttype !== undefined &&
+          value.amoprighttype !== undefined &&
+          value.amopstrategy !== undefined &&
+          value.amoppurpose !== undefined &&
+          value.amopopr !== undefined &&
+          value.amopmethod !== undefined &&
+          value.amopsortfamily !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAmproc {
+      export function is(value: any): value is PgCatalog.Types.PgAmproc {
+        if (
+          value.oid !== undefined &&
+          value.amprocfamily !== undefined &&
+          value.amproclefttype !== undefined &&
+          value.amprocrighttype !== undefined &&
+          value.amprocnum !== undefined &&
+          value.amproc !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAttrdef {
+      export function is(value: any): value is PgCatalog.Types.PgAttrdef {
+        if (
+          value.oid !== undefined &&
+          value.adrelid !== undefined &&
+          value.adnum !== undefined &&
+          value.adbin !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAttribute {
+      export function is(value: any): value is PgCatalog.Types.PgAttribute {
+        if (
+          value.attrelid !== undefined &&
+          value.attname !== undefined &&
+          value.atttypid !== undefined &&
+          value.attlen !== undefined &&
+          value.attnum !== undefined &&
+          value.attcacheoff !== undefined &&
+          value.atttypmod !== undefined &&
+          value.attndims !== undefined &&
+          value.attbyval !== undefined &&
+          value.attalign !== undefined &&
+          value.attstorage !== undefined &&
+          value.attcompression !== undefined &&
+          value.attnotnull !== undefined &&
+          value.atthasdef !== undefined &&
+          value.atthasmissing !== undefined &&
+          value.attidentity !== undefined &&
+          value.attgenerated !== undefined &&
+          value.attisdropped !== undefined &&
+          value.attislocal !== undefined &&
+          value.attinhcount !== undefined &&
+          value.attstattarget !== undefined &&
+          value.attcollation !== undefined &&
+          value.attacl !== undefined &&
+          value.attoptions !== undefined &&
+          value.attfdwoptions !== undefined &&
+          value.attmissingval !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAuthMembers {
+      export function is(value: any): value is PgCatalog.Types.PgAuthMembers {
+        if (
+          value.oid !== undefined &&
+          value.roleid !== undefined &&
+          value.member !== undefined &&
+          value.grantor !== undefined &&
+          value.adminOption !== undefined &&
+          value.inheritOption !== undefined &&
+          value.setOption !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAuthid {
+      export function is(value: any): value is PgCatalog.Types.PgAuthid {
+        if (
+          value.oid !== undefined &&
+          value.rolname !== undefined &&
+          value.rolsuper !== undefined &&
+          value.rolinherit !== undefined &&
+          value.rolcreaterole !== undefined &&
+          value.rolcreatedb !== undefined &&
+          value.rolcanlogin !== undefined &&
+          value.rolreplication !== undefined &&
+          value.rolbypassrls !== undefined &&
+          value.rolconnlimit !== undefined &&
+          value.rolpassword !== undefined &&
+          value.rolvaliduntil !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAvailableExtensionVersions {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgAvailableExtensionVersions {
+        if (
+          value.name !== undefined &&
+          value.version !== undefined &&
+          value.installed !== undefined &&
+          value.superuser !== undefined &&
+          value.trusted !== undefined &&
+          value.relocatable !== undefined &&
+          value.schema !== undefined &&
+          value.requires !== undefined &&
+          value.comment !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgAvailableExtensions {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgAvailableExtensions {
+        if (
+          value.name !== undefined &&
+          value.defaultVersion !== undefined &&
+          value.installedVersion !== undefined &&
+          value.comment !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgBackendMemoryContexts {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgBackendMemoryContexts {
+        if (
+          value.name !== undefined &&
+          value.ident !== undefined &&
+          value.parent !== undefined &&
+          value.level !== undefined &&
+          value.totalBytes !== undefined &&
+          value.totalNblocks !== undefined &&
+          value.freeBytes !== undefined &&
+          value.freeChunks !== undefined &&
+          value.usedBytes !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgCast {
+      export function is(value: any): value is PgCatalog.Types.PgCast {
+        if (
+          value.oid !== undefined &&
+          value.castsource !== undefined &&
+          value.casttarget !== undefined &&
+          value.castfunc !== undefined &&
+          value.castcontext !== undefined &&
+          value.castmethod !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgClass {
+      export function is(value: any): value is PgCatalog.Types.PgClass {
+        if (
+          value.oid !== undefined &&
+          value.relname !== undefined &&
+          value.relnamespace !== undefined &&
+          value.reltype !== undefined &&
+          value.reloftype !== undefined &&
+          value.relowner !== undefined &&
+          value.relam !== undefined &&
+          value.relfilenode !== undefined &&
+          value.reltablespace !== undefined &&
+          value.relpages !== undefined &&
+          value.reltuples !== undefined &&
+          value.relallvisible !== undefined &&
+          value.reltoastrelid !== undefined &&
+          value.relhasindex !== undefined &&
+          value.relisshared !== undefined &&
+          value.relpersistence !== undefined &&
+          value.relkind !== undefined &&
+          value.relnatts !== undefined &&
+          value.relchecks !== undefined &&
+          value.relhasrules !== undefined &&
+          value.relhastriggers !== undefined &&
+          value.relhassubclass !== undefined &&
+          value.relrowsecurity !== undefined &&
+          value.relforcerowsecurity !== undefined &&
+          value.relispopulated !== undefined &&
+          value.relreplident !== undefined &&
+          value.relispartition !== undefined &&
+          value.relrewrite !== undefined &&
+          value.relfrozenxid !== undefined &&
+          value.relminmxid !== undefined &&
+          value.relacl !== undefined &&
+          value.reloptions !== undefined &&
+          value.relpartbound !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgCollation {
+      export function is(value: any): value is PgCatalog.Types.PgCollation {
+        if (
+          value.oid !== undefined &&
+          value.collname !== undefined &&
+          value.collnamespace !== undefined &&
+          value.collowner !== undefined &&
+          value.collprovider !== undefined &&
+          value.collisdeterministic !== undefined &&
+          value.collencoding !== undefined &&
+          value.collcollate !== undefined &&
+          value.collctype !== undefined &&
+          value.colliculocale !== undefined &&
+          value.collicurules !== undefined &&
+          value.collversion !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgConfig {
+      export function is(value: any): value is PgCatalog.Types.PgConfig {
+        if (value.name !== undefined && value.setting !== undefined)
+          return true;
+        return false;
+      }
+    }
+    export namespace PgConstraint {
+      export function is(value: any): value is PgCatalog.Types.PgConstraint {
+        if (
+          value.oid !== undefined &&
+          value.conname !== undefined &&
+          value.connamespace !== undefined &&
+          value.contype !== undefined &&
+          value.condeferrable !== undefined &&
+          value.condeferred !== undefined &&
+          value.convalidated !== undefined &&
+          value.conrelid !== undefined &&
+          value.contypid !== undefined &&
+          value.conindid !== undefined &&
+          value.conparentid !== undefined &&
+          value.confrelid !== undefined &&
+          value.confupdtype !== undefined &&
+          value.confdeltype !== undefined &&
+          value.confmatchtype !== undefined &&
+          value.conislocal !== undefined &&
+          value.coninhcount !== undefined &&
+          value.connoinherit !== undefined &&
+          value.conkey !== undefined &&
+          value.confkey !== undefined &&
+          value.conpfeqop !== undefined &&
+          value.conppeqop !== undefined &&
+          value.conffeqop !== undefined &&
+          value.confdelsetcols !== undefined &&
+          value.conexclop !== undefined &&
+          value.conbin !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgConversion {
+      export function is(value: any): value is PgCatalog.Types.PgConversion {
+        if (
+          value.oid !== undefined &&
+          value.conname !== undefined &&
+          value.connamespace !== undefined &&
+          value.conowner !== undefined &&
+          value.conforencoding !== undefined &&
+          value.contoencoding !== undefined &&
+          value.conproc !== undefined &&
+          value.condefault !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgCursors {
+      export function is(value: any): value is PgCatalog.Types.PgCursors {
+        if (
+          value.name !== undefined &&
+          value.statement !== undefined &&
+          value.isHoldable !== undefined &&
+          value.isBinary !== undefined &&
+          value.isScrollable !== undefined &&
+          value.creationTime !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgDatabase {
+      export function is(value: any): value is PgCatalog.Types.PgDatabase {
+        if (
+          value.oid !== undefined &&
+          value.datname !== undefined &&
+          value.datdba !== undefined &&
+          value.encoding !== undefined &&
+          value.datlocprovider !== undefined &&
+          value.datistemplate !== undefined &&
+          value.datallowconn !== undefined &&
+          value.datconnlimit !== undefined &&
+          value.datfrozenxid !== undefined &&
+          value.datminmxid !== undefined &&
+          value.dattablespace !== undefined &&
+          value.datcollate !== undefined &&
+          value.datctype !== undefined &&
+          value.daticulocale !== undefined &&
+          value.daticurules !== undefined &&
+          value.datcollversion !== undefined &&
+          value.datacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgDbRoleSetting {
+      export function is(value: any): value is PgCatalog.Types.PgDbRoleSetting {
+        if (
+          value.setdatabase !== undefined &&
+          value.setrole !== undefined &&
+          value.setconfig !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgDefaultAcl {
+      export function is(value: any): value is PgCatalog.Types.PgDefaultAcl {
+        if (
+          value.oid !== undefined &&
+          value.defaclrole !== undefined &&
+          value.defaclnamespace !== undefined &&
+          value.defaclobjtype !== undefined &&
+          value.defaclacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgDepend {
+      export function is(value: any): value is PgCatalog.Types.PgDepend {
+        if (
+          value.classid !== undefined &&
+          value.objid !== undefined &&
+          value.objsubid !== undefined &&
+          value.refclassid !== undefined &&
+          value.refobjid !== undefined &&
+          value.refobjsubid !== undefined &&
+          value.deptype !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgDescription {
+      export function is(value: any): value is PgCatalog.Types.PgDescription {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.objsubid !== undefined &&
+          value.description !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgEnum {
+      export function is(value: any): value is PgCatalog.Types.PgEnum {
+        if (
+          value.oid !== undefined &&
+          value.enumtypid !== undefined &&
+          value.enumsortorder !== undefined &&
+          value.enumlabel !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgEventTrigger {
+      export function is(value: any): value is PgCatalog.Types.PgEventTrigger {
+        if (
+          value.oid !== undefined &&
+          value.evtname !== undefined &&
+          value.evtevent !== undefined &&
+          value.evtowner !== undefined &&
+          value.evtfoid !== undefined &&
+          value.evtenabled !== undefined &&
+          value.evttags !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgExtension {
+      export function is(value: any): value is PgCatalog.Types.PgExtension {
+        if (
+          value.oid !== undefined &&
+          value.extname !== undefined &&
+          value.extowner !== undefined &&
+          value.extnamespace !== undefined &&
+          value.extrelocatable !== undefined &&
+          value.extversion !== undefined &&
+          value.extconfig !== undefined &&
+          value.extcondition !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgFileSettings {
+      export function is(value: any): value is PgCatalog.Types.PgFileSettings {
+        if (
+          value.sourcefile !== undefined &&
+          value.sourceline !== undefined &&
+          value.seqno !== undefined &&
+          value.name !== undefined &&
+          value.setting !== undefined &&
+          value.applied !== undefined &&
+          value.error !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignDataWrapper {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgForeignDataWrapper {
+        if (
+          value.oid !== undefined &&
+          value.fdwname !== undefined &&
+          value.fdwowner !== undefined &&
+          value.fdwhandler !== undefined &&
+          value.fdwvalidator !== undefined &&
+          value.fdwacl !== undefined &&
+          value.fdwoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignServer {
+      export function is(value: any): value is PgCatalog.Types.PgForeignServer {
+        if (
+          value.oid !== undefined &&
+          value.srvname !== undefined &&
+          value.srvowner !== undefined &&
+          value.srvfdw !== undefined &&
+          value.srvtype !== undefined &&
+          value.srvversion !== undefined &&
+          value.srvacl !== undefined &&
+          value.srvoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignTable {
+      export function is(value: any): value is PgCatalog.Types.PgForeignTable {
+        if (
+          value.ftrelid !== undefined &&
+          value.ftserver !== undefined &&
+          value.ftoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgGroup {
+      export function is(value: any): value is PgCatalog.Types.PgGroup {
+        if (
+          value.groname !== undefined &&
+          value.grosysid !== undefined &&
+          value.grolist !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgHbaFileRules {
+      export function is(value: any): value is PgCatalog.Types.PgHbaFileRules {
+        if (
+          value.ruleNumber !== undefined &&
+          value.fileName !== undefined &&
+          value.lineNumber !== undefined &&
+          value.type !== undefined &&
+          value.database !== undefined &&
+          value.userName !== undefined &&
+          value.address !== undefined &&
+          value.netmask !== undefined &&
+          value.authMethod !== undefined &&
+          value.options !== undefined &&
+          value.error !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgIdentFileMappings {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgIdentFileMappings {
+        if (
+          value.mapNumber !== undefined &&
+          value.fileName !== undefined &&
+          value.lineNumber !== undefined &&
+          value.mapName !== undefined &&
+          value.sysName !== undefined &&
+          value.pgUsername !== undefined &&
+          value.error !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgIndex {
+      export function is(value: any): value is PgCatalog.Types.PgIndex {
+        if (
+          value.indexrelid !== undefined &&
+          value.indrelid !== undefined &&
+          value.indnatts !== undefined &&
+          value.indnkeyatts !== undefined &&
+          value.indisunique !== undefined &&
+          value.indnullsnotdistinct !== undefined &&
+          value.indisprimary !== undefined &&
+          value.indisexclusion !== undefined &&
+          value.indimmediate !== undefined &&
+          value.indisclustered !== undefined &&
+          value.indisvalid !== undefined &&
+          value.indcheckxmin !== undefined &&
+          value.indisready !== undefined &&
+          value.indislive !== undefined &&
+          value.indisreplident !== undefined &&
+          value.indkey !== undefined &&
+          value.indcollation !== undefined &&
+          value.indclass !== undefined &&
+          value.indoption !== undefined &&
+          value.indexprs !== undefined &&
+          value.indpred !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgIndexes {
+      export function is(value: any): value is PgCatalog.Types.PgIndexes {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.indexname !== undefined &&
+          value.tablespace !== undefined &&
+          value.indexdef !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgInherits {
+      export function is(value: any): value is PgCatalog.Types.PgInherits {
+        if (
+          value.inhrelid !== undefined &&
+          value.inhparent !== undefined &&
+          value.inhseqno !== undefined &&
+          value.inhdetachpending !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgInitPrivs {
+      export function is(value: any): value is PgCatalog.Types.PgInitPrivs {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.objsubid !== undefined &&
+          value.privtype !== undefined &&
+          value.initprivs !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgLanguage {
+      export function is(value: any): value is PgCatalog.Types.PgLanguage {
+        if (
+          value.oid !== undefined &&
+          value.lanname !== undefined &&
+          value.lanowner !== undefined &&
+          value.lanispl !== undefined &&
+          value.lanpltrusted !== undefined &&
+          value.lanplcallfoid !== undefined &&
+          value.laninline !== undefined &&
+          value.lanvalidator !== undefined &&
+          value.lanacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgLargeobject {
+      export function is(value: any): value is PgCatalog.Types.PgLargeobject {
+        if (
+          value.loid !== undefined &&
+          value.pageno !== undefined &&
+          value.data !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgLargeobjectMetadata {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgLargeobjectMetadata {
+        if (
+          value.oid !== undefined &&
+          value.lomowner !== undefined &&
+          value.lomacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgLocks {
+      export function is(value: any): value is PgCatalog.Types.PgLocks {
+        if (
+          value.locktype !== undefined &&
+          value.database !== undefined &&
+          value.relation !== undefined &&
+          value.page !== undefined &&
+          value.tuple !== undefined &&
+          value.virtualxid !== undefined &&
+          value.transactionid !== undefined &&
+          value.classid !== undefined &&
+          value.objid !== undefined &&
+          value.objsubid !== undefined &&
+          value.virtualtransaction !== undefined &&
+          value.pid !== undefined &&
+          value.mode !== undefined &&
+          value.granted !== undefined &&
+          value.fastpath !== undefined &&
+          value.waitstart !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgMatviews {
+      export function is(value: any): value is PgCatalog.Types.PgMatviews {
+        if (
+          value.schemaname !== undefined &&
+          value.matviewname !== undefined &&
+          value.matviewowner !== undefined &&
+          value.tablespace !== undefined &&
+          value.hasindexes !== undefined &&
+          value.ispopulated !== undefined &&
+          value.definition !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgNamespace {
+      export function is(value: any): value is PgCatalog.Types.PgNamespace {
+        if (
+          value.oid !== undefined &&
+          value.nspname !== undefined &&
+          value.nspowner !== undefined &&
+          value.nspacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgOpclass {
+      export function is(value: any): value is PgCatalog.Types.PgOpclass {
+        if (
+          value.oid !== undefined &&
+          value.opcmethod !== undefined &&
+          value.opcname !== undefined &&
+          value.opcnamespace !== undefined &&
+          value.opcowner !== undefined &&
+          value.opcfamily !== undefined &&
+          value.opcintype !== undefined &&
+          value.opcdefault !== undefined &&
+          value.opckeytype !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgOperator {
+      export function is(value: any): value is PgCatalog.Types.PgOperator {
+        if (
+          value.oid !== undefined &&
+          value.oprname !== undefined &&
+          value.oprnamespace !== undefined &&
+          value.oprowner !== undefined &&
+          value.oprkind !== undefined &&
+          value.oprcanmerge !== undefined &&
+          value.oprcanhash !== undefined &&
+          value.oprleft !== undefined &&
+          value.oprright !== undefined &&
+          value.oprresult !== undefined &&
+          value.oprcom !== undefined &&
+          value.oprnegate !== undefined &&
+          value.oprcode !== undefined &&
+          value.oprrest !== undefined &&
+          value.oprjoin !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgOpfamily {
+      export function is(value: any): value is PgCatalog.Types.PgOpfamily {
+        if (
+          value.oid !== undefined &&
+          value.opfmethod !== undefined &&
+          value.opfname !== undefined &&
+          value.opfnamespace !== undefined &&
+          value.opfowner !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgParameterAcl {
+      export function is(value: any): value is PgCatalog.Types.PgParameterAcl {
+        if (
+          value.oid !== undefined &&
+          value.parname !== undefined &&
+          value.paracl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPartitionedTable {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgPartitionedTable {
+        if (
+          value.partrelid !== undefined &&
+          value.partstrat !== undefined &&
+          value.partnatts !== undefined &&
+          value.partdefid !== undefined &&
+          value.partattrs !== undefined &&
+          value.partclass !== undefined &&
+          value.partcollation !== undefined &&
+          value.partexprs !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPolicies {
+      export function is(value: any): value is PgCatalog.Types.PgPolicies {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.policyname !== undefined &&
+          value.permissive !== undefined &&
+          value.roles !== undefined &&
+          value.cmd !== undefined &&
+          value.qual !== undefined &&
+          value.withCheck !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPolicy {
+      export function is(value: any): value is PgCatalog.Types.PgPolicy {
+        if (
+          value.oid !== undefined &&
+          value.polname !== undefined &&
+          value.polrelid !== undefined &&
+          value.polcmd !== undefined &&
+          value.polpermissive !== undefined &&
+          value.polroles !== undefined &&
+          value.polqual !== undefined &&
+          value.polwithcheck !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPreparedStatements {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgPreparedStatements {
+        if (
+          value.name !== undefined &&
+          value.statement !== undefined &&
+          value.prepareTime !== undefined &&
+          value.parameterTypes !== undefined &&
+          value.resultTypes !== undefined &&
+          value.fromSql !== undefined &&
+          value.genericPlans !== undefined &&
+          value.customPlans !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPreparedXacts {
+      export function is(value: any): value is PgCatalog.Types.PgPreparedXacts {
+        if (
+          value.transaction !== undefined &&
+          value.gid !== undefined &&
+          value.prepared !== undefined &&
+          value.owner !== undefined &&
+          value.database !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgProc {
+      export function is(value: any): value is PgCatalog.Types.PgProc {
+        if (
+          value.oid !== undefined &&
+          value.proname !== undefined &&
+          value.pronamespace !== undefined &&
+          value.proowner !== undefined &&
+          value.prolang !== undefined &&
+          value.procost !== undefined &&
+          value.prorows !== undefined &&
+          value.provariadic !== undefined &&
+          value.prosupport !== undefined &&
+          value.prokind !== undefined &&
+          value.prosecdef !== undefined &&
+          value.proleakproof !== undefined &&
+          value.proisstrict !== undefined &&
+          value.proretset !== undefined &&
+          value.provolatile !== undefined &&
+          value.proparallel !== undefined &&
+          value.pronargs !== undefined &&
+          value.pronargdefaults !== undefined &&
+          value.prorettype !== undefined &&
+          value.proargtypes !== undefined &&
+          value.proallargtypes !== undefined &&
+          value.proargmodes !== undefined &&
+          value.proargnames !== undefined &&
+          value.proargdefaults !== undefined &&
+          value.protrftypes !== undefined &&
+          value.prosrc !== undefined &&
+          value.probin !== undefined &&
+          value.prosqlbody !== undefined &&
+          value.proconfig !== undefined &&
+          value.proacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPublication {
+      export function is(value: any): value is PgCatalog.Types.PgPublication {
+        if (
+          value.oid !== undefined &&
+          value.pubname !== undefined &&
+          value.pubowner !== undefined &&
+          value.puballtables !== undefined &&
+          value.pubinsert !== undefined &&
+          value.pubupdate !== undefined &&
+          value.pubdelete !== undefined &&
+          value.pubtruncate !== undefined &&
+          value.pubviaroot !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPublicationNamespace {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgPublicationNamespace {
+        if (
+          value.oid !== undefined &&
+          value.pnpubid !== undefined &&
+          value.pnnspid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPublicationRel {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgPublicationRel {
+        if (
+          value.oid !== undefined &&
+          value.prpubid !== undefined &&
+          value.prrelid !== undefined &&
+          value.prqual !== undefined &&
+          value.prattrs !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgPublicationTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgPublicationTables {
+        if (
+          value.pubname !== undefined &&
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.attnames !== undefined &&
+          value.rowfilter !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgRange {
+      export function is(value: any): value is PgCatalog.Types.PgRange {
+        if (
+          value.rngtypid !== undefined &&
+          value.rngsubtype !== undefined &&
+          value.rngmultitypid !== undefined &&
+          value.rngcollation !== undefined &&
+          value.rngsubopc !== undefined &&
+          value.rngcanonical !== undefined &&
+          value.rngsubdiff !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgReplicationOrigin {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgReplicationOrigin {
+        if (value.roident !== undefined && value.roname !== undefined)
+          return true;
+        return false;
+      }
+    }
+    export namespace PgReplicationOriginStatus {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgReplicationOriginStatus {
+        if (
+          value.localId !== undefined &&
+          value.externalId !== undefined &&
+          value.remoteLsn !== undefined &&
+          value.localLsn !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgReplicationSlots {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgReplicationSlots {
+        if (
+          value.slotName !== undefined &&
+          value.plugin !== undefined &&
+          value.slotType !== undefined &&
+          value.datoid !== undefined &&
+          value.database !== undefined &&
+          value.temporary !== undefined &&
+          value.active !== undefined &&
+          value.activePid !== undefined &&
+          value.xmin !== undefined &&
+          value.catalogXmin !== undefined &&
+          value.restartLsn !== undefined &&
+          value.confirmedFlushLsn !== undefined &&
+          value.walStatus !== undefined &&
+          value.safeWalSize !== undefined &&
+          value.twoPhase !== undefined &&
+          value.conflicting !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgRewrite {
+      export function is(value: any): value is PgCatalog.Types.PgRewrite {
+        if (
+          value.oid !== undefined &&
+          value.rulename !== undefined &&
+          value.evClass !== undefined &&
+          value.evType !== undefined &&
+          value.evEnabled !== undefined &&
+          value.isInstead !== undefined &&
+          value.evQual !== undefined &&
+          value.evAction !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgRoles {
+      export function is(value: any): value is PgCatalog.Types.PgRoles {
+        if (
+          value.rolname !== undefined &&
+          value.rolsuper !== undefined &&
+          value.rolinherit !== undefined &&
+          value.rolcreaterole !== undefined &&
+          value.rolcreatedb !== undefined &&
+          value.rolcanlogin !== undefined &&
+          value.rolreplication !== undefined &&
+          value.rolconnlimit !== undefined &&
+          value.rolpassword !== undefined &&
+          value.rolvaliduntil !== undefined &&
+          value.rolbypassrls !== undefined &&
+          value.rolconfig !== undefined &&
+          value.oid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgRules {
+      export function is(value: any): value is PgCatalog.Types.PgRules {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.rulename !== undefined &&
+          value.definition !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSeclabel {
+      export function is(value: any): value is PgCatalog.Types.PgSeclabel {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.objsubid !== undefined &&
+          value.provider !== undefined &&
+          value.label !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSeclabels {
+      export function is(value: any): value is PgCatalog.Types.PgSeclabels {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.objsubid !== undefined &&
+          value.objtype !== undefined &&
+          value.objnamespace !== undefined &&
+          value.objname !== undefined &&
+          value.provider !== undefined &&
+          value.label !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSequence {
+      export function is(value: any): value is PgCatalog.Types.PgSequence {
+        if (
+          value.seqrelid !== undefined &&
+          value.seqtypid !== undefined &&
+          value.seqstart !== undefined &&
+          value.seqincrement !== undefined &&
+          value.seqmax !== undefined &&
+          value.seqmin !== undefined &&
+          value.seqcache !== undefined &&
+          value.seqcycle !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSequences {
+      export function is(value: any): value is PgCatalog.Types.PgSequences {
+        if (
+          value.schemaname !== undefined &&
+          value.sequencename !== undefined &&
+          value.sequenceowner !== undefined &&
+          value.dataType !== undefined &&
+          value.startValue !== undefined &&
+          value.minValue !== undefined &&
+          value.maxValue !== undefined &&
+          value.incrementBy !== undefined &&
+          value.cycle !== undefined &&
+          value.cacheSize !== undefined &&
+          value.lastValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSettings {
+      export function is(value: any): value is PgCatalog.Types.PgSettings {
+        if (
+          value.name !== undefined &&
+          value.setting !== undefined &&
+          value.unit !== undefined &&
+          value.category !== undefined &&
+          value.shortDesc !== undefined &&
+          value.extraDesc !== undefined &&
+          value.context !== undefined &&
+          value.vartype !== undefined &&
+          value.source !== undefined &&
+          value.minVal !== undefined &&
+          value.maxVal !== undefined &&
+          value.enumvals !== undefined &&
+          value.bootVal !== undefined &&
+          value.resetVal !== undefined &&
+          value.sourcefile !== undefined &&
+          value.sourceline !== undefined &&
+          value.pendingRestart !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgShadow {
+      export function is(value: any): value is PgCatalog.Types.PgShadow {
+        if (
+          value.usename !== undefined &&
+          value.usesysid !== undefined &&
+          value.usecreatedb !== undefined &&
+          value.usesuper !== undefined &&
+          value.userepl !== undefined &&
+          value.usebypassrls !== undefined &&
+          value.passwd !== undefined &&
+          value.valuntil !== undefined &&
+          value.useconfig !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgShdepend {
+      export function is(value: any): value is PgCatalog.Types.PgShdepend {
+        if (
+          value.dbid !== undefined &&
+          value.classid !== undefined &&
+          value.objid !== undefined &&
+          value.objsubid !== undefined &&
+          value.refclassid !== undefined &&
+          value.refobjid !== undefined &&
+          value.deptype !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgShdescription {
+      export function is(value: any): value is PgCatalog.Types.PgShdescription {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.description !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgShmemAllocations {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgShmemAllocations {
+        if (
+          value.name !== undefined &&
+          value.off !== undefined &&
+          value.size !== undefined &&
+          value.allocatedSize !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgShseclabel {
+      export function is(value: any): value is PgCatalog.Types.PgShseclabel {
+        if (
+          value.objoid !== undefined &&
+          value.classoid !== undefined &&
+          value.provider !== undefined &&
+          value.label !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatActivity {
+      export function is(value: any): value is PgCatalog.Types.PgStatActivity {
+        if (
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.pid !== undefined &&
+          value.leaderPid !== undefined &&
+          value.usesysid !== undefined &&
+          value.usename !== undefined &&
+          value.applicationName !== undefined &&
+          value.clientAddr !== undefined &&
+          value.clientHostname !== undefined &&
+          value.clientPort !== undefined &&
+          value.backendStart !== undefined &&
+          value.xactStart !== undefined &&
+          value.queryStart !== undefined &&
+          value.stateChange !== undefined &&
+          value.waitEventType !== undefined &&
+          value.waitEvent !== undefined &&
+          value.state !== undefined &&
+          value.backendXid !== undefined &&
+          value.backendXmin !== undefined &&
+          value.queryId !== undefined &&
+          value.query !== undefined &&
+          value.backendType !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatAllIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatAllIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupRead !== undefined &&
+          value.idxTupFetch !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatAllTables {
+      export function is(value: any): value is PgCatalog.Types.PgStatAllTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.lastSeqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined &&
+          value.nLiveTup !== undefined &&
+          value.nDeadTup !== undefined &&
+          value.nModSinceAnalyze !== undefined &&
+          value.nInsSinceVacuum !== undefined &&
+          value.lastVacuum !== undefined &&
+          value.lastAutovacuum !== undefined &&
+          value.lastAnalyze !== undefined &&
+          value.lastAutoanalyze !== undefined &&
+          value.vacuumCount !== undefined &&
+          value.autovacuumCount !== undefined &&
+          value.analyzeCount !== undefined &&
+          value.autoanalyzeCount !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatArchiver {
+      export function is(value: any): value is PgCatalog.Types.PgStatArchiver {
+        if (
+          value.archivedCount !== undefined &&
+          value.lastArchivedWal !== undefined &&
+          value.lastArchivedTime !== undefined &&
+          value.failedCount !== undefined &&
+          value.lastFailedWal !== undefined &&
+          value.lastFailedTime !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatBgwriter {
+      export function is(value: any): value is PgCatalog.Types.PgStatBgwriter {
+        if (
+          value.checkpointsTimed !== undefined &&
+          value.checkpointsReq !== undefined &&
+          value.checkpointWriteTime !== undefined &&
+          value.checkpointSyncTime !== undefined &&
+          value.buffersCheckpoint !== undefined &&
+          value.buffersClean !== undefined &&
+          value.maxwrittenClean !== undefined &&
+          value.buffersBackend !== undefined &&
+          value.buffersBackendFsync !== undefined &&
+          value.buffersAlloc !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatDatabase {
+      export function is(value: any): value is PgCatalog.Types.PgStatDatabase {
+        if (
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.numbackends !== undefined &&
+          value.xactCommit !== undefined &&
+          value.xactRollback !== undefined &&
+          value.blksRead !== undefined &&
+          value.blksHit !== undefined &&
+          value.tupReturned !== undefined &&
+          value.tupFetched !== undefined &&
+          value.tupInserted !== undefined &&
+          value.tupUpdated !== undefined &&
+          value.tupDeleted !== undefined &&
+          value.conflicts !== undefined &&
+          value.tempFiles !== undefined &&
+          value.tempBytes !== undefined &&
+          value.deadlocks !== undefined &&
+          value.checksumFailures !== undefined &&
+          value.checksumLastFailure !== undefined &&
+          value.blkReadTime !== undefined &&
+          value.blkWriteTime !== undefined &&
+          value.sessionTime !== undefined &&
+          value.activeTime !== undefined &&
+          value.idleInTransactionTime !== undefined &&
+          value.sessions !== undefined &&
+          value.sessionsAbandoned !== undefined &&
+          value.sessionsFatal !== undefined &&
+          value.sessionsKilled !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatDatabaseConflicts {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatDatabaseConflicts {
+        if (
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.conflTablespace !== undefined &&
+          value.conflLock !== undefined &&
+          value.conflSnapshot !== undefined &&
+          value.conflBufferpin !== undefined &&
+          value.conflDeadlock !== undefined &&
+          value.conflActiveLogicalslot !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatGssapi {
+      export function is(value: any): value is PgCatalog.Types.PgStatGssapi {
+        if (
+          value.pid !== undefined &&
+          value.gssAuthenticated !== undefined &&
+          value.principal !== undefined &&
+          value.encrypted !== undefined &&
+          value.credentialsDelegated !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatIo {
+      export function is(value: any): value is PgCatalog.Types.PgStatIo {
+        if (
+          value.backendType !== undefined &&
+          value.object !== undefined &&
+          value.context !== undefined &&
+          value.reads !== undefined &&
+          value.readTime !== undefined &&
+          value.writes !== undefined &&
+          value.writeTime !== undefined &&
+          value.writebacks !== undefined &&
+          value.writebackTime !== undefined &&
+          value.extends !== undefined &&
+          value.extendTime !== undefined &&
+          value.opBytes !== undefined &&
+          value.hits !== undefined &&
+          value.evictions !== undefined &&
+          value.reuses !== undefined &&
+          value.fsyncs !== undefined &&
+          value.fsyncTime !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressAnalyze {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressAnalyze {
+        if (
+          value.pid !== undefined &&
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.relid !== undefined &&
+          value.phase !== undefined &&
+          value.sampleBlksTotal !== undefined &&
+          value.sampleBlksScanned !== undefined &&
+          value.extStatsTotal !== undefined &&
+          value.extStatsComputed !== undefined &&
+          value.childTablesTotal !== undefined &&
+          value.childTablesDone !== undefined &&
+          value.currentChildTableRelid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressBasebackup {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressBasebackup {
+        if (
+          value.pid !== undefined &&
+          value.phase !== undefined &&
+          value.backupTotal !== undefined &&
+          value.backupStreamed !== undefined &&
+          value.tablespacesTotal !== undefined &&
+          value.tablespacesStreamed !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressCluster {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressCluster {
+        if (
+          value.pid !== undefined &&
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.relid !== undefined &&
+          value.command !== undefined &&
+          value.phase !== undefined &&
+          value.clusterIndexRelid !== undefined &&
+          value.heapTuplesScanned !== undefined &&
+          value.heapTuplesWritten !== undefined &&
+          value.heapBlksTotal !== undefined &&
+          value.heapBlksScanned !== undefined &&
+          value.indexRebuildCount !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressCopy {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressCopy {
+        if (
+          value.pid !== undefined &&
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.relid !== undefined &&
+          value.command !== undefined &&
+          value.type !== undefined &&
+          value.bytesProcessed !== undefined &&
+          value.bytesTotal !== undefined &&
+          value.tuplesProcessed !== undefined &&
+          value.tuplesExcluded !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressCreateIndex {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressCreateIndex {
+        if (
+          value.pid !== undefined &&
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.relid !== undefined &&
+          value.indexRelid !== undefined &&
+          value.command !== undefined &&
+          value.phase !== undefined &&
+          value.lockersTotal !== undefined &&
+          value.lockersDone !== undefined &&
+          value.currentLockerPid !== undefined &&
+          value.blocksTotal !== undefined &&
+          value.blocksDone !== undefined &&
+          value.tuplesTotal !== undefined &&
+          value.tuplesDone !== undefined &&
+          value.partitionsTotal !== undefined &&
+          value.partitionsDone !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatProgressVacuum {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatProgressVacuum {
+        if (
+          value.pid !== undefined &&
+          value.datid !== undefined &&
+          value.datname !== undefined &&
+          value.relid !== undefined &&
+          value.phase !== undefined &&
+          value.heapBlksTotal !== undefined &&
+          value.heapBlksScanned !== undefined &&
+          value.heapBlksVacuumed !== undefined &&
+          value.indexVacuumCount !== undefined &&
+          value.maxDeadTuples !== undefined &&
+          value.numDeadTuples !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatRecoveryPrefetch {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatRecoveryPrefetch {
+        if (
+          value.statsReset !== undefined &&
+          value.prefetch !== undefined &&
+          value.hit !== undefined &&
+          value.skipInit !== undefined &&
+          value.skipNew !== undefined &&
+          value.skipFpw !== undefined &&
+          value.skipRep !== undefined &&
+          value.walDistance !== undefined &&
+          value.blockDistance !== undefined &&
+          value.ioDepth !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatReplication {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatReplication {
+        if (
+          value.pid !== undefined &&
+          value.usesysid !== undefined &&
+          value.usename !== undefined &&
+          value.applicationName !== undefined &&
+          value.clientAddr !== undefined &&
+          value.clientHostname !== undefined &&
+          value.clientPort !== undefined &&
+          value.backendStart !== undefined &&
+          value.backendXmin !== undefined &&
+          value.state !== undefined &&
+          value.sentLsn !== undefined &&
+          value.writeLsn !== undefined &&
+          value.flushLsn !== undefined &&
+          value.replayLsn !== undefined &&
+          value.writeLag !== undefined &&
+          value.flushLag !== undefined &&
+          value.replayLag !== undefined &&
+          value.syncPriority !== undefined &&
+          value.syncState !== undefined &&
+          value.replyTime !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatReplicationSlots {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatReplicationSlots {
+        if (
+          value.slotName !== undefined &&
+          value.spillTxns !== undefined &&
+          value.spillCount !== undefined &&
+          value.spillBytes !== undefined &&
+          value.streamTxns !== undefined &&
+          value.streamCount !== undefined &&
+          value.streamBytes !== undefined &&
+          value.totalTxns !== undefined &&
+          value.totalBytes !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSlru {
+      export function is(value: any): value is PgCatalog.Types.PgStatSlru {
+        if (
+          value.name !== undefined &&
+          value.blksZeroed !== undefined &&
+          value.blksHit !== undefined &&
+          value.blksRead !== undefined &&
+          value.blksWritten !== undefined &&
+          value.blksExists !== undefined &&
+          value.flushes !== undefined &&
+          value.truncates !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSsl {
+      export function is(value: any): value is PgCatalog.Types.PgStatSsl {
+        if (
+          value.pid !== undefined &&
+          value.ssl !== undefined &&
+          value.version !== undefined &&
+          value.cipher !== undefined &&
+          value.bits !== undefined &&
+          value.clientDn !== undefined &&
+          value.clientSerial !== undefined &&
+          value.issuerDn !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSubscription {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatSubscription {
+        if (
+          value.subid !== undefined &&
+          value.subname !== undefined &&
+          value.pid !== undefined &&
+          value.leaderPid !== undefined &&
+          value.relid !== undefined &&
+          value.receivedLsn !== undefined &&
+          value.lastMsgSendTime !== undefined &&
+          value.lastMsgReceiptTime !== undefined &&
+          value.latestEndLsn !== undefined &&
+          value.latestEndTime !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSubscriptionStats {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatSubscriptionStats {
+        if (
+          value.subid !== undefined &&
+          value.subname !== undefined &&
+          value.applyErrorCount !== undefined &&
+          value.syncErrorCount !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSysIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatSysIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupRead !== undefined &&
+          value.idxTupFetch !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatSysTables {
+      export function is(value: any): value is PgCatalog.Types.PgStatSysTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.lastSeqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined &&
+          value.nLiveTup !== undefined &&
+          value.nDeadTup !== undefined &&
+          value.nModSinceAnalyze !== undefined &&
+          value.nInsSinceVacuum !== undefined &&
+          value.lastVacuum !== undefined &&
+          value.lastAutovacuum !== undefined &&
+          value.lastAnalyze !== undefined &&
+          value.lastAutoanalyze !== undefined &&
+          value.vacuumCount !== undefined &&
+          value.autovacuumCount !== undefined &&
+          value.analyzeCount !== undefined &&
+          value.autoanalyzeCount !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatUserFunctions {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatUserFunctions {
+        if (
+          value.funcid !== undefined &&
+          value.schemaname !== undefined &&
+          value.funcname !== undefined &&
+          value.calls !== undefined &&
+          value.totalTime !== undefined &&
+          value.selfTime !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatUserIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatUserIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupRead !== undefined &&
+          value.idxTupFetch !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatUserTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatUserTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.lastSeqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.lastIdxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined &&
+          value.nLiveTup !== undefined &&
+          value.nDeadTup !== undefined &&
+          value.nModSinceAnalyze !== undefined &&
+          value.nInsSinceVacuum !== undefined &&
+          value.lastVacuum !== undefined &&
+          value.lastAutovacuum !== undefined &&
+          value.lastAnalyze !== undefined &&
+          value.lastAutoanalyze !== undefined &&
+          value.vacuumCount !== undefined &&
+          value.autovacuumCount !== undefined &&
+          value.analyzeCount !== undefined &&
+          value.autoanalyzeCount !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatWal {
+      export function is(value: any): value is PgCatalog.Types.PgStatWal {
+        if (
+          value.walRecords !== undefined &&
+          value.walFpi !== undefined &&
+          value.walBytes !== undefined &&
+          value.walBuffersFull !== undefined &&
+          value.walWrite !== undefined &&
+          value.walSync !== undefined &&
+          value.walWriteTime !== undefined &&
+          value.walSyncTime !== undefined &&
+          value.statsReset !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatWalReceiver {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatWalReceiver {
+        if (
+          value.pid !== undefined &&
+          value.status !== undefined &&
+          value.receiveStartLsn !== undefined &&
+          value.receiveStartTli !== undefined &&
+          value.writtenLsn !== undefined &&
+          value.flushedLsn !== undefined &&
+          value.receivedTli !== undefined &&
+          value.lastMsgSendTime !== undefined &&
+          value.lastMsgReceiptTime !== undefined &&
+          value.latestEndLsn !== undefined &&
+          value.latestEndTime !== undefined &&
+          value.slotName !== undefined &&
+          value.senderHost !== undefined &&
+          value.senderPort !== undefined &&
+          value.conninfo !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatXactAllTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatXactAllTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatXactSysTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatXactSysTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatXactUserFunctions {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatXactUserFunctions {
+        if (
+          value.funcid !== undefined &&
+          value.schemaname !== undefined &&
+          value.funcname !== undefined &&
+          value.calls !== undefined &&
+          value.totalTime !== undefined &&
+          value.selfTime !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatXactUserTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatXactUserTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.seqScan !== undefined &&
+          value.seqTupRead !== undefined &&
+          value.idxScan !== undefined &&
+          value.idxTupFetch !== undefined &&
+          value.nTupIns !== undefined &&
+          value.nTupUpd !== undefined &&
+          value.nTupDel !== undefined &&
+          value.nTupHotUpd !== undefined &&
+          value.nTupNewpageUpd !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioAllIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioAllIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioAllSequences {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioAllSequences {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.blksRead !== undefined &&
+          value.blksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioAllTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioAllTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.heapBlksRead !== undefined &&
+          value.heapBlksHit !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined &&
+          value.toastBlksRead !== undefined &&
+          value.toastBlksHit !== undefined &&
+          value.tidxBlksRead !== undefined &&
+          value.tidxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioSysIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioSysIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioSysSequences {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioSysSequences {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.blksRead !== undefined &&
+          value.blksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioSysTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioSysTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.heapBlksRead !== undefined &&
+          value.heapBlksHit !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined &&
+          value.toastBlksRead !== undefined &&
+          value.toastBlksHit !== undefined &&
+          value.tidxBlksRead !== undefined &&
+          value.tidxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioUserIndexes {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioUserIndexes {
+        if (
+          value.relid !== undefined &&
+          value.indexrelid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.indexrelname !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioUserSequences {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioUserSequences {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.blksRead !== undefined &&
+          value.blksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatioUserTables {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatioUserTables {
+        if (
+          value.relid !== undefined &&
+          value.schemaname !== undefined &&
+          value.relname !== undefined &&
+          value.heapBlksRead !== undefined &&
+          value.heapBlksHit !== undefined &&
+          value.idxBlksRead !== undefined &&
+          value.idxBlksHit !== undefined &&
+          value.toastBlksRead !== undefined &&
+          value.toastBlksHit !== undefined &&
+          value.tidxBlksRead !== undefined &&
+          value.tidxBlksHit !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatistic {
+      export function is(value: any): value is PgCatalog.Types.PgStatistic {
+        if (
+          value.starelid !== undefined &&
+          value.staattnum !== undefined &&
+          value.stainherit !== undefined &&
+          value.stanullfrac !== undefined &&
+          value.stawidth !== undefined &&
+          value.stadistinct !== undefined &&
+          value.stakind1 !== undefined &&
+          value.stakind2 !== undefined &&
+          value.stakind3 !== undefined &&
+          value.stakind4 !== undefined &&
+          value.stakind5 !== undefined &&
+          value.staop1 !== undefined &&
+          value.staop2 !== undefined &&
+          value.staop3 !== undefined &&
+          value.staop4 !== undefined &&
+          value.staop5 !== undefined &&
+          value.stacoll1 !== undefined &&
+          value.stacoll2 !== undefined &&
+          value.stacoll3 !== undefined &&
+          value.stacoll4 !== undefined &&
+          value.stacoll5 !== undefined &&
+          value.stanumbers1 !== undefined &&
+          value.stanumbers2 !== undefined &&
+          value.stanumbers3 !== undefined &&
+          value.stanumbers4 !== undefined &&
+          value.stanumbers5 !== undefined &&
+          value.stavalues1 !== undefined &&
+          value.stavalues2 !== undefined &&
+          value.stavalues3 !== undefined &&
+          value.stavalues4 !== undefined &&
+          value.stavalues5 !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatisticExt {
+      export function is(value: any): value is PgCatalog.Types.PgStatisticExt {
+        if (
+          value.oid !== undefined &&
+          value.stxrelid !== undefined &&
+          value.stxname !== undefined &&
+          value.stxnamespace !== undefined &&
+          value.stxowner !== undefined &&
+          value.stxstattarget !== undefined &&
+          value.stxkeys !== undefined &&
+          value.stxkind !== undefined &&
+          value.stxexprs !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatisticExtData {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgStatisticExtData {
+        if (
+          value.stxoid !== undefined &&
+          value.stxdinherit !== undefined &&
+          value.stxdndistinct !== undefined &&
+          value.stxddependencies !== undefined &&
+          value.stxdmcv !== undefined &&
+          value.stxdexpr !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStats {
+      export function is(value: any): value is PgCatalog.Types.PgStats {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.attname !== undefined &&
+          value.inherited !== undefined &&
+          value.nullFrac !== undefined &&
+          value.avgWidth !== undefined &&
+          value.nDistinct !== undefined &&
+          value.mostCommonVals !== undefined &&
+          value.mostCommonFreqs !== undefined &&
+          value.histogramBounds !== undefined &&
+          value.correlation !== undefined &&
+          value.mostCommonElems !== undefined &&
+          value.mostCommonElemFreqs !== undefined &&
+          value.elemCountHistogram !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatsExt {
+      export function is(value: any): value is PgCatalog.Types.PgStatsExt {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.statisticsSchemaname !== undefined &&
+          value.statisticsName !== undefined &&
+          value.statisticsOwner !== undefined &&
+          value.attnames !== undefined &&
+          value.exprs !== undefined &&
+          value.kinds !== undefined &&
+          value.inherited !== undefined &&
+          value.nDistinct !== undefined &&
+          value.dependencies !== undefined &&
+          value.mostCommonVals !== undefined &&
+          value.mostCommonValNulls !== undefined &&
+          value.mostCommonFreqs !== undefined &&
+          value.mostCommonBaseFreqs !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgStatsExtExprs {
+      export function is(value: any): value is PgCatalog.Types.PgStatsExtExprs {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.statisticsSchemaname !== undefined &&
+          value.statisticsName !== undefined &&
+          value.statisticsOwner !== undefined &&
+          value.expr !== undefined &&
+          value.inherited !== undefined &&
+          value.nullFrac !== undefined &&
+          value.avgWidth !== undefined &&
+          value.nDistinct !== undefined &&
+          value.mostCommonVals !== undefined &&
+          value.mostCommonFreqs !== undefined &&
+          value.histogramBounds !== undefined &&
+          value.correlation !== undefined &&
+          value.mostCommonElems !== undefined &&
+          value.mostCommonElemFreqs !== undefined &&
+          value.elemCountHistogram !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSubscription {
+      export function is(value: any): value is PgCatalog.Types.PgSubscription {
+        if (
+          value.oid !== undefined &&
+          value.subdbid !== undefined &&
+          value.subskiplsn !== undefined &&
+          value.subname !== undefined &&
+          value.subowner !== undefined &&
+          value.subenabled !== undefined &&
+          value.subbinary !== undefined &&
+          value.substream !== undefined &&
+          value.subtwophasestate !== undefined &&
+          value.subdisableonerr !== undefined &&
+          value.subpasswordrequired !== undefined &&
+          value.subrunasowner !== undefined &&
+          value.subconninfo !== undefined &&
+          value.subslotname !== undefined &&
+          value.subsynccommit !== undefined &&
+          value.subpublications !== undefined &&
+          value.suborigin !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgSubscriptionRel {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgSubscriptionRel {
+        if (
+          value.srsubid !== undefined &&
+          value.srrelid !== undefined &&
+          value.srsubstate !== undefined &&
+          value.srsublsn !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTables {
+      export function is(value: any): value is PgCatalog.Types.PgTables {
+        if (
+          value.schemaname !== undefined &&
+          value.tablename !== undefined &&
+          value.tableowner !== undefined &&
+          value.tablespace !== undefined &&
+          value.hasindexes !== undefined &&
+          value.hasrules !== undefined &&
+          value.hastriggers !== undefined &&
+          value.rowsecurity !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTablespace {
+      export function is(value: any): value is PgCatalog.Types.PgTablespace {
+        if (
+          value.oid !== undefined &&
+          value.spcname !== undefined &&
+          value.spcowner !== undefined &&
+          value.spcacl !== undefined &&
+          value.spcoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTimezoneAbbrevs {
+      export function is(
+        value: any,
+      ): value is PgCatalog.Types.PgTimezoneAbbrevs {
+        if (
+          value.abbrev !== undefined &&
+          value.utcOffset !== undefined &&
+          value.isDst !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTimezoneNames {
+      export function is(value: any): value is PgCatalog.Types.PgTimezoneNames {
+        if (
+          value.name !== undefined &&
+          value.abbrev !== undefined &&
+          value.utcOffset !== undefined &&
+          value.isDst !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTransform {
+      export function is(value: any): value is PgCatalog.Types.PgTransform {
+        if (
+          value.oid !== undefined &&
+          value.trftype !== undefined &&
+          value.trflang !== undefined &&
+          value.trffromsql !== undefined &&
+          value.trftosql !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTrigger {
+      export function is(value: any): value is PgCatalog.Types.PgTrigger {
+        if (
+          value.oid !== undefined &&
+          value.tgrelid !== undefined &&
+          value.tgparentid !== undefined &&
+          value.tgname !== undefined &&
+          value.tgfoid !== undefined &&
+          value.tgtype !== undefined &&
+          value.tgenabled !== undefined &&
+          value.tgisinternal !== undefined &&
+          value.tgconstrrelid !== undefined &&
+          value.tgconstrindid !== undefined &&
+          value.tgconstraint !== undefined &&
+          value.tgdeferrable !== undefined &&
+          value.tginitdeferred !== undefined &&
+          value.tgnargs !== undefined &&
+          value.tgattr !== undefined &&
+          value.tgargs !== undefined &&
+          value.tgqual !== undefined &&
+          value.tgoldtable !== undefined &&
+          value.tgnewtable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTsConfig {
+      export function is(value: any): value is PgCatalog.Types.PgTsConfig {
+        if (
+          value.oid !== undefined &&
+          value.cfgname !== undefined &&
+          value.cfgnamespace !== undefined &&
+          value.cfgowner !== undefined &&
+          value.cfgparser !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTsConfigMap {
+      export function is(value: any): value is PgCatalog.Types.PgTsConfigMap {
+        if (
+          value.mapcfg !== undefined &&
+          value.maptokentype !== undefined &&
+          value.mapseqno !== undefined &&
+          value.mapdict !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTsDict {
+      export function is(value: any): value is PgCatalog.Types.PgTsDict {
+        if (
+          value.oid !== undefined &&
+          value.dictname !== undefined &&
+          value.dictnamespace !== undefined &&
+          value.dictowner !== undefined &&
+          value.dicttemplate !== undefined &&
+          value.dictinitoption !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTsParser {
+      export function is(value: any): value is PgCatalog.Types.PgTsParser {
+        if (
+          value.oid !== undefined &&
+          value.prsname !== undefined &&
+          value.prsnamespace !== undefined &&
+          value.prsstart !== undefined &&
+          value.prstoken !== undefined &&
+          value.prsend !== undefined &&
+          value.prsheadline !== undefined &&
+          value.prslextype !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgTsTemplate {
+      export function is(value: any): value is PgCatalog.Types.PgTsTemplate {
+        if (
+          value.oid !== undefined &&
+          value.tmplname !== undefined &&
+          value.tmplnamespace !== undefined &&
+          value.tmplinit !== undefined &&
+          value.tmpllexize !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgType {
+      export function is(value: any): value is PgCatalog.Types.PgType {
+        if (
+          value.oid !== undefined &&
+          value.typname !== undefined &&
+          value.typnamespace !== undefined &&
+          value.typowner !== undefined &&
+          value.typlen !== undefined &&
+          value.typbyval !== undefined &&
+          value.typtype !== undefined &&
+          value.typcategory !== undefined &&
+          value.typispreferred !== undefined &&
+          value.typisdefined !== undefined &&
+          value.typdelim !== undefined &&
+          value.typrelid !== undefined &&
+          value.typsubscript !== undefined &&
+          value.typelem !== undefined &&
+          value.typarray !== undefined &&
+          value.typinput !== undefined &&
+          value.typoutput !== undefined &&
+          value.typreceive !== undefined &&
+          value.typsend !== undefined &&
+          value.typmodin !== undefined &&
+          value.typmodout !== undefined &&
+          value.typanalyze !== undefined &&
+          value.typalign !== undefined &&
+          value.typstorage !== undefined &&
+          value.typnotnull !== undefined &&
+          value.typbasetype !== undefined &&
+          value.typtypmod !== undefined &&
+          value.typndims !== undefined &&
+          value.typcollation !== undefined &&
+          value.typdefaultbin !== undefined &&
+          value.typdefault !== undefined &&
+          value.typacl !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgUser {
+      export function is(value: any): value is PgCatalog.Types.PgUser {
+        if (
+          value.usename !== undefined &&
+          value.usesysid !== undefined &&
+          value.usecreatedb !== undefined &&
+          value.usesuper !== undefined &&
+          value.userepl !== undefined &&
+          value.usebypassrls !== undefined &&
+          value.passwd !== undefined &&
+          value.valuntil !== undefined &&
+          value.useconfig !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgUserMapping {
+      export function is(value: any): value is PgCatalog.Types.PgUserMapping {
+        if (
+          value.oid !== undefined &&
+          value.umuser !== undefined &&
+          value.umserver !== undefined &&
+          value.umoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgUserMappings {
+      export function is(value: any): value is PgCatalog.Types.PgUserMappings {
+        if (
+          value.umid !== undefined &&
+          value.srvid !== undefined &&
+          value.srvname !== undefined &&
+          value.umuser !== undefined &&
+          value.usename !== undefined &&
+          value.umoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgViews {
+      export function is(value: any): value is PgCatalog.Types.PgViews {
+        if (
+          value.schemaname !== undefined &&
+          value.viewname !== undefined &&
+          value.viewowner !== undefined &&
+          value.definition !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {}
+  export namespace Tables {
+    export namespace PgStatistic {}
+    export namespace PgType {}
+    export namespace PgForeignTable {}
+    export namespace PgAuthid {}
+    export namespace PgStatisticExtData {}
+    export namespace PgUserMapping {}
+    export namespace PgSubscription {}
+    export namespace PgAttribute {}
+    export namespace PgProc {}
+    export namespace PgClass {}
+    export namespace PgAttrdef {}
+    export namespace PgConstraint {}
+    export namespace PgInherits {}
+    export namespace PgIndex {}
+    export namespace PgOperator {}
+    export namespace PgOpfamily {}
+    export namespace PgOpclass {}
+    export namespace PgAm {}
+    export namespace PgAmop {}
+    export namespace PgAmproc {}
+    export namespace PgLanguage {}
+    export namespace PgLargeobjectMetadata {}
+    export namespace PgAggregate {}
+    export namespace PgStatisticExt {}
+    export namespace PgRewrite {}
+    export namespace PgTrigger {}
+    export namespace PgEventTrigger {}
+    export namespace PgDescription {}
+    export namespace PgCast {}
+    export namespace PgEnum {}
+    export namespace PgNamespace {}
+    export namespace PgConversion {}
+    export namespace PgDepend {}
+    export namespace PgDatabase {}
+    export namespace PgDbRoleSetting {}
+    export namespace PgTablespace {}
+    export namespace PgAuthMembers {}
+    export namespace PgShdepend {}
+    export namespace PgShdescription {}
+    export namespace PgTsConfig {}
+    export namespace PgTsConfigMap {}
+    export namespace PgTsDict {}
+    export namespace PgTsParser {}
+    export namespace PgTsTemplate {}
+    export namespace PgExtension {}
+    export namespace PgForeignDataWrapper {}
+    export namespace PgForeignServer {}
+    export namespace PgPolicy {}
+    export namespace PgReplicationOrigin {}
+    export namespace PgDefaultAcl {}
+    export namespace PgInitPrivs {}
+    export namespace PgSeclabel {}
+    export namespace PgShseclabel {}
+    export namespace PgCollation {}
+    export namespace PgParameterAcl {}
+    export namespace PgPartitionedTable {}
+    export namespace PgRange {}
+    export namespace PgTransform {}
+    export namespace PgSequence {}
+    export namespace PgPublication {}
+    export namespace PgPublicationNamespace {}
+    export namespace PgPublicationRel {}
+    export namespace PgSubscriptionRel {}
+    export namespace PgLargeobject {}
+  }
+}
+export namespace InformationSchema {
+  export namespace Types {
+    export namespace PgForeignDataWrappers {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.PgForeignDataWrappers {
+        if (
+          value.oid !== undefined &&
+          value.fdwowner !== undefined &&
+          value.fdwoptions !== undefined &&
+          value.foreignDataWrapperCatalog !== undefined &&
+          value.foreignDataWrapperName !== undefined &&
+          value.authorizationIdentifier !== undefined &&
+          value.foreignDataWrapperLanguage !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignServers {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.PgForeignServers {
+        if (
+          value.oid !== undefined &&
+          value.srvoptions !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.foreignDataWrapperCatalog !== undefined &&
+          value.foreignDataWrapperName !== undefined &&
+          value.foreignServerType !== undefined &&
+          value.foreignServerVersion !== undefined &&
+          value.authorizationIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignTableColumns {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.PgForeignTableColumns {
+        if (
+          value.nspname !== undefined &&
+          value.relname !== undefined &&
+          value.attname !== undefined &&
+          value.attfdwoptions !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgForeignTables {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.PgForeignTables {
+        if (
+          value.foreignTableCatalog !== undefined &&
+          value.foreignTableSchema !== undefined &&
+          value.foreignTableName !== undefined &&
+          value.ftoptions !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.authorizationIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace PgUserMappings {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.PgUserMappings {
+        if (
+          value.oid !== undefined &&
+          value.umoptions !== undefined &&
+          value.umuser !== undefined &&
+          value.authorizationIdentifier !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.srvowner !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace AdministrableRoleAuthorizations {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.AdministrableRoleAuthorizations {
+        if (
+          value.grantee !== undefined &&
+          value.roleName !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ApplicableRoles {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ApplicableRoles {
+        if (
+          value.grantee !== undefined &&
+          value.roleName !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Attributes {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Attributes {
+        if (
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.attributeName !== undefined &&
+          value.ordinalPosition !== undefined &&
+          value.attributeDefault !== undefined &&
+          value.isNullable !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.attributeUdtCatalog !== undefined &&
+          value.attributeUdtSchema !== undefined &&
+          value.attributeUdtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined &&
+          value.isDerivedReferenceAttribute !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CharacterSets {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.CharacterSets {
+        if (
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.characterRepertoire !== undefined &&
+          value.formOfUse !== undefined &&
+          value.defaultCollateCatalog !== undefined &&
+          value.defaultCollateSchema !== undefined &&
+          value.defaultCollateName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CheckConstraintRoutineUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.CheckConstraintRoutineUsage {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CheckConstraints {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.CheckConstraints {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.checkClause !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CollationCharacterSetApplicability {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.CollationCharacterSetApplicability {
+        if (
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Collations {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Collations {
+        if (
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.padAttribute !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ColumnColumnUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ColumnColumnUsage {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.dependentColumn !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ColumnDomainUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ColumnDomainUsage {
+        if (
+          value.domainCatalog !== undefined &&
+          value.domainSchema !== undefined &&
+          value.domainName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ColumnOptions {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ColumnOptions {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.optionName !== undefined &&
+          value.optionValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ColumnPrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ColumnPrivileges {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ColumnUdtUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ColumnUdtUsage {
+        if (
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Columns {
+      export function is(value: any): value is InformationSchema.Types.Columns {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.ordinalPosition !== undefined &&
+          value.columnDefault !== undefined &&
+          value.isNullable !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.domainCatalog !== undefined &&
+          value.domainSchema !== undefined &&
+          value.domainName !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined &&
+          value.isSelfReferencing !== undefined &&
+          value.isIdentity !== undefined &&
+          value.identityGeneration !== undefined &&
+          value.identityStart !== undefined &&
+          value.identityIncrement !== undefined &&
+          value.identityMaximum !== undefined &&
+          value.identityMinimum !== undefined &&
+          value.identityCycle !== undefined &&
+          value.isGenerated !== undefined &&
+          value.generationExpression !== undefined &&
+          value.isUpdatable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ConstraintColumnUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ConstraintColumnUsage {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ConstraintTableUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ConstraintTableUsage {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace DataTypePrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.DataTypePrivileges {
+        if (
+          value.objectCatalog !== undefined &&
+          value.objectSchema !== undefined &&
+          value.objectName !== undefined &&
+          value.objectType !== undefined &&
+          value.dtdIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace DomainConstraints {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.DomainConstraints {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.domainCatalog !== undefined &&
+          value.domainSchema !== undefined &&
+          value.domainName !== undefined &&
+          value.isDeferrable !== undefined &&
+          value.initiallyDeferred !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace DomainUdtUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.DomainUdtUsage {
+        if (
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.domainCatalog !== undefined &&
+          value.domainSchema !== undefined &&
+          value.domainName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Domains {
+      export function is(value: any): value is InformationSchema.Types.Domains {
+        if (
+          value.domainCatalog !== undefined &&
+          value.domainSchema !== undefined &&
+          value.domainName !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.domainDefault !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ElementTypes {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ElementTypes {
+        if (
+          value.objectCatalog !== undefined &&
+          value.objectSchema !== undefined &&
+          value.objectName !== undefined &&
+          value.objectType !== undefined &&
+          value.collectionTypeIdentifier !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.domainDefault !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace EnabledRoles {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.EnabledRoles {
+        if (value.roleName !== undefined) return true;
+        return false;
+      }
+    }
+    export namespace ForeignDataWrapperOptions {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignDataWrapperOptions {
+        if (
+          value.foreignDataWrapperCatalog !== undefined &&
+          value.foreignDataWrapperName !== undefined &&
+          value.optionName !== undefined &&
+          value.optionValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ForeignDataWrappers {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignDataWrappers {
+        if (
+          value.foreignDataWrapperCatalog !== undefined &&
+          value.foreignDataWrapperName !== undefined &&
+          value.authorizationIdentifier !== undefined &&
+          value.libraryName !== undefined &&
+          value.foreignDataWrapperLanguage !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ForeignServerOptions {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignServerOptions {
+        if (
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.optionName !== undefined &&
+          value.optionValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ForeignServers {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignServers {
+        if (
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.foreignDataWrapperCatalog !== undefined &&
+          value.foreignDataWrapperName !== undefined &&
+          value.foreignServerType !== undefined &&
+          value.foreignServerVersion !== undefined &&
+          value.authorizationIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ForeignTableOptions {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignTableOptions {
+        if (
+          value.foreignTableCatalog !== undefined &&
+          value.foreignTableSchema !== undefined &&
+          value.foreignTableName !== undefined &&
+          value.optionName !== undefined &&
+          value.optionValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ForeignTables {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ForeignTables {
+        if (
+          value.foreignTableCatalog !== undefined &&
+          value.foreignTableSchema !== undefined &&
+          value.foreignTableName !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace InformationSchemaCatalogName {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.InformationSchemaCatalogName {
+        if (value.catalogName !== undefined) return true;
+        return false;
+      }
+    }
+    export namespace KeyColumnUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.KeyColumnUsage {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.ordinalPosition !== undefined &&
+          value.positionInUniqueConstraint !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Parameters {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Parameters {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.ordinalPosition !== undefined &&
+          value.parameterMode !== undefined &&
+          value.isResult !== undefined &&
+          value.asLocator !== undefined &&
+          value.parameterName !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined &&
+          value.parameterDefault !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ReferentialConstraints {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ReferentialConstraints {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.uniqueConstraintCatalog !== undefined &&
+          value.uniqueConstraintSchema !== undefined &&
+          value.uniqueConstraintName !== undefined &&
+          value.matchOption !== undefined &&
+          value.updateRule !== undefined &&
+          value.deleteRule !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoleColumnGrants {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoleColumnGrants {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoleRoutineGrants {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoleRoutineGrants {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoleTableGrants {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoleTableGrants {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined &&
+          value.withHierarchy !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoleUdtGrants {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoleUdtGrants {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoleUsageGrants {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoleUsageGrants {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.objectCatalog !== undefined &&
+          value.objectSchema !== undefined &&
+          value.objectName !== undefined &&
+          value.objectType !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoutineColumnUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoutineColumnUsage {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoutinePrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoutinePrivileges {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoutineRoutineUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoutineRoutineUsage {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoutineSequenceUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoutineSequenceUsage {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.sequenceCatalog !== undefined &&
+          value.sequenceSchema !== undefined &&
+          value.sequenceName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace RoutineTableUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.RoutineTableUsage {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Routines {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Routines {
+        if (
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.routineCatalog !== undefined &&
+          value.routineSchema !== undefined &&
+          value.routineName !== undefined &&
+          value.routineType !== undefined &&
+          value.moduleCatalog !== undefined &&
+          value.moduleSchema !== undefined &&
+          value.moduleName !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.typeUdtCatalog !== undefined &&
+          value.typeUdtSchema !== undefined &&
+          value.typeUdtName !== undefined &&
+          value.scopeCatalog !== undefined &&
+          value.scopeSchema !== undefined &&
+          value.scopeName !== undefined &&
+          value.maximumCardinality !== undefined &&
+          value.dtdIdentifier !== undefined &&
+          value.routineBody !== undefined &&
+          value.routineDefinition !== undefined &&
+          value.externalName !== undefined &&
+          value.externalLanguage !== undefined &&
+          value.parameterStyle !== undefined &&
+          value.isDeterministic !== undefined &&
+          value.sqlDataAccess !== undefined &&
+          value.isNullCall !== undefined &&
+          value.sqlPath !== undefined &&
+          value.schemaLevelRoutine !== undefined &&
+          value.maxDynamicResultSets !== undefined &&
+          value.isUserDefinedCast !== undefined &&
+          value.isImplicitlyInvocable !== undefined &&
+          value.securityType !== undefined &&
+          value.toSqlSpecificCatalog !== undefined &&
+          value.toSqlSpecificSchema !== undefined &&
+          value.toSqlSpecificName !== undefined &&
+          value.asLocator !== undefined &&
+          value.created !== undefined &&
+          value.lastAltered !== undefined &&
+          value.newSavepointLevel !== undefined &&
+          value.isUdtDependent !== undefined &&
+          value.resultCastFromDataType !== undefined &&
+          value.resultCastAsLocator !== undefined &&
+          value.resultCastCharMaxLength !== undefined &&
+          value.resultCastCharOctetLength !== undefined &&
+          value.resultCastCharSetCatalog !== undefined &&
+          value.resultCastCharSetSchema !== undefined &&
+          value.resultCastCharSetName !== undefined &&
+          value.resultCastCollationCatalog !== undefined &&
+          value.resultCastCollationSchema !== undefined &&
+          value.resultCastCollationName !== undefined &&
+          value.resultCastNumericPrecision !== undefined &&
+          value.resultCastNumericPrecisionRadix !== undefined &&
+          value.resultCastNumericScale !== undefined &&
+          value.resultCastDatetimePrecision !== undefined &&
+          value.resultCastIntervalType !== undefined &&
+          value.resultCastIntervalPrecision !== undefined &&
+          value.resultCastTypeUdtCatalog !== undefined &&
+          value.resultCastTypeUdtSchema !== undefined &&
+          value.resultCastTypeUdtName !== undefined &&
+          value.resultCastScopeCatalog !== undefined &&
+          value.resultCastScopeSchema !== undefined &&
+          value.resultCastScopeName !== undefined &&
+          value.resultCastMaximumCardinality !== undefined &&
+          value.resultCastDtdIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Schemata {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Schemata {
+        if (
+          value.catalogName !== undefined &&
+          value.schemaName !== undefined &&
+          value.schemaOwner !== undefined &&
+          value.defaultCharacterSetCatalog !== undefined &&
+          value.defaultCharacterSetSchema !== undefined &&
+          value.defaultCharacterSetName !== undefined &&
+          value.sqlPath !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Sequences {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Sequences {
+        if (
+          value.sequenceCatalog !== undefined &&
+          value.sequenceSchema !== undefined &&
+          value.sequenceName !== undefined &&
+          value.dataType !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.startValue !== undefined &&
+          value.minimumValue !== undefined &&
+          value.maximumValue !== undefined &&
+          value.increment !== undefined &&
+          value.cycleOption !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SqlFeatures {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.SqlFeatures {
+        if (
+          value.featureId !== undefined &&
+          value.featureName !== undefined &&
+          value.subFeatureId !== undefined &&
+          value.subFeatureName !== undefined &&
+          value.isSupported !== undefined &&
+          value.isVerifiedBy !== undefined &&
+          value.comments !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SqlImplementationInfo {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.SqlImplementationInfo {
+        if (
+          value.implementationInfoId !== undefined &&
+          value.implementationInfoName !== undefined &&
+          value.integerValue !== undefined &&
+          value.characterValue !== undefined &&
+          value.comments !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SqlParts {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.SqlParts {
+        if (
+          value.featureId !== undefined &&
+          value.featureName !== undefined &&
+          value.isSupported !== undefined &&
+          value.isVerifiedBy !== undefined &&
+          value.comments !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SqlSizing {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.SqlSizing {
+        if (
+          value.sizingId !== undefined &&
+          value.sizingName !== undefined &&
+          value.supportedValue !== undefined &&
+          value.comments !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace TableConstraints {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.TableConstraints {
+        if (
+          value.constraintCatalog !== undefined &&
+          value.constraintSchema !== undefined &&
+          value.constraintName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.constraintType !== undefined &&
+          value.isDeferrable !== undefined &&
+          value.initiallyDeferred !== undefined &&
+          value.enforced !== undefined &&
+          value.nullsDistinct !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace TablePrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.TablePrivileges {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined &&
+          value.withHierarchy !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Tables {
+      export function is(value: any): value is InformationSchema.Types.Tables {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.tableType !== undefined &&
+          value.selfReferencingColumnName !== undefined &&
+          value.referenceGeneration !== undefined &&
+          value.userDefinedTypeCatalog !== undefined &&
+          value.userDefinedTypeSchema !== undefined &&
+          value.userDefinedTypeName !== undefined &&
+          value.isInsertableInto !== undefined &&
+          value.isTyped !== undefined &&
+          value.commitAction !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Transforms {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Transforms {
+        if (
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined &&
+          value.groupName !== undefined &&
+          value.transformType !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace TriggeredUpdateColumns {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.TriggeredUpdateColumns {
+        if (
+          value.triggerCatalog !== undefined &&
+          value.triggerSchema !== undefined &&
+          value.triggerName !== undefined &&
+          value.eventObjectCatalog !== undefined &&
+          value.eventObjectSchema !== undefined &&
+          value.eventObjectTable !== undefined &&
+          value.eventObjectColumn !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Triggers {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.Triggers {
+        if (
+          value.triggerCatalog !== undefined &&
+          value.triggerSchema !== undefined &&
+          value.triggerName !== undefined &&
+          value.eventManipulation !== undefined &&
+          value.eventObjectCatalog !== undefined &&
+          value.eventObjectSchema !== undefined &&
+          value.eventObjectTable !== undefined &&
+          value.actionOrder !== undefined &&
+          value.actionCondition !== undefined &&
+          value.actionStatement !== undefined &&
+          value.actionOrientation !== undefined &&
+          value.actionTiming !== undefined &&
+          value.actionReferenceOldTable !== undefined &&
+          value.actionReferenceNewTable !== undefined &&
+          value.actionReferenceOldRow !== undefined &&
+          value.actionReferenceNewRow !== undefined &&
+          value.created !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace UdtPrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.UdtPrivileges {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.udtCatalog !== undefined &&
+          value.udtSchema !== undefined &&
+          value.udtName !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace UsagePrivileges {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.UsagePrivileges {
+        if (
+          value.grantor !== undefined &&
+          value.grantee !== undefined &&
+          value.objectCatalog !== undefined &&
+          value.objectSchema !== undefined &&
+          value.objectName !== undefined &&
+          value.objectType !== undefined &&
+          value.privilegeType !== undefined &&
+          value.isGrantable !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace UserDefinedTypes {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.UserDefinedTypes {
+        if (
+          value.userDefinedTypeCatalog !== undefined &&
+          value.userDefinedTypeSchema !== undefined &&
+          value.userDefinedTypeName !== undefined &&
+          value.userDefinedTypeCategory !== undefined &&
+          value.isInstantiable !== undefined &&
+          value.isFinal !== undefined &&
+          value.orderingForm !== undefined &&
+          value.orderingCategory !== undefined &&
+          value.orderingRoutineCatalog !== undefined &&
+          value.orderingRoutineSchema !== undefined &&
+          value.orderingRoutineName !== undefined &&
+          value.referenceType !== undefined &&
+          value.dataType !== undefined &&
+          value.characterMaximumLength !== undefined &&
+          value.characterOctetLength !== undefined &&
+          value.characterSetCatalog !== undefined &&
+          value.characterSetSchema !== undefined &&
+          value.characterSetName !== undefined &&
+          value.collationCatalog !== undefined &&
+          value.collationSchema !== undefined &&
+          value.collationName !== undefined &&
+          value.numericPrecision !== undefined &&
+          value.numericPrecisionRadix !== undefined &&
+          value.numericScale !== undefined &&
+          value.datetimePrecision !== undefined &&
+          value.intervalType !== undefined &&
+          value.intervalPrecision !== undefined &&
+          value.sourceDtdIdentifier !== undefined &&
+          value.refDtdIdentifier !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace UserMappingOptions {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.UserMappingOptions {
+        if (
+          value.authorizationIdentifier !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined &&
+          value.optionName !== undefined &&
+          value.optionValue !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace UserMappings {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.UserMappings {
+        if (
+          value.authorizationIdentifier !== undefined &&
+          value.foreignServerCatalog !== undefined &&
+          value.foreignServerName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ViewColumnUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ViewColumnUsage {
+        if (
+          value.viewCatalog !== undefined &&
+          value.viewSchema !== undefined &&
+          value.viewName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.columnName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ViewRoutineUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ViewRoutineUsage {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.specificCatalog !== undefined &&
+          value.specificSchema !== undefined &&
+          value.specificName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ViewTableUsage {
+      export function is(
+        value: any,
+      ): value is InformationSchema.Types.ViewTableUsage {
+        if (
+          value.viewCatalog !== undefined &&
+          value.viewSchema !== undefined &&
+          value.viewName !== undefined &&
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Views {
+      export function is(value: any): value is InformationSchema.Types.Views {
+        if (
+          value.tableCatalog !== undefined &&
+          value.tableSchema !== undefined &&
+          value.tableName !== undefined &&
+          value.viewDefinition !== undefined &&
+          value.checkOption !== undefined &&
+          value.isUpdatable !== undefined &&
+          value.isInsertableInto !== undefined &&
+          value.isTriggerUpdatable !== undefined &&
+          value.isTriggerDeletable !== undefined &&
+          value.isTriggerInsertableInto !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {}
+  export namespace Tables {
+    export namespace SqlFeatures {}
+    export namespace SqlImplementationInfo {}
+    export namespace SqlParts {}
+    export namespace SqlSizing {}
+  }
+}
+export namespace Public {
+  export namespace Types {
+    export namespace Slug {
+      export function is(value: any): value is Public.Types.Slug {
+        if (value.slugId !== undefined) return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace CubeIn {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeIn.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace Cube_9c45 {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.Cube_9c45.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace Cube_2e6d {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.Cube_2e6d.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeOut {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeOut.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeEq {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeEq.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeNe {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeNe.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeLt {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeLt.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeGt {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeGt.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeLe {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeLe.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeGe {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeGe.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeCmp {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeCmp.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeContains {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeContains.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeContained {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeContained.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeOverlap {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeOverlap.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeUnion {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeUnion.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeInter {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeInter.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeSize {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeSize.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeSubset {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeSubset.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeDistance {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeDistance.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace DistanceChebyshev {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.DistanceChebyshev.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace DistanceTaxicab {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.DistanceTaxicab.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeDim {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeDim.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeLlCoord {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeLlCoord.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeUrCoord {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeUrCoord.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeCoord {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeCoord.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeCoordLlur {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeCoordLlur.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeA5b3 {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeA5b3.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace Cube_0aec {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.Cube_0aec.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace Cube_39d2 {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.Cube_39d2.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeA7eb {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeA7eb.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeIsPoint {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeIsPoint.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeEnlarge {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeEnlarge.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubeConsistent {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubeConsistent.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined &&
+            value.argument_3 !== undefined &&
+            value.argument_4 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubePenalty {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubePenalty.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubePicksplit {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubePicksplit.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubeUnion {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubeUnion.Parameters {
+          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubeSame {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubeSame.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GCubeDistance {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GCubeDistance.Parameters {
+          if (
+            value.argument_0 !== undefined &&
+            value.argument_1 !== undefined &&
+            value.argument_2 !== undefined &&
+            value.argument_3 !== undefined &&
+            value.argument_4 !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeRecv {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeRecv.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace CubeSend {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.CubeSend.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace Slug {}
+  }
+}
+export namespace Api {
+  export namespace Types {
+    export namespace EchoType {
+      export function is(value: any): value is Api.Types.EchoType {
+        if (value.echomessage !== undefined && value.at !== undefined)
+          return true;
+        return false;
+      }
+    }
+    export namespace EchoTypeNested {
+      export function is(value: any): value is Api.Types.EchoTypeNested {
+        if (value.echoes !== undefined) return true;
+        return false;
+      }
+    }
+    export namespace EchoTableResults {
+      export function is(value: any): value is Api.Types.EchoTableResults {
+        if (value.echomessage !== undefined && value.at !== undefined)
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace Echo {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.Echo.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoSet {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoSet.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoTable {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoTable.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoType {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoType.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoTypeArray {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoTypeArray.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoTypeNested {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoTypeNested.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace EchoTypeSet {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Api.Procedures.EchoTypeSet.Parameters {
+          if (value.message !== undefined) return true;
+          return false;
+        }
+      }
+    }
+  }
   export namespace Tables {}
 }
 

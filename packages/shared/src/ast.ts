@@ -364,9 +364,17 @@ export class AbstractTypeNode extends ContainerNode {
     kind: ASTKind,
     parent: ContainerNode,
     public id: string | number,
-    public parser: GeneratesTypeScript,
+    private parser?: GeneratesTypeScript,
   ) {
     super(name, kind, parent);
+  }
+
+  typescriptTypeParser(context: GenerationContext) {
+    return this.parser?.typescriptTypeParser(context);
+  }
+
+  typescriptTypeDefinition(context: GenerationContext) {
+    return this.parser?.typescriptTypeDefinition(context);
   }
 }
 
@@ -391,7 +399,7 @@ export class TypeNode extends AbstractTypeNode {
     name: string,
     types: TypesNode,
     public id: string | number,
-    public parser: GeneratesTypeScript,
+    parser: GeneratesTypeScript,
   ) {
     super(name, ASTKind.Type, types, id, parser);
   }
@@ -406,7 +414,7 @@ export class EnumNode extends AbstractTypeNode {
     public values: string[],
     types: TypesNode,
     public id: string | number,
-    public parser: GeneratesTypeScript,
+    parser: GeneratesTypeScript,
   ) {
     super(name, ASTKind.Enum, types, id, parser);
   }
@@ -582,6 +590,16 @@ export abstract class OperationNode extends ContainerNode {
  * Function like operations -- scripts and procedures.
  */
 export abstract class FunctionOperationNode extends OperationNode {
+  constructor(
+    name: string,
+    kind: ASTKind,
+    parent: ContainerNode,
+    public returnsMany: boolean,
+  ) {
+    // always returnsMany
+    super(name, kind, parent);
+  }
+
   /**
    * Operations have results, which are each of this type.
    *
@@ -773,7 +791,8 @@ export class ScriptNode extends FunctionOperationNode {
     public script: string,
     parent: ContainerNode,
   ) {
-    super(path.name, ASTKind.Script, parent);
+    // always returnsMany
+    super(path.name, ASTKind.Script, parent, true);
   }
 }
 
@@ -798,10 +817,10 @@ export class ProcedureNode
     public procedures: ProceduresNode,
     public id: string | number,
     public nameInDatabase: string,
-    public returnsMany: boolean,
+    returnsMany: boolean,
     public isPseudoType: boolean,
   ) {
-    super(name, ASTKind.Procedure, procedures);
+    super(name, ASTKind.Procedure, procedures, returnsMany);
   }
 
   get databaseName() {
@@ -828,37 +847,42 @@ export class ProcedureArgumentNode extends NamedASTNode {
  */
 export class CompositeTypeNode extends AbstractTypeNode {
   constructor(name: string, parent: ContainerNode, id: string | number) {
-    super(
-      name,
-      ASTKind.CompositeType,
-      parent,
-      id,
-      // inline code generation
-      {
-        typescriptTypeDefinition: () => {
-          const recordAttributes = this.children
-            .filter<AttributeTypeNode>(
-              (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
-            )
-            .map(
-              (a) =>
-                `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`,
-            );
-          return ` { ${recordAttributes.join("\n")} } `;
-        },
-        typescriptTypeParser: () => {
-          // no op type parser -- query results are expected to have
-          // already been parsed by the databse driver
-          return `return from`;
-        },
-      },
-    );
+    super(name, ASTKind.CompositeType, parent, id);
   }
 
   get attributes() {
     return this.children.filter<AttributeTypeNode>(
       (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
     );
+  }
+  override typescriptTypeDefinition(
+    context: GenerationContext,
+  ): string | undefined {
+    console.assert(context);
+    const recordAttributes = this.children
+      .filter<AttributeTypeNode>(
+        (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+      )
+      .map(
+        (a) =>
+          `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`,
+      );
+    return ` { ${recordAttributes.join("\n")} } `;
+  }
+
+  override typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    // parsing on the client side needs to turn 'loose' json types
+    // into our database mapped types -- for example -- dates
+
+    // parsing on the server side -- the database driver is expected to have
+    // already done the parsing, so this is a no-op
+    return [
+      `if (${this.typescriptNamespacedName}.is(from)) {`,
+      `  return from;`,
+      `}`,
+      `throw new Error(JSON.stringify(from))`,
+    ].join("\n");
   }
 }
 
@@ -897,14 +921,20 @@ export class AliasTypeNode extends AbstractTypeNode {
     public type: TypeNode,
     parent: ContainerNode,
   ) {
-    super(name, ASTKind.AliasType, parent, type.id, {
-      typescriptTypeDefinition() {
-        return `${type.typescriptNamespacedName}`;
-      },
-      typescriptTypeParser() {
-        return `${type.typescriptNamespacedName}.parse(from)`;
-      },
-    });
+    super(name, ASTKind.AliasType, parent, type.id);
+  }
+
+  override typescriptTypeDefinition(
+    context: GenerationContext,
+  ): string | undefined {
+    console.assert(context);
+    return `${this.type.typescriptNamespacedName}`;
+  }
+
+  override typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    // delegate to the actual type
+    return `return ${this.type.typescriptNamespacedName}.parse(from)`;
   }
 }
 
@@ -926,38 +956,25 @@ export class AliasTypeNode extends AbstractTypeNode {
 export class DomainTypeNode extends AbstractTypeNode {
   private _baseType: AbstractTypeNode;
   constructor(name: string, parent: ContainerNode, id: string | number) {
-    super(
-      name,
-      ASTKind.DomainType,
-      parent,
-      id,
-      // this is a placeholder and will be replaced
-      {
-        typescriptTypeDefinition: () => {
-          return `never`;
-        },
-        typescriptTypeParser: () => {
-          return `return undefined;`;
-        },
-      },
-    );
+    super(name, ASTKind.DomainType, parent, id);
     this._baseType = new Never(parent);
   }
 
   set baseType(baseType: AbstractTypeNode) {
     this._baseType = baseType;
-    this.parser = {
-      typescriptTypeDefinition: () => {
-        // just alias the base type
-        return `${baseType.typescriptNamespacedName}`;
-      },
-      typescriptTypeParser: () => {
-        // base type type parser
-        return `return ${baseType.typescriptNamespacedName}.parse(from);`;
-      },
-    };
   }
+
   get baseType() {
     return this._baseType;
+  }
+  override typescriptTypeDefinition(context: GenerationContext) {
+    console.assert(context);
+    // just alias the base type
+    return `${this.baseType.typescriptNamespacedName}`;
+  }
+  override typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    // base type type parser
+    return `return ${this.baseType.typescriptNamespacedName}.parse(from);`;
   }
 }

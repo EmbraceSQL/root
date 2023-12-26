@@ -75,12 +75,21 @@ export type WithChangeHandlers<T, E = never> = T & {
  * This is an adapter as postgres driver does not auto translate
  * undefined to null.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const undefinedIsNull = (value: any) => {
+export function undefinedIsNull<T>(value: T | undefined) {
   if (value === undefined) return null;
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return value;
-};
+}
+
+/**
+ * Adapter when we get a parsed null from the database but should
+ * return an undefined for TypeScript
+ * undefined to null.
+ */
+export function nullIsUndefined<T>(value: T | null) {
+  if (value === null) return undefined;
+  return value;
+}
+
 export type JsDate = Date;
 export type Empty = Record<string, never>;
 export type JSONValue =
