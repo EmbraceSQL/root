@@ -1,4 +1,4 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { TypeFactoryContext } from "../../context";
 import { PGIndex } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
@@ -8,7 +8,6 @@ import {
   TableNode,
   TablesNode,
 } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -83,34 +82,4 @@ export class PGTable {
     // and the indexes
     this.indexes.forEach((i) => i.loadAST(context, table));
   }
-
-  get typescriptName() {
-    return pascalCase(this.table.relname);
-  }
-  // TODO: remove
-
-  /**
-   * Code generation builder for all fields updating.
-   *
-   * This will do self assignment for undefined properties, allowing
-   * partial updates in typescript by omitting properties corresponding to
-   * columns.
-   *
-   * Nulls in the passed typescript turn into SQL NULL.
-   */
-  sqlSetExpressions(context: Context, parameterHolder = "parameters") {
-    const tableType = context.resolveType<PGTypeComposite>(
-      this.table.tabletypeoid,
-    );
-    return tableType.attributes
-      .map(
-        (a) =>
-          `${a.postgresName} = ${a.postgresValueExpression(
-            context,
-            parameterHolder,
-          )}`,
-      )
-      .join(" , ");
-  }
-  // TODO: remove
 }
