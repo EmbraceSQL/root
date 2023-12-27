@@ -1,6 +1,5 @@
 import { Context, PostgresProcTypecast } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
-import { PGNamespace } from "../pgnamespace";
 import { PGTypes } from "../pgtype";
 import {
   ARGUMENTS,
@@ -13,7 +12,7 @@ import {
   compositeAttribute,
   parseObjectWithAttributes,
 } from "@embracesql/shared";
-import { camelCase, pascalCase } from "change-case";
+import { camelCase } from "change-case";
 import hash from "object-hash";
 import parsimmon from "parsimmon";
 import path from "path";
@@ -97,8 +96,6 @@ export class PGProcs {
       procNode.children.push(
         new AliasTypeNode(RESULTS, procReturnType, procNode),
       );
-      // TODO: eliminate this shim
-      proc.procNode = procNode;
     }
   }
 }
@@ -110,9 +107,6 @@ export class PGProcs {
  * group and fully qualify proc names.
  */
 export class PGProc implements PostgresProcTypecast {
-  // TODO: remove this shim
-  public procNode?: ProcedureNode;
-
   constructor(
     context: PGProcsContext,
     public proc: ProcRow,
@@ -130,36 +124,6 @@ export class PGProc implements PostgresProcTypecast {
     const seed = this.proc.proname;
     const stem = hash(this.proc.proargtypes.flatMap((x) => x)).substring(0, 4);
     return this.overloaded ? `${seed}_${stem}` : seed;
-  }
-
-  get typescriptName() {
-    return pascalCase(this.name);
-  }
-
-  get typescriptNameForNamespace() {
-    return PGNamespace.typescriptName(this.proc.nspname);
-  }
-
-  typescriptNameForResponse(withNamespace = false) {
-    return (
-      (withNamespace ? `${this.typescriptNameForNamespace}.` : "") +
-      `${this.typescriptName}Response`
-    );
-  }
-
-  typescriptNameForPostgresArguments(withNamespace = false) {
-    return (
-      (withNamespace ? `${this.typescriptNameForNamespace}.Procedures.` : "") +
-      `${this.typescriptName}.Arguments`
-    );
-  }
-
-  get postgresName() {
-    return `${this.proc.nspname}.${this.proc.proname}`;
-  }
-
-  get resultsetName() {
-    return `${this.proc.proname}`;
   }
 
   get returnsSet() {
