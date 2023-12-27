@@ -252,4 +252,6 @@ describe("The database can marshall base types", () => {
       );
     }
   });
+  // TODO: test every base scalar type parsing a string
+  // TODO: test every base scalar type 'parsing' an actual value
 });

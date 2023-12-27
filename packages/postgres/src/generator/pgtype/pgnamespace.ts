@@ -69,7 +69,6 @@ export class PGNamespace {
     const schema = context.database.resolveSchema(this.nspname);
     // TODO: add prop to schema, move to constructor
     const tables = new TablesNode(schema);
-    schema.children.push(tables);
     this.tables.forEach((t) => {
       t.loadAST(context, tables);
     });

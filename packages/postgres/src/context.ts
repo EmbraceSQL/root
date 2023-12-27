@@ -10,6 +10,7 @@ import { oneBasedArgumentNamefromZeroBasedIndex } from "./util";
 import {
   ARGUMENTS,
   ASTKind,
+  ASTNode,
   AttributeTypeNode,
   CompositeTypeNode,
   DatabaseNode,
@@ -217,8 +218,8 @@ export const initializeContext = async (
           const scriptPath = path.join(node.path.dir, node.path.base);
           const metadata = await sql.file(scriptPath).describe();
           const resultsNode = new CompositeTypeNode(RESULTS, node, "");
-          metadata.columns.forEach((a, i) =>
-            resultsNode.children.push(
+          metadata.columns.forEach(
+            (a, i) =>
               new AttributeTypeNode(
                 resultsNode,
                 a.name,
@@ -226,13 +227,11 @@ export const initializeContext = async (
                 context.database.resolveType(a.type)!,
                 true,
               ),
-            ),
           );
-          node.children.push(resultsNode);
           if (metadata.types.length) {
             const argumentsNode = new CompositeTypeNode(ARGUMENTS, node, "");
-            metadata.types.forEach((a, i) =>
-              argumentsNode.children.push(
+            metadata.types.forEach(
+              (a, i) =>
                 new AttributeTypeNode(
                   argumentsNode,
                   // these don't have natural names, just positions
@@ -242,9 +241,7 @@ export const initializeContext = async (
                   context.database.resolveType(a)!,
                   true,
                 ),
-              ),
             );
-            node.children.push(argumentsNode);
           }
           return "";
         },
@@ -254,7 +251,8 @@ export const initializeContext = async (
 
   await procCatalog.loadAST(generationContext);
 
-  // TODO: sanity check AST for parenting
+  // sanity check and verification of all created nodes
+  ASTNode.verify();
 
   // now we set up a new sql that can do type marshalling - runtime data
   // from the database is complete

@@ -4,7 +4,7 @@
   "description": "Love SQL? Love TypeScript? Hate ORMs. You're 🏡.",
   "scripts": {
     "database": "psql --file var/data/dvdrental/dvdrental.sql && psql --file var/data/marshalling/marshalling.sql",
-    "lint": "eslint .",
+    "lint": "eslint --format visualstudio .",
     "check": "npm run check --workspaces",
     "test": "npm run test --workspaces --if-present",
     "prepare": "husky install",

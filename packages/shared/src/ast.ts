@@ -145,8 +145,6 @@ export function isNodeType<T extends ASTKind>(
   return node?.kind === kind;
 }
 
-export type z = ASTKindMap[ASTKind.CompositeType];
-
 /**
  * Mapping to set up visitors.
  */
@@ -163,8 +161,28 @@ export type VisitorMap = {
 export abstract class ASTNode {
   constructor(
     public kind: ASTKind,
-    public onType?: NamedASTNode,
-  ) {}
+    public parent?: ContainerNode,
+  ) {
+    ASTNode._runningObjectTable.push(this);
+    parent?.add(this);
+  }
+
+  // track all ast nodes created
+  static _runningObjectTable: ASTNode[] = [];
+
+  static verify() {
+    // nodes with parents need parents to know this child
+    for (const node of ASTNode._runningObjectTable) {
+      if (node.parent) {
+        console.assert(
+          node.parent.includes(node),
+          `${ASTKind[node.kind]} ${(node as NamedASTNode).name} not in ${
+            node.parent.typescriptNamespacedName
+          }`,
+        );
+      }
+    }
+  }
 
   async visit<T extends this>(context: GenerationContext): Promise<string> {
     const generationBuffer = [""];
@@ -181,8 +199,8 @@ export abstract class ASTNode {
   }
 
   lookUpTo<T extends ASTKind>(kind: T): ASTKindMap[T] | undefined {
-    if (isNodeType(this.onType, kind)) return this.onType;
-    else return this.onType?.lookUpTo(kind);
+    if (isNodeType(this.parent, kind)) return this.parent;
+    else return this.parent?.lookUpTo(kind);
   }
 }
 
@@ -194,7 +212,7 @@ export abstract class NamedASTNode extends ASTNode {
   constructor(
     public name: string,
     kind: ASTKind,
-    parent?: NamedASTNode,
+    parent?: ContainerNode,
   ) {
     super(kind, parent);
   }
@@ -204,8 +222,8 @@ export abstract class NamedASTNode extends ASTNode {
   }
 
   get typescriptNamespacedName(): string {
-    if (this.onType) {
-      return `${this.onType.typescriptNamespacedName}.${this.typescriptName}`;
+    if (this.parent) {
+      return `${this.parent.typescriptNamespacedName}.${this.typescriptName}`;
     } else {
       return `${this.typescriptName}`;
     }
@@ -216,8 +234,8 @@ export abstract class NamedASTNode extends ASTNode {
   }
 
   get typescriptNamespacedPropertyName(): string {
-    if (this.onType) {
-      return `${this.onType.typescriptNamespacedName}.${this.typescriptPropertyName}`;
+    if (this.parent) {
+      return `${this.parent.typescriptNamespacedName}.${this.typescriptPropertyName}`;
     } else {
       return `${this.typescriptPropertyName}`;
     }
@@ -231,6 +249,14 @@ export abstract class ContainerNode extends NamedASTNode {
   children: ASTNode[] = [];
   constructor(name: string, kind: ASTKind, parent?: ContainerNode) {
     super(name, kind, parent);
+  }
+
+  add(child: ASTNode) {
+    this.children.push(child);
+  }
+
+  includes(child: ASTNode) {
+    return this.children.includes(child);
   }
 
   async visit<T extends this>(context: GenerationContext): Promise<string> {
@@ -271,9 +297,7 @@ export class DatabaseNode extends ContainerNode {
   registerType(id: string | number, type: AbstractTypeNode) {
     const existing = this.types.get(`${id}`);
     if (existing) return existing;
-    // mapped and in the children
     this.types.set(`${id}`, type);
-    (type.lookUpTo(ASTKind.Schema) as SchemaNode).types.children.push(type);
     return type;
   }
 
@@ -295,7 +319,6 @@ export class DatabaseNode extends ContainerNode {
     ) as SchemaNode;
     if (exists) return exists;
     const schema = new SchemaNode(this, name);
-    this.children.push(schema);
     return schema;
   }
 }
@@ -312,8 +335,8 @@ export class SchemaNode extends ContainerNode {
     public name: string,
   ) {
     super(name, ASTKind.Schema, database);
-    this.children.push(new TypesNode(this));
-    this.children.push(new ProceduresNode(this));
+    new TypesNode(this);
+    new ProceduresNode(this);
   }
 
   get types() {
@@ -378,19 +401,6 @@ export class AbstractTypeNode extends ContainerNode {
   }
 }
 
-export class Never extends AbstractTypeNode {
-  constructor(parent: ContainerNode) {
-    super("never", ASTKind.Type, parent, 0, {
-      typescriptTypeDefinition: () => {
-        return `never`;
-      },
-      typescriptTypeParser: () => {
-        return `return undefined;`;
-      },
-    });
-  }
-}
-
 /**
  * Represents a single type from a database.
  */
@@ -442,7 +452,7 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
     public type: CompositeTypeNode,
   ) {
     super(name, ASTKind.Table, tables);
-    this.children.push(new CreateOperationNode(this));
+    new CreateOperationNode(this);
   }
 
   get databaseName() {
@@ -501,15 +511,15 @@ export class ColumnNode extends ContainerNode {
   }
 
   get schema() {
-    return this.onType?.onType?.onType as SchemaNode;
+    return this.parent?.parent?.parent as SchemaNode;
   }
 
   get tables() {
-    return this.onType?.onType as TablesNode;
+    return this.parent?.parent as TablesNode;
   }
 
   get table() {
-    return this.onType as TableNode;
+    return this.parent as TableNode;
   }
 }
 
@@ -525,14 +535,12 @@ export class IndexNode extends ContainerNode {
     attributes: NamedType[],
   ) {
     super(name, ASTKind.Index, table);
-    attributes.forEach((a) =>
-      this.children.push(new IndexColumnNode(this, a.name, a.type)),
-    );
+    attributes.forEach((a) => new IndexColumnNode(this, a.name, a.type));
     // important that the operations go after the attributes
     // so that we can have a well defined `typescriptName`
-    this.children.push(new ReadOperationNode(this));
-    this.children.push(new UpdateOperationNode(this));
-    this.children.push(new DeleteOperationNode(this));
+    new ReadOperationNode(this);
+    new UpdateOperationNode(this);
+    new DeleteOperationNode(this);
   }
 
   get typescriptName() {
@@ -698,7 +706,6 @@ export class ScriptsNode extends ContainerNode {
     if (context.sqlScriptsFrom) {
       const rootPath = path.parse(path.join(context.sqlScriptsFrom));
       const scriptsNode = new ScriptsNode(context.database, rootPath);
-      context.database.children.push(scriptsNode);
       await ScriptFolderNode.loadAST(context, rootPath, scriptsNode);
       return scriptsNode;
     } else {
@@ -743,7 +750,6 @@ export class ScriptFolderNode extends ContainerNode {
           path.parse(path.join(entry.path, entry.name)),
           addToNode,
         );
-        addToNode.children.push(folder);
         await ScriptFolderNode.loadAST(context, folder.path, folder);
       } else if (entry.name.endsWith(".sql")) {
         await ScriptNode.loadAST(
@@ -776,14 +782,13 @@ export class ScriptNode extends FunctionOperationNode {
     addToNode: ContainerNode,
   ) {
     console.assert(context);
-    const script = new ScriptNode(
+    new ScriptNode(
       scriptPath,
       await fs.promises.readFile(path.join(scriptPath.dir, scriptPath.base), {
         encoding: "utf8",
       }),
       addToNode,
     );
-    addToNode.children.push(script);
   }
 
   constructor(
@@ -891,13 +896,13 @@ export class CompositeTypeNode extends AbstractTypeNode {
  */
 export class AttributeTypeNode extends ContainerNode implements NamedType {
   constructor(
-    public onType: CompositeTypeNode,
+    public parent: CompositeTypeNode,
     public name: string,
     public index: number,
     public type: TypeNode,
     public required: boolean,
   ) {
-    super(name, ASTKind.AttributeType, onType);
+    super(name, ASTKind.AttributeType, parent);
   }
 
   /**
@@ -954,27 +959,27 @@ export class AliasTypeNode extends AbstractTypeNode {
  *
  */
 export class DomainTypeNode extends AbstractTypeNode {
-  private _baseType: AbstractTypeNode;
+  private _baseType?: AbstractTypeNode;
   constructor(name: string, parent: ContainerNode, id: string | number) {
     super(name, ASTKind.DomainType, parent, id);
-    this._baseType = new Never(parent);
   }
 
-  set baseType(baseType: AbstractTypeNode) {
+  set baseType(baseType: AbstractTypeNode | undefined) {
     this._baseType = baseType;
   }
 
   get baseType() {
     return this._baseType;
   }
+
   override typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
     // just alias the base type
-    return `${this.baseType.typescriptNamespacedName}`;
+    return `${this.baseType?.typescriptNamespacedName}`;
   }
   override typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     // base type type parser
-    return `return ${this.baseType.typescriptNamespacedName}.parse(from);`;
+    return `return ${this.baseType?.typescriptNamespacedName}.parse(from);`;
   }
 }

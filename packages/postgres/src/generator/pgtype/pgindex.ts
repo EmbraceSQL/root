@@ -67,7 +67,7 @@ export class PGIndex {
   }
 
   loadAST(context: GenerationContext, table: TableNode) {
-    const index = new IndexNode(
+    new IndexNode(
       table,
       this.name,
       this.index.indisunique,
@@ -77,7 +77,6 @@ export class PGIndex {
         return { name: a.name, type: typeNode };
       }),
     );
-    table.children.push(index);
   }
 
   get name() {

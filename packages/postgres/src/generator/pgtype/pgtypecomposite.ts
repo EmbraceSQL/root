@@ -48,8 +48,8 @@ export class PGTypeComposite extends PGCatalogType {
 
   finalizeAST(context: GenerationContext) {
     const typeNode = context.database.resolveType<CompositeTypeNode>(this.oid);
-    this.attributes.forEach((a, i) =>
-      typeNode.children.push(
+    this.attributes.forEach(
+      (a, i) =>
         new AttributeTypeNode(
           typeNode,
           a.name,
@@ -57,7 +57,6 @@ export class PGTypeComposite extends PGCatalogType {
           context.database.resolveType(a.attribute.atttypid),
           !a.isOptional,
         ),
-      ),
     );
   }
 

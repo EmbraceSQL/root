@@ -72,30 +72,24 @@ export class PGProcs {
         proc.returnsPseudoTypeRecord || proc.returnsSet,
         proc.returnsPseudoTypeRecord,
       );
-      procsNode.children.push(procNode);
 
       // inputs
       const argumentsNode = new CompositeTypeNode(ARGUMENTS, procNode, "");
-      procNode.children.push(argumentsNode);
 
       proc.proc.proargtypes
         .flatMap((t) => t)
         .forEach((oid, i) => {
           const type = context.database.resolveType(oid)!;
-          argumentsNode.children.push(
-            new AttributeTypeNode(
-              argumentsNode,
-              proc.proc.proargnames[i] ?? "",
-              i,
-              type,
-              i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
-            ),
+          new AttributeTypeNode(
+            argumentsNode,
+            proc.proc.proargnames[i] ?? "",
+            i,
+            type,
+            i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
           );
         });
       // outputs
-      procNode.children.push(
-        new AliasTypeNode(RESULTS, procReturnType, procNode),
-      );
+      new AliasTypeNode(RESULTS, procReturnType, procNode);
     }
   }
 }
@@ -194,8 +188,8 @@ export class PGProcPseudoType extends PGCatalogType {
       schema.types,
       this.oid,
     );
-    this.pseudoTypeAttributes(context).forEach((a, i) =>
-      type.children.push(new AttributeTypeNode(type, a.name, i, a.type, true)),
+    this.pseudoTypeAttributes(context).forEach(
+      (a, i) => new AttributeTypeNode(type, a.name, i, a.type, true),
     );
     context.database.registerType(type.id, type);
   }

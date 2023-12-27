@@ -70,14 +70,11 @@ export class PGTable {
     );
     // hash lookup of all tables
     context.database.registerTable(table.type.id, table);
-    tables.children.push(table);
     // columns -- derived from the table type
     this.tableType.attributes.forEach((a) => {
       const typeNode = context.database.resolveType(a.attribute.atttypid);
       if (typeNode) {
-        table.children.push(
-          new ColumnNode(table, a.name, typeNode, a.hasDefault, a.allowsNull),
-        );
+        new ColumnNode(table, a.name, typeNode, a.hasDefault, a.allowsNull);
       } else {
         throw new Error(`${a.name} cannot find type ${a.attribute.atttypid}`);
       }
