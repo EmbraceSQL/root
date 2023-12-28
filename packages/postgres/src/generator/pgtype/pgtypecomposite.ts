@@ -56,6 +56,7 @@ export class PGTypeComposite extends PGCatalogType {
           i,
           context.database.resolveType(a.attribute.atttypid),
           !a.isOptional,
+          !a.notNull,
         ),
     );
   }

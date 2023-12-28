@@ -49,6 +49,7 @@ export class PGTypeEnum extends PGCatalogType {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
     const type = new EnumNode(
+      // TODO: just use name
       this.typescriptName,
       this.values.map((v) => v.enumlabel),
       schema.types,

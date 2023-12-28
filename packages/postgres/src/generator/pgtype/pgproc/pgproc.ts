@@ -103,6 +103,7 @@ export class PGProcs {
             i,
             type,
             i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
+            true,
           );
         });
       // outputs
@@ -209,12 +210,13 @@ export class PGProcPseudoType extends PGCatalogType {
     } else {
       // multiple attributes creates a composite
       const type = new CompositeTypeNode(
+        // TODO - just use name
         this.typescriptName,
         schema.types,
         this.oid,
       );
       returnsAttributes.forEach(
-        (a, i) => new AttributeTypeNode(type, a.name, i, a.type, true),
+        (a, i) => new AttributeTypeNode(type, a.name, i, a.type, true, true),
       );
       context.database.registerType(type.id, type);
     }

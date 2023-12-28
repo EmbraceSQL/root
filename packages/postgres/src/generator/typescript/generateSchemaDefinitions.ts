@@ -42,7 +42,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, undefinedIsNull, nullIsUndefined} from "@embracesql/shared";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined} from "@embracesql/shared";
         import type { PartiallyOptional } from "@embracesql/shared";
 
     `,
@@ -145,6 +145,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         [ASTKind.CompositeType]: TypeDefiner,
         [ASTKind.DomainType]: TypeDefiner,
         [ASTKind.AliasType]: TypeDefiner,
+        [ASTKind.ArrayType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
         [ASTKind.Script]: NamespaceVisitor,

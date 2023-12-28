@@ -2,6 +2,7 @@ import { Context, TypeFactoryContext } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
 import {
+  ArrayTypeNode,
   DELIMITER,
   GenerationContext,
   arrayAttribute,
@@ -25,6 +26,27 @@ export class PGTypeArray extends PGCatalogType {
     super(catalog);
   }
 
+  loadAST(context: GenerationContext) {
+    const schema = context.database.resolveSchema(this.catalog.nspname);
+
+    const type = new ArrayTypeNode(
+      this.typescriptName,
+      schema.types,
+      this.oid,
+      this,
+    );
+    context.database.registerType(type.id, type);
+  }
+
+  finalizeAST(context: GenerationContext): void {
+    // this needs to be done 'later' to make sure the member type
+    // has had a chance to be created -- two passes since types form a
+    // graph, not a strict tree
+    const memberType = context.database.resolveType(this.catalog.typelem);
+    context.database.resolveType<ArrayTypeNode>(this.catalog.oid).memberType =
+      memberType;
+  }
+
   typescriptTypeParser(context: GenerationContext) {
     const elementType = context.database.resolveType(this.catalog.typelem);
     if (elementType) {
@@ -45,6 +67,7 @@ export class PGTypeArray extends PGCatalogType {
     }
   }
 
+  // TODO: remove
   get typescriptName() {
     return `${pascalCase(this.catalog.typname)}${
       this.props.arraySuffix ? "Array" : ""

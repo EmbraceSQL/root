@@ -103,6 +103,10 @@ export type JSONObject = {
 };
 export type Nullable<T> = T | null | undefined;
 
+export type NullableMembers<T> = {
+  [Member in keyof T]: Nullable<T[Member]>;
+};
+
 export * from "./uuid";
 
 /**

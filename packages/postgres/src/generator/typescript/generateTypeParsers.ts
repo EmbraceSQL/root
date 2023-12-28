@@ -50,6 +50,7 @@ export async function generateTypeParsers(context: GenerationContext) {
         [ASTKind.AliasType]: ParseVisitor,
         [ASTKind.Enum]: ParseVisitor,
         [ASTKind.DomainType]: ParseVisitor,
+        [ASTKind.ArrayType]: ParseVisitor,
       },
     }),
   );

@@ -226,6 +226,7 @@ export const initializeContext = async (
                 i,
                 context.database.resolveType(a.type)!,
                 true,
+                true,
               ),
           );
           if (metadata.types.length) {
@@ -240,6 +241,7 @@ export const initializeContext = async (
                   i,
                   context.database.resolveType(a)!,
                   true,
+                  false,
                 ),
             );
           }

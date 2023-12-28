@@ -3877,8 +3877,6 @@ export namespace Public {
       lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
-    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
-    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -3886,40 +3884,40 @@ export namespace Public {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
-      export type Results = Public.Types.FilmInStockResults;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace FilmNotInStock {
       export type Parameters = {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
-      export type Results = Public.Types.FilmNotInStockResults;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace GetCustomerBalance {
       export type Parameters = {
         pCustomerId: PgCatalog.Types.Int4;
         pEffectiveDate: PgCatalog.Types.Timestamp;
       };
-      export type Results = PgCatalog.Types.Numeric;
+      export type Results = Nullable<PgCatalog.Types.Numeric>;
     }
     export namespace InventoryHeldByCustomer {
       export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
-      export type Results = PgCatalog.Types.Int4;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace InventoryInStock {
       export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace LastDay {
       export type Parameters = { argument_0: PgCatalog.Types.Timestamp };
-      export type Results = PgCatalog.Types.Date;
+      export type Results = Nullable<PgCatalog.Types.Date>;
     }
     export namespace RewardsReport {
       export type Parameters = {
         minMonthlyPurchases: PgCatalog.Types.Int4;
         minDollarAmountPurchased: PgCatalog.Types.Numeric;
       };
-      export type Results = Public.Types.Customer;
+      export type Results = Nullable<Public.Types.Customer>;
     }
   }
   export namespace Tables {
@@ -11159,24 +11157,6 @@ export namespace Public {
         return PgCatalog.Types.Int4.parse(from);
       }
     }
-    export namespace FilmInStockResults {
-      export function parse(from: any) {
-        // CompositeType Public.Types.FilmInStockResults
-        if (Public.Types.FilmInStockResults.is(from)) {
-          return from;
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace FilmNotInStockResults {
-      export function parse(from: any) {
-        // CompositeType Public.Types.FilmNotInStockResults
-        if (Public.Types.FilmNotInStockResults.is(from)) {
-          return from;
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -11192,7 +11172,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType Public.Procedures.FilmInStock.Results
-          return Public.Types.FilmInStockResults.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -11209,7 +11189,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType Public.Procedures.FilmNotInStock.Results
-          return Public.Types.FilmNotInStockResults.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -18422,20 +18402,6 @@ export namespace Public {
         return false;
       }
     }
-    export namespace FilmInStockResults {
-      export function is(value: any): value is Public.Types.FilmInStockResults {
-        if (value.pFilmCount !== undefined) return true;
-        return false;
-      }
-    }
-    export namespace FilmNotInStockResults {
-      export function is(
-        value: any,
-      ): value is Public.Types.FilmNotInStockResults {
-        if (value.pFilmCount !== undefined) return true;
-        return false;
-      }
-    }
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -20866,106 +20832,102 @@ export interface PostgresTypecasts {
   ["PgCatalog.Types.Xid8"]: Typecast;
   [142]: Typecast;
   ["PgCatalog.Types.Xml"]: Typecast;
-  [25176]: Typecast;
+  [27048]: Typecast;
   ["Public.Types.ActorArray"]: Typecast;
-  [25207]: Typecast;
+  [27079]: Typecast;
   ["Public.Types.ActorInfoArray"]: Typecast;
-  [25213]: Typecast;
+  [27085]: Typecast;
   ["Public.Types.AddressArray"]: Typecast;
-  [25182]: Typecast;
+  [27054]: Typecast;
   ["Public.Types.CategoryArray"]: Typecast;
-  [25219]: Typecast;
+  [27091]: Typecast;
   ["Public.Types.CityArray"]: Typecast;
-  [25225]: Typecast;
+  [27097]: Typecast;
   ["Public.Types.CountryArray"]: Typecast;
-  [25166]: Typecast;
+  [27038]: Typecast;
   ["Public.Types.CustomerArray"]: Typecast;
-  [25230]: Typecast;
+  [27102]: Typecast;
   ["Public.Types.CustomerListArray"]: Typecast;
-  [25188]: Typecast;
+  [27060]: Typecast;
   ["Public.Types.FilmArray"]: Typecast;
-  [25199]: Typecast;
+  [27071]: Typecast;
   ["Public.Types.FilmActorArray"]: Typecast;
-  [25203]: Typecast;
+  [27075]: Typecast;
   ["Public.Types.FilmCategoryArray"]: Typecast;
-  [25235]: Typecast;
+  [27107]: Typecast;
   ["Public.Types.FilmListArray"]: Typecast;
-  [25241]: Typecast;
+  [27113]: Typecast;
   ["Public.Types.InventoryArray"]: Typecast;
-  [25247]: Typecast;
+  [27119]: Typecast;
   ["Public.Types.LanguageArray"]: Typecast;
-  [25142]: Typecast;
+  [27013]: Typecast;
   ["Public.Types.MpaaRatingArray"]: Typecast;
-  [25252]: Typecast;
+  [27124]: Typecast;
   ["Public.Types.NicerButSlowerFilmListArray"]: Typecast;
-  [25258]: Typecast;
+  [27130]: Typecast;
   ["Public.Types.PaymentArray"]: Typecast;
-  [25263]: Typecast;
+  [27135]: Typecast;
   ["Public.Types.RentalArray"]: Typecast;
-  [25268]: Typecast;
+  [27140]: Typecast;
   ["Public.Types.SalesByFilmCategoryArray"]: Typecast;
-  [25288]: Typecast;
+  [27160]: Typecast;
   ["Public.Types.SalesByStoreArray"]: Typecast;
-  [25274]: Typecast;
+  [27146]: Typecast;
   ["Public.Types.StaffArray"]: Typecast;
-  [25293]: Typecast;
+  [27165]: Typecast;
   ["Public.Types.StaffListArray"]: Typecast;
-  [25283]: Typecast;
+  [27155]: Typecast;
   ["Public.Types.StoreArray"]: Typecast;
-  [25153]: Typecast;
+  [27025]: Typecast;
   ["Public.Types.YearArray"]: Typecast;
-  [25177]: Typecast;
+  [27049]: Typecast;
   ["Public.Types.Actor"]: Typecast;
-  [25208]: Typecast;
+  [27080]: Typecast;
   ["Public.Types.ActorInfo"]: Typecast;
-  [25214]: Typecast;
+  [27086]: Typecast;
   ["Public.Types.Address"]: Typecast;
-  [25183]: Typecast;
+  [27055]: Typecast;
   ["Public.Types.Category"]: Typecast;
-  [25220]: Typecast;
+  [27092]: Typecast;
   ["Public.Types.City"]: Typecast;
-  [25226]: Typecast;
+  [27098]: Typecast;
   ["Public.Types.Country"]: Typecast;
-  [25167]: Typecast;
+  [27039]: Typecast;
   ["Public.Types.Customer"]: Typecast;
-  [25231]: Typecast;
+  [27103]: Typecast;
   ["Public.Types.CustomerList"]: Typecast;
-  [25189]: Typecast;
+  [27061]: Typecast;
   ["Public.Types.Film"]: Typecast;
-  [25200]: Typecast;
+  [27072]: Typecast;
   ["Public.Types.FilmActor"]: Typecast;
-  [25204]: Typecast;
+  [27076]: Typecast;
   ["Public.Types.FilmCategory"]: Typecast;
-  [25236]: Typecast;
+  [27108]: Typecast;
   ["Public.Types.FilmList"]: Typecast;
-  [25242]: Typecast;
+  [27114]: Typecast;
   ["Public.Types.Inventory"]: Typecast;
-  [25248]: Typecast;
+  [27120]: Typecast;
   ["Public.Types.Language"]: Typecast;
-  [25143]: Typecast;
+  [27014]: Typecast;
   ["Public.Types.MpaaRating"]: Typecast;
-  [25253]: Typecast;
+  [27125]: Typecast;
   ["Public.Types.NicerButSlowerFilmList"]: Typecast;
-  [25259]: Typecast;
+  [27131]: Typecast;
   ["Public.Types.Payment"]: Typecast;
-  [25264]: Typecast;
+  [27136]: Typecast;
   ["Public.Types.Rental"]: Typecast;
-  [25269]: Typecast;
+  [27141]: Typecast;
   ["Public.Types.SalesByFilmCategory"]: Typecast;
-  [25289]: Typecast;
+  [27161]: Typecast;
   ["Public.Types.SalesByStore"]: Typecast;
-  [25275]: Typecast;
+  [27147]: Typecast;
   ["Public.Types.Staff"]: Typecast;
-  [25294]: Typecast;
+  [27166]: Typecast;
   ["Public.Types.StaffList"]: Typecast;
-  [25284]: Typecast;
+  [27156]: Typecast;
   ["Public.Types.Store"]: Typecast;
-  [25154]: Typecast;
+  [27026]: Typecast;
   ["Public.Types.Year"]: Typecast;
-  [25157]: Typecast;
-  ["Public.Types.FilmInStockResults"]: Typecast;
-  [25158]: Typecast;
-  ["Public.Types.FilmNotInStockResults"]: Typecast;
 
   ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
 
@@ -21305,10 +21267,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[25157].parseFromPostgresIfRecord(
+          return context.procTypes[27029].parseFromPostgresIfRecord(
             context,
             result,
-          ) as unknown as Public.Types.FilmInStockResults;
+          ) as unknown as PgCatalog.Types.Int4;
         };
 
         console.assert(parameters);
@@ -21324,7 +21286,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const results = response;
         const responseBody = results.map((x) =>
           parseResult(this.database.context, x.film_in_stock),
-        ) as unknown as Public.Types.FilmInStockResults[];
+        ) as unknown as PgCatalog.Types.Int4[];
         return responseBody;
       }
       async filmNotInStock(
@@ -21335,10 +21297,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[25158].parseFromPostgresIfRecord(
+          return context.procTypes[27030].parseFromPostgresIfRecord(
             context,
             result,
-          ) as unknown as Public.Types.FilmNotInStockResults;
+          ) as unknown as PgCatalog.Types.Int4;
         };
 
         console.assert(parameters);
@@ -21354,7 +21316,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const results = response;
         const responseBody = results.map((x) =>
           parseResult(this.database.context, x.film_not_in_stock),
-        ) as unknown as Public.Types.FilmNotInStockResults[];
+        ) as unknown as PgCatalog.Types.Int4[];
         return responseBody;
       }
       async getCustomerBalance(
@@ -25900,7 +25862,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       },${
         values.releaseYear === undefined
           ? sql`DEFAULT`
-          : typed[25154](values.releaseYear)
+          : typed[27026](values.releaseYear)
       },${
         values.languageId === undefined
           ? sql`DEFAULT`
@@ -25920,7 +25882,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`DEFAULT`
           : typed[1700](values.replacementCost)
       },${
-        values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+        values.rating === undefined ? sql`DEFAULT` : typed[27014](values.rating)
       },${
         values.lastUpdate === undefined
           ? sql`DEFAULT`
@@ -25967,7 +25929,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     },${
       values.releaseYear === undefined
         ? sql`DEFAULT`
-        : typed[25154](values.releaseYear)
+        : typed[27026](values.releaseYear)
     },${
       values.languageId === undefined
         ? sql`DEFAULT`
@@ -25987,7 +25949,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1700](values.replacementCost)
     },${
-      values.rating === undefined ? sql`DEFAULT` : typed[25143](values.rating)
+      values.rating === undefined ? sql`DEFAULT` : typed[27014](values.rating)
     },${
       values.lastUpdate === undefined
         ? sql`DEFAULT`
@@ -26093,7 +26055,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[25154](values.releaseYear)
+          : typed[27026](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -26113,7 +26075,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[27014](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -26256,7 +26218,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[25154](values.releaseYear)
+          : typed[27026](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -26276,7 +26238,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[27014](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -26419,7 +26381,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[25154](values.releaseYear)
+          : typed[27026](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -26439,7 +26401,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[27014](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -26582,7 +26544,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[25154](values.releaseYear)
+          : typed[27026](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -26602,7 +26564,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[25143](values.rating)
+        values.rating === undefined ? sql`rating` : typed[27014](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`

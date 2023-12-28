@@ -47,8 +47,6 @@ export enum ASTKind {
   Index,
   IndexColumn,
   Types,
-  Type,
-  Enum,
   CreateOperation,
   ReadOperation,
   UpdateOperation,
@@ -59,10 +57,13 @@ export enum ASTKind {
   Procedures,
   Procedure,
   ProcedureArgument,
+  Type,
+  Enum,
   CompositeType,
   AliasType,
   AttributeType,
   DomainType,
+  ArrayType,
 }
 
 interface DatabaseNamed {
@@ -117,8 +118,6 @@ export type ASTKindMap = {
   [ASTKind.Index]: IndexNode;
   [ASTKind.IndexColumn]: IndexColumnNode;
   [ASTKind.Types]: TypesNode;
-  [ASTKind.Type]: TypeNode;
-  [ASTKind.Enum]: EnumNode;
   [ASTKind.CreateOperation]: CreateOperationNode;
   [ASTKind.ReadOperation]: ReadOperationNode;
   [ASTKind.UpdateOperation]: UpdateOperationNode;
@@ -129,10 +128,13 @@ export type ASTKindMap = {
   [ASTKind.Procedures]: ProceduresNode;
   [ASTKind.Procedure]: ProcedureNode;
   [ASTKind.ProcedureArgument]: ProcedureArgumentNode;
+  [ASTKind.Type]: TypeNode;
+  [ASTKind.Enum]: EnumNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
   [ASTKind.AttributeType]: AttributeTypeNode;
   [ASTKind.AliasType]: AliasTypeNode;
   [ASTKind.DomainType]: DomainTypeNode;
+  [ASTKind.ArrayType]: ArrayTypeNode;
 };
 
 /**
@@ -412,6 +414,21 @@ export class TypeNode extends AbstractTypeNode {
     parser: GeneratesTypeScript,
   ) {
     super(name, ASTKind.Type, types, id, parser);
+  }
+}
+
+/**
+ * Represents an array type from a database.
+ */
+export class ArrayTypeNode extends AbstractTypeNode {
+  public memberType?: AbstractTypeNode;
+  constructor(
+    name: string,
+    types: TypesNode,
+    public id: string | number,
+    parser: GeneratesTypeScript,
+  ) {
+    super(name, ASTKind.ArrayType, types, id, parser);
   }
 }
 
@@ -868,10 +885,15 @@ export class CompositeTypeNode extends AbstractTypeNode {
       .filter<AttributeTypeNode>(
         (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
       )
-      .map(
-        (a) =>
-          `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`,
-      );
+      .map((a) => {
+        if (a.type.kind === ASTKind.ArrayType) {
+          return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
+        }
+        if (a.nullable) {
+          return `${a.typescriptPropertyName}: Nullable<${a.type.typescriptNamespacedName}>;`;
+        }
+        return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
+      });
     return ` { ${recordAttributes.join("\n")} } `;
   }
 
@@ -884,7 +906,18 @@ export class CompositeTypeNode extends AbstractTypeNode {
     // already done the parsing, so this is a no-op
     return [
       `if (${this.typescriptNamespacedName}.is(from)) {`,
-      `  return from;`,
+      `  return {`,
+
+      this.children
+        .filter<AttributeTypeNode>(
+          (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+        )
+        .map(
+          (a) =>
+            `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName}.parse(from.${a.typescriptPropertyName}),`,
+        )
+        .join("\n"),
+      `};`,
       `}`,
       `throw new Error(JSON.stringify(from))`,
     ].join("\n");
@@ -901,6 +934,7 @@ export class AttributeTypeNode extends ContainerNode implements NamedType {
     public index: number,
     public type: TypeNode,
     public required: boolean,
+    public nullable: boolean,
   ) {
     super(name, ASTKind.AttributeType, parent);
   }
@@ -934,6 +968,9 @@ export class AliasTypeNode extends AbstractTypeNode {
   ): string | undefined {
     console.assert(context);
     if (this.name === RESULTS) {
+      if (this.type.kind === ASTKind.CompositeType) {
+        return `NullableMembers<${this.type.typescriptNamespacedName}>`;
+      }
       return `Nullable<${this.type.typescriptNamespacedName}>`;
     }
     return `${this.type.typescriptNamespacedName}`;

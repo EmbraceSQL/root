@@ -23,6 +23,7 @@ export class PGCatalogType implements GeneratesTypeScript {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
     const type = new TypeNode(
+      // TODO - just use name
       this.typescriptName,
       schema.types,
       this.oid,

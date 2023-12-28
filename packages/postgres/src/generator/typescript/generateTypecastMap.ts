@@ -40,6 +40,7 @@ export async function generateTypecastMap(context: GenerationContext) {
     [ASTKind.Enum]: TypecastEntry,
     [ASTKind.CompositeType]: TypecastEntry,
     [ASTKind.DomainType]: TypecastEntry,
+    [ASTKind.ArrayType]: TypecastEntry,
   };
   // include all schemas -- need those built in types
   return await context.database.visit({ ...context, skipSchemas: [] });

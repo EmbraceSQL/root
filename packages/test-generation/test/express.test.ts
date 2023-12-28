@@ -143,5 +143,17 @@ describe("EmbraceSQLExpress can", () => {
     expect(response![0]).toBeGreaterThan(0);
   });
 
-  // TODO: multiple results, composite multiple attributes
+  it("answer a procedure with a multiple results a composite record type", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    // when we invoke the procedure returning SETOF into
+    const response = await client.Public.Procedures.rewardsReport({
+      minDollarAmountPurchased: 10,
+      minMonthlyPurchases: 1,
+    });
+    // then we get multiple results
+    expect(response?.length).toBeGreaterThan(1);
+    // and it is going to be a single number -- not a structure
+    expect(response![0]?.customerId).toBeGreaterThan(0);
+    expect(response![0]?.lastUpdate).toBeInstanceOf(Date);
+  });
 });
