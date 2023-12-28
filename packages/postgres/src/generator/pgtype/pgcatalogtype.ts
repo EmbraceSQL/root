@@ -63,6 +63,7 @@ export class PGCatalogType implements GeneratesTypeScript {
   get typescriptName() {
     return pascalCase(this.catalog.typname);
   }
+  // TODO remove
 
   /**
    * Convention is pascal case for TS. Excludes reserved words.
@@ -71,6 +72,7 @@ export class PGCatalogType implements GeneratesTypeScript {
     const formatted = pascalCase(this.catalog.nspname);
     return formatted;
   }
+  // TODO remove
 
   /**
    * Convention is snake case in PG, separating namespace(schema) from

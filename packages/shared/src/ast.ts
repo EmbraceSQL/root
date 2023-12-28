@@ -933,6 +933,9 @@ export class AliasTypeNode extends AbstractTypeNode {
     context: GenerationContext,
   ): string | undefined {
     console.assert(context);
+    if (this.name === RESULTS) {
+      return `Nullable<${this.type.typescriptNamespacedName}>`;
+    }
     return `${this.type.typescriptNamespacedName}`;
   }
 

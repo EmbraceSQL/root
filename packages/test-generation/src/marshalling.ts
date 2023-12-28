@@ -4709,188 +4709,188 @@ export namespace Public {
   export namespace Procedures {
     export namespace CubeIn {
       export type Parameters = { argument_0: PgCatalog.Types.Cstring };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace Cube_9c45 {
       export type Parameters = {
         argument_0: PgCatalog.Types.Float8Array;
         argument_1: PgCatalog.Types.Float8Array;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace Cube_2e6d {
       export type Parameters = { argument_0: PgCatalog.Types.Float8Array };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeOut {
       export type Parameters = { argument_0: Public.Types.Cube };
-      export type Results = PgCatalog.Types.Cstring;
+      export type Results = Nullable<PgCatalog.Types.Cstring>;
     }
     export namespace CubeEq {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeNe {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeLt {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeGt {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeLe {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeGe {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeCmp {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Int4;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace CubeContains {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeContained {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeOverlap {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeUnion {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeInter {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeSize {
       export type Parameters = { argument_0: Public.Types.Cube };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeSubset {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4Array;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeDistance {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace DistanceChebyshev {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace DistanceTaxicab {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: Public.Types.Cube;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeDim {
       export type Parameters = { argument_0: Public.Types.Cube };
-      export type Results = PgCatalog.Types.Int4;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace CubeLlCoord {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeUrCoord {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeCoord {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeCoordLlur {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Int4;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeA5b3 {
       export type Parameters = { argument_0: PgCatalog.Types.Float8 };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace Cube_0aec {
       export type Parameters = {
         argument_0: PgCatalog.Types.Float8;
         argument_1: PgCatalog.Types.Float8;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace Cube_39d2 {
       export type Parameters = {
         argument_0: Public.Types.Cube;
         argument_1: PgCatalog.Types.Float8;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeA7eb {
       export type Parameters = {
@@ -4898,11 +4898,11 @@ export namespace Public {
         argument_1: PgCatalog.Types.Float8;
         argument_2: PgCatalog.Types.Float8;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeIsPoint {
       export type Parameters = { argument_0: Public.Types.Cube };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace CubeEnlarge {
       export type Parameters = {
@@ -4910,7 +4910,7 @@ export namespace Public {
         argument_1: PgCatalog.Types.Float8;
         argument_2: PgCatalog.Types.Int4;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace GCubeConsistent {
       export type Parameters = {
@@ -4920,7 +4920,7 @@ export namespace Public {
         argument_3: PgCatalog.Types.Oid;
         argument_4: PgCatalog.Types.Internal;
       };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace GCubePenalty {
       export type Parameters = {
@@ -4928,21 +4928,21 @@ export namespace Public {
         argument_1: PgCatalog.Types.Internal;
         argument_2: PgCatalog.Types.Internal;
       };
-      export type Results = PgCatalog.Types.Internal;
+      export type Results = Nullable<PgCatalog.Types.Internal>;
     }
     export namespace GCubePicksplit {
       export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: PgCatalog.Types.Internal;
       };
-      export type Results = PgCatalog.Types.Internal;
+      export type Results = Nullable<PgCatalog.Types.Internal>;
     }
     export namespace GCubeUnion {
       export type Parameters = {
         argument_0: PgCatalog.Types.Internal;
         argument_1: PgCatalog.Types.Internal;
       };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace GCubeSame {
       export type Parameters = {
@@ -4950,7 +4950,7 @@ export namespace Public {
         argument_1: Public.Types.Cube;
         argument_2: PgCatalog.Types.Internal;
       };
-      export type Results = PgCatalog.Types.Internal;
+      export type Results = Nullable<PgCatalog.Types.Internal>;
     }
     export namespace GCubeDistance {
       export type Parameters = {
@@ -4960,15 +4960,15 @@ export namespace Public {
         argument_3: PgCatalog.Types.Oid;
         argument_4: PgCatalog.Types.Internal;
       };
-      export type Results = PgCatalog.Types.Float8;
+      export type Results = Nullable<PgCatalog.Types.Float8>;
     }
     export namespace CubeRecv {
       export type Parameters = { argument_0: PgCatalog.Types.Internal };
-      export type Results = Public.Types.Cube;
+      export type Results = Nullable<Public.Types.Cube>;
     }
     export namespace CubeSend {
       export type Parameters = { argument_0: Public.Types.Cube };
-      export type Results = PgCatalog.Types.Bytea;
+      export type Results = Nullable<PgCatalog.Types.Bytea>;
     }
   }
   export namespace Tables {
@@ -5003,31 +5003,31 @@ export namespace Api {
   export namespace Procedures {
     export namespace Echo {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = PgCatalog.Types.Text;
+      export type Results = Nullable<PgCatalog.Types.Text>;
     }
     export namespace EchoSet {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = PgCatalog.Types.Text;
+      export type Results = Nullable<PgCatalog.Types.Text>;
     }
     export namespace EchoTable {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = Api.Types.EchoTableResults;
+      export type Results = Nullable<Api.Types.EchoTableResults>;
     }
     export namespace EchoType {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = Api.Types.EchoType;
+      export type Results = Nullable<Api.Types.EchoType>;
     }
     export namespace EchoTypeArray {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = Api.Types.EchoTypeArray;
+      export type Results = Nullable<Api.Types.EchoTypeArray>;
     }
     export namespace EchoTypeNested {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = Api.Types.EchoTypeNested;
+      export type Results = Nullable<Api.Types.EchoTypeNested>;
     }
     export namespace EchoTypeSet {
       export type Parameters = { message: PgCatalog.Types.Text };
-      export type Results = Api.Types.EchoType;
+      export type Results = Nullable<Api.Types.EchoType>;
     }
   }
   export namespace Tables {}

@@ -249,6 +249,7 @@ export const initializeContext = async (
     },
   });
 
+  // map in procedure calls
   await procCatalog.loadAST(generationContext);
 
   // sanity check and verification of all created nodes
@@ -283,7 +284,9 @@ export const initializeContext = async (
     types[t.oid] = t.postgresTypecast(context);
     // by name -- typescript generated style
     const typeNode = database.resolveType(t.oid);
-    types[typeNode.typescriptNamespacedName] = t.postgresTypecast(context);
+    if (typeNode) {
+      types[typeNode.typescriptNamespacedName] = t.postgresTypecast(context);
+    }
   });
   // and resolvers for procs, which have their own pseudo types as return types
   namespaces
@@ -294,7 +297,9 @@ export const initializeContext = async (
       procTypes[p.proc.oid] = p;
       // by name -- typescript generated style
       const typeNode = database.resolveType(p.proc.oid);
-      procTypes[typeNode.typescriptNamespacedName] = p;
+      if (typeNode) {
+        procTypes[typeNode.typescriptNamespacedName] = p;
+      }
     });
 
   // no need to fetch types -- we're making our own

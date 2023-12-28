@@ -3877,8 +3877,6 @@ export namespace Public {
       lastUpdate: PgCatalog.Types.Timestamp;
     };
     export type Year = PgCatalog.Types.Int4;
-    export type FilmInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
-    export type FilmNotInStockResults = { pFilmCount: PgCatalog.Types.Int4 };
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -3886,40 +3884,40 @@ export namespace Public {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
-      export type Results = Public.Types.FilmInStockResults;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace FilmNotInStock {
       export type Parameters = {
         pFilmId: PgCatalog.Types.Int4;
         pStoreId: PgCatalog.Types.Int4;
       };
-      export type Results = Public.Types.FilmNotInStockResults;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace GetCustomerBalance {
       export type Parameters = {
         pCustomerId: PgCatalog.Types.Int4;
         pEffectiveDate: PgCatalog.Types.Timestamp;
       };
-      export type Results = PgCatalog.Types.Numeric;
+      export type Results = Nullable<PgCatalog.Types.Numeric>;
     }
     export namespace InventoryHeldByCustomer {
       export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
-      export type Results = PgCatalog.Types.Int4;
+      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace InventoryInStock {
       export type Parameters = { pInventoryId: PgCatalog.Types.Int4 };
-      export type Results = PgCatalog.Types.Bool;
+      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace LastDay {
       export type Parameters = { argument_0: PgCatalog.Types.Timestamp };
-      export type Results = PgCatalog.Types.Date;
+      export type Results = Nullable<PgCatalog.Types.Date>;
     }
     export namespace RewardsReport {
       export type Parameters = {
         minMonthlyPurchases: PgCatalog.Types.Int4;
         minDollarAmountPurchased: PgCatalog.Types.Numeric;
       };
-      export type Results = Public.Types.Customer;
+      export type Results = Nullable<Public.Types.Customer>;
     }
   }
   export namespace Tables {
@@ -11189,24 +11187,6 @@ export namespace Public {
         return PgCatalog.Types.Int4.parse(from);
       }
     }
-    export namespace FilmInStockResults {
-      export function parse(from: any) {
-        // CompositeType Public.Types.FilmInStockResults
-        if (Public.Types.FilmInStockResults.is(from)) {
-          return from;
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace FilmNotInStockResults {
-      export function parse(from: any) {
-        // CompositeType Public.Types.FilmNotInStockResults
-        if (Public.Types.FilmNotInStockResults.is(from)) {
-          return from;
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -11222,7 +11202,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType Public.Procedures.FilmInStock.Results
-          return Public.Types.FilmInStockResults.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -11239,7 +11219,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType Public.Procedures.FilmNotInStock.Results
-          return Public.Types.FilmNotInStockResults.parse(from);
+          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -18500,20 +18480,6 @@ export namespace Public {
         return false;
       }
     }
-    export namespace FilmInStockResults {
-      export function is(value: any): value is Public.Types.FilmInStockResults {
-        if (value.pFilmCount !== undefined) return true;
-        return false;
-      }
-    }
-    export namespace FilmNotInStockResults {
-      export function is(
-        value: any,
-      ): value is Public.Types.FilmNotInStockResults {
-        if (value.pFilmCount !== undefined) return true;
-        return false;
-      }
-    }
   }
   export namespace Procedures {
     export namespace FilmInStock {
@@ -21095,10 +21061,6 @@ export interface PostgresTypecasts {
   ["Public.Types.Store"]: Typecast;
   [25154]: Typecast;
   ["Public.Types.Year"]: Typecast;
-  [25157]: Typecast;
-  ["Public.Types.FilmInStockResults"]: Typecast;
-  [25158]: Typecast;
-  ["Public.Types.FilmNotInStockResults"]: Typecast;
 
   ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
 
@@ -21449,7 +21411,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           return context.procTypes[25157].parseFromPostgresIfRecord(
             context,
             result,
-          ) as unknown as Public.Types.FilmInStockResults;
+          ) as unknown as PgCatalog.Types.Int4;
         };
 
         console.assert(parameters);
@@ -21465,7 +21427,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const results = response;
         const responseBody = results.map((x) =>
           parseResult(this.database.context, x.film_in_stock),
-        ) as unknown as Public.Types.FilmInStockResults[];
+        ) as unknown as PgCatalog.Types.Int4[];
         return responseBody;
       }
       async filmNotInStock(
@@ -21479,7 +21441,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           return context.procTypes[25158].parseFromPostgresIfRecord(
             context,
             result,
-          ) as unknown as Public.Types.FilmNotInStockResults;
+          ) as unknown as PgCatalog.Types.Int4;
         };
 
         console.assert(parameters);
@@ -21495,7 +21457,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const results = response;
         const responseBody = results.map((x) =>
           parseResult(this.database.context, x.film_not_in_stock),
-        ) as unknown as Public.Types.FilmNotInStockResults[];
+        ) as unknown as PgCatalog.Types.Int4[];
         return responseBody;
       }
       async getCustomerBalance(
