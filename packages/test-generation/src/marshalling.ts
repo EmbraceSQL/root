@@ -5000,7 +5000,7 @@ export namespace Api {
       at: Nullable<PgCatalog.Types.Timestamptz>;
     };
     export type EchoTypeNested = { echoes: Api.Types.EchoTypeArray };
-    export type EchoTableResults = {
+    export type EchoTable = {
       echomessage: Nullable<PgCatalog.Types.Text>;
       at: Nullable<PgCatalog.Types.Timestamptz>;
     };
@@ -5016,7 +5016,7 @@ export namespace Api {
     }
     export namespace EchoTable {
       export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-      export type Results = NullableMembers<Api.Types.EchoTableResults>;
+      export type Results = NullableMembers<Api.Types.EchoTable>;
     }
     export namespace EchoType {
       export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
@@ -16624,10 +16624,10 @@ export namespace Api {
         throw new Error(JSON.stringify(from));
       }
     }
-    export namespace EchoTableResults {
+    export namespace EchoTable {
       export function parse(from: any) {
-        // CompositeType Api.Types.EchoTableResults
-        if (Api.Types.EchoTableResults.is(from)) {
+        // CompositeType Api.Types.EchoTable
+        if (Api.Types.EchoTable.is(from)) {
           return {
             echomessage: PgCatalog.Types.Text.parse(from.echomessage),
             at: PgCatalog.Types.Timestamptz.parse(from.at),
@@ -16691,7 +16691,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType Api.Procedures.EchoTable.Results
-          return Api.Types.EchoTableResults.parse(from);
+          return Api.Types.EchoTable.parse(from);
         }
       }
     }
@@ -23318,8 +23318,8 @@ export namespace Api {
         return false;
       }
     }
-    export namespace EchoTableResults {
-      export function is(value: any): value is Api.Types.EchoTableResults {
+    export namespace EchoTable {
+      export function is(value: any): value is Api.Types.EchoTable {
         if (value.echomessage !== undefined && value.at !== undefined)
           return true;
         return false;
@@ -24728,7 +24728,7 @@ export interface PostgresTypecasts {
   [27427]: Typecast;
   ["Api.Types.EchoTypeNested"]: Typecast;
   [27421]: Typecast;
-  ["Api.Types.EchoTableResults"]: Typecast;
+  ["Api.Types.EchoTable"]: Typecast;
 
   ["Api.Procedures.Echo.Parameters"]: Typecast;
 
@@ -25562,7 +25562,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           return context.procTypes[27421].parseFromPostgresIfRecord(
             context,
             result,
-          ) as unknown as Api.Types.EchoTableResults;
+          ) as unknown as Api.Types.EchoTable;
         };
 
         console.assert(parameters);
@@ -25576,7 +25576,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const results = response;
         const responseBody = results.map((x) =>
           parseResult(this.database.context, x.echo_table),
-        ) as unknown as Api.Types.EchoTableResults[];
+        ) as unknown as Api.Types.EchoTable[];
         return responseBody;
       }
       async echoType(parameters: Api.Procedures.EchoType.Parameters) {

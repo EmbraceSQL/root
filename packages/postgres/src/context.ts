@@ -1,5 +1,4 @@
 import { PGAttributes } from "./generator/pgtype/pgattribute";
-import { PGCatalogType } from "./generator/pgtype/pgcatalogtype";
 import { PGIndexes } from "./generator/pgtype/pgindex";
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
 import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
@@ -266,8 +265,8 @@ export const initializeContext = async (
   // ok a little odd loading this up here -- we're going to modify it later before
   // we return which will allow the context being created to be passed to
   // type resolvers that can parse composite and RETURNS TABLE types at runtime
-  const resolveType = <T extends PGCatalogType>(oid: number) => {
-    return typeCatalog.typesByOid[oid] as T;
+  const resolveType = (oid: number) => {
+    return typeCatalog.typesByOid[oid] ?? procCatalog.pseudoTypesByOid[oid];
   };
   const context = {
     sql,

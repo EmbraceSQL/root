@@ -69,7 +69,6 @@ class PGType extends PGCatalogType {
     // there are 'odd' base types that are arrays of scalars but when you
     // but are not named like other arrays
 
-    // TODO: update registerOverride to allow a function expression
     if (catalog.typname === "oidvector")
       return PGTypeBase.factory(context, catalog);
     if (catalog.typname === "name") return new PGTypeText(catalog);

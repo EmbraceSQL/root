@@ -5,7 +5,6 @@ import {
   GenerationContext,
   TypeNode,
 } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 
 /**
  * All types come from here.
@@ -19,12 +18,14 @@ export class PGCatalogType implements GeneratesTypeScript {
     public comment = "",
   ) {}
 
+  /**
+   * First pass load this type into the AST within the passed `context`.
+   */
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
     const type = new TypeNode(
-      // TODO - just use name
-      this.typescriptName,
+      this.catalog.typname,
       schema.types,
       this.oid,
       this,
@@ -59,31 +60,6 @@ export class PGCatalogType implements GeneratesTypeScript {
   }
 
   /**
-   * Convention is pascal case for TS.
-   */
-  get typescriptName() {
-    return pascalCase(this.catalog.typname);
-  }
-  // TODO remove
-
-  /**
-   * Convention is pascal case for TS. Excludes reserved words.
-   */
-  get typescriptNamespaceName() {
-    const formatted = pascalCase(this.catalog.nspname);
-    return formatted;
-  }
-  // TODO remove
-
-  /**
-   * Convention is snake case in PG, separating namespace(schema) from
-   * the object (type, table, proc...) with a `.`.
-   */
-  get postgresName() {
-    return `${this.catalog.nspname}.${this.catalog.typname}`;
-  }
-
-  /**
    * TypeScript source code for a type definition for this database
    * type.
    *
@@ -91,10 +67,14 @@ export class PGCatalogType implements GeneratesTypeScript {
    */
   typescriptTypeDefinition(context: GenerationContext): string {
     console.assert(context);
+    // TODO: unknown
     return `any`;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  /**
+   * Given a value, turn it into postgres protocol serialization format
+   * for use with the postgres driver.
+   */
   serializeToPostgres(context: Context, x: unknown) {
     console.assert(context);
     // default is just 'a string of it'
@@ -110,6 +90,7 @@ export class PGCatalogType implements GeneratesTypeScript {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   parseFromPostgres(context: Context, x: any) {
+    // TODO: unknown
     // default is just to echo it -- which is almost never correct
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return x;

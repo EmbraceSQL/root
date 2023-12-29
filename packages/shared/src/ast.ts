@@ -61,7 +61,7 @@ export enum ASTKind {
   Enum,
   CompositeType,
   AliasType,
-  AttributeType,
+  Attribute,
   DomainType,
   ArrayType,
 }
@@ -131,7 +131,7 @@ export type ASTKindMap = {
   [ASTKind.Type]: TypeNode;
   [ASTKind.Enum]: EnumNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
-  [ASTKind.AttributeType]: AttributeTypeNode;
+  [ASTKind.Attribute]: AttributeTypeNode;
   [ASTKind.AliasType]: AliasTypeNode;
   [ASTKind.DomainType]: DomainTypeNode;
   [ASTKind.ArrayType]: ArrayTypeNode;
@@ -874,7 +874,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
 
   get attributes() {
     return this.children.filter<AttributeTypeNode>(
-      (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+      (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
     );
   }
   override typescriptTypeDefinition(
@@ -883,7 +883,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
     console.assert(context);
     const recordAttributes = this.children
       .filter<AttributeTypeNode>(
-        (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+        (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
       )
       .map((a) => {
         if (a.type.kind === ASTKind.ArrayType) {
@@ -910,7 +910,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
 
       this.children
         .filter<AttributeTypeNode>(
-          (c): c is AttributeTypeNode => c.kind === ASTKind.AttributeType,
+          (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
         )
         .map(
           (a) =>
@@ -936,7 +936,7 @@ export class AttributeTypeNode extends ContainerNode implements NamedType {
     public required: boolean,
     public nullable: boolean,
   ) {
-    super(name, ASTKind.AttributeType, parent);
+    super(name, ASTKind.Attribute, parent);
   }
 
   /**

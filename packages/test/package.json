@@ -6,7 +6,7 @@
   "description": "",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest "
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --bail"
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",

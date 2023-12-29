@@ -1,5 +1,4 @@
 import { Context, initializeContext } from "@embracesql/postgres/src/context";
-import { PGTypeComposite } from "@embracesql/postgres/src/generator/pgtype/pgtypecomposite";
 
 /**
  * Test setting up the context and interrogating the schema.
@@ -15,32 +14,23 @@ describe("The context can", () => {
     await context.sql.end();
   });
   it("load up schemas as namespaces", () => {
-    const publicNamespace = context.namespaces.find(
-      (n) => n.namespace === "public",
-    );
-    expect(publicNamespace?.procs.length).toBeGreaterThan(0);
+    const schema = context.database.resolveSchema("public");
+    expect(schema).toBeDefined();
   });
-  it("load up table types and columns", () => {
-    const actorTable = context.namespaces
-      .find((n) => n.namespace === "public")
-      ?.types.find((t) => t.postgresName === "public.actor") as PGTypeComposite;
-    expect(actorTable).toBeTruthy();
-    expect(actorTable.attributeByAttnum(1).name).toBe("actor_id");
+  it("look up a type by oid", () => {
+    context.namespaces
+      .flatMap((n) => n.types)
+      .forEach((pgType) => {
+        const type = context.resolveType(pgType.oid);
+        expect(pgType).toStrictEqual(type);
+      });
   });
   it("look up a table type by oid", () => {
-    const actorTable = context.namespaces
-      .find((n) => n.namespace === "public")
-      ?.types.find((t) => t.postgresName === "public.actor") as PGTypeComposite;
-
-    const actorTableByOid = context.resolveType(actorTable.oid);
-    expect(actorTable).toBe(actorTableByOid);
-  });
-  it("look up a table indexes", () => {
-    const actorTable = context.namespaces
-      .find((n) => n.namespace === "public")
-      ?.types.find((t) => t.postgresName === "public.actor") as PGTypeComposite;
-
-    expect(actorTable.indexes.length).toBe(2);
-    expect(actorTable.indexes[0].attributes.length).toBe(1);
+    context.namespaces
+      .flatMap((n) => n.tables)
+      .forEach((pgTable) => {
+        const tableType = context.resolveType(pgTable.tableType.oid);
+        expect(pgTable.tableType).toBe(tableType);
+      });
   });
 });

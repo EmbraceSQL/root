@@ -8,7 +8,6 @@ import {
   arrayAttribute,
   escapeArrayValue,
 } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 
 type Props = {
   arraySuffix: boolean;
@@ -30,7 +29,7 @@ export class PGTypeArray extends PGCatalogType {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
     const type = new ArrayTypeNode(
-      this.typescriptName,
+      `${this.catalog.typname}${this.props.arraySuffix ? "_array" : ""}`,
       schema.types,
       this.oid,
       this,
@@ -65,13 +64,6 @@ export class PGTypeArray extends PGCatalogType {
         `${this.catalog.typname} could not resolve type of element`,
       );
     }
-  }
-
-  // TODO: remove
-  get typescriptName() {
-    return `${pascalCase(this.catalog.typname)}${
-      this.props.arraySuffix ? "Array" : ""
-    }`;
   }
 
   typescriptTypeDefinition(context: GenerationContext) {

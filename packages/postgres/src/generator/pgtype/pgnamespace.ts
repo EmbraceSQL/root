@@ -4,7 +4,6 @@ import { PGProc, PGProcPseudoType, PGProcs } from "./pgproc/pgproc";
 import { PGTable, PGTables } from "./pgtable";
 import { PGTypes } from "./pgtype";
 import { GenerationContext, TablesNode } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 
 /**
  * Namespace in the postgres catalog tables correspond to SCHEMA in SQL.
@@ -50,14 +49,6 @@ export class PGNamespace {
     });
   }
 
-  /**
-   * Name formatting for typescript, which PascalCase as a sql namespace
-   * is like a typescript namespace or nested class.
-   */
-  static typescriptName(name: string) {
-    return pascalCase(name);
-  }
-
   constructor(
     public namespace: string,
     public types: PGCatalogType[],
@@ -67,15 +58,10 @@ export class PGNamespace {
 
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.nspname);
-    // TODO: add prop to schema, move to constructor
     const tables = new TablesNode(schema);
     this.tables.forEach((t) => {
       t.loadAST(context, tables);
     });
-  }
-
-  get typescriptName() {
-    return PGNamespace.typescriptName(this.namespace);
   }
 
   get nspname() {

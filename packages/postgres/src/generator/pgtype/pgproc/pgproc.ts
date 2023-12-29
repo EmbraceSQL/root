@@ -53,8 +53,12 @@ export class PGProcs {
   }
 
   procs: PGProc[];
+  pseudoTypesByOid: Record<number, PGProcPseudoType>;
   private constructor(context: PGProcsContext, procRows: ProcRow[]) {
     this.procs = procRows.map((r) => new PGProc(context, r));
+    this.pseudoTypesByOid = Object.fromEntries(
+      this.procs.map((t) => [t.proc.oid, new PGProcPseudoType(t)]),
+    );
   }
 
   async loadAST(context: GenerationContext) {
@@ -210,8 +214,7 @@ export class PGProcPseudoType extends PGCatalogType {
     } else {
       // multiple attributes creates a composite
       const type = new CompositeTypeNode(
-        // TODO - just use name
-        this.typescriptName,
+        this.proc.name,
         schema.types,
         this.oid,
       );
