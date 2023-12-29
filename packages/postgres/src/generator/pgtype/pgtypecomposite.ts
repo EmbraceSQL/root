@@ -157,11 +157,13 @@ export class PGTypeComposite extends PGCatalogType {
     // and chain along to the parser for that type
     const attributes = this.attributes.map((a) => [
       camelCase(a.attribute.attname),
-      compositeAttribute.map((parsedAttributeText) =>
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        context
-          .resolveType(a.attribute.atttypid)
-          .parseFromPostgres(context, parsedAttributeText),
+      compositeAttribute.map(
+        (parsedAttributeText) =>
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          context
+            .resolveType(a.attribute.atttypid)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            .parseFromPostgres(context, parsedAttributeText) as any,
       ),
     ]);
     return parseObjectWithAttributes(attributes, x);

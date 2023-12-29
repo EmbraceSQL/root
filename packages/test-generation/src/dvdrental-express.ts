@@ -293,18 +293,18 @@ export namespace PgCatalog {
     export type Xid8Array = Array<PgCatalog.Types.Xid8>;
     export type XmlArray = Array<PgCatalog.Types.Xml>;
     export type Aclitem = string;
-    export type Any = any;
-    export type Anyarray = any;
-    export type Anycompatible = any;
-    export type Anycompatiblearray = any;
-    export type Anycompatiblemultirange = any;
-    export type Anycompatiblenonarray = any;
-    export type Anycompatiblerange = any;
-    export type Anyelement = any;
-    export type Anyenum = any;
-    export type Anymultirange = any;
-    export type Anynonarray = any;
-    export type Anyrange = any;
+    export type Any = unknown;
+    export type Anyarray = unknown;
+    export type Anycompatible = unknown;
+    export type Anycompatiblearray = unknown;
+    export type Anycompatiblemultirange = unknown;
+    export type Anycompatiblenonarray = unknown;
+    export type Anycompatiblerange = unknown;
+    export type Anyelement = unknown;
+    export type Anyenum = unknown;
+    export type Anymultirange = unknown;
+    export type Anynonarray = unknown;
+    export type Anyrange = unknown;
     export type Bit = boolean;
     export type Bool = boolean;
     export type Box = {
@@ -320,31 +320,31 @@ export namespace PgCatalog {
       center: Point;
       radius: number;
     };
-    export type Cstring = any;
+    export type Cstring = unknown;
     export type Date = JsDate;
-    export type Datemultirange = any;
+    export type Datemultirange = unknown;
     export type Daterange = [PgCatalog.Types.Date, PgCatalog.Types.Date];
-    export type EventTrigger = any;
-    export type FdwHandler = any;
+    export type EventTrigger = unknown;
+    export type FdwHandler = unknown;
     export type Float4 = number;
     export type Float8 = number;
     export type Gtsvector = Array<string>;
-    export type IndexAmHandler = any;
+    export type IndexAmHandler = unknown;
     export type Inet = string;
     export type Int2 = number;
     export type Int2vector = Uint16Array;
     export type Int4 = number;
-    export type Int4multirange = any;
+    export type Int4multirange = unknown;
     export type Int4range = [PgCatalog.Types.Int4, PgCatalog.Types.Int4];
     export type Int8 = number;
-    export type Int8multirange = any;
+    export type Int8multirange = unknown;
     export type Int8range = [PgCatalog.Types.Int8, PgCatalog.Types.Int8];
-    export type Internal = any;
+    export type Internal = unknown;
     export type Interval = number;
     export type Json = JSONObject;
     export type Jsonb = JSONObject;
     export type Jsonpath = string;
-    export type LanguageHandler = any;
+    export type LanguageHandler = unknown;
     export type Line = {
       a: number;
       b: number;
@@ -359,7 +359,7 @@ export namespace PgCatalog {
     export type Money = number;
     export type Name = string;
     export type Numeric = number;
-    export type Nummultirange = any;
+    export type Nummultirange = unknown;
     export type Numrange = [PgCatalog.Types.Numeric, PgCatalog.Types.Numeric];
     export type Oid = number;
     export type Oidvector = Array<PgCatalog.Types.Oid>;
@@ -631,7 +631,7 @@ export namespace PgCatalog {
       setrole: PgCatalog.Types.Oid;
       setconfig: PgCatalog.Types.TextArray;
     };
-    export type PgDdlCommand = any;
+    export type PgDdlCommand = unknown;
     export type PgDefaultAcl = {
       oid: PgCatalog.Types.Oid;
       defaclrole: PgCatalog.Types.Oid;
@@ -2016,7 +2016,7 @@ export namespace PgCatalog {
       y: number;
     };
     export type Polygon = string;
-    export type Record = any;
+    export type Record = unknown;
     export type Refcursor = string;
     export type Regclass = number;
     export type Regcollation = number;
@@ -2029,7 +2029,7 @@ export namespace PgCatalog {
     export type Regprocedure = number;
     export type Regrole = number;
     export type Regtype = number;
-    export type TableAmHandler = any;
+    export type TableAmHandler = unknown;
     export type Text = string;
     export type Tid = {
       blockNumber: number;
@@ -2039,26 +2039,26 @@ export namespace PgCatalog {
     export type Timestamp = JsDate;
     export type Timestamptz = JsDate;
     export type Timetz = JsDate;
-    export type Trigger = any;
-    export type TsmHandler = any;
-    export type Tsmultirange = any;
+    export type Trigger = unknown;
+    export type TsmHandler = unknown;
+    export type Tsmultirange = unknown;
     export type Tsquery = string;
     export type Tsrange = [
       PgCatalog.Types.Timestamp,
       PgCatalog.Types.Timestamp,
     ];
-    export type Tstzmultirange = any;
+    export type Tstzmultirange = unknown;
     export type Tstzrange = [
       PgCatalog.Types.Timestamptz,
       PgCatalog.Types.Timestamptz,
     ];
     export type Tsvector = string;
     export type TxidSnapshot = string;
-    export type Unknown = any;
+    export type Unknown = unknown;
     export type Uuid = UUID;
     export type Varbit = boolean;
     export type Varchar = string;
-    export type Void = any;
+    export type Void = unknown;
     export type Xid = string;
     export type Xid8 = string;
     export type Xml = string;

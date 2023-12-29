@@ -67,8 +67,7 @@ export class PGCatalogType implements GeneratesTypeScript {
    */
   typescriptTypeDefinition(context: GenerationContext): string {
     console.assert(context);
-    // TODO: unknown
-    return `any`;
+    return `unknown`;
   }
 
   /**
@@ -89,8 +88,7 @@ export class PGCatalogType implements GeneratesTypeScript {
    * structured data.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  parseFromPostgres(context: Context, x: any) {
-    // TODO: unknown
+  parseFromPostgres(context: Context, x: unknown) {
     // default is just to echo it -- which is almost never correct
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return x;

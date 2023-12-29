@@ -74,7 +74,7 @@ export class PGTypeBase extends PGCatalogType {
           case "S":
             return new PGTypeText(catalog);
           default:
-            // TODO: handle types that map to any
+            // TODO: handle types
             return new PGTypeText(
               catalog,
               `FIXME: ${catalog.typname} did not resolve to a base type`,
