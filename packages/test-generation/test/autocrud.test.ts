@@ -181,4 +181,20 @@ describe("The database can AutoCRUD", () => {
       lastName: "Hope",
     });
   });
+  it("null values", async () => {
+    const anAddress = await database.Public.Tables.Address.ByAddressId.read({
+      addressId: 1,
+    });
+    expect(anAddress.address2).toBeNull();
+    const nowNotNull = await database.Public.Tables.Address.ByAddressId.update(
+      { addressId: 1 },
+      { address2: "hi" },
+    );
+    expect(nowNotNull.address2).toBe("hi");
+    const nullAgain = await database.Public.Tables.Address.ByAddressId.update(
+      { addressId: 1 },
+      { address2: null },
+    );
+    expect(nullAgain.address2).toBeNull();
+  });
 });
