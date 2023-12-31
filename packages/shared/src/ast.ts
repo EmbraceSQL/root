@@ -426,12 +426,32 @@ export class ArrayTypeNode extends AbstractTypeNode {
     name: string,
     types: TypesNode,
     public id: string | number,
-    parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.ArrayType, types, id, parser);
+    super(name, ASTKind.ArrayType, types, id);
+  }
+
+  typescriptTypeDefinition(context: GenerationContext) {
+    console.assert(context);
+    return `
+     Array<${this.memberType?.typescriptNamespacedName ?? "void"}>
+    `;
+  }
+
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    if (this.memberType) {
+      return `
+      if (from === null || from === undefined) return null;
+      const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+      return rawArray.map((e:unknown) => ${this.memberType.typescriptName}.parse(e));
+    `;
+    } else {
+      throw new Error(`${this.memberType} could not resolve type of element`);
+    }
   }
 }
 
+// TODO: rename EnumTypeNode
 /**
  * Represents a single enum from a database.
  */
@@ -444,6 +464,17 @@ export class EnumNode extends AbstractTypeNode {
     parser: GeneratesTypeScript,
   ) {
     super(name, ASTKind.Enum, types, id, parser);
+  }
+
+  override typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return [
+      `  if(Object.values(${this.typescriptNamespacedName}).includes(from as ${this.typescriptNamespacedName})) {`,
+      `    return from as ${this.typescriptNamespacedName};`,
+      `  } else {`,
+      `    return undefined;`,
+      `  }`,
+    ].join("\n");
   }
 }
 

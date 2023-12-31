@@ -111,7 +111,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               node.primaryKey ? "" : `export type PrimaryKey = never;`,
               // optional columns -- won't always need to pass these
               // ex: database has a default
-              // TODO: test with a nullable column
               `export type Optional = Pick<Record,${
                 node.optionalColumns
                   .map((c) => `"${c.typescriptPropertyName}"`)

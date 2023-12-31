@@ -5288,6 +5288,24 @@ export namespace InformationSchema {
 export namespace Scripts {
   export namespace Sample {
     export namespace Film {
+      export namespace Rated {
+        export type Results = {
+          filmId: Nullable<PgCatalog.Types.Int4>;
+          title: Nullable<PgCatalog.Types.Varchar>;
+          description: Nullable<PgCatalog.Types.Text>;
+          releaseYear: Nullable<PgCatalog.Types.Int4>;
+          languageId: Nullable<PgCatalog.Types.Int2>;
+          rentalDuration: Nullable<PgCatalog.Types.Int2>;
+          rentalRate: Nullable<PgCatalog.Types.Numeric>;
+          length: Nullable<PgCatalog.Types.Int2>;
+          replacementCost: Nullable<PgCatalog.Types.Numeric>;
+          rating: Nullable<Public.Types.MpaaRating>;
+          lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+          specialFeatures: PgCatalog.Types.TextArray;
+          fulltext: Nullable<PgCatalog.Types.Tsvector>;
+        };
+        export type Parameters = { argument_1: Public.Types.MpaaRating };
+      }
       export namespace Tally {
         export type Results = { count: Nullable<PgCatalog.Types.Int8> };
       }
@@ -5321,3150 +5339,2062 @@ export namespace PgCatalog {
   export namespace Types {
     export namespace AclitemArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.AclitemArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Aclitem.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Aclitem.parse(e));
       }
     }
     export namespace BitArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.BitArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Bit.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Bit.parse(e));
       }
     }
     export namespace BoolArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.BoolArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Bool.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Bool.parse(e));
       }
     }
     export namespace BoxArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.BoxArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Box.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Box.parse(e));
       }
     }
     export namespace BpcharArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.BpcharArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Bpchar.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Bpchar.parse(e));
       }
     }
     export namespace ByteaArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.ByteaArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Bytea.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Bytea.parse(e));
       }
     }
     export namespace CharArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.CharArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Char.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Char.parse(e));
       }
     }
     export namespace CidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.CidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Cid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Cid.parse(e));
       }
     }
     export namespace CidrArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.CidrArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Cidr.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Cidr.parse(e));
       }
     }
     export namespace CircleArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.CircleArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Circle.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Circle.parse(e));
       }
     }
     export namespace CstringArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.CstringArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Cstring.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Cstring.parse(e));
       }
     }
     export namespace DateArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.DateArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Date.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Date.parse(e));
       }
     }
     export namespace DatemultirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.DatemultirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Datemultirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Datemultirange.parse(e));
       }
     }
     export namespace DaterangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.DaterangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Daterange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Daterange.parse(e));
       }
     }
     export namespace Float4Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Float4Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Float4.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Float4.parse(e));
       }
     }
     export namespace Float8Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Float8Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Float8.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Float8.parse(e));
       }
     }
     export namespace GtsvectorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.GtsvectorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Gtsvector.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Gtsvector.parse(e));
       }
     }
     export namespace InetArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.InetArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Inet.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Inet.parse(e));
       }
     }
     export namespace Int2Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int2Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int2.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int2.parse(e));
       }
     }
     export namespace Int2vectorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int2vectorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int2vector.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int2vector.parse(e));
       }
     }
     export namespace Int4Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int4Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int4.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int4.parse(e));
       }
     }
     export namespace Int4multirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int4multirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int4multirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int4multirange.parse(e));
       }
     }
     export namespace Int4rangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int4rangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int4range.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int4range.parse(e));
       }
     }
     export namespace Int8Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int8Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int8.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int8.parse(e));
       }
     }
     export namespace Int8multirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int8multirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int8multirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int8multirange.parse(e));
       }
     }
     export namespace Int8rangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Int8rangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Int8range.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Int8range.parse(e));
       }
     }
     export namespace IntervalArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.IntervalArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Interval.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Interval.parse(e));
       }
     }
     export namespace JsonArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.JsonArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Json.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Json.parse(e));
       }
     }
     export namespace JsonbArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.JsonbArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Jsonb.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Jsonb.parse(e));
       }
     }
     export namespace JsonpathArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.JsonpathArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Jsonpath.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Jsonpath.parse(e));
       }
     }
     export namespace LineArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.LineArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Line.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Line.parse(e));
       }
     }
     export namespace LsegArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.LsegArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Lseg.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Lseg.parse(e));
       }
     }
     export namespace MacaddrArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.MacaddrArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Macaddr.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Macaddr.parse(e));
       }
     }
     export namespace Macaddr8Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Macaddr8Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Macaddr8.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Macaddr8.parse(e));
       }
     }
     export namespace MoneyArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.MoneyArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Money.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Money.parse(e));
       }
     }
     export namespace NameArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.NameArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Name.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Name.parse(e));
       }
     }
     export namespace NumericArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.NumericArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Numeric.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Numeric.parse(e));
       }
     }
     export namespace NummultirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.NummultirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Nummultirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Nummultirange.parse(e));
       }
     }
     export namespace NumrangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.NumrangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Numrange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Numrange.parse(e));
       }
     }
     export namespace OidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.OidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Oid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Oid.parse(e));
       }
     }
     export namespace OidvectorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.OidvectorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Oidvector.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Oidvector.parse(e));
       }
     }
     export namespace PathArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PathArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Path.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Path.parse(e));
       }
     }
     export namespace PgAggregateArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAggregateArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAggregate.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAggregate.parse(e));
       }
     }
     export namespace PgAmArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAmArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAm.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAm.parse(e));
       }
     }
     export namespace PgAmopArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAmopArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAmop.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAmop.parse(e));
       }
     }
     export namespace PgAmprocArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAmprocArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAmproc.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAmproc.parse(e));
       }
     }
     export namespace PgAttrdefArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAttrdefArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAttrdef.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAttrdef.parse(e));
       }
     }
     export namespace PgAttributeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAttributeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAttribute.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAttribute.parse(e));
       }
     }
     export namespace PgAuthMembersArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAuthMembersArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAuthMembers.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAuthMembers.parse(e));
       }
     }
     export namespace PgAuthidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAuthidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAuthid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAuthid.parse(e));
       }
     }
     export namespace PgAvailableExtensionVersionsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAvailableExtensionVersionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAvailableExtensionVersions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) =>
+          PgAvailableExtensionVersions.parse(e),
+        );
       }
     }
     export namespace PgAvailableExtensionsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgAvailableExtensionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgAvailableExtensions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgAvailableExtensions.parse(e));
       }
     }
     export namespace PgBackendMemoryContextsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgBackendMemoryContextsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgBackendMemoryContexts.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgBackendMemoryContexts.parse(e));
       }
     }
     export namespace PgCastArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgCastArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgCast.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgCast.parse(e));
       }
     }
     export namespace PgClassArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgClassArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgClass.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgClass.parse(e));
       }
     }
     export namespace PgCollationArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgCollationArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgCollation.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgCollation.parse(e));
       }
     }
     export namespace PgConfigArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgConfigArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgConfig.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgConfig.parse(e));
       }
     }
     export namespace PgConstraintArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgConstraintArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgConstraint.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgConstraint.parse(e));
       }
     }
     export namespace PgConversionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgConversionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgConversion.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgConversion.parse(e));
       }
     }
     export namespace PgCursorsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgCursorsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgCursors.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgCursors.parse(e));
       }
     }
     export namespace PgDatabaseArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgDatabaseArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgDatabase.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgDatabase.parse(e));
       }
     }
     export namespace PgDbRoleSettingArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgDbRoleSettingArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgDbRoleSetting.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgDbRoleSetting.parse(e));
       }
     }
     export namespace PgDefaultAclArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgDefaultAclArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgDefaultAcl.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgDefaultAcl.parse(e));
       }
     }
     export namespace PgDependArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgDependArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgDepend.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgDepend.parse(e));
       }
     }
     export namespace PgDescriptionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgDescriptionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgDescription.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgDescription.parse(e));
       }
     }
     export namespace PgEnumArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgEnumArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgEnum.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgEnum.parse(e));
       }
     }
     export namespace PgEventTriggerArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgEventTriggerArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgEventTrigger.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgEventTrigger.parse(e));
       }
     }
     export namespace PgExtensionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgExtensionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgExtension.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgExtension.parse(e));
       }
     }
     export namespace PgFileSettingsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgFileSettingsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgFileSettings.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgFileSettings.parse(e));
       }
     }
     export namespace PgForeignDataWrapperArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgForeignDataWrapperArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgForeignDataWrapper.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgForeignDataWrapper.parse(e));
       }
     }
     export namespace PgForeignServerArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgForeignServerArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgForeignServer.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgForeignServer.parse(e));
       }
     }
     export namespace PgForeignTableArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgForeignTableArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgForeignTable.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgForeignTable.parse(e));
       }
     }
     export namespace PgGroupArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgGroupArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgGroup.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgGroup.parse(e));
       }
     }
     export namespace PgHbaFileRulesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgHbaFileRulesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgHbaFileRules.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgHbaFileRules.parse(e));
       }
     }
     export namespace PgIdentFileMappingsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgIdentFileMappingsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgIdentFileMappings.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgIdentFileMappings.parse(e));
       }
     }
     export namespace PgIndexArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgIndexArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgIndex.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgIndex.parse(e));
       }
     }
     export namespace PgIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgIndexes.parse(e));
       }
     }
     export namespace PgInheritsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgInheritsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgInherits.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgInherits.parse(e));
       }
     }
     export namespace PgInitPrivsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgInitPrivsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgInitPrivs.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgInitPrivs.parse(e));
       }
     }
     export namespace PgLanguageArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgLanguageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgLanguage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgLanguage.parse(e));
       }
     }
     export namespace PgLargeobjectArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgLargeobjectArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgLargeobject.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgLargeobject.parse(e));
       }
     }
     export namespace PgLargeobjectMetadataArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgLargeobjectMetadataArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgLargeobjectMetadata.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgLargeobjectMetadata.parse(e));
       }
     }
     export namespace PgLocksArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgLocksArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgLocks.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgLocks.parse(e));
       }
     }
     export namespace PgLsnArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgLsnArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgLsn.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgLsn.parse(e));
       }
     }
     export namespace PgMatviewsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgMatviewsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgMatviews.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgMatviews.parse(e));
       }
     }
     export namespace PgNamespaceArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgNamespaceArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgNamespace.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgNamespace.parse(e));
       }
     }
     export namespace PgOpclassArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgOpclassArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgOpclass.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgOpclass.parse(e));
       }
     }
     export namespace PgOperatorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgOperatorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgOperator.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgOperator.parse(e));
       }
     }
     export namespace PgOpfamilyArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgOpfamilyArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgOpfamily.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgOpfamily.parse(e));
       }
     }
     export namespace PgParameterAclArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgParameterAclArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgParameterAcl.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgParameterAcl.parse(e));
       }
     }
     export namespace PgPartitionedTableArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPartitionedTableArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPartitionedTable.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPartitionedTable.parse(e));
       }
     }
     export namespace PgPoliciesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPoliciesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPolicies.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPolicies.parse(e));
       }
     }
     export namespace PgPolicyArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPolicyArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPolicy.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPolicy.parse(e));
       }
     }
     export namespace PgPreparedStatementsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPreparedStatementsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPreparedStatements.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPreparedStatements.parse(e));
       }
     }
     export namespace PgPreparedXactsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPreparedXactsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPreparedXacts.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPreparedXacts.parse(e));
       }
     }
     export namespace PgProcArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgProcArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgProc.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgProc.parse(e));
       }
     }
     export namespace PgPublicationArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPublicationArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPublication.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPublication.parse(e));
       }
     }
     export namespace PgPublicationNamespaceArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPublicationNamespaceArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPublicationNamespace.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPublicationNamespace.parse(e));
       }
     }
     export namespace PgPublicationRelArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPublicationRelArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPublicationRel.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPublicationRel.parse(e));
       }
     }
     export namespace PgPublicationTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgPublicationTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgPublicationTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgPublicationTables.parse(e));
       }
     }
     export namespace PgRangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgRangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgRange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgRange.parse(e));
       }
     }
     export namespace PgReplicationOriginArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgReplicationOriginArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgReplicationOrigin.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgReplicationOrigin.parse(e));
       }
     }
     export namespace PgReplicationOriginStatusArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgReplicationOriginStatusArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgReplicationOriginStatus.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgReplicationOriginStatus.parse(e));
       }
     }
     export namespace PgReplicationSlotsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgReplicationSlotsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgReplicationSlots.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgReplicationSlots.parse(e));
       }
     }
     export namespace PgRewriteArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgRewriteArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgRewrite.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgRewrite.parse(e));
       }
     }
     export namespace PgRolesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgRolesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgRoles.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgRoles.parse(e));
       }
     }
     export namespace PgRulesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgRulesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgRules.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgRules.parse(e));
       }
     }
     export namespace PgSeclabelArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSeclabelArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSeclabel.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSeclabel.parse(e));
       }
     }
     export namespace PgSeclabelsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSeclabelsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSeclabels.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSeclabels.parse(e));
       }
     }
     export namespace PgSequenceArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSequenceArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSequence.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSequence.parse(e));
       }
     }
     export namespace PgSequencesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSequencesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSequences.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSequences.parse(e));
       }
     }
     export namespace PgSettingsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSettingsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSettings.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSettings.parse(e));
       }
     }
     export namespace PgShadowArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgShadowArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgShadow.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgShadow.parse(e));
       }
     }
     export namespace PgShdependArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgShdependArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgShdepend.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgShdepend.parse(e));
       }
     }
     export namespace PgShdescriptionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgShdescriptionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgShdescription.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgShdescription.parse(e));
       }
     }
     export namespace PgShmemAllocationsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgShmemAllocationsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgShmemAllocations.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgShmemAllocations.parse(e));
       }
     }
     export namespace PgShseclabelArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgShseclabelArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgShseclabel.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgShseclabel.parse(e));
       }
     }
     export namespace PgSnapshotArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSnapshotArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSnapshot.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSnapshot.parse(e));
       }
     }
     export namespace PgStatActivityArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatActivityArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatActivity.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatActivity.parse(e));
       }
     }
     export namespace PgStatAllIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatAllIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatAllIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatAllIndexes.parse(e));
       }
     }
     export namespace PgStatAllTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatAllTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatAllTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatAllTables.parse(e));
       }
     }
     export namespace PgStatArchiverArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatArchiverArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatArchiver.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatArchiver.parse(e));
       }
     }
     export namespace PgStatBgwriterArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatBgwriterArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatBgwriter.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatBgwriter.parse(e));
       }
     }
     export namespace PgStatDatabaseArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatDatabaseArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatDatabase.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatDatabase.parse(e));
       }
     }
     export namespace PgStatDatabaseConflictsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatDatabaseConflictsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatDatabaseConflicts.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatDatabaseConflicts.parse(e));
       }
     }
     export namespace PgStatGssapiArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatGssapiArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatGssapi.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatGssapi.parse(e));
       }
     }
     export namespace PgStatIoArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatIoArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatIo.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatIo.parse(e));
       }
     }
     export namespace PgStatProgressAnalyzeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressAnalyzeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressAnalyze.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressAnalyze.parse(e));
       }
     }
     export namespace PgStatProgressBasebackupArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressBasebackupArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressBasebackup.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressBasebackup.parse(e));
       }
     }
     export namespace PgStatProgressClusterArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressClusterArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressCluster.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressCluster.parse(e));
       }
     }
     export namespace PgStatProgressCopyArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressCopyArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressCopy.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressCopy.parse(e));
       }
     }
     export namespace PgStatProgressCreateIndexArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressCreateIndexArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressCreateIndex.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressCreateIndex.parse(e));
       }
     }
     export namespace PgStatProgressVacuumArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatProgressVacuumArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatProgressVacuum.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatProgressVacuum.parse(e));
       }
     }
     export namespace PgStatRecoveryPrefetchArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatRecoveryPrefetchArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatRecoveryPrefetch.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatRecoveryPrefetch.parse(e));
       }
     }
     export namespace PgStatReplicationArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatReplicationArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatReplication.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatReplication.parse(e));
       }
     }
     export namespace PgStatReplicationSlotsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatReplicationSlotsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatReplicationSlots.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatReplicationSlots.parse(e));
       }
     }
     export namespace PgStatSlruArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSlruArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSlru.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSlru.parse(e));
       }
     }
     export namespace PgStatSslArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSslArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSsl.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSsl.parse(e));
       }
     }
     export namespace PgStatSubscriptionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSubscriptionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSubscription.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSubscription.parse(e));
       }
     }
     export namespace PgStatSubscriptionStatsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSubscriptionStatsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSubscriptionStats.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSubscriptionStats.parse(e));
       }
     }
     export namespace PgStatSysIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSysIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSysIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSysIndexes.parse(e));
       }
     }
     export namespace PgStatSysTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatSysTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatSysTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatSysTables.parse(e));
       }
     }
     export namespace PgStatUserFunctionsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatUserFunctionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatUserFunctions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatUserFunctions.parse(e));
       }
     }
     export namespace PgStatUserIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatUserIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatUserIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatUserIndexes.parse(e));
       }
     }
     export namespace PgStatUserTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatUserTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatUserTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatUserTables.parse(e));
       }
     }
     export namespace PgStatWalArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatWalArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatWal.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatWal.parse(e));
       }
     }
     export namespace PgStatWalReceiverArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatWalReceiverArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatWalReceiver.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatWalReceiver.parse(e));
       }
     }
     export namespace PgStatXactAllTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatXactAllTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatXactAllTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatXactAllTables.parse(e));
       }
     }
     export namespace PgStatXactSysTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatXactSysTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatXactSysTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatXactSysTables.parse(e));
       }
     }
     export namespace PgStatXactUserFunctionsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatXactUserFunctionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatXactUserFunctions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatXactUserFunctions.parse(e));
       }
     }
     export namespace PgStatXactUserTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatXactUserTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatXactUserTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatXactUserTables.parse(e));
       }
     }
     export namespace PgStatioAllIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioAllIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioAllIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioAllIndexes.parse(e));
       }
     }
     export namespace PgStatioAllSequencesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioAllSequencesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioAllSequences.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioAllSequences.parse(e));
       }
     }
     export namespace PgStatioAllTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioAllTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioAllTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioAllTables.parse(e));
       }
     }
     export namespace PgStatioSysIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioSysIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioSysIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioSysIndexes.parse(e));
       }
     }
     export namespace PgStatioSysSequencesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioSysSequencesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioSysSequences.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioSysSequences.parse(e));
       }
     }
     export namespace PgStatioSysTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioSysTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioSysTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioSysTables.parse(e));
       }
     }
     export namespace PgStatioUserIndexesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioUserIndexesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioUserIndexes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioUserIndexes.parse(e));
       }
     }
     export namespace PgStatioUserSequencesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioUserSequencesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioUserSequences.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioUserSequences.parse(e));
       }
     }
     export namespace PgStatioUserTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatioUserTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatioUserTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatioUserTables.parse(e));
       }
     }
     export namespace PgStatisticArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatisticArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatistic.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatistic.parse(e));
       }
     }
     export namespace PgStatisticExtArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatisticExtArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatisticExt.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatisticExt.parse(e));
       }
     }
     export namespace PgStatisticExtDataArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatisticExtDataArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatisticExtData.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatisticExtData.parse(e));
       }
     }
     export namespace PgStatsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStats.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStats.parse(e));
       }
     }
     export namespace PgStatsExtArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatsExtArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatsExt.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatsExt.parse(e));
       }
     }
     export namespace PgStatsExtExprsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgStatsExtExprsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgStatsExtExprs.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgStatsExtExprs.parse(e));
       }
     }
     export namespace PgSubscriptionArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSubscriptionArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSubscription.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSubscription.parse(e));
       }
     }
     export namespace PgSubscriptionRelArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgSubscriptionRelArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgSubscriptionRel.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgSubscriptionRel.parse(e));
       }
     }
     export namespace PgTablesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTables.parse(e));
       }
     }
     export namespace PgTablespaceArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTablespaceArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTablespace.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTablespace.parse(e));
       }
     }
     export namespace PgTimezoneAbbrevsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTimezoneAbbrevsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTimezoneAbbrevs.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTimezoneAbbrevs.parse(e));
       }
     }
     export namespace PgTimezoneNamesArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTimezoneNamesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTimezoneNames.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTimezoneNames.parse(e));
       }
     }
     export namespace PgTransformArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTransformArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTransform.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTransform.parse(e));
       }
     }
     export namespace PgTriggerArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTriggerArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTrigger.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTrigger.parse(e));
       }
     }
     export namespace PgTsConfigArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTsConfigArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTsConfig.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTsConfig.parse(e));
       }
     }
     export namespace PgTsConfigMapArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTsConfigMapArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTsConfigMap.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTsConfigMap.parse(e));
       }
     }
     export namespace PgTsDictArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTsDictArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTsDict.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTsDict.parse(e));
       }
     }
     export namespace PgTsParserArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTsParserArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTsParser.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTsParser.parse(e));
       }
     }
     export namespace PgTsTemplateArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTsTemplateArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgTsTemplate.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgTsTemplate.parse(e));
       }
     }
     export namespace PgTypeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgTypeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgType.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgType.parse(e));
       }
     }
     export namespace PgUserArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgUserArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgUser.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgUser.parse(e));
       }
     }
     export namespace PgUserMappingArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgUserMappingArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgUserMapping.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgUserMapping.parse(e));
       }
     }
     export namespace PgUserMappingsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgUserMappingsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgUserMappings.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgUserMappings.parse(e));
       }
     }
     export namespace PgViewsArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PgViewsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return PgViews.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => PgViews.parse(e));
       }
     }
     export namespace PointArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PointArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Point.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Point.parse(e));
       }
     }
     export namespace PolygonArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.PolygonArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Polygon.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Polygon.parse(e));
       }
     }
     export namespace RecordArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RecordArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Record.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Record.parse(e));
       }
     }
     export namespace RefcursorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RefcursorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Refcursor.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Refcursor.parse(e));
       }
     }
     export namespace RegclassArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegclassArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regclass.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regclass.parse(e));
       }
     }
     export namespace RegcollationArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegcollationArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regcollation.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regcollation.parse(e));
       }
     }
     export namespace RegconfigArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegconfigArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regconfig.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regconfig.parse(e));
       }
     }
     export namespace RegdictionaryArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegdictionaryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regdictionary.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regdictionary.parse(e));
       }
     }
     export namespace RegnamespaceArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegnamespaceArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regnamespace.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regnamespace.parse(e));
       }
     }
     export namespace RegoperArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegoperArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regoper.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regoper.parse(e));
       }
     }
     export namespace RegoperatorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegoperatorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regoperator.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regoperator.parse(e));
       }
     }
     export namespace RegprocArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegprocArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regproc.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regproc.parse(e));
       }
     }
     export namespace RegprocedureArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegprocedureArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regprocedure.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regprocedure.parse(e));
       }
     }
     export namespace RegroleArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegroleArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regrole.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regrole.parse(e));
       }
     }
     export namespace RegtypeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.RegtypeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Regtype.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Regtype.parse(e));
       }
     }
     export namespace TextArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TextArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Text.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Text.parse(e));
       }
     }
     export namespace TidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tid.parse(e));
       }
     }
     export namespace TimeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TimeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Time.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Time.parse(e));
       }
     }
     export namespace TimestampArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TimestampArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Timestamp.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Timestamp.parse(e));
       }
     }
     export namespace TimestamptzArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TimestamptzArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Timestamptz.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Timestamptz.parse(e));
       }
     }
     export namespace TimetzArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TimetzArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Timetz.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Timetz.parse(e));
       }
     }
     export namespace TsmultirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TsmultirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tsmultirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tsmultirange.parse(e));
       }
     }
     export namespace TsqueryArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TsqueryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tsquery.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tsquery.parse(e));
       }
     }
     export namespace TsrangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TsrangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tsrange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tsrange.parse(e));
       }
     }
     export namespace TstzmultirangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TstzmultirangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tstzmultirange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tstzmultirange.parse(e));
       }
     }
     export namespace TstzrangeArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TstzrangeArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tstzrange.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tstzrange.parse(e));
       }
     }
     export namespace TsvectorArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TsvectorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tsvector.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tsvector.parse(e));
       }
     }
     export namespace TxidSnapshotArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.TxidSnapshotArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return TxidSnapshot.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => TxidSnapshot.parse(e));
       }
     }
     export namespace UuidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.UuidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Uuid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Uuid.parse(e));
       }
     }
     export namespace VarbitArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.VarbitArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Varbit.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Varbit.parse(e));
       }
     }
     export namespace VarcharArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.VarcharArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Varchar.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Varchar.parse(e));
       }
     }
     export namespace XidArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.XidArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Xid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Xid.parse(e));
       }
     }
     export namespace Xid8Array {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Xid8Array
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Xid8.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Xid8.parse(e));
       }
     }
     export namespace XmlArray {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.XmlArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Xml.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Xml.parse(e));
       }
     }
     export namespace Aclitem {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Aclitem
+        // Type
 
         return from;
       }
     }
     export namespace Any {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Any
+        // Type
 
         return from;
       }
     }
     export namespace Anyarray {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anyarray
+        // Type
 
         return from;
       }
     }
     export namespace Anycompatible {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anycompatible
+        // Type
 
         return from;
       }
     }
     export namespace Anycompatiblearray {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anycompatiblearray
+        // Type
 
         return from;
       }
     }
     export namespace Anycompatiblemultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anycompatiblemultirange
+        // Type
 
         return from;
       }
     }
     export namespace Anycompatiblenonarray {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anycompatiblenonarray
+        // Type
 
         return from;
       }
     }
     export namespace Anycompatiblerange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anycompatiblerange
+        // Type
 
         return from;
       }
     }
     export namespace Anyelement {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anyelement
+        // Type
 
         return from;
       }
     }
     export namespace Anyenum {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anyenum
+        // Type
 
         return from;
       }
     }
     export namespace Anymultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anymultirange
+        // Type
 
         return from;
       }
     }
     export namespace Anynonarray {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anynonarray
+        // Type
 
         return from;
       }
     }
     export namespace Anyrange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Anyrange
+        // Type
 
         return from;
       }
     }
     export namespace Bit {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Bit
+        // Type
 
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
@@ -8478,7 +7408,7 @@ export namespace PgCatalog {
     }
     export namespace Bool {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Bool
+        // Type
 
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
@@ -8492,63 +7422,63 @@ export namespace PgCatalog {
     }
     export namespace Box {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Box
+        // Type
 
         return from;
       }
     }
     export namespace Bpchar {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Bpchar
+        // Type
 
         return from;
       }
     }
     export namespace Bytea {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Bytea
+        // Type
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Char {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Char
+        // Type
 
         return from;
       }
     }
     export namespace Cid {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Cid
+        // Type
 
         return from;
       }
     }
     export namespace Cidr {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Cidr
+        // Type
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Circle {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Circle
+        // Type
 
         return from;
       }
     }
     export namespace Cstring {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Cstring
+        // Type
 
         return from;
       }
     }
     export namespace Date {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Date
+        // Type
 
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
@@ -8557,35 +7487,35 @@ export namespace PgCatalog {
     }
     export namespace Datemultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Datemultirange
+        // Type
 
         return from;
       }
     }
     export namespace Daterange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Daterange
+        // Type
 
         return from;
       }
     }
     export namespace EventTrigger {
       export function parse(from: any) {
-        // Type PgCatalog.Types.EventTrigger
+        // Type
 
         return from;
       }
     }
     export namespace FdwHandler {
       export function parse(from: any) {
-        // Type PgCatalog.Types.FdwHandler
+        // Type
 
         return from;
       }
     }
     export namespace Float4 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Float4
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8593,7 +7523,7 @@ export namespace PgCatalog {
     }
     export namespace Float8 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Float8
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8601,28 +7531,28 @@ export namespace PgCatalog {
     }
     export namespace Gtsvector {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Gtsvector
+        // Type
 
         return from;
       }
     }
     export namespace IndexAmHandler {
       export function parse(from: any) {
-        // Type PgCatalog.Types.IndexAmHandler
+        // Type
 
         return from;
       }
     }
     export namespace Inet {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Inet
+        // Type
 
         return from;
       }
     }
     export namespace Int2 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int2
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8630,7 +7560,7 @@ export namespace PgCatalog {
     }
     export namespace Int2vector {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int2vector
+        // Type
 
         if (from === null) return null;
         const source = Array.isArray(from)
@@ -8641,7 +7571,7 @@ export namespace PgCatalog {
     }
     export namespace Int4 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int4
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8649,21 +7579,21 @@ export namespace PgCatalog {
     }
     export namespace Int4multirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int4multirange
+        // Type
 
         return from;
       }
     }
     export namespace Int4range {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int4range
+        // Type
 
         return from;
       }
     }
     export namespace Int8 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int8
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8671,28 +7601,28 @@ export namespace PgCatalog {
     }
     export namespace Int8multirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int8multirange
+        // Type
 
         return from;
       }
     }
     export namespace Int8range {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Int8range
+        // Type
 
         return from;
       }
     }
     export namespace Internal {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Internal
+        // Type
 
         return from;
       }
     }
     export namespace Interval {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Interval
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8700,63 +7630,63 @@ export namespace PgCatalog {
     }
     export namespace Json {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Json
+        // Type
 
         return from;
       }
     }
     export namespace Jsonb {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Jsonb
+        // Type
 
         return from;
       }
     }
     export namespace Jsonpath {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Jsonpath
+        // Type
 
         return from;
       }
     }
     export namespace LanguageHandler {
       export function parse(from: any) {
-        // Type PgCatalog.Types.LanguageHandler
+        // Type
 
         return from;
       }
     }
     export namespace Line {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Line
+        // Type
 
         return from;
       }
     }
     export namespace Lseg {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Lseg
+        // Type
 
         return from;
       }
     }
     export namespace Macaddr {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Macaddr
+        // Type
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Macaddr8 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Macaddr8
+        // Type
 
         return from ? new Uint8Array(JSON.parse(from)) : null;
       }
     }
     export namespace Money {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Money
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8764,14 +7694,14 @@ export namespace PgCatalog {
     }
     export namespace Name {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Name
+        // Type
 
         return from;
       }
     }
     export namespace Numeric {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Numeric
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8779,21 +7709,21 @@ export namespace PgCatalog {
     }
     export namespace Nummultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Nummultirange
+        // Type
 
         return from;
       }
     }
     export namespace Numrange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Numrange
+        // Type
 
         return from;
       }
     }
     export namespace Oid {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Oid
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -8801,28 +7731,23 @@ export namespace PgCatalog {
     }
     export namespace Oidvector {
       export function parse(from: any) {
-        // ArrayType PgCatalog.Types.Oidvector
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Oid.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Oid.parse(e));
       }
     }
     export namespace Path {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Path
+        // Type
 
         return from;
       }
     }
     export namespace PgAggregate {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAggregate
+        // CompositeType
         if (PgCatalog.Types.PgAggregate.is(from)) {
           return {
             aggfnoid: PgCatalog.Types.Regproc.parse(from.aggfnoid),
@@ -8854,7 +7779,7 @@ export namespace PgCatalog {
     }
     export namespace PgAm {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAm
+        // CompositeType
         if (PgCatalog.Types.PgAm.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8868,7 +7793,7 @@ export namespace PgCatalog {
     }
     export namespace PgAmop {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAmop
+        // CompositeType
         if (PgCatalog.Types.PgAmop.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8887,7 +7812,7 @@ export namespace PgCatalog {
     }
     export namespace PgAmproc {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAmproc
+        // CompositeType
         if (PgCatalog.Types.PgAmproc.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8903,7 +7828,7 @@ export namespace PgCatalog {
     }
     export namespace PgAttrdef {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAttrdef
+        // CompositeType
         if (PgCatalog.Types.PgAttrdef.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8917,7 +7842,7 @@ export namespace PgCatalog {
     }
     export namespace PgAttribute {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAttribute
+        // CompositeType
         if (PgCatalog.Types.PgAttribute.is(from)) {
           return {
             attrelid: PgCatalog.Types.Oid.parse(from.attrelid),
@@ -8953,7 +7878,7 @@ export namespace PgCatalog {
     }
     export namespace PgAuthMembers {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAuthMembers
+        // CompositeType
         if (PgCatalog.Types.PgAuthMembers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8970,7 +7895,7 @@ export namespace PgCatalog {
     }
     export namespace PgAuthid {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAuthid
+        // CompositeType
         if (PgCatalog.Types.PgAuthid.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8994,7 +7919,7 @@ export namespace PgCatalog {
     }
     export namespace PgAvailableExtensionVersions {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAvailableExtensionVersions
+        // CompositeType
         if (PgCatalog.Types.PgAvailableExtensionVersions.is(from)) {
           return {
             name: PgCatalog.Types.Name.parse(from.name),
@@ -9013,7 +7938,7 @@ export namespace PgCatalog {
     }
     export namespace PgAvailableExtensions {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgAvailableExtensions
+        // CompositeType
         if (PgCatalog.Types.PgAvailableExtensions.is(from)) {
           return {
             name: PgCatalog.Types.Name.parse(from.name),
@@ -9027,7 +7952,7 @@ export namespace PgCatalog {
     }
     export namespace PgBackendMemoryContexts {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgBackendMemoryContexts
+        // CompositeType
         if (PgCatalog.Types.PgBackendMemoryContexts.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -9046,21 +7971,21 @@ export namespace PgCatalog {
     }
     export namespace PgBrinBloomSummary {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgBrinBloomSummary
+        // Type
 
         return from;
       }
     }
     export namespace PgBrinMinmaxMultiSummary {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgBrinMinmaxMultiSummary
+        // Type
 
         return from;
       }
     }
     export namespace PgCast {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgCast
+        // CompositeType
         if (PgCatalog.Types.PgCast.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9076,7 +8001,7 @@ export namespace PgCatalog {
     }
     export namespace PgClass {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgClass
+        // CompositeType
         if (PgCatalog.Types.PgClass.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9121,7 +8046,7 @@ export namespace PgCatalog {
     }
     export namespace PgCollation {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgCollation
+        // CompositeType
         if (PgCatalog.Types.PgCollation.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9145,7 +8070,7 @@ export namespace PgCatalog {
     }
     export namespace PgConfig {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgConfig
+        // CompositeType
         if (PgCatalog.Types.PgConfig.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -9157,7 +8082,7 @@ export namespace PgCatalog {
     }
     export namespace PgConstraint {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgConstraint
+        // CompositeType
         if (PgCatalog.Types.PgConstraint.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9195,7 +8120,7 @@ export namespace PgCatalog {
     }
     export namespace PgConversion {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgConversion
+        // CompositeType
         if (PgCatalog.Types.PgConversion.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9213,7 +8138,7 @@ export namespace PgCatalog {
     }
     export namespace PgCursors {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgCursors
+        // CompositeType
         if (PgCatalog.Types.PgCursors.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -9229,7 +8154,7 @@ export namespace PgCatalog {
     }
     export namespace PgDatabase {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgDatabase
+        // CompositeType
         if (PgCatalog.Types.PgDatabase.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9256,7 +8181,7 @@ export namespace PgCatalog {
     }
     export namespace PgDbRoleSetting {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgDbRoleSetting
+        // CompositeType
         if (PgCatalog.Types.PgDbRoleSetting.is(from)) {
           return {
             setdatabase: PgCatalog.Types.Oid.parse(from.setdatabase),
@@ -9269,14 +8194,14 @@ export namespace PgCatalog {
     }
     export namespace PgDdlCommand {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgDdlCommand
+        // Type
 
         return from;
       }
     }
     export namespace PgDefaultAcl {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgDefaultAcl
+        // CompositeType
         if (PgCatalog.Types.PgDefaultAcl.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9291,7 +8216,7 @@ export namespace PgCatalog {
     }
     export namespace PgDepend {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgDepend
+        // CompositeType
         if (PgCatalog.Types.PgDepend.is(from)) {
           return {
             classid: PgCatalog.Types.Oid.parse(from.classid),
@@ -9308,14 +8233,14 @@ export namespace PgCatalog {
     }
     export namespace PgDependencies {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgDependencies
+        // Type
 
         return from;
       }
     }
     export namespace PgDescription {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgDescription
+        // CompositeType
         if (PgCatalog.Types.PgDescription.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -9329,7 +8254,7 @@ export namespace PgCatalog {
     }
     export namespace PgEnum {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgEnum
+        // CompositeType
         if (PgCatalog.Types.PgEnum.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9343,7 +8268,7 @@ export namespace PgCatalog {
     }
     export namespace PgEventTrigger {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgEventTrigger
+        // CompositeType
         if (PgCatalog.Types.PgEventTrigger.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9360,7 +8285,7 @@ export namespace PgCatalog {
     }
     export namespace PgExtension {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgExtension
+        // CompositeType
         if (PgCatalog.Types.PgExtension.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9378,7 +8303,7 @@ export namespace PgCatalog {
     }
     export namespace PgFileSettings {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgFileSettings
+        // CompositeType
         if (PgCatalog.Types.PgFileSettings.is(from)) {
           return {
             sourcefile: PgCatalog.Types.Text.parse(from.sourcefile),
@@ -9395,7 +8320,7 @@ export namespace PgCatalog {
     }
     export namespace PgForeignDataWrapper {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgForeignDataWrapper
+        // CompositeType
         if (PgCatalog.Types.PgForeignDataWrapper.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9412,7 +8337,7 @@ export namespace PgCatalog {
     }
     export namespace PgForeignServer {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgForeignServer
+        // CompositeType
         if (PgCatalog.Types.PgForeignServer.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9430,7 +8355,7 @@ export namespace PgCatalog {
     }
     export namespace PgForeignTable {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgForeignTable
+        // CompositeType
         if (PgCatalog.Types.PgForeignTable.is(from)) {
           return {
             ftrelid: PgCatalog.Types.Oid.parse(from.ftrelid),
@@ -9443,7 +8368,7 @@ export namespace PgCatalog {
     }
     export namespace PgGroup {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgGroup
+        // CompositeType
         if (PgCatalog.Types.PgGroup.is(from)) {
           return {
             groname: PgCatalog.Types.Name.parse(from.groname),
@@ -9456,7 +8381,7 @@ export namespace PgCatalog {
     }
     export namespace PgHbaFileRules {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgHbaFileRules
+        // CompositeType
         if (PgCatalog.Types.PgHbaFileRules.is(from)) {
           return {
             ruleNumber: PgCatalog.Types.Int4.parse(from.ruleNumber),
@@ -9477,7 +8402,7 @@ export namespace PgCatalog {
     }
     export namespace PgIdentFileMappings {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgIdentFileMappings
+        // CompositeType
         if (PgCatalog.Types.PgIdentFileMappings.is(from)) {
           return {
             mapNumber: PgCatalog.Types.Int4.parse(from.mapNumber),
@@ -9494,7 +8419,7 @@ export namespace PgCatalog {
     }
     export namespace PgIndex {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgIndex
+        // CompositeType
         if (PgCatalog.Types.PgIndex.is(from)) {
           return {
             indexrelid: PgCatalog.Types.Oid.parse(from.indexrelid),
@@ -9527,7 +8452,7 @@ export namespace PgCatalog {
     }
     export namespace PgIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgIndexes
+        // CompositeType
         if (PgCatalog.Types.PgIndexes.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -9542,7 +8467,7 @@ export namespace PgCatalog {
     }
     export namespace PgInherits {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgInherits
+        // CompositeType
         if (PgCatalog.Types.PgInherits.is(from)) {
           return {
             inhrelid: PgCatalog.Types.Oid.parse(from.inhrelid),
@@ -9556,7 +8481,7 @@ export namespace PgCatalog {
     }
     export namespace PgInitPrivs {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgInitPrivs
+        // CompositeType
         if (PgCatalog.Types.PgInitPrivs.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -9571,7 +8496,7 @@ export namespace PgCatalog {
     }
     export namespace PgLanguage {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgLanguage
+        // CompositeType
         if (PgCatalog.Types.PgLanguage.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9590,7 +8515,7 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobject {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgLargeobject
+        // CompositeType
         if (PgCatalog.Types.PgLargeobject.is(from)) {
           return {
             loid: PgCatalog.Types.Oid.parse(from.loid),
@@ -9603,7 +8528,7 @@ export namespace PgCatalog {
     }
     export namespace PgLargeobjectMetadata {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgLargeobjectMetadata
+        // CompositeType
         if (PgCatalog.Types.PgLargeobjectMetadata.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9616,7 +8541,7 @@ export namespace PgCatalog {
     }
     export namespace PgLocks {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgLocks
+        // CompositeType
         if (PgCatalog.Types.PgLocks.is(from)) {
           return {
             locktype: PgCatalog.Types.Text.parse(from.locktype),
@@ -9644,7 +8569,7 @@ export namespace PgCatalog {
     }
     export namespace PgLsn {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgLsn
+        // Type
 
         if (from === null) return null;
         if (from === "") return null;
@@ -9653,7 +8578,7 @@ export namespace PgCatalog {
     }
     export namespace PgMatviews {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgMatviews
+        // CompositeType
         if (PgCatalog.Types.PgMatviews.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -9670,14 +8595,14 @@ export namespace PgCatalog {
     }
     export namespace PgMcvList {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgMcvList
+        // Type
 
         return from;
       }
     }
     export namespace PgNamespace {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgNamespace
+        // CompositeType
         if (PgCatalog.Types.PgNamespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9691,21 +8616,21 @@ export namespace PgCatalog {
     }
     export namespace PgNdistinct {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgNdistinct
+        // Type
 
         return from;
       }
     }
     export namespace PgNodeTree {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgNodeTree
+        // Type
 
         return from;
       }
     }
     export namespace PgOpclass {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgOpclass
+        // CompositeType
         if (PgCatalog.Types.PgOpclass.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9724,7 +8649,7 @@ export namespace PgCatalog {
     }
     export namespace PgOperator {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgOperator
+        // CompositeType
         if (PgCatalog.Types.PgOperator.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9749,7 +8674,7 @@ export namespace PgCatalog {
     }
     export namespace PgOpfamily {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgOpfamily
+        // CompositeType
         if (PgCatalog.Types.PgOpfamily.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9764,7 +8689,7 @@ export namespace PgCatalog {
     }
     export namespace PgParameterAcl {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgParameterAcl
+        // CompositeType
         if (PgCatalog.Types.PgParameterAcl.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9777,7 +8702,7 @@ export namespace PgCatalog {
     }
     export namespace PgPartitionedTable {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPartitionedTable
+        // CompositeType
         if (PgCatalog.Types.PgPartitionedTable.is(from)) {
           return {
             partrelid: PgCatalog.Types.Oid.parse(from.partrelid),
@@ -9795,7 +8720,7 @@ export namespace PgCatalog {
     }
     export namespace PgPolicies {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPolicies
+        // CompositeType
         if (PgCatalog.Types.PgPolicies.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -9813,7 +8738,7 @@ export namespace PgCatalog {
     }
     export namespace PgPolicy {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPolicy
+        // CompositeType
         if (PgCatalog.Types.PgPolicy.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9831,7 +8756,7 @@ export namespace PgCatalog {
     }
     export namespace PgPreparedStatements {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPreparedStatements
+        // CompositeType
         if (PgCatalog.Types.PgPreparedStatements.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -9851,7 +8776,7 @@ export namespace PgCatalog {
     }
     export namespace PgPreparedXacts {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPreparedXacts
+        // CompositeType
         if (PgCatalog.Types.PgPreparedXacts.is(from)) {
           return {
             transaction: PgCatalog.Types.Xid.parse(from.transaction),
@@ -9866,7 +8791,7 @@ export namespace PgCatalog {
     }
     export namespace PgProc {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgProc
+        // CompositeType
         if (PgCatalog.Types.PgProc.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9908,7 +8833,7 @@ export namespace PgCatalog {
     }
     export namespace PgPublication {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPublication
+        // CompositeType
         if (PgCatalog.Types.PgPublication.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9927,7 +8852,7 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationNamespace {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPublicationNamespace
+        // CompositeType
         if (PgCatalog.Types.PgPublicationNamespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9940,7 +8865,7 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationRel {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPublicationRel
+        // CompositeType
         if (PgCatalog.Types.PgPublicationRel.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9955,7 +8880,7 @@ export namespace PgCatalog {
     }
     export namespace PgPublicationTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgPublicationTables
+        // CompositeType
         if (PgCatalog.Types.PgPublicationTables.is(from)) {
           return {
             pubname: PgCatalog.Types.Name.parse(from.pubname),
@@ -9970,7 +8895,7 @@ export namespace PgCatalog {
     }
     export namespace PgRange {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgRange
+        // CompositeType
         if (PgCatalog.Types.PgRange.is(from)) {
           return {
             rngtypid: PgCatalog.Types.Oid.parse(from.rngtypid),
@@ -9987,7 +8912,7 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOrigin {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgReplicationOrigin
+        // CompositeType
         if (PgCatalog.Types.PgReplicationOrigin.is(from)) {
           return {
             roident: PgCatalog.Types.Oid.parse(from.roident),
@@ -9999,7 +8924,7 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationOriginStatus {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgReplicationOriginStatus
+        // CompositeType
         if (PgCatalog.Types.PgReplicationOriginStatus.is(from)) {
           return {
             localId: PgCatalog.Types.Oid.parse(from.localId),
@@ -10013,7 +8938,7 @@ export namespace PgCatalog {
     }
     export namespace PgReplicationSlots {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgReplicationSlots
+        // CompositeType
         if (PgCatalog.Types.PgReplicationSlots.is(from)) {
           return {
             slotName: PgCatalog.Types.Name.parse(from.slotName),
@@ -10041,7 +8966,7 @@ export namespace PgCatalog {
     }
     export namespace PgRewrite {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgRewrite
+        // CompositeType
         if (PgCatalog.Types.PgRewrite.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10059,7 +8984,7 @@ export namespace PgCatalog {
     }
     export namespace PgRoles {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgRoles
+        // CompositeType
         if (PgCatalog.Types.PgRoles.is(from)) {
           return {
             rolname: PgCatalog.Types.Name.parse(from.rolname),
@@ -10084,7 +9009,7 @@ export namespace PgCatalog {
     }
     export namespace PgRules {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgRules
+        // CompositeType
         if (PgCatalog.Types.PgRules.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10098,7 +9023,7 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabel {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSeclabel
+        // CompositeType
         if (PgCatalog.Types.PgSeclabel.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -10113,7 +9038,7 @@ export namespace PgCatalog {
     }
     export namespace PgSeclabels {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSeclabels
+        // CompositeType
         if (PgCatalog.Types.PgSeclabels.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -10131,7 +9056,7 @@ export namespace PgCatalog {
     }
     export namespace PgSequence {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSequence
+        // CompositeType
         if (PgCatalog.Types.PgSequence.is(from)) {
           return {
             seqrelid: PgCatalog.Types.Oid.parse(from.seqrelid),
@@ -10149,7 +9074,7 @@ export namespace PgCatalog {
     }
     export namespace PgSequences {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSequences
+        // CompositeType
         if (PgCatalog.Types.PgSequences.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10170,7 +9095,7 @@ export namespace PgCatalog {
     }
     export namespace PgSettings {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSettings
+        // CompositeType
         if (PgCatalog.Types.PgSettings.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -10197,7 +9122,7 @@ export namespace PgCatalog {
     }
     export namespace PgShadow {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgShadow
+        // CompositeType
         if (PgCatalog.Types.PgShadow.is(from)) {
           return {
             usename: PgCatalog.Types.Name.parse(from.usename),
@@ -10216,7 +9141,7 @@ export namespace PgCatalog {
     }
     export namespace PgShdepend {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgShdepend
+        // CompositeType
         if (PgCatalog.Types.PgShdepend.is(from)) {
           return {
             dbid: PgCatalog.Types.Oid.parse(from.dbid),
@@ -10233,7 +9158,7 @@ export namespace PgCatalog {
     }
     export namespace PgShdescription {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgShdescription
+        // CompositeType
         if (PgCatalog.Types.PgShdescription.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -10246,7 +9171,7 @@ export namespace PgCatalog {
     }
     export namespace PgShmemAllocations {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgShmemAllocations
+        // CompositeType
         if (PgCatalog.Types.PgShmemAllocations.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -10260,7 +9185,7 @@ export namespace PgCatalog {
     }
     export namespace PgShseclabel {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgShseclabel
+        // CompositeType
         if (PgCatalog.Types.PgShseclabel.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -10274,14 +9199,14 @@ export namespace PgCatalog {
     }
     export namespace PgSnapshot {
       export function parse(from: any) {
-        // Type PgCatalog.Types.PgSnapshot
+        // Type
 
         return from;
       }
     }
     export namespace PgStatActivity {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatActivity
+        // CompositeType
         if (PgCatalog.Types.PgStatActivity.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -10313,7 +9238,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatAllIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatAllIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatAllIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10332,7 +9257,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatAllTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatAllTables
+        // CompositeType
         if (PgCatalog.Types.PgStatAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10372,7 +9297,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatArchiver {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatArchiver
+        // CompositeType
         if (PgCatalog.Types.PgStatArchiver.is(from)) {
           return {
             archivedCount: PgCatalog.Types.Int8.parse(from.archivedCount),
@@ -10393,7 +9318,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatBgwriter {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatBgwriter
+        // CompositeType
         if (PgCatalog.Types.PgStatBgwriter.is(from)) {
           return {
             checkpointsTimed: PgCatalog.Types.Int8.parse(from.checkpointsTimed),
@@ -10422,7 +9347,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatDatabase {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatDatabase
+        // CompositeType
         if (PgCatalog.Types.PgStatDatabase.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -10466,7 +9391,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatDatabaseConflicts {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatDatabaseConflicts
+        // CompositeType
         if (PgCatalog.Types.PgStatDatabaseConflicts.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -10486,7 +9411,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatGssapi {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatGssapi
+        // CompositeType
         if (PgCatalog.Types.PgStatGssapi.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10503,7 +9428,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatIo {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatIo
+        // CompositeType
         if (PgCatalog.Types.PgStatIo.is(from)) {
           return {
             backendType: PgCatalog.Types.Text.parse(from.backendType),
@@ -10531,7 +9456,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressAnalyze {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressAnalyze
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressAnalyze.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10557,7 +9482,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressBasebackup {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressBasebackup
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressBasebackup.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10575,7 +9500,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressCluster {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressCluster
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressCluster.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10605,7 +9530,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressCopy {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressCopy
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressCopy.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10625,7 +9550,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressCreateIndex {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressCreateIndex
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressCreateIndex.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10651,7 +9576,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatProgressVacuum {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatProgressVacuum
+        // CompositeType
         if (PgCatalog.Types.PgStatProgressVacuum.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10672,7 +9597,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatRecoveryPrefetch {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatRecoveryPrefetch
+        // CompositeType
         if (PgCatalog.Types.PgStatRecoveryPrefetch.is(from)) {
           return {
             statsReset: PgCatalog.Types.Timestamptz.parse(from.statsReset),
@@ -10692,7 +9617,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatReplication {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatReplication
+        // CompositeType
         if (PgCatalog.Types.PgStatReplication.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10722,7 +9647,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatReplicationSlots {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatReplicationSlots
+        // CompositeType
         if (PgCatalog.Types.PgStatReplicationSlots.is(from)) {
           return {
             slotName: PgCatalog.Types.Text.parse(from.slotName),
@@ -10742,7 +9667,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSlru {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSlru
+        // CompositeType
         if (PgCatalog.Types.PgStatSlru.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -10761,7 +9686,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSsl {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSsl
+        // CompositeType
         if (PgCatalog.Types.PgStatSsl.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -10779,7 +9704,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSubscription {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSubscription
+        // CompositeType
         if (PgCatalog.Types.PgStatSubscription.is(from)) {
           return {
             subid: PgCatalog.Types.Oid.parse(from.subid),
@@ -10805,7 +9730,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSubscriptionStats {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSubscriptionStats
+        // CompositeType
         if (PgCatalog.Types.PgStatSubscriptionStats.is(from)) {
           return {
             subid: PgCatalog.Types.Oid.parse(from.subid),
@@ -10820,7 +9745,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSysIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSysIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatSysIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10839,7 +9764,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatSysTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatSysTables
+        // CompositeType
         if (PgCatalog.Types.PgStatSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10879,7 +9804,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserFunctions {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatUserFunctions
+        // CompositeType
         if (PgCatalog.Types.PgStatUserFunctions.is(from)) {
           return {
             funcid: PgCatalog.Types.Oid.parse(from.funcid),
@@ -10895,7 +9820,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatUserIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatUserIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10914,7 +9839,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatUserTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatUserTables
+        // CompositeType
         if (PgCatalog.Types.PgStatUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -10954,7 +9879,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatWal {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatWal
+        // CompositeType
         if (PgCatalog.Types.PgStatWal.is(from)) {
           return {
             walRecords: PgCatalog.Types.Int8.parse(from.walRecords),
@@ -10973,7 +9898,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatWalReceiver {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatWalReceiver
+        // CompositeType
         if (PgCatalog.Types.PgStatWalReceiver.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -11004,7 +9929,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactAllTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatXactAllTables
+        // CompositeType
         if (PgCatalog.Types.PgStatXactAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11026,7 +9951,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactSysTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatXactSysTables
+        // CompositeType
         if (PgCatalog.Types.PgStatXactSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11048,7 +9973,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactUserFunctions {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatXactUserFunctions
+        // CompositeType
         if (PgCatalog.Types.PgStatXactUserFunctions.is(from)) {
           return {
             funcid: PgCatalog.Types.Oid.parse(from.funcid),
@@ -11064,7 +9989,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatXactUserTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatXactUserTables
+        // CompositeType
         if (PgCatalog.Types.PgStatXactUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11086,7 +10011,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioAllIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatioAllIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11103,7 +10028,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllSequences {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioAllSequences
+        // CompositeType
         if (PgCatalog.Types.PgStatioAllSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11118,7 +10043,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioAllTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioAllTables
+        // CompositeType
         if (PgCatalog.Types.PgStatioAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11139,7 +10064,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioSysIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatioSysIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11156,7 +10081,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysSequences {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioSysSequences
+        // CompositeType
         if (PgCatalog.Types.PgStatioSysSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11171,7 +10096,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioSysTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioSysTables
+        // CompositeType
         if (PgCatalog.Types.PgStatioSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11192,7 +10117,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserIndexes {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioUserIndexes
+        // CompositeType
         if (PgCatalog.Types.PgStatioUserIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11209,7 +10134,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserSequences {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioUserSequences
+        // CompositeType
         if (PgCatalog.Types.PgStatioUserSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11224,7 +10149,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatioUserTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatioUserTables
+        // CompositeType
         if (PgCatalog.Types.PgStatioUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -11245,7 +10170,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatistic {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatistic
+        // CompositeType
         if (PgCatalog.Types.PgStatistic.is(from)) {
           return {
             starelid: PgCatalog.Types.Oid.parse(from.starelid),
@@ -11286,7 +10211,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExt {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatisticExt
+        // CompositeType
         if (PgCatalog.Types.PgStatisticExt.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11305,7 +10230,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatisticExtData {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatisticExtData
+        // CompositeType
         if (PgCatalog.Types.PgStatisticExtData.is(from)) {
           return {
             stxoid: PgCatalog.Types.Oid.parse(from.stxoid),
@@ -11325,7 +10250,7 @@ export namespace PgCatalog {
     }
     export namespace PgStats {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStats
+        // CompositeType
         if (PgCatalog.Types.PgStats.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -11359,7 +10284,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatsExt {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatsExt
+        // CompositeType
         if (PgCatalog.Types.PgStatsExt.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -11396,7 +10321,7 @@ export namespace PgCatalog {
     }
     export namespace PgStatsExtExprs {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgStatsExtExprs
+        // CompositeType
         if (PgCatalog.Types.PgStatsExtExprs.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -11435,7 +10360,7 @@ export namespace PgCatalog {
     }
     export namespace PgSubscription {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSubscription
+        // CompositeType
         if (PgCatalog.Types.PgSubscription.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11466,7 +10391,7 @@ export namespace PgCatalog {
     }
     export namespace PgSubscriptionRel {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgSubscriptionRel
+        // CompositeType
         if (PgCatalog.Types.PgSubscriptionRel.is(from)) {
           return {
             srsubid: PgCatalog.Types.Oid.parse(from.srsubid),
@@ -11480,7 +10405,7 @@ export namespace PgCatalog {
     }
     export namespace PgTables {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTables
+        // CompositeType
         if (PgCatalog.Types.PgTables.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -11498,7 +10423,7 @@ export namespace PgCatalog {
     }
     export namespace PgTablespace {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTablespace
+        // CompositeType
         if (PgCatalog.Types.PgTablespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11513,7 +10438,7 @@ export namespace PgCatalog {
     }
     export namespace PgTimezoneAbbrevs {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTimezoneAbbrevs
+        // CompositeType
         if (PgCatalog.Types.PgTimezoneAbbrevs.is(from)) {
           return {
             abbrev: PgCatalog.Types.Text.parse(from.abbrev),
@@ -11526,7 +10451,7 @@ export namespace PgCatalog {
     }
     export namespace PgTimezoneNames {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTimezoneNames
+        // CompositeType
         if (PgCatalog.Types.PgTimezoneNames.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -11540,7 +10465,7 @@ export namespace PgCatalog {
     }
     export namespace PgTransform {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTransform
+        // CompositeType
         if (PgCatalog.Types.PgTransform.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11555,7 +10480,7 @@ export namespace PgCatalog {
     }
     export namespace PgTrigger {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTrigger
+        // CompositeType
         if (PgCatalog.Types.PgTrigger.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11584,7 +10509,7 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfig {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTsConfig
+        // CompositeType
         if (PgCatalog.Types.PgTsConfig.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11599,7 +10524,7 @@ export namespace PgCatalog {
     }
     export namespace PgTsConfigMap {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTsConfigMap
+        // CompositeType
         if (PgCatalog.Types.PgTsConfigMap.is(from)) {
           return {
             mapcfg: PgCatalog.Types.Oid.parse(from.mapcfg),
@@ -11613,7 +10538,7 @@ export namespace PgCatalog {
     }
     export namespace PgTsDict {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTsDict
+        // CompositeType
         if (PgCatalog.Types.PgTsDict.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11629,7 +10554,7 @@ export namespace PgCatalog {
     }
     export namespace PgTsParser {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTsParser
+        // CompositeType
         if (PgCatalog.Types.PgTsParser.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11647,7 +10572,7 @@ export namespace PgCatalog {
     }
     export namespace PgTsTemplate {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgTsTemplate
+        // CompositeType
         if (PgCatalog.Types.PgTsTemplate.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11662,7 +10587,7 @@ export namespace PgCatalog {
     }
     export namespace PgType {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgType
+        // CompositeType
         if (PgCatalog.Types.PgType.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11704,7 +10629,7 @@ export namespace PgCatalog {
     }
     export namespace PgUser {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgUser
+        // CompositeType
         if (PgCatalog.Types.PgUser.is(from)) {
           return {
             usename: PgCatalog.Types.Name.parse(from.usename),
@@ -11723,7 +10648,7 @@ export namespace PgCatalog {
     }
     export namespace PgUserMapping {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgUserMapping
+        // CompositeType
         if (PgCatalog.Types.PgUserMapping.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11737,7 +10662,7 @@ export namespace PgCatalog {
     }
     export namespace PgUserMappings {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgUserMappings
+        // CompositeType
         if (PgCatalog.Types.PgUserMappings.is(from)) {
           return {
             umid: PgCatalog.Types.Oid.parse(from.umid),
@@ -11753,7 +10678,7 @@ export namespace PgCatalog {
     }
     export namespace PgViews {
       export function parse(from: any) {
-        // CompositeType PgCatalog.Types.PgViews
+        // CompositeType
         if (PgCatalog.Types.PgViews.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -11767,35 +10692,35 @@ export namespace PgCatalog {
     }
     export namespace Point {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Point
+        // Type
 
         return from;
       }
     }
     export namespace Polygon {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Polygon
+        // Type
 
         return from;
       }
     }
     export namespace Record {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Record
+        // Type
 
         return from;
       }
     }
     export namespace Refcursor {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Refcursor
+        // Type
 
         return from;
       }
     }
     export namespace Regclass {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regclass
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11803,7 +10728,7 @@ export namespace PgCatalog {
     }
     export namespace Regcollation {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regcollation
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11811,7 +10736,7 @@ export namespace PgCatalog {
     }
     export namespace Regconfig {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regconfig
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11819,7 +10744,7 @@ export namespace PgCatalog {
     }
     export namespace Regdictionary {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regdictionary
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11827,7 +10752,7 @@ export namespace PgCatalog {
     }
     export namespace Regnamespace {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regnamespace
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11835,7 +10760,7 @@ export namespace PgCatalog {
     }
     export namespace Regoper {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regoper
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11843,7 +10768,7 @@ export namespace PgCatalog {
     }
     export namespace Regoperator {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regoperator
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11851,7 +10776,7 @@ export namespace PgCatalog {
     }
     export namespace Regproc {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regproc
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11859,7 +10784,7 @@ export namespace PgCatalog {
     }
     export namespace Regprocedure {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regprocedure
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11867,7 +10792,7 @@ export namespace PgCatalog {
     }
     export namespace Regrole {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regrole
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11875,7 +10800,7 @@ export namespace PgCatalog {
     }
     export namespace Regtype {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Regtype
+        // Type
 
         if (from === null) return null;
         return Number.parseFloat(from);
@@ -11883,28 +10808,28 @@ export namespace PgCatalog {
     }
     export namespace TableAmHandler {
       export function parse(from: any) {
-        // Type PgCatalog.Types.TableAmHandler
+        // Type
 
         return from;
       }
     }
     export namespace Text {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Text
+        // Type
 
         return from;
       }
     }
     export namespace Tid {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tid
+        // Type
 
         return from;
       }
     }
     export namespace Time {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Time
+        // Type
 
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
@@ -11913,7 +10838,7 @@ export namespace PgCatalog {
     }
     export namespace Timestamp {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Timestamp
+        // Type
 
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
@@ -11922,7 +10847,7 @@ export namespace PgCatalog {
     }
     export namespace Timestamptz {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Timestamptz
+        // Type
 
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
@@ -11931,7 +10856,7 @@ export namespace PgCatalog {
     }
     export namespace Timetz {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Timetz
+        // Type
 
         if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
@@ -11940,84 +10865,84 @@ export namespace PgCatalog {
     }
     export namespace Trigger {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Trigger
+        // Type
 
         return from;
       }
     }
     export namespace TsmHandler {
       export function parse(from: any) {
-        // Type PgCatalog.Types.TsmHandler
+        // Type
 
         return from;
       }
     }
     export namespace Tsmultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tsmultirange
+        // Type
 
         return from;
       }
     }
     export namespace Tsquery {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tsquery
+        // Type
 
         return from;
       }
     }
     export namespace Tsrange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tsrange
+        // Type
 
         return from;
       }
     }
     export namespace Tstzmultirange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tstzmultirange
+        // Type
 
         return from;
       }
     }
     export namespace Tstzrange {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tstzrange
+        // Type
 
         return from;
       }
     }
     export namespace Tsvector {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Tsvector
+        // Type
 
         return from;
       }
     }
     export namespace TxidSnapshot {
       export function parse(from: any) {
-        // Type PgCatalog.Types.TxidSnapshot
+        // Type
 
         return from;
       }
     }
     export namespace Unknown {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Unknown
+        // Type
 
         return from;
       }
     }
     export namespace Uuid {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Uuid
+        // Type
 
         return from ? new UUID(from) : null;
       }
     }
     export namespace Varbit {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Varbit
+        // Type
 
         if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
@@ -12031,35 +10956,35 @@ export namespace PgCatalog {
     }
     export namespace Varchar {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Varchar
+        // Type
 
         return from;
       }
     }
     export namespace Void {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Void
+        // Type
 
         return from;
       }
     }
     export namespace Xid {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Xid
+        // Type
 
         return from;
       }
     }
     export namespace Xid8 {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Xid8
+        // Type
 
         return from;
       }
     }
     export namespace Xml {
       export function parse(from: any) {
-        // Type PgCatalog.Types.Xml
+        // Type
 
         return from;
       }
@@ -12265,343 +11190,223 @@ export namespace Public {
   export namespace Types {
     export namespace ActorArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.ActorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Actor.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Actor.parse(e));
       }
     }
     export namespace ActorInfoArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.ActorInfoArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ActorInfo.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ActorInfo.parse(e));
       }
     }
     export namespace AddressArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.AddressArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Address.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Address.parse(e));
       }
     }
     export namespace CategoryArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.CategoryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Category.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Category.parse(e));
       }
     }
     export namespace CityArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.CityArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return City.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => City.parse(e));
       }
     }
     export namespace CountryArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.CountryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Country.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Country.parse(e));
       }
     }
     export namespace CustomerArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.CustomerArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Customer.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Customer.parse(e));
       }
     }
     export namespace CustomerListArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.CustomerListArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CustomerList.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => CustomerList.parse(e));
       }
     }
     export namespace FilmArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.FilmArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Film.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Film.parse(e));
       }
     }
     export namespace FilmActorArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.FilmActorArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return FilmActor.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => FilmActor.parse(e));
       }
     }
     export namespace FilmCategoryArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.FilmCategoryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return FilmCategory.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => FilmCategory.parse(e));
       }
     }
     export namespace FilmListArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.FilmListArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return FilmList.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => FilmList.parse(e));
       }
     }
     export namespace InventoryArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.InventoryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Inventory.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Inventory.parse(e));
       }
     }
     export namespace LanguageArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.LanguageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Language.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Language.parse(e));
       }
     }
     export namespace MpaaRatingArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.MpaaRatingArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return MpaaRating.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => MpaaRating.parse(e));
       }
     }
     export namespace NicerButSlowerFilmListArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.NicerButSlowerFilmListArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return NicerButSlowerFilmList.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => NicerButSlowerFilmList.parse(e));
       }
     }
     export namespace PaymentArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.PaymentArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Payment.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Payment.parse(e));
       }
     }
     export namespace RentalArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.RentalArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Rental.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Rental.parse(e));
       }
     }
     export namespace SalesByFilmCategoryArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.SalesByFilmCategoryArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SalesByFilmCategory.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SalesByFilmCategory.parse(e));
       }
     }
     export namespace SalesByStoreArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.SalesByStoreArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SalesByStore.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SalesByStore.parse(e));
       }
     }
     export namespace StaffArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.StaffArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Staff.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Staff.parse(e));
       }
     }
     export namespace StaffListArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.StaffListArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return StaffList.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => StaffList.parse(e));
       }
     }
     export namespace StoreArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.StoreArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Store.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Store.parse(e));
       }
     }
     export namespace YearArray {
       export function parse(from: any) {
-        // ArrayType Public.Types.YearArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Year.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Year.parse(e));
       }
     }
     export namespace Actor {
       export function parse(from: any) {
-        // CompositeType Public.Types.Actor
+        // CompositeType
         if (Public.Types.Actor.is(from)) {
           return {
             actorId: PgCatalog.Types.Int4.parse(from.actorId),
@@ -12615,7 +11420,7 @@ export namespace Public {
     }
     export namespace ActorInfo {
       export function parse(from: any) {
-        // CompositeType Public.Types.ActorInfo
+        // CompositeType
         if (Public.Types.ActorInfo.is(from)) {
           return {
             actorId: PgCatalog.Types.Int4.parse(from.actorId),
@@ -12629,7 +11434,7 @@ export namespace Public {
     }
     export namespace Address {
       export function parse(from: any) {
-        // CompositeType Public.Types.Address
+        // CompositeType
         if (Public.Types.Address.is(from)) {
           return {
             addressId: PgCatalog.Types.Int4.parse(from.addressId),
@@ -12647,7 +11452,7 @@ export namespace Public {
     }
     export namespace Category {
       export function parse(from: any) {
-        // CompositeType Public.Types.Category
+        // CompositeType
         if (Public.Types.Category.is(from)) {
           return {
             categoryId: PgCatalog.Types.Int4.parse(from.categoryId),
@@ -12660,7 +11465,7 @@ export namespace Public {
     }
     export namespace City {
       export function parse(from: any) {
-        // CompositeType Public.Types.City
+        // CompositeType
         if (Public.Types.City.is(from)) {
           return {
             cityId: PgCatalog.Types.Int4.parse(from.cityId),
@@ -12674,7 +11479,7 @@ export namespace Public {
     }
     export namespace Country {
       export function parse(from: any) {
-        // CompositeType Public.Types.Country
+        // CompositeType
         if (Public.Types.Country.is(from)) {
           return {
             countryId: PgCatalog.Types.Int4.parse(from.countryId),
@@ -12687,7 +11492,7 @@ export namespace Public {
     }
     export namespace Customer {
       export function parse(from: any) {
-        // CompositeType Public.Types.Customer
+        // CompositeType
         if (Public.Types.Customer.is(from)) {
           return {
             customerId: PgCatalog.Types.Int4.parse(from.customerId),
@@ -12707,7 +11512,7 @@ export namespace Public {
     }
     export namespace CustomerList {
       export function parse(from: any) {
-        // CompositeType Public.Types.CustomerList
+        // CompositeType
         if (Public.Types.CustomerList.is(from)) {
           return {
             id: PgCatalog.Types.Int4.parse(from.id),
@@ -12726,7 +11531,7 @@ export namespace Public {
     }
     export namespace Film {
       export function parse(from: any) {
-        // CompositeType Public.Types.Film
+        // CompositeType
         if (Public.Types.Film.is(from)) {
           return {
             filmId: PgCatalog.Types.Int4.parse(from.filmId),
@@ -12753,7 +11558,7 @@ export namespace Public {
     }
     export namespace FilmActor {
       export function parse(from: any) {
-        // CompositeType Public.Types.FilmActor
+        // CompositeType
         if (Public.Types.FilmActor.is(from)) {
           return {
             actorId: PgCatalog.Types.Int2.parse(from.actorId),
@@ -12766,7 +11571,7 @@ export namespace Public {
     }
     export namespace FilmCategory {
       export function parse(from: any) {
-        // CompositeType Public.Types.FilmCategory
+        // CompositeType
         if (Public.Types.FilmCategory.is(from)) {
           return {
             filmId: PgCatalog.Types.Int2.parse(from.filmId),
@@ -12779,7 +11584,7 @@ export namespace Public {
     }
     export namespace FilmList {
       export function parse(from: any) {
-        // CompositeType Public.Types.FilmList
+        // CompositeType
         if (Public.Types.FilmList.is(from)) {
           return {
             fid: PgCatalog.Types.Int4.parse(from.fid),
@@ -12797,7 +11602,7 @@ export namespace Public {
     }
     export namespace Inventory {
       export function parse(from: any) {
-        // CompositeType Public.Types.Inventory
+        // CompositeType
         if (Public.Types.Inventory.is(from)) {
           return {
             inventoryId: PgCatalog.Types.Int4.parse(from.inventoryId),
@@ -12811,7 +11616,7 @@ export namespace Public {
     }
     export namespace Language {
       export function parse(from: any) {
-        // CompositeType Public.Types.Language
+        // CompositeType
         if (Public.Types.Language.is(from)) {
           return {
             languageId: PgCatalog.Types.Int4.parse(from.languageId),
@@ -12824,14 +11629,21 @@ export namespace Public {
     }
     export namespace MpaaRating {
       export function parse(from: any) {
-        // Enum Public.Types.MpaaRating
-
-        return from;
+        // Enum
+        if (
+          Object.values(Public.Types.MpaaRating).includes(
+            from as Public.Types.MpaaRating,
+          )
+        ) {
+          return from as Public.Types.MpaaRating;
+        } else {
+          return undefined;
+        }
       }
     }
     export namespace NicerButSlowerFilmList {
       export function parse(from: any) {
-        // CompositeType Public.Types.NicerButSlowerFilmList
+        // CompositeType
         if (Public.Types.NicerButSlowerFilmList.is(from)) {
           return {
             fid: PgCatalog.Types.Int4.parse(from.fid),
@@ -12849,7 +11661,7 @@ export namespace Public {
     }
     export namespace Payment {
       export function parse(from: any) {
-        // CompositeType Public.Types.Payment
+        // CompositeType
         if (Public.Types.Payment.is(from)) {
           return {
             paymentId: PgCatalog.Types.Int4.parse(from.paymentId),
@@ -12865,7 +11677,7 @@ export namespace Public {
     }
     export namespace Rental {
       export function parse(from: any) {
-        // CompositeType Public.Types.Rental
+        // CompositeType
         if (Public.Types.Rental.is(from)) {
           return {
             rentalId: PgCatalog.Types.Int4.parse(from.rentalId),
@@ -12882,7 +11694,7 @@ export namespace Public {
     }
     export namespace SalesByFilmCategory {
       export function parse(from: any) {
-        // CompositeType Public.Types.SalesByFilmCategory
+        // CompositeType
         if (Public.Types.SalesByFilmCategory.is(from)) {
           return {
             category: PgCatalog.Types.Varchar.parse(from.category),
@@ -12894,7 +11706,7 @@ export namespace Public {
     }
     export namespace SalesByStore {
       export function parse(from: any) {
-        // CompositeType Public.Types.SalesByStore
+        // CompositeType
         if (Public.Types.SalesByStore.is(from)) {
           return {
             store: PgCatalog.Types.Text.parse(from.store),
@@ -12907,7 +11719,7 @@ export namespace Public {
     }
     export namespace Staff {
       export function parse(from: any) {
-        // CompositeType Public.Types.Staff
+        // CompositeType
         if (Public.Types.Staff.is(from)) {
           return {
             staffId: PgCatalog.Types.Int4.parse(from.staffId),
@@ -12928,7 +11740,7 @@ export namespace Public {
     }
     export namespace StaffList {
       export function parse(from: any) {
-        // CompositeType Public.Types.StaffList
+        // CompositeType
         if (Public.Types.StaffList.is(from)) {
           return {
             id: PgCatalog.Types.Int4.parse(from.id),
@@ -12946,7 +11758,7 @@ export namespace Public {
     }
     export namespace Store {
       export function parse(from: any) {
-        // CompositeType Public.Types.Store
+        // CompositeType
         if (Public.Types.Store.is(from)) {
           return {
             storeId: PgCatalog.Types.Int4.parse(from.storeId),
@@ -12960,7 +11772,7 @@ export namespace Public {
     }
     export namespace Year {
       export function parse(from: any) {
-        // DomainType Public.Types.Year
+        // DomainType
         return PgCatalog.Types.Int4.parse(from);
       }
     }
@@ -12969,7 +11781,7 @@ export namespace Public {
     export namespace FilmInStock {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.FilmInStock.Parameters
+          // CompositeType
           if (Public.Procedures.FilmInStock.Parameters.is(from)) {
             return {
               pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
@@ -12981,7 +11793,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.FilmInStock.Results
+          // AliasType
           return PgCatalog.Types.Int4.parse(from);
         }
       }
@@ -12989,7 +11801,7 @@ export namespace Public {
     export namespace FilmNotInStock {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.FilmNotInStock.Parameters
+          // CompositeType
           if (Public.Procedures.FilmNotInStock.Parameters.is(from)) {
             return {
               pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
@@ -13001,7 +11813,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.FilmNotInStock.Results
+          // AliasType
           return PgCatalog.Types.Int4.parse(from);
         }
       }
@@ -13009,7 +11821,7 @@ export namespace Public {
     export namespace GetCustomerBalance {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.GetCustomerBalance.Parameters
+          // CompositeType
           if (Public.Procedures.GetCustomerBalance.Parameters.is(from)) {
             return {
               pCustomerId: PgCatalog.Types.Int4.parse(from.pCustomerId),
@@ -13023,7 +11835,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.GetCustomerBalance.Results
+          // AliasType
           return PgCatalog.Types.Numeric.parse(from);
         }
       }
@@ -13031,7 +11843,7 @@ export namespace Public {
     export namespace InventoryHeldByCustomer {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.InventoryHeldByCustomer.Parameters
+          // CompositeType
           if (Public.Procedures.InventoryHeldByCustomer.Parameters.is(from)) {
             return {
               pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
@@ -13042,7 +11854,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.InventoryHeldByCustomer.Results
+          // AliasType
           return PgCatalog.Types.Int4.parse(from);
         }
       }
@@ -13050,7 +11862,7 @@ export namespace Public {
     export namespace InventoryInStock {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.InventoryInStock.Parameters
+          // CompositeType
           if (Public.Procedures.InventoryInStock.Parameters.is(from)) {
             return {
               pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
@@ -13061,7 +11873,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.InventoryInStock.Results
+          // AliasType
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -13069,7 +11881,7 @@ export namespace Public {
     export namespace LastDay {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.LastDay.Parameters
+          // CompositeType
           if (Public.Procedures.LastDay.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Timestamp.parse(from.argument_0),
@@ -13080,7 +11892,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.LastDay.Results
+          // AliasType
           return PgCatalog.Types.Date.parse(from);
         }
       }
@@ -13088,7 +11900,7 @@ export namespace Public {
     export namespace RewardsReport {
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Public.Procedures.RewardsReport.Parameters
+          // CompositeType
           if (Public.Procedures.RewardsReport.Parameters.is(from)) {
             return {
               minMonthlyPurchases: PgCatalog.Types.Int4.parse(
@@ -13104,7 +11916,7 @@ export namespace Public {
       }
       export namespace Results {
         export function parse(from: any) {
-          // AliasType Public.Procedures.RewardsReport.Results
+          // AliasType
           return Public.Types.Customer.parse(from);
         }
       }
@@ -13162,469 +11974,312 @@ export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.AdministrableRoleAuthorizationsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return AdministrableRoleAuthorizations.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) =>
+          AdministrableRoleAuthorizations.parse(e),
+        );
       }
     }
     export namespace ApplicableRolesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ApplicableRolesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ApplicableRoles.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ApplicableRoles.parse(e));
       }
     }
     export namespace AttributesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.AttributesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Attributes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Attributes.parse(e));
       }
     }
     export namespace CardinalNumberArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CardinalNumberArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CardinalNumber.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => CardinalNumber.parse(e));
       }
     }
     export namespace CharacterDataArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CharacterDataArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CharacterData.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => CharacterData.parse(e));
       }
     }
     export namespace CharacterSetsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CharacterSetsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CharacterSets.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => CharacterSets.parse(e));
       }
     }
     export namespace CheckConstraintRoutineUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CheckConstraintRoutineUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CheckConstraintRoutineUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) =>
+          CheckConstraintRoutineUsage.parse(e),
+        );
       }
     }
     export namespace CheckConstraintsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CheckConstraintsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CheckConstraints.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => CheckConstraints.parse(e));
       }
     }
     export namespace CollationCharacterSetApplicabilityArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CollationCharacterSetApplicabilityArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return CollationCharacterSetApplicability.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) =>
+          CollationCharacterSetApplicability.parse(e),
+        );
       }
     }
     export namespace CollationsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.CollationsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Collations.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Collations.parse(e));
       }
     }
     export namespace ColumnColumnUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnColumnUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ColumnColumnUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ColumnColumnUsage.parse(e));
       }
     }
     export namespace ColumnDomainUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnDomainUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ColumnDomainUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ColumnDomainUsage.parse(e));
       }
     }
     export namespace ColumnOptionsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnOptionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ColumnOptions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ColumnOptions.parse(e));
       }
     }
     export namespace ColumnPrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnPrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ColumnPrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ColumnPrivileges.parse(e));
       }
     }
     export namespace ColumnUdtUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnUdtUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ColumnUdtUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ColumnUdtUsage.parse(e));
       }
     }
     export namespace ColumnsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ColumnsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Columns.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Columns.parse(e));
       }
     }
     export namespace ConstraintColumnUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ConstraintColumnUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ConstraintColumnUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ConstraintColumnUsage.parse(e));
       }
     }
     export namespace ConstraintTableUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ConstraintTableUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ConstraintTableUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ConstraintTableUsage.parse(e));
       }
     }
     export namespace DataTypePrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.DataTypePrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return DataTypePrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => DataTypePrivileges.parse(e));
       }
     }
     export namespace DomainConstraintsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.DomainConstraintsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return DomainConstraints.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => DomainConstraints.parse(e));
       }
     }
     export namespace DomainUdtUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.DomainUdtUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return DomainUdtUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => DomainUdtUsage.parse(e));
       }
     }
     export namespace DomainsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.DomainsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Domains.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Domains.parse(e));
       }
     }
     export namespace ElementTypesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ElementTypesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ElementTypes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ElementTypes.parse(e));
       }
     }
     export namespace EnabledRolesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.EnabledRolesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return EnabledRoles.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => EnabledRoles.parse(e));
       }
     }
     export namespace ForeignDataWrapperOptionsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignDataWrapperOptionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignDataWrapperOptions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignDataWrapperOptions.parse(e));
       }
     }
     export namespace ForeignDataWrappersArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignDataWrappersArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignDataWrappers.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignDataWrappers.parse(e));
       }
     }
     export namespace ForeignServerOptionsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignServerOptionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignServerOptions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignServerOptions.parse(e));
       }
     }
     export namespace ForeignServersArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignServersArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignServers.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignServers.parse(e));
       }
     }
     export namespace ForeignTableOptionsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignTableOptionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignTableOptions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignTableOptions.parse(e));
       }
     }
     export namespace ForeignTablesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ForeignTablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ForeignTables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ForeignTables.parse(e));
       }
     }
     export namespace InformationSchemaCatalogNameArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.InformationSchemaCatalogNameArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return InformationSchemaCatalogName.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) =>
+          InformationSchemaCatalogName.parse(e),
+        );
       }
     }
     export namespace KeyColumnUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.KeyColumnUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return KeyColumnUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => KeyColumnUsage.parse(e));
       }
     }
     export namespace ParametersArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ParametersArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Parameters.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Parameters.parse(e));
       }
     }
     export namespace PgForeignDataWrappers {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.PgForeignDataWrappers
+        // CompositeType
         if (InformationSchema.Types.PgForeignDataWrappers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -13652,7 +12307,7 @@ export namespace InformationSchema {
     }
     export namespace PgForeignServers {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.PgForeignServers
+        // CompositeType
         if (InformationSchema.Types.PgForeignServers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -13687,7 +12342,7 @@ export namespace InformationSchema {
     }
     export namespace PgForeignTableColumns {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.PgForeignTableColumns
+        // CompositeType
         if (InformationSchema.Types.PgForeignTableColumns.is(from)) {
           return {
             nspname: PgCatalog.Types.Name.parse(from.nspname),
@@ -13701,7 +12356,7 @@ export namespace InformationSchema {
     }
     export namespace PgForeignTables {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.PgForeignTables
+        // CompositeType
         if (InformationSchema.Types.PgForeignTables.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13731,7 +12386,7 @@ export namespace InformationSchema {
     }
     export namespace PgUserMappings {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.PgUserMappings
+        // CompositeType
         if (InformationSchema.Types.PgUserMappings.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -13757,511 +12412,331 @@ export namespace InformationSchema {
     }
     export namespace ReferentialConstraintsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ReferentialConstraintsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ReferentialConstraints.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ReferentialConstraints.parse(e));
       }
     }
     export namespace RoleColumnGrantsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoleColumnGrantsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoleColumnGrants.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoleColumnGrants.parse(e));
       }
     }
     export namespace RoleRoutineGrantsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoleRoutineGrantsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoleRoutineGrants.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoleRoutineGrants.parse(e));
       }
     }
     export namespace RoleTableGrantsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoleTableGrantsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoleTableGrants.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoleTableGrants.parse(e));
       }
     }
     export namespace RoleUdtGrantsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoleUdtGrantsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoleUdtGrants.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoleUdtGrants.parse(e));
       }
     }
     export namespace RoleUsageGrantsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoleUsageGrantsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoleUsageGrants.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoleUsageGrants.parse(e));
       }
     }
     export namespace RoutineColumnUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutineColumnUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoutineColumnUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoutineColumnUsage.parse(e));
       }
     }
     export namespace RoutinePrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutinePrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoutinePrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoutinePrivileges.parse(e));
       }
     }
     export namespace RoutineRoutineUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutineRoutineUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoutineRoutineUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoutineRoutineUsage.parse(e));
       }
     }
     export namespace RoutineSequenceUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutineSequenceUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoutineSequenceUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoutineSequenceUsage.parse(e));
       }
     }
     export namespace RoutineTableUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutineTableUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return RoutineTableUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => RoutineTableUsage.parse(e));
       }
     }
     export namespace RoutinesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.RoutinesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Routines.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Routines.parse(e));
       }
     }
     export namespace SchemataArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SchemataArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Schemata.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Schemata.parse(e));
       }
     }
     export namespace SequencesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SequencesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Sequences.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Sequences.parse(e));
       }
     }
     export namespace SqlFeaturesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SqlFeaturesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SqlFeatures.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SqlFeatures.parse(e));
       }
     }
     export namespace SqlIdentifierArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SqlIdentifierArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SqlIdentifier.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SqlIdentifier.parse(e));
       }
     }
     export namespace SqlImplementationInfoArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SqlImplementationInfoArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SqlImplementationInfo.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SqlImplementationInfo.parse(e));
       }
     }
     export namespace SqlPartsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SqlPartsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SqlParts.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SqlParts.parse(e));
       }
     }
     export namespace SqlSizingArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.SqlSizingArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return SqlSizing.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => SqlSizing.parse(e));
       }
     }
     export namespace TableConstraintsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TableConstraintsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return TableConstraints.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => TableConstraints.parse(e));
       }
     }
     export namespace TablePrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TablePrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return TablePrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => TablePrivileges.parse(e));
       }
     }
     export namespace TablesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TablesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Tables.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Tables.parse(e));
       }
     }
     export namespace TimeStampArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TimeStampArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return TimeStamp.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => TimeStamp.parse(e));
       }
     }
     export namespace TransformsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TransformsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Transforms.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Transforms.parse(e));
       }
     }
     export namespace TriggeredUpdateColumnsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TriggeredUpdateColumnsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return TriggeredUpdateColumns.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => TriggeredUpdateColumns.parse(e));
       }
     }
     export namespace TriggersArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.TriggersArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Triggers.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Triggers.parse(e));
       }
     }
     export namespace UdtPrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.UdtPrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return UdtPrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => UdtPrivileges.parse(e));
       }
     }
     export namespace UsagePrivilegesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.UsagePrivilegesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return UsagePrivileges.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => UsagePrivileges.parse(e));
       }
     }
     export namespace UserDefinedTypesArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.UserDefinedTypesArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return UserDefinedTypes.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => UserDefinedTypes.parse(e));
       }
     }
     export namespace UserMappingOptionsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.UserMappingOptionsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return UserMappingOptions.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => UserMappingOptions.parse(e));
       }
     }
     export namespace UserMappingsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.UserMappingsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return UserMappings.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => UserMappings.parse(e));
       }
     }
     export namespace ViewColumnUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ViewColumnUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ViewColumnUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ViewColumnUsage.parse(e));
       }
     }
     export namespace ViewRoutineUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ViewRoutineUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ViewRoutineUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ViewRoutineUsage.parse(e));
       }
     }
     export namespace ViewTableUsageArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ViewTableUsageArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return ViewTableUsage.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => ViewTableUsage.parse(e));
       }
     }
     export namespace ViewsArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.ViewsArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return Views.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => Views.parse(e));
       }
     }
     export namespace YesOrNoArray {
       export function parse(from: any) {
-        // ArrayType InformationSchema.Types.YesOrNoArray
+        // ArrayType
 
-        if (from === null) return null;
-        const rawArray = JSON.parse(from);
-        return rawArray.map((e: unknown) => {
-          return YesOrNo.parse(
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            `${e}`,
-          );
-        });
+        if (from === null || from === undefined) return null;
+        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        return rawArray.map((e: unknown) => YesOrNo.parse(e));
       }
     }
     export namespace AdministrableRoleAuthorizations {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.AdministrableRoleAuthorizations
+        // CompositeType
         if (InformationSchema.Types.AdministrableRoleAuthorizations.is(from)) {
           return {
             grantee: InformationSchema.Types.SqlIdentifier.parse(from.grantee),
@@ -14278,7 +12753,7 @@ export namespace InformationSchema {
     }
     export namespace ApplicableRoles {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ApplicableRoles
+        // CompositeType
         if (InformationSchema.Types.ApplicableRoles.is(from)) {
           return {
             grantee: InformationSchema.Types.SqlIdentifier.parse(from.grantee),
@@ -14295,7 +12770,7 @@ export namespace InformationSchema {
     }
     export namespace Attributes {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Attributes
+        // CompositeType
         if (InformationSchema.Types.Attributes.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14395,19 +12870,19 @@ export namespace InformationSchema {
     }
     export namespace CardinalNumber {
       export function parse(from: any) {
-        // DomainType InformationSchema.Types.CardinalNumber
+        // DomainType
         return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace CharacterData {
       export function parse(from: any) {
-        // DomainType InformationSchema.Types.CharacterData
+        // DomainType
         return PgCatalog.Types.Varchar.parse(from);
       }
     }
     export namespace CharacterSets {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.CharacterSets
+        // CompositeType
         if (InformationSchema.Types.CharacterSets.is(from)) {
           return {
             characterSetCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14441,7 +12916,7 @@ export namespace InformationSchema {
     }
     export namespace CheckConstraintRoutineUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.CheckConstraintRoutineUsage
+        // CompositeType
         if (InformationSchema.Types.CheckConstraintRoutineUsage.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14469,7 +12944,7 @@ export namespace InformationSchema {
     }
     export namespace CheckConstraints {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.CheckConstraints
+        // CompositeType
         if (InformationSchema.Types.CheckConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14491,7 +12966,7 @@ export namespace InformationSchema {
     }
     export namespace CollationCharacterSetApplicability {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.CollationCharacterSetApplicability
+        // CompositeType
         if (
           InformationSchema.Types.CollationCharacterSetApplicability.is(from)
         ) {
@@ -14521,7 +12996,7 @@ export namespace InformationSchema {
     }
     export namespace Collations {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Collations
+        // CompositeType
         if (InformationSchema.Types.Collations.is(from)) {
           return {
             collationCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14543,7 +13018,7 @@ export namespace InformationSchema {
     }
     export namespace ColumnColumnUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ColumnColumnUsage
+        // CompositeType
         if (InformationSchema.Types.ColumnColumnUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14568,7 +13043,7 @@ export namespace InformationSchema {
     }
     export namespace ColumnDomainUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ColumnDomainUsage
+        // CompositeType
         if (InformationSchema.Types.ColumnDomainUsage.is(from)) {
           return {
             domainCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14599,7 +13074,7 @@ export namespace InformationSchema {
     }
     export namespace ColumnOptions {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ColumnOptions
+        // CompositeType
         if (InformationSchema.Types.ColumnOptions.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14627,7 +13102,7 @@ export namespace InformationSchema {
     }
     export namespace ColumnPrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ColumnPrivileges
+        // CompositeType
         if (InformationSchema.Types.ColumnPrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -14657,7 +13132,7 @@ export namespace InformationSchema {
     }
     export namespace ColumnUdtUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ColumnUdtUsage
+        // CompositeType
         if (InformationSchema.Types.ColumnUdtUsage.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14686,7 +13161,7 @@ export namespace InformationSchema {
     }
     export namespace Columns {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Columns
+        // CompositeType
         if (InformationSchema.Types.Columns.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14823,7 +13298,7 @@ export namespace InformationSchema {
     }
     export namespace ConstraintColumnUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ConstraintColumnUsage
+        // CompositeType
         if (InformationSchema.Types.ConstraintColumnUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14854,7 +13329,7 @@ export namespace InformationSchema {
     }
     export namespace ConstraintTableUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ConstraintTableUsage
+        // CompositeType
         if (InformationSchema.Types.ConstraintTableUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14882,7 +13357,7 @@ export namespace InformationSchema {
     }
     export namespace DataTypePrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.DataTypePrivileges
+        // CompositeType
         if (InformationSchema.Types.DataTypePrivileges.is(from)) {
           return {
             objectCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14907,7 +13382,7 @@ export namespace InformationSchema {
     }
     export namespace DomainConstraints {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.DomainConstraints
+        // CompositeType
         if (InformationSchema.Types.DomainConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14941,7 +13416,7 @@ export namespace InformationSchema {
     }
     export namespace DomainUdtUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.DomainUdtUsage
+        // CompositeType
         if (InformationSchema.Types.DomainUdtUsage.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14967,7 +13442,7 @@ export namespace InformationSchema {
     }
     export namespace Domains {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Domains
+        // CompositeType
         if (InformationSchema.Types.Domains.is(from)) {
           return {
             domainCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15057,7 +13532,7 @@ export namespace InformationSchema {
     }
     export namespace ElementTypes {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ElementTypes
+        // CompositeType
         if (InformationSchema.Types.ElementTypes.is(from)) {
           return {
             objectCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15154,7 +13629,7 @@ export namespace InformationSchema {
     }
     export namespace EnabledRoles {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.EnabledRoles
+        // CompositeType
         if (InformationSchema.Types.EnabledRoles.is(from)) {
           return {
             roleName: InformationSchema.Types.SqlIdentifier.parse(
@@ -15167,7 +13642,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignDataWrapperOptions {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignDataWrapperOptions
+        // CompositeType
         if (InformationSchema.Types.ForeignDataWrapperOptions.is(from)) {
           return {
             foreignDataWrapperCatalog:
@@ -15190,7 +13665,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignDataWrappers {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignDataWrappers
+        // CompositeType
         if (InformationSchema.Types.ForeignDataWrappers.is(from)) {
           return {
             foreignDataWrapperCatalog:
@@ -15218,7 +13693,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignServerOptions {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignServerOptions
+        // CompositeType
         if (InformationSchema.Types.ForeignServerOptions.is(from)) {
           return {
             foreignServerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15240,7 +13715,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignServers {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignServers
+        // CompositeType
         if (InformationSchema.Types.ForeignServers.is(from)) {
           return {
             foreignServerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15273,7 +13748,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignTableOptions {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignTableOptions
+        // CompositeType
         if (InformationSchema.Types.ForeignTableOptions.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15298,7 +13773,7 @@ export namespace InformationSchema {
     }
     export namespace ForeignTables {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ForeignTables
+        // CompositeType
         if (InformationSchema.Types.ForeignTables.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15323,7 +13798,7 @@ export namespace InformationSchema {
     }
     export namespace InformationSchemaCatalogName {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.InformationSchemaCatalogName
+        // CompositeType
         if (InformationSchema.Types.InformationSchemaCatalogName.is(from)) {
           return {
             catalogName: InformationSchema.Types.SqlIdentifier.parse(
@@ -15336,7 +13811,7 @@ export namespace InformationSchema {
     }
     export namespace KeyColumnUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.KeyColumnUsage
+        // CompositeType
         if (InformationSchema.Types.KeyColumnUsage.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15374,7 +13849,7 @@ export namespace InformationSchema {
     }
     export namespace Parameters {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Parameters
+        // CompositeType
         if (InformationSchema.Types.Parameters.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15475,7 +13950,7 @@ export namespace InformationSchema {
     }
     export namespace ReferentialConstraints {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ReferentialConstraints
+        // CompositeType
         if (InformationSchema.Types.ReferentialConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15513,7 +13988,7 @@ export namespace InformationSchema {
     }
     export namespace RoleColumnGrants {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoleColumnGrants
+        // CompositeType
         if (InformationSchema.Types.RoleColumnGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15543,7 +14018,7 @@ export namespace InformationSchema {
     }
     export namespace RoleRoutineGrants {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoleRoutineGrants
+        // CompositeType
         if (InformationSchema.Types.RoleRoutineGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15579,7 +14054,7 @@ export namespace InformationSchema {
     }
     export namespace RoleTableGrants {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoleTableGrants
+        // CompositeType
         if (InformationSchema.Types.RoleTableGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15609,7 +14084,7 @@ export namespace InformationSchema {
     }
     export namespace RoleUdtGrants {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoleUdtGrants
+        // CompositeType
         if (InformationSchema.Types.RoleUdtGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15634,7 +14109,7 @@ export namespace InformationSchema {
     }
     export namespace RoleUsageGrants {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoleUsageGrants
+        // CompositeType
         if (InformationSchema.Types.RoleUsageGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15664,7 +14139,7 @@ export namespace InformationSchema {
     }
     export namespace RoutineColumnUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoutineColumnUsage
+        // CompositeType
         if (InformationSchema.Types.RoutineColumnUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15704,7 +14179,7 @@ export namespace InformationSchema {
     }
     export namespace RoutinePrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoutinePrivileges
+        // CompositeType
         if (InformationSchema.Types.RoutinePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -15740,7 +14215,7 @@ export namespace InformationSchema {
     }
     export namespace RoutineRoutineUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoutineRoutineUsage
+        // CompositeType
         if (InformationSchema.Types.RoutineRoutineUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15768,7 +14243,7 @@ export namespace InformationSchema {
     }
     export namespace RoutineSequenceUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoutineSequenceUsage
+        // CompositeType
         if (InformationSchema.Types.RoutineSequenceUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15805,7 +14280,7 @@ export namespace InformationSchema {
     }
     export namespace RoutineTableUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.RoutineTableUsage
+        // CompositeType
         if (InformationSchema.Types.RoutineTableUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -15842,7 +14317,7 @@ export namespace InformationSchema {
     }
     export namespace Routines {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Routines
+        // CompositeType
         if (InformationSchema.Types.Routines.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16105,7 +14580,7 @@ export namespace InformationSchema {
     }
     export namespace Schemata {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Schemata
+        // CompositeType
         if (InformationSchema.Types.Schemata.is(from)) {
           return {
             catalogName: InformationSchema.Types.SqlIdentifier.parse(
@@ -16137,7 +14612,7 @@ export namespace InformationSchema {
     }
     export namespace Sequences {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Sequences
+        // CompositeType
         if (InformationSchema.Types.Sequences.is(from)) {
           return {
             sequenceCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16183,7 +14658,7 @@ export namespace InformationSchema {
     }
     export namespace SqlFeatures {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.SqlFeatures
+        // CompositeType
         if (InformationSchema.Types.SqlFeatures.is(from)) {
           return {
             featureId: InformationSchema.Types.CharacterData.parse(
@@ -16214,13 +14689,13 @@ export namespace InformationSchema {
     }
     export namespace SqlIdentifier {
       export function parse(from: any) {
-        // DomainType InformationSchema.Types.SqlIdentifier
+        // DomainType
         return PgCatalog.Types.Name.parse(from);
       }
     }
     export namespace SqlImplementationInfo {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.SqlImplementationInfo
+        // CompositeType
         if (InformationSchema.Types.SqlImplementationInfo.is(from)) {
           return {
             implementationInfoId: InformationSchema.Types.CharacterData.parse(
@@ -16245,7 +14720,7 @@ export namespace InformationSchema {
     }
     export namespace SqlParts {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.SqlParts
+        // CompositeType
         if (InformationSchema.Types.SqlParts.is(from)) {
           return {
             featureId: InformationSchema.Types.CharacterData.parse(
@@ -16270,7 +14745,7 @@ export namespace InformationSchema {
     }
     export namespace SqlSizing {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.SqlSizing
+        // CompositeType
         if (InformationSchema.Types.SqlSizing.is(from)) {
           return {
             sizingId: InformationSchema.Types.CardinalNumber.parse(
@@ -16292,7 +14767,7 @@ export namespace InformationSchema {
     }
     export namespace TableConstraints {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.TableConstraints
+        // CompositeType
         if (InformationSchema.Types.TableConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16333,7 +14808,7 @@ export namespace InformationSchema {
     }
     export namespace TablePrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.TablePrivileges
+        // CompositeType
         if (InformationSchema.Types.TablePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -16363,7 +14838,7 @@ export namespace InformationSchema {
     }
     export namespace Tables {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Tables
+        // CompositeType
         if (InformationSchema.Types.Tables.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16408,13 +14883,13 @@ export namespace InformationSchema {
     }
     export namespace TimeStamp {
       export function parse(from: any) {
-        // DomainType InformationSchema.Types.TimeStamp
+        // DomainType
         return PgCatalog.Types.Timestamptz.parse(from);
       }
     }
     export namespace Transforms {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Transforms
+        // CompositeType
         if (InformationSchema.Types.Transforms.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16446,7 +14921,7 @@ export namespace InformationSchema {
     }
     export namespace TriggeredUpdateColumns {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.TriggeredUpdateColumns
+        // CompositeType
         if (InformationSchema.Types.TriggeredUpdateColumns.is(from)) {
           return {
             triggerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16477,7 +14952,7 @@ export namespace InformationSchema {
     }
     export namespace Triggers {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Triggers
+        // CompositeType
         if (InformationSchema.Types.Triggers.is(from)) {
           return {
             triggerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16538,7 +15013,7 @@ export namespace InformationSchema {
     }
     export namespace UdtPrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.UdtPrivileges
+        // CompositeType
         if (InformationSchema.Types.UdtPrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -16563,7 +15038,7 @@ export namespace InformationSchema {
     }
     export namespace UsagePrivileges {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.UsagePrivileges
+        // CompositeType
         if (InformationSchema.Types.UsagePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -16593,7 +15068,7 @@ export namespace InformationSchema {
     }
     export namespace UserDefinedTypes {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.UserDefinedTypes
+        // CompositeType
         if (InformationSchema.Types.UserDefinedTypes.is(from)) {
           return {
             userDefinedTypeCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16690,7 +15165,7 @@ export namespace InformationSchema {
     }
     export namespace UserMappingOptions {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.UserMappingOptions
+        // CompositeType
         if (InformationSchema.Types.UserMappingOptions.is(from)) {
           return {
             authorizationIdentifier:
@@ -16716,7 +15191,7 @@ export namespace InformationSchema {
     }
     export namespace UserMappings {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.UserMappings
+        // CompositeType
         if (InformationSchema.Types.UserMappings.is(from)) {
           return {
             authorizationIdentifier:
@@ -16736,7 +15211,7 @@ export namespace InformationSchema {
     }
     export namespace ViewColumnUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ViewColumnUsage
+        // CompositeType
         if (InformationSchema.Types.ViewColumnUsage.is(from)) {
           return {
             viewCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16767,7 +15242,7 @@ export namespace InformationSchema {
     }
     export namespace ViewRoutineUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ViewRoutineUsage
+        // CompositeType
         if (InformationSchema.Types.ViewRoutineUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16795,7 +15270,7 @@ export namespace InformationSchema {
     }
     export namespace ViewTableUsage {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.ViewTableUsage
+        // CompositeType
         if (InformationSchema.Types.ViewTableUsage.is(from)) {
           return {
             viewCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16823,7 +15298,7 @@ export namespace InformationSchema {
     }
     export namespace Views {
       export function parse(from: any) {
-        // CompositeType InformationSchema.Types.Views
+        // CompositeType
         if (InformationSchema.Types.Views.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -16863,7 +15338,7 @@ export namespace InformationSchema {
     }
     export namespace YesOrNo {
       export function parse(from: any) {
-        // DomainType InformationSchema.Types.YesOrNo
+        // DomainType
         return PgCatalog.Types.Varchar.parse(from);
       }
     }
@@ -16887,10 +15362,50 @@ export namespace InformationSchema {
 export namespace Scripts {
   export namespace Sample {
     export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function parse(from: any) {
+            // CompositeType
+            if (Scripts.Sample.Film.Rated.Results.is(from)) {
+              return {
+                filmId: PgCatalog.Types.Int4.parse(from.filmId),
+                title: PgCatalog.Types.Varchar.parse(from.title),
+                description: PgCatalog.Types.Text.parse(from.description),
+                releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+                languageId: PgCatalog.Types.Int2.parse(from.languageId),
+                rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+                rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+                length: PgCatalog.Types.Int2.parse(from.length),
+                replacementCost: PgCatalog.Types.Numeric.parse(
+                  from.replacementCost,
+                ),
+                rating: Public.Types.MpaaRating.parse(from.rating),
+                lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+                specialFeatures: PgCatalog.Types.TextArray.parse(
+                  from.specialFeatures,
+                ),
+                fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+        export namespace Parameters {
+          export function parse(from: any) {
+            // CompositeType
+            if (Scripts.Sample.Film.Rated.Parameters.is(from)) {
+              return {
+                argument_1: Public.Types.MpaaRating.parse(from.argument_1),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+      }
       export namespace Tally {
         export namespace Results {
           export function parse(from: any) {
-            // CompositeType Scripts.Sample.Film.Tally.Results
+            // CompositeType
             if (Scripts.Sample.Film.Tally.Results.is(from)) {
               return {
                 count: PgCatalog.Types.Int8.parse(from.count),
@@ -16904,7 +15419,7 @@ export namespace Scripts {
     export namespace Pick {
       export namespace Results {
         export function parse(from: any) {
-          // CompositeType Scripts.Sample.Pick.Results
+          // CompositeType
           if (Scripts.Sample.Pick.Results.is(from)) {
             return {
               filmId: PgCatalog.Types.Int4.parse(from.filmId),
@@ -16931,7 +15446,7 @@ export namespace Scripts {
       }
       export namespace Parameters {
         export function parse(from: any) {
-          // CompositeType Scripts.Sample.Pick.Parameters
+          // CompositeType
           if (Scripts.Sample.Pick.Parameters.is(from)) {
             return {
               argument_1: PgCatalog.Types.Text.parse(from.argument_1),
@@ -16945,7 +15460,7 @@ export namespace Scripts {
   export namespace Tally {
     export namespace Results {
       export function parse(from: any) {
-        // CompositeType Scripts.Tally.Results
+        // CompositeType
         if (Scripts.Tally.Results.is(from)) {
           return {
             count: PgCatalog.Types.Int8.parse(from.count),
@@ -23881,6 +22396,39 @@ export namespace InformationSchema {
 export namespace Scripts {
   export namespace Sample {
     export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Results {
+            if (
+              value.filmId !== undefined &&
+              value.title !== undefined &&
+              value.description !== undefined &&
+              value.releaseYear !== undefined &&
+              value.languageId !== undefined &&
+              value.rentalDuration !== undefined &&
+              value.rentalRate !== undefined &&
+              value.length !== undefined &&
+              value.replacementCost !== undefined &&
+              value.rating !== undefined &&
+              value.lastUpdate !== undefined &&
+              value.specialFeatures !== undefined &&
+              value.fulltext !== undefined
+            )
+              return true;
+            return false;
+          }
+        }
+        export namespace Parameters {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Parameters {
+            if (value.argument_1 !== undefined) return true;
+            return false;
+          }
+        }
+      }
       export namespace Tally {
         export namespace Results {
           export function is(
@@ -25799,6 +24347,25 @@ export class EmbraceSQLClient extends BaseClient {
   public Scripts = new (class extends HasClient {
     public Sample = new (class extends HasClient {
       public Film = new (class extends HasClient {
+        public async rated(
+          parameters: Scripts.Sample.Film.Rated.Parameters,
+        ): Promise<Scripts.Sample.Film.Rated.Results[] | undefined> {
+          const response = await this.client.invoke<
+            Scripts.Sample.Film.Rated.Parameters,
+            never,
+            Scripts.Sample.Film.Rated.Results[]
+          >({
+            operation: "Scripts.Sample.Film.rated",
+            parameters,
+          });
+
+          return (
+            response.results?.map((r) =>
+              Scripts.Sample.Film.Rated.Results.parse(r),
+            ) ?? []
+          );
+        }
+
         public async tally(): Promise<
           Scripts.Sample.Film.Tally.Results[] | undefined
         > {

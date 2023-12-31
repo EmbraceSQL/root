@@ -115,7 +115,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             .attributes
             ? (resultsFinalType as CompositeTypeNode).attributes.map(
                 (c) =>
-                  `${c.typescriptPropertyName}: undefinedIsNull(record.${c.typescriptPropertyName})`,
+                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(record.${c.typescriptPropertyName}))`,
               )
             : [];
           // and here is the really defensive part...
@@ -187,8 +187,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                   return `results.map(x => x.${node.nameInDatabase})`;
                 }
                 // pick out the scalar case
-                return `results?.[0].${node.nameInDatabase}`;
-              })()} ) as unknown as ${resultType};
+                return `undefinedIsNull(${resultType}.parse(results?.[0].${node.nameInDatabase}))`;
+              })()} );
               return responseBody;
 
     `);

@@ -100,3 +100,18 @@ CREATE OR REPLACE FUNCTION api.echo_type_set(message text)
     now();
 $$;
 
+CREATE TYPE api.answer AS ENUM (
+    'Yes',
+    'No',
+    'Maybe'
+);
+
+CREATE OR REPLACE FUNCTION api.echo_answer(message api.answer)
+  RETURNS api.answer
+  LANGUAGE plpgsql
+  SECURITY DEFINER
+  AS $$
+BEGIN
+  RETURN message;
+END;
+$$;

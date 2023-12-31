@@ -12793,10 +12793,12 @@ export namespace Public {
       }
     }
     export namespace MpaaRating {
-      export function parse(from: any) {
-        // Enum Public.Types.MpaaRating
-
-        return from;
+      export function parse(from: unknown) {
+        if (Object.values(Public.Types.MpaaRating.valuesOf()).includes(from)) {
+          return from as Public.Types.MpaaRating;
+        } else {
+          return undefined;
+        }
       }
     }
     export namespace NicerButSlowerFilmList {

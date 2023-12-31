@@ -32,7 +32,6 @@ export class PGTypeArray extends PGCatalogType {
       `${this.catalog.typname}${this.props.arraySuffix ? "_array" : ""}`,
       schema.types,
       this.oid,
-      this,
     );
     context.database.registerType(type.id, type);
   }
@@ -46,36 +45,6 @@ export class PGTypeArray extends PGCatalogType {
       memberType;
   }
 
-  typescriptTypeParser(context: GenerationContext) {
-    const elementType = context.database.resolveType(this.catalog.typelem);
-    if (elementType) {
-      return `
-      if (from === null) return null;
-      const rawArray = JSON.parse(from);
-      return rawArray.map((e:unknown) => {
-        return ${elementType.typescriptName}.parse(
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-          \`\${e}\`
-        );
-      });
-    `;
-    } else {
-      throw new Error(
-        `${this.catalog.typname} could not resolve type of element`,
-      );
-    }
-  }
-
-  typescriptTypeDefinition(context: GenerationContext) {
-    console.assert(context);
-    return `
-     Array<${
-       context.database.resolveType(this.catalog.typelem)
-         ?.typescriptNamespacedName ?? "void"
-     }>
-    `;
-  }
-
   serializeToPostgres(context: Context, x: unknown) {
     // passed object
     if (x) {
@@ -86,6 +55,8 @@ export class PGTypeArray extends PGCatalogType {
       const attributes = elements.map((e) => {
         // hand off the the serializer
         const value = elementType.serializeToPostgres(context, e);
+        // null out unknown values
+        if (value === null || value === undefined) return "NULL";
         // quick escape with regex
         return value ? escapeArrayValue.tryParse(`${value}`) : "";
       });

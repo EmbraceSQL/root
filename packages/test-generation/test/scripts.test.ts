@@ -1,4 +1,4 @@
-import { Database } from "../src/dvdrental";
+import { Database, Public } from "../src/dvdrental";
 
 /**
  * Works-at-all.
@@ -24,5 +24,12 @@ describe("The database can run scripts", () => {
   it("that have positional parameters", async () => {
     const value = await db.Scripts.Sample.pick({ argument_1: "Basic Easy" });
     expect(value.length).toEqual(1);
+  });
+  it("that has an enum parameter", async () => {
+    const ratedG = await db.Scripts.Sample.Film.rated({
+      argument_1: Public.Types.MpaaRating.G,
+    });
+    expect(ratedG.length).toBeGreaterThan(1);
+    expect(ratedG[0].rating).toBe(Public.Types.MpaaRating.G);
   });
 });
