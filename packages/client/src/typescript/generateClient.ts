@@ -77,7 +77,7 @@ const FunctionalOperation = {
     console.assert(node);
     return [
       node.returnsMany
-        ? `return response.results?.map(r => ${node.resultsType?.typescriptNamespacedName}.parse(r)) ?? [];`
+        ? `return response.results?.map(r => ${node.resultsType?.typescriptNamespacedName}.parse(r)) as ${node.resultsType?.typescriptNamespacedName}[] ?? [];`
         : `return response.results ? nullIsUndefined(${node.resultsType?.typescriptNamespacedName}.parse(response.results)) : undefined;`,
       `}`,
     ].join("\n");

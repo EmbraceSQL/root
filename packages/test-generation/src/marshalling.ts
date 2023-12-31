@@ -5056,8 +5056,8 @@ export namespace PgCatalog {
     export namespace AclitemArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Aclitem.parse(e));
       }
@@ -5065,8 +5065,8 @@ export namespace PgCatalog {
     export namespace BitArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Bit.parse(e));
       }
@@ -5074,8 +5074,8 @@ export namespace PgCatalog {
     export namespace BoolArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Bool.parse(e));
       }
@@ -5083,8 +5083,8 @@ export namespace PgCatalog {
     export namespace BoxArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Box.parse(e));
       }
@@ -5092,8 +5092,8 @@ export namespace PgCatalog {
     export namespace BpcharArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Bpchar.parse(e));
       }
@@ -5101,8 +5101,8 @@ export namespace PgCatalog {
     export namespace ByteaArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Bytea.parse(e));
       }
@@ -5110,8 +5110,8 @@ export namespace PgCatalog {
     export namespace CharArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Char.parse(e));
       }
@@ -5119,8 +5119,8 @@ export namespace PgCatalog {
     export namespace CidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Cid.parse(e));
       }
@@ -5128,8 +5128,8 @@ export namespace PgCatalog {
     export namespace CidrArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Cidr.parse(e));
       }
@@ -5137,8 +5137,8 @@ export namespace PgCatalog {
     export namespace CircleArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Circle.parse(e));
       }
@@ -5146,8 +5146,8 @@ export namespace PgCatalog {
     export namespace CstringArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Cstring.parse(e));
       }
@@ -5155,8 +5155,8 @@ export namespace PgCatalog {
     export namespace DateArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Date.parse(e));
       }
@@ -5164,8 +5164,8 @@ export namespace PgCatalog {
     export namespace DatemultirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Datemultirange.parse(e));
       }
@@ -5173,8 +5173,8 @@ export namespace PgCatalog {
     export namespace DaterangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Daterange.parse(e));
       }
@@ -5182,8 +5182,8 @@ export namespace PgCatalog {
     export namespace Float4Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Float4.parse(e));
       }
@@ -5191,8 +5191,8 @@ export namespace PgCatalog {
     export namespace Float8Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Float8.parse(e));
       }
@@ -5200,8 +5200,8 @@ export namespace PgCatalog {
     export namespace GtsvectorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Gtsvector.parse(e));
       }
@@ -5209,8 +5209,8 @@ export namespace PgCatalog {
     export namespace InetArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Inet.parse(e));
       }
@@ -5218,8 +5218,8 @@ export namespace PgCatalog {
     export namespace Int2Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int2.parse(e));
       }
@@ -5227,8 +5227,8 @@ export namespace PgCatalog {
     export namespace Int2vectorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int2vector.parse(e));
       }
@@ -5236,8 +5236,8 @@ export namespace PgCatalog {
     export namespace Int4Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int4.parse(e));
       }
@@ -5245,8 +5245,8 @@ export namespace PgCatalog {
     export namespace Int4multirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int4multirange.parse(e));
       }
@@ -5254,8 +5254,8 @@ export namespace PgCatalog {
     export namespace Int4rangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int4range.parse(e));
       }
@@ -5263,8 +5263,8 @@ export namespace PgCatalog {
     export namespace Int8Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int8.parse(e));
       }
@@ -5272,8 +5272,8 @@ export namespace PgCatalog {
     export namespace Int8multirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int8multirange.parse(e));
       }
@@ -5281,8 +5281,8 @@ export namespace PgCatalog {
     export namespace Int8rangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Int8range.parse(e));
       }
@@ -5290,8 +5290,8 @@ export namespace PgCatalog {
     export namespace IntervalArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Interval.parse(e));
       }
@@ -5299,8 +5299,8 @@ export namespace PgCatalog {
     export namespace JsonArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Json.parse(e));
       }
@@ -5308,8 +5308,8 @@ export namespace PgCatalog {
     export namespace JsonbArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Jsonb.parse(e));
       }
@@ -5317,8 +5317,8 @@ export namespace PgCatalog {
     export namespace JsonpathArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Jsonpath.parse(e));
       }
@@ -5326,8 +5326,8 @@ export namespace PgCatalog {
     export namespace LineArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Line.parse(e));
       }
@@ -5335,8 +5335,8 @@ export namespace PgCatalog {
     export namespace LsegArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Lseg.parse(e));
       }
@@ -5344,8 +5344,8 @@ export namespace PgCatalog {
     export namespace MacaddrArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Macaddr.parse(e));
       }
@@ -5353,8 +5353,8 @@ export namespace PgCatalog {
     export namespace Macaddr8Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Macaddr8.parse(e));
       }
@@ -5362,8 +5362,8 @@ export namespace PgCatalog {
     export namespace MoneyArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Money.parse(e));
       }
@@ -5371,8 +5371,8 @@ export namespace PgCatalog {
     export namespace NameArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Name.parse(e));
       }
@@ -5380,8 +5380,8 @@ export namespace PgCatalog {
     export namespace NumericArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Numeric.parse(e));
       }
@@ -5389,8 +5389,8 @@ export namespace PgCatalog {
     export namespace NummultirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Nummultirange.parse(e));
       }
@@ -5398,8 +5398,8 @@ export namespace PgCatalog {
     export namespace NumrangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Numrange.parse(e));
       }
@@ -5407,8 +5407,8 @@ export namespace PgCatalog {
     export namespace OidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Oid.parse(e));
       }
@@ -5416,8 +5416,8 @@ export namespace PgCatalog {
     export namespace OidvectorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Oidvector.parse(e));
       }
@@ -5425,8 +5425,8 @@ export namespace PgCatalog {
     export namespace PathArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Path.parse(e));
       }
@@ -5434,8 +5434,8 @@ export namespace PgCatalog {
     export namespace PgAggregateArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAggregate.parse(e));
       }
@@ -5443,8 +5443,8 @@ export namespace PgCatalog {
     export namespace PgAmArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAm.parse(e));
       }
@@ -5452,8 +5452,8 @@ export namespace PgCatalog {
     export namespace PgAmopArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAmop.parse(e));
       }
@@ -5461,8 +5461,8 @@ export namespace PgCatalog {
     export namespace PgAmprocArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAmproc.parse(e));
       }
@@ -5470,8 +5470,8 @@ export namespace PgCatalog {
     export namespace PgAttrdefArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAttrdef.parse(e));
       }
@@ -5479,8 +5479,8 @@ export namespace PgCatalog {
     export namespace PgAttributeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAttribute.parse(e));
       }
@@ -5488,8 +5488,8 @@ export namespace PgCatalog {
     export namespace PgAuthMembersArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAuthMembers.parse(e));
       }
@@ -5497,8 +5497,8 @@ export namespace PgCatalog {
     export namespace PgAuthidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAuthid.parse(e));
       }
@@ -5506,8 +5506,8 @@ export namespace PgCatalog {
     export namespace PgAvailableExtensionVersionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) =>
           PgAvailableExtensionVersions.parse(e),
@@ -5517,8 +5517,8 @@ export namespace PgCatalog {
     export namespace PgAvailableExtensionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgAvailableExtensions.parse(e));
       }
@@ -5526,8 +5526,8 @@ export namespace PgCatalog {
     export namespace PgBackendMemoryContextsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgBackendMemoryContexts.parse(e));
       }
@@ -5535,8 +5535,8 @@ export namespace PgCatalog {
     export namespace PgCastArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgCast.parse(e));
       }
@@ -5544,8 +5544,8 @@ export namespace PgCatalog {
     export namespace PgClassArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgClass.parse(e));
       }
@@ -5553,8 +5553,8 @@ export namespace PgCatalog {
     export namespace PgCollationArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgCollation.parse(e));
       }
@@ -5562,8 +5562,8 @@ export namespace PgCatalog {
     export namespace PgConfigArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgConfig.parse(e));
       }
@@ -5571,8 +5571,8 @@ export namespace PgCatalog {
     export namespace PgConstraintArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgConstraint.parse(e));
       }
@@ -5580,8 +5580,8 @@ export namespace PgCatalog {
     export namespace PgConversionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgConversion.parse(e));
       }
@@ -5589,8 +5589,8 @@ export namespace PgCatalog {
     export namespace PgCursorsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgCursors.parse(e));
       }
@@ -5598,8 +5598,8 @@ export namespace PgCatalog {
     export namespace PgDatabaseArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgDatabase.parse(e));
       }
@@ -5607,8 +5607,8 @@ export namespace PgCatalog {
     export namespace PgDbRoleSettingArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgDbRoleSetting.parse(e));
       }
@@ -5616,8 +5616,8 @@ export namespace PgCatalog {
     export namespace PgDefaultAclArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgDefaultAcl.parse(e));
       }
@@ -5625,8 +5625,8 @@ export namespace PgCatalog {
     export namespace PgDependArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgDepend.parse(e));
       }
@@ -5634,8 +5634,8 @@ export namespace PgCatalog {
     export namespace PgDescriptionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgDescription.parse(e));
       }
@@ -5643,8 +5643,8 @@ export namespace PgCatalog {
     export namespace PgEnumArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgEnum.parse(e));
       }
@@ -5652,8 +5652,8 @@ export namespace PgCatalog {
     export namespace PgEventTriggerArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgEventTrigger.parse(e));
       }
@@ -5661,8 +5661,8 @@ export namespace PgCatalog {
     export namespace PgExtensionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgExtension.parse(e));
       }
@@ -5670,8 +5670,8 @@ export namespace PgCatalog {
     export namespace PgFileSettingsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgFileSettings.parse(e));
       }
@@ -5679,8 +5679,8 @@ export namespace PgCatalog {
     export namespace PgForeignDataWrapperArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgForeignDataWrapper.parse(e));
       }
@@ -5688,8 +5688,8 @@ export namespace PgCatalog {
     export namespace PgForeignServerArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgForeignServer.parse(e));
       }
@@ -5697,8 +5697,8 @@ export namespace PgCatalog {
     export namespace PgForeignTableArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgForeignTable.parse(e));
       }
@@ -5706,8 +5706,8 @@ export namespace PgCatalog {
     export namespace PgGroupArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgGroup.parse(e));
       }
@@ -5715,8 +5715,8 @@ export namespace PgCatalog {
     export namespace PgHbaFileRulesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgHbaFileRules.parse(e));
       }
@@ -5724,8 +5724,8 @@ export namespace PgCatalog {
     export namespace PgIdentFileMappingsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgIdentFileMappings.parse(e));
       }
@@ -5733,8 +5733,8 @@ export namespace PgCatalog {
     export namespace PgIndexArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgIndex.parse(e));
       }
@@ -5742,8 +5742,8 @@ export namespace PgCatalog {
     export namespace PgIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgIndexes.parse(e));
       }
@@ -5751,8 +5751,8 @@ export namespace PgCatalog {
     export namespace PgInheritsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgInherits.parse(e));
       }
@@ -5760,8 +5760,8 @@ export namespace PgCatalog {
     export namespace PgInitPrivsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgInitPrivs.parse(e));
       }
@@ -5769,8 +5769,8 @@ export namespace PgCatalog {
     export namespace PgLanguageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgLanguage.parse(e));
       }
@@ -5778,8 +5778,8 @@ export namespace PgCatalog {
     export namespace PgLargeobjectArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgLargeobject.parse(e));
       }
@@ -5787,8 +5787,8 @@ export namespace PgCatalog {
     export namespace PgLargeobjectMetadataArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgLargeobjectMetadata.parse(e));
       }
@@ -5796,8 +5796,8 @@ export namespace PgCatalog {
     export namespace PgLocksArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgLocks.parse(e));
       }
@@ -5805,8 +5805,8 @@ export namespace PgCatalog {
     export namespace PgLsnArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgLsn.parse(e));
       }
@@ -5814,8 +5814,8 @@ export namespace PgCatalog {
     export namespace PgMatviewsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgMatviews.parse(e));
       }
@@ -5823,8 +5823,8 @@ export namespace PgCatalog {
     export namespace PgNamespaceArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgNamespace.parse(e));
       }
@@ -5832,8 +5832,8 @@ export namespace PgCatalog {
     export namespace PgOpclassArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgOpclass.parse(e));
       }
@@ -5841,8 +5841,8 @@ export namespace PgCatalog {
     export namespace PgOperatorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgOperator.parse(e));
       }
@@ -5850,8 +5850,8 @@ export namespace PgCatalog {
     export namespace PgOpfamilyArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgOpfamily.parse(e));
       }
@@ -5859,8 +5859,8 @@ export namespace PgCatalog {
     export namespace PgParameterAclArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgParameterAcl.parse(e));
       }
@@ -5868,8 +5868,8 @@ export namespace PgCatalog {
     export namespace PgPartitionedTableArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPartitionedTable.parse(e));
       }
@@ -5877,8 +5877,8 @@ export namespace PgCatalog {
     export namespace PgPoliciesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPolicies.parse(e));
       }
@@ -5886,8 +5886,8 @@ export namespace PgCatalog {
     export namespace PgPolicyArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPolicy.parse(e));
       }
@@ -5895,8 +5895,8 @@ export namespace PgCatalog {
     export namespace PgPreparedStatementsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPreparedStatements.parse(e));
       }
@@ -5904,8 +5904,8 @@ export namespace PgCatalog {
     export namespace PgPreparedXactsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPreparedXacts.parse(e));
       }
@@ -5913,8 +5913,8 @@ export namespace PgCatalog {
     export namespace PgProcArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgProc.parse(e));
       }
@@ -5922,8 +5922,8 @@ export namespace PgCatalog {
     export namespace PgPublicationArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPublication.parse(e));
       }
@@ -5931,8 +5931,8 @@ export namespace PgCatalog {
     export namespace PgPublicationNamespaceArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPublicationNamespace.parse(e));
       }
@@ -5940,8 +5940,8 @@ export namespace PgCatalog {
     export namespace PgPublicationRelArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPublicationRel.parse(e));
       }
@@ -5949,8 +5949,8 @@ export namespace PgCatalog {
     export namespace PgPublicationTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgPublicationTables.parse(e));
       }
@@ -5958,8 +5958,8 @@ export namespace PgCatalog {
     export namespace PgRangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgRange.parse(e));
       }
@@ -5967,8 +5967,8 @@ export namespace PgCatalog {
     export namespace PgReplicationOriginArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgReplicationOrigin.parse(e));
       }
@@ -5976,8 +5976,8 @@ export namespace PgCatalog {
     export namespace PgReplicationOriginStatusArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgReplicationOriginStatus.parse(e));
       }
@@ -5985,8 +5985,8 @@ export namespace PgCatalog {
     export namespace PgReplicationSlotsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgReplicationSlots.parse(e));
       }
@@ -5994,8 +5994,8 @@ export namespace PgCatalog {
     export namespace PgRewriteArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgRewrite.parse(e));
       }
@@ -6003,8 +6003,8 @@ export namespace PgCatalog {
     export namespace PgRolesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgRoles.parse(e));
       }
@@ -6012,8 +6012,8 @@ export namespace PgCatalog {
     export namespace PgRulesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgRules.parse(e));
       }
@@ -6021,8 +6021,8 @@ export namespace PgCatalog {
     export namespace PgSeclabelArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSeclabel.parse(e));
       }
@@ -6030,8 +6030,8 @@ export namespace PgCatalog {
     export namespace PgSeclabelsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSeclabels.parse(e));
       }
@@ -6039,8 +6039,8 @@ export namespace PgCatalog {
     export namespace PgSequenceArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSequence.parse(e));
       }
@@ -6048,8 +6048,8 @@ export namespace PgCatalog {
     export namespace PgSequencesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSequences.parse(e));
       }
@@ -6057,8 +6057,8 @@ export namespace PgCatalog {
     export namespace PgSettingsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSettings.parse(e));
       }
@@ -6066,8 +6066,8 @@ export namespace PgCatalog {
     export namespace PgShadowArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgShadow.parse(e));
       }
@@ -6075,8 +6075,8 @@ export namespace PgCatalog {
     export namespace PgShdependArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgShdepend.parse(e));
       }
@@ -6084,8 +6084,8 @@ export namespace PgCatalog {
     export namespace PgShdescriptionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgShdescription.parse(e));
       }
@@ -6093,8 +6093,8 @@ export namespace PgCatalog {
     export namespace PgShmemAllocationsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgShmemAllocations.parse(e));
       }
@@ -6102,8 +6102,8 @@ export namespace PgCatalog {
     export namespace PgShseclabelArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgShseclabel.parse(e));
       }
@@ -6111,8 +6111,8 @@ export namespace PgCatalog {
     export namespace PgSnapshotArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSnapshot.parse(e));
       }
@@ -6120,8 +6120,8 @@ export namespace PgCatalog {
     export namespace PgStatActivityArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatActivity.parse(e));
       }
@@ -6129,8 +6129,8 @@ export namespace PgCatalog {
     export namespace PgStatAllIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatAllIndexes.parse(e));
       }
@@ -6138,8 +6138,8 @@ export namespace PgCatalog {
     export namespace PgStatAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatAllTables.parse(e));
       }
@@ -6147,8 +6147,8 @@ export namespace PgCatalog {
     export namespace PgStatArchiverArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatArchiver.parse(e));
       }
@@ -6156,8 +6156,8 @@ export namespace PgCatalog {
     export namespace PgStatBgwriterArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatBgwriter.parse(e));
       }
@@ -6165,8 +6165,8 @@ export namespace PgCatalog {
     export namespace PgStatDatabaseArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatDatabase.parse(e));
       }
@@ -6174,8 +6174,8 @@ export namespace PgCatalog {
     export namespace PgStatDatabaseConflictsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatDatabaseConflicts.parse(e));
       }
@@ -6183,8 +6183,8 @@ export namespace PgCatalog {
     export namespace PgStatGssapiArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatGssapi.parse(e));
       }
@@ -6192,8 +6192,8 @@ export namespace PgCatalog {
     export namespace PgStatIoArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatIo.parse(e));
       }
@@ -6201,8 +6201,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressAnalyzeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressAnalyze.parse(e));
       }
@@ -6210,8 +6210,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressBasebackupArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressBasebackup.parse(e));
       }
@@ -6219,8 +6219,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressClusterArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressCluster.parse(e));
       }
@@ -6228,8 +6228,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressCopyArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressCopy.parse(e));
       }
@@ -6237,8 +6237,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressCreateIndexArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressCreateIndex.parse(e));
       }
@@ -6246,8 +6246,8 @@ export namespace PgCatalog {
     export namespace PgStatProgressVacuumArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatProgressVacuum.parse(e));
       }
@@ -6255,8 +6255,8 @@ export namespace PgCatalog {
     export namespace PgStatRecoveryPrefetchArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatRecoveryPrefetch.parse(e));
       }
@@ -6264,8 +6264,8 @@ export namespace PgCatalog {
     export namespace PgStatReplicationArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatReplication.parse(e));
       }
@@ -6273,8 +6273,8 @@ export namespace PgCatalog {
     export namespace PgStatReplicationSlotsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatReplicationSlots.parse(e));
       }
@@ -6282,8 +6282,8 @@ export namespace PgCatalog {
     export namespace PgStatSlruArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSlru.parse(e));
       }
@@ -6291,8 +6291,8 @@ export namespace PgCatalog {
     export namespace PgStatSslArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSsl.parse(e));
       }
@@ -6300,8 +6300,8 @@ export namespace PgCatalog {
     export namespace PgStatSubscriptionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSubscription.parse(e));
       }
@@ -6309,8 +6309,8 @@ export namespace PgCatalog {
     export namespace PgStatSubscriptionStatsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSubscriptionStats.parse(e));
       }
@@ -6318,8 +6318,8 @@ export namespace PgCatalog {
     export namespace PgStatSysIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSysIndexes.parse(e));
       }
@@ -6327,8 +6327,8 @@ export namespace PgCatalog {
     export namespace PgStatSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatSysTables.parse(e));
       }
@@ -6336,8 +6336,8 @@ export namespace PgCatalog {
     export namespace PgStatUserFunctionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatUserFunctions.parse(e));
       }
@@ -6345,8 +6345,8 @@ export namespace PgCatalog {
     export namespace PgStatUserIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatUserIndexes.parse(e));
       }
@@ -6354,8 +6354,8 @@ export namespace PgCatalog {
     export namespace PgStatUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatUserTables.parse(e));
       }
@@ -6363,8 +6363,8 @@ export namespace PgCatalog {
     export namespace PgStatWalArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatWal.parse(e));
       }
@@ -6372,8 +6372,8 @@ export namespace PgCatalog {
     export namespace PgStatWalReceiverArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatWalReceiver.parse(e));
       }
@@ -6381,8 +6381,8 @@ export namespace PgCatalog {
     export namespace PgStatXactAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatXactAllTables.parse(e));
       }
@@ -6390,8 +6390,8 @@ export namespace PgCatalog {
     export namespace PgStatXactSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatXactSysTables.parse(e));
       }
@@ -6399,8 +6399,8 @@ export namespace PgCatalog {
     export namespace PgStatXactUserFunctionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatXactUserFunctions.parse(e));
       }
@@ -6408,8 +6408,8 @@ export namespace PgCatalog {
     export namespace PgStatXactUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatXactUserTables.parse(e));
       }
@@ -6417,8 +6417,8 @@ export namespace PgCatalog {
     export namespace PgStatioAllIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioAllIndexes.parse(e));
       }
@@ -6426,8 +6426,8 @@ export namespace PgCatalog {
     export namespace PgStatioAllSequencesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioAllSequences.parse(e));
       }
@@ -6435,8 +6435,8 @@ export namespace PgCatalog {
     export namespace PgStatioAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioAllTables.parse(e));
       }
@@ -6444,8 +6444,8 @@ export namespace PgCatalog {
     export namespace PgStatioSysIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioSysIndexes.parse(e));
       }
@@ -6453,8 +6453,8 @@ export namespace PgCatalog {
     export namespace PgStatioSysSequencesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioSysSequences.parse(e));
       }
@@ -6462,8 +6462,8 @@ export namespace PgCatalog {
     export namespace PgStatioSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioSysTables.parse(e));
       }
@@ -6471,8 +6471,8 @@ export namespace PgCatalog {
     export namespace PgStatioUserIndexesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioUserIndexes.parse(e));
       }
@@ -6480,8 +6480,8 @@ export namespace PgCatalog {
     export namespace PgStatioUserSequencesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioUserSequences.parse(e));
       }
@@ -6489,8 +6489,8 @@ export namespace PgCatalog {
     export namespace PgStatioUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatioUserTables.parse(e));
       }
@@ -6498,8 +6498,8 @@ export namespace PgCatalog {
     export namespace PgStatisticArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatistic.parse(e));
       }
@@ -6507,8 +6507,8 @@ export namespace PgCatalog {
     export namespace PgStatisticExtArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatisticExt.parse(e));
       }
@@ -6516,8 +6516,8 @@ export namespace PgCatalog {
     export namespace PgStatisticExtDataArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatisticExtData.parse(e));
       }
@@ -6525,8 +6525,8 @@ export namespace PgCatalog {
     export namespace PgStatsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStats.parse(e));
       }
@@ -6534,8 +6534,8 @@ export namespace PgCatalog {
     export namespace PgStatsExtArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatsExt.parse(e));
       }
@@ -6543,8 +6543,8 @@ export namespace PgCatalog {
     export namespace PgStatsExtExprsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgStatsExtExprs.parse(e));
       }
@@ -6552,8 +6552,8 @@ export namespace PgCatalog {
     export namespace PgSubscriptionArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSubscription.parse(e));
       }
@@ -6561,8 +6561,8 @@ export namespace PgCatalog {
     export namespace PgSubscriptionRelArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgSubscriptionRel.parse(e));
       }
@@ -6570,8 +6570,8 @@ export namespace PgCatalog {
     export namespace PgTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTables.parse(e));
       }
@@ -6579,8 +6579,8 @@ export namespace PgCatalog {
     export namespace PgTablespaceArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTablespace.parse(e));
       }
@@ -6588,8 +6588,8 @@ export namespace PgCatalog {
     export namespace PgTimezoneAbbrevsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTimezoneAbbrevs.parse(e));
       }
@@ -6597,8 +6597,8 @@ export namespace PgCatalog {
     export namespace PgTimezoneNamesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTimezoneNames.parse(e));
       }
@@ -6606,8 +6606,8 @@ export namespace PgCatalog {
     export namespace PgTransformArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTransform.parse(e));
       }
@@ -6615,8 +6615,8 @@ export namespace PgCatalog {
     export namespace PgTriggerArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTrigger.parse(e));
       }
@@ -6624,8 +6624,8 @@ export namespace PgCatalog {
     export namespace PgTsConfigArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTsConfig.parse(e));
       }
@@ -6633,8 +6633,8 @@ export namespace PgCatalog {
     export namespace PgTsConfigMapArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTsConfigMap.parse(e));
       }
@@ -6642,8 +6642,8 @@ export namespace PgCatalog {
     export namespace PgTsDictArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTsDict.parse(e));
       }
@@ -6651,8 +6651,8 @@ export namespace PgCatalog {
     export namespace PgTsParserArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTsParser.parse(e));
       }
@@ -6660,8 +6660,8 @@ export namespace PgCatalog {
     export namespace PgTsTemplateArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgTsTemplate.parse(e));
       }
@@ -6669,8 +6669,8 @@ export namespace PgCatalog {
     export namespace PgTypeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgType.parse(e));
       }
@@ -6678,8 +6678,8 @@ export namespace PgCatalog {
     export namespace PgUserArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgUser.parse(e));
       }
@@ -6687,8 +6687,8 @@ export namespace PgCatalog {
     export namespace PgUserMappingArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgUserMapping.parse(e));
       }
@@ -6696,8 +6696,8 @@ export namespace PgCatalog {
     export namespace PgUserMappingsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgUserMappings.parse(e));
       }
@@ -6705,8 +6705,8 @@ export namespace PgCatalog {
     export namespace PgViewsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => PgViews.parse(e));
       }
@@ -6714,8 +6714,8 @@ export namespace PgCatalog {
     export namespace PointArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Point.parse(e));
       }
@@ -6723,8 +6723,8 @@ export namespace PgCatalog {
     export namespace PolygonArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Polygon.parse(e));
       }
@@ -6732,8 +6732,8 @@ export namespace PgCatalog {
     export namespace RecordArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Record.parse(e));
       }
@@ -6741,8 +6741,8 @@ export namespace PgCatalog {
     export namespace RefcursorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Refcursor.parse(e));
       }
@@ -6750,8 +6750,8 @@ export namespace PgCatalog {
     export namespace RegclassArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regclass.parse(e));
       }
@@ -6759,8 +6759,8 @@ export namespace PgCatalog {
     export namespace RegcollationArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regcollation.parse(e));
       }
@@ -6768,8 +6768,8 @@ export namespace PgCatalog {
     export namespace RegconfigArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regconfig.parse(e));
       }
@@ -6777,8 +6777,8 @@ export namespace PgCatalog {
     export namespace RegdictionaryArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regdictionary.parse(e));
       }
@@ -6786,8 +6786,8 @@ export namespace PgCatalog {
     export namespace RegnamespaceArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regnamespace.parse(e));
       }
@@ -6795,8 +6795,8 @@ export namespace PgCatalog {
     export namespace RegoperArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regoper.parse(e));
       }
@@ -6804,8 +6804,8 @@ export namespace PgCatalog {
     export namespace RegoperatorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regoperator.parse(e));
       }
@@ -6813,8 +6813,8 @@ export namespace PgCatalog {
     export namespace RegprocArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regproc.parse(e));
       }
@@ -6822,8 +6822,8 @@ export namespace PgCatalog {
     export namespace RegprocedureArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regprocedure.parse(e));
       }
@@ -6831,8 +6831,8 @@ export namespace PgCatalog {
     export namespace RegroleArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regrole.parse(e));
       }
@@ -6840,8 +6840,8 @@ export namespace PgCatalog {
     export namespace RegtypeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Regtype.parse(e));
       }
@@ -6849,8 +6849,8 @@ export namespace PgCatalog {
     export namespace TextArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Text.parse(e));
       }
@@ -6858,8 +6858,8 @@ export namespace PgCatalog {
     export namespace TidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tid.parse(e));
       }
@@ -6867,8 +6867,8 @@ export namespace PgCatalog {
     export namespace TimeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Time.parse(e));
       }
@@ -6876,8 +6876,8 @@ export namespace PgCatalog {
     export namespace TimestampArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Timestamp.parse(e));
       }
@@ -6885,8 +6885,8 @@ export namespace PgCatalog {
     export namespace TimestamptzArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Timestamptz.parse(e));
       }
@@ -6894,8 +6894,8 @@ export namespace PgCatalog {
     export namespace TimetzArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Timetz.parse(e));
       }
@@ -6903,8 +6903,8 @@ export namespace PgCatalog {
     export namespace TsmultirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tsmultirange.parse(e));
       }
@@ -6912,8 +6912,8 @@ export namespace PgCatalog {
     export namespace TsqueryArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tsquery.parse(e));
       }
@@ -6921,8 +6921,8 @@ export namespace PgCatalog {
     export namespace TsrangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tsrange.parse(e));
       }
@@ -6930,8 +6930,8 @@ export namespace PgCatalog {
     export namespace TstzmultirangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tstzmultirange.parse(e));
       }
@@ -6939,8 +6939,8 @@ export namespace PgCatalog {
     export namespace TstzrangeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tstzrange.parse(e));
       }
@@ -6948,8 +6948,8 @@ export namespace PgCatalog {
     export namespace TsvectorArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tsvector.parse(e));
       }
@@ -6957,8 +6957,8 @@ export namespace PgCatalog {
     export namespace TxidSnapshotArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => TxidSnapshot.parse(e));
       }
@@ -6966,8 +6966,8 @@ export namespace PgCatalog {
     export namespace UuidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Uuid.parse(e));
       }
@@ -6975,8 +6975,8 @@ export namespace PgCatalog {
     export namespace VarbitArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Varbit.parse(e));
       }
@@ -6984,8 +6984,8 @@ export namespace PgCatalog {
     export namespace VarcharArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Varchar.parse(e));
       }
@@ -6993,8 +6993,8 @@ export namespace PgCatalog {
     export namespace XidArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Xid.parse(e));
       }
@@ -7002,8 +7002,8 @@ export namespace PgCatalog {
     export namespace Xid8Array {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Xid8.parse(e));
       }
@@ -7011,8 +7011,8 @@ export namespace PgCatalog {
     export namespace XmlArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Xml.parse(e));
       }
@@ -7020,6 +7020,7 @@ export namespace PgCatalog {
     export namespace Aclitem {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7027,6 +7028,7 @@ export namespace PgCatalog {
     export namespace Any {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7034,6 +7036,7 @@ export namespace PgCatalog {
     export namespace Anyarray {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7041,6 +7044,7 @@ export namespace PgCatalog {
     export namespace Anycompatible {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7048,6 +7052,7 @@ export namespace PgCatalog {
     export namespace Anycompatiblearray {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7055,6 +7060,7 @@ export namespace PgCatalog {
     export namespace Anycompatiblemultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7062,6 +7068,7 @@ export namespace PgCatalog {
     export namespace Anycompatiblenonarray {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7069,6 +7076,7 @@ export namespace PgCatalog {
     export namespace Anycompatiblerange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7076,6 +7084,7 @@ export namespace PgCatalog {
     export namespace Anyelement {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7083,6 +7092,7 @@ export namespace PgCatalog {
     export namespace Anyenum {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7090,6 +7100,7 @@ export namespace PgCatalog {
     export namespace Anymultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7097,6 +7108,7 @@ export namespace PgCatalog {
     export namespace Anynonarray {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7104,6 +7116,7 @@ export namespace PgCatalog {
     export namespace Anyrange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7111,8 +7124,8 @@ export namespace PgCatalog {
     export namespace Bit {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
           if (Number.parseFloat(from) > 0) return true;
@@ -7125,8 +7138,8 @@ export namespace PgCatalog {
     export namespace Bool {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
           if (Number.parseFloat(from) > 0) return true;
@@ -7139,6 +7152,7 @@ export namespace PgCatalog {
     export namespace Box {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7146,6 +7160,7 @@ export namespace PgCatalog {
     export namespace Bpchar {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7153,13 +7168,15 @@ export namespace PgCatalog {
     export namespace Bytea {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        return from ? new Uint8Array(JSON.parse(from)) : null;
+        return new Uint8Array(JSON.parse(from));
       }
     }
     export namespace Char {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7167,6 +7184,7 @@ export namespace PgCatalog {
     export namespace Cid {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7174,13 +7192,15 @@ export namespace PgCatalog {
     export namespace Cidr {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        return from ? new Uint8Array(JSON.parse(from)) : null;
+        return new Uint8Array(JSON.parse(from));
       }
     }
     export namespace Circle {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7188,6 +7208,7 @@ export namespace PgCatalog {
     export namespace Cstring {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7195,8 +7216,8 @@ export namespace PgCatalog {
     export namespace Date {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
       }
@@ -7204,6 +7225,7 @@ export namespace PgCatalog {
     export namespace Datemultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7211,6 +7233,7 @@ export namespace PgCatalog {
     export namespace Daterange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7218,6 +7241,7 @@ export namespace PgCatalog {
     export namespace EventTrigger {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7225,6 +7249,7 @@ export namespace PgCatalog {
     export namespace FdwHandler {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7232,22 +7257,23 @@ export namespace PgCatalog {
     export namespace Float4 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Float8 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Gtsvector {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7255,6 +7281,7 @@ export namespace PgCatalog {
     export namespace IndexAmHandler {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7262,6 +7289,7 @@ export namespace PgCatalog {
     export namespace Inet {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7269,16 +7297,16 @@ export namespace PgCatalog {
     export namespace Int2 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int2vector {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         const source = Array.isArray(from)
           ? new Uint16Array(from)
           : JSON.parse(from);
@@ -7288,14 +7316,15 @@ export namespace PgCatalog {
     export namespace Int4 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int4multirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7303,6 +7332,7 @@ export namespace PgCatalog {
     export namespace Int4range {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7310,14 +7340,15 @@ export namespace PgCatalog {
     export namespace Int8 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Int8multirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7325,6 +7356,7 @@ export namespace PgCatalog {
     export namespace Int8range {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7332,6 +7364,7 @@ export namespace PgCatalog {
     export namespace Internal {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7339,14 +7372,15 @@ export namespace PgCatalog {
     export namespace Interval {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Json {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7354,6 +7388,7 @@ export namespace PgCatalog {
     export namespace Jsonb {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7361,6 +7396,7 @@ export namespace PgCatalog {
     export namespace Jsonpath {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7368,6 +7404,7 @@ export namespace PgCatalog {
     export namespace LanguageHandler {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7375,6 +7412,7 @@ export namespace PgCatalog {
     export namespace Line {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7382,6 +7420,7 @@ export namespace PgCatalog {
     export namespace Lseg {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7389,28 +7428,31 @@ export namespace PgCatalog {
     export namespace Macaddr {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        return from ? new Uint8Array(JSON.parse(from)) : null;
+        return new Uint8Array(JSON.parse(from));
       }
     }
     export namespace Macaddr8 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        return from ? new Uint8Array(JSON.parse(from)) : null;
+        return new Uint8Array(JSON.parse(from));
       }
     }
     export namespace Money {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Name {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7418,14 +7460,15 @@ export namespace PgCatalog {
     export namespace Numeric {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Nummultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7433,6 +7476,7 @@ export namespace PgCatalog {
     export namespace Numrange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7440,16 +7484,16 @@ export namespace PgCatalog {
     export namespace Oid {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Oidvector {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Oid.parse(e));
       }
@@ -7457,6 +7501,7 @@ export namespace PgCatalog {
     export namespace Path {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7464,6 +7509,7 @@ export namespace PgCatalog {
     export namespace PgAggregate {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAggregate.is(from)) {
           return {
             aggfnoid: PgCatalog.Types.Regproc.parse(from.aggfnoid),
@@ -7496,6 +7542,7 @@ export namespace PgCatalog {
     export namespace PgAm {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAm.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7510,6 +7557,7 @@ export namespace PgCatalog {
     export namespace PgAmop {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAmop.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7529,6 +7577,7 @@ export namespace PgCatalog {
     export namespace PgAmproc {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAmproc.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7545,6 +7594,7 @@ export namespace PgCatalog {
     export namespace PgAttrdef {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAttrdef.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7559,6 +7609,7 @@ export namespace PgCatalog {
     export namespace PgAttribute {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAttribute.is(from)) {
           return {
             attrelid: PgCatalog.Types.Oid.parse(from.attrelid),
@@ -7595,6 +7646,7 @@ export namespace PgCatalog {
     export namespace PgAuthMembers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAuthMembers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7612,6 +7664,7 @@ export namespace PgCatalog {
     export namespace PgAuthid {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAuthid.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7636,6 +7689,7 @@ export namespace PgCatalog {
     export namespace PgAvailableExtensionVersions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAvailableExtensionVersions.is(from)) {
           return {
             name: PgCatalog.Types.Name.parse(from.name),
@@ -7655,6 +7709,7 @@ export namespace PgCatalog {
     export namespace PgAvailableExtensions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgAvailableExtensions.is(from)) {
           return {
             name: PgCatalog.Types.Name.parse(from.name),
@@ -7669,6 +7724,7 @@ export namespace PgCatalog {
     export namespace PgBackendMemoryContexts {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgBackendMemoryContexts.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -7688,6 +7744,7 @@ export namespace PgCatalog {
     export namespace PgBrinBloomSummary {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7695,6 +7752,7 @@ export namespace PgCatalog {
     export namespace PgBrinMinmaxMultiSummary {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7702,6 +7760,7 @@ export namespace PgCatalog {
     export namespace PgCast {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgCast.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7718,6 +7777,7 @@ export namespace PgCatalog {
     export namespace PgClass {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgClass.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7763,6 +7823,7 @@ export namespace PgCatalog {
     export namespace PgCollation {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgCollation.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7787,6 +7848,7 @@ export namespace PgCatalog {
     export namespace PgConfig {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgConfig.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -7799,6 +7861,7 @@ export namespace PgCatalog {
     export namespace PgConstraint {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgConstraint.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7837,6 +7900,7 @@ export namespace PgCatalog {
     export namespace PgConversion {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgConversion.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7855,6 +7919,7 @@ export namespace PgCatalog {
     export namespace PgCursors {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgCursors.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -7871,6 +7936,7 @@ export namespace PgCatalog {
     export namespace PgDatabase {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgDatabase.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7898,6 +7964,7 @@ export namespace PgCatalog {
     export namespace PgDbRoleSetting {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgDbRoleSetting.is(from)) {
           return {
             setdatabase: PgCatalog.Types.Oid.parse(from.setdatabase),
@@ -7911,6 +7978,7 @@ export namespace PgCatalog {
     export namespace PgDdlCommand {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7918,6 +7986,7 @@ export namespace PgCatalog {
     export namespace PgDefaultAcl {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgDefaultAcl.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7933,6 +8002,7 @@ export namespace PgCatalog {
     export namespace PgDepend {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgDepend.is(from)) {
           return {
             classid: PgCatalog.Types.Oid.parse(from.classid),
@@ -7950,6 +8020,7 @@ export namespace PgCatalog {
     export namespace PgDependencies {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -7957,6 +8028,7 @@ export namespace PgCatalog {
     export namespace PgDescription {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgDescription.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -7971,6 +8043,7 @@ export namespace PgCatalog {
     export namespace PgEnum {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgEnum.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -7985,6 +8058,7 @@ export namespace PgCatalog {
     export namespace PgEventTrigger {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgEventTrigger.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8002,6 +8076,7 @@ export namespace PgCatalog {
     export namespace PgExtension {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgExtension.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8020,6 +8095,7 @@ export namespace PgCatalog {
     export namespace PgFileSettings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgFileSettings.is(from)) {
           return {
             sourcefile: PgCatalog.Types.Text.parse(from.sourcefile),
@@ -8037,6 +8113,7 @@ export namespace PgCatalog {
     export namespace PgForeignDataWrapper {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgForeignDataWrapper.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8054,6 +8131,7 @@ export namespace PgCatalog {
     export namespace PgForeignServer {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgForeignServer.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8072,6 +8150,7 @@ export namespace PgCatalog {
     export namespace PgForeignTable {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgForeignTable.is(from)) {
           return {
             ftrelid: PgCatalog.Types.Oid.parse(from.ftrelid),
@@ -8085,6 +8164,7 @@ export namespace PgCatalog {
     export namespace PgGroup {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgGroup.is(from)) {
           return {
             groname: PgCatalog.Types.Name.parse(from.groname),
@@ -8098,6 +8178,7 @@ export namespace PgCatalog {
     export namespace PgHbaFileRules {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgHbaFileRules.is(from)) {
           return {
             ruleNumber: PgCatalog.Types.Int4.parse(from.ruleNumber),
@@ -8119,6 +8200,7 @@ export namespace PgCatalog {
     export namespace PgIdentFileMappings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgIdentFileMappings.is(from)) {
           return {
             mapNumber: PgCatalog.Types.Int4.parse(from.mapNumber),
@@ -8136,6 +8218,7 @@ export namespace PgCatalog {
     export namespace PgIndex {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgIndex.is(from)) {
           return {
             indexrelid: PgCatalog.Types.Oid.parse(from.indexrelid),
@@ -8169,6 +8252,7 @@ export namespace PgCatalog {
     export namespace PgIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgIndexes.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -8184,6 +8268,7 @@ export namespace PgCatalog {
     export namespace PgInherits {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgInherits.is(from)) {
           return {
             inhrelid: PgCatalog.Types.Oid.parse(from.inhrelid),
@@ -8198,6 +8283,7 @@ export namespace PgCatalog {
     export namespace PgInitPrivs {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgInitPrivs.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -8213,6 +8299,7 @@ export namespace PgCatalog {
     export namespace PgLanguage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgLanguage.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8232,6 +8319,7 @@ export namespace PgCatalog {
     export namespace PgLargeobject {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgLargeobject.is(from)) {
           return {
             loid: PgCatalog.Types.Oid.parse(from.loid),
@@ -8245,6 +8333,7 @@ export namespace PgCatalog {
     export namespace PgLargeobjectMetadata {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgLargeobjectMetadata.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8258,6 +8347,7 @@ export namespace PgCatalog {
     export namespace PgLocks {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgLocks.is(from)) {
           return {
             locktype: PgCatalog.Types.Text.parse(from.locktype),
@@ -8286,8 +8376,8 @@ export namespace PgCatalog {
     export namespace PgLsn {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if (from === "") return null;
         return BigInt(from);
       }
@@ -8295,6 +8385,7 @@ export namespace PgCatalog {
     export namespace PgMatviews {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgMatviews.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -8312,6 +8403,7 @@ export namespace PgCatalog {
     export namespace PgMcvList {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -8319,6 +8411,7 @@ export namespace PgCatalog {
     export namespace PgNamespace {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgNamespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8333,6 +8426,7 @@ export namespace PgCatalog {
     export namespace PgNdistinct {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -8340,6 +8434,7 @@ export namespace PgCatalog {
     export namespace PgNodeTree {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -8347,6 +8442,7 @@ export namespace PgCatalog {
     export namespace PgOpclass {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgOpclass.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8366,6 +8462,7 @@ export namespace PgCatalog {
     export namespace PgOperator {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgOperator.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8391,6 +8488,7 @@ export namespace PgCatalog {
     export namespace PgOpfamily {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgOpfamily.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8406,6 +8504,7 @@ export namespace PgCatalog {
     export namespace PgParameterAcl {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgParameterAcl.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8419,6 +8518,7 @@ export namespace PgCatalog {
     export namespace PgPartitionedTable {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPartitionedTable.is(from)) {
           return {
             partrelid: PgCatalog.Types.Oid.parse(from.partrelid),
@@ -8437,6 +8537,7 @@ export namespace PgCatalog {
     export namespace PgPolicies {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPolicies.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -8455,6 +8556,7 @@ export namespace PgCatalog {
     export namespace PgPolicy {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPolicy.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8473,6 +8575,7 @@ export namespace PgCatalog {
     export namespace PgPreparedStatements {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPreparedStatements.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -8493,6 +8596,7 @@ export namespace PgCatalog {
     export namespace PgPreparedXacts {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPreparedXacts.is(from)) {
           return {
             transaction: PgCatalog.Types.Xid.parse(from.transaction),
@@ -8508,6 +8612,7 @@ export namespace PgCatalog {
     export namespace PgProc {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgProc.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8550,6 +8655,7 @@ export namespace PgCatalog {
     export namespace PgPublication {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPublication.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8569,6 +8675,7 @@ export namespace PgCatalog {
     export namespace PgPublicationNamespace {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPublicationNamespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8582,6 +8689,7 @@ export namespace PgCatalog {
     export namespace PgPublicationRel {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPublicationRel.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8597,6 +8705,7 @@ export namespace PgCatalog {
     export namespace PgPublicationTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgPublicationTables.is(from)) {
           return {
             pubname: PgCatalog.Types.Name.parse(from.pubname),
@@ -8612,6 +8721,7 @@ export namespace PgCatalog {
     export namespace PgRange {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgRange.is(from)) {
           return {
             rngtypid: PgCatalog.Types.Oid.parse(from.rngtypid),
@@ -8629,6 +8739,7 @@ export namespace PgCatalog {
     export namespace PgReplicationOrigin {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgReplicationOrigin.is(from)) {
           return {
             roident: PgCatalog.Types.Oid.parse(from.roident),
@@ -8641,6 +8752,7 @@ export namespace PgCatalog {
     export namespace PgReplicationOriginStatus {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgReplicationOriginStatus.is(from)) {
           return {
             localId: PgCatalog.Types.Oid.parse(from.localId),
@@ -8655,6 +8767,7 @@ export namespace PgCatalog {
     export namespace PgReplicationSlots {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgReplicationSlots.is(from)) {
           return {
             slotName: PgCatalog.Types.Name.parse(from.slotName),
@@ -8683,6 +8796,7 @@ export namespace PgCatalog {
     export namespace PgRewrite {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgRewrite.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -8701,6 +8815,7 @@ export namespace PgCatalog {
     export namespace PgRoles {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgRoles.is(from)) {
           return {
             rolname: PgCatalog.Types.Name.parse(from.rolname),
@@ -8726,6 +8841,7 @@ export namespace PgCatalog {
     export namespace PgRules {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgRules.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -8740,6 +8856,7 @@ export namespace PgCatalog {
     export namespace PgSeclabel {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSeclabel.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -8755,6 +8872,7 @@ export namespace PgCatalog {
     export namespace PgSeclabels {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSeclabels.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -8773,6 +8891,7 @@ export namespace PgCatalog {
     export namespace PgSequence {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSequence.is(from)) {
           return {
             seqrelid: PgCatalog.Types.Oid.parse(from.seqrelid),
@@ -8791,6 +8910,7 @@ export namespace PgCatalog {
     export namespace PgSequences {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSequences.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -8812,6 +8932,7 @@ export namespace PgCatalog {
     export namespace PgSettings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSettings.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -8839,6 +8960,7 @@ export namespace PgCatalog {
     export namespace PgShadow {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgShadow.is(from)) {
           return {
             usename: PgCatalog.Types.Name.parse(from.usename),
@@ -8858,6 +8980,7 @@ export namespace PgCatalog {
     export namespace PgShdepend {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgShdepend.is(from)) {
           return {
             dbid: PgCatalog.Types.Oid.parse(from.dbid),
@@ -8875,6 +8998,7 @@ export namespace PgCatalog {
     export namespace PgShdescription {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgShdescription.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -8888,6 +9012,7 @@ export namespace PgCatalog {
     export namespace PgShmemAllocations {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgShmemAllocations.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -8902,6 +9027,7 @@ export namespace PgCatalog {
     export namespace PgShseclabel {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgShseclabel.is(from)) {
           return {
             objoid: PgCatalog.Types.Oid.parse(from.objoid),
@@ -8916,6 +9042,7 @@ export namespace PgCatalog {
     export namespace PgSnapshot {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -8923,6 +9050,7 @@ export namespace PgCatalog {
     export namespace PgStatActivity {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatActivity.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -8955,6 +9083,7 @@ export namespace PgCatalog {
     export namespace PgStatAllIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatAllIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -8974,6 +9103,7 @@ export namespace PgCatalog {
     export namespace PgStatAllTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9014,6 +9144,7 @@ export namespace PgCatalog {
     export namespace PgStatArchiver {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatArchiver.is(from)) {
           return {
             archivedCount: PgCatalog.Types.Int8.parse(from.archivedCount),
@@ -9035,6 +9166,7 @@ export namespace PgCatalog {
     export namespace PgStatBgwriter {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatBgwriter.is(from)) {
           return {
             checkpointsTimed: PgCatalog.Types.Int8.parse(from.checkpointsTimed),
@@ -9064,6 +9196,7 @@ export namespace PgCatalog {
     export namespace PgStatDatabase {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatDatabase.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -9108,6 +9241,7 @@ export namespace PgCatalog {
     export namespace PgStatDatabaseConflicts {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatDatabaseConflicts.is(from)) {
           return {
             datid: PgCatalog.Types.Oid.parse(from.datid),
@@ -9128,6 +9262,7 @@ export namespace PgCatalog {
     export namespace PgStatGssapi {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatGssapi.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9145,6 +9280,7 @@ export namespace PgCatalog {
     export namespace PgStatIo {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatIo.is(from)) {
           return {
             backendType: PgCatalog.Types.Text.parse(from.backendType),
@@ -9173,6 +9309,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressAnalyze {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressAnalyze.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9199,6 +9336,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressBasebackup {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressBasebackup.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9217,6 +9355,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressCluster {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressCluster.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9247,6 +9386,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressCopy {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressCopy.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9267,6 +9407,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressCreateIndex {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressCreateIndex.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9293,6 +9434,7 @@ export namespace PgCatalog {
     export namespace PgStatProgressVacuum {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatProgressVacuum.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9314,6 +9456,7 @@ export namespace PgCatalog {
     export namespace PgStatRecoveryPrefetch {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatRecoveryPrefetch.is(from)) {
           return {
             statsReset: PgCatalog.Types.Timestamptz.parse(from.statsReset),
@@ -9334,6 +9477,7 @@ export namespace PgCatalog {
     export namespace PgStatReplication {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatReplication.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9364,6 +9508,7 @@ export namespace PgCatalog {
     export namespace PgStatReplicationSlots {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatReplicationSlots.is(from)) {
           return {
             slotName: PgCatalog.Types.Text.parse(from.slotName),
@@ -9384,6 +9529,7 @@ export namespace PgCatalog {
     export namespace PgStatSlru {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSlru.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -9403,6 +9549,7 @@ export namespace PgCatalog {
     export namespace PgStatSsl {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSsl.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9421,6 +9568,7 @@ export namespace PgCatalog {
     export namespace PgStatSubscription {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSubscription.is(from)) {
           return {
             subid: PgCatalog.Types.Oid.parse(from.subid),
@@ -9447,6 +9595,7 @@ export namespace PgCatalog {
     export namespace PgStatSubscriptionStats {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSubscriptionStats.is(from)) {
           return {
             subid: PgCatalog.Types.Oid.parse(from.subid),
@@ -9462,6 +9611,7 @@ export namespace PgCatalog {
     export namespace PgStatSysIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSysIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9481,6 +9631,7 @@ export namespace PgCatalog {
     export namespace PgStatSysTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9521,6 +9672,7 @@ export namespace PgCatalog {
     export namespace PgStatUserFunctions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatUserFunctions.is(from)) {
           return {
             funcid: PgCatalog.Types.Oid.parse(from.funcid),
@@ -9537,6 +9689,7 @@ export namespace PgCatalog {
     export namespace PgStatUserIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatUserIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9556,6 +9709,7 @@ export namespace PgCatalog {
     export namespace PgStatUserTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9596,6 +9750,7 @@ export namespace PgCatalog {
     export namespace PgStatWal {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatWal.is(from)) {
           return {
             walRecords: PgCatalog.Types.Int8.parse(from.walRecords),
@@ -9615,6 +9770,7 @@ export namespace PgCatalog {
     export namespace PgStatWalReceiver {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatWalReceiver.is(from)) {
           return {
             pid: PgCatalog.Types.Int4.parse(from.pid),
@@ -9646,6 +9802,7 @@ export namespace PgCatalog {
     export namespace PgStatXactAllTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatXactAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9668,6 +9825,7 @@ export namespace PgCatalog {
     export namespace PgStatXactSysTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatXactSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9690,6 +9848,7 @@ export namespace PgCatalog {
     export namespace PgStatXactUserFunctions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatXactUserFunctions.is(from)) {
           return {
             funcid: PgCatalog.Types.Oid.parse(from.funcid),
@@ -9706,6 +9865,7 @@ export namespace PgCatalog {
     export namespace PgStatXactUserTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatXactUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9728,6 +9888,7 @@ export namespace PgCatalog {
     export namespace PgStatioAllIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioAllIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9745,6 +9906,7 @@ export namespace PgCatalog {
     export namespace PgStatioAllSequences {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioAllSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9760,6 +9922,7 @@ export namespace PgCatalog {
     export namespace PgStatioAllTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioAllTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9781,6 +9944,7 @@ export namespace PgCatalog {
     export namespace PgStatioSysIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioSysIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9798,6 +9962,7 @@ export namespace PgCatalog {
     export namespace PgStatioSysSequences {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioSysSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9813,6 +9978,7 @@ export namespace PgCatalog {
     export namespace PgStatioSysTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioSysTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9834,6 +10000,7 @@ export namespace PgCatalog {
     export namespace PgStatioUserIndexes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioUserIndexes.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9851,6 +10018,7 @@ export namespace PgCatalog {
     export namespace PgStatioUserSequences {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioUserSequences.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9866,6 +10034,7 @@ export namespace PgCatalog {
     export namespace PgStatioUserTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatioUserTables.is(from)) {
           return {
             relid: PgCatalog.Types.Oid.parse(from.relid),
@@ -9887,6 +10056,7 @@ export namespace PgCatalog {
     export namespace PgStatistic {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatistic.is(from)) {
           return {
             starelid: PgCatalog.Types.Oid.parse(from.starelid),
@@ -9928,6 +10098,7 @@ export namespace PgCatalog {
     export namespace PgStatisticExt {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatisticExt.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -9947,6 +10118,7 @@ export namespace PgCatalog {
     export namespace PgStatisticExtData {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatisticExtData.is(from)) {
           return {
             stxoid: PgCatalog.Types.Oid.parse(from.stxoid),
@@ -9967,6 +10139,7 @@ export namespace PgCatalog {
     export namespace PgStats {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStats.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10001,6 +10174,7 @@ export namespace PgCatalog {
     export namespace PgStatsExt {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatsExt.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10038,6 +10212,7 @@ export namespace PgCatalog {
     export namespace PgStatsExtExprs {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgStatsExtExprs.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10077,6 +10252,7 @@ export namespace PgCatalog {
     export namespace PgSubscription {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSubscription.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10108,6 +10284,7 @@ export namespace PgCatalog {
     export namespace PgSubscriptionRel {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgSubscriptionRel.is(from)) {
           return {
             srsubid: PgCatalog.Types.Oid.parse(from.srsubid),
@@ -10122,6 +10299,7 @@ export namespace PgCatalog {
     export namespace PgTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTables.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10140,6 +10318,7 @@ export namespace PgCatalog {
     export namespace PgTablespace {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTablespace.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10155,6 +10334,7 @@ export namespace PgCatalog {
     export namespace PgTimezoneAbbrevs {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTimezoneAbbrevs.is(from)) {
           return {
             abbrev: PgCatalog.Types.Text.parse(from.abbrev),
@@ -10168,6 +10348,7 @@ export namespace PgCatalog {
     export namespace PgTimezoneNames {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTimezoneNames.is(from)) {
           return {
             name: PgCatalog.Types.Text.parse(from.name),
@@ -10182,6 +10363,7 @@ export namespace PgCatalog {
     export namespace PgTransform {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTransform.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10197,6 +10379,7 @@ export namespace PgCatalog {
     export namespace PgTrigger {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTrigger.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10226,6 +10409,7 @@ export namespace PgCatalog {
     export namespace PgTsConfig {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTsConfig.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10241,6 +10425,7 @@ export namespace PgCatalog {
     export namespace PgTsConfigMap {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTsConfigMap.is(from)) {
           return {
             mapcfg: PgCatalog.Types.Oid.parse(from.mapcfg),
@@ -10255,6 +10440,7 @@ export namespace PgCatalog {
     export namespace PgTsDict {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTsDict.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10271,6 +10457,7 @@ export namespace PgCatalog {
     export namespace PgTsParser {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTsParser.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10289,6 +10476,7 @@ export namespace PgCatalog {
     export namespace PgTsTemplate {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgTsTemplate.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10304,6 +10492,7 @@ export namespace PgCatalog {
     export namespace PgType {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgType.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10346,6 +10535,7 @@ export namespace PgCatalog {
     export namespace PgUser {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgUser.is(from)) {
           return {
             usename: PgCatalog.Types.Name.parse(from.usename),
@@ -10365,6 +10555,7 @@ export namespace PgCatalog {
     export namespace PgUserMapping {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgUserMapping.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -10379,6 +10570,7 @@ export namespace PgCatalog {
     export namespace PgUserMappings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgUserMappings.is(from)) {
           return {
             umid: PgCatalog.Types.Oid.parse(from.umid),
@@ -10395,6 +10587,7 @@ export namespace PgCatalog {
     export namespace PgViews {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (PgCatalog.Types.PgViews.is(from)) {
           return {
             schemaname: PgCatalog.Types.Name.parse(from.schemaname),
@@ -10409,6 +10602,7 @@ export namespace PgCatalog {
     export namespace Point {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10416,6 +10610,7 @@ export namespace PgCatalog {
     export namespace Polygon {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10423,6 +10618,7 @@ export namespace PgCatalog {
     export namespace Record {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10430,6 +10626,7 @@ export namespace PgCatalog {
     export namespace Refcursor {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10437,94 +10634,95 @@ export namespace PgCatalog {
     export namespace Regclass {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regcollation {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regconfig {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regdictionary {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regnamespace {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regoper {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regoperator {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regproc {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regprocedure {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regrole {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace Regtype {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         return Number.parseFloat(from);
       }
     }
     export namespace TableAmHandler {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10532,6 +10730,7 @@ export namespace PgCatalog {
     export namespace Text {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10539,6 +10738,7 @@ export namespace PgCatalog {
     export namespace Tid {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10546,8 +10746,8 @@ export namespace PgCatalog {
     export namespace Time {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
       }
@@ -10555,8 +10755,8 @@ export namespace PgCatalog {
     export namespace Timestamp {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
       }
@@ -10564,8 +10764,8 @@ export namespace PgCatalog {
     export namespace Timestamptz {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
       }
@@ -10573,8 +10773,8 @@ export namespace PgCatalog {
     export namespace Timetz {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if ((from as unknown) instanceof global.Date) return from;
         return new global.Date(from);
       }
@@ -10582,6 +10782,7 @@ export namespace PgCatalog {
     export namespace Trigger {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10589,6 +10790,7 @@ export namespace PgCatalog {
     export namespace TsmHandler {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10596,6 +10798,7 @@ export namespace PgCatalog {
     export namespace Tsmultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10603,6 +10806,7 @@ export namespace PgCatalog {
     export namespace Tsquery {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10610,6 +10814,7 @@ export namespace PgCatalog {
     export namespace Tsrange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10617,6 +10822,7 @@ export namespace PgCatalog {
     export namespace Tstzmultirange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10624,6 +10830,7 @@ export namespace PgCatalog {
     export namespace Tstzrange {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10631,6 +10838,7 @@ export namespace PgCatalog {
     export namespace Tsvector {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10638,6 +10846,7 @@ export namespace PgCatalog {
     export namespace TxidSnapshot {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10645,6 +10854,7 @@ export namespace PgCatalog {
     export namespace Unknown {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10652,15 +10862,16 @@ export namespace PgCatalog {
     export namespace Uuid {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        return from ? new UUID(from) : null;
+        return new UUID(from);
       }
     }
     export namespace Varbit {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         if (["t", "T", "true", "True"].includes(from)) return true;
         try {
           if (Number.parseFloat(from) > 0) return true;
@@ -10673,6 +10884,7 @@ export namespace PgCatalog {
     export namespace Varchar {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10680,6 +10892,7 @@ export namespace PgCatalog {
     export namespace Void {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10687,6 +10900,7 @@ export namespace PgCatalog {
     export namespace Xid {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10694,6 +10908,7 @@ export namespace PgCatalog {
     export namespace Xid8 {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10701,6 +10916,7 @@ export namespace PgCatalog {
     export namespace Xml {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
         return from;
       }
@@ -10907,8 +11123,8 @@ export namespace InformationSchema {
     export namespace AdministrableRoleAuthorizationsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) =>
           AdministrableRoleAuthorizations.parse(e),
@@ -10918,8 +11134,8 @@ export namespace InformationSchema {
     export namespace ApplicableRolesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ApplicableRoles.parse(e));
       }
@@ -10927,8 +11143,8 @@ export namespace InformationSchema {
     export namespace AttributesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Attributes.parse(e));
       }
@@ -10936,8 +11152,8 @@ export namespace InformationSchema {
     export namespace CardinalNumberArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => CardinalNumber.parse(e));
       }
@@ -10945,8 +11161,8 @@ export namespace InformationSchema {
     export namespace CharacterDataArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => CharacterData.parse(e));
       }
@@ -10954,8 +11170,8 @@ export namespace InformationSchema {
     export namespace CharacterSetsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => CharacterSets.parse(e));
       }
@@ -10963,8 +11179,8 @@ export namespace InformationSchema {
     export namespace CheckConstraintRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) =>
           CheckConstraintRoutineUsage.parse(e),
@@ -10974,8 +11190,8 @@ export namespace InformationSchema {
     export namespace CheckConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => CheckConstraints.parse(e));
       }
@@ -10983,8 +11199,8 @@ export namespace InformationSchema {
     export namespace CollationCharacterSetApplicabilityArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) =>
           CollationCharacterSetApplicability.parse(e),
@@ -10994,8 +11210,8 @@ export namespace InformationSchema {
     export namespace CollationsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Collations.parse(e));
       }
@@ -11003,8 +11219,8 @@ export namespace InformationSchema {
     export namespace ColumnColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ColumnColumnUsage.parse(e));
       }
@@ -11012,8 +11228,8 @@ export namespace InformationSchema {
     export namespace ColumnDomainUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ColumnDomainUsage.parse(e));
       }
@@ -11021,8 +11237,8 @@ export namespace InformationSchema {
     export namespace ColumnOptionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ColumnOptions.parse(e));
       }
@@ -11030,8 +11246,8 @@ export namespace InformationSchema {
     export namespace ColumnPrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ColumnPrivileges.parse(e));
       }
@@ -11039,8 +11255,8 @@ export namespace InformationSchema {
     export namespace ColumnUdtUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ColumnUdtUsage.parse(e));
       }
@@ -11048,8 +11264,8 @@ export namespace InformationSchema {
     export namespace ColumnsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Columns.parse(e));
       }
@@ -11057,8 +11273,8 @@ export namespace InformationSchema {
     export namespace ConstraintColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ConstraintColumnUsage.parse(e));
       }
@@ -11066,8 +11282,8 @@ export namespace InformationSchema {
     export namespace ConstraintTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ConstraintTableUsage.parse(e));
       }
@@ -11075,8 +11291,8 @@ export namespace InformationSchema {
     export namespace DataTypePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => DataTypePrivileges.parse(e));
       }
@@ -11084,8 +11300,8 @@ export namespace InformationSchema {
     export namespace DomainConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => DomainConstraints.parse(e));
       }
@@ -11093,8 +11309,8 @@ export namespace InformationSchema {
     export namespace DomainUdtUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => DomainUdtUsage.parse(e));
       }
@@ -11102,8 +11318,8 @@ export namespace InformationSchema {
     export namespace DomainsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Domains.parse(e));
       }
@@ -11111,8 +11327,8 @@ export namespace InformationSchema {
     export namespace ElementTypesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ElementTypes.parse(e));
       }
@@ -11120,8 +11336,8 @@ export namespace InformationSchema {
     export namespace EnabledRolesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => EnabledRoles.parse(e));
       }
@@ -11129,8 +11345,8 @@ export namespace InformationSchema {
     export namespace ForeignDataWrapperOptionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignDataWrapperOptions.parse(e));
       }
@@ -11138,8 +11354,8 @@ export namespace InformationSchema {
     export namespace ForeignDataWrappersArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignDataWrappers.parse(e));
       }
@@ -11147,8 +11363,8 @@ export namespace InformationSchema {
     export namespace ForeignServerOptionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignServerOptions.parse(e));
       }
@@ -11156,8 +11372,8 @@ export namespace InformationSchema {
     export namespace ForeignServersArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignServers.parse(e));
       }
@@ -11165,8 +11381,8 @@ export namespace InformationSchema {
     export namespace ForeignTableOptionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignTableOptions.parse(e));
       }
@@ -11174,8 +11390,8 @@ export namespace InformationSchema {
     export namespace ForeignTablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ForeignTables.parse(e));
       }
@@ -11183,8 +11399,8 @@ export namespace InformationSchema {
     export namespace InformationSchemaCatalogNameArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) =>
           InformationSchemaCatalogName.parse(e),
@@ -11194,8 +11410,8 @@ export namespace InformationSchema {
     export namespace KeyColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => KeyColumnUsage.parse(e));
       }
@@ -11203,8 +11419,8 @@ export namespace InformationSchema {
     export namespace ParametersArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Parameters.parse(e));
       }
@@ -11212,6 +11428,7 @@ export namespace InformationSchema {
     export namespace PgForeignDataWrappers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.PgForeignDataWrappers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11240,6 +11457,7 @@ export namespace InformationSchema {
     export namespace PgForeignServers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.PgForeignServers.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11275,6 +11493,7 @@ export namespace InformationSchema {
     export namespace PgForeignTableColumns {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.PgForeignTableColumns.is(from)) {
           return {
             nspname: PgCatalog.Types.Name.parse(from.nspname),
@@ -11289,6 +11508,7 @@ export namespace InformationSchema {
     export namespace PgForeignTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.PgForeignTables.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11319,6 +11539,7 @@ export namespace InformationSchema {
     export namespace PgUserMappings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.PgUserMappings.is(from)) {
           return {
             oid: PgCatalog.Types.Oid.parse(from.oid),
@@ -11345,8 +11566,8 @@ export namespace InformationSchema {
     export namespace ReferentialConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ReferentialConstraints.parse(e));
       }
@@ -11354,8 +11575,8 @@ export namespace InformationSchema {
     export namespace RoleColumnGrantsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoleColumnGrants.parse(e));
       }
@@ -11363,8 +11584,8 @@ export namespace InformationSchema {
     export namespace RoleRoutineGrantsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoleRoutineGrants.parse(e));
       }
@@ -11372,8 +11593,8 @@ export namespace InformationSchema {
     export namespace RoleTableGrantsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoleTableGrants.parse(e));
       }
@@ -11381,8 +11602,8 @@ export namespace InformationSchema {
     export namespace RoleUdtGrantsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoleUdtGrants.parse(e));
       }
@@ -11390,8 +11611,8 @@ export namespace InformationSchema {
     export namespace RoleUsageGrantsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoleUsageGrants.parse(e));
       }
@@ -11399,8 +11620,8 @@ export namespace InformationSchema {
     export namespace RoutineColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoutineColumnUsage.parse(e));
       }
@@ -11408,8 +11629,8 @@ export namespace InformationSchema {
     export namespace RoutinePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoutinePrivileges.parse(e));
       }
@@ -11417,8 +11638,8 @@ export namespace InformationSchema {
     export namespace RoutineRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoutineRoutineUsage.parse(e));
       }
@@ -11426,8 +11647,8 @@ export namespace InformationSchema {
     export namespace RoutineSequenceUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoutineSequenceUsage.parse(e));
       }
@@ -11435,8 +11656,8 @@ export namespace InformationSchema {
     export namespace RoutineTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => RoutineTableUsage.parse(e));
       }
@@ -11444,8 +11665,8 @@ export namespace InformationSchema {
     export namespace RoutinesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Routines.parse(e));
       }
@@ -11453,8 +11674,8 @@ export namespace InformationSchema {
     export namespace SchemataArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Schemata.parse(e));
       }
@@ -11462,8 +11683,8 @@ export namespace InformationSchema {
     export namespace SequencesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Sequences.parse(e));
       }
@@ -11471,8 +11692,8 @@ export namespace InformationSchema {
     export namespace SqlFeaturesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => SqlFeatures.parse(e));
       }
@@ -11480,8 +11701,8 @@ export namespace InformationSchema {
     export namespace SqlIdentifierArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => SqlIdentifier.parse(e));
       }
@@ -11489,8 +11710,8 @@ export namespace InformationSchema {
     export namespace SqlImplementationInfoArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => SqlImplementationInfo.parse(e));
       }
@@ -11498,8 +11719,8 @@ export namespace InformationSchema {
     export namespace SqlPartsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => SqlParts.parse(e));
       }
@@ -11507,8 +11728,8 @@ export namespace InformationSchema {
     export namespace SqlSizingArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => SqlSizing.parse(e));
       }
@@ -11516,8 +11737,8 @@ export namespace InformationSchema {
     export namespace TableConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => TableConstraints.parse(e));
       }
@@ -11525,8 +11746,8 @@ export namespace InformationSchema {
     export namespace TablePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => TablePrivileges.parse(e));
       }
@@ -11534,8 +11755,8 @@ export namespace InformationSchema {
     export namespace TablesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Tables.parse(e));
       }
@@ -11543,8 +11764,8 @@ export namespace InformationSchema {
     export namespace TimeStampArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => TimeStamp.parse(e));
       }
@@ -11552,8 +11773,8 @@ export namespace InformationSchema {
     export namespace TransformsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Transforms.parse(e));
       }
@@ -11561,8 +11782,8 @@ export namespace InformationSchema {
     export namespace TriggeredUpdateColumnsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => TriggeredUpdateColumns.parse(e));
       }
@@ -11570,8 +11791,8 @@ export namespace InformationSchema {
     export namespace TriggersArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Triggers.parse(e));
       }
@@ -11579,8 +11800,8 @@ export namespace InformationSchema {
     export namespace UdtPrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => UdtPrivileges.parse(e));
       }
@@ -11588,8 +11809,8 @@ export namespace InformationSchema {
     export namespace UsagePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => UsagePrivileges.parse(e));
       }
@@ -11597,8 +11818,8 @@ export namespace InformationSchema {
     export namespace UserDefinedTypesArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => UserDefinedTypes.parse(e));
       }
@@ -11606,8 +11827,8 @@ export namespace InformationSchema {
     export namespace UserMappingOptionsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => UserMappingOptions.parse(e));
       }
@@ -11615,8 +11836,8 @@ export namespace InformationSchema {
     export namespace UserMappingsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => UserMappings.parse(e));
       }
@@ -11624,8 +11845,8 @@ export namespace InformationSchema {
     export namespace ViewColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ViewColumnUsage.parse(e));
       }
@@ -11633,8 +11854,8 @@ export namespace InformationSchema {
     export namespace ViewRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ViewRoutineUsage.parse(e));
       }
@@ -11642,8 +11863,8 @@ export namespace InformationSchema {
     export namespace ViewTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => ViewTableUsage.parse(e));
       }
@@ -11651,8 +11872,8 @@ export namespace InformationSchema {
     export namespace ViewsArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Views.parse(e));
       }
@@ -11660,8 +11881,8 @@ export namespace InformationSchema {
     export namespace YesOrNoArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => YesOrNo.parse(e));
       }
@@ -11669,6 +11890,7 @@ export namespace InformationSchema {
     export namespace AdministrableRoleAuthorizations {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.AdministrableRoleAuthorizations.is(from)) {
           return {
             grantee: InformationSchema.Types.SqlIdentifier.parse(from.grantee),
@@ -11686,6 +11908,7 @@ export namespace InformationSchema {
     export namespace ApplicableRoles {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ApplicableRoles.is(from)) {
           return {
             grantee: InformationSchema.Types.SqlIdentifier.parse(from.grantee),
@@ -11703,6 +11926,7 @@ export namespace InformationSchema {
     export namespace Attributes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Attributes.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11803,18 +12027,21 @@ export namespace InformationSchema {
     export namespace CardinalNumber {
       export function parse(from: any) {
         // DomainType
+        if (from === null || from === undefined) return null;
         return PgCatalog.Types.Int4.parse(from);
       }
     }
     export namespace CharacterData {
       export function parse(from: any) {
         // DomainType
+        if (from === null || from === undefined) return null;
         return PgCatalog.Types.Varchar.parse(from);
       }
     }
     export namespace CharacterSets {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.CharacterSets.is(from)) {
           return {
             characterSetCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11849,6 +12076,7 @@ export namespace InformationSchema {
     export namespace CheckConstraintRoutineUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.CheckConstraintRoutineUsage.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11877,6 +12105,7 @@ export namespace InformationSchema {
     export namespace CheckConstraints {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.CheckConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11899,6 +12128,7 @@ export namespace InformationSchema {
     export namespace CollationCharacterSetApplicability {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (
           InformationSchema.Types.CollationCharacterSetApplicability.is(from)
         ) {
@@ -11929,6 +12159,7 @@ export namespace InformationSchema {
     export namespace Collations {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Collations.is(from)) {
           return {
             collationCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11951,6 +12182,7 @@ export namespace InformationSchema {
     export namespace ColumnColumnUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ColumnColumnUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -11976,6 +12208,7 @@ export namespace InformationSchema {
     export namespace ColumnDomainUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ColumnDomainUsage.is(from)) {
           return {
             domainCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12007,6 +12240,7 @@ export namespace InformationSchema {
     export namespace ColumnOptions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ColumnOptions.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12035,6 +12269,7 @@ export namespace InformationSchema {
     export namespace ColumnPrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ColumnPrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -12065,6 +12300,7 @@ export namespace InformationSchema {
     export namespace ColumnUdtUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ColumnUdtUsage.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12094,6 +12330,7 @@ export namespace InformationSchema {
     export namespace Columns {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Columns.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12231,6 +12468,7 @@ export namespace InformationSchema {
     export namespace ConstraintColumnUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ConstraintColumnUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12262,6 +12500,7 @@ export namespace InformationSchema {
     export namespace ConstraintTableUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ConstraintTableUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12290,6 +12529,7 @@ export namespace InformationSchema {
     export namespace DataTypePrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.DataTypePrivileges.is(from)) {
           return {
             objectCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12315,6 +12555,7 @@ export namespace InformationSchema {
     export namespace DomainConstraints {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.DomainConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12349,6 +12590,7 @@ export namespace InformationSchema {
     export namespace DomainUdtUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.DomainUdtUsage.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12375,6 +12617,7 @@ export namespace InformationSchema {
     export namespace Domains {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Domains.is(from)) {
           return {
             domainCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12465,6 +12708,7 @@ export namespace InformationSchema {
     export namespace ElementTypes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ElementTypes.is(from)) {
           return {
             objectCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12562,6 +12806,7 @@ export namespace InformationSchema {
     export namespace EnabledRoles {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.EnabledRoles.is(from)) {
           return {
             roleName: InformationSchema.Types.SqlIdentifier.parse(
@@ -12575,6 +12820,7 @@ export namespace InformationSchema {
     export namespace ForeignDataWrapperOptions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignDataWrapperOptions.is(from)) {
           return {
             foreignDataWrapperCatalog:
@@ -12598,6 +12844,7 @@ export namespace InformationSchema {
     export namespace ForeignDataWrappers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignDataWrappers.is(from)) {
           return {
             foreignDataWrapperCatalog:
@@ -12626,6 +12873,7 @@ export namespace InformationSchema {
     export namespace ForeignServerOptions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignServerOptions.is(from)) {
           return {
             foreignServerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12648,6 +12896,7 @@ export namespace InformationSchema {
     export namespace ForeignServers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignServers.is(from)) {
           return {
             foreignServerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12681,6 +12930,7 @@ export namespace InformationSchema {
     export namespace ForeignTableOptions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignTableOptions.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12706,6 +12956,7 @@ export namespace InformationSchema {
     export namespace ForeignTables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ForeignTables.is(from)) {
           return {
             foreignTableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12731,6 +12982,7 @@ export namespace InformationSchema {
     export namespace InformationSchemaCatalogName {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.InformationSchemaCatalogName.is(from)) {
           return {
             catalogName: InformationSchema.Types.SqlIdentifier.parse(
@@ -12744,6 +12996,7 @@ export namespace InformationSchema {
     export namespace KeyColumnUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.KeyColumnUsage.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12782,6 +13035,7 @@ export namespace InformationSchema {
     export namespace Parameters {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Parameters.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12883,6 +13137,7 @@ export namespace InformationSchema {
     export namespace ReferentialConstraints {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ReferentialConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -12921,6 +13176,7 @@ export namespace InformationSchema {
     export namespace RoleColumnGrants {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoleColumnGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -12951,6 +13207,7 @@ export namespace InformationSchema {
     export namespace RoleRoutineGrants {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoleRoutineGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -12987,6 +13244,7 @@ export namespace InformationSchema {
     export namespace RoleTableGrants {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoleTableGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13017,6 +13275,7 @@ export namespace InformationSchema {
     export namespace RoleUdtGrants {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoleUdtGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13042,6 +13301,7 @@ export namespace InformationSchema {
     export namespace RoleUsageGrants {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoleUsageGrants.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13072,6 +13332,7 @@ export namespace InformationSchema {
     export namespace RoutineColumnUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoutineColumnUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13112,6 +13373,7 @@ export namespace InformationSchema {
     export namespace RoutinePrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoutinePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13148,6 +13410,7 @@ export namespace InformationSchema {
     export namespace RoutineRoutineUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoutineRoutineUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13176,6 +13439,7 @@ export namespace InformationSchema {
     export namespace RoutineSequenceUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoutineSequenceUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13213,6 +13477,7 @@ export namespace InformationSchema {
     export namespace RoutineTableUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.RoutineTableUsage.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13250,6 +13515,7 @@ export namespace InformationSchema {
     export namespace Routines {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Routines.is(from)) {
           return {
             specificCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13513,6 +13779,7 @@ export namespace InformationSchema {
     export namespace Schemata {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Schemata.is(from)) {
           return {
             catalogName: InformationSchema.Types.SqlIdentifier.parse(
@@ -13545,6 +13812,7 @@ export namespace InformationSchema {
     export namespace Sequences {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Sequences.is(from)) {
           return {
             sequenceCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13591,6 +13859,7 @@ export namespace InformationSchema {
     export namespace SqlFeatures {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.SqlFeatures.is(from)) {
           return {
             featureId: InformationSchema.Types.CharacterData.parse(
@@ -13622,12 +13891,14 @@ export namespace InformationSchema {
     export namespace SqlIdentifier {
       export function parse(from: any) {
         // DomainType
+        if (from === null || from === undefined) return null;
         return PgCatalog.Types.Name.parse(from);
       }
     }
     export namespace SqlImplementationInfo {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.SqlImplementationInfo.is(from)) {
           return {
             implementationInfoId: InformationSchema.Types.CharacterData.parse(
@@ -13653,6 +13924,7 @@ export namespace InformationSchema {
     export namespace SqlParts {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.SqlParts.is(from)) {
           return {
             featureId: InformationSchema.Types.CharacterData.parse(
@@ -13678,6 +13950,7 @@ export namespace InformationSchema {
     export namespace SqlSizing {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.SqlSizing.is(from)) {
           return {
             sizingId: InformationSchema.Types.CardinalNumber.parse(
@@ -13700,6 +13973,7 @@ export namespace InformationSchema {
     export namespace TableConstraints {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.TableConstraints.is(from)) {
           return {
             constraintCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13741,6 +14015,7 @@ export namespace InformationSchema {
     export namespace TablePrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.TablePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13771,6 +14046,7 @@ export namespace InformationSchema {
     export namespace Tables {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Tables.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13816,12 +14092,14 @@ export namespace InformationSchema {
     export namespace TimeStamp {
       export function parse(from: any) {
         // DomainType
+        if (from === null || from === undefined) return null;
         return PgCatalog.Types.Timestamptz.parse(from);
       }
     }
     export namespace Transforms {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Transforms.is(from)) {
           return {
             udtCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13854,6 +14132,7 @@ export namespace InformationSchema {
     export namespace TriggeredUpdateColumns {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.TriggeredUpdateColumns.is(from)) {
           return {
             triggerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13885,6 +14164,7 @@ export namespace InformationSchema {
     export namespace Triggers {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Triggers.is(from)) {
           return {
             triggerCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -13946,6 +14226,7 @@ export namespace InformationSchema {
     export namespace UdtPrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.UdtPrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -13971,6 +14252,7 @@ export namespace InformationSchema {
     export namespace UsagePrivileges {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.UsagePrivileges.is(from)) {
           return {
             grantor: InformationSchema.Types.SqlIdentifier.parse(from.grantor),
@@ -14001,6 +14283,7 @@ export namespace InformationSchema {
     export namespace UserDefinedTypes {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.UserDefinedTypes.is(from)) {
           return {
             userDefinedTypeCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14098,6 +14381,7 @@ export namespace InformationSchema {
     export namespace UserMappingOptions {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.UserMappingOptions.is(from)) {
           return {
             authorizationIdentifier:
@@ -14124,6 +14408,7 @@ export namespace InformationSchema {
     export namespace UserMappings {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.UserMappings.is(from)) {
           return {
             authorizationIdentifier:
@@ -14144,6 +14429,7 @@ export namespace InformationSchema {
     export namespace ViewColumnUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ViewColumnUsage.is(from)) {
           return {
             viewCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14175,6 +14461,7 @@ export namespace InformationSchema {
     export namespace ViewRoutineUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ViewRoutineUsage.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14203,6 +14490,7 @@ export namespace InformationSchema {
     export namespace ViewTableUsage {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.ViewTableUsage.is(from)) {
           return {
             viewCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14231,6 +14519,7 @@ export namespace InformationSchema {
     export namespace Views {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (InformationSchema.Types.Views.is(from)) {
           return {
             tableCatalog: InformationSchema.Types.SqlIdentifier.parse(
@@ -14271,6 +14560,7 @@ export namespace InformationSchema {
     export namespace YesOrNo {
       export function parse(from: any) {
         // DomainType
+        if (from === null || from === undefined) return null;
         return PgCatalog.Types.Varchar.parse(from);
       }
     }
@@ -14296,8 +14586,8 @@ export namespace Api {
     export namespace AnswerArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Answer.parse(e));
       }
@@ -14305,8 +14595,8 @@ export namespace Api {
     export namespace EchoTypeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => EchoType.parse(e));
       }
@@ -14314,8 +14604,8 @@ export namespace Api {
     export namespace EchoTypeNestedArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => EchoTypeNested.parse(e));
       }
@@ -14323,6 +14613,7 @@ export namespace Api {
     export namespace Answer {
       export function parse(from: any) {
         // Enum
+        if (from === null || from === undefined) return null;
         if (
           Object.values(Api.Types.Answer).includes(from as Api.Types.Answer)
         ) {
@@ -14335,6 +14626,7 @@ export namespace Api {
     export namespace EchoType {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (Api.Types.EchoType.is(from)) {
           return {
             echomessage: PgCatalog.Types.Text.parse(from.echomessage),
@@ -14347,6 +14639,7 @@ export namespace Api {
     export namespace EchoTypeNested {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (Api.Types.EchoTypeNested.is(from)) {
           return {
             echoes: Api.Types.EchoTypeArray.parse(from.echoes),
@@ -14358,6 +14651,7 @@ export namespace Api {
     export namespace EchoTable {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (Api.Types.EchoTable.is(from)) {
           return {
             echomessage: PgCatalog.Types.Text.parse(from.echomessage),
@@ -14373,6 +14667,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.Echo.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14384,6 +14679,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Text.parse(from);
         }
       }
@@ -14392,6 +14688,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoSet.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14403,6 +14700,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Text.parse(from);
         }
       }
@@ -14411,6 +14709,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoTable.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14422,6 +14721,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.EchoTable.parse(from);
         }
       }
@@ -14430,6 +14730,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoType.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14441,6 +14742,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.EchoType.parse(from);
         }
       }
@@ -14449,6 +14751,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoTypeArray.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14460,6 +14763,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.EchoTypeArray.parse(from);
         }
       }
@@ -14468,6 +14772,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoTypeNested.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14479,6 +14784,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.EchoTypeNested.parse(from);
         }
       }
@@ -14487,6 +14793,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoTypeSet.Parameters.is(from)) {
             return {
               message: PgCatalog.Types.Text.parse(from.message),
@@ -14498,6 +14805,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.EchoType.parse(from);
         }
       }
@@ -14506,6 +14814,7 @@ export namespace Api {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Api.Procedures.EchoAnswer.Parameters.is(from)) {
             return {
               message: Api.Types.Answer.parse(from.message),
@@ -14517,6 +14826,7 @@ export namespace Api {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Api.Types.Answer.parse(from);
         }
       }
@@ -14529,8 +14839,8 @@ export namespace Public {
     export namespace CubeArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Cube.parse(e));
       }
@@ -14538,8 +14848,8 @@ export namespace Public {
     export namespace SlugArray {
       export function parse(from: any) {
         // ArrayType
-
         if (from === null || from === undefined) return null;
+
         const rawArray = Array.isArray(from) ? from : JSON.parse(from);
         return rawArray.map((e: unknown) => Slug.parse(e));
       }
@@ -14547,8 +14857,8 @@ export namespace Public {
     export namespace Cube {
       export function parse(from: any) {
         // Type
+        if (from === null || from === undefined) return null;
 
-        if (from === null) return null;
         const source = Array.isArray(from)
           ? new Float32Array(from)
           : JSON.parse(from);
@@ -14558,6 +14868,7 @@ export namespace Public {
     export namespace Slug {
       export function parse(from: any) {
         // CompositeType
+        if (from === null || from === undefined) return null;
         if (Public.Types.Slug.is(from)) {
           return {
             slugId: PgCatalog.Types.Int4.parse(from.slugId),
@@ -14572,6 +14883,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeIn.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Cstring.parse(from.argument_0),
@@ -14583,6 +14895,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14591,6 +14904,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.Cube_9c45.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Float8Array.parse(from.argument_0),
@@ -14603,6 +14917,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14611,6 +14926,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.Cube_2e6d.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Float8Array.parse(from.argument_0),
@@ -14622,6 +14938,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14630,6 +14947,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeOut.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14641,6 +14959,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Cstring.parse(from);
         }
       }
@@ -14649,6 +14968,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeEq.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14661,6 +14981,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14669,6 +14990,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeNe.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14681,6 +15003,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14689,6 +15012,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeLt.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14701,6 +15025,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14709,6 +15034,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeGt.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14721,6 +15047,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14729,6 +15056,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeLe.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14741,6 +15069,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14749,6 +15078,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeGe.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14761,6 +15091,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14769,6 +15100,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeCmp.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14781,6 +15113,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Int4.parse(from);
         }
       }
@@ -14789,6 +15122,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeContains.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14801,6 +15135,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14809,6 +15144,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeContained.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14821,6 +15157,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14829,6 +15166,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeOverlap.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14841,6 +15179,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -14849,6 +15188,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeUnion.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14861,6 +15201,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14869,6 +15210,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeInter.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14881,6 +15223,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14889,6 +15232,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeSize.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14900,6 +15244,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -14908,6 +15253,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeSubset.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14920,6 +15266,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -14928,6 +15275,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeDistance.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14940,6 +15288,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -14948,6 +15297,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.DistanceChebyshev.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14960,6 +15310,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -14968,6 +15319,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.DistanceTaxicab.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14980,6 +15332,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -14988,6 +15341,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeDim.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -14999,6 +15353,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Int4.parse(from);
         }
       }
@@ -15007,6 +15362,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeLlCoord.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15019,6 +15375,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -15027,6 +15384,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeUrCoord.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15039,6 +15397,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -15047,6 +15406,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeCoord.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15059,6 +15419,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -15067,6 +15428,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeCoordLlur.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15079,6 +15441,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -15087,6 +15450,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeA5b3.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Float8.parse(from.argument_0),
@@ -15098,6 +15462,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15106,6 +15471,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.Cube_0aec.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Float8.parse(from.argument_0),
@@ -15118,6 +15484,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15126,6 +15493,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.Cube_1bfc.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15138,6 +15506,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15146,6 +15515,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeD8cd.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15159,6 +15529,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15167,6 +15538,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeIsPoint.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15178,6 +15550,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -15186,6 +15559,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeEnlarge.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15199,6 +15573,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15207,6 +15582,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubeConsistent.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15222,6 +15598,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bool.parse(from);
         }
       }
@@ -15230,6 +15607,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubePenalty.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15243,6 +15621,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Internal.parse(from);
         }
       }
@@ -15251,6 +15630,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubePicksplit.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15263,6 +15643,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Internal.parse(from);
         }
       }
@@ -15271,6 +15652,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubeUnion.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15283,6 +15665,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15291,6 +15674,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubeSame.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15304,6 +15688,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Internal.parse(from);
         }
       }
@@ -15312,6 +15697,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.GCubeDistance.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15327,6 +15713,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Float8.parse(from);
         }
       }
@@ -15335,6 +15722,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeRecv.Parameters.is(from)) {
             return {
               argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
@@ -15346,6 +15734,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return Public.Types.Cube.parse(from);
         }
       }
@@ -15354,6 +15743,7 @@ export namespace Public {
       export namespace Parameters {
         export function parse(from: any) {
           // CompositeType
+          if (from === null || from === undefined) return null;
           if (Public.Procedures.CubeSend.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
@@ -15365,6 +15755,7 @@ export namespace Public {
       export namespace Results {
         export function parse(from: any) {
           // AliasType
+          if (from === null || from === undefined) return null;
           return PgCatalog.Types.Bytea.parse(from);
         }
       }

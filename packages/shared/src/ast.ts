@@ -441,7 +441,6 @@ export class ArrayTypeNode extends AbstractTypeNode {
     console.assert(context);
     if (this.memberType) {
       return `
-      if (from === null || from === undefined) return null;
       const rawArray = Array.isArray(from) ? from : JSON.parse(from);
       return rawArray.map((e:unknown) => ${this.memberType.typescriptName}.parse(e));
     `;

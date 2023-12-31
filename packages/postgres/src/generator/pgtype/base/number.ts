@@ -17,7 +17,6 @@ export class PGTypeNumber extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      if (from === null) return null;
       return Number.parseFloat(from);
     `;
   }
@@ -50,7 +49,6 @@ export class PGTypeBigInt extends PGTypeNumber {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      if (from === null) return null;
       if (from === '') return null;
       return BigInt(from);
     `;
@@ -74,7 +72,7 @@ export class PGTypeBytea extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      return from ? new Uint8Array(JSON.parse(from)) : null;
+      return new Uint8Array(JSON.parse(from));
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {

@@ -7,7 +7,6 @@ class PGTypeInt2Vector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      if (from === null) return null;
       const source = Array.isArray(from) ? new Uint16Array(from) : JSON.parse(from);
       return new Uint16Array(source);
     `;
@@ -33,7 +32,6 @@ class PGTypeVector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      if (from === null) return null;
       const source = Array.isArray(from) ? new Float32Array(from) : JSON.parse(from);
       return new Float32Array(source);
     `;

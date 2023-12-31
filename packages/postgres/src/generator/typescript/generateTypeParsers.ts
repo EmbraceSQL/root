@@ -13,13 +13,16 @@ export async function generateTypeParsers(context: GenerationContext) {
 
   const ParseVisitor = {
     before: async (context: GenerationContext, node: AbstractTypeNode) => {
-      const generationBuffer = [await NamespaceVisitor.before(context, node)];
-      // TODO: unknown
-      generationBuffer.push(`export function parse(from: any) {`);
-      generationBuffer.push(`// ${ASTKind[node.kind]}`);
-      generationBuffer.push(`${node.typescriptTypeParser(context)}`);
-      generationBuffer.push(`}`);
-      return generationBuffer.join("\n");
+      return [
+        await NamespaceVisitor.before(context, node),
+        // TODO: unknown
+        `export function parse(from: any) {`,
+        `// ${ASTKind[node.kind]}`,
+        `if (from === null || from === undefined) return null;`,
+        `${node.typescriptTypeParser(context)}`,
+        `}`,
+        "\n",
+      ].join("\n");
     },
     after: NamespaceVisitor.after,
   };

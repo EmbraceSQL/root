@@ -5,7 +5,7 @@ export class PGTypeUri extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-        return from ? new URL(from) : null;
+        return new URL(from);
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {
