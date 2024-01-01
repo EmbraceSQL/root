@@ -23,35 +23,30 @@ describe("The database can marshall complex types", () => {
     const ret = await db.Api.Procedures.echo({ message: "Hi" });
     expect(ret).toEqual("Hi");
   });
-  // TODO: assert parsed types
   it("that are from an set function", async () => {
     const ret = await db.Api.Procedures.echoSet({ message: "Hi" });
     expect(ret).toMatchObject(["Hi"]);
   });
-  // TODO: assert parsed types
   it("that are from an table function", async () => {
     const ret = await db.Api.Procedures.echoTable({ message: "Hi" });
     expect(ret).toMatchObject([{ echomessage: "Hi" }]);
   });
-  // TODO: assert parsed types
   it("that are from an typed function", async () => {
     const ret = await db.Api.Procedures.echoType({ message: "Hi" });
     expect(ret!.echomessage).toEqual("Hi");
     expect(ret!.at).toBeTruthy();
   });
-  // TODO: assert parsed types
   it("that are from an array function", async () => {
     const ret = await db.Api.Procedures.echoTypeArray({ message: "Hi" });
     expect(ret.length).toEqual(1);
-    expect(ret[0].echomessage).toEqual("Hi");
-    expect(ret[0].at).toBeTruthy();
+    expect(ret[0]!.echomessage).toEqual("Hi");
+    expect(ret[0]!.at).toBeTruthy();
   });
-  // TODO: assert parsed types
   it("that are from an nested type function", async () => {
     const ret = await db.Api.Procedures.echoTypeNested({ message: "Hi" });
     expect(ret!.echoes?.length).toEqual(1);
-    expect(ret!.echoes[0].echomessage).toEqual("Hi");
-    expect(ret!.echoes[0].at).toBeTruthy();
+    expect(ret!.echoes[0]!.echomessage).toEqual("Hi");
+    expect(ret!.echoes[0]!.at).toBeTruthy();
   });
   it("that are from an type set function", async () => {
     const ret = await db.Api.Procedures.echoTypeSet({ message: "Hi" });

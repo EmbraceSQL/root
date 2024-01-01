@@ -398,6 +398,11 @@ export class AbstractTypeNode extends ContainerNode {
     return this.parser?.typescriptTypeParser(context);
   }
 
+  typescriptNullOrUndefined(context: GenerationContext) {
+    console.assert(context);
+    return `if (from === null || from === undefined) return null;`;
+  }
+
   typescriptTypeDefinition(context: GenerationContext) {
     return this.parser?.typescriptTypeDefinition(context);
   }
@@ -441,12 +446,17 @@ export class ArrayTypeNode extends AbstractTypeNode {
     console.assert(context);
     if (this.memberType) {
       return `
-      const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+      const rawArray = Array.isArray(from) ? from : JSON.parse(from) as unknown[];
       return rawArray.map((e:unknown) => ${this.memberType.typescriptName}.parse(e));
     `;
     } else {
       throw new Error(`${this.memberType} could not resolve type of element`);
     }
+  }
+
+  typescriptNullOrUndefined(context: GenerationContext) {
+    console.assert(context);
+    return `if (from === null || from === undefined) return [];`;
   }
 }
 

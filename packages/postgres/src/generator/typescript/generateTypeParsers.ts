@@ -18,7 +18,7 @@ export async function generateTypeParsers(context: GenerationContext) {
         // TODO: unknown
         `export function parse(from: any) {`,
         `// ${ASTKind[node.kind]}`,
-        `if (from === null || from === undefined) return null;`,
+        `${node.typescriptNullOrUndefined(context)}`,
         `${node.typescriptTypeParser(context)}`,
         `}`,
         "\n",

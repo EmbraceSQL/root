@@ -10,6 +10,13 @@ export class PGTypeText extends PGCatalogType {
     console.assert(context);
     return `string`;
   }
+
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+      return \`\${from}\`;
+    `;
+  }
 }
 
 /**

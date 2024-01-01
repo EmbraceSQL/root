@@ -142,11 +142,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       [ASTKind.Procedures]: NestedNamedClassVisitor,
       [ASTKind.Procedure]: {
         before: async (_, node) => {
-          const resultType = `${node.resultsResolvedType
-            ?.typescriptNamespacedName}${node.returnsMany ? "[]" : ""}`;
+          const resultType = `${node.resultsResolvedType?.typescriptNamespacedName}`;
           // function call start, passing in parameters
           const generationBuffer = [
-            ` async ${node.typescriptPropertyName}(parameters : ${node.argumentsType?.typescriptNamespacedName}){`,
+            ` async ${node.typescriptPropertyName}(parameters : ${node.argumentsType?.typescriptNamespacedName})`,
+            `{`,
           ];
           // turn parameters into the postgres driver escape sequence
           // this is making a string interpolation with string interpoplation
@@ -180,14 +180,14 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               const responseBody = ( ${(() => {
                 // pseudo record -- which is always a table type but needs more parsing
                 if (node.isPseudoType) {
-                  return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase}))`;
+                  return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
                 }
                 // table cast of a defined type
                 if (node.returnsMany) {
-                  return `results.map(x => x.${node.nameInDatabase})`;
+                  return `results.map(x => ${resultType}.parse(x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
                 }
                 // pick out the scalar case
-                return `undefinedIsNull(${resultType}.parse(results?.[0].${node.nameInDatabase}))`;
+                return `${resultType}.parse(results?.[0].${node.nameInDatabase})`;
               })()} );
               return responseBody;
 

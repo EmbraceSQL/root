@@ -101,7 +101,7 @@ export type JSONValue =
 export type JSONObject = {
   [key: string]: JSONValue | JSONObject;
 };
-export type Nullable<T> = T | null | undefined;
+export type Nullable<T> = T | null;
 
 export type NullableMembers<T> = {
   [Member in keyof T]: Nullable<T[Member]>;

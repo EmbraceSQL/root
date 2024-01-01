@@ -5075,459 +5075,561 @@ export namespace PgCatalog {
     export namespace AclitemArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Aclitem.parse(e));
       }
     }
     export namespace BitArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Bit.parse(e));
       }
     }
     export namespace BoolArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Bool.parse(e));
       }
     }
     export namespace BoxArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Box.parse(e));
       }
     }
     export namespace BpcharArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Bpchar.parse(e));
       }
     }
     export namespace ByteaArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Bytea.parse(e));
       }
     }
     export namespace CharArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Char.parse(e));
       }
     }
     export namespace CidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Cid.parse(e));
       }
     }
     export namespace CidrArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Cidr.parse(e));
       }
     }
     export namespace CircleArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Circle.parse(e));
       }
     }
     export namespace CstringArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Cstring.parse(e));
       }
     }
     export namespace DateArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Date.parse(e));
       }
     }
     export namespace DatemultirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Datemultirange.parse(e));
       }
     }
     export namespace DaterangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Daterange.parse(e));
       }
     }
     export namespace Float4Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Float4.parse(e));
       }
     }
     export namespace Float8Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Float8.parse(e));
       }
     }
     export namespace GtsvectorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Gtsvector.parse(e));
       }
     }
     export namespace InetArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Inet.parse(e));
       }
     }
     export namespace Int2Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int2.parse(e));
       }
     }
     export namespace Int2vectorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int2vector.parse(e));
       }
     }
     export namespace Int4Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int4.parse(e));
       }
     }
     export namespace Int4multirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int4multirange.parse(e));
       }
     }
     export namespace Int4rangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int4range.parse(e));
       }
     }
     export namespace Int8Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int8.parse(e));
       }
     }
     export namespace Int8multirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int8multirange.parse(e));
       }
     }
     export namespace Int8rangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Int8range.parse(e));
       }
     }
     export namespace IntervalArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Interval.parse(e));
       }
     }
     export namespace JsonArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Json.parse(e));
       }
     }
     export namespace JsonbArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Jsonb.parse(e));
       }
     }
     export namespace JsonpathArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Jsonpath.parse(e));
       }
     }
     export namespace LineArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Line.parse(e));
       }
     }
     export namespace LsegArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Lseg.parse(e));
       }
     }
     export namespace MacaddrArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Macaddr.parse(e));
       }
     }
     export namespace Macaddr8Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Macaddr8.parse(e));
       }
     }
     export namespace MoneyArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Money.parse(e));
       }
     }
     export namespace NameArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Name.parse(e));
       }
     }
     export namespace NumericArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Numeric.parse(e));
       }
     }
     export namespace NummultirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Nummultirange.parse(e));
       }
     }
     export namespace NumrangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Numrange.parse(e));
       }
     }
     export namespace OidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Oid.parse(e));
       }
     }
     export namespace OidvectorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Oidvector.parse(e));
       }
     }
     export namespace PathArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Path.parse(e));
       }
     }
     export namespace PgAggregateArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAggregate.parse(e));
       }
     }
     export namespace PgAmArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAm.parse(e));
       }
     }
     export namespace PgAmopArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAmop.parse(e));
       }
     }
     export namespace PgAmprocArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAmproc.parse(e));
       }
     }
     export namespace PgAttrdefArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAttrdef.parse(e));
       }
     }
     export namespace PgAttributeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAttribute.parse(e));
       }
     }
     export namespace PgAuthMembersArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAuthMembers.parse(e));
       }
     }
     export namespace PgAuthidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAuthid.parse(e));
       }
     }
     export namespace PgAvailableExtensionVersionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) =>
           PgAvailableExtensionVersions.parse(e),
         );
@@ -5536,1503 +5638,1837 @@ export namespace PgCatalog {
     export namespace PgAvailableExtensionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgAvailableExtensions.parse(e));
       }
     }
     export namespace PgBackendMemoryContextsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgBackendMemoryContexts.parse(e));
       }
     }
     export namespace PgCastArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgCast.parse(e));
       }
     }
     export namespace PgClassArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgClass.parse(e));
       }
     }
     export namespace PgCollationArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgCollation.parse(e));
       }
     }
     export namespace PgConfigArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgConfig.parse(e));
       }
     }
     export namespace PgConstraintArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgConstraint.parse(e));
       }
     }
     export namespace PgConversionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgConversion.parse(e));
       }
     }
     export namespace PgCursorsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgCursors.parse(e));
       }
     }
     export namespace PgDatabaseArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgDatabase.parse(e));
       }
     }
     export namespace PgDbRoleSettingArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgDbRoleSetting.parse(e));
       }
     }
     export namespace PgDefaultAclArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgDefaultAcl.parse(e));
       }
     }
     export namespace PgDependArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgDepend.parse(e));
       }
     }
     export namespace PgDescriptionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgDescription.parse(e));
       }
     }
     export namespace PgEnumArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgEnum.parse(e));
       }
     }
     export namespace PgEventTriggerArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgEventTrigger.parse(e));
       }
     }
     export namespace PgExtensionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgExtension.parse(e));
       }
     }
     export namespace PgFileSettingsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgFileSettings.parse(e));
       }
     }
     export namespace PgForeignDataWrapperArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgForeignDataWrapper.parse(e));
       }
     }
     export namespace PgForeignServerArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgForeignServer.parse(e));
       }
     }
     export namespace PgForeignTableArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgForeignTable.parse(e));
       }
     }
     export namespace PgGroupArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgGroup.parse(e));
       }
     }
     export namespace PgHbaFileRulesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgHbaFileRules.parse(e));
       }
     }
     export namespace PgIdentFileMappingsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgIdentFileMappings.parse(e));
       }
     }
     export namespace PgIndexArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgIndex.parse(e));
       }
     }
     export namespace PgIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgIndexes.parse(e));
       }
     }
     export namespace PgInheritsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgInherits.parse(e));
       }
     }
     export namespace PgInitPrivsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgInitPrivs.parse(e));
       }
     }
     export namespace PgLanguageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgLanguage.parse(e));
       }
     }
     export namespace PgLargeobjectArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgLargeobject.parse(e));
       }
     }
     export namespace PgLargeobjectMetadataArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgLargeobjectMetadata.parse(e));
       }
     }
     export namespace PgLocksArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgLocks.parse(e));
       }
     }
     export namespace PgLsnArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgLsn.parse(e));
       }
     }
     export namespace PgMatviewsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgMatviews.parse(e));
       }
     }
     export namespace PgNamespaceArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgNamespace.parse(e));
       }
     }
     export namespace PgOpclassArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgOpclass.parse(e));
       }
     }
     export namespace PgOperatorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgOperator.parse(e));
       }
     }
     export namespace PgOpfamilyArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgOpfamily.parse(e));
       }
     }
     export namespace PgParameterAclArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgParameterAcl.parse(e));
       }
     }
     export namespace PgPartitionedTableArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPartitionedTable.parse(e));
       }
     }
     export namespace PgPoliciesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPolicies.parse(e));
       }
     }
     export namespace PgPolicyArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPolicy.parse(e));
       }
     }
     export namespace PgPreparedStatementsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPreparedStatements.parse(e));
       }
     }
     export namespace PgPreparedXactsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPreparedXacts.parse(e));
       }
     }
     export namespace PgProcArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgProc.parse(e));
       }
     }
     export namespace PgPublicationArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPublication.parse(e));
       }
     }
     export namespace PgPublicationNamespaceArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPublicationNamespace.parse(e));
       }
     }
     export namespace PgPublicationRelArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPublicationRel.parse(e));
       }
     }
     export namespace PgPublicationTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgPublicationTables.parse(e));
       }
     }
     export namespace PgRangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgRange.parse(e));
       }
     }
     export namespace PgReplicationOriginArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgReplicationOrigin.parse(e));
       }
     }
     export namespace PgReplicationOriginStatusArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgReplicationOriginStatus.parse(e));
       }
     }
     export namespace PgReplicationSlotsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgReplicationSlots.parse(e));
       }
     }
     export namespace PgRewriteArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgRewrite.parse(e));
       }
     }
     export namespace PgRolesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgRoles.parse(e));
       }
     }
     export namespace PgRulesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgRules.parse(e));
       }
     }
     export namespace PgSeclabelArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSeclabel.parse(e));
       }
     }
     export namespace PgSeclabelsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSeclabels.parse(e));
       }
     }
     export namespace PgSequenceArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSequence.parse(e));
       }
     }
     export namespace PgSequencesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSequences.parse(e));
       }
     }
     export namespace PgSettingsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSettings.parse(e));
       }
     }
     export namespace PgShadowArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgShadow.parse(e));
       }
     }
     export namespace PgShdependArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgShdepend.parse(e));
       }
     }
     export namespace PgShdescriptionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgShdescription.parse(e));
       }
     }
     export namespace PgShmemAllocationsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgShmemAllocations.parse(e));
       }
     }
     export namespace PgShseclabelArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgShseclabel.parse(e));
       }
     }
     export namespace PgSnapshotArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSnapshot.parse(e));
       }
     }
     export namespace PgStatActivityArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatActivity.parse(e));
       }
     }
     export namespace PgStatAllIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatAllIndexes.parse(e));
       }
     }
     export namespace PgStatAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatAllTables.parse(e));
       }
     }
     export namespace PgStatArchiverArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatArchiver.parse(e));
       }
     }
     export namespace PgStatBgwriterArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatBgwriter.parse(e));
       }
     }
     export namespace PgStatDatabaseArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatDatabase.parse(e));
       }
     }
     export namespace PgStatDatabaseConflictsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatDatabaseConflicts.parse(e));
       }
     }
     export namespace PgStatGssapiArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatGssapi.parse(e));
       }
     }
     export namespace PgStatIoArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatIo.parse(e));
       }
     }
     export namespace PgStatProgressAnalyzeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressAnalyze.parse(e));
       }
     }
     export namespace PgStatProgressBasebackupArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressBasebackup.parse(e));
       }
     }
     export namespace PgStatProgressClusterArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressCluster.parse(e));
       }
     }
     export namespace PgStatProgressCopyArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressCopy.parse(e));
       }
     }
     export namespace PgStatProgressCreateIndexArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressCreateIndex.parse(e));
       }
     }
     export namespace PgStatProgressVacuumArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatProgressVacuum.parse(e));
       }
     }
     export namespace PgStatRecoveryPrefetchArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatRecoveryPrefetch.parse(e));
       }
     }
     export namespace PgStatReplicationArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatReplication.parse(e));
       }
     }
     export namespace PgStatReplicationSlotsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatReplicationSlots.parse(e));
       }
     }
     export namespace PgStatSlruArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSlru.parse(e));
       }
     }
     export namespace PgStatSslArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSsl.parse(e));
       }
     }
     export namespace PgStatSubscriptionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSubscription.parse(e));
       }
     }
     export namespace PgStatSubscriptionStatsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSubscriptionStats.parse(e));
       }
     }
     export namespace PgStatSysIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSysIndexes.parse(e));
       }
     }
     export namespace PgStatSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatSysTables.parse(e));
       }
     }
     export namespace PgStatUserFunctionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatUserFunctions.parse(e));
       }
     }
     export namespace PgStatUserIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatUserIndexes.parse(e));
       }
     }
     export namespace PgStatUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatUserTables.parse(e));
       }
     }
     export namespace PgStatWalArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatWal.parse(e));
       }
     }
     export namespace PgStatWalReceiverArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatWalReceiver.parse(e));
       }
     }
     export namespace PgStatXactAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatXactAllTables.parse(e));
       }
     }
     export namespace PgStatXactSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatXactSysTables.parse(e));
       }
     }
     export namespace PgStatXactUserFunctionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatXactUserFunctions.parse(e));
       }
     }
     export namespace PgStatXactUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatXactUserTables.parse(e));
       }
     }
     export namespace PgStatioAllIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioAllIndexes.parse(e));
       }
     }
     export namespace PgStatioAllSequencesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioAllSequences.parse(e));
       }
     }
     export namespace PgStatioAllTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioAllTables.parse(e));
       }
     }
     export namespace PgStatioSysIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioSysIndexes.parse(e));
       }
     }
     export namespace PgStatioSysSequencesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioSysSequences.parse(e));
       }
     }
     export namespace PgStatioSysTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioSysTables.parse(e));
       }
     }
     export namespace PgStatioUserIndexesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioUserIndexes.parse(e));
       }
     }
     export namespace PgStatioUserSequencesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioUserSequences.parse(e));
       }
     }
     export namespace PgStatioUserTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatioUserTables.parse(e));
       }
     }
     export namespace PgStatisticArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatistic.parse(e));
       }
     }
     export namespace PgStatisticExtArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatisticExt.parse(e));
       }
     }
     export namespace PgStatisticExtDataArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatisticExtData.parse(e));
       }
     }
     export namespace PgStatsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStats.parse(e));
       }
     }
     export namespace PgStatsExtArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatsExt.parse(e));
       }
     }
     export namespace PgStatsExtExprsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgStatsExtExprs.parse(e));
       }
     }
     export namespace PgSubscriptionArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSubscription.parse(e));
       }
     }
     export namespace PgSubscriptionRelArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgSubscriptionRel.parse(e));
       }
     }
     export namespace PgTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTables.parse(e));
       }
     }
     export namespace PgTablespaceArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTablespace.parse(e));
       }
     }
     export namespace PgTimezoneAbbrevsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTimezoneAbbrevs.parse(e));
       }
     }
     export namespace PgTimezoneNamesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTimezoneNames.parse(e));
       }
     }
     export namespace PgTransformArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTransform.parse(e));
       }
     }
     export namespace PgTriggerArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTrigger.parse(e));
       }
     }
     export namespace PgTsConfigArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTsConfig.parse(e));
       }
     }
     export namespace PgTsConfigMapArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTsConfigMap.parse(e));
       }
     }
     export namespace PgTsDictArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTsDict.parse(e));
       }
     }
     export namespace PgTsParserArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTsParser.parse(e));
       }
     }
     export namespace PgTsTemplateArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgTsTemplate.parse(e));
       }
     }
     export namespace PgTypeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgType.parse(e));
       }
     }
     export namespace PgUserArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgUser.parse(e));
       }
     }
     export namespace PgUserMappingArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgUserMapping.parse(e));
       }
     }
     export namespace PgUserMappingsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgUserMappings.parse(e));
       }
     }
     export namespace PgViewsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => PgViews.parse(e));
       }
     }
     export namespace PointArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Point.parse(e));
       }
     }
     export namespace PolygonArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Polygon.parse(e));
       }
     }
     export namespace RecordArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Record.parse(e));
       }
     }
     export namespace RefcursorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Refcursor.parse(e));
       }
     }
     export namespace RegclassArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regclass.parse(e));
       }
     }
     export namespace RegcollationArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regcollation.parse(e));
       }
     }
     export namespace RegconfigArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regconfig.parse(e));
       }
     }
     export namespace RegdictionaryArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regdictionary.parse(e));
       }
     }
     export namespace RegnamespaceArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regnamespace.parse(e));
       }
     }
     export namespace RegoperArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regoper.parse(e));
       }
     }
     export namespace RegoperatorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regoperator.parse(e));
       }
     }
     export namespace RegprocArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regproc.parse(e));
       }
     }
     export namespace RegprocedureArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regprocedure.parse(e));
       }
     }
     export namespace RegroleArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regrole.parse(e));
       }
     }
     export namespace RegtypeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Regtype.parse(e));
       }
     }
     export namespace TextArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Text.parse(e));
       }
     }
     export namespace TidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tid.parse(e));
       }
     }
     export namespace TimeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Time.parse(e));
       }
     }
     export namespace TimestampArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Timestamp.parse(e));
       }
     }
     export namespace TimestamptzArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Timestamptz.parse(e));
       }
     }
     export namespace TimetzArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Timetz.parse(e));
       }
     }
     export namespace TsmultirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tsmultirange.parse(e));
       }
     }
     export namespace TsqueryArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tsquery.parse(e));
       }
     }
     export namespace TsrangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tsrange.parse(e));
       }
     }
     export namespace TstzmultirangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tstzmultirange.parse(e));
       }
     }
     export namespace TstzrangeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tstzrange.parse(e));
       }
     }
     export namespace TsvectorArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tsvector.parse(e));
       }
     }
     export namespace TxidSnapshotArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => TxidSnapshot.parse(e));
       }
     }
     export namespace UuidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Uuid.parse(e));
       }
     }
     export namespace VarbitArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Varbit.parse(e));
       }
     }
     export namespace VarcharArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Varchar.parse(e));
       }
     }
     export namespace XidArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Xid.parse(e));
       }
     }
     export namespace Xid8Array {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Xid8.parse(e));
       }
     }
     export namespace XmlArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Xml.parse(e));
       }
     }
@@ -7041,7 +7477,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Any {
@@ -7181,7 +7617,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Bytea {
@@ -7197,7 +7633,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Cid {
@@ -7205,7 +7641,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Cidr {
@@ -7417,7 +7853,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace LanguageHandler {
@@ -7473,7 +7909,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Numeric {
@@ -7511,9 +7947,11 @@ export namespace PgCatalog {
     export namespace Oidvector {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Oid.parse(e));
       }
     }
@@ -7765,7 +8203,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgBrinMinmaxMultiSummary {
@@ -7773,7 +8211,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgCast {
@@ -8041,7 +8479,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgDescription {
@@ -8424,7 +8862,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgNamespace {
@@ -8447,7 +8885,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgNodeTree {
@@ -8455,7 +8893,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgOpclass {
@@ -9063,7 +9501,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace PgStatActivity {
@@ -10631,7 +11069,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Record {
@@ -10647,7 +11085,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Regclass {
@@ -10751,7 +11189,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Tid {
@@ -10827,7 +11265,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Tsrange {
@@ -10859,7 +11297,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace TxidSnapshot {
@@ -10867,7 +11305,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Unknown {
@@ -10905,7 +11343,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Void {
@@ -10921,7 +11359,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Xid8 {
@@ -10929,7 +11367,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
     export namespace Xml {
@@ -10937,7 +11375,7 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        return from;
+        return `${from}`;
       }
     }
   }
@@ -11142,9 +11580,11 @@ export namespace InformationSchema {
     export namespace AdministrableRoleAuthorizationsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) =>
           AdministrableRoleAuthorizations.parse(e),
         );
@@ -11153,54 +11593,66 @@ export namespace InformationSchema {
     export namespace ApplicableRolesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ApplicableRoles.parse(e));
       }
     }
     export namespace AttributesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Attributes.parse(e));
       }
     }
     export namespace CardinalNumberArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => CardinalNumber.parse(e));
       }
     }
     export namespace CharacterDataArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => CharacterData.parse(e));
       }
     }
     export namespace CharacterSetsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => CharacterSets.parse(e));
       }
     }
     export namespace CheckConstraintRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) =>
           CheckConstraintRoutineUsage.parse(e),
         );
@@ -11209,18 +11661,22 @@ export namespace InformationSchema {
     export namespace CheckConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => CheckConstraints.parse(e));
       }
     }
     export namespace CollationCharacterSetApplicabilityArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) =>
           CollationCharacterSetApplicability.parse(e),
         );
@@ -11229,198 +11685,242 @@ export namespace InformationSchema {
     export namespace CollationsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Collations.parse(e));
       }
     }
     export namespace ColumnColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ColumnColumnUsage.parse(e));
       }
     }
     export namespace ColumnDomainUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ColumnDomainUsage.parse(e));
       }
     }
     export namespace ColumnOptionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ColumnOptions.parse(e));
       }
     }
     export namespace ColumnPrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ColumnPrivileges.parse(e));
       }
     }
     export namespace ColumnUdtUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ColumnUdtUsage.parse(e));
       }
     }
     export namespace ColumnsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Columns.parse(e));
       }
     }
     export namespace ConstraintColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ConstraintColumnUsage.parse(e));
       }
     }
     export namespace ConstraintTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ConstraintTableUsage.parse(e));
       }
     }
     export namespace DataTypePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => DataTypePrivileges.parse(e));
       }
     }
     export namespace DomainConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => DomainConstraints.parse(e));
       }
     }
     export namespace DomainUdtUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => DomainUdtUsage.parse(e));
       }
     }
     export namespace DomainsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Domains.parse(e));
       }
     }
     export namespace ElementTypesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ElementTypes.parse(e));
       }
     }
     export namespace EnabledRolesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => EnabledRoles.parse(e));
       }
     }
     export namespace ForeignDataWrapperOptionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignDataWrapperOptions.parse(e));
       }
     }
     export namespace ForeignDataWrappersArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignDataWrappers.parse(e));
       }
     }
     export namespace ForeignServerOptionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignServerOptions.parse(e));
       }
     }
     export namespace ForeignServersArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignServers.parse(e));
       }
     }
     export namespace ForeignTableOptionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignTableOptions.parse(e));
       }
     }
     export namespace ForeignTablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ForeignTables.parse(e));
       }
     }
     export namespace InformationSchemaCatalogNameArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) =>
           InformationSchemaCatalogName.parse(e),
         );
@@ -11429,18 +11929,22 @@ export namespace InformationSchema {
     export namespace KeyColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => KeyColumnUsage.parse(e));
       }
     }
     export namespace ParametersArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Parameters.parse(e));
       }
     }
@@ -11585,324 +12089,396 @@ export namespace InformationSchema {
     export namespace ReferentialConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ReferentialConstraints.parse(e));
       }
     }
     export namespace RoleColumnGrantsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoleColumnGrants.parse(e));
       }
     }
     export namespace RoleRoutineGrantsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoleRoutineGrants.parse(e));
       }
     }
     export namespace RoleTableGrantsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoleTableGrants.parse(e));
       }
     }
     export namespace RoleUdtGrantsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoleUdtGrants.parse(e));
       }
     }
     export namespace RoleUsageGrantsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoleUsageGrants.parse(e));
       }
     }
     export namespace RoutineColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoutineColumnUsage.parse(e));
       }
     }
     export namespace RoutinePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoutinePrivileges.parse(e));
       }
     }
     export namespace RoutineRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoutineRoutineUsage.parse(e));
       }
     }
     export namespace RoutineSequenceUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoutineSequenceUsage.parse(e));
       }
     }
     export namespace RoutineTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => RoutineTableUsage.parse(e));
       }
     }
     export namespace RoutinesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Routines.parse(e));
       }
     }
     export namespace SchemataArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Schemata.parse(e));
       }
     }
     export namespace SequencesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Sequences.parse(e));
       }
     }
     export namespace SqlFeaturesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => SqlFeatures.parse(e));
       }
     }
     export namespace SqlIdentifierArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => SqlIdentifier.parse(e));
       }
     }
     export namespace SqlImplementationInfoArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => SqlImplementationInfo.parse(e));
       }
     }
     export namespace SqlPartsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => SqlParts.parse(e));
       }
     }
     export namespace SqlSizingArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => SqlSizing.parse(e));
       }
     }
     export namespace TableConstraintsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => TableConstraints.parse(e));
       }
     }
     export namespace TablePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => TablePrivileges.parse(e));
       }
     }
     export namespace TablesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Tables.parse(e));
       }
     }
     export namespace TimeStampArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => TimeStamp.parse(e));
       }
     }
     export namespace TransformsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Transforms.parse(e));
       }
     }
     export namespace TriggeredUpdateColumnsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => TriggeredUpdateColumns.parse(e));
       }
     }
     export namespace TriggersArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Triggers.parse(e));
       }
     }
     export namespace UdtPrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => UdtPrivileges.parse(e));
       }
     }
     export namespace UsagePrivilegesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => UsagePrivileges.parse(e));
       }
     }
     export namespace UserDefinedTypesArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => UserDefinedTypes.parse(e));
       }
     }
     export namespace UserMappingOptionsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => UserMappingOptions.parse(e));
       }
     }
     export namespace UserMappingsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => UserMappings.parse(e));
       }
     }
     export namespace ViewColumnUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ViewColumnUsage.parse(e));
       }
     }
     export namespace ViewRoutineUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ViewRoutineUsage.parse(e));
       }
     }
     export namespace ViewTableUsageArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => ViewTableUsage.parse(e));
       }
     }
     export namespace ViewsArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Views.parse(e));
       }
     }
     export namespace YesOrNoArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => YesOrNo.parse(e));
       }
     }
@@ -14605,36 +15181,44 @@ export namespace Api {
     export namespace AnswerArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Answer.parse(e));
       }
     }
     export namespace EchoTypeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => EchoType.parse(e));
       }
     }
     export namespace EchoTypeNestedArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => EchoTypeNested.parse(e));
       }
     }
     export namespace QAndAArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => QAndA.parse(e));
       }
     }
@@ -14884,18 +15468,22 @@ export namespace Public {
     export namespace CubeArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Cube.parse(e));
       }
     }
     export namespace SlugArray {
       export function parse(from: any) {
         // ArrayType
-        if (from === null || from === undefined) return null;
+        if (from === null || from === undefined) return [];
 
-        const rawArray = Array.isArray(from) ? from : JSON.parse(from);
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from) as unknown[]);
         return rawArray.map((e: unknown) => Slug.parse(e));
       }
     }
@@ -23864,9 +24452,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Text.parse(results?.[0].echo),
-        );
+        const responseBody = PgCatalog.Types.Text.parse(results?.[0].echo);
         return responseBody;
       }
       async echoSet(parameters: Api.Procedures.EchoSet.Parameters) {
@@ -23879,7 +24465,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = results.map((x) => x.echo_set);
+        const responseBody = results
+          .map((x) => PgCatalog.Types.Text.parse(x.echo_set))
+          .filter<PgCatalog.Types.Text>(
+            (r): r is PgCatalog.Types.Text => r !== null,
+          );
         return responseBody;
       }
       async echoTable(parameters: Api.Procedures.EchoTable.Parameters) {
@@ -23903,9 +24493,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = results.map((x) =>
-          parseResult(this.database.context, x.echo_table),
-        );
+        const responseBody = results
+          .map((x) => parseResult(this.database.context, x.echo_table))
+          .filter<Api.Types.EchoTable>(
+            (r): r is Api.Types.EchoTable => r !== null,
+          );
         return responseBody;
       }
       async echoType(parameters: Api.Procedures.EchoType.Parameters) {
@@ -23918,9 +24510,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Api.Types.EchoType.parse(results?.[0].echo_type),
-        );
+        const responseBody = Api.Types.EchoType.parse(results?.[0].echo_type);
         return responseBody;
       }
       async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Parameters) {
@@ -23933,8 +24523,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Api.Types.EchoTypeArray.parse(results?.[0].echo_type_array),
+        const responseBody = Api.Types.EchoTypeArray.parse(
+          results?.[0].echo_type_array,
         );
         return responseBody;
       }
@@ -23950,8 +24540,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Api.Types.EchoTypeNested.parse(results?.[0].echo_type_nested),
+        const responseBody = Api.Types.EchoTypeNested.parse(
+          results?.[0].echo_type_nested,
         );
         return responseBody;
       }
@@ -23965,7 +24555,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = results.map((x) => x.echo_type_set);
+        const responseBody = results
+          .map((x) => Api.Types.EchoType.parse(x.echo_type_set))
+          .filter<Api.Types.EchoType>(
+            (r): r is Api.Types.EchoType => r !== null,
+          );
         return responseBody;
       }
       async echoAnswer(parameters: Api.Procedures.EchoAnswer.Parameters) {
@@ -23978,9 +24572,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Api.Types.Answer.parse(results?.[0].echo_answer),
-        );
+        const responseBody = Api.Types.Answer.parse(results?.[0].echo_answer);
         return responseBody;
       }
     })(this);
@@ -24144,9 +24736,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_in),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_in);
         return responseBody;
       }
       async cube_9c45(parameters: Public.Procedures.Cube_9c45.Parameters) {
@@ -24159,9 +24749,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1022](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Parameters) {
@@ -24174,9 +24762,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cubeOut(parameters: Public.Procedures.CubeOut.Parameters) {
@@ -24189,8 +24775,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Cstring.parse(results?.[0].cube_out),
+        const responseBody = PgCatalog.Types.Cstring.parse(
+          results?.[0].cube_out,
         );
         return responseBody;
       }
@@ -24204,9 +24790,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_eq),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_eq);
         return responseBody;
       }
       async cubeNe(parameters: Public.Procedures.CubeNe.Parameters) {
@@ -24219,9 +24803,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_ne),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ne);
         return responseBody;
       }
       async cubeLt(parameters: Public.Procedures.CubeLt.Parameters) {
@@ -24234,9 +24816,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_lt),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_lt);
         return responseBody;
       }
       async cubeGt(parameters: Public.Procedures.CubeGt.Parameters) {
@@ -24249,9 +24829,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_gt),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_gt);
         return responseBody;
       }
       async cubeLe(parameters: Public.Procedures.CubeLe.Parameters) {
@@ -24264,9 +24842,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_le),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_le);
         return responseBody;
       }
       async cubeGe(parameters: Public.Procedures.CubeGe.Parameters) {
@@ -24279,9 +24855,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_ge),
-        );
+        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ge);
         return responseBody;
       }
       async cubeCmp(parameters: Public.Procedures.CubeCmp.Parameters) {
@@ -24294,9 +24868,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Int4.parse(results?.[0].cube_cmp),
-        );
+        const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_cmp);
         return responseBody;
       }
       async cubeContains(
@@ -24311,8 +24883,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_contains),
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].cube_contains,
         );
         return responseBody;
       }
@@ -24328,8 +24900,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_contained),
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].cube_contained,
         );
         return responseBody;
       }
@@ -24343,8 +24915,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_overlap),
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].cube_overlap,
         );
         return responseBody;
       }
@@ -24358,9 +24930,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_union),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_union);
         return responseBody;
       }
       async cubeInter(parameters: Public.Procedures.CubeInter.Parameters) {
@@ -24373,9 +24943,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_inter),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_inter);
         return responseBody;
       }
       async cubeSize(parameters: Public.Procedures.CubeSize.Parameters) {
@@ -24388,8 +24956,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_size),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_size,
         );
         return responseBody;
       }
@@ -24403,9 +24971,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1007](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_subset),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_subset);
         return responseBody;
       }
       async cubeDistance(
@@ -24420,8 +24986,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_distance),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_distance,
         );
         return responseBody;
       }
@@ -24437,8 +25003,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].distance_chebyshev,
         );
         return responseBody;
       }
@@ -24454,8 +25020,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[30227](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].distance_taxicab,
         );
         return responseBody;
       }
@@ -24469,9 +25035,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Int4.parse(results?.[0].cube_dim),
-        );
+        const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_dim);
         return responseBody;
       }
       async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Parameters) {
@@ -24484,8 +25048,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_ll_coord,
         );
         return responseBody;
       }
@@ -24499,8 +25063,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_ur_coord,
         );
         return responseBody;
       }
@@ -24514,8 +25078,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_coord),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_coord,
         );
         return responseBody;
       }
@@ -24531,8 +25095,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].cube_coord_llur,
         );
         return responseBody;
       }
@@ -24546,9 +25110,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cube_0aec(parameters: Public.Procedures.Cube_0aec.Parameters) {
@@ -24561,9 +25123,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cube_3d2f(parameters: Public.Procedures.Cube_3d2f.Parameters) {
@@ -24576,9 +25136,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cube_9133(parameters: Public.Procedures.Cube_9133.Parameters) {
@@ -24593,9 +25151,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
       async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Parameters) {
@@ -24608,8 +25164,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].cube_is_point),
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].cube_is_point,
         );
         return responseBody;
       }
@@ -24625,9 +25181,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_enlarge),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_enlarge);
         return responseBody;
       }
       async gCubeConsistent(
@@ -24648,8 +25202,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_3),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent),
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].g_cube_consistent,
         );
         return responseBody;
       }
@@ -24667,8 +25221,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Internal.parse(results?.[0].g_cube_penalty),
+        const responseBody = PgCatalog.Types.Internal.parse(
+          results?.[0].g_cube_penalty,
         );
         return responseBody;
       }
@@ -24684,8 +25238,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Internal.parse(results?.[0].g_cube_picksplit),
+        const responseBody = PgCatalog.Types.Internal.parse(
+          results?.[0].g_cube_picksplit,
         );
         return responseBody;
       }
@@ -24699,9 +25253,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].g_cube_union),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].g_cube_union);
         return responseBody;
       }
       async gCubeSame(parameters: Public.Procedures.GCubeSame.Parameters) {
@@ -24716,8 +25268,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Internal.parse(results?.[0].g_cube_same),
+        const responseBody = PgCatalog.Types.Internal.parse(
+          results?.[0].g_cube_same,
         );
         return responseBody;
       }
@@ -24739,8 +25291,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_3),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance),
+        const responseBody = PgCatalog.Types.Float8.parse(
+          results?.[0].g_cube_distance,
         );
         return responseBody;
       }
@@ -24754,9 +25306,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          Public.Types.Cube.parse(results?.[0].cube_recv),
-        );
+        const responseBody = Public.Types.Cube.parse(results?.[0].cube_recv);
         return responseBody;
       }
       async cubeSend(parameters: Public.Procedures.CubeSend.Parameters) {
@@ -24769,8 +25319,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
-        const responseBody = undefinedIsNull(
-          PgCatalog.Types.Bytea.parse(results?.[0].cube_send),
+        const responseBody = PgCatalog.Types.Bytea.parse(
+          results?.[0].cube_send,
         );
         return responseBody;
       }
