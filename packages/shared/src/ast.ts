@@ -625,19 +625,6 @@ export abstract class OperationNode extends ContainerNode {
       )
       .find((c) => c.name === ARGUMENTS);
   }
-
-  // TODO: remove
-  get valuesType() {
-    const typeNode = this.children
-      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
-        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
-      )
-      .find((c) => c.name === VALUES);
-    // resolve type alias
-    return typeNode?.kind === ASTKind.AliasType
-      ? (typeNode as AliasTypeNode).type
-      : typeNode;
-  }
 }
 
 /**
