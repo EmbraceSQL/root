@@ -115,3 +115,14 @@ BEGIN
   RETURN message;
 END;
 $$;
+
+CREATE TABLE api.q_and_a (
+  question TEXT NOT NULL,
+  answer api.answer NULL
+);
+
+CREATE INDEX q_and_a_answer ON api.q_and_a USING btree (answer);
+
+COPY api.q_and_a (question, answer) FROM stdin WITH NULL as 'NULL';
+Is this a test?	Yes
+Is this a question?	NULL

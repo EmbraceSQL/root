@@ -71,6 +71,12 @@ describe("The database can marshall complex types", () => {
     });
     expect(ret).toBeNull();
   });
+  it("that are from an enum AutoCRUD", async () => {
+    const ret = await db.Api.Tables.QAndA.ByAnswer.read({
+      answer: Api.Types.Answer.Yes,
+    });
+    expect(ret[0].question).toBe("Is this a test?");
+  });
 });
 
 describe("The database can marshall base types", () => {

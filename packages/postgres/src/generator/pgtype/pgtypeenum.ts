@@ -57,7 +57,4 @@ export class PGTypeEnum extends PGCatalogType {
     );
     context.database.registerType(type.id, type);
   }
-
-  // TODO: add unit test with enum in a query
-  // TODO: add unit test with enums with different base types
 }
