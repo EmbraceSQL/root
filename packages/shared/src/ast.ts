@@ -129,7 +129,7 @@ export type ASTKindMap = {
   [ASTKind.Procedure]: ProcedureNode;
   [ASTKind.ProcedureArgument]: ProcedureArgumentNode;
   [ASTKind.Type]: TypeNode;
-  [ASTKind.Enum]: EnumNode;
+  [ASTKind.Enum]: EnumTypeNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
   [ASTKind.Attribute]: AttributeTypeNode;
   [ASTKind.AliasType]: AliasTypeNode;
@@ -450,11 +450,10 @@ export class ArrayTypeNode extends AbstractTypeNode {
   }
 }
 
-// TODO: rename EnumTypeNode
 /**
  * Represents a single enum from a database.
  */
-export class EnumNode extends AbstractTypeNode {
+export class EnumTypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     public values: string[],

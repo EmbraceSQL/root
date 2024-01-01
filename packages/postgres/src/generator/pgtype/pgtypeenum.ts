@@ -2,7 +2,7 @@ import { TypeFactoryContext } from "../../context";
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
 import { CatalogRow } from "./pgtype";
-import { EnumNode, GenerationContext } from "@embracesql/shared";
+import { EnumTypeNode, GenerationContext } from "@embracesql/shared";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -48,7 +48,7 @@ export class PGTypeEnum extends PGCatalogType {
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.catalog.nspname);
 
-    const type = new EnumNode(
+    const type = new EnumTypeNode(
       this.catalog.typname,
       this.values.map((v) => v.enumlabel),
       schema.types,
