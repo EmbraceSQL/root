@@ -20,8 +20,7 @@ export const RESULTS = "results";
  *
  * Think -- things that go in a WHERE clause.
  */
-export const ARGUMENTS = "parameters";
-// TODO rename to PARAMETERS
+export const PARAMETERS = "parameters";
 
 /**
  * Common name for passed in values to set or read.
@@ -628,12 +627,12 @@ export class IndexColumnNode extends ContainerNode implements NamedType {
 // operations
 
 export abstract class OperationNode extends ContainerNode {
-  get argumentsType() {
+  get parametersType() {
     return this.children
       .filter<CompositeTypeNode>(
         (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
       )
-      .find((c) => c.name === ARGUMENTS);
+      .find((c) => c.name === PARAMETERS);
   }
 }
 

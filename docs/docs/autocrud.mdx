@@ -115,7 +115,7 @@ without generating a dynamic sql string.
 
 This does rely on TypeScript properties you do NOT want to change to be `undefined`
 on the passed in `values`. The easiest way to get this is to have an inline `{column: value}`
-set of arguments to `values` for what you want to change.
+passed to `values` for what you want to change, and omit columns you do not want to change.
 
 To null a column, pass `null` for the value like `{email: null}`.
 

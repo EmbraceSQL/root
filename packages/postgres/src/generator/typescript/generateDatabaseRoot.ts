@@ -95,10 +95,9 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
       [ASTKind.Script]: {
         before: async (context, node) => {
-          // passing in arguments
-          const parameterPasses = node.argumentsType?.attributes?.length
+          const parameterPasses = node.parametersType?.attributes?.length
             ? ", [" +
-              node.argumentsType.attributes
+              node.parametersType.attributes
                 .map((a) => `parameters.${a.typescriptPropertyName}`)
                 .join(",") +
               "]"
@@ -120,8 +119,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             : [];
           // and here is the really defensive part...
           console.assert(recordPieceBuilders.length);
-          const parameters = node.argumentsType
-            ? `parameters: ${node.argumentsType.typescriptNamespacedName}`
+          const parameters = node.parametersType
+            ? `parameters: ${node.parametersType.typescriptNamespacedName}`
             : "";
           return `
          async ${node.typescriptPropertyName} (${parameters}) {
@@ -145,13 +144,13 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           const resultType = `${node.resultsResolvedType?.typescriptNamespacedName}`;
           // function call start, passing in parameters
           const generationBuffer = [
-            ` async ${node.typescriptPropertyName}(parameters : ${node.argumentsType?.typescriptNamespacedName})`,
+            ` async ${node.typescriptPropertyName}(parameters : ${node.parametersType?.typescriptNamespacedName})`,
             `{`,
           ];
           // turn parameters into the postgres driver escape sequence
           // this is making a string interpolation with string interpoplation
           const parameterExpressions =
-            node.argumentsType?.attributes.map(
+            node.parametersType?.attributes.map(
               (a) =>
                 (a.name ? `${a.name} =>` : ``) +
                 ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,

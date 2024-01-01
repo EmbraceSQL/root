@@ -54,8 +54,8 @@ const FunctionalOperation = {
       node.returnsMany ? "[]" : ""
     }`;
 
-    if (node.argumentsType) {
-      const parametersType = `${node.argumentsType.typescriptNamespacedName}`;
+    if (node.parametersType) {
+      const parametersType = `${node.parametersType.typescriptNamespacedName}`;
       return `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}) : Promise<${returnType}|undefined> {
             const response = await this.client.invoke<${parametersType}, never, ${returnType}>({

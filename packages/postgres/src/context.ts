@@ -7,7 +7,7 @@ import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import { oneBasedArgumentNamefromZeroBasedIndex } from "./util";
 import {
-  ARGUMENTS,
+  PARAMETERS,
   ASTKind,
   ASTNode,
   AttributeNode,
@@ -112,7 +112,7 @@ export const initializeContext = async (
 ) => {
   // props leaking in .database will cause a connection failure that is
   // confusing to read -- it'll look like a proper URL that really does
-  // exist, trouble is it just doesn't match the arguments to `postgres`
+  // exist, trouble is it just doesn't match the PARAMETERS to `postgres`
   delete props?.database;
   const parsed = pgconnectionstring.parse(postgresUrl) as ConnectionStringProps;
   // little tweaks of types
@@ -229,11 +229,11 @@ export const initializeContext = async (
               ),
           );
           if (metadata.types.length) {
-            const argumentsNode = new CompositeTypeNode(ARGUMENTS, node, "");
+            const PARAMETERSNode = new CompositeTypeNode(PARAMETERS, node, "");
             metadata.types.forEach(
               (a, i) =>
                 new AttributeNode(
-                  argumentsNode,
+                  PARAMETERSNode,
                   // these don't have natural names, just positions
                   // so manufacture names
                   oneBasedArgumentNamefromZeroBasedIndex(i),

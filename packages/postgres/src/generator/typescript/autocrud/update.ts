@@ -4,7 +4,7 @@ import {
   sqlSetExpressions,
 } from "./shared";
 import {
-  ARGUMENTS,
+  PARAMETERS,
   GenerationContext,
   UpdateOperationNode,
   VALUES,
@@ -21,7 +21,7 @@ import {
 export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
     const generationBuffer = [""];
-    const parameters = `${ARGUMENTS}: ${node.index.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
+    const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.typescriptNamespacedName}.Record>`
       : `Promise<${node.index.table.typescriptNamespacedName}.Record[]>`;
@@ -48,7 +48,7 @@ export const UpdateOperation = {
     SET
       ${sqlSetExpressions(context, node.index.table, VALUES, true)} 
     WHERE
-      ${sqlPredicate(context, node.index, ARGUMENTS)}
+      ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
     generationBuffer.push(`const response = await sql\`${sql}\``);

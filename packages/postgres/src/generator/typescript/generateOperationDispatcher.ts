@@ -12,9 +12,9 @@ const FunctionOperationNodeVisitor = {
   before: async (_: GenerationContext, node: FunctionOperationNode) => {
     const callee: string[] = [];
     // parameters go first!
-    if (node.argumentsType) {
+    if (node.parametersType) {
       callee.push(
-        `request.parameters as ${node.argumentsType.typescriptNamespacedName}`,
+        `request.parameters as ${node.parametersType.typescriptNamespacedName}`,
       );
     }
     return `"${

@@ -2,7 +2,7 @@ import { Context, PostgresProcTypecast } from "../../../context";
 import { PGCatalogType } from "../pgcatalogtype";
 import { PGTypes } from "../pgtype";
 import {
-  ARGUMENTS,
+  PARAMETERS,
   AliasTypeNode,
   AttributeNode,
   CompositeTypeNode,
@@ -95,14 +95,14 @@ export class PGProcs {
       );
 
       // inputs
-      const argumentsNode = new CompositeTypeNode(ARGUMENTS, procNode, "");
+      const parametersNode = new CompositeTypeNode(PARAMETERS, procNode, "");
 
       proc.proc.proargtypes
         .flatMap((t) => t)
         .forEach((oid, i) => {
           const type = context.database.resolveType(oid)!;
           new AttributeNode(
-            argumentsNode,
+            parametersNode,
             proc.proc.proargnames[i] ?? "",
             i,
             type,

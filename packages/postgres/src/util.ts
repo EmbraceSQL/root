@@ -20,7 +20,7 @@ export const groupBy = <T, TT, K extends string | number>(
   );
 
 /**
- * Unnamed positional arguments in postgres are one based
+ * Unnamed positional parameters in postgres are one based
  */
 export function oneBasedArgumentNamefromZeroBasedIndex(index: number) {
   return `argument_${index + 1}`;

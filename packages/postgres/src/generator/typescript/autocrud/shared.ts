@@ -3,7 +3,7 @@
  * driver result record to a type checked record.
  */
 import {
-  ARGUMENTS,
+  PARAMETERS,
   ASTKind,
   AbstractTypeNode,
   GenerationContext,
@@ -45,7 +45,7 @@ export function postgresResultRecordToTypescript(
 export function postgresValueExpression(
   context: GenerationContext,
   node: NamedType & NamedASTNode,
-  holder: typeof ARGUMENTS | typeof VALUES,
+  holder: typeof PARAMETERS | typeof VALUES,
   defaultToSelfAssign = false,
 ) {
   console.assert(context);
@@ -67,7 +67,7 @@ export function postgresValueExpression(
 export function sqlPredicate(
   context: GenerationContext,
   node: IndexNode,
-  holder: typeof ARGUMENTS | typeof VALUES,
+  holder: typeof PARAMETERS | typeof VALUES,
 ) {
   return node.columns
     .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
@@ -86,7 +86,7 @@ export function sqlPredicate(
 export function sqlSetExpressions(
   context: GenerationContext,
   node: TableNode,
-  holder: typeof ARGUMENTS | typeof VALUES,
+  holder: typeof PARAMETERS | typeof VALUES,
   defaultToSelfAssign = false,
 ) {
   return node.allColumns

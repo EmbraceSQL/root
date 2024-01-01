@@ -1,6 +1,6 @@
 import { postgresResultRecordToTypescript, sqlPredicate } from "./shared";
 import {
-  ARGUMENTS,
+  PARAMETERS,
   DeleteOperationNode,
   GenerationContext,
 } from "@embracesql/shared";
@@ -16,7 +16,7 @@ import {
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
     const generationBuffer = [""];
-    const parameters = `${ARGUMENTS}: ${node.index.typescriptNamespacedName}`;
+    const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.typescriptNamespacedName}.Record>`
       : `Promise<${node.index.table.typescriptNamespacedName}.Record[]>`;
@@ -40,7 +40,7 @@ export const DeleteOperation = {
     DELETE FROM 
       ${node.index.table.databaseName} 
     WHERE
-      ${sqlPredicate(context, node.index, ARGUMENTS)}
+      ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
     generationBuffer.push(`const response = await sql\`${sql}\``);
