@@ -4,7 +4,7 @@ import { PGCatalogType } from "./pgcatalogtype";
 import { PGIndex } from "./pgindex";
 import { CatalogRow } from "./pgtype";
 import {
-  AttributeTypeNode,
+  AttributeNode,
   CompositeTypeNode,
   DELIMITER,
   GenerationContext,
@@ -50,7 +50,7 @@ export class PGTypeComposite extends PGCatalogType {
     const typeNode = context.database.resolveType<CompositeTypeNode>(this.oid);
     this.attributes.forEach(
       (a, i) =>
-        new AttributeTypeNode(
+        new AttributeNode(
           typeNode,
           a.name,
           i,

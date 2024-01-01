@@ -131,7 +131,7 @@ export type ASTKindMap = {
   [ASTKind.Type]: TypeNode;
   [ASTKind.Enum]: EnumTypeNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
-  [ASTKind.Attribute]: AttributeTypeNode;
+  [ASTKind.Attribute]: AttributeNode;
   [ASTKind.AliasType]: AliasTypeNode;
   [ASTKind.DomainType]: DomainTypeNode;
   [ASTKind.ArrayType]: ArrayTypeNode;
@@ -889,8 +889,8 @@ export class CompositeTypeNode extends AbstractTypeNode {
   }
 
   get attributes() {
-    return this.children.filter<AttributeTypeNode>(
-      (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
+    return this.children.filter<AttributeNode>(
+      (c): c is AttributeNode => c.kind === ASTKind.Attribute,
     );
   }
   override typescriptTypeDefinition(
@@ -898,8 +898,8 @@ export class CompositeTypeNode extends AbstractTypeNode {
   ): string | undefined {
     console.assert(context);
     const recordAttributes = this.children
-      .filter<AttributeTypeNode>(
-        (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
+      .filter<AttributeNode>(
+        (c): c is AttributeNode => c.kind === ASTKind.Attribute,
       )
       .map((a) => {
         if (a.type.kind === ASTKind.ArrayType) {
@@ -925,8 +925,8 @@ export class CompositeTypeNode extends AbstractTypeNode {
       `  return {`,
 
       this.children
-        .filter<AttributeTypeNode>(
-          (c): c is AttributeTypeNode => c.kind === ASTKind.Attribute,
+        .filter<AttributeNode>(
+          (c): c is AttributeNode => c.kind === ASTKind.Attribute,
         )
         .map(
           (a) =>
@@ -943,7 +943,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
 /**
  * A single named type.
  */
-export class AttributeTypeNode extends ContainerNode implements NamedType {
+export class AttributeNode extends ContainerNode implements NamedType {
   constructor(
     public parent: CompositeTypeNode,
     public name: string,
@@ -964,7 +964,6 @@ export class AttributeTypeNode extends ContainerNode implements NamedType {
     else return `argument_${this.index}`;
   }
 }
-// TODO: rename AttributeNode, this is not a 'type'
 
 /**
  * Rename a type, useful in namespaces to allow consistent

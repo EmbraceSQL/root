@@ -10,7 +10,7 @@ import {
   ARGUMENTS,
   ASTKind,
   ASTNode,
-  AttributeTypeNode,
+  AttributeNode,
   CompositeTypeNode,
   DatabaseNode,
   GenerationContextProps,
@@ -219,7 +219,7 @@ export const initializeContext = async (
           const resultsNode = new CompositeTypeNode(RESULTS, node, "");
           metadata.columns.forEach(
             (a, i) =>
-              new AttributeTypeNode(
+              new AttributeNode(
                 resultsNode,
                 a.name,
                 i,
@@ -232,7 +232,7 @@ export const initializeContext = async (
             const argumentsNode = new CompositeTypeNode(ARGUMENTS, node, "");
             metadata.types.forEach(
               (a, i) =>
-                new AttributeTypeNode(
+                new AttributeNode(
                   argumentsNode,
                   // these don't have natural names, just positions
                   // so manufacture names

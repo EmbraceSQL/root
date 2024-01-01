@@ -4,7 +4,7 @@ import { PGTypes } from "../pgtype";
 import {
   ARGUMENTS,
   AliasTypeNode,
-  AttributeTypeNode,
+  AttributeNode,
   CompositeTypeNode,
   GenerationContext,
   ProcedureNode,
@@ -101,7 +101,7 @@ export class PGProcs {
         .flatMap((t) => t)
         .forEach((oid, i) => {
           const type = context.database.resolveType(oid)!;
-          new AttributeTypeNode(
+          new AttributeNode(
             argumentsNode,
             proc.proc.proargnames[i] ?? "",
             i,
@@ -219,7 +219,7 @@ export class PGProcPseudoType extends PGCatalogType {
         this.oid,
       );
       returnsAttributes.forEach(
-        (a, i) => new AttributeTypeNode(type, a.name, i, a.type, true, true),
+        (a, i) => new AttributeNode(type, a.name, i, a.type, true, true),
       );
       context.database.registerType(type.id, type);
     }
