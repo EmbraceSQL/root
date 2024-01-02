@@ -697,13 +697,6 @@ export abstract class IndexOperationNode extends OperationNode {
   ) {
     super(name, kind, index);
   }
-
-  // TODO: remove
-  get typescriptNamespacedName() {
-    // bypass to the table to not get a doubling of the apparent
-    // index name
-    return `${this.index.table.typescriptNamespacedName}.${this.typescriptName}`;
-  }
 }
 
 /**

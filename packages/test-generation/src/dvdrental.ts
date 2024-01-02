@@ -7745,7 +7745,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Any {
@@ -7898,7 +7898,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Bytea {
@@ -7923,7 +7923,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Cid {
@@ -7934,7 +7934,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Cidr {
@@ -8194,7 +8194,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace LanguageHandler {
@@ -8271,7 +8271,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Numeric {
@@ -8580,7 +8580,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgBrinMinmaxMultiSummary {
@@ -8591,7 +8591,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgCast {
@@ -8862,7 +8862,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgDescription {
@@ -9257,7 +9257,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgNamespace {
@@ -9283,7 +9283,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgNodeTree {
@@ -9294,7 +9294,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgOpclass {
@@ -9905,7 +9905,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace PgStatActivity {
@@ -11476,7 +11476,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Record {
@@ -11495,7 +11495,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Regclass {
@@ -11668,7 +11668,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Tid {
@@ -11747,7 +11747,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Tsrange {
@@ -11782,7 +11782,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace TxidSnapshot {
@@ -11793,7 +11793,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Unknown {
@@ -11839,7 +11839,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Void {
@@ -11858,7 +11858,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Xid8 {
@@ -11869,7 +11869,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
     export namespace Xml {
@@ -11880,7 +11880,7 @@ export namespace PgCatalog {
         if (typeof from === "string") {
           return from;
         }
-        throw new Error(from + ` is not a string`);
+        throw new Error(`from is not a string`, { cause: from });
       }
     }
   }
