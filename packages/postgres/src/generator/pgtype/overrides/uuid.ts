@@ -7,7 +7,7 @@ class PGUUID extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      return new UUID(from);
+      return new UUID(from as string);
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {

@@ -10,8 +10,13 @@ class PGTypeCube extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      const source = Array.isArray(from) ? new Float32Array(from) : JSON.parse(from);
-      return new Float32Array(source);
+      if (typeof from === "string"){
+       return new Float32Array(JSON.parse(from));
+      }
+      if (Array.isArray(from)) {
+        return new Float32Array(from);
+      }
+      return null;
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {

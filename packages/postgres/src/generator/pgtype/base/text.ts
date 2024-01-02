@@ -13,8 +13,13 @@ export class PGTypeText extends PGCatalogType {
 
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
+    // parsing a string doesn't really make 'sense' in that
+    // a string is expected to be a string
     return `
-      return \`\${from}\`;
+      if (typeof from === "string") {
+        return from;
+      }
+      throw new Error(\`from is not a string\`, {cause: from});
     `;
   }
 }

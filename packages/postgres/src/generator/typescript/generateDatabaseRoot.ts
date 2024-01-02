@@ -68,9 +68,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             // generated database class starts here
             `export class Database extends PostgresDatabase implements HasDatabase { `,
             `get database() { return this};`,
-            // I have no idea how to 'new' a subclass in a static, so this
-            // is generated
-            // TODO: get this into the base class
             `
           /**
            * Connect to your database server via URL, and return 

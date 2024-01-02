@@ -17,7 +17,13 @@ export class PGTypeNumber extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
+    if (typeof from === "string"){
       return Number.parseFloat(from);
+    }
+    if (typeof from === "number") {
+      return from;
+    }
+    return null;
     `;
   }
 
@@ -49,8 +55,17 @@ export class PGTypeBigInt extends PGTypeNumber {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
+    if (typeof from === "bigint") {
+      return from;
+    }
+    if (typeof from === "number") {
+      return BigInt(from);
+    }
+    if (typeof from === "string") {
       if (from === '') return null;
       return BigInt(from);
+    }
+    return null;
     `;
   }
 
@@ -72,7 +87,13 @@ export class PGTypeBytea extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
+    if (typeof from === "string"){
       return new Uint8Array(JSON.parse(from));
+    }
+    if (Array.isArray(from)) {
+      return new Uint8Array(from);
+    }
+    return [];
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {

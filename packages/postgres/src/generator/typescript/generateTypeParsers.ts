@@ -15,8 +15,7 @@ export async function generateTypeParsers(context: GenerationContext) {
     before: async (context: GenerationContext, node: AbstractTypeNode) => {
       return [
         await NamespaceVisitor.before(context, node),
-        // TODO: unknown
-        `export function parse(from: any) {`,
+        `export function parse(from: unknown) {`,
         `// ${ASTKind[node.kind]}`,
         `${node.typescriptNullOrUndefined(context)}`,
         `${node.typescriptTypeParser(context)}`,

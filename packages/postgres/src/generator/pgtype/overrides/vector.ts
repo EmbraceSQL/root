@@ -7,8 +7,13 @@ class PGTypeInt2Vector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      const source = Array.isArray(from) ? new Uint16Array(from) : JSON.parse(from);
-      return new Uint16Array(source);
+      if (typeof from === "string") {
+        return new Uint16Array(JSON.parse(from));
+      }
+      if (Array.isArray(from)) {
+        return new Uint16Array(from);
+      }
+      return [];
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {
@@ -32,8 +37,13 @@ class PGTypeVector extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      const source = Array.isArray(from) ? new Float32Array(from) : JSON.parse(from);
-      return new Float32Array(source);
+      if (typeof from === "string") {
+        return new Float32Array(JSON.parse(from));
+      }
+      if (Array.isArray(from)) {
+        return new Float32Array(from);
+      }
+      return [];
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {
