@@ -3,6 +3,7 @@ import { DatabaseNode, VisitorMap } from "./ast";
 export * from "./ast";
 export * from "./typescript";
 export * from "./parsers";
+export * from "./debounce";
 
 /**
  * Message format for EmbraceSQL.

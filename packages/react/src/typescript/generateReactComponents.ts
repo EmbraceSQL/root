@@ -1,5 +1,5 @@
-import { generateReactHooks } from "./generateHooks";
 import { generateReactBindables } from "./generateReactBindables";
+import { generateReactHooks } from "./generateReactHooks";
 import { GenerationContext } from "@embracesql/shared";
 
 /**

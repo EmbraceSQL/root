@@ -48,7 +48,12 @@ export const generateReactHooks = async (context: GenerationContext) => {
         );
         // callback on updates
         generationBuffer.push(
-          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>({operation: "${node.table.createOperation?.typescriptNamespacedName}", results, setResults});`,
+          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>(
+           {operation: "${node.table.createOperation?.typescriptNamespacedName}",
+              results,
+              setResults,
+              primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom
+           });`,
         );
         // buffer up intercepted responses
         generationBuffer.push(

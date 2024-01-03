@@ -22,9 +22,11 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const generationBuffer = [await NamespaceVisitor.before(context, node)];
         const primaryKey = node.primaryKey;
         if (primaryKey) {
+          const generationBuffer = [
+            await NamespaceVisitor.before(context, node),
+          ];
           // extract primary key
           generationBuffer.push(
             `export function primaryKeyFrom(value: ${node.typescriptNamespacedName}.Record) : string {`,
@@ -47,9 +49,18 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
         return ${primaryKeyNames.join(" && ")}
       }
       `);
+          return generationBuffer.join("\n");
+        } else {
+          return [
+            await NamespaceVisitor.before(context, node),
+            `export function primaryKeyFrom(value: ${node.typescriptNamespacedName}.Record) {`,
+            `  return "";`,
+            `}`,
+            `export function includesPrimaryKey(value: ${node.typescriptNamespacedName}.Record) {`,
+            `  return false;`,
+            `}`,
+          ].join("\n");
         }
-
-        return generationBuffer.join("\n");
       },
       after: NamespaceVisitor.after,
     },

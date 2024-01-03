@@ -1,5 +1,5 @@
 import { useEmbraceSQLClient } from "./provider";
-import { WithChangeHandlers } from "@embracesql/shared";
+import { DebounceMap, WithChangeHandlers } from "@embracesql/shared";
 import React from "react";
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -33,7 +33,7 @@ export type Interceptor<T> = (
   index?: number,
 ) => Intercepted<T>;
 
-type Props<T> = {
+type Props<T, R> = {
   /**
    * Operation name that will do an upsert.
    */
@@ -42,11 +42,15 @@ type Props<T> = {
    * Current results. Will be updated index wise when a list, other
    * wise replaced.
    */
-  results: T | undefined;
+  results: R | undefined;
   /**
    * Dispatch back the updated state when returned from the database.
    */
-  setResults: React.Dispatch<React.SetStateAction<T | undefined>>;
+  setResults: React.Dispatch<React.SetStateAction<R | undefined>>;
+  /**
+   * Primary key picker, used for debouncing.
+   */
+  primaryKeyPicker: (updated: T) => string;
 };
 
 /**
@@ -61,33 +65,43 @@ export function useEmbraceSQLUpdateCallback<T, R extends T | T[]>({
   operation,
   results,
   setResults,
-}: Props<R>) {
+  primaryKeyPicker,
+}: Props<T, R>) {
   // context provided client
   const client = useEmbraceSQLClient();
+  // debounce mapping - in a ref, this is state like but we do not update on it
+  const debounceMap = React.useRef(new DebounceMap());
 
   return React.useCallback(
     async (updated: T, index?: number) => {
-      // TODO: debounce via primary key
+      const debounceKey = primaryKeyPicker(updated);
 
       if (client) {
-        // actual server trip - counting on a read back of a single record
-        const response = await client.invoke<never, T, T>({
-          operation,
-          values: updated,
-        });
+        const toExecute = async () => {
+          // actual server trip - counting on a read back of a single record
+          const response = await client.invoke<never, T, T>({
+            operation,
+            values: updated,
+          });
 
-        // response has the single read-back record -- this is what needs
-        // to be merged into react state
-        if (Array.isArray(results) && index !== undefined && response.results) {
-          // update state in a slot in an array -- which will be a fresh
-          // record from the database -- difference instance which will
-          // be enough to trigger a refresh
-          results[index] = response.results;
-          setResults(results);
-        } else {
-          // update state with the single record
-          setResults(response.results as R);
-        }
+          // response has the single read-back record -- this is what needs
+          // to be merged into react state
+          if (
+            Array.isArray(results) &&
+            index !== undefined &&
+            response.results
+          ) {
+            // update state in a slot in an array -- which will be a fresh
+            // record from the database -- difference instance which will
+            // be enough to trigger a refresh
+            results[index] = response.results;
+            setResults(results);
+          } else {
+            // update state with the single record
+            setResults(response.results as R);
+          }
+        };
+        debounceMap.current.register(debounceKey, toExecute);
       }
     },
     [client, operation, setResults],

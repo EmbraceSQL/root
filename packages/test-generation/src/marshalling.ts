@@ -18664,7 +18664,14 @@ export namespace Public {
 // begin primary key pickers
 export namespace Api {
   export namespace Tables {
-    export namespace QAndA {}
+    export namespace QAndA {
+      export function primaryKeyFrom(value: Api.Tables.QAndA.Record) {
+        return "";
+      }
+      export function includesPrimaryKey(value: Api.Tables.QAndA.Record) {
+        return false;
+      }
+    }
   }
 }
 export namespace Public {
