@@ -34,10 +34,18 @@ export class DebounceMap {
    * If that function exists by key, time to cancel and replace it.
    */
   register(key: string, toExecute: () => Promise<void>, waitFor = 200) {
-    this.registry.get(key)?.cancel();
-    this.registry.set(
-      key,
-      new DebounceMapEntry(toExecute, () => this.registry.delete(key), waitFor),
-    );
+    if (key) {
+      this.registry.get(key)?.cancel();
+      this.registry.set(
+        key,
+        new DebounceMapEntry(
+          toExecute,
+          () => this.registry.delete(key),
+          waitFor,
+        ),
+      );
+    } else {
+      void toExecute();
+    }
   }
 }

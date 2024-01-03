@@ -24884,7 +24884,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record
-        >({ operation: "Public.Tables.FilmActor.Create", results, setResults });
+        >({
+          operation: "Public.Tables.FilmActor.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.FilmActor.Record>>();
         React.useEffect(() => {
@@ -24925,7 +24930,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record[]
-        >({ operation: "Public.Tables.FilmActor.Create", results, setResults });
+        >({
+          operation: "Public.Tables.FilmActor.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.FilmActor.Record>[]>();
         React.useEffect(() => {
@@ -24975,7 +24985,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Address.Record,
           Public.Tables.Address.Record
-        >({ operation: "Public.Tables.Address.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Address.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Address.Record>>();
         React.useEffect(() => {
@@ -25016,7 +25031,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Address.Record,
           Public.Tables.Address.Record[]
-        >({ operation: "Public.Tables.Address.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Address.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Address.Record>[]>();
         React.useEffect(() => {
@@ -25062,7 +25082,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.City.Record,
           Public.Tables.City.Record
-        >({ operation: "Public.Tables.City.Create", results, setResults });
+        >({
+          operation: "Public.Tables.City.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.City.Record>>();
         React.useEffect(() => {
@@ -25103,7 +25128,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.City.Record,
           Public.Tables.City.Record[]
-        >({ operation: "Public.Tables.City.Create", results, setResults });
+        >({
+          operation: "Public.Tables.City.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.City.Record>[]>();
         React.useEffect(() => {
@@ -25155,7 +25185,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >({ operation: "Public.Tables.Customer.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Customer.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
         React.useEffect(() => {
@@ -25195,7 +25230,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record
-        >({ operation: "Public.Tables.Customer.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Customer.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Customer.Record>>();
         React.useEffect(() => {
@@ -25236,7 +25276,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >({ operation: "Public.Tables.Customer.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Customer.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
         React.useEffect(() => {
@@ -25276,7 +25321,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >({ operation: "Public.Tables.Customer.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Customer.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
         React.useEffect(() => {
@@ -25322,7 +25372,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Actor.Record,
           Public.Tables.Actor.Record
-        >({ operation: "Public.Tables.Actor.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Actor.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Actor.Record>>();
         React.useEffect(() => {
@@ -25363,7 +25418,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Actor.Record,
           Public.Tables.Actor.Record[]
-        >({ operation: "Public.Tables.Actor.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Actor.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Actor.Record>[]>();
         React.useEffect(() => {
@@ -25412,6 +25472,7 @@ export namespace Public {
           operation: "Public.Tables.FilmCategory.Create",
           results,
           setResults,
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.FilmCategory.Record>>();
@@ -25459,7 +25520,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record
-        >({ operation: "Public.Tables.Inventory.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Inventory.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Inventory.Record>>();
         React.useEffect(() => {
@@ -25500,7 +25566,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record[]
-        >({ operation: "Public.Tables.Inventory.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Inventory.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Inventory.Record>[]>();
         React.useEffect(() => {
@@ -25545,7 +25616,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Category.Record,
           Public.Tables.Category.Record
-        >({ operation: "Public.Tables.Category.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Category.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Category.Record>>();
         React.useEffect(() => {
@@ -25591,7 +25667,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Country.Record,
           Public.Tables.Country.Record
-        >({ operation: "Public.Tables.Country.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Country.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Country.Record>>();
         React.useEffect(() => {
@@ -25637,7 +25718,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Language.Record,
           Public.Tables.Language.Record
-        >({ operation: "Public.Tables.Language.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Language.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Language.Record>>();
         React.useEffect(() => {
@@ -25687,7 +25773,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record[]
-        >({ operation: "Public.Tables.Rental.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Rental.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Rental.Record>[]>();
         React.useEffect(() => {
@@ -25729,7 +25820,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
-        >({ operation: "Public.Tables.Rental.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Rental.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Rental.Record>>();
         React.useEffect(() => {
@@ -25770,7 +25866,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
-        >({ operation: "Public.Tables.Rental.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Rental.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Rental.Record>>();
         React.useEffect(() => {
@@ -25824,7 +25925,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Staff.Record,
           Public.Tables.Staff.Record
-        >({ operation: "Public.Tables.Staff.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Staff.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Staff.Record>>();
         React.useEffect(() => {
@@ -25871,7 +25977,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Store.Record,
           Public.Tables.Store.Record
-        >({ operation: "Public.Tables.Store.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Store.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Store.Record>>();
         React.useEffect(() => {
@@ -25912,7 +26023,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Store.Record,
           Public.Tables.Store.Record
-        >({ operation: "Public.Tables.Store.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Store.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Store.Record>>();
         React.useEffect(() => {
@@ -25961,7 +26077,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >({ operation: "Public.Tables.Payment.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Payment.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
         React.useEffect(() => {
@@ -26001,7 +26122,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record
-        >({ operation: "Public.Tables.Payment.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Payment.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Payment.Record>>();
         React.useEffect(() => {
@@ -26042,7 +26168,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >({ operation: "Public.Tables.Payment.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Payment.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
         React.useEffect(() => {
@@ -26082,7 +26213,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >({ operation: "Public.Tables.Payment.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Payment.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
         React.useEffect(() => {
@@ -26137,7 +26273,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Film.Record,
           Public.Tables.Film.Record
-        >({ operation: "Public.Tables.Film.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Film.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Film.Record>>();
         React.useEffect(() => {
@@ -26178,7 +26319,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >({ operation: "Public.Tables.Film.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Film.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Film.Record>[]>();
         React.useEffect(() => {
@@ -26218,7 +26364,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >({ operation: "Public.Tables.Film.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Film.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Film.Record>[]>();
         React.useEffect(() => {
@@ -26258,7 +26409,12 @@ export namespace Public {
         const updateCallback = useEmbraceSQLUpdateCallback<
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >({ operation: "Public.Tables.Film.Create", results, setResults });
+        >({
+          operation: "Public.Tables.Film.Create",
+          results,
+          setResults,
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+        });
         const [interceptedResults, setInterceptedResults] =
           React.useState<Intercepted<Public.Tables.Film.Record>[]>();
         React.useEffect(() => {
