@@ -1,7 +1,7 @@
 {
   "name": "@embracesql/test-generation",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "type": "module",
   "scripts": {
@@ -13,9 +13,9 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/client": "^0.0.4",
-    "@embracesql/postgres": "^0.0.4",
-    "@embracesql/react": "^0.0.4",
-    "embracesqlcli": "^0.0.4"
+    "@embracesql/client": "^0.0.5",
+    "@embracesql/postgres": "^0.0.5",
+    "@embracesql/react": "^0.0.5",
+    "embracesqlcli": "^0.0.5"
   }
 }

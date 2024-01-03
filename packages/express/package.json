@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/express",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Serves EmbraceSQL via a reusable express application.",
   "type": "module",
   "main": "./src/index.ts",
@@ -10,8 +10,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/postgres": "^0.0.4",
-    "@embracesql/shared": "^0.0.4",
+    "@embracesql/postgres": "^0.0.5",
+    "@embracesql/shared": "^0.0.5",
     "express": "^4.0.0"
   }
 }
