@@ -23,4 +23,4 @@ class PGTypePointArray extends PGCatalogType {
 
 registerOverride("point", PGTypePoint);
 registerOverride("path", PGTypePointArray);
-registerOverride("polygoin", PGTypePointArray);
+registerOverride("polygon", PGTypePointArray);

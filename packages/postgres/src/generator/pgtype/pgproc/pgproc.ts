@@ -55,7 +55,7 @@ export class PGProcs {
   procs: PGProc[];
   pseudoTypesByOid: Record<number, PGProcPseudoType>;
   private constructor(context: PGProcsContext, procRows: ProcRow[]) {
-    this.procs = procRows.map((r) => new PGProc(context, r));
+    this.procs = procRows.map((r) => new PGProc(context, r, ""));
     this.pseudoTypesByOid = Object.fromEntries(
       this.procs.map((t) => [t.proc.oid, new PGProcPseudoType(t)]),
     );
@@ -95,7 +95,12 @@ export class PGProcs {
       );
 
       // inputs
-      const parametersNode = new CompositeTypeNode(PARAMETERS, procNode, "");
+      const parametersNode = new CompositeTypeNode(
+        PARAMETERS,
+        procNode,
+        "",
+        proc.comment,
+      );
 
       proc.proc.proargtypes
         .flatMap((t) => t)
@@ -126,6 +131,7 @@ export class PGProc implements PostgresProcTypecast {
   constructor(
     context: PGProcsContext,
     public proc: ProcRow,
+    public comment: string,
   ) {}
 
   get overloaded() {
@@ -217,6 +223,7 @@ export class PGProcPseudoType extends PGCatalogType {
         this.proc.name,
         schema.types,
         this.oid,
+        this.comment,
       );
       returnsAttributes.forEach(
         (a, i) => new AttributeNode(type, a.name, i, a.type, true, true),

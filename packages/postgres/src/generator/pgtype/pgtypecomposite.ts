@@ -42,23 +42,29 @@ export class PGTypeComposite extends PGCatalogType {
       this.catalog.typname,
       schema.types,
       this.oid,
+      this.comment,
     );
     context.database.registerType(type.id, type);
   }
 
   finalizeAST(context: GenerationContext) {
     const typeNode = context.database.resolveType<CompositeTypeNode>(this.oid);
-    this.attributes.forEach(
-      (a, i) =>
-        new AttributeNode(
-          typeNode,
-          a.name,
-          i,
-          context.database.resolveType(a.attribute.atttypid),
-          !a.isOptional,
-          !a.notNull,
-        ),
-    );
+    this.attributes.forEach((a, i) => {
+      const attributeType = context.database.resolveType(a.attribute.atttypid);
+      if (!attributeType) {
+        throw new Error(
+          `${this.catalog.typname} cannot find type for ${a.attribute.attname} ${a.attribute.atttypid}`,
+        );
+      }
+      new AttributeNode(
+        typeNode,
+        a.name,
+        i,
+        attributeType,
+        !a.isOptional,
+        !a.notNull,
+      );
+    });
   }
 
   get hasPrimaryKey() {

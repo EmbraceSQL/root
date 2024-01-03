@@ -216,7 +216,7 @@ export const initializeContext = async (
           // there is no actual database object or oid
           const scriptPath = path.join(node.path.dir, node.path.base);
           const metadata = await sql.file(scriptPath).describe();
-          const resultsNode = new CompositeTypeNode(RESULTS, node, "");
+          const resultsNode = new CompositeTypeNode(RESULTS, node, "", "");
           metadata.columns.forEach(
             (a, i) =>
               new AttributeNode(
@@ -229,7 +229,12 @@ export const initializeContext = async (
               ),
           );
           if (metadata.types.length) {
-            const PARAMETERSNode = new CompositeTypeNode(PARAMETERS, node, "");
+            const PARAMETERSNode = new CompositeTypeNode(
+              PARAMETERS,
+              node,
+              "",
+              "",
+            );
             metadata.types.forEach(
               (a, i) =>
                 new AttributeNode(

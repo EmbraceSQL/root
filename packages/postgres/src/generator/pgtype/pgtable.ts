@@ -75,7 +75,9 @@ export class PGTable {
       if (typeNode) {
         new ColumnNode(table, a.name, typeNode, a.hasDefault, a.allowsNull);
       } else {
-        throw new Error(`${a.name} cannot find type ${a.attribute.atttypid}`);
+        throw new Error(
+          `${this.table.relname}.${a.name} cannot find type ${a.attribute.atttypid}`,
+        );
       }
     });
 

@@ -53,6 +53,7 @@ export class PGTypeEnum extends PGCatalogType {
       this.values.map((v) => v.enumlabel),
       schema.types,
       this.oid,
+      this.comment,
       this,
     );
     context.database.registerType(type.id, type);

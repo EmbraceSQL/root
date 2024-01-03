@@ -62,6 +62,12 @@ export class PGTypeBase extends PGCatalogType {
         return new PGTypeText(catalog);
       case "uri":
         return new PGTypeUri(catalog);
+      case "cid":
+        return new PGTypeNumber(catalog);
+      case "xid":
+        return new PGTypeNumber(catalog);
+      case "xid8":
+        return new PGTypeNumber(catalog);
       case "oidvector":
         return new PGTypeArray(context, catalog, { arraySuffix: false });
       default:

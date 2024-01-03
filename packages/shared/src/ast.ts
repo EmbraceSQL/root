@@ -388,6 +388,7 @@ export class AbstractTypeNode extends ContainerNode {
     kind: ASTKind,
     parent: ContainerNode,
     public id: string | number,
+    public comment: string,
     private parser?: GeneratesTypeScript,
   ) {
     super(name, kind, parent);
@@ -415,9 +416,10 @@ export class TypeNode extends AbstractTypeNode {
     name: string,
     types: TypesNode,
     public id: string | number,
+    comment: string,
     parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.Type, types, id, parser);
+    super(name, ASTKind.Type, types, id, comment, parser);
   }
 }
 
@@ -430,8 +432,9 @@ export class ArrayTypeNode extends AbstractTypeNode {
     name: string,
     types: TypesNode,
     public id: string | number,
+    comment: string,
   ) {
-    super(name, ASTKind.ArrayType, types, id);
+    super(name, ASTKind.ArrayType, types, id, comment);
   }
 
   typescriptTypeDefinition(context: GenerationContext) {
@@ -468,9 +471,10 @@ export class EnumTypeNode extends AbstractTypeNode {
     public values: string[],
     types: TypesNode,
     public id: string | number,
+    comment: string,
     parser: GeneratesTypeScript,
   ) {
-    super(name, ASTKind.Enum, types, id, parser);
+    super(name, ASTKind.Enum, types, id, comment, parser);
   }
 
   override typescriptTypeParser(context: GenerationContext) {
@@ -886,8 +890,13 @@ export class ProcedureArgumentNode extends NamedASTNode {
  * A composite type is built of named attributes, each with their own type.
  */
 export class CompositeTypeNode extends AbstractTypeNode {
-  constructor(name: string, parent: ContainerNode, id: string | number) {
-    super(name, ASTKind.CompositeType, parent, id);
+  constructor(
+    name: string,
+    parent: ContainerNode,
+    id: string | number,
+    comment: string,
+  ) {
+    super(name, ASTKind.CompositeType, parent, id, comment);
   }
 
   get attributes() {
@@ -977,7 +986,7 @@ export class AliasTypeNode extends AbstractTypeNode {
     public type: TypeNode,
     parent: ContainerNode,
   ) {
-    super(name, ASTKind.AliasType, parent, type.id);
+    super(name, ASTKind.AliasType, parent, type.id, "");
   }
 
   override typescriptTypeDefinition(
@@ -1017,8 +1026,13 @@ export class AliasTypeNode extends AbstractTypeNode {
  */
 export class DomainTypeNode extends AbstractTypeNode {
   private _baseType?: AbstractTypeNode;
-  constructor(name: string, parent: ContainerNode, id: string | number) {
-    super(name, ASTKind.DomainType, parent, id);
+  constructor(
+    name: string,
+    parent: ContainerNode,
+    id: string | number,
+    comment: string,
+  ) {
+    super(name, ASTKind.DomainType, parent, id, comment);
   }
 
   set baseType(baseType: AbstractTypeNode | undefined) {

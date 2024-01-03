@@ -21,6 +21,7 @@ export class PGTypeDomain extends PGCatalogType {
       this.catalog.typname,
       schema.types,
       this.oid,
+      this.comment,
     );
     context.database.registerType(type.id, type);
   }

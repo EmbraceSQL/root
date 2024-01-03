@@ -1,4 +1,5 @@
 import { GenerationContext } from "..";
+import { asDocComment } from "../../util";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
@@ -50,9 +51,12 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
 
   const TypeDefiner = {
     before: async (context: GC, node: AbstractTypeNode) => {
-      return `export type ${
-        node.typescriptName
-      } = ${node.typescriptTypeDefinition(context)};`;
+      return [
+        node.comment ? asDocComment(node.comment) : "",
+        `export type ${node.typescriptName} = ${node.typescriptTypeDefinition(
+          context,
+        )};`,
+      ].join("\n");
     },
   };
 

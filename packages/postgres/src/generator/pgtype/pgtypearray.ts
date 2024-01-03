@@ -32,6 +32,7 @@ export class PGTypeArray extends PGCatalogType {
       `${this.catalog.typname}${this.props.arraySuffix ? "_array" : ""}`,
       schema.types,
       this.oid,
+      this.comment,
     );
     context.database.registerType(type.id, type);
   }

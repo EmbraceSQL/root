@@ -28,6 +28,7 @@ export class PGCatalogType implements GeneratesTypeScript {
       this.catalog.typname,
       schema.types,
       this.oid,
+      this.comment,
       this,
     );
     context.database.registerType(type.id, type);
