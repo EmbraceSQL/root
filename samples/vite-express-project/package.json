@@ -1,7 +1,7 @@
 {
   "name": "@embracesql/vite-express-project",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "generate": "bin/generate",
@@ -9,6 +9,6 @@
     "start": "npx tsx watch ./src/server/main.ts"
   },
   "dependencies": {
-    "@embracesql/vite": "^0.0.5"
+    "@embracesql/vite": "^0.0.6"
   }
 }
