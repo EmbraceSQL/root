@@ -34,7 +34,7 @@ describe("EmbraceSQL Hooks can", () => {
     // given mocking of the EmbraceSQL HTTP/S server via fetch
     fetch.mockResponseOnce(
       JSON.stringify({
-        operation: "Public.Actor.byActorid",
+        operation: "Public.Actor.byActorid.read",
         results: mockActor,
       }),
     );
