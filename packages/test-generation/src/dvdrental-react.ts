@@ -25812,7 +25812,7 @@ export namespace Public {
 
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
         const request = {
-          operation: "Public.Tables.FilmActor.ByActorIdFilmId",
+          operation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -25829,7 +25829,7 @@ export namespace Public {
           Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record
         >({
-          operation: "Public.Tables.FilmActor.Create",
+          operation: "Public.Tables.FilmActor.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
@@ -25858,7 +25858,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Tables.FilmActor.ByFilmId",
+          operation: "Public.Tables.FilmActor.ByFilmId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -25875,7 +25875,7 @@ export namespace Public {
           Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record[]
         >({
-          operation: "Public.Tables.FilmActor.Create",
+          operation: "Public.Tables.FilmActor.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
@@ -25913,7 +25913,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Tables.Address.ByAddressId",
+          operation: "Public.Tables.Address.ByAddressId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -25930,7 +25930,7 @@ export namespace Public {
           Public.Tables.Address.Record,
           Public.Tables.Address.Record
         >({
-          operation: "Public.Tables.Address.Create",
+          operation: "Public.Tables.Address.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
@@ -25959,7 +25959,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Tables.Address.ByCityId",
+          operation: "Public.Tables.Address.ByCityId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -25976,7 +25976,7 @@ export namespace Public {
           Public.Tables.Address.Record,
           Public.Tables.Address.Record[]
         >({
-          operation: "Public.Tables.Address.Create",
+          operation: "Public.Tables.Address.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
@@ -26010,7 +26010,7 @@ export namespace Public {
 
       export function useByCityId(parameters: ByCityId) {
         const request = {
-          operation: "Public.Tables.City.ByCityId",
+          operation: "Public.Tables.City.ByCityId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26027,7 +26027,7 @@ export namespace Public {
           Public.Tables.City.Record,
           Public.Tables.City.Record
         >({
-          operation: "Public.Tables.City.Create",
+          operation: "Public.Tables.City.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
@@ -26056,7 +26056,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Tables.City.ByCountryId",
+          operation: "Public.Tables.City.ByCountryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26073,7 +26073,7 @@ export namespace Public {
           Public.Tables.City.Record,
           Public.Tables.City.Record[]
         >({
-          operation: "Public.Tables.City.Create",
+          operation: "Public.Tables.City.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
@@ -26113,7 +26113,7 @@ export namespace Public {
 
       export function useByAddressId(parameters: ByAddressId) {
         const request = {
-          operation: "Public.Tables.Customer.ByAddressId",
+          operation: "Public.Tables.Customer.ByAddressId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26130,7 +26130,7 @@ export namespace Public {
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
         >({
-          operation: "Public.Tables.Customer.Create",
+          operation: "Public.Tables.Customer.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -26158,7 +26158,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Tables.Customer.ByCustomerId",
+          operation: "Public.Tables.Customer.ByCustomerId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26175,7 +26175,7 @@ export namespace Public {
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record
         >({
-          operation: "Public.Tables.Customer.Create",
+          operation: "Public.Tables.Customer.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -26204,7 +26204,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Tables.Customer.ByLastName",
+          operation: "Public.Tables.Customer.ByLastName.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26221,7 +26221,7 @@ export namespace Public {
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
         >({
-          operation: "Public.Tables.Customer.Create",
+          operation: "Public.Tables.Customer.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -26249,7 +26249,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Tables.Customer.ByStoreId",
+          operation: "Public.Tables.Customer.ByStoreId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26266,7 +26266,7 @@ export namespace Public {
           Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
         >({
-          operation: "Public.Tables.Customer.Create",
+          operation: "Public.Tables.Customer.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -26300,7 +26300,7 @@ export namespace Public {
 
       export function useByActorId(parameters: ByActorId) {
         const request = {
-          operation: "Public.Tables.Actor.ByActorId",
+          operation: "Public.Tables.Actor.ByActorId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26317,7 +26317,7 @@ export namespace Public {
           Public.Tables.Actor.Record,
           Public.Tables.Actor.Record
         >({
-          operation: "Public.Tables.Actor.Create",
+          operation: "Public.Tables.Actor.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
@@ -26346,7 +26346,7 @@ export namespace Public {
 
       export function useByLastName(parameters: ByLastName) {
         const request = {
-          operation: "Public.Tables.Actor.ByLastName",
+          operation: "Public.Tables.Actor.ByLastName.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26363,7 +26363,7 @@ export namespace Public {
           Public.Tables.Actor.Record,
           Public.Tables.Actor.Record[]
         >({
-          operation: "Public.Tables.Actor.Create",
+          operation: "Public.Tables.Actor.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
@@ -26396,7 +26396,7 @@ export namespace Public {
 
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
         const request = {
-          operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId",
+          operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26413,7 +26413,7 @@ export namespace Public {
           Public.Tables.FilmCategory.Record,
           Public.Tables.FilmCategory.Record
         >({
-          operation: "Public.Tables.FilmCategory.Create",
+          operation: "Public.Tables.FilmCategory.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
@@ -26448,7 +26448,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Tables.Inventory.ByInventoryId",
+          operation: "Public.Tables.Inventory.ByInventoryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26465,7 +26465,7 @@ export namespace Public {
           Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record
         >({
-          operation: "Public.Tables.Inventory.Create",
+          operation: "Public.Tables.Inventory.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
@@ -26494,7 +26494,7 @@ export namespace Public {
 
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
         const request = {
-          operation: "Public.Tables.Inventory.ByStoreIdFilmId",
+          operation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26511,7 +26511,7 @@ export namespace Public {
           Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record[]
         >({
-          operation: "Public.Tables.Inventory.Create",
+          operation: "Public.Tables.Inventory.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
@@ -26544,7 +26544,7 @@ export namespace Public {
 
       export function useByCategoryId(parameters: ByCategoryId) {
         const request = {
-          operation: "Public.Tables.Category.ByCategoryId",
+          operation: "Public.Tables.Category.ByCategoryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26561,7 +26561,7 @@ export namespace Public {
           Public.Tables.Category.Record,
           Public.Tables.Category.Record
         >({
-          operation: "Public.Tables.Category.Create",
+          operation: "Public.Tables.Category.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
@@ -26595,7 +26595,7 @@ export namespace Public {
 
       export function useByCountryId(parameters: ByCountryId) {
         const request = {
-          operation: "Public.Tables.Country.ByCountryId",
+          operation: "Public.Tables.Country.ByCountryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26612,7 +26612,7 @@ export namespace Public {
           Public.Tables.Country.Record,
           Public.Tables.Country.Record
         >({
-          operation: "Public.Tables.Country.Create",
+          operation: "Public.Tables.Country.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
@@ -26646,7 +26646,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Tables.Language.ByLanguageId",
+          operation: "Public.Tables.Language.ByLanguageId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26663,7 +26663,7 @@ export namespace Public {
           Public.Tables.Language.Record,
           Public.Tables.Language.Record
         >({
-          operation: "Public.Tables.Language.Create",
+          operation: "Public.Tables.Language.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
@@ -26701,7 +26701,7 @@ export namespace Public {
 
       export function useByInventoryId(parameters: ByInventoryId) {
         const request = {
-          operation: "Public.Tables.Rental.ByInventoryId",
+          operation: "Public.Tables.Rental.ByInventoryId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26718,7 +26718,7 @@ export namespace Public {
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record[]
         >({
-          operation: "Public.Tables.Rental.Create",
+          operation: "Public.Tables.Rental.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -26748,7 +26748,8 @@ export namespace Public {
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
         const request = {
-          operation: "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId",
+          operation:
+            "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26765,7 +26766,7 @@ export namespace Public {
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
         >({
-          operation: "Public.Tables.Rental.Create",
+          operation: "Public.Tables.Rental.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -26794,7 +26795,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Tables.Rental.ByRentalId",
+          operation: "Public.Tables.Rental.ByRentalId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26811,7 +26812,7 @@ export namespace Public {
           Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
         >({
-          operation: "Public.Tables.Rental.Create",
+          operation: "Public.Tables.Rental.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -26853,7 +26854,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Tables.Staff.ByStaffId",
+          operation: "Public.Tables.Staff.ByStaffId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26870,7 +26871,7 @@ export namespace Public {
           Public.Tables.Staff.Record,
           Public.Tables.Staff.Record
         >({
-          operation: "Public.Tables.Staff.Create",
+          operation: "Public.Tables.Staff.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
@@ -26905,7 +26906,7 @@ export namespace Public {
 
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const request = {
-          operation: "Public.Tables.Store.ByManagerStaffId",
+          operation: "Public.Tables.Store.ByManagerStaffId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26922,7 +26923,7 @@ export namespace Public {
           Public.Tables.Store.Record,
           Public.Tables.Store.Record
         >({
-          operation: "Public.Tables.Store.Create",
+          operation: "Public.Tables.Store.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
@@ -26951,7 +26952,7 @@ export namespace Public {
 
       export function useByStoreId(parameters: ByStoreId) {
         const request = {
-          operation: "Public.Tables.Store.ByStoreId",
+          operation: "Public.Tables.Store.ByStoreId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -26968,7 +26969,7 @@ export namespace Public {
           Public.Tables.Store.Record,
           Public.Tables.Store.Record
         >({
-          operation: "Public.Tables.Store.Create",
+          operation: "Public.Tables.Store.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
@@ -27005,7 +27006,7 @@ export namespace Public {
 
       export function useByCustomerId(parameters: ByCustomerId) {
         const request = {
-          operation: "Public.Tables.Payment.ByCustomerId",
+          operation: "Public.Tables.Payment.ByCustomerId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27022,7 +27023,7 @@ export namespace Public {
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
         >({
-          operation: "Public.Tables.Payment.Create",
+          operation: "Public.Tables.Payment.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -27050,7 +27051,7 @@ export namespace Public {
 
       export function useByPaymentId(parameters: ByPaymentId) {
         const request = {
-          operation: "Public.Tables.Payment.ByPaymentId",
+          operation: "Public.Tables.Payment.ByPaymentId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27067,7 +27068,7 @@ export namespace Public {
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record
         >({
-          operation: "Public.Tables.Payment.Create",
+          operation: "Public.Tables.Payment.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -27096,7 +27097,7 @@ export namespace Public {
 
       export function useByRentalId(parameters: ByRentalId) {
         const request = {
-          operation: "Public.Tables.Payment.ByRentalId",
+          operation: "Public.Tables.Payment.ByRentalId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27113,7 +27114,7 @@ export namespace Public {
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
         >({
-          operation: "Public.Tables.Payment.Create",
+          operation: "Public.Tables.Payment.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -27141,7 +27142,7 @@ export namespace Public {
 
       export function useByStaffId(parameters: ByStaffId) {
         const request = {
-          operation: "Public.Tables.Payment.ByStaffId",
+          operation: "Public.Tables.Payment.ByStaffId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27158,7 +27159,7 @@ export namespace Public {
           Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
         >({
-          operation: "Public.Tables.Payment.Create",
+          operation: "Public.Tables.Payment.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -27201,7 +27202,7 @@ export namespace Public {
 
       export function useByFilmId(parameters: ByFilmId) {
         const request = {
-          operation: "Public.Tables.Film.ByFilmId",
+          operation: "Public.Tables.Film.ByFilmId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27218,7 +27219,7 @@ export namespace Public {
           Public.Tables.Film.Record,
           Public.Tables.Film.Record
         >({
-          operation: "Public.Tables.Film.Create",
+          operation: "Public.Tables.Film.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -27247,7 +27248,7 @@ export namespace Public {
 
       export function useByFulltext(parameters: ByFulltext) {
         const request = {
-          operation: "Public.Tables.Film.ByFulltext",
+          operation: "Public.Tables.Film.ByFulltext.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27264,7 +27265,7 @@ export namespace Public {
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
         >({
-          operation: "Public.Tables.Film.Create",
+          operation: "Public.Tables.Film.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -27292,7 +27293,7 @@ export namespace Public {
 
       export function useByLanguageId(parameters: ByLanguageId) {
         const request = {
-          operation: "Public.Tables.Film.ByLanguageId",
+          operation: "Public.Tables.Film.ByLanguageId.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27309,7 +27310,7 @@ export namespace Public {
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
         >({
-          operation: "Public.Tables.Film.Create",
+          operation: "Public.Tables.Film.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -27337,7 +27338,7 @@ export namespace Public {
 
       export function useByTitle(parameters: ByTitle) {
         const request = {
-          operation: "Public.Tables.Film.ByTitle",
+          operation: "Public.Tables.Film.ByTitle.read",
           parameters,
         };
         const done = useEmbraceSQLRequest<
@@ -27354,7 +27355,7 @@ export namespace Public {
           Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
         >({
-          operation: "Public.Tables.Film.Create",
+          operation: "Public.Tables.Film.create",
           results,
           setResults,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,

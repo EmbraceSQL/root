@@ -30,7 +30,9 @@ export const generateReactHooks = async (context: GenerationContext) => {
 
         // request - this is the actual doing
         generationBuffer.push(`const request = {`);
-        generationBuffer.push(`operation: "${node.typescriptNamespacedName}",`);
+        generationBuffer.push(
+          `operation: "${node.typescriptNamespacedName}.read",`,
+        );
         generationBuffer.push(`parameters,`);
         generationBuffer.push(`}`);
         // dispatching the request
@@ -49,7 +51,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
         // callback on updates
         generationBuffer.push(
           `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>(
-           {operation: "${node.table.createOperation?.typescriptNamespacedName}",
+           {operation: "${node.table.createOperation?.typescriptNamespacedPropertyName}",
               results,
               setResults,
               primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom
