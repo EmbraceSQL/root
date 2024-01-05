@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Love SQL? Love TypeScript? Hate ORMs. You're 🏡.",
   "scripts": {
-    "database": "psql --file var/data/dvdrental/dvdrental.sql && psql --file var/data/marshalling/marshalling.sql",
+    "database": "./bin/database",
     "lint": "eslint --format visualstudio .",
     "check": "npm run check --workspaces",
     "test": "npm run test --workspaces --if-present",

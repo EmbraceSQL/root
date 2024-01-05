@@ -69,15 +69,15 @@ export const generateReactHooks = async (context: GenerationContext) => {
         // result type, with setters attached
         if (node.unique) {
           generationBuffer.push(
-            `setInterceptedResults(${node.table.typescriptNamespacedName}.interceptor(done.response.results, updateCallback));`,
+            `setInterceptedResults(new ${node.table.typescriptNamespacedName}.Interceptor(done.response.results, updateCallback));`,
           );
         } else {
           generationBuffer.push(
-            `setInterceptedResults((results ?? []).map((r, i) => ${node.table.typescriptNamespacedName}.interceptor(r, updateCallback, i)));`,
+            `setInterceptedResults((results ?? []).map((r, i) => new ${node.table.typescriptNamespacedName}.Interceptor(r, updateCallback, i)));`,
           );
         }
         generationBuffer.push(`} else { setResults(undefined);}`);
-        generationBuffer.push(`}, [results])`);
+        generationBuffer.push(`}, [done?.response])`);
 
         // and the hook return all merged up -- note we're returning the
         // intercepted wrapper results

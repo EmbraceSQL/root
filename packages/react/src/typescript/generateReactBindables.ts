@@ -9,63 +9,51 @@ import { pascalCase, camelCase } from "change-case";
  * Generate bindable objects designed to be used in state.
  */
 export const generateReactBindables = async (context: GenerationContext) => {
-  const generationBuffer = [""];
   context.handlers = {
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const generationBuffer = [await NamespaceVisitor.before(context, node)];
-        generationBuffer.push(
-          `export function interceptor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, index?: number) : Intercepted<${node.typescriptNamespacedName}.Record>{`,
-        );
-        generationBuffer.push(`const ret = {`);
-
-        return generationBuffer.join("\n");
+        return [
+          await NamespaceVisitor.before(context, node),
+          `export class Interceptor implements Intercepted<${node.typescriptNamespacedName}.Record> {`,
+          `constructor(private uninterceptedValue: ${node.typescriptNamespacedName}.Record, private callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, private index?: number) {`,
+          `}`,
+        ].join("\n");
       },
       after: async (context, node) => {
-        return (
-          `
-          };
-          return ret;
-        }
-          ` + (await NamespaceVisitor.after(context, node))
-        );
+        return [
+          // close off the class
+          `}`,
+          await NamespaceVisitor.after(context, node),
+        ].join("\n");
       },
     },
     [ASTKind.Column]: {
       before: async (_, node) => {
-        const generationBuffer = [""];
-        generationBuffer.push(
+        return [
           `get ${camelCase(
             node.name,
-          )}() { return uninterceptedValue.${camelCase(node.name)};},`,
-        );
-        // the setter -- this sets a local memory value and triggers the callback
-        // that intercepts sets
-        generationBuffer.push(`set ${camelCase(node.name)}(newValue) {`);
-        generationBuffer.push(
-          `uninterceptedValue.${camelCase(node.name)} = newValue;`,
-        );
-        generationBuffer.push(`void callback(uninterceptedValue, index);`);
-        generationBuffer.push(`},`);
-        // react change event handlers
-        generationBuffer.push(
-          `change${pascalCase(node.name)}(event: ChangeEvent) {`,
-        );
-        generationBuffer.push(
-          `const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
-        );
-        generationBuffer.push(
-          `ret.${camelCase(node.name)} = parsedValue as ${
+          )}() { return this.uninterceptedValue.${camelCase(node.name)};}`,
+          // the setter -- this sets a local memory value and triggers the callback
+          // that intercepts sets
+          `set ${camelCase(node.name)}(newValue) {`,
+          ` this.uninterceptedValue.${camelCase(node.name)} = newValue;`,
+          ` void this.callback(this.uninterceptedValue, this.index);`,
+          `}`,
+          // react change event handlers -- needs a bound this
+          // to be used as react event handler
+          `get change${pascalCase(node.name)}() {`,
+          `  return (event: ChangeEvent) => {`,
+          `    const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
+          `    this.${camelCase(node.name)} = parsedValue as ${
             node.table.typescriptNamespacedName
           }.Record["${camelCase(node.name)}"] ;`,
-        );
-        generationBuffer.push(`},`);
-        return generationBuffer.join("\n");
+          `  };`,
+          `}`,
+        ].join("\n");
       },
     },
   };
-  generationBuffer.push(await context.database.visit(context));
-  return generationBuffer.join("\n");
+  return await context.database.visit(context);
 };

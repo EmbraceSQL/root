@@ -25058,101 +25058,101 @@ export interface PostgresTypecasts {
   ["PgCatalog.Types.Xid8"]: Typecast;
   [142]: Typecast;
   ["PgCatalog.Types.Xml"]: Typecast;
-  [29952]: Typecast;
+  [31024]: Typecast;
   ["Public.Types.ActorArray"]: Typecast;
-  [29983]: Typecast;
+  [31055]: Typecast;
   ["Public.Types.ActorInfoArray"]: Typecast;
-  [29989]: Typecast;
+  [31061]: Typecast;
   ["Public.Types.AddressArray"]: Typecast;
-  [29958]: Typecast;
+  [31030]: Typecast;
   ["Public.Types.CategoryArray"]: Typecast;
-  [29995]: Typecast;
+  [31067]: Typecast;
   ["Public.Types.CityArray"]: Typecast;
-  [30001]: Typecast;
+  [31073]: Typecast;
   ["Public.Types.CountryArray"]: Typecast;
-  [29942]: Typecast;
+  [31014]: Typecast;
   ["Public.Types.CustomerArray"]: Typecast;
-  [30006]: Typecast;
+  [31078]: Typecast;
   ["Public.Types.CustomerListArray"]: Typecast;
-  [29964]: Typecast;
+  [31036]: Typecast;
   ["Public.Types.FilmArray"]: Typecast;
-  [29975]: Typecast;
+  [31047]: Typecast;
   ["Public.Types.FilmActorArray"]: Typecast;
-  [29979]: Typecast;
+  [31051]: Typecast;
   ["Public.Types.FilmCategoryArray"]: Typecast;
-  [30011]: Typecast;
+  [31083]: Typecast;
   ["Public.Types.FilmListArray"]: Typecast;
-  [30017]: Typecast;
+  [31089]: Typecast;
   ["Public.Types.InventoryArray"]: Typecast;
-  [30023]: Typecast;
+  [31095]: Typecast;
   ["Public.Types.LanguageArray"]: Typecast;
-  [29918]: Typecast;
+  [30990]: Typecast;
   ["Public.Types.MpaaRatingArray"]: Typecast;
-  [30028]: Typecast;
+  [31100]: Typecast;
   ["Public.Types.NicerButSlowerFilmListArray"]: Typecast;
-  [30034]: Typecast;
+  [31106]: Typecast;
   ["Public.Types.PaymentArray"]: Typecast;
-  [30039]: Typecast;
+  [31111]: Typecast;
   ["Public.Types.RentalArray"]: Typecast;
-  [30044]: Typecast;
+  [31116]: Typecast;
   ["Public.Types.SalesByFilmCategoryArray"]: Typecast;
-  [30064]: Typecast;
+  [31136]: Typecast;
   ["Public.Types.SalesByStoreArray"]: Typecast;
-  [30050]: Typecast;
+  [31122]: Typecast;
   ["Public.Types.StaffArray"]: Typecast;
-  [30069]: Typecast;
+  [31141]: Typecast;
   ["Public.Types.StaffListArray"]: Typecast;
-  [30059]: Typecast;
+  [31131]: Typecast;
   ["Public.Types.StoreArray"]: Typecast;
-  [29929]: Typecast;
+  [31001]: Typecast;
   ["Public.Types.YearArray"]: Typecast;
-  [29953]: Typecast;
+  [31025]: Typecast;
   ["Public.Types.Actor"]: Typecast;
-  [29984]: Typecast;
+  [31056]: Typecast;
   ["Public.Types.ActorInfo"]: Typecast;
-  [29990]: Typecast;
+  [31062]: Typecast;
   ["Public.Types.Address"]: Typecast;
-  [29959]: Typecast;
+  [31031]: Typecast;
   ["Public.Types.Category"]: Typecast;
-  [29996]: Typecast;
+  [31068]: Typecast;
   ["Public.Types.City"]: Typecast;
-  [30002]: Typecast;
+  [31074]: Typecast;
   ["Public.Types.Country"]: Typecast;
-  [29943]: Typecast;
+  [31015]: Typecast;
   ["Public.Types.Customer"]: Typecast;
-  [30007]: Typecast;
+  [31079]: Typecast;
   ["Public.Types.CustomerList"]: Typecast;
-  [29965]: Typecast;
+  [31037]: Typecast;
   ["Public.Types.Film"]: Typecast;
-  [29976]: Typecast;
+  [31048]: Typecast;
   ["Public.Types.FilmActor"]: Typecast;
-  [29980]: Typecast;
+  [31052]: Typecast;
   ["Public.Types.FilmCategory"]: Typecast;
-  [30012]: Typecast;
+  [31084]: Typecast;
   ["Public.Types.FilmList"]: Typecast;
-  [30018]: Typecast;
+  [31090]: Typecast;
   ["Public.Types.Inventory"]: Typecast;
-  [30024]: Typecast;
+  [31096]: Typecast;
   ["Public.Types.Language"]: Typecast;
-  [29919]: Typecast;
+  [30991]: Typecast;
   ["Public.Types.MpaaRating"]: Typecast;
-  [30029]: Typecast;
+  [31101]: Typecast;
   ["Public.Types.NicerButSlowerFilmList"]: Typecast;
-  [30035]: Typecast;
+  [31107]: Typecast;
   ["Public.Types.Payment"]: Typecast;
-  [30040]: Typecast;
+  [31112]: Typecast;
   ["Public.Types.Rental"]: Typecast;
-  [30045]: Typecast;
+  [31117]: Typecast;
   ["Public.Types.SalesByFilmCategory"]: Typecast;
-  [30065]: Typecast;
+  [31137]: Typecast;
   ["Public.Types.SalesByStore"]: Typecast;
-  [30051]: Typecast;
+  [31123]: Typecast;
   ["Public.Types.Staff"]: Typecast;
-  [30070]: Typecast;
+  [31142]: Typecast;
   ["Public.Types.StaffList"]: Typecast;
-  [30060]: Typecast;
+  [31132]: Typecast;
   ["Public.Types.Store"]: Typecast;
-  [29930]: Typecast;
+  [31002]: Typecast;
   ["Public.Types.Year"]: Typecast;
 
   ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
@@ -25493,7 +25493,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[29933].parseFromPostgresIfRecord(
+          return context.procTypes[31005].parseFromPostgresIfRecord(
             context,
             result,
           ) as unknown as PgCatalog.Types.Int4;
@@ -25525,7 +25525,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[29934].parseFromPostgresIfRecord(
+          return context.procTypes[31006].parseFromPostgresIfRecord(
             context,
             result,
           ) as unknown as PgCatalog.Types.Int4;
@@ -30096,7 +30096,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       },${
         values.releaseYear === undefined
           ? sql`DEFAULT`
-          : typed[29930](values.releaseYear)
+          : typed[31002](values.releaseYear)
       },${
         values.languageId === undefined
           ? sql`DEFAULT`
@@ -30116,7 +30116,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`DEFAULT`
           : typed[1700](values.replacementCost)
       },${
-        values.rating === undefined ? sql`DEFAULT` : typed[29919](values.rating)
+        values.rating === undefined ? sql`DEFAULT` : typed[30991](values.rating)
       },${
         values.lastUpdate === undefined
           ? sql`DEFAULT`
@@ -30163,7 +30163,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     },${
       values.releaseYear === undefined
         ? sql`DEFAULT`
-        : typed[29930](values.releaseYear)
+        : typed[31002](values.releaseYear)
     },${
       values.languageId === undefined
         ? sql`DEFAULT`
@@ -30183,7 +30183,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1700](values.replacementCost)
     },${
-      values.rating === undefined ? sql`DEFAULT` : typed[29919](values.rating)
+      values.rating === undefined ? sql`DEFAULT` : typed[30991](values.rating)
     },${
       values.lastUpdate === undefined
         ? sql`DEFAULT`
@@ -30289,7 +30289,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[29930](values.releaseYear)
+          : typed[31002](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -30309,7 +30309,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[29919](values.rating)
+        values.rating === undefined ? sql`rating` : typed[30991](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -30452,7 +30452,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[29930](values.releaseYear)
+          : typed[31002](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -30472,7 +30472,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[29919](values.rating)
+        values.rating === undefined ? sql`rating` : typed[30991](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -30615,7 +30615,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[29930](values.releaseYear)
+          : typed[31002](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -30635,7 +30635,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[29919](values.rating)
+        values.rating === undefined ? sql`rating` : typed[30991](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -30778,7 +30778,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[29930](values.releaseYear)
+          : typed[31002](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -30798,7 +30798,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[29919](values.rating)
+        values.rating === undefined ? sql`rating` : typed[30991](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
