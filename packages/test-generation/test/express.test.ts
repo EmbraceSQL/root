@@ -70,6 +70,23 @@ describe("EmbraceSQLExpress can", () => {
     });
   });
 
+  it("answer a typed read all", async () => {
+    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const response = await client.Public.Tables.Actor.all();
+    expect(response.length).toBeGreaterThan(1);
+    expect(
+      response.map((x) => ({
+        actorId: x.actorId,
+        firstName: x.firstName,
+        lastName: x.lastName,
+      })),
+    ).toContainEqual({
+      actorId: 1,
+      firstName: "Penelope",
+      lastName: "Guiness",
+    });
+  });
+
   it("answer a typed update", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
     const response = await client.Public.Tables.Actor.ByActorId.update(

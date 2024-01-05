@@ -1,3 +1,4 @@
+import { AllOperation } from "./autocrud/all";
 import { CreateOperation } from "./autocrud/create";
 import { DeleteOperation } from "./autocrud/delete";
 import { ReadOperation } from "./autocrud/read";
@@ -201,6 +202,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       // C R U D - AutoCRUD!
       [ASTKind.CreateOperation]: CreateOperation,
       [ASTKind.ReadOperation]: ReadOperation,
+      [ASTKind.AllOperation]: AllOperation,
       [ASTKind.UpdateOperation]: UpdateOperation,
       [ASTKind.DeleteOperation]: DeleteOperation,
     },

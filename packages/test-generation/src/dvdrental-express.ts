@@ -25950,6 +25950,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.FilmActor.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByActorIdFilmId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -26261,6 +26278,28 @@ export class Database extends PostgresDatabase implements HasDatabase {
             phone: undefinedIsNull(record.phone),
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Address.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    `;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
         public ByAddressId = new (class implements HasDatabase {
@@ -26594,6 +26633,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.City.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    `;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByCityId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -26923,6 +26980,30 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
             active: undefinedIsNull(record.active),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Customer.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
         }
 
         public ByAddressId = new (class implements HasDatabase {
@@ -27574,6 +27655,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.Actor.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByActorId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -27827,6 +27926,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.FilmCategory.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,category_id,last_update 
+    FROM
+      public.film_category 
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByFilmIdCategoryId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -28005,6 +28121,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
             storeId: undefinedIsNull(record.store_id),
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Inventory.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    `;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
         public ByInventoryId = new (class implements HasDatabase {
@@ -28286,6 +28420,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.Category.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      category_id,name,last_update 
+    FROM
+      public.category 
+    `;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByCategoryId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -28449,6 +28600,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
         }
+        async all(): Promise<Public.Tables.Country.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      country_id,country,last_update 
+    FROM
+      public.country 
+    `;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
 
         public ByCountryId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -28609,6 +28777,23 @@ export class Database extends PostgresDatabase implements HasDatabase {
             name: undefinedIsNull(record.name),
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Language.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      language_id,name,last_update 
+    FROM
+      public.language 
+    `;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
         public ByLanguageId = new (class implements HasDatabase {
@@ -28808,6 +28993,27 @@ export class Database extends PostgresDatabase implements HasDatabase {
             staffId: undefinedIsNull(record.staff_id),
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Rental.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
         public ByInventoryId = new (class implements HasDatabase {
@@ -29344,6 +29550,31 @@ export class Database extends PostgresDatabase implements HasDatabase {
             picture: undefinedIsNull(record.picture),
           }))[0];
         }
+        async all(): Promise<Public.Tables.Staff.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
+    FROM
+      public.staff 
+    `;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }));
+        }
 
         public ByStaffId = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -29564,6 +29795,24 @@ export class Database extends PostgresDatabase implements HasDatabase {
             addressId: undefinedIsNull(record.address_id),
             lastUpdate: undefinedIsNull(record.last_update),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Store.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    `;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
         public ByManagerStaffId = new (class implements HasDatabase {
@@ -29862,6 +30111,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
             amount: undefinedIsNull(record.amount),
             paymentDate: undefinedIsNull(record.payment_date),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Payment.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
         }
 
         public ByCustomerId = new (class implements HasDatabase {
@@ -30486,6 +30755,33 @@ export class Database extends PostgresDatabase implements HasDatabase {
             specialFeatures: undefinedIsNull(record.special_features),
             fulltext: undefinedIsNull(record.fulltext),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Film.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
         }
 
         public ByFilmId = new (class implements HasDatabase {
@@ -31352,6 +31648,11 @@ export class OperationDispatcher {
         database.Public.Tables.FilmActor.create(
           request.values as Public.Tables.FilmActor.Values,
         ),
+
+      "Public.Tables.FilmActor.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.FilmActor.all(),
+
       "Public.Tables.FilmActor.ByActorIdFilmId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31396,6 +31697,11 @@ export class OperationDispatcher {
         database.Public.Tables.Address.create(
           request.values as Public.Tables.Address.Values,
         ),
+
+      "Public.Tables.Address.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Address.all(),
+
       "Public.Tables.Address.ByAddressId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31440,6 +31746,11 @@ export class OperationDispatcher {
         database.Public.Tables.City.create(
           request.values as Public.Tables.City.Values,
         ),
+
+      "Public.Tables.City.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.City.all(),
+
       "Public.Tables.City.ByCityId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31484,6 +31795,11 @@ export class OperationDispatcher {
         database.Public.Tables.Customer.create(
           request.values as Public.Tables.Customer.Values,
         ),
+
+      "Public.Tables.Customer.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Customer.all(),
+
       "Public.Tables.Customer.ByAddressId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31566,6 +31882,11 @@ export class OperationDispatcher {
         database.Public.Tables.Actor.create(
           request.values as Public.Tables.Actor.Values,
         ),
+
+      "Public.Tables.Actor.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Actor.all(),
+
       "Public.Tables.Actor.ByActorId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31610,6 +31931,11 @@ export class OperationDispatcher {
         database.Public.Tables.FilmCategory.create(
           request.values as Public.Tables.FilmCategory.Values,
         ),
+
+      "Public.Tables.FilmCategory.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.FilmCategory.all(),
+
       "Public.Tables.FilmCategory.ByFilmIdCategoryId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31635,6 +31961,11 @@ export class OperationDispatcher {
         database.Public.Tables.Inventory.create(
           request.values as Public.Tables.Inventory.Values,
         ),
+
+      "Public.Tables.Inventory.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Inventory.all(),
+
       "Public.Tables.Inventory.ByInventoryId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31679,6 +32010,11 @@ export class OperationDispatcher {
         database.Public.Tables.Category.create(
           request.values as Public.Tables.Category.Values,
         ),
+
+      "Public.Tables.Category.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Category.all(),
+
       "Public.Tables.Category.ByCategoryId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31704,6 +32040,11 @@ export class OperationDispatcher {
         database.Public.Tables.Country.create(
           request.values as Public.Tables.Country.Values,
         ),
+
+      "Public.Tables.Country.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Country.all(),
+
       "Public.Tables.Country.ByCountryId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31729,6 +32070,11 @@ export class OperationDispatcher {
         database.Public.Tables.Language.create(
           request.values as Public.Tables.Language.Values,
         ),
+
+      "Public.Tables.Language.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Language.all(),
+
       "Public.Tables.Language.ByLanguageId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31754,6 +32100,11 @@ export class OperationDispatcher {
         database.Public.Tables.Rental.create(
           request.values as Public.Tables.Rental.Values,
         ),
+
+      "Public.Tables.Rental.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Rental.all(),
+
       "Public.Tables.Rental.ByInventoryId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31817,6 +32168,11 @@ export class OperationDispatcher {
         database.Public.Tables.Staff.create(
           request.values as Public.Tables.Staff.Values,
         ),
+
+      "Public.Tables.Staff.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Staff.all(),
+
       "Public.Tables.Staff.ByStaffId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31842,6 +32198,11 @@ export class OperationDispatcher {
         database.Public.Tables.Store.create(
           request.values as Public.Tables.Store.Values,
         ),
+
+      "Public.Tables.Store.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Store.all(),
+
       "Public.Tables.Store.ByManagerStaffId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31886,6 +32247,11 @@ export class OperationDispatcher {
         database.Public.Tables.Payment.create(
           request.values as Public.Tables.Payment.Values,
         ),
+
+      "Public.Tables.Payment.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Payment.all(),
+
       "Public.Tables.Payment.ByCustomerId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
@@ -31968,6 +32334,11 @@ export class OperationDispatcher {
         database.Public.Tables.Film.create(
           request.values as Public.Tables.Film.Values,
         ),
+
+      "Public.Tables.Film.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Film.all(),
+
       "Public.Tables.Film.ByFilmId.read": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>

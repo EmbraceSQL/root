@@ -25559,6 +25559,22 @@ export class Database extends PostgresDatabase implements HasDatabase {
             answer: undefinedIsNull(record.answer),
           }))[0];
         }
+        async all(): Promise<Api.Tables.QAndA.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      question,answer 
+    FROM
+      api.q_and_a 
+    `;
+          return response.map((record) => ({
+            question: undefinedIsNull(record.question),
+            answer: undefinedIsNull(record.answer),
+          }));
+        }
 
         public ByAnswer = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
@@ -26317,6 +26333,21 @@ export class Database extends PostgresDatabase implements HasDatabase {
           return response.map((record) => ({
             slugId: undefinedIsNull(record.slug_id),
           }))[0];
+        }
+        async all(): Promise<Public.Tables.Slug.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      slug_id 
+    FROM
+      public.slug 
+    `;
+          return response.map((record) => ({
+            slugId: undefinedIsNull(record.slug_id),
+          }));
         }
 
         public BySlugId = new (class implements HasDatabase {

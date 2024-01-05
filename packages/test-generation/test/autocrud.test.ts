@@ -79,6 +79,10 @@ describe("The database can AutoCRUD", () => {
     });
     expect(values.length).toBeGreaterThan(1);
   });
+  it("all rows read", async () => {
+    const values = await database.Public.Tables.Actor.all();
+    expect(values.length).toBeGreaterThan(1);
+  });
   it("a unique index delete", async () => {
     const before = await database.Public.Tables.Payment.ByPaymentId.read({
       paymentId: 17503,

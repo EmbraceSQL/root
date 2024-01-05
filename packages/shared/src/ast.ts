@@ -47,6 +47,7 @@ export enum ASTKind {
   IndexColumn,
   Types,
   CreateOperation,
+  AllOperation,
   ReadOperation,
   UpdateOperation,
   DeleteOperation,
@@ -118,6 +119,7 @@ export type ASTKindMap = {
   [ASTKind.IndexColumn]: IndexColumnNode;
   [ASTKind.Types]: TypesNode;
   [ASTKind.CreateOperation]: CreateOperationNode;
+  [ASTKind.AllOperation]: AllOperationNode;
   [ASTKind.ReadOperation]: ReadOperationNode;
   [ASTKind.UpdateOperation]: UpdateOperationNode;
   [ASTKind.DeleteOperation]: DeleteOperationNode;
@@ -512,6 +514,7 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
   ) {
     super(name, ASTKind.Table, tables);
     new CreateOperationNode(this);
+    new AllOperationNode(this);
   }
 
   get databaseName() {
@@ -685,6 +688,15 @@ export abstract class FunctionOperationNode extends OperationNode {
 export class CreateOperationNode extends OperationNode {
   constructor(public table: TableNode) {
     super("create", ASTKind.CreateOperation, table);
+  }
+}
+
+/**
+ * Operation to read all the rows in a table. Each table gets one.
+ */
+export class AllOperationNode extends OperationNode {
+  constructor(public table: TableNode) {
+    super("all", ASTKind.AllOperation, table);
   }
 }
 

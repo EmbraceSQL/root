@@ -6,6 +6,7 @@ import {
   ReadOperationNode,
   UpdateOperationNode,
   DeleteOperationNode,
+  AllOperationNode,
 } from "@embracesql/shared";
 
 const FunctionOperationNodeVisitor = {
@@ -76,6 +77,16 @@ export const generateOperationDispatcher = async (
           }": async (request: EmbraceSQLRequest<object, object>) => database.${
             node.typescriptNamespacedPropertyName
           }(${callee.join(",")}),`;
+        },
+      },
+      [ASTKind.AllOperation]: {
+        before: async (_: GenerationContext, node: AllOperationNode) => {
+          return [
+            `
+             "${node.typescriptNamespacedPropertyName}": async (request: EmbraceSQLRequest<object, object>) =>
+              database.${node.typescriptNamespacedPropertyName}(),
+            `,
+          ].join("\n");
         },
       },
       [ASTKind.ReadOperation]: {

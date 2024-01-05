@@ -24285,6 +24285,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.FilmActor.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.FilmActor.Record[]
+          >({
+            operation: "Public.Tables.FilmActor.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByActorIdFilmId = new (class extends HasClient {
           public async read(
             parameters: Public.Tables.FilmActor.ByActorIdFilmId,
@@ -24395,6 +24406,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.Address.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Address.Record[]
+          >({
+            operation: "Public.Tables.Address.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByAddressId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Address.ByAddressId) {
             const response = await this.client.invoke<
@@ -24501,6 +24523,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.City.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.City.Record[]
+          >({
+            operation: "Public.Tables.City.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByCityId = new (class extends HasClient {
           public async read(parameters: Public.Tables.City.ByCityId) {
             const response = await this.client.invoke<
@@ -24605,6 +24638,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Customer.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Customer.Record[]
+          >({
+            operation: "Public.Tables.Customer.all",
+          });
+          return response.results ?? [];
         }
 
         public ByAddressId = new (class extends HasClient {
@@ -24803,6 +24847,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.Actor.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Actor.Record[]
+          >({
+            operation: "Public.Tables.Actor.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByActorId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Actor.ByActorId) {
             const response = await this.client.invoke<
@@ -24909,6 +24964,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.FilmCategory.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.FilmCategory.Record[]
+          >({
+            operation: "Public.Tables.FilmCategory.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByFilmIdCategoryId = new (class extends HasClient {
           public async read(
             parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
@@ -24972,6 +25038,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Inventory.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Inventory.Record[]
+          >({
+            operation: "Public.Tables.Inventory.all",
+          });
+          return response.results ?? [];
         }
 
         public ByInventoryId = new (class extends HasClient {
@@ -25086,6 +25163,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.Category.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Category.Record[]
+          >({
+            operation: "Public.Tables.Category.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByCategoryId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Category.ByCategoryId) {
             const response = await this.client.invoke<
@@ -25145,6 +25233,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Country.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Country.Record[]
+          >({
+            operation: "Public.Tables.Country.all",
+          });
+          return response.results ?? [];
         }
 
         public ByCountryId = new (class extends HasClient {
@@ -25208,6 +25307,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.Language.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Language.Record[]
+          >({
+            operation: "Public.Tables.Language.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByLanguageId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Language.ByLanguageId) {
             const response = await this.client.invoke<
@@ -25267,6 +25377,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Rental.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Rental.Record[]
+          >({
+            operation: "Public.Tables.Rental.all",
+          });
+          return response.results ?? [];
         }
 
         public ByInventoryId = new (class extends HasClient {
@@ -25428,6 +25549,17 @@ export class EmbraceSQLClient extends BaseClient {
           return response.results;
         }
 
+        public async all(): Promise<Public.Tables.Staff.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Staff.Record[]
+          >({
+            operation: "Public.Tables.Staff.all",
+          });
+          return response.results ?? [];
+        }
+
         public ByStaffId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Staff.ByStaffId) {
             const response = await this.client.invoke<
@@ -25487,6 +25619,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Store.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Store.Record[]
+          >({
+            operation: "Public.Tables.Store.all",
+          });
+          return response.results ?? [];
         }
 
         public ByManagerStaffId = new (class extends HasClient {
@@ -25595,6 +25738,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Payment.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Payment.Record[]
+          >({
+            operation: "Public.Tables.Payment.all",
+          });
+          return response.results ?? [];
         }
 
         public ByCustomerId = new (class extends HasClient {
@@ -25791,6 +25945,17 @@ export class EmbraceSQLClient extends BaseClient {
             values,
           });
           return response.results;
+        }
+
+        public async all(): Promise<Public.Tables.Film.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Film.Record[]
+          >({
+            operation: "Public.Tables.Film.all",
+          });
+          return response.results ?? [];
         }
 
         public ByFilmId = new (class extends HasClient {

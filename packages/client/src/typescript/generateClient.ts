@@ -139,6 +139,20 @@ export async function generateClient(context: GenerationContext) {
         `;
       },
     },
+    [ASTKind.AllOperation]: {
+      before: async (_, node) => {
+        // all those rows
+        const returnType = `${node.table.typescriptNamespacedName}.Record[]`;
+        return `
+          public async all() : Promise<${returnType}> {
+            const response = await this.client.invoke<never, never, ${returnType}>({
+              operation: "${node.typescriptNamespacedPropertyName}"
+            });
+            return response.results ?? [];
+          }
+        `;
+      },
+    },
 
     // with the `returns` deletes and reads have the same structure
     [ASTKind.ReadOperation]: IndexOperation,
