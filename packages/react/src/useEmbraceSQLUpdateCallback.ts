@@ -1,3 +1,4 @@
+import { AcceptsDatabaseUpdate } from "./interceptor";
 import { useEmbraceSQLClient } from "./provider";
 import { DebounceMap, WithChangeHandlers } from "@embracesql/shared";
 import React from "react";
@@ -10,15 +11,13 @@ export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
  *
  * Easier to avoid passing the wrong thing...
  */
-export type Intercepted<T> = WithChangeHandlers<T, ChangeEvent>;
+export type Intercepted<T> = WithChangeHandlers<T, ChangeEvent> &
+  AcceptsDatabaseUpdate<T>;
 
 /**
  * Call back into an interception hook with this interface.
  */
-export type InterceptorCallback<T> = (
-  value: T,
-  index?: number,
-) => Promise<void>;
+export type InterceptorCallback<T> = (value: Intercepted<T>) => Promise<void>;
 
 /**
  * An Interceptor is a function that wraps some raw data T and 'intercepts'
@@ -30,23 +29,17 @@ export type InterceptorCallback<T> = (
 export type Interceptor<T> = (
   uninterceptedValue: T,
   callback: InterceptorCallback<T>,
-  index?: number,
 ) => Intercepted<T>;
 
-type Props<T, R> = {
+type Props<T> = {
   /**
    * Operation name that will do an upsert.
    */
   operation: string;
   /**
-   * Current results. Will be updated index wise when a list, other
-   * wise replaced.
+   * Dispatch when in memory objects are updated and it is time to render.
    */
-  results: R | undefined;
-  /**
-   * Dispatch back the updated state when returned from the database.
-   */
-  setResults: React.Dispatch<React.SetStateAction<R | undefined>>;
+  inMemoryUpdate: () => void;
   /**
    * Primary key picker, used for debouncing.
    */
@@ -61,49 +54,39 @@ type Props<T, R> = {
  *
  * Debounced to avoid ⚒️ your poor database.
  */
-export function useEmbraceSQLUpdateCallback<T, R extends T | T[]>({
+export function useEmbraceSQLUpdateCallback<T>({
   operation,
-  results,
-  setResults,
   primaryKeyPicker,
-}: Props<T, R>) {
+  inMemoryUpdate,
+}: Props<T>) {
   // context provided client
   const client = useEmbraceSQLClient();
   // debounce mapping - in a ref, this is state like but we do not update on it
   const debounceMap = React.useRef(new DebounceMap());
 
   return React.useCallback(
-    async (updated: T, index?: number) => {
-      const debounceKey = primaryKeyPicker(updated);
+    async (updated: Intercepted<T>) => {
+      const debounceKey = primaryKeyPicker(updated.value);
+      inMemoryUpdate();
 
       if (client) {
         const toExecute = async () => {
           // actual server trip - counting on a read back of a single record
           const response = await client.invoke<never, T, T>({
             operation,
-            values: updated,
+            values: updated.value,
           });
-
           // response has the single read-back record -- this is what needs
-          // to be merged into react state
-          if (
-            Array.isArray(results) &&
-            index !== undefined &&
-            response.results
-          ) {
-            // update state in a slot in an array -- which will be a fresh
-            // record from the database -- difference instance which will
-            // be enough to trigger a refresh
-            results[index] = response.results;
-            setResults(results);
-          } else {
-            // update state with the single record
-            setResults(response.results as R);
+          // to be merged into react state as the database plenty well might
+          // have rules or triggers that altered the data
+          // not to mention other users might have updated other fields
+          if (response.results) {
+            updated.wholeUpdateFromDatabase(response.results);
           }
         };
         debounceMap.current.register(debounceKey, toExecute);
       }
     },
-    [client, operation, setResults],
+    [client, operation],
   );
 }

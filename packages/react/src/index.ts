@@ -10,6 +10,7 @@ export type {
   Interceptor,
   ChangeEvent,
 } from "./useEmbraceSQLUpdateCallback";
+export * from "./interceptor";
 
 type Setter<T> = (newValue: T) => void;
 

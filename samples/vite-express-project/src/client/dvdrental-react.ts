@@ -24121,25 +24121,29 @@ import {
   useEmbraceSQLUpdateCallback,
   InterceptorCallback,
   Intercepted,
+  InterceptorBase,
   ChangeEvent,
 } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.FilmActor.Record>
         implements Intercepted<Public.Tables.FilmActor.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.FilmActor.Record,
+          uninterceptedValue: Public.Tables.FilmActor.Record,
           private callback: InterceptorCallback<Public.Tables.FilmActor.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get actorId() {
           return this.uninterceptedValue.actorId;
         }
         set actorId(newValue) {
           this.uninterceptedValue.actorId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
@@ -24155,7 +24159,7 @@ export namespace Public {
         }
         set filmId(newValue) {
           this.uninterceptedValue.filmId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -24171,7 +24175,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24186,19 +24190,22 @@ export namespace Public {
     }
     export namespace Address {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Address.Record>
         implements Intercepted<Public.Tables.Address.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Address.Record,
+          uninterceptedValue: Public.Tables.Address.Record,
           private callback: InterceptorCallback<Public.Tables.Address.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get addressId() {
           return this.uninterceptedValue.addressId;
         }
         set addressId(newValue) {
           this.uninterceptedValue.addressId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -24214,7 +24221,7 @@ export namespace Public {
         }
         set address(newValue) {
           this.uninterceptedValue.address = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddress() {
           return (event: ChangeEvent) => {
@@ -24230,7 +24237,7 @@ export namespace Public {
         }
         set address2(newValue) {
           this.uninterceptedValue.address2 = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddress2() {
           return (event: ChangeEvent) => {
@@ -24246,7 +24253,7 @@ export namespace Public {
         }
         set district(newValue) {
           this.uninterceptedValue.district = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeDistrict() {
           return (event: ChangeEvent) => {
@@ -24262,7 +24269,7 @@ export namespace Public {
         }
         set cityId(newValue) {
           this.uninterceptedValue.cityId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
@@ -24277,7 +24284,7 @@ export namespace Public {
         }
         set postalCode(newValue) {
           this.uninterceptedValue.postalCode = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePostalCode() {
           return (event: ChangeEvent) => {
@@ -24293,7 +24300,7 @@ export namespace Public {
         }
         set phone(newValue) {
           this.uninterceptedValue.phone = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePhone() {
           return (event: ChangeEvent) => {
@@ -24308,7 +24315,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24323,19 +24330,22 @@ export namespace Public {
     }
     export namespace City {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.City.Record>
         implements Intercepted<Public.Tables.City.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.City.Record,
+          uninterceptedValue: Public.Tables.City.Record,
           private callback: InterceptorCallback<Public.Tables.City.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get cityId() {
           return this.uninterceptedValue.cityId;
         }
         set cityId(newValue) {
           this.uninterceptedValue.cityId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
@@ -24350,7 +24360,7 @@ export namespace Public {
         }
         set city(newValue) {
           this.uninterceptedValue.city = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCity() {
           return (event: ChangeEvent) => {
@@ -24365,7 +24375,7 @@ export namespace Public {
         }
         set countryId(newValue) {
           this.uninterceptedValue.countryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
@@ -24381,7 +24391,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24396,19 +24406,22 @@ export namespace Public {
     }
     export namespace Customer {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Customer.Record>
         implements Intercepted<Public.Tables.Customer.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Customer.Record,
+          uninterceptedValue: Public.Tables.Customer.Record,
           private callback: InterceptorCallback<Public.Tables.Customer.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get customerId() {
           return this.uninterceptedValue.customerId;
         }
         set customerId(newValue) {
           this.uninterceptedValue.customerId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -24424,7 +24437,7 @@ export namespace Public {
         }
         set storeId(newValue) {
           this.uninterceptedValue.storeId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -24440,7 +24453,7 @@ export namespace Public {
         }
         set firstName(newValue) {
           this.uninterceptedValue.firstName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -24456,7 +24469,7 @@ export namespace Public {
         }
         set lastName(newValue) {
           this.uninterceptedValue.lastName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -24472,7 +24485,7 @@ export namespace Public {
         }
         set email(newValue) {
           this.uninterceptedValue.email = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
@@ -24487,7 +24500,7 @@ export namespace Public {
         }
         set addressId(newValue) {
           this.uninterceptedValue.addressId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -24503,7 +24516,7 @@ export namespace Public {
         }
         set activebool(newValue) {
           this.uninterceptedValue.activebool = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
@@ -24519,7 +24532,7 @@ export namespace Public {
         }
         set createDate(newValue) {
           this.uninterceptedValue.createDate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
@@ -24535,7 +24548,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24551,7 +24564,7 @@ export namespace Public {
         }
         set active(newValue) {
           this.uninterceptedValue.active = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeActive() {
           return (event: ChangeEvent) => {
@@ -24566,19 +24579,22 @@ export namespace Public {
     }
     export namespace Actor {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Actor.Record>
         implements Intercepted<Public.Tables.Actor.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Actor.Record,
+          uninterceptedValue: Public.Tables.Actor.Record,
           private callback: InterceptorCallback<Public.Tables.Actor.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get actorId() {
           return this.uninterceptedValue.actorId;
         }
         set actorId(newValue) {
           this.uninterceptedValue.actorId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
@@ -24593,7 +24609,7 @@ export namespace Public {
         }
         set firstName(newValue) {
           this.uninterceptedValue.firstName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -24609,7 +24625,7 @@ export namespace Public {
         }
         set lastName(newValue) {
           this.uninterceptedValue.lastName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -24625,7 +24641,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24640,19 +24656,22 @@ export namespace Public {
     }
     export namespace FilmCategory {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.FilmCategory.Record>
         implements Intercepted<Public.Tables.FilmCategory.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.FilmCategory.Record,
+          uninterceptedValue: Public.Tables.FilmCategory.Record,
           private callback: InterceptorCallback<Public.Tables.FilmCategory.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get filmId() {
           return this.uninterceptedValue.filmId;
         }
         set filmId(newValue) {
           this.uninterceptedValue.filmId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -24668,7 +24687,7 @@ export namespace Public {
         }
         set categoryId(newValue) {
           this.uninterceptedValue.categoryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
@@ -24684,7 +24703,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24699,19 +24718,22 @@ export namespace Public {
     }
     export namespace Inventory {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Inventory.Record>
         implements Intercepted<Public.Tables.Inventory.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Inventory.Record,
+          uninterceptedValue: Public.Tables.Inventory.Record,
           private callback: InterceptorCallback<Public.Tables.Inventory.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get inventoryId() {
           return this.uninterceptedValue.inventoryId;
         }
         set inventoryId(newValue) {
           this.uninterceptedValue.inventoryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
@@ -24727,7 +24749,7 @@ export namespace Public {
         }
         set filmId(newValue) {
           this.uninterceptedValue.filmId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -24743,7 +24765,7 @@ export namespace Public {
         }
         set storeId(newValue) {
           this.uninterceptedValue.storeId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -24759,7 +24781,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24774,19 +24796,22 @@ export namespace Public {
     }
     export namespace Category {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Category.Record>
         implements Intercepted<Public.Tables.Category.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Category.Record,
+          uninterceptedValue: Public.Tables.Category.Record,
           private callback: InterceptorCallback<Public.Tables.Category.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get categoryId() {
           return this.uninterceptedValue.categoryId;
         }
         set categoryId(newValue) {
           this.uninterceptedValue.categoryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
@@ -24802,7 +24827,7 @@ export namespace Public {
         }
         set name(newValue) {
           this.uninterceptedValue.name = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeName() {
           return (event: ChangeEvent) => {
@@ -24817,7 +24842,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24832,19 +24857,22 @@ export namespace Public {
     }
     export namespace Country {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Country.Record>
         implements Intercepted<Public.Tables.Country.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Country.Record,
+          uninterceptedValue: Public.Tables.Country.Record,
           private callback: InterceptorCallback<Public.Tables.Country.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get countryId() {
           return this.uninterceptedValue.countryId;
         }
         set countryId(newValue) {
           this.uninterceptedValue.countryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
@@ -24860,7 +24888,7 @@ export namespace Public {
         }
         set country(newValue) {
           this.uninterceptedValue.country = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCountry() {
           return (event: ChangeEvent) => {
@@ -24876,7 +24904,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24891,19 +24919,22 @@ export namespace Public {
     }
     export namespace Language {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Language.Record>
         implements Intercepted<Public.Tables.Language.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Language.Record,
+          uninterceptedValue: Public.Tables.Language.Record,
           private callback: InterceptorCallback<Public.Tables.Language.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get languageId() {
           return this.uninterceptedValue.languageId;
         }
         set languageId(newValue) {
           this.uninterceptedValue.languageId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
@@ -24919,7 +24950,7 @@ export namespace Public {
         }
         set name(newValue) {
           this.uninterceptedValue.name = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeName() {
           return (event: ChangeEvent) => {
@@ -24934,7 +24965,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -24949,19 +24980,22 @@ export namespace Public {
     }
     export namespace Rental {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Rental.Record>
         implements Intercepted<Public.Tables.Rental.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Rental.Record,
+          uninterceptedValue: Public.Tables.Rental.Record,
           private callback: InterceptorCallback<Public.Tables.Rental.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get rentalId() {
           return this.uninterceptedValue.rentalId;
         }
         set rentalId(newValue) {
           this.uninterceptedValue.rentalId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
@@ -24977,7 +25011,7 @@ export namespace Public {
         }
         set rentalDate(newValue) {
           this.uninterceptedValue.rentalDate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRentalDate() {
           return (event: ChangeEvent) => {
@@ -24993,7 +25027,7 @@ export namespace Public {
         }
         set inventoryId(newValue) {
           this.uninterceptedValue.inventoryId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
@@ -25009,7 +25043,7 @@ export namespace Public {
         }
         set customerId(newValue) {
           this.uninterceptedValue.customerId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -25025,7 +25059,7 @@ export namespace Public {
         }
         set returnDate(newValue) {
           this.uninterceptedValue.returnDate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeReturnDate() {
           return (event: ChangeEvent) => {
@@ -25041,7 +25075,7 @@ export namespace Public {
         }
         set staffId(newValue) {
           this.uninterceptedValue.staffId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -25057,7 +25091,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -25072,19 +25106,22 @@ export namespace Public {
     }
     export namespace Staff {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Staff.Record>
         implements Intercepted<Public.Tables.Staff.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Staff.Record,
+          uninterceptedValue: Public.Tables.Staff.Record,
           private callback: InterceptorCallback<Public.Tables.Staff.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get staffId() {
           return this.uninterceptedValue.staffId;
         }
         set staffId(newValue) {
           this.uninterceptedValue.staffId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -25099,7 +25136,7 @@ export namespace Public {
         }
         set firstName(newValue) {
           this.uninterceptedValue.firstName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -25115,7 +25152,7 @@ export namespace Public {
         }
         set lastName(newValue) {
           this.uninterceptedValue.lastName = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -25131,7 +25168,7 @@ export namespace Public {
         }
         set addressId(newValue) {
           this.uninterceptedValue.addressId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -25147,7 +25184,7 @@ export namespace Public {
         }
         set email(newValue) {
           this.uninterceptedValue.email = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
@@ -25162,7 +25199,7 @@ export namespace Public {
         }
         set storeId(newValue) {
           this.uninterceptedValue.storeId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -25177,7 +25214,7 @@ export namespace Public {
         }
         set active(newValue) {
           this.uninterceptedValue.active = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeActive() {
           return (event: ChangeEvent) => {
@@ -25192,7 +25229,7 @@ export namespace Public {
         }
         set username(newValue) {
           this.uninterceptedValue.username = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeUsername() {
           return (event: ChangeEvent) => {
@@ -25208,7 +25245,7 @@ export namespace Public {
         }
         set password(newValue) {
           this.uninterceptedValue.password = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePassword() {
           return (event: ChangeEvent) => {
@@ -25224,7 +25261,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -25240,7 +25277,7 @@ export namespace Public {
         }
         set picture(newValue) {
           this.uninterceptedValue.picture = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePicture() {
           return (event: ChangeEvent) => {
@@ -25254,19 +25291,22 @@ export namespace Public {
     }
     export namespace Store {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Store.Record>
         implements Intercepted<Public.Tables.Store.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Store.Record,
+          uninterceptedValue: Public.Tables.Store.Record,
           private callback: InterceptorCallback<Public.Tables.Store.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get storeId() {
           return this.uninterceptedValue.storeId;
         }
         set storeId(newValue) {
           this.uninterceptedValue.storeId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -25281,7 +25321,7 @@ export namespace Public {
         }
         set managerStaffId(newValue) {
           this.uninterceptedValue.managerStaffId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeManagerStaffId() {
           return (event: ChangeEvent) => {
@@ -25297,7 +25337,7 @@ export namespace Public {
         }
         set addressId(newValue) {
           this.uninterceptedValue.addressId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -25313,7 +25353,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -25328,19 +25368,22 @@ export namespace Public {
     }
     export namespace Payment {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Payment.Record>
         implements Intercepted<Public.Tables.Payment.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Payment.Record,
+          uninterceptedValue: Public.Tables.Payment.Record,
           private callback: InterceptorCallback<Public.Tables.Payment.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get paymentId() {
           return this.uninterceptedValue.paymentId;
         }
         set paymentId(newValue) {
           this.uninterceptedValue.paymentId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePaymentId() {
           return (event: ChangeEvent) => {
@@ -25356,7 +25399,7 @@ export namespace Public {
         }
         set customerId(newValue) {
           this.uninterceptedValue.customerId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -25372,7 +25415,7 @@ export namespace Public {
         }
         set staffId(newValue) {
           this.uninterceptedValue.staffId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -25388,7 +25431,7 @@ export namespace Public {
         }
         set rentalId(newValue) {
           this.uninterceptedValue.rentalId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
@@ -25404,7 +25447,7 @@ export namespace Public {
         }
         set amount(newValue) {
           this.uninterceptedValue.amount = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeAmount() {
           return (event: ChangeEvent) => {
@@ -25419,7 +25462,7 @@ export namespace Public {
         }
         set paymentDate(newValue) {
           this.uninterceptedValue.paymentDate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changePaymentDate() {
           return (event: ChangeEvent) => {
@@ -25434,19 +25477,22 @@ export namespace Public {
     }
     export namespace Film {
       export class Interceptor
+        extends InterceptorBase<Public.Tables.Film.Record>
         implements Intercepted<Public.Tables.Film.Record>
       {
         constructor(
-          private uninterceptedValue: Public.Tables.Film.Record,
+          uninterceptedValue: Public.Tables.Film.Record,
           private callback: InterceptorCallback<Public.Tables.Film.Record>,
           private index?: number,
-        ) {}
+        ) {
+          super(uninterceptedValue);
+        }
         get filmId() {
           return this.uninterceptedValue.filmId;
         }
         set filmId(newValue) {
           this.uninterceptedValue.filmId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -25461,7 +25507,7 @@ export namespace Public {
         }
         set title(newValue) {
           this.uninterceptedValue.title = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
@@ -25476,7 +25522,7 @@ export namespace Public {
         }
         set description(newValue) {
           this.uninterceptedValue.description = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
@@ -25492,7 +25538,7 @@ export namespace Public {
         }
         set releaseYear(newValue) {
           this.uninterceptedValue.releaseYear = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
@@ -25508,7 +25554,7 @@ export namespace Public {
         }
         set languageId(newValue) {
           this.uninterceptedValue.languageId = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
@@ -25524,7 +25570,7 @@ export namespace Public {
         }
         set rentalDuration(newValue) {
           this.uninterceptedValue.rentalDuration = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
@@ -25540,7 +25586,7 @@ export namespace Public {
         }
         set rentalRate(newValue) {
           this.uninterceptedValue.rentalRate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
@@ -25556,7 +25602,7 @@ export namespace Public {
         }
         set length(newValue) {
           this.uninterceptedValue.length = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLength() {
           return (event: ChangeEvent) => {
@@ -25571,7 +25617,7 @@ export namespace Public {
         }
         set replacementCost(newValue) {
           this.uninterceptedValue.replacementCost = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
@@ -25587,7 +25633,7 @@ export namespace Public {
         }
         set rating(newValue) {
           this.uninterceptedValue.rating = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeRating() {
           return (event: ChangeEvent) => {
@@ -25602,7 +25648,7 @@ export namespace Public {
         }
         set lastUpdate(newValue) {
           this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -25618,7 +25664,7 @@ export namespace Public {
         }
         set specialFeatures(newValue) {
           this.uninterceptedValue.specialFeatures = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
@@ -25634,7 +25680,7 @@ export namespace Public {
         }
         set fulltext(newValue) {
           this.uninterceptedValue.fulltext = newValue;
-          void this.callback(this.uninterceptedValue, this.index);
+          void this.callback(this);
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
@@ -25667,18 +25713,20 @@ export namespace Public {
           never,
           Public.Tables.FilmActor.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.FilmActor.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.FilmActor.Record,
-          Public.Tables.FilmActor.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.FilmActor.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25700,6 +25748,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -25713,18 +25762,20 @@ export namespace Public {
           never,
           Public.Tables.FilmActor.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.FilmActor.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.FilmActor.Record,
-          Public.Tables.FilmActor.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.FilmActor.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25746,6 +25797,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -25769,18 +25821,20 @@ export namespace Public {
           never,
           Public.Tables.Address.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Address.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Address.Record,
-          Public.Tables.Address.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Address.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25802,6 +25856,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -25815,18 +25870,20 @@ export namespace Public {
           never,
           Public.Tables.Address.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Address.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Address.Record,
-          Public.Tables.Address.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Address.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25848,6 +25905,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -25867,18 +25925,20 @@ export namespace Public {
           never,
           Public.Tables.City.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.City.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.City.Record,
-          Public.Tables.City.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.City.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25900,6 +25960,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -25913,18 +25974,20 @@ export namespace Public {
           never,
           Public.Tables.City.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.City.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.City.Record,
-          Public.Tables.City.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.City.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -25946,6 +26009,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -25971,18 +26035,20 @@ export namespace Public {
           never,
           Public.Tables.Customer.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Customer.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Customer.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26004,6 +26070,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26017,18 +26084,20 @@ export namespace Public {
           never,
           Public.Tables.Customer.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Customer.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Customer.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26050,6 +26119,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26063,18 +26133,20 @@ export namespace Public {
           never,
           Public.Tables.Customer.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Customer.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Customer.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26096,6 +26168,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26109,18 +26182,20 @@ export namespace Public {
           never,
           Public.Tables.Customer.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Customer.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Customer.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26142,6 +26217,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26161,18 +26237,20 @@ export namespace Public {
           never,
           Public.Tables.Actor.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Actor.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Actor.Record,
-          Public.Tables.Actor.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Actor.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26194,6 +26272,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26207,18 +26286,20 @@ export namespace Public {
           never,
           Public.Tables.Actor.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Actor.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Actor.Record,
-          Public.Tables.Actor.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Actor.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26240,6 +26321,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26258,18 +26340,20 @@ export namespace Public {
           never,
           Public.Tables.FilmCategory.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.FilmCategory.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.FilmCategory.Record,
-          Public.Tables.FilmCategory.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.FilmCategory.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26291,6 +26375,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26310,18 +26395,20 @@ export namespace Public {
           never,
           Public.Tables.Inventory.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Inventory.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Inventory.Record,
-          Public.Tables.Inventory.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Inventory.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26343,6 +26430,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26356,18 +26444,20 @@ export namespace Public {
           never,
           Public.Tables.Inventory.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Inventory.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Inventory.Record,
-          Public.Tables.Inventory.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Inventory.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26389,6 +26479,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26407,18 +26498,20 @@ export namespace Public {
           never,
           Public.Tables.Category.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Category.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Category.Record,
-          Public.Tables.Category.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Category.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26440,6 +26533,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26458,18 +26552,20 @@ export namespace Public {
           never,
           Public.Tables.Country.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Country.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Country.Record,
-          Public.Tables.Country.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Country.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26491,6 +26587,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26509,18 +26606,20 @@ export namespace Public {
           never,
           Public.Tables.Language.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Language.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Language.Record,
-          Public.Tables.Language.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Language.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26542,6 +26641,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26564,18 +26664,20 @@ export namespace Public {
           never,
           Public.Tables.Rental.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Rental.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Rental.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26597,6 +26699,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26613,18 +26716,20 @@ export namespace Public {
           never,
           Public.Tables.Rental.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Rental.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Rental.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26646,6 +26751,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26659,18 +26765,20 @@ export namespace Public {
           never,
           Public.Tables.Rental.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Rental.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Rental.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26692,6 +26800,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26718,18 +26827,20 @@ export namespace Public {
           never,
           Public.Tables.Staff.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Staff.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Staff.Record,
-          Public.Tables.Staff.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Staff.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26751,6 +26862,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26770,18 +26882,20 @@ export namespace Public {
           never,
           Public.Tables.Store.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Store.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Store.Record,
-          Public.Tables.Store.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Store.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26803,6 +26917,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26816,18 +26931,20 @@ export namespace Public {
           never,
           Public.Tables.Store.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Store.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Store.Record,
-          Public.Tables.Store.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Store.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26849,6 +26966,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -26870,18 +26988,20 @@ export namespace Public {
           never,
           Public.Tables.Payment.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Payment.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Payment.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26903,6 +27023,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26916,18 +27037,20 @@ export namespace Public {
           never,
           Public.Tables.Payment.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Payment.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Payment.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26949,6 +27072,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -26962,18 +27086,20 @@ export namespace Public {
           never,
           Public.Tables.Payment.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Payment.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Payment.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -26995,6 +27121,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -27008,18 +27135,20 @@ export namespace Public {
           never,
           Public.Tables.Payment.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Payment.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Payment.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -27041,6 +27170,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }
@@ -27069,18 +27199,20 @@ export namespace Public {
           never,
           Public.Tables.Film.Record
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Film.Record>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Film.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -27102,6 +27234,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -27115,18 +27248,20 @@ export namespace Public {
           never,
           Public.Tables.Film.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Film.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Film.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -27148,6 +27283,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -27161,18 +27297,20 @@ export namespace Public {
           never,
           Public.Tables.Film.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Film.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Film.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -27194,6 +27332,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
 
@@ -27207,18 +27346,20 @@ export namespace Public {
           never,
           Public.Tables.Film.Record[]
         >(request);
+        const [tick, setTick] = React.useState(0);
+
+        const inMemoryUpdate = React.useCallback(() => {
+          setTick(Date.now());
+        }, [setTick]);
+
         const [results, setResults] =
           React.useState<Public.Tables.Film.Record[]>();
         React.useEffect(() => {
           setResults(done?.response?.results);
         }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback<
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        const updateCallback = useEmbraceSQLUpdateCallback({
           operation: "Public.Tables.Film.create",
-          results,
-          setResults,
+          inMemoryUpdate,
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
         });
         const [interceptedResults, setInterceptedResults] =
@@ -27240,6 +27381,7 @@ export namespace Public {
           loading: done?.loading,
           error: done?.error,
           results: interceptedResults,
+          tick,
         };
       }
     }

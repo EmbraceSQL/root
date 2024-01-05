@@ -16,8 +16,11 @@ export const generateReactBindables = async (context: GenerationContext) => {
       before: async (context, node) => {
         return [
           await NamespaceVisitor.before(context, node),
-          `export class Interceptor implements Intercepted<${node.typescriptNamespacedName}.Record> {`,
-          `constructor(private uninterceptedValue: ${node.typescriptNamespacedName}.Record, private callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, private index?: number) {`,
+          `export class Interceptor`,
+          `extends InterceptorBase<${node.typescriptNamespacedName}.Record>`,
+          `implements Intercepted<${node.typescriptNamespacedName}.Record> {`,
+          `constructor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, private callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, private index?: number) {`,
+          ` super(uninterceptedValue);`,
           `}`,
         ].join("\n");
       },
@@ -39,7 +42,7 @@ export const generateReactBindables = async (context: GenerationContext) => {
           // that intercepts sets
           `set ${camelCase(node.name)}(newValue) {`,
           ` this.uninterceptedValue.${camelCase(node.name)} = newValue;`,
-          ` void this.callback(this.uninterceptedValue, this.index);`,
+          ` void this.callback(this);`,
           `}`,
           // react change event handlers -- needs a bound this
           // to be used as react event handler

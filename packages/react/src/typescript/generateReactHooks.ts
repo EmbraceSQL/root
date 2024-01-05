@@ -41,6 +41,13 @@ export const generateReactHooks = async (context: GenerationContext) => {
             node.name,
           )}, never, ${resultsTypeName}>(request);`,
         );
+        // re render callback tick
+        generationBuffer.push(`const [tick, setTick] = React.useState(0);`);
+        generationBuffer.push(`
+          const inMemoryUpdate = React.useCallback(() => {
+              setTick(Date.now());
+          }, [setTick]);
+        `);
         // capturing results from responses
         generationBuffer.push(
           `const [results, setResults] = React.useState<${resultsTypeName}>();`,
@@ -50,10 +57,9 @@ export const generateReactHooks = async (context: GenerationContext) => {
         );
         // callback on updates
         generationBuffer.push(
-          `const updateCallback = useEmbraceSQLUpdateCallback<${tableTypeName}, ${resultsTypeName}>(
+          `const updateCallback = useEmbraceSQLUpdateCallback(
            {operation: "${node.table.createOperation?.typescriptNamespacedPropertyName}",
-              results,
-              setResults,
+              inMemoryUpdate,
               primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom
            });`,
         );
@@ -86,6 +92,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                 loading: done?.loading,
                 error: done?.error,
                 results: interceptedResults,
+                tick
             };
             `);
 

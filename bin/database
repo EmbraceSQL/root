@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -exo pipefail
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+psql --file ${SCRIPT_DIR}/../var/data/dvdrental/dvdrental.sql
+psql --file ${SCRIPT_DIR}/../var/data/marshalling/marshalling.sql
+psql --file ${SCRIPT_DIR}/../var/data/checklist/checklist.sql

@@ -6,7 +6,13 @@ import {
   EmbraceSQLProvider,
   Public,
 } from "../src/dvdrental-react";
-import { fireEvent, render, renderHook, waitFor } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  renderHook,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import fetch from "jest-fetch-mock";
 import React from "react";
 
@@ -76,8 +82,9 @@ describe("EmbraceSQL Hooks can", () => {
       expect(result.current?.results).toMatchObject(mockActor),
     );
     // intercepted record will update the database -- set up a mock
-
-    result.current.results!.firstName = "Alec";
+    act(() => {
+      result.current.results!.firstName = "Alec";
+    });
     await waitFor(() =>
       expect(result.current?.results).toMatchObject(updatedMockActor),
     );
@@ -97,8 +104,10 @@ describe("EmbraceSQL Hooks can", () => {
     const rendered = render(
       <input value={actor?.firstName} onChange={actor?.changeFirstName} />,
     );
-    fireEvent.change(rendered.getByRole("textbox"), {
-      target: { value: "Alec" },
+    act(() => {
+      fireEvent.change(rendered.getByRole("textbox"), {
+        target: { value: "Alec" },
+      });
     });
     // this should have tapped the server in the change handler
     // causing the hook to update
