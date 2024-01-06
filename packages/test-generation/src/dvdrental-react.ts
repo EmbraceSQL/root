@@ -24375,6 +24375,7 @@ export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
 import {
   useEmbraceSQLRequest,
   useEmbraceSQLUpdateCallback,
+  useEmbraceSQL,
   InterceptorCallback,
   Intercepted,
   InterceptorBase,
@@ -24389,10 +24390,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.FilmActor.Record,
-          private callback: InterceptorCallback<Public.Tables.FilmActor.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.FilmActor.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get actorId() {
           return this.uninterceptedValue.actorId;
@@ -24451,10 +24451,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Address.Record,
-          private callback: InterceptorCallback<Public.Tables.Address.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Address.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get addressId() {
           return this.uninterceptedValue.addressId;
@@ -24591,10 +24590,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.City.Record,
-          private callback: InterceptorCallback<Public.Tables.City.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.City.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get cityId() {
           return this.uninterceptedValue.cityId;
@@ -24667,10 +24665,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Customer.Record,
-          private callback: InterceptorCallback<Public.Tables.Customer.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Customer.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get customerId() {
           return this.uninterceptedValue.customerId;
@@ -24840,10 +24837,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Actor.Record,
-          private callback: InterceptorCallback<Public.Tables.Actor.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Actor.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get actorId() {
           return this.uninterceptedValue.actorId;
@@ -24917,10 +24913,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.FilmCategory.Record,
-          private callback: InterceptorCallback<Public.Tables.FilmCategory.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.FilmCategory.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get filmId() {
           return this.uninterceptedValue.filmId;
@@ -24979,10 +24974,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Inventory.Record,
-          private callback: InterceptorCallback<Public.Tables.Inventory.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Inventory.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get inventoryId() {
           return this.uninterceptedValue.inventoryId;
@@ -25057,10 +25051,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Category.Record,
-          private callback: InterceptorCallback<Public.Tables.Category.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Category.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get categoryId() {
           return this.uninterceptedValue.categoryId;
@@ -25118,10 +25111,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Country.Record,
-          private callback: InterceptorCallback<Public.Tables.Country.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Country.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get countryId() {
           return this.uninterceptedValue.countryId;
@@ -25180,10 +25172,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Language.Record,
-          private callback: InterceptorCallback<Public.Tables.Language.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Language.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get languageId() {
           return this.uninterceptedValue.languageId;
@@ -25241,10 +25232,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Rental.Record,
-          private callback: InterceptorCallback<Public.Tables.Rental.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Rental.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get rentalId() {
           return this.uninterceptedValue.rentalId;
@@ -25367,10 +25357,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Staff.Record,
-          private callback: InterceptorCallback<Public.Tables.Staff.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Staff.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get staffId() {
           return this.uninterceptedValue.staffId;
@@ -25552,10 +25541,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Store.Record,
-          private callback: InterceptorCallback<Public.Tables.Store.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Store.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get storeId() {
           return this.uninterceptedValue.storeId;
@@ -25629,10 +25617,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Payment.Record,
-          private callback: InterceptorCallback<Public.Tables.Payment.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Payment.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get paymentId() {
           return this.uninterceptedValue.paymentId;
@@ -25738,10 +25725,9 @@ export namespace Public {
       {
         constructor(
           uninterceptedValue: Public.Tables.Film.Record,
-          private callback: InterceptorCallback<Public.Tables.Film.Record>,
-          private index?: number,
+          callback: InterceptorCallback<Public.Tables.Film.Record>,
         ) {
-          super(uninterceptedValue);
+          super(uninterceptedValue, callback);
         }
         get filmId() {
           return this.uninterceptedValue.filmId;
@@ -25958,103 +25944,33 @@ export namespace Public {
       export namespace ActorId {}
       export namespace FilmId {}
       export namespace LastUpdate {}
-
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
-        const request = {
-          operation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByActorIdFilmId,
           never,
+          Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.FilmActor.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.FilmActor.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.FilmActor.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.FilmActor.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByFilmId(parameters: ByFilmId) {
-        const request = {
-          operation: "Public.Tables.FilmActor.ByFilmId.read",
+        >({
+          readOperation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.FilmActor.create",
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          Interceptor: Public.Tables.FilmActor.Interceptor,
+        });
+      }
+      export function useByFilmId(parameters: ByFilmId) {
+        return useEmbraceSQL<
           ByFilmId,
           never,
+          Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.FilmActor.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.FilmActor.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.FilmActor.ByFilmId.read",
+          parameters,
+          upsertOperation: "Public.Tables.FilmActor.create",
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          Interceptor: Public.Tables.FilmActor.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.FilmActor.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.FilmActor.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Address {
@@ -26066,103 +25982,33 @@ export namespace Public {
       export namespace PostalCode {}
       export namespace Phone {}
       export namespace LastUpdate {}
-
       export function useByAddressId(parameters: ByAddressId) {
-        const request = {
-          operation: "Public.Tables.Address.ByAddressId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByAddressId,
           never,
+          Public.Tables.Address.Record,
           Public.Tables.Address.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Address.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Address.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Address.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Address.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByCityId(parameters: ByCityId) {
-        const request = {
-          operation: "Public.Tables.Address.ByCityId.read",
+        >({
+          readOperation: "Public.Tables.Address.ByAddressId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Address.create",
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          Interceptor: Public.Tables.Address.Interceptor,
+        });
+      }
+      export function useByCityId(parameters: ByCityId) {
+        return useEmbraceSQL<
           ByCityId,
           never,
+          Public.Tables.Address.Record,
           Public.Tables.Address.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Address.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Address.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Address.ByCityId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Address.create",
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          Interceptor: Public.Tables.Address.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Address.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Address.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace City {
@@ -26170,103 +26016,33 @@ export namespace Public {
       export namespace City {}
       export namespace CountryId {}
       export namespace LastUpdate {}
-
       export function useByCityId(parameters: ByCityId) {
-        const request = {
-          operation: "Public.Tables.City.ByCityId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByCityId,
           never,
+          Public.Tables.City.Record,
           Public.Tables.City.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.City.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.City.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.City.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.City.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByCountryId(parameters: ByCountryId) {
-        const request = {
-          operation: "Public.Tables.City.ByCountryId.read",
+        >({
+          readOperation: "Public.Tables.City.ByCityId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.City.create",
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          Interceptor: Public.Tables.City.Interceptor,
+        });
+      }
+      export function useByCountryId(parameters: ByCountryId) {
+        return useEmbraceSQL<
           ByCountryId,
           never,
+          Public.Tables.City.Record,
           Public.Tables.City.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.City.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.City.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.City.ByCountryId.read",
+          parameters,
+          upsertOperation: "Public.Tables.City.create",
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          Interceptor: Public.Tables.City.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.City.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.City.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Customer {
@@ -26280,201 +26056,61 @@ export namespace Public {
       export namespace CreateDate {}
       export namespace LastUpdate {}
       export namespace Active {}
-
       export function useByAddressId(parameters: ByAddressId) {
-        const request = {
-          operation: "Public.Tables.Customer.ByAddressId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByAddressId,
           never,
+          Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Customer.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Customer.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Customer.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByCustomerId(parameters: ByCustomerId) {
-        const request = {
-          operation: "Public.Tables.Customer.ByCustomerId.read",
+        >({
+          readOperation: "Public.Tables.Customer.ByAddressId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Customer.create",
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          Interceptor: Public.Tables.Customer.Interceptor,
+        });
+      }
+      export function useByCustomerId(parameters: ByCustomerId) {
+        return useEmbraceSQL<
           ByCustomerId,
           never,
+          Public.Tables.Customer.Record,
           Public.Tables.Customer.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Customer.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Customer.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Customer.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Customer.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByLastName(parameters: ByLastName) {
-        const request = {
-          operation: "Public.Tables.Customer.ByLastName.read",
+        >({
+          readOperation: "Public.Tables.Customer.ByCustomerId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Customer.create",
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          Interceptor: Public.Tables.Customer.Interceptor,
+        });
+      }
+      export function useByLastName(parameters: ByLastName) {
+        return useEmbraceSQL<
           ByLastName,
           never,
+          Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Customer.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Customer.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Customer.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByStoreId(parameters: ByStoreId) {
-        const request = {
-          operation: "Public.Tables.Customer.ByStoreId.read",
+        >({
+          readOperation: "Public.Tables.Customer.ByLastName.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Customer.create",
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          Interceptor: Public.Tables.Customer.Interceptor,
+        });
+      }
+      export function useByStoreId(parameters: ByStoreId) {
+        return useEmbraceSQL<
           ByStoreId,
           never,
+          Public.Tables.Customer.Record,
           Public.Tables.Customer.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Customer.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Customer.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Customer.ByStoreId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Customer.create",
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          Interceptor: Public.Tables.Customer.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Customer.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Customer.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Actor {
@@ -26482,157 +26118,52 @@ export namespace Public {
       export namespace FirstName {}
       export namespace LastName {}
       export namespace LastUpdate {}
-
       export function useByActorId(parameters: ByActorId) {
-        const request = {
-          operation: "Public.Tables.Actor.ByActorId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByActorId,
           never,
+          Public.Tables.Actor.Record,
           Public.Tables.Actor.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Actor.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Actor.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Actor.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Actor.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByLastName(parameters: ByLastName) {
-        const request = {
-          operation: "Public.Tables.Actor.ByLastName.read",
+        >({
+          readOperation: "Public.Tables.Actor.ByActorId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Actor.create",
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          Interceptor: Public.Tables.Actor.Interceptor,
+        });
+      }
+      export function useByLastName(parameters: ByLastName) {
+        return useEmbraceSQL<
           ByLastName,
           never,
+          Public.Tables.Actor.Record,
           Public.Tables.Actor.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Actor.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Actor.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Actor.ByLastName.read",
+          parameters,
+          upsertOperation: "Public.Tables.Actor.create",
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          Interceptor: Public.Tables.Actor.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Actor.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Actor.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace FilmCategory {
       export namespace FilmId {}
       export namespace CategoryId {}
       export namespace LastUpdate {}
-
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
-        const request = {
-          operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByFilmIdCategoryId,
           never,
+          Public.Tables.FilmCategory.Record,
           Public.Tables.FilmCategory.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.FilmCategory.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.FilmCategory.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
+          parameters,
+          upsertOperation: "Public.Tables.FilmCategory.create",
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          Interceptor: Public.Tables.FilmCategory.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.FilmCategory.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.FilmCategory.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Inventory {
@@ -26640,265 +26171,90 @@ export namespace Public {
       export namespace FilmId {}
       export namespace StoreId {}
       export namespace LastUpdate {}
-
       export function useByInventoryId(parameters: ByInventoryId) {
-        const request = {
-          operation: "Public.Tables.Inventory.ByInventoryId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByInventoryId,
           never,
+          Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Inventory.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Inventory.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Inventory.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Inventory.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
-        const request = {
-          operation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
+        >({
+          readOperation: "Public.Tables.Inventory.ByInventoryId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Inventory.create",
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          Interceptor: Public.Tables.Inventory.Interceptor,
+        });
+      }
+      export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
+        return useEmbraceSQL<
           ByStoreIdFilmId,
           never,
+          Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Inventory.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Inventory.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Inventory.create",
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          Interceptor: Public.Tables.Inventory.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Inventory.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Inventory.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Category {
       export namespace CategoryId {}
       export namespace Name {}
       export namespace LastUpdate {}
-
       export function useByCategoryId(parameters: ByCategoryId) {
-        const request = {
-          operation: "Public.Tables.Category.ByCategoryId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByCategoryId,
           never,
+          Public.Tables.Category.Record,
           Public.Tables.Category.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Category.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Category.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Category.ByCategoryId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Category.create",
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          Interceptor: Public.Tables.Category.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Category.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Category.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Country {
       export namespace CountryId {}
       export namespace Country {}
       export namespace LastUpdate {}
-
       export function useByCountryId(parameters: ByCountryId) {
-        const request = {
-          operation: "Public.Tables.Country.ByCountryId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByCountryId,
           never,
+          Public.Tables.Country.Record,
           Public.Tables.Country.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Country.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Country.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Country.ByCountryId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Country.create",
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          Interceptor: Public.Tables.Country.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Country.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Country.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Language {
       export namespace LanguageId {}
       export namespace Name {}
       export namespace LastUpdate {}
-
       export function useByLanguageId(parameters: ByLanguageId) {
-        const request = {
-          operation: "Public.Tables.Language.ByLanguageId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByLanguageId,
           never,
+          Public.Tables.Language.Record,
           Public.Tables.Language.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Language.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Language.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Language.ByLanguageId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Language.create",
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          Interceptor: Public.Tables.Language.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Language.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Language.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Rental {
@@ -26909,155 +26265,50 @@ export namespace Public {
       export namespace ReturnDate {}
       export namespace StaffId {}
       export namespace LastUpdate {}
-
       export function useByInventoryId(parameters: ByInventoryId) {
-        const request = {
-          operation: "Public.Tables.Rental.ByInventoryId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByInventoryId,
           never,
+          Public.Tables.Rental.Record,
           Public.Tables.Rental.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Rental.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Rental.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Rental.ByInventoryId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Rental.create",
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          Interceptor: Public.Tables.Rental.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Rental.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Rental.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
-
       export function useByRentalDateInventoryIdCustomerId(
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
-        const request = {
-          operation:
-            "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByRentalDateInventoryIdCustomerId,
           never,
+          Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Rental.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Rental.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Rental.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Rental.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByRentalId(parameters: ByRentalId) {
-        const request = {
-          operation: "Public.Tables.Rental.ByRentalId.read",
+        >({
+          readOperation:
+            "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Rental.create",
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          Interceptor: Public.Tables.Rental.Interceptor,
+        });
+      }
+      export function useByRentalId(parameters: ByRentalId) {
+        return useEmbraceSQL<
           ByRentalId,
           never,
+          Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Rental.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Rental.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Rental.ByRentalId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Rental.create",
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          Interceptor: Public.Tables.Rental.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Rental.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Rental.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Staff {
@@ -27072,54 +26323,19 @@ export namespace Public {
       export namespace Password {}
       export namespace LastUpdate {}
       export namespace Picture {}
-
       export function useByStaffId(parameters: ByStaffId) {
-        const request = {
-          operation: "Public.Tables.Staff.ByStaffId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByStaffId,
           never,
+          Public.Tables.Staff.Record,
           Public.Tables.Staff.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Staff.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Staff.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Staff.ByStaffId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Staff.create",
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          Interceptor: Public.Tables.Staff.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Staff.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Staff.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Store {
@@ -27127,103 +26343,33 @@ export namespace Public {
       export namespace ManagerStaffId {}
       export namespace AddressId {}
       export namespace LastUpdate {}
-
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
-        const request = {
-          operation: "Public.Tables.Store.ByManagerStaffId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByManagerStaffId,
           never,
+          Public.Tables.Store.Record,
           Public.Tables.Store.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Store.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Store.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Store.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Store.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByStoreId(parameters: ByStoreId) {
-        const request = {
-          operation: "Public.Tables.Store.ByStoreId.read",
+        >({
+          readOperation: "Public.Tables.Store.ByManagerStaffId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Store.create",
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          Interceptor: Public.Tables.Store.Interceptor,
+        });
+      }
+      export function useByStoreId(parameters: ByStoreId) {
+        return useEmbraceSQL<
           ByStoreId,
           never,
+          Public.Tables.Store.Record,
           Public.Tables.Store.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Store.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Store.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Store.ByStoreId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Store.create",
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          Interceptor: Public.Tables.Store.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Store.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Store.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Payment {
@@ -27233,201 +26379,61 @@ export namespace Public {
       export namespace RentalId {}
       export namespace Amount {}
       export namespace PaymentDate {}
-
       export function useByCustomerId(parameters: ByCustomerId) {
-        const request = {
-          operation: "Public.Tables.Payment.ByCustomerId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByCustomerId,
           never,
+          Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Payment.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Payment.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Payment.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByPaymentId(parameters: ByPaymentId) {
-        const request = {
-          operation: "Public.Tables.Payment.ByPaymentId.read",
+        >({
+          readOperation: "Public.Tables.Payment.ByCustomerId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Payment.create",
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          Interceptor: Public.Tables.Payment.Interceptor,
+        });
+      }
+      export function useByPaymentId(parameters: ByPaymentId) {
+        return useEmbraceSQL<
           ByPaymentId,
           never,
+          Public.Tables.Payment.Record,
           Public.Tables.Payment.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Payment.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Payment.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Payment.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Payment.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByRentalId(parameters: ByRentalId) {
-        const request = {
-          operation: "Public.Tables.Payment.ByRentalId.read",
+        >({
+          readOperation: "Public.Tables.Payment.ByPaymentId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Payment.create",
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          Interceptor: Public.Tables.Payment.Interceptor,
+        });
+      }
+      export function useByRentalId(parameters: ByRentalId) {
+        return useEmbraceSQL<
           ByRentalId,
           never,
+          Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Payment.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Payment.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Payment.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByStaffId(parameters: ByStaffId) {
-        const request = {
-          operation: "Public.Tables.Payment.ByStaffId.read",
+        >({
+          readOperation: "Public.Tables.Payment.ByRentalId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Payment.create",
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          Interceptor: Public.Tables.Payment.Interceptor,
+        });
+      }
+      export function useByStaffId(parameters: ByStaffId) {
+        return useEmbraceSQL<
           ByStaffId,
           never,
+          Public.Tables.Payment.Record,
           Public.Tables.Payment.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Payment.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Payment.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Payment.ByStaffId.read",
+          parameters,
+          upsertOperation: "Public.Tables.Payment.create",
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          Interceptor: Public.Tables.Payment.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Payment.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Payment.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
     export namespace Film {
@@ -27444,201 +26450,61 @@ export namespace Public {
       export namespace LastUpdate {}
       export namespace SpecialFeatures {}
       export namespace Fulltext {}
-
       export function useByFilmId(parameters: ByFilmId) {
-        const request = {
-          operation: "Public.Tables.Film.ByFilmId.read",
-          parameters,
-        };
-        const done = useEmbraceSQLRequest<
+        return useEmbraceSQL<
           ByFilmId,
           never,
+          Public.Tables.Film.Record,
           Public.Tables.Film.Record
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Film.Record>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Film.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Film.Record>>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              new Public.Tables.Film.Interceptor(
-                done.response.results,
-                updateCallback,
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByFulltext(parameters: ByFulltext) {
-        const request = {
-          operation: "Public.Tables.Film.ByFulltext.read",
+        >({
+          readOperation: "Public.Tables.Film.ByFilmId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Film.create",
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          Interceptor: Public.Tables.Film.Interceptor,
+        });
+      }
+      export function useByFulltext(parameters: ByFulltext) {
+        return useEmbraceSQL<
           ByFulltext,
           never,
+          Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Film.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Film.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Film.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Film.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByLanguageId(parameters: ByLanguageId) {
-        const request = {
-          operation: "Public.Tables.Film.ByLanguageId.read",
+        >({
+          readOperation: "Public.Tables.Film.ByFulltext.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Film.create",
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          Interceptor: Public.Tables.Film.Interceptor,
+        });
+      }
+      export function useByLanguageId(parameters: ByLanguageId) {
+        return useEmbraceSQL<
           ByLanguageId,
           never,
+          Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Film.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Film.create",
-          inMemoryUpdate,
-          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-        });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Film.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Film.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
-      }
-
-      export function useByTitle(parameters: ByTitle) {
-        const request = {
-          operation: "Public.Tables.Film.ByTitle.read",
+        >({
+          readOperation: "Public.Tables.Film.ByLanguageId.read",
           parameters,
-        };
-        const done = useEmbraceSQLRequest<
+          upsertOperation: "Public.Tables.Film.create",
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          Interceptor: Public.Tables.Film.Interceptor,
+        });
+      }
+      export function useByTitle(parameters: ByTitle) {
+        return useEmbraceSQL<
           ByTitle,
           never,
+          Public.Tables.Film.Record,
           Public.Tables.Film.Record[]
-        >(request);
-        const [tick, setTick] = React.useState(0);
-
-        const inMemoryUpdate = React.useCallback(() => {
-          setTick(Date.now());
-        }, [setTick]);
-
-        const [results, setResults] =
-          React.useState<Public.Tables.Film.Record[]>();
-        React.useEffect(() => {
-          setResults(done?.response?.results);
-        }, [done?.response]);
-        const updateCallback = useEmbraceSQLUpdateCallback({
-          operation: "Public.Tables.Film.create",
-          inMemoryUpdate,
+        >({
+          readOperation: "Public.Tables.Film.ByTitle.read",
+          parameters,
+          upsertOperation: "Public.Tables.Film.create",
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          Interceptor: Public.Tables.Film.Interceptor,
         });
-        const [interceptedResults, setInterceptedResults] =
-          React.useState<Intercepted<Public.Tables.Film.Record>[]>();
-        React.useEffect(() => {
-          if (done?.response?.results) {
-            setInterceptedResults(
-              (results ?? []).map(
-                (r, i) =>
-                  new Public.Tables.Film.Interceptor(r, updateCallback, i),
-              ),
-            );
-          } else {
-            setResults(undefined);
-          }
-        }, [done?.response]);
-
-        return {
-          loading: done?.loading,
-          error: done?.error,
-          results: interceptedResults,
-          tick,
-        };
       }
     }
   }

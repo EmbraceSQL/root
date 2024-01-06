@@ -139,3 +139,8 @@ export type PartiallyOptional<T, U> =
   Partial<Pick<T, CommonKeys<T, U>>> &
     // keys not in common, these will remain as is from T
     Omit<T, CommonKeys<T, U>>;
+
+/**
+ * Result sets will be a mixture of one or multiple rows.
+ */
+export type OneOrMany<T> = T | T[];

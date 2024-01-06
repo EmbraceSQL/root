@@ -19,8 +19,8 @@ export const generateReactBindables = async (context: GenerationContext) => {
           `export class Interceptor`,
           `extends InterceptorBase<${node.typescriptNamespacedName}.Record>`,
           `implements Intercepted<${node.typescriptNamespacedName}.Record> {`,
-          `constructor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, private callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, private index?: number) {`,
-          ` super(uninterceptedValue);`,
+          `constructor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>) {`,
+          ` super(uninterceptedValue, callback);`,
           `}`,
         ].join("\n");
       },
