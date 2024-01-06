@@ -1,5 +1,4 @@
 import { EmbraceSQLClient, EmbraceSQLProvider } from "./checklist-react";
-import "./main.css";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
 
@@ -8,7 +7,7 @@ const client = new EmbraceSQLClient({
   url: "http://localhost:3000/embracesql",
 });
 
-// Supported in React 18+
+// whole application is wrapped in a provider to allow data access in any component
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <EmbraceSQLProvider client={client}></EmbraceSQLProvider>
