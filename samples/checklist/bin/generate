@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mkdir -p src/server
+npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/checklist > ./src/server/checklist.ts
+
+mkdir -p src/client
+npx embracesqlcli generate react --database postgres://postgres:postgres@localhost/checklist > ./src/client/checklist-react.ts

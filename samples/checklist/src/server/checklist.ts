@@ -5330,427 +5330,60 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Api {
-  export namespace Types {
-    export type AnswerArray = Array<Api.Types.Answer>;
-
-    export type EchoTypeArray = Array<Api.Types.EchoType>;
-
-    export type EchoTypeNestedArray = Array<Api.Types.EchoTypeNested>;
-
-    export type QAndAArray = Array<Api.Types.QAndA>;
-
-    export enum Answer {
-      Yes = "Yes",
-      No = "No",
-      Maybe = "Maybe",
-    }
-
-    export type EchoType = {
-      echomessage: Nullable<PgCatalog.Types.Text>;
-      at: Nullable<PgCatalog.Types.Timestamptz>;
-    };
-
-    export type EchoTypeNested = { echoes: Api.Types.EchoTypeArray };
-
-    export type QAndA = {
-      question: PgCatalog.Types.Text;
-      answer: Nullable<Api.Types.Answer>;
-    };
-
-    export type EchoTable = {
-      echomessage: Nullable<PgCatalog.Types.Text>;
-      at: Nullable<PgCatalog.Types.Timestamptz>;
-    };
-  }
-  export namespace Procedures {
-    export namespace Echo {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = Nullable<PgCatalog.Types.Text>;
-    }
-    export namespace EchoSet {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = Nullable<PgCatalog.Types.Text>;
-    }
-    export namespace EchoTable {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = NullableMembers<Api.Types.EchoTable>;
-    }
-    export namespace EchoType {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = NullableMembers<Api.Types.EchoType>;
-    }
-    export namespace EchoTypeArray {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = Nullable<Api.Types.EchoTypeArray>;
-    }
-    export namespace EchoTypeNested {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = NullableMembers<Api.Types.EchoTypeNested>;
-    }
-    export namespace EchoTypeSet {
-      export type Parameters = { message: Nullable<PgCatalog.Types.Text> };
-
-      export type Results = NullableMembers<Api.Types.EchoType>;
-    }
-    export namespace EchoAnswer {
-      export type Parameters = { message: Nullable<Api.Types.Answer> };
-
-      export type Results = Nullable<Api.Types.Answer>;
-    }
-  }
-  export namespace Tables {
-    export namespace QAndA {
-      export type Record = {
-        question: Api.Types.QAndA["question"];
-        answer: Api.Types.QAndA["answer"] | null;
-      };
-      export type ByAnswer = {
-        answer: Api.Types.Answer;
-      };
-
-      export type PrimaryKey = never;
-      export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
-    }
-  }
-}
 export namespace Public {
   export namespace Types {
-    export type CubeArray = Array<Public.Types.Cube>;
+    export type ChecklistArray = Array<Public.Types.Checklist>;
 
-    export type SlugArray = Array<Public.Types.Slug>;
+    export type ChecklistItemArray = Array<Public.Types.ChecklistItem>;
 
-    export type Cube = Float32Array;
+    export type Checklist = {
+      id: PgCatalog.Types.Uuid;
+      name: PgCatalog.Types.Text;
+      createdAt: PgCatalog.Types.Timestamp;
+    };
 
-    export type Slug = { slugId: PgCatalog.Types.Int4 };
+    export type ChecklistItem = {
+      id: PgCatalog.Types.Uuid;
+      checklistId: PgCatalog.Types.Uuid;
+      title: PgCatalog.Types.Text;
+      checked: PgCatalog.Types.Bool;
+      createdAt: PgCatalog.Types.Timestamp;
+    };
   }
-  export namespace Procedures {
-    export namespace CubeIn {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Cstring>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace Cube_9c45 {
-      export type Parameters = {
-        argument_0: PgCatalog.Types.Float8Array;
-        argument_1: PgCatalog.Types.Float8Array;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace Cube_2e6d {
-      export type Parameters = { argument_0: PgCatalog.Types.Float8Array };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeOut {
-      export type Parameters = { argument_0: Nullable<Public.Types.Cube> };
-
-      export type Results = Nullable<PgCatalog.Types.Cstring>;
-    }
-    export namespace CubeEq {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeNe {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeLt {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeGt {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeLe {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeGe {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeCmp {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
-    }
-    export namespace CubeContains {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeContained {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeOverlap {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeUnion {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeInter {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeSize {
-      export type Parameters = { argument_0: Nullable<Public.Types.Cube> };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeSubset {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: PgCatalog.Types.Int4Array;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeDistance {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace DistanceChebyshev {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace DistanceTaxicab {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeDim {
-      export type Parameters = { argument_0: Nullable<Public.Types.Cube> };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
-    }
-    export namespace CubeLlCoord {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Int4>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeUrCoord {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Int4>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeCoord {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Int4>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeCoordLlur {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Int4>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeA5b3 {
-      export type Parameters = { argument_0: Nullable<PgCatalog.Types.Float8> };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace Cube_0aec {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Float8>;
-        argument_1: Nullable<PgCatalog.Types.Float8>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeEe16 {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Float8>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace Cube_8f28 {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Float8>;
-        argument_2: Nullable<PgCatalog.Types.Float8>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeIsPoint {
-      export type Parameters = { argument_0: Nullable<Public.Types.Cube> };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace CubeEnlarge {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<PgCatalog.Types.Float8>;
-        argument_2: Nullable<PgCatalog.Types.Int4>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace GCubeConsistent {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-        argument_1: Nullable<Public.Types.Cube>;
-        argument_2: Nullable<PgCatalog.Types.Int2>;
-        argument_3: Nullable<PgCatalog.Types.Oid>;
-        argument_4: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
-    }
-    export namespace GCubePenalty {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-        argument_1: Nullable<PgCatalog.Types.Internal>;
-        argument_2: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Internal>;
-    }
-    export namespace GCubePicksplit {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-        argument_1: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Internal>;
-    }
-    export namespace GCubeUnion {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-        argument_1: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace GCubeSame {
-      export type Parameters = {
-        argument_0: Nullable<Public.Types.Cube>;
-        argument_1: Nullable<Public.Types.Cube>;
-        argument_2: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Internal>;
-    }
-    export namespace GCubeDistance {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-        argument_1: Nullable<Public.Types.Cube>;
-        argument_2: Nullable<PgCatalog.Types.Int2>;
-        argument_3: Nullable<PgCatalog.Types.Oid>;
-        argument_4: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<PgCatalog.Types.Float8>;
-    }
-    export namespace CubeRecv {
-      export type Parameters = {
-        argument_0: Nullable<PgCatalog.Types.Internal>;
-      };
-
-      export type Results = Nullable<Public.Types.Cube>;
-    }
-    export namespace CubeSend {
-      export type Parameters = { argument_0: Nullable<Public.Types.Cube> };
-
-      export type Results = Nullable<PgCatalog.Types.Bytea>;
-    }
-  }
+  export namespace Procedures {}
   export namespace Tables {
-    export namespace Slug {
+    export namespace Checklist {
       export type Record = {
-        slugId: Public.Types.Slug["slugId"];
+        id: Public.Types.Checklist["id"];
+        name: Public.Types.Checklist["name"];
+        createdAt: Public.Types.Checklist["createdAt"];
       };
-      export type BySlugId = {
-        slugId: PgCatalog.Types.Int4;
+      export type ById = {
+        id: PgCatalog.Types.Uuid;
       };
-      export type PrimaryKey = BySlugId;
+      export type PrimaryKey = ById;
 
-      export type Optional = Pick<Record, "slugId">;
+      export type Optional = Pick<Record, "id" | "createdAt">;
+      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+    }
+    export namespace ChecklistItem {
+      export type Record = {
+        id: Public.Types.ChecklistItem["id"];
+        checklistId: Public.Types.ChecklistItem["checklistId"];
+        title: Public.Types.ChecklistItem["title"];
+        checked: Public.Types.ChecklistItem["checked"];
+        createdAt: Public.Types.ChecklistItem["createdAt"];
+      };
+      export type ByChecklistId = {
+        checklistId: PgCatalog.Types.Uuid;
+      };
+
+      export type ById = {
+        id: PgCatalog.Types.Uuid;
+      };
+      export type PrimaryKey = ById;
+
+      export type Optional = Pick<Record, "id" | "checked" | "createdAt">;
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
     }
   }
@@ -16109,296 +15742,9 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Api {
-  export namespace Types {
-    export namespace AnswerArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => Answer.parse(e));
-      }
-    }
-    export namespace EchoTypeArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => EchoType.parse(e));
-      }
-    }
-    export namespace EchoTypeNestedArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => EchoTypeNested.parse(e));
-      }
-    }
-    export namespace QAndAArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => QAndA.parse(e));
-      }
-    }
-    export namespace Answer {
-      export function parse(from: unknown) {
-        // Enum
-        if (from === null || from === undefined) return null;
-        if (
-          Object.values(Api.Types.Answer).includes(from as Api.Types.Answer)
-        ) {
-          return from as Api.Types.Answer;
-        } else {
-          return undefined;
-        }
-      }
-    }
-    export namespace EchoType {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Api.Types.EchoType.is(from)) {
-          return {
-            echomessage: PgCatalog.Types.Text.parse(from.echomessage),
-            at: PgCatalog.Types.Timestamptz.parse(from.at),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace EchoTypeNested {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Api.Types.EchoTypeNested.is(from)) {
-          return {
-            echoes: Api.Types.EchoTypeArray.parse(from.echoes),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace QAndA {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Api.Types.QAndA.is(from)) {
-          return {
-            question: PgCatalog.Types.Text.parse(from.question),
-            answer: Api.Types.Answer.parse(from.answer),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace EchoTable {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Api.Types.EchoTable.is(from)) {
-          return {
-            echomessage: PgCatalog.Types.Text.parse(from.echomessage),
-            at: PgCatalog.Types.Timestamptz.parse(from.at),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-  }
-  export namespace Procedures {
-    export namespace Echo {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.Echo.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Text.parse(from);
-        }
-      }
-    }
-    export namespace EchoSet {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoSet.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Text.parse(from);
-        }
-      }
-    }
-    export namespace EchoTable {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoTable.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.EchoTable.parse(from);
-        }
-      }
-    }
-    export namespace EchoType {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoType.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.EchoType.parse(from);
-        }
-      }
-    }
-    export namespace EchoTypeArray {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoTypeArray.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.EchoTypeArray.parse(from);
-        }
-      }
-    }
-    export namespace EchoTypeNested {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoTypeNested.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.EchoTypeNested.parse(from);
-        }
-      }
-    }
-    export namespace EchoTypeSet {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoTypeSet.Parameters.is(from)) {
-            return {
-              message: PgCatalog.Types.Text.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.EchoType.parse(from);
-        }
-      }
-    }
-    export namespace EchoAnswer {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Api.Procedures.EchoAnswer.Parameters.is(from)) {
-            return {
-              message: Api.Types.Answer.parse(from.message),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Api.Types.Answer.parse(from);
-        }
-      }
-    }
-  }
-  export namespace Tables {
-    export namespace QAndA {
-      export namespace Create {}
-    }
-  }
-}
 export namespace Public {
   export namespace Types {
-    export namespace CubeArray {
+    export namespace ChecklistArray {
       export function parse(from: unknown) {
         // ArrayType
         if (from === null || from === undefined) return [];
@@ -16406,10 +15752,10 @@ export namespace Public {
         const rawArray = Array.isArray(from)
           ? from
           : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => Cube.parse(e));
+        return rawArray.map((e: unknown) => Checklist.parse(e));
       }
     }
-    export namespace SlugArray {
+    export namespace ChecklistItemArray {
       export function parse(from: unknown) {
         // ArrayType
         if (from === null || from === undefined) return [];
@@ -16417,921 +15763,46 @@ export namespace Public {
         const rawArray = Array.isArray(from)
           ? from
           : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => Slug.parse(e));
+        return rawArray.map((e: unknown) => ChecklistItem.parse(e));
       }
     }
-    export namespace Cube {
-      export function parse(from: unknown) {
-        // Type
-        if (from === null || from === undefined) return null;
-
-        if (typeof from === "string") {
-          return new Float32Array(JSON.parse(from));
-        }
-        if (Array.isArray(from)) {
-          return new Float32Array(from);
-        }
-        return null;
-      }
-    }
-    export namespace Slug {
+    export namespace Checklist {
       export function parse(from: unknown) {
         // CompositeType
         if (from === null || from === undefined) return null;
-        if (Public.Types.Slug.is(from)) {
+        if (Public.Types.Checklist.is(from)) {
           return {
-            slugId: PgCatalog.Types.Int4.parse(from.slugId),
+            id: PgCatalog.Types.Uuid.parse(from.id),
+            name: PgCatalog.Types.Text.parse(from.name),
+            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace ChecklistItem {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.ChecklistItem.is(from)) {
+          return {
+            id: PgCatalog.Types.Uuid.parse(from.id),
+            checklistId: PgCatalog.Types.Uuid.parse(from.checklistId),
+            title: PgCatalog.Types.Text.parse(from.title),
+            checked: PgCatalog.Types.Bool.parse(from.checked),
+            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
           };
         }
         throw new Error(JSON.stringify(from));
       }
     }
   }
-  export namespace Procedures {
-    export namespace CubeIn {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeIn.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Cstring.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace Cube_9c45 {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_9c45.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Float8Array.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Float8Array.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace Cube_2e6d {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_2e6d.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Float8Array.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeOut {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeOut.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Cstring.parse(from);
-        }
-      }
-    }
-    export namespace CubeEq {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeEq.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeNe {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeNe.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeLt {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeLt.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeGt {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeGt.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeLe {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeLe.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeGe {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeGe.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeCmp {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeCmp.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
-        }
-      }
-    }
-    export namespace CubeContains {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeContains.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeContained {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeContained.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeOverlap {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeOverlap.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeUnion {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeUnion.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeInter {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeInter.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeSize {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeSize.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeSubset {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeSubset.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Int4Array.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeDistance {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeDistance.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace DistanceChebyshev {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.DistanceChebyshev.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace DistanceTaxicab {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.DistanceTaxicab.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeDim {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeDim.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
-        }
-      }
-    }
-    export namespace CubeLlCoord {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeLlCoord.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeUrCoord {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeUrCoord.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeCoord {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeCoord.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeCoordLlur {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeCoordLlur.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeA5b3 {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeA5b3.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Float8.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace Cube_0aec {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_0aec.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Float8.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeEe16 {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeEe16.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace Cube_8f28 {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_8f28.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Float8.parse(from.argument_2),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeIsPoint {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeIsPoint.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace CubeEnlarge {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeEnlarge.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Int4.parse(from.argument_2),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace GCubeConsistent {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubeConsistent.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Int2.parse(from.argument_2),
-              argument_3: PgCatalog.Types.Oid.parse(from.argument_3),
-              argument_4: PgCatalog.Types.Internal.parse(from.argument_4),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
-    }
-    export namespace GCubePenalty {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubePenalty.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Internal.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Internal.parse(from.argument_2),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Internal.parse(from);
-        }
-      }
-    }
-    export namespace GCubePicksplit {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubePicksplit.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Internal.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Internal.parse(from);
-        }
-      }
-    }
-    export namespace GCubeUnion {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubeUnion.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-              argument_1: PgCatalog.Types.Internal.parse(from.argument_1),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace GCubeSame {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubeSame.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Internal.parse(from.argument_2),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Internal.parse(from);
-        }
-      }
-    }
-    export namespace GCubeDistance {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.GCubeDistance.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-              argument_1: Public.Types.Cube.parse(from.argument_1),
-              argument_2: PgCatalog.Types.Int2.parse(from.argument_2),
-              argument_3: PgCatalog.Types.Oid.parse(from.argument_3),
-              argument_4: PgCatalog.Types.Internal.parse(from.argument_4),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Float8.parse(from);
-        }
-      }
-    }
-    export namespace CubeRecv {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeRecv.Parameters.is(from)) {
-            return {
-              argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Cube.parse(from);
-        }
-      }
-    }
-    export namespace CubeSend {
-      export namespace Parameters {
-        export function parse(from: unknown) {
-          // CompositeType
-          if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeSend.Parameters.is(from)) {
-            return {
-              argument_0: Public.Types.Cube.parse(from.argument_0),
-            };
-          }
-          throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bytea.parse(from);
-        }
-      }
-    }
-  }
+  export namespace Procedures {}
   export namespace Tables {
-    export namespace Slug {
+    export namespace Checklist {
+      export namespace Create {}
+    }
+    export namespace ChecklistItem {
       export namespace Create {}
     }
   }
@@ -19332,52 +17803,66 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Api {
-  export namespace Tables {
-    export namespace QAndA {
-      export namespace Question {
-        export const parse = PgCatalog.Types.Text.parse;
-      }
-      export namespace Answer {
-        export const parse = Api.Types.Answer.parse;
-      }
-    }
-  }
-}
 export namespace Public {
   export namespace Tables {
-    export namespace Slug {
-      export namespace SlugId {
-        export const parse = PgCatalog.Types.Int4.parse;
+    export namespace Checklist {
+      export namespace Id {
+        export const parse = PgCatalog.Types.Uuid.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace CreatedAt {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace ChecklistItem {
+      export namespace Id {
+        export const parse = PgCatalog.Types.Uuid.parse;
+      }
+      export namespace ChecklistId {
+        export const parse = PgCatalog.Types.Uuid.parse;
+      }
+      export namespace Title {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace Checked {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace CreatedAt {
+        export const parse = PgCatalog.Types.Timestamp.parse;
       }
     }
   }
 }
 
 // begin primary key pickers
-export namespace Api {
-  export namespace Tables {
-    export namespace QAndA {
-      export function primaryKeyFrom(value: Api.Tables.QAndA.Record) {
-        return "";
-      }
-      export function includesPrimaryKey(value: Api.Tables.QAndA.Record) {
-        return false;
-      }
-    }
-  }
-}
 export namespace Public {
   export namespace Tables {
-    export namespace Slug {
-      export function primaryKeyFrom(value: Public.Tables.Slug.Record): string {
+    export namespace Checklist {
+      export function primaryKeyFrom(
+        value: Public.Tables.Checklist.Record,
+      ): string {
         return JSON.stringify({
-          slugId: value.slugId,
+          id: value.id,
         });
       }
 
       export function includesPrimaryKey(value: Partial<Record>) {
-        return value.slugId !== undefined;
+        return value.id !== undefined;
+      }
+    }
+    export namespace ChecklistItem {
+      export function primaryKeyFrom(
+        value: Public.Tables.ChecklistItem.Record,
+      ): string {
+        return JSON.stringify({
+          id: value.id,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.id !== undefined;
       }
     }
   }
@@ -23409,594 +21894,37 @@ export namespace InformationSchema {
     export namespace SqlSizing {}
   }
 }
-export namespace Api {
-  export namespace Types {
-    export namespace EchoType {
-      export function is(value: any): value is Api.Types.EchoType {
-        if (value.echomessage !== undefined && value.at !== undefined)
-          return true;
-        return false;
-      }
-    }
-    export namespace EchoTypeNested {
-      export function is(value: any): value is Api.Types.EchoTypeNested {
-        if (value.echoes !== undefined) return true;
-        return false;
-      }
-    }
-    export namespace QAndA {
-      export function is(value: any): value is Api.Types.QAndA {
-        if (value.question !== undefined && value.answer !== undefined)
-          return true;
-        return false;
-      }
-    }
-    export namespace EchoTable {
-      export function is(value: any): value is Api.Types.EchoTable {
-        if (value.echomessage !== undefined && value.at !== undefined)
-          return true;
-        return false;
-      }
-    }
-  }
-  export namespace Procedures {
-    export namespace Echo {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.Echo.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoSet {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoSet.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoTable {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoTable.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoType {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoType.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoTypeArray {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoTypeArray.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoTypeNested {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoTypeNested.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoTypeSet {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoTypeSet.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace EchoAnswer {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Api.Procedures.EchoAnswer.Parameters {
-          if (value.message !== undefined) return true;
-          return false;
-        }
-      }
-    }
-  }
-  export namespace Tables {
-    export namespace QAndA {}
-  }
-}
 export namespace Public {
   export namespace Types {
-    export namespace Slug {
-      export function is(value: any): value is Public.Types.Slug {
-        if (value.slugId !== undefined) return true;
+    export namespace Checklist {
+      export function is(value: any): value is Public.Types.Checklist {
+        if (
+          value.id !== undefined &&
+          value.name !== undefined &&
+          value.createdAt !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ChecklistItem {
+      export function is(value: any): value is Public.Types.ChecklistItem {
+        if (
+          value.id !== undefined &&
+          value.checklistId !== undefined &&
+          value.title !== undefined &&
+          value.checked !== undefined &&
+          value.createdAt !== undefined
+        )
+          return true;
         return false;
       }
     }
   }
-  export namespace Procedures {
-    export namespace CubeIn {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeIn.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace Cube_9c45 {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.Cube_9c45.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace Cube_2e6d {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.Cube_2e6d.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeOut {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeOut.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeEq {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeEq.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeNe {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeNe.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeLt {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeLt.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeGt {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeGt.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeLe {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeLe.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeGe {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeGe.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeCmp {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeCmp.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeContains {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeContains.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeContained {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeContained.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeOverlap {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeOverlap.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeUnion {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeUnion.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeInter {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeInter.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeSize {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeSize.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeSubset {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeSubset.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeDistance {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeDistance.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace DistanceChebyshev {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.DistanceChebyshev.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace DistanceTaxicab {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.DistanceTaxicab.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeDim {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeDim.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeLlCoord {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeLlCoord.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeUrCoord {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeUrCoord.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeCoord {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeCoord.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeCoordLlur {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeCoordLlur.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeA5b3 {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeA5b3.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace Cube_0aec {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.Cube_0aec.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeEe16 {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeEe16.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace Cube_8f28 {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.Cube_8f28.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeIsPoint {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeIsPoint.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeEnlarge {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeEnlarge.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubeConsistent {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubeConsistent.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined &&
-            value.argument_3 !== undefined &&
-            value.argument_4 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubePenalty {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubePenalty.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubePicksplit {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubePicksplit.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubeUnion {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubeUnion.Parameters {
-          if (value.argument_0 !== undefined && value.argument_1 !== undefined)
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubeSame {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubeSame.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace GCubeDistance {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.GCubeDistance.Parameters {
-          if (
-            value.argument_0 !== undefined &&
-            value.argument_1 !== undefined &&
-            value.argument_2 !== undefined &&
-            value.argument_3 !== undefined &&
-            value.argument_4 !== undefined
-          )
-            return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeRecv {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeRecv.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-    export namespace CubeSend {
-      export namespace Parameters {
-        export function is(
-          value: any,
-        ): value is Public.Procedures.CubeSend.Parameters {
-          if (value.argument_0 !== undefined) return true;
-          return false;
-        }
-      }
-    }
-  }
+  export namespace Procedures {}
   export namespace Tables {
-    export namespace Slug {}
+    export namespace Checklist {}
+    export namespace ChecklistItem {}
   }
 }
 
@@ -25230,128 +23158,14 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [32018]: Typecast;
-  ["Api.Types.AnswerArray"]: Typecast;
-  [32009]: Typecast;
-  ["Api.Types.EchoTypeArray"]: Typecast;
-  [32012]: Typecast;
-  ["Api.Types.EchoTypeNestedArray"]: Typecast;
-  [32027]: Typecast;
-  ["Api.Types.QAndAArray"]: Typecast;
-  [32019]: Typecast;
-  ["Api.Types.Answer"]: Typecast;
-  [32010]: Typecast;
-  ["Api.Types.EchoType"]: Typecast;
-  [32013]: Typecast;
-  ["Api.Types.EchoTypeNested"]: Typecast;
-  [32028]: Typecast;
-  ["Api.Types.QAndA"]: Typecast;
-  [32007]: Typecast;
-  ["Api.Types.EchoTable"]: Typecast;
-
-  ["Api.Procedures.Echo.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoSet.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoTable.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoType.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoTypeArray.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoTypeNested.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast;
-
-  ["Api.Procedures.EchoAnswer.Parameters"]: Typecast;
-  [31914]: Typecast;
-  ["Public.Types.CubeArray"]: Typecast;
-  [31999]: Typecast;
-  ["Public.Types.SlugArray"]: Typecast;
-  [31909]: Typecast;
-  ["Public.Types.Cube"]: Typecast;
-  [32000]: Typecast;
-  ["Public.Types.Slug"]: Typecast;
-
-  ["Public.Procedures.CubeIn.Parameters"]: Typecast;
-
-  ["Public.Procedures.Cube_9c45.Parameters"]: Typecast;
-
-  ["Public.Procedures.Cube_2e6d.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeOut.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeEq.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeNe.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeLt.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeGt.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeLe.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeGe.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeCmp.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeContains.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeContained.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeOverlap.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeUnion.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeInter.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeSize.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeSubset.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeDistance.Parameters"]: Typecast;
-
-  ["Public.Procedures.DistanceChebyshev.Parameters"]: Typecast;
-
-  ["Public.Procedures.DistanceTaxicab.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeDim.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeLlCoord.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeUrCoord.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeCoord.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeCoordLlur.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeA5b3.Parameters"]: Typecast;
-
-  ["Public.Procedures.Cube_0aec.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeEe16.Parameters"]: Typecast;
-
-  ["Public.Procedures.Cube_8f28.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeEnlarge.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubeConsistent.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubePenalty.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubePicksplit.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubeUnion.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubeSame.Parameters"]: Typecast;
-
-  ["Public.Procedures.GCubeDistance.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeRecv.Parameters"]: Typecast;
-
-  ["Public.Procedures.CubeSend.Parameters"]: Typecast;
+  [32034]: Typecast;
+  ["Public.Types.ChecklistArray"]: Typecast;
+  [32043]: Typecast;
+  ["Public.Types.ChecklistItemArray"]: Typecast;
+  [32035]: Typecast;
+  ["Public.Types.Checklist"]: Typecast;
+  [32044]: Typecast;
+  ["Public.Types.ChecklistItem"]: Typecast;
 }
 
 interface HasDatabase {
@@ -25371,306 +23185,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
     return new Database(await initializeContext(postgresUrl, props));
   }
 
-  public Api = new (class implements HasDatabase {
-    constructor(private hasDatabase: HasDatabase) {}
-
-    get database() {
-      return this.hasDatabase.database;
-    }
-
-    public Procedures = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      async echo(parameters: Api.Procedures.Echo.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Text.parse(results?.[0].echo);
-        return responseBody;
-      }
-      async echoSet(parameters: Api.Procedures.EchoSet.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_set(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => PgCatalog.Types.Text.parse(x.echo_set))
-          .filter<PgCatalog.Types.Text>(
-            (r): r is PgCatalog.Types.Text => r !== null,
-          );
-        return responseBody;
-      }
-      async echoTable(parameters: Api.Procedures.EchoTable.Parameters) {
-        const parseResult = (
-          context: Context,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          result: any,
-        ) => {
-          return context.procTypes[32007].parseFromPostgresIfRecord(
-            context,
-            result,
-          ) as unknown as Api.Types.EchoTable;
-        };
-
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_table(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => parseResult(this.database.context, x.echo_table))
-          .filter<Api.Types.EchoTable>(
-            (r): r is Api.Types.EchoTable => r !== null,
-          );
-        return responseBody;
-      }
-      async echoType(parameters: Api.Procedures.EchoType.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_type(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = Api.Types.EchoType.parse(results?.[0].echo_type);
-        return responseBody;
-      }
-      async echoTypeArray(parameters: Api.Procedures.EchoTypeArray.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_type_array(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = Api.Types.EchoTypeArray.parse(
-          results?.[0].echo_type_array,
-        );
-        return responseBody;
-      }
-      async echoTypeNested(
-        parameters: Api.Procedures.EchoTypeNested.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_type_nested(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = Api.Types.EchoTypeNested.parse(
-          results?.[0].echo_type_nested,
-        );
-        return responseBody;
-      }
-      async echoTypeSet(parameters: Api.Procedures.EchoTypeSet.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_type_set(message => ${typed[25](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => Api.Types.EchoType.parse(x.echo_type_set))
-          .filter<Api.Types.EchoType>(
-            (r): r is Api.Types.EchoType => r !== null,
-          );
-        return responseBody;
-      }
-      async echoAnswer(parameters: Api.Procedures.EchoAnswer.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  api.echo_answer(message => ${typed[32019](
-                    undefinedIsNull(parameters.message),
-                  )})`;
-        const results = response;
-        const responseBody = Api.Types.Answer.parse(results?.[0].echo_answer);
-        return responseBody;
-      }
-    })(this);
-
-    public Tables = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      public QAndA = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
-        }
-
-        async create(
-          values: Api.Tables.QAndA.Values,
-        ): Promise<Api.Tables.QAndA.Record> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    INSERT INTO
-      api.q_and_a (question,answer)
-    VALUES (${
-      values.question === undefined ? sql`DEFAULT` : typed[25](values.question)
-    },${
-      values.answer === undefined ? sql`DEFAULT` : typed[32019](values.answer)
-    })
-    ON CONFLICT () DO UPDATE
-    SET
-      question = EXCLUDED.question,answer = EXCLUDED.answer
-    RETURNING
-      question,answer
-    `;
-          return response.map((record) => ({
-            question: undefinedIsNull(record.question),
-            answer: undefinedIsNull(record.answer),
-          }))[0];
-        }
-        async all(): Promise<Api.Tables.QAndA.Record[]> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      question,answer 
-    FROM
-      api.q_and_a 
-    `;
-          return response.map((record) => ({
-            question: undefinedIsNull(record.question),
-            answer: undefinedIsNull(record.answer),
-          }));
-        }
-
-        public ByAnswer = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
-
-          get database() {
-            return this.hasDatabase.database;
-          }
-
-          async read(
-            parameters: Api.Tables.QAndA.ByAnswer,
-          ): Promise<Api.Tables.QAndA.Record[]> {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-
-            const response = await sql`
-    -- 
-    SELECT 
-      question,answer 
-    FROM
-      api.q_and_a 
-    WHERE
-      answer = ${
-        parameters.answer === undefined
-          ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
-      }
-    `;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
-            }));
-          }
-
-          async update(
-            parameters: Api.Tables.QAndA.ByAnswer,
-            values: Partial<Api.Tables.QAndA.Values>,
-          ): Promise<Api.Tables.QAndA.Record[]> {
-            console.assert(parameters);
-            console.assert(values);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-
-            const response = await sql`
-    --
-    UPDATE 
-      api.q_and_a 
-    SET
-      question = ${
-        values.question === undefined
-          ? sql`question`
-          : typed[25](values.question)
-      } , answer = ${
-        values.answer === undefined ? sql`answer` : typed[32019](values.answer)
-      } 
-    WHERE
-      answer = ${
-        parameters.answer === undefined
-          ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
-      }
-    RETURNING question,answer`;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
-            }));
-          }
-
-          async delete(
-            parameters: Api.Tables.QAndA.ByAnswer,
-          ): Promise<Api.Tables.QAndA.Record[]> {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-
-            const response = await sql`
-    --
-    DELETE FROM 
-      api.q_and_a 
-    WHERE
-      answer = ${
-        parameters.answer === undefined
-          ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
-      }
-    RETURNING question,answer`;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
-            }));
-          }
-        })(this);
-      })(this);
-    })(this);
-  })(this);
-
   public Public = new (class implements HasDatabase {
     constructor(private hasDatabase: HasDatabase) {}
 
@@ -25684,605 +23198,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
       get database() {
         return this.hasDatabase.database;
       }
-
-      async cubeIn(parameters: Public.Procedures.CubeIn.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_in( ${typed[2275](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_in);
-        return responseBody;
-      }
-      async cube_9c45(parameters: Public.Procedures.Cube_9c45.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[1022](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[1022](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cube_2e6d(parameters: Public.Procedures.Cube_2e6d.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[1022](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cubeOut(parameters: Public.Procedures.CubeOut.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_out( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Cstring.parse(
-          results?.[0].cube_out,
-        );
-        return responseBody;
-      }
-      async cubeEq(parameters: Public.Procedures.CubeEq.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_eq( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_eq);
-        return responseBody;
-      }
-      async cubeNe(parameters: Public.Procedures.CubeNe.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_ne( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ne);
-        return responseBody;
-      }
-      async cubeLt(parameters: Public.Procedures.CubeLt.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_lt( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_lt);
-        return responseBody;
-      }
-      async cubeGt(parameters: Public.Procedures.CubeGt.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_gt( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_gt);
-        return responseBody;
-      }
-      async cubeLe(parameters: Public.Procedures.CubeLe.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_le( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_le);
-        return responseBody;
-      }
-      async cubeGe(parameters: Public.Procedures.CubeGe.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_ge( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ge);
-        return responseBody;
-      }
-      async cubeCmp(parameters: Public.Procedures.CubeCmp.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_cmp( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_cmp);
-        return responseBody;
-      }
-      async cubeContains(
-        parameters: Public.Procedures.CubeContains.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_contains( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].cube_contains,
-        );
-        return responseBody;
-      }
-      async cubeContained(
-        parameters: Public.Procedures.CubeContained.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_contained( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].cube_contained,
-        );
-        return responseBody;
-      }
-      async cubeOverlap(parameters: Public.Procedures.CubeOverlap.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_overlap( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].cube_overlap,
-        );
-        return responseBody;
-      }
-      async cubeUnion(parameters: Public.Procedures.CubeUnion.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_union( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_union);
-        return responseBody;
-      }
-      async cubeInter(parameters: Public.Procedures.CubeInter.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_inter( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_inter);
-        return responseBody;
-      }
-      async cubeSize(parameters: Public.Procedures.CubeSize.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_size( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_size,
-        );
-        return responseBody;
-      }
-      async cubeSubset(parameters: Public.Procedures.CubeSubset.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_subset( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[1007](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_subset);
-        return responseBody;
-      }
-      async cubeDistance(
-        parameters: Public.Procedures.CubeDistance.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_distance( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_distance,
-        );
-        return responseBody;
-      }
-      async distanceChebyshev(
-        parameters: Public.Procedures.DistanceChebyshev.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.distance_chebyshev( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].distance_chebyshev,
-        );
-        return responseBody;
-      }
-      async distanceTaxicab(
-        parameters: Public.Procedures.DistanceTaxicab.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.distance_taxicab( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].distance_taxicab,
-        );
-        return responseBody;
-      }
-      async cubeDim(parameters: Public.Procedures.CubeDim.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_dim( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_dim);
-        return responseBody;
-      }
-      async cubeLlCoord(parameters: Public.Procedures.CubeLlCoord.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_ll_coord( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_ll_coord,
-        );
-        return responseBody;
-      }
-      async cubeUrCoord(parameters: Public.Procedures.CubeUrCoord.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_ur_coord( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_ur_coord,
-        );
-        return responseBody;
-      }
-      async cubeCoord(parameters: Public.Procedures.CubeCoord.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_coord( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_coord,
-        );
-        return responseBody;
-      }
-      async cubeCoordLlur(
-        parameters: Public.Procedures.CubeCoordLlur.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_coord_llur( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].cube_coord_llur,
-        );
-        return responseBody;
-      }
-      async cubeA5b3(parameters: Public.Procedures.CubeA5b3.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[701](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cube_0aec(parameters: Public.Procedures.Cube_0aec.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[701](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cubeEe16(parameters: Public.Procedures.CubeEe16.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cube_8f28(parameters: Public.Procedures.Cube_8f28.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[701](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[701](undefinedIsNull(parameters.argument_2))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube);
-        return responseBody;
-      }
-      async cubeIsPoint(parameters: Public.Procedures.CubeIsPoint.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_is_point( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].cube_is_point,
-        );
-        return responseBody;
-      }
-      async cubeEnlarge(parameters: Public.Procedures.CubeEnlarge.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_enlarge( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[701](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[23](undefinedIsNull(parameters.argument_2))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_enlarge);
-        return responseBody;
-      }
-      async gCubeConsistent(
-        parameters: Public.Procedures.GCubeConsistent.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_consistent( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[21](
-                    undefinedIsNull(parameters.argument_2),
-                  )}, ${typed[26](
-                    undefinedIsNull(parameters.argument_3),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].g_cube_consistent,
-        );
-        return responseBody;
-      }
-      async gCubePenalty(
-        parameters: Public.Procedures.GCubePenalty.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_penalty( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[2281](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Internal.parse(
-          results?.[0].g_cube_penalty,
-        );
-        return responseBody;
-      }
-      async gCubePicksplit(
-        parameters: Public.Procedures.GCubePicksplit.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_picksplit( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Internal.parse(
-          results?.[0].g_cube_picksplit,
-        );
-        return responseBody;
-      }
-      async gCubeUnion(parameters: Public.Procedures.GCubeUnion.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_union( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_1))})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].g_cube_union);
-        return responseBody;
-      }
-      async gCubeSame(parameters: Public.Procedures.GCubeSame.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_same( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Internal.parse(
-          results?.[0].g_cube_same,
-        );
-        return responseBody;
-      }
-      async gCubeDistance(
-        parameters: Public.Procedures.GCubeDistance.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.g_cube_distance( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
-                    undefinedIsNull(parameters.argument_1),
-                  )}, ${typed[21](
-                    undefinedIsNull(parameters.argument_2),
-                  )}, ${typed[26](
-                    undefinedIsNull(parameters.argument_3),
-                  )}, ${typed[2281](undefinedIsNull(parameters.argument_4))})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Float8.parse(
-          results?.[0].g_cube_distance,
-        );
-        return responseBody;
-      }
-      async cubeRecv(parameters: Public.Procedures.CubeRecv.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_recv( ${typed[2281](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = Public.Types.Cube.parse(results?.[0].cube_recv);
-        return responseBody;
-      }
-      async cubeSend(parameters: Public.Procedures.CubeSend.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.cube_send( ${typed[31909](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bytea.parse(
-          results?.[0].cube_send,
-        );
-        return responseBody;
-      }
     })(this);
 
     public Tables = new (class implements HasDatabase {
@@ -26292,7 +23207,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         return this.hasDatabase.database;
       }
 
-      public Slug = new (class implements HasDatabase {
+      public Checklist = new (class implements HasDatabase {
         constructor(private hasDatabase: HasDatabase) {}
 
         get database() {
@@ -26300,57 +23215,73 @@ export class Database extends PostgresDatabase implements HasDatabase {
         }
 
         async create(
-          values: Public.Tables.Slug.Values,
-        ): Promise<Public.Tables.Slug.Record> {
+          values: Public.Tables.Checklist.Values,
+        ): Promise<Public.Tables.Checklist.Record> {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
-          if (!Public.Tables.Slug.includesPrimaryKey(values)) {
+          if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
             const response = await sql`
       --
       INSERT INTO
-        public.slug ()
-      VALUES ()
+        public.checklist (name,created_at)
+      VALUES (${
+        values.name === undefined ? sql`DEFAULT` : typed[25](values.name)
+      },${
+        values.createdAt === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.createdAt)
+      })
       RETURNING
-        slug_id
+        id,name,created_at
     `;
             return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+              id: undefinedIsNull(record.id),
+              name: undefinedIsNull(record.name),
+              createdAt: undefinedIsNull(record.created_at),
             }))[0];
           }
           const response = await sql`
     INSERT INTO
-      public.slug (slug_id)
+      public.checklist (id,name,created_at)
     VALUES (${
-      values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId)
+      values.id === undefined ? sql`DEFAULT` : typed[2950](values.id)
+    },${values.name === undefined ? sql`DEFAULT` : typed[25](values.name)},${
+      values.createdAt === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.createdAt)
     })
-    ON CONFLICT (slug_id) DO UPDATE
+    ON CONFLICT (id) DO UPDATE
     SET
-      
+      name = EXCLUDED.name,created_at = EXCLUDED.created_at
     RETURNING
-      slug_id
+      id,name,created_at
     `;
           return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
+            id: undefinedIsNull(record.id),
+            name: undefinedIsNull(record.name),
+            createdAt: undefinedIsNull(record.created_at),
           }))[0];
         }
-        async all(): Promise<Public.Tables.Slug.Record[]> {
+        async all(): Promise<Public.Tables.Checklist.Record[]> {
           const sql = this.database.context.sql;
           const typed = sql.typed as unknown as PostgresTypecasts;
 
           const response = await sql`
     -- 
     SELECT 
-      slug_id 
+      id,name,created_at 
     FROM
-      public.slug 
+      public.checklist 
     `;
           return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
+            id: undefinedIsNull(record.id),
+            name: undefinedIsNull(record.name),
+            createdAt: undefinedIsNull(record.created_at),
           }));
         }
 
-        public BySlugId = new (class implements HasDatabase {
+        public ById = new (class implements HasDatabase {
           constructor(private hasDatabase: HasDatabase) {}
 
           get database() {
@@ -26358,8 +23289,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
           }
 
           async read(
-            parameters: Public.Tables.Slug.BySlugId,
-          ): Promise<Public.Tables.Slug.Record> {
+            parameters: Public.Tables.Checklist.ById,
+          ): Promise<Public.Tables.Checklist.Record> {
             console.assert(parameters);
             const sql = this.database.context.sql;
             const typed = sql.typed as unknown as PostgresTypecasts;
@@ -26367,25 +23298,25 @@ export class Database extends PostgresDatabase implements HasDatabase {
             const response = await sql`
     -- 
     SELECT 
-      slug_id 
+      id,name,created_at 
     FROM
-      public.slug 
+      public.checklist 
     WHERE
-      slug_id = ${
-        parameters.slugId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.slugId)
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     `;
             return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+              id: undefinedIsNull(record.id),
+              name: undefinedIsNull(record.name),
+              createdAt: undefinedIsNull(record.created_at),
             }))[0];
           }
 
           async update(
-            parameters: Public.Tables.Slug.BySlugId,
-            values: Partial<Public.Tables.Slug.Values>,
-          ): Promise<Public.Tables.Slug.Record> {
+            parameters: Public.Tables.Checklist.ById,
+            values: Partial<Public.Tables.Checklist.Values>,
+          ): Promise<Public.Tables.Checklist.Record> {
             console.assert(parameters);
             console.assert(values);
             const sql = this.database.context.sql;
@@ -26394,26 +23325,32 @@ export class Database extends PostgresDatabase implements HasDatabase {
             const response = await sql`
     --
     UPDATE 
-      public.slug 
+      public.checklist 
     SET
-      slug_id = ${
-        values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId)
+      id = ${
+        values.id === undefined ? sql`id` : typed[2950](values.id)
+      } , name = ${
+        values.name === undefined ? sql`name` : typed[25](values.name)
+      } , created_at = ${
+        values.createdAt === undefined
+          ? sql`created_at`
+          : typed[1114](values.createdAt)
       } 
     WHERE
-      slug_id = ${
-        parameters.slugId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.slugId)
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
-    RETURNING slug_id`;
+    RETURNING id,name,created_at`;
             return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+              id: undefinedIsNull(record.id),
+              name: undefinedIsNull(record.name),
+              createdAt: undefinedIsNull(record.created_at),
             }))[0];
           }
 
           async delete(
-            parameters: Public.Tables.Slug.BySlugId,
-          ): Promise<Public.Tables.Slug.Record> {
+            parameters: Public.Tables.Checklist.ById,
+          ): Promise<Public.Tables.Checklist.Record> {
             console.assert(parameters);
             const sql = this.database.context.sql;
             const typed = sql.typed as unknown as PostgresTypecasts;
@@ -26421,16 +23358,321 @@ export class Database extends PostgresDatabase implements HasDatabase {
             const response = await sql`
     --
     DELETE FROM 
-      public.slug 
+      public.checklist 
     WHERE
-      slug_id = ${
-        parameters.slugId === undefined
-          ? sql`DEFAULT`
-          : typed[23](parameters.slugId)
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
-    RETURNING slug_id`;
+    RETURNING id,name,created_at`;
             return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+              id: undefinedIsNull(record.id),
+              name: undefinedIsNull(record.name),
+              createdAt: undefinedIsNull(record.created_at),
+            }))[0];
+          }
+        })(this);
+      })(this);
+
+      public ChecklistItem = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.ChecklistItem.Values,
+        ): Promise<Public.Tables.ChecklistItem.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.checklist_item (checklist_id,title,checked,created_at)
+      VALUES (${
+        values.checklistId === undefined
+          ? sql`DEFAULT`
+          : typed[2950](values.checklistId)
+      },${
+        values.title === undefined ? sql`DEFAULT` : typed[25](values.title)
+      },${
+        values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked)
+      },${
+        values.createdAt === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.createdAt)
+      })
+      RETURNING
+        id,checklist_id,title,checked,created_at
+    `;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.checklist_item (id,checklist_id,title,checked,created_at)
+    VALUES (${
+      values.id === undefined ? sql`DEFAULT` : typed[2950](values.id)
+    },${
+      values.checklistId === undefined
+        ? sql`DEFAULT`
+        : typed[2950](values.checklistId)
+    },${values.title === undefined ? sql`DEFAULT` : typed[25](values.title)},${
+      values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked)
+    },${
+      values.createdAt === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.createdAt)
+    })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
+    RETURNING
+      id,checklist_id,title,checked,created_at
+    `;
+          return response.map((record) => ({
+            id: undefinedIsNull(record.id),
+            checklistId: undefinedIsNull(record.checklist_id),
+            title: undefinedIsNull(record.title),
+            checked: undefinedIsNull(record.checked),
+            createdAt: undefinedIsNull(record.created_at),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.ChecklistItem.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    `;
+          return response.map((record) => ({
+            id: undefinedIsNull(record.id),
+            checklistId: undefinedIsNull(record.checklist_id),
+            title: undefinedIsNull(record.title),
+            checked: undefinedIsNull(record.checked),
+            createdAt: undefinedIsNull(record.created_at),
+          }));
+        }
+
+        public ByChecklistId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.ChecklistItem.ByChecklistId,
+          ): Promise<Public.Tables.ChecklistItem.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    WHERE
+      checklist_id = ${
+        parameters.checklistId === undefined
+          ? sql`DEFAULT`
+          : typed[2950](parameters.checklistId)
+      }
+    `;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.ChecklistItem.ByChecklistId,
+            values: Partial<Public.Tables.ChecklistItem.Values>,
+          ): Promise<Public.Tables.ChecklistItem.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.checklist_item 
+    SET
+      id = ${
+        values.id === undefined ? sql`id` : typed[2950](values.id)
+      } , checklist_id = ${
+        values.checklistId === undefined
+          ? sql`checklist_id`
+          : typed[2950](values.checklistId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[25](values.title)
+      } , checked = ${
+        values.checked === undefined ? sql`checked` : typed[16](values.checked)
+      } , created_at = ${
+        values.createdAt === undefined
+          ? sql`created_at`
+          : typed[1114](values.createdAt)
+      } 
+    WHERE
+      checklist_id = ${
+        parameters.checklistId === undefined
+          ? sql`DEFAULT`
+          : typed[2950](parameters.checklistId)
+      }
+    RETURNING id,checklist_id,title,checked,created_at`;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }));
+          }
+
+          async delete(
+            parameters: Public.Tables.ChecklistItem.ByChecklistId,
+          ): Promise<Public.Tables.ChecklistItem.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.checklist_item 
+    WHERE
+      checklist_id = ${
+        parameters.checklistId === undefined
+          ? sql`DEFAULT`
+          : typed[2950](parameters.checklistId)
+      }
+    RETURNING id,checklist_id,title,checked,created_at`;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }));
+          }
+        })(this);
+
+        public ById = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.ChecklistItem.ById,
+          ): Promise<Public.Tables.ChecklistItem.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    WHERE
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
+      }
+    `;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.ChecklistItem.ById,
+            values: Partial<Public.Tables.ChecklistItem.Values>,
+          ): Promise<Public.Tables.ChecklistItem.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.checklist_item 
+    SET
+      id = ${
+        values.id === undefined ? sql`id` : typed[2950](values.id)
+      } , checklist_id = ${
+        values.checklistId === undefined
+          ? sql`checklist_id`
+          : typed[2950](values.checklistId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[25](values.title)
+      } , checked = ${
+        values.checked === undefined ? sql`checked` : typed[16](values.checked)
+      } , created_at = ${
+        values.createdAt === undefined
+          ? sql`created_at`
+          : typed[1114](values.createdAt)
+      } 
+    WHERE
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
+      }
+    RETURNING id,checklist_id,title,checked,created_at`;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
+            }))[0];
+          }
+
+          async delete(
+            parameters: Public.Tables.ChecklistItem.ById,
+          ): Promise<Public.Tables.ChecklistItem.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.checklist_item 
+    WHERE
+      id = ${
+        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
+      }
+    RETURNING id,checklist_id,title,checked,created_at`;
+            return response.map((record) => ({
+              id: undefinedIsNull(record.id),
+              checklistId: undefinedIsNull(record.checklist_id),
+              title: undefinedIsNull(record.title),
+              checked: undefinedIsNull(record.checked),
+              createdAt: undefinedIsNull(record.created_at),
             }))[0];
           }
         })(this);
@@ -26438,3 +23680,112 @@ export class Database extends PostgresDatabase implements HasDatabase {
     })(this);
   })(this);
 }
+
+// begin - operation dispatch map
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+export class OperationDispatcher {
+  private dispatchMap: Record<string, OperationDispatchMethod>;
+  constructor(private database: Database) {
+    this.dispatchMap = {
+      "Public.Tables.Checklist.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Checklist.create(
+          request.values as Public.Tables.Checklist.Values,
+        ),
+
+      "Public.Tables.Checklist.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Checklist.all(),
+
+      "Public.Tables.Checklist.ById.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Checklist.ById.read(
+          request.parameters as Public.Tables.Checklist.ById,
+        ),
+      "Public.Tables.Checklist.ById.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Checklist.ById.update(
+          request.parameters as Public.Tables.Checklist.ById,
+          request.values as Partial<Public.Tables.Checklist.Values>,
+        ),
+      "Public.Tables.Checklist.ById.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Checklist.ById.delete(
+          request.parameters as Public.Tables.Checklist.ById,
+        ),
+      "Public.Tables.ChecklistItem.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.create(
+          request.values as Public.Tables.ChecklistItem.Values,
+        ),
+
+      "Public.Tables.ChecklistItem.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.ChecklistItem.all(),
+
+      "Public.Tables.ChecklistItem.ByChecklistId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ByChecklistId.read(
+          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
+        ),
+      "Public.Tables.ChecklistItem.ByChecklistId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ByChecklistId.update(
+          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
+          request.values as Partial<Public.Tables.ChecklistItem.Values>,
+        ),
+      "Public.Tables.ChecklistItem.ByChecklistId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ByChecklistId.delete(
+          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
+        ),
+      "Public.Tables.ChecklistItem.ById.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ById.read(
+          request.parameters as Public.Tables.ChecklistItem.ById,
+        ),
+      "Public.Tables.ChecklistItem.ById.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ById.update(
+          request.parameters as Public.Tables.ChecklistItem.ById,
+          request.values as Partial<Public.Tables.ChecklistItem.Values>,
+        ),
+      "Public.Tables.ChecklistItem.ById.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.ChecklistItem.ById.delete(
+          request.parameters as Public.Tables.ChecklistItem.ById,
+        ),
+    };
+  }
+
+  async dispatch(request: EmbraceSQLRequest<object, object>) {
+    if (!this.dispatchMap[request.operation]) {
+      throw new Error(`${request.operation} not available`);
+    }
+    return this.dispatchMap[request.operation](request);
+  }
+}
+// Begin Express generated section
+import { EmbraceSQLExpress } from "@embracesql/express";
+
+export const EmbraceSQLExpressApp = async (
+  postgresUrl: string,
+  database?: Database,
+) => {
+  const dispatchToDatabase = database ?? (await Database.connect(postgresUrl));
+  const dispatcher = new OperationDispatcher(dispatchToDatabase);
+  return EmbraceSQLExpress(dispatcher);
+};
+
+// End Express generated section

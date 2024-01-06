@@ -1,0 +1,44 @@
+import ExpressSource from "!!raw-loader!../../../../samples/checklist/src/server/main.ts";
+import TsConfigSource from "!!raw-loader!../../../../samples/checklist/tsconfig.json";
+import CodeBlock from "@theme/CodeBlock";
+
+# Create a Server
+
+We'll create a simple server using Express and Vite.
+
+## Steps
+
+### Generate an Express Server
+
+Go into a nice blank directory. We'll create a new node module and generate
+database wrapper code.
+
+```shell
+npm install @embracesql/vite
+npm pkg set type=module
+mkdir -p ./src/server
+npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/checklist.ts
+```
+### Code up an Express Server
+
+Create two files as shown.
+
+<CodeBlock language="json" title="tsconfig.json">
+  {TsConfigSource}
+</CodeBlock>
+
+<CodeBlock language="typescript" title="./src/server/main.ts">
+  {ExpressSource}
+</CodeBlock>
+
+### Run Your Server
+
+Start it up. This server includes:
+
+- Database access
+- Hot reload
+- Vite React support
+
+```shell
+npx tsx watch ./src/server/main.ts
+```

@@ -31,3 +31,4 @@ CREATE TABLE public.checklist_item(
   created_at timestamp NOT NULL DEFAULT now()
 );
 
+CREATE INDEX checklist_item_parent ON public.checklist_item (checklist_id);
