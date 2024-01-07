@@ -920,7 +920,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
     context: GenerationContext,
   ): string | undefined {
     console.assert(context);
-    const recordAttributes = this.children
+    const attributes = this.children
       .filter<AttributeNode>(
         (c): c is AttributeNode => c.kind === ASTKind.Attribute,
       )
@@ -933,7 +933,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
         }
         return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
       });
-    return ` { ${recordAttributes.join("\n")} } `;
+    return ` { ${attributes.join("\n")} } `;
   }
 
   override typescriptTypeParser(context: GenerationContext) {
@@ -971,7 +971,7 @@ export class AttributeNode extends ContainerNode implements NamedType {
     public parent: CompositeTypeNode,
     public name: string,
     public index: number,
-    public type: TypeNode,
+    public type: AbstractTypeNode,
     public required: boolean,
     public nullable: boolean,
   ) {

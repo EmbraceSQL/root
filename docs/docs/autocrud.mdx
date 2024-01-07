@@ -80,12 +80,12 @@ You aren't generating SQL at runtime, instead the sql is pregenerated. This help
 on performance, and debuggability - the generated database access code is just
 a single TypeScript file. Go ahead and set breakpoints in it!
 
-All methods utilize Postgres `RETURNING` so you get the records modified back
+All methods utilize Postgres `RETURNING` so you get the rows modified back
 in a single trip to the database. You'll appreciate this if you have an active
 database with triggers and functions that modifiy columns separate from your
-TypeScript code. Simply cache/stash/return the modified records!
+TypeScript code. Simply cache/stash/return the modified rows!
 
-Unique indexes, like primary keys, return a single record `{Schema}.{Table}`
+Unique indexes, like primary keys, return a single row `{Schema}.{Table}`
 -- saving you the `[0]` game.
 
 Non unique indexes return a `List<{Schema}.{Table}>`.
@@ -94,15 +94,15 @@ Non unique indexes return a `List<{Schema}.{Table}>`.
 
 Reads work along indexes with methods generated of the format `{Schema}.{Table}.by{IndexColumns}`.
 
-If you need another way to read records, just add an index.
+If you need another way to read rows, just add an index.
 
 ### Deletes
 
 Deletes work along indexes with methods generated of the format `{Schema}.{Table}.deleteBy{IndexColumns}`.
 
-Deletes get rid of records. Nothing surprising here, unless you have foreign
+Deletes get rid of rows. Nothing surprising here, unless you have foreign
 keys without `ON DELETE CASCADE`, in which case you won't actually be deleting
-and records after all 😉.
+and rows after all 😉.
 
 ### Updates
 
@@ -129,7 +129,7 @@ Creates have one method per table generated of the format `{Schema}.{Table}.crea
 Pass in values, get a whole new row from the database. If the row exists, it will
 upsert automatically.
 
-Creating records recognizes defaults.
+Creating rows recognizes defaults.
 
 Primary keys often have defaults defined with
 
@@ -145,7 +145,7 @@ want to leave them undefined in order to have the database create you a primary 
 Columns beyond the primary key can have defaults as well, `created_date` is a common
 pattern here. To get the database default, just don't pass a value for the column.
 
-The good news is the `RETURNING` record will show you the primary key as
+The good news is the `RETURNING` row will show you the primary key as
 created by the database.
 
 You can pass in `values` with the primary key - particularly when you
@@ -155,7 +155,7 @@ and bypassing the default.
 ### Upserts
 
 Creates automatically upsert, turning the `INSERT` into an `UPDATE`, `RETURNING`
-the modified record.
+the modified row.
 
 ## Transactions
 

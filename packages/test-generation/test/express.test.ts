@@ -160,7 +160,7 @@ describe("EmbraceSQLExpress can", () => {
     expect(response![0]).toBeGreaterThan(0);
   });
 
-  it("answer a procedure with a multiple results a composite record type", async () => {
+  it("answer a procedure with a multiple results a composite row type", async () => {
     const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
     // when we invoke the procedure returning SETOF into
     const response = await client.Public.Procedures.rewardsReport({

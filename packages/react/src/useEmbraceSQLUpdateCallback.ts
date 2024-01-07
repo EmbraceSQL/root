@@ -47,7 +47,7 @@ type Props<T> = {
 };
 
 /**
- * Hook and implement update interception on EmbraceSQL table record types.
+ * Hook and implement update interception on EmbraceSQL table row types.
  *
  * This hook creates a callback that actually performs the update to
  * the database over an HTTP/S EmbraceSQL server via context provided client.
@@ -71,12 +71,12 @@ export function useEmbraceSQLUpdateCallback<T>({
 
       if (client) {
         const toExecute = async () => {
-          // actual server trip - counting on a read back of a single record
+          // actual server trip - counting on a read back of a single row
           const response = await client.invoke<never, T, T>({
             operation,
             values: updated.value,
           });
-          // response has the single read-back record -- this is what needs
+          // response has the single read-back row -- this is what needs
           // to be merged into react state as the database plenty well might
           // have rules or triggers that altered the data
           // not to mention other users might have updated other fields

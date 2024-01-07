@@ -1,5 +1,6 @@
 import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
+import { emptyTypescriptRow } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
@@ -17,11 +18,6 @@ import { pascalCase } from "change-case";
  * Generate TypeScript type definitions for all types available
  * in the database schema catalog along with request/response message
  * types for each available stored function.
- *
- *
- *
- * @param context
- * @param namespaces
  */
 export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // a place to store all the types
@@ -31,8 +27,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         // ⚠️ generated - do not modify ⚠️
 
         /**
-         * BEGIN - shared types generated from schema.
-         *
          * These types are node/browser isomorphic and are used by all other
          * EmbraceSQL generated code.
          */
@@ -88,7 +82,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           },
         },
         [ASTKind.Tables]: NamespaceVisitor,
-        // tables are defined by types -- but actual rows/records
+        // tables are defined by types -- but actual rows
         // coming back from queries need a required so we get
         // DBMS style value | null semantics -- no undefinded in SQL
         [ASTKind.Table]: {
@@ -107,6 +101,10 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
                 )
                 .join(";"),
               `};`,
+              // empty placeholder rows used in UI adding
+              `export function emptyRow() {`,
+              ` return ${emptyTypescriptRow(context, node.type)};`,
+              `}`,
             ].join("\n");
           },
           after: async (context, node) => {

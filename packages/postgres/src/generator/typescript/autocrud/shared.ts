@@ -1,6 +1,6 @@
 /**
  * Generate a right hand side expression that converts a postgres
- * driver result record to a type checked record.
+ * driver result row to a type checked object.
  */
 import {
   PARAMETERS,
@@ -16,6 +16,9 @@ import {
 } from "@embracesql/shared";
 import { camelCase } from "change-case";
 
+/**
+ * Generate code to map a postgres row object names to typescript style names.
+ */
 export function postgresResultRecordToTypescript(
   context: GenerationContext,
   node: AbstractTypeNode,
@@ -25,15 +28,39 @@ export function postgresResultRecordToTypescript(
 
   if (isNodeType(node, ASTKind.CompositeType)) {
     // snippet will pick resultset fields to type map
-    const recordPieceBuilders = node.attributes.map(
+    const attributes = node.attributes.map(
       (c) => `${c.typescriptPropertyName}: undefinedIsNull(record.${c.name})`,
     );
     // all the fields in the resultset mapped out to an inferred type array
-    return `response.map(record => ({ ${recordPieceBuilders.join(",")} }))`;
+    return `response.map(record => ({ ${attributes.join(",")} }))`;
   }
 
   throw new Error(`unexpected result type ${node.id}:${ASTKind[node.kind]}`);
 }
+
+/**
+ * Generate code for an empty typescript row object constant.
+ */
+export function emptyTypescriptRow(
+  context: GenerationContext,
+  node: AbstractTypeNode,
+): string {
+  console.assert(context);
+  console.assert(node);
+
+  if (isNodeType(node, ASTKind.CompositeType)) {
+    // snippet will pick resultset fields to type map
+    const attributes = node.attributes.map(
+      (c) =>
+        `${c.typescriptPropertyName}: ${emptyTypescriptRow(context, c.type)}`,
+    );
+    // all the fields in the resultset mapped out to an inferred type array
+    return `{ ${attributes.join(",")} }`;
+  }
+
+  return "null";
+}
+
 /**
  * Render a code generation string that will create a postgres 'right hand side'
  * of an equals value expression for this attribute.

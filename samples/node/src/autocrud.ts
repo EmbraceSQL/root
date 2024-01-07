@@ -4,7 +4,7 @@ import { Database } from "./dvdrental";
 const database = await Database.connect(
   "postgres://postgres:postgres@localhost:5432/dvdrental",
 );
-// (C) creating a new record
+// (C) creating a new row
 const theBob = await database.Public.Tables.Actor.create({
   firstName: "Bob",
   lastName: "Hope",
@@ -16,7 +16,7 @@ const theBobAgain = await database.Public.Tables.Actor.ByActorId.read({
 });
 console.log(theBobAgain);
 
-// (U) or upserting -- no new record, turns into an update
+// (U) or upserting -- no new row, turns into an update
 theBob.firstName = "Robert";
 const theRobert = await database.Public.Tables.Actor.create(theBob);
 console.log(theRobert);
@@ -32,7 +32,7 @@ console.log(theRoberto);
 const deleted = await database.Public.Tables.Actor.ByActorId.delete({
   actorId: theRoberto.actorId,
 });
-// the modified record is always returned -- which is very convenient
+// the modified row is always returned -- which is very convenient
 // to use in client application state
 console.log(deleted);
 

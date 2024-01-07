@@ -108,6 +108,12 @@ export type NullableMembers<T> = {
   [Member in keyof T]: Nullable<T[Member]>;
 };
 
+export type NullableRecursive<T> = T extends object
+  ? {
+      [Member in keyof T]: NullableRecursive<T[Member]> | null;
+    }
+  : T | null;
+
 export * from "./uuid";
 
 /**

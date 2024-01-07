@@ -1,8 +1,6 @@
 // ⚠️ generated - do not modify ⚠️
 
 /**
- * BEGIN - shared types generated from schema.
- *
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
@@ -2587,6 +2585,41 @@ export namespace PgCatalog {
         stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
         stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
       };
+      export function emptyRow() {
+        return {
+          starelid: null,
+          staattnum: null,
+          stainherit: null,
+          stanullfrac: null,
+          stawidth: null,
+          stadistinct: null,
+          stakind1: null,
+          stakind2: null,
+          stakind3: null,
+          stakind4: null,
+          stakind5: null,
+          staop1: null,
+          staop2: null,
+          staop3: null,
+          staop4: null,
+          staop5: null,
+          stacoll1: null,
+          stacoll2: null,
+          stacoll3: null,
+          stacoll4: null,
+          stacoll5: null,
+          stanumbers1: null,
+          stanumbers2: null,
+          stanumbers3: null,
+          stanumbers4: null,
+          stanumbers5: null,
+          stavalues1: null,
+          stavalues2: null,
+          stavalues3: null,
+          stavalues4: null,
+          stavalues5: null,
+        };
+      }
       export type ByStarelidStaattnumStainherit = {
         starelid: PgCatalog.Types.Oid;
         staattnum: PgCatalog.Types.Int2;
@@ -2632,6 +2665,42 @@ export namespace PgCatalog {
         typdefault: PgCatalog.Types.PgType["typdefault"] | null;
         typacl: PgCatalog.Types.PgType["typacl"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          typname: null,
+          typnamespace: null,
+          typowner: null,
+          typlen: null,
+          typbyval: null,
+          typtype: null,
+          typcategory: null,
+          typispreferred: null,
+          typisdefined: null,
+          typdelim: null,
+          typrelid: null,
+          typsubscript: null,
+          typelem: null,
+          typarray: null,
+          typinput: null,
+          typoutput: null,
+          typreceive: null,
+          typsend: null,
+          typmodin: null,
+          typmodout: null,
+          typanalyze: null,
+          typalign: null,
+          typstorage: null,
+          typnotnull: null,
+          typbasetype: null,
+          typtypmod: null,
+          typndims: null,
+          typcollation: null,
+          typdefaultbin: null,
+          typdefault: null,
+          typacl: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2650,6 +2719,9 @@ export namespace PgCatalog {
         ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
+      export function emptyRow() {
+        return { ftrelid: null, ftserver: null, ftoptions: null };
+      }
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
@@ -2673,6 +2745,22 @@ export namespace PgCatalog {
         rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
         rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          rolname: null,
+          rolsuper: null,
+          rolinherit: null,
+          rolcreaterole: null,
+          rolcreatedb: null,
+          rolcanlogin: null,
+          rolreplication: null,
+          rolbypassrls: null,
+          rolconnlimit: null,
+          rolpassword: null,
+          rolvaliduntil: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2697,6 +2785,16 @@ export namespace PgCatalog {
         stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
         stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
       };
+      export function emptyRow() {
+        return {
+          stxoid: null,
+          stxdinherit: null,
+          stxdndistinct: null,
+          stxddependencies: null,
+          stxdmcv: null,
+          stxdexpr: null,
+        };
+      }
       export type ByStxoidStxdinherit = {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
@@ -2713,6 +2811,9 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.PgUserMapping["umserver"];
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
+      export function emptyRow() {
+        return { oid: null, umuser: null, umserver: null, umoptions: null };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2745,6 +2846,27 @@ export namespace PgCatalog {
         subpublications: PgCatalog.Types.PgSubscription["subpublications"];
         suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          subdbid: null,
+          subskiplsn: null,
+          subname: null,
+          subowner: null,
+          subenabled: null,
+          subbinary: null,
+          substream: null,
+          subtwophasestate: null,
+          subdisableonerr: null,
+          subpasswordrequired: null,
+          subrunasowner: null,
+          subconninfo: null,
+          subslotname: null,
+          subsynccommit: null,
+          subpublications: null,
+          suborigin: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2786,6 +2908,36 @@ export namespace PgCatalog {
         attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
         attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
       };
+      export function emptyRow() {
+        return {
+          attrelid: null,
+          attname: null,
+          atttypid: null,
+          attlen: null,
+          attnum: null,
+          attcacheoff: null,
+          atttypmod: null,
+          attndims: null,
+          attbyval: null,
+          attalign: null,
+          attstorage: null,
+          attcompression: null,
+          attnotnull: null,
+          atthasdef: null,
+          atthasmissing: null,
+          attidentity: null,
+          attgenerated: null,
+          attisdropped: null,
+          attislocal: null,
+          attinhcount: null,
+          attstattarget: null,
+          attcollation: null,
+          attacl: null,
+          attoptions: null,
+          attfdwoptions: null,
+          attmissingval: null,
+        };
+      }
       export type ByAttrelidAttname = {
         attrelid: PgCatalog.Types.Oid;
         attname: PgCatalog.Types.Cstring;
@@ -2833,6 +2985,40 @@ export namespace PgCatalog {
         proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
         proacl: PgCatalog.Types.PgProc["proacl"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          proname: null,
+          pronamespace: null,
+          proowner: null,
+          prolang: null,
+          procost: null,
+          prorows: null,
+          provariadic: null,
+          prosupport: null,
+          prokind: null,
+          prosecdef: null,
+          proleakproof: null,
+          proisstrict: null,
+          proretset: null,
+          provolatile: null,
+          proparallel: null,
+          pronargs: null,
+          pronargdefaults: null,
+          prorettype: null,
+          proargtypes: null,
+          proallargtypes: null,
+          proargmodes: null,
+          proargnames: null,
+          proargdefaults: null,
+          protrftypes: null,
+          prosrc: null,
+          probin: null,
+          prosqlbody: null,
+          proconfig: null,
+          proacl: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2882,6 +3068,43 @@ export namespace PgCatalog {
         reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
         relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          relname: null,
+          relnamespace: null,
+          reltype: null,
+          reloftype: null,
+          relowner: null,
+          relam: null,
+          relfilenode: null,
+          reltablespace: null,
+          relpages: null,
+          reltuples: null,
+          relallvisible: null,
+          reltoastrelid: null,
+          relhasindex: null,
+          relisshared: null,
+          relpersistence: null,
+          relkind: null,
+          relnatts: null,
+          relchecks: null,
+          relhasrules: null,
+          relhastriggers: null,
+          relhassubclass: null,
+          relrowsecurity: null,
+          relforcerowsecurity: null,
+          relispopulated: null,
+          relreplident: null,
+          relispartition: null,
+          relrewrite: null,
+          relfrozenxid: null,
+          relminmxid: null,
+          relacl: null,
+          reloptions: null,
+          relpartbound: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -2906,6 +3129,9 @@ export namespace PgCatalog {
         adnum: PgCatalog.Types.PgAttrdef["adnum"];
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
+      export function emptyRow() {
+        return { oid: null, adrelid: null, adnum: null, adbin: null };
+      }
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
         adnum: PgCatalog.Types.Int2;
@@ -2948,6 +3174,36 @@ export namespace PgCatalog {
         conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
         conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          conname: null,
+          connamespace: null,
+          contype: null,
+          condeferrable: null,
+          condeferred: null,
+          convalidated: null,
+          conrelid: null,
+          contypid: null,
+          conindid: null,
+          conparentid: null,
+          confrelid: null,
+          confupdtype: null,
+          confdeltype: null,
+          confmatchtype: null,
+          conislocal: null,
+          coninhcount: null,
+          connoinherit: null,
+          conkey: null,
+          confkey: null,
+          conpfeqop: null,
+          conppeqop: null,
+          conffeqop: null,
+          confdelsetcols: null,
+          conexclop: null,
+          conbin: null,
+        };
+      }
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -2982,6 +3238,14 @@ export namespace PgCatalog {
         inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
         inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
       };
+      export function emptyRow() {
+        return {
+          inhrelid: null,
+          inhparent: null,
+          inhseqno: null,
+          inhdetachpending: null,
+        };
+      }
       export type ByInhparent = {
         inhparent: PgCatalog.Types.Oid;
       };
@@ -3019,6 +3283,31 @@ export namespace PgCatalog {
         indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
         indpred: PgCatalog.Types.PgIndex["indpred"] | null;
       };
+      export function emptyRow() {
+        return {
+          indexrelid: null,
+          indrelid: null,
+          indnatts: null,
+          indnkeyatts: null,
+          indisunique: null,
+          indnullsnotdistinct: null,
+          indisprimary: null,
+          indisexclusion: null,
+          indimmediate: null,
+          indisclustered: null,
+          indisvalid: null,
+          indcheckxmin: null,
+          indisready: null,
+          indislive: null,
+          indisreplident: null,
+          indkey: null,
+          indcollation: null,
+          indclass: null,
+          indoption: null,
+          indexprs: null,
+          indpred: null,
+        };
+      }
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
@@ -3048,6 +3337,25 @@ export namespace PgCatalog {
         oprrest: PgCatalog.Types.PgOperator["oprrest"];
         oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          oprname: null,
+          oprnamespace: null,
+          oprowner: null,
+          oprkind: null,
+          oprcanmerge: null,
+          oprcanhash: null,
+          oprleft: null,
+          oprright: null,
+          oprresult: null,
+          oprcom: null,
+          oprnegate: null,
+          oprcode: null,
+          oprrest: null,
+          oprjoin: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3070,6 +3378,15 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
         opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          opfmethod: null,
+          opfname: null,
+          opfnamespace: null,
+          opfowner: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3095,6 +3412,19 @@ export namespace PgCatalog {
         opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
         opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          opcmethod: null,
+          opcname: null,
+          opcnamespace: null,
+          opcowner: null,
+          opcfamily: null,
+          opcintype: null,
+          opcdefault: null,
+          opckeytype: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3115,6 +3445,9 @@ export namespace PgCatalog {
         amhandler: PgCatalog.Types.PgAm["amhandler"];
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
+      export function emptyRow() {
+        return { oid: null, amname: null, amhandler: null, amtype: null };
+      }
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
       };
@@ -3139,6 +3472,19 @@ export namespace PgCatalog {
         amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
         amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          amopfamily: null,
+          amoplefttype: null,
+          amoprighttype: null,
+          amopstrategy: null,
+          amoppurpose: null,
+          amopopr: null,
+          amopmethod: null,
+          amopsortfamily: null,
+        };
+      }
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
         amopfamily: PgCatalog.Types.Oid;
         amoplefttype: PgCatalog.Types.Oid;
@@ -3169,6 +3515,16 @@ export namespace PgCatalog {
         amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
         amproc: PgCatalog.Types.PgAmproc["amproc"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          amprocfamily: null,
+          amproclefttype: null,
+          amprocrighttype: null,
+          amprocnum: null,
+          amproc: null,
+        };
+      }
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
         amprocfamily: PgCatalog.Types.Oid;
         amproclefttype: PgCatalog.Types.Oid;
@@ -3196,6 +3552,19 @@ export namespace PgCatalog {
         lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
         lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          lanname: null,
+          lanowner: null,
+          lanispl: null,
+          lanpltrusted: null,
+          lanplcallfoid: null,
+          laninline: null,
+          lanvalidator: null,
+          lanacl: null,
+        };
+      }
       export type ByLanname = {
         lanname: PgCatalog.Types.Cstring;
       };
@@ -3214,6 +3583,9 @@ export namespace PgCatalog {
         lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
+      export function emptyRow() {
+        return { oid: null, lomowner: null, lomacl: null };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3247,6 +3619,32 @@ export namespace PgCatalog {
         agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
         aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
       };
+      export function emptyRow() {
+        return {
+          aggfnoid: null,
+          aggkind: null,
+          aggnumdirectargs: null,
+          aggtransfn: null,
+          aggfinalfn: null,
+          aggcombinefn: null,
+          aggserialfn: null,
+          aggdeserialfn: null,
+          aggmtransfn: null,
+          aggminvtransfn: null,
+          aggmfinalfn: null,
+          aggfinalextra: null,
+          aggmfinalextra: null,
+          aggfinalmodify: null,
+          aggmfinalmodify: null,
+          aggsortop: null,
+          aggtranstype: null,
+          aggtransspace: null,
+          aggmtranstype: null,
+          aggmtransspace: null,
+          agginitval: null,
+          aggminitval: null,
+        };
+      }
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
@@ -3267,6 +3665,19 @@ export namespace PgCatalog {
         stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
         stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          stxrelid: null,
+          stxname: null,
+          stxnamespace: null,
+          stxowner: null,
+          stxstattarget: null,
+          stxkeys: null,
+          stxkind: null,
+          stxexprs: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3294,6 +3705,18 @@ export namespace PgCatalog {
         evQual: PgCatalog.Types.PgRewrite["evQual"];
         evAction: PgCatalog.Types.PgRewrite["evAction"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          rulename: null,
+          evClass: null,
+          evType: null,
+          evEnabled: null,
+          isInstead: null,
+          evQual: null,
+          evAction: null,
+        };
+      }
       export type ByEvClassRulename = {
         evClass: PgCatalog.Types.Oid;
         rulename: PgCatalog.Types.Cstring;
@@ -3329,6 +3752,29 @@ export namespace PgCatalog {
         tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
         tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          tgrelid: null,
+          tgparentid: null,
+          tgname: null,
+          tgfoid: null,
+          tgtype: null,
+          tgenabled: null,
+          tgisinternal: null,
+          tgconstrrelid: null,
+          tgconstrindid: null,
+          tgconstraint: null,
+          tgdeferrable: null,
+          tginitdeferred: null,
+          tgnargs: null,
+          tgattr: null,
+          tgargs: null,
+          tgqual: null,
+          tgoldtable: null,
+          tgnewtable: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3355,6 +3801,17 @@ export namespace PgCatalog {
         evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
         evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          evtname: null,
+          evtevent: null,
+          evtowner: null,
+          evtfoid: null,
+          evtenabled: null,
+          evttags: null,
+        };
+      }
       export type ByEvtname = {
         evtname: PgCatalog.Types.Cstring;
       };
@@ -3374,6 +3831,14 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.PgDescription["objsubid"];
         description: PgCatalog.Types.PgDescription["description"];
       };
+      export function emptyRow() {
+        return {
+          objoid: null,
+          classoid: null,
+          objsubid: null,
+          description: null,
+        };
+      }
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3393,6 +3858,16 @@ export namespace PgCatalog {
         castcontext: PgCatalog.Types.PgCast["castcontext"];
         castmethod: PgCatalog.Types.PgCast["castmethod"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          castsource: null,
+          casttarget: null,
+          castfunc: null,
+          castcontext: null,
+          castmethod: null,
+        };
+      }
       export type ByCastsourceCasttarget = {
         castsource: PgCatalog.Types.Oid;
         casttarget: PgCatalog.Types.Oid;
@@ -3413,6 +3888,14 @@ export namespace PgCatalog {
         enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
         enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          enumtypid: null,
+          enumsortorder: null,
+          enumlabel: null,
+        };
+      }
       export type ByEnumtypidEnumlabel = {
         enumtypid: PgCatalog.Types.Oid;
         enumlabel: PgCatalog.Types.Cstring;
@@ -3438,6 +3921,9 @@ export namespace PgCatalog {
         nspowner: PgCatalog.Types.PgNamespace["nspowner"];
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
+      export function emptyRow() {
+        return { oid: null, nspname: null, nspowner: null, nspacl: null };
+      }
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
       };
@@ -3461,6 +3947,18 @@ export namespace PgCatalog {
         conproc: PgCatalog.Types.PgConversion["conproc"];
         condefault: PgCatalog.Types.PgConversion["condefault"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          conname: null,
+          connamespace: null,
+          conowner: null,
+          conforencoding: null,
+          contoencoding: null,
+          conproc: null,
+          condefault: null,
+        };
+      }
       export type ByConnameConnamespace = {
         conname: PgCatalog.Types.Cstring;
         connamespace: PgCatalog.Types.Oid;
@@ -3491,6 +3989,17 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
         deptype: PgCatalog.Types.PgDepend["deptype"];
       };
+      export function emptyRow() {
+        return {
+          classid: null,
+          objid: null,
+          objsubid: null,
+          refclassid: null,
+          refobjid: null,
+          refobjsubid: null,
+          deptype: null,
+        };
+      }
       export type ByClassidObjidObjsubid = {
         classid: PgCatalog.Types.Oid;
         objid: PgCatalog.Types.Oid;
@@ -3527,6 +4036,27 @@ export namespace PgCatalog {
         datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
         datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          datname: null,
+          datdba: null,
+          encoding: null,
+          datlocprovider: null,
+          datistemplate: null,
+          datallowconn: null,
+          datconnlimit: null,
+          datfrozenxid: null,
+          datminmxid: null,
+          dattablespace: null,
+          datcollate: null,
+          datctype: null,
+          daticulocale: null,
+          daticurules: null,
+          datcollversion: null,
+          datacl: null,
+        };
+      }
       export type ByDatname = {
         datname: PgCatalog.Types.Cstring;
       };
@@ -3545,6 +4075,9 @@ export namespace PgCatalog {
         setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
+      export function emptyRow() {
+        return { setdatabase: null, setrole: null, setconfig: null };
+      }
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
@@ -3562,6 +4095,15 @@ export namespace PgCatalog {
         spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
         spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          spcname: null,
+          spcowner: null,
+          spcacl: null,
+          spcoptions: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3583,6 +4125,17 @@ export namespace PgCatalog {
         inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
         setOption: PgCatalog.Types.PgAuthMembers["setOption"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          roleid: null,
+          member: null,
+          grantor: null,
+          adminOption: null,
+          inheritOption: null,
+          setOption: null,
+        };
+      }
       export type ByGrantor = {
         grantor: PgCatalog.Types.Oid;
       };
@@ -3616,6 +4169,17 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.PgShdepend["refobjid"];
         deptype: PgCatalog.Types.PgShdepend["deptype"];
       };
+      export function emptyRow() {
+        return {
+          dbid: null,
+          classid: null,
+          objid: null,
+          objsubid: null,
+          refclassid: null,
+          refobjid: null,
+          deptype: null,
+        };
+      }
       export type ByDbidClassidObjidObjsubid = {
         dbid: PgCatalog.Types.Oid;
         classid: PgCatalog.Types.Oid;
@@ -3638,6 +4202,9 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.PgShdescription["classoid"];
         description: PgCatalog.Types.PgShdescription["description"];
       };
+      export function emptyRow() {
+        return { objoid: null, classoid: null, description: null };
+      }
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3655,6 +4222,15 @@ export namespace PgCatalog {
         cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
         cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          cfgname: null,
+          cfgnamespace: null,
+          cfgowner: null,
+          cfgparser: null,
+        };
+      }
       export type ByCfgnameCfgnamespace = {
         cfgname: PgCatalog.Types.Cstring;
         cfgnamespace: PgCatalog.Types.Oid;
@@ -3675,6 +4251,14 @@ export namespace PgCatalog {
         mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
         mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
       };
+      export function emptyRow() {
+        return {
+          mapcfg: null,
+          maptokentype: null,
+          mapseqno: null,
+          mapdict: null,
+        };
+      }
       export type ByMapcfgMaptokentypeMapseqno = {
         mapcfg: PgCatalog.Types.Oid;
         maptokentype: PgCatalog.Types.Int4;
@@ -3694,6 +4278,16 @@ export namespace PgCatalog {
         dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
         dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          dictname: null,
+          dictnamespace: null,
+          dictowner: null,
+          dicttemplate: null,
+          dictinitoption: null,
+        };
+      }
       export type ByDictnameDictnamespace = {
         dictname: PgCatalog.Types.Cstring;
         dictnamespace: PgCatalog.Types.Oid;
@@ -3718,6 +4312,18 @@ export namespace PgCatalog {
         prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
         prslextype: PgCatalog.Types.PgTsParser["prslextype"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          prsname: null,
+          prsnamespace: null,
+          prsstart: null,
+          prstoken: null,
+          prsend: null,
+          prsheadline: null,
+          prslextype: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3738,6 +4344,15 @@ export namespace PgCatalog {
         tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
         tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          tmplname: null,
+          tmplnamespace: null,
+          tmplinit: null,
+          tmpllexize: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3761,6 +4376,18 @@ export namespace PgCatalog {
         extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
         extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          extname: null,
+          extowner: null,
+          extnamespace: null,
+          extrelocatable: null,
+          extversion: null,
+          extconfig: null,
+          extcondition: null,
+        };
+      }
       export type ByExtname = {
         extname: PgCatalog.Types.Cstring;
       };
@@ -3783,6 +4410,17 @@ export namespace PgCatalog {
         fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
         fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          fdwname: null,
+          fdwowner: null,
+          fdwhandler: null,
+          fdwvalidator: null,
+          fdwacl: null,
+          fdwoptions: null,
+        };
+      }
       export type ByFdwname = {
         fdwname: PgCatalog.Types.Cstring;
       };
@@ -3806,6 +4444,18 @@ export namespace PgCatalog {
         srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
         srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          srvname: null,
+          srvowner: null,
+          srvfdw: null,
+          srvtype: null,
+          srvversion: null,
+          srvacl: null,
+          srvoptions: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3828,6 +4478,18 @@ export namespace PgCatalog {
         polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
         polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          polname: null,
+          polrelid: null,
+          polcmd: null,
+          polpermissive: null,
+          polroles: null,
+          polqual: null,
+          polwithcheck: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3845,6 +4507,9 @@ export namespace PgCatalog {
         roident: PgCatalog.Types.PgReplicationOrigin["roident"];
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
+      export function emptyRow() {
+        return { roident: null, roname: null };
+      }
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
@@ -3864,6 +4529,15 @@ export namespace PgCatalog {
         defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
         defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          defaclrole: null,
+          defaclnamespace: null,
+          defaclobjtype: null,
+          defaclacl: null,
+        };
+      }
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
         defaclrole: PgCatalog.Types.Oid;
         defaclnamespace: PgCatalog.Types.Oid;
@@ -3886,6 +4560,15 @@ export namespace PgCatalog {
         privtype: PgCatalog.Types.PgInitPrivs["privtype"];
         initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
       };
+      export function emptyRow() {
+        return {
+          objoid: null,
+          classoid: null,
+          objsubid: null,
+          privtype: null,
+          initprivs: null,
+        };
+      }
       export type ByObjoidClassoidObjsubid = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3904,6 +4587,15 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgSeclabel["provider"];
         label: PgCatalog.Types.PgSeclabel["label"];
       };
+      export function emptyRow() {
+        return {
+          objoid: null,
+          classoid: null,
+          objsubid: null,
+          provider: null,
+          label: null,
+        };
+      }
       export type ByObjoidClassoidObjsubidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3922,6 +4614,9 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgShseclabel["provider"];
         label: PgCatalog.Types.PgShseclabel["label"];
       };
+      export function emptyRow() {
+        return { objoid: null, classoid: null, provider: null, label: null };
+      }
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
@@ -3947,6 +4642,22 @@ export namespace PgCatalog {
         collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
         collversion: PgCatalog.Types.PgCollation["collversion"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          collname: null,
+          collnamespace: null,
+          collowner: null,
+          collprovider: null,
+          collisdeterministic: null,
+          collencoding: null,
+          collcollate: null,
+          collctype: null,
+          colliculocale: null,
+          collicurules: null,
+          collversion: null,
+        };
+      }
       export type ByCollnameCollencodingCollnamespace = {
         collname: PgCatalog.Types.Cstring;
         collencoding: PgCatalog.Types.Int4;
@@ -3967,6 +4678,9 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.PgParameterAcl["parname"];
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
+      export function emptyRow() {
+        return { oid: null, parname: null, paracl: null };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -3989,6 +4703,18 @@ export namespace PgCatalog {
         partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
         partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
       };
+      export function emptyRow() {
+        return {
+          partrelid: null,
+          partstrat: null,
+          partnatts: null,
+          partdefid: null,
+          partattrs: null,
+          partclass: null,
+          partcollation: null,
+          partexprs: null,
+        };
+      }
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
@@ -4007,6 +4733,17 @@ export namespace PgCatalog {
         rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
         rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
       };
+      export function emptyRow() {
+        return {
+          rngtypid: null,
+          rngsubtype: null,
+          rngmultitypid: null,
+          rngcollation: null,
+          rngsubopc: null,
+          rngcanonical: null,
+          rngsubdiff: null,
+        };
+      }
       export type ByRngmultitypid = {
         rngmultitypid: PgCatalog.Types.Oid;
       };
@@ -4027,6 +4764,15 @@ export namespace PgCatalog {
         trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
         trftosql: PgCatalog.Types.PgTransform["trftosql"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          trftype: null,
+          trflang: null,
+          trffromsql: null,
+          trftosql: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -4050,6 +4796,18 @@ export namespace PgCatalog {
         seqcache: PgCatalog.Types.PgSequence["seqcache"];
         seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
       };
+      export function emptyRow() {
+        return {
+          seqrelid: null,
+          seqtypid: null,
+          seqstart: null,
+          seqincrement: null,
+          seqmax: null,
+          seqmin: null,
+          seqcache: null,
+          seqcycle: null,
+        };
+      }
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
@@ -4070,6 +4828,19 @@ export namespace PgCatalog {
         pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
         pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          pubname: null,
+          pubowner: null,
+          puballtables: null,
+          pubinsert: null,
+          pubupdate: null,
+          pubdelete: null,
+          pubtruncate: null,
+          pubviaroot: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -4087,6 +4858,9 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
+      export function emptyRow() {
+        return { oid: null, pnpubid: null, pnnspid: null };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -4107,6 +4881,15 @@ export namespace PgCatalog {
         prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
         prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
       };
+      export function emptyRow() {
+        return {
+          oid: null,
+          prpubid: null,
+          prrelid: null,
+          prqual: null,
+          prattrs: null,
+        };
+      }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
@@ -4130,6 +4913,14 @@ export namespace PgCatalog {
         srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
         srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
       };
+      export function emptyRow() {
+        return {
+          srsubid: null,
+          srrelid: null,
+          srsubstate: null,
+          srsublsn: null,
+        };
+      }
       export type BySrrelidSrsubid = {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
@@ -4145,6 +4936,9 @@ export namespace PgCatalog {
         pageno: PgCatalog.Types.PgLargeobject["pageno"];
         data: PgCatalog.Types.PgLargeobject["data"];
       };
+      export function emptyRow() {
+        return { loid: null, pageno: null, data: null };
+      }
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
@@ -5277,6 +6071,17 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlFeatures["comments"] | null;
       };
+      export function emptyRow() {
+        return {
+          featureId: null,
+          featureName: null,
+          subFeatureId: null,
+          subFeatureName: null,
+          isSupported: null,
+          isVerifiedBy: null,
+          comments: null,
+        };
+      }
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
@@ -5299,6 +6104,15 @@ export namespace InformationSchema {
           | InformationSchema.Types.SqlImplementationInfo["comments"]
           | null;
       };
+      export function emptyRow() {
+        return {
+          implementationInfoId: null,
+          implementationInfoName: null,
+          integerValue: null,
+          characterValue: null,
+          comments: null,
+        };
+      }
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
@@ -5311,6 +6125,15 @@ export namespace InformationSchema {
         isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
         comments: InformationSchema.Types.SqlParts["comments"] | null;
       };
+      export function emptyRow() {
+        return {
+          featureId: null,
+          featureName: null,
+          isSupported: null,
+          isVerifiedBy: null,
+          comments: null,
+        };
+      }
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
@@ -5324,6 +6147,14 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlSizing["comments"] | null;
       };
+      export function emptyRow() {
+        return {
+          sizingId: null,
+          sizingName: null,
+          supportedValue: null,
+          comments: null,
+        };
+      }
       export type PrimaryKey = never;
       export type Optional = Pick<Record, never>;
       export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
@@ -5358,6 +6189,9 @@ export namespace Public {
         name: Public.Types.Checklist["name"];
         createdAt: Public.Types.Checklist["createdAt"];
       };
+      export function emptyRow() {
+        return { id: null, name: null, createdAt: null };
+      }
       export type ById = {
         id: PgCatalog.Types.Uuid;
       };
@@ -5374,6 +6208,15 @@ export namespace Public {
         checked: Public.Types.ChecklistItem["checked"];
         createdAt: Public.Types.ChecklistItem["createdAt"];
       };
+      export function emptyRow() {
+        return {
+          id: null,
+          checklistId: null,
+          title: null,
+          checked: null,
+          createdAt: null,
+        };
+      }
       export type ByChecklistId = {
         checklistId: PgCatalog.Types.Uuid;
       };
