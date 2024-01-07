@@ -10,7 +10,8 @@
     "noEmit": true,
     "strict": true,
     "jsx": "react-jsxdev",
-    "sourceMap": true
+    "sourceMap": true,
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "dist"]
 }
