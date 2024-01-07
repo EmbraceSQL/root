@@ -1,7 +1,7 @@
 import { InterceptedResults, InterceptorConstructor } from ".";
 import { useEmbraceSQLRequest } from "./useEmbraceSQLRequest";
 import { useEmbraceSQLUpdateCallback } from "./useEmbraceSQLUpdateCallback";
-import { OneOrMany } from "@embracesql/shared";
+import { NullableRecursive, OneOrMany } from "@embracesql/shared";
 import React from "react";
 
 type Props<P, R> = {
@@ -22,9 +22,7 @@ function manyResults<R>(results: OneOrMany<R>): results is R[] {
  * This hook is specialized (wrapped) by code generation
  * to provide types and callback.
  */
-export function useEmbraceSQL<P, V, R, RR extends OneOrMany<R>>(
-  props: Props<P, R>,
-) {
+function useEmbraceSQL<P, V, R, RR extends OneOrMany<R>>(props: Props<P, R>) {
   // the row(s) stored in the hook are mutable, so we need
   // a way to trigger an update
   const [tick, setTick] = React.useState(0);
@@ -71,6 +69,40 @@ export function useEmbraceSQL<P, V, R, RR extends OneOrMany<R>>(
     loading: done?.loading,
     error: done?.error,
     results: interceptedResults.current,
+    tick,
+  };
+}
+
+/**
+ * Use a single row.
+ */
+export function useEmbraceSQLRow<P, V, R>(props: Props<P, R>) {
+  const { loading, error, results, tick } = useEmbraceSQL<P, V, R, R>(props);
+
+  return {
+    loading,
+    error,
+    results,
+    tick,
+  };
+}
+
+type RowsProps<P, R> = Props<P, R> & {
+  emptyRow: () => NullableRecursive<R>;
+};
+
+/**
+ * Use rows, this allows adding and removing rows.
+ */
+export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
+  const { loading, error, results, tick } = useEmbraceSQL<P, V, R, Array<R>>(
+    props,
+  );
+
+  return {
+    loading,
+    error,
+    results,
     tick,
   };
 }

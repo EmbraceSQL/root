@@ -14,18 +14,18 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const tableTypeName = `${node.typescriptNamespacedName}.Record`;
-        const resultsTypeName = `${node.typescriptNamespacedName}.Record[]`;
+        const rowTypeName = `${node.typescriptNamespacedName}.Record`;
         return [
           await NamespaceVisitor.before(context, node),
           // the 'all the rows' hook'
           `export function useRows() {`,
-          `return useEmbraceSQL<never, never, ${tableTypeName}, ${resultsTypeName}>(
+          `return useEmbraceSQLRows<never, never, ${rowTypeName}>(
                {
                  readOperation: "${node.typescriptNamespacedName}.all",
                  upsertOperation: "${node.typescriptNamespacedName}.create",
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
-                 Interceptor: ${node.typescriptNamespacedName}.Interceptor 
+                 Interceptor: ${node.typescriptNamespacedName}.Interceptor,
+                 emptyRow: ${node.typescriptNamespacedName}.emptyRow
                }
              )`,
           `}`,
@@ -37,17 +37,15 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Column]: NamespaceVisitor,
     [ASTKind.Index]: {
       before: async (_, node) => {
-        const tableTypeName = `${node.table.typescriptNamespacedName}.Record`;
-        const resultsTypeName = `${node.table.typescriptNamespacedName}.Record${
-          node.unique ? "" : "[]"
-        }`;
-        return [
-          `export function use${pascalCase(node.name)}(parameters: ${pascalCase(
-            node.name,
-          )}) {`,
-          `return useEmbraceSQL<${pascalCase(
-            node.name,
-          )}, never, ${tableTypeName}, ${resultsTypeName}>(
+        const rowTypeName = `${node.table.typescriptNamespacedName}.Record`;
+        if (node.unique) {
+          return [
+            `export function use${pascalCase(
+              node.name,
+            )}(parameters: ${pascalCase(node.name)}) {`,
+            `return useEmbraceSQLRow<${pascalCase(
+              node.name,
+            )}, never, ${rowTypeName}>(
                {
                  readOperation: "${node.typescriptNamespacedName}.read",
                  parameters,
@@ -59,11 +57,37 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  }.primaryKeyFrom,
                  Interceptor: ${
                    node.table.typescriptNamespacedName
-                 }.Interceptor 
+                 }.Interceptor,
                }
              )`,
-          `}`,
-        ].join("\n");
+            `}`,
+          ].join("\n");
+        } else {
+          return [
+            `export function use${pascalCase(
+              node.name,
+            )}(parameters: ${pascalCase(node.name)}) {`,
+            `return useEmbraceSQLRows<${pascalCase(
+              node.name,
+            )}, never, ${rowTypeName}>(
+               {
+                 readOperation: "${node.typescriptNamespacedName}.read",
+                 parameters,
+                 upsertOperation: "${
+                   node.table.typescriptNamespacedName
+                 }.create",
+                 primaryKeyPicker: ${
+                   node.table.typescriptNamespacedName
+                 }.primaryKeyFrom,
+                 Interceptor: ${
+                   node.table.typescriptNamespacedName
+                 }.Interceptor,
+                 emptyRow: ${node.table.typescriptNamespacedName}.emptyRow,
+               }
+             )`,
+            `}`,
+          ].join("\n");
+        }
       },
     },
   };

@@ -25327,7 +25327,8 @@ export { EmbraceSQLClient, EmbraceSQLProvider } from "@embracesql/react";
 import {
   useEmbraceSQLRequest,
   useEmbraceSQLUpdateCallback,
-  useEmbraceSQL,
+  useEmbraceSQLRow,
+  useEmbraceSQLRows,
   InterceptorCallback,
   Intercepted,
   InterceptorBase,
@@ -26894,26 +26895,21 @@ export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.FilmActor.Record,
-          Public.Tables.FilmActor.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.FilmActor.Record>({
           readOperation: "Public.Tables.FilmActor.all",
           upsertOperation: "Public.Tables.FilmActor.create",
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
           Interceptor: Public.Tables.FilmActor.Interceptor,
+          emptyRow: Public.Tables.FilmActor.emptyRow,
         });
       }
       export namespace ActorId {}
       export namespace FilmId {}
       export namespace LastUpdate {}
       export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByActorIdFilmId,
           never,
-          Public.Tables.FilmActor.Record,
           Public.Tables.FilmActor.Record
         >({
           readOperation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
@@ -26924,32 +26920,28 @@ export namespace Public {
         });
       }
       export function useByFilmId(parameters: ByFilmId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByFilmId,
           never,
-          Public.Tables.FilmActor.Record,
-          Public.Tables.FilmActor.Record[]
+          Public.Tables.FilmActor.Record
         >({
           readOperation: "Public.Tables.FilmActor.ByFilmId.read",
           parameters,
           upsertOperation: "Public.Tables.FilmActor.create",
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
           Interceptor: Public.Tables.FilmActor.Interceptor,
+          emptyRow: Public.Tables.FilmActor.emptyRow,
         });
       }
     }
     export namespace Address {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Address.Record,
-          Public.Tables.Address.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Address.Record>({
           readOperation: "Public.Tables.Address.all",
           upsertOperation: "Public.Tables.Address.create",
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
           Interceptor: Public.Tables.Address.Interceptor,
+          emptyRow: Public.Tables.Address.emptyRow,
         });
       }
       export namespace AddressId {}
@@ -26961,10 +26953,9 @@ export namespace Public {
       export namespace Phone {}
       export namespace LastUpdate {}
       export function useByAddressId(parameters: ByAddressId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByAddressId,
           never,
-          Public.Tables.Address.Record,
           Public.Tables.Address.Record
         >({
           readOperation: "Public.Tables.Address.ByAddressId.read",
@@ -26975,32 +26966,26 @@ export namespace Public {
         });
       }
       export function useByCityId(parameters: ByCityId) {
-        return useEmbraceSQL<
-          ByCityId,
-          never,
-          Public.Tables.Address.Record,
-          Public.Tables.Address.Record[]
-        >({
-          readOperation: "Public.Tables.Address.ByCityId.read",
-          parameters,
-          upsertOperation: "Public.Tables.Address.create",
-          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-          Interceptor: Public.Tables.Address.Interceptor,
-        });
+        return useEmbraceSQLRows<ByCityId, never, Public.Tables.Address.Record>(
+          {
+            readOperation: "Public.Tables.Address.ByCityId.read",
+            parameters,
+            upsertOperation: "Public.Tables.Address.create",
+            primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+            Interceptor: Public.Tables.Address.Interceptor,
+            emptyRow: Public.Tables.Address.emptyRow,
+          },
+        );
       }
     }
     export namespace City {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.City.Record,
-          Public.Tables.City.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.City.Record>({
           readOperation: "Public.Tables.City.all",
           upsertOperation: "Public.Tables.City.create",
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
           Interceptor: Public.Tables.City.Interceptor,
+          emptyRow: Public.Tables.City.emptyRow,
         });
       }
       export namespace CityId {}
@@ -27008,12 +26993,7 @@ export namespace Public {
       export namespace CountryId {}
       export namespace LastUpdate {}
       export function useByCityId(parameters: ByCityId) {
-        return useEmbraceSQL<
-          ByCityId,
-          never,
-          Public.Tables.City.Record,
-          Public.Tables.City.Record
-        >({
+        return useEmbraceSQLRow<ByCityId, never, Public.Tables.City.Record>({
           readOperation: "Public.Tables.City.ByCityId.read",
           parameters,
           upsertOperation: "Public.Tables.City.create",
@@ -27022,32 +27002,26 @@ export namespace Public {
         });
       }
       export function useByCountryId(parameters: ByCountryId) {
-        return useEmbraceSQL<
-          ByCountryId,
-          never,
-          Public.Tables.City.Record,
-          Public.Tables.City.Record[]
-        >({
-          readOperation: "Public.Tables.City.ByCountryId.read",
-          parameters,
-          upsertOperation: "Public.Tables.City.create",
-          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-          Interceptor: Public.Tables.City.Interceptor,
-        });
+        return useEmbraceSQLRows<ByCountryId, never, Public.Tables.City.Record>(
+          {
+            readOperation: "Public.Tables.City.ByCountryId.read",
+            parameters,
+            upsertOperation: "Public.Tables.City.create",
+            primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+            Interceptor: Public.Tables.City.Interceptor,
+            emptyRow: Public.Tables.City.emptyRow,
+          },
+        );
       }
     }
     export namespace Customer {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Customer.Record>({
           readOperation: "Public.Tables.Customer.all",
           upsertOperation: "Public.Tables.Customer.create",
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
+          emptyRow: Public.Tables.Customer.emptyRow,
         });
       }
       export namespace CustomerId {}
@@ -27061,24 +27035,23 @@ export namespace Public {
       export namespace LastUpdate {}
       export namespace Active {}
       export function useByAddressId(parameters: ByAddressId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByAddressId,
           never,
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
+          Public.Tables.Customer.Record
         >({
           readOperation: "Public.Tables.Customer.ByAddressId.read",
           parameters,
           upsertOperation: "Public.Tables.Customer.create",
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
+          emptyRow: Public.Tables.Customer.emptyRow,
         });
       }
       export function useByCustomerId(parameters: ByCustomerId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByCustomerId,
           never,
-          Public.Tables.Customer.Record,
           Public.Tables.Customer.Record
         >({
           readOperation: "Public.Tables.Customer.ByCustomerId.read",
@@ -27089,46 +27062,42 @@ export namespace Public {
         });
       }
       export function useByLastName(parameters: ByLastName) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByLastName,
           never,
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
+          Public.Tables.Customer.Record
         >({
           readOperation: "Public.Tables.Customer.ByLastName.read",
           parameters,
           upsertOperation: "Public.Tables.Customer.create",
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
+          emptyRow: Public.Tables.Customer.emptyRow,
         });
       }
       export function useByStoreId(parameters: ByStoreId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByStoreId,
           never,
-          Public.Tables.Customer.Record,
-          Public.Tables.Customer.Record[]
+          Public.Tables.Customer.Record
         >({
           readOperation: "Public.Tables.Customer.ByStoreId.read",
           parameters,
           upsertOperation: "Public.Tables.Customer.create",
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
+          emptyRow: Public.Tables.Customer.emptyRow,
         });
       }
     }
     export namespace Actor {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Actor.Record,
-          Public.Tables.Actor.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Actor.Record>({
           readOperation: "Public.Tables.Actor.all",
           upsertOperation: "Public.Tables.Actor.create",
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
           Interceptor: Public.Tables.Actor.Interceptor,
+          emptyRow: Public.Tables.Actor.emptyRow,
         });
       }
       export namespace ActorId {}
@@ -27136,12 +27105,7 @@ export namespace Public {
       export namespace LastName {}
       export namespace LastUpdate {}
       export function useByActorId(parameters: ByActorId) {
-        return useEmbraceSQL<
-          ByActorId,
-          never,
-          Public.Tables.Actor.Record,
-          Public.Tables.Actor.Record
-        >({
+        return useEmbraceSQLRow<ByActorId, never, Public.Tables.Actor.Record>({
           readOperation: "Public.Tables.Actor.ByActorId.read",
           parameters,
           upsertOperation: "Public.Tables.Actor.create",
@@ -27150,42 +27114,39 @@ export namespace Public {
         });
       }
       export function useByLastName(parameters: ByLastName) {
-        return useEmbraceSQL<
-          ByLastName,
-          never,
-          Public.Tables.Actor.Record,
-          Public.Tables.Actor.Record[]
-        >({
-          readOperation: "Public.Tables.Actor.ByLastName.read",
-          parameters,
-          upsertOperation: "Public.Tables.Actor.create",
-          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-          Interceptor: Public.Tables.Actor.Interceptor,
-        });
+        return useEmbraceSQLRows<ByLastName, never, Public.Tables.Actor.Record>(
+          {
+            readOperation: "Public.Tables.Actor.ByLastName.read",
+            parameters,
+            upsertOperation: "Public.Tables.Actor.create",
+            primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+            Interceptor: Public.Tables.Actor.Interceptor,
+            emptyRow: Public.Tables.Actor.emptyRow,
+          },
+        );
       }
     }
     export namespace FilmCategory {
       export function useRows() {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           never,
           never,
-          Public.Tables.FilmCategory.Record,
-          Public.Tables.FilmCategory.Record[]
+          Public.Tables.FilmCategory.Record
         >({
           readOperation: "Public.Tables.FilmCategory.all",
           upsertOperation: "Public.Tables.FilmCategory.create",
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
           Interceptor: Public.Tables.FilmCategory.Interceptor,
+          emptyRow: Public.Tables.FilmCategory.emptyRow,
         });
       }
       export namespace FilmId {}
       export namespace CategoryId {}
       export namespace LastUpdate {}
       export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByFilmIdCategoryId,
           never,
-          Public.Tables.FilmCategory.Record,
           Public.Tables.FilmCategory.Record
         >({
           readOperation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
@@ -27198,16 +27159,12 @@ export namespace Public {
     }
     export namespace Inventory {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Inventory.Record,
-          Public.Tables.Inventory.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Inventory.Record>({
           readOperation: "Public.Tables.Inventory.all",
           upsertOperation: "Public.Tables.Inventory.create",
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
           Interceptor: Public.Tables.Inventory.Interceptor,
+          emptyRow: Public.Tables.Inventory.emptyRow,
         });
       }
       export namespace InventoryId {}
@@ -27215,10 +27172,9 @@ export namespace Public {
       export namespace StoreId {}
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByInventoryId,
           never,
-          Public.Tables.Inventory.Record,
           Public.Tables.Inventory.Record
         >({
           readOperation: "Public.Tables.Inventory.ByInventoryId.read",
@@ -27229,42 +27185,37 @@ export namespace Public {
         });
       }
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByStoreIdFilmId,
           never,
-          Public.Tables.Inventory.Record,
-          Public.Tables.Inventory.Record[]
+          Public.Tables.Inventory.Record
         >({
           readOperation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
           parameters,
           upsertOperation: "Public.Tables.Inventory.create",
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
           Interceptor: Public.Tables.Inventory.Interceptor,
+          emptyRow: Public.Tables.Inventory.emptyRow,
         });
       }
     }
     export namespace Category {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Category.Record,
-          Public.Tables.Category.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Category.Record>({
           readOperation: "Public.Tables.Category.all",
           upsertOperation: "Public.Tables.Category.create",
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
           Interceptor: Public.Tables.Category.Interceptor,
+          emptyRow: Public.Tables.Category.emptyRow,
         });
       }
       export namespace CategoryId {}
       export namespace Name {}
       export namespace LastUpdate {}
       export function useByCategoryId(parameters: ByCategoryId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByCategoryId,
           never,
-          Public.Tables.Category.Record,
           Public.Tables.Category.Record
         >({
           readOperation: "Public.Tables.Category.ByCategoryId.read",
@@ -27277,26 +27228,21 @@ export namespace Public {
     }
     export namespace Country {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Country.Record,
-          Public.Tables.Country.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Country.Record>({
           readOperation: "Public.Tables.Country.all",
           upsertOperation: "Public.Tables.Country.create",
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
           Interceptor: Public.Tables.Country.Interceptor,
+          emptyRow: Public.Tables.Country.emptyRow,
         });
       }
       export namespace CountryId {}
       export namespace Country {}
       export namespace LastUpdate {}
       export function useByCountryId(parameters: ByCountryId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByCountryId,
           never,
-          Public.Tables.Country.Record,
           Public.Tables.Country.Record
         >({
           readOperation: "Public.Tables.Country.ByCountryId.read",
@@ -27309,26 +27255,21 @@ export namespace Public {
     }
     export namespace Language {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Language.Record,
-          Public.Tables.Language.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Language.Record>({
           readOperation: "Public.Tables.Language.all",
           upsertOperation: "Public.Tables.Language.create",
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
           Interceptor: Public.Tables.Language.Interceptor,
+          emptyRow: Public.Tables.Language.emptyRow,
         });
       }
       export namespace LanguageId {}
       export namespace Name {}
       export namespace LastUpdate {}
       export function useByLanguageId(parameters: ByLanguageId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByLanguageId,
           never,
-          Public.Tables.Language.Record,
           Public.Tables.Language.Record
         >({
           readOperation: "Public.Tables.Language.ByLanguageId.read",
@@ -27341,16 +27282,12 @@ export namespace Public {
     }
     export namespace Rental {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Rental.Record>({
           readOperation: "Public.Tables.Rental.all",
           upsertOperation: "Public.Tables.Rental.create",
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           Interceptor: Public.Tables.Rental.Interceptor,
+          emptyRow: Public.Tables.Rental.emptyRow,
         });
       }
       export namespace RentalId {}
@@ -27361,26 +27298,25 @@ export namespace Public {
       export namespace StaffId {}
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByInventoryId,
           never,
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record[]
+          Public.Tables.Rental.Record
         >({
           readOperation: "Public.Tables.Rental.ByInventoryId.read",
           parameters,
           upsertOperation: "Public.Tables.Rental.create",
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           Interceptor: Public.Tables.Rental.Interceptor,
+          emptyRow: Public.Tables.Rental.emptyRow,
         });
       }
       export function useByRentalDateInventoryIdCustomerId(
         parameters: ByRentalDateInventoryIdCustomerId,
       ) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByRentalDateInventoryIdCustomerId,
           never,
-          Public.Tables.Rental.Record,
           Public.Tables.Rental.Record
         >({
           readOperation:
@@ -27392,32 +27328,25 @@ export namespace Public {
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
-        return useEmbraceSQL<
-          ByRentalId,
-          never,
-          Public.Tables.Rental.Record,
-          Public.Tables.Rental.Record
-        >({
-          readOperation: "Public.Tables.Rental.ByRentalId.read",
-          parameters,
-          upsertOperation: "Public.Tables.Rental.create",
-          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-          Interceptor: Public.Tables.Rental.Interceptor,
-        });
+        return useEmbraceSQLRow<ByRentalId, never, Public.Tables.Rental.Record>(
+          {
+            readOperation: "Public.Tables.Rental.ByRentalId.read",
+            parameters,
+            upsertOperation: "Public.Tables.Rental.create",
+            primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+            Interceptor: Public.Tables.Rental.Interceptor,
+          },
+        );
       }
     }
     export namespace Staff {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Staff.Record,
-          Public.Tables.Staff.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Staff.Record>({
           readOperation: "Public.Tables.Staff.all",
           upsertOperation: "Public.Tables.Staff.create",
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
           Interceptor: Public.Tables.Staff.Interceptor,
+          emptyRow: Public.Tables.Staff.emptyRow,
         });
       }
       export namespace StaffId {}
@@ -27432,12 +27361,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export namespace Picture {}
       export function useByStaffId(parameters: ByStaffId) {
-        return useEmbraceSQL<
-          ByStaffId,
-          never,
-          Public.Tables.Staff.Record,
-          Public.Tables.Staff.Record
-        >({
+        return useEmbraceSQLRow<ByStaffId, never, Public.Tables.Staff.Record>({
           readOperation: "Public.Tables.Staff.ByStaffId.read",
           parameters,
           upsertOperation: "Public.Tables.Staff.create",
@@ -27448,16 +27372,12 @@ export namespace Public {
     }
     export namespace Store {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Store.Record,
-          Public.Tables.Store.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Store.Record>({
           readOperation: "Public.Tables.Store.all",
           upsertOperation: "Public.Tables.Store.create",
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
           Interceptor: Public.Tables.Store.Interceptor,
+          emptyRow: Public.Tables.Store.emptyRow,
         });
       }
       export namespace StoreId {}
@@ -27465,10 +27385,9 @@ export namespace Public {
       export namespace AddressId {}
       export namespace LastUpdate {}
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByManagerStaffId,
           never,
-          Public.Tables.Store.Record,
           Public.Tables.Store.Record
         >({
           readOperation: "Public.Tables.Store.ByManagerStaffId.read",
@@ -27479,12 +27398,7 @@ export namespace Public {
         });
       }
       export function useByStoreId(parameters: ByStoreId) {
-        return useEmbraceSQL<
-          ByStoreId,
-          never,
-          Public.Tables.Store.Record,
-          Public.Tables.Store.Record
-        >({
+        return useEmbraceSQLRow<ByStoreId, never, Public.Tables.Store.Record>({
           readOperation: "Public.Tables.Store.ByStoreId.read",
           parameters,
           upsertOperation: "Public.Tables.Store.create",
@@ -27495,16 +27409,12 @@ export namespace Public {
     }
     export namespace Payment {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Payment.Record>({
           readOperation: "Public.Tables.Payment.all",
           upsertOperation: "Public.Tables.Payment.create",
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
+          emptyRow: Public.Tables.Payment.emptyRow,
         });
       }
       export namespace PaymentId {}
@@ -27514,24 +27424,23 @@ export namespace Public {
       export namespace Amount {}
       export namespace PaymentDate {}
       export function useByCustomerId(parameters: ByCustomerId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByCustomerId,
           never,
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
+          Public.Tables.Payment.Record
         >({
           readOperation: "Public.Tables.Payment.ByCustomerId.read",
           parameters,
           upsertOperation: "Public.Tables.Payment.create",
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
+          emptyRow: Public.Tables.Payment.emptyRow,
         });
       }
       export function useByPaymentId(parameters: ByPaymentId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRow<
           ByPaymentId,
           never,
-          Public.Tables.Payment.Record,
           Public.Tables.Payment.Record
         >({
           readOperation: "Public.Tables.Payment.ByPaymentId.read",
@@ -27542,46 +27451,42 @@ export namespace Public {
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByRentalId,
           never,
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
+          Public.Tables.Payment.Record
         >({
           readOperation: "Public.Tables.Payment.ByRentalId.read",
           parameters,
           upsertOperation: "Public.Tables.Payment.create",
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
+          emptyRow: Public.Tables.Payment.emptyRow,
         });
       }
       export function useByStaffId(parameters: ByStaffId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByStaffId,
           never,
-          Public.Tables.Payment.Record,
-          Public.Tables.Payment.Record[]
+          Public.Tables.Payment.Record
         >({
           readOperation: "Public.Tables.Payment.ByStaffId.read",
           parameters,
           upsertOperation: "Public.Tables.Payment.create",
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
+          emptyRow: Public.Tables.Payment.emptyRow,
         });
       }
     }
     export namespace Film {
       export function useRows() {
-        return useEmbraceSQL<
-          never,
-          never,
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        return useEmbraceSQLRows<never, never, Public.Tables.Film.Record>({
           readOperation: "Public.Tables.Film.all",
           upsertOperation: "Public.Tables.Film.create",
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
+          emptyRow: Public.Tables.Film.emptyRow,
         });
       }
       export namespace FilmId {}
@@ -27598,12 +27503,7 @@ export namespace Public {
       export namespace SpecialFeatures {}
       export namespace Fulltext {}
       export function useByFilmId(parameters: ByFilmId) {
-        return useEmbraceSQL<
-          ByFilmId,
-          never,
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record
-        >({
+        return useEmbraceSQLRow<ByFilmId, never, Public.Tables.Film.Record>({
           readOperation: "Public.Tables.Film.ByFilmId.read",
           parameters,
           upsertOperation: "Public.Tables.Film.create",
@@ -27612,45 +27512,37 @@ export namespace Public {
         });
       }
       export function useByFulltext(parameters: ByFulltext) {
-        return useEmbraceSQL<
-          ByFulltext,
-          never,
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        return useEmbraceSQLRows<ByFulltext, never, Public.Tables.Film.Record>({
           readOperation: "Public.Tables.Film.ByFulltext.read",
           parameters,
           upsertOperation: "Public.Tables.Film.create",
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
+          emptyRow: Public.Tables.Film.emptyRow,
         });
       }
       export function useByLanguageId(parameters: ByLanguageId) {
-        return useEmbraceSQL<
+        return useEmbraceSQLRows<
           ByLanguageId,
           never,
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
+          Public.Tables.Film.Record
         >({
           readOperation: "Public.Tables.Film.ByLanguageId.read",
           parameters,
           upsertOperation: "Public.Tables.Film.create",
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
+          emptyRow: Public.Tables.Film.emptyRow,
         });
       }
       export function useByTitle(parameters: ByTitle) {
-        return useEmbraceSQL<
-          ByTitle,
-          never,
-          Public.Tables.Film.Record,
-          Public.Tables.Film.Record[]
-        >({
+        return useEmbraceSQLRows<ByTitle, never, Public.Tables.Film.Record>({
           readOperation: "Public.Tables.Film.ByTitle.read",
           parameters,
           upsertOperation: "Public.Tables.Film.create",
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
+          emptyRow: Public.Tables.Film.emptyRow,
         });
       }
     }
