@@ -6,7 +6,7 @@ import React from "react";
 
 type Props<P, R> = {
   readOperation: string;
-  parameters: P;
+  parameters?: P;
   upsertOperation: string;
   primaryKeyPicker: (row: R) => string;
   Interceptor: InterceptorConstructor<R>;
