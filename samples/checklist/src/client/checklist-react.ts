@@ -22098,6 +22098,19 @@ export namespace Public {
 export namespace Public {
   export namespace Tables {
     export namespace Checklist {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Checklist.Record,
+          Public.Tables.Checklist.Record[]
+        >({
+          readOperation: "Public.Tables.Checklist.all",
+          upsertOperation: "Public.Tables.Checklist.create",
+          primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
+          Interceptor: Public.Tables.Checklist.Interceptor,
+        });
+      }
       export namespace Id {}
       export namespace Name {}
       export namespace CreatedAt {}
@@ -22117,6 +22130,19 @@ export namespace Public {
       }
     }
     export namespace ChecklistItem {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.ChecklistItem.Record,
+          Public.Tables.ChecklistItem.Record[]
+        >({
+          readOperation: "Public.Tables.ChecklistItem.all",
+          upsertOperation: "Public.Tables.ChecklistItem.create",
+          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+          Interceptor: Public.Tables.ChecklistItem.Interceptor,
+        });
+      }
       export namespace Id {}
       export namespace ChecklistId {}
       export namespace Title {}

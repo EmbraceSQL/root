@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import { Database, EmbraceSQLExpressApp } from "../src/dvdrental-express";
 import {
   EmbraceSQLClient,
   EmbraceSQLProvider,
@@ -13,50 +14,59 @@ import {
   waitFor,
   act,
 } from "@testing-library/react";
-import fetch from "jest-fetch-mock";
+import { Express } from "express";
+import { Server } from "http";
+import fetch from "node-fetch";
 import React from "react";
+import { setImmediate, clearImmediate } from "timers";
+import { TextEncoder, TextDecoder } from "util";
+
+Object.assign(global, {
+  TextDecoder,
+  TextEncoder,
+  fetch,
+  setImmediate,
+  clearImmediate,
+});
 
 type WithChildren = {
   children: React.ReactNode;
 };
 
 describe("EmbraceSQL Hooks can", () => {
-  const client = new EmbraceSQLClient({ url: "http://localhost" });
-  const mockActor = {
-    actorId: 1,
-    firstName: "Penelope",
-    lastName: "Guiness",
-  };
-  const updatedMockActor = {
-    actorId: 1,
-    firstName: "Alec",
-    lastName: "Guiness",
-  };
-  beforeAll(() => {
-    fetch.enableMocks();
-  });
-  beforeEach(() => {
-    // we'll have an initial value of an actor
-    // given mocking of the EmbraceSQL HTTP/S server via fetch
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        operation: "Public.Actor.byActorid.read",
-        results: mockActor,
-      }),
+  const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+  let app: Express;
+  let server: Server;
+  let database: Database;
+  let databaseInTransaction: Awaited<ReturnType<Database["beginTransaction"]>>;
+  beforeAll(async () => {
+    const postgresUrl = "postgres://postgres:postgres@localhost:5432/dvdrental";
+    database = await Database.connect(postgresUrl, {
+      max: 1,
+    });
+    databaseInTransaction = await database.beginTransaction();
+    // going to set up a transacted database
+    app = await EmbraceSQLExpressApp(
+      "postgres://postgres:postgres@localhost:5432/dvdrental",
+      databaseInTransaction.database,
     );
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        operation: "Public.Actor.create",
-        results: updatedMockActor,
-      }),
-    );
+    return new Promise<void>((resolve) => {
+      server = app.listen(4444, () => {
+        resolve();
+      });
+    });
   });
-  afterEach(() => {
-    fetch.resetMocks();
+  afterAll(async () => {
+    // transactional testing, database will restore to initial state
+    databaseInTransaction.rollback();
+    await database.disconnect();
+    return new Promise<void>((resolve) => {
+      server.close(() => resolve());
+    });
   });
 
   // all requests are going to be mocked
-  it("read a single record", async () => {
+  it("read a single row", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
@@ -67,10 +77,25 @@ describe("EmbraceSQL Hooks can", () => {
     await waitFor(() => expect(result.current?.loading).toBe(true));
     await waitFor(() => expect(result.current?.loading).toBe(false));
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject(mockActor),
+      expect(result.current?.results).toMatchObject({
+        firstName: "Penelope",
+        lastName: "Guiness",
+      }),
     );
   });
-  it("update a single record", async () => {
+  it("read all rows", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(() => Public.Tables.Actor.useRows(), {
+      wrapper,
+    });
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    await waitFor(() =>
+      expect(result.current?.results?.length).toBeGreaterThan(100),
+    );
+  });
+  it("update a single row", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
@@ -78,18 +103,19 @@ describe("EmbraceSQL Hooks can", () => {
       () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
       { wrapper },
     );
-    await waitFor(() =>
-      expect(result.current?.results).toMatchObject(mockActor),
-    );
-    // intercepted record will update the database -- set up a mock
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    // intercepted row will update the database -- set up a mock
     act(() => {
       result.current.results!.firstName = "Alec";
     });
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject(updatedMockActor),
+      expect(result.current?.results).toMatchObject({
+        firstName: "Alec",
+        lastName: "Guiness",
+      }),
     );
   });
-  it("update a single record via change event", async () => {
+  it("update a single row via change event", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
@@ -97,9 +123,7 @@ describe("EmbraceSQL Hooks can", () => {
       () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
       { wrapper },
     );
-    await waitFor(() =>
-      expect(result.current?.results).toMatchObject(mockActor),
-    );
+    await waitFor(() => expect(result.current?.loading).toBe(false));
     const actor = result.current?.results;
     const rendered = render(
       <input value={actor?.firstName} onChange={actor?.changeFirstName} />,
@@ -112,7 +136,10 @@ describe("EmbraceSQL Hooks can", () => {
     // this should have tapped the server in the change handler
     // causing the hook to update
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject(updatedMockActor),
+      expect(result.current?.results).toMatchObject({
+        firstName: "Alec",
+        lastName: "Guiness",
+      }),
     );
   });
 });

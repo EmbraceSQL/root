@@ -12,10 +12,11 @@
   },
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@embracesql/client": "^0.0.8",
     "@embracesql/postgres": "^0.0.8",
     "@embracesql/react": "^0.0.8",
-    "embracesqlcli": "^0.0.8"
+    "embracesqlcli": "^0.0.8",
+    "node-fetch": "3.3.2"
   }
 }

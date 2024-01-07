@@ -25685,6 +25685,19 @@ export namespace Public {
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.FilmActor.Record,
+          Public.Tables.FilmActor.Record[]
+        >({
+          readOperation: "Public.Tables.FilmActor.all",
+          upsertOperation: "Public.Tables.FilmActor.create",
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          Interceptor: Public.Tables.FilmActor.Interceptor,
+        });
+      }
       export namespace ActorId {}
       export namespace FilmId {}
       export namespace LastUpdate {}
@@ -25718,6 +25731,19 @@ export namespace Public {
       }
     }
     export namespace Address {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Address.Record,
+          Public.Tables.Address.Record[]
+        >({
+          readOperation: "Public.Tables.Address.all",
+          upsertOperation: "Public.Tables.Address.create",
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          Interceptor: Public.Tables.Address.Interceptor,
+        });
+      }
       export namespace AddressId {}
       export namespace Address {}
       export namespace Address2 {}
@@ -25756,6 +25782,19 @@ export namespace Public {
       }
     }
     export namespace City {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.City.Record,
+          Public.Tables.City.Record[]
+        >({
+          readOperation: "Public.Tables.City.all",
+          upsertOperation: "Public.Tables.City.create",
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          Interceptor: Public.Tables.City.Interceptor,
+        });
+      }
       export namespace CityId {}
       export namespace City {}
       export namespace CountryId {}
@@ -25790,6 +25829,19 @@ export namespace Public {
       }
     }
     export namespace Customer {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Customer.Record,
+          Public.Tables.Customer.Record[]
+        >({
+          readOperation: "Public.Tables.Customer.all",
+          upsertOperation: "Public.Tables.Customer.create",
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          Interceptor: Public.Tables.Customer.Interceptor,
+        });
+      }
       export namespace CustomerId {}
       export namespace StoreId {}
       export namespace FirstName {}
@@ -25858,6 +25910,19 @@ export namespace Public {
       }
     }
     export namespace Actor {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Actor.Record,
+          Public.Tables.Actor.Record[]
+        >({
+          readOperation: "Public.Tables.Actor.all",
+          upsertOperation: "Public.Tables.Actor.create",
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          Interceptor: Public.Tables.Actor.Interceptor,
+        });
+      }
       export namespace ActorId {}
       export namespace FirstName {}
       export namespace LastName {}
@@ -25892,6 +25957,19 @@ export namespace Public {
       }
     }
     export namespace FilmCategory {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.FilmCategory.Record,
+          Public.Tables.FilmCategory.Record[]
+        >({
+          readOperation: "Public.Tables.FilmCategory.all",
+          upsertOperation: "Public.Tables.FilmCategory.create",
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          Interceptor: Public.Tables.FilmCategory.Interceptor,
+        });
+      }
       export namespace FilmId {}
       export namespace CategoryId {}
       export namespace LastUpdate {}
@@ -25911,6 +25989,19 @@ export namespace Public {
       }
     }
     export namespace Inventory {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Inventory.Record,
+          Public.Tables.Inventory.Record[]
+        >({
+          readOperation: "Public.Tables.Inventory.all",
+          upsertOperation: "Public.Tables.Inventory.create",
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          Interceptor: Public.Tables.Inventory.Interceptor,
+        });
+      }
       export namespace InventoryId {}
       export namespace FilmId {}
       export namespace StoreId {}
@@ -25945,6 +26036,19 @@ export namespace Public {
       }
     }
     export namespace Category {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Category.Record,
+          Public.Tables.Category.Record[]
+        >({
+          readOperation: "Public.Tables.Category.all",
+          upsertOperation: "Public.Tables.Category.create",
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          Interceptor: Public.Tables.Category.Interceptor,
+        });
+      }
       export namespace CategoryId {}
       export namespace Name {}
       export namespace LastUpdate {}
@@ -25964,6 +26068,19 @@ export namespace Public {
       }
     }
     export namespace Country {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Country.Record,
+          Public.Tables.Country.Record[]
+        >({
+          readOperation: "Public.Tables.Country.all",
+          upsertOperation: "Public.Tables.Country.create",
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          Interceptor: Public.Tables.Country.Interceptor,
+        });
+      }
       export namespace CountryId {}
       export namespace Country {}
       export namespace LastUpdate {}
@@ -25983,6 +26100,19 @@ export namespace Public {
       }
     }
     export namespace Language {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Language.Record,
+          Public.Tables.Language.Record[]
+        >({
+          readOperation: "Public.Tables.Language.all",
+          upsertOperation: "Public.Tables.Language.create",
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          Interceptor: Public.Tables.Language.Interceptor,
+        });
+      }
       export namespace LanguageId {}
       export namespace Name {}
       export namespace LastUpdate {}
@@ -26002,6 +26132,19 @@ export namespace Public {
       }
     }
     export namespace Rental {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Rental.Record,
+          Public.Tables.Rental.Record[]
+        >({
+          readOperation: "Public.Tables.Rental.all",
+          upsertOperation: "Public.Tables.Rental.create",
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          Interceptor: Public.Tables.Rental.Interceptor,
+        });
+      }
       export namespace RentalId {}
       export namespace RentalDate {}
       export namespace InventoryId {}
@@ -26056,6 +26199,19 @@ export namespace Public {
       }
     }
     export namespace Staff {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Staff.Record,
+          Public.Tables.Staff.Record[]
+        >({
+          readOperation: "Public.Tables.Staff.all",
+          upsertOperation: "Public.Tables.Staff.create",
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          Interceptor: Public.Tables.Staff.Interceptor,
+        });
+      }
       export namespace StaffId {}
       export namespace FirstName {}
       export namespace LastName {}
@@ -26083,6 +26239,19 @@ export namespace Public {
       }
     }
     export namespace Store {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Store.Record,
+          Public.Tables.Store.Record[]
+        >({
+          readOperation: "Public.Tables.Store.all",
+          upsertOperation: "Public.Tables.Store.create",
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          Interceptor: Public.Tables.Store.Interceptor,
+        });
+      }
       export namespace StoreId {}
       export namespace ManagerStaffId {}
       export namespace AddressId {}
@@ -26117,6 +26286,19 @@ export namespace Public {
       }
     }
     export namespace Payment {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Payment.Record,
+          Public.Tables.Payment.Record[]
+        >({
+          readOperation: "Public.Tables.Payment.all",
+          upsertOperation: "Public.Tables.Payment.create",
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          Interceptor: Public.Tables.Payment.Interceptor,
+        });
+      }
       export namespace PaymentId {}
       export namespace CustomerId {}
       export namespace StaffId {}
@@ -26181,6 +26363,19 @@ export namespace Public {
       }
     }
     export namespace Film {
+      export function useRows() {
+        return useEmbraceSQL<
+          never,
+          never,
+          Public.Tables.Film.Record,
+          Public.Tables.Film.Record[]
+        >({
+          readOperation: "Public.Tables.Film.all",
+          upsertOperation: "Public.Tables.Film.create",
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          Interceptor: Public.Tables.Film.Interceptor,
+        });
+      }
       export namespace FilmId {}
       export namespace Title {}
       export namespace Description {}
