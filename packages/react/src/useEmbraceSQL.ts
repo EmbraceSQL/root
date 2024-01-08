@@ -1,13 +1,13 @@
 import { InterceptedResults, InterceptorConstructor } from ".";
 import { useEmbraceSQLRequest } from "./useEmbraceSQLRequest";
 import { useEmbraceSQLUpdateCallback } from "./useEmbraceSQLUpdateCallback";
-import { NullableRecursive, OneOrMany } from "@embracesql/shared";
+import { PartialRecursive, OneOrMany } from "@embracesql/shared";
 import React from "react";
 
 type Props<P, R> = {
   readOperation: string;
   parameters?: P;
-  upsertOperation: string;
+  upsertOperation: (values: R) => Promise<R | undefined>;
   primaryKeyPicker: (row: R) => string;
   Interceptor: InterceptorConstructor<R>;
 };
@@ -40,8 +40,8 @@ function useEmbraceSQL<P, V, R, RR extends OneOrMany<R>>(props: Props<P, R>) {
   });
 
   // in memory updates trigger database updates
-  const updateCallback = useEmbraceSQLUpdateCallback({
-    operation: props.upsertOperation,
+  const updateCallback = useEmbraceSQLUpdateCallback<R>({
+    upsertOperation: props.upsertOperation,
     inMemoryUpdate,
     primaryKeyPicker: props.primaryKeyPicker,
   });
@@ -70,6 +70,7 @@ function useEmbraceSQL<P, V, R, RR extends OneOrMany<R>>(props: Props<P, R>) {
     error: done?.error,
     results: interceptedResults.current,
     tick,
+    updateCallback,
   };
 }
 
@@ -88,21 +89,33 @@ export function useEmbraceSQLRow<P, V, R>(props: Props<P, R>) {
 }
 
 type RowsProps<P, R> = Props<P, R> & {
-  emptyRow: () => NullableRecursive<R>;
+  emptyRow: () => PartialRecursive<R>;
 };
 
 /**
  * Use rows, this allows adding and removing rows.
  */
 export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
-  const { loading, error, results, tick } = useEmbraceSQL<P, V, R, Array<R>>(
-    props,
-  );
+  const { loading, error, results, tick, updateCallback } = useEmbraceSQL<
+    P,
+    V,
+    R,
+    Array<R>
+  >(props);
+
+  // adding a row wraps an interceptor around an empty and adds it to the results
+  // saving is 'automatic' once any edit is made to the row
+  const addRow = React.useCallback(() => {
+    const newRow = new props.Interceptor(props.emptyRow() as R, updateCallback);
+    results?.push(newRow);
+    return newRow;
+  }, [props.Interceptor, props.emptyRow, results]);
 
   return {
     loading,
     error,
     results,
     tick,
+    addRow,
   };
 }

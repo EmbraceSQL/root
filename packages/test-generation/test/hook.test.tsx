@@ -83,18 +83,6 @@ describe("EmbraceSQL Hooks can", () => {
       }),
     );
   });
-  it("read all rows", async () => {
-    const wrapper = ({ children }: WithChildren) => (
-      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
-    );
-    const { result } = renderHook(() => Public.Tables.Actor.useRows(), {
-      wrapper,
-    });
-    await waitFor(() => expect(result.current?.loading).toBe(false));
-    await waitFor(() =>
-      expect(result.current?.results?.length).toBeGreaterThan(100),
-    );
-  });
   it("update a single row", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
@@ -141,5 +129,38 @@ describe("EmbraceSQL Hooks can", () => {
         lastName: "Guiness",
       }),
     );
+  });
+  it("read all rows", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(() => Public.Tables.Actor.useRows(), {
+      wrapper,
+    });
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    await waitFor(() =>
+      expect(result.current?.results?.length).toBeGreaterThan(100),
+    );
+  });
+  it("add a row to read rows", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(() => Public.Tables.Actor.useRows(), {
+      wrapper,
+    });
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    // when we add a row
+    const added = result.current.addRow();
+    // and set some values as if a user edited them
+    // just updating the row members should be enough to save
+    act(() => {
+      added.firstName = "New";
+      added.lastName = "Hope";
+    });
+    // then the database should have allocated a new id
+    await waitFor(() => expect(added.actorId).toBeGreaterThan(0));
+    // and this is a proper date last update stamp
+    expect(added.lastUpdate.valueOf()).toBeLessThan(Date.now());
   });
 });

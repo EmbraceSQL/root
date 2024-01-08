@@ -136,6 +136,7 @@ addOptions(
   };
 
   generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateClient(combinedContext));
   generationBuffer.push(await generateReactComponents(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();

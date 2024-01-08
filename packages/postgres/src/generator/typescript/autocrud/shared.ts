@@ -58,7 +58,7 @@ export function emptyTypescriptRow(
     return `{ ${attributes.join(",")} }`;
   }
 
-  return "null";
+  return "undefined";
 }
 
 /**

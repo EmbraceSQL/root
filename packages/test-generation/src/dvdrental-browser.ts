@@ -2587,37 +2587,37 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          starelid: null,
-          staattnum: null,
-          stainherit: null,
-          stanullfrac: null,
-          stawidth: null,
-          stadistinct: null,
-          stakind1: null,
-          stakind2: null,
-          stakind3: null,
-          stakind4: null,
-          stakind5: null,
-          staop1: null,
-          staop2: null,
-          staop3: null,
-          staop4: null,
-          staop5: null,
-          stacoll1: null,
-          stacoll2: null,
-          stacoll3: null,
-          stacoll4: null,
-          stacoll5: null,
-          stanumbers1: null,
-          stanumbers2: null,
-          stanumbers3: null,
-          stanumbers4: null,
-          stanumbers5: null,
-          stavalues1: null,
-          stavalues2: null,
-          stavalues3: null,
-          stavalues4: null,
-          stavalues5: null,
+          starelid: undefined,
+          staattnum: undefined,
+          stainherit: undefined,
+          stanullfrac: undefined,
+          stawidth: undefined,
+          stadistinct: undefined,
+          stakind1: undefined,
+          stakind2: undefined,
+          stakind3: undefined,
+          stakind4: undefined,
+          stakind5: undefined,
+          staop1: undefined,
+          staop2: undefined,
+          staop3: undefined,
+          staop4: undefined,
+          staop5: undefined,
+          stacoll1: undefined,
+          stacoll2: undefined,
+          stacoll3: undefined,
+          stacoll4: undefined,
+          stacoll5: undefined,
+          stanumbers1: undefined,
+          stanumbers2: undefined,
+          stanumbers3: undefined,
+          stanumbers4: undefined,
+          stanumbers5: undefined,
+          stavalues1: undefined,
+          stavalues2: undefined,
+          stavalues3: undefined,
+          stavalues4: undefined,
+          stavalues5: undefined,
         };
       }
       export type ByStarelidStaattnumStainherit = {
@@ -2667,38 +2667,38 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          typname: null,
-          typnamespace: null,
-          typowner: null,
-          typlen: null,
-          typbyval: null,
-          typtype: null,
-          typcategory: null,
-          typispreferred: null,
-          typisdefined: null,
-          typdelim: null,
-          typrelid: null,
-          typsubscript: null,
-          typelem: null,
-          typarray: null,
-          typinput: null,
-          typoutput: null,
-          typreceive: null,
-          typsend: null,
-          typmodin: null,
-          typmodout: null,
-          typanalyze: null,
-          typalign: null,
-          typstorage: null,
-          typnotnull: null,
-          typbasetype: null,
-          typtypmod: null,
-          typndims: null,
-          typcollation: null,
-          typdefaultbin: null,
-          typdefault: null,
-          typacl: null,
+          oid: undefined,
+          typname: undefined,
+          typnamespace: undefined,
+          typowner: undefined,
+          typlen: undefined,
+          typbyval: undefined,
+          typtype: undefined,
+          typcategory: undefined,
+          typispreferred: undefined,
+          typisdefined: undefined,
+          typdelim: undefined,
+          typrelid: undefined,
+          typsubscript: undefined,
+          typelem: undefined,
+          typarray: undefined,
+          typinput: undefined,
+          typoutput: undefined,
+          typreceive: undefined,
+          typsend: undefined,
+          typmodin: undefined,
+          typmodout: undefined,
+          typanalyze: undefined,
+          typalign: undefined,
+          typstorage: undefined,
+          typnotnull: undefined,
+          typbasetype: undefined,
+          typtypmod: undefined,
+          typndims: undefined,
+          typcollation: undefined,
+          typdefaultbin: undefined,
+          typdefault: undefined,
+          typacl: undefined,
         };
       }
       export type ByOid = {
@@ -2720,7 +2720,11 @@ export namespace PgCatalog {
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
       export function emptyRow() {
-        return { ftrelid: null, ftserver: null, ftoptions: null };
+        return {
+          ftrelid: undefined,
+          ftserver: undefined,
+          ftoptions: undefined,
+        };
       }
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
@@ -2747,18 +2751,18 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          rolname: null,
-          rolsuper: null,
-          rolinherit: null,
-          rolcreaterole: null,
-          rolcreatedb: null,
-          rolcanlogin: null,
-          rolreplication: null,
-          rolbypassrls: null,
-          rolconnlimit: null,
-          rolpassword: null,
-          rolvaliduntil: null,
+          oid: undefined,
+          rolname: undefined,
+          rolsuper: undefined,
+          rolinherit: undefined,
+          rolcreaterole: undefined,
+          rolcreatedb: undefined,
+          rolcanlogin: undefined,
+          rolreplication: undefined,
+          rolbypassrls: undefined,
+          rolconnlimit: undefined,
+          rolpassword: undefined,
+          rolvaliduntil: undefined,
         };
       }
       export type ByOid = {
@@ -2787,12 +2791,12 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          stxoid: null,
-          stxdinherit: null,
-          stxdndistinct: null,
-          stxddependencies: null,
-          stxdmcv: null,
-          stxdexpr: null,
+          stxoid: undefined,
+          stxdinherit: undefined,
+          stxdndistinct: undefined,
+          stxddependencies: undefined,
+          stxdmcv: undefined,
+          stxdexpr: undefined,
         };
       }
       export type ByStxoidStxdinherit = {
@@ -2812,7 +2816,12 @@ export namespace PgCatalog {
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
       export function emptyRow() {
-        return { oid: null, umuser: null, umserver: null, umoptions: null };
+        return {
+          oid: undefined,
+          umuser: undefined,
+          umserver: undefined,
+          umoptions: undefined,
+        };
       }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
@@ -2848,23 +2857,23 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          subdbid: null,
-          subskiplsn: null,
-          subname: null,
-          subowner: null,
-          subenabled: null,
-          subbinary: null,
-          substream: null,
-          subtwophasestate: null,
-          subdisableonerr: null,
-          subpasswordrequired: null,
-          subrunasowner: null,
-          subconninfo: null,
-          subslotname: null,
-          subsynccommit: null,
-          subpublications: null,
-          suborigin: null,
+          oid: undefined,
+          subdbid: undefined,
+          subskiplsn: undefined,
+          subname: undefined,
+          subowner: undefined,
+          subenabled: undefined,
+          subbinary: undefined,
+          substream: undefined,
+          subtwophasestate: undefined,
+          subdisableonerr: undefined,
+          subpasswordrequired: undefined,
+          subrunasowner: undefined,
+          subconninfo: undefined,
+          subslotname: undefined,
+          subsynccommit: undefined,
+          subpublications: undefined,
+          suborigin: undefined,
         };
       }
       export type ByOid = {
@@ -2910,32 +2919,32 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          attrelid: null,
-          attname: null,
-          atttypid: null,
-          attlen: null,
-          attnum: null,
-          attcacheoff: null,
-          atttypmod: null,
-          attndims: null,
-          attbyval: null,
-          attalign: null,
-          attstorage: null,
-          attcompression: null,
-          attnotnull: null,
-          atthasdef: null,
-          atthasmissing: null,
-          attidentity: null,
-          attgenerated: null,
-          attisdropped: null,
-          attislocal: null,
-          attinhcount: null,
-          attstattarget: null,
-          attcollation: null,
-          attacl: null,
-          attoptions: null,
-          attfdwoptions: null,
-          attmissingval: null,
+          attrelid: undefined,
+          attname: undefined,
+          atttypid: undefined,
+          attlen: undefined,
+          attnum: undefined,
+          attcacheoff: undefined,
+          atttypmod: undefined,
+          attndims: undefined,
+          attbyval: undefined,
+          attalign: undefined,
+          attstorage: undefined,
+          attcompression: undefined,
+          attnotnull: undefined,
+          atthasdef: undefined,
+          atthasmissing: undefined,
+          attidentity: undefined,
+          attgenerated: undefined,
+          attisdropped: undefined,
+          attislocal: undefined,
+          attinhcount: undefined,
+          attstattarget: undefined,
+          attcollation: undefined,
+          attacl: undefined,
+          attoptions: undefined,
+          attfdwoptions: undefined,
+          attmissingval: undefined,
         };
       }
       export type ByAttrelidAttname = {
@@ -2987,36 +2996,36 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          proname: null,
-          pronamespace: null,
-          proowner: null,
-          prolang: null,
-          procost: null,
-          prorows: null,
-          provariadic: null,
-          prosupport: null,
-          prokind: null,
-          prosecdef: null,
-          proleakproof: null,
-          proisstrict: null,
-          proretset: null,
-          provolatile: null,
-          proparallel: null,
-          pronargs: null,
-          pronargdefaults: null,
-          prorettype: null,
-          proargtypes: null,
-          proallargtypes: null,
-          proargmodes: null,
-          proargnames: null,
-          proargdefaults: null,
-          protrftypes: null,
-          prosrc: null,
-          probin: null,
-          prosqlbody: null,
-          proconfig: null,
-          proacl: null,
+          oid: undefined,
+          proname: undefined,
+          pronamespace: undefined,
+          proowner: undefined,
+          prolang: undefined,
+          procost: undefined,
+          prorows: undefined,
+          provariadic: undefined,
+          prosupport: undefined,
+          prokind: undefined,
+          prosecdef: undefined,
+          proleakproof: undefined,
+          proisstrict: undefined,
+          proretset: undefined,
+          provolatile: undefined,
+          proparallel: undefined,
+          pronargs: undefined,
+          pronargdefaults: undefined,
+          prorettype: undefined,
+          proargtypes: undefined,
+          proallargtypes: undefined,
+          proargmodes: undefined,
+          proargnames: undefined,
+          proargdefaults: undefined,
+          protrftypes: undefined,
+          prosrc: undefined,
+          probin: undefined,
+          prosqlbody: undefined,
+          proconfig: undefined,
+          proacl: undefined,
         };
       }
       export type ByOid = {
@@ -3070,39 +3079,39 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          relname: null,
-          relnamespace: null,
-          reltype: null,
-          reloftype: null,
-          relowner: null,
-          relam: null,
-          relfilenode: null,
-          reltablespace: null,
-          relpages: null,
-          reltuples: null,
-          relallvisible: null,
-          reltoastrelid: null,
-          relhasindex: null,
-          relisshared: null,
-          relpersistence: null,
-          relkind: null,
-          relnatts: null,
-          relchecks: null,
-          relhasrules: null,
-          relhastriggers: null,
-          relhassubclass: null,
-          relrowsecurity: null,
-          relforcerowsecurity: null,
-          relispopulated: null,
-          relreplident: null,
-          relispartition: null,
-          relrewrite: null,
-          relfrozenxid: null,
-          relminmxid: null,
-          relacl: null,
-          reloptions: null,
-          relpartbound: null,
+          oid: undefined,
+          relname: undefined,
+          relnamespace: undefined,
+          reltype: undefined,
+          reloftype: undefined,
+          relowner: undefined,
+          relam: undefined,
+          relfilenode: undefined,
+          reltablespace: undefined,
+          relpages: undefined,
+          reltuples: undefined,
+          relallvisible: undefined,
+          reltoastrelid: undefined,
+          relhasindex: undefined,
+          relisshared: undefined,
+          relpersistence: undefined,
+          relkind: undefined,
+          relnatts: undefined,
+          relchecks: undefined,
+          relhasrules: undefined,
+          relhastriggers: undefined,
+          relhassubclass: undefined,
+          relrowsecurity: undefined,
+          relforcerowsecurity: undefined,
+          relispopulated: undefined,
+          relreplident: undefined,
+          relispartition: undefined,
+          relrewrite: undefined,
+          relfrozenxid: undefined,
+          relminmxid: undefined,
+          relacl: undefined,
+          reloptions: undefined,
+          relpartbound: undefined,
         };
       }
       export type ByOid = {
@@ -3130,7 +3139,12 @@ export namespace PgCatalog {
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
       export function emptyRow() {
-        return { oid: null, adrelid: null, adnum: null, adbin: null };
+        return {
+          oid: undefined,
+          adrelid: undefined,
+          adnum: undefined,
+          adbin: undefined,
+        };
       }
       export type ByAdrelidAdnum = {
         adrelid: PgCatalog.Types.Oid;
@@ -3176,32 +3190,32 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          conname: null,
-          connamespace: null,
-          contype: null,
-          condeferrable: null,
-          condeferred: null,
-          convalidated: null,
-          conrelid: null,
-          contypid: null,
-          conindid: null,
-          conparentid: null,
-          confrelid: null,
-          confupdtype: null,
-          confdeltype: null,
-          confmatchtype: null,
-          conislocal: null,
-          coninhcount: null,
-          connoinherit: null,
-          conkey: null,
-          confkey: null,
-          conpfeqop: null,
-          conppeqop: null,
-          conffeqop: null,
-          confdelsetcols: null,
-          conexclop: null,
-          conbin: null,
+          oid: undefined,
+          conname: undefined,
+          connamespace: undefined,
+          contype: undefined,
+          condeferrable: undefined,
+          condeferred: undefined,
+          convalidated: undefined,
+          conrelid: undefined,
+          contypid: undefined,
+          conindid: undefined,
+          conparentid: undefined,
+          confrelid: undefined,
+          confupdtype: undefined,
+          confdeltype: undefined,
+          confmatchtype: undefined,
+          conislocal: undefined,
+          coninhcount: undefined,
+          connoinherit: undefined,
+          conkey: undefined,
+          confkey: undefined,
+          conpfeqop: undefined,
+          conppeqop: undefined,
+          conffeqop: undefined,
+          confdelsetcols: undefined,
+          conexclop: undefined,
+          conbin: undefined,
         };
       }
       export type ByConnameConnamespace = {
@@ -3240,10 +3254,10 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          inhrelid: null,
-          inhparent: null,
-          inhseqno: null,
-          inhdetachpending: null,
+          inhrelid: undefined,
+          inhparent: undefined,
+          inhseqno: undefined,
+          inhdetachpending: undefined,
         };
       }
       export type ByInhparent = {
@@ -3285,27 +3299,27 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          indexrelid: null,
-          indrelid: null,
-          indnatts: null,
-          indnkeyatts: null,
-          indisunique: null,
-          indnullsnotdistinct: null,
-          indisprimary: null,
-          indisexclusion: null,
-          indimmediate: null,
-          indisclustered: null,
-          indisvalid: null,
-          indcheckxmin: null,
-          indisready: null,
-          indislive: null,
-          indisreplident: null,
-          indkey: null,
-          indcollation: null,
-          indclass: null,
-          indoption: null,
-          indexprs: null,
-          indpred: null,
+          indexrelid: undefined,
+          indrelid: undefined,
+          indnatts: undefined,
+          indnkeyatts: undefined,
+          indisunique: undefined,
+          indnullsnotdistinct: undefined,
+          indisprimary: undefined,
+          indisexclusion: undefined,
+          indimmediate: undefined,
+          indisclustered: undefined,
+          indisvalid: undefined,
+          indcheckxmin: undefined,
+          indisready: undefined,
+          indislive: undefined,
+          indisreplident: undefined,
+          indkey: undefined,
+          indcollation: undefined,
+          indclass: undefined,
+          indoption: undefined,
+          indexprs: undefined,
+          indpred: undefined,
         };
       }
       export type ByIndexrelid = {
@@ -3339,21 +3353,21 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          oprname: null,
-          oprnamespace: null,
-          oprowner: null,
-          oprkind: null,
-          oprcanmerge: null,
-          oprcanhash: null,
-          oprleft: null,
-          oprright: null,
-          oprresult: null,
-          oprcom: null,
-          oprnegate: null,
-          oprcode: null,
-          oprrest: null,
-          oprjoin: null,
+          oid: undefined,
+          oprname: undefined,
+          oprnamespace: undefined,
+          oprowner: undefined,
+          oprkind: undefined,
+          oprcanmerge: undefined,
+          oprcanhash: undefined,
+          oprleft: undefined,
+          oprright: undefined,
+          oprresult: undefined,
+          oprcom: undefined,
+          oprnegate: undefined,
+          oprcode: undefined,
+          oprrest: undefined,
+          oprjoin: undefined,
         };
       }
       export type ByOid = {
@@ -3380,11 +3394,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          opfmethod: null,
-          opfname: null,
-          opfnamespace: null,
-          opfowner: null,
+          oid: undefined,
+          opfmethod: undefined,
+          opfname: undefined,
+          opfnamespace: undefined,
+          opfowner: undefined,
         };
       }
       export type ByOid = {
@@ -3414,15 +3428,15 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          opcmethod: null,
-          opcname: null,
-          opcnamespace: null,
-          opcowner: null,
-          opcfamily: null,
-          opcintype: null,
-          opcdefault: null,
-          opckeytype: null,
+          oid: undefined,
+          opcmethod: undefined,
+          opcname: undefined,
+          opcnamespace: undefined,
+          opcowner: undefined,
+          opcfamily: undefined,
+          opcintype: undefined,
+          opcdefault: undefined,
+          opckeytype: undefined,
         };
       }
       export type ByOid = {
@@ -3446,7 +3460,12 @@ export namespace PgCatalog {
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
       export function emptyRow() {
-        return { oid: null, amname: null, amhandler: null, amtype: null };
+        return {
+          oid: undefined,
+          amname: undefined,
+          amhandler: undefined,
+          amtype: undefined,
+        };
       }
       export type ByAmname = {
         amname: PgCatalog.Types.Cstring;
@@ -3474,15 +3493,15 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          amopfamily: null,
-          amoplefttype: null,
-          amoprighttype: null,
-          amopstrategy: null,
-          amoppurpose: null,
-          amopopr: null,
-          amopmethod: null,
-          amopsortfamily: null,
+          oid: undefined,
+          amopfamily: undefined,
+          amoplefttype: undefined,
+          amoprighttype: undefined,
+          amopstrategy: undefined,
+          amoppurpose: undefined,
+          amopopr: undefined,
+          amopmethod: undefined,
+          amopsortfamily: undefined,
         };
       }
       export type ByAmopfamilyAmoplefttypeAmoprighttypeAmopstrategy = {
@@ -3517,12 +3536,12 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          amprocfamily: null,
-          amproclefttype: null,
-          amprocrighttype: null,
-          amprocnum: null,
-          amproc: null,
+          oid: undefined,
+          amprocfamily: undefined,
+          amproclefttype: undefined,
+          amprocrighttype: undefined,
+          amprocnum: undefined,
+          amproc: undefined,
         };
       }
       export type ByAmprocfamilyAmproclefttypeAmprocrighttypeAmprocnum = {
@@ -3554,15 +3573,15 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          lanname: null,
-          lanowner: null,
-          lanispl: null,
-          lanpltrusted: null,
-          lanplcallfoid: null,
-          laninline: null,
-          lanvalidator: null,
-          lanacl: null,
+          oid: undefined,
+          lanname: undefined,
+          lanowner: undefined,
+          lanispl: undefined,
+          lanpltrusted: undefined,
+          lanplcallfoid: undefined,
+          laninline: undefined,
+          lanvalidator: undefined,
+          lanacl: undefined,
         };
       }
       export type ByLanname = {
@@ -3584,7 +3603,7 @@ export namespace PgCatalog {
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
       export function emptyRow() {
-        return { oid: null, lomowner: null, lomacl: null };
+        return { oid: undefined, lomowner: undefined, lomacl: undefined };
       }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
@@ -3621,28 +3640,28 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          aggfnoid: null,
-          aggkind: null,
-          aggnumdirectargs: null,
-          aggtransfn: null,
-          aggfinalfn: null,
-          aggcombinefn: null,
-          aggserialfn: null,
-          aggdeserialfn: null,
-          aggmtransfn: null,
-          aggminvtransfn: null,
-          aggmfinalfn: null,
-          aggfinalextra: null,
-          aggmfinalextra: null,
-          aggfinalmodify: null,
-          aggmfinalmodify: null,
-          aggsortop: null,
-          aggtranstype: null,
-          aggtransspace: null,
-          aggmtranstype: null,
-          aggmtransspace: null,
-          agginitval: null,
-          aggminitval: null,
+          aggfnoid: undefined,
+          aggkind: undefined,
+          aggnumdirectargs: undefined,
+          aggtransfn: undefined,
+          aggfinalfn: undefined,
+          aggcombinefn: undefined,
+          aggserialfn: undefined,
+          aggdeserialfn: undefined,
+          aggmtransfn: undefined,
+          aggminvtransfn: undefined,
+          aggmfinalfn: undefined,
+          aggfinalextra: undefined,
+          aggmfinalextra: undefined,
+          aggfinalmodify: undefined,
+          aggmfinalmodify: undefined,
+          aggsortop: undefined,
+          aggtranstype: undefined,
+          aggtransspace: undefined,
+          aggmtranstype: undefined,
+          aggmtransspace: undefined,
+          agginitval: undefined,
+          aggminitval: undefined,
         };
       }
       export type ByAggfnoid = {
@@ -3667,15 +3686,15 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          stxrelid: null,
-          stxname: null,
-          stxnamespace: null,
-          stxowner: null,
-          stxstattarget: null,
-          stxkeys: null,
-          stxkind: null,
-          stxexprs: null,
+          oid: undefined,
+          stxrelid: undefined,
+          stxname: undefined,
+          stxnamespace: undefined,
+          stxowner: undefined,
+          stxstattarget: undefined,
+          stxkeys: undefined,
+          stxkind: undefined,
+          stxexprs: undefined,
         };
       }
       export type ByOid = {
@@ -3707,14 +3726,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          rulename: null,
-          evClass: null,
-          evType: null,
-          evEnabled: null,
-          isInstead: null,
-          evQual: null,
-          evAction: null,
+          oid: undefined,
+          rulename: undefined,
+          evClass: undefined,
+          evType: undefined,
+          evEnabled: undefined,
+          isInstead: undefined,
+          evQual: undefined,
+          evAction: undefined,
         };
       }
       export type ByEvClassRulename = {
@@ -3754,25 +3773,25 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          tgrelid: null,
-          tgparentid: null,
-          tgname: null,
-          tgfoid: null,
-          tgtype: null,
-          tgenabled: null,
-          tgisinternal: null,
-          tgconstrrelid: null,
-          tgconstrindid: null,
-          tgconstraint: null,
-          tgdeferrable: null,
-          tginitdeferred: null,
-          tgnargs: null,
-          tgattr: null,
-          tgargs: null,
-          tgqual: null,
-          tgoldtable: null,
-          tgnewtable: null,
+          oid: undefined,
+          tgrelid: undefined,
+          tgparentid: undefined,
+          tgname: undefined,
+          tgfoid: undefined,
+          tgtype: undefined,
+          tgenabled: undefined,
+          tgisinternal: undefined,
+          tgconstrrelid: undefined,
+          tgconstrindid: undefined,
+          tgconstraint: undefined,
+          tgdeferrable: undefined,
+          tginitdeferred: undefined,
+          tgnargs: undefined,
+          tgattr: undefined,
+          tgargs: undefined,
+          tgqual: undefined,
+          tgoldtable: undefined,
+          tgnewtable: undefined,
         };
       }
       export type ByOid = {
@@ -3803,13 +3822,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          evtname: null,
-          evtevent: null,
-          evtowner: null,
-          evtfoid: null,
-          evtenabled: null,
-          evttags: null,
+          oid: undefined,
+          evtname: undefined,
+          evtevent: undefined,
+          evtowner: undefined,
+          evtfoid: undefined,
+          evtenabled: undefined,
+          evttags: undefined,
         };
       }
       export type ByEvtname = {
@@ -3833,10 +3852,10 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          objoid: null,
-          classoid: null,
-          objsubid: null,
-          description: null,
+          objoid: undefined,
+          classoid: undefined,
+          objsubid: undefined,
+          description: undefined,
         };
       }
       export type ByObjoidClassoidObjsubid = {
@@ -3860,12 +3879,12 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          castsource: null,
-          casttarget: null,
-          castfunc: null,
-          castcontext: null,
-          castmethod: null,
+          oid: undefined,
+          castsource: undefined,
+          casttarget: undefined,
+          castfunc: undefined,
+          castcontext: undefined,
+          castmethod: undefined,
         };
       }
       export type ByCastsourceCasttarget = {
@@ -3890,10 +3909,10 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          enumtypid: null,
-          enumsortorder: null,
-          enumlabel: null,
+          oid: undefined,
+          enumtypid: undefined,
+          enumsortorder: undefined,
+          enumlabel: undefined,
         };
       }
       export type ByEnumtypidEnumlabel = {
@@ -3922,7 +3941,12 @@ export namespace PgCatalog {
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
       export function emptyRow() {
-        return { oid: null, nspname: null, nspowner: null, nspacl: null };
+        return {
+          oid: undefined,
+          nspname: undefined,
+          nspowner: undefined,
+          nspacl: undefined,
+        };
       }
       export type ByNspname = {
         nspname: PgCatalog.Types.Cstring;
@@ -3949,14 +3973,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          conname: null,
-          connamespace: null,
-          conowner: null,
-          conforencoding: null,
-          contoencoding: null,
-          conproc: null,
-          condefault: null,
+          oid: undefined,
+          conname: undefined,
+          connamespace: undefined,
+          conowner: undefined,
+          conforencoding: undefined,
+          contoencoding: undefined,
+          conproc: undefined,
+          condefault: undefined,
         };
       }
       export type ByConnameConnamespace = {
@@ -3991,13 +4015,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          classid: null,
-          objid: null,
-          objsubid: null,
-          refclassid: null,
-          refobjid: null,
-          refobjsubid: null,
-          deptype: null,
+          classid: undefined,
+          objid: undefined,
+          objsubid: undefined,
+          refclassid: undefined,
+          refobjid: undefined,
+          refobjsubid: undefined,
+          deptype: undefined,
         };
       }
       export type ByClassidObjidObjsubid = {
@@ -4038,23 +4062,23 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          datname: null,
-          datdba: null,
-          encoding: null,
-          datlocprovider: null,
-          datistemplate: null,
-          datallowconn: null,
-          datconnlimit: null,
-          datfrozenxid: null,
-          datminmxid: null,
-          dattablespace: null,
-          datcollate: null,
-          datctype: null,
-          daticulocale: null,
-          daticurules: null,
-          datcollversion: null,
-          datacl: null,
+          oid: undefined,
+          datname: undefined,
+          datdba: undefined,
+          encoding: undefined,
+          datlocprovider: undefined,
+          datistemplate: undefined,
+          datallowconn: undefined,
+          datconnlimit: undefined,
+          datfrozenxid: undefined,
+          datminmxid: undefined,
+          dattablespace: undefined,
+          datcollate: undefined,
+          datctype: undefined,
+          daticulocale: undefined,
+          daticurules: undefined,
+          datcollversion: undefined,
+          datacl: undefined,
         };
       }
       export type ByDatname = {
@@ -4076,7 +4100,11 @@ export namespace PgCatalog {
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
       export function emptyRow() {
-        return { setdatabase: null, setrole: null, setconfig: null };
+        return {
+          setdatabase: undefined,
+          setrole: undefined,
+          setconfig: undefined,
+        };
       }
       export type BySetdatabaseSetrole = {
         setdatabase: PgCatalog.Types.Oid;
@@ -4097,11 +4125,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          spcname: null,
-          spcowner: null,
-          spcacl: null,
-          spcoptions: null,
+          oid: undefined,
+          spcname: undefined,
+          spcowner: undefined,
+          spcacl: undefined,
+          spcoptions: undefined,
         };
       }
       export type ByOid = {
@@ -4127,13 +4155,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          roleid: null,
-          member: null,
-          grantor: null,
-          adminOption: null,
-          inheritOption: null,
-          setOption: null,
+          oid: undefined,
+          roleid: undefined,
+          member: undefined,
+          grantor: undefined,
+          adminOption: undefined,
+          inheritOption: undefined,
+          setOption: undefined,
         };
       }
       export type ByGrantor = {
@@ -4171,13 +4199,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          dbid: null,
-          classid: null,
-          objid: null,
-          objsubid: null,
-          refclassid: null,
-          refobjid: null,
-          deptype: null,
+          dbid: undefined,
+          classid: undefined,
+          objid: undefined,
+          objsubid: undefined,
+          refclassid: undefined,
+          refobjid: undefined,
+          deptype: undefined,
         };
       }
       export type ByDbidClassidObjidObjsubid = {
@@ -4203,7 +4231,11 @@ export namespace PgCatalog {
         description: PgCatalog.Types.PgShdescription["description"];
       };
       export function emptyRow() {
-        return { objoid: null, classoid: null, description: null };
+        return {
+          objoid: undefined,
+          classoid: undefined,
+          description: undefined,
+        };
       }
       export type ByObjoidClassoid = {
         objoid: PgCatalog.Types.Oid;
@@ -4224,11 +4256,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          cfgname: null,
-          cfgnamespace: null,
-          cfgowner: null,
-          cfgparser: null,
+          oid: undefined,
+          cfgname: undefined,
+          cfgnamespace: undefined,
+          cfgowner: undefined,
+          cfgparser: undefined,
         };
       }
       export type ByCfgnameCfgnamespace = {
@@ -4253,10 +4285,10 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          mapcfg: null,
-          maptokentype: null,
-          mapseqno: null,
-          mapdict: null,
+          mapcfg: undefined,
+          maptokentype: undefined,
+          mapseqno: undefined,
+          mapdict: undefined,
         };
       }
       export type ByMapcfgMaptokentypeMapseqno = {
@@ -4280,12 +4312,12 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          dictname: null,
-          dictnamespace: null,
-          dictowner: null,
-          dicttemplate: null,
-          dictinitoption: null,
+          oid: undefined,
+          dictname: undefined,
+          dictnamespace: undefined,
+          dictowner: undefined,
+          dicttemplate: undefined,
+          dictinitoption: undefined,
         };
       }
       export type ByDictnameDictnamespace = {
@@ -4314,14 +4346,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          prsname: null,
-          prsnamespace: null,
-          prsstart: null,
-          prstoken: null,
-          prsend: null,
-          prsheadline: null,
-          prslextype: null,
+          oid: undefined,
+          prsname: undefined,
+          prsnamespace: undefined,
+          prsstart: undefined,
+          prstoken: undefined,
+          prsend: undefined,
+          prsheadline: undefined,
+          prslextype: undefined,
         };
       }
       export type ByOid = {
@@ -4346,11 +4378,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          tmplname: null,
-          tmplnamespace: null,
-          tmplinit: null,
-          tmpllexize: null,
+          oid: undefined,
+          tmplname: undefined,
+          tmplnamespace: undefined,
+          tmplinit: undefined,
+          tmpllexize: undefined,
         };
       }
       export type ByOid = {
@@ -4378,14 +4410,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          extname: null,
-          extowner: null,
-          extnamespace: null,
-          extrelocatable: null,
-          extversion: null,
-          extconfig: null,
-          extcondition: null,
+          oid: undefined,
+          extname: undefined,
+          extowner: undefined,
+          extnamespace: undefined,
+          extrelocatable: undefined,
+          extversion: undefined,
+          extconfig: undefined,
+          extcondition: undefined,
         };
       }
       export type ByExtname = {
@@ -4412,13 +4444,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          fdwname: null,
-          fdwowner: null,
-          fdwhandler: null,
-          fdwvalidator: null,
-          fdwacl: null,
-          fdwoptions: null,
+          oid: undefined,
+          fdwname: undefined,
+          fdwowner: undefined,
+          fdwhandler: undefined,
+          fdwvalidator: undefined,
+          fdwacl: undefined,
+          fdwoptions: undefined,
         };
       }
       export type ByFdwname = {
@@ -4446,14 +4478,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          srvname: null,
-          srvowner: null,
-          srvfdw: null,
-          srvtype: null,
-          srvversion: null,
-          srvacl: null,
-          srvoptions: null,
+          oid: undefined,
+          srvname: undefined,
+          srvowner: undefined,
+          srvfdw: undefined,
+          srvtype: undefined,
+          srvversion: undefined,
+          srvacl: undefined,
+          srvoptions: undefined,
         };
       }
       export type ByOid = {
@@ -4480,14 +4512,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          polname: null,
-          polrelid: null,
-          polcmd: null,
-          polpermissive: null,
-          polroles: null,
-          polqual: null,
-          polwithcheck: null,
+          oid: undefined,
+          polname: undefined,
+          polrelid: undefined,
+          polcmd: undefined,
+          polpermissive: undefined,
+          polroles: undefined,
+          polqual: undefined,
+          polwithcheck: undefined,
         };
       }
       export type ByOid = {
@@ -4508,7 +4540,7 @@ export namespace PgCatalog {
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
       export function emptyRow() {
-        return { roident: null, roname: null };
+        return { roident: undefined, roname: undefined };
       }
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
@@ -4531,11 +4563,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          defaclrole: null,
-          defaclnamespace: null,
-          defaclobjtype: null,
-          defaclacl: null,
+          oid: undefined,
+          defaclrole: undefined,
+          defaclnamespace: undefined,
+          defaclobjtype: undefined,
+          defaclacl: undefined,
         };
       }
       export type ByDefaclroleDefaclnamespaceDefaclobjtype = {
@@ -4562,11 +4594,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          objoid: null,
-          classoid: null,
-          objsubid: null,
-          privtype: null,
-          initprivs: null,
+          objoid: undefined,
+          classoid: undefined,
+          objsubid: undefined,
+          privtype: undefined,
+          initprivs: undefined,
         };
       }
       export type ByObjoidClassoidObjsubid = {
@@ -4589,11 +4621,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          objoid: null,
-          classoid: null,
-          objsubid: null,
-          provider: null,
-          label: null,
+          objoid: undefined,
+          classoid: undefined,
+          objsubid: undefined,
+          provider: undefined,
+          label: undefined,
         };
       }
       export type ByObjoidClassoidObjsubidProvider = {
@@ -4615,7 +4647,12 @@ export namespace PgCatalog {
         label: PgCatalog.Types.PgShseclabel["label"];
       };
       export function emptyRow() {
-        return { objoid: null, classoid: null, provider: null, label: null };
+        return {
+          objoid: undefined,
+          classoid: undefined,
+          provider: undefined,
+          label: undefined,
+        };
       }
       export type ByObjoidClassoidProvider = {
         objoid: PgCatalog.Types.Oid;
@@ -4644,18 +4681,18 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          collname: null,
-          collnamespace: null,
-          collowner: null,
-          collprovider: null,
-          collisdeterministic: null,
-          collencoding: null,
-          collcollate: null,
-          collctype: null,
-          colliculocale: null,
-          collicurules: null,
-          collversion: null,
+          oid: undefined,
+          collname: undefined,
+          collnamespace: undefined,
+          collowner: undefined,
+          collprovider: undefined,
+          collisdeterministic: undefined,
+          collencoding: undefined,
+          collcollate: undefined,
+          collctype: undefined,
+          colliculocale: undefined,
+          collicurules: undefined,
+          collversion: undefined,
         };
       }
       export type ByCollnameCollencodingCollnamespace = {
@@ -4679,7 +4716,7 @@ export namespace PgCatalog {
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
       export function emptyRow() {
-        return { oid: null, parname: null, paracl: null };
+        return { oid: undefined, parname: undefined, paracl: undefined };
       }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
@@ -4705,14 +4742,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          partrelid: null,
-          partstrat: null,
-          partnatts: null,
-          partdefid: null,
-          partattrs: null,
-          partclass: null,
-          partcollation: null,
-          partexprs: null,
+          partrelid: undefined,
+          partstrat: undefined,
+          partnatts: undefined,
+          partdefid: undefined,
+          partattrs: undefined,
+          partclass: undefined,
+          partcollation: undefined,
+          partexprs: undefined,
         };
       }
       export type ByPartrelid = {
@@ -4735,13 +4772,13 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          rngtypid: null,
-          rngsubtype: null,
-          rngmultitypid: null,
-          rngcollation: null,
-          rngsubopc: null,
-          rngcanonical: null,
-          rngsubdiff: null,
+          rngtypid: undefined,
+          rngsubtype: undefined,
+          rngmultitypid: undefined,
+          rngcollation: undefined,
+          rngsubopc: undefined,
+          rngcanonical: undefined,
+          rngsubdiff: undefined,
         };
       }
       export type ByRngmultitypid = {
@@ -4766,11 +4803,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          trftype: null,
-          trflang: null,
-          trffromsql: null,
-          trftosql: null,
+          oid: undefined,
+          trftype: undefined,
+          trflang: undefined,
+          trffromsql: undefined,
+          trftosql: undefined,
         };
       }
       export type ByOid = {
@@ -4798,14 +4835,14 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          seqrelid: null,
-          seqtypid: null,
-          seqstart: null,
-          seqincrement: null,
-          seqmax: null,
-          seqmin: null,
-          seqcache: null,
-          seqcycle: null,
+          seqrelid: undefined,
+          seqtypid: undefined,
+          seqstart: undefined,
+          seqincrement: undefined,
+          seqmax: undefined,
+          seqmin: undefined,
+          seqcache: undefined,
+          seqcycle: undefined,
         };
       }
       export type BySeqrelid = {
@@ -4830,15 +4867,15 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          pubname: null,
-          pubowner: null,
-          puballtables: null,
-          pubinsert: null,
-          pubupdate: null,
-          pubdelete: null,
-          pubtruncate: null,
-          pubviaroot: null,
+          oid: undefined,
+          pubname: undefined,
+          pubowner: undefined,
+          puballtables: undefined,
+          pubinsert: undefined,
+          pubupdate: undefined,
+          pubdelete: undefined,
+          pubtruncate: undefined,
+          pubviaroot: undefined,
         };
       }
       export type ByOid = {
@@ -4859,7 +4896,7 @@ export namespace PgCatalog {
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
       export function emptyRow() {
-        return { oid: null, pnpubid: null, pnnspid: null };
+        return { oid: undefined, pnpubid: undefined, pnnspid: undefined };
       }
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
@@ -4883,11 +4920,11 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          oid: null,
-          prpubid: null,
-          prrelid: null,
-          prqual: null,
-          prattrs: null,
+          oid: undefined,
+          prpubid: undefined,
+          prrelid: undefined,
+          prqual: undefined,
+          prattrs: undefined,
         };
       }
       export type ByOid = {
@@ -4915,10 +4952,10 @@ export namespace PgCatalog {
       };
       export function emptyRow() {
         return {
-          srsubid: null,
-          srrelid: null,
-          srsubstate: null,
-          srsublsn: null,
+          srsubid: undefined,
+          srrelid: undefined,
+          srsubstate: undefined,
+          srsublsn: undefined,
         };
       }
       export type BySrrelidSrsubid = {
@@ -4937,7 +4974,7 @@ export namespace PgCatalog {
         data: PgCatalog.Types.PgLargeobject["data"];
       };
       export function emptyRow() {
-        return { loid: null, pageno: null, data: null };
+        return { loid: undefined, pageno: undefined, data: undefined };
       }
       export type ByLoidPageno = {
         loid: PgCatalog.Types.Oid;
@@ -5265,7 +5302,7 @@ export namespace Public {
         lastUpdate: Public.Types.FilmActor["lastUpdate"];
       };
       export function emptyRow() {
-        return { actorId: null, filmId: null, lastUpdate: null };
+        return { actorId: undefined, filmId: undefined, lastUpdate: undefined };
       }
       export type ByActorIdFilmId = {
         actorId: PgCatalog.Types.Int2;
@@ -5292,14 +5329,14 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          addressId: null,
-          address: null,
-          address2: null,
-          district: null,
-          cityId: null,
-          postalCode: null,
-          phone: null,
-          lastUpdate: null,
+          addressId: undefined,
+          address: undefined,
+          address2: undefined,
+          district: undefined,
+          cityId: undefined,
+          postalCode: undefined,
+          phone: undefined,
+          lastUpdate: undefined,
         };
       }
       export type ByAddressId = {
@@ -5321,7 +5358,12 @@ export namespace Public {
         lastUpdate: Public.Types.City["lastUpdate"];
       };
       export function emptyRow() {
-        return { cityId: null, city: null, countryId: null, lastUpdate: null };
+        return {
+          cityId: undefined,
+          city: undefined,
+          countryId: undefined,
+          lastUpdate: undefined,
+        };
       }
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
@@ -5349,16 +5391,16 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          customerId: null,
-          storeId: null,
-          firstName: null,
-          lastName: null,
-          email: null,
-          addressId: null,
-          activebool: null,
-          createDate: null,
-          lastUpdate: null,
-          active: null,
+          customerId: undefined,
+          storeId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          email: undefined,
+          addressId: undefined,
+          activebool: undefined,
+          createDate: undefined,
+          lastUpdate: undefined,
+          active: undefined,
         };
       }
       export type ByAddressId = {
@@ -5392,10 +5434,10 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          actorId: null,
-          firstName: null,
-          lastName: null,
-          lastUpdate: null,
+          actorId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          lastUpdate: undefined,
         };
       }
       export type ByActorId = {
@@ -5416,7 +5458,11 @@ export namespace Public {
         lastUpdate: Public.Types.FilmCategory["lastUpdate"];
       };
       export function emptyRow() {
-        return { filmId: null, categoryId: null, lastUpdate: null };
+        return {
+          filmId: undefined,
+          categoryId: undefined,
+          lastUpdate: undefined,
+        };
       }
       export type ByFilmIdCategoryId = {
         filmId: PgCatalog.Types.Int2;
@@ -5436,10 +5482,10 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          inventoryId: null,
-          filmId: null,
-          storeId: null,
-          lastUpdate: null,
+          inventoryId: undefined,
+          filmId: undefined,
+          storeId: undefined,
+          lastUpdate: undefined,
         };
       }
       export type ByInventoryId = {
@@ -5461,7 +5507,11 @@ export namespace Public {
         lastUpdate: Public.Types.Category["lastUpdate"];
       };
       export function emptyRow() {
-        return { categoryId: null, name: null, lastUpdate: null };
+        return {
+          categoryId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
       }
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
@@ -5478,7 +5528,11 @@ export namespace Public {
         lastUpdate: Public.Types.Country["lastUpdate"];
       };
       export function emptyRow() {
-        return { countryId: null, country: null, lastUpdate: null };
+        return {
+          countryId: undefined,
+          country: undefined,
+          lastUpdate: undefined,
+        };
       }
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
@@ -5495,7 +5549,11 @@ export namespace Public {
         lastUpdate: Public.Types.Language["lastUpdate"];
       };
       export function emptyRow() {
-        return { languageId: null, name: null, lastUpdate: null };
+        return {
+          languageId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
       }
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
@@ -5517,13 +5575,13 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          rentalId: null,
-          rentalDate: null,
-          inventoryId: null,
-          customerId: null,
-          returnDate: null,
-          staffId: null,
-          lastUpdate: null,
+          rentalId: undefined,
+          rentalDate: undefined,
+          inventoryId: undefined,
+          customerId: undefined,
+          returnDate: undefined,
+          staffId: undefined,
+          lastUpdate: undefined,
         };
       }
       export type ByInventoryId = {
@@ -5560,17 +5618,17 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          staffId: null,
-          firstName: null,
-          lastName: null,
-          addressId: null,
-          email: null,
-          storeId: null,
-          active: null,
-          username: null,
-          password: null,
-          lastUpdate: null,
-          picture: null,
+          staffId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          addressId: undefined,
+          email: undefined,
+          storeId: undefined,
+          active: undefined,
+          username: undefined,
+          password: undefined,
+          lastUpdate: undefined,
+          picture: undefined,
         };
       }
       export type ByStaffId = {
@@ -5590,10 +5648,10 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          storeId: null,
-          managerStaffId: null,
-          addressId: null,
-          lastUpdate: null,
+          storeId: undefined,
+          managerStaffId: undefined,
+          addressId: undefined,
+          lastUpdate: undefined,
         };
       }
       export type ByManagerStaffId = {
@@ -5619,12 +5677,12 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          paymentId: null,
-          customerId: null,
-          staffId: null,
-          rentalId: null,
-          amount: null,
-          paymentDate: null,
+          paymentId: undefined,
+          customerId: undefined,
+          staffId: undefined,
+          rentalId: undefined,
+          amount: undefined,
+          paymentDate: undefined,
         };
       }
       export type ByCustomerId = {
@@ -5664,19 +5722,19 @@ export namespace Public {
       };
       export function emptyRow() {
         return {
-          filmId: null,
-          title: null,
-          description: null,
-          releaseYear: null,
-          languageId: null,
-          rentalDuration: null,
-          rentalRate: null,
-          length: null,
-          replacementCost: null,
-          rating: null,
-          lastUpdate: null,
-          specialFeatures: null,
-          fulltext: null,
+          filmId: undefined,
+          title: undefined,
+          description: undefined,
+          releaseYear: undefined,
+          languageId: undefined,
+          rentalDuration: undefined,
+          rentalRate: undefined,
+          length: undefined,
+          replacementCost: undefined,
+          rating: undefined,
+          lastUpdate: undefined,
+          specialFeatures: undefined,
+          fulltext: undefined,
         };
       }
       export type ByFilmId = {
@@ -6831,13 +6889,13 @@ export namespace InformationSchema {
       };
       export function emptyRow() {
         return {
-          featureId: null,
-          featureName: null,
-          subFeatureId: null,
-          subFeatureName: null,
-          isSupported: null,
-          isVerifiedBy: null,
-          comments: null,
+          featureId: undefined,
+          featureName: undefined,
+          subFeatureId: undefined,
+          subFeatureName: undefined,
+          isSupported: undefined,
+          isVerifiedBy: undefined,
+          comments: undefined,
         };
       }
       export type PrimaryKey = never;
@@ -6864,11 +6922,11 @@ export namespace InformationSchema {
       };
       export function emptyRow() {
         return {
-          implementationInfoId: null,
-          implementationInfoName: null,
-          integerValue: null,
-          characterValue: null,
-          comments: null,
+          implementationInfoId: undefined,
+          implementationInfoName: undefined,
+          integerValue: undefined,
+          characterValue: undefined,
+          comments: undefined,
         };
       }
       export type PrimaryKey = never;
@@ -6885,11 +6943,11 @@ export namespace InformationSchema {
       };
       export function emptyRow() {
         return {
-          featureId: null,
-          featureName: null,
-          isSupported: null,
-          isVerifiedBy: null,
-          comments: null,
+          featureId: undefined,
+          featureName: undefined,
+          isSupported: undefined,
+          isVerifiedBy: undefined,
+          comments: undefined,
         };
       }
       export type PrimaryKey = never;
@@ -6907,10 +6965,10 @@ export namespace InformationSchema {
       };
       export function emptyRow() {
         return {
-          sizingId: null,
-          sizingName: null,
-          supportedValue: null,
-          comments: null,
+          sizingId: undefined,
+          sizingName: undefined,
+          supportedValue: undefined,
+          comments: undefined,
         };
       }
       export type PrimaryKey = never;
@@ -25490,7 +25548,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.FilmActor.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.FilmActor.Record>(
+            Public.Types.FilmActor.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.FilmActor.Record[]> {
@@ -25501,7 +25561,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.FilmActor.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.FilmActor.parse)
+              .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+              .filter(
+                (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByActorIdFilmId = new (class extends HasClient {
@@ -25517,7 +25584,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
 
           public async update(
@@ -25534,7 +25603,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
 
           public async delete(
@@ -25549,7 +25620,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
         })(this);
 
@@ -25564,7 +25637,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -25581,7 +25661,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.FilmActor.ByFilmId) {
@@ -25594,7 +25681,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -25611,7 +25705,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Address.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Address.Record>(
+            Public.Types.Address.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Address.Record[]> {
@@ -25622,7 +25718,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Address.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Address.parse)
+              .map(nullIsUndefined<Public.Tables.Address.Record>)
+              .filter(
+                (x): x is Public.Tables.Address.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByAddressId = new (class extends HasClient {
@@ -25636,7 +25739,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
           }
 
           public async update(
@@ -25653,7 +25758,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Address.ByAddressId) {
@@ -25666,7 +25773,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
           }
         })(this);
 
@@ -25681,7 +25790,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -25698,7 +25814,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Address.ByCityId) {
@@ -25711,7 +25834,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -25728,7 +25858,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.City.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.City.Record>(
+            Public.Types.City.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.City.Record[]> {
@@ -25739,7 +25871,13 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.City.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.City.parse)
+              .map(nullIsUndefined<Public.Tables.City.Record>)
+              .filter((x): x is Public.Tables.City.Record => x !== undefined) ??
+            []
+          );
         }
 
         public ByCityId = new (class extends HasClient {
@@ -25753,7 +25891,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
           }
 
           public async update(
@@ -25770,7 +25910,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.City.ByCityId) {
@@ -25783,7 +25925,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
           }
         })(this);
 
@@ -25798,7 +25942,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -25815,7 +25966,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.City.ByCountryId) {
@@ -25828,7 +25986,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -25845,7 +26010,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Customer.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Customer.Record>(
+            Public.Types.Customer.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Customer.Record[]> {
@@ -25856,7 +26023,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Customer.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Customer.parse)
+              .map(nullIsUndefined<Public.Tables.Customer.Record>)
+              .filter(
+                (x): x is Public.Tables.Customer.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByAddressId = new (class extends HasClient {
@@ -25870,7 +26044,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -25887,7 +26068,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Customer.ByAddressId) {
@@ -25900,7 +26088,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -25915,7 +26110,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
           }
 
           public async update(
@@ -25932,7 +26129,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Customer.ByCustomerId) {
@@ -25945,7 +26144,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
           }
         })(this);
 
@@ -25960,7 +26161,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -25977,7 +26185,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Customer.ByLastName) {
@@ -25990,7 +26205,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -26005,7 +26227,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -26022,7 +26251,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Customer.ByStoreId) {
@@ -26035,7 +26271,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -26052,7 +26295,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Actor.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Actor.Record>(
+            Public.Types.Actor.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Actor.Record[]> {
@@ -26063,7 +26308,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Actor.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Actor.parse)
+              .map(nullIsUndefined<Public.Tables.Actor.Record>)
+              .filter(
+                (x): x is Public.Tables.Actor.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByActorId = new (class extends HasClient {
@@ -26077,7 +26329,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
           }
 
           public async update(
@@ -26094,7 +26348,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Actor.ByActorId) {
@@ -26107,7 +26363,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
           }
         })(this);
 
@@ -26122,7 +26380,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -26139,7 +26404,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Actor.ByLastName) {
@@ -26152,7 +26424,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -26169,7 +26448,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.FilmCategory.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+            Public.Types.FilmCategory.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.FilmCategory.Record[]> {
@@ -26180,7 +26461,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.FilmCategory.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.FilmCategory.parse)
+              .map(nullIsUndefined<Public.Tables.FilmCategory.Record>)
+              .filter(
+                (x): x is Public.Tables.FilmCategory.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByFilmIdCategoryId = new (class extends HasClient {
@@ -26196,7 +26484,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
           }
 
           public async update(
@@ -26213,7 +26503,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
           }
 
           public async delete(
@@ -26228,7 +26520,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26245,7 +26539,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Inventory.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Inventory.Record>(
+            Public.Types.Inventory.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Inventory.Record[]> {
@@ -26256,7 +26552,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Inventory.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Inventory.parse)
+              .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+              .filter(
+                (x): x is Public.Tables.Inventory.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByInventoryId = new (class extends HasClient {
@@ -26270,7 +26573,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
 
           public async update(
@@ -26287,7 +26592,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
 
           public async delete(
@@ -26302,7 +26609,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
         })(this);
 
@@ -26319,7 +26628,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -26336,7 +26652,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(
@@ -26351,7 +26674,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -26368,7 +26698,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Category.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Category.Record>(
+            Public.Types.Category.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Category.Record[]> {
@@ -26379,7 +26711,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Category.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Category.parse)
+              .map(nullIsUndefined<Public.Tables.Category.Record>)
+              .filter(
+                (x): x is Public.Tables.Category.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByCategoryId = new (class extends HasClient {
@@ -26393,7 +26732,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
           }
 
           public async update(
@@ -26410,7 +26751,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Category.ByCategoryId) {
@@ -26423,7 +26766,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26440,7 +26785,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Country.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Country.Record>(
+            Public.Types.Country.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Country.Record[]> {
@@ -26451,7 +26798,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Country.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Country.parse)
+              .map(nullIsUndefined<Public.Tables.Country.Record>)
+              .filter(
+                (x): x is Public.Tables.Country.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByCountryId = new (class extends HasClient {
@@ -26465,7 +26819,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
           }
 
           public async update(
@@ -26482,7 +26838,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Country.ByCountryId) {
@@ -26495,7 +26853,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26512,7 +26872,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Language.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Language.Record>(
+            Public.Types.Language.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Language.Record[]> {
@@ -26523,7 +26885,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Language.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Language.parse)
+              .map(nullIsUndefined<Public.Tables.Language.Record>)
+              .filter(
+                (x): x is Public.Tables.Language.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByLanguageId = new (class extends HasClient {
@@ -26537,7 +26906,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
           }
 
           public async update(
@@ -26554,7 +26925,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Language.ByLanguageId) {
@@ -26567,7 +26940,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26584,7 +26959,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Rental.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Rental.Record>(
+            Public.Types.Rental.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Rental.Record[]> {
@@ -26595,7 +26972,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Rental.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Rental.parse)
+              .map(nullIsUndefined<Public.Tables.Rental.Record>)
+              .filter(
+                (x): x is Public.Tables.Rental.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByInventoryId = new (class extends HasClient {
@@ -26609,7 +26993,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -26626,7 +27017,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Rental.ByInventoryId) {
@@ -26639,7 +27037,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -26658,7 +27063,9 @@ export class EmbraceSQLClient extends BaseClient {
                 parameters,
               });
 
-              return response.results ? response.results : undefined;
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
             }
 
             public async update(
@@ -26676,7 +27083,9 @@ export class EmbraceSQLClient extends BaseClient {
                 values,
               });
 
-              return response.results ? response.results : undefined;
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
             }
 
             public async delete(
@@ -26692,7 +27101,9 @@ export class EmbraceSQLClient extends BaseClient {
                 parameters,
               });
 
-              return response.results ? response.results : undefined;
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
             }
           })(this);
 
@@ -26707,7 +27118,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
           }
 
           public async update(
@@ -26724,7 +27137,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Rental.ByRentalId) {
@@ -26737,7 +27152,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26754,7 +27171,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Staff.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Staff.Record>(
+            Public.Types.Staff.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Staff.Record[]> {
@@ -26765,7 +27184,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Staff.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Staff.parse)
+              .map(nullIsUndefined<Public.Tables.Staff.Record>)
+              .filter(
+                (x): x is Public.Tables.Staff.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByStaffId = new (class extends HasClient {
@@ -26779,7 +27205,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
           }
 
           public async update(
@@ -26796,7 +27224,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Staff.ByStaffId) {
@@ -26809,7 +27239,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26826,7 +27258,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Store.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Store.Record>(
+            Public.Types.Store.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Store.Record[]> {
@@ -26837,7 +27271,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Store.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Store.parse)
+              .map(nullIsUndefined<Public.Tables.Store.Record>)
+              .filter(
+                (x): x is Public.Tables.Store.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByManagerStaffId = new (class extends HasClient {
@@ -26851,7 +27292,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
 
           public async update(
@@ -26868,7 +27311,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
 
           public async delete(
@@ -26883,7 +27328,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
         })(this);
 
@@ -26898,7 +27345,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
 
           public async update(
@@ -26915,7 +27364,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Store.ByStoreId) {
@@ -26928,7 +27379,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
           }
         })(this);
       })(this);
@@ -26945,7 +27398,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Payment.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Payment.Record>(
+            Public.Types.Payment.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Payment.Record[]> {
@@ -26956,7 +27411,14 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Payment.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Payment.parse)
+              .map(nullIsUndefined<Public.Tables.Payment.Record>)
+              .filter(
+                (x): x is Public.Tables.Payment.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
         public ByCustomerId = new (class extends HasClient {
@@ -26970,7 +27432,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -26987,7 +27456,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Payment.ByCustomerId) {
@@ -27000,7 +27476,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -27015,7 +27498,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
           }
 
           public async update(
@@ -27032,7 +27517,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Payment.ByPaymentId) {
@@ -27045,7 +27532,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
           }
         })(this);
 
@@ -27060,7 +27549,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -27077,7 +27573,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Payment.ByRentalId) {
@@ -27090,7 +27593,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -27105,7 +27615,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -27122,7 +27639,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Payment.ByStaffId) {
@@ -27135,7 +27659,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);
@@ -27152,7 +27683,9 @@ export class EmbraceSQLClient extends BaseClient {
             operation: "Public.Tables.Film.create",
             values,
           });
-          return response.results;
+          return nullIsUndefined<Public.Tables.Film.Record>(
+            Public.Types.Film.parse(response.results),
+          );
         }
 
         public async all(): Promise<Public.Tables.Film.Record[]> {
@@ -27163,7 +27696,13 @@ export class EmbraceSQLClient extends BaseClient {
           >({
             operation: "Public.Tables.Film.all",
           });
-          return response.results ?? [];
+          return (
+            response.results
+              ?.map(Public.Types.Film.parse)
+              .map(nullIsUndefined<Public.Tables.Film.Record>)
+              .filter((x): x is Public.Tables.Film.Record => x !== undefined) ??
+            []
+          );
         }
 
         public ByFilmId = new (class extends HasClient {
@@ -27177,7 +27716,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
           }
 
           public async update(
@@ -27194,7 +27735,9 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
           }
 
           public async delete(parameters: Public.Tables.Film.ByFilmId) {
@@ -27207,7 +27750,9 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : undefined;
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
           }
         })(this);
 
@@ -27222,7 +27767,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -27239,7 +27791,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Film.ByFulltext) {
@@ -27252,7 +27811,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -27267,7 +27833,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -27284,7 +27857,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Film.ByLanguageId) {
@@ -27297,7 +27877,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
 
@@ -27312,7 +27899,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async update(
@@ -27329,7 +27923,14 @@ export class EmbraceSQLClient extends BaseClient {
               values,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
 
           public async delete(parameters: Public.Tables.Film.ByTitle) {
@@ -27342,7 +27943,14 @@ export class EmbraceSQLClient extends BaseClient {
               parameters,
             });
 
-            return response.results ? response.results : [];
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
           }
         })(this);
       })(this);

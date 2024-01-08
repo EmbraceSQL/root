@@ -4,7 +4,25 @@ import {
   GenerationContext,
   IndexOperationNode,
   NamedASTNode,
+  TableNode,
 } from "@embracesql/shared";
+
+function returnParsedRows(table: TableNode): string {
+  return `(
+    response.results
+      ?.map(${table.type.typescriptNamespacedName}.parse)
+      .map(nullIsUndefined<${table.typescriptNamespacedName}.Record>)
+      .filter((x): x is ${table.typescriptNamespacedName}.Record => x !== undefined) ?? []
+  )
+  `;
+}
+
+function returnParsedRow(table: TableNode): string {
+  return `(
+    nullIsUndefined<${table.typescriptNamespacedName}.Record>(${table.type.typescriptNamespacedName}.parse(response.results))
+  )
+  `;
+}
 
 export const NestedNamedClassVisitor = {
   before: async (context: GenerationContext, node: NamedASTNode) => {
@@ -38,8 +56,8 @@ const IndexOperation = {
     ];
     generationBuffer.push(
       node.index.unique
-        ? `return response.results ? response.results : undefined`
-        : `return response.results ? response.results : []`,
+        ? `return ${returnParsedRow(node.index.table)};`
+        : `return ${returnParsedRows(node.index.table)};`,
     );
     return generationBuffer.join("\n");
   },
@@ -134,7 +152,7 @@ export async function generateClient(context: GenerationContext) {
               operation: "${node.typescriptNamespacedPropertyName}",
               values
             });
-            return response.results;
+            return ${returnParsedRow(node.table)};
           }
         `;
       },
@@ -142,13 +160,16 @@ export async function generateClient(context: GenerationContext) {
     [ASTKind.AllOperation]: {
       before: async (_, node) => {
         // all those rows
-        const returnType = `${node.table.typescriptNamespacedName}.Record[]`;
         return `
-          public async all() : Promise<${returnType}> {
-            const response = await this.client.invoke<never, never, ${returnType}>({
+          public async all() : Promise<${
+            node.table.typescriptNamespacedName
+          }.Record[]> {
+            const response = await this.client.invoke<never, never, ${
+              node.table.typescriptNamespacedName
+            }.Record[]>({
               operation: "${node.typescriptNamespacedPropertyName}"
             });
-            return response.results ?? [];
+            return ${returnParsedRows(node.table)};
           }
         `;
       },
@@ -177,8 +198,8 @@ export async function generateClient(context: GenerationContext) {
         ];
         generationBuffer.push(
           node.index.unique
-            ? `return response.results ? response.results : undefined`
-            : `return response.results ? response.results : []`,
+            ? `return ${returnParsedRow(node.index.table)};`
+            : `return ${returnParsedRows(node.index.table)};`,
         );
         return generationBuffer.join("\n");
       },

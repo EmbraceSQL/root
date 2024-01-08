@@ -1,5 +1,4 @@
 import { AcceptsDatabaseUpdate } from "./interceptor";
-import { useEmbraceSQLClient } from "./provider";
 import { DebounceMap, WithChangeHandlers } from "@embracesql/shared";
 import React from "react";
 
@@ -31,11 +30,11 @@ export type Interceptor<T> = (
   callback: InterceptorCallback<T>,
 ) => Intercepted<T>;
 
-type Props<T> = {
+type Props<R> = {
   /**
-   * Operation name that will do an upsert.
+   * Operation that will do an upsert.
    */
-  operation: string;
+  upsertOperation: (values: R) => Promise<R | undefined>;
   /**
    * Dispatch when in memory objects are updated and it is time to render.
    */
@@ -43,7 +42,7 @@ type Props<T> = {
   /**
    * Primary key picker, used for debouncing.
    */
-  primaryKeyPicker: (updated: T) => string;
+  primaryKeyPicker: (updated: R) => string;
 };
 
 /**
@@ -54,39 +53,32 @@ type Props<T> = {
  *
  * Debounced to avoid ⚒️ your poor database.
  */
-export function useEmbraceSQLUpdateCallback<T>({
-  operation,
+export function useEmbraceSQLUpdateCallback<R>({
+  upsertOperation,
   primaryKeyPicker,
   inMemoryUpdate,
-}: Props<T>) {
-  // context provided client
-  const client = useEmbraceSQLClient();
+}: Props<R>) {
   // debounce mapping - in a ref, this is state like but we do not update on it
   const debounceMap = React.useRef(new DebounceMap());
 
   return React.useCallback(
-    async (updated: Intercepted<T>) => {
+    async (updated: Intercepted<R>) => {
       const debounceKey = primaryKeyPicker(updated.value);
       inMemoryUpdate();
 
-      if (client) {
-        const toExecute = async () => {
-          // actual server trip - counting on a read back of a single row
-          const response = await client.invoke<never, T, T>({
-            operation,
-            values: updated.value,
-          });
-          // response has the single read-back row -- this is what needs
-          // to be merged into react state as the database plenty well might
-          // have rules or triggers that altered the data
-          // not to mention other users might have updated other fields
-          if (response.results) {
-            updated.wholeUpdateFromDatabase(response.results);
-          }
-        };
-        debounceMap.current.register(debounceKey, toExecute);
-      }
+      const toExecute = async () => {
+        // actual server trip - counting on a read back of a single row
+        const response = await upsertOperation(updated.value);
+        // response has the single read-back row -- this is what needs
+        // to be merged into react state as the database plenty well might
+        // have rules or triggers that altered the data
+        // not to mention other users might have updated other fields
+        if (response) {
+          updated.wholeUpdateFromDatabase(response);
+        }
+      };
+      debounceMap.current.register(debounceKey, toExecute);
     },
-    [client, operation],
+    [upsertOperation],
   );
 }

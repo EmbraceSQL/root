@@ -19,10 +19,11 @@ export const generateReactHooks = async (context: GenerationContext) => {
           await NamespaceVisitor.before(context, node),
           // the 'all the rows' hook'
           `export function useRows() {`,
+          `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
           `return useEmbraceSQLRows<never, never, ${rowTypeName}>(
                {
                  readOperation: "${node.typescriptNamespacedName}.all",
-                 upsertOperation: "${node.typescriptNamespacedName}.create",
+                 upsertOperation: client.${node.typescriptNamespacedName}.create.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
                  Interceptor: ${node.typescriptNamespacedName}.Interceptor,
                  emptyRow: ${node.typescriptNamespacedName}.emptyRow
@@ -43,15 +44,16 @@ export const generateReactHooks = async (context: GenerationContext) => {
             `export function use${pascalCase(
               node.name,
             )}(parameters: ${pascalCase(node.name)}) {`,
+            `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
             `return useEmbraceSQLRow<${pascalCase(
               node.name,
             )}, never, ${rowTypeName}>(
                {
                  readOperation: "${node.typescriptNamespacedName}.read",
                  parameters,
-                 upsertOperation: "${
+                 upsertOperation: client.${
                    node.table.typescriptNamespacedName
-                 }.create",
+                 }.create.bind(client),
                  primaryKeyPicker: ${
                    node.table.typescriptNamespacedName
                  }.primaryKeyFrom,
@@ -67,15 +69,16 @@ export const generateReactHooks = async (context: GenerationContext) => {
             `export function use${pascalCase(
               node.name,
             )}(parameters: ${pascalCase(node.name)}) {`,
+            `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
             `return useEmbraceSQLRows<${pascalCase(
               node.name,
             )}, never, ${rowTypeName}>(
                {
                  readOperation: "${node.typescriptNamespacedName}.read",
                  parameters,
-                 upsertOperation: "${
+                 upsertOperation: client.${
                    node.table.typescriptNamespacedName
-                 }.create",
+                 }.create.bind(client),
                  primaryKeyPicker: ${
                    node.table.typescriptNamespacedName
                  }.primaryKeyFrom,

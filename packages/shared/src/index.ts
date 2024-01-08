@@ -86,9 +86,9 @@ export function undefinedIsNull<T>(value: T | undefined) {
  * return an undefined for TypeScript
  * undefined to null.
  */
-export function nullIsUndefined<T>(value: T | null) {
+export function nullIsUndefined<T>(value: unknown) {
   if (value === null) return undefined;
-  return value;
+  return value as T;
 }
 
 export type JsDate = Date;
@@ -113,6 +113,12 @@ export type NullableRecursive<T> = T extends object
       [Member in keyof T]: NullableRecursive<T[Member]> | null;
     }
   : T | null;
+
+export type PartialRecursive<T> = T extends object
+  ? {
+      [Member in keyof T]: PartialRecursive<T[Member]> | undefined;
+    }
+  : T | undefined;
 
 export * from "./uuid";
 

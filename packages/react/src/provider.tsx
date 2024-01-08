@@ -25,6 +25,6 @@ export const EmbraceSQLProvider = ({
 /**
  * Hook your way to the raw EmbraceSQLClient.
  */
-export const useEmbraceSQLClient = () => {
-  return useContext(EmbraceSQLContext);
-};
+export function useEmbraceSQLClient<T extends EmbraceSQLClient>() {
+  return useContext(EmbraceSQLContext) as T;
+}
