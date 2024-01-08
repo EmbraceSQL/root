@@ -1,15 +1,8 @@
 import React from "react";
 
-export { EmbraceSQLClient } from "@embracesql/client";
-export { EmbraceSQLProvider, useEmbraceSQLClient } from "./provider";
-export { useEmbraceSQLUpdateCallback } from "./useEmbraceSQLUpdateCallback";
-export { useEmbraceSQLRow, useEmbraceSQLRows } from "./useEmbraceSQL";
-export type {
-  Intercepted,
-  InterceptorCallback,
-  Interceptor,
-  ChangeEvent,
-} from "./useEmbraceSQLUpdateCallback";
+export * from "@embracesql/client";
+export * from "./provider";
+export * from "./useEmbraceSQL";
 export * from "./interceptor";
 
 type Setter<T> = (newValue: T) => void;

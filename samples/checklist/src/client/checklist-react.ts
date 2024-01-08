@@ -23279,7 +23279,7 @@ export namespace Public {
     export namespace Checklist {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Checklist.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Checklist.Record>({
           readOperation: client.Public.Tables.Checklist.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Checklist.create.bind(client),
@@ -23295,7 +23295,7 @@ export namespace Public {
       export namespace CreatedAt {}
       export function useById(parameters: ById) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ById, never, Public.Tables.Checklist.Record>({
+        return useEmbraceSQLRow<ById, Public.Tables.Checklist.Record>({
           readOperation: client.Public.Tables.Checklist.ById.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Checklist.create.bind(client),
@@ -23309,11 +23309,7 @@ export namespace Public {
     export namespace ChecklistItem {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          never,
-          never,
-          Public.Tables.ChecklistItem.Record
-        >({
+        return useEmbraceSQLRows<never, Public.Tables.ChecklistItem.Record>({
           readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
           parameters: NEVER,
           upsertOperation:
@@ -23334,7 +23330,6 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByChecklistId,
-          never,
           Public.Tables.ChecklistItem.Record
         >({
           readOperation:
@@ -23351,11 +23346,7 @@ export namespace Public {
       }
       export function useById(parameters: ById) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ById,
-          never,
-          Public.Tables.ChecklistItem.Record
-        >({
+        return useEmbraceSQLRow<ById, Public.Tables.ChecklistItem.Record>({
           readOperation:
             client.Public.Tables.ChecklistItem.ById.read.bind(client),
           parameters,

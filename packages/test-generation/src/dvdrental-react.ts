@@ -30042,7 +30042,7 @@ export namespace Public {
     export namespace FilmActor {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.FilmActor.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.FilmActor.Record>({
           readOperation: client.Public.Tables.FilmActor.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
@@ -30060,7 +30060,6 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByActorIdFilmId,
-          never,
           Public.Tables.FilmActor.Record
         >({
           readOperation:
@@ -30075,11 +30074,7 @@ export namespace Public {
       }
       export function useByFilmId(parameters: ByFilmId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByFilmId,
-          never,
-          Public.Tables.FilmActor.Record
-        >({
+        return useEmbraceSQLRows<ByFilmId, Public.Tables.FilmActor.Record>({
           readOperation:
             client.Public.Tables.FilmActor.ByFilmId.read.bind(client),
           parameters,
@@ -30095,7 +30090,7 @@ export namespace Public {
     export namespace Address {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Address.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Address.Record>({
           readOperation: client.Public.Tables.Address.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Address.create.bind(client),
@@ -30116,11 +30111,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByAddressId(parameters: ByAddressId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByAddressId,
-          never,
-          Public.Tables.Address.Record
-        >({
+        return useEmbraceSQLRow<ByAddressId, Public.Tables.Address.Record>({
           readOperation:
             client.Public.Tables.Address.ByAddressId.read.bind(client),
           parameters,
@@ -30133,25 +30124,23 @@ export namespace Public {
       }
       export function useByCityId(parameters: ByCityId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByCityId, never, Public.Tables.Address.Record>(
-          {
-            readOperation:
-              client.Public.Tables.Address.ByCityId.read.bind(client),
-            parameters,
-            upsertOperation: client.Public.Tables.Address.create.bind(client),
-            deleteOperation:
-              client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
-            primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-            Interceptor: Public.Tables.Address.Interceptor,
-            emptyRow: Public.Tables.Address.emptyRow,
-          },
-        );
+        return useEmbraceSQLRows<ByCityId, Public.Tables.Address.Record>({
+          readOperation:
+            client.Public.Tables.Address.ByCityId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          Interceptor: Public.Tables.Address.Interceptor,
+          emptyRow: Public.Tables.Address.emptyRow,
+        });
       }
     }
     export namespace City {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.City.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.City.Record>({
           readOperation: client.Public.Tables.City.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.City.create.bind(client),
@@ -30168,7 +30157,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCityId(parameters: ByCityId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByCityId, never, Public.Tables.City.Record>({
+        return useEmbraceSQLRow<ByCityId, Public.Tables.City.Record>({
           readOperation: client.Public.Tables.City.ByCityId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.City.create.bind(client),
@@ -30180,25 +30169,23 @@ export namespace Public {
       }
       export function useByCountryId(parameters: ByCountryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByCountryId, never, Public.Tables.City.Record>(
-          {
-            readOperation:
-              client.Public.Tables.City.ByCountryId.read.bind(client),
-            parameters,
-            upsertOperation: client.Public.Tables.City.create.bind(client),
-            deleteOperation:
-              client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
-            primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-            Interceptor: Public.Tables.City.Interceptor,
-            emptyRow: Public.Tables.City.emptyRow,
-          },
-        );
+        return useEmbraceSQLRows<ByCountryId, Public.Tables.City.Record>({
+          readOperation:
+            client.Public.Tables.City.ByCountryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          Interceptor: Public.Tables.City.Interceptor,
+          emptyRow: Public.Tables.City.emptyRow,
+        });
       }
     }
     export namespace Customer {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Customer.Record>({
           readOperation: client.Public.Tables.Customer.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Customer.create.bind(client),
@@ -30221,11 +30208,7 @@ export namespace Public {
       export namespace Active {}
       export function useByAddressId(parameters: ByAddressId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByAddressId,
-          never,
-          Public.Tables.Customer.Record
-        >({
+        return useEmbraceSQLRows<ByAddressId, Public.Tables.Customer.Record>({
           readOperation:
             client.Public.Tables.Customer.ByAddressId.read.bind(client),
           parameters,
@@ -30239,11 +30222,7 @@ export namespace Public {
       }
       export function useByCustomerId(parameters: ByCustomerId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByCustomerId,
-          never,
-          Public.Tables.Customer.Record
-        >({
+        return useEmbraceSQLRow<ByCustomerId, Public.Tables.Customer.Record>({
           readOperation:
             client.Public.Tables.Customer.ByCustomerId.read.bind(client),
           parameters,
@@ -30256,11 +30235,7 @@ export namespace Public {
       }
       export function useByLastName(parameters: ByLastName) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByLastName,
-          never,
-          Public.Tables.Customer.Record
-        >({
+        return useEmbraceSQLRows<ByLastName, Public.Tables.Customer.Record>({
           readOperation:
             client.Public.Tables.Customer.ByLastName.read.bind(client),
           parameters,
@@ -30274,11 +30249,7 @@ export namespace Public {
       }
       export function useByStoreId(parameters: ByStoreId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByStoreId,
-          never,
-          Public.Tables.Customer.Record
-        >({
+        return useEmbraceSQLRows<ByStoreId, Public.Tables.Customer.Record>({
           readOperation:
             client.Public.Tables.Customer.ByStoreId.read.bind(client),
           parameters,
@@ -30294,7 +30265,7 @@ export namespace Public {
     export namespace Actor {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Actor.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Actor.Record>({
           readOperation: client.Public.Tables.Actor.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Actor.create.bind(client),
@@ -30311,7 +30282,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByActorId(parameters: ByActorId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByActorId, never, Public.Tables.Actor.Record>({
+        return useEmbraceSQLRow<ByActorId, Public.Tables.Actor.Record>({
           readOperation: client.Public.Tables.Actor.ByActorId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Actor.create.bind(client),
@@ -30323,29 +30294,23 @@ export namespace Public {
       }
       export function useByLastName(parameters: ByLastName) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByLastName, never, Public.Tables.Actor.Record>(
-          {
-            readOperation:
-              client.Public.Tables.Actor.ByLastName.read.bind(client),
-            parameters,
-            upsertOperation: client.Public.Tables.Actor.create.bind(client),
-            deleteOperation:
-              client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
-            primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-            Interceptor: Public.Tables.Actor.Interceptor,
-            emptyRow: Public.Tables.Actor.emptyRow,
-          },
-        );
+        return useEmbraceSQLRows<ByLastName, Public.Tables.Actor.Record>({
+          readOperation:
+            client.Public.Tables.Actor.ByLastName.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          Interceptor: Public.Tables.Actor.Interceptor,
+          emptyRow: Public.Tables.Actor.emptyRow,
+        });
       }
     }
     export namespace FilmCategory {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          never,
-          never,
-          Public.Tables.FilmCategory.Record
-        >({
+        return useEmbraceSQLRows<never, Public.Tables.FilmCategory.Record>({
           readOperation: client.Public.Tables.FilmCategory.all.bind(client),
           parameters: NEVER,
           upsertOperation:
@@ -30364,7 +30329,6 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByFilmIdCategoryId,
-          never,
           Public.Tables.FilmCategory.Record
         >({
           readOperation:
@@ -30384,7 +30348,7 @@ export namespace Public {
     export namespace Inventory {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Inventory.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Inventory.Record>({
           readOperation: client.Public.Tables.Inventory.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Inventory.create.bind(client),
@@ -30401,11 +30365,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByInventoryId,
-          never,
-          Public.Tables.Inventory.Record
-        >({
+        return useEmbraceSQLRow<ByInventoryId, Public.Tables.Inventory.Record>({
           readOperation:
             client.Public.Tables.Inventory.ByInventoryId.read.bind(client),
           parameters,
@@ -30420,7 +30380,6 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByStoreIdFilmId,
-          never,
           Public.Tables.Inventory.Record
         >({
           readOperation:
@@ -30438,7 +30397,7 @@ export namespace Public {
     export namespace Category {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Category.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Category.Record>({
           readOperation: client.Public.Tables.Category.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Category.create.bind(client),
@@ -30454,11 +30413,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCategoryId(parameters: ByCategoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByCategoryId,
-          never,
-          Public.Tables.Category.Record
-        >({
+        return useEmbraceSQLRow<ByCategoryId, Public.Tables.Category.Record>({
           readOperation:
             client.Public.Tables.Category.ByCategoryId.read.bind(client),
           parameters,
@@ -30473,7 +30428,7 @@ export namespace Public {
     export namespace Country {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Country.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Country.Record>({
           readOperation: client.Public.Tables.Country.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Country.create.bind(client),
@@ -30489,11 +30444,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCountryId(parameters: ByCountryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByCountryId,
-          never,
-          Public.Tables.Country.Record
-        >({
+        return useEmbraceSQLRow<ByCountryId, Public.Tables.Country.Record>({
           readOperation:
             client.Public.Tables.Country.ByCountryId.read.bind(client),
           parameters,
@@ -30508,7 +30459,7 @@ export namespace Public {
     export namespace Language {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Language.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Language.Record>({
           readOperation: client.Public.Tables.Language.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Language.create.bind(client),
@@ -30524,11 +30475,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByLanguageId(parameters: ByLanguageId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByLanguageId,
-          never,
-          Public.Tables.Language.Record
-        >({
+        return useEmbraceSQLRow<ByLanguageId, Public.Tables.Language.Record>({
           readOperation:
             client.Public.Tables.Language.ByLanguageId.read.bind(client),
           parameters,
@@ -30543,7 +30490,7 @@ export namespace Public {
     export namespace Rental {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Rental.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Rental.Record>({
           readOperation: client.Public.Tables.Rental.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Rental.create.bind(client),
@@ -30563,11 +30510,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByInventoryId,
-          never,
-          Public.Tables.Rental.Record
-        >({
+        return useEmbraceSQLRows<ByInventoryId, Public.Tables.Rental.Record>({
           readOperation:
             client.Public.Tables.Rental.ByInventoryId.read.bind(client),
           parameters,
@@ -30585,7 +30528,6 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByRentalDateInventoryIdCustomerId,
-          never,
           Public.Tables.Rental.Record
         >({
           readOperation:
@@ -30602,24 +30544,22 @@ export namespace Public {
       }
       export function useByRentalId(parameters: ByRentalId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByRentalId, never, Public.Tables.Rental.Record>(
-          {
-            readOperation:
-              client.Public.Tables.Rental.ByRentalId.read.bind(client),
-            parameters,
-            upsertOperation: client.Public.Tables.Rental.create.bind(client),
-            deleteOperation:
-              client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-            primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-            Interceptor: Public.Tables.Rental.Interceptor,
-          },
-        );
+        return useEmbraceSQLRow<ByRentalId, Public.Tables.Rental.Record>({
+          readOperation:
+            client.Public.Tables.Rental.ByRentalId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          Interceptor: Public.Tables.Rental.Interceptor,
+        });
       }
     }
     export namespace Staff {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Staff.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Staff.Record>({
           readOperation: client.Public.Tables.Staff.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Staff.create.bind(client),
@@ -30643,7 +30583,7 @@ export namespace Public {
       export namespace Picture {}
       export function useByStaffId(parameters: ByStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByStaffId, never, Public.Tables.Staff.Record>({
+        return useEmbraceSQLRow<ByStaffId, Public.Tables.Staff.Record>({
           readOperation: client.Public.Tables.Staff.ByStaffId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Staff.create.bind(client),
@@ -30657,7 +30597,7 @@ export namespace Public {
     export namespace Store {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Store.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Store.Record>({
           readOperation: client.Public.Tables.Store.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Store.create.bind(client),
@@ -30674,11 +30614,7 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByManagerStaffId,
-          never,
-          Public.Tables.Store.Record
-        >({
+        return useEmbraceSQLRow<ByManagerStaffId, Public.Tables.Store.Record>({
           readOperation:
             client.Public.Tables.Store.ByManagerStaffId.read.bind(client),
           parameters,
@@ -30691,7 +30627,7 @@ export namespace Public {
       }
       export function useByStoreId(parameters: ByStoreId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByStoreId, never, Public.Tables.Store.Record>({
+        return useEmbraceSQLRow<ByStoreId, Public.Tables.Store.Record>({
           readOperation: client.Public.Tables.Store.ByStoreId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Store.create.bind(client),
@@ -30705,7 +30641,7 @@ export namespace Public {
     export namespace Payment {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Payment.Record>({
           readOperation: client.Public.Tables.Payment.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Payment.create.bind(client),
@@ -30724,11 +30660,7 @@ export namespace Public {
       export namespace PaymentDate {}
       export function useByCustomerId(parameters: ByCustomerId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByCustomerId,
-          never,
-          Public.Tables.Payment.Record
-        >({
+        return useEmbraceSQLRows<ByCustomerId, Public.Tables.Payment.Record>({
           readOperation:
             client.Public.Tables.Payment.ByCustomerId.read.bind(client),
           parameters,
@@ -30742,11 +30674,7 @@ export namespace Public {
       }
       export function useByPaymentId(parameters: ByPaymentId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByPaymentId,
-          never,
-          Public.Tables.Payment.Record
-        >({
+        return useEmbraceSQLRow<ByPaymentId, Public.Tables.Payment.Record>({
           readOperation:
             client.Public.Tables.Payment.ByPaymentId.read.bind(client),
           parameters,
@@ -30759,11 +30687,7 @@ export namespace Public {
       }
       export function useByRentalId(parameters: ByRentalId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByRentalId,
-          never,
-          Public.Tables.Payment.Record
-        >({
+        return useEmbraceSQLRows<ByRentalId, Public.Tables.Payment.Record>({
           readOperation:
             client.Public.Tables.Payment.ByRentalId.read.bind(client),
           parameters,
@@ -30777,11 +30701,7 @@ export namespace Public {
       }
       export function useByStaffId(parameters: ByStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByStaffId,
-          never,
-          Public.Tables.Payment.Record
-        >({
+        return useEmbraceSQLRows<ByStaffId, Public.Tables.Payment.Record>({
           readOperation:
             client.Public.Tables.Payment.ByStaffId.read.bind(client),
           parameters,
@@ -30797,7 +30717,7 @@ export namespace Public {
     export namespace Film {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, never, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<never, Public.Tables.Film.Record>({
           readOperation: client.Public.Tables.Film.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30823,7 +30743,7 @@ export namespace Public {
       export namespace Fulltext {}
       export function useByFilmId(parameters: ByFilmId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByFilmId, never, Public.Tables.Film.Record>({
+        return useEmbraceSQLRow<ByFilmId, Public.Tables.Film.Record>({
           readOperation: client.Public.Tables.Film.ByFilmId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30835,7 +30755,7 @@ export namespace Public {
       }
       export function useByFulltext(parameters: ByFulltext) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByFulltext, never, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<ByFulltext, Public.Tables.Film.Record>({
           readOperation: client.Public.Tables.Film.ByFulltext.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30848,11 +30768,7 @@ export namespace Public {
       }
       export function useByLanguageId(parameters: ByLanguageId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByLanguageId,
-          never,
-          Public.Tables.Film.Record
-        >({
+        return useEmbraceSQLRows<ByLanguageId, Public.Tables.Film.Record>({
           readOperation:
             client.Public.Tables.Film.ByLanguageId.read.bind(client),
           parameters,
@@ -30866,7 +30782,7 @@ export namespace Public {
       }
       export function useByTitle(parameters: ByTitle) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByTitle, never, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<ByTitle, Public.Tables.Film.Record>({
           readOperation: client.Public.Tables.Film.ByTitle.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),

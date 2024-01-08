@@ -1,9 +1,5 @@
-import { InterceptedResults, InterceptorConstructor } from ".";
-import {
-  Intercepted,
-  useEmbraceSQLUpdateCallback,
-} from "./useEmbraceSQLUpdateCallback";
-import { PartialRecursive, OneOrMany } from "@embracesql/shared";
+import { Intercepted, InterceptedResults, InterceptorConstructor } from ".";
+import { PartialRecursive, OneOrMany, DebounceMap } from "@embracesql/shared";
 import React from "react";
 
 type ReadReturn<RR> = Promise<RR | (RR extends unknown[] ? [] : undefined)>;
@@ -37,6 +33,9 @@ function useEmbraceSQL<P, R, RR extends OneOrMany<R>>(props: Props<P, R, RR>) {
   // a way to trigger an update
   const [tick, setTick] = React.useState(0);
 
+  // debounce mapping - in a ref, this is state like but we do not update on it
+  const debounceMap = React.useRef(new DebounceMap());
+
   const inMemoryUpdate = React.useCallback(() => {
     setTick(Date.now());
   }, [setTick]);
@@ -45,11 +44,26 @@ function useEmbraceSQL<P, R, RR extends OneOrMany<R>>(props: Props<P, R, RR>) {
   const [error, setError] = React.useState<Error>();
 
   // in memory updates trigger database updates
-  const updateCallback = useEmbraceSQLUpdateCallback<R>({
-    upsertOperation: props.upsertOperation,
-    inMemoryUpdate,
-    primaryKeyPicker: props.primaryKeyPicker,
-  });
+  const updateCallback = React.useCallback(
+    async (updated: Intercepted<R>) => {
+      const debounceKey = props.primaryKeyPicker(updated.value);
+      inMemoryUpdate();
+
+      const toExecute = async () => {
+        // actual server trip - counting on a read back of a single row
+        const response = await props.upsertOperation(updated.value);
+        // response has the single read-back row -- this is what needs
+        // to be merged into react state as the database plenty well might
+        // have rules or triggers that altered the data
+        // not to mention other users might have updated other fields
+        if (response) {
+          updated.wholeUpdateFromDatabase(response);
+        }
+      };
+      debounceMap.current.register(debounceKey, toExecute);
+    },
+    [props.upsertOperation, props.primaryKeyPicker, inMemoryUpdate],
+  );
 
   // and here is the mutable data
   const interceptedResults = React.useRef<InterceptedResults<RR>>();
