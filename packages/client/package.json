@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/client",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Connects to EmbraceSQL over HTTP/S from browser and node.",
   "type": "module",
   "main": "src/index.ts",
@@ -10,6 +10,6 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/shared": "^0.0.8"
+    "@embracesql/shared": "^0.0.9"
   }
 }
