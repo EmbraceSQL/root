@@ -3,7 +3,7 @@ set -exo pipefail
 
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run generate
 npm test
+npm run generate
 npm run check
 npm run lint

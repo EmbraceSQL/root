@@ -6,6 +6,7 @@ import { UpdateOperation } from "./autocrud/update";
 import { generateTypecastMap } from "./generateTypecastMap";
 import {
   ASTKind,
+  BY_PRIMARY_KEY,
   CompositeTypeNode,
   GenerationContext,
   NamedASTNode,
@@ -52,7 +53,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             // starting off with all the imports, append to this list
             // and it will be the final output
             `
-            // BEGIN - Node side database connectivity layer
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           `,
@@ -197,7 +197,17 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
       // tables and indexes host AutoCRUD
       [ASTKind.Tables]: NestedNamedClassVisitor,
       [ASTKind.Table]: NestedNamedClassVisitor,
-      [ASTKind.Index]: NestedNamedClassVisitor,
+      [ASTKind.Index]: {
+        before: NestedNamedClassVisitor.before,
+        after: async (context, node) => {
+          return [
+            await NestedNamedClassVisitor.after(context, node),
+            node.primaryKey
+              ? `public get ${BY_PRIMARY_KEY}(){ return this.${node.typescriptName} };`
+              : ``,
+          ].join("\n");
+        },
+      },
 
       // C R U D - AutoCRUD!
       [ASTKind.CreateOperation]: CreateOperation,

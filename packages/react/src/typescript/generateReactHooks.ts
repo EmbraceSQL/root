@@ -1,5 +1,6 @@
 import {
   ASTKind,
+  BY_PRIMARY_KEY,
   GenerationContext,
   NamespaceVisitor,
 } from "@embracesql/shared";
@@ -20,10 +21,12 @@ export const generateReactHooks = async (context: GenerationContext) => {
           // the 'all the rows' hook'
           `export function useRows() {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return useEmbraceSQLRows<never, never, ${rowTypeName}>(
+          `return useEmbraceSQLRows<never, ${rowTypeName}>(
                {
-                 readOperation: "${node.typescriptNamespacedName}.all",
+                 readOperation: client.${node.typescriptNamespacedName}.all.bind(client),
+                 parameters: NEVER,
                  upsertOperation: client.${node.typescriptNamespacedName}.create.bind(client),
+                 deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
                  Interceptor: ${node.typescriptNamespacedName}.Interceptor,
                  emptyRow: ${node.typescriptNamespacedName}.emptyRow
@@ -45,15 +48,18 @@ export const generateReactHooks = async (context: GenerationContext) => {
               node.name,
             )}(parameters: ${pascalCase(node.name)}) {`,
             `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-            `return useEmbraceSQLRow<${pascalCase(
-              node.name,
-            )}, never, ${rowTypeName}>(
+            `return useEmbraceSQLRow<${pascalCase(node.name)},  ${rowTypeName}>(
                {
-                 readOperation: "${node.typescriptNamespacedName}.read",
+                 readOperation: client.${
+                   node.typescriptNamespacedName
+                 }.read.bind(client),
                  parameters,
                  upsertOperation: client.${
                    node.table.typescriptNamespacedName
                  }.create.bind(client),
+                 deleteOperation: client.${
+                   node.table.typescriptNamespacedName
+                 }.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${
                    node.table.typescriptNamespacedName
                  }.primaryKeyFrom,
@@ -70,15 +76,18 @@ export const generateReactHooks = async (context: GenerationContext) => {
               node.name,
             )}(parameters: ${pascalCase(node.name)}) {`,
             `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-            `return useEmbraceSQLRows<${pascalCase(
-              node.name,
-            )}, never, ${rowTypeName}>(
+            `return useEmbraceSQLRows<${pascalCase(node.name)}, ${rowTypeName}>(
                {
-                 readOperation: "${node.typescriptNamespacedName}.read",
+                 readOperation: client.${
+                   node.typescriptNamespacedName
+                 }.read.bind(client),
                  parameters,
                  upsertOperation: client.${
                    node.table.typescriptNamespacedName
                  }.create.bind(client),
+                 deleteOperation: client.${
+                   node.table.typescriptNamespacedName
+                 }.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${
                    node.table.typescriptNamespacedName
                  }.primaryKeyFrom,

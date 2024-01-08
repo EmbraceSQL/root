@@ -15,25 +15,10 @@ import {
  */
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
-    const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}`;
-    const returns = node.index.unique
-      ? `Promise<${node.index.table.typescriptNamespacedName}.Record>`
-      : `Promise<${node.index.table.typescriptNamespacedName}.Record[]>`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");
-
-    generationBuffer.push(
-      `async ${node.typescriptPropertyName}(${parameters}) : ${returns}{`,
-    );
-    generationBuffer.push(
-      `
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      `,
-    );
     // query using postgres driver bindings to the index
     const sql = `
     --
@@ -43,17 +28,17 @@ export const DeleteOperation = {
       ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
-    generationBuffer.push(`const response = await sql\`${sql}\``);
-
-    generationBuffer.push(
-      `return ${postgresResultRecordToTypescript(
+    return [
+      `async ${node.typescriptPropertyName}(${parameters}) {`,
+      ` console.assert(parameters);`,
+      ` const sql = this.database.context.sql;`,
+      ` const typed = sql.typed as unknown as PostgresTypecasts;`,
+      ` const response = await sql\`${sql}\``,
+      ` return ${postgresResultRecordToTypescript(
         context,
         node.index.table.type,
       )}${node.index.unique ? "[0]" : ""}`,
-    );
-
-    generationBuffer.push(`}`);
-
-    return generationBuffer.join("\n");
+      `}`,
+    ].join("\n");
   },
 };

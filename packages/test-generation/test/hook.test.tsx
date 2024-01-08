@@ -151,7 +151,7 @@ describe("EmbraceSQL Hooks can", () => {
     });
     await waitFor(() => expect(result.current?.loading).toBe(false));
     // when we add a row
-    const added = result.current.addRow();
+    const added = await result.current.addRow();
     // and set some values as if a user edited them
     // just updating the row members should be enough to save
     act(() => {
@@ -160,7 +160,36 @@ describe("EmbraceSQL Hooks can", () => {
     });
     // then the database should have allocated a new id
     await waitFor(() => expect(added.actorId).toBeGreaterThan(0));
+    // and the database should know this record
+    const shouldBeAdded =
+      await client.Public.Tables.Actor.ByPrimaryKey.read(added);
     // and this is a proper date last update stamp
-    expect(added.lastUpdate.valueOf()).toBeLessThan(Date.now());
+    expect(shouldBeAdded!.lastUpdate.valueOf()).toBeLessThan(Date.now());
+  });
+  it("delete a row from read rows", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(() => Public.Tables.Actor.useRows(), {
+      wrapper,
+    });
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    // when we add a row
+    const added = await result.current.addRow();
+    // and set some values as if a user edited them
+    // just updating the row members should be enough to save
+    act(() => {
+      added.firstName = "New";
+      added.lastName = "Hope";
+    });
+    // and wait for the row to be saved
+    await waitFor(() => expect(added.actorId).toBeGreaterThan(0));
+    // and then delete a row
+    await result.current.deleteRow(added);
+    // the the database should no longer know this record
+    const shouldBeDeleted =
+      await client.Public.Tables.Actor.ByActorId.read(added);
+    // and this is a proper date last update stamp
+    expect(shouldBeDeleted).toBeUndefined();
   });
 });

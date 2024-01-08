@@ -5,6 +5,8 @@ export * from "./typescript";
 export * from "./parsers";
 export * from "./debounce";
 
+export let NEVER: never;
+
 /**
  * Message format for EmbraceSQL.
  *

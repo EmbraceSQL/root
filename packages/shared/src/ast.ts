@@ -9,6 +9,11 @@ import * as fs from "fs";
 import * as path from "path";
 
 /**
+ * Common name for primary key operations.
+ */
+export const BY_PRIMARY_KEY = "ByPrimaryKey";
+
+/**
  * Common name for return results.
  *
  * When you are looking for results... look here 🤪.

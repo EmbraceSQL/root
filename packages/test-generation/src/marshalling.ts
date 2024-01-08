@@ -21,6 +21,7 @@ import {
   NullableMembers,
   undefinedIsNull,
   nullIsUndefined,
+  NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
 
@@ -2625,10 +2626,10 @@ export namespace PgCatalog {
         staattnum: PgCatalog.Types.Int2;
         stainherit: PgCatalog.Types.Bool;
       };
-      export type PrimaryKey = ByStarelidStaattnumStainherit;
+      export type ByPrimaryKey = ByStarelidStaattnumStainherit;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgType {
       export type Record = {
@@ -2704,14 +2705,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTypnameTypnamespace = {
         typname: PgCatalog.Types.Cstring;
         typnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignTable {
       export type Record = {
@@ -2729,10 +2730,10 @@ export namespace PgCatalog {
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByFtrelid;
+      export type ByPrimaryKey = ByFtrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAuthid {
       export type Record = {
@@ -2768,13 +2769,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRolname = {
         rolname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgStatisticExtData {
       export type Record = {
@@ -2803,10 +2804,10 @@ export namespace PgCatalog {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
       };
-      export type PrimaryKey = ByStxoidStxdinherit;
+      export type ByPrimaryKey = ByStxoidStxdinherit;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgUserMapping {
       export type Record = {
@@ -2826,14 +2827,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByUmuserUmserver = {
         umuser: PgCatalog.Types.Oid;
         umserver: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSubscription {
       export type Record = {
@@ -2879,14 +2880,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySubdbidSubname = {
         subdbid: PgCatalog.Types.Oid;
         subname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAttribute {
       export type Record = {
@@ -2956,10 +2957,10 @@ export namespace PgCatalog {
         attrelid: PgCatalog.Types.Oid;
         attnum: PgCatalog.Types.Int2;
       };
-      export type PrimaryKey = ByAttrelidAttnum;
+      export type ByPrimaryKey = ByAttrelidAttnum;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgProc {
       export type Record = {
@@ -3031,7 +3032,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPronameProargtypesPronamespace = {
         proname: PgCatalog.Types.Cstring;
         proargtypes: PgCatalog.Types.Oidvector;
@@ -3039,7 +3040,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgClass {
       export type Record = {
@@ -3117,7 +3118,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRelnameRelnamespace = {
         relname: PgCatalog.Types.Cstring;
         relnamespace: PgCatalog.Types.Oid;
@@ -3129,7 +3130,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAttrdef {
       export type Record = {
@@ -3154,10 +3155,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgConstraint {
       export type Record = {
@@ -3240,10 +3241,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgInherits {
       export type Record = {
@@ -3268,10 +3269,10 @@ export namespace PgCatalog {
         inhrelid: PgCatalog.Types.Oid;
         inhseqno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByInhrelidInhseqno;
+      export type ByPrimaryKey = ByInhrelidInhseqno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgIndex {
       export type Record = {
@@ -3325,13 +3326,13 @@ export namespace PgCatalog {
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByIndexrelid;
+      export type ByPrimaryKey = ByIndexrelid;
       export type ByIndrelid = {
         indrelid: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOperator {
       export type Record = {
@@ -3373,7 +3374,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOprnameOprleftOprrightOprnamespace = {
         oprname: PgCatalog.Types.Cstring;
         oprleft: PgCatalog.Types.Oid;
@@ -3382,7 +3383,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOpfamily {
       export type Record = {
@@ -3404,7 +3405,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOpfmethodOpfnameOpfnamespace = {
         opfmethod: PgCatalog.Types.Oid;
         opfname: PgCatalog.Types.Cstring;
@@ -3412,7 +3413,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOpclass {
       export type Record = {
@@ -3442,7 +3443,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOpcmethodOpcnameOpcnamespace = {
         opcmethod: PgCatalog.Types.Oid;
         opcname: PgCatalog.Types.Cstring;
@@ -3450,7 +3451,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAm {
       export type Record = {
@@ -3474,10 +3475,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAmop {
       export type Record = {
@@ -3520,10 +3521,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAmproc {
       export type Record = {
@@ -3554,10 +3555,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLanguage {
       export type Record = {
@@ -3591,10 +3592,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLargeobjectMetadata {
       export type Record = {
@@ -3608,10 +3609,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAggregate {
       export type Record = {
@@ -3667,10 +3668,10 @@ export namespace PgCatalog {
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
-      export type PrimaryKey = ByAggfnoid;
+      export type ByPrimaryKey = ByAggfnoid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgStatisticExt {
       export type Record = {
@@ -3700,7 +3701,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByStxnameStxnamespace = {
         stxname: PgCatalog.Types.Cstring;
         stxnamespace: PgCatalog.Types.Oid;
@@ -3711,7 +3712,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgRewrite {
       export type Record = {
@@ -3744,10 +3745,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTrigger {
       export type Record = {
@@ -3797,7 +3798,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTgconstraint = {
         tgconstraint: PgCatalog.Types.Oid;
       };
@@ -3808,7 +3809,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgEventTrigger {
       export type Record = {
@@ -3838,10 +3839,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDescription {
       export type Record = {
@@ -3863,10 +3864,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubid;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgCast {
       export type Record = {
@@ -3895,10 +3896,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgEnum {
       export type Record = {
@@ -3928,10 +3929,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgNamespace {
       export type Record = {
@@ -3955,10 +3956,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgConversion {
       export type Record = {
@@ -3998,10 +3999,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDepend {
       export type Record = {
@@ -4036,9 +4037,9 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.Int4;
       };
 
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDatabase {
       export type Record = {
@@ -4088,10 +4089,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDbRoleSetting {
       export type Record = {
@@ -4110,10 +4111,10 @@ export namespace PgCatalog {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySetdatabaseSetrole;
+      export type ByPrimaryKey = BySetdatabaseSetrole;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTablespace {
       export type Record = {
@@ -4135,13 +4136,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySpcname = {
         spcname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAuthMembers {
       export type Record = {
@@ -4177,7 +4178,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRoleidMemberGrantor = {
         roleid: PgCatalog.Types.Oid;
         member: PgCatalog.Types.Oid;
@@ -4185,7 +4186,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShdepend {
       export type Record = {
@@ -4220,9 +4221,9 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.Oid;
       };
 
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShdescription {
       export type Record = {
@@ -4241,10 +4242,10 @@ export namespace PgCatalog {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByObjoidClassoid;
+      export type ByPrimaryKey = ByObjoidClassoid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsConfig {
       export type Record = {
@@ -4271,10 +4272,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsConfigMap {
       export type Record = {
@@ -4296,10 +4297,10 @@ export namespace PgCatalog {
         maptokentype: PgCatalog.Types.Int4;
         mapseqno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByMapcfgMaptokentypeMapseqno;
+      export type ByPrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsDict {
       export type Record = {
@@ -4328,10 +4329,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsParser {
       export type Record = {
@@ -4359,14 +4360,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPrsnamePrsnamespace = {
         prsname: PgCatalog.Types.Cstring;
         prsnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsTemplate {
       export type Record = {
@@ -4388,14 +4389,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTmplnameTmplnamespace = {
         tmplname: PgCatalog.Types.Cstring;
         tmplnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgExtension {
       export type Record = {
@@ -4427,10 +4428,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignDataWrapper {
       export type Record = {
@@ -4460,10 +4461,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignServer {
       export type Record = {
@@ -4491,13 +4492,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySrvname = {
         srvname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPolicy {
       export type Record = {
@@ -4525,14 +4526,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPolrelidPolname = {
         polrelid: PgCatalog.Types.Oid;
         polname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgReplicationOrigin {
       export type Record = {
@@ -4545,13 +4546,13 @@ export namespace PgCatalog {
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByRoident;
+      export type ByPrimaryKey = ByRoident;
       export type ByRoname = {
         roname: PgCatalog.Types.Text;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDefaultAcl {
       export type Record = {
@@ -4579,10 +4580,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgInitPrivs {
       export type Record = {
@@ -4606,10 +4607,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubid;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSeclabel {
       export type Record = {
@@ -4634,10 +4635,10 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.Int4;
         provider: PgCatalog.Types.Text;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubidProvider;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubidProvider;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShseclabel {
       export type Record = {
@@ -4659,10 +4660,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         provider: PgCatalog.Types.Text;
       };
-      export type PrimaryKey = ByObjoidClassoidProvider;
+      export type ByPrimaryKey = ByObjoidClassoidProvider;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgCollation {
       export type Record = {
@@ -4704,10 +4705,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgParameterAcl {
       export type Record = {
@@ -4721,13 +4722,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByParname = {
         parname: PgCatalog.Types.Text;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPartitionedTable {
       export type Record = {
@@ -4755,10 +4756,10 @@ export namespace PgCatalog {
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByPartrelid;
+      export type ByPrimaryKey = ByPartrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgRange {
       export type Record = {
@@ -4788,10 +4789,10 @@ export namespace PgCatalog {
       export type ByRngtypid = {
         rngtypid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByRngtypid;
+      export type ByPrimaryKey = ByRngtypid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTransform {
       export type Record = {
@@ -4813,14 +4814,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTrftypeTrflang = {
         trftype: PgCatalog.Types.Oid;
         trflang: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSequence {
       export type Record = {
@@ -4848,10 +4849,10 @@ export namespace PgCatalog {
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySeqrelid;
+      export type ByPrimaryKey = BySeqrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublication {
       export type Record = {
@@ -4881,13 +4882,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPubname = {
         pubname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublicationNamespace {
       export type Record = {
@@ -4901,14 +4902,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPnnspidPnpubid = {
         pnnspid: PgCatalog.Types.Oid;
         pnpubid: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublicationRel {
       export type Record = {
@@ -4930,7 +4931,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPrpubid = {
         prpubid: PgCatalog.Types.Oid;
       };
@@ -4941,7 +4942,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSubscriptionRel {
       export type Record = {
@@ -4962,10 +4963,10 @@ export namespace PgCatalog {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySrrelidSrsubid;
+      export type ByPrimaryKey = BySrrelidSrsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLargeobject {
       export type Record = {
@@ -4980,10 +4981,10 @@ export namespace PgCatalog {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByLoidPageno;
+      export type ByPrimaryKey = ByLoidPageno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -6119,9 +6120,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlImplementationInfo {
       export type Record = {
@@ -6150,9 +6151,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlParts {
       export type Record = {
@@ -6171,9 +6172,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlSizing {
       export type Record = {
@@ -6192,9 +6193,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -6286,9 +6287,9 @@ export namespace Api {
         answer: Api.Types.Answer;
       };
 
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -6511,7 +6512,7 @@ export namespace Public {
 
       export type Results = Nullable<Public.Types.Cube>;
     }
-    export namespace CubeEe16 {
+    export namespace Cube_4064 {
       export type Parameters = {
         argument_0: Nullable<Public.Types.Cube>;
         argument_1: Nullable<PgCatalog.Types.Float8>;
@@ -6519,7 +6520,7 @@ export namespace Public {
 
       export type Results = Nullable<Public.Types.Cube>;
     }
-    export namespace Cube_8f28 {
+    export namespace Cube_8fe0 {
       export type Parameters = {
         argument_0: Nullable<Public.Types.Cube>;
         argument_1: Nullable<PgCatalog.Types.Float8>;
@@ -6622,10 +6623,10 @@ export namespace Public {
       export type BySlugId = {
         slugId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = BySlugId;
+      export type ByPrimaryKey = BySlugId;
 
       export type Optional = Pick<Record, "slugId">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -17932,12 +17933,12 @@ export namespace Public {
         }
       }
     }
-    export namespace CubeEe16 {
+    export namespace Cube_4064 {
       export namespace Parameters {
         export function parse(from: unknown) {
           // CompositeType
           if (from === null || from === undefined) return null;
-          if (Public.Procedures.CubeEe16.Parameters.is(from)) {
+          if (Public.Procedures.Cube_4064.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
               argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -17954,12 +17955,12 @@ export namespace Public {
         }
       }
     }
-    export namespace Cube_8f28 {
+    export namespace Cube_8fe0 {
       export namespace Parameters {
         export function parse(from: unknown) {
           // CompositeType
           if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_8f28.Parameters.is(from)) {
+          if (Public.Procedures.Cube_8fe0.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
               argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -24711,22 +24712,22 @@ export namespace Public {
         }
       }
     }
-    export namespace CubeEe16 {
+    export namespace Cube_4064 {
       export namespace Parameters {
         export function is(
           value: any,
-        ): value is Public.Procedures.CubeEe16.Parameters {
+        ): value is Public.Procedures.Cube_4064.Parameters {
           if (value.argument_0 !== undefined && value.argument_1 !== undefined)
             return true;
           return false;
         }
       }
     }
-    export namespace Cube_8f28 {
+    export namespace Cube_8fe0 {
       export namespace Parameters {
         export function is(
           value: any,
-        ): value is Public.Procedures.Cube_8f28.Parameters {
+        ): value is Public.Procedures.Cube_8fe0.Parameters {
           if (
             value.argument_0 !== undefined &&
             value.argument_1 !== undefined &&
@@ -24874,7 +24875,6 @@ export namespace Public {
   }
 }
 
-// BEGIN - Node side database connectivity layer
 import {
   Context,
   initializeContext,
@@ -26104,23 +26104,23 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [32018]: Typecast;
+  [17234]: Typecast;
   ["Api.Types.AnswerArray"]: Typecast;
-  [32009]: Typecast;
+  [17225]: Typecast;
   ["Api.Types.EchoTypeArray"]: Typecast;
-  [32012]: Typecast;
+  [17228]: Typecast;
   ["Api.Types.EchoTypeNestedArray"]: Typecast;
-  [32027]: Typecast;
+  [17243]: Typecast;
   ["Api.Types.QAndAArray"]: Typecast;
-  [32019]: Typecast;
+  [17235]: Typecast;
   ["Api.Types.Answer"]: Typecast;
-  [32010]: Typecast;
+  [17226]: Typecast;
   ["Api.Types.EchoType"]: Typecast;
-  [32013]: Typecast;
+  [17229]: Typecast;
   ["Api.Types.EchoTypeNested"]: Typecast;
-  [32028]: Typecast;
+  [17244]: Typecast;
   ["Api.Types.QAndA"]: Typecast;
-  [32007]: Typecast;
+  [17223]: Typecast;
   ["Api.Types.EchoTable"]: Typecast;
 
   ["Api.Procedures.Echo.Parameters"]: Typecast;
@@ -26138,13 +26138,13 @@ export interface PostgresTypecasts {
   ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast;
 
   ["Api.Procedures.EchoAnswer.Parameters"]: Typecast;
-  [31914]: Typecast;
+  [17130]: Typecast;
   ["Public.Types.CubeArray"]: Typecast;
-  [31999]: Typecast;
+  [17215]: Typecast;
   ["Public.Types.SlugArray"]: Typecast;
-  [31909]: Typecast;
+  [17125]: Typecast;
   ["Public.Types.Cube"]: Typecast;
-  [32000]: Typecast;
+  [17216]: Typecast;
   ["Public.Types.Slug"]: Typecast;
 
   ["Public.Procedures.CubeIn.Parameters"]: Typecast;
@@ -26203,9 +26203,9 @@ export interface PostgresTypecasts {
 
   ["Public.Procedures.Cube_0aec.Parameters"]: Typecast;
 
-  ["Public.Procedures.CubeEe16.Parameters"]: Typecast;
+  ["Public.Procedures.Cube_4064.Parameters"]: Typecast;
 
-  ["Public.Procedures.Cube_8f28.Parameters"]: Typecast;
+  ["Public.Procedures.Cube_8fe0.Parameters"]: Typecast;
 
   ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast;
 
@@ -26295,7 +26295,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[32007].parseFromPostgresIfRecord(
+          return context.procTypes[17223].parseFromPostgresIfRecord(
             context,
             result,
           ) as unknown as Api.Types.EchoTable;
@@ -26385,7 +26385,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  api.echo_answer(message => ${typed[32019](
+                  api.echo_answer(message => ${typed[17235](
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
@@ -26420,7 +26420,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     VALUES (${
       values.question === undefined ? sql`DEFAULT` : typed[25](values.question)
     },${
-      values.answer === undefined ? sql`DEFAULT` : typed[32019](values.answer)
+      values.answer === undefined ? sql`DEFAULT` : typed[17235](values.answer)
     })
     ON CONFLICT () DO UPDATE
     SET
@@ -26474,7 +26474,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     `;
             return response.map((record) => ({
@@ -26502,13 +26502,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`question`
           : typed[25](values.question)
       } , answer = ${
-        values.answer === undefined ? sql`answer` : typed[32019](values.answer)
+        values.answer === undefined ? sql`answer` : typed[17235](values.answer)
       } 
     WHERE
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     RETURNING question,answer`;
             return response.map((record) => ({
@@ -26516,14 +26516,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
               answer: undefinedIsNull(record.answer),
             }));
           }
-
-          async delete(
-            parameters: Api.Tables.QAndA.ByAnswer,
-          ): Promise<Api.Tables.QAndA.Record[]> {
+          async delete(parameters: Api.Tables.QAndA.ByAnswer) {
             console.assert(parameters);
             const sql = this.database.context.sql;
             const typed = sql.typed as unknown as PostgresTypecasts;
-
             const response = await sql`
     --
     DELETE FROM 
@@ -26532,7 +26528,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32019](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     RETURNING question,answer`;
             return response.map((record) => ({
@@ -26604,7 +26600,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_out( ${typed[31909](
+                  public.cube_out( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26619,9 +26615,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_eq( ${typed[31909](
+                  public.cube_eq( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_eq);
         return responseBody;
@@ -26632,9 +26628,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ne( ${typed[31909](
+                  public.cube_ne( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ne);
         return responseBody;
@@ -26645,9 +26641,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_lt( ${typed[31909](
+                  public.cube_lt( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_lt);
         return responseBody;
@@ -26658,9 +26654,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_gt( ${typed[31909](
+                  public.cube_gt( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_gt);
         return responseBody;
@@ -26671,9 +26667,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_le( ${typed[31909](
+                  public.cube_le( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_le);
         return responseBody;
@@ -26684,9 +26680,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ge( ${typed[31909](
+                  public.cube_ge( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ge);
         return responseBody;
@@ -26697,9 +26693,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_cmp( ${typed[31909](
+                  public.cube_cmp( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_cmp);
         return responseBody;
@@ -26712,9 +26708,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_contains( ${typed[31909](
+                  public.cube_contains( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_contains,
@@ -26729,9 +26725,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_contained( ${typed[31909](
+                  public.cube_contained( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_contained,
@@ -26744,9 +26740,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_overlap( ${typed[31909](
+                  public.cube_overlap( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_overlap,
@@ -26759,9 +26755,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_union( ${typed[31909](
+                  public.cube_union( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube_union);
         return responseBody;
@@ -26772,9 +26768,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_inter( ${typed[31909](
+                  public.cube_inter( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube_inter);
         return responseBody;
@@ -26785,7 +26781,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_size( ${typed[31909](
+                  public.cube_size( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26800,7 +26796,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_subset( ${typed[31909](
+                  public.cube_subset( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1007](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26815,9 +26811,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_distance( ${typed[31909](
+                  public.cube_distance( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].cube_distance,
@@ -26832,9 +26828,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.distance_chebyshev( ${typed[31909](
+                  public.distance_chebyshev( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].distance_chebyshev,
@@ -26849,9 +26845,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.distance_taxicab( ${typed[31909](
+                  public.distance_taxicab( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].distance_taxicab,
@@ -26864,7 +26860,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_dim( ${typed[31909](
+                  public.cube_dim( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26877,7 +26873,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ll_coord( ${typed[31909](
+                  public.cube_ll_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26892,7 +26888,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ur_coord( ${typed[31909](
+                  public.cube_ur_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26907,7 +26903,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_coord( ${typed[31909](
+                  public.cube_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26924,7 +26920,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_coord_llur( ${typed[31909](
+                  public.cube_coord_llur( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26959,26 +26955,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
-      async cubeEe16(parameters: Public.Procedures.CubeEe16.Parameters) {
+      async cube_4064(parameters: Public.Procedures.Cube_4064.Parameters) {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube( ${typed[31909](
+                  public.cube( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
-      async cube_8f28(parameters: Public.Procedures.Cube_8f28.Parameters) {
+      async cube_8fe0(parameters: Public.Procedures.Cube_8fe0.Parameters) {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube( ${typed[31909](
+                  public.cube( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
@@ -26993,7 +26989,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_is_point( ${typed[31909](
+                  public.cube_is_point( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -27008,7 +27004,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_enlarge( ${typed[31909](
+                  public.cube_enlarge( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
@@ -27027,7 +27023,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   SELECT
                   public.g_cube_consistent( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[21](
                     undefinedIsNull(parameters.argument_2),
@@ -27095,9 +27091,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.g_cube_same( ${typed[31909](
+                  public.g_cube_same( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
@@ -27116,7 +27112,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   SELECT
                   public.g_cube_distance( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[31909](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[21](
                     undefinedIsNull(parameters.argument_2),
@@ -27148,7 +27144,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_send( ${typed[31909](
+                  public.cube_send( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -27284,14 +27280,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
               slugId: undefinedIsNull(record.slug_id),
             }))[0];
           }
-
-          async delete(
-            parameters: Public.Tables.Slug.BySlugId,
-          ): Promise<Public.Tables.Slug.Record> {
+          async delete(parameters: Public.Tables.Slug.BySlugId) {
             console.assert(parameters);
             const sql = this.database.context.sql;
             const typed = sql.typed as unknown as PostgresTypecasts;
-
             const response = await sql`
     --
     DELETE FROM 
@@ -27308,6 +27300,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
             }))[0];
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.BySlugId;
+        }
       })(this);
     })(this);
   })(this);

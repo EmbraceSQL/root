@@ -1,10 +1,9 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { TypeFactoryContext } from "../../context";
 import { groupBy } from "../../util";
 import { PGAttribute, PGAttributes } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import { GenerationContext, IndexNode, TableNode } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -40,7 +39,7 @@ export class PGIndexes {
   indexesForType(catalogType: PGCatalogType) {
     return (
       this.indexesByTableTypeOid[catalogType.oid]?.sort((l, r) =>
-        l.typescriptName.localeCompare(r.typescriptName),
+        l.name.localeCompare(r.name),
       ) ?? []
     );
   }
@@ -83,10 +82,6 @@ export class PGIndex {
     return `by_${this.attributes.map((a) => a.typescriptName).join("_")}`;
   }
 
-  get unique() {
-    return this.index.indisunique;
-  }
-
   get primaryKey() {
     return this.index.indisprimary;
   }
@@ -104,26 +99,5 @@ export class PGIndex {
       this.index.indexrelid
     ].map((r) => forType.attributes.find((a) => a.name === r.name) ?? r);
     return new PGIndex(this.index, translatedAttributes);
-  }
-
-  get typescriptName() {
-    return `By${pascalCase(
-      this.attributes.map((a) => a.typescriptName).join("_"),
-    )}`;
-  }
-
-  /**
-   * Code generation builder for an exact index match.
-   */
-  sqlPredicate(context: Context, parameterHolder = "parameters") {
-    return this.attributes
-      .map(
-        (a) =>
-          `${a.postgresName} = ${a.postgresValueExpression(
-            context,
-            parameterHolder,
-          )}`,
-      )
-      .join(" AND ");
   }
 }

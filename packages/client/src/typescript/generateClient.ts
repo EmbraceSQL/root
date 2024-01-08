@@ -1,5 +1,6 @@
 import {
   ASTKind,
+  BY_PRIMARY_KEY,
   FunctionOperationNode,
   GenerationContext,
   IndexOperationNode,
@@ -45,12 +46,18 @@ const IndexOperation = {
     const resultType = node.index.unique
       ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
       : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
+    const parametersPick = node.index.columns
+      .map(
+        (c) =>
+          `${c.typescriptPropertyName}: parameters.${c.typescriptPropertyName}`,
+      )
+      .join(",");
     const generationBuffer = [
       `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}) {
             const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
-              parameters
+              parameters: {${parametersPick}}
             });
         `,
     ];
@@ -132,7 +139,17 @@ export async function generateClient(context: GenerationContext) {
     [ASTKind.Tables]: NestedNamedClassVisitor,
 
     [ASTKind.Table]: NestedNamedClassVisitor,
-    [ASTKind.Index]: NestedNamedClassVisitor,
+    [ASTKind.Index]: {
+      before: NestedNamedClassVisitor.before,
+      after: async (context, node) => {
+        return [
+          await NestedNamedClassVisitor.after(context, node),
+          node.primaryKey
+            ? `public get ${BY_PRIMARY_KEY}(){ return this.${node.typescriptName} };`
+            : ``,
+        ].join("\n");
+      },
+    },
     [ASTKind.Scripts]: NestedNamedClassVisitor,
     [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
     [ASTKind.Script]: FunctionalOperation,
@@ -146,11 +163,17 @@ export async function generateClient(context: GenerationContext) {
         // without a primary key
         const valuesType = `${node.table.typescriptNamespacedName}.Values`;
         const returnType = `${node.table.typescriptNamespacedName}.Record`;
+        const valuesPick = node.table.allColumns
+          .map(
+            (c) =>
+              `${c.typescriptPropertyName}: values.${c.typescriptPropertyName}`,
+          )
+          .join(",");
         return `
           public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
             const response = await this.client.invoke<never, ${valuesType}, ${returnType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
-              values
+              values: {${valuesPick}}
             });
             return ${returnParsedRow(node.table)};
           }
@@ -186,13 +209,25 @@ export async function generateClient(context: GenerationContext) {
         const resultType = node.index.unique
           ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
           : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
+        const parametersPick = node.index.columns
+          .map(
+            (c) =>
+              `${c.typescriptPropertyName}: parameters.${c.typescriptPropertyName}`,
+          )
+          .join(",");
+        const valuesPick = node.index.table.allColumns
+          .map(
+            (c) =>
+              `${c.typescriptPropertyName}: values.${c.typescriptPropertyName}`,
+          )
+          .join(",");
         const generationBuffer = [
           `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}) {
             const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
-              parameters,
-              values
+              parameters: {${parametersPick}},
+              values: {${valuesPick}}
             });
         `,
         ];

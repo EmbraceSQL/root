@@ -21,6 +21,7 @@ import {
   NullableMembers,
   undefinedIsNull,
   nullIsUndefined,
+  NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
 
@@ -2625,10 +2626,10 @@ export namespace PgCatalog {
         staattnum: PgCatalog.Types.Int2;
         stainherit: PgCatalog.Types.Bool;
       };
-      export type PrimaryKey = ByStarelidStaattnumStainherit;
+      export type ByPrimaryKey = ByStarelidStaattnumStainherit;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgType {
       export type Record = {
@@ -2704,14 +2705,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTypnameTypnamespace = {
         typname: PgCatalog.Types.Cstring;
         typnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignTable {
       export type Record = {
@@ -2729,10 +2730,10 @@ export namespace PgCatalog {
       export type ByFtrelid = {
         ftrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByFtrelid;
+      export type ByPrimaryKey = ByFtrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAuthid {
       export type Record = {
@@ -2768,13 +2769,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRolname = {
         rolname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgStatisticExtData {
       export type Record = {
@@ -2803,10 +2804,10 @@ export namespace PgCatalog {
         stxoid: PgCatalog.Types.Oid;
         stxdinherit: PgCatalog.Types.Bool;
       };
-      export type PrimaryKey = ByStxoidStxdinherit;
+      export type ByPrimaryKey = ByStxoidStxdinherit;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgUserMapping {
       export type Record = {
@@ -2826,14 +2827,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByUmuserUmserver = {
         umuser: PgCatalog.Types.Oid;
         umserver: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSubscription {
       export type Record = {
@@ -2879,14 +2880,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySubdbidSubname = {
         subdbid: PgCatalog.Types.Oid;
         subname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAttribute {
       export type Record = {
@@ -2956,10 +2957,10 @@ export namespace PgCatalog {
         attrelid: PgCatalog.Types.Oid;
         attnum: PgCatalog.Types.Int2;
       };
-      export type PrimaryKey = ByAttrelidAttnum;
+      export type ByPrimaryKey = ByAttrelidAttnum;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgProc {
       export type Record = {
@@ -3031,7 +3032,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPronameProargtypesPronamespace = {
         proname: PgCatalog.Types.Cstring;
         proargtypes: PgCatalog.Types.Oidvector;
@@ -3039,7 +3040,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgClass {
       export type Record = {
@@ -3117,7 +3118,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRelnameRelnamespace = {
         relname: PgCatalog.Types.Cstring;
         relnamespace: PgCatalog.Types.Oid;
@@ -3129,7 +3130,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAttrdef {
       export type Record = {
@@ -3154,10 +3155,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgConstraint {
       export type Record = {
@@ -3240,10 +3241,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgInherits {
       export type Record = {
@@ -3268,10 +3269,10 @@ export namespace PgCatalog {
         inhrelid: PgCatalog.Types.Oid;
         inhseqno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByInhrelidInhseqno;
+      export type ByPrimaryKey = ByInhrelidInhseqno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgIndex {
       export type Record = {
@@ -3325,13 +3326,13 @@ export namespace PgCatalog {
       export type ByIndexrelid = {
         indexrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByIndexrelid;
+      export type ByPrimaryKey = ByIndexrelid;
       export type ByIndrelid = {
         indrelid: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOperator {
       export type Record = {
@@ -3373,7 +3374,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOprnameOprleftOprrightOprnamespace = {
         oprname: PgCatalog.Types.Cstring;
         oprleft: PgCatalog.Types.Oid;
@@ -3382,7 +3383,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOpfamily {
       export type Record = {
@@ -3404,7 +3405,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOpfmethodOpfnameOpfnamespace = {
         opfmethod: PgCatalog.Types.Oid;
         opfname: PgCatalog.Types.Cstring;
@@ -3412,7 +3413,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgOpclass {
       export type Record = {
@@ -3442,7 +3443,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByOpcmethodOpcnameOpcnamespace = {
         opcmethod: PgCatalog.Types.Oid;
         opcname: PgCatalog.Types.Cstring;
@@ -3450,7 +3451,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAm {
       export type Record = {
@@ -3474,10 +3475,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAmop {
       export type Record = {
@@ -3520,10 +3521,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAmproc {
       export type Record = {
@@ -3554,10 +3555,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLanguage {
       export type Record = {
@@ -3591,10 +3592,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLargeobjectMetadata {
       export type Record = {
@@ -3608,10 +3609,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAggregate {
       export type Record = {
@@ -3667,10 +3668,10 @@ export namespace PgCatalog {
       export type ByAggfnoid = {
         aggfnoid: PgCatalog.Types.Regproc;
       };
-      export type PrimaryKey = ByAggfnoid;
+      export type ByPrimaryKey = ByAggfnoid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgStatisticExt {
       export type Record = {
@@ -3700,7 +3701,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByStxnameStxnamespace = {
         stxname: PgCatalog.Types.Cstring;
         stxnamespace: PgCatalog.Types.Oid;
@@ -3711,7 +3712,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgRewrite {
       export type Record = {
@@ -3744,10 +3745,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTrigger {
       export type Record = {
@@ -3797,7 +3798,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTgconstraint = {
         tgconstraint: PgCatalog.Types.Oid;
       };
@@ -3808,7 +3809,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgEventTrigger {
       export type Record = {
@@ -3838,10 +3839,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDescription {
       export type Record = {
@@ -3863,10 +3864,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubid;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgCast {
       export type Record = {
@@ -3895,10 +3896,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgEnum {
       export type Record = {
@@ -3928,10 +3929,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgNamespace {
       export type Record = {
@@ -3955,10 +3956,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgConversion {
       export type Record = {
@@ -3998,10 +3999,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDepend {
       export type Record = {
@@ -4036,9 +4037,9 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.Int4;
       };
 
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDatabase {
       export type Record = {
@@ -4088,10 +4089,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDbRoleSetting {
       export type Record = {
@@ -4110,10 +4111,10 @@ export namespace PgCatalog {
         setdatabase: PgCatalog.Types.Oid;
         setrole: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySetdatabaseSetrole;
+      export type ByPrimaryKey = BySetdatabaseSetrole;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTablespace {
       export type Record = {
@@ -4135,13 +4136,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySpcname = {
         spcname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgAuthMembers {
       export type Record = {
@@ -4177,7 +4178,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByRoleidMemberGrantor = {
         roleid: PgCatalog.Types.Oid;
         member: PgCatalog.Types.Oid;
@@ -4185,7 +4186,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShdepend {
       export type Record = {
@@ -4220,9 +4221,9 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.Oid;
       };
 
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShdescription {
       export type Record = {
@@ -4241,10 +4242,10 @@ export namespace PgCatalog {
         objoid: PgCatalog.Types.Oid;
         classoid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByObjoidClassoid;
+      export type ByPrimaryKey = ByObjoidClassoid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsConfig {
       export type Record = {
@@ -4271,10 +4272,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsConfigMap {
       export type Record = {
@@ -4296,10 +4297,10 @@ export namespace PgCatalog {
         maptokentype: PgCatalog.Types.Int4;
         mapseqno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByMapcfgMaptokentypeMapseqno;
+      export type ByPrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsDict {
       export type Record = {
@@ -4328,10 +4329,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsParser {
       export type Record = {
@@ -4359,14 +4360,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPrsnamePrsnamespace = {
         prsname: PgCatalog.Types.Cstring;
         prsnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTsTemplate {
       export type Record = {
@@ -4388,14 +4389,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTmplnameTmplnamespace = {
         tmplname: PgCatalog.Types.Cstring;
         tmplnamespace: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgExtension {
       export type Record = {
@@ -4427,10 +4428,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignDataWrapper {
       export type Record = {
@@ -4460,10 +4461,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgForeignServer {
       export type Record = {
@@ -4491,13 +4492,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type BySrvname = {
         srvname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPolicy {
       export type Record = {
@@ -4525,14 +4526,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPolrelidPolname = {
         polrelid: PgCatalog.Types.Oid;
         polname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgReplicationOrigin {
       export type Record = {
@@ -4545,13 +4546,13 @@ export namespace PgCatalog {
       export type ByRoident = {
         roident: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByRoident;
+      export type ByPrimaryKey = ByRoident;
       export type ByRoname = {
         roname: PgCatalog.Types.Text;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgDefaultAcl {
       export type Record = {
@@ -4579,10 +4580,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgInitPrivs {
       export type Record = {
@@ -4606,10 +4607,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         objsubid: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubid;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSeclabel {
       export type Record = {
@@ -4634,10 +4635,10 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.Int4;
         provider: PgCatalog.Types.Text;
       };
-      export type PrimaryKey = ByObjoidClassoidObjsubidProvider;
+      export type ByPrimaryKey = ByObjoidClassoidObjsubidProvider;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgShseclabel {
       export type Record = {
@@ -4659,10 +4660,10 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.Oid;
         provider: PgCatalog.Types.Text;
       };
-      export type PrimaryKey = ByObjoidClassoidProvider;
+      export type ByPrimaryKey = ByObjoidClassoidProvider;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgCollation {
       export type Record = {
@@ -4704,10 +4705,10 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgParameterAcl {
       export type Record = {
@@ -4721,13 +4722,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByParname = {
         parname: PgCatalog.Types.Text;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPartitionedTable {
       export type Record = {
@@ -4755,10 +4756,10 @@ export namespace PgCatalog {
       export type ByPartrelid = {
         partrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByPartrelid;
+      export type ByPrimaryKey = ByPartrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgRange {
       export type Record = {
@@ -4788,10 +4789,10 @@ export namespace PgCatalog {
       export type ByRngtypid = {
         rngtypid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByRngtypid;
+      export type ByPrimaryKey = ByRngtypid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgTransform {
       export type Record = {
@@ -4813,14 +4814,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByTrftypeTrflang = {
         trftype: PgCatalog.Types.Oid;
         trflang: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSequence {
       export type Record = {
@@ -4848,10 +4849,10 @@ export namespace PgCatalog {
       export type BySeqrelid = {
         seqrelid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySeqrelid;
+      export type ByPrimaryKey = BySeqrelid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublication {
       export type Record = {
@@ -4881,13 +4882,13 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPubname = {
         pubname: PgCatalog.Types.Cstring;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublicationNamespace {
       export type Record = {
@@ -4901,14 +4902,14 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPnnspidPnpubid = {
         pnnspid: PgCatalog.Types.Oid;
         pnpubid: PgCatalog.Types.Oid;
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgPublicationRel {
       export type Record = {
@@ -4930,7 +4931,7 @@ export namespace PgCatalog {
       export type ByOid = {
         oid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = ByOid;
+      export type ByPrimaryKey = ByOid;
       export type ByPrpubid = {
         prpubid: PgCatalog.Types.Oid;
       };
@@ -4941,7 +4942,7 @@ export namespace PgCatalog {
       };
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgSubscriptionRel {
       export type Record = {
@@ -4962,10 +4963,10 @@ export namespace PgCatalog {
         srrelid: PgCatalog.Types.Oid;
         srsubid: PgCatalog.Types.Oid;
       };
-      export type PrimaryKey = BySrrelidSrsubid;
+      export type ByPrimaryKey = BySrrelidSrsubid;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace PgLargeobject {
       export type Record = {
@@ -4980,10 +4981,10 @@ export namespace PgCatalog {
         loid: PgCatalog.Types.Oid;
         pageno: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByLoidPageno;
+      export type ByPrimaryKey = ByLoidPageno;
 
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -5308,13 +5309,13 @@ export namespace Public {
         actorId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
       };
-      export type PrimaryKey = ByActorIdFilmId;
+      export type ByPrimaryKey = ByActorIdFilmId;
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int2;
       };
 
       export type Optional = Pick<Record, "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Address {
       export type Record = {
@@ -5342,13 +5343,13 @@ export namespace Public {
       export type ByAddressId = {
         addressId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByAddressId;
+      export type ByPrimaryKey = ByAddressId;
       export type ByCityId = {
         cityId: PgCatalog.Types.Int2;
       };
 
       export type Optional = Pick<Record, "addressId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace City {
       export type Record = {
@@ -5368,13 +5369,13 @@ export namespace Public {
       export type ByCityId = {
         cityId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByCityId;
+      export type ByPrimaryKey = ByCityId;
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int2;
       };
 
       export type Optional = Pick<Record, "cityId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Customer {
       export type Record = {
@@ -5410,7 +5411,7 @@ export namespace Public {
       export type ByCustomerId = {
         customerId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByCustomerId;
+      export type ByPrimaryKey = ByCustomerId;
       export type ByLastName = {
         lastName: PgCatalog.Types.Varchar;
       };
@@ -5423,7 +5424,7 @@ export namespace Public {
         Record,
         "customerId" | "activebool" | "createDate" | "lastUpdate"
       >;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Actor {
       export type Record = {
@@ -5443,13 +5444,13 @@ export namespace Public {
       export type ByActorId = {
         actorId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByActorId;
+      export type ByPrimaryKey = ByActorId;
       export type ByLastName = {
         lastName: PgCatalog.Types.Varchar;
       };
 
       export type Optional = Pick<Record, "actorId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace FilmCategory {
       export type Record = {
@@ -5468,10 +5469,10 @@ export namespace Public {
         filmId: PgCatalog.Types.Int2;
         categoryId: PgCatalog.Types.Int2;
       };
-      export type PrimaryKey = ByFilmIdCategoryId;
+      export type ByPrimaryKey = ByFilmIdCategoryId;
 
       export type Optional = Pick<Record, "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Inventory {
       export type Record = {
@@ -5491,14 +5492,14 @@ export namespace Public {
       export type ByInventoryId = {
         inventoryId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByInventoryId;
+      export type ByPrimaryKey = ByInventoryId;
       export type ByStoreIdFilmId = {
         storeId: PgCatalog.Types.Int2;
         filmId: PgCatalog.Types.Int2;
       };
 
       export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Category {
       export type Record = {
@@ -5516,10 +5517,10 @@ export namespace Public {
       export type ByCategoryId = {
         categoryId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByCategoryId;
+      export type ByPrimaryKey = ByCategoryId;
 
       export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Country {
       export type Record = {
@@ -5537,10 +5538,10 @@ export namespace Public {
       export type ByCountryId = {
         countryId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByCountryId;
+      export type ByPrimaryKey = ByCountryId;
 
       export type Optional = Pick<Record, "countryId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Language {
       export type Record = {
@@ -5558,10 +5559,10 @@ export namespace Public {
       export type ByLanguageId = {
         languageId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByLanguageId;
+      export type ByPrimaryKey = ByLanguageId;
 
       export type Optional = Pick<Record, "languageId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Rental {
       export type Record = {
@@ -5597,10 +5598,10 @@ export namespace Public {
       export type ByRentalId = {
         rentalId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByRentalId;
+      export type ByPrimaryKey = ByRentalId;
 
       export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Staff {
       export type Record = {
@@ -5634,10 +5635,10 @@ export namespace Public {
       export type ByStaffId = {
         staffId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByStaffId;
+      export type ByPrimaryKey = ByStaffId;
 
       export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Store {
       export type Record = {
@@ -5661,10 +5662,10 @@ export namespace Public {
       export type ByStoreId = {
         storeId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByStoreId;
+      export type ByPrimaryKey = ByStoreId;
 
       export type Optional = Pick<Record, "storeId" | "lastUpdate">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Payment {
       export type Record = {
@@ -5692,7 +5693,7 @@ export namespace Public {
       export type ByPaymentId = {
         paymentId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByPaymentId;
+      export type ByPrimaryKey = ByPaymentId;
       export type ByRentalId = {
         rentalId: PgCatalog.Types.Int4;
       };
@@ -5702,7 +5703,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<Record, "paymentId">;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace Film {
       export type Record = {
@@ -5740,7 +5741,7 @@ export namespace Public {
       export type ByFilmId = {
         filmId: PgCatalog.Types.Int4;
       };
-      export type PrimaryKey = ByFilmId;
+      export type ByPrimaryKey = ByFilmId;
       export type ByFulltext = {
         fulltext: PgCatalog.Types.Gtsvector;
       };
@@ -5762,7 +5763,7 @@ export namespace Public {
         | "rating"
         | "lastUpdate"
       >;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -6898,9 +6899,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlImplementationInfo {
       export type Record = {
@@ -6929,9 +6930,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlParts {
       export type Record = {
@@ -6950,9 +6951,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
     export namespace SqlSizing {
       export type Record = {
@@ -6971,9 +6972,9 @@ export namespace InformationSchema {
           comments: undefined,
         };
       }
-      export type PrimaryKey = never;
+      export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & PrimaryKey>;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
 }
@@ -25290,7 +25291,11 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.FilmActor.Record
           >({
             operation: "Public.Tables.FilmActor.create",
-            values,
+            values: {
+              actorId: values.actorId,
+              filmId: values.filmId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.FilmActor.Record>(
             Public.Types.FilmActor.parse(response.results),
@@ -25325,7 +25330,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
-              parameters,
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmActor.Record>(
@@ -25343,8 +25351,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.update",
-              parameters,
-              values,
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
+              values: {
+                actorId: values.actorId,
+                filmId: values.filmId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmActor.Record>(
@@ -25361,7 +25376,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.delete",
-              parameters,
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmActor.Record>(
@@ -25369,6 +25387,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByActorIdFilmId;
+        }
 
         public ByFilmId = new (class extends HasClient {
           public async read(parameters: Public.Tables.FilmActor.ByFilmId) {
@@ -25378,7 +25399,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.read",
-              parameters,
+              parameters: { filmId: parameters.filmId },
             });
 
             return (
@@ -25401,8 +25422,12 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.update",
-              parameters,
-              values,
+              parameters: { filmId: parameters.filmId },
+              values: {
+                actorId: values.actorId,
+                filmId: values.filmId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -25422,7 +25447,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmActor.Record[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.delete",
-              parameters,
+              parameters: { filmId: parameters.filmId },
             });
 
             return (
@@ -25447,7 +25472,16 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Address.Record
           >({
             operation: "Public.Tables.Address.create",
-            values,
+            values: {
+              addressId: values.addressId,
+              address: values.address,
+              address2: values.address2,
+              district: values.district,
+              cityId: values.cityId,
+              postalCode: values.postalCode,
+              phone: values.phone,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Address.Record>(
             Public.Types.Address.parse(response.results),
@@ -25480,7 +25514,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.read",
-              parameters,
+              parameters: { addressId: parameters.addressId },
             });
 
             return nullIsUndefined<Public.Tables.Address.Record>(
@@ -25498,8 +25532,17 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.update",
-              parameters,
-              values,
+              parameters: { addressId: parameters.addressId },
+              values: {
+                addressId: values.addressId,
+                address: values.address,
+                address2: values.address2,
+                district: values.district,
+                cityId: values.cityId,
+                postalCode: values.postalCode,
+                phone: values.phone,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Address.Record>(
@@ -25514,7 +25557,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.delete",
-              parameters,
+              parameters: { addressId: parameters.addressId },
             });
 
             return nullIsUndefined<Public.Tables.Address.Record>(
@@ -25522,6 +25565,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByAddressId;
+        }
 
         public ByCityId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Address.ByCityId) {
@@ -25531,7 +25577,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.read",
-              parameters,
+              parameters: { cityId: parameters.cityId },
             });
 
             return (
@@ -25554,8 +25600,17 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.update",
-              parameters,
-              values,
+              parameters: { cityId: parameters.cityId },
+              values: {
+                addressId: values.addressId,
+                address: values.address,
+                address2: values.address2,
+                district: values.district,
+                cityId: values.cityId,
+                postalCode: values.postalCode,
+                phone: values.phone,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -25575,7 +25630,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Address.Record[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.delete",
-              parameters,
+              parameters: { cityId: parameters.cityId },
             });
 
             return (
@@ -25600,7 +25655,12 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.City.Record
           >({
             operation: "Public.Tables.City.create",
-            values,
+            values: {
+              cityId: values.cityId,
+              city: values.city,
+              countryId: values.countryId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.City.Record>(
             Public.Types.City.parse(response.results),
@@ -25632,7 +25692,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record | undefined
             >({
               operation: "Public.Tables.City.ByCityId.read",
-              parameters,
+              parameters: { cityId: parameters.cityId },
             });
 
             return nullIsUndefined<Public.Tables.City.Record>(
@@ -25650,8 +25710,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record | undefined
             >({
               operation: "Public.Tables.City.ByCityId.update",
-              parameters,
-              values,
+              parameters: { cityId: parameters.cityId },
+              values: {
+                cityId: values.cityId,
+                city: values.city,
+                countryId: values.countryId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.City.Record>(
@@ -25666,7 +25731,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record | undefined
             >({
               operation: "Public.Tables.City.ByCityId.delete",
-              parameters,
+              parameters: { cityId: parameters.cityId },
             });
 
             return nullIsUndefined<Public.Tables.City.Record>(
@@ -25674,6 +25739,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByCityId;
+        }
 
         public ByCountryId = new (class extends HasClient {
           public async read(parameters: Public.Tables.City.ByCountryId) {
@@ -25683,7 +25751,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.read",
-              parameters,
+              parameters: { countryId: parameters.countryId },
             });
 
             return (
@@ -25706,8 +25774,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.update",
-              parameters,
-              values,
+              parameters: { countryId: parameters.countryId },
+              values: {
+                cityId: values.cityId,
+                city: values.city,
+                countryId: values.countryId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -25727,7 +25800,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.City.Record[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.delete",
-              parameters,
+              parameters: { countryId: parameters.countryId },
             });
 
             return (
@@ -25752,7 +25825,18 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Customer.Record
           >({
             operation: "Public.Tables.Customer.create",
-            values,
+            values: {
+              customerId: values.customerId,
+              storeId: values.storeId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              email: values.email,
+              addressId: values.addressId,
+              activebool: values.activebool,
+              createDate: values.createDate,
+              lastUpdate: values.lastUpdate,
+              active: values.active,
+            },
           });
           return nullIsUndefined<Public.Tables.Customer.Record>(
             Public.Types.Customer.parse(response.results),
@@ -25785,7 +25869,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.read",
-              parameters,
+              parameters: { addressId: parameters.addressId },
             });
 
             return (
@@ -25808,8 +25892,19 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.update",
-              parameters,
-              values,
+              parameters: { addressId: parameters.addressId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
             });
 
             return (
@@ -25829,7 +25924,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.delete",
-              parameters,
+              parameters: { addressId: parameters.addressId },
             });
 
             return (
@@ -25851,7 +25946,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.read",
-              parameters,
+              parameters: { customerId: parameters.customerId },
             });
 
             return nullIsUndefined<Public.Tables.Customer.Record>(
@@ -25869,8 +25964,19 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.update",
-              parameters,
-              values,
+              parameters: { customerId: parameters.customerId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Customer.Record>(
@@ -25885,7 +25991,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.delete",
-              parameters,
+              parameters: { customerId: parameters.customerId },
             });
 
             return nullIsUndefined<Public.Tables.Customer.Record>(
@@ -25893,6 +25999,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByCustomerId;
+        }
 
         public ByLastName = new (class extends HasClient {
           public async read(parameters: Public.Tables.Customer.ByLastName) {
@@ -25902,7 +26011,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.read",
-              parameters,
+              parameters: { lastName: parameters.lastName },
             });
 
             return (
@@ -25925,8 +26034,19 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.update",
-              parameters,
-              values,
+              parameters: { lastName: parameters.lastName },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
             });
 
             return (
@@ -25946,7 +26066,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.delete",
-              parameters,
+              parameters: { lastName: parameters.lastName },
             });
 
             return (
@@ -25968,7 +26088,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.read",
-              parameters,
+              parameters: { storeId: parameters.storeId },
             });
 
             return (
@@ -25991,8 +26111,19 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.update",
-              parameters,
-              values,
+              parameters: { storeId: parameters.storeId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
             });
 
             return (
@@ -26012,7 +26143,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Customer.Record[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.delete",
-              parameters,
+              parameters: { storeId: parameters.storeId },
             });
 
             return (
@@ -26037,7 +26168,12 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Actor.Record
           >({
             operation: "Public.Tables.Actor.create",
-            values,
+            values: {
+              actorId: values.actorId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Actor.Record>(
             Public.Types.Actor.parse(response.results),
@@ -26070,7 +26206,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.read",
-              parameters,
+              parameters: { actorId: parameters.actorId },
             });
 
             return nullIsUndefined<Public.Tables.Actor.Record>(
@@ -26088,8 +26224,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.update",
-              parameters,
-              values,
+              parameters: { actorId: parameters.actorId },
+              values: {
+                actorId: values.actorId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Actor.Record>(
@@ -26104,7 +26245,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.delete",
-              parameters,
+              parameters: { actorId: parameters.actorId },
             });
 
             return nullIsUndefined<Public.Tables.Actor.Record>(
@@ -26112,6 +26253,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByActorId;
+        }
 
         public ByLastName = new (class extends HasClient {
           public async read(parameters: Public.Tables.Actor.ByLastName) {
@@ -26121,7 +26265,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.read",
-              parameters,
+              parameters: { lastName: parameters.lastName },
             });
 
             return (
@@ -26144,8 +26288,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.update",
-              parameters,
-              values,
+              parameters: { lastName: parameters.lastName },
+              values: {
+                actorId: values.actorId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -26165,7 +26314,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Actor.Record[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.delete",
-              parameters,
+              parameters: { lastName: parameters.lastName },
             });
 
             return (
@@ -26190,7 +26339,11 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.FilmCategory.Record
           >({
             operation: "Public.Tables.FilmCategory.create",
-            values,
+            values: {
+              filmId: values.filmId,
+              categoryId: values.categoryId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.FilmCategory.Record>(
             Public.Types.FilmCategory.parse(response.results),
@@ -26225,7 +26378,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmCategory.Record | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
-              parameters,
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmCategory.Record>(
@@ -26243,8 +26399,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmCategory.Record | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.update",
-              parameters,
-              values,
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
+              values: {
+                filmId: values.filmId,
+                categoryId: values.categoryId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmCategory.Record>(
@@ -26261,7 +26424,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.FilmCategory.Record | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.delete",
-              parameters,
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
             });
 
             return nullIsUndefined<Public.Tables.FilmCategory.Record>(
@@ -26269,6 +26435,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmIdCategoryId;
+        }
       })(this);
 
       public Inventory = new (class extends HasClient {
@@ -26281,7 +26450,12 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Inventory.Record
           >({
             operation: "Public.Tables.Inventory.create",
-            values,
+            values: {
+              inventoryId: values.inventoryId,
+              filmId: values.filmId,
+              storeId: values.storeId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Inventory.Record>(
             Public.Types.Inventory.parse(response.results),
@@ -26314,7 +26488,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.read",
-              parameters,
+              parameters: { inventoryId: parameters.inventoryId },
             });
 
             return nullIsUndefined<Public.Tables.Inventory.Record>(
@@ -26332,8 +26506,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.update",
-              parameters,
-              values,
+              parameters: { inventoryId: parameters.inventoryId },
+              values: {
+                inventoryId: values.inventoryId,
+                filmId: values.filmId,
+                storeId: values.storeId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Inventory.Record>(
@@ -26350,7 +26529,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.delete",
-              parameters,
+              parameters: { inventoryId: parameters.inventoryId },
             });
 
             return nullIsUndefined<Public.Tables.Inventory.Record>(
@@ -26358,6 +26537,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByInventoryId;
+        }
 
         public ByStoreIdFilmId = new (class extends HasClient {
           public async read(
@@ -26369,7 +26551,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
-              parameters,
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
             });
 
             return (
@@ -26392,8 +26577,16 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.update",
-              parameters,
-              values,
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
+              values: {
+                inventoryId: values.inventoryId,
+                filmId: values.filmId,
+                storeId: values.storeId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -26415,7 +26608,10 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Inventory.Record[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.delete",
-              parameters,
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
             });
 
             return (
@@ -26440,7 +26636,11 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Category.Record
           >({
             operation: "Public.Tables.Category.create",
-            values,
+            values: {
+              categoryId: values.categoryId,
+              name: values.name,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Category.Record>(
             Public.Types.Category.parse(response.results),
@@ -26473,7 +26673,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Category.Record | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.read",
-              parameters,
+              parameters: { categoryId: parameters.categoryId },
             });
 
             return nullIsUndefined<Public.Tables.Category.Record>(
@@ -26491,8 +26691,12 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Category.Record | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.update",
-              parameters,
-              values,
+              parameters: { categoryId: parameters.categoryId },
+              values: {
+                categoryId: values.categoryId,
+                name: values.name,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Category.Record>(
@@ -26507,7 +26711,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Category.Record | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.delete",
-              parameters,
+              parameters: { categoryId: parameters.categoryId },
             });
 
             return nullIsUndefined<Public.Tables.Category.Record>(
@@ -26515,6 +26719,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByCategoryId;
+        }
       })(this);
 
       public Country = new (class extends HasClient {
@@ -26527,7 +26734,11 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Country.Record
           >({
             operation: "Public.Tables.Country.create",
-            values,
+            values: {
+              countryId: values.countryId,
+              country: values.country,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Country.Record>(
             Public.Types.Country.parse(response.results),
@@ -26560,7 +26771,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Country.Record | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.read",
-              parameters,
+              parameters: { countryId: parameters.countryId },
             });
 
             return nullIsUndefined<Public.Tables.Country.Record>(
@@ -26578,8 +26789,12 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Country.Record | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.update",
-              parameters,
-              values,
+              parameters: { countryId: parameters.countryId },
+              values: {
+                countryId: values.countryId,
+                country: values.country,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Country.Record>(
@@ -26594,7 +26809,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Country.Record | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.delete",
-              parameters,
+              parameters: { countryId: parameters.countryId },
             });
 
             return nullIsUndefined<Public.Tables.Country.Record>(
@@ -26602,6 +26817,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByCountryId;
+        }
       })(this);
 
       public Language = new (class extends HasClient {
@@ -26614,7 +26832,11 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Language.Record
           >({
             operation: "Public.Tables.Language.create",
-            values,
+            values: {
+              languageId: values.languageId,
+              name: values.name,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Language.Record>(
             Public.Types.Language.parse(response.results),
@@ -26647,7 +26869,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Language.Record | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.read",
-              parameters,
+              parameters: { languageId: parameters.languageId },
             });
 
             return nullIsUndefined<Public.Tables.Language.Record>(
@@ -26665,8 +26887,12 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Language.Record | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.update",
-              parameters,
-              values,
+              parameters: { languageId: parameters.languageId },
+              values: {
+                languageId: values.languageId,
+                name: values.name,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Language.Record>(
@@ -26681,7 +26907,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Language.Record | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.delete",
-              parameters,
+              parameters: { languageId: parameters.languageId },
             });
 
             return nullIsUndefined<Public.Tables.Language.Record>(
@@ -26689,6 +26915,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByLanguageId;
+        }
       })(this);
 
       public Rental = new (class extends HasClient {
@@ -26701,7 +26930,15 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Rental.Record
           >({
             operation: "Public.Tables.Rental.create",
-            values,
+            values: {
+              rentalId: values.rentalId,
+              rentalDate: values.rentalDate,
+              inventoryId: values.inventoryId,
+              customerId: values.customerId,
+              returnDate: values.returnDate,
+              staffId: values.staffId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Rental.Record>(
             Public.Types.Rental.parse(response.results),
@@ -26734,7 +26971,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.read",
-              parameters,
+              parameters: { inventoryId: parameters.inventoryId },
             });
 
             return (
@@ -26757,8 +26994,16 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.update",
-              parameters,
-              values,
+              parameters: { inventoryId: parameters.inventoryId },
+              values: {
+                rentalId: values.rentalId,
+                rentalDate: values.rentalDate,
+                inventoryId: values.inventoryId,
+                customerId: values.customerId,
+                returnDate: values.returnDate,
+                staffId: values.staffId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return (
@@ -26778,7 +27023,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.delete",
-              parameters,
+              parameters: { inventoryId: parameters.inventoryId },
             });
 
             return (
@@ -26804,7 +27049,11 @@ export class EmbraceSQLClient extends BaseClient {
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
-                parameters,
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
               });
 
               return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26823,8 +27072,20 @@ export class EmbraceSQLClient extends BaseClient {
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.update",
-                parameters,
-                values,
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
+                values: {
+                  rentalId: values.rentalId,
+                  rentalDate: values.rentalDate,
+                  inventoryId: values.inventoryId,
+                  customerId: values.customerId,
+                  returnDate: values.returnDate,
+                  staffId: values.staffId,
+                  lastUpdate: values.lastUpdate,
+                },
               });
 
               return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26842,7 +27103,11 @@ export class EmbraceSQLClient extends BaseClient {
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.delete",
-                parameters,
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
               });
 
               return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26859,7 +27124,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.read",
-              parameters,
+              parameters: { rentalId: parameters.rentalId },
             });
 
             return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26877,8 +27142,16 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.update",
-              parameters,
-              values,
+              parameters: { rentalId: parameters.rentalId },
+              values: {
+                rentalId: values.rentalId,
+                rentalDate: values.rentalDate,
+                inventoryId: values.inventoryId,
+                customerId: values.customerId,
+                returnDate: values.returnDate,
+                staffId: values.staffId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26893,7 +27166,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Rental.Record | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.delete",
-              parameters,
+              parameters: { rentalId: parameters.rentalId },
             });
 
             return nullIsUndefined<Public.Tables.Rental.Record>(
@@ -26901,6 +27174,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByRentalId;
+        }
       })(this);
 
       public Staff = new (class extends HasClient {
@@ -26913,7 +27189,19 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Staff.Record
           >({
             operation: "Public.Tables.Staff.create",
-            values,
+            values: {
+              staffId: values.staffId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              addressId: values.addressId,
+              email: values.email,
+              storeId: values.storeId,
+              active: values.active,
+              username: values.username,
+              password: values.password,
+              lastUpdate: values.lastUpdate,
+              picture: values.picture,
+            },
           });
           return nullIsUndefined<Public.Tables.Staff.Record>(
             Public.Types.Staff.parse(response.results),
@@ -26946,7 +27234,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Staff.Record | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.read",
-              parameters,
+              parameters: { staffId: parameters.staffId },
             });
 
             return nullIsUndefined<Public.Tables.Staff.Record>(
@@ -26964,8 +27252,20 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Staff.Record | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.update",
-              parameters,
-              values,
+              parameters: { staffId: parameters.staffId },
+              values: {
+                staffId: values.staffId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                addressId: values.addressId,
+                email: values.email,
+                storeId: values.storeId,
+                active: values.active,
+                username: values.username,
+                password: values.password,
+                lastUpdate: values.lastUpdate,
+                picture: values.picture,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Staff.Record>(
@@ -26980,7 +27280,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Staff.Record | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.delete",
-              parameters,
+              parameters: { staffId: parameters.staffId },
             });
 
             return nullIsUndefined<Public.Tables.Staff.Record>(
@@ -26988,6 +27288,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByStaffId;
+        }
       })(this);
 
       public Store = new (class extends HasClient {
@@ -27000,7 +27303,12 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Store.Record
           >({
             operation: "Public.Tables.Store.create",
-            values,
+            values: {
+              storeId: values.storeId,
+              managerStaffId: values.managerStaffId,
+              addressId: values.addressId,
+              lastUpdate: values.lastUpdate,
+            },
           });
           return nullIsUndefined<Public.Tables.Store.Record>(
             Public.Types.Store.parse(response.results),
@@ -27033,7 +27341,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.read",
-              parameters,
+              parameters: { managerStaffId: parameters.managerStaffId },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27051,8 +27359,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.update",
-              parameters,
-              values,
+              parameters: { managerStaffId: parameters.managerStaffId },
+              values: {
+                storeId: values.storeId,
+                managerStaffId: values.managerStaffId,
+                addressId: values.addressId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27069,7 +27382,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.delete",
-              parameters,
+              parameters: { managerStaffId: parameters.managerStaffId },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27086,7 +27399,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.read",
-              parameters,
+              parameters: { storeId: parameters.storeId },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27104,8 +27417,13 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.update",
-              parameters,
-              values,
+              parameters: { storeId: parameters.storeId },
+              values: {
+                storeId: values.storeId,
+                managerStaffId: values.managerStaffId,
+                addressId: values.addressId,
+                lastUpdate: values.lastUpdate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27120,7 +27438,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Store.Record | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.delete",
-              parameters,
+              parameters: { storeId: parameters.storeId },
             });
 
             return nullIsUndefined<Public.Tables.Store.Record>(
@@ -27128,6 +27446,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByStoreId;
+        }
       })(this);
 
       public Payment = new (class extends HasClient {
@@ -27140,7 +27461,14 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Payment.Record
           >({
             operation: "Public.Tables.Payment.create",
-            values,
+            values: {
+              paymentId: values.paymentId,
+              customerId: values.customerId,
+              staffId: values.staffId,
+              rentalId: values.rentalId,
+              amount: values.amount,
+              paymentDate: values.paymentDate,
+            },
           });
           return nullIsUndefined<Public.Tables.Payment.Record>(
             Public.Types.Payment.parse(response.results),
@@ -27173,7 +27501,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.read",
-              parameters,
+              parameters: { customerId: parameters.customerId },
             });
 
             return (
@@ -27196,8 +27524,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.update",
-              parameters,
-              values,
+              parameters: { customerId: parameters.customerId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
             });
 
             return (
@@ -27217,7 +27552,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.delete",
-              parameters,
+              parameters: { customerId: parameters.customerId },
             });
 
             return (
@@ -27239,7 +27574,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.read",
-              parameters,
+              parameters: { paymentId: parameters.paymentId },
             });
 
             return nullIsUndefined<Public.Tables.Payment.Record>(
@@ -27257,8 +27592,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.update",
-              parameters,
-              values,
+              parameters: { paymentId: parameters.paymentId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Payment.Record>(
@@ -27273,7 +27615,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.delete",
-              parameters,
+              parameters: { paymentId: parameters.paymentId },
             });
 
             return nullIsUndefined<Public.Tables.Payment.Record>(
@@ -27281,6 +27623,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByPaymentId;
+        }
 
         public ByRentalId = new (class extends HasClient {
           public async read(parameters: Public.Tables.Payment.ByRentalId) {
@@ -27290,7 +27635,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.read",
-              parameters,
+              parameters: { rentalId: parameters.rentalId },
             });
 
             return (
@@ -27313,8 +27658,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.update",
-              parameters,
-              values,
+              parameters: { rentalId: parameters.rentalId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
             });
 
             return (
@@ -27334,7 +27686,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.delete",
-              parameters,
+              parameters: { rentalId: parameters.rentalId },
             });
 
             return (
@@ -27356,7 +27708,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.read",
-              parameters,
+              parameters: { staffId: parameters.staffId },
             });
 
             return (
@@ -27379,8 +27731,15 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.update",
-              parameters,
-              values,
+              parameters: { staffId: parameters.staffId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
             });
 
             return (
@@ -27400,7 +27759,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Payment.Record[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.delete",
-              parameters,
+              parameters: { staffId: parameters.staffId },
             });
 
             return (
@@ -27425,7 +27784,21 @@ export class EmbraceSQLClient extends BaseClient {
             Public.Tables.Film.Record
           >({
             operation: "Public.Tables.Film.create",
-            values,
+            values: {
+              filmId: values.filmId,
+              title: values.title,
+              description: values.description,
+              releaseYear: values.releaseYear,
+              languageId: values.languageId,
+              rentalDuration: values.rentalDuration,
+              rentalRate: values.rentalRate,
+              length: values.length,
+              replacementCost: values.replacementCost,
+              rating: values.rating,
+              lastUpdate: values.lastUpdate,
+              specialFeatures: values.specialFeatures,
+              fulltext: values.fulltext,
+            },
           });
           return nullIsUndefined<Public.Tables.Film.Record>(
             Public.Types.Film.parse(response.results),
@@ -27457,7 +27830,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.read",
-              parameters,
+              parameters: { filmId: parameters.filmId },
             });
 
             return nullIsUndefined<Public.Tables.Film.Record>(
@@ -27475,8 +27848,22 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.update",
-              parameters,
-              values,
+              parameters: { filmId: parameters.filmId },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
             });
 
             return nullIsUndefined<Public.Tables.Film.Record>(
@@ -27491,7 +27878,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.delete",
-              parameters,
+              parameters: { filmId: parameters.filmId },
             });
 
             return nullIsUndefined<Public.Tables.Film.Record>(
@@ -27499,6 +27886,9 @@ export class EmbraceSQLClient extends BaseClient {
             );
           }
         })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmId;
+        }
 
         public ByFulltext = new (class extends HasClient {
           public async read(parameters: Public.Tables.Film.ByFulltext) {
@@ -27508,7 +27898,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.read",
-              parameters,
+              parameters: { fulltext: parameters.fulltext },
             });
 
             return (
@@ -27531,8 +27921,22 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.update",
-              parameters,
-              values,
+              parameters: { fulltext: parameters.fulltext },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
             });
 
             return (
@@ -27552,7 +27956,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.delete",
-              parameters,
+              parameters: { fulltext: parameters.fulltext },
             });
 
             return (
@@ -27574,7 +27978,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.read",
-              parameters,
+              parameters: { languageId: parameters.languageId },
             });
 
             return (
@@ -27597,8 +28001,22 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.update",
-              parameters,
-              values,
+              parameters: { languageId: parameters.languageId },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
             });
 
             return (
@@ -27618,7 +28036,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.delete",
-              parameters,
+              parameters: { languageId: parameters.languageId },
             });
 
             return (
@@ -27640,7 +28058,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.read",
-              parameters,
+              parameters: { title: parameters.title },
             });
 
             return (
@@ -27663,8 +28081,22 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.update",
-              parameters,
-              values,
+              parameters: { title: parameters.title },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
             });
 
             return (
@@ -27684,7 +28116,7 @@ export class EmbraceSQLClient extends BaseClient {
               Public.Tables.Film.Record[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.delete",
-              parameters,
+              parameters: { title: parameters.title },
             });
 
             return (

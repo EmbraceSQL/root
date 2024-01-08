@@ -37,7 +37,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined} from "@embracesql/shared";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional } from "@embracesql/shared";
 
     `,
@@ -110,7 +110,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           after: async (context, node) => {
             return [
               // exhaustive -- if there is no primary key, say so explicitly
-              node.primaryKey ? "" : `export type PrimaryKey = never;`,
+              node.primaryKey ? "" : `export type ByPrimaryKey = never;`,
               // optional columns -- won't always need to pass these
               // ex: database has a default
               `export type Optional = Pick<Record,${
@@ -121,7 +121,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               // values type -- used in create and update
               `export type ${pascalCase(
                 VALUES,
-              )} = PartiallyOptional<Record, Optional & PrimaryKey>`,
+              )} = PartiallyOptional<Record, Optional & ByPrimaryKey>`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");
           },
@@ -133,7 +133,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               `}`,
               // alias primary key to the correct index
               node.primaryKey
-                ? `export type PrimaryKey = ${node.typescriptName};`
+                ? `export type ByPrimaryKey = ${node.typescriptName};`
                 : "",
             ].join("\n"),
         },
