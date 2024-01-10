@@ -23111,63 +23111,64 @@ import {
   useEmbraceSQLClient,
   useEmbraceSQLRow,
   useEmbraceSQLRows,
-  InterceptorCallback,
-  Intercepted,
-  InterceptorBase,
   ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RecordCallback,
 } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
     export namespace Checklist {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Checklist.Record>
-        implements Intercepted<Public.Tables.Checklist.Record>
+      export type Row = IsRow<Public.Tables.Checklist.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Checklist.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Checklist.Record,
-          callback: InterceptorCallback<Public.Tables.Checklist.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Checklist.Record,
+          changeCallback: RecordCallback<Public.Tables.Checklist.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get id() {
-          return this.uninterceptedValue.id;
+          return this.record.id;
         }
         get changeId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Checklist.Id.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               id: parsedValue as Public.Tables.Checklist.Record["id"],
             });
           };
         }
         get name() {
-          return this.uninterceptedValue.name;
+          return this.record.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Checklist.Name.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               name: parsedValue as Public.Tables.Checklist.Record["name"],
             });
           };
         }
         get createdAt() {
-          return this.uninterceptedValue.createdAt;
+          return this.record.createdAt;
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Checklist.CreatedAt.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               createdAt:
                 parsedValue as Public.Tables.Checklist.Record["createdAt"],
             });
@@ -23176,85 +23177,86 @@ export namespace Public {
       }
     }
     export namespace ChecklistItem {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.ChecklistItem.Record>
-        implements Intercepted<Public.Tables.ChecklistItem.Record>
+      export type Row = IsRow<Public.Tables.ChecklistItem.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.ChecklistItem.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.ChecklistItem.Record,
-          callback: InterceptorCallback<Public.Tables.ChecklistItem.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.ChecklistItem.Record,
+          changeCallback: RecordCallback<Public.Tables.ChecklistItem.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get id() {
-          return this.uninterceptedValue.id;
+          return this.record.id;
         }
         get changeId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.ChecklistItem.Id.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               id: parsedValue as Public.Tables.ChecklistItem.Record["id"],
             });
           };
         }
         get checklistId() {
-          return this.uninterceptedValue.checklistId;
+          return this.record.checklistId;
         }
         get changeChecklistId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.ChecklistItem.ChecklistId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               checklistId:
                 parsedValue as Public.Tables.ChecklistItem.Record["checklistId"],
             });
           };
         }
         get title() {
-          return this.uninterceptedValue.title;
+          return this.record.title;
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.ChecklistItem.Title.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               title: parsedValue as Public.Tables.ChecklistItem.Record["title"],
             });
           };
         }
         get checked() {
-          return this.uninterceptedValue.checked;
+          return this.record.checked;
         }
         get changeChecked() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.ChecklistItem.Checked.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               checked:
                 parsedValue as Public.Tables.ChecklistItem.Record["checked"],
             });
           };
         }
         get createdAt() {
-          return this.uninterceptedValue.createdAt;
+          return this.record.createdAt;
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.ChecklistItem.CreatedAt.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               createdAt:
                 parsedValue as Public.Tables.ChecklistItem.Record["createdAt"],
             });
@@ -23281,7 +23283,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-          Interceptor: Public.Tables.Checklist.Interceptor,
+          RowImplementation: Public.Tables.Checklist.RowImplementation,
           emptyRecord: Public.Tables.Checklist.emptyRecord,
         });
       }
@@ -23301,7 +23303,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-          Interceptor: Public.Tables.Checklist.Interceptor,
+          RowImplementation: Public.Tables.Checklist.RowImplementation,
         });
       }
     }
@@ -23320,7 +23322,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          Interceptor: Public.Tables.ChecklistItem.Interceptor,
+          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
           emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
         });
       }
@@ -23344,7 +23346,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          Interceptor: Public.Tables.ChecklistItem.Interceptor,
+          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
           emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
         });
       }
@@ -23363,7 +23365,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          Interceptor: Public.Tables.ChecklistItem.Interceptor,
+          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
         });
       }
     }

@@ -9,7 +9,7 @@ export const generateReactComponents = async (context: GenerationContext) => {
   const generationBuffer = [
     `import React from "react";`,
     `export { EmbraceSQLProvider } from "@embracesql/react";`,
-    `import { useEmbraceSQLClient,  useEmbraceSQLRow, useEmbraceSQLRows, InterceptorCallback, Intercepted, InterceptorBase, ChangeEvent } from "@embracesql/react";`,
+    `import { useEmbraceSQLClient, useEmbraceSQLRow, useEmbraceSQLRows, ChangeEvent, Row as IsRow, RowBase, RecordCallback } from "@embracesql/react";`,
   ];
 
   generationBuffer.push(await generateReactBindables(context));

@@ -1,4 +1,4 @@
-import { InterceptorConstructor } from ".";
+import { RowConstructor } from ".";
 import { useNetwork } from "./useNetwork";
 import { PartialRecursive, DebounceMap } from "@embracesql/shared";
 import React from "react";
@@ -13,7 +13,7 @@ type Props<R> = {
   deleteOperation: (values: R) => Promise<R | undefined>;
   upsertOperation: (values: R) => Promise<R | undefined>;
   primaryKeyPicker: (row: R) => string;
-  Interceptor: InterceptorConstructor<R>;
+  RowImplementation: RowConstructor<R>;
 };
 
 type UpdateCallbackProps<R> = Props<R>;
@@ -91,12 +91,13 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
    */
   const updateRow = React.useCallback(
     async (values: V) =>
-      new props.Interceptor(
+      new props.RowImplementation(
         await updateCallback(responseCallback)({
           ...results,
           ...values,
         } as unknown as R),
         updateCallback(responseCallback),
+        0,
       ),
     [updateCallback, responseCallback],
   );
@@ -104,8 +105,12 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   return {
     loading: readState.loading,
     error: readState.error,
-    results: results
-      ? new props.Interceptor(results, updateCallback(responseCallback))
+    row: results
+      ? new props.RowImplementation(
+          results,
+          updateCallback(responseCallback),
+          0,
+        )
       : undefined,
     updateRow,
   };
@@ -150,12 +155,13 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
    */
   const updateRow = React.useCallback(
     async (index: number, values: V) =>
-      new props.Interceptor(
+      new props.RowImplementation(
         await updateCallback(responseCallback(index))({
           ...results?.[index],
           ...values,
         } as unknown as R),
         updateCallback(responseCallback(index)),
+        0,
       ),
     [updateCallback, responseCallback],
   );
@@ -172,7 +178,7 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
     setResults(newResults);
     // and the index of this new row
     return newResults.length - 1;
-  }, [props.Interceptor, props.emptyRecord, results, responseCallback]);
+  }, [props.RowImplementation, props.emptyRecord, results, responseCallback]);
 
   /**
    * Deleting a row removes an interceptor from the local memory buffer
@@ -194,10 +200,14 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
   return {
     loading: readState.loading,
     error: readState.error,
-    results:
+    rows:
       results?.map(
         (r, i) =>
-          new props.Interceptor(r, updateCallback(responseCallback(i)), i),
+          new props.RowImplementation(
+            r,
+            updateCallback(responseCallback(i)),
+            i,
+          ),
       ) ?? [],
     updateRow,
     addRow,

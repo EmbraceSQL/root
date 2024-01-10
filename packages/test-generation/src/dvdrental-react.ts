@@ -28473,63 +28473,64 @@ import {
   useEmbraceSQLClient,
   useEmbraceSQLRow,
   useEmbraceSQLRows,
-  InterceptorCallback,
-  Intercepted,
-  InterceptorBase,
   ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RecordCallback,
 } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.FilmActor.Record>
-        implements Intercepted<Public.Tables.FilmActor.Record>
+      export type Row = IsRow<Public.Tables.FilmActor.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.FilmActor.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.FilmActor.Record,
-          callback: InterceptorCallback<Public.Tables.FilmActor.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.FilmActor.Record,
+          changeCallback: RecordCallback<Public.Tables.FilmActor.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get actorId() {
-          return this.uninterceptedValue.actorId;
+          return this.record.actorId;
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.ActorId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               actorId: parsedValue as Public.Tables.FilmActor.Record["actorId"],
             });
           };
         }
         get filmId() {
-          return this.uninterceptedValue.filmId;
+          return this.record.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.FilmId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               filmId: parsedValue as Public.Tables.FilmActor.Record["filmId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.FilmActor.Record["lastUpdate"],
             });
@@ -28538,127 +28539,128 @@ export namespace Public {
       }
     }
     export namespace Address {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Address.Record>
-        implements Intercepted<Public.Tables.Address.Record>
+      export type Row = IsRow<Public.Tables.Address.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Address.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Address.Record,
-          callback: InterceptorCallback<Public.Tables.Address.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Address.Record,
+          changeCallback: RecordCallback<Public.Tables.Address.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get addressId() {
-          return this.uninterceptedValue.addressId;
+          return this.record.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.AddressId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               addressId:
                 parsedValue as Public.Tables.Address.Record["addressId"],
             });
           };
         }
         get address() {
-          return this.uninterceptedValue.address;
+          return this.record.address;
         }
         get changeAddress() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Address.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               address: parsedValue as Public.Tables.Address.Record["address"],
             });
           };
         }
         get address2() {
-          return this.uninterceptedValue.address2;
+          return this.record.address2;
         }
         get changeAddress2() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Address2.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               address2: parsedValue as Public.Tables.Address.Record["address2"],
             });
           };
         }
         get district() {
-          return this.uninterceptedValue.district;
+          return this.record.district;
         }
         get changeDistrict() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.District.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               district: parsedValue as Public.Tables.Address.Record["district"],
             });
           };
         }
         get cityId() {
-          return this.uninterceptedValue.cityId;
+          return this.record.cityId;
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.CityId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               cityId: parsedValue as Public.Tables.Address.Record["cityId"],
             });
           };
         }
         get postalCode() {
-          return this.uninterceptedValue.postalCode;
+          return this.record.postalCode;
         }
         get changePostalCode() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.PostalCode.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               postalCode:
                 parsedValue as Public.Tables.Address.Record["postalCode"],
             });
           };
         }
         get phone() {
-          return this.uninterceptedValue.phone;
+          return this.record.phone;
         }
         get changePhone() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Phone.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               phone: parsedValue as Public.Tables.Address.Record["phone"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Address.Record["lastUpdate"],
             });
@@ -28667,69 +28669,70 @@ export namespace Public {
       }
     }
     export namespace City {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.City.Record>
-        implements Intercepted<Public.Tables.City.Record>
+      export type Row = IsRow<Public.Tables.City.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.City.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.City.Record,
-          callback: InterceptorCallback<Public.Tables.City.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.City.Record,
+          changeCallback: RecordCallback<Public.Tables.City.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get cityId() {
-          return this.uninterceptedValue.cityId;
+          return this.record.cityId;
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.CityId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               cityId: parsedValue as Public.Tables.City.Record["cityId"],
             });
           };
         }
         get city() {
-          return this.uninterceptedValue.city;
+          return this.record.city;
         }
         get changeCity() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.City.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               city: parsedValue as Public.Tables.City.Record["city"],
             });
           };
         }
         get countryId() {
-          return this.uninterceptedValue.countryId;
+          return this.record.countryId;
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.CountryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               countryId: parsedValue as Public.Tables.City.Record["countryId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.City.Record["lastUpdate"],
             });
@@ -28738,160 +28741,161 @@ export namespace Public {
       }
     }
     export namespace Customer {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Customer.Record>
-        implements Intercepted<Public.Tables.Customer.Record>
+      export type Row = IsRow<Public.Tables.Customer.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Customer.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Customer.Record,
-          callback: InterceptorCallback<Public.Tables.Customer.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Customer.Record,
+          changeCallback: RecordCallback<Public.Tables.Customer.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get customerId() {
-          return this.uninterceptedValue.customerId;
+          return this.record.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.CustomerId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               customerId:
                 parsedValue as Public.Tables.Customer.Record["customerId"],
             });
           };
         }
         get storeId() {
-          return this.uninterceptedValue.storeId;
+          return this.record.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.StoreId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               storeId: parsedValue as Public.Tables.Customer.Record["storeId"],
             });
           };
         }
         get firstName() {
-          return this.uninterceptedValue.firstName;
+          return this.record.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.FirstName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               firstName:
                 parsedValue as Public.Tables.Customer.Record["firstName"],
             });
           };
         }
         get lastName() {
-          return this.uninterceptedValue.lastName;
+          return this.record.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.LastName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastName:
                 parsedValue as Public.Tables.Customer.Record["lastName"],
             });
           };
         }
         get email() {
-          return this.uninterceptedValue.email;
+          return this.record.email;
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Email.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               email: parsedValue as Public.Tables.Customer.Record["email"],
             });
           };
         }
         get addressId() {
-          return this.uninterceptedValue.addressId;
+          return this.record.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.AddressId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               addressId:
                 parsedValue as Public.Tables.Customer.Record["addressId"],
             });
           };
         }
         get activebool() {
-          return this.uninterceptedValue.activebool;
+          return this.record.activebool;
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Activebool.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               activebool:
                 parsedValue as Public.Tables.Customer.Record["activebool"],
             });
           };
         }
         get createDate() {
-          return this.uninterceptedValue.createDate;
+          return this.record.createDate;
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.CreateDate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               createDate:
                 parsedValue as Public.Tables.Customer.Record["createDate"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Customer.Record["lastUpdate"],
             });
           };
         }
         get active() {
-          return this.uninterceptedValue.active;
+          return this.record.active;
         }
         get changeActive() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Active.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               active: parsedValue as Public.Tables.Customer.Record["active"],
             });
           };
@@ -28899,69 +28903,70 @@ export namespace Public {
       }
     }
     export namespace Actor {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Actor.Record>
-        implements Intercepted<Public.Tables.Actor.Record>
+      export type Row = IsRow<Public.Tables.Actor.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Actor.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Actor.Record,
-          callback: InterceptorCallback<Public.Tables.Actor.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Actor.Record,
+          changeCallback: RecordCallback<Public.Tables.Actor.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get actorId() {
-          return this.uninterceptedValue.actorId;
+          return this.record.actorId;
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.ActorId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               actorId: parsedValue as Public.Tables.Actor.Record["actorId"],
             });
           };
         }
         get firstName() {
-          return this.uninterceptedValue.firstName;
+          return this.record.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.FirstName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               firstName: parsedValue as Public.Tables.Actor.Record["firstName"],
             });
           };
         }
         get lastName() {
-          return this.uninterceptedValue.lastName;
+          return this.record.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.LastName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastName: parsedValue as Public.Tables.Actor.Record["lastName"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Actor.Record["lastUpdate"],
             });
@@ -28970,57 +28975,58 @@ export namespace Public {
       }
     }
     export namespace FilmCategory {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.FilmCategory.Record>
-        implements Intercepted<Public.Tables.FilmCategory.Record>
+      export type Row = IsRow<Public.Tables.FilmCategory.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.FilmCategory.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.FilmCategory.Record,
-          callback: InterceptorCallback<Public.Tables.FilmCategory.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.FilmCategory.Record,
+          changeCallback: RecordCallback<Public.Tables.FilmCategory.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get filmId() {
-          return this.uninterceptedValue.filmId;
+          return this.record.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.FilmId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               filmId:
                 parsedValue as Public.Tables.FilmCategory.Record["filmId"],
             });
           };
         }
         get categoryId() {
-          return this.uninterceptedValue.categoryId;
+          return this.record.categoryId;
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.CategoryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               categoryId:
                 parsedValue as Public.Tables.FilmCategory.Record["categoryId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.FilmCategory.Record["lastUpdate"],
             });
@@ -29029,70 +29035,71 @@ export namespace Public {
       }
     }
     export namespace Inventory {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Inventory.Record>
-        implements Intercepted<Public.Tables.Inventory.Record>
+      export type Row = IsRow<Public.Tables.Inventory.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Inventory.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Inventory.Record,
-          callback: InterceptorCallback<Public.Tables.Inventory.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Inventory.Record,
+          changeCallback: RecordCallback<Public.Tables.Inventory.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get inventoryId() {
-          return this.uninterceptedValue.inventoryId;
+          return this.record.inventoryId;
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.InventoryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               inventoryId:
                 parsedValue as Public.Tables.Inventory.Record["inventoryId"],
             });
           };
         }
         get filmId() {
-          return this.uninterceptedValue.filmId;
+          return this.record.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.FilmId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               filmId: parsedValue as Public.Tables.Inventory.Record["filmId"],
             });
           };
         }
         get storeId() {
-          return this.uninterceptedValue.storeId;
+          return this.record.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.StoreId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               storeId: parsedValue as Public.Tables.Inventory.Record["storeId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Inventory.Record["lastUpdate"],
             });
@@ -29101,56 +29108,57 @@ export namespace Public {
       }
     }
     export namespace Category {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Category.Record>
-        implements Intercepted<Public.Tables.Category.Record>
+      export type Row = IsRow<Public.Tables.Category.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Category.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Category.Record,
-          callback: InterceptorCallback<Public.Tables.Category.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Category.Record,
+          changeCallback: RecordCallback<Public.Tables.Category.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get categoryId() {
-          return this.uninterceptedValue.categoryId;
+          return this.record.categoryId;
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.CategoryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               categoryId:
                 parsedValue as Public.Tables.Category.Record["categoryId"],
             });
           };
         }
         get name() {
-          return this.uninterceptedValue.name;
+          return this.record.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.Name.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               name: parsedValue as Public.Tables.Category.Record["name"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Category.Record["lastUpdate"],
             });
@@ -29159,56 +29167,57 @@ export namespace Public {
       }
     }
     export namespace Country {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Country.Record>
-        implements Intercepted<Public.Tables.Country.Record>
+      export type Row = IsRow<Public.Tables.Country.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Country.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Country.Record,
-          callback: InterceptorCallback<Public.Tables.Country.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Country.Record,
+          changeCallback: RecordCallback<Public.Tables.Country.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get countryId() {
-          return this.uninterceptedValue.countryId;
+          return this.record.countryId;
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.CountryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               countryId:
                 parsedValue as Public.Tables.Country.Record["countryId"],
             });
           };
         }
         get country() {
-          return this.uninterceptedValue.country;
+          return this.record.country;
         }
         get changeCountry() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.Country.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               country: parsedValue as Public.Tables.Country.Record["country"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Country.Record["lastUpdate"],
             });
@@ -29217,56 +29226,57 @@ export namespace Public {
       }
     }
     export namespace Language {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Language.Record>
-        implements Intercepted<Public.Tables.Language.Record>
+      export type Row = IsRow<Public.Tables.Language.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Language.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Language.Record,
-          callback: InterceptorCallback<Public.Tables.Language.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Language.Record,
+          changeCallback: RecordCallback<Public.Tables.Language.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get languageId() {
-          return this.uninterceptedValue.languageId;
+          return this.record.languageId;
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.LanguageId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               languageId:
                 parsedValue as Public.Tables.Language.Record["languageId"],
             });
           };
         }
         get name() {
-          return this.uninterceptedValue.name;
+          return this.record.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.Name.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               name: parsedValue as Public.Tables.Language.Record["name"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Language.Record["lastUpdate"],
             });
@@ -29275,115 +29285,116 @@ export namespace Public {
       }
     }
     export namespace Rental {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Rental.Record>
-        implements Intercepted<Public.Tables.Rental.Record>
+      export type Row = IsRow<Public.Tables.Rental.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Rental.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Rental.Record,
-          callback: InterceptorCallback<Public.Tables.Rental.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Rental.Record,
+          changeCallback: RecordCallback<Public.Tables.Rental.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get rentalId() {
-          return this.uninterceptedValue.rentalId;
+          return this.record.rentalId;
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.RentalId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rentalId: parsedValue as Public.Tables.Rental.Record["rentalId"],
             });
           };
         }
         get rentalDate() {
-          return this.uninterceptedValue.rentalDate;
+          return this.record.rentalDate;
         }
         get changeRentalDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.RentalDate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rentalDate:
                 parsedValue as Public.Tables.Rental.Record["rentalDate"],
             });
           };
         }
         get inventoryId() {
-          return this.uninterceptedValue.inventoryId;
+          return this.record.inventoryId;
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.InventoryId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               inventoryId:
                 parsedValue as Public.Tables.Rental.Record["inventoryId"],
             });
           };
         }
         get customerId() {
-          return this.uninterceptedValue.customerId;
+          return this.record.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.CustomerId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               customerId:
                 parsedValue as Public.Tables.Rental.Record["customerId"],
             });
           };
         }
         get returnDate() {
-          return this.uninterceptedValue.returnDate;
+          return this.record.returnDate;
         }
         get changeReturnDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.ReturnDate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               returnDate:
                 parsedValue as Public.Tables.Rental.Record["returnDate"],
             });
           };
         }
         get staffId() {
-          return this.uninterceptedValue.staffId;
+          return this.record.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.StaffId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               staffId: parsedValue as Public.Tables.Rental.Record["staffId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Rental.Record["lastUpdate"],
             });
@@ -29392,168 +29403,169 @@ export namespace Public {
       }
     }
     export namespace Staff {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Staff.Record>
-        implements Intercepted<Public.Tables.Staff.Record>
+      export type Row = IsRow<Public.Tables.Staff.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Staff.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Staff.Record,
-          callback: InterceptorCallback<Public.Tables.Staff.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Staff.Record,
+          changeCallback: RecordCallback<Public.Tables.Staff.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get staffId() {
-          return this.uninterceptedValue.staffId;
+          return this.record.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.StaffId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               staffId: parsedValue as Public.Tables.Staff.Record["staffId"],
             });
           };
         }
         get firstName() {
-          return this.uninterceptedValue.firstName;
+          return this.record.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.FirstName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               firstName: parsedValue as Public.Tables.Staff.Record["firstName"],
             });
           };
         }
         get lastName() {
-          return this.uninterceptedValue.lastName;
+          return this.record.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.LastName.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastName: parsedValue as Public.Tables.Staff.Record["lastName"],
             });
           };
         }
         get addressId() {
-          return this.uninterceptedValue.addressId;
+          return this.record.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.AddressId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               addressId: parsedValue as Public.Tables.Staff.Record["addressId"],
             });
           };
         }
         get email() {
-          return this.uninterceptedValue.email;
+          return this.record.email;
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Email.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               email: parsedValue as Public.Tables.Staff.Record["email"],
             });
           };
         }
         get storeId() {
-          return this.uninterceptedValue.storeId;
+          return this.record.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.StoreId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               storeId: parsedValue as Public.Tables.Staff.Record["storeId"],
             });
           };
         }
         get active() {
-          return this.uninterceptedValue.active;
+          return this.record.active;
         }
         get changeActive() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Active.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               active: parsedValue as Public.Tables.Staff.Record["active"],
             });
           };
         }
         get username() {
-          return this.uninterceptedValue.username;
+          return this.record.username;
         }
         get changeUsername() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Username.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               username: parsedValue as Public.Tables.Staff.Record["username"],
             });
           };
         }
         get password() {
-          return this.uninterceptedValue.password;
+          return this.record.password;
         }
         get changePassword() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Password.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               password: parsedValue as Public.Tables.Staff.Record["password"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Staff.Record["lastUpdate"],
             });
           };
         }
         get picture() {
-          return this.uninterceptedValue.picture;
+          return this.record.picture;
         }
         get changePicture() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Picture.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               picture: parsedValue as Public.Tables.Staff.Record["picture"],
             });
           };
@@ -29561,70 +29573,71 @@ export namespace Public {
       }
     }
     export namespace Store {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Store.Record>
-        implements Intercepted<Public.Tables.Store.Record>
+      export type Row = IsRow<Public.Tables.Store.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Store.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Store.Record,
-          callback: InterceptorCallback<Public.Tables.Store.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Store.Record,
+          changeCallback: RecordCallback<Public.Tables.Store.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get storeId() {
-          return this.uninterceptedValue.storeId;
+          return this.record.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.StoreId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               storeId: parsedValue as Public.Tables.Store.Record["storeId"],
             });
           };
         }
         get managerStaffId() {
-          return this.uninterceptedValue.managerStaffId;
+          return this.record.managerStaffId;
         }
         get changeManagerStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.ManagerStaffId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               managerStaffId:
                 parsedValue as Public.Tables.Store.Record["managerStaffId"],
             });
           };
         }
         get addressId() {
-          return this.uninterceptedValue.addressId;
+          return this.record.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.AddressId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               addressId: parsedValue as Public.Tables.Store.Record["addressId"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Store.Record["lastUpdate"],
             });
@@ -29633,99 +29646,100 @@ export namespace Public {
       }
     }
     export namespace Payment {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Payment.Record>
-        implements Intercepted<Public.Tables.Payment.Record>
+      export type Row = IsRow<Public.Tables.Payment.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Payment.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Payment.Record,
-          callback: InterceptorCallback<Public.Tables.Payment.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Payment.Record,
+          changeCallback: RecordCallback<Public.Tables.Payment.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get paymentId() {
-          return this.uninterceptedValue.paymentId;
+          return this.record.paymentId;
         }
         get changePaymentId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.PaymentId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               paymentId:
                 parsedValue as Public.Tables.Payment.Record["paymentId"],
             });
           };
         }
         get customerId() {
-          return this.uninterceptedValue.customerId;
+          return this.record.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.CustomerId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               customerId:
                 parsedValue as Public.Tables.Payment.Record["customerId"],
             });
           };
         }
         get staffId() {
-          return this.uninterceptedValue.staffId;
+          return this.record.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.StaffId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               staffId: parsedValue as Public.Tables.Payment.Record["staffId"],
             });
           };
         }
         get rentalId() {
-          return this.uninterceptedValue.rentalId;
+          return this.record.rentalId;
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.RentalId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rentalId: parsedValue as Public.Tables.Payment.Record["rentalId"],
             });
           };
         }
         get amount() {
-          return this.uninterceptedValue.amount;
+          return this.record.amount;
         }
         get changeAmount() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.Amount.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               amount: parsedValue as Public.Tables.Payment.Record["amount"],
             });
           };
         }
         get paymentDate() {
-          return this.uninterceptedValue.paymentDate;
+          return this.record.paymentDate;
         }
         get changePaymentDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.PaymentDate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               paymentDate:
                 parsedValue as Public.Tables.Payment.Record["paymentDate"],
             });
@@ -29734,203 +29748,204 @@ export namespace Public {
       }
     }
     export namespace Film {
-      export class Interceptor
-        extends InterceptorBase<Public.Tables.Film.Record>
-        implements Intercepted<Public.Tables.Film.Record>
+      export type Row = IsRow<Public.Tables.Film.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Film.Record>
+        implements Row
       {
         constructor(
-          uninterceptedValue: Public.Tables.Film.Record,
-          callback: InterceptorCallback<Public.Tables.Film.Record>,
-          rowNumberInResultset?: number,
+          record: Public.Tables.Film.Record,
+          changeCallback: RecordCallback<Public.Tables.Film.Record>,
+          rowNumberInResultset: number,
         ) {
-          super(uninterceptedValue, callback, rowNumberInResultset);
+          super(record, changeCallback, rowNumberInResultset);
         }
         get filmId() {
-          return this.uninterceptedValue.filmId;
+          return this.record.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.FilmId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               filmId: parsedValue as Public.Tables.Film.Record["filmId"],
             });
           };
         }
         get title() {
-          return this.uninterceptedValue.title;
+          return this.record.title;
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Title.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               title: parsedValue as Public.Tables.Film.Record["title"],
             });
           };
         }
         get description() {
-          return this.uninterceptedValue.description;
+          return this.record.description;
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Description.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               description:
                 parsedValue as Public.Tables.Film.Record["description"],
             });
           };
         }
         get releaseYear() {
-          return this.uninterceptedValue.releaseYear;
+          return this.record.releaseYear;
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.ReleaseYear.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               releaseYear:
                 parsedValue as Public.Tables.Film.Record["releaseYear"],
             });
           };
         }
         get languageId() {
-          return this.uninterceptedValue.languageId;
+          return this.record.languageId;
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.LanguageId.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               languageId:
                 parsedValue as Public.Tables.Film.Record["languageId"],
             });
           };
         }
         get rentalDuration() {
-          return this.uninterceptedValue.rentalDuration;
+          return this.record.rentalDuration;
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.RentalDuration.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rentalDuration:
                 parsedValue as Public.Tables.Film.Record["rentalDuration"],
             });
           };
         }
         get rentalRate() {
-          return this.uninterceptedValue.rentalRate;
+          return this.record.rentalRate;
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.RentalRate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rentalRate:
                 parsedValue as Public.Tables.Film.Record["rentalRate"],
             });
           };
         }
         get length() {
-          return this.uninterceptedValue.length;
+          return this.record.length;
         }
         get changeLength() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Length.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               length: parsedValue as Public.Tables.Film.Record["length"],
             });
           };
         }
         get replacementCost() {
-          return this.uninterceptedValue.replacementCost;
+          return this.record.replacementCost;
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.ReplacementCost.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               replacementCost:
                 parsedValue as Public.Tables.Film.Record["replacementCost"],
             });
           };
         }
         get rating() {
-          return this.uninterceptedValue.rating;
+          return this.record.rating;
         }
         get changeRating() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Rating.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               rating: parsedValue as Public.Tables.Film.Record["rating"],
             });
           };
         }
         get lastUpdate() {
-          return this.uninterceptedValue.lastUpdate;
+          return this.record.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.LastUpdate.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               lastUpdate:
                 parsedValue as Public.Tables.Film.Record["lastUpdate"],
             });
           };
         }
         get specialFeatures() {
-          return this.uninterceptedValue.specialFeatures;
+          return this.record.specialFeatures;
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.SpecialFeatures.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               specialFeatures:
                 parsedValue as Public.Tables.Film.Record["specialFeatures"],
             });
           };
         }
         get fulltext() {
-          return this.uninterceptedValue.fulltext;
+          return this.record.fulltext;
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Fulltext.parse(
               event.target.value,
             );
-            void this.callback({
-              ...this.uninterceptedValue,
+            void this.changeCallback({
+              ...this.record,
               fulltext: parsedValue as Public.Tables.Film.Record["fulltext"],
             });
           };
@@ -29956,7 +29971,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-          Interceptor: Public.Tables.FilmActor.Interceptor,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
           emptyRecord: Public.Tables.FilmActor.emptyRecord,
         });
       }
@@ -29977,7 +29992,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-          Interceptor: Public.Tables.FilmActor.Interceptor,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
         });
       }
       export function useByFilmId(parameters: ByFilmId) {
@@ -29994,7 +30009,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-          Interceptor: Public.Tables.FilmActor.Interceptor,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
           emptyRecord: Public.Tables.FilmActor.emptyRecord,
         });
       }
@@ -30013,7 +30028,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-          Interceptor: Public.Tables.Address.Interceptor,
+          RowImplementation: Public.Tables.Address.RowImplementation,
           emptyRecord: Public.Tables.Address.emptyRecord,
         });
       }
@@ -30039,7 +30054,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-          Interceptor: Public.Tables.Address.Interceptor,
+          RowImplementation: Public.Tables.Address.RowImplementation,
         });
       }
       export function useByCityId(parameters: ByCityId) {
@@ -30056,7 +30071,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-          Interceptor: Public.Tables.Address.Interceptor,
+          RowImplementation: Public.Tables.Address.RowImplementation,
           emptyRecord: Public.Tables.Address.emptyRecord,
         });
       }
@@ -30075,7 +30090,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-          Interceptor: Public.Tables.City.Interceptor,
+          RowImplementation: Public.Tables.City.RowImplementation,
           emptyRecord: Public.Tables.City.emptyRecord,
         });
       }
@@ -30096,7 +30111,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-          Interceptor: Public.Tables.City.Interceptor,
+          RowImplementation: Public.Tables.City.RowImplementation,
         });
       }
       export function useByCountryId(parameters: ByCountryId) {
@@ -30113,7 +30128,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-          Interceptor: Public.Tables.City.Interceptor,
+          RowImplementation: Public.Tables.City.RowImplementation,
           emptyRecord: Public.Tables.City.emptyRecord,
         });
       }
@@ -30132,7 +30147,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-          Interceptor: Public.Tables.Customer.Interceptor,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
           emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
@@ -30160,7 +30175,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-          Interceptor: Public.Tables.Customer.Interceptor,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
           emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
@@ -30178,7 +30193,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-          Interceptor: Public.Tables.Customer.Interceptor,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
         });
       }
       export function useByLastName(parameters: ByLastName) {
@@ -30195,7 +30210,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-          Interceptor: Public.Tables.Customer.Interceptor,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
           emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
@@ -30213,7 +30228,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-          Interceptor: Public.Tables.Customer.Interceptor,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
           emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
@@ -30232,7 +30247,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-          Interceptor: Public.Tables.Actor.Interceptor,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
           emptyRecord: Public.Tables.Actor.emptyRecord,
         });
       }
@@ -30253,7 +30268,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-          Interceptor: Public.Tables.Actor.Interceptor,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
         });
       }
       export function useByLastName(parameters: ByLastName) {
@@ -30270,7 +30285,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-          Interceptor: Public.Tables.Actor.Interceptor,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
           emptyRecord: Public.Tables.Actor.emptyRecord,
         });
       }
@@ -30290,7 +30305,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
-          Interceptor: Public.Tables.FilmCategory.Interceptor,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
           emptyRecord: Public.Tables.FilmCategory.emptyRecord,
         });
       }
@@ -30314,7 +30329,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
-          Interceptor: Public.Tables.FilmCategory.Interceptor,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
         });
       }
     }
@@ -30332,7 +30347,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-          Interceptor: Public.Tables.Inventory.Interceptor,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
           emptyRecord: Public.Tables.Inventory.emptyRecord,
         });
       }
@@ -30354,7 +30369,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-          Interceptor: Public.Tables.Inventory.Interceptor,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
         });
       }
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
@@ -30371,7 +30386,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-          Interceptor: Public.Tables.Inventory.Interceptor,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
           emptyRecord: Public.Tables.Inventory.emptyRecord,
         });
       }
@@ -30390,7 +30405,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
-          Interceptor: Public.Tables.Category.Interceptor,
+          RowImplementation: Public.Tables.Category.RowImplementation,
           emptyRecord: Public.Tables.Category.emptyRecord,
         });
       }
@@ -30411,7 +30426,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
-          Interceptor: Public.Tables.Category.Interceptor,
+          RowImplementation: Public.Tables.Category.RowImplementation,
         });
       }
     }
@@ -30429,7 +30444,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
-          Interceptor: Public.Tables.Country.Interceptor,
+          RowImplementation: Public.Tables.Country.RowImplementation,
           emptyRecord: Public.Tables.Country.emptyRecord,
         });
       }
@@ -30450,7 +30465,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
-          Interceptor: Public.Tables.Country.Interceptor,
+          RowImplementation: Public.Tables.Country.RowImplementation,
         });
       }
     }
@@ -30468,7 +30483,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
-          Interceptor: Public.Tables.Language.Interceptor,
+          RowImplementation: Public.Tables.Language.RowImplementation,
           emptyRecord: Public.Tables.Language.emptyRecord,
         });
       }
@@ -30489,7 +30504,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
-          Interceptor: Public.Tables.Language.Interceptor,
+          RowImplementation: Public.Tables.Language.RowImplementation,
         });
       }
     }
@@ -30507,7 +30522,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-          Interceptor: Public.Tables.Rental.Interceptor,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
           emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
@@ -30532,7 +30547,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-          Interceptor: Public.Tables.Rental.Interceptor,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
           emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
@@ -30554,7 +30569,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-          Interceptor: Public.Tables.Rental.Interceptor,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
@@ -30571,7 +30586,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-          Interceptor: Public.Tables.Rental.Interceptor,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
         });
       }
     }
@@ -30589,7 +30604,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
-          Interceptor: Public.Tables.Staff.Interceptor,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
           emptyRecord: Public.Tables.Staff.emptyRecord,
         });
       }
@@ -30617,7 +30632,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
-          Interceptor: Public.Tables.Staff.Interceptor,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
         });
       }
     }
@@ -30635,7 +30650,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-          Interceptor: Public.Tables.Store.Interceptor,
+          RowImplementation: Public.Tables.Store.RowImplementation,
           emptyRecord: Public.Tables.Store.emptyRecord,
         });
       }
@@ -30657,7 +30672,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-          Interceptor: Public.Tables.Store.Interceptor,
+          RowImplementation: Public.Tables.Store.RowImplementation,
         });
       }
       export function useByStoreId(parameters: ByStoreId) {
@@ -30673,7 +30688,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-          Interceptor: Public.Tables.Store.Interceptor,
+          RowImplementation: Public.Tables.Store.RowImplementation,
         });
       }
     }
@@ -30691,7 +30706,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-          Interceptor: Public.Tables.Payment.Interceptor,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
           emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
@@ -30715,7 +30730,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-          Interceptor: Public.Tables.Payment.Interceptor,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
           emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
@@ -30733,7 +30748,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-          Interceptor: Public.Tables.Payment.Interceptor,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
@@ -30750,7 +30765,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-          Interceptor: Public.Tables.Payment.Interceptor,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
           emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
@@ -30768,7 +30783,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-          Interceptor: Public.Tables.Payment.Interceptor,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
           emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
@@ -30787,7 +30802,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-          Interceptor: Public.Tables.Film.Interceptor,
+          RowImplementation: Public.Tables.Film.RowImplementation,
           emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
@@ -30817,7 +30832,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-          Interceptor: Public.Tables.Film.Interceptor,
+          RowImplementation: Public.Tables.Film.RowImplementation,
         });
       }
       export function useByFulltext(parameters: ByFulltext) {
@@ -30833,7 +30848,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-          Interceptor: Public.Tables.Film.Interceptor,
+          RowImplementation: Public.Tables.Film.RowImplementation,
           emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
@@ -30851,7 +30866,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-          Interceptor: Public.Tables.Film.Interceptor,
+          RowImplementation: Public.Tables.Film.RowImplementation,
           emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
@@ -30868,7 +30883,7 @@ export namespace Public {
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-          Interceptor: Public.Tables.Film.Interceptor,
+          RowImplementation: Public.Tables.Film.RowImplementation,
           emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }

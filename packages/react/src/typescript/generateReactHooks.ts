@@ -15,20 +15,22 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
-        const rowTypeName = `${node.typescriptNamespacedName}.Record`;
         return [
           await NamespaceVisitor.before(context, node),
           // the 'all the rows' hook'
           `export function useRows() {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return useEmbraceSQLRows<never, Partial<${node.typescriptNamespacedName}.Values>, ${rowTypeName}>(
+          `return useEmbraceSQLRows<never,`,
+          `  Partial<${node.typescriptNamespacedName}.Values>, `,
+          `  ${node.typescriptNamespacedName}.Record> (`,
+          `
                {
                  readOperation: client.${node.typescriptNamespacedName}.all.bind(client),
                  parameters: NEVER,
                  upsertOperation: client.${node.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
-                 Interceptor: ${node.typescriptNamespacedName}.Interceptor,
+                 RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
                  emptyRecord: ${node.typescriptNamespacedName}.emptyRecord
                }
              )`,
@@ -55,7 +57,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  upsertOperation: client.${node.table.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
-                 Interceptor: ${node.table.typescriptNamespacedName}.Interceptor,
+                 RowImplementation: ${node.table.typescriptNamespacedName}.RowImplementation,
                }
              )`,
             `}`,
@@ -73,7 +75,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  upsertOperation: client.${node.table.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
-                 Interceptor: ${node.table.typescriptNamespacedName}.Interceptor,
+                 RowImplementation: ${node.table.typescriptNamespacedName}.RowImplementation,
                  emptyRecord: ${node.table.typescriptNamespacedName}.emptyRecord,
                }
              )`,

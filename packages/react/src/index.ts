@@ -3,7 +3,7 @@ import React from "react";
 export * from "@embracesql/client";
 export * from "./provider";
 export * from "./useEmbraceSQL";
-export * from "./interceptor";
+export * from "./row";
 
 type Setter<T> = (newValue: T) => void;
 

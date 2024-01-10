@@ -1,3 +1,0 @@
-{
-  "extends": "@embracesql/shared/tsconfig/react.tsconfig.json"
-}

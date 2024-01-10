@@ -24038,13 +24038,13 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [17250]: Typecast;
+  [32694]: Typecast;
   ["Public.Types.ChecklistArray"]: Typecast;
-  [17259]: Typecast;
+  [32703]: Typecast;
   ["Public.Types.ChecklistItemArray"]: Typecast;
-  [17251]: Typecast;
+  [32695]: Typecast;
   ["Public.Types.Checklist"]: Typecast;
-  [17260]: Typecast;
+  [32704]: Typecast;
   ["Public.Types.ChecklistItem"]: Typecast;
 }
 

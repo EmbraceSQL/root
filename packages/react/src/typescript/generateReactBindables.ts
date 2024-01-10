@@ -16,11 +16,14 @@ export const generateReactBindables = async (context: GenerationContext) => {
       before: async (context, node) => {
         return [
           await NamespaceVisitor.before(context, node),
-          `export class Interceptor`,
-          `extends InterceptorBase<${node.typescriptNamespacedName}.Record>`,
-          `implements Intercepted<${node.typescriptNamespacedName}.Record> {`,
-          `constructor(uninterceptedValue: ${node.typescriptNamespacedName}.Record, callback: InterceptorCallback<${node.typescriptNamespacedName}.Record>, rowNumberInResultset?: number) {`,
-          ` super(uninterceptedValue, callback, rowNumberInResultset);`,
+          `export type Row = IsRow<${node.typescriptNamespacedName}.Record>;`,
+          `export class RowImplementation`,
+          `extends RowBase<${node.typescriptNamespacedName}.Record>`,
+          `implements Row {`,
+          `constructor(record: ${node.typescriptNamespacedName}.Record, `,
+          ` changeCallback: RecordCallback<${node.typescriptNamespacedName}.Record>, `,
+          ` rowNumberInResultset: number) {`,
+          ` super(record, changeCallback, rowNumberInResultset);`,
           `}`,
         ].join("\n");
       },
@@ -36,16 +39,16 @@ export const generateReactBindables = async (context: GenerationContext) => {
       before: async (_, node) => {
         return [
           // the getter -- read only view of the values
-          `get ${camelCase(
+          `get ${camelCase(node.name)}() { return this.record.${camelCase(
             node.name,
-          )}() { return this.uninterceptedValue.${camelCase(node.name)};}`,
+          )};}`,
           // react change event handlers -- needs a bound this
           // to be used as react event handler
           `get change${pascalCase(node.name)}() {`,
           `  return (event: ChangeEvent) => {`,
           `    const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
-          `    void this.callback({`,
-          `      ...this.uninterceptedValue,`,
+          `    void this.changeCallback({`,
+          `      ...this.record,`,
           `    ${node.typescriptPropertyName} :parsedValue as ${node.table.typescriptNamespacedName}.Record["${node.typescriptPropertyName}"],`,
           `    });`,
           `  };`,

@@ -75,7 +75,7 @@ describe("EmbraceSQL Hooks can", () => {
       { wrapper },
     );
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject({
+      expect(result.current?.row).toMatchObject({
         firstName: "Penelope",
         lastName: "Guiness",
       }),
@@ -98,7 +98,7 @@ describe("EmbraceSQL Hooks can", () => {
     });
     // then the row reflects our change
     await waitFor(() =>
-      expect(result.current.results).toMatchObject({
+      expect(result.current.row).toMatchObject({
         firstName: "Alec",
         lastName: "Guiness",
       }),
@@ -113,7 +113,7 @@ describe("EmbraceSQL Hooks can", () => {
       { wrapper },
     );
     await waitFor(() => expect(result.current?.loading).toBe(false));
-    const actor = result.current?.results;
+    const actor = result.current?.row;
     const rendered = render(
       <input value={actor?.firstName} onChange={actor?.changeFirstName} />,
     );
@@ -125,7 +125,7 @@ describe("EmbraceSQL Hooks can", () => {
     // this should have tapped the server in the change handler
     // causing the hook to update
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject({
+      expect(result.current?.row).toMatchObject({
         firstName: "Alec",
         lastName: "Guiness",
       }),
@@ -140,7 +140,7 @@ describe("EmbraceSQL Hooks can", () => {
     });
     await waitFor(() => expect(result.current?.loading).toBe(false));
     await waitFor(() =>
-      expect(result.current?.results?.length).toBeGreaterThan(100),
+      expect(result.current?.rows?.length).toBeGreaterThan(100),
     );
   });
   it("add a row to read rows", async () => {
@@ -165,11 +165,11 @@ describe("EmbraceSQL Hooks can", () => {
     // then the database should have allocated a new id which will
     // show up in the hook
     await waitFor(() =>
-      expect(result.current.results[addedIndex].actorId).toBeGreaterThan(0),
+      expect(result.current.rows[addedIndex].actorId).toBeGreaterThan(0),
     );
     // and the database should know this record
     const shouldBeAdded = await client.Public.Tables.Actor.ByPrimaryKey.read({
-      actorId: result.current.results[addedIndex].actorId,
+      actorId: result.current.rows[addedIndex].actorId,
     });
     // and this is a proper date last update stamp
     expect(shouldBeAdded!.lastUpdate.valueOf()).toBeLessThan(Date.now());
@@ -195,15 +195,15 @@ describe("EmbraceSQL Hooks can", () => {
     });
     // and wait for the row to be saved
     await waitFor(() =>
-      expect(result.current.results[addedIndex].actorId).toBeGreaterThan(0),
+      expect(result.current.rows[addedIndex].actorId).toBeGreaterThan(0),
     );
     // and then delete a row
-    const actorId = result.current.results[addedIndex].actorId;
+    const actorId = result.current.rows[addedIndex].actorId;
     await act(async () => {
       await result.current.deleteRow(addedIndex);
     });
     // the hook should no longer know the record
-    expect(result.current.results[addedIndex]).toBeUndefined();
+    expect(result.current.rows[addedIndex]).toBeUndefined();
     // the the database should no longer know this record
     const shouldBeDeleted = await client.Public.Tables.Actor.ByPrimaryKey.read({
       actorId,
