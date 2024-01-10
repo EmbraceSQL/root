@@ -104,6 +104,30 @@ describe("EmbraceSQL Hooks can", () => {
       }),
     );
   });
+  it("create a single row from database defaults", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () => Public.Tables.Actor.useRow({ createIfNotExists: true }),
+      { wrapper },
+    );
+    await act(async () => {
+      // and set some values as if a user edited them
+      // just updating the row members should be enough to save
+      await result.current.updateRow({
+        firstName: "New",
+        lastName: "Hope",
+      });
+    });
+    // then we wait for a record to be created, as evidenced by an id
+    await waitFor(() => expect(result.current.row?.actorId).toBeGreaterThan(0));
+    // and we have our values
+    expect(result.current?.row).toMatchObject({
+      firstName: "New",
+      lastName: "Hope",
+    });
+  });
   it("update a single row via change event", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>

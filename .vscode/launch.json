@@ -14,6 +14,7 @@
         "--testNamePattern",
         "${jest.testNamePattern}",
         "--runTestsByPath",
+        "--testTimeout=300000",
         "${jest.testFile}"
       ],
       "cwd": "${workspaceFolder}",

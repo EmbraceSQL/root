@@ -61,6 +61,13 @@ function useUpdateCallback<R>(props: UpdateCallbackProps<R>) {
 type RowProps<P, R> = Props<R> & {
   parameters: P;
   readOperation: ReadOperation<P, R | undefined>;
+  emptyRecord: () => PartialRecursive<R>;
+  createIfNotExists?: boolean;
+};
+
+export type GeneratedRowProps<V> = {
+  values?: Partial<V>;
+  createIfNotExists?: boolean;
 };
 
 /**
@@ -82,8 +89,14 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   );
   const updateCallback = useUpdateCallback(props);
   const readState = useNetwork(async () => {
-    const read = await props.readOperation(props.parameters);
-    setResults(read);
+    // yeah this looks odd, but in the `useRow({createIfUndefined})` case
+    // folks can pass no parameters
+    const read = props.parameters
+      ? await props.readOperation(props.parameters)
+      : undefined;
+    const record =
+      read ?? (props.createIfNotExists ? props.emptyRecord() : undefined);
+    setResults(record as R);
   }, [JSON.stringify(props.parameters)]);
 
   /**
