@@ -2586,7 +2586,7 @@ export namespace PgCatalog {
         stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
         stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           starelid: undefined,
           staattnum: undefined,
@@ -2666,7 +2666,7 @@ export namespace PgCatalog {
         typdefault: PgCatalog.Types.PgType["typdefault"] | null;
         typacl: PgCatalog.Types.PgType["typacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           typname: undefined,
@@ -2720,7 +2720,7 @@ export namespace PgCatalog {
         ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           ftrelid: undefined,
           ftserver: undefined,
@@ -2750,7 +2750,7 @@ export namespace PgCatalog {
         rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
         rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           rolname: undefined,
@@ -2790,7 +2790,7 @@ export namespace PgCatalog {
         stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
         stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           stxoid: undefined,
           stxdinherit: undefined,
@@ -2816,7 +2816,7 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.PgUserMapping["umserver"];
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           umuser: undefined,
@@ -2856,7 +2856,7 @@ export namespace PgCatalog {
         subpublications: PgCatalog.Types.PgSubscription["subpublications"];
         suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           subdbid: undefined,
@@ -2918,7 +2918,7 @@ export namespace PgCatalog {
         attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
         attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           attrelid: undefined,
           attname: undefined,
@@ -2995,7 +2995,7 @@ export namespace PgCatalog {
         proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
         proacl: PgCatalog.Types.PgProc["proacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           proname: undefined,
@@ -3078,7 +3078,7 @@ export namespace PgCatalog {
         reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
         relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           relname: undefined,
@@ -3139,7 +3139,7 @@ export namespace PgCatalog {
         adnum: PgCatalog.Types.PgAttrdef["adnum"];
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           adrelid: undefined,
@@ -3189,7 +3189,7 @@ export namespace PgCatalog {
         conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
         conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3253,7 +3253,7 @@ export namespace PgCatalog {
         inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
         inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           inhrelid: undefined,
           inhparent: undefined,
@@ -3298,7 +3298,7 @@ export namespace PgCatalog {
         indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
         indpred: PgCatalog.Types.PgIndex["indpred"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           indexrelid: undefined,
           indrelid: undefined,
@@ -3352,7 +3352,7 @@ export namespace PgCatalog {
         oprrest: PgCatalog.Types.PgOperator["oprrest"];
         oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           oprname: undefined,
@@ -3393,7 +3393,7 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
         opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           opfmethod: undefined,
@@ -3427,7 +3427,7 @@ export namespace PgCatalog {
         opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
         opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           opcmethod: undefined,
@@ -3460,7 +3460,7 @@ export namespace PgCatalog {
         amhandler: PgCatalog.Types.PgAm["amhandler"];
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amname: undefined,
@@ -3492,7 +3492,7 @@ export namespace PgCatalog {
         amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
         amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amopfamily: undefined,
@@ -3535,7 +3535,7 @@ export namespace PgCatalog {
         amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
         amproc: PgCatalog.Types.PgAmproc["amproc"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amprocfamily: undefined,
@@ -3572,7 +3572,7 @@ export namespace PgCatalog {
         lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
         lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           lanname: undefined,
@@ -3603,7 +3603,7 @@ export namespace PgCatalog {
         lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, lomowner: undefined, lomacl: undefined };
       }
       export type ByOid = {
@@ -3639,7 +3639,7 @@ export namespace PgCatalog {
         agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
         aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           aggfnoid: undefined,
           aggkind: undefined,
@@ -3685,7 +3685,7 @@ export namespace PgCatalog {
         stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
         stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           stxrelid: undefined,
@@ -3725,7 +3725,7 @@ export namespace PgCatalog {
         evQual: PgCatalog.Types.PgRewrite["evQual"];
         evAction: PgCatalog.Types.PgRewrite["evAction"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           rulename: undefined,
@@ -3772,7 +3772,7 @@ export namespace PgCatalog {
         tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
         tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           tgrelid: undefined,
@@ -3821,7 +3821,7 @@ export namespace PgCatalog {
         evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
         evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           evtname: undefined,
@@ -3851,7 +3851,7 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.PgDescription["objsubid"];
         description: PgCatalog.Types.PgDescription["description"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3878,7 +3878,7 @@ export namespace PgCatalog {
         castcontext: PgCatalog.Types.PgCast["castcontext"];
         castmethod: PgCatalog.Types.PgCast["castmethod"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           castsource: undefined,
@@ -3908,7 +3908,7 @@ export namespace PgCatalog {
         enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
         enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           enumtypid: undefined,
@@ -3941,7 +3941,7 @@ export namespace PgCatalog {
         nspowner: PgCatalog.Types.PgNamespace["nspowner"];
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           nspname: undefined,
@@ -3972,7 +3972,7 @@ export namespace PgCatalog {
         conproc: PgCatalog.Types.PgConversion["conproc"];
         condefault: PgCatalog.Types.PgConversion["condefault"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           conname: undefined,
@@ -4014,7 +4014,7 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
         deptype: PgCatalog.Types.PgDepend["deptype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           classid: undefined,
           objid: undefined,
@@ -4061,7 +4061,7 @@ export namespace PgCatalog {
         datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
         datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           datname: undefined,
@@ -4100,7 +4100,7 @@ export namespace PgCatalog {
         setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           setdatabase: undefined,
           setrole: undefined,
@@ -4124,7 +4124,7 @@ export namespace PgCatalog {
         spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
         spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           spcname: undefined,
@@ -4154,7 +4154,7 @@ export namespace PgCatalog {
         inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
         setOption: PgCatalog.Types.PgAuthMembers["setOption"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           roleid: undefined,
@@ -4198,7 +4198,7 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.PgShdepend["refobjid"];
         deptype: PgCatalog.Types.PgShdepend["deptype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           dbid: undefined,
           classid: undefined,
@@ -4231,7 +4231,7 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.PgShdescription["classoid"];
         description: PgCatalog.Types.PgShdescription["description"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4255,7 +4255,7 @@ export namespace PgCatalog {
         cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
         cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           cfgname: undefined,
@@ -4284,7 +4284,7 @@ export namespace PgCatalog {
         mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
         mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           mapcfg: undefined,
           maptokentype: undefined,
@@ -4311,7 +4311,7 @@ export namespace PgCatalog {
         dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
         dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           dictname: undefined,
@@ -4345,7 +4345,7 @@ export namespace PgCatalog {
         prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
         prslextype: PgCatalog.Types.PgTsParser["prslextype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           prsname: undefined,
@@ -4377,7 +4377,7 @@ export namespace PgCatalog {
         tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
         tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           tmplname: undefined,
@@ -4409,7 +4409,7 @@ export namespace PgCatalog {
         extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
         extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           extname: undefined,
@@ -4443,7 +4443,7 @@ export namespace PgCatalog {
         fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
         fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           fdwname: undefined,
@@ -4477,7 +4477,7 @@ export namespace PgCatalog {
         srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
         srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           srvname: undefined,
@@ -4511,7 +4511,7 @@ export namespace PgCatalog {
         polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
         polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           polname: undefined,
@@ -4540,7 +4540,7 @@ export namespace PgCatalog {
         roident: PgCatalog.Types.PgReplicationOrigin["roident"];
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { roident: undefined, roname: undefined };
       }
       export type ByRoident = {
@@ -4562,7 +4562,7 @@ export namespace PgCatalog {
         defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
         defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           defaclrole: undefined,
@@ -4593,7 +4593,7 @@ export namespace PgCatalog {
         privtype: PgCatalog.Types.PgInitPrivs["privtype"];
         initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4620,7 +4620,7 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgSeclabel["provider"];
         label: PgCatalog.Types.PgSeclabel["label"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4647,7 +4647,7 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgShseclabel["provider"];
         label: PgCatalog.Types.PgShseclabel["label"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4680,7 +4680,7 @@ export namespace PgCatalog {
         collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
         collversion: PgCatalog.Types.PgCollation["collversion"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           collname: undefined,
@@ -4716,7 +4716,7 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.PgParameterAcl["parname"];
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, parname: undefined, paracl: undefined };
       }
       export type ByOid = {
@@ -4741,7 +4741,7 @@ export namespace PgCatalog {
         partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
         partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           partrelid: undefined,
           partstrat: undefined,
@@ -4771,7 +4771,7 @@ export namespace PgCatalog {
         rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
         rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           rngtypid: undefined,
           rngsubtype: undefined,
@@ -4802,7 +4802,7 @@ export namespace PgCatalog {
         trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
         trftosql: PgCatalog.Types.PgTransform["trftosql"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           trftype: undefined,
@@ -4834,7 +4834,7 @@ export namespace PgCatalog {
         seqcache: PgCatalog.Types.PgSequence["seqcache"];
         seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           seqrelid: undefined,
           seqtypid: undefined,
@@ -4866,7 +4866,7 @@ export namespace PgCatalog {
         pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
         pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           pubname: undefined,
@@ -4896,7 +4896,7 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, pnpubid: undefined, pnnspid: undefined };
       }
       export type ByOid = {
@@ -4919,7 +4919,7 @@ export namespace PgCatalog {
         prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
         prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           prpubid: undefined,
@@ -4951,7 +4951,7 @@ export namespace PgCatalog {
         srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
         srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           srsubid: undefined,
           srrelid: undefined,
@@ -4974,7 +4974,7 @@ export namespace PgCatalog {
         pageno: PgCatalog.Types.PgLargeobject["pageno"];
         data: PgCatalog.Types.PgLargeobject["data"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { loid: undefined, pageno: undefined, data: undefined };
       }
       export type ByLoidPageno = {
@@ -5302,7 +5302,7 @@ export namespace Public {
         filmId: Public.Types.FilmActor["filmId"];
         lastUpdate: Public.Types.FilmActor["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { actorId: undefined, filmId: undefined, lastUpdate: undefined };
       }
       export type ByActorIdFilmId = {
@@ -5328,7 +5328,7 @@ export namespace Public {
         phone: Public.Types.Address["phone"];
         lastUpdate: Public.Types.Address["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           addressId: undefined,
           address: undefined,
@@ -5358,7 +5358,7 @@ export namespace Public {
         countryId: Public.Types.City["countryId"];
         lastUpdate: Public.Types.City["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           cityId: undefined,
           city: undefined,
@@ -5390,7 +5390,7 @@ export namespace Public {
         lastUpdate: Public.Types.Customer["lastUpdate"] | null;
         active: Public.Types.Customer["active"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           customerId: undefined,
           storeId: undefined,
@@ -5433,7 +5433,7 @@ export namespace Public {
         lastName: Public.Types.Actor["lastName"];
         lastUpdate: Public.Types.Actor["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           actorId: undefined,
           firstName: undefined,
@@ -5458,7 +5458,7 @@ export namespace Public {
         categoryId: Public.Types.FilmCategory["categoryId"];
         lastUpdate: Public.Types.FilmCategory["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           filmId: undefined,
           categoryId: undefined,
@@ -5481,7 +5481,7 @@ export namespace Public {
         storeId: Public.Types.Inventory["storeId"];
         lastUpdate: Public.Types.Inventory["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           inventoryId: undefined,
           filmId: undefined,
@@ -5507,7 +5507,7 @@ export namespace Public {
         name: Public.Types.Category["name"];
         lastUpdate: Public.Types.Category["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           categoryId: undefined,
           name: undefined,
@@ -5528,7 +5528,7 @@ export namespace Public {
         country: Public.Types.Country["country"];
         lastUpdate: Public.Types.Country["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           countryId: undefined,
           country: undefined,
@@ -5549,7 +5549,7 @@ export namespace Public {
         name: Public.Types.Language["name"];
         lastUpdate: Public.Types.Language["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           languageId: undefined,
           name: undefined,
@@ -5574,7 +5574,7 @@ export namespace Public {
         staffId: Public.Types.Rental["staffId"];
         lastUpdate: Public.Types.Rental["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           rentalId: undefined,
           rentalDate: undefined,
@@ -5617,7 +5617,7 @@ export namespace Public {
         lastUpdate: Public.Types.Staff["lastUpdate"];
         picture: Public.Types.Staff["picture"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           staffId: undefined,
           firstName: undefined,
@@ -5647,7 +5647,7 @@ export namespace Public {
         addressId: Public.Types.Store["addressId"];
         lastUpdate: Public.Types.Store["lastUpdate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           storeId: undefined,
           managerStaffId: undefined,
@@ -5676,7 +5676,7 @@ export namespace Public {
         amount: Public.Types.Payment["amount"];
         paymentDate: Public.Types.Payment["paymentDate"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           paymentId: undefined,
           customerId: undefined,
@@ -5721,7 +5721,7 @@ export namespace Public {
         specialFeatures: Public.Types.Film["specialFeatures"] | null;
         fulltext: Public.Types.Film["fulltext"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           filmId: undefined,
           title: undefined,
@@ -6888,7 +6888,7 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlFeatures["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -6921,7 +6921,7 @@ export namespace InformationSchema {
           | InformationSchema.Types.SqlImplementationInfo["comments"]
           | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           implementationInfoId: undefined,
           implementationInfoName: undefined,
@@ -6942,7 +6942,7 @@ export namespace InformationSchema {
         isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
         comments: InformationSchema.Types.SqlParts["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -6964,7 +6964,7 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlSizing["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           sizingId: undefined,
           sizingName: undefined,
@@ -9620,8 +9620,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Datemultirange {
@@ -13329,8 +13329,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timestamp {
@@ -13338,8 +13338,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timestamptz {
@@ -13347,8 +13347,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timetz {
@@ -13356,8 +13356,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Trigger {
@@ -28133,12 +28133,10 @@ export class EmbraceSQLClient extends BaseClient {
     })(this);
   })(this);
 }
-// Begin React generated section
 import React from "react";
 export { EmbraceSQLProvider } from "@embracesql/react";
 import {
   useEmbraceSQLClient,
-  useEmbraceSQLUpdateCallback,
   useEmbraceSQLRow,
   useEmbraceSQLRows,
   InterceptorCallback,
@@ -28162,49 +28160,44 @@ export namespace Public {
         get actorId() {
           return this.uninterceptedValue.actorId;
         }
-        set actorId(newValue) {
-          this.uninterceptedValue.actorId = newValue;
-          void this.callback(this);
-        }
         get changeActorId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.ActorId.parse(
               event.target.value,
             );
-            this.actorId =
-              parsedValue as Public.Tables.FilmActor.Record["actorId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              actorId: parsedValue as Public.Tables.FilmActor.Record["actorId"],
+            });
           };
         }
         get filmId() {
           return this.uninterceptedValue.filmId;
-        }
-        set filmId(newValue) {
-          this.uninterceptedValue.filmId = newValue;
-          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.FilmId.parse(
               event.target.value,
             );
-            this.filmId =
-              parsedValue as Public.Tables.FilmActor.Record["filmId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              filmId: parsedValue as Public.Tables.FilmActor.Record["filmId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmActor.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.FilmActor.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.FilmActor.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28223,127 +28216,116 @@ export namespace Public {
         get addressId() {
           return this.uninterceptedValue.addressId;
         }
-        set addressId(newValue) {
-          this.uninterceptedValue.addressId = newValue;
-          void this.callback(this);
-        }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.AddressId.parse(
               event.target.value,
             );
-            this.addressId =
-              parsedValue as Public.Tables.Address.Record["addressId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              addressId:
+                parsedValue as Public.Tables.Address.Record["addressId"],
+            });
           };
         }
         get address() {
           return this.uninterceptedValue.address;
-        }
-        set address(newValue) {
-          this.uninterceptedValue.address = newValue;
-          void this.callback(this);
         }
         get changeAddress() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Address.parse(
               event.target.value,
             );
-            this.address =
-              parsedValue as Public.Tables.Address.Record["address"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              address: parsedValue as Public.Tables.Address.Record["address"],
+            });
           };
         }
         get address2() {
           return this.uninterceptedValue.address2;
-        }
-        set address2(newValue) {
-          this.uninterceptedValue.address2 = newValue;
-          void this.callback(this);
         }
         get changeAddress2() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Address2.parse(
               event.target.value,
             );
-            this.address2 =
-              parsedValue as Public.Tables.Address.Record["address2"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              address2: parsedValue as Public.Tables.Address.Record["address2"],
+            });
           };
         }
         get district() {
           return this.uninterceptedValue.district;
-        }
-        set district(newValue) {
-          this.uninterceptedValue.district = newValue;
-          void this.callback(this);
         }
         get changeDistrict() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.District.parse(
               event.target.value,
             );
-            this.district =
-              parsedValue as Public.Tables.Address.Record["district"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              district: parsedValue as Public.Tables.Address.Record["district"],
+            });
           };
         }
         get cityId() {
           return this.uninterceptedValue.cityId;
-        }
-        set cityId(newValue) {
-          this.uninterceptedValue.cityId = newValue;
-          void this.callback(this);
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.CityId.parse(
               event.target.value,
             );
-            this.cityId = parsedValue as Public.Tables.Address.Record["cityId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              cityId: parsedValue as Public.Tables.Address.Record["cityId"],
+            });
           };
         }
         get postalCode() {
           return this.uninterceptedValue.postalCode;
-        }
-        set postalCode(newValue) {
-          this.uninterceptedValue.postalCode = newValue;
-          void this.callback(this);
         }
         get changePostalCode() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.PostalCode.parse(
               event.target.value,
             );
-            this.postalCode =
-              parsedValue as Public.Tables.Address.Record["postalCode"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              postalCode:
+                parsedValue as Public.Tables.Address.Record["postalCode"],
+            });
           };
         }
         get phone() {
           return this.uninterceptedValue.phone;
-        }
-        set phone(newValue) {
-          this.uninterceptedValue.phone = newValue;
-          void this.callback(this);
         }
         get changePhone() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.Phone.parse(
               event.target.value,
             );
-            this.phone = parsedValue as Public.Tables.Address.Record["phone"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              phone: parsedValue as Public.Tables.Address.Record["phone"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Address.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Address.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Address.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28362,63 +28344,58 @@ export namespace Public {
         get cityId() {
           return this.uninterceptedValue.cityId;
         }
-        set cityId(newValue) {
-          this.uninterceptedValue.cityId = newValue;
-          void this.callback(this);
-        }
         get changeCityId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.CityId.parse(
               event.target.value,
             );
-            this.cityId = parsedValue as Public.Tables.City.Record["cityId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              cityId: parsedValue as Public.Tables.City.Record["cityId"],
+            });
           };
         }
         get city() {
           return this.uninterceptedValue.city;
-        }
-        set city(newValue) {
-          this.uninterceptedValue.city = newValue;
-          void this.callback(this);
         }
         get changeCity() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.City.parse(
               event.target.value,
             );
-            this.city = parsedValue as Public.Tables.City.Record["city"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              city: parsedValue as Public.Tables.City.Record["city"],
+            });
           };
         }
         get countryId() {
           return this.uninterceptedValue.countryId;
-        }
-        set countryId(newValue) {
-          this.uninterceptedValue.countryId = newValue;
-          void this.callback(this);
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.CountryId.parse(
               event.target.value,
             );
-            this.countryId =
-              parsedValue as Public.Tables.City.Record["countryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              countryId: parsedValue as Public.Tables.City.Record["countryId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.City.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.City.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.City.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28437,160 +28414,148 @@ export namespace Public {
         get customerId() {
           return this.uninterceptedValue.customerId;
         }
-        set customerId(newValue) {
-          this.uninterceptedValue.customerId = newValue;
-          void this.callback(this);
-        }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.CustomerId.parse(
               event.target.value,
             );
-            this.customerId =
-              parsedValue as Public.Tables.Customer.Record["customerId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              customerId:
+                parsedValue as Public.Tables.Customer.Record["customerId"],
+            });
           };
         }
         get storeId() {
           return this.uninterceptedValue.storeId;
-        }
-        set storeId(newValue) {
-          this.uninterceptedValue.storeId = newValue;
-          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.StoreId.parse(
               event.target.value,
             );
-            this.storeId =
-              parsedValue as Public.Tables.Customer.Record["storeId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              storeId: parsedValue as Public.Tables.Customer.Record["storeId"],
+            });
           };
         }
         get firstName() {
           return this.uninterceptedValue.firstName;
-        }
-        set firstName(newValue) {
-          this.uninterceptedValue.firstName = newValue;
-          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.FirstName.parse(
               event.target.value,
             );
-            this.firstName =
-              parsedValue as Public.Tables.Customer.Record["firstName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              firstName:
+                parsedValue as Public.Tables.Customer.Record["firstName"],
+            });
           };
         }
         get lastName() {
           return this.uninterceptedValue.lastName;
-        }
-        set lastName(newValue) {
-          this.uninterceptedValue.lastName = newValue;
-          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.LastName.parse(
               event.target.value,
             );
-            this.lastName =
-              parsedValue as Public.Tables.Customer.Record["lastName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastName:
+                parsedValue as Public.Tables.Customer.Record["lastName"],
+            });
           };
         }
         get email() {
           return this.uninterceptedValue.email;
-        }
-        set email(newValue) {
-          this.uninterceptedValue.email = newValue;
-          void this.callback(this);
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Email.parse(
               event.target.value,
             );
-            this.email = parsedValue as Public.Tables.Customer.Record["email"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              email: parsedValue as Public.Tables.Customer.Record["email"],
+            });
           };
         }
         get addressId() {
           return this.uninterceptedValue.addressId;
-        }
-        set addressId(newValue) {
-          this.uninterceptedValue.addressId = newValue;
-          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.AddressId.parse(
               event.target.value,
             );
-            this.addressId =
-              parsedValue as Public.Tables.Customer.Record["addressId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              addressId:
+                parsedValue as Public.Tables.Customer.Record["addressId"],
+            });
           };
         }
         get activebool() {
           return this.uninterceptedValue.activebool;
-        }
-        set activebool(newValue) {
-          this.uninterceptedValue.activebool = newValue;
-          void this.callback(this);
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Activebool.parse(
               event.target.value,
             );
-            this.activebool =
-              parsedValue as Public.Tables.Customer.Record["activebool"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              activebool:
+                parsedValue as Public.Tables.Customer.Record["activebool"],
+            });
           };
         }
         get createDate() {
           return this.uninterceptedValue.createDate;
-        }
-        set createDate(newValue) {
-          this.uninterceptedValue.createDate = newValue;
-          void this.callback(this);
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.CreateDate.parse(
               event.target.value,
             );
-            this.createDate =
-              parsedValue as Public.Tables.Customer.Record["createDate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              createDate:
+                parsedValue as Public.Tables.Customer.Record["createDate"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Customer.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Customer.Record["lastUpdate"],
+            });
           };
         }
         get active() {
           return this.uninterceptedValue.active;
-        }
-        set active(newValue) {
-          this.uninterceptedValue.active = newValue;
-          void this.callback(this);
         }
         get changeActive() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Customer.Active.parse(
               event.target.value,
             );
-            this.active =
-              parsedValue as Public.Tables.Customer.Record["active"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              active: parsedValue as Public.Tables.Customer.Record["active"],
+            });
           };
         }
       }
@@ -28609,64 +28574,58 @@ export namespace Public {
         get actorId() {
           return this.uninterceptedValue.actorId;
         }
-        set actorId(newValue) {
-          this.uninterceptedValue.actorId = newValue;
-          void this.callback(this);
-        }
         get changeActorId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.ActorId.parse(
               event.target.value,
             );
-            this.actorId = parsedValue as Public.Tables.Actor.Record["actorId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              actorId: parsedValue as Public.Tables.Actor.Record["actorId"],
+            });
           };
         }
         get firstName() {
           return this.uninterceptedValue.firstName;
-        }
-        set firstName(newValue) {
-          this.uninterceptedValue.firstName = newValue;
-          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.FirstName.parse(
               event.target.value,
             );
-            this.firstName =
-              parsedValue as Public.Tables.Actor.Record["firstName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              firstName: parsedValue as Public.Tables.Actor.Record["firstName"],
+            });
           };
         }
         get lastName() {
           return this.uninterceptedValue.lastName;
-        }
-        set lastName(newValue) {
-          this.uninterceptedValue.lastName = newValue;
-          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.LastName.parse(
               event.target.value,
             );
-            this.lastName =
-              parsedValue as Public.Tables.Actor.Record["lastName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastName: parsedValue as Public.Tables.Actor.Record["lastName"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Actor.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Actor.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Actor.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28685,49 +28644,46 @@ export namespace Public {
         get filmId() {
           return this.uninterceptedValue.filmId;
         }
-        set filmId(newValue) {
-          this.uninterceptedValue.filmId = newValue;
-          void this.callback(this);
-        }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.FilmId.parse(
               event.target.value,
             );
-            this.filmId =
-              parsedValue as Public.Tables.FilmCategory.Record["filmId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              filmId:
+                parsedValue as Public.Tables.FilmCategory.Record["filmId"],
+            });
           };
         }
         get categoryId() {
           return this.uninterceptedValue.categoryId;
-        }
-        set categoryId(newValue) {
-          this.uninterceptedValue.categoryId = newValue;
-          void this.callback(this);
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.CategoryId.parse(
               event.target.value,
             );
-            this.categoryId =
-              parsedValue as Public.Tables.FilmCategory.Record["categoryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              categoryId:
+                parsedValue as Public.Tables.FilmCategory.Record["categoryId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.FilmCategory.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.FilmCategory.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.FilmCategory.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28746,65 +28702,59 @@ export namespace Public {
         get inventoryId() {
           return this.uninterceptedValue.inventoryId;
         }
-        set inventoryId(newValue) {
-          this.uninterceptedValue.inventoryId = newValue;
-          void this.callback(this);
-        }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.InventoryId.parse(
               event.target.value,
             );
-            this.inventoryId =
-              parsedValue as Public.Tables.Inventory.Record["inventoryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              inventoryId:
+                parsedValue as Public.Tables.Inventory.Record["inventoryId"],
+            });
           };
         }
         get filmId() {
           return this.uninterceptedValue.filmId;
-        }
-        set filmId(newValue) {
-          this.uninterceptedValue.filmId = newValue;
-          void this.callback(this);
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.FilmId.parse(
               event.target.value,
             );
-            this.filmId =
-              parsedValue as Public.Tables.Inventory.Record["filmId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              filmId: parsedValue as Public.Tables.Inventory.Record["filmId"],
+            });
           };
         }
         get storeId() {
           return this.uninterceptedValue.storeId;
-        }
-        set storeId(newValue) {
-          this.uninterceptedValue.storeId = newValue;
-          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.StoreId.parse(
               event.target.value,
             );
-            this.storeId =
-              parsedValue as Public.Tables.Inventory.Record["storeId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              storeId: parsedValue as Public.Tables.Inventory.Record["storeId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Inventory.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Inventory.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Inventory.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28823,48 +28773,45 @@ export namespace Public {
         get categoryId() {
           return this.uninterceptedValue.categoryId;
         }
-        set categoryId(newValue) {
-          this.uninterceptedValue.categoryId = newValue;
-          void this.callback(this);
-        }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.CategoryId.parse(
               event.target.value,
             );
-            this.categoryId =
-              parsedValue as Public.Tables.Category.Record["categoryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              categoryId:
+                parsedValue as Public.Tables.Category.Record["categoryId"],
+            });
           };
         }
         get name() {
           return this.uninterceptedValue.name;
-        }
-        set name(newValue) {
-          this.uninterceptedValue.name = newValue;
-          void this.callback(this);
         }
         get changeName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.Name.parse(
               event.target.value,
             );
-            this.name = parsedValue as Public.Tables.Category.Record["name"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              name: parsedValue as Public.Tables.Category.Record["name"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Category.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Category.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Category.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28883,49 +28830,45 @@ export namespace Public {
         get countryId() {
           return this.uninterceptedValue.countryId;
         }
-        set countryId(newValue) {
-          this.uninterceptedValue.countryId = newValue;
-          void this.callback(this);
-        }
         get changeCountryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.CountryId.parse(
               event.target.value,
             );
-            this.countryId =
-              parsedValue as Public.Tables.Country.Record["countryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              countryId:
+                parsedValue as Public.Tables.Country.Record["countryId"],
+            });
           };
         }
         get country() {
           return this.uninterceptedValue.country;
-        }
-        set country(newValue) {
-          this.uninterceptedValue.country = newValue;
-          void this.callback(this);
         }
         get changeCountry() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.Country.parse(
               event.target.value,
             );
-            this.country =
-              parsedValue as Public.Tables.Country.Record["country"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              country: parsedValue as Public.Tables.Country.Record["country"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Country.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Country.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Country.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -28944,48 +28887,45 @@ export namespace Public {
         get languageId() {
           return this.uninterceptedValue.languageId;
         }
-        set languageId(newValue) {
-          this.uninterceptedValue.languageId = newValue;
-          void this.callback(this);
-        }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.LanguageId.parse(
               event.target.value,
             );
-            this.languageId =
-              parsedValue as Public.Tables.Language.Record["languageId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              languageId:
+                parsedValue as Public.Tables.Language.Record["languageId"],
+            });
           };
         }
         get name() {
           return this.uninterceptedValue.name;
-        }
-        set name(newValue) {
-          this.uninterceptedValue.name = newValue;
-          void this.callback(this);
         }
         get changeName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.Name.parse(
               event.target.value,
             );
-            this.name = parsedValue as Public.Tables.Language.Record["name"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              name: parsedValue as Public.Tables.Language.Record["name"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Language.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Language.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Language.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -29004,113 +28944,104 @@ export namespace Public {
         get rentalId() {
           return this.uninterceptedValue.rentalId;
         }
-        set rentalId(newValue) {
-          this.uninterceptedValue.rentalId = newValue;
-          void this.callback(this);
-        }
         get changeRentalId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.RentalId.parse(
               event.target.value,
             );
-            this.rentalId =
-              parsedValue as Public.Tables.Rental.Record["rentalId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rentalId: parsedValue as Public.Tables.Rental.Record["rentalId"],
+            });
           };
         }
         get rentalDate() {
           return this.uninterceptedValue.rentalDate;
-        }
-        set rentalDate(newValue) {
-          this.uninterceptedValue.rentalDate = newValue;
-          void this.callback(this);
         }
         get changeRentalDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.RentalDate.parse(
               event.target.value,
             );
-            this.rentalDate =
-              parsedValue as Public.Tables.Rental.Record["rentalDate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rentalDate:
+                parsedValue as Public.Tables.Rental.Record["rentalDate"],
+            });
           };
         }
         get inventoryId() {
           return this.uninterceptedValue.inventoryId;
-        }
-        set inventoryId(newValue) {
-          this.uninterceptedValue.inventoryId = newValue;
-          void this.callback(this);
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.InventoryId.parse(
               event.target.value,
             );
-            this.inventoryId =
-              parsedValue as Public.Tables.Rental.Record["inventoryId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              inventoryId:
+                parsedValue as Public.Tables.Rental.Record["inventoryId"],
+            });
           };
         }
         get customerId() {
           return this.uninterceptedValue.customerId;
-        }
-        set customerId(newValue) {
-          this.uninterceptedValue.customerId = newValue;
-          void this.callback(this);
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.CustomerId.parse(
               event.target.value,
             );
-            this.customerId =
-              parsedValue as Public.Tables.Rental.Record["customerId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              customerId:
+                parsedValue as Public.Tables.Rental.Record["customerId"],
+            });
           };
         }
         get returnDate() {
           return this.uninterceptedValue.returnDate;
-        }
-        set returnDate(newValue) {
-          this.uninterceptedValue.returnDate = newValue;
-          void this.callback(this);
         }
         get changeReturnDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.ReturnDate.parse(
               event.target.value,
             );
-            this.returnDate =
-              parsedValue as Public.Tables.Rental.Record["returnDate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              returnDate:
+                parsedValue as Public.Tables.Rental.Record["returnDate"],
+            });
           };
         }
         get staffId() {
           return this.uninterceptedValue.staffId;
-        }
-        set staffId(newValue) {
-          this.uninterceptedValue.staffId = newValue;
-          void this.callback(this);
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.StaffId.parse(
               event.target.value,
             );
-            this.staffId =
-              parsedValue as Public.Tables.Rental.Record["staffId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              staffId: parsedValue as Public.Tables.Rental.Record["staffId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Rental.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Rental.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Rental.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -29129,172 +29060,156 @@ export namespace Public {
         get staffId() {
           return this.uninterceptedValue.staffId;
         }
-        set staffId(newValue) {
-          this.uninterceptedValue.staffId = newValue;
-          void this.callback(this);
-        }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.StaffId.parse(
               event.target.value,
             );
-            this.staffId = parsedValue as Public.Tables.Staff.Record["staffId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              staffId: parsedValue as Public.Tables.Staff.Record["staffId"],
+            });
           };
         }
         get firstName() {
           return this.uninterceptedValue.firstName;
-        }
-        set firstName(newValue) {
-          this.uninterceptedValue.firstName = newValue;
-          void this.callback(this);
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.FirstName.parse(
               event.target.value,
             );
-            this.firstName =
-              parsedValue as Public.Tables.Staff.Record["firstName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              firstName: parsedValue as Public.Tables.Staff.Record["firstName"],
+            });
           };
         }
         get lastName() {
           return this.uninterceptedValue.lastName;
-        }
-        set lastName(newValue) {
-          this.uninterceptedValue.lastName = newValue;
-          void this.callback(this);
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.LastName.parse(
               event.target.value,
             );
-            this.lastName =
-              parsedValue as Public.Tables.Staff.Record["lastName"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastName: parsedValue as Public.Tables.Staff.Record["lastName"],
+            });
           };
         }
         get addressId() {
           return this.uninterceptedValue.addressId;
-        }
-        set addressId(newValue) {
-          this.uninterceptedValue.addressId = newValue;
-          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.AddressId.parse(
               event.target.value,
             );
-            this.addressId =
-              parsedValue as Public.Tables.Staff.Record["addressId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              addressId: parsedValue as Public.Tables.Staff.Record["addressId"],
+            });
           };
         }
         get email() {
           return this.uninterceptedValue.email;
-        }
-        set email(newValue) {
-          this.uninterceptedValue.email = newValue;
-          void this.callback(this);
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Email.parse(
               event.target.value,
             );
-            this.email = parsedValue as Public.Tables.Staff.Record["email"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              email: parsedValue as Public.Tables.Staff.Record["email"],
+            });
           };
         }
         get storeId() {
           return this.uninterceptedValue.storeId;
-        }
-        set storeId(newValue) {
-          this.uninterceptedValue.storeId = newValue;
-          void this.callback(this);
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.StoreId.parse(
               event.target.value,
             );
-            this.storeId = parsedValue as Public.Tables.Staff.Record["storeId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              storeId: parsedValue as Public.Tables.Staff.Record["storeId"],
+            });
           };
         }
         get active() {
           return this.uninterceptedValue.active;
-        }
-        set active(newValue) {
-          this.uninterceptedValue.active = newValue;
-          void this.callback(this);
         }
         get changeActive() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Active.parse(
               event.target.value,
             );
-            this.active = parsedValue as Public.Tables.Staff.Record["active"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              active: parsedValue as Public.Tables.Staff.Record["active"],
+            });
           };
         }
         get username() {
           return this.uninterceptedValue.username;
-        }
-        set username(newValue) {
-          this.uninterceptedValue.username = newValue;
-          void this.callback(this);
         }
         get changeUsername() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Username.parse(
               event.target.value,
             );
-            this.username =
-              parsedValue as Public.Tables.Staff.Record["username"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              username: parsedValue as Public.Tables.Staff.Record["username"],
+            });
           };
         }
         get password() {
           return this.uninterceptedValue.password;
-        }
-        set password(newValue) {
-          this.uninterceptedValue.password = newValue;
-          void this.callback(this);
         }
         get changePassword() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Password.parse(
               event.target.value,
             );
-            this.password =
-              parsedValue as Public.Tables.Staff.Record["password"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              password: parsedValue as Public.Tables.Staff.Record["password"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Staff.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Staff.Record["lastUpdate"],
+            });
           };
         }
         get picture() {
           return this.uninterceptedValue.picture;
-        }
-        set picture(newValue) {
-          this.uninterceptedValue.picture = newValue;
-          void this.callback(this);
         }
         get changePicture() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Staff.Picture.parse(
               event.target.value,
             );
-            this.picture = parsedValue as Public.Tables.Staff.Record["picture"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              picture: parsedValue as Public.Tables.Staff.Record["picture"],
+            });
           };
         }
       }
@@ -29313,64 +29228,59 @@ export namespace Public {
         get storeId() {
           return this.uninterceptedValue.storeId;
         }
-        set storeId(newValue) {
-          this.uninterceptedValue.storeId = newValue;
-          void this.callback(this);
-        }
         get changeStoreId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.StoreId.parse(
               event.target.value,
             );
-            this.storeId = parsedValue as Public.Tables.Store.Record["storeId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              storeId: parsedValue as Public.Tables.Store.Record["storeId"],
+            });
           };
         }
         get managerStaffId() {
           return this.uninterceptedValue.managerStaffId;
-        }
-        set managerStaffId(newValue) {
-          this.uninterceptedValue.managerStaffId = newValue;
-          void this.callback(this);
         }
         get changeManagerStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.ManagerStaffId.parse(
               event.target.value,
             );
-            this.managerStaffId =
-              parsedValue as Public.Tables.Store.Record["managerStaffId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              managerStaffId:
+                parsedValue as Public.Tables.Store.Record["managerStaffId"],
+            });
           };
         }
         get addressId() {
           return this.uninterceptedValue.addressId;
-        }
-        set addressId(newValue) {
-          this.uninterceptedValue.addressId = newValue;
-          void this.callback(this);
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.AddressId.parse(
               event.target.value,
             );
-            this.addressId =
-              parsedValue as Public.Tables.Store.Record["addressId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              addressId: parsedValue as Public.Tables.Store.Record["addressId"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Store.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Store.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Store.Record["lastUpdate"],
+            });
           };
         }
       }
@@ -29389,96 +29299,88 @@ export namespace Public {
         get paymentId() {
           return this.uninterceptedValue.paymentId;
         }
-        set paymentId(newValue) {
-          this.uninterceptedValue.paymentId = newValue;
-          void this.callback(this);
-        }
         get changePaymentId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.PaymentId.parse(
               event.target.value,
             );
-            this.paymentId =
-              parsedValue as Public.Tables.Payment.Record["paymentId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              paymentId:
+                parsedValue as Public.Tables.Payment.Record["paymentId"],
+            });
           };
         }
         get customerId() {
           return this.uninterceptedValue.customerId;
-        }
-        set customerId(newValue) {
-          this.uninterceptedValue.customerId = newValue;
-          void this.callback(this);
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.CustomerId.parse(
               event.target.value,
             );
-            this.customerId =
-              parsedValue as Public.Tables.Payment.Record["customerId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              customerId:
+                parsedValue as Public.Tables.Payment.Record["customerId"],
+            });
           };
         }
         get staffId() {
           return this.uninterceptedValue.staffId;
-        }
-        set staffId(newValue) {
-          this.uninterceptedValue.staffId = newValue;
-          void this.callback(this);
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.StaffId.parse(
               event.target.value,
             );
-            this.staffId =
-              parsedValue as Public.Tables.Payment.Record["staffId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              staffId: parsedValue as Public.Tables.Payment.Record["staffId"],
+            });
           };
         }
         get rentalId() {
           return this.uninterceptedValue.rentalId;
-        }
-        set rentalId(newValue) {
-          this.uninterceptedValue.rentalId = newValue;
-          void this.callback(this);
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.RentalId.parse(
               event.target.value,
             );
-            this.rentalId =
-              parsedValue as Public.Tables.Payment.Record["rentalId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rentalId: parsedValue as Public.Tables.Payment.Record["rentalId"],
+            });
           };
         }
         get amount() {
           return this.uninterceptedValue.amount;
-        }
-        set amount(newValue) {
-          this.uninterceptedValue.amount = newValue;
-          void this.callback(this);
         }
         get changeAmount() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.Amount.parse(
               event.target.value,
             );
-            this.amount = parsedValue as Public.Tables.Payment.Record["amount"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              amount: parsedValue as Public.Tables.Payment.Record["amount"],
+            });
           };
         }
         get paymentDate() {
           return this.uninterceptedValue.paymentDate;
-        }
-        set paymentDate(newValue) {
-          this.uninterceptedValue.paymentDate = newValue;
-          void this.callback(this);
         }
         get changePaymentDate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Payment.PaymentDate.parse(
               event.target.value,
             );
-            this.paymentDate =
-              parsedValue as Public.Tables.Payment.Record["paymentDate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              paymentDate:
+                parsedValue as Public.Tables.Payment.Record["paymentDate"],
+            });
           };
         }
       }
@@ -29497,205 +29399,191 @@ export namespace Public {
         get filmId() {
           return this.uninterceptedValue.filmId;
         }
-        set filmId(newValue) {
-          this.uninterceptedValue.filmId = newValue;
-          void this.callback(this);
-        }
         get changeFilmId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.FilmId.parse(
               event.target.value,
             );
-            this.filmId = parsedValue as Public.Tables.Film.Record["filmId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              filmId: parsedValue as Public.Tables.Film.Record["filmId"],
+            });
           };
         }
         get title() {
           return this.uninterceptedValue.title;
-        }
-        set title(newValue) {
-          this.uninterceptedValue.title = newValue;
-          void this.callback(this);
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Title.parse(
               event.target.value,
             );
-            this.title = parsedValue as Public.Tables.Film.Record["title"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              title: parsedValue as Public.Tables.Film.Record["title"],
+            });
           };
         }
         get description() {
           return this.uninterceptedValue.description;
-        }
-        set description(newValue) {
-          this.uninterceptedValue.description = newValue;
-          void this.callback(this);
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Description.parse(
               event.target.value,
             );
-            this.description =
-              parsedValue as Public.Tables.Film.Record["description"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              description:
+                parsedValue as Public.Tables.Film.Record["description"],
+            });
           };
         }
         get releaseYear() {
           return this.uninterceptedValue.releaseYear;
-        }
-        set releaseYear(newValue) {
-          this.uninterceptedValue.releaseYear = newValue;
-          void this.callback(this);
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.ReleaseYear.parse(
               event.target.value,
             );
-            this.releaseYear =
-              parsedValue as Public.Tables.Film.Record["releaseYear"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              releaseYear:
+                parsedValue as Public.Tables.Film.Record["releaseYear"],
+            });
           };
         }
         get languageId() {
           return this.uninterceptedValue.languageId;
-        }
-        set languageId(newValue) {
-          this.uninterceptedValue.languageId = newValue;
-          void this.callback(this);
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.LanguageId.parse(
               event.target.value,
             );
-            this.languageId =
-              parsedValue as Public.Tables.Film.Record["languageId"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              languageId:
+                parsedValue as Public.Tables.Film.Record["languageId"],
+            });
           };
         }
         get rentalDuration() {
           return this.uninterceptedValue.rentalDuration;
-        }
-        set rentalDuration(newValue) {
-          this.uninterceptedValue.rentalDuration = newValue;
-          void this.callback(this);
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.RentalDuration.parse(
               event.target.value,
             );
-            this.rentalDuration =
-              parsedValue as Public.Tables.Film.Record["rentalDuration"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rentalDuration:
+                parsedValue as Public.Tables.Film.Record["rentalDuration"],
+            });
           };
         }
         get rentalRate() {
           return this.uninterceptedValue.rentalRate;
-        }
-        set rentalRate(newValue) {
-          this.uninterceptedValue.rentalRate = newValue;
-          void this.callback(this);
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.RentalRate.parse(
               event.target.value,
             );
-            this.rentalRate =
-              parsedValue as Public.Tables.Film.Record["rentalRate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rentalRate:
+                parsedValue as Public.Tables.Film.Record["rentalRate"],
+            });
           };
         }
         get length() {
           return this.uninterceptedValue.length;
-        }
-        set length(newValue) {
-          this.uninterceptedValue.length = newValue;
-          void this.callback(this);
         }
         get changeLength() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Length.parse(
               event.target.value,
             );
-            this.length = parsedValue as Public.Tables.Film.Record["length"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              length: parsedValue as Public.Tables.Film.Record["length"],
+            });
           };
         }
         get replacementCost() {
           return this.uninterceptedValue.replacementCost;
-        }
-        set replacementCost(newValue) {
-          this.uninterceptedValue.replacementCost = newValue;
-          void this.callback(this);
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.ReplacementCost.parse(
               event.target.value,
             );
-            this.replacementCost =
-              parsedValue as Public.Tables.Film.Record["replacementCost"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              replacementCost:
+                parsedValue as Public.Tables.Film.Record["replacementCost"],
+            });
           };
         }
         get rating() {
           return this.uninterceptedValue.rating;
-        }
-        set rating(newValue) {
-          this.uninterceptedValue.rating = newValue;
-          void this.callback(this);
         }
         get changeRating() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Rating.parse(
               event.target.value,
             );
-            this.rating = parsedValue as Public.Tables.Film.Record["rating"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              rating: parsedValue as Public.Tables.Film.Record["rating"],
+            });
           };
         }
         get lastUpdate() {
           return this.uninterceptedValue.lastUpdate;
-        }
-        set lastUpdate(newValue) {
-          this.uninterceptedValue.lastUpdate = newValue;
-          void this.callback(this);
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.LastUpdate.parse(
               event.target.value,
             );
-            this.lastUpdate =
-              parsedValue as Public.Tables.Film.Record["lastUpdate"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              lastUpdate:
+                parsedValue as Public.Tables.Film.Record["lastUpdate"],
+            });
           };
         }
         get specialFeatures() {
           return this.uninterceptedValue.specialFeatures;
-        }
-        set specialFeatures(newValue) {
-          this.uninterceptedValue.specialFeatures = newValue;
-          void this.callback(this);
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.SpecialFeatures.parse(
               event.target.value,
             );
-            this.specialFeatures =
-              parsedValue as Public.Tables.Film.Record["specialFeatures"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              specialFeatures:
+                parsedValue as Public.Tables.Film.Record["specialFeatures"],
+            });
           };
         }
         get fulltext() {
           return this.uninterceptedValue.fulltext;
-        }
-        set fulltext(newValue) {
-          this.uninterceptedValue.fulltext = newValue;
-          void this.callback(this);
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Tables.Film.Fulltext.parse(
               event.target.value,
             );
-            this.fulltext =
-              parsedValue as Public.Tables.Film.Record["fulltext"];
+            void this.callback({
+              ...this.uninterceptedValue,
+              fulltext: parsedValue as Public.Tables.Film.Record["fulltext"],
+            });
           };
         }
       }
@@ -29708,7 +29596,11 @@ export namespace Public {
     export namespace FilmActor {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.FilmActor.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
           readOperation: client.Public.Tables.FilmActor.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
@@ -29716,7 +29608,7 @@ export namespace Public {
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
           Interceptor: Public.Tables.FilmActor.Interceptor,
-          emptyRow: Public.Tables.FilmActor.emptyRow,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
         });
       }
       export namespace ActorId {}
@@ -29726,6 +29618,7 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByActorIdFilmId,
+          Partial<Public.Tables.FilmActor.Values>,
           Public.Tables.FilmActor.Record
         >({
           readOperation:
@@ -29740,7 +29633,11 @@ export namespace Public {
       }
       export function useByFilmId(parameters: ByFilmId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByFilmId, Public.Tables.FilmActor.Record>({
+        return useEmbraceSQLRows<
+          ByFilmId,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
           readOperation:
             client.Public.Tables.FilmActor.ByFilmId.read.bind(client),
           parameters,
@@ -29749,14 +29646,18 @@ export namespace Public {
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
           Interceptor: Public.Tables.FilmActor.Interceptor,
-          emptyRow: Public.Tables.FilmActor.emptyRow,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
         });
       }
     }
     export namespace Address {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Address.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
           readOperation: client.Public.Tables.Address.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Address.create.bind(client),
@@ -29764,7 +29665,7 @@ export namespace Public {
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
           Interceptor: Public.Tables.Address.Interceptor,
-          emptyRow: Public.Tables.Address.emptyRow,
+          emptyRecord: Public.Tables.Address.emptyRecord,
         });
       }
       export namespace AddressId {}
@@ -29777,7 +29678,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByAddressId(parameters: ByAddressId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByAddressId, Public.Tables.Address.Record>({
+        return useEmbraceSQLRow<
+          ByAddressId,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
           readOperation:
             client.Public.Tables.Address.ByAddressId.read.bind(client),
           parameters,
@@ -29790,7 +29695,11 @@ export namespace Public {
       }
       export function useByCityId(parameters: ByCityId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByCityId, Public.Tables.Address.Record>({
+        return useEmbraceSQLRows<
+          ByCityId,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
           readOperation:
             client.Public.Tables.Address.ByCityId.read.bind(client),
           parameters,
@@ -29799,14 +29708,18 @@ export namespace Public {
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
           Interceptor: Public.Tables.Address.Interceptor,
-          emptyRow: Public.Tables.Address.emptyRow,
+          emptyRecord: Public.Tables.Address.emptyRecord,
         });
       }
     }
     export namespace City {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.City.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
           readOperation: client.Public.Tables.City.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.City.create.bind(client),
@@ -29814,7 +29727,7 @@ export namespace Public {
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
           Interceptor: Public.Tables.City.Interceptor,
-          emptyRow: Public.Tables.City.emptyRow,
+          emptyRecord: Public.Tables.City.emptyRecord,
         });
       }
       export namespace CityId {}
@@ -29823,7 +29736,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCityId(parameters: ByCityId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByCityId, Public.Tables.City.Record>({
+        return useEmbraceSQLRow<
+          ByCityId,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
           readOperation: client.Public.Tables.City.ByCityId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.City.create.bind(client),
@@ -29835,7 +29752,11 @@ export namespace Public {
       }
       export function useByCountryId(parameters: ByCountryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByCountryId, Public.Tables.City.Record>({
+        return useEmbraceSQLRows<
+          ByCountryId,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
           readOperation:
             client.Public.Tables.City.ByCountryId.read.bind(client),
           parameters,
@@ -29844,14 +29765,18 @@ export namespace Public {
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
           Interceptor: Public.Tables.City.Interceptor,
-          emptyRow: Public.Tables.City.emptyRow,
+          emptyRecord: Public.Tables.City.emptyRecord,
         });
       }
     }
     export namespace Customer {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
           readOperation: client.Public.Tables.Customer.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Customer.create.bind(client),
@@ -29859,7 +29784,7 @@ export namespace Public {
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
-          emptyRow: Public.Tables.Customer.emptyRow,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
       export namespace CustomerId {}
@@ -29874,7 +29799,11 @@ export namespace Public {
       export namespace Active {}
       export function useByAddressId(parameters: ByAddressId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByAddressId, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRows<
+          ByAddressId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
           readOperation:
             client.Public.Tables.Customer.ByAddressId.read.bind(client),
           parameters,
@@ -29883,12 +29812,16 @@ export namespace Public {
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
-          emptyRow: Public.Tables.Customer.emptyRow,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
       export function useByCustomerId(parameters: ByCustomerId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByCustomerId, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRow<
+          ByCustomerId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
           readOperation:
             client.Public.Tables.Customer.ByCustomerId.read.bind(client),
           parameters,
@@ -29901,7 +29834,11 @@ export namespace Public {
       }
       export function useByLastName(parameters: ByLastName) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByLastName, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRows<
+          ByLastName,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
           readOperation:
             client.Public.Tables.Customer.ByLastName.read.bind(client),
           parameters,
@@ -29910,12 +29847,16 @@ export namespace Public {
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
-          emptyRow: Public.Tables.Customer.emptyRow,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
       export function useByStoreId(parameters: ByStoreId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByStoreId, Public.Tables.Customer.Record>({
+        return useEmbraceSQLRows<
+          ByStoreId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
           readOperation:
             client.Public.Tables.Customer.ByStoreId.read.bind(client),
           parameters,
@@ -29924,14 +29865,18 @@ export namespace Public {
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           Interceptor: Public.Tables.Customer.Interceptor,
-          emptyRow: Public.Tables.Customer.emptyRow,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
     }
     export namespace Actor {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Actor.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
           readOperation: client.Public.Tables.Actor.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Actor.create.bind(client),
@@ -29939,7 +29884,7 @@ export namespace Public {
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
           Interceptor: Public.Tables.Actor.Interceptor,
-          emptyRow: Public.Tables.Actor.emptyRow,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
         });
       }
       export namespace ActorId {}
@@ -29948,7 +29893,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByActorId(parameters: ByActorId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByActorId, Public.Tables.Actor.Record>({
+        return useEmbraceSQLRow<
+          ByActorId,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
           readOperation: client.Public.Tables.Actor.ByActorId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Actor.create.bind(client),
@@ -29960,7 +29909,11 @@ export namespace Public {
       }
       export function useByLastName(parameters: ByLastName) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByLastName, Public.Tables.Actor.Record>({
+        return useEmbraceSQLRows<
+          ByLastName,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
           readOperation:
             client.Public.Tables.Actor.ByLastName.read.bind(client),
           parameters,
@@ -29969,14 +29922,18 @@ export namespace Public {
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
           Interceptor: Public.Tables.Actor.Interceptor,
-          emptyRow: Public.Tables.Actor.emptyRow,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
         });
       }
     }
     export namespace FilmCategory {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.FilmCategory.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.FilmCategory.Values>,
+          Public.Tables.FilmCategory.Record
+        >({
           readOperation: client.Public.Tables.FilmCategory.all.bind(client),
           parameters: NEVER,
           upsertOperation:
@@ -29985,7 +29942,7 @@ export namespace Public {
             client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
           Interceptor: Public.Tables.FilmCategory.Interceptor,
-          emptyRow: Public.Tables.FilmCategory.emptyRow,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
         });
       }
       export namespace FilmId {}
@@ -29995,6 +29952,7 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByFilmIdCategoryId,
+          Partial<Public.Tables.FilmCategory.Values>,
           Public.Tables.FilmCategory.Record
         >({
           readOperation:
@@ -30014,7 +29972,11 @@ export namespace Public {
     export namespace Inventory {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Inventory.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
           readOperation: client.Public.Tables.Inventory.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Inventory.create.bind(client),
@@ -30022,7 +29984,7 @@ export namespace Public {
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
           Interceptor: Public.Tables.Inventory.Interceptor,
-          emptyRow: Public.Tables.Inventory.emptyRow,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
         });
       }
       export namespace InventoryId {}
@@ -30031,7 +29993,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByInventoryId, Public.Tables.Inventory.Record>({
+        return useEmbraceSQLRow<
+          ByInventoryId,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
           readOperation:
             client.Public.Tables.Inventory.ByInventoryId.read.bind(client),
           parameters,
@@ -30046,6 +30012,7 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByStoreIdFilmId,
+          Partial<Public.Tables.Inventory.Values>,
           Public.Tables.Inventory.Record
         >({
           readOperation:
@@ -30056,14 +30023,18 @@ export namespace Public {
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
           Interceptor: Public.Tables.Inventory.Interceptor,
-          emptyRow: Public.Tables.Inventory.emptyRow,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
         });
       }
     }
     export namespace Category {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Category.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
           readOperation: client.Public.Tables.Category.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Category.create.bind(client),
@@ -30071,7 +30042,7 @@ export namespace Public {
             client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
           Interceptor: Public.Tables.Category.Interceptor,
-          emptyRow: Public.Tables.Category.emptyRow,
+          emptyRecord: Public.Tables.Category.emptyRecord,
         });
       }
       export namespace CategoryId {}
@@ -30079,7 +30050,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCategoryId(parameters: ByCategoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByCategoryId, Public.Tables.Category.Record>({
+        return useEmbraceSQLRow<
+          ByCategoryId,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
           readOperation:
             client.Public.Tables.Category.ByCategoryId.read.bind(client),
           parameters,
@@ -30094,7 +30069,11 @@ export namespace Public {
     export namespace Country {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Country.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
           readOperation: client.Public.Tables.Country.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Country.create.bind(client),
@@ -30102,7 +30081,7 @@ export namespace Public {
             client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
           Interceptor: Public.Tables.Country.Interceptor,
-          emptyRow: Public.Tables.Country.emptyRow,
+          emptyRecord: Public.Tables.Country.emptyRecord,
         });
       }
       export namespace CountryId {}
@@ -30110,7 +30089,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByCountryId(parameters: ByCountryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByCountryId, Public.Tables.Country.Record>({
+        return useEmbraceSQLRow<
+          ByCountryId,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
           readOperation:
             client.Public.Tables.Country.ByCountryId.read.bind(client),
           parameters,
@@ -30125,7 +30108,11 @@ export namespace Public {
     export namespace Language {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Language.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
           readOperation: client.Public.Tables.Language.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Language.create.bind(client),
@@ -30133,7 +30120,7 @@ export namespace Public {
             client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
           Interceptor: Public.Tables.Language.Interceptor,
-          emptyRow: Public.Tables.Language.emptyRow,
+          emptyRecord: Public.Tables.Language.emptyRecord,
         });
       }
       export namespace LanguageId {}
@@ -30141,7 +30128,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByLanguageId(parameters: ByLanguageId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByLanguageId, Public.Tables.Language.Record>({
+        return useEmbraceSQLRow<
+          ByLanguageId,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
           readOperation:
             client.Public.Tables.Language.ByLanguageId.read.bind(client),
           parameters,
@@ -30156,7 +30147,11 @@ export namespace Public {
     export namespace Rental {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Rental.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
           readOperation: client.Public.Tables.Rental.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Rental.create.bind(client),
@@ -30164,7 +30159,7 @@ export namespace Public {
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           Interceptor: Public.Tables.Rental.Interceptor,
-          emptyRow: Public.Tables.Rental.emptyRow,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
       export namespace RentalId {}
@@ -30176,7 +30171,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByInventoryId(parameters: ByInventoryId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByInventoryId, Public.Tables.Rental.Record>({
+        return useEmbraceSQLRows<
+          ByInventoryId,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
           readOperation:
             client.Public.Tables.Rental.ByInventoryId.read.bind(client),
           parameters,
@@ -30185,7 +30184,7 @@ export namespace Public {
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           Interceptor: Public.Tables.Rental.Interceptor,
-          emptyRow: Public.Tables.Rental.emptyRow,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
       export function useByRentalDateInventoryIdCustomerId(
@@ -30194,6 +30193,7 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByRentalDateInventoryIdCustomerId,
+          Partial<Public.Tables.Rental.Values>,
           Public.Tables.Rental.Record
         >({
           readOperation:
@@ -30210,7 +30210,11 @@ export namespace Public {
       }
       export function useByRentalId(parameters: ByRentalId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByRentalId, Public.Tables.Rental.Record>({
+        return useEmbraceSQLRow<
+          ByRentalId,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
           readOperation:
             client.Public.Tables.Rental.ByRentalId.read.bind(client),
           parameters,
@@ -30225,7 +30229,11 @@ export namespace Public {
     export namespace Staff {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Staff.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
           readOperation: client.Public.Tables.Staff.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Staff.create.bind(client),
@@ -30233,7 +30241,7 @@ export namespace Public {
             client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
           Interceptor: Public.Tables.Staff.Interceptor,
-          emptyRow: Public.Tables.Staff.emptyRow,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
         });
       }
       export namespace StaffId {}
@@ -30249,7 +30257,11 @@ export namespace Public {
       export namespace Picture {}
       export function useByStaffId(parameters: ByStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByStaffId, Public.Tables.Staff.Record>({
+        return useEmbraceSQLRow<
+          ByStaffId,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
           readOperation: client.Public.Tables.Staff.ByStaffId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Staff.create.bind(client),
@@ -30263,7 +30275,11 @@ export namespace Public {
     export namespace Store {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Store.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
           readOperation: client.Public.Tables.Store.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Store.create.bind(client),
@@ -30271,7 +30287,7 @@ export namespace Public {
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
           Interceptor: Public.Tables.Store.Interceptor,
-          emptyRow: Public.Tables.Store.emptyRow,
+          emptyRecord: Public.Tables.Store.emptyRecord,
         });
       }
       export namespace StoreId {}
@@ -30280,7 +30296,11 @@ export namespace Public {
       export namespace LastUpdate {}
       export function useByManagerStaffId(parameters: ByManagerStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByManagerStaffId, Public.Tables.Store.Record>({
+        return useEmbraceSQLRow<
+          ByManagerStaffId,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
           readOperation:
             client.Public.Tables.Store.ByManagerStaffId.read.bind(client),
           parameters,
@@ -30293,7 +30313,11 @@ export namespace Public {
       }
       export function useByStoreId(parameters: ByStoreId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByStoreId, Public.Tables.Store.Record>({
+        return useEmbraceSQLRow<
+          ByStoreId,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
           readOperation: client.Public.Tables.Store.ByStoreId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Store.create.bind(client),
@@ -30307,7 +30331,11 @@ export namespace Public {
     export namespace Payment {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
           readOperation: client.Public.Tables.Payment.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Payment.create.bind(client),
@@ -30315,7 +30343,7 @@ export namespace Public {
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
-          emptyRow: Public.Tables.Payment.emptyRow,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
       export namespace PaymentId {}
@@ -30326,7 +30354,11 @@ export namespace Public {
       export namespace PaymentDate {}
       export function useByCustomerId(parameters: ByCustomerId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByCustomerId, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRows<
+          ByCustomerId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
           readOperation:
             client.Public.Tables.Payment.ByCustomerId.read.bind(client),
           parameters,
@@ -30335,12 +30367,16 @@ export namespace Public {
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
-          emptyRow: Public.Tables.Payment.emptyRow,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
       export function useByPaymentId(parameters: ByPaymentId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByPaymentId, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRow<
+          ByPaymentId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
           readOperation:
             client.Public.Tables.Payment.ByPaymentId.read.bind(client),
           parameters,
@@ -30353,7 +30389,11 @@ export namespace Public {
       }
       export function useByRentalId(parameters: ByRentalId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByRentalId, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRows<
+          ByRentalId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
           readOperation:
             client.Public.Tables.Payment.ByRentalId.read.bind(client),
           parameters,
@@ -30362,12 +30402,16 @@ export namespace Public {
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
-          emptyRow: Public.Tables.Payment.emptyRow,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
       export function useByStaffId(parameters: ByStaffId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByStaffId, Public.Tables.Payment.Record>({
+        return useEmbraceSQLRows<
+          ByStaffId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
           readOperation:
             client.Public.Tables.Payment.ByStaffId.read.bind(client),
           parameters,
@@ -30376,14 +30420,18 @@ export namespace Public {
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           Interceptor: Public.Tables.Payment.Interceptor,
-          emptyRow: Public.Tables.Payment.emptyRow,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
     }
     export namespace Film {
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<never, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
           readOperation: client.Public.Tables.Film.all.bind(client),
           parameters: NEVER,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30391,7 +30439,7 @@ export namespace Public {
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
-          emptyRow: Public.Tables.Film.emptyRow,
+          emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
       export namespace FilmId {}
@@ -30409,7 +30457,11 @@ export namespace Public {
       export namespace Fulltext {}
       export function useByFilmId(parameters: ByFilmId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<ByFilmId, Public.Tables.Film.Record>({
+        return useEmbraceSQLRow<
+          ByFilmId,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
           readOperation: client.Public.Tables.Film.ByFilmId.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30421,7 +30473,11 @@ export namespace Public {
       }
       export function useByFulltext(parameters: ByFulltext) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByFulltext, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<
+          ByFulltext,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
           readOperation: client.Public.Tables.Film.ByFulltext.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30429,12 +30485,16 @@ export namespace Public {
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
-          emptyRow: Public.Tables.Film.emptyRow,
+          emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
       export function useByLanguageId(parameters: ByLanguageId) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByLanguageId, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<
+          ByLanguageId,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
           readOperation:
             client.Public.Tables.Film.ByLanguageId.read.bind(client),
           parameters,
@@ -30443,12 +30503,16 @@ export namespace Public {
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
-          emptyRow: Public.Tables.Film.emptyRow,
+          emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
       export function useByTitle(parameters: ByTitle) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<ByTitle, Public.Tables.Film.Record>({
+        return useEmbraceSQLRows<
+          ByTitle,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
           readOperation: client.Public.Tables.Film.ByTitle.read.bind(client),
           parameters,
           upsertOperation: client.Public.Tables.Film.create.bind(client),
@@ -30456,7 +30520,7 @@ export namespace Public {
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           Interceptor: Public.Tables.Film.Interceptor,
-          emptyRow: Public.Tables.Film.emptyRow,
+          emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
     }

@@ -21,7 +21,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
           // the 'all the rows' hook'
           `export function useRows() {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return useEmbraceSQLRows<never, ${rowTypeName}>(
+          `return useEmbraceSQLRows<never, Partial<${node.typescriptNamespacedName}.Values>, ${rowTypeName}>(
                {
                  readOperation: client.${node.typescriptNamespacedName}.all.bind(client),
                  parameters: NEVER,
@@ -29,7 +29,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
                  Interceptor: ${node.typescriptNamespacedName}.Interceptor,
-                 emptyRow: ${node.typescriptNamespacedName}.emptyRow
+                 emptyRecord: ${node.typescriptNamespacedName}.emptyRecord
                }
              )`,
           `}`,
@@ -44,57 +44,37 @@ export const generateReactHooks = async (context: GenerationContext) => {
         const rowTypeName = `${node.table.typescriptNamespacedName}.Record`;
         if (node.unique) {
           return [
-            `export function use${pascalCase(
-              node.name,
-            )}(parameters: ${pascalCase(node.name)}) {`,
+            `export function use${pascalCase(node.name)}(parameters: ${
+              node.typescriptName
+            }) {`,
             `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-            `return useEmbraceSQLRow<${pascalCase(node.name)},  ${rowTypeName}>(
+            `return useEmbraceSQLRow<${node.typescriptName}, Partial<${node.table.typescriptNamespacedName}.Values>,  ${rowTypeName}>(
                {
-                 readOperation: client.${
-                   node.typescriptNamespacedName
-                 }.read.bind(client),
+                 readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,
-                 upsertOperation: client.${
-                   node.table.typescriptNamespacedName
-                 }.create.bind(client),
-                 deleteOperation: client.${
-                   node.table.typescriptNamespacedName
-                 }.${BY_PRIMARY_KEY}.delete.bind(client),
-                 primaryKeyPicker: ${
-                   node.table.typescriptNamespacedName
-                 }.primaryKeyFrom,
-                 Interceptor: ${
-                   node.table.typescriptNamespacedName
-                 }.Interceptor,
+                 upsertOperation: client.${node.table.typescriptNamespacedName}.create.bind(client),
+                 deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
+                 primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
+                 Interceptor: ${node.table.typescriptNamespacedName}.Interceptor,
                }
              )`,
             `}`,
           ].join("\n");
         } else {
           return [
-            `export function use${pascalCase(
-              node.name,
-            )}(parameters: ${pascalCase(node.name)}) {`,
+            `export function use${pascalCase(node.name)}(parameters: ${
+              node.typescriptName
+            }) {`,
             `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-            `return useEmbraceSQLRows<${pascalCase(node.name)}, ${rowTypeName}>(
+            `return useEmbraceSQLRows<${node.typescriptName}, Partial<${node.table.typescriptNamespacedName}.Values>, ${rowTypeName}>(
                {
-                 readOperation: client.${
-                   node.typescriptNamespacedName
-                 }.read.bind(client),
+                 readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,
-                 upsertOperation: client.${
-                   node.table.typescriptNamespacedName
-                 }.create.bind(client),
-                 deleteOperation: client.${
-                   node.table.typescriptNamespacedName
-                 }.${BY_PRIMARY_KEY}.delete.bind(client),
-                 primaryKeyPicker: ${
-                   node.table.typescriptNamespacedName
-                 }.primaryKeyFrom,
-                 Interceptor: ${
-                   node.table.typescriptNamespacedName
-                 }.Interceptor,
-                 emptyRow: ${node.table.typescriptNamespacedName}.emptyRow,
+                 upsertOperation: client.${node.table.typescriptNamespacedName}.create.bind(client),
+                 deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
+                 primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
+                 Interceptor: ${node.table.typescriptNamespacedName}.Interceptor,
+                 emptyRecord: ${node.table.typescriptNamespacedName}.emptyRecord,
                }
              )`,
             `}`,

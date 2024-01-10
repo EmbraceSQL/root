@@ -2586,7 +2586,7 @@ export namespace PgCatalog {
         stavalues4: PgCatalog.Types.PgStatistic["stavalues4"] | null;
         stavalues5: PgCatalog.Types.PgStatistic["stavalues5"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           starelid: undefined,
           staattnum: undefined,
@@ -2666,7 +2666,7 @@ export namespace PgCatalog {
         typdefault: PgCatalog.Types.PgType["typdefault"] | null;
         typacl: PgCatalog.Types.PgType["typacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           typname: undefined,
@@ -2720,7 +2720,7 @@ export namespace PgCatalog {
         ftserver: PgCatalog.Types.PgForeignTable["ftserver"];
         ftoptions: PgCatalog.Types.PgForeignTable["ftoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           ftrelid: undefined,
           ftserver: undefined,
@@ -2750,7 +2750,7 @@ export namespace PgCatalog {
         rolpassword: PgCatalog.Types.PgAuthid["rolpassword"] | null;
         rolvaliduntil: PgCatalog.Types.PgAuthid["rolvaliduntil"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           rolname: undefined,
@@ -2790,7 +2790,7 @@ export namespace PgCatalog {
         stxdmcv: PgCatalog.Types.PgStatisticExtData["stxdmcv"] | null;
         stxdexpr: PgCatalog.Types.PgStatisticExtData["stxdexpr"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           stxoid: undefined,
           stxdinherit: undefined,
@@ -2816,7 +2816,7 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.PgUserMapping["umserver"];
         umoptions: PgCatalog.Types.PgUserMapping["umoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           umuser: undefined,
@@ -2856,7 +2856,7 @@ export namespace PgCatalog {
         subpublications: PgCatalog.Types.PgSubscription["subpublications"];
         suborigin: PgCatalog.Types.PgSubscription["suborigin"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           subdbid: undefined,
@@ -2918,7 +2918,7 @@ export namespace PgCatalog {
         attfdwoptions: PgCatalog.Types.PgAttribute["attfdwoptions"] | null;
         attmissingval: PgCatalog.Types.PgAttribute["attmissingval"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           attrelid: undefined,
           attname: undefined,
@@ -2995,7 +2995,7 @@ export namespace PgCatalog {
         proconfig: PgCatalog.Types.PgProc["proconfig"] | null;
         proacl: PgCatalog.Types.PgProc["proacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           proname: undefined,
@@ -3078,7 +3078,7 @@ export namespace PgCatalog {
         reloptions: PgCatalog.Types.PgClass["reloptions"] | null;
         relpartbound: PgCatalog.Types.PgClass["relpartbound"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           relname: undefined,
@@ -3139,7 +3139,7 @@ export namespace PgCatalog {
         adnum: PgCatalog.Types.PgAttrdef["adnum"];
         adbin: PgCatalog.Types.PgAttrdef["adbin"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           adrelid: undefined,
@@ -3189,7 +3189,7 @@ export namespace PgCatalog {
         conexclop: PgCatalog.Types.PgConstraint["conexclop"] | null;
         conbin: PgCatalog.Types.PgConstraint["conbin"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3253,7 +3253,7 @@ export namespace PgCatalog {
         inhseqno: PgCatalog.Types.PgInherits["inhseqno"];
         inhdetachpending: PgCatalog.Types.PgInherits["inhdetachpending"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           inhrelid: undefined,
           inhparent: undefined,
@@ -3298,7 +3298,7 @@ export namespace PgCatalog {
         indexprs: PgCatalog.Types.PgIndex["indexprs"] | null;
         indpred: PgCatalog.Types.PgIndex["indpred"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           indexrelid: undefined,
           indrelid: undefined,
@@ -3352,7 +3352,7 @@ export namespace PgCatalog {
         oprrest: PgCatalog.Types.PgOperator["oprrest"];
         oprjoin: PgCatalog.Types.PgOperator["oprjoin"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           oprname: undefined,
@@ -3393,7 +3393,7 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.PgOpfamily["opfnamespace"];
         opfowner: PgCatalog.Types.PgOpfamily["opfowner"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           opfmethod: undefined,
@@ -3427,7 +3427,7 @@ export namespace PgCatalog {
         opcdefault: PgCatalog.Types.PgOpclass["opcdefault"];
         opckeytype: PgCatalog.Types.PgOpclass["opckeytype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           opcmethod: undefined,
@@ -3460,7 +3460,7 @@ export namespace PgCatalog {
         amhandler: PgCatalog.Types.PgAm["amhandler"];
         amtype: PgCatalog.Types.PgAm["amtype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amname: undefined,
@@ -3492,7 +3492,7 @@ export namespace PgCatalog {
         amopmethod: PgCatalog.Types.PgAmop["amopmethod"];
         amopsortfamily: PgCatalog.Types.PgAmop["amopsortfamily"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amopfamily: undefined,
@@ -3535,7 +3535,7 @@ export namespace PgCatalog {
         amprocnum: PgCatalog.Types.PgAmproc["amprocnum"];
         amproc: PgCatalog.Types.PgAmproc["amproc"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           amprocfamily: undefined,
@@ -3572,7 +3572,7 @@ export namespace PgCatalog {
         lanvalidator: PgCatalog.Types.PgLanguage["lanvalidator"];
         lanacl: PgCatalog.Types.PgLanguage["lanacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           lanname: undefined,
@@ -3603,7 +3603,7 @@ export namespace PgCatalog {
         lomowner: PgCatalog.Types.PgLargeobjectMetadata["lomowner"];
         lomacl: PgCatalog.Types.PgLargeobjectMetadata["lomacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, lomowner: undefined, lomacl: undefined };
       }
       export type ByOid = {
@@ -3639,7 +3639,7 @@ export namespace PgCatalog {
         agginitval: PgCatalog.Types.PgAggregate["agginitval"] | null;
         aggminitval: PgCatalog.Types.PgAggregate["aggminitval"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           aggfnoid: undefined,
           aggkind: undefined,
@@ -3685,7 +3685,7 @@ export namespace PgCatalog {
         stxkind: PgCatalog.Types.PgStatisticExt["stxkind"];
         stxexprs: PgCatalog.Types.PgStatisticExt["stxexprs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           stxrelid: undefined,
@@ -3725,7 +3725,7 @@ export namespace PgCatalog {
         evQual: PgCatalog.Types.PgRewrite["evQual"];
         evAction: PgCatalog.Types.PgRewrite["evAction"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           rulename: undefined,
@@ -3772,7 +3772,7 @@ export namespace PgCatalog {
         tgoldtable: PgCatalog.Types.PgTrigger["tgoldtable"] | null;
         tgnewtable: PgCatalog.Types.PgTrigger["tgnewtable"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           tgrelid: undefined,
@@ -3821,7 +3821,7 @@ export namespace PgCatalog {
         evtenabled: PgCatalog.Types.PgEventTrigger["evtenabled"];
         evttags: PgCatalog.Types.PgEventTrigger["evttags"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           evtname: undefined,
@@ -3851,7 +3851,7 @@ export namespace PgCatalog {
         objsubid: PgCatalog.Types.PgDescription["objsubid"];
         description: PgCatalog.Types.PgDescription["description"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3878,7 +3878,7 @@ export namespace PgCatalog {
         castcontext: PgCatalog.Types.PgCast["castcontext"];
         castmethod: PgCatalog.Types.PgCast["castmethod"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           castsource: undefined,
@@ -3908,7 +3908,7 @@ export namespace PgCatalog {
         enumsortorder: PgCatalog.Types.PgEnum["enumsortorder"];
         enumlabel: PgCatalog.Types.PgEnum["enumlabel"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           enumtypid: undefined,
@@ -3941,7 +3941,7 @@ export namespace PgCatalog {
         nspowner: PgCatalog.Types.PgNamespace["nspowner"];
         nspacl: PgCatalog.Types.PgNamespace["nspacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           nspname: undefined,
@@ -3972,7 +3972,7 @@ export namespace PgCatalog {
         conproc: PgCatalog.Types.PgConversion["conproc"];
         condefault: PgCatalog.Types.PgConversion["condefault"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           conname: undefined,
@@ -4014,7 +4014,7 @@ export namespace PgCatalog {
         refobjsubid: PgCatalog.Types.PgDepend["refobjsubid"];
         deptype: PgCatalog.Types.PgDepend["deptype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           classid: undefined,
           objid: undefined,
@@ -4061,7 +4061,7 @@ export namespace PgCatalog {
         datcollversion: PgCatalog.Types.PgDatabase["datcollversion"] | null;
         datacl: PgCatalog.Types.PgDatabase["datacl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           datname: undefined,
@@ -4100,7 +4100,7 @@ export namespace PgCatalog {
         setrole: PgCatalog.Types.PgDbRoleSetting["setrole"];
         setconfig: PgCatalog.Types.PgDbRoleSetting["setconfig"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           setdatabase: undefined,
           setrole: undefined,
@@ -4124,7 +4124,7 @@ export namespace PgCatalog {
         spcacl: PgCatalog.Types.PgTablespace["spcacl"] | null;
         spcoptions: PgCatalog.Types.PgTablespace["spcoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           spcname: undefined,
@@ -4154,7 +4154,7 @@ export namespace PgCatalog {
         inheritOption: PgCatalog.Types.PgAuthMembers["inheritOption"];
         setOption: PgCatalog.Types.PgAuthMembers["setOption"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           roleid: undefined,
@@ -4198,7 +4198,7 @@ export namespace PgCatalog {
         refobjid: PgCatalog.Types.PgShdepend["refobjid"];
         deptype: PgCatalog.Types.PgShdepend["deptype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           dbid: undefined,
           classid: undefined,
@@ -4231,7 +4231,7 @@ export namespace PgCatalog {
         classoid: PgCatalog.Types.PgShdescription["classoid"];
         description: PgCatalog.Types.PgShdescription["description"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4255,7 +4255,7 @@ export namespace PgCatalog {
         cfgowner: PgCatalog.Types.PgTsConfig["cfgowner"];
         cfgparser: PgCatalog.Types.PgTsConfig["cfgparser"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           cfgname: undefined,
@@ -4284,7 +4284,7 @@ export namespace PgCatalog {
         mapseqno: PgCatalog.Types.PgTsConfigMap["mapseqno"];
         mapdict: PgCatalog.Types.PgTsConfigMap["mapdict"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           mapcfg: undefined,
           maptokentype: undefined,
@@ -4311,7 +4311,7 @@ export namespace PgCatalog {
         dicttemplate: PgCatalog.Types.PgTsDict["dicttemplate"];
         dictinitoption: PgCatalog.Types.PgTsDict["dictinitoption"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           dictname: undefined,
@@ -4345,7 +4345,7 @@ export namespace PgCatalog {
         prsheadline: PgCatalog.Types.PgTsParser["prsheadline"];
         prslextype: PgCatalog.Types.PgTsParser["prslextype"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           prsname: undefined,
@@ -4377,7 +4377,7 @@ export namespace PgCatalog {
         tmplinit: PgCatalog.Types.PgTsTemplate["tmplinit"];
         tmpllexize: PgCatalog.Types.PgTsTemplate["tmpllexize"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           tmplname: undefined,
@@ -4409,7 +4409,7 @@ export namespace PgCatalog {
         extconfig: PgCatalog.Types.PgExtension["extconfig"] | null;
         extcondition: PgCatalog.Types.PgExtension["extcondition"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           extname: undefined,
@@ -4443,7 +4443,7 @@ export namespace PgCatalog {
         fdwacl: PgCatalog.Types.PgForeignDataWrapper["fdwacl"] | null;
         fdwoptions: PgCatalog.Types.PgForeignDataWrapper["fdwoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           fdwname: undefined,
@@ -4477,7 +4477,7 @@ export namespace PgCatalog {
         srvacl: PgCatalog.Types.PgForeignServer["srvacl"] | null;
         srvoptions: PgCatalog.Types.PgForeignServer["srvoptions"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           srvname: undefined,
@@ -4511,7 +4511,7 @@ export namespace PgCatalog {
         polqual: PgCatalog.Types.PgPolicy["polqual"] | null;
         polwithcheck: PgCatalog.Types.PgPolicy["polwithcheck"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           polname: undefined,
@@ -4540,7 +4540,7 @@ export namespace PgCatalog {
         roident: PgCatalog.Types.PgReplicationOrigin["roident"];
         roname: PgCatalog.Types.PgReplicationOrigin["roname"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { roident: undefined, roname: undefined };
       }
       export type ByRoident = {
@@ -4562,7 +4562,7 @@ export namespace PgCatalog {
         defaclobjtype: PgCatalog.Types.PgDefaultAcl["defaclobjtype"];
         defaclacl: PgCatalog.Types.PgDefaultAcl["defaclacl"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           defaclrole: undefined,
@@ -4593,7 +4593,7 @@ export namespace PgCatalog {
         privtype: PgCatalog.Types.PgInitPrivs["privtype"];
         initprivs: PgCatalog.Types.PgInitPrivs["initprivs"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4620,7 +4620,7 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgSeclabel["provider"];
         label: PgCatalog.Types.PgSeclabel["label"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4647,7 +4647,7 @@ export namespace PgCatalog {
         provider: PgCatalog.Types.PgShseclabel["provider"];
         label: PgCatalog.Types.PgShseclabel["label"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4680,7 +4680,7 @@ export namespace PgCatalog {
         collicurules: PgCatalog.Types.PgCollation["collicurules"] | null;
         collversion: PgCatalog.Types.PgCollation["collversion"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           collname: undefined,
@@ -4716,7 +4716,7 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.PgParameterAcl["parname"];
         paracl: PgCatalog.Types.PgParameterAcl["paracl"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, parname: undefined, paracl: undefined };
       }
       export type ByOid = {
@@ -4741,7 +4741,7 @@ export namespace PgCatalog {
         partcollation: PgCatalog.Types.PgPartitionedTable["partcollation"];
         partexprs: PgCatalog.Types.PgPartitionedTable["partexprs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           partrelid: undefined,
           partstrat: undefined,
@@ -4771,7 +4771,7 @@ export namespace PgCatalog {
         rngcanonical: PgCatalog.Types.PgRange["rngcanonical"];
         rngsubdiff: PgCatalog.Types.PgRange["rngsubdiff"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           rngtypid: undefined,
           rngsubtype: undefined,
@@ -4802,7 +4802,7 @@ export namespace PgCatalog {
         trffromsql: PgCatalog.Types.PgTransform["trffromsql"];
         trftosql: PgCatalog.Types.PgTransform["trftosql"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           trftype: undefined,
@@ -4834,7 +4834,7 @@ export namespace PgCatalog {
         seqcache: PgCatalog.Types.PgSequence["seqcache"];
         seqcycle: PgCatalog.Types.PgSequence["seqcycle"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           seqrelid: undefined,
           seqtypid: undefined,
@@ -4866,7 +4866,7 @@ export namespace PgCatalog {
         pubtruncate: PgCatalog.Types.PgPublication["pubtruncate"];
         pubviaroot: PgCatalog.Types.PgPublication["pubviaroot"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           pubname: undefined,
@@ -4896,7 +4896,7 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.PgPublicationNamespace["pnpubid"];
         pnnspid: PgCatalog.Types.PgPublicationNamespace["pnnspid"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { oid: undefined, pnpubid: undefined, pnnspid: undefined };
       }
       export type ByOid = {
@@ -4919,7 +4919,7 @@ export namespace PgCatalog {
         prqual: PgCatalog.Types.PgPublicationRel["prqual"] | null;
         prattrs: PgCatalog.Types.PgPublicationRel["prattrs"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           oid: undefined,
           prpubid: undefined,
@@ -4951,7 +4951,7 @@ export namespace PgCatalog {
         srsubstate: PgCatalog.Types.PgSubscriptionRel["srsubstate"];
         srsublsn: PgCatalog.Types.PgSubscriptionRel["srsublsn"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           srsubid: undefined,
           srrelid: undefined,
@@ -4974,7 +4974,7 @@ export namespace PgCatalog {
         pageno: PgCatalog.Types.PgLargeobject["pageno"];
         data: PgCatalog.Types.PgLargeobject["data"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { loid: undefined, pageno: undefined, data: undefined };
       }
       export type ByLoidPageno = {
@@ -6109,7 +6109,7 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlFeatures["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -6142,7 +6142,7 @@ export namespace InformationSchema {
           | InformationSchema.Types.SqlImplementationInfo["comments"]
           | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           implementationInfoId: undefined,
           implementationInfoName: undefined,
@@ -6163,7 +6163,7 @@ export namespace InformationSchema {
         isVerifiedBy: InformationSchema.Types.SqlParts["isVerifiedBy"] | null;
         comments: InformationSchema.Types.SqlParts["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -6185,7 +6185,7 @@ export namespace InformationSchema {
           | null;
         comments: InformationSchema.Types.SqlSizing["comments"] | null;
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           sizingId: undefined,
           sizingName: undefined,
@@ -6227,7 +6227,7 @@ export namespace Public {
         name: Public.Types.Checklist["name"];
         createdAt: Public.Types.Checklist["createdAt"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return { id: undefined, name: undefined, createdAt: undefined };
       }
       export type ById = {
@@ -6246,7 +6246,7 @@ export namespace Public {
         checked: Public.Types.ChecklistItem["checked"];
         createdAt: Public.Types.ChecklistItem["createdAt"];
       };
-      export function emptyRow() {
+      export function emptyRecord() {
         return {
           id: undefined,
           checklistId: undefined,
@@ -8911,8 +8911,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Datemultirange {
@@ -12620,8 +12620,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timestamp {
@@ -12629,8 +12629,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timestamptz {
@@ -12638,8 +12638,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Timetz {
@@ -12647,8 +12647,8 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
-        if ((from as unknown) instanceof global.Date) return from as Date;
-        return new global.Date(from as string);
+        if ((from as unknown) instanceof JsDate) return from as Date;
+        return new JsDate(from as string);
       }
     }
     export namespace Trigger {

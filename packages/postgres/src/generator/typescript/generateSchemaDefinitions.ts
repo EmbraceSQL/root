@@ -1,6 +1,6 @@
 import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
-import { emptyTypescriptRow } from "./autocrud/shared";
+import { emptyTypescriptRecord } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
@@ -102,8 +102,8 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
                 .join(";"),
               `};`,
               // empty placeholder rows used in UI adding
-              `export function emptyRow() {`,
-              ` return ${emptyTypescriptRow(context, node.type)};`,
+              `export function emptyRecord() {`,
+              ` return ${emptyTypescriptRecord(context, node.type)};`,
               `}`,
             ].join("\n");
           },

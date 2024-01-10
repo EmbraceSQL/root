@@ -93,7 +93,7 @@ export function nullIsUndefined<T>(value: unknown) {
   return value as T;
 }
 
-export type JsDate = Date;
+export class JsDate extends Date {}
 export type Empty = Record<string, never>;
 export type JSONValue =
   | string

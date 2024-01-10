@@ -7,8 +7,8 @@ class PGDate extends PGCatalogType {
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      if ((from as unknown) instanceof global.Date) return from as Date;
-      return new global.Date(from as string);
+      if ((from as unknown) instanceof JsDate) return from as Date;
+      return new JsDate(from as string);
     `;
   }
   typescriptTypeDefinition(context: GenerationContext) {

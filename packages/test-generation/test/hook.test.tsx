@@ -74,8 +74,6 @@ describe("EmbraceSQL Hooks can", () => {
       () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
       { wrapper },
     );
-    await waitFor(() => expect(result.current?.loading).toBe(true));
-    await waitFor(() => expect(result.current?.loading).toBe(false));
     await waitFor(() =>
       expect(result.current?.results).toMatchObject({
         firstName: "Penelope",
@@ -92,12 +90,15 @@ describe("EmbraceSQL Hooks can", () => {
       { wrapper },
     );
     await waitFor(() => expect(result.current?.loading).toBe(false));
-    // intercepted row will update the database -- set up a mock
-    act(() => {
-      result.current.results!.firstName = "Alec";
+    // when we update the row with a partial update
+    await act(async () => {
+      await result.current.updateRow({
+        firstName: "Alec",
+      });
     });
+    // then the row reflects our change
     await waitFor(() =>
-      expect(result.current?.results).toMatchObject({
+      expect(result.current.results).toMatchObject({
         firstName: "Alec",
         lastName: "Guiness",
       }),
@@ -150,19 +151,26 @@ describe("EmbraceSQL Hooks can", () => {
       wrapper,
     });
     await waitFor(() => expect(result.current?.loading).toBe(false));
-    // when we add a row
-    const added = await result.current.addRow();
-    // and set some values as if a user edited them
-    // just updating the row members should be enough to save
-    act(() => {
-      added.firstName = "New";
-      added.lastName = "Hope";
+    let addedIndex = -1;
+    await act(async () => {
+      // when we add a row
+      addedIndex = await result.current.addRow();
+      // and set some values as if a user edited them
+      // just updating the row members should be enough to save
+      await result.current.updateRow(addedIndex, {
+        firstName: "New",
+        lastName: "Hope",
+      });
     });
-    // then the database should have allocated a new id
-    await waitFor(() => expect(added.actorId).toBeGreaterThan(0));
+    // then the database should have allocated a new id which will
+    // show up in the hook
+    await waitFor(() =>
+      expect(result.current.results[addedIndex].actorId).toBeGreaterThan(0),
+    );
     // and the database should know this record
-    const shouldBeAdded =
-      await client.Public.Tables.Actor.ByPrimaryKey.read(added);
+    const shouldBeAdded = await client.Public.Tables.Actor.ByPrimaryKey.read({
+      actorId: result.current.results[addedIndex].actorId,
+    });
     // and this is a proper date last update stamp
     expect(shouldBeAdded!.lastUpdate.valueOf()).toBeLessThan(Date.now());
   });
@@ -174,21 +182,32 @@ describe("EmbraceSQL Hooks can", () => {
       wrapper,
     });
     await waitFor(() => expect(result.current?.loading).toBe(false));
-    // when we add a row
-    const added = await result.current.addRow();
-    // and set some values as if a user edited them
-    // just updating the row members should be enough to save
-    act(() => {
-      added.firstName = "New";
-      added.lastName = "Hope";
+    let addedIndex = -1;
+    await act(async () => {
+      // when we add a row
+      addedIndex = await result.current.addRow();
+      // and set some values as if a user edited them
+      // just updating the row members should be enough to save
+      await result.current.updateRow(addedIndex, {
+        firstName: "New",
+        lastName: "Hope",
+      });
     });
     // and wait for the row to be saved
-    await waitFor(() => expect(added.actorId).toBeGreaterThan(0));
+    await waitFor(() =>
+      expect(result.current.results[addedIndex].actorId).toBeGreaterThan(0),
+    );
     // and then delete a row
-    await result.current.deleteRow(added);
+    const actorId = result.current.results[addedIndex].actorId;
+    await act(async () => {
+      await result.current.deleteRow(addedIndex);
+    });
+    // the hook should no longer know the record
+    expect(result.current.results[addedIndex]).toBeUndefined();
     // the the database should no longer know this record
-    const shouldBeDeleted =
-      await client.Public.Tables.Actor.ByActorId.read(added);
+    const shouldBeDeleted = await client.Public.Tables.Actor.ByPrimaryKey.read({
+      actorId,
+    });
     // and this is a proper date last update stamp
     expect(shouldBeDeleted).toBeUndefined();
   });

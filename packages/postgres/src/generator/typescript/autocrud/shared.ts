@@ -41,7 +41,7 @@ export function postgresResultRecordToTypescript(
 /**
  * Generate code for an empty typescript row object constant.
  */
-export function emptyTypescriptRow(
+export function emptyTypescriptRecord(
   context: GenerationContext,
   node: AbstractTypeNode,
 ): string {
@@ -52,7 +52,10 @@ export function emptyTypescriptRow(
     // snippet will pick resultset fields to type map
     const attributes = node.attributes.map(
       (c) =>
-        `${c.typescriptPropertyName}: ${emptyTypescriptRow(context, c.type)}`,
+        `${c.typescriptPropertyName}: ${emptyTypescriptRecord(
+          context,
+          c.type,
+        )}`,
     );
     // all the fields in the resultset mapped out to an inferred type array
     return `{ ${attributes.join(",")} }`;

@@ -4,7 +4,6 @@ import {
   Public,
 } from "./dvdrental-react";
 import "./main.css";
-import React from "react";
 import * as ReactDOM from "react-dom/client";
 
 // connect to where we mounted EmbraceSQL
@@ -47,9 +46,7 @@ const App = () => {
 
 // Supported in React 18+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <EmbraceSQLProvider client={client}>
-      <App />
-    </EmbraceSQLProvider>
-  </React.StrictMode>,
+  <EmbraceSQLProvider client={client}>
+    <App />
+  </EmbraceSQLProvider>,
 );
