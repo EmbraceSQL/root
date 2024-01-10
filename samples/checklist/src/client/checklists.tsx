@@ -1,4 +1,5 @@
 import { Public } from "./checklist-react";
+import { HasRowNumber } from "@embracesql/react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Button } from "@mui/material";
@@ -28,7 +29,8 @@ export function Toolbar({ handleClick = () => {} }) {
  */
 export function Checklists() {
   // fetching data is a one call
-  const { results, addRow } = Public.Tables.Checklist.useRows();
+  const { results, addRow, updateRow, deleteRow } =
+    Public.Tables.Checklist.useRows();
 
   // config for the MUI grid, here just showing the columns with user data,
   // hiding the keys, and row level action buttons
@@ -38,13 +40,6 @@ export function Checklists() {
       headerName: "Name",
       flex: 4,
       editable: true,
-      valueGetter(params) {
-        return params.row.name;
-      },
-      valueSetter(params) {
-        params.row.name = params.value;
-        return params.row;
-      },
     },
     {
       field: "createdAt",
@@ -59,12 +54,16 @@ export function Checklists() {
       field: "actions",
       type: "actions",
       headerName: "",
-      getActions: (row) => {
+      getActions: (gridRow) => {
         return [
           <GridActionsCellItem
             icon={<DeleteIcon />}
             label="Delete"
-            onClick={() => console.log(row)}
+            onClick={() =>
+              void deleteRow(
+                (gridRow.row as unknown as HasRowNumber).rowNumberInResultset,
+              )
+            }
             color="inherit"
           />,
         ];
@@ -81,7 +80,21 @@ export function Checklists() {
       slotProps={{
         toolbar: { handleClick: addRow },
       }}
-      getRowId={(row) => row.id?.toString() ?? ""}
+      getRowId={(row) => {
+        // the MUI grid requires an 'id' for each row
+        // but -- our new rows won't have an id yet, becuase they are blank
+        // and the database will be allocating the UUID - so we'll just make
+        // MUI happy by providing a row in resultset identifier
+        return (row as unknown as HasRowNumber).rowNumberInResultset ?? 0;
+      }}
+      processRowUpdate={async (updatedRow, originalRow) => {
+        // when you are done editing a row, it is time to save it
+        // simply pass the now complete row to the hook
+        return updateRow(
+          (originalRow as unknown as HasRowNumber).rowNumberInResultset,
+          updatedRow,
+        );
+      }}
     ></DataGrid>
   );
 }

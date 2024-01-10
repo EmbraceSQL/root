@@ -23126,8 +23126,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Checklist.Record,
           callback: InterceptorCallback<Public.Tables.Checklist.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get id() {
           return this.uninterceptedValue.id;
@@ -23182,8 +23183,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.ChecklistItem.Record,
           callback: InterceptorCallback<Public.Tables.ChecklistItem.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get id() {
           return this.uninterceptedValue.id;

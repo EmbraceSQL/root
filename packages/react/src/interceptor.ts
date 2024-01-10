@@ -23,7 +23,18 @@ export type InterceptorCallback<T> = (value: T) => Promise<T>;
  * value types.
  */
 export interface InterceptorConstructor<T> {
-  new (uninterceptedValue: T, callback: InterceptorCallback<T>): Intercepted<T>;
+  new (
+    uninterceptedValue: T,
+    callback: InterceptorCallback<T>,
+    rowNumberInResultset?: number,
+  ): Intercepted<T>;
+}
+
+/**
+ * Rows in a resultset have a row number.
+ */
+export interface HasRowNumber {
+  rowNumberInResultset: number;
 }
 
 /**
@@ -38,6 +49,7 @@ export abstract class InterceptorBase<T> {
   constructor(
     protected uninterceptedValue: T,
     protected callback: InterceptorCallback<T>,
+    public rowNumberInResultset?: number,
   ) {}
 
   /**

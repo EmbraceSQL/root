@@ -28488,8 +28488,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.FilmActor.Record,
           callback: InterceptorCallback<Public.Tables.FilmActor.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get actorId() {
           return this.uninterceptedValue.actorId;
@@ -28544,8 +28545,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Address.Record,
           callback: InterceptorCallback<Public.Tables.Address.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get addressId() {
           return this.uninterceptedValue.addressId;
@@ -28672,8 +28674,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.City.Record,
           callback: InterceptorCallback<Public.Tables.City.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get cityId() {
           return this.uninterceptedValue.cityId;
@@ -28742,8 +28745,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Customer.Record,
           callback: InterceptorCallback<Public.Tables.Customer.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get customerId() {
           return this.uninterceptedValue.customerId;
@@ -28902,8 +28906,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Actor.Record,
           callback: InterceptorCallback<Public.Tables.Actor.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get actorId() {
           return this.uninterceptedValue.actorId;
@@ -28972,8 +28977,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.FilmCategory.Record,
           callback: InterceptorCallback<Public.Tables.FilmCategory.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get filmId() {
           return this.uninterceptedValue.filmId;
@@ -29030,8 +29036,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Inventory.Record,
           callback: InterceptorCallback<Public.Tables.Inventory.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get inventoryId() {
           return this.uninterceptedValue.inventoryId;
@@ -29101,8 +29108,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Category.Record,
           callback: InterceptorCallback<Public.Tables.Category.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get categoryId() {
           return this.uninterceptedValue.categoryId;
@@ -29158,8 +29166,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Country.Record,
           callback: InterceptorCallback<Public.Tables.Country.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get countryId() {
           return this.uninterceptedValue.countryId;
@@ -29215,8 +29224,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Language.Record,
           callback: InterceptorCallback<Public.Tables.Language.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get languageId() {
           return this.uninterceptedValue.languageId;
@@ -29272,8 +29282,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Rental.Record,
           callback: InterceptorCallback<Public.Tables.Rental.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get rentalId() {
           return this.uninterceptedValue.rentalId;
@@ -29388,8 +29399,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Staff.Record,
           callback: InterceptorCallback<Public.Tables.Staff.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get staffId() {
           return this.uninterceptedValue.staffId;
@@ -29556,8 +29568,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Store.Record,
           callback: InterceptorCallback<Public.Tables.Store.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get storeId() {
           return this.uninterceptedValue.storeId;
@@ -29627,8 +29640,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Payment.Record,
           callback: InterceptorCallback<Public.Tables.Payment.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get paymentId() {
           return this.uninterceptedValue.paymentId;
@@ -29727,8 +29741,9 @@ export namespace Public {
         constructor(
           uninterceptedValue: Public.Tables.Film.Record,
           callback: InterceptorCallback<Public.Tables.Film.Record>,
+          rowNumberInResultset?: number,
         ) {
-          super(uninterceptedValue, callback);
+          super(uninterceptedValue, callback, rowNumberInResultset);
         }
         get filmId() {
           return this.uninterceptedValue.filmId;

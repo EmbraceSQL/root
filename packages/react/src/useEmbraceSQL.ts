@@ -196,7 +196,8 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
     error: readState.error,
     results:
       results?.map(
-        (r, i) => new props.Interceptor(r, updateCallback(responseCallback(i))),
+        (r, i) =>
+          new props.Interceptor(r, updateCallback(responseCallback(i)), i),
       ) ?? [],
     updateRow,
     addRow,
