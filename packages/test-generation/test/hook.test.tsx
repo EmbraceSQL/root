@@ -235,4 +235,43 @@ describe("EmbraceSQL Hooks can", () => {
     // and this is a proper date last update stamp
     expect(shouldBeDeleted).toBeUndefined();
   });
+  it("add a parent child row", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    // given a parent child table with an index on the parent
+    const { result } = renderHook(
+      () => Public.Tables.FilmActor.useByFilmId({ filmId: 1 }),
+      {
+        wrapper,
+      },
+    );
+    // when we fetch data
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    expect(result.current.rows.length).toBeGreaterThan(0);
+    let addedIndex = -1;
+    await act(async () => {
+      // when we add a row
+      addedIndex = await result.current.addRow();
+    });
+    // in a second action to allow the hook testing support time to rebuild results
+    await act(async () => {
+      // and associate an actor
+      await result.current.updateRow(addedIndex, {
+        actorId: 2,
+      });
+    });
+    // then the database should have updated the update date
+    await waitFor(() =>
+      expect(result.current.rows[addedIndex].lastUpdate).toBeDefined(),
+    );
+    // and the database should know this record by parent
+    const shouldBeAdded =
+      await client.Public.Tables.FilmActor.ByActorIdFilmId.read({
+        filmId: 1,
+        actorId: 2,
+      });
+    // and this is a proper date last update stamp
+    expect(shouldBeAdded).toBeDefined();
+  });
 });

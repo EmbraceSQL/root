@@ -176,7 +176,7 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
         updateCallback(responseCallback(index)),
         0,
       ),
-    [updateCallback, responseCallback],
+    [updateCallback, responseCallback, results],
   );
 
   /**
@@ -186,12 +186,20 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
   const addRow = React.useCallback(async () => {
     // new empty base record 'as if' it was returned from the database
     // it *isn't* from the database, just to be clear -- it's an in memory buffer
-    const newRecord = props.emptyRecord();
+    // to support automatic parent-child the parameters used to read the rows
+    // need to be on the new rows so when put to the database -- they tie up
+    const newRecord = { ...props.emptyRecord(), ...props.parameters };
     const newResults = [...(results ?? []), newRecord as R];
     setResults(newResults);
     // and the index of this new row
     return newResults.length - 1;
-  }, [props.RowImplementation, props.emptyRecord, results, responseCallback]);
+  }, [
+    props.RowImplementation,
+    props.emptyRecord,
+    props.parameters,
+    results,
+    responseCallback,
+  ]);
 
   /**
    * Deleting a row removes an interceptor from the local memory buffer

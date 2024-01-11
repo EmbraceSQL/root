@@ -13,5 +13,3 @@ See the [docs](https://embracesql.github.io/docs).
 
 // TODO: 'record' needs to be consistently called 'row'
 
-// TODO: useRow({primaryKey, createIfNotExists})
-
