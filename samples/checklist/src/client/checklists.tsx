@@ -1,26 +1,8 @@
 import { Public } from "./checklist-react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import {
-  DataGrid,
-  GridActionsCellItem,
-  GridColDef,
-  GridToolbarContainer,
-} from "@mui/x-data-grid";
-
-/**
- * Need a way to add some rows, here is a toolbar with an Add button.
- */
-export function Toolbar({ handleClick = () => {} }) {
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add
-      </Button>
-    </GridToolbarContainer>
-  );
-}
+import { Button, IconButton, TextField } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 
 type Props = {
   // selection event, notice we can re-use the row type -- no need
@@ -34,80 +16,63 @@ type Props = {
  */
 export function Checklists({ onChecklistSelected }: Props) {
   // fetching data is a one call, using the client database connection via context
-  const { rows, addRow, updateRow, deleteRow } =
-    Public.Tables.Checklist.useRows();
+  const { rows, addRow, deleteRow } = Public.Tables.Checklist.useRows();
 
-  // config for the MUI grid, here just showing the columns with user data,
-  // hiding the id key, and row level action buttons
-  const columns: GridColDef<Public.Tables.Checklist.Row>[] = [
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 2,
-      // here is what you are really editing in the grid
-      editable: true,
-    },
-    {
-      field: "createdAt",
-      headerName: "Created",
-      flex: 1,
-      // doesn't really make sense to edit a create date
-      // this will show us how values defaulted from the database
-      editable: false,
-      type: "date",
-    },
-    {
-      // action buttons in each row
-      field: "actions",
-      type: "actions",
-      headerName: "",
-      getActions: (gridRow) => {
-        // deleting a row from the hooked rows is just - pass the row number
-        // the in memory update is processed in React as well as in the database
-        return [
-          <GridActionsCellItem
-            icon={<DeleteIcon />}
-            label="Delete"
-            onClick={() => {
-              // deleting is just -- pass the row number you want to delete to the hook
-              void deleteRow(gridRow.row.rowNumberInResultset);
-            }}
-            color="inherit"
-          />,
-        ];
-      },
-    },
-  ];
   return (
-    <DataGrid
-      hideFooter={true}
-      columns={columns}
-      rows={rows}
-      slots={{
-        toolbar: Toolbar,
-      }}
-      slotProps={{
-        toolbar: { handleClick: addRow },
-      }}
-      onRowClick={(params) => {
-        // row click even turns into a checklist selection
-        // notice how the types line up nicely
-        onChecklistSelected(params.row);
-      }}
-      getRowId={(row) => {
-        // The MUI grid requires an 'id' for each row
-        // but -- our new rows won't have an id yet, becuase they are blank!
-        // And to top it off the database will be allocating the UUID -
-        // so this makes using 'the database key' impossible.
-        // So we provide a nice row number as a 'unique' identifier for the UI
-        // Think UI Grid -> in memory array of rows -> database table
-        return row.rowNumberInResultset;
-      }}
-      processRowUpdate={async (updatedRow, originalRow) => {
-        // when you are done editing a row, it is time to save it
-        // simply pass the now complete row to the hook
-        return await updateRow(originalRow.rowNumberInResultset, updatedRow);
-      }}
-    ></DataGrid>
+    // just a single editable text field -- EmbraceSQL has automatic saving
+    // for text fields, debounced on change as the user types - values go
+    // to the databse
+    <Grid container spacing={1}>
+      {rows.map((row) => {
+        return (
+          <Grid
+            key={row.rowNumberInResultset}
+            xs={12}
+            container
+            onClick={() => onChecklistSelected(row)}
+          >
+            <Grid xs={11}>
+              <TextField
+                variant="standard"
+                value={row.name}
+                label={row.name ? " " : "Name your list..."}
+                onChange={row.changeName}
+                fullWidth
+                helperText={
+                  row.createdAt
+                    ? `Created: ${row.createdAt.toLocaleDateString()}`
+                    : ` `
+                }
+              />
+            </Grid>
+            <Grid
+              xs={1}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <IconButton
+                onClick={() => void deleteRow(row.rowNumberInResultset)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        );
+      })}
+      <Grid container>
+        <Grid>
+          <Button
+            color="primary"
+            startIcon={<AddIcon />}
+            onClick={() => void addRow()}
+          >
+            Add
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }

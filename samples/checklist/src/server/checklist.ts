@@ -8785,8 +8785,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -8804,8 +8808,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -12753,8 +12761,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -24038,13 +24050,13 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [17250]: Typecast;
+  [32694]: Typecast;
   ["Public.Types.ChecklistArray"]: Typecast;
-  [17259]: Typecast;
+  [32703]: Typecast;
   ["Public.Types.ChecklistItemArray"]: Typecast;
-  [17251]: Typecast;
+  [32695]: Typecast;
   ["Public.Types.Checklist"]: Typecast;
-  [17260]: Typecast;
+  [32704]: Typecast;
   ["Public.Types.ChecklistItem"]: Typecast;
 }
 

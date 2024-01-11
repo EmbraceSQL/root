@@ -8785,8 +8785,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -8804,8 +8808,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -12753,8 +12761,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {

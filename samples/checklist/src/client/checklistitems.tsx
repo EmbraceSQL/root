@@ -1,7 +1,8 @@
 import { Public } from "./checklist-react";
-import { Toolbar } from "./checklists";
+import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { DataGrid, GridActionsCellItem, GridColDef } from "@mui/x-data-grid";
+import { Button, Checkbox, IconButton, TextField } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 
 type Props = {
   // we can use the exact type generated from the database complete with autocomplete
@@ -14,76 +15,74 @@ type Props = {
  */
 export function ChecklistItems({ checklistId }: Props) {
   // data hooked to the checklist id
-  const { rows, addRow, updateRow, deleteRow } =
+  const { rows, addRow, deleteRow } =
     Public.Tables.ChecklistItem.useByChecklistId({ checklistId });
 
-  // named items with a 'check off'
-  const columns: GridColDef<Public.Tables.ChecklistItem.Row>[] = [
-    {
-      field: "checked",
-      headerName: "✔",
-      flex: 1,
-      editable: true,
-      type: "boolean",
-    },
-    {
-      field: "title",
-      headerName: "Title",
-      flex: 2,
-      editable: true,
-    },
-    {
-      field: "createdAt",
-      headerName: "Created",
-      flex: 1,
-      editable: false,
-      type: "date",
-    },
-    {
-      // action buttons in each row
-      field: "actions",
-      type: "actions",
-      headerName: "",
-      getActions: (gridRow) => {
-        // deleting, just like in `Checklists`.
-        return [
-          <GridActionsCellItem
-            icon={<DeleteIcon />}
-            label="Delete"
-            onClick={() => {
-              void deleteRow(gridRow.row.rowNumberInResultset);
-            }}
-            color="inherit"
-          />,
-        ];
-      },
-    },
-  ];
   return (
-    <DataGrid
-      hideFooter={true}
-      columns={columns}
-      rows={rows}
-      slots={{
-        // re-use our toolbar from `Checklists`
-        toolbar: Toolbar,
-      }}
-      slotProps={{
-        toolbar: {
-          // add a row via the hook -- EmbraceSQL will automatically parent
-          // to the right checklistId because it knows that is how it
-          // read the rows 🪄
-          handleClick: addRow,
-        },
-      }}
-      getRowId={(row) => {
-        // MUI grid row level 'id' as in `Checklists`
-        return row.rowNumberInResultset;
-      }}
-      processRowUpdate={async (updatedRow, originalRow) => {
-        // save via the hook
-        return await updateRow(originalRow.rowNumberInResultset, updatedRow);
-      }}
-    ></DataGrid>
+    // just a single editable text field -- EmbraceSQL has automatic saving
+    // for text fields, debounced on change as the user types - values go
+    // to the databse
+    <Grid container spacing={1}>
+      {rows.map((row) => {
+        console.log(row);
+        return (
+          <Grid key={row.rowNumberInResultset} xs={12} container>
+            <Grid
+              xs={1}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Checkbox
+                checked={row.checked}
+                onChange={row.changeChecked}
+                inputProps={{ "aria-label": "controlled" }}
+              />
+            </Grid>
+            <Grid xs={10}>
+              <TextField
+                variant="standard"
+                value={row.title}
+                label={row.title ? " " : "Name your item..."}
+                onChange={row.changeTitle}
+                fullWidth
+                helperText={
+                  row.createdAt
+                    ? `Created: ${row.createdAt.toLocaleDateString()}`
+                    : ` `
+                }
+              />
+            </Grid>
+            <Grid
+              xs={1}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <IconButton
+                onClick={() => void deleteRow(row.rowNumberInResultset)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        );
+      })}
+      <Grid container>
+        <Grid>
+          <Button
+            color="primary"
+            startIcon={<AddIcon />}
+            onClick={() => void addRow()}
+          >
+            Add
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
