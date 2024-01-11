@@ -1,0 +1,18 @@
+import ChecklistItemsSource from "!!raw-loader!../../../../samples/checklist/src/client/checklistitems.tsx";
+import CodeBlock from "@theme/CodeBlock";
+
+# Create Items
+
+Now we'll associate a parent Checklist with ChecklistItems. 
+EmbraceSQL makes this easy with automatically generated hooks.
+
+## Steps
+
+### Create a ChecklistsItem Component
+
+We're using another grid to *CRUD* ChecklistItems. The read operation is hooked
+to a prop that is the parent Checklist `id`.
+
+<CodeBlock language="tsx" title="./src/client/checklistitems.tsx">
+  {ChecklistItemsSource}
+</CodeBlock>

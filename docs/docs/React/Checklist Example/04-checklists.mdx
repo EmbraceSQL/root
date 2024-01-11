@@ -1,0 +1,27 @@
+import HtmlSource from "!!raw-loader!../../../../samples/checklist/index.html";
+import MainSource from "!!raw-loader!../../../../samples/checklist/src/client/main.tsx";
+import AppSource from "!!raw-loader!../../../../samples/checklist/src/client/app.tsx";
+import ChecklistSource from "!!raw-loader!../../../../samples/checklist/src/client/checklists.tsx";
+import CodeBlock from "@theme/CodeBlock";
+
+# Create Checklists
+
+Our app is a classic todo-list, with the extra feature of being a list
+of todo lists. At the top level are Checklists, which contain Checklist Items -
+classic parent child.
+
+## Steps
+
+### Create a Checklists Component
+
+Here we as using a grid to:
+- add a new Checklist
+- display all the Checklists
+- change the name of a Checklist
+- delete a Checklist
+
+*C R U D* in a Grid!
+
+<CodeBlock language="tsx" title="./src/client/checklists.tsx">
+  {ChecklistSource}
+</CodeBlock>

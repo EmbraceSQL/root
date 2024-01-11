@@ -16,16 +16,23 @@ export function Toolbar({ handleClick = () => {} }) {
   return (
     <GridToolbarContainer>
       <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
+        Add
       </Button>
     </GridToolbarContainer>
   );
 }
 
+type Props = {
+  // selection event, notice we can re-use the row type -- no need
+  // for additional data models -- and if we happen to add columns to
+  // the `checklist` table -- they will show up here automatically on regeneration!
+  onChecklistSelected: (checklist: Public.Tables.Checklist.Row) => void;
+};
+
 /**
  * A data grid displaying data bound to to the `checklist` table via EmbraceSQL.
  */
-export function Checklists() {
+export function Checklists({ onChecklistSelected }: Props) {
   // fetching data is a one call, using the client database connection via context
   const { rows, addRow, updateRow, deleteRow } =
     Public.Tables.Checklist.useRows();
@@ -36,7 +43,7 @@ export function Checklists() {
     {
       field: "name",
       headerName: "Name",
-      flex: 4,
+      flex: 2,
       // here is what you are really editing in the grid
       editable: true,
     },
@@ -47,6 +54,7 @@ export function Checklists() {
       // doesn't really make sense to edit a create date
       // this will show us how values defaulted from the database
       editable: false,
+      type: "date",
     },
     {
       // action buttons in each row
@@ -61,8 +69,7 @@ export function Checklists() {
             icon={<DeleteIcon />}
             label="Delete"
             onClick={() => {
-              // deleting is just -- pass the row number you want to delete
-              // to the hook
+              // deleting is just -- pass the row number you want to delete to the hook
               void deleteRow(gridRow.row.rowNumberInResultset);
             }}
             color="inherit"
@@ -73,6 +80,7 @@ export function Checklists() {
   ];
   return (
     <DataGrid
+      hideFooter={true}
       columns={columns}
       rows={rows}
       slots={{
@@ -80,6 +88,11 @@ export function Checklists() {
       }}
       slotProps={{
         toolbar: { handleClick: addRow },
+      }}
+      onRowClick={(params) => {
+        // row click even turns into a checklist selection
+        // notice how the types line up nicely
+        onChecklistSelected(params.row);
       }}
       getRowId={(row) => {
         // The MUI grid requires an 'id' for each row

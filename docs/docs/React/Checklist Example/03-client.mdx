@@ -4,15 +4,16 @@ import AppSource from "!!raw-loader!../../../../samples/checklist/src/client/app
 import ChecklistSource from "!!raw-loader!../../../../samples/checklist/src/client/checklists.tsx";
 import CodeBlock from "@theme/CodeBlock";
 
-# Create a Client
+# Create Client
 
-Now we can create a react UI.
+Now we'll start in the React UI, let's get all the support code in place.
 
 ## Steps
 
 ### Get MUI
 
-In our app directory, we need to add a few packages to get the MUI toolkit:
+In our app directory, we need to add a few packages to get the MUI toolkit,
+which we'll be using for a grid user interface.
 
 ```shell
 npm install @mui/material @emotion/react @emotion/styled @mui/x-data-grid @mui/icons-material
@@ -40,12 +41,4 @@ A very simple app at the root.
 
 <CodeBlock language="tsx" title="./src/client/app.tsx">
   {AppSource}
-</CodeBlock>
-
-### Create a Checklists Component
-
-Using a grid to display all the checklists.
-
-<CodeBlock language="tsx" title="./src/client/checklists.tsx">
-  {ChecklistSource}
 </CodeBlock>

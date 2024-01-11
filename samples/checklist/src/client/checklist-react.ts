@@ -23115,6 +23115,7 @@ import {
   Row as IsRow,
   RowBase,
   RecordCallback,
+  GeneratedRowProps,
 } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
@@ -23270,6 +23271,27 @@ export namespace Public {
 export namespace Public {
   export namespace Tables {
     export namespace Checklist {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Checklist.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Checklist.Values>,
+          Public.Tables.Checklist.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Checklist.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Checklist.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
+          RowImplementation: Public.Tables.Checklist.RowImplementation,
+          emptyRecord: Public.Tables.Checklist.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -23277,8 +23299,8 @@ export namespace Public {
           Partial<Public.Tables.Checklist.Values>,
           Public.Tables.Checklist.Record
         >({
-          readOperation: client.Public.Tables.Checklist.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Checklist.all.bind(client),
           upsertOperation: client.Public.Tables.Checklist.create.bind(client),
           deleteOperation:
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
@@ -23304,10 +23326,33 @@ export namespace Public {
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
           RowImplementation: Public.Tables.Checklist.RowImplementation,
+          emptyRecord: Public.Tables.Checklist.emptyRecord,
         });
       }
     }
     export namespace ChecklistItem {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.ChecklistItem.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.ChecklistItem.Values>,
+          Public.Tables.ChecklistItem.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.ChecklistItem.ByPrimaryKey.read.bind(client),
+          upsertOperation:
+            client.Public.Tables.ChecklistItem.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -23315,8 +23360,8 @@ export namespace Public {
           Partial<Public.Tables.ChecklistItem.Values>,
           Public.Tables.ChecklistItem.Record
         >({
-          readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
           upsertOperation:
             client.Public.Tables.ChecklistItem.create.bind(client),
           deleteOperation:
@@ -23366,6 +23411,7 @@ export namespace Public {
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
           RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
         });
       }
     }

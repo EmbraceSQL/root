@@ -6512,7 +6512,7 @@ export namespace Public {
 
       export type Results = Nullable<Public.Types.Cube>;
     }
-    export namespace Cube_9135 {
+    export namespace Cube_4064 {
       export type Parameters = {
         argument_0: Nullable<Public.Types.Cube>;
         argument_1: Nullable<PgCatalog.Types.Float8>;
@@ -6520,7 +6520,7 @@ export namespace Public {
 
       export type Results = Nullable<Public.Types.Cube>;
     }
-    export namespace Cube_83e2 {
+    export namespace Cube_8fe0 {
       export type Parameters = {
         argument_0: Nullable<Public.Types.Cube>;
         argument_1: Nullable<PgCatalog.Types.Float8>;
@@ -17933,12 +17933,12 @@ export namespace Public {
         }
       }
     }
-    export namespace Cube_9135 {
+    export namespace Cube_4064 {
       export namespace Parameters {
         export function parse(from: unknown) {
           // CompositeType
           if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_9135.Parameters.is(from)) {
+          if (Public.Procedures.Cube_4064.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
               argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -17955,12 +17955,12 @@ export namespace Public {
         }
       }
     }
-    export namespace Cube_83e2 {
+    export namespace Cube_8fe0 {
       export namespace Parameters {
         export function parse(from: unknown) {
           // CompositeType
           if (from === null || from === undefined) return null;
-          if (Public.Procedures.Cube_83e2.Parameters.is(from)) {
+          if (Public.Procedures.Cube_8fe0.Parameters.is(from)) {
             return {
               argument_0: Public.Types.Cube.parse(from.argument_0),
               argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -24712,22 +24712,22 @@ export namespace Public {
         }
       }
     }
-    export namespace Cube_9135 {
+    export namespace Cube_4064 {
       export namespace Parameters {
         export function is(
           value: any,
-        ): value is Public.Procedures.Cube_9135.Parameters {
+        ): value is Public.Procedures.Cube_4064.Parameters {
           if (value.argument_0 !== undefined && value.argument_1 !== undefined)
             return true;
           return false;
         }
       }
     }
-    export namespace Cube_83e2 {
+    export namespace Cube_8fe0 {
       export namespace Parameters {
         export function is(
           value: any,
-        ): value is Public.Procedures.Cube_83e2.Parameters {
+        ): value is Public.Procedures.Cube_8fe0.Parameters {
           if (
             value.argument_0 !== undefined &&
             value.argument_1 !== undefined &&
@@ -26104,23 +26104,23 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [32678]: Typecast;
+  [17234]: Typecast;
   ["Api.Types.AnswerArray"]: Typecast;
-  [32669]: Typecast;
+  [17225]: Typecast;
   ["Api.Types.EchoTypeArray"]: Typecast;
-  [32672]: Typecast;
+  [17228]: Typecast;
   ["Api.Types.EchoTypeNestedArray"]: Typecast;
-  [32687]: Typecast;
+  [17243]: Typecast;
   ["Api.Types.QAndAArray"]: Typecast;
-  [32679]: Typecast;
+  [17235]: Typecast;
   ["Api.Types.Answer"]: Typecast;
-  [32670]: Typecast;
+  [17226]: Typecast;
   ["Api.Types.EchoType"]: Typecast;
-  [32673]: Typecast;
+  [17229]: Typecast;
   ["Api.Types.EchoTypeNested"]: Typecast;
-  [32688]: Typecast;
+  [17244]: Typecast;
   ["Api.Types.QAndA"]: Typecast;
-  [32667]: Typecast;
+  [17223]: Typecast;
   ["Api.Types.EchoTable"]: Typecast;
 
   ["Api.Procedures.Echo.Parameters"]: Typecast;
@@ -26138,13 +26138,13 @@ export interface PostgresTypecasts {
   ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast;
 
   ["Api.Procedures.EchoAnswer.Parameters"]: Typecast;
-  [32574]: Typecast;
+  [17130]: Typecast;
   ["Public.Types.CubeArray"]: Typecast;
-  [32659]: Typecast;
+  [17215]: Typecast;
   ["Public.Types.SlugArray"]: Typecast;
-  [32569]: Typecast;
+  [17125]: Typecast;
   ["Public.Types.Cube"]: Typecast;
-  [32660]: Typecast;
+  [17216]: Typecast;
   ["Public.Types.Slug"]: Typecast;
 
   ["Public.Procedures.CubeIn.Parameters"]: Typecast;
@@ -26203,9 +26203,9 @@ export interface PostgresTypecasts {
 
   ["Public.Procedures.Cube_0aec.Parameters"]: Typecast;
 
-  ["Public.Procedures.Cube_9135.Parameters"]: Typecast;
+  ["Public.Procedures.Cube_4064.Parameters"]: Typecast;
 
-  ["Public.Procedures.Cube_83e2.Parameters"]: Typecast;
+  ["Public.Procedures.Cube_8fe0.Parameters"]: Typecast;
 
   ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast;
 
@@ -26295,7 +26295,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           result: any,
         ) => {
-          return context.procTypes[32667].parseFromPostgresIfRecord(
+          return context.procTypes[17223].parseFromPostgresIfRecord(
             context,
             result,
           ) as unknown as Api.Types.EchoTable;
@@ -26385,7 +26385,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  api.echo_answer(message => ${typed[32679](
+                  api.echo_answer(message => ${typed[17235](
                     undefinedIsNull(parameters.message),
                   )})`;
         const results = response;
@@ -26420,7 +26420,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     VALUES (${
       values.question === undefined ? sql`DEFAULT` : typed[25](values.question)
     },${
-      values.answer === undefined ? sql`DEFAULT` : typed[32679](values.answer)
+      values.answer === undefined ? sql`DEFAULT` : typed[17235](values.answer)
     })
     ON CONFLICT () DO UPDATE
     SET
@@ -26474,7 +26474,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32679](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     `;
             return response.map((record) => ({
@@ -26502,13 +26502,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`question`
           : typed[25](values.question)
       } , answer = ${
-        values.answer === undefined ? sql`answer` : typed[32679](values.answer)
+        values.answer === undefined ? sql`answer` : typed[17235](values.answer)
       } 
     WHERE
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32679](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     RETURNING question,answer`;
             return response.map((record) => ({
@@ -26528,7 +26528,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       answer = ${
         parameters.answer === undefined
           ? sql`DEFAULT`
-          : typed[32679](parameters.answer)
+          : typed[17235](parameters.answer)
       }
     RETURNING question,answer`;
             return response.map((record) => ({
@@ -26600,7 +26600,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_out( ${typed[32569](
+                  public.cube_out( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26615,9 +26615,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_eq( ${typed[32569](
+                  public.cube_eq( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_eq);
         return responseBody;
@@ -26628,9 +26628,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ne( ${typed[32569](
+                  public.cube_ne( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ne);
         return responseBody;
@@ -26641,9 +26641,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_lt( ${typed[32569](
+                  public.cube_lt( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_lt);
         return responseBody;
@@ -26654,9 +26654,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_gt( ${typed[32569](
+                  public.cube_gt( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_gt);
         return responseBody;
@@ -26667,9 +26667,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_le( ${typed[32569](
+                  public.cube_le( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_le);
         return responseBody;
@@ -26680,9 +26680,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ge( ${typed[32569](
+                  public.cube_ge( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(results?.[0].cube_ge);
         return responseBody;
@@ -26693,9 +26693,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_cmp( ${typed[32569](
+                  public.cube_cmp( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Int4.parse(results?.[0].cube_cmp);
         return responseBody;
@@ -26708,9 +26708,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_contains( ${typed[32569](
+                  public.cube_contains( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_contains,
@@ -26725,9 +26725,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_contained( ${typed[32569](
+                  public.cube_contained( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_contained,
@@ -26740,9 +26740,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_overlap( ${typed[32569](
+                  public.cube_overlap( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Bool.parse(
           results?.[0].cube_overlap,
@@ -26755,9 +26755,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_union( ${typed[32569](
+                  public.cube_union( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube_union);
         return responseBody;
@@ -26768,9 +26768,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_inter( ${typed[32569](
+                  public.cube_inter( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube_inter);
         return responseBody;
@@ -26781,7 +26781,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_size( ${typed[32569](
+                  public.cube_size( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26796,7 +26796,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_subset( ${typed[32569](
+                  public.cube_subset( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[1007](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26811,9 +26811,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_distance( ${typed[32569](
+                  public.cube_distance( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].cube_distance,
@@ -26828,9 +26828,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.distance_chebyshev( ${typed[32569](
+                  public.distance_chebyshev( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].distance_chebyshev,
@@ -26845,9 +26845,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.distance_taxicab( ${typed[32569](
+                  public.distance_taxicab( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](undefinedIsNull(parameters.argument_1))})`;
+                  )}, ${typed[17125](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = PgCatalog.Types.Float8.parse(
           results?.[0].distance_taxicab,
@@ -26860,7 +26860,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_dim( ${typed[32569](
+                  public.cube_dim( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -26873,7 +26873,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ll_coord( ${typed[32569](
+                  public.cube_ll_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26888,7 +26888,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_ur_coord( ${typed[32569](
+                  public.cube_ur_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26903,7 +26903,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_coord( ${typed[32569](
+                  public.cube_coord( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26920,7 +26920,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_coord_llur( ${typed[32569](
+                  public.cube_coord_llur( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[23](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
@@ -26955,26 +26955,26 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
-      async cube_9135(parameters: Public.Procedures.Cube_9135.Parameters) {
+      async cube_4064(parameters: Public.Procedures.Cube_4064.Parameters) {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube( ${typed[32569](
+                  public.cube( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](undefinedIsNull(parameters.argument_1))})`;
         const results = response;
         const responseBody = Public.Types.Cube.parse(results?.[0].cube);
         return responseBody;
       }
-      async cube_83e2(parameters: Public.Procedures.Cube_83e2.Parameters) {
+      async cube_8fe0(parameters: Public.Procedures.Cube_8fe0.Parameters) {
         console.assert(parameters);
         const sql = this.database.context.sql;
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube( ${typed[32569](
+                  public.cube( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
@@ -26989,7 +26989,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_is_point( ${typed[32569](
+                  public.cube_is_point( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;
@@ -27004,7 +27004,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_enlarge( ${typed[32569](
+                  public.cube_enlarge( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )}, ${typed[701](
                     undefinedIsNull(parameters.argument_1),
@@ -27023,7 +27023,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   SELECT
                   public.g_cube_consistent( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[21](
                     undefinedIsNull(parameters.argument_2),
@@ -27091,9 +27091,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.g_cube_same( ${typed[32569](
+                  public.g_cube_same( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[2281](undefinedIsNull(parameters.argument_2))})`;
         const results = response;
@@ -27112,7 +27112,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
                   SELECT
                   public.g_cube_distance( ${typed[2281](
                     undefinedIsNull(parameters.argument_0),
-                  )}, ${typed[32569](
+                  )}, ${typed[17125](
                     undefinedIsNull(parameters.argument_1),
                   )}, ${typed[21](
                     undefinedIsNull(parameters.argument_2),
@@ -27144,7 +27144,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.cube_send( ${typed[32569](
+                  public.cube_send( ${typed[17125](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;

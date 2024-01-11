@@ -28143,6 +28143,7 @@ import {
   Row as IsRow,
   RowBase,
   RecordCallback,
+  GeneratedRowProps,
 } from "@embracesql/react";
 export namespace Public {
   export namespace Tables {
@@ -29624,6 +29625,27 @@ export namespace Public {
 export namespace Public {
   export namespace Tables {
     export namespace FilmActor {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.FilmActor.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29631,8 +29653,8 @@ export namespace Public {
           Partial<Public.Tables.FilmActor.Values>,
           Public.Tables.FilmActor.Record
         >({
-          readOperation: client.Public.Tables.FilmActor.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.FilmActor.all.bind(client),
           upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
           deleteOperation:
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
@@ -29659,6 +29681,7 @@ export namespace Public {
             client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
           RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
         });
       }
       export function useByFilmId(parameters: ByFilmId) {
@@ -29681,6 +29704,27 @@ export namespace Public {
       }
     }
     export namespace Address {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Address.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Address.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29688,8 +29732,8 @@ export namespace Public {
           Partial<Public.Tables.Address.Values>,
           Public.Tables.Address.Record
         >({
-          readOperation: client.Public.Tables.Address.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Address.all.bind(client),
           upsertOperation: client.Public.Tables.Address.create.bind(client),
           deleteOperation:
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
@@ -29721,6 +29765,7 @@ export namespace Public {
             client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
           RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
         });
       }
       export function useByCityId(parameters: ByCityId) {
@@ -29743,6 +29788,27 @@ export namespace Public {
       }
     }
     export namespace City {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.City.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.City.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29750,8 +29816,8 @@ export namespace Public {
           Partial<Public.Tables.City.Values>,
           Public.Tables.City.Record
         >({
-          readOperation: client.Public.Tables.City.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.City.all.bind(client),
           upsertOperation: client.Public.Tables.City.create.bind(client),
           deleteOperation:
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
@@ -29778,6 +29844,7 @@ export namespace Public {
             client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
           RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
         });
       }
       export function useByCountryId(parameters: ByCountryId) {
@@ -29800,6 +29867,27 @@ export namespace Public {
       }
     }
     export namespace Customer {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Customer.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29807,8 +29895,8 @@ export namespace Public {
           Partial<Public.Tables.Customer.Values>,
           Public.Tables.Customer.Record
         >({
-          readOperation: client.Public.Tables.Customer.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Customer.all.bind(client),
           upsertOperation: client.Public.Tables.Customer.create.bind(client),
           deleteOperation:
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
@@ -29860,6 +29948,7 @@ export namespace Public {
             client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
           RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
         });
       }
       export function useByLastName(parameters: ByLastName) {
@@ -29900,6 +29989,27 @@ export namespace Public {
       }
     }
     export namespace Actor {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Actor.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29907,8 +30017,8 @@ export namespace Public {
           Partial<Public.Tables.Actor.Values>,
           Public.Tables.Actor.Record
         >({
-          readOperation: client.Public.Tables.Actor.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Actor.all.bind(client),
           upsertOperation: client.Public.Tables.Actor.create.bind(client),
           deleteOperation:
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
@@ -29935,6 +30045,7 @@ export namespace Public {
             client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
           RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
         });
       }
       export function useByLastName(parameters: ByLastName) {
@@ -29957,6 +30068,28 @@ export namespace Public {
       }
     }
     export namespace FilmCategory {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.FilmCategory.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.FilmCategory.Values>,
+          Public.Tables.FilmCategory.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.read.bind(client),
+          upsertOperation:
+            client.Public.Tables.FilmCategory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -29964,8 +30097,8 @@ export namespace Public {
           Partial<Public.Tables.FilmCategory.Values>,
           Public.Tables.FilmCategory.Record
         >({
-          readOperation: client.Public.Tables.FilmCategory.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.FilmCategory.all.bind(client),
           upsertOperation:
             client.Public.Tables.FilmCategory.create.bind(client),
           deleteOperation:
@@ -29996,10 +30129,32 @@ export namespace Public {
             client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
           RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
         });
       }
     }
     export namespace Inventory {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Inventory.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30007,8 +30162,8 @@ export namespace Public {
           Partial<Public.Tables.Inventory.Values>,
           Public.Tables.Inventory.Record
         >({
-          readOperation: client.Public.Tables.Inventory.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Inventory.all.bind(client),
           upsertOperation: client.Public.Tables.Inventory.create.bind(client),
           deleteOperation:
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
@@ -30036,6 +30191,7 @@ export namespace Public {
             client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
           RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
         });
       }
       export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
@@ -30058,6 +30214,27 @@ export namespace Public {
       }
     }
     export namespace Category {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Category.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Category.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Category.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          RowImplementation: Public.Tables.Category.RowImplementation,
+          emptyRecord: Public.Tables.Category.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30065,8 +30242,8 @@ export namespace Public {
           Partial<Public.Tables.Category.Values>,
           Public.Tables.Category.Record
         >({
-          readOperation: client.Public.Tables.Category.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Category.all.bind(client),
           upsertOperation: client.Public.Tables.Category.create.bind(client),
           deleteOperation:
             client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
@@ -30093,10 +30270,32 @@ export namespace Public {
             client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
           RowImplementation: Public.Tables.Category.RowImplementation,
+          emptyRecord: Public.Tables.Category.emptyRecord,
         });
       }
     }
     export namespace Country {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Country.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Country.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Country.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          RowImplementation: Public.Tables.Country.RowImplementation,
+          emptyRecord: Public.Tables.Country.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30104,8 +30303,8 @@ export namespace Public {
           Partial<Public.Tables.Country.Values>,
           Public.Tables.Country.Record
         >({
-          readOperation: client.Public.Tables.Country.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Country.all.bind(client),
           upsertOperation: client.Public.Tables.Country.create.bind(client),
           deleteOperation:
             client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
@@ -30132,10 +30331,32 @@ export namespace Public {
             client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
           RowImplementation: Public.Tables.Country.RowImplementation,
+          emptyRecord: Public.Tables.Country.emptyRecord,
         });
       }
     }
     export namespace Language {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Language.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Language.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Language.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          RowImplementation: Public.Tables.Language.RowImplementation,
+          emptyRecord: Public.Tables.Language.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30143,8 +30364,8 @@ export namespace Public {
           Partial<Public.Tables.Language.Values>,
           Public.Tables.Language.Record
         >({
-          readOperation: client.Public.Tables.Language.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Language.all.bind(client),
           upsertOperation: client.Public.Tables.Language.create.bind(client),
           deleteOperation:
             client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
@@ -30171,10 +30392,32 @@ export namespace Public {
             client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
           RowImplementation: Public.Tables.Language.RowImplementation,
+          emptyRecord: Public.Tables.Language.emptyRecord,
         });
       }
     }
     export namespace Rental {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Rental.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30182,8 +30425,8 @@ export namespace Public {
           Partial<Public.Tables.Rental.Values>,
           Public.Tables.Rental.Record
         >({
-          readOperation: client.Public.Tables.Rental.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Rental.all.bind(client),
           upsertOperation: client.Public.Tables.Rental.create.bind(client),
           deleteOperation:
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
@@ -30236,6 +30479,7 @@ export namespace Public {
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
@@ -30253,10 +30497,32 @@ export namespace Public {
             client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
           RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
         });
       }
     }
     export namespace Staff {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Staff.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Staff.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30264,8 +30530,8 @@ export namespace Public {
           Partial<Public.Tables.Staff.Values>,
           Public.Tables.Staff.Record
         >({
-          readOperation: client.Public.Tables.Staff.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Staff.all.bind(client),
           upsertOperation: client.Public.Tables.Staff.create.bind(client),
           deleteOperation:
             client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
@@ -30299,10 +30565,32 @@ export namespace Public {
             client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
           RowImplementation: Public.Tables.Staff.RowImplementation,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
         });
       }
     }
     export namespace Store {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Store.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Store.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Store.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30310,8 +30598,8 @@ export namespace Public {
           Partial<Public.Tables.Store.Values>,
           Public.Tables.Store.Record
         >({
-          readOperation: client.Public.Tables.Store.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Store.all.bind(client),
           upsertOperation: client.Public.Tables.Store.create.bind(client),
           deleteOperation:
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
@@ -30339,6 +30627,7 @@ export namespace Public {
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
           RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
         });
       }
       export function useByStoreId(parameters: ByStoreId) {
@@ -30355,10 +30644,32 @@ export namespace Public {
             client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
           RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
         });
       }
     }
     export namespace Payment {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Payment.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30366,8 +30677,8 @@ export namespace Public {
           Partial<Public.Tables.Payment.Values>,
           Public.Tables.Payment.Record
         >({
-          readOperation: client.Public.Tables.Payment.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Payment.all.bind(client),
           upsertOperation: client.Public.Tables.Payment.create.bind(client),
           deleteOperation:
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
@@ -30415,6 +30726,7 @@ export namespace Public {
             client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
           RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
         });
       }
       export function useByRentalId(parameters: ByRentalId) {
@@ -30455,6 +30767,27 @@ export namespace Public {
       }
     }
     export namespace Film {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Film.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Film.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
       export function useRows() {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
@@ -30462,8 +30795,8 @@ export namespace Public {
           Partial<Public.Tables.Film.Values>,
           Public.Tables.Film.Record
         >({
-          readOperation: client.Public.Tables.Film.all.bind(client),
           parameters: NEVER,
+          readOperation: client.Public.Tables.Film.all.bind(client),
           upsertOperation: client.Public.Tables.Film.create.bind(client),
           deleteOperation:
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
@@ -30499,6 +30832,7 @@ export namespace Public {
             client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
           RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
       export function useByFulltext(parameters: ByFulltext) {
