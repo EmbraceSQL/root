@@ -4988,6 +4988,785 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Types {
+    export type ActorArray = Array<Public.Types.Actor>;
+
+    export type ActorInfoArray = Array<Public.Types.ActorInfo>;
+
+    export type AddressArray = Array<Public.Types.Address>;
+
+    export type CategoryArray = Array<Public.Types.Category>;
+
+    export type CityArray = Array<Public.Types.City>;
+
+    export type CountryArray = Array<Public.Types.Country>;
+
+    export type CustomerArray = Array<Public.Types.Customer>;
+
+    export type CustomerListArray = Array<Public.Types.CustomerList>;
+
+    export type FilmArray = Array<Public.Types.Film>;
+
+    export type FilmActorArray = Array<Public.Types.FilmActor>;
+
+    export type FilmCategoryArray = Array<Public.Types.FilmCategory>;
+
+    export type FilmListArray = Array<Public.Types.FilmList>;
+
+    export type InventoryArray = Array<Public.Types.Inventory>;
+
+    export type LanguageArray = Array<Public.Types.Language>;
+
+    export type MpaaRatingArray = Array<Public.Types.MpaaRating>;
+
+    export type NicerButSlowerFilmListArray =
+      Array<Public.Types.NicerButSlowerFilmList>;
+
+    export type PaymentArray = Array<Public.Types.Payment>;
+
+    export type RentalArray = Array<Public.Types.Rental>;
+
+    export type SalesByFilmCategoryArray =
+      Array<Public.Types.SalesByFilmCategory>;
+
+    export type SalesByStoreArray = Array<Public.Types.SalesByStore>;
+
+    export type StaffArray = Array<Public.Types.Staff>;
+
+    export type StaffListArray = Array<Public.Types.StaffList>;
+
+    export type StoreArray = Array<Public.Types.Store>;
+
+    export type YearArray = Array<Public.Types.Year>;
+
+    export type Actor = {
+      actorId: PgCatalog.Types.Int4;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type ActorInfo = {
+      actorId: Nullable<PgCatalog.Types.Int4>;
+      firstName: Nullable<PgCatalog.Types.Varchar>;
+      lastName: Nullable<PgCatalog.Types.Varchar>;
+      filmInfo: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Address = {
+      addressId: PgCatalog.Types.Int4;
+      address: PgCatalog.Types.Varchar;
+      address2: Nullable<PgCatalog.Types.Varchar>;
+      district: PgCatalog.Types.Varchar;
+      cityId: PgCatalog.Types.Int2;
+      postalCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Category = {
+      categoryId: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type City = {
+      cityId: PgCatalog.Types.Int4;
+      city: PgCatalog.Types.Varchar;
+      countryId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Country = {
+      countryId: PgCatalog.Types.Int4;
+      country: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Customer = {
+      customerId: PgCatalog.Types.Int4;
+      storeId: PgCatalog.Types.Int2;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      email: Nullable<PgCatalog.Types.Varchar>;
+      addressId: PgCatalog.Types.Int2;
+      activebool: PgCatalog.Types.Bool;
+      createDate: PgCatalog.Types.Date;
+      lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+      active: Nullable<PgCatalog.Types.Int4>;
+    };
+
+    export type CustomerList = {
+      id: Nullable<PgCatalog.Types.Int4>;
+      name: Nullable<PgCatalog.Types.Text>;
+      address: Nullable<PgCatalog.Types.Varchar>;
+      zipCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: Nullable<PgCatalog.Types.Varchar>;
+      city: Nullable<PgCatalog.Types.Varchar>;
+      country: Nullable<PgCatalog.Types.Varchar>;
+      notes: Nullable<PgCatalog.Types.Text>;
+      sid: Nullable<PgCatalog.Types.Int2>;
+    };
+
+    export type Film = {
+      filmId: PgCatalog.Types.Int4;
+      title: PgCatalog.Types.Varchar;
+      description: Nullable<PgCatalog.Types.Text>;
+      releaseYear: Nullable<Public.Types.Year>;
+      languageId: PgCatalog.Types.Int2;
+      rentalDuration: PgCatalog.Types.Int2;
+      rentalRate: PgCatalog.Types.Numeric;
+      length: Nullable<PgCatalog.Types.Int2>;
+      replacementCost: PgCatalog.Types.Numeric;
+      rating: Nullable<Public.Types.MpaaRating>;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      specialFeatures: PgCatalog.Types.TextArray;
+      fulltext: PgCatalog.Types.Tsvector;
+    };
+
+    export type FilmActor = {
+      actorId: PgCatalog.Types.Int2;
+      filmId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type FilmCategory = {
+      filmId: PgCatalog.Types.Int2;
+      categoryId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type FilmList = {
+      fid: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      description: Nullable<PgCatalog.Types.Text>;
+      category: Nullable<PgCatalog.Types.Varchar>;
+      price: Nullable<PgCatalog.Types.Numeric>;
+      length: Nullable<PgCatalog.Types.Int2>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Inventory = {
+      inventoryId: PgCatalog.Types.Int4;
+      filmId: PgCatalog.Types.Int2;
+      storeId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Language = {
+      languageId: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Bpchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export enum MpaaRating {
+      G = "G",
+      PG = "PG",
+      PG_13 = "PG-13",
+      R = "R",
+      NC_17 = "NC-17",
+    }
+
+    export type NicerButSlowerFilmList = {
+      fid: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      description: Nullable<PgCatalog.Types.Text>;
+      category: Nullable<PgCatalog.Types.Varchar>;
+      price: Nullable<PgCatalog.Types.Numeric>;
+      length: Nullable<PgCatalog.Types.Int2>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Payment = {
+      paymentId: PgCatalog.Types.Int4;
+      customerId: PgCatalog.Types.Int2;
+      staffId: PgCatalog.Types.Int2;
+      rentalId: PgCatalog.Types.Int4;
+      amount: PgCatalog.Types.Numeric;
+      paymentDate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Rental = {
+      rentalId: PgCatalog.Types.Int4;
+      rentalDate: PgCatalog.Types.Timestamp;
+      inventoryId: PgCatalog.Types.Int4;
+      customerId: PgCatalog.Types.Int2;
+      returnDate: Nullable<PgCatalog.Types.Timestamp>;
+      staffId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type SalesByFilmCategory = {
+      category: Nullable<PgCatalog.Types.Varchar>;
+      totalSales: Nullable<PgCatalog.Types.Numeric>;
+    };
+
+    export type SalesByStore = {
+      store: Nullable<PgCatalog.Types.Text>;
+      manager: Nullable<PgCatalog.Types.Text>;
+      totalSales: Nullable<PgCatalog.Types.Numeric>;
+    };
+
+    export type Staff = {
+      staffId: PgCatalog.Types.Int4;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      addressId: PgCatalog.Types.Int2;
+      email: Nullable<PgCatalog.Types.Varchar>;
+      storeId: PgCatalog.Types.Int2;
+      active: PgCatalog.Types.Bool;
+      username: PgCatalog.Types.Varchar;
+      password: Nullable<PgCatalog.Types.Varchar>;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      picture: Nullable<PgCatalog.Types.Bytea>;
+    };
+
+    export type StaffList = {
+      id: Nullable<PgCatalog.Types.Int4>;
+      name: Nullable<PgCatalog.Types.Text>;
+      address: Nullable<PgCatalog.Types.Varchar>;
+      zipCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: Nullable<PgCatalog.Types.Varchar>;
+      city: Nullable<PgCatalog.Types.Varchar>;
+      country: Nullable<PgCatalog.Types.Varchar>;
+      sid: Nullable<PgCatalog.Types.Int2>;
+    };
+
+    export type Store = {
+      storeId: PgCatalog.Types.Int4;
+      managerStaffId: PgCatalog.Types.Int2;
+      addressId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Year = PgCatalog.Types.Int4;
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export type Parameters = {
+        pFilmId: Nullable<PgCatalog.Types.Int4>;
+        pStoreId: Nullable<PgCatalog.Types.Int4>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace FilmNotInStock {
+      export type Parameters = {
+        pFilmId: Nullable<PgCatalog.Types.Int4>;
+        pStoreId: Nullable<PgCatalog.Types.Int4>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace GetCustomerBalance {
+      export type Parameters = {
+        pCustomerId: Nullable<PgCatalog.Types.Int4>;
+        pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Numeric>;
+    }
+    export namespace InventoryHeldByCustomer {
+      export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace InventoryInStock {
+      export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
+
+      export type Results = Nullable<PgCatalog.Types.Bool>;
+    }
+    export namespace LastDay {
+      export type Parameters = {
+        argument_0: Nullable<PgCatalog.Types.Timestamp>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Date>;
+    }
+    export namespace RewardsReport {
+      export type Parameters = {
+        minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
+        minDollarAmountPurchased: Nullable<PgCatalog.Types.Numeric>;
+      };
+
+      export type Results = NullableMembers<Public.Types.Customer>;
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Record = {
+        actorId: Public.Types.FilmActor["actorId"];
+        filmId: Public.Types.FilmActor["filmId"];
+        lastUpdate: Public.Types.FilmActor["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return { actorId: undefined, filmId: undefined, lastUpdate: undefined };
+      }
+      export type ByActorIdFilmId = {
+        actorId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+      export type ByPrimaryKey = ByActorIdFilmId;
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Address {
+      export type Record = {
+        addressId: Public.Types.Address["addressId"];
+        address: Public.Types.Address["address"];
+        address2: Public.Types.Address["address2"] | null;
+        district: Public.Types.Address["district"];
+        cityId: Public.Types.Address["cityId"];
+        postalCode: Public.Types.Address["postalCode"] | null;
+        phone: Public.Types.Address["phone"];
+        lastUpdate: Public.Types.Address["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          addressId: undefined,
+          address: undefined,
+          address2: undefined,
+          district: undefined,
+          cityId: undefined,
+          postalCode: undefined,
+          phone: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByAddressId;
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "addressId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace City {
+      export type Record = {
+        cityId: Public.Types.City["cityId"];
+        city: Public.Types.City["city"];
+        countryId: Public.Types.City["countryId"];
+        lastUpdate: Public.Types.City["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          cityId: undefined,
+          city: undefined,
+          countryId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCityId;
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "cityId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Customer {
+      export type Record = {
+        customerId: Public.Types.Customer["customerId"];
+        storeId: Public.Types.Customer["storeId"];
+        firstName: Public.Types.Customer["firstName"];
+        lastName: Public.Types.Customer["lastName"];
+        email: Public.Types.Customer["email"] | null;
+        addressId: Public.Types.Customer["addressId"];
+        activebool: Public.Types.Customer["activebool"];
+        createDate: Public.Types.Customer["createDate"];
+        lastUpdate: Public.Types.Customer["lastUpdate"] | null;
+        active: Public.Types.Customer["active"] | null;
+      };
+      export function emptyRecord() {
+        return {
+          customerId: undefined,
+          storeId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          email: undefined,
+          addressId: undefined,
+          activebool: undefined,
+          createDate: undefined,
+          lastUpdate: undefined,
+          active: undefined,
+        };
+      }
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int2;
+      };
+
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCustomerId;
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<
+        Record,
+        "customerId" | "activebool" | "createDate" | "lastUpdate"
+      >;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Actor {
+      export type Record = {
+        actorId: Public.Types.Actor["actorId"];
+        firstName: Public.Types.Actor["firstName"];
+        lastName: Public.Types.Actor["lastName"];
+        lastUpdate: Public.Types.Actor["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          actorId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByActorId = {
+        actorId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByActorId;
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+
+      export type Optional = Pick<Record, "actorId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace FilmCategory {
+      export type Record = {
+        filmId: Public.Types.FilmCategory["filmId"];
+        categoryId: Public.Types.FilmCategory["categoryId"];
+        lastUpdate: Public.Types.FilmCategory["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          filmId: undefined,
+          categoryId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByFilmIdCategoryId = {
+        filmId: PgCatalog.Types.Int2;
+        categoryId: PgCatalog.Types.Int2;
+      };
+      export type ByPrimaryKey = ByFilmIdCategoryId;
+
+      export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Inventory {
+      export type Record = {
+        inventoryId: Public.Types.Inventory["inventoryId"];
+        filmId: Public.Types.Inventory["filmId"];
+        storeId: Public.Types.Inventory["storeId"];
+        lastUpdate: Public.Types.Inventory["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          inventoryId: undefined,
+          filmId: undefined,
+          storeId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByInventoryId;
+      export type ByStoreIdFilmId = {
+        storeId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Category {
+      export type Record = {
+        categoryId: Public.Types.Category["categoryId"];
+        name: Public.Types.Category["name"];
+        lastUpdate: Public.Types.Category["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          categoryId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCategoryId = {
+        categoryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCategoryId;
+
+      export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Country {
+      export type Record = {
+        countryId: Public.Types.Country["countryId"];
+        country: Public.Types.Country["country"];
+        lastUpdate: Public.Types.Country["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          countryId: undefined,
+          country: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCountryId;
+
+      export type Optional = Pick<Record, "countryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Language {
+      export type Record = {
+        languageId: Public.Types.Language["languageId"];
+        name: Public.Types.Language["name"];
+        lastUpdate: Public.Types.Language["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          languageId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByLanguageId;
+
+      export type Optional = Pick<Record, "languageId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Rental {
+      export type Record = {
+        rentalId: Public.Types.Rental["rentalId"];
+        rentalDate: Public.Types.Rental["rentalDate"];
+        inventoryId: Public.Types.Rental["inventoryId"];
+        customerId: Public.Types.Rental["customerId"];
+        returnDate: Public.Types.Rental["returnDate"] | null;
+        staffId: Public.Types.Rental["staffId"];
+        lastUpdate: Public.Types.Rental["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          rentalId: undefined,
+          rentalDate: undefined,
+          inventoryId: undefined,
+          customerId: undefined,
+          returnDate: undefined,
+          staffId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+
+      export type ByRentalDateInventoryIdCustomerId = {
+        rentalDate: PgCatalog.Types.Timestamp;
+        inventoryId: PgCatalog.Types.Int4;
+        customerId: PgCatalog.Types.Int2;
+      };
+
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByRentalId;
+
+      export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Staff {
+      export type Record = {
+        staffId: Public.Types.Staff["staffId"];
+        firstName: Public.Types.Staff["firstName"];
+        lastName: Public.Types.Staff["lastName"];
+        addressId: Public.Types.Staff["addressId"];
+        email: Public.Types.Staff["email"] | null;
+        storeId: Public.Types.Staff["storeId"];
+        active: Public.Types.Staff["active"];
+        username: Public.Types.Staff["username"];
+        password: Public.Types.Staff["password"] | null;
+        lastUpdate: Public.Types.Staff["lastUpdate"];
+        picture: Public.Types.Staff["picture"] | null;
+      };
+      export function emptyRecord() {
+        return {
+          staffId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          addressId: undefined,
+          email: undefined,
+          storeId: undefined,
+          active: undefined,
+          username: undefined,
+          password: undefined,
+          lastUpdate: undefined,
+          picture: undefined,
+        };
+      }
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByStaffId;
+
+      export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Store {
+      export type Record = {
+        storeId: Public.Types.Store["storeId"];
+        managerStaffId: Public.Types.Store["managerStaffId"];
+        addressId: Public.Types.Store["addressId"];
+        lastUpdate: Public.Types.Store["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          storeId: undefined,
+          managerStaffId: undefined,
+          addressId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByManagerStaffId = {
+        managerStaffId: PgCatalog.Types.Int2;
+      };
+
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByStoreId;
+
+      export type Optional = Pick<Record, "storeId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Payment {
+      export type Record = {
+        paymentId: Public.Types.Payment["paymentId"];
+        customerId: Public.Types.Payment["customerId"];
+        staffId: Public.Types.Payment["staffId"];
+        rentalId: Public.Types.Payment["rentalId"];
+        amount: Public.Types.Payment["amount"];
+        paymentDate: Public.Types.Payment["paymentDate"];
+      };
+      export function emptyRecord() {
+        return {
+          paymentId: undefined,
+          customerId: undefined,
+          staffId: undefined,
+          rentalId: undefined,
+          amount: undefined,
+          paymentDate: undefined,
+        };
+      }
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int2;
+      };
+
+      export type ByPaymentId = {
+        paymentId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByPaymentId;
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "paymentId">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Film {
+      export type Record = {
+        filmId: Public.Types.Film["filmId"];
+        title: Public.Types.Film["title"];
+        description: Public.Types.Film["description"] | null;
+        releaseYear: Public.Types.Film["releaseYear"] | null;
+        languageId: Public.Types.Film["languageId"];
+        rentalDuration: Public.Types.Film["rentalDuration"];
+        rentalRate: Public.Types.Film["rentalRate"];
+        length: Public.Types.Film["length"] | null;
+        replacementCost: Public.Types.Film["replacementCost"];
+        rating: Public.Types.Film["rating"] | null;
+        lastUpdate: Public.Types.Film["lastUpdate"];
+        specialFeatures: Public.Types.Film["specialFeatures"] | null;
+        fulltext: Public.Types.Film["fulltext"];
+      };
+      export function emptyRecord() {
+        return {
+          filmId: undefined,
+          title: undefined,
+          description: undefined,
+          releaseYear: undefined,
+          languageId: undefined,
+          rentalDuration: undefined,
+          rentalRate: undefined,
+          length: undefined,
+          replacementCost: undefined,
+          rating: undefined,
+          lastUpdate: undefined,
+          specialFeatures: undefined,
+          fulltext: undefined,
+        };
+      }
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByFilmId;
+      export type ByFulltext = {
+        fulltext: PgCatalog.Types.Gtsvector;
+      };
+
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int2;
+      };
+
+      export type ByTitle = {
+        title: PgCatalog.Types.Varchar;
+      };
+
+      export type Optional = Pick<
+        Record,
+        | "filmId"
+        | "rentalDuration"
+        | "rentalRate"
+        | "replacementCost"
+        | "rating"
+        | "lastUpdate"
+      >;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export type AdministrableRoleAuthorizationsArray =
@@ -6195,76 +6974,6 @@ export namespace InformationSchema {
       }
       export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
-    }
-  }
-}
-export namespace Public {
-  export namespace Types {
-    export type ChecklistArray = Array<Public.Types.Checklist>;
-
-    export type ChecklistItemArray = Array<Public.Types.ChecklistItem>;
-
-    export type Checklist = {
-      id: PgCatalog.Types.Uuid;
-      name: PgCatalog.Types.Text;
-      createdAt: PgCatalog.Types.Timestamp;
-    };
-
-    export type ChecklistItem = {
-      id: PgCatalog.Types.Uuid;
-      checklistId: PgCatalog.Types.Uuid;
-      title: PgCatalog.Types.Text;
-      checked: PgCatalog.Types.Bool;
-      createdAt: PgCatalog.Types.Timestamp;
-    };
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {
-      export type Record = {
-        id: Public.Types.Checklist["id"];
-        name: Public.Types.Checklist["name"];
-        createdAt: Public.Types.Checklist["createdAt"];
-      };
-      export function emptyRecord() {
-        return { id: undefined, name: undefined, createdAt: undefined };
-      }
-      export type ById = {
-        id: PgCatalog.Types.Uuid;
-      };
-      export type ByPrimaryKey = ById;
-
-      export type Optional = Pick<Record, "id" | "createdAt">;
-      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
-    }
-    export namespace ChecklistItem {
-      export type Record = {
-        id: Public.Types.ChecklistItem["id"];
-        checklistId: Public.Types.ChecklistItem["checklistId"];
-        title: Public.Types.ChecklistItem["title"];
-        checked: Public.Types.ChecklistItem["checked"];
-        createdAt: Public.Types.ChecklistItem["createdAt"];
-      };
-      export function emptyRecord() {
-        return {
-          id: undefined,
-          checklistId: undefined,
-          title: undefined,
-          checked: undefined,
-          createdAt: undefined,
-        };
-      }
-      export type ByChecklistId = {
-        checklistId: PgCatalog.Types.Uuid;
-      };
-
-      export type ById = {
-        id: PgCatalog.Types.Uuid;
-      };
-      export type ByPrimaryKey = ById;
-
-      export type Optional = Pick<Record, "id" | "checked" | "createdAt">;
       export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
@@ -13034,6 +13743,876 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Types {
+    export namespace ActorArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Actor.parse(e));
+      }
+    }
+    export namespace ActorInfoArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => ActorInfo.parse(e));
+      }
+    }
+    export namespace AddressArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Address.parse(e));
+      }
+    }
+    export namespace CategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Category.parse(e));
+      }
+    }
+    export namespace CityArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => City.parse(e));
+      }
+    }
+    export namespace CountryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Country.parse(e));
+      }
+    }
+    export namespace CustomerArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Customer.parse(e));
+      }
+    }
+    export namespace CustomerListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => CustomerList.parse(e));
+      }
+    }
+    export namespace FilmArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Film.parse(e));
+      }
+    }
+    export namespace FilmActorArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmActor.parse(e));
+      }
+    }
+    export namespace FilmCategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmCategory.parse(e));
+      }
+    }
+    export namespace FilmListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmList.parse(e));
+      }
+    }
+    export namespace InventoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Inventory.parse(e));
+      }
+    }
+    export namespace LanguageArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Language.parse(e));
+      }
+    }
+    export namespace MpaaRatingArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => MpaaRating.parse(e));
+      }
+    }
+    export namespace NicerButSlowerFilmListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => NicerButSlowerFilmList.parse(e));
+      }
+    }
+    export namespace PaymentArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Payment.parse(e));
+      }
+    }
+    export namespace RentalArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Rental.parse(e));
+      }
+    }
+    export namespace SalesByFilmCategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => SalesByFilmCategory.parse(e));
+      }
+    }
+    export namespace SalesByStoreArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => SalesByStore.parse(e));
+      }
+    }
+    export namespace StaffArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Staff.parse(e));
+      }
+    }
+    export namespace StaffListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => StaffList.parse(e));
+      }
+    }
+    export namespace StoreArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Store.parse(e));
+      }
+    }
+    export namespace YearArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Year.parse(e));
+      }
+    }
+    export namespace Actor {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Actor.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int4.parse(from.actorId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace ActorInfo {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.ActorInfo.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int4.parse(from.actorId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            filmInfo: PgCatalog.Types.Text.parse(from.filmInfo),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Address {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Address.is(from)) {
+          return {
+            addressId: PgCatalog.Types.Int4.parse(from.addressId),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            address2: PgCatalog.Types.Varchar.parse(from.address2),
+            district: PgCatalog.Types.Varchar.parse(from.district),
+            cityId: PgCatalog.Types.Int2.parse(from.cityId),
+            postalCode: PgCatalog.Types.Varchar.parse(from.postalCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Category {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Category.is(from)) {
+          return {
+            categoryId: PgCatalog.Types.Int4.parse(from.categoryId),
+            name: PgCatalog.Types.Varchar.parse(from.name),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace City {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.City.is(from)) {
+          return {
+            cityId: PgCatalog.Types.Int4.parse(from.cityId),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            countryId: PgCatalog.Types.Int2.parse(from.countryId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Country {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Country.is(from)) {
+          return {
+            countryId: PgCatalog.Types.Int4.parse(from.countryId),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Customer {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Customer.is(from)) {
+          return {
+            customerId: PgCatalog.Types.Int4.parse(from.customerId),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            email: PgCatalog.Types.Varchar.parse(from.email),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            activebool: PgCatalog.Types.Bool.parse(from.activebool),
+            createDate: PgCatalog.Types.Date.parse(from.createDate),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            active: PgCatalog.Types.Int4.parse(from.active),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace CustomerList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.CustomerList.is(from)) {
+          return {
+            id: PgCatalog.Types.Int4.parse(from.id),
+            name: PgCatalog.Types.Text.parse(from.name),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            zipCode: PgCatalog.Types.Varchar.parse(from.zipCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            notes: PgCatalog.Types.Text.parse(from.notes),
+            sid: PgCatalog.Types.Int2.parse(from.sid),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Film {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Film.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int4.parse(from.filmId),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            releaseYear: Public.Types.Year.parse(from.releaseYear),
+            languageId: PgCatalog.Types.Int2.parse(from.languageId),
+            rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+            rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            replacementCost: PgCatalog.Types.Numeric.parse(
+              from.replacementCost,
+            ),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            specialFeatures: PgCatalog.Types.TextArray.parse(
+              from.specialFeatures,
+            ),
+            fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmActor {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmActor.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int2.parse(from.actorId),
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmCategory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmCategory.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            categoryId: PgCatalog.Types.Int2.parse(from.categoryId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmList.is(from)) {
+          return {
+            fid: PgCatalog.Types.Int4.parse(from.fid),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            price: PgCatalog.Types.Numeric.parse(from.price),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.Text.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Inventory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Inventory.is(from)) {
+          return {
+            inventoryId: PgCatalog.Types.Int4.parse(from.inventoryId),
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Language {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Language.is(from)) {
+          return {
+            languageId: PgCatalog.Types.Int4.parse(from.languageId),
+            name: PgCatalog.Types.Bpchar.parse(from.name),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace MpaaRating {
+      export function parse(from: unknown) {
+        // Enum
+        if (from === null || from === undefined) return null;
+        if (
+          Object.values(Public.Types.MpaaRating).includes(
+            from as Public.Types.MpaaRating,
+          )
+        ) {
+          return from as Public.Types.MpaaRating;
+        } else {
+          return undefined;
+        }
+      }
+    }
+    export namespace NicerButSlowerFilmList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.NicerButSlowerFilmList.is(from)) {
+          return {
+            fid: PgCatalog.Types.Int4.parse(from.fid),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            price: PgCatalog.Types.Numeric.parse(from.price),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.Text.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Payment {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Payment.is(from)) {
+          return {
+            paymentId: PgCatalog.Types.Int4.parse(from.paymentId),
+            customerId: PgCatalog.Types.Int2.parse(from.customerId),
+            staffId: PgCatalog.Types.Int2.parse(from.staffId),
+            rentalId: PgCatalog.Types.Int4.parse(from.rentalId),
+            amount: PgCatalog.Types.Numeric.parse(from.amount),
+            paymentDate: PgCatalog.Types.Timestamp.parse(from.paymentDate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Rental {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Rental.is(from)) {
+          return {
+            rentalId: PgCatalog.Types.Int4.parse(from.rentalId),
+            rentalDate: PgCatalog.Types.Timestamp.parse(from.rentalDate),
+            inventoryId: PgCatalog.Types.Int4.parse(from.inventoryId),
+            customerId: PgCatalog.Types.Int2.parse(from.customerId),
+            returnDate: PgCatalog.Types.Timestamp.parse(from.returnDate),
+            staffId: PgCatalog.Types.Int2.parse(from.staffId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace SalesByFilmCategory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.SalesByFilmCategory.is(from)) {
+          return {
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            totalSales: PgCatalog.Types.Numeric.parse(from.totalSales),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace SalesByStore {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.SalesByStore.is(from)) {
+          return {
+            store: PgCatalog.Types.Text.parse(from.store),
+            manager: PgCatalog.Types.Text.parse(from.manager),
+            totalSales: PgCatalog.Types.Numeric.parse(from.totalSales),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Staff {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Staff.is(from)) {
+          return {
+            staffId: PgCatalog.Types.Int4.parse(from.staffId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            email: PgCatalog.Types.Varchar.parse(from.email),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            active: PgCatalog.Types.Bool.parse(from.active),
+            username: PgCatalog.Types.Varchar.parse(from.username),
+            password: PgCatalog.Types.Varchar.parse(from.password),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            picture: PgCatalog.Types.Bytea.parse(from.picture),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace StaffList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.StaffList.is(from)) {
+          return {
+            id: PgCatalog.Types.Int4.parse(from.id),
+            name: PgCatalog.Types.Text.parse(from.name),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            zipCode: PgCatalog.Types.Varchar.parse(from.zipCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            sid: PgCatalog.Types.Int2.parse(from.sid),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Store {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Store.is(from)) {
+          return {
+            storeId: PgCatalog.Types.Int4.parse(from.storeId),
+            managerStaffId: PgCatalog.Types.Int2.parse(from.managerStaffId),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Year {
+      export function parse(from: unknown) {
+        // DomainType
+        if (from === null || from === undefined) return null;
+        return PgCatalog.Types.Int4.parse(from);
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.FilmInStock.Parameters.is(from)) {
+            return {
+              pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
+              pStoreId: PgCatalog.Types.Int4.parse(from.pStoreId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace FilmNotInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.FilmNotInStock.Parameters.is(from)) {
+            return {
+              pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
+              pStoreId: PgCatalog.Types.Int4.parse(from.pStoreId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace GetCustomerBalance {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.GetCustomerBalance.Parameters.is(from)) {
+            return {
+              pCustomerId: PgCatalog.Types.Int4.parse(from.pCustomerId),
+              pEffectiveDate: PgCatalog.Types.Timestamp.parse(
+                from.pEffectiveDate,
+              ),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Numeric.parse(from);
+        }
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.InventoryHeldByCustomer.Parameters.is(from)) {
+            return {
+              pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace InventoryInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.InventoryInStock.Parameters.is(from)) {
+            return {
+              pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Bool.parse(from);
+        }
+      }
+    }
+    export namespace LastDay {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.LastDay.Parameters.is(from)) {
+            return {
+              argument_0: PgCatalog.Types.Timestamp.parse(from.argument_0),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Date.parse(from);
+        }
+      }
+    }
+    export namespace RewardsReport {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.RewardsReport.Parameters.is(from)) {
+            return {
+              minMonthlyPurchases: PgCatalog.Types.Int4.parse(
+                from.minMonthlyPurchases,
+              ),
+              minDollarAmountPurchased: PgCatalog.Types.Numeric.parse(
+                from.minDollarAmountPurchased,
+              ),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return Public.Types.Customer.parse(from);
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace Create {}
+    }
+    export namespace Address {
+      export namespace Create {}
+    }
+    export namespace City {
+      export namespace Create {}
+    }
+    export namespace Customer {
+      export namespace Create {}
+    }
+    export namespace Actor {
+      export namespace Create {}
+    }
+    export namespace FilmCategory {
+      export namespace Create {}
+    }
+    export namespace Inventory {
+      export namespace Create {}
+    }
+    export namespace Category {
+      export namespace Create {}
+    }
+    export namespace Country {
+      export namespace Create {}
+    }
+    export namespace Language {
+      export namespace Create {}
+    }
+    export namespace Rental {
+      export namespace Create {}
+    }
+    export namespace Staff {
+      export namespace Create {}
+    }
+    export namespace Store {
+      export namespace Create {}
+    }
+    export namespace Payment {
+      export namespace Create {}
+    }
+    export namespace Film {
+      export namespace Create {}
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
@@ -16635,71 +18214,6 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Public {
-  export namespace Types {
-    export namespace ChecklistArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => Checklist.parse(e));
-      }
-    }
-    export namespace ChecklistItemArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => ChecklistItem.parse(e));
-      }
-    }
-    export namespace Checklist {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Public.Types.Checklist.is(from)) {
-          return {
-            id: PgCatalog.Types.Uuid.parse(from.id),
-            name: PgCatalog.Types.Text.parse(from.name),
-            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace ChecklistItem {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Public.Types.ChecklistItem.is(from)) {
-          return {
-            id: PgCatalog.Types.Uuid.parse(from.id),
-            checklistId: PgCatalog.Types.Uuid.parse(from.checklistId),
-            title: PgCatalog.Types.Text.parse(from.title),
-            checked: PgCatalog.Types.Bool.parse(from.checked),
-            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {
-      export namespace Create {}
-    }
-    export namespace ChecklistItem {
-      export namespace Create {}
-    }
-  }
-}
 // begin table column parser mapping
 export namespace PgCatalog {
   export namespace Tables {
@@ -18621,6 +20135,298 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Address {
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Address {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Address2 {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace District {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace PostalCode {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Phone {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace City {
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace City {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Customer {
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Activebool {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace CreateDate {
+        export const parse = PgCatalog.Types.Date.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+    }
+    export namespace Actor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace FilmCategory {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Inventory {
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Category {
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Country {
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Country {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Language {
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Bpchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Rental {
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace RentalDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReturnDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Staff {
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Username {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Password {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Picture {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
+    }
+    export namespace Store {
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace ManagerStaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Payment {
+      export namespace PaymentId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Amount {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace PaymentDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Film {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Title {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Description {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace ReleaseYear {
+        export const parse = Public.Types.Year.parse;
+      }
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalDuration {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalRate {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Length {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReplacementCost {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Rating {
+        export const parse = Public.Types.MpaaRating.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace SpecialFeatures {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Fulltext {
+        export const parse = PgCatalog.Types.Tsvector.parse;
+      }
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
@@ -18696,66 +20502,201 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Public {
-  export namespace Tables {
-    export namespace Checklist {
-      export namespace Id {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace Name {
-        export const parse = PgCatalog.Types.Text.parse;
-      }
-      export namespace CreatedAt {
-        export const parse = PgCatalog.Types.Timestamp.parse;
-      }
-    }
-    export namespace ChecklistItem {
-      export namespace Id {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace ChecklistId {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace Title {
-        export const parse = PgCatalog.Types.Text.parse;
-      }
-      export namespace Checked {
-        export const parse = PgCatalog.Types.Bool.parse;
-      }
-      export namespace CreatedAt {
-        export const parse = PgCatalog.Types.Timestamp.parse;
-      }
-    }
-  }
-}
 
 // begin primary key pickers
 export namespace Public {
   export namespace Tables {
-    export namespace Checklist {
+    export namespace FilmActor {
       export function primaryKeyFrom(
-        value: Public.Tables.Checklist.Record,
+        value: Public.Tables.FilmActor.Record,
       ): string {
         return JSON.stringify({
-          id: value.id,
+          actorId: value.actorId,
+          filmId: value.filmId,
         });
       }
 
       export function includesPrimaryKey(value: Partial<Record>) {
-        return value.id !== undefined;
+        return value.actorId !== undefined && value.filmId !== undefined;
       }
     }
-    export namespace ChecklistItem {
+    export namespace Address {
       export function primaryKeyFrom(
-        value: Public.Tables.ChecklistItem.Record,
+        value: Public.Tables.Address.Record,
       ): string {
         return JSON.stringify({
-          id: value.id,
+          addressId: value.addressId,
         });
       }
 
       export function includesPrimaryKey(value: Partial<Record>) {
-        return value.id !== undefined;
+        return value.addressId !== undefined;
+      }
+    }
+    export namespace City {
+      export function primaryKeyFrom(value: Public.Tables.City.Record): string {
+        return JSON.stringify({
+          cityId: value.cityId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.cityId !== undefined;
+      }
+    }
+    export namespace Customer {
+      export function primaryKeyFrom(
+        value: Public.Tables.Customer.Record,
+      ): string {
+        return JSON.stringify({
+          customerId: value.customerId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.customerId !== undefined;
+      }
+    }
+    export namespace Actor {
+      export function primaryKeyFrom(
+        value: Public.Tables.Actor.Record,
+      ): string {
+        return JSON.stringify({
+          actorId: value.actorId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.actorId !== undefined;
+      }
+    }
+    export namespace FilmCategory {
+      export function primaryKeyFrom(
+        value: Public.Tables.FilmCategory.Record,
+      ): string {
+        return JSON.stringify({
+          filmId: value.filmId,
+          categoryId: value.categoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.filmId !== undefined && value.categoryId !== undefined;
+      }
+    }
+    export namespace Inventory {
+      export function primaryKeyFrom(
+        value: Public.Tables.Inventory.Record,
+      ): string {
+        return JSON.stringify({
+          inventoryId: value.inventoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.inventoryId !== undefined;
+      }
+    }
+    export namespace Category {
+      export function primaryKeyFrom(
+        value: Public.Tables.Category.Record,
+      ): string {
+        return JSON.stringify({
+          categoryId: value.categoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.categoryId !== undefined;
+      }
+    }
+    export namespace Country {
+      export function primaryKeyFrom(
+        value: Public.Tables.Country.Record,
+      ): string {
+        return JSON.stringify({
+          countryId: value.countryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.countryId !== undefined;
+      }
+    }
+    export namespace Language {
+      export function primaryKeyFrom(
+        value: Public.Tables.Language.Record,
+      ): string {
+        return JSON.stringify({
+          languageId: value.languageId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.languageId !== undefined;
+      }
+    }
+    export namespace Rental {
+      export function primaryKeyFrom(
+        value: Public.Tables.Rental.Record,
+      ): string {
+        return JSON.stringify({
+          rentalId: value.rentalId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.rentalId !== undefined;
+      }
+    }
+    export namespace Staff {
+      export function primaryKeyFrom(
+        value: Public.Tables.Staff.Record,
+      ): string {
+        return JSON.stringify({
+          staffId: value.staffId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.staffId !== undefined;
+      }
+    }
+    export namespace Store {
+      export function primaryKeyFrom(
+        value: Public.Tables.Store.Record,
+      ): string {
+        return JSON.stringify({
+          storeId: value.storeId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.storeId !== undefined;
+      }
+    }
+    export namespace Payment {
+      export function primaryKeyFrom(
+        value: Public.Tables.Payment.Record,
+      ): string {
+        return JSON.stringify({
+          paymentId: value.paymentId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.paymentId !== undefined;
+      }
+    }
+    export namespace Film {
+      export function primaryKeyFrom(value: Public.Tables.Film.Record): string {
+        return JSON.stringify({
+          filmId: value.filmId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.filmId !== undefined;
       }
     }
   }
@@ -21403,6 +23344,414 @@ export namespace PgCatalog {
     export namespace PgLargeobject {}
   }
 }
+export namespace Public {
+  export namespace Types {
+    export namespace Actor {
+      export function is(value: any): value is Public.Types.Actor {
+        if (
+          value.actorId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ActorInfo {
+      export function is(value: any): value is Public.Types.ActorInfo {
+        if (
+          value.actorId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.filmInfo !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Address {
+      export function is(value: any): value is Public.Types.Address {
+        if (
+          value.addressId !== undefined &&
+          value.address !== undefined &&
+          value.address2 !== undefined &&
+          value.district !== undefined &&
+          value.cityId !== undefined &&
+          value.postalCode !== undefined &&
+          value.phone !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Category {
+      export function is(value: any): value is Public.Types.Category {
+        if (
+          value.categoryId !== undefined &&
+          value.name !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace City {
+      export function is(value: any): value is Public.Types.City {
+        if (
+          value.cityId !== undefined &&
+          value.city !== undefined &&
+          value.countryId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Country {
+      export function is(value: any): value is Public.Types.Country {
+        if (
+          value.countryId !== undefined &&
+          value.country !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Customer {
+      export function is(value: any): value is Public.Types.Customer {
+        if (
+          value.customerId !== undefined &&
+          value.storeId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.email !== undefined &&
+          value.addressId !== undefined &&
+          value.activebool !== undefined &&
+          value.createDate !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.active !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CustomerList {
+      export function is(value: any): value is Public.Types.CustomerList {
+        if (
+          value.id !== undefined &&
+          value.name !== undefined &&
+          value.address !== undefined &&
+          value.zipCode !== undefined &&
+          value.phone !== undefined &&
+          value.city !== undefined &&
+          value.country !== undefined &&
+          value.notes !== undefined &&
+          value.sid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Film {
+      export function is(value: any): value is Public.Types.Film {
+        if (
+          value.filmId !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.releaseYear !== undefined &&
+          value.languageId !== undefined &&
+          value.rentalDuration !== undefined &&
+          value.rentalRate !== undefined &&
+          value.length !== undefined &&
+          value.replacementCost !== undefined &&
+          value.rating !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.specialFeatures !== undefined &&
+          value.fulltext !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmActor {
+      export function is(value: any): value is Public.Types.FilmActor {
+        if (
+          value.actorId !== undefined &&
+          value.filmId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmCategory {
+      export function is(value: any): value is Public.Types.FilmCategory {
+        if (
+          value.filmId !== undefined &&
+          value.categoryId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmList {
+      export function is(value: any): value is Public.Types.FilmList {
+        if (
+          value.fid !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.category !== undefined &&
+          value.price !== undefined &&
+          value.length !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Inventory {
+      export function is(value: any): value is Public.Types.Inventory {
+        if (
+          value.inventoryId !== undefined &&
+          value.filmId !== undefined &&
+          value.storeId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Language {
+      export function is(value: any): value is Public.Types.Language {
+        if (
+          value.languageId !== undefined &&
+          value.name !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace NicerButSlowerFilmList {
+      export function is(
+        value: any,
+      ): value is Public.Types.NicerButSlowerFilmList {
+        if (
+          value.fid !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.category !== undefined &&
+          value.price !== undefined &&
+          value.length !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Payment {
+      export function is(value: any): value is Public.Types.Payment {
+        if (
+          value.paymentId !== undefined &&
+          value.customerId !== undefined &&
+          value.staffId !== undefined &&
+          value.rentalId !== undefined &&
+          value.amount !== undefined &&
+          value.paymentDate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Rental {
+      export function is(value: any): value is Public.Types.Rental {
+        if (
+          value.rentalId !== undefined &&
+          value.rentalDate !== undefined &&
+          value.inventoryId !== undefined &&
+          value.customerId !== undefined &&
+          value.returnDate !== undefined &&
+          value.staffId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SalesByFilmCategory {
+      export function is(
+        value: any,
+      ): value is Public.Types.SalesByFilmCategory {
+        if (value.category !== undefined && value.totalSales !== undefined)
+          return true;
+        return false;
+      }
+    }
+    export namespace SalesByStore {
+      export function is(value: any): value is Public.Types.SalesByStore {
+        if (
+          value.store !== undefined &&
+          value.manager !== undefined &&
+          value.totalSales !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Staff {
+      export function is(value: any): value is Public.Types.Staff {
+        if (
+          value.staffId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.addressId !== undefined &&
+          value.email !== undefined &&
+          value.storeId !== undefined &&
+          value.active !== undefined &&
+          value.username !== undefined &&
+          value.password !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.picture !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace StaffList {
+      export function is(value: any): value is Public.Types.StaffList {
+        if (
+          value.id !== undefined &&
+          value.name !== undefined &&
+          value.address !== undefined &&
+          value.zipCode !== undefined &&
+          value.phone !== undefined &&
+          value.city !== undefined &&
+          value.country !== undefined &&
+          value.sid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Store {
+      export function is(value: any): value is Public.Types.Store {
+        if (
+          value.storeId !== undefined &&
+          value.managerStaffId !== undefined &&
+          value.addressId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.FilmInStock.Parameters {
+          if (value.pFilmId !== undefined && value.pStoreId !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace FilmNotInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.FilmNotInStock.Parameters {
+          if (value.pFilmId !== undefined && value.pStoreId !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GetCustomerBalance {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GetCustomerBalance.Parameters {
+          if (
+            value.pCustomerId !== undefined &&
+            value.pEffectiveDate !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.InventoryHeldByCustomer.Parameters {
+          if (value.pInventoryId !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace InventoryInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.InventoryInStock.Parameters {
+          if (value.pInventoryId !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace LastDay {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.LastDay.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace RewardsReport {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.RewardsReport.Parameters {
+          if (
+            value.minMonthlyPurchases !== undefined &&
+            value.minDollarAmountPurchased !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {}
+    export namespace Address {}
+    export namespace City {}
+    export namespace Customer {}
+    export namespace Actor {}
+    export namespace FilmCategory {}
+    export namespace Inventory {}
+    export namespace Category {}
+    export namespace Country {}
+    export namespace Language {}
+    export namespace Rental {}
+    export namespace Staff {}
+    export namespace Store {}
+    export namespace Payment {}
+    export namespace Film {}
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export namespace PgForeignDataWrappers {
@@ -22787,1878 +25136,5770 @@ export namespace InformationSchema {
     export namespace SqlSizing {}
   }
 }
-export namespace Public {
-  export namespace Types {
-    export namespace Checklist {
-      export function is(value: any): value is Public.Types.Checklist {
-        if (
-          value.id !== undefined &&
-          value.name !== undefined &&
-          value.createdAt !== undefined
-        )
-          return true;
-        return false;
-      }
-    }
-    export namespace ChecklistItem {
-      export function is(value: any): value is Public.Types.ChecklistItem {
-        if (
-          value.id !== undefined &&
-          value.checklistId !== undefined &&
-          value.title !== undefined &&
-          value.checked !== undefined &&
-          value.createdAt !== undefined
-        )
-          return true;
-        return false;
-      }
-    }
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {}
-    export namespace ChecklistItem {}
-  }
-}
-
+// begin fetch client
 import {
-  Context,
-  initializeContext,
-  PostgresDatabase,
-} from "@embracesql/postgres";
-import postgres from "postgres";
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ArgumentToPostgres = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ArgumentFromPostgres = any;
-type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-export interface PostgresTypecasts {
-  [1034]: Typecast;
-  ["PgCatalog.Types.AclitemArray"]: Typecast;
-  [1561]: Typecast;
-  ["PgCatalog.Types.BitArray"]: Typecast;
-  [1000]: Typecast;
-  ["PgCatalog.Types.BoolArray"]: Typecast;
-  [1020]: Typecast;
-  ["PgCatalog.Types.BoxArray"]: Typecast;
-  [1014]: Typecast;
-  ["PgCatalog.Types.BpcharArray"]: Typecast;
-  [1001]: Typecast;
-  ["PgCatalog.Types.ByteaArray"]: Typecast;
-  [1002]: Typecast;
-  ["PgCatalog.Types.CharArray"]: Typecast;
-  [1012]: Typecast;
-  ["PgCatalog.Types.CidArray"]: Typecast;
-  [651]: Typecast;
-  ["PgCatalog.Types.CidrArray"]: Typecast;
-  [719]: Typecast;
-  ["PgCatalog.Types.CircleArray"]: Typecast;
-  [1263]: Typecast;
-  ["PgCatalog.Types.CstringArray"]: Typecast;
-  [1182]: Typecast;
-  ["PgCatalog.Types.DateArray"]: Typecast;
-  [6155]: Typecast;
-  ["PgCatalog.Types.DatemultirangeArray"]: Typecast;
-  [3913]: Typecast;
-  ["PgCatalog.Types.DaterangeArray"]: Typecast;
-  [1021]: Typecast;
-  ["PgCatalog.Types.Float4Array"]: Typecast;
-  [1022]: Typecast;
-  ["PgCatalog.Types.Float8Array"]: Typecast;
-  [3644]: Typecast;
-  ["PgCatalog.Types.GtsvectorArray"]: Typecast;
-  [1041]: Typecast;
-  ["PgCatalog.Types.InetArray"]: Typecast;
-  [1005]: Typecast;
-  ["PgCatalog.Types.Int2Array"]: Typecast;
-  [1006]: Typecast;
-  ["PgCatalog.Types.Int2vectorArray"]: Typecast;
-  [1007]: Typecast;
-  ["PgCatalog.Types.Int4Array"]: Typecast;
-  [6150]: Typecast;
-  ["PgCatalog.Types.Int4multirangeArray"]: Typecast;
-  [3905]: Typecast;
-  ["PgCatalog.Types.Int4rangeArray"]: Typecast;
-  [1016]: Typecast;
-  ["PgCatalog.Types.Int8Array"]: Typecast;
-  [6157]: Typecast;
-  ["PgCatalog.Types.Int8multirangeArray"]: Typecast;
-  [3927]: Typecast;
-  ["PgCatalog.Types.Int8rangeArray"]: Typecast;
-  [1187]: Typecast;
-  ["PgCatalog.Types.IntervalArray"]: Typecast;
-  [199]: Typecast;
-  ["PgCatalog.Types.JsonArray"]: Typecast;
-  [3807]: Typecast;
-  ["PgCatalog.Types.JsonbArray"]: Typecast;
-  [4073]: Typecast;
-  ["PgCatalog.Types.JsonpathArray"]: Typecast;
-  [629]: Typecast;
-  ["PgCatalog.Types.LineArray"]: Typecast;
-  [1018]: Typecast;
-  ["PgCatalog.Types.LsegArray"]: Typecast;
-  [1040]: Typecast;
-  ["PgCatalog.Types.MacaddrArray"]: Typecast;
-  [775]: Typecast;
-  ["PgCatalog.Types.Macaddr8Array"]: Typecast;
-  [791]: Typecast;
-  ["PgCatalog.Types.MoneyArray"]: Typecast;
-  [1003]: Typecast;
-  ["PgCatalog.Types.NameArray"]: Typecast;
-  [1231]: Typecast;
-  ["PgCatalog.Types.NumericArray"]: Typecast;
-  [6151]: Typecast;
-  ["PgCatalog.Types.NummultirangeArray"]: Typecast;
-  [3907]: Typecast;
-  ["PgCatalog.Types.NumrangeArray"]: Typecast;
-  [1028]: Typecast;
-  ["PgCatalog.Types.OidArray"]: Typecast;
-  [1013]: Typecast;
-  ["PgCatalog.Types.OidvectorArray"]: Typecast;
-  [1019]: Typecast;
-  ["PgCatalog.Types.PathArray"]: Typecast;
-  [10026]: Typecast;
-  ["PgCatalog.Types.PgAggregateArray"]: Typecast;
-  [10014]: Typecast;
-  ["PgCatalog.Types.PgAmArray"]: Typecast;
-  [10016]: Typecast;
-  ["PgCatalog.Types.PgAmopArray"]: Typecast;
-  [10018]: Typecast;
-  ["PgCatalog.Types.PgAmprocArray"]: Typecast;
-  [10000]: Typecast;
-  ["PgCatalog.Types.PgAttrdefArray"]: Typecast;
-  [270]: Typecast;
-  ["PgCatalog.Types.PgAttributeArray"]: Typecast;
-  [10058]: Typecast;
-  ["PgCatalog.Types.PgAuthMembersArray"]: Typecast;
-  [10057]: Typecast;
-  ["PgCatalog.Types.PgAuthidArray"]: Typecast;
-  [12086]: Typecast;
-  ["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast;
-  [12082]: Typecast;
-  ["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast;
-  [12139]: Typecast;
-  ["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast;
-  [10042]: Typecast;
-  ["PgCatalog.Types.PgCastArray"]: Typecast;
-  [273]: Typecast;
-  ["PgCatalog.Types.PgClassArray"]: Typecast;
-  [10094]: Typecast;
-  ["PgCatalog.Types.PgCollationArray"]: Typecast;
-  [12131]: Typecast;
-  ["PgCatalog.Types.PgConfigArray"]: Typecast;
-  [10002]: Typecast;
-  ["PgCatalog.Types.PgConstraintArray"]: Typecast;
-  [10048]: Typecast;
-  ["PgCatalog.Types.PgConversionArray"]: Typecast;
-  [12078]: Typecast;
-  ["PgCatalog.Types.PgCursorsArray"]: Typecast;
-  [10052]: Typecast;
-  ["PgCatalog.Types.PgDatabaseArray"]: Typecast;
-  [10053]: Typecast;
-  ["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast;
-  [10087]: Typecast;
-  ["PgCatalog.Types.PgDefaultAclArray"]: Typecast;
-  [10050]: Typecast;
-  ["PgCatalog.Types.PgDependArray"]: Typecast;
-  [10040]: Typecast;
-  ["PgCatalog.Types.PgDescriptionArray"]: Typecast;
-  [10044]: Typecast;
-  ["PgCatalog.Types.PgEnumArray"]: Typecast;
-  [10038]: Typecast;
-  ["PgCatalog.Types.PgEventTriggerArray"]: Typecast;
-  [10073]: Typecast;
-  ["PgCatalog.Types.PgExtensionArray"]: Typecast;
-  [12111]: Typecast;
-  ["PgCatalog.Types.PgFileSettingsArray"]: Typecast;
-  [10075]: Typecast;
-  ["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast;
-  [10077]: Typecast;
-  ["PgCatalog.Types.PgForeignServerArray"]: Typecast;
-  [10081]: Typecast;
-  ["PgCatalog.Types.PgForeignTableArray"]: Typecast;
-  [12011]: Typecast;
-  ["PgCatalog.Types.PgGroupArray"]: Typecast;
-  [12115]: Typecast;
-  ["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast;
-  [12119]: Typecast;
-  ["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast;
-  [10006]: Typecast;
-  ["PgCatalog.Types.PgIndexArray"]: Typecast;
-  [12044]: Typecast;
-  ["PgCatalog.Types.PgIndexesArray"]: Typecast;
-  [10004]: Typecast;
-  ["PgCatalog.Types.PgInheritsArray"]: Typecast;
-  [10089]: Typecast;
-  ["PgCatalog.Types.PgInitPrivsArray"]: Typecast;
-  [10020]: Typecast;
-  ["PgCatalog.Types.PgLanguageArray"]: Typecast;
-  [10024]: Typecast;
-  ["PgCatalog.Types.PgLargeobjectArray"]: Typecast;
-  [10022]: Typecast;
-  ["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast;
-  [12074]: Typecast;
-  ["PgCatalog.Types.PgLocksArray"]: Typecast;
-  [3221]: Typecast;
-  ["PgCatalog.Types.PgLsnArray"]: Typecast;
-  [12039]: Typecast;
-  ["PgCatalog.Types.PgMatviewsArray"]: Typecast;
-  [10046]: Typecast;
-  ["PgCatalog.Types.PgNamespaceArray"]: Typecast;
-  [10012]: Typecast;
-  ["PgCatalog.Types.PgOpclassArray"]: Typecast;
-  [10008]: Typecast;
-  ["PgCatalog.Types.PgOperatorArray"]: Typecast;
-  [10010]: Typecast;
-  ["PgCatalog.Types.PgOpfamilyArray"]: Typecast;
-  [10096]: Typecast;
-  ["PgCatalog.Types.PgParameterAclArray"]: Typecast;
-  [10098]: Typecast;
-  ["PgCatalog.Types.PgPartitionedTableArray"]: Typecast;
-  [12019]: Typecast;
-  ["PgCatalog.Types.PgPoliciesArray"]: Typecast;
-  [10083]: Typecast;
-  ["PgCatalog.Types.PgPolicyArray"]: Typecast;
-  [12096]: Typecast;
-  ["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast;
-  [12091]: Typecast;
-  ["PgCatalog.Types.PgPreparedXactsArray"]: Typecast;
-  [272]: Typecast;
-  ["PgCatalog.Types.PgProcArray"]: Typecast;
-  [10106]: Typecast;
-  ["PgCatalog.Types.PgPublicationArray"]: Typecast;
-  [10108]: Typecast;
-  ["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast;
-  [10110]: Typecast;
-  ["PgCatalog.Types.PgPublicationRelArray"]: Typecast;
-  [12069]: Typecast;
-  ["PgCatalog.Types.PgPublicationTablesArray"]: Typecast;
-  [10100]: Typecast;
-  ["PgCatalog.Types.PgRangeArray"]: Typecast;
-  [10085]: Typecast;
-  ["PgCatalog.Types.PgReplicationOriginArray"]: Typecast;
-  [12337]: Typecast;
-  ["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast;
-  [12258]: Typecast;
-  ["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast;
-  [10034]: Typecast;
-  ["PgCatalog.Types.PgRewriteArray"]: Typecast;
-  [12001]: Typecast;
-  ["PgCatalog.Types.PgRolesArray"]: Typecast;
-  [12024]: Typecast;
-  ["PgCatalog.Types.PgRulesArray"]: Typecast;
-  [10091]: Typecast;
-  ["PgCatalog.Types.PgSeclabelArray"]: Typecast;
-  [12100]: Typecast;
-  ["PgCatalog.Types.PgSeclabelsArray"]: Typecast;
-  [10104]: Typecast;
-  ["PgCatalog.Types.PgSequenceArray"]: Typecast;
-  [12049]: Typecast;
-  ["PgCatalog.Types.PgSequencesArray"]: Typecast;
-  [12105]: Typecast;
-  ["PgCatalog.Types.PgSettingsArray"]: Typecast;
-  [12006]: Typecast;
-  ["PgCatalog.Types.PgShadowArray"]: Typecast;
-  [10059]: Typecast;
-  ["PgCatalog.Types.PgShdependArray"]: Typecast;
-  [10061]: Typecast;
-  ["PgCatalog.Types.PgShdescriptionArray"]: Typecast;
-  [12135]: Typecast;
-  ["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast;
-  [10093]: Typecast;
-  ["PgCatalog.Types.PgShseclabelArray"]: Typecast;
-  [5039]: Typecast;
-  ["PgCatalog.Types.PgSnapshotArray"]: Typecast;
-  [12223]: Typecast;
-  ["PgCatalog.Types.PgStatActivityArray"]: Typecast;
-  [12184]: Typecast;
-  ["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast;
-  [12143]: Typecast;
-  ["PgCatalog.Types.PgStatAllTablesArray"]: Typecast;
-  [12286]: Typecast;
-  ["PgCatalog.Types.PgStatArchiverArray"]: Typecast;
-  [12290]: Typecast;
-  ["PgCatalog.Types.PgStatBgwriterArray"]: Typecast;
-  [12267]: Typecast;
-  ["PgCatalog.Types.PgStatDatabaseArray"]: Typecast;
-  [12272]: Typecast;
-  ["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast;
-  [12254]: Typecast;
-  ["PgCatalog.Types.PgStatGssapiArray"]: Typecast;
-  [12294]: Typecast;
-  ["PgCatalog.Types.PgStatIoArray"]: Typecast;
-  [12302]: Typecast;
-  ["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast;
-  [12322]: Typecast;
-  ["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast;
-  [12312]: Typecast;
-  ["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast;
-  [12327]: Typecast;
-  ["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast;
-  [12317]: Typecast;
-  ["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast;
-  [12307]: Typecast;
-  ["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast;
-  [12241]: Typecast;
-  ["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast;
-  [12228]: Typecast;
-  ["PgCatalog.Types.PgStatReplicationArray"]: Typecast;
-  [12263]: Typecast;
-  ["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast;
-  [12233]: Typecast;
-  ["PgCatalog.Types.PgStatSlruArray"]: Typecast;
-  [12250]: Typecast;
-  ["PgCatalog.Types.PgStatSslArray"]: Typecast;
-  [12245]: Typecast;
-  ["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast;
-  [12341]: Typecast;
-  ["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast;
-  [12189]: Typecast;
-  ["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast;
-  [12153]: Typecast;
-  ["PgCatalog.Types.PgStatSysTablesArray"]: Typecast;
-  [12276]: Typecast;
-  ["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast;
-  [12193]: Typecast;
-  ["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast;
-  [12162]: Typecast;
-  ["PgCatalog.Types.PgStatUserTablesArray"]: Typecast;
-  [12298]: Typecast;
-  ["PgCatalog.Types.PgStatWalArray"]: Typecast;
-  [12237]: Typecast;
-  ["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast;
-  [12148]: Typecast;
-  ["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast;
-  [12158]: Typecast;
-  ["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast;
-  [12281]: Typecast;
-  ["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast;
-  [12167]: Typecast;
-  ["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast;
-  [12197]: Typecast;
-  ["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast;
-  [12210]: Typecast;
-  ["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast;
-  [12171]: Typecast;
-  ["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast;
-  [12202]: Typecast;
-  ["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast;
-  [12215]: Typecast;
-  ["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast;
-  [12176]: Typecast;
-  ["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast;
-  [12206]: Typecast;
-  ["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast;
-  [12219]: Typecast;
-  ["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast;
-  [12180]: Typecast;
-  ["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast;
-  [10028]: Typecast;
-  ["PgCatalog.Types.PgStatisticArray"]: Typecast;
-  [10030]: Typecast;
-  ["PgCatalog.Types.PgStatisticExtArray"]: Typecast;
-  [10032]: Typecast;
-  ["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast;
-  [12054]: Typecast;
-  ["PgCatalog.Types.PgStatsArray"]: Typecast;
-  [12059]: Typecast;
-  ["PgCatalog.Types.PgStatsExtArray"]: Typecast;
-  [12064]: Typecast;
-  ["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast;
-  [10112]: Typecast;
-  ["PgCatalog.Types.PgSubscriptionArray"]: Typecast;
-  [10113]: Typecast;
-  ["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast;
-  [12034]: Typecast;
-  ["PgCatalog.Types.PgTablesArray"]: Typecast;
-  [10055]: Typecast;
-  ["PgCatalog.Types.PgTablespaceArray"]: Typecast;
-  [12123]: Typecast;
-  ["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast;
-  [12127]: Typecast;
-  ["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast;
-  [10102]: Typecast;
-  ["PgCatalog.Types.PgTransformArray"]: Typecast;
-  [10036]: Typecast;
-  ["PgCatalog.Types.PgTriggerArray"]: Typecast;
-  [10063]: Typecast;
-  ["PgCatalog.Types.PgTsConfigArray"]: Typecast;
-  [10065]: Typecast;
-  ["PgCatalog.Types.PgTsConfigMapArray"]: Typecast;
-  [10067]: Typecast;
-  ["PgCatalog.Types.PgTsDictArray"]: Typecast;
-  [10069]: Typecast;
-  ["PgCatalog.Types.PgTsParserArray"]: Typecast;
-  [10071]: Typecast;
-  ["PgCatalog.Types.PgTsTemplateArray"]: Typecast;
-  [210]: Typecast;
-  ["PgCatalog.Types.PgTypeArray"]: Typecast;
-  [12015]: Typecast;
-  ["PgCatalog.Types.PgUserArray"]: Typecast;
-  [10079]: Typecast;
-  ["PgCatalog.Types.PgUserMappingArray"]: Typecast;
-  [12332]: Typecast;
-  ["PgCatalog.Types.PgUserMappingsArray"]: Typecast;
-  [12029]: Typecast;
-  ["PgCatalog.Types.PgViewsArray"]: Typecast;
-  [1017]: Typecast;
-  ["PgCatalog.Types.PointArray"]: Typecast;
-  [1027]: Typecast;
-  ["PgCatalog.Types.PolygonArray"]: Typecast;
-  [2287]: Typecast;
-  ["PgCatalog.Types.RecordArray"]: Typecast;
-  [2201]: Typecast;
-  ["PgCatalog.Types.RefcursorArray"]: Typecast;
-  [2210]: Typecast;
-  ["PgCatalog.Types.RegclassArray"]: Typecast;
-  [4192]: Typecast;
-  ["PgCatalog.Types.RegcollationArray"]: Typecast;
-  [3735]: Typecast;
-  ["PgCatalog.Types.RegconfigArray"]: Typecast;
-  [3770]: Typecast;
-  ["PgCatalog.Types.RegdictionaryArray"]: Typecast;
-  [4090]: Typecast;
-  ["PgCatalog.Types.RegnamespaceArray"]: Typecast;
-  [2208]: Typecast;
-  ["PgCatalog.Types.RegoperArray"]: Typecast;
-  [2209]: Typecast;
-  ["PgCatalog.Types.RegoperatorArray"]: Typecast;
-  [1008]: Typecast;
-  ["PgCatalog.Types.RegprocArray"]: Typecast;
-  [2207]: Typecast;
-  ["PgCatalog.Types.RegprocedureArray"]: Typecast;
-  [4097]: Typecast;
-  ["PgCatalog.Types.RegroleArray"]: Typecast;
-  [2211]: Typecast;
-  ["PgCatalog.Types.RegtypeArray"]: Typecast;
-  [1009]: Typecast;
-  ["PgCatalog.Types.TextArray"]: Typecast;
-  [1010]: Typecast;
-  ["PgCatalog.Types.TidArray"]: Typecast;
-  [1183]: Typecast;
-  ["PgCatalog.Types.TimeArray"]: Typecast;
-  [1115]: Typecast;
-  ["PgCatalog.Types.TimestampArray"]: Typecast;
-  [1185]: Typecast;
-  ["PgCatalog.Types.TimestamptzArray"]: Typecast;
-  [1270]: Typecast;
-  ["PgCatalog.Types.TimetzArray"]: Typecast;
-  [6152]: Typecast;
-  ["PgCatalog.Types.TsmultirangeArray"]: Typecast;
-  [3645]: Typecast;
-  ["PgCatalog.Types.TsqueryArray"]: Typecast;
-  [3909]: Typecast;
-  ["PgCatalog.Types.TsrangeArray"]: Typecast;
-  [6153]: Typecast;
-  ["PgCatalog.Types.TstzmultirangeArray"]: Typecast;
-  [3911]: Typecast;
-  ["PgCatalog.Types.TstzrangeArray"]: Typecast;
-  [3643]: Typecast;
-  ["PgCatalog.Types.TsvectorArray"]: Typecast;
-  [2949]: Typecast;
-  ["PgCatalog.Types.TxidSnapshotArray"]: Typecast;
-  [2951]: Typecast;
-  ["PgCatalog.Types.UuidArray"]: Typecast;
-  [1563]: Typecast;
-  ["PgCatalog.Types.VarbitArray"]: Typecast;
-  [1015]: Typecast;
-  ["PgCatalog.Types.VarcharArray"]: Typecast;
-  [1011]: Typecast;
-  ["PgCatalog.Types.XidArray"]: Typecast;
-  [271]: Typecast;
-  ["PgCatalog.Types.Xid8Array"]: Typecast;
-  [143]: Typecast;
-  ["PgCatalog.Types.XmlArray"]: Typecast;
-  [1033]: Typecast;
-  ["PgCatalog.Types.Aclitem"]: Typecast;
-  [2276]: Typecast;
-  ["PgCatalog.Types.Any"]: Typecast;
-  [2277]: Typecast;
-  ["PgCatalog.Types.Anyarray"]: Typecast;
-  [5077]: Typecast;
-  ["PgCatalog.Types.Anycompatible"]: Typecast;
-  [5078]: Typecast;
-  ["PgCatalog.Types.Anycompatiblearray"]: Typecast;
-  [4538]: Typecast;
-  ["PgCatalog.Types.Anycompatiblemultirange"]: Typecast;
-  [5079]: Typecast;
-  ["PgCatalog.Types.Anycompatiblenonarray"]: Typecast;
-  [5080]: Typecast;
-  ["PgCatalog.Types.Anycompatiblerange"]: Typecast;
-  [2283]: Typecast;
-  ["PgCatalog.Types.Anyelement"]: Typecast;
-  [3500]: Typecast;
-  ["PgCatalog.Types.Anyenum"]: Typecast;
-  [4537]: Typecast;
-  ["PgCatalog.Types.Anymultirange"]: Typecast;
-  [2776]: Typecast;
-  ["PgCatalog.Types.Anynonarray"]: Typecast;
-  [3831]: Typecast;
-  ["PgCatalog.Types.Anyrange"]: Typecast;
-  [1560]: Typecast;
-  ["PgCatalog.Types.Bit"]: Typecast;
-  [16]: Typecast;
-  ["PgCatalog.Types.Bool"]: Typecast;
-  [603]: Typecast;
-  ["PgCatalog.Types.Box"]: Typecast;
-  [1042]: Typecast;
-  ["PgCatalog.Types.Bpchar"]: Typecast;
-  [17]: Typecast;
-  ["PgCatalog.Types.Bytea"]: Typecast;
-  [18]: Typecast;
-  ["PgCatalog.Types.Char"]: Typecast;
-  [29]: Typecast;
-  ["PgCatalog.Types.Cid"]: Typecast;
-  [650]: Typecast;
-  ["PgCatalog.Types.Cidr"]: Typecast;
-  [718]: Typecast;
-  ["PgCatalog.Types.Circle"]: Typecast;
-  [2275]: Typecast;
-  ["PgCatalog.Types.Cstring"]: Typecast;
-  [1082]: Typecast;
-  ["PgCatalog.Types.Date"]: Typecast;
-  [4535]: Typecast;
-  ["PgCatalog.Types.Datemultirange"]: Typecast;
-  [3912]: Typecast;
-  ["PgCatalog.Types.Daterange"]: Typecast;
-  [3838]: Typecast;
-  ["PgCatalog.Types.EventTrigger"]: Typecast;
-  [3115]: Typecast;
-  ["PgCatalog.Types.FdwHandler"]: Typecast;
-  [700]: Typecast;
-  ["PgCatalog.Types.Float4"]: Typecast;
-  [701]: Typecast;
-  ["PgCatalog.Types.Float8"]: Typecast;
-  [3642]: Typecast;
-  ["PgCatalog.Types.Gtsvector"]: Typecast;
-  [325]: Typecast;
-  ["PgCatalog.Types.IndexAmHandler"]: Typecast;
-  [869]: Typecast;
-  ["PgCatalog.Types.Inet"]: Typecast;
-  [21]: Typecast;
-  ["PgCatalog.Types.Int2"]: Typecast;
-  [22]: Typecast;
-  ["PgCatalog.Types.Int2vector"]: Typecast;
-  [23]: Typecast;
-  ["PgCatalog.Types.Int4"]: Typecast;
-  [4451]: Typecast;
-  ["PgCatalog.Types.Int4multirange"]: Typecast;
-  [3904]: Typecast;
-  ["PgCatalog.Types.Int4range"]: Typecast;
-  [20]: Typecast;
-  ["PgCatalog.Types.Int8"]: Typecast;
-  [4536]: Typecast;
-  ["PgCatalog.Types.Int8multirange"]: Typecast;
-  [3926]: Typecast;
-  ["PgCatalog.Types.Int8range"]: Typecast;
-  [2281]: Typecast;
-  ["PgCatalog.Types.Internal"]: Typecast;
-  [1186]: Typecast;
-  ["PgCatalog.Types.Interval"]: Typecast;
-  [114]: Typecast;
-  ["PgCatalog.Types.Json"]: Typecast;
-  [3802]: Typecast;
-  ["PgCatalog.Types.Jsonb"]: Typecast;
-  [4072]: Typecast;
-  ["PgCatalog.Types.Jsonpath"]: Typecast;
-  [2280]: Typecast;
-  ["PgCatalog.Types.LanguageHandler"]: Typecast;
-  [628]: Typecast;
-  ["PgCatalog.Types.Line"]: Typecast;
-  [601]: Typecast;
-  ["PgCatalog.Types.Lseg"]: Typecast;
-  [829]: Typecast;
-  ["PgCatalog.Types.Macaddr"]: Typecast;
-  [774]: Typecast;
-  ["PgCatalog.Types.Macaddr8"]: Typecast;
-  [790]: Typecast;
-  ["PgCatalog.Types.Money"]: Typecast;
-  [19]: Typecast;
-  ["PgCatalog.Types.Name"]: Typecast;
-  [1700]: Typecast;
-  ["PgCatalog.Types.Numeric"]: Typecast;
-  [4532]: Typecast;
-  ["PgCatalog.Types.Nummultirange"]: Typecast;
-  [3906]: Typecast;
-  ["PgCatalog.Types.Numrange"]: Typecast;
-  [26]: Typecast;
-  ["PgCatalog.Types.Oid"]: Typecast;
-  [30]: Typecast;
-  ["PgCatalog.Types.Oidvector"]: Typecast;
-  [602]: Typecast;
-  ["PgCatalog.Types.Path"]: Typecast;
-  [10027]: Typecast;
-  ["PgCatalog.Types.PgAggregate"]: Typecast;
-  [10015]: Typecast;
-  ["PgCatalog.Types.PgAm"]: Typecast;
-  [10017]: Typecast;
-  ["PgCatalog.Types.PgAmop"]: Typecast;
-  [10019]: Typecast;
-  ["PgCatalog.Types.PgAmproc"]: Typecast;
-  [10001]: Typecast;
-  ["PgCatalog.Types.PgAttrdef"]: Typecast;
-  [75]: Typecast;
-  ["PgCatalog.Types.PgAttribute"]: Typecast;
-  [2843]: Typecast;
-  ["PgCatalog.Types.PgAuthMembers"]: Typecast;
-  [2842]: Typecast;
-  ["PgCatalog.Types.PgAuthid"]: Typecast;
-  [12087]: Typecast;
-  ["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast;
-  [12083]: Typecast;
-  ["PgCatalog.Types.PgAvailableExtensions"]: Typecast;
-  [12140]: Typecast;
-  ["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast;
-  [4600]: Typecast;
-  ["PgCatalog.Types.PgBrinBloomSummary"]: Typecast;
-  [4601]: Typecast;
-  ["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast;
-  [10043]: Typecast;
-  ["PgCatalog.Types.PgCast"]: Typecast;
-  [83]: Typecast;
-  ["PgCatalog.Types.PgClass"]: Typecast;
-  [10095]: Typecast;
-  ["PgCatalog.Types.PgCollation"]: Typecast;
-  [12132]: Typecast;
-  ["PgCatalog.Types.PgConfig"]: Typecast;
-  [10003]: Typecast;
-  ["PgCatalog.Types.PgConstraint"]: Typecast;
-  [10049]: Typecast;
-  ["PgCatalog.Types.PgConversion"]: Typecast;
-  [12079]: Typecast;
-  ["PgCatalog.Types.PgCursors"]: Typecast;
-  [1248]: Typecast;
-  ["PgCatalog.Types.PgDatabase"]: Typecast;
-  [10054]: Typecast;
-  ["PgCatalog.Types.PgDbRoleSetting"]: Typecast;
-  [32]: Typecast;
-  ["PgCatalog.Types.PgDdlCommand"]: Typecast;
-  [10088]: Typecast;
-  ["PgCatalog.Types.PgDefaultAcl"]: Typecast;
-  [10051]: Typecast;
-  ["PgCatalog.Types.PgDepend"]: Typecast;
-  [3402]: Typecast;
-  ["PgCatalog.Types.PgDependencies"]: Typecast;
-  [10041]: Typecast;
-  ["PgCatalog.Types.PgDescription"]: Typecast;
-  [10045]: Typecast;
-  ["PgCatalog.Types.PgEnum"]: Typecast;
-  [10039]: Typecast;
-  ["PgCatalog.Types.PgEventTrigger"]: Typecast;
-  [10074]: Typecast;
-  ["PgCatalog.Types.PgExtension"]: Typecast;
-  [12112]: Typecast;
-  ["PgCatalog.Types.PgFileSettings"]: Typecast;
-  [10076]: Typecast;
-  ["PgCatalog.Types.PgForeignDataWrapper"]: Typecast;
-  [10078]: Typecast;
-  ["PgCatalog.Types.PgForeignServer"]: Typecast;
-  [10082]: Typecast;
-  ["PgCatalog.Types.PgForeignTable"]: Typecast;
-  [12012]: Typecast;
-  ["PgCatalog.Types.PgGroup"]: Typecast;
-  [12116]: Typecast;
-  ["PgCatalog.Types.PgHbaFileRules"]: Typecast;
-  [12120]: Typecast;
-  ["PgCatalog.Types.PgIdentFileMappings"]: Typecast;
-  [10007]: Typecast;
-  ["PgCatalog.Types.PgIndex"]: Typecast;
-  [12045]: Typecast;
-  ["PgCatalog.Types.PgIndexes"]: Typecast;
-  [10005]: Typecast;
-  ["PgCatalog.Types.PgInherits"]: Typecast;
-  [10090]: Typecast;
-  ["PgCatalog.Types.PgInitPrivs"]: Typecast;
-  [10021]: Typecast;
-  ["PgCatalog.Types.PgLanguage"]: Typecast;
-  [10025]: Typecast;
-  ["PgCatalog.Types.PgLargeobject"]: Typecast;
-  [10023]: Typecast;
-  ["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast;
-  [12075]: Typecast;
-  ["PgCatalog.Types.PgLocks"]: Typecast;
-  [3220]: Typecast;
-  ["PgCatalog.Types.PgLsn"]: Typecast;
-  [12040]: Typecast;
-  ["PgCatalog.Types.PgMatviews"]: Typecast;
-  [5017]: Typecast;
-  ["PgCatalog.Types.PgMcvList"]: Typecast;
-  [10047]: Typecast;
-  ["PgCatalog.Types.PgNamespace"]: Typecast;
-  [3361]: Typecast;
-  ["PgCatalog.Types.PgNdistinct"]: Typecast;
-  [194]: Typecast;
-  ["PgCatalog.Types.PgNodeTree"]: Typecast;
-  [10013]: Typecast;
-  ["PgCatalog.Types.PgOpclass"]: Typecast;
-  [10009]: Typecast;
-  ["PgCatalog.Types.PgOperator"]: Typecast;
-  [10011]: Typecast;
-  ["PgCatalog.Types.PgOpfamily"]: Typecast;
-  [10097]: Typecast;
-  ["PgCatalog.Types.PgParameterAcl"]: Typecast;
-  [10099]: Typecast;
-  ["PgCatalog.Types.PgPartitionedTable"]: Typecast;
-  [12020]: Typecast;
-  ["PgCatalog.Types.PgPolicies"]: Typecast;
-  [10084]: Typecast;
-  ["PgCatalog.Types.PgPolicy"]: Typecast;
-  [12097]: Typecast;
-  ["PgCatalog.Types.PgPreparedStatements"]: Typecast;
-  [12092]: Typecast;
-  ["PgCatalog.Types.PgPreparedXacts"]: Typecast;
-  [81]: Typecast;
-  ["PgCatalog.Types.PgProc"]: Typecast;
-  [10107]: Typecast;
-  ["PgCatalog.Types.PgPublication"]: Typecast;
-  [10109]: Typecast;
-  ["PgCatalog.Types.PgPublicationNamespace"]: Typecast;
-  [10111]: Typecast;
-  ["PgCatalog.Types.PgPublicationRel"]: Typecast;
-  [12070]: Typecast;
-  ["PgCatalog.Types.PgPublicationTables"]: Typecast;
-  [10101]: Typecast;
-  ["PgCatalog.Types.PgRange"]: Typecast;
-  [10086]: Typecast;
-  ["PgCatalog.Types.PgReplicationOrigin"]: Typecast;
-  [12338]: Typecast;
-  ["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast;
-  [12259]: Typecast;
-  ["PgCatalog.Types.PgReplicationSlots"]: Typecast;
-  [10035]: Typecast;
-  ["PgCatalog.Types.PgRewrite"]: Typecast;
-  [12002]: Typecast;
-  ["PgCatalog.Types.PgRoles"]: Typecast;
-  [12025]: Typecast;
-  ["PgCatalog.Types.PgRules"]: Typecast;
-  [10092]: Typecast;
-  ["PgCatalog.Types.PgSeclabel"]: Typecast;
-  [12101]: Typecast;
-  ["PgCatalog.Types.PgSeclabels"]: Typecast;
-  [10105]: Typecast;
-  ["PgCatalog.Types.PgSequence"]: Typecast;
-  [12050]: Typecast;
-  ["PgCatalog.Types.PgSequences"]: Typecast;
-  [12106]: Typecast;
-  ["PgCatalog.Types.PgSettings"]: Typecast;
-  [12007]: Typecast;
-  ["PgCatalog.Types.PgShadow"]: Typecast;
-  [10060]: Typecast;
-  ["PgCatalog.Types.PgShdepend"]: Typecast;
-  [10062]: Typecast;
-  ["PgCatalog.Types.PgShdescription"]: Typecast;
-  [12136]: Typecast;
-  ["PgCatalog.Types.PgShmemAllocations"]: Typecast;
-  [4066]: Typecast;
-  ["PgCatalog.Types.PgShseclabel"]: Typecast;
-  [5038]: Typecast;
-  ["PgCatalog.Types.PgSnapshot"]: Typecast;
-  [12224]: Typecast;
-  ["PgCatalog.Types.PgStatActivity"]: Typecast;
-  [12185]: Typecast;
-  ["PgCatalog.Types.PgStatAllIndexes"]: Typecast;
-  [12144]: Typecast;
-  ["PgCatalog.Types.PgStatAllTables"]: Typecast;
-  [12287]: Typecast;
-  ["PgCatalog.Types.PgStatArchiver"]: Typecast;
-  [12291]: Typecast;
-  ["PgCatalog.Types.PgStatBgwriter"]: Typecast;
-  [12268]: Typecast;
-  ["PgCatalog.Types.PgStatDatabase"]: Typecast;
-  [12273]: Typecast;
-  ["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast;
-  [12255]: Typecast;
-  ["PgCatalog.Types.PgStatGssapi"]: Typecast;
-  [12295]: Typecast;
-  ["PgCatalog.Types.PgStatIo"]: Typecast;
-  [12303]: Typecast;
-  ["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast;
-  [12323]: Typecast;
-  ["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast;
-  [12313]: Typecast;
-  ["PgCatalog.Types.PgStatProgressCluster"]: Typecast;
-  [12328]: Typecast;
-  ["PgCatalog.Types.PgStatProgressCopy"]: Typecast;
-  [12318]: Typecast;
-  ["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast;
-  [12308]: Typecast;
-  ["PgCatalog.Types.PgStatProgressVacuum"]: Typecast;
-  [12242]: Typecast;
-  ["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast;
-  [12229]: Typecast;
-  ["PgCatalog.Types.PgStatReplication"]: Typecast;
-  [12264]: Typecast;
-  ["PgCatalog.Types.PgStatReplicationSlots"]: Typecast;
-  [12234]: Typecast;
-  ["PgCatalog.Types.PgStatSlru"]: Typecast;
-  [12251]: Typecast;
-  ["PgCatalog.Types.PgStatSsl"]: Typecast;
-  [12246]: Typecast;
-  ["PgCatalog.Types.PgStatSubscription"]: Typecast;
-  [12342]: Typecast;
-  ["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast;
-  [12190]: Typecast;
-  ["PgCatalog.Types.PgStatSysIndexes"]: Typecast;
-  [12154]: Typecast;
-  ["PgCatalog.Types.PgStatSysTables"]: Typecast;
-  [12277]: Typecast;
-  ["PgCatalog.Types.PgStatUserFunctions"]: Typecast;
-  [12194]: Typecast;
-  ["PgCatalog.Types.PgStatUserIndexes"]: Typecast;
-  [12163]: Typecast;
-  ["PgCatalog.Types.PgStatUserTables"]: Typecast;
-  [12299]: Typecast;
-  ["PgCatalog.Types.PgStatWal"]: Typecast;
-  [12238]: Typecast;
-  ["PgCatalog.Types.PgStatWalReceiver"]: Typecast;
-  [12149]: Typecast;
-  ["PgCatalog.Types.PgStatXactAllTables"]: Typecast;
-  [12159]: Typecast;
-  ["PgCatalog.Types.PgStatXactSysTables"]: Typecast;
-  [12282]: Typecast;
-  ["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast;
-  [12168]: Typecast;
-  ["PgCatalog.Types.PgStatXactUserTables"]: Typecast;
-  [12198]: Typecast;
-  ["PgCatalog.Types.PgStatioAllIndexes"]: Typecast;
-  [12211]: Typecast;
-  ["PgCatalog.Types.PgStatioAllSequences"]: Typecast;
-  [12172]: Typecast;
-  ["PgCatalog.Types.PgStatioAllTables"]: Typecast;
-  [12203]: Typecast;
-  ["PgCatalog.Types.PgStatioSysIndexes"]: Typecast;
-  [12216]: Typecast;
-  ["PgCatalog.Types.PgStatioSysSequences"]: Typecast;
-  [12177]: Typecast;
-  ["PgCatalog.Types.PgStatioSysTables"]: Typecast;
-  [12207]: Typecast;
-  ["PgCatalog.Types.PgStatioUserIndexes"]: Typecast;
-  [12220]: Typecast;
-  ["PgCatalog.Types.PgStatioUserSequences"]: Typecast;
-  [12181]: Typecast;
-  ["PgCatalog.Types.PgStatioUserTables"]: Typecast;
-  [10029]: Typecast;
-  ["PgCatalog.Types.PgStatistic"]: Typecast;
-  [10031]: Typecast;
-  ["PgCatalog.Types.PgStatisticExt"]: Typecast;
-  [10033]: Typecast;
-  ["PgCatalog.Types.PgStatisticExtData"]: Typecast;
-  [12055]: Typecast;
-  ["PgCatalog.Types.PgStats"]: Typecast;
-  [12060]: Typecast;
-  ["PgCatalog.Types.PgStatsExt"]: Typecast;
-  [12065]: Typecast;
-  ["PgCatalog.Types.PgStatsExtExprs"]: Typecast;
-  [6101]: Typecast;
-  ["PgCatalog.Types.PgSubscription"]: Typecast;
-  [10114]: Typecast;
-  ["PgCatalog.Types.PgSubscriptionRel"]: Typecast;
-  [12035]: Typecast;
-  ["PgCatalog.Types.PgTables"]: Typecast;
-  [10056]: Typecast;
-  ["PgCatalog.Types.PgTablespace"]: Typecast;
-  [12124]: Typecast;
-  ["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast;
-  [12128]: Typecast;
-  ["PgCatalog.Types.PgTimezoneNames"]: Typecast;
-  [10103]: Typecast;
-  ["PgCatalog.Types.PgTransform"]: Typecast;
-  [10037]: Typecast;
-  ["PgCatalog.Types.PgTrigger"]: Typecast;
-  [10064]: Typecast;
-  ["PgCatalog.Types.PgTsConfig"]: Typecast;
-  [10066]: Typecast;
-  ["PgCatalog.Types.PgTsConfigMap"]: Typecast;
-  [10068]: Typecast;
-  ["PgCatalog.Types.PgTsDict"]: Typecast;
-  [10070]: Typecast;
-  ["PgCatalog.Types.PgTsParser"]: Typecast;
-  [10072]: Typecast;
-  ["PgCatalog.Types.PgTsTemplate"]: Typecast;
-  [71]: Typecast;
-  ["PgCatalog.Types.PgType"]: Typecast;
-  [12016]: Typecast;
-  ["PgCatalog.Types.PgUser"]: Typecast;
-  [10080]: Typecast;
-  ["PgCatalog.Types.PgUserMapping"]: Typecast;
-  [12333]: Typecast;
-  ["PgCatalog.Types.PgUserMappings"]: Typecast;
-  [12030]: Typecast;
-  ["PgCatalog.Types.PgViews"]: Typecast;
-  [600]: Typecast;
-  ["PgCatalog.Types.Point"]: Typecast;
-  [604]: Typecast;
-  ["PgCatalog.Types.Polygon"]: Typecast;
-  [2249]: Typecast;
-  ["PgCatalog.Types.Record"]: Typecast;
-  [1790]: Typecast;
-  ["PgCatalog.Types.Refcursor"]: Typecast;
-  [2205]: Typecast;
-  ["PgCatalog.Types.Regclass"]: Typecast;
-  [4191]: Typecast;
-  ["PgCatalog.Types.Regcollation"]: Typecast;
-  [3734]: Typecast;
-  ["PgCatalog.Types.Regconfig"]: Typecast;
-  [3769]: Typecast;
-  ["PgCatalog.Types.Regdictionary"]: Typecast;
-  [4089]: Typecast;
-  ["PgCatalog.Types.Regnamespace"]: Typecast;
-  [2203]: Typecast;
-  ["PgCatalog.Types.Regoper"]: Typecast;
-  [2204]: Typecast;
-  ["PgCatalog.Types.Regoperator"]: Typecast;
-  [24]: Typecast;
-  ["PgCatalog.Types.Regproc"]: Typecast;
-  [2202]: Typecast;
-  ["PgCatalog.Types.Regprocedure"]: Typecast;
-  [4096]: Typecast;
-  ["PgCatalog.Types.Regrole"]: Typecast;
-  [2206]: Typecast;
-  ["PgCatalog.Types.Regtype"]: Typecast;
-  [269]: Typecast;
-  ["PgCatalog.Types.TableAmHandler"]: Typecast;
-  [25]: Typecast;
-  ["PgCatalog.Types.Text"]: Typecast;
-  [27]: Typecast;
-  ["PgCatalog.Types.Tid"]: Typecast;
-  [1083]: Typecast;
-  ["PgCatalog.Types.Time"]: Typecast;
-  [1114]: Typecast;
-  ["PgCatalog.Types.Timestamp"]: Typecast;
-  [1184]: Typecast;
-  ["PgCatalog.Types.Timestamptz"]: Typecast;
-  [1266]: Typecast;
-  ["PgCatalog.Types.Timetz"]: Typecast;
-  [2279]: Typecast;
-  ["PgCatalog.Types.Trigger"]: Typecast;
-  [3310]: Typecast;
-  ["PgCatalog.Types.TsmHandler"]: Typecast;
-  [4533]: Typecast;
-  ["PgCatalog.Types.Tsmultirange"]: Typecast;
-  [3615]: Typecast;
-  ["PgCatalog.Types.Tsquery"]: Typecast;
-  [3908]: Typecast;
-  ["PgCatalog.Types.Tsrange"]: Typecast;
-  [4534]: Typecast;
-  ["PgCatalog.Types.Tstzmultirange"]: Typecast;
-  [3910]: Typecast;
-  ["PgCatalog.Types.Tstzrange"]: Typecast;
-  [3614]: Typecast;
-  ["PgCatalog.Types.Tsvector"]: Typecast;
-  [2970]: Typecast;
-  ["PgCatalog.Types.TxidSnapshot"]: Typecast;
-  [705]: Typecast;
-  ["PgCatalog.Types.Unknown"]: Typecast;
-  [2950]: Typecast;
-  ["PgCatalog.Types.Uuid"]: Typecast;
-  [1562]: Typecast;
-  ["PgCatalog.Types.Varbit"]: Typecast;
-  [1043]: Typecast;
-  ["PgCatalog.Types.Varchar"]: Typecast;
-  [2278]: Typecast;
-  ["PgCatalog.Types.Void"]: Typecast;
-  [28]: Typecast;
-  ["PgCatalog.Types.Xid"]: Typecast;
-  [5069]: Typecast;
-  ["PgCatalog.Types.Xid8"]: Typecast;
-  [142]: Typecast;
-  ["PgCatalog.Types.Xml"]: Typecast;
-  [13509]: Typecast;
-  ["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast;
-  [13504]: Typecast;
-  ["InformationSchema.Types.ApplicableRolesArray"]: Typecast;
-  [13513]: Typecast;
-  ["InformationSchema.Types.AttributesArray"]: Typecast;
-  [13487]: Typecast;
-  ["InformationSchema.Types.CardinalNumberArray"]: Typecast;
-  [13490]: Typecast;
-  ["InformationSchema.Types.CharacterDataArray"]: Typecast;
-  [13518]: Typecast;
-  ["InformationSchema.Types.CharacterSetsArray"]: Typecast;
-  [13523]: Typecast;
-  ["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast;
-  [13528]: Typecast;
-  ["InformationSchema.Types.CheckConstraintsArray"]: Typecast;
-  [13538]: Typecast;
-  ["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast;
-  [13533]: Typecast;
-  ["InformationSchema.Types.CollationsArray"]: Typecast;
-  [13543]: Typecast;
-  ["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast;
-  [13548]: Typecast;
-  ["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast;
-  [13771]: Typecast;
-  ["InformationSchema.Types.ColumnOptionsArray"]: Typecast;
-  [13553]: Typecast;
-  ["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast;
-  [13558]: Typecast;
-  ["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast;
-  [13563]: Typecast;
-  ["InformationSchema.Types.ColumnsArray"]: Typecast;
-  [13568]: Typecast;
-  ["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast;
-  [13573]: Typecast;
-  ["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast;
-  [13756]: Typecast;
-  ["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast;
-  [13578]: Typecast;
-  ["InformationSchema.Types.DomainConstraintsArray"]: Typecast;
-  [13583]: Typecast;
-  ["InformationSchema.Types.DomainUdtUsageArray"]: Typecast;
-  [13588]: Typecast;
-  ["InformationSchema.Types.DomainsArray"]: Typecast;
-  [13761]: Typecast;
-  ["InformationSchema.Types.ElementTypesArray"]: Typecast;
-  [13593]: Typecast;
-  ["InformationSchema.Types.EnabledRolesArray"]: Typecast;
-  [13779]: Typecast;
-  ["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast;
-  [13783]: Typecast;
-  ["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast;
-  [13792]: Typecast;
-  ["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast;
-  [13796]: Typecast;
-  ["InformationSchema.Types.ForeignServersArray"]: Typecast;
-  [13805]: Typecast;
-  ["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast;
-  [13809]: Typecast;
-  ["InformationSchema.Types.ForeignTablesArray"]: Typecast;
-  [13495]: Typecast;
-  ["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast;
-  [13597]: Typecast;
-  ["InformationSchema.Types.KeyColumnUsageArray"]: Typecast;
-  [13602]: Typecast;
-  ["InformationSchema.Types.ParametersArray"]: Typecast;
-  [13776]: Typecast;
-  ["InformationSchema.Types.PgForeignDataWrappers"]: Typecast;
-  [13788]: Typecast;
-  ["InformationSchema.Types.PgForeignServers"]: Typecast;
-  [13767]: Typecast;
-  ["InformationSchema.Types.PgForeignTableColumns"]: Typecast;
-  [13801]: Typecast;
-  ["InformationSchema.Types.PgForeignTables"]: Typecast;
-  [13814]: Typecast;
-  ["InformationSchema.Types.PgUserMappings"]: Typecast;
-  [13607]: Typecast;
-  ["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast;
-  [13612]: Typecast;
-  ["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast;
-  [13626]: Typecast;
-  ["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast;
-  [13689]: Typecast;
-  ["InformationSchema.Types.RoleTableGrantsArray"]: Typecast;
-  [13718]: Typecast;
-  ["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast;
-  [13727]: Typecast;
-  ["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast;
-  [13616]: Typecast;
-  ["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast;
-  [13621]: Typecast;
-  ["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast;
-  [13630]: Typecast;
-  ["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast;
-  [13635]: Typecast;
-  ["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast;
-  [13640]: Typecast;
-  ["InformationSchema.Types.RoutineTableUsageArray"]: Typecast;
-  [13645]: Typecast;
-  ["InformationSchema.Types.RoutinesArray"]: Typecast;
-  [13650]: Typecast;
-  ["InformationSchema.Types.SchemataArray"]: Typecast;
-  [13654]: Typecast;
-  ["InformationSchema.Types.SequencesArray"]: Typecast;
-  [13659]: Typecast;
-  ["InformationSchema.Types.SqlFeaturesArray"]: Typecast;
-  [13492]: Typecast;
-  ["InformationSchema.Types.SqlIdentifierArray"]: Typecast;
-  [13664]: Typecast;
-  ["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast;
-  [13669]: Typecast;
-  ["InformationSchema.Types.SqlPartsArray"]: Typecast;
-  [13674]: Typecast;
-  ["InformationSchema.Types.SqlSizingArray"]: Typecast;
-  [13679]: Typecast;
-  ["InformationSchema.Types.TableConstraintsArray"]: Typecast;
-  [13684]: Typecast;
-  ["InformationSchema.Types.TablePrivilegesArray"]: Typecast;
-  [13693]: Typecast;
-  ["InformationSchema.Types.TablesArray"]: Typecast;
-  [13498]: Typecast;
-  ["InformationSchema.Types.TimeStampArray"]: Typecast;
-  [13698]: Typecast;
-  ["InformationSchema.Types.TransformsArray"]: Typecast;
-  [13703]: Typecast;
-  ["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast;
-  [13708]: Typecast;
-  ["InformationSchema.Types.TriggersArray"]: Typecast;
-  [13713]: Typecast;
-  ["InformationSchema.Types.UdtPrivilegesArray"]: Typecast;
-  [13722]: Typecast;
-  ["InformationSchema.Types.UsagePrivilegesArray"]: Typecast;
-  [13731]: Typecast;
-  ["InformationSchema.Types.UserDefinedTypesArray"]: Typecast;
-  [13818]: Typecast;
-  ["InformationSchema.Types.UserMappingOptionsArray"]: Typecast;
-  [13823]: Typecast;
-  ["InformationSchema.Types.UserMappingsArray"]: Typecast;
-  [13736]: Typecast;
-  ["InformationSchema.Types.ViewColumnUsageArray"]: Typecast;
-  [13741]: Typecast;
-  ["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast;
-  [13746]: Typecast;
-  ["InformationSchema.Types.ViewTableUsageArray"]: Typecast;
-  [13751]: Typecast;
-  ["InformationSchema.Types.ViewsArray"]: Typecast;
-  [13500]: Typecast;
-  ["InformationSchema.Types.YesOrNoArray"]: Typecast;
-  [13510]: Typecast;
-  ["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast;
-  [13505]: Typecast;
-  ["InformationSchema.Types.ApplicableRoles"]: Typecast;
-  [13514]: Typecast;
-  ["InformationSchema.Types.Attributes"]: Typecast;
-  [13488]: Typecast;
-  ["InformationSchema.Types.CardinalNumber"]: Typecast;
-  [13491]: Typecast;
-  ["InformationSchema.Types.CharacterData"]: Typecast;
-  [13519]: Typecast;
-  ["InformationSchema.Types.CharacterSets"]: Typecast;
-  [13524]: Typecast;
-  ["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast;
-  [13529]: Typecast;
-  ["InformationSchema.Types.CheckConstraints"]: Typecast;
-  [13539]: Typecast;
-  ["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast;
-  [13534]: Typecast;
-  ["InformationSchema.Types.Collations"]: Typecast;
-  [13544]: Typecast;
-  ["InformationSchema.Types.ColumnColumnUsage"]: Typecast;
-  [13549]: Typecast;
-  ["InformationSchema.Types.ColumnDomainUsage"]: Typecast;
-  [13772]: Typecast;
-  ["InformationSchema.Types.ColumnOptions"]: Typecast;
-  [13554]: Typecast;
-  ["InformationSchema.Types.ColumnPrivileges"]: Typecast;
-  [13559]: Typecast;
-  ["InformationSchema.Types.ColumnUdtUsage"]: Typecast;
-  [13564]: Typecast;
-  ["InformationSchema.Types.Columns"]: Typecast;
-  [13569]: Typecast;
-  ["InformationSchema.Types.ConstraintColumnUsage"]: Typecast;
-  [13574]: Typecast;
-  ["InformationSchema.Types.ConstraintTableUsage"]: Typecast;
-  [13757]: Typecast;
-  ["InformationSchema.Types.DataTypePrivileges"]: Typecast;
-  [13579]: Typecast;
-  ["InformationSchema.Types.DomainConstraints"]: Typecast;
-  [13584]: Typecast;
-  ["InformationSchema.Types.DomainUdtUsage"]: Typecast;
-  [13589]: Typecast;
-  ["InformationSchema.Types.Domains"]: Typecast;
-  [13762]: Typecast;
-  ["InformationSchema.Types.ElementTypes"]: Typecast;
-  [13594]: Typecast;
-  ["InformationSchema.Types.EnabledRoles"]: Typecast;
-  [13780]: Typecast;
-  ["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast;
-  [13784]: Typecast;
-  ["InformationSchema.Types.ForeignDataWrappers"]: Typecast;
-  [13793]: Typecast;
-  ["InformationSchema.Types.ForeignServerOptions"]: Typecast;
-  [13797]: Typecast;
-  ["InformationSchema.Types.ForeignServers"]: Typecast;
-  [13806]: Typecast;
-  ["InformationSchema.Types.ForeignTableOptions"]: Typecast;
-  [13810]: Typecast;
-  ["InformationSchema.Types.ForeignTables"]: Typecast;
-  [13496]: Typecast;
-  ["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast;
-  [13598]: Typecast;
-  ["InformationSchema.Types.KeyColumnUsage"]: Typecast;
-  [13603]: Typecast;
-  ["InformationSchema.Types.Parameters"]: Typecast;
-  [13608]: Typecast;
-  ["InformationSchema.Types.ReferentialConstraints"]: Typecast;
-  [13613]: Typecast;
-  ["InformationSchema.Types.RoleColumnGrants"]: Typecast;
-  [13627]: Typecast;
-  ["InformationSchema.Types.RoleRoutineGrants"]: Typecast;
-  [13690]: Typecast;
-  ["InformationSchema.Types.RoleTableGrants"]: Typecast;
-  [13719]: Typecast;
-  ["InformationSchema.Types.RoleUdtGrants"]: Typecast;
-  [13728]: Typecast;
-  ["InformationSchema.Types.RoleUsageGrants"]: Typecast;
-  [13617]: Typecast;
-  ["InformationSchema.Types.RoutineColumnUsage"]: Typecast;
-  [13622]: Typecast;
-  ["InformationSchema.Types.RoutinePrivileges"]: Typecast;
-  [13631]: Typecast;
-  ["InformationSchema.Types.RoutineRoutineUsage"]: Typecast;
-  [13636]: Typecast;
-  ["InformationSchema.Types.RoutineSequenceUsage"]: Typecast;
-  [13641]: Typecast;
-  ["InformationSchema.Types.RoutineTableUsage"]: Typecast;
-  [13646]: Typecast;
-  ["InformationSchema.Types.Routines"]: Typecast;
-  [13651]: Typecast;
-  ["InformationSchema.Types.Schemata"]: Typecast;
-  [13655]: Typecast;
-  ["InformationSchema.Types.Sequences"]: Typecast;
-  [13660]: Typecast;
-  ["InformationSchema.Types.SqlFeatures"]: Typecast;
-  [13493]: Typecast;
-  ["InformationSchema.Types.SqlIdentifier"]: Typecast;
-  [13665]: Typecast;
-  ["InformationSchema.Types.SqlImplementationInfo"]: Typecast;
-  [13670]: Typecast;
-  ["InformationSchema.Types.SqlParts"]: Typecast;
-  [13675]: Typecast;
-  ["InformationSchema.Types.SqlSizing"]: Typecast;
-  [13680]: Typecast;
-  ["InformationSchema.Types.TableConstraints"]: Typecast;
-  [13685]: Typecast;
-  ["InformationSchema.Types.TablePrivileges"]: Typecast;
-  [13694]: Typecast;
-  ["InformationSchema.Types.Tables"]: Typecast;
-  [13499]: Typecast;
-  ["InformationSchema.Types.TimeStamp"]: Typecast;
-  [13699]: Typecast;
-  ["InformationSchema.Types.Transforms"]: Typecast;
-  [13704]: Typecast;
-  ["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast;
-  [13709]: Typecast;
-  ["InformationSchema.Types.Triggers"]: Typecast;
-  [13714]: Typecast;
-  ["InformationSchema.Types.UdtPrivileges"]: Typecast;
-  [13723]: Typecast;
-  ["InformationSchema.Types.UsagePrivileges"]: Typecast;
-  [13732]: Typecast;
-  ["InformationSchema.Types.UserDefinedTypes"]: Typecast;
-  [13819]: Typecast;
-  ["InformationSchema.Types.UserMappingOptions"]: Typecast;
-  [13824]: Typecast;
-  ["InformationSchema.Types.UserMappings"]: Typecast;
-  [13737]: Typecast;
-  ["InformationSchema.Types.ViewColumnUsage"]: Typecast;
-  [13742]: Typecast;
-  ["InformationSchema.Types.ViewRoutineUsage"]: Typecast;
-  [13747]: Typecast;
-  ["InformationSchema.Types.ViewTableUsage"]: Typecast;
-  [13752]: Typecast;
-  ["InformationSchema.Types.Views"]: Typecast;
-  [13501]: Typecast;
-  ["InformationSchema.Types.YesOrNo"]: Typecast;
-  [17250]: Typecast;
-  ["Public.Types.ChecklistArray"]: Typecast;
-  [17259]: Typecast;
-  ["Public.Types.ChecklistItemArray"]: Typecast;
-  [17251]: Typecast;
-  ["Public.Types.Checklist"]: Typecast;
-  [17260]: Typecast;
-  ["Public.Types.ChecklistItem"]: Typecast;
-}
-
-interface HasDatabase {
-  database: Database;
-}
-
-export class Database extends PostgresDatabase implements HasDatabase {
-  get database() {
-    return this;
+export class EmbraceSQLClient extends BaseClient {
+  constructor(props: EmbraceSQLClientProps) {
+    super(props);
   }
 
-  /**
-   * Connect to your database server via URL, and return
-   * a fully typed database you can use to access it.
-   */
-  static async connect(postgresUrl: string, props?: postgres.Options<never>) {
-    return new Database(await initializeContext(postgresUrl, props));
-  }
+  public Public = new (class extends HasClient {
+    public Procedures = new (class extends HasClient {
+      public async filmInStock(
+        parameters: Public.Procedures.FilmInStock.Parameters,
+      ): Promise<Public.Procedures.FilmInStock.Results[] | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.FilmInStock.Parameters,
+          never,
+          Public.Procedures.FilmInStock.Results[]
+        >({
+          operation: "Public.Procedures.filmInStock",
+          parameters,
+        });
 
-  public Public = new (class implements HasDatabase {
-    constructor(private hasDatabase: HasDatabase) {}
+        return (
+          (response.results?.map((r) =>
+            Public.Procedures.FilmInStock.Results.parse(r),
+          ) as Public.Procedures.FilmInStock.Results[]) ?? []
+        );
+      }
 
-    get database() {
-      return this.hasDatabase.database;
-    }
+      public async filmNotInStock(
+        parameters: Public.Procedures.FilmNotInStock.Parameters,
+      ): Promise<Public.Procedures.FilmNotInStock.Results[] | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.FilmNotInStock.Parameters,
+          never,
+          Public.Procedures.FilmNotInStock.Results[]
+        >({
+          operation: "Public.Procedures.filmNotInStock",
+          parameters,
+        });
 
-    public Procedures = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
+        return (
+          (response.results?.map((r) =>
+            Public.Procedures.FilmNotInStock.Results.parse(r),
+          ) as Public.Procedures.FilmNotInStock.Results[]) ?? []
+        );
+      }
 
-      get database() {
-        return this.hasDatabase.database;
+      public async getCustomerBalance(
+        parameters: Public.Procedures.GetCustomerBalance.Parameters,
+      ): Promise<Public.Procedures.GetCustomerBalance.Results | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.GetCustomerBalance.Parameters,
+          never,
+          Public.Procedures.GetCustomerBalance.Results
+        >({
+          operation: "Public.Procedures.getCustomerBalance",
+          parameters,
+        });
+
+        return response.results
+          ? nullIsUndefined(
+              Public.Procedures.GetCustomerBalance.Results.parse(
+                response.results,
+              ),
+            )
+          : undefined;
+      }
+
+      public async inventoryHeldByCustomer(
+        parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
+      ): Promise<
+        Public.Procedures.InventoryHeldByCustomer.Results | undefined
+      > {
+        const response = await this.client.invoke<
+          Public.Procedures.InventoryHeldByCustomer.Parameters,
+          never,
+          Public.Procedures.InventoryHeldByCustomer.Results
+        >({
+          operation: "Public.Procedures.inventoryHeldByCustomer",
+          parameters,
+        });
+
+        return response.results
+          ? nullIsUndefined(
+              Public.Procedures.InventoryHeldByCustomer.Results.parse(
+                response.results,
+              ),
+            )
+          : undefined;
+      }
+
+      public async inventoryInStock(
+        parameters: Public.Procedures.InventoryInStock.Parameters,
+      ): Promise<Public.Procedures.InventoryInStock.Results | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.InventoryInStock.Parameters,
+          never,
+          Public.Procedures.InventoryInStock.Results
+        >({
+          operation: "Public.Procedures.inventoryInStock",
+          parameters,
+        });
+
+        return response.results
+          ? nullIsUndefined(
+              Public.Procedures.InventoryInStock.Results.parse(
+                response.results,
+              ),
+            )
+          : undefined;
+      }
+
+      public async lastDay(
+        parameters: Public.Procedures.LastDay.Parameters,
+      ): Promise<Public.Procedures.LastDay.Results | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.LastDay.Parameters,
+          never,
+          Public.Procedures.LastDay.Results
+        >({
+          operation: "Public.Procedures.lastDay",
+          parameters,
+        });
+
+        return response.results
+          ? nullIsUndefined(
+              Public.Procedures.LastDay.Results.parse(response.results),
+            )
+          : undefined;
+      }
+
+      public async rewardsReport(
+        parameters: Public.Procedures.RewardsReport.Parameters,
+      ): Promise<Public.Procedures.RewardsReport.Results[] | undefined> {
+        const response = await this.client.invoke<
+          Public.Procedures.RewardsReport.Parameters,
+          never,
+          Public.Procedures.RewardsReport.Results[]
+        >({
+          operation: "Public.Procedures.rewardsReport",
+          parameters,
+        });
+
+        return (
+          (response.results?.map((r) =>
+            Public.Procedures.RewardsReport.Results.parse(r),
+          ) as Public.Procedures.RewardsReport.Results[]) ?? []
+        );
       }
     })(this);
 
-    public Tables = new (class implements HasDatabase {
-      constructor(private hasDatabase: HasDatabase) {}
-
-      get database() {
-        return this.hasDatabase.database;
-      }
-
-      public Checklist = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+    public Tables = new (class extends HasClient {
+      public FilmActor = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.FilmActor.Values,
+        ): Promise<Public.Tables.FilmActor.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.FilmActor.Values,
+            Public.Tables.FilmActor.Record
+          >({
+            operation: "Public.Tables.FilmActor.create",
+            values: {
+              actorId: values.actorId,
+              filmId: values.filmId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.FilmActor.Record>(
+            Public.Types.FilmActor.parse(response.results),
+          );
         }
 
-        async create(
-          values: Public.Tables.Checklist.Values,
-        ): Promise<Public.Tables.Checklist.Record> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
-            const response = await sql`
-      --
-      INSERT INTO
-        public.checklist (name,created_at)
-      VALUES (${
-        values.name === undefined ? sql`DEFAULT` : typed[25](values.name)
-      },${
-        values.createdAt === undefined
-          ? sql`DEFAULT`
-          : typed[1114](values.createdAt)
-      })
-      RETURNING
-        id,name,created_at
-    `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
-          }
-          const response = await sql`
-    INSERT INTO
-      public.checklist (id,name,created_at)
-    VALUES (${
-      values.id === undefined ? sql`DEFAULT` : typed[2950](values.id)
-    },${values.name === undefined ? sql`DEFAULT` : typed[25](values.name)},${
-      values.createdAt === undefined
-        ? sql`DEFAULT`
-        : typed[1114](values.createdAt)
-    })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      name = EXCLUDED.name,created_at = EXCLUDED.created_at
-    RETURNING
-      id,name,created_at
-    `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            name: undefinedIsNull(record.name),
-            createdAt: undefinedIsNull(record.created_at),
-          }))[0];
-        }
-        async all(): Promise<Public.Tables.Checklist.Record[]> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      id,name,created_at 
-    FROM
-      public.checklist 
-    `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            name: undefinedIsNull(record.name),
-            createdAt: undefinedIsNull(record.created_at),
-          }));
+        public async all(): Promise<Public.Tables.FilmActor.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.FilmActor.Record[]
+          >({
+            operation: "Public.Tables.FilmActor.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.FilmActor.parse)
+              .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+              .filter(
+                (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
-        public ById = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
+        public ByActorIdFilmId = new (class extends HasClient {
+          public async read(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByActorIdFilmId,
+              never,
+              Public.Tables.FilmActor.Record | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
+            });
 
-          get database() {
-            return this.hasDatabase.database;
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
 
-          async read(
-            parameters: Public.Tables.Checklist.ById,
-          ): Promise<Public.Tables.Checklist.Record> {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
+          public async update(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+            values: Partial<Public.Types.FilmActor>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByActorIdFilmId,
+              Partial<Public.Types.FilmActor>,
+              Public.Tables.FilmActor.Record | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByActorIdFilmId.update",
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
+              values: {
+                actorId: values.actorId,
+                filmId: values.filmId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
 
-            const response = await sql`
-    -- 
-    SELECT 
-      id,name,created_at 
-    FROM
-      public.checklist 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
 
-          async update(
-            parameters: Public.Tables.Checklist.ById,
-            values: Partial<Public.Tables.Checklist.Values>,
-          ): Promise<Public.Tables.Checklist.Record> {
-            console.assert(parameters);
-            console.assert(values);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
+          public async delete(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByActorIdFilmId,
+              never,
+              Public.Tables.FilmActor.Record | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByActorIdFilmId.delete",
+              parameters: {
+                actorId: parameters.actorId,
+                filmId: parameters.filmId,
+              },
+            });
 
-            const response = await sql`
-    --
-    UPDATE 
-      public.checklist 
-    SET
-      id = ${
-        values.id === undefined ? sql`id` : typed[2950](values.id)
-      } , name = ${
-        values.name === undefined ? sql`name` : typed[25](values.name)
-      } , created_at = ${
-        values.createdAt === undefined
-          ? sql`created_at`
-          : typed[1114](values.createdAt)
-      } 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    RETURNING id,name,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
-          }
-          async delete(parameters: Public.Tables.Checklist.ById) {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-            const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    RETURNING id,name,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
+            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+              Public.Types.FilmActor.parse(response.results),
+            );
           }
         })(this);
         public get ByPrimaryKey() {
-          return this.ById;
+          return this.ByActorIdFilmId;
+        }
+
+        public ByFilmId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.FilmActor.ByFilmId) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByFilmId,
+              never,
+              Public.Tables.FilmActor.Record[] | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByFilmId.read",
+              parameters: { filmId: parameters.filmId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+            values: Partial<Public.Types.FilmActor>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByFilmId,
+              Partial<Public.Types.FilmActor>,
+              Public.Tables.FilmActor.Record[] | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByFilmId.update",
+              parameters: { filmId: parameters.filmId },
+              values: {
+                actorId: values.actorId,
+                filmId: values.filmId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.FilmActor.ByFilmId) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmActor.ByFilmId,
+              never,
+              Public.Tables.FilmActor.Record[] | undefined
+            >({
+              operation: "Public.Tables.FilmActor.ByFilmId.delete",
+              parameters: { filmId: parameters.filmId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.FilmActor.parse)
+                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
+                .filter(
+                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Address = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Address.Values,
+        ): Promise<Public.Tables.Address.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Address.Values,
+            Public.Tables.Address.Record
+          >({
+            operation: "Public.Tables.Address.create",
+            values: {
+              addressId: values.addressId,
+              address: values.address,
+              address2: values.address2,
+              district: values.district,
+              cityId: values.cityId,
+              postalCode: values.postalCode,
+              phone: values.phone,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Address.Record>(
+            Public.Types.Address.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Address.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Address.Record[]
+          >({
+            operation: "Public.Tables.Address.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Address.parse)
+              .map(nullIsUndefined<Public.Tables.Address.Record>)
+              .filter(
+                (x): x is Public.Tables.Address.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByAddressId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Address.ByAddressId) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByAddressId,
+              never,
+              Public.Tables.Address.Record | undefined
+            >({
+              operation: "Public.Tables.Address.ByAddressId.read",
+              parameters: { addressId: parameters.addressId },
+            });
+
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Address.ByAddressId,
+            values: Partial<Public.Types.Address>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByAddressId,
+              Partial<Public.Types.Address>,
+              Public.Tables.Address.Record | undefined
+            >({
+              operation: "Public.Tables.Address.ByAddressId.update",
+              parameters: { addressId: parameters.addressId },
+              values: {
+                addressId: values.addressId,
+                address: values.address,
+                address2: values.address2,
+                district: values.district,
+                cityId: values.cityId,
+                postalCode: values.postalCode,
+                phone: values.phone,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Address.ByAddressId) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByAddressId,
+              never,
+              Public.Tables.Address.Record | undefined
+            >({
+              operation: "Public.Tables.Address.ByAddressId.delete",
+              parameters: { addressId: parameters.addressId },
+            });
+
+            return nullIsUndefined<Public.Tables.Address.Record>(
+              Public.Types.Address.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByAddressId;
+        }
+
+        public ByCityId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Address.ByCityId) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByCityId,
+              never,
+              Public.Tables.Address.Record[] | undefined
+            >({
+              operation: "Public.Tables.Address.ByCityId.read",
+              parameters: { cityId: parameters.cityId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Address.ByCityId,
+            values: Partial<Public.Types.Address>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByCityId,
+              Partial<Public.Types.Address>,
+              Public.Tables.Address.Record[] | undefined
+            >({
+              operation: "Public.Tables.Address.ByCityId.update",
+              parameters: { cityId: parameters.cityId },
+              values: {
+                addressId: values.addressId,
+                address: values.address,
+                address2: values.address2,
+                district: values.district,
+                cityId: values.cityId,
+                postalCode: values.postalCode,
+                phone: values.phone,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Address.ByCityId) {
+            const response = await this.client.invoke<
+              Public.Tables.Address.ByCityId,
+              never,
+              Public.Tables.Address.Record[] | undefined
+            >({
+              operation: "Public.Tables.Address.ByCityId.delete",
+              parameters: { cityId: parameters.cityId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Address.parse)
+                .map(nullIsUndefined<Public.Tables.Address.Record>)
+                .filter(
+                  (x): x is Public.Tables.Address.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public City = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.City.Values,
+        ): Promise<Public.Tables.City.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.City.Values,
+            Public.Tables.City.Record
+          >({
+            operation: "Public.Tables.City.create",
+            values: {
+              cityId: values.cityId,
+              city: values.city,
+              countryId: values.countryId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.City.Record>(
+            Public.Types.City.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.City.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.City.Record[]
+          >({
+            operation: "Public.Tables.City.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.City.parse)
+              .map(nullIsUndefined<Public.Tables.City.Record>)
+              .filter((x): x is Public.Tables.City.Record => x !== undefined) ??
+            []
+          );
+        }
+
+        public ByCityId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.City.ByCityId) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCityId,
+              never,
+              Public.Tables.City.Record | undefined
+            >({
+              operation: "Public.Tables.City.ByCityId.read",
+              parameters: { cityId: parameters.cityId },
+            });
+
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.City.ByCityId,
+            values: Partial<Public.Types.City>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCityId,
+              Partial<Public.Types.City>,
+              Public.Tables.City.Record | undefined
+            >({
+              operation: "Public.Tables.City.ByCityId.update",
+              parameters: { cityId: parameters.cityId },
+              values: {
+                cityId: values.cityId,
+                city: values.city,
+                countryId: values.countryId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.City.ByCityId) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCityId,
+              never,
+              Public.Tables.City.Record | undefined
+            >({
+              operation: "Public.Tables.City.ByCityId.delete",
+              parameters: { cityId: parameters.cityId },
+            });
+
+            return nullIsUndefined<Public.Tables.City.Record>(
+              Public.Types.City.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCityId;
+        }
+
+        public ByCountryId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.City.ByCountryId) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCountryId,
+              never,
+              Public.Tables.City.Record[] | undefined
+            >({
+              operation: "Public.Tables.City.ByCountryId.read",
+              parameters: { countryId: parameters.countryId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.City.ByCountryId,
+            values: Partial<Public.Types.City>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCountryId,
+              Partial<Public.Types.City>,
+              Public.Tables.City.Record[] | undefined
+            >({
+              operation: "Public.Tables.City.ByCountryId.update",
+              parameters: { countryId: parameters.countryId },
+              values: {
+                cityId: values.cityId,
+                city: values.city,
+                countryId: values.countryId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.City.ByCountryId) {
+            const response = await this.client.invoke<
+              Public.Tables.City.ByCountryId,
+              never,
+              Public.Tables.City.Record[] | undefined
+            >({
+              operation: "Public.Tables.City.ByCountryId.delete",
+              parameters: { countryId: parameters.countryId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.City.parse)
+                .map(nullIsUndefined<Public.Tables.City.Record>)
+                .filter(
+                  (x): x is Public.Tables.City.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Customer = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Customer.Values,
+        ): Promise<Public.Tables.Customer.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Customer.Values,
+            Public.Tables.Customer.Record
+          >({
+            operation: "Public.Tables.Customer.create",
+            values: {
+              customerId: values.customerId,
+              storeId: values.storeId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              email: values.email,
+              addressId: values.addressId,
+              activebool: values.activebool,
+              createDate: values.createDate,
+              lastUpdate: values.lastUpdate,
+              active: values.active,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Customer.Record>(
+            Public.Types.Customer.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Customer.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Customer.Record[]
+          >({
+            operation: "Public.Tables.Customer.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Customer.parse)
+              .map(nullIsUndefined<Public.Tables.Customer.Record>)
+              .filter(
+                (x): x is Public.Tables.Customer.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByAddressId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Customer.ByAddressId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByAddressId,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByAddressId.read",
+              parameters: { addressId: parameters.addressId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Customer.ByAddressId,
+            values: Partial<Public.Types.Customer>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByAddressId,
+              Partial<Public.Types.Customer>,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByAddressId.update",
+              parameters: { addressId: parameters.addressId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Customer.ByAddressId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByAddressId,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByAddressId.delete",
+              parameters: { addressId: parameters.addressId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByCustomerId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Customer.ByCustomerId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByCustomerId,
+              never,
+              Public.Tables.Customer.Record | undefined
+            >({
+              operation: "Public.Tables.Customer.ByCustomerId.read",
+              parameters: { customerId: parameters.customerId },
+            });
+
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Customer.ByCustomerId,
+            values: Partial<Public.Types.Customer>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByCustomerId,
+              Partial<Public.Types.Customer>,
+              Public.Tables.Customer.Record | undefined
+            >({
+              operation: "Public.Tables.Customer.ByCustomerId.update",
+              parameters: { customerId: parameters.customerId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Customer.ByCustomerId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByCustomerId,
+              never,
+              Public.Tables.Customer.Record | undefined
+            >({
+              operation: "Public.Tables.Customer.ByCustomerId.delete",
+              parameters: { customerId: parameters.customerId },
+            });
+
+            return nullIsUndefined<Public.Tables.Customer.Record>(
+              Public.Types.Customer.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCustomerId;
+        }
+
+        public ByLastName = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Customer.ByLastName) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByLastName,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByLastName.read",
+              parameters: { lastName: parameters.lastName },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Customer.ByLastName,
+            values: Partial<Public.Types.Customer>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByLastName,
+              Partial<Public.Types.Customer>,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByLastName.update",
+              parameters: { lastName: parameters.lastName },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Customer.ByLastName) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByLastName,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByLastName.delete",
+              parameters: { lastName: parameters.lastName },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByStoreId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Customer.ByStoreId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByStoreId,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByStoreId.read",
+              parameters: { storeId: parameters.storeId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Customer.ByStoreId,
+            values: Partial<Public.Types.Customer>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByStoreId,
+              Partial<Public.Types.Customer>,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByStoreId.update",
+              parameters: { storeId: parameters.storeId },
+              values: {
+                customerId: values.customerId,
+                storeId: values.storeId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                addressId: values.addressId,
+                activebool: values.activebool,
+                createDate: values.createDate,
+                lastUpdate: values.lastUpdate,
+                active: values.active,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Customer.ByStoreId) {
+            const response = await this.client.invoke<
+              Public.Tables.Customer.ByStoreId,
+              never,
+              Public.Tables.Customer.Record[] | undefined
+            >({
+              operation: "Public.Tables.Customer.ByStoreId.delete",
+              parameters: { storeId: parameters.storeId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Customer.parse)
+                .map(nullIsUndefined<Public.Tables.Customer.Record>)
+                .filter(
+                  (x): x is Public.Tables.Customer.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Actor = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Actor.Values,
+        ): Promise<Public.Tables.Actor.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Actor.Values,
+            Public.Tables.Actor.Record
+          >({
+            operation: "Public.Tables.Actor.create",
+            values: {
+              actorId: values.actorId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Actor.Record>(
+            Public.Types.Actor.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Actor.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Actor.Record[]
+          >({
+            operation: "Public.Tables.Actor.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Actor.parse)
+              .map(nullIsUndefined<Public.Tables.Actor.Record>)
+              .filter(
+                (x): x is Public.Tables.Actor.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByActorId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Actor.ByActorId) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByActorId,
+              never,
+              Public.Tables.Actor.Record | undefined
+            >({
+              operation: "Public.Tables.Actor.ByActorId.read",
+              parameters: { actorId: parameters.actorId },
+            });
+
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Actor.ByActorId,
+            values: Partial<Public.Types.Actor>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByActorId,
+              Partial<Public.Types.Actor>,
+              Public.Tables.Actor.Record | undefined
+            >({
+              operation: "Public.Tables.Actor.ByActorId.update",
+              parameters: { actorId: parameters.actorId },
+              values: {
+                actorId: values.actorId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Actor.ByActorId) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByActorId,
+              never,
+              Public.Tables.Actor.Record | undefined
+            >({
+              operation: "Public.Tables.Actor.ByActorId.delete",
+              parameters: { actorId: parameters.actorId },
+            });
+
+            return nullIsUndefined<Public.Tables.Actor.Record>(
+              Public.Types.Actor.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByActorId;
+        }
+
+        public ByLastName = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Actor.ByLastName) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByLastName,
+              never,
+              Public.Tables.Actor.Record[] | undefined
+            >({
+              operation: "Public.Tables.Actor.ByLastName.read",
+              parameters: { lastName: parameters.lastName },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Actor.ByLastName,
+            values: Partial<Public.Types.Actor>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByLastName,
+              Partial<Public.Types.Actor>,
+              Public.Tables.Actor.Record[] | undefined
+            >({
+              operation: "Public.Tables.Actor.ByLastName.update",
+              parameters: { lastName: parameters.lastName },
+              values: {
+                actorId: values.actorId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Actor.ByLastName) {
+            const response = await this.client.invoke<
+              Public.Tables.Actor.ByLastName,
+              never,
+              Public.Tables.Actor.Record[] | undefined
+            >({
+              operation: "Public.Tables.Actor.ByLastName.delete",
+              parameters: { lastName: parameters.lastName },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Actor.parse)
+                .map(nullIsUndefined<Public.Tables.Actor.Record>)
+                .filter(
+                  (x): x is Public.Tables.Actor.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public FilmCategory = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.FilmCategory.Values,
+        ): Promise<Public.Tables.FilmCategory.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.FilmCategory.Values,
+            Public.Tables.FilmCategory.Record
+          >({
+            operation: "Public.Tables.FilmCategory.create",
+            values: {
+              filmId: values.filmId,
+              categoryId: values.categoryId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+            Public.Types.FilmCategory.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.FilmCategory.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.FilmCategory.Record[]
+          >({
+            operation: "Public.Tables.FilmCategory.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.FilmCategory.parse)
+              .map(nullIsUndefined<Public.Tables.FilmCategory.Record>)
+              .filter(
+                (x): x is Public.Tables.FilmCategory.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByFilmIdCategoryId = new (class extends HasClient {
+          public async read(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmCategory.ByFilmIdCategoryId,
+              never,
+              Public.Tables.FilmCategory.Record | undefined
+            >({
+              operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            values: Partial<Public.Types.FilmCategory>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmCategory.ByFilmIdCategoryId,
+              Partial<Public.Types.FilmCategory>,
+              Public.Tables.FilmCategory.Record | undefined
+            >({
+              operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.update",
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
+              values: {
+                filmId: values.filmId,
+                categoryId: values.categoryId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
+          }
+
+          public async delete(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.FilmCategory.ByFilmIdCategoryId,
+              never,
+              Public.Tables.FilmCategory.Record | undefined
+            >({
+              operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.delete",
+              parameters: {
+                filmId: parameters.filmId,
+                categoryId: parameters.categoryId,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+              Public.Types.FilmCategory.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmIdCategoryId;
         }
       })(this);
 
-      public ChecklistItem = new (class implements HasDatabase {
-        constructor(private hasDatabase: HasDatabase) {}
-
-        get database() {
-          return this.hasDatabase.database;
+      public Inventory = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Inventory.Values,
+        ): Promise<Public.Tables.Inventory.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Inventory.Values,
+            Public.Tables.Inventory.Record
+          >({
+            operation: "Public.Tables.Inventory.create",
+            values: {
+              inventoryId: values.inventoryId,
+              filmId: values.filmId,
+              storeId: values.storeId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Inventory.Record>(
+            Public.Types.Inventory.parse(response.results),
+          );
         }
 
-        async create(
-          values: Public.Tables.ChecklistItem.Values,
-        ): Promise<Public.Tables.ChecklistItem.Record> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
-            const response = await sql`
-      --
-      INSERT INTO
-        public.checklist_item (checklist_id,title,checked,created_at)
-      VALUES (${
-        values.checklistId === undefined
-          ? sql`DEFAULT`
-          : typed[2950](values.checklistId)
-      },${
-        values.title === undefined ? sql`DEFAULT` : typed[25](values.title)
-      },${
-        values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked)
-      },${
-        values.createdAt === undefined
-          ? sql`DEFAULT`
-          : typed[1114](values.createdAt)
-      })
-      RETURNING
-        id,checklist_id,title,checked,created_at
-    `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
-          }
-          const response = await sql`
-    INSERT INTO
-      public.checklist_item (id,checklist_id,title,checked,created_at)
-    VALUES (${
-      values.id === undefined ? sql`DEFAULT` : typed[2950](values.id)
-    },${
-      values.checklistId === undefined
-        ? sql`DEFAULT`
-        : typed[2950](values.checklistId)
-    },${values.title === undefined ? sql`DEFAULT` : typed[25](values.title)},${
-      values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked)
-    },${
-      values.createdAt === undefined
-        ? sql`DEFAULT`
-        : typed[1114](values.createdAt)
-    })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
-    RETURNING
-      id,checklist_id,title,checked,created_at
-    `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            checklistId: undefinedIsNull(record.checklist_id),
-            title: undefinedIsNull(record.title),
-            checked: undefinedIsNull(record.checked),
-            createdAt: undefinedIsNull(record.created_at),
-          }))[0];
-        }
-        async all(): Promise<Public.Tables.ChecklistItem.Record[]> {
-          const sql = this.database.context.sql;
-          const typed = sql.typed as unknown as PostgresTypecasts;
-
-          const response = await sql`
-    -- 
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            checklistId: undefinedIsNull(record.checklist_id),
-            title: undefinedIsNull(record.title),
-            checked: undefinedIsNull(record.checked),
-            createdAt: undefinedIsNull(record.created_at),
-          }));
+        public async all(): Promise<Public.Tables.Inventory.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Inventory.Record[]
+          >({
+            operation: "Public.Tables.Inventory.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Inventory.parse)
+              .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+              .filter(
+                (x): x is Public.Tables.Inventory.Record => x !== undefined,
+              ) ?? []
+          );
         }
 
-        public ByChecklistId = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
+        public ByInventoryId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Inventory.ByInventoryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByInventoryId,
+              never,
+              Public.Tables.Inventory.Record | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByInventoryId.read",
+              parameters: { inventoryId: parameters.inventoryId },
+            });
 
-          get database() {
-            return this.hasDatabase.database;
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
 
-          async read(
-            parameters: Public.Tables.ChecklistItem.ByChecklistId,
-          ): Promise<Public.Tables.ChecklistItem.Record[]> {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
+          public async update(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+            values: Partial<Public.Types.Inventory>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByInventoryId,
+              Partial<Public.Types.Inventory>,
+              Public.Tables.Inventory.Record | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByInventoryId.update",
+              parameters: { inventoryId: parameters.inventoryId },
+              values: {
+                inventoryId: values.inventoryId,
+                filmId: values.filmId,
+                storeId: values.storeId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
 
-            const response = await sql`
-    -- 
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    WHERE
-      checklist_id = ${
-        parameters.checklistId === undefined
-          ? sql`DEFAULT`
-          : typed[2950](parameters.checklistId)
-      }
-    `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }));
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
 
-          async update(
-            parameters: Public.Tables.ChecklistItem.ByChecklistId,
-            values: Partial<Public.Tables.ChecklistItem.Values>,
-          ): Promise<Public.Tables.ChecklistItem.Record[]> {
-            console.assert(parameters);
-            console.assert(values);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
+          public async delete(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByInventoryId,
+              never,
+              Public.Tables.Inventory.Record | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByInventoryId.delete",
+              parameters: { inventoryId: parameters.inventoryId },
+            });
 
-            const response = await sql`
-    --
-    UPDATE 
-      public.checklist_item 
-    SET
-      id = ${
-        values.id === undefined ? sql`id` : typed[2950](values.id)
-      } , checklist_id = ${
-        values.checklistId === undefined
-          ? sql`checklist_id`
-          : typed[2950](values.checklistId)
-      } , title = ${
-        values.title === undefined ? sql`title` : typed[25](values.title)
-      } , checked = ${
-        values.checked === undefined ? sql`checked` : typed[16](values.checked)
-      } , created_at = ${
-        values.createdAt === undefined
-          ? sql`created_at`
-          : typed[1114](values.createdAt)
-      } 
-    WHERE
-      checklist_id = ${
-        parameters.checklistId === undefined
-          ? sql`DEFAULT`
-          : typed[2950](parameters.checklistId)
-      }
-    RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }));
-          }
-          async delete(parameters: Public.Tables.ChecklistItem.ByChecklistId) {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-            const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist_item 
-    WHERE
-      checklist_id = ${
-        parameters.checklistId === undefined
-          ? sql`DEFAULT`
-          : typed[2950](parameters.checklistId)
-      }
-    RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }));
-          }
-        })(this);
-
-        public ById = new (class implements HasDatabase {
-          constructor(private hasDatabase: HasDatabase) {}
-
-          get database() {
-            return this.hasDatabase.database;
-          }
-
-          async read(
-            parameters: Public.Tables.ChecklistItem.ById,
-          ): Promise<Public.Tables.ChecklistItem.Record> {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-
-            const response = await sql`
-    -- 
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
-          }
-
-          async update(
-            parameters: Public.Tables.ChecklistItem.ById,
-            values: Partial<Public.Tables.ChecklistItem.Values>,
-          ): Promise<Public.Tables.ChecklistItem.Record> {
-            console.assert(parameters);
-            console.assert(values);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-
-            const response = await sql`
-    --
-    UPDATE 
-      public.checklist_item 
-    SET
-      id = ${
-        values.id === undefined ? sql`id` : typed[2950](values.id)
-      } , checklist_id = ${
-        values.checklistId === undefined
-          ? sql`checklist_id`
-          : typed[2950](values.checklistId)
-      } , title = ${
-        values.title === undefined ? sql`title` : typed[25](values.title)
-      } , checked = ${
-        values.checked === undefined ? sql`checked` : typed[16](values.checked)
-      } , created_at = ${
-        values.createdAt === undefined
-          ? sql`created_at`
-          : typed[1114](values.createdAt)
-      } 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
-          }
-          async delete(parameters: Public.Tables.ChecklistItem.ById) {
-            console.assert(parameters);
-            const sql = this.database.context.sql;
-            const typed = sql.typed as unknown as PostgresTypecasts;
-            const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist_item 
-    WHERE
-      id = ${
-        parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
-      }
-    RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
-            }))[0];
+            return nullIsUndefined<Public.Tables.Inventory.Record>(
+              Public.Types.Inventory.parse(response.results),
+            );
           }
         })(this);
         public get ByPrimaryKey() {
-          return this.ById;
+          return this.ByInventoryId;
         }
+
+        public ByStoreIdFilmId = new (class extends HasClient {
+          public async read(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByStoreIdFilmId,
+              never,
+              Public.Tables.Inventory.Record[] | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+            values: Partial<Public.Types.Inventory>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByStoreIdFilmId,
+              Partial<Public.Types.Inventory>,
+              Public.Tables.Inventory.Record[] | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByStoreIdFilmId.update",
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
+              values: {
+                inventoryId: values.inventoryId,
+                filmId: values.filmId,
+                storeId: values.storeId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Inventory.ByStoreIdFilmId,
+              never,
+              Public.Tables.Inventory.Record[] | undefined
+            >({
+              operation: "Public.Tables.Inventory.ByStoreIdFilmId.delete",
+              parameters: {
+                storeId: parameters.storeId,
+                filmId: parameters.filmId,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Inventory.parse)
+                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
+                .filter(
+                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Category = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Category.Values,
+        ): Promise<Public.Tables.Category.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Category.Values,
+            Public.Tables.Category.Record
+          >({
+            operation: "Public.Tables.Category.create",
+            values: {
+              categoryId: values.categoryId,
+              name: values.name,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Category.Record>(
+            Public.Types.Category.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Category.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Category.Record[]
+          >({
+            operation: "Public.Tables.Category.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Category.parse)
+              .map(nullIsUndefined<Public.Tables.Category.Record>)
+              .filter(
+                (x): x is Public.Tables.Category.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByCategoryId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Category.ByCategoryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Category.ByCategoryId,
+              never,
+              Public.Tables.Category.Record | undefined
+            >({
+              operation: "Public.Tables.Category.ByCategoryId.read",
+              parameters: { categoryId: parameters.categoryId },
+            });
+
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Category.ByCategoryId,
+            values: Partial<Public.Types.Category>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Category.ByCategoryId,
+              Partial<Public.Types.Category>,
+              Public.Tables.Category.Record | undefined
+            >({
+              operation: "Public.Tables.Category.ByCategoryId.update",
+              parameters: { categoryId: parameters.categoryId },
+              values: {
+                categoryId: values.categoryId,
+                name: values.name,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Category.ByCategoryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Category.ByCategoryId,
+              never,
+              Public.Tables.Category.Record | undefined
+            >({
+              operation: "Public.Tables.Category.ByCategoryId.delete",
+              parameters: { categoryId: parameters.categoryId },
+            });
+
+            return nullIsUndefined<Public.Tables.Category.Record>(
+              Public.Types.Category.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCategoryId;
+        }
+      })(this);
+
+      public Country = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Country.Values,
+        ): Promise<Public.Tables.Country.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Country.Values,
+            Public.Tables.Country.Record
+          >({
+            operation: "Public.Tables.Country.create",
+            values: {
+              countryId: values.countryId,
+              country: values.country,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Country.Record>(
+            Public.Types.Country.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Country.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Country.Record[]
+          >({
+            operation: "Public.Tables.Country.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Country.parse)
+              .map(nullIsUndefined<Public.Tables.Country.Record>)
+              .filter(
+                (x): x is Public.Tables.Country.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByCountryId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Country.ByCountryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Country.ByCountryId,
+              never,
+              Public.Tables.Country.Record | undefined
+            >({
+              operation: "Public.Tables.Country.ByCountryId.read",
+              parameters: { countryId: parameters.countryId },
+            });
+
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Country.ByCountryId,
+            values: Partial<Public.Types.Country>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Country.ByCountryId,
+              Partial<Public.Types.Country>,
+              Public.Tables.Country.Record | undefined
+            >({
+              operation: "Public.Tables.Country.ByCountryId.update",
+              parameters: { countryId: parameters.countryId },
+              values: {
+                countryId: values.countryId,
+                country: values.country,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Country.ByCountryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Country.ByCountryId,
+              never,
+              Public.Tables.Country.Record | undefined
+            >({
+              operation: "Public.Tables.Country.ByCountryId.delete",
+              parameters: { countryId: parameters.countryId },
+            });
+
+            return nullIsUndefined<Public.Tables.Country.Record>(
+              Public.Types.Country.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCountryId;
+        }
+      })(this);
+
+      public Language = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Language.Values,
+        ): Promise<Public.Tables.Language.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Language.Values,
+            Public.Tables.Language.Record
+          >({
+            operation: "Public.Tables.Language.create",
+            values: {
+              languageId: values.languageId,
+              name: values.name,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Language.Record>(
+            Public.Types.Language.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Language.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Language.Record[]
+          >({
+            operation: "Public.Tables.Language.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Language.parse)
+              .map(nullIsUndefined<Public.Tables.Language.Record>)
+              .filter(
+                (x): x is Public.Tables.Language.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByLanguageId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Language.ByLanguageId) {
+            const response = await this.client.invoke<
+              Public.Tables.Language.ByLanguageId,
+              never,
+              Public.Tables.Language.Record | undefined
+            >({
+              operation: "Public.Tables.Language.ByLanguageId.read",
+              parameters: { languageId: parameters.languageId },
+            });
+
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Language.ByLanguageId,
+            values: Partial<Public.Types.Language>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Language.ByLanguageId,
+              Partial<Public.Types.Language>,
+              Public.Tables.Language.Record | undefined
+            >({
+              operation: "Public.Tables.Language.ByLanguageId.update",
+              parameters: { languageId: parameters.languageId },
+              values: {
+                languageId: values.languageId,
+                name: values.name,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Language.ByLanguageId) {
+            const response = await this.client.invoke<
+              Public.Tables.Language.ByLanguageId,
+              never,
+              Public.Tables.Language.Record | undefined
+            >({
+              operation: "Public.Tables.Language.ByLanguageId.delete",
+              parameters: { languageId: parameters.languageId },
+            });
+
+            return nullIsUndefined<Public.Tables.Language.Record>(
+              Public.Types.Language.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByLanguageId;
+        }
+      })(this);
+
+      public Rental = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Rental.Values,
+        ): Promise<Public.Tables.Rental.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Rental.Values,
+            Public.Tables.Rental.Record
+          >({
+            operation: "Public.Tables.Rental.create",
+            values: {
+              rentalId: values.rentalId,
+              rentalDate: values.rentalDate,
+              inventoryId: values.inventoryId,
+              customerId: values.customerId,
+              returnDate: values.returnDate,
+              staffId: values.staffId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Rental.Record>(
+            Public.Types.Rental.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Rental.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Rental.Record[]
+          >({
+            operation: "Public.Tables.Rental.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Rental.parse)
+              .map(nullIsUndefined<Public.Tables.Rental.Record>)
+              .filter(
+                (x): x is Public.Tables.Rental.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByInventoryId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Rental.ByInventoryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByInventoryId,
+              never,
+              Public.Tables.Rental.Record[] | undefined
+            >({
+              operation: "Public.Tables.Rental.ByInventoryId.read",
+              parameters: { inventoryId: parameters.inventoryId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Rental.ByInventoryId,
+            values: Partial<Public.Types.Rental>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByInventoryId,
+              Partial<Public.Types.Rental>,
+              Public.Tables.Rental.Record[] | undefined
+            >({
+              operation: "Public.Tables.Rental.ByInventoryId.update",
+              parameters: { inventoryId: parameters.inventoryId },
+              values: {
+                rentalId: values.rentalId,
+                rentalDate: values.rentalDate,
+                inventoryId: values.inventoryId,
+                customerId: values.customerId,
+                returnDate: values.returnDate,
+                staffId: values.staffId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Rental.ByInventoryId) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByInventoryId,
+              never,
+              Public.Tables.Rental.Record[] | undefined
+            >({
+              operation: "Public.Tables.Rental.ByInventoryId.delete",
+              parameters: { inventoryId: parameters.inventoryId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Rental.parse)
+                .map(nullIsUndefined<Public.Tables.Rental.Record>)
+                .filter(
+                  (x): x is Public.Tables.Rental.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByRentalDateInventoryIdCustomerId =
+          new (class extends HasClient {
+            public async read(
+              parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            ) {
+              const response = await this.client.invoke<
+                Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+                never,
+                Public.Tables.Rental.Record | undefined
+              >({
+                operation:
+                  "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
+              });
+
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
+            }
+
+            public async update(
+              parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+              values: Partial<Public.Types.Rental>,
+            ) {
+              const response = await this.client.invoke<
+                Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+                Partial<Public.Types.Rental>,
+                Public.Tables.Rental.Record | undefined
+              >({
+                operation:
+                  "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.update",
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
+                values: {
+                  rentalId: values.rentalId,
+                  rentalDate: values.rentalDate,
+                  inventoryId: values.inventoryId,
+                  customerId: values.customerId,
+                  returnDate: values.returnDate,
+                  staffId: values.staffId,
+                  lastUpdate: values.lastUpdate,
+                },
+              });
+
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
+            }
+
+            public async delete(
+              parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            ) {
+              const response = await this.client.invoke<
+                Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+                never,
+                Public.Tables.Rental.Record | undefined
+              >({
+                operation:
+                  "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.delete",
+                parameters: {
+                  rentalDate: parameters.rentalDate,
+                  inventoryId: parameters.inventoryId,
+                  customerId: parameters.customerId,
+                },
+              });
+
+              return nullIsUndefined<Public.Tables.Rental.Record>(
+                Public.Types.Rental.parse(response.results),
+              );
+            }
+          })(this);
+
+        public ByRentalId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Rental.ByRentalId) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByRentalId,
+              never,
+              Public.Tables.Rental.Record | undefined
+            >({
+              operation: "Public.Tables.Rental.ByRentalId.read",
+              parameters: { rentalId: parameters.rentalId },
+            });
+
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Rental.ByRentalId,
+            values: Partial<Public.Types.Rental>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByRentalId,
+              Partial<Public.Types.Rental>,
+              Public.Tables.Rental.Record | undefined
+            >({
+              operation: "Public.Tables.Rental.ByRentalId.update",
+              parameters: { rentalId: parameters.rentalId },
+              values: {
+                rentalId: values.rentalId,
+                rentalDate: values.rentalDate,
+                inventoryId: values.inventoryId,
+                customerId: values.customerId,
+                returnDate: values.returnDate,
+                staffId: values.staffId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Rental.ByRentalId) {
+            const response = await this.client.invoke<
+              Public.Tables.Rental.ByRentalId,
+              never,
+              Public.Tables.Rental.Record | undefined
+            >({
+              operation: "Public.Tables.Rental.ByRentalId.delete",
+              parameters: { rentalId: parameters.rentalId },
+            });
+
+            return nullIsUndefined<Public.Tables.Rental.Record>(
+              Public.Types.Rental.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByRentalId;
+        }
+      })(this);
+
+      public Staff = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Staff.Values,
+        ): Promise<Public.Tables.Staff.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Staff.Values,
+            Public.Tables.Staff.Record
+          >({
+            operation: "Public.Tables.Staff.create",
+            values: {
+              staffId: values.staffId,
+              firstName: values.firstName,
+              lastName: values.lastName,
+              addressId: values.addressId,
+              email: values.email,
+              storeId: values.storeId,
+              active: values.active,
+              username: values.username,
+              password: values.password,
+              lastUpdate: values.lastUpdate,
+              picture: values.picture,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Staff.Record>(
+            Public.Types.Staff.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Staff.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Staff.Record[]
+          >({
+            operation: "Public.Tables.Staff.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Staff.parse)
+              .map(nullIsUndefined<Public.Tables.Staff.Record>)
+              .filter(
+                (x): x is Public.Tables.Staff.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByStaffId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Staff.ByStaffId) {
+            const response = await this.client.invoke<
+              Public.Tables.Staff.ByStaffId,
+              never,
+              Public.Tables.Staff.Record | undefined
+            >({
+              operation: "Public.Tables.Staff.ByStaffId.read",
+              parameters: { staffId: parameters.staffId },
+            });
+
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Staff.ByStaffId,
+            values: Partial<Public.Types.Staff>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Staff.ByStaffId,
+              Partial<Public.Types.Staff>,
+              Public.Tables.Staff.Record | undefined
+            >({
+              operation: "Public.Tables.Staff.ByStaffId.update",
+              parameters: { staffId: parameters.staffId },
+              values: {
+                staffId: values.staffId,
+                firstName: values.firstName,
+                lastName: values.lastName,
+                addressId: values.addressId,
+                email: values.email,
+                storeId: values.storeId,
+                active: values.active,
+                username: values.username,
+                password: values.password,
+                lastUpdate: values.lastUpdate,
+                picture: values.picture,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Staff.ByStaffId) {
+            const response = await this.client.invoke<
+              Public.Tables.Staff.ByStaffId,
+              never,
+              Public.Tables.Staff.Record | undefined
+            >({
+              operation: "Public.Tables.Staff.ByStaffId.delete",
+              parameters: { staffId: parameters.staffId },
+            });
+
+            return nullIsUndefined<Public.Tables.Staff.Record>(
+              Public.Types.Staff.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByStaffId;
+        }
+      })(this);
+
+      public Store = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Store.Values,
+        ): Promise<Public.Tables.Store.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Store.Values,
+            Public.Tables.Store.Record
+          >({
+            operation: "Public.Tables.Store.create",
+            values: {
+              storeId: values.storeId,
+              managerStaffId: values.managerStaffId,
+              addressId: values.addressId,
+              lastUpdate: values.lastUpdate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Store.Record>(
+            Public.Types.Store.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Store.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Store.Record[]
+          >({
+            operation: "Public.Tables.Store.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Store.parse)
+              .map(nullIsUndefined<Public.Tables.Store.Record>)
+              .filter(
+                (x): x is Public.Tables.Store.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByManagerStaffId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Store.ByManagerStaffId) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByManagerStaffId,
+              never,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByManagerStaffId.read",
+              parameters: { managerStaffId: parameters.managerStaffId },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+            values: Partial<Public.Types.Store>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByManagerStaffId,
+              Partial<Public.Types.Store>,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByManagerStaffId.update",
+              parameters: { managerStaffId: parameters.managerStaffId },
+              values: {
+                storeId: values.storeId,
+                managerStaffId: values.managerStaffId,
+                addressId: values.addressId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+
+          public async delete(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByManagerStaffId,
+              never,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByManagerStaffId.delete",
+              parameters: { managerStaffId: parameters.managerStaffId },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+        })(this);
+
+        public ByStoreId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Store.ByStoreId) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByStoreId,
+              never,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByStoreId.read",
+              parameters: { storeId: parameters.storeId },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Store.ByStoreId,
+            values: Partial<Public.Types.Store>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByStoreId,
+              Partial<Public.Types.Store>,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByStoreId.update",
+              parameters: { storeId: parameters.storeId },
+              values: {
+                storeId: values.storeId,
+                managerStaffId: values.managerStaffId,
+                addressId: values.addressId,
+                lastUpdate: values.lastUpdate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Store.ByStoreId) {
+            const response = await this.client.invoke<
+              Public.Tables.Store.ByStoreId,
+              never,
+              Public.Tables.Store.Record | undefined
+            >({
+              operation: "Public.Tables.Store.ByStoreId.delete",
+              parameters: { storeId: parameters.storeId },
+            });
+
+            return nullIsUndefined<Public.Tables.Store.Record>(
+              Public.Types.Store.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByStoreId;
+        }
+      })(this);
+
+      public Payment = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Payment.Values,
+        ): Promise<Public.Tables.Payment.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Payment.Values,
+            Public.Tables.Payment.Record
+          >({
+            operation: "Public.Tables.Payment.create",
+            values: {
+              paymentId: values.paymentId,
+              customerId: values.customerId,
+              staffId: values.staffId,
+              rentalId: values.rentalId,
+              amount: values.amount,
+              paymentDate: values.paymentDate,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Payment.Record>(
+            Public.Types.Payment.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Payment.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Payment.Record[]
+          >({
+            operation: "Public.Tables.Payment.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Payment.parse)
+              .map(nullIsUndefined<Public.Tables.Payment.Record>)
+              .filter(
+                (x): x is Public.Tables.Payment.Record => x !== undefined,
+              ) ?? []
+          );
+        }
+
+        public ByCustomerId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Payment.ByCustomerId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByCustomerId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByCustomerId.read",
+              parameters: { customerId: parameters.customerId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Payment.ByCustomerId,
+            values: Partial<Public.Types.Payment>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByCustomerId,
+              Partial<Public.Types.Payment>,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByCustomerId.update",
+              parameters: { customerId: parameters.customerId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Payment.ByCustomerId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByCustomerId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByCustomerId.delete",
+              parameters: { customerId: parameters.customerId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByPaymentId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Payment.ByPaymentId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByPaymentId,
+              never,
+              Public.Tables.Payment.Record | undefined
+            >({
+              operation: "Public.Tables.Payment.ByPaymentId.read",
+              parameters: { paymentId: parameters.paymentId },
+            });
+
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Payment.ByPaymentId,
+            values: Partial<Public.Types.Payment>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByPaymentId,
+              Partial<Public.Types.Payment>,
+              Public.Tables.Payment.Record | undefined
+            >({
+              operation: "Public.Tables.Payment.ByPaymentId.update",
+              parameters: { paymentId: parameters.paymentId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Payment.ByPaymentId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByPaymentId,
+              never,
+              Public.Tables.Payment.Record | undefined
+            >({
+              operation: "Public.Tables.Payment.ByPaymentId.delete",
+              parameters: { paymentId: parameters.paymentId },
+            });
+
+            return nullIsUndefined<Public.Tables.Payment.Record>(
+              Public.Types.Payment.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByPaymentId;
+        }
+
+        public ByRentalId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Payment.ByRentalId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByRentalId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByRentalId.read",
+              parameters: { rentalId: parameters.rentalId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Payment.ByRentalId,
+            values: Partial<Public.Types.Payment>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByRentalId,
+              Partial<Public.Types.Payment>,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByRentalId.update",
+              parameters: { rentalId: parameters.rentalId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Payment.ByRentalId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByRentalId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByRentalId.delete",
+              parameters: { rentalId: parameters.rentalId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByStaffId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Payment.ByStaffId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByStaffId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByStaffId.read",
+              parameters: { staffId: parameters.staffId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Payment.ByStaffId,
+            values: Partial<Public.Types.Payment>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByStaffId,
+              Partial<Public.Types.Payment>,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByStaffId.update",
+              parameters: { staffId: parameters.staffId },
+              values: {
+                paymentId: values.paymentId,
+                customerId: values.customerId,
+                staffId: values.staffId,
+                rentalId: values.rentalId,
+                amount: values.amount,
+                paymentDate: values.paymentDate,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Payment.ByStaffId) {
+            const response = await this.client.invoke<
+              Public.Tables.Payment.ByStaffId,
+              never,
+              Public.Tables.Payment.Record[] | undefined
+            >({
+              operation: "Public.Tables.Payment.ByStaffId.delete",
+              parameters: { staffId: parameters.staffId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Payment.parse)
+                .map(nullIsUndefined<Public.Tables.Payment.Record>)
+                .filter(
+                  (x): x is Public.Tables.Payment.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Film = new (class extends HasClient {
+        public async create(
+          values: Public.Tables.Film.Values,
+        ): Promise<Public.Tables.Film.Record | undefined> {
+          const response = await this.client.invoke<
+            never,
+            Public.Tables.Film.Values,
+            Public.Tables.Film.Record
+          >({
+            operation: "Public.Tables.Film.create",
+            values: {
+              filmId: values.filmId,
+              title: values.title,
+              description: values.description,
+              releaseYear: values.releaseYear,
+              languageId: values.languageId,
+              rentalDuration: values.rentalDuration,
+              rentalRate: values.rentalRate,
+              length: values.length,
+              replacementCost: values.replacementCost,
+              rating: values.rating,
+              lastUpdate: values.lastUpdate,
+              specialFeatures: values.specialFeatures,
+              fulltext: values.fulltext,
+            },
+          });
+          return nullIsUndefined<Public.Tables.Film.Record>(
+            Public.Types.Film.parse(response.results),
+          );
+        }
+
+        public async all(): Promise<Public.Tables.Film.Record[]> {
+          const response = await this.client.invoke<
+            never,
+            never,
+            Public.Tables.Film.Record[]
+          >({
+            operation: "Public.Tables.Film.all",
+          });
+          return (
+            response.results
+              ?.map(Public.Types.Film.parse)
+              .map(nullIsUndefined<Public.Tables.Film.Record>)
+              .filter((x): x is Public.Tables.Film.Record => x !== undefined) ??
+            []
+          );
+        }
+
+        public ByFilmId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Film.ByFilmId) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFilmId,
+              never,
+              Public.Tables.Film.Record | undefined
+            >({
+              operation: "Public.Tables.Film.ByFilmId.read",
+              parameters: { filmId: parameters.filmId },
+            });
+
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Film.ByFilmId,
+            values: Partial<Public.Types.Film>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFilmId,
+              Partial<Public.Types.Film>,
+              Public.Tables.Film.Record | undefined
+            >({
+              operation: "Public.Tables.Film.ByFilmId.update",
+              parameters: { filmId: parameters.filmId },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
+            });
+
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Film.ByFilmId) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFilmId,
+              never,
+              Public.Tables.Film.Record | undefined
+            >({
+              operation: "Public.Tables.Film.ByFilmId.delete",
+              parameters: { filmId: parameters.filmId },
+            });
+
+            return nullIsUndefined<Public.Tables.Film.Record>(
+              Public.Types.Film.parse(response.results),
+            );
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmId;
+        }
+
+        public ByFulltext = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Film.ByFulltext) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFulltext,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByFulltext.read",
+              parameters: { fulltext: parameters.fulltext },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Film.ByFulltext,
+            values: Partial<Public.Types.Film>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFulltext,
+              Partial<Public.Types.Film>,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByFulltext.update",
+              parameters: { fulltext: parameters.fulltext },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Film.ByFulltext) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByFulltext,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByFulltext.delete",
+              parameters: { fulltext: parameters.fulltext },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByLanguageId = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Film.ByLanguageId) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByLanguageId,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByLanguageId.read",
+              parameters: { languageId: parameters.languageId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Film.ByLanguageId,
+            values: Partial<Public.Types.Film>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByLanguageId,
+              Partial<Public.Types.Film>,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByLanguageId.update",
+              parameters: { languageId: parameters.languageId },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Film.ByLanguageId) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByLanguageId,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByLanguageId.delete",
+              parameters: { languageId: parameters.languageId },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
+
+        public ByTitle = new (class extends HasClient {
+          public async read(parameters: Public.Tables.Film.ByTitle) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByTitle,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByTitle.read",
+              parameters: { title: parameters.title },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async update(
+            parameters: Public.Tables.Film.ByTitle,
+            values: Partial<Public.Types.Film>,
+          ) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByTitle,
+              Partial<Public.Types.Film>,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByTitle.update",
+              parameters: { title: parameters.title },
+              values: {
+                filmId: values.filmId,
+                title: values.title,
+                description: values.description,
+                releaseYear: values.releaseYear,
+                languageId: values.languageId,
+                rentalDuration: values.rentalDuration,
+                rentalRate: values.rentalRate,
+                length: values.length,
+                replacementCost: values.replacementCost,
+                rating: values.rating,
+                lastUpdate: values.lastUpdate,
+                specialFeatures: values.specialFeatures,
+                fulltext: values.fulltext,
+              },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+
+          public async delete(parameters: Public.Tables.Film.ByTitle) {
+            const response = await this.client.invoke<
+              Public.Tables.Film.ByTitle,
+              never,
+              Public.Tables.Film.Record[] | undefined
+            >({
+              operation: "Public.Tables.Film.ByTitle.delete",
+              parameters: { title: parameters.title },
+            });
+
+            return (
+              response.results
+                ?.map(Public.Types.Film.parse)
+                .map(nullIsUndefined<Public.Tables.Film.Record>)
+                .filter(
+                  (x): x is Public.Tables.Film.Record => x !== undefined,
+                ) ?? []
+            );
+          }
+        })(this);
       })(this);
     })(this);
   })(this);
 }
-
-// begin - operation dispatch map
-import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-export class OperationDispatcher {
-  private dispatchMap: Record<string, OperationDispatchMethod>;
-  constructor(private database: Database) {
-    this.dispatchMap = {
-      "Public.Tables.Checklist.create": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.Checklist.create(
-          request.values as Public.Tables.Checklist.Values,
-        ),
-
-      "Public.Tables.Checklist.all": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) => database.Public.Tables.Checklist.all(),
-
-      "Public.Tables.Checklist.ById.read": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.Checklist.ById.read(
-          request.parameters as Public.Tables.Checklist.ById,
-        ),
-      "Public.Tables.Checklist.ById.update": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.Checklist.ById.update(
-          request.parameters as Public.Tables.Checklist.ById,
-          request.values as Partial<Public.Tables.Checklist.Values>,
-        ),
-      "Public.Tables.Checklist.ById.delete": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.Checklist.ById.delete(
-          request.parameters as Public.Tables.Checklist.ById,
-        ),
-      "Public.Tables.ChecklistItem.create": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.create(
-          request.values as Public.Tables.ChecklistItem.Values,
-        ),
-
-      "Public.Tables.ChecklistItem.all": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) => database.Public.Tables.ChecklistItem.all(),
-
-      "Public.Tables.ChecklistItem.ByChecklistId.read": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ByChecklistId.read(
-          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
-        ),
-      "Public.Tables.ChecklistItem.ByChecklistId.update": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ByChecklistId.update(
-          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
-          request.values as Partial<Public.Tables.ChecklistItem.Values>,
-        ),
-      "Public.Tables.ChecklistItem.ByChecklistId.delete": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ByChecklistId.delete(
-          request.parameters as Public.Tables.ChecklistItem.ByChecklistId,
-        ),
-      "Public.Tables.ChecklistItem.ById.read": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ById.read(
-          request.parameters as Public.Tables.ChecklistItem.ById,
-        ),
-      "Public.Tables.ChecklistItem.ById.update": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ById.update(
-          request.parameters as Public.Tables.ChecklistItem.ById,
-          request.values as Partial<Public.Tables.ChecklistItem.Values>,
-        ),
-      "Public.Tables.ChecklistItem.ById.delete": async (
-        request: EmbraceSQLRequest<object, object>,
-      ) =>
-        database.Public.Tables.ChecklistItem.ById.delete(
-          request.parameters as Public.Tables.ChecklistItem.ById,
-        ),
-    };
-  }
-
-  async dispatch(request: EmbraceSQLRequest<object, object>) {
-    if (!this.dispatchMap[request.operation]) {
-      throw new Error(`${request.operation} not available`);
+import React from "react";
+export { EmbraceSQLProvider } from "@embracesql/react";
+import {
+  useEmbraceSQLClient,
+  useEmbraceSQLRow,
+  useEmbraceSQLRows,
+  ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RecordCallback,
+  GeneratedRowProps,
+} from "@embracesql/react";
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Row = IsRow<Public.Tables.FilmActor.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.FilmActor.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.FilmActor.Record,
+          changeCallback: RecordCallback<Public.Tables.FilmActor.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get actorId() {
+          return this.record.actorId;
+        }
+        get changeActorId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmActor.ActorId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              actorId: parsedValue as Public.Tables.FilmActor.Record["actorId"],
+            });
+          };
+        }
+        get filmId() {
+          return this.record.filmId;
+        }
+        get changeFilmId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmActor.FilmId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              filmId: parsedValue as Public.Tables.FilmActor.Record["filmId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmActor.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.FilmActor.Record["lastUpdate"],
+            });
+          };
+        }
+      }
     }
-    return this.dispatchMap[request.operation](request);
+    export namespace Address {
+      export type Row = IsRow<Public.Tables.Address.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Address.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Address.Record,
+          changeCallback: RecordCallback<Public.Tables.Address.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.AddressId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              addressId:
+                parsedValue as Public.Tables.Address.Record["addressId"],
+            });
+          };
+        }
+        get address() {
+          return this.record.address;
+        }
+        get changeAddress() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.Address.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              address: parsedValue as Public.Tables.Address.Record["address"],
+            });
+          };
+        }
+        get address2() {
+          return this.record.address2;
+        }
+        get changeAddress2() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.Address2.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              address2: parsedValue as Public.Tables.Address.Record["address2"],
+            });
+          };
+        }
+        get district() {
+          return this.record.district;
+        }
+        get changeDistrict() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.District.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              district: parsedValue as Public.Tables.Address.Record["district"],
+            });
+          };
+        }
+        get cityId() {
+          return this.record.cityId;
+        }
+        get changeCityId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.CityId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              cityId: parsedValue as Public.Tables.Address.Record["cityId"],
+            });
+          };
+        }
+        get postalCode() {
+          return this.record.postalCode;
+        }
+        get changePostalCode() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.PostalCode.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              postalCode:
+                parsedValue as Public.Tables.Address.Record["postalCode"],
+            });
+          };
+        }
+        get phone() {
+          return this.record.phone;
+        }
+        get changePhone() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.Phone.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              phone: parsedValue as Public.Tables.Address.Record["phone"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Address.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Address.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace City {
+      export type Row = IsRow<Public.Tables.City.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.City.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.City.Record,
+          changeCallback: RecordCallback<Public.Tables.City.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get cityId() {
+          return this.record.cityId;
+        }
+        get changeCityId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.City.CityId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              cityId: parsedValue as Public.Tables.City.Record["cityId"],
+            });
+          };
+        }
+        get city() {
+          return this.record.city;
+        }
+        get changeCity() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.City.City.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              city: parsedValue as Public.Tables.City.Record["city"],
+            });
+          };
+        }
+        get countryId() {
+          return this.record.countryId;
+        }
+        get changeCountryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.City.CountryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              countryId: parsedValue as Public.Tables.City.Record["countryId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.City.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.City.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Customer {
+      export type Row = IsRow<Public.Tables.Customer.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Customer.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Customer.Record,
+          changeCallback: RecordCallback<Public.Tables.Customer.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get customerId() {
+          return this.record.customerId;
+        }
+        get changeCustomerId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.CustomerId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              customerId:
+                parsedValue as Public.Tables.Customer.Record["customerId"],
+            });
+          };
+        }
+        get storeId() {
+          return this.record.storeId;
+        }
+        get changeStoreId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.StoreId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              storeId: parsedValue as Public.Tables.Customer.Record["storeId"],
+            });
+          };
+        }
+        get firstName() {
+          return this.record.firstName;
+        }
+        get changeFirstName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.FirstName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              firstName:
+                parsedValue as Public.Tables.Customer.Record["firstName"],
+            });
+          };
+        }
+        get lastName() {
+          return this.record.lastName;
+        }
+        get changeLastName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.LastName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastName:
+                parsedValue as Public.Tables.Customer.Record["lastName"],
+            });
+          };
+        }
+        get email() {
+          return this.record.email;
+        }
+        get changeEmail() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.Email.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              email: parsedValue as Public.Tables.Customer.Record["email"],
+            });
+          };
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.AddressId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              addressId:
+                parsedValue as Public.Tables.Customer.Record["addressId"],
+            });
+          };
+        }
+        get activebool() {
+          return this.record.activebool;
+        }
+        get changeActivebool() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.Activebool.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              activebool:
+                parsedValue as Public.Tables.Customer.Record["activebool"],
+            });
+          };
+        }
+        get createDate() {
+          return this.record.createDate;
+        }
+        get changeCreateDate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.CreateDate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              createDate:
+                parsedValue as Public.Tables.Customer.Record["createDate"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Customer.Record["lastUpdate"],
+            });
+          };
+        }
+        get active() {
+          return this.record.active;
+        }
+        get changeActive() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Customer.Active.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              active: parsedValue as Public.Tables.Customer.Record["active"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Actor {
+      export type Row = IsRow<Public.Tables.Actor.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Actor.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Actor.Record,
+          changeCallback: RecordCallback<Public.Tables.Actor.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get actorId() {
+          return this.record.actorId;
+        }
+        get changeActorId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Actor.ActorId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              actorId: parsedValue as Public.Tables.Actor.Record["actorId"],
+            });
+          };
+        }
+        get firstName() {
+          return this.record.firstName;
+        }
+        get changeFirstName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Actor.FirstName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              firstName: parsedValue as Public.Tables.Actor.Record["firstName"],
+            });
+          };
+        }
+        get lastName() {
+          return this.record.lastName;
+        }
+        get changeLastName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Actor.LastName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastName: parsedValue as Public.Tables.Actor.Record["lastName"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Actor.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Actor.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace FilmCategory {
+      export type Row = IsRow<Public.Tables.FilmCategory.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.FilmCategory.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.FilmCategory.Record,
+          changeCallback: RecordCallback<Public.Tables.FilmCategory.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get filmId() {
+          return this.record.filmId;
+        }
+        get changeFilmId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmCategory.FilmId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              filmId:
+                parsedValue as Public.Tables.FilmCategory.Record["filmId"],
+            });
+          };
+        }
+        get categoryId() {
+          return this.record.categoryId;
+        }
+        get changeCategoryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmCategory.CategoryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              categoryId:
+                parsedValue as Public.Tables.FilmCategory.Record["categoryId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.FilmCategory.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.FilmCategory.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Inventory {
+      export type Row = IsRow<Public.Tables.Inventory.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Inventory.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Inventory.Record,
+          changeCallback: RecordCallback<Public.Tables.Inventory.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get inventoryId() {
+          return this.record.inventoryId;
+        }
+        get changeInventoryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Inventory.InventoryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              inventoryId:
+                parsedValue as Public.Tables.Inventory.Record["inventoryId"],
+            });
+          };
+        }
+        get filmId() {
+          return this.record.filmId;
+        }
+        get changeFilmId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Inventory.FilmId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              filmId: parsedValue as Public.Tables.Inventory.Record["filmId"],
+            });
+          };
+        }
+        get storeId() {
+          return this.record.storeId;
+        }
+        get changeStoreId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Inventory.StoreId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              storeId: parsedValue as Public.Tables.Inventory.Record["storeId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Inventory.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Inventory.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Category {
+      export type Row = IsRow<Public.Tables.Category.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Category.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Category.Record,
+          changeCallback: RecordCallback<Public.Tables.Category.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get categoryId() {
+          return this.record.categoryId;
+        }
+        get changeCategoryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Category.CategoryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              categoryId:
+                parsedValue as Public.Tables.Category.Record["categoryId"],
+            });
+          };
+        }
+        get name() {
+          return this.record.name;
+        }
+        get changeName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Category.Name.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              name: parsedValue as Public.Tables.Category.Record["name"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Category.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Category.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Country {
+      export type Row = IsRow<Public.Tables.Country.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Country.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Country.Record,
+          changeCallback: RecordCallback<Public.Tables.Country.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get countryId() {
+          return this.record.countryId;
+        }
+        get changeCountryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Country.CountryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              countryId:
+                parsedValue as Public.Tables.Country.Record["countryId"],
+            });
+          };
+        }
+        get country() {
+          return this.record.country;
+        }
+        get changeCountry() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Country.Country.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              country: parsedValue as Public.Tables.Country.Record["country"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Country.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Country.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Language {
+      export type Row = IsRow<Public.Tables.Language.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Language.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Language.Record,
+          changeCallback: RecordCallback<Public.Tables.Language.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get languageId() {
+          return this.record.languageId;
+        }
+        get changeLanguageId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Language.LanguageId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              languageId:
+                parsedValue as Public.Tables.Language.Record["languageId"],
+            });
+          };
+        }
+        get name() {
+          return this.record.name;
+        }
+        get changeName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Language.Name.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              name: parsedValue as Public.Tables.Language.Record["name"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Language.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Language.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Rental {
+      export type Row = IsRow<Public.Tables.Rental.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Rental.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Rental.Record,
+          changeCallback: RecordCallback<Public.Tables.Rental.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get rentalId() {
+          return this.record.rentalId;
+        }
+        get changeRentalId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.RentalId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalId: parsedValue as Public.Tables.Rental.Record["rentalId"],
+            });
+          };
+        }
+        get rentalDate() {
+          return this.record.rentalDate;
+        }
+        get changeRentalDate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.RentalDate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalDate:
+                parsedValue as Public.Tables.Rental.Record["rentalDate"],
+            });
+          };
+        }
+        get inventoryId() {
+          return this.record.inventoryId;
+        }
+        get changeInventoryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.InventoryId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              inventoryId:
+                parsedValue as Public.Tables.Rental.Record["inventoryId"],
+            });
+          };
+        }
+        get customerId() {
+          return this.record.customerId;
+        }
+        get changeCustomerId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.CustomerId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              customerId:
+                parsedValue as Public.Tables.Rental.Record["customerId"],
+            });
+          };
+        }
+        get returnDate() {
+          return this.record.returnDate;
+        }
+        get changeReturnDate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.ReturnDate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              returnDate:
+                parsedValue as Public.Tables.Rental.Record["returnDate"],
+            });
+          };
+        }
+        get staffId() {
+          return this.record.staffId;
+        }
+        get changeStaffId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.StaffId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              staffId: parsedValue as Public.Tables.Rental.Record["staffId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Rental.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Rental.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Staff {
+      export type Row = IsRow<Public.Tables.Staff.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Staff.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Staff.Record,
+          changeCallback: RecordCallback<Public.Tables.Staff.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get staffId() {
+          return this.record.staffId;
+        }
+        get changeStaffId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.StaffId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              staffId: parsedValue as Public.Tables.Staff.Record["staffId"],
+            });
+          };
+        }
+        get firstName() {
+          return this.record.firstName;
+        }
+        get changeFirstName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.FirstName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              firstName: parsedValue as Public.Tables.Staff.Record["firstName"],
+            });
+          };
+        }
+        get lastName() {
+          return this.record.lastName;
+        }
+        get changeLastName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.LastName.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastName: parsedValue as Public.Tables.Staff.Record["lastName"],
+            });
+          };
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.AddressId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              addressId: parsedValue as Public.Tables.Staff.Record["addressId"],
+            });
+          };
+        }
+        get email() {
+          return this.record.email;
+        }
+        get changeEmail() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.Email.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              email: parsedValue as Public.Tables.Staff.Record["email"],
+            });
+          };
+        }
+        get storeId() {
+          return this.record.storeId;
+        }
+        get changeStoreId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.StoreId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              storeId: parsedValue as Public.Tables.Staff.Record["storeId"],
+            });
+          };
+        }
+        get active() {
+          return this.record.active;
+        }
+        get changeActive() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.Active.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              active: parsedValue as Public.Tables.Staff.Record["active"],
+            });
+          };
+        }
+        get username() {
+          return this.record.username;
+        }
+        get changeUsername() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.Username.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              username: parsedValue as Public.Tables.Staff.Record["username"],
+            });
+          };
+        }
+        get password() {
+          return this.record.password;
+        }
+        get changePassword() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.Password.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              password: parsedValue as Public.Tables.Staff.Record["password"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Staff.Record["lastUpdate"],
+            });
+          };
+        }
+        get picture() {
+          return this.record.picture;
+        }
+        get changePicture() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Staff.Picture.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              picture: parsedValue as Public.Tables.Staff.Record["picture"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Store {
+      export type Row = IsRow<Public.Tables.Store.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Store.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Store.Record,
+          changeCallback: RecordCallback<Public.Tables.Store.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get storeId() {
+          return this.record.storeId;
+        }
+        get changeStoreId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Store.StoreId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              storeId: parsedValue as Public.Tables.Store.Record["storeId"],
+            });
+          };
+        }
+        get managerStaffId() {
+          return this.record.managerStaffId;
+        }
+        get changeManagerStaffId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Store.ManagerStaffId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              managerStaffId:
+                parsedValue as Public.Tables.Store.Record["managerStaffId"],
+            });
+          };
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Store.AddressId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              addressId: parsedValue as Public.Tables.Store.Record["addressId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Store.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Store.Record["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Payment {
+      export type Row = IsRow<Public.Tables.Payment.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Payment.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Payment.Record,
+          changeCallback: RecordCallback<Public.Tables.Payment.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get paymentId() {
+          return this.record.paymentId;
+        }
+        get changePaymentId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.PaymentId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              paymentId:
+                parsedValue as Public.Tables.Payment.Record["paymentId"],
+            });
+          };
+        }
+        get customerId() {
+          return this.record.customerId;
+        }
+        get changeCustomerId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.CustomerId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              customerId:
+                parsedValue as Public.Tables.Payment.Record["customerId"],
+            });
+          };
+        }
+        get staffId() {
+          return this.record.staffId;
+        }
+        get changeStaffId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.StaffId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              staffId: parsedValue as Public.Tables.Payment.Record["staffId"],
+            });
+          };
+        }
+        get rentalId() {
+          return this.record.rentalId;
+        }
+        get changeRentalId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.RentalId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalId: parsedValue as Public.Tables.Payment.Record["rentalId"],
+            });
+          };
+        }
+        get amount() {
+          return this.record.amount;
+        }
+        get changeAmount() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.Amount.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              amount: parsedValue as Public.Tables.Payment.Record["amount"],
+            });
+          };
+        }
+        get paymentDate() {
+          return this.record.paymentDate;
+        }
+        get changePaymentDate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Payment.PaymentDate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              paymentDate:
+                parsedValue as Public.Tables.Payment.Record["paymentDate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Film {
+      export type Row = IsRow<Public.Tables.Film.Record>;
+      export class RowImplementation
+        extends RowBase<Public.Tables.Film.Record>
+        implements Row
+      {
+        constructor(
+          record: Public.Tables.Film.Record,
+          changeCallback: RecordCallback<Public.Tables.Film.Record>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get filmId() {
+          return this.record.filmId;
+        }
+        get changeFilmId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.FilmId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              filmId: parsedValue as Public.Tables.Film.Record["filmId"],
+            });
+          };
+        }
+        get title() {
+          return this.record.title;
+        }
+        get changeTitle() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.Title.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              title: parsedValue as Public.Tables.Film.Record["title"],
+            });
+          };
+        }
+        get description() {
+          return this.record.description;
+        }
+        get changeDescription() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.Description.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              description:
+                parsedValue as Public.Tables.Film.Record["description"],
+            });
+          };
+        }
+        get releaseYear() {
+          return this.record.releaseYear;
+        }
+        get changeReleaseYear() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.ReleaseYear.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              releaseYear:
+                parsedValue as Public.Tables.Film.Record["releaseYear"],
+            });
+          };
+        }
+        get languageId() {
+          return this.record.languageId;
+        }
+        get changeLanguageId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.LanguageId.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              languageId:
+                parsedValue as Public.Tables.Film.Record["languageId"],
+            });
+          };
+        }
+        get rentalDuration() {
+          return this.record.rentalDuration;
+        }
+        get changeRentalDuration() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.RentalDuration.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalDuration:
+                parsedValue as Public.Tables.Film.Record["rentalDuration"],
+            });
+          };
+        }
+        get rentalRate() {
+          return this.record.rentalRate;
+        }
+        get changeRentalRate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.RentalRate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalRate:
+                parsedValue as Public.Tables.Film.Record["rentalRate"],
+            });
+          };
+        }
+        get length() {
+          return this.record.length;
+        }
+        get changeLength() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.Length.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              length: parsedValue as Public.Tables.Film.Record["length"],
+            });
+          };
+        }
+        get replacementCost() {
+          return this.record.replacementCost;
+        }
+        get changeReplacementCost() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.ReplacementCost.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              replacementCost:
+                parsedValue as Public.Tables.Film.Record["replacementCost"],
+            });
+          };
+        }
+        get rating() {
+          return this.record.rating;
+        }
+        get changeRating() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.Rating.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rating: parsedValue as Public.Tables.Film.Record["rating"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.LastUpdate.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Public.Tables.Film.Record["lastUpdate"],
+            });
+          };
+        }
+        get specialFeatures() {
+          return this.record.specialFeatures;
+        }
+        get changeSpecialFeatures() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.SpecialFeatures.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              specialFeatures:
+                parsedValue as Public.Tables.Film.Record["specialFeatures"],
+            });
+          };
+        }
+        get fulltext() {
+          return this.record.fulltext;
+        }
+        get changeFulltext() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Tables.Film.Fulltext.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              fulltext: parsedValue as Public.Tables.Film.Record["fulltext"],
+            });
+          };
+        }
+      }
+    }
   }
 }
+
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.FilmActor.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.FilmActor.all.bind(client),
+          upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
+        });
+      }
+      export namespace ActorId {}
+      export namespace FilmId {}
+      export namespace LastUpdate {}
+      export function useByActorIdFilmId(parameters: ByActorIdFilmId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByActorIdFilmId,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
+          readOperation:
+            client.Public.Tables.FilmActor.ByActorIdFilmId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
+        });
+      }
+      export function useByFilmId(parameters: ByFilmId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByFilmId,
+          Partial<Public.Tables.FilmActor.Values>,
+          Public.Tables.FilmActor.Record
+        >({
+          readOperation:
+            client.Public.Tables.FilmActor.ByFilmId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmActor.RowImplementation,
+          emptyRecord: Public.Tables.FilmActor.emptyRecord,
+        });
+      }
+    }
+    export namespace Address {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Address.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Address.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Address.all.bind(client),
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
+        });
+      }
+      export namespace AddressId {}
+      export namespace Address {}
+      export namespace Address2 {}
+      export namespace District {}
+      export namespace CityId {}
+      export namespace PostalCode {}
+      export namespace Phone {}
+      export namespace LastUpdate {}
+      export function useByAddressId(parameters: ByAddressId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByAddressId,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
+          readOperation:
+            client.Public.Tables.Address.ByAddressId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
+        });
+      }
+      export function useByCityId(parameters: ByCityId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByCityId,
+          Partial<Public.Tables.Address.Values>,
+          Public.Tables.Address.Record
+        >({
+          readOperation:
+            client.Public.Tables.Address.ByCityId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Address.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+          RowImplementation: Public.Tables.Address.RowImplementation,
+          emptyRecord: Public.Tables.Address.emptyRecord,
+        });
+      }
+    }
+    export namespace City {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.City.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.City.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.City.all.bind(client),
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
+        });
+      }
+      export namespace CityId {}
+      export namespace City {}
+      export namespace CountryId {}
+      export namespace LastUpdate {}
+      export function useByCityId(parameters: ByCityId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByCityId,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
+          readOperation: client.Public.Tables.City.ByCityId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
+        });
+      }
+      export function useByCountryId(parameters: ByCountryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByCountryId,
+          Partial<Public.Tables.City.Values>,
+          Public.Tables.City.Record
+        >({
+          readOperation:
+            client.Public.Tables.City.ByCountryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.City.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+          RowImplementation: Public.Tables.City.RowImplementation,
+          emptyRecord: Public.Tables.City.emptyRecord,
+        });
+      }
+    }
+    export namespace Customer {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Customer.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Customer.all.bind(client),
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+        });
+      }
+      export namespace CustomerId {}
+      export namespace StoreId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace Email {}
+      export namespace AddressId {}
+      export namespace Activebool {}
+      export namespace CreateDate {}
+      export namespace LastUpdate {}
+      export namespace Active {}
+      export function useByAddressId(parameters: ByAddressId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByAddressId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          readOperation:
+            client.Public.Tables.Customer.ByAddressId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+        });
+      }
+      export function useByCustomerId(parameters: ByCustomerId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByCustomerId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          readOperation:
+            client.Public.Tables.Customer.ByCustomerId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+        });
+      }
+      export function useByLastName(parameters: ByLastName) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByLastName,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          readOperation:
+            client.Public.Tables.Customer.ByLastName.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+        });
+      }
+      export function useByStoreId(parameters: ByStoreId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByStoreId,
+          Partial<Public.Tables.Customer.Values>,
+          Public.Tables.Customer.Record
+        >({
+          readOperation:
+            client.Public.Tables.Customer.ByStoreId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Customer.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+          RowImplementation: Public.Tables.Customer.RowImplementation,
+          emptyRecord: Public.Tables.Customer.emptyRecord,
+        });
+      }
+    }
+    export namespace Actor {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Actor.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Actor.all.bind(client),
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
+        });
+      }
+      export namespace ActorId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace LastUpdate {}
+      export function useByActorId(parameters: ByActorId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByActorId,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
+          readOperation: client.Public.Tables.Actor.ByActorId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
+        });
+      }
+      export function useByLastName(parameters: ByLastName) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByLastName,
+          Partial<Public.Tables.Actor.Values>,
+          Public.Tables.Actor.Record
+        >({
+          readOperation:
+            client.Public.Tables.Actor.ByLastName.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Actor.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+          RowImplementation: Public.Tables.Actor.RowImplementation,
+          emptyRecord: Public.Tables.Actor.emptyRecord,
+        });
+      }
+    }
+    export namespace FilmCategory {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.FilmCategory.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.FilmCategory.Values>,
+          Public.Tables.FilmCategory.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.read.bind(client),
+          upsertOperation:
+            client.Public.Tables.FilmCategory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.FilmCategory.Values>,
+          Public.Tables.FilmCategory.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.FilmCategory.all.bind(client),
+          upsertOperation:
+            client.Public.Tables.FilmCategory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
+        });
+      }
+      export namespace FilmId {}
+      export namespace CategoryId {}
+      export namespace LastUpdate {}
+      export function useByFilmIdCategoryId(parameters: ByFilmIdCategoryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByFilmIdCategoryId,
+          Partial<Public.Tables.FilmCategory.Values>,
+          Public.Tables.FilmCategory.Record
+        >({
+          readOperation:
+            client.Public.Tables.FilmCategory.ByFilmIdCategoryId.read.bind(
+              client,
+            ),
+          parameters,
+          upsertOperation:
+            client.Public.Tables.FilmCategory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+          RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+          emptyRecord: Public.Tables.FilmCategory.emptyRecord,
+        });
+      }
+    }
+    export namespace Inventory {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Inventory.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Inventory.all.bind(client),
+          upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
+        });
+      }
+      export namespace InventoryId {}
+      export namespace FilmId {}
+      export namespace StoreId {}
+      export namespace LastUpdate {}
+      export function useByInventoryId(parameters: ByInventoryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByInventoryId,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
+          readOperation:
+            client.Public.Tables.Inventory.ByInventoryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
+        });
+      }
+      export function useByStoreIdFilmId(parameters: ByStoreIdFilmId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByStoreIdFilmId,
+          Partial<Public.Tables.Inventory.Values>,
+          Public.Tables.Inventory.Record
+        >({
+          readOperation:
+            client.Public.Tables.Inventory.ByStoreIdFilmId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+          RowImplementation: Public.Tables.Inventory.RowImplementation,
+          emptyRecord: Public.Tables.Inventory.emptyRecord,
+        });
+      }
+    }
+    export namespace Category {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Category.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Category.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Category.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          RowImplementation: Public.Tables.Category.RowImplementation,
+          emptyRecord: Public.Tables.Category.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Category.all.bind(client),
+          upsertOperation: client.Public.Tables.Category.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          RowImplementation: Public.Tables.Category.RowImplementation,
+          emptyRecord: Public.Tables.Category.emptyRecord,
+        });
+      }
+      export namespace CategoryId {}
+      export namespace Name {}
+      export namespace LastUpdate {}
+      export function useByCategoryId(parameters: ByCategoryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByCategoryId,
+          Partial<Public.Tables.Category.Values>,
+          Public.Tables.Category.Record
+        >({
+          readOperation:
+            client.Public.Tables.Category.ByCategoryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Category.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+          RowImplementation: Public.Tables.Category.RowImplementation,
+          emptyRecord: Public.Tables.Category.emptyRecord,
+        });
+      }
+    }
+    export namespace Country {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Country.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Country.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Country.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          RowImplementation: Public.Tables.Country.RowImplementation,
+          emptyRecord: Public.Tables.Country.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Country.all.bind(client),
+          upsertOperation: client.Public.Tables.Country.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          RowImplementation: Public.Tables.Country.RowImplementation,
+          emptyRecord: Public.Tables.Country.emptyRecord,
+        });
+      }
+      export namespace CountryId {}
+      export namespace Country {}
+      export namespace LastUpdate {}
+      export function useByCountryId(parameters: ByCountryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByCountryId,
+          Partial<Public.Tables.Country.Values>,
+          Public.Tables.Country.Record
+        >({
+          readOperation:
+            client.Public.Tables.Country.ByCountryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Country.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+          RowImplementation: Public.Tables.Country.RowImplementation,
+          emptyRecord: Public.Tables.Country.emptyRecord,
+        });
+      }
+    }
+    export namespace Language {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Language.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Language.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Language.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          RowImplementation: Public.Tables.Language.RowImplementation,
+          emptyRecord: Public.Tables.Language.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Language.all.bind(client),
+          upsertOperation: client.Public.Tables.Language.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          RowImplementation: Public.Tables.Language.RowImplementation,
+          emptyRecord: Public.Tables.Language.emptyRecord,
+        });
+      }
+      export namespace LanguageId {}
+      export namespace Name {}
+      export namespace LastUpdate {}
+      export function useByLanguageId(parameters: ByLanguageId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByLanguageId,
+          Partial<Public.Tables.Language.Values>,
+          Public.Tables.Language.Record
+        >({
+          readOperation:
+            client.Public.Tables.Language.ByLanguageId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Language.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+          RowImplementation: Public.Tables.Language.RowImplementation,
+          emptyRecord: Public.Tables.Language.emptyRecord,
+        });
+      }
+    }
+    export namespace Rental {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Rental.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Rental.all.bind(client),
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+        });
+      }
+      export namespace RentalId {}
+      export namespace RentalDate {}
+      export namespace InventoryId {}
+      export namespace CustomerId {}
+      export namespace ReturnDate {}
+      export namespace StaffId {}
+      export namespace LastUpdate {}
+      export function useByInventoryId(parameters: ByInventoryId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByInventoryId,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          readOperation:
+            client.Public.Tables.Rental.ByInventoryId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+        });
+      }
+      export function useByRentalDateInventoryIdCustomerId(
+        parameters: ByRentalDateInventoryIdCustomerId,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByRentalDateInventoryIdCustomerId,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          readOperation:
+            client.Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read.bind(
+              client,
+            ),
+          parameters,
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+        });
+      }
+      export function useByRentalId(parameters: ByRentalId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByRentalId,
+          Partial<Public.Tables.Rental.Values>,
+          Public.Tables.Rental.Record
+        >({
+          readOperation:
+            client.Public.Tables.Rental.ByRentalId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Rental.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+          RowImplementation: Public.Tables.Rental.RowImplementation,
+          emptyRecord: Public.Tables.Rental.emptyRecord,
+        });
+      }
+    }
+    export namespace Staff {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Staff.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Staff.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Staff.all.bind(client),
+          upsertOperation: client.Public.Tables.Staff.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
+        });
+      }
+      export namespace StaffId {}
+      export namespace FirstName {}
+      export namespace LastName {}
+      export namespace AddressId {}
+      export namespace Email {}
+      export namespace StoreId {}
+      export namespace Active {}
+      export namespace Username {}
+      export namespace Password {}
+      export namespace LastUpdate {}
+      export namespace Picture {}
+      export function useByStaffId(parameters: ByStaffId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByStaffId,
+          Partial<Public.Tables.Staff.Values>,
+          Public.Tables.Staff.Record
+        >({
+          readOperation: client.Public.Tables.Staff.ByStaffId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Staff.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+          RowImplementation: Public.Tables.Staff.RowImplementation,
+          emptyRecord: Public.Tables.Staff.emptyRecord,
+        });
+      }
+    }
+    export namespace Store {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Store.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Store.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Store.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Store.all.bind(client),
+          upsertOperation: client.Public.Tables.Store.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
+        });
+      }
+      export namespace StoreId {}
+      export namespace ManagerStaffId {}
+      export namespace AddressId {}
+      export namespace LastUpdate {}
+      export function useByManagerStaffId(parameters: ByManagerStaffId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByManagerStaffId,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
+          readOperation:
+            client.Public.Tables.Store.ByManagerStaffId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Store.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
+        });
+      }
+      export function useByStoreId(parameters: ByStoreId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByStoreId,
+          Partial<Public.Tables.Store.Values>,
+          Public.Tables.Store.Record
+        >({
+          readOperation: client.Public.Tables.Store.ByStoreId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Store.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+          RowImplementation: Public.Tables.Store.RowImplementation,
+          emptyRecord: Public.Tables.Store.emptyRecord,
+        });
+      }
+    }
+    export namespace Payment {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Payment.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Payment.all.bind(client),
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+        });
+      }
+      export namespace PaymentId {}
+      export namespace CustomerId {}
+      export namespace StaffId {}
+      export namespace RentalId {}
+      export namespace Amount {}
+      export namespace PaymentDate {}
+      export function useByCustomerId(parameters: ByCustomerId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByCustomerId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          readOperation:
+            client.Public.Tables.Payment.ByCustomerId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+        });
+      }
+      export function useByPaymentId(parameters: ByPaymentId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPaymentId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          readOperation:
+            client.Public.Tables.Payment.ByPaymentId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+        });
+      }
+      export function useByRentalId(parameters: ByRentalId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByRentalId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          readOperation:
+            client.Public.Tables.Payment.ByRentalId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+        });
+      }
+      export function useByStaffId(parameters: ByStaffId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByStaffId,
+          Partial<Public.Tables.Payment.Values>,
+          Public.Tables.Payment.Record
+        >({
+          readOperation:
+            client.Public.Tables.Payment.ByStaffId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Payment.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+          RowImplementation: Public.Tables.Payment.RowImplementation,
+          emptyRecord: Public.Tables.Payment.emptyRecord,
+        });
+      }
+    }
+    export namespace Film {
+      export function useRow(
+        props: GeneratedRowProps<Public.Tables.Film.Values>,
+      ) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByPrimaryKey,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          parameters: props.values as unknown as ByPrimaryKey,
+          readOperation:
+            client.Public.Tables.Film.ByPrimaryKey.read.bind(client),
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+          createIfNotExists: props.createIfNotExists,
+        });
+      }
+      export function useRows() {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          never,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          parameters: NEVER,
+          readOperation: client.Public.Tables.Film.all.bind(client),
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+        });
+      }
+      export namespace FilmId {}
+      export namespace Title {}
+      export namespace Description {}
+      export namespace ReleaseYear {}
+      export namespace LanguageId {}
+      export namespace RentalDuration {}
+      export namespace RentalRate {}
+      export namespace Length {}
+      export namespace ReplacementCost {}
+      export namespace Rating {}
+      export namespace LastUpdate {}
+      export namespace SpecialFeatures {}
+      export namespace Fulltext {}
+      export function useByFilmId(parameters: ByFilmId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRow<
+          ByFilmId,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          readOperation: client.Public.Tables.Film.ByFilmId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+        });
+      }
+      export function useByFulltext(parameters: ByFulltext) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByFulltext,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          readOperation: client.Public.Tables.Film.ByFulltext.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+        });
+      }
+      export function useByLanguageId(parameters: ByLanguageId) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByLanguageId,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          readOperation:
+            client.Public.Tables.Film.ByLanguageId.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+        });
+      }
+      export function useByTitle(parameters: ByTitle) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLRows<
+          ByTitle,
+          Partial<Public.Tables.Film.Values>,
+          Public.Tables.Film.Record
+        >({
+          readOperation: client.Public.Tables.Film.ByTitle.read.bind(client),
+          parameters,
+          upsertOperation: client.Public.Tables.Film.create.bind(client),
+          deleteOperation:
+            client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+          primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+          RowImplementation: Public.Tables.Film.RowImplementation,
+          emptyRecord: Public.Tables.Film.emptyRecord,
+        });
+      }
+    }
+  }
+}
+// End React generated section

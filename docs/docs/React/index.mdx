@@ -62,14 +62,6 @@ web page we're about to build.
 npx tsx watch ./src/server/main.ts
 ```
 
-And check for some data:
-
-```shell
-curl -X POST http://localhost:3000/embracesql \
-   -H 'Content-Type: application/json' \
-   -d '{"operation":"Public.Actor.byActorId","parameters":{"actorId": 1}}'
-```
-
 At this point, if you are getting data -- it's time to make a react app!
 
 ### Generate a React Client

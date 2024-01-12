@@ -4988,6 +4988,785 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Types {
+    export type ActorArray = Array<Public.Types.Actor>;
+
+    export type ActorInfoArray = Array<Public.Types.ActorInfo>;
+
+    export type AddressArray = Array<Public.Types.Address>;
+
+    export type CategoryArray = Array<Public.Types.Category>;
+
+    export type CityArray = Array<Public.Types.City>;
+
+    export type CountryArray = Array<Public.Types.Country>;
+
+    export type CustomerArray = Array<Public.Types.Customer>;
+
+    export type CustomerListArray = Array<Public.Types.CustomerList>;
+
+    export type FilmArray = Array<Public.Types.Film>;
+
+    export type FilmActorArray = Array<Public.Types.FilmActor>;
+
+    export type FilmCategoryArray = Array<Public.Types.FilmCategory>;
+
+    export type FilmListArray = Array<Public.Types.FilmList>;
+
+    export type InventoryArray = Array<Public.Types.Inventory>;
+
+    export type LanguageArray = Array<Public.Types.Language>;
+
+    export type MpaaRatingArray = Array<Public.Types.MpaaRating>;
+
+    export type NicerButSlowerFilmListArray =
+      Array<Public.Types.NicerButSlowerFilmList>;
+
+    export type PaymentArray = Array<Public.Types.Payment>;
+
+    export type RentalArray = Array<Public.Types.Rental>;
+
+    export type SalesByFilmCategoryArray =
+      Array<Public.Types.SalesByFilmCategory>;
+
+    export type SalesByStoreArray = Array<Public.Types.SalesByStore>;
+
+    export type StaffArray = Array<Public.Types.Staff>;
+
+    export type StaffListArray = Array<Public.Types.StaffList>;
+
+    export type StoreArray = Array<Public.Types.Store>;
+
+    export type YearArray = Array<Public.Types.Year>;
+
+    export type Actor = {
+      actorId: PgCatalog.Types.Int4;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type ActorInfo = {
+      actorId: Nullable<PgCatalog.Types.Int4>;
+      firstName: Nullable<PgCatalog.Types.Varchar>;
+      lastName: Nullable<PgCatalog.Types.Varchar>;
+      filmInfo: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Address = {
+      addressId: PgCatalog.Types.Int4;
+      address: PgCatalog.Types.Varchar;
+      address2: Nullable<PgCatalog.Types.Varchar>;
+      district: PgCatalog.Types.Varchar;
+      cityId: PgCatalog.Types.Int2;
+      postalCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Category = {
+      categoryId: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type City = {
+      cityId: PgCatalog.Types.Int4;
+      city: PgCatalog.Types.Varchar;
+      countryId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Country = {
+      countryId: PgCatalog.Types.Int4;
+      country: PgCatalog.Types.Varchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Customer = {
+      customerId: PgCatalog.Types.Int4;
+      storeId: PgCatalog.Types.Int2;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      email: Nullable<PgCatalog.Types.Varchar>;
+      addressId: PgCatalog.Types.Int2;
+      activebool: PgCatalog.Types.Bool;
+      createDate: PgCatalog.Types.Date;
+      lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+      active: Nullable<PgCatalog.Types.Int4>;
+    };
+
+    export type CustomerList = {
+      id: Nullable<PgCatalog.Types.Int4>;
+      name: Nullable<PgCatalog.Types.Text>;
+      address: Nullable<PgCatalog.Types.Varchar>;
+      zipCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: Nullable<PgCatalog.Types.Varchar>;
+      city: Nullable<PgCatalog.Types.Varchar>;
+      country: Nullable<PgCatalog.Types.Varchar>;
+      notes: Nullable<PgCatalog.Types.Text>;
+      sid: Nullable<PgCatalog.Types.Int2>;
+    };
+
+    export type Film = {
+      filmId: PgCatalog.Types.Int4;
+      title: PgCatalog.Types.Varchar;
+      description: Nullable<PgCatalog.Types.Text>;
+      releaseYear: Nullable<Public.Types.Year>;
+      languageId: PgCatalog.Types.Int2;
+      rentalDuration: PgCatalog.Types.Int2;
+      rentalRate: PgCatalog.Types.Numeric;
+      length: Nullable<PgCatalog.Types.Int2>;
+      replacementCost: PgCatalog.Types.Numeric;
+      rating: Nullable<Public.Types.MpaaRating>;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      specialFeatures: PgCatalog.Types.TextArray;
+      fulltext: PgCatalog.Types.Tsvector;
+    };
+
+    export type FilmActor = {
+      actorId: PgCatalog.Types.Int2;
+      filmId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type FilmCategory = {
+      filmId: PgCatalog.Types.Int2;
+      categoryId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type FilmList = {
+      fid: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      description: Nullable<PgCatalog.Types.Text>;
+      category: Nullable<PgCatalog.Types.Varchar>;
+      price: Nullable<PgCatalog.Types.Numeric>;
+      length: Nullable<PgCatalog.Types.Int2>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Inventory = {
+      inventoryId: PgCatalog.Types.Int4;
+      filmId: PgCatalog.Types.Int2;
+      storeId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Language = {
+      languageId: PgCatalog.Types.Int4;
+      name: PgCatalog.Types.Bpchar;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export enum MpaaRating {
+      G = "G",
+      PG = "PG",
+      PG_13 = "PG-13",
+      R = "R",
+      NC_17 = "NC-17",
+    }
+
+    export type NicerButSlowerFilmList = {
+      fid: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      description: Nullable<PgCatalog.Types.Text>;
+      category: Nullable<PgCatalog.Types.Varchar>;
+      price: Nullable<PgCatalog.Types.Numeric>;
+      length: Nullable<PgCatalog.Types.Int2>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: Nullable<PgCatalog.Types.Text>;
+    };
+
+    export type Payment = {
+      paymentId: PgCatalog.Types.Int4;
+      customerId: PgCatalog.Types.Int2;
+      staffId: PgCatalog.Types.Int2;
+      rentalId: PgCatalog.Types.Int4;
+      amount: PgCatalog.Types.Numeric;
+      paymentDate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Rental = {
+      rentalId: PgCatalog.Types.Int4;
+      rentalDate: PgCatalog.Types.Timestamp;
+      inventoryId: PgCatalog.Types.Int4;
+      customerId: PgCatalog.Types.Int2;
+      returnDate: Nullable<PgCatalog.Types.Timestamp>;
+      staffId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type SalesByFilmCategory = {
+      category: Nullable<PgCatalog.Types.Varchar>;
+      totalSales: Nullable<PgCatalog.Types.Numeric>;
+    };
+
+    export type SalesByStore = {
+      store: Nullable<PgCatalog.Types.Text>;
+      manager: Nullable<PgCatalog.Types.Text>;
+      totalSales: Nullable<PgCatalog.Types.Numeric>;
+    };
+
+    export type Staff = {
+      staffId: PgCatalog.Types.Int4;
+      firstName: PgCatalog.Types.Varchar;
+      lastName: PgCatalog.Types.Varchar;
+      addressId: PgCatalog.Types.Int2;
+      email: Nullable<PgCatalog.Types.Varchar>;
+      storeId: PgCatalog.Types.Int2;
+      active: PgCatalog.Types.Bool;
+      username: PgCatalog.Types.Varchar;
+      password: Nullable<PgCatalog.Types.Varchar>;
+      lastUpdate: PgCatalog.Types.Timestamp;
+      picture: Nullable<PgCatalog.Types.Bytea>;
+    };
+
+    export type StaffList = {
+      id: Nullable<PgCatalog.Types.Int4>;
+      name: Nullable<PgCatalog.Types.Text>;
+      address: Nullable<PgCatalog.Types.Varchar>;
+      zipCode: Nullable<PgCatalog.Types.Varchar>;
+      phone: Nullable<PgCatalog.Types.Varchar>;
+      city: Nullable<PgCatalog.Types.Varchar>;
+      country: Nullable<PgCatalog.Types.Varchar>;
+      sid: Nullable<PgCatalog.Types.Int2>;
+    };
+
+    export type Store = {
+      storeId: PgCatalog.Types.Int4;
+      managerStaffId: PgCatalog.Types.Int2;
+      addressId: PgCatalog.Types.Int2;
+      lastUpdate: PgCatalog.Types.Timestamp;
+    };
+
+    export type Year = PgCatalog.Types.Int4;
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export type Parameters = {
+        pFilmId: Nullable<PgCatalog.Types.Int4>;
+        pStoreId: Nullable<PgCatalog.Types.Int4>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace FilmNotInStock {
+      export type Parameters = {
+        pFilmId: Nullable<PgCatalog.Types.Int4>;
+        pStoreId: Nullable<PgCatalog.Types.Int4>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace GetCustomerBalance {
+      export type Parameters = {
+        pCustomerId: Nullable<PgCatalog.Types.Int4>;
+        pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Numeric>;
+    }
+    export namespace InventoryHeldByCustomer {
+      export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
+
+      export type Results = Nullable<PgCatalog.Types.Int4>;
+    }
+    export namespace InventoryInStock {
+      export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
+
+      export type Results = Nullable<PgCatalog.Types.Bool>;
+    }
+    export namespace LastDay {
+      export type Parameters = {
+        argument_0: Nullable<PgCatalog.Types.Timestamp>;
+      };
+
+      export type Results = Nullable<PgCatalog.Types.Date>;
+    }
+    export namespace RewardsReport {
+      export type Parameters = {
+        minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
+        minDollarAmountPurchased: Nullable<PgCatalog.Types.Numeric>;
+      };
+
+      export type Results = NullableMembers<Public.Types.Customer>;
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Record = {
+        actorId: Public.Types.FilmActor["actorId"];
+        filmId: Public.Types.FilmActor["filmId"];
+        lastUpdate: Public.Types.FilmActor["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return { actorId: undefined, filmId: undefined, lastUpdate: undefined };
+      }
+      export type ByActorIdFilmId = {
+        actorId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+      export type ByPrimaryKey = ByActorIdFilmId;
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Address {
+      export type Record = {
+        addressId: Public.Types.Address["addressId"];
+        address: Public.Types.Address["address"];
+        address2: Public.Types.Address["address2"] | null;
+        district: Public.Types.Address["district"];
+        cityId: Public.Types.Address["cityId"];
+        postalCode: Public.Types.Address["postalCode"] | null;
+        phone: Public.Types.Address["phone"];
+        lastUpdate: Public.Types.Address["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          addressId: undefined,
+          address: undefined,
+          address2: undefined,
+          district: undefined,
+          cityId: undefined,
+          postalCode: undefined,
+          phone: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByAddressId;
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "addressId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace City {
+      export type Record = {
+        cityId: Public.Types.City["cityId"];
+        city: Public.Types.City["city"];
+        countryId: Public.Types.City["countryId"];
+        lastUpdate: Public.Types.City["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          cityId: undefined,
+          city: undefined,
+          countryId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCityId = {
+        cityId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCityId;
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "cityId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Customer {
+      export type Record = {
+        customerId: Public.Types.Customer["customerId"];
+        storeId: Public.Types.Customer["storeId"];
+        firstName: Public.Types.Customer["firstName"];
+        lastName: Public.Types.Customer["lastName"];
+        email: Public.Types.Customer["email"] | null;
+        addressId: Public.Types.Customer["addressId"];
+        activebool: Public.Types.Customer["activebool"];
+        createDate: Public.Types.Customer["createDate"];
+        lastUpdate: Public.Types.Customer["lastUpdate"] | null;
+        active: Public.Types.Customer["active"] | null;
+      };
+      export function emptyRecord() {
+        return {
+          customerId: undefined,
+          storeId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          email: undefined,
+          addressId: undefined,
+          activebool: undefined,
+          createDate: undefined,
+          lastUpdate: undefined,
+          active: undefined,
+        };
+      }
+      export type ByAddressId = {
+        addressId: PgCatalog.Types.Int2;
+      };
+
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCustomerId;
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<
+        Record,
+        "customerId" | "activebool" | "createDate" | "lastUpdate"
+      >;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Actor {
+      export type Record = {
+        actorId: Public.Types.Actor["actorId"];
+        firstName: Public.Types.Actor["firstName"];
+        lastName: Public.Types.Actor["lastName"];
+        lastUpdate: Public.Types.Actor["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          actorId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByActorId = {
+        actorId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByActorId;
+      export type ByLastName = {
+        lastName: PgCatalog.Types.Varchar;
+      };
+
+      export type Optional = Pick<Record, "actorId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace FilmCategory {
+      export type Record = {
+        filmId: Public.Types.FilmCategory["filmId"];
+        categoryId: Public.Types.FilmCategory["categoryId"];
+        lastUpdate: Public.Types.FilmCategory["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          filmId: undefined,
+          categoryId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByFilmIdCategoryId = {
+        filmId: PgCatalog.Types.Int2;
+        categoryId: PgCatalog.Types.Int2;
+      };
+      export type ByPrimaryKey = ByFilmIdCategoryId;
+
+      export type Optional = Pick<Record, "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Inventory {
+      export type Record = {
+        inventoryId: Public.Types.Inventory["inventoryId"];
+        filmId: Public.Types.Inventory["filmId"];
+        storeId: Public.Types.Inventory["storeId"];
+        lastUpdate: Public.Types.Inventory["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          inventoryId: undefined,
+          filmId: undefined,
+          storeId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByInventoryId;
+      export type ByStoreIdFilmId = {
+        storeId: PgCatalog.Types.Int2;
+        filmId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Category {
+      export type Record = {
+        categoryId: Public.Types.Category["categoryId"];
+        name: Public.Types.Category["name"];
+        lastUpdate: Public.Types.Category["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          categoryId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCategoryId = {
+        categoryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCategoryId;
+
+      export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Country {
+      export type Record = {
+        countryId: Public.Types.Country["countryId"];
+        country: Public.Types.Country["country"];
+        lastUpdate: Public.Types.Country["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          countryId: undefined,
+          country: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByCountryId = {
+        countryId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByCountryId;
+
+      export type Optional = Pick<Record, "countryId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Language {
+      export type Record = {
+        languageId: Public.Types.Language["languageId"];
+        name: Public.Types.Language["name"];
+        lastUpdate: Public.Types.Language["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          languageId: undefined,
+          name: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByLanguageId;
+
+      export type Optional = Pick<Record, "languageId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Rental {
+      export type Record = {
+        rentalId: Public.Types.Rental["rentalId"];
+        rentalDate: Public.Types.Rental["rentalDate"];
+        inventoryId: Public.Types.Rental["inventoryId"];
+        customerId: Public.Types.Rental["customerId"];
+        returnDate: Public.Types.Rental["returnDate"] | null;
+        staffId: Public.Types.Rental["staffId"];
+        lastUpdate: Public.Types.Rental["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          rentalId: undefined,
+          rentalDate: undefined,
+          inventoryId: undefined,
+          customerId: undefined,
+          returnDate: undefined,
+          staffId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByInventoryId = {
+        inventoryId: PgCatalog.Types.Int4;
+      };
+
+      export type ByRentalDateInventoryIdCustomerId = {
+        rentalDate: PgCatalog.Types.Timestamp;
+        inventoryId: PgCatalog.Types.Int4;
+        customerId: PgCatalog.Types.Int2;
+      };
+
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByRentalId;
+
+      export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Staff {
+      export type Record = {
+        staffId: Public.Types.Staff["staffId"];
+        firstName: Public.Types.Staff["firstName"];
+        lastName: Public.Types.Staff["lastName"];
+        addressId: Public.Types.Staff["addressId"];
+        email: Public.Types.Staff["email"] | null;
+        storeId: Public.Types.Staff["storeId"];
+        active: Public.Types.Staff["active"];
+        username: Public.Types.Staff["username"];
+        password: Public.Types.Staff["password"] | null;
+        lastUpdate: Public.Types.Staff["lastUpdate"];
+        picture: Public.Types.Staff["picture"] | null;
+      };
+      export function emptyRecord() {
+        return {
+          staffId: undefined,
+          firstName: undefined,
+          lastName: undefined,
+          addressId: undefined,
+          email: undefined,
+          storeId: undefined,
+          active: undefined,
+          username: undefined,
+          password: undefined,
+          lastUpdate: undefined,
+          picture: undefined,
+        };
+      }
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByStaffId;
+
+      export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Store {
+      export type Record = {
+        storeId: Public.Types.Store["storeId"];
+        managerStaffId: Public.Types.Store["managerStaffId"];
+        addressId: Public.Types.Store["addressId"];
+        lastUpdate: Public.Types.Store["lastUpdate"];
+      };
+      export function emptyRecord() {
+        return {
+          storeId: undefined,
+          managerStaffId: undefined,
+          addressId: undefined,
+          lastUpdate: undefined,
+        };
+      }
+      export type ByManagerStaffId = {
+        managerStaffId: PgCatalog.Types.Int2;
+      };
+
+      export type ByStoreId = {
+        storeId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByStoreId;
+
+      export type Optional = Pick<Record, "storeId" | "lastUpdate">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Payment {
+      export type Record = {
+        paymentId: Public.Types.Payment["paymentId"];
+        customerId: Public.Types.Payment["customerId"];
+        staffId: Public.Types.Payment["staffId"];
+        rentalId: Public.Types.Payment["rentalId"];
+        amount: Public.Types.Payment["amount"];
+        paymentDate: Public.Types.Payment["paymentDate"];
+      };
+      export function emptyRecord() {
+        return {
+          paymentId: undefined,
+          customerId: undefined,
+          staffId: undefined,
+          rentalId: undefined,
+          amount: undefined,
+          paymentDate: undefined,
+        };
+      }
+      export type ByCustomerId = {
+        customerId: PgCatalog.Types.Int2;
+      };
+
+      export type ByPaymentId = {
+        paymentId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByPaymentId;
+      export type ByRentalId = {
+        rentalId: PgCatalog.Types.Int4;
+      };
+
+      export type ByStaffId = {
+        staffId: PgCatalog.Types.Int2;
+      };
+
+      export type Optional = Pick<Record, "paymentId">;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+    export namespace Film {
+      export type Record = {
+        filmId: Public.Types.Film["filmId"];
+        title: Public.Types.Film["title"];
+        description: Public.Types.Film["description"] | null;
+        releaseYear: Public.Types.Film["releaseYear"] | null;
+        languageId: Public.Types.Film["languageId"];
+        rentalDuration: Public.Types.Film["rentalDuration"];
+        rentalRate: Public.Types.Film["rentalRate"];
+        length: Public.Types.Film["length"] | null;
+        replacementCost: Public.Types.Film["replacementCost"];
+        rating: Public.Types.Film["rating"] | null;
+        lastUpdate: Public.Types.Film["lastUpdate"];
+        specialFeatures: Public.Types.Film["specialFeatures"] | null;
+        fulltext: Public.Types.Film["fulltext"];
+      };
+      export function emptyRecord() {
+        return {
+          filmId: undefined,
+          title: undefined,
+          description: undefined,
+          releaseYear: undefined,
+          languageId: undefined,
+          rentalDuration: undefined,
+          rentalRate: undefined,
+          length: undefined,
+          replacementCost: undefined,
+          rating: undefined,
+          lastUpdate: undefined,
+          specialFeatures: undefined,
+          fulltext: undefined,
+        };
+      }
+      export type ByFilmId = {
+        filmId: PgCatalog.Types.Int4;
+      };
+      export type ByPrimaryKey = ByFilmId;
+      export type ByFulltext = {
+        fulltext: PgCatalog.Types.Gtsvector;
+      };
+
+      export type ByLanguageId = {
+        languageId: PgCatalog.Types.Int2;
+      };
+
+      export type ByTitle = {
+        title: PgCatalog.Types.Varchar;
+      };
+
+      export type Optional = Pick<
+        Record,
+        | "filmId"
+        | "rentalDuration"
+        | "rentalRate"
+        | "replacementCost"
+        | "rating"
+        | "lastUpdate"
+      >;
+      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export type AdministrableRoleAuthorizationsArray =
@@ -6195,76 +6974,6 @@ export namespace InformationSchema {
       }
       export type ByPrimaryKey = never;
       export type Optional = Pick<Record, never>;
-      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
-    }
-  }
-}
-export namespace Public {
-  export namespace Types {
-    export type ChecklistArray = Array<Public.Types.Checklist>;
-
-    export type ChecklistItemArray = Array<Public.Types.ChecklistItem>;
-
-    export type Checklist = {
-      id: PgCatalog.Types.Uuid;
-      name: PgCatalog.Types.Text;
-      createdAt: PgCatalog.Types.Timestamp;
-    };
-
-    export type ChecklistItem = {
-      id: PgCatalog.Types.Uuid;
-      checklistId: PgCatalog.Types.Uuid;
-      title: PgCatalog.Types.Text;
-      checked: PgCatalog.Types.Bool;
-      createdAt: PgCatalog.Types.Timestamp;
-    };
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {
-      export type Record = {
-        id: Public.Types.Checklist["id"];
-        name: Public.Types.Checklist["name"];
-        createdAt: Public.Types.Checklist["createdAt"];
-      };
-      export function emptyRecord() {
-        return { id: undefined, name: undefined, createdAt: undefined };
-      }
-      export type ById = {
-        id: PgCatalog.Types.Uuid;
-      };
-      export type ByPrimaryKey = ById;
-
-      export type Optional = Pick<Record, "id" | "createdAt">;
-      export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
-    }
-    export namespace ChecklistItem {
-      export type Record = {
-        id: Public.Types.ChecklistItem["id"];
-        checklistId: Public.Types.ChecklistItem["checklistId"];
-        title: Public.Types.ChecklistItem["title"];
-        checked: Public.Types.ChecklistItem["checked"];
-        createdAt: Public.Types.ChecklistItem["createdAt"];
-      };
-      export function emptyRecord() {
-        return {
-          id: undefined,
-          checklistId: undefined,
-          title: undefined,
-          checked: undefined,
-          createdAt: undefined,
-        };
-      }
-      export type ByChecklistId = {
-        checklistId: PgCatalog.Types.Uuid;
-      };
-
-      export type ById = {
-        id: PgCatalog.Types.Uuid;
-      };
-      export type ByPrimaryKey = ById;
-
-      export type Optional = Pick<Record, "id" | "checked" | "createdAt">;
       export type Values = PartiallyOptional<Record, Optional & ByPrimaryKey>;
     }
   }
@@ -13034,6 +13743,876 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Types {
+    export namespace ActorArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Actor.parse(e));
+      }
+    }
+    export namespace ActorInfoArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => ActorInfo.parse(e));
+      }
+    }
+    export namespace AddressArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Address.parse(e));
+      }
+    }
+    export namespace CategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Category.parse(e));
+      }
+    }
+    export namespace CityArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => City.parse(e));
+      }
+    }
+    export namespace CountryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Country.parse(e));
+      }
+    }
+    export namespace CustomerArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Customer.parse(e));
+      }
+    }
+    export namespace CustomerListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => CustomerList.parse(e));
+      }
+    }
+    export namespace FilmArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Film.parse(e));
+      }
+    }
+    export namespace FilmActorArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmActor.parse(e));
+      }
+    }
+    export namespace FilmCategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmCategory.parse(e));
+      }
+    }
+    export namespace FilmListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => FilmList.parse(e));
+      }
+    }
+    export namespace InventoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Inventory.parse(e));
+      }
+    }
+    export namespace LanguageArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Language.parse(e));
+      }
+    }
+    export namespace MpaaRatingArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => MpaaRating.parse(e));
+      }
+    }
+    export namespace NicerButSlowerFilmListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => NicerButSlowerFilmList.parse(e));
+      }
+    }
+    export namespace PaymentArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Payment.parse(e));
+      }
+    }
+    export namespace RentalArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Rental.parse(e));
+      }
+    }
+    export namespace SalesByFilmCategoryArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => SalesByFilmCategory.parse(e));
+      }
+    }
+    export namespace SalesByStoreArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => SalesByStore.parse(e));
+      }
+    }
+    export namespace StaffArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Staff.parse(e));
+      }
+    }
+    export namespace StaffListArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => StaffList.parse(e));
+      }
+    }
+    export namespace StoreArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Store.parse(e));
+      }
+    }
+    export namespace YearArray {
+      export function parse(from: unknown) {
+        // ArrayType
+        if (from === null || from === undefined) return [];
+
+        const rawArray = Array.isArray(from)
+          ? from
+          : (JSON.parse(from as string) as unknown[]);
+        return rawArray.map((e: unknown) => Year.parse(e));
+      }
+    }
+    export namespace Actor {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Actor.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int4.parse(from.actorId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace ActorInfo {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.ActorInfo.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int4.parse(from.actorId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            filmInfo: PgCatalog.Types.Text.parse(from.filmInfo),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Address {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Address.is(from)) {
+          return {
+            addressId: PgCatalog.Types.Int4.parse(from.addressId),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            address2: PgCatalog.Types.Varchar.parse(from.address2),
+            district: PgCatalog.Types.Varchar.parse(from.district),
+            cityId: PgCatalog.Types.Int2.parse(from.cityId),
+            postalCode: PgCatalog.Types.Varchar.parse(from.postalCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Category {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Category.is(from)) {
+          return {
+            categoryId: PgCatalog.Types.Int4.parse(from.categoryId),
+            name: PgCatalog.Types.Varchar.parse(from.name),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace City {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.City.is(from)) {
+          return {
+            cityId: PgCatalog.Types.Int4.parse(from.cityId),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            countryId: PgCatalog.Types.Int2.parse(from.countryId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Country {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Country.is(from)) {
+          return {
+            countryId: PgCatalog.Types.Int4.parse(from.countryId),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Customer {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Customer.is(from)) {
+          return {
+            customerId: PgCatalog.Types.Int4.parse(from.customerId),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            email: PgCatalog.Types.Varchar.parse(from.email),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            activebool: PgCatalog.Types.Bool.parse(from.activebool),
+            createDate: PgCatalog.Types.Date.parse(from.createDate),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            active: PgCatalog.Types.Int4.parse(from.active),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace CustomerList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.CustomerList.is(from)) {
+          return {
+            id: PgCatalog.Types.Int4.parse(from.id),
+            name: PgCatalog.Types.Text.parse(from.name),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            zipCode: PgCatalog.Types.Varchar.parse(from.zipCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            notes: PgCatalog.Types.Text.parse(from.notes),
+            sid: PgCatalog.Types.Int2.parse(from.sid),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Film {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Film.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int4.parse(from.filmId),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            releaseYear: Public.Types.Year.parse(from.releaseYear),
+            languageId: PgCatalog.Types.Int2.parse(from.languageId),
+            rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+            rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            replacementCost: PgCatalog.Types.Numeric.parse(
+              from.replacementCost,
+            ),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            specialFeatures: PgCatalog.Types.TextArray.parse(
+              from.specialFeatures,
+            ),
+            fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmActor {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmActor.is(from)) {
+          return {
+            actorId: PgCatalog.Types.Int2.parse(from.actorId),
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmCategory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmCategory.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            categoryId: PgCatalog.Types.Int2.parse(from.categoryId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace FilmList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.FilmList.is(from)) {
+          return {
+            fid: PgCatalog.Types.Int4.parse(from.fid),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            price: PgCatalog.Types.Numeric.parse(from.price),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.Text.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Inventory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Inventory.is(from)) {
+          return {
+            inventoryId: PgCatalog.Types.Int4.parse(from.inventoryId),
+            filmId: PgCatalog.Types.Int2.parse(from.filmId),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Language {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Language.is(from)) {
+          return {
+            languageId: PgCatalog.Types.Int4.parse(from.languageId),
+            name: PgCatalog.Types.Bpchar.parse(from.name),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace MpaaRating {
+      export function parse(from: unknown) {
+        // Enum
+        if (from === null || from === undefined) return null;
+        if (
+          Object.values(Public.Types.MpaaRating).includes(
+            from as Public.Types.MpaaRating,
+          )
+        ) {
+          return from as Public.Types.MpaaRating;
+        } else {
+          return undefined;
+        }
+      }
+    }
+    export namespace NicerButSlowerFilmList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.NicerButSlowerFilmList.is(from)) {
+          return {
+            fid: PgCatalog.Types.Int4.parse(from.fid),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            description: PgCatalog.Types.Text.parse(from.description),
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            price: PgCatalog.Types.Numeric.parse(from.price),
+            length: PgCatalog.Types.Int2.parse(from.length),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.Text.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Payment {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Payment.is(from)) {
+          return {
+            paymentId: PgCatalog.Types.Int4.parse(from.paymentId),
+            customerId: PgCatalog.Types.Int2.parse(from.customerId),
+            staffId: PgCatalog.Types.Int2.parse(from.staffId),
+            rentalId: PgCatalog.Types.Int4.parse(from.rentalId),
+            amount: PgCatalog.Types.Numeric.parse(from.amount),
+            paymentDate: PgCatalog.Types.Timestamp.parse(from.paymentDate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Rental {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Rental.is(from)) {
+          return {
+            rentalId: PgCatalog.Types.Int4.parse(from.rentalId),
+            rentalDate: PgCatalog.Types.Timestamp.parse(from.rentalDate),
+            inventoryId: PgCatalog.Types.Int4.parse(from.inventoryId),
+            customerId: PgCatalog.Types.Int2.parse(from.customerId),
+            returnDate: PgCatalog.Types.Timestamp.parse(from.returnDate),
+            staffId: PgCatalog.Types.Int2.parse(from.staffId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace SalesByFilmCategory {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.SalesByFilmCategory.is(from)) {
+          return {
+            category: PgCatalog.Types.Varchar.parse(from.category),
+            totalSales: PgCatalog.Types.Numeric.parse(from.totalSales),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace SalesByStore {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.SalesByStore.is(from)) {
+          return {
+            store: PgCatalog.Types.Text.parse(from.store),
+            manager: PgCatalog.Types.Text.parse(from.manager),
+            totalSales: PgCatalog.Types.Numeric.parse(from.totalSales),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Staff {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Staff.is(from)) {
+          return {
+            staffId: PgCatalog.Types.Int4.parse(from.staffId),
+            firstName: PgCatalog.Types.Varchar.parse(from.firstName),
+            lastName: PgCatalog.Types.Varchar.parse(from.lastName),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            email: PgCatalog.Types.Varchar.parse(from.email),
+            storeId: PgCatalog.Types.Int2.parse(from.storeId),
+            active: PgCatalog.Types.Bool.parse(from.active),
+            username: PgCatalog.Types.Varchar.parse(from.username),
+            password: PgCatalog.Types.Varchar.parse(from.password),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+            picture: PgCatalog.Types.Bytea.parse(from.picture),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace StaffList {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.StaffList.is(from)) {
+          return {
+            id: PgCatalog.Types.Int4.parse(from.id),
+            name: PgCatalog.Types.Text.parse(from.name),
+            address: PgCatalog.Types.Varchar.parse(from.address),
+            zipCode: PgCatalog.Types.Varchar.parse(from.zipCode),
+            phone: PgCatalog.Types.Varchar.parse(from.phone),
+            city: PgCatalog.Types.Varchar.parse(from.city),
+            country: PgCatalog.Types.Varchar.parse(from.country),
+            sid: PgCatalog.Types.Int2.parse(from.sid),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Store {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Public.Types.Store.is(from)) {
+          return {
+            storeId: PgCatalog.Types.Int4.parse(from.storeId),
+            managerStaffId: PgCatalog.Types.Int2.parse(from.managerStaffId),
+            addressId: PgCatalog.Types.Int2.parse(from.addressId),
+            lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+    export namespace Year {
+      export function parse(from: unknown) {
+        // DomainType
+        if (from === null || from === undefined) return null;
+        return PgCatalog.Types.Int4.parse(from);
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.FilmInStock.Parameters.is(from)) {
+            return {
+              pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
+              pStoreId: PgCatalog.Types.Int4.parse(from.pStoreId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace FilmNotInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.FilmNotInStock.Parameters.is(from)) {
+            return {
+              pFilmId: PgCatalog.Types.Int4.parse(from.pFilmId),
+              pStoreId: PgCatalog.Types.Int4.parse(from.pStoreId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace GetCustomerBalance {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.GetCustomerBalance.Parameters.is(from)) {
+            return {
+              pCustomerId: PgCatalog.Types.Int4.parse(from.pCustomerId),
+              pEffectiveDate: PgCatalog.Types.Timestamp.parse(
+                from.pEffectiveDate,
+              ),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Numeric.parse(from);
+        }
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.InventoryHeldByCustomer.Parameters.is(from)) {
+            return {
+              pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Int4.parse(from);
+        }
+      }
+    }
+    export namespace InventoryInStock {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.InventoryInStock.Parameters.is(from)) {
+            return {
+              pInventoryId: PgCatalog.Types.Int4.parse(from.pInventoryId),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Bool.parse(from);
+        }
+      }
+    }
+    export namespace LastDay {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.LastDay.Parameters.is(from)) {
+            return {
+              argument_0: PgCatalog.Types.Timestamp.parse(from.argument_0),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return PgCatalog.Types.Date.parse(from);
+        }
+      }
+    }
+    export namespace RewardsReport {
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Public.Procedures.RewardsReport.Parameters.is(from)) {
+            return {
+              minMonthlyPurchases: PgCatalog.Types.Int4.parse(
+                from.minMonthlyPurchases,
+              ),
+              minDollarAmountPurchased: PgCatalog.Types.Numeric.parse(
+                from.minDollarAmountPurchased,
+              ),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Results {
+        export function parse(from: unknown) {
+          // AliasType
+          if (from === null || from === undefined) return null;
+          return Public.Types.Customer.parse(from);
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace Create {}
+    }
+    export namespace Address {
+      export namespace Create {}
+    }
+    export namespace City {
+      export namespace Create {}
+    }
+    export namespace Customer {
+      export namespace Create {}
+    }
+    export namespace Actor {
+      export namespace Create {}
+    }
+    export namespace FilmCategory {
+      export namespace Create {}
+    }
+    export namespace Inventory {
+      export namespace Create {}
+    }
+    export namespace Category {
+      export namespace Create {}
+    }
+    export namespace Country {
+      export namespace Create {}
+    }
+    export namespace Language {
+      export namespace Create {}
+    }
+    export namespace Rental {
+      export namespace Create {}
+    }
+    export namespace Staff {
+      export namespace Create {}
+    }
+    export namespace Store {
+      export namespace Create {}
+    }
+    export namespace Payment {
+      export namespace Create {}
+    }
+    export namespace Film {
+      export namespace Create {}
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export namespace AdministrableRoleAuthorizationsArray {
@@ -16635,71 +18214,6 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Public {
-  export namespace Types {
-    export namespace ChecklistArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => Checklist.parse(e));
-      }
-    }
-    export namespace ChecklistItemArray {
-      export function parse(from: unknown) {
-        // ArrayType
-        if (from === null || from === undefined) return [];
-
-        const rawArray = Array.isArray(from)
-          ? from
-          : (JSON.parse(from as string) as unknown[]);
-        return rawArray.map((e: unknown) => ChecklistItem.parse(e));
-      }
-    }
-    export namespace Checklist {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Public.Types.Checklist.is(from)) {
-          return {
-            id: PgCatalog.Types.Uuid.parse(from.id),
-            name: PgCatalog.Types.Text.parse(from.name),
-            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-    export namespace ChecklistItem {
-      export function parse(from: unknown) {
-        // CompositeType
-        if (from === null || from === undefined) return null;
-        if (Public.Types.ChecklistItem.is(from)) {
-          return {
-            id: PgCatalog.Types.Uuid.parse(from.id),
-            checklistId: PgCatalog.Types.Uuid.parse(from.checklistId),
-            title: PgCatalog.Types.Text.parse(from.title),
-            checked: PgCatalog.Types.Bool.parse(from.checked),
-            createdAt: PgCatalog.Types.Timestamp.parse(from.createdAt),
-          };
-        }
-        throw new Error(JSON.stringify(from));
-      }
-    }
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {
-      export namespace Create {}
-    }
-    export namespace ChecklistItem {
-      export namespace Create {}
-    }
-  }
-}
 // begin table column parser mapping
 export namespace PgCatalog {
   export namespace Tables {
@@ -18621,6 +20135,298 @@ export namespace PgCatalog {
     }
   }
 }
+export namespace Public {
+  export namespace Tables {
+    export namespace FilmActor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Address {
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Address {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Address2 {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace District {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace PostalCode {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Phone {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace City {
+      export namespace CityId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace City {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Customer {
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Activebool {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace CreateDate {
+        export const parse = PgCatalog.Types.Date.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+    }
+    export namespace Actor {
+      export namespace ActorId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace FilmCategory {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Inventory {
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Category {
+      export namespace CategoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Country {
+      export namespace CountryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Country {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Language {
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Name {
+        export const parse = PgCatalog.Types.Bpchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Rental {
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace RentalDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace InventoryId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReturnDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Staff {
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace FirstName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastName {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Email {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace Active {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
+      export namespace Username {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Password {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace Picture {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
+    }
+    export namespace Store {
+      export namespace StoreId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace ManagerStaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace AddressId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Payment {
+      export namespace PaymentId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace CustomerId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace StaffId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Amount {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace PaymentDate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+    }
+    export namespace Film {
+      export namespace FilmId {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
+      export namespace Title {
+        export const parse = PgCatalog.Types.Varchar.parse;
+      }
+      export namespace Description {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
+      export namespace ReleaseYear {
+        export const parse = Public.Types.Year.parse;
+      }
+      export namespace LanguageId {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalDuration {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace RentalRate {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Length {
+        export const parse = PgCatalog.Types.Int2.parse;
+      }
+      export namespace ReplacementCost {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
+      export namespace Rating {
+        export const parse = Public.Types.MpaaRating.parse;
+      }
+      export namespace LastUpdate {
+        export const parse = PgCatalog.Types.Timestamp.parse;
+      }
+      export namespace SpecialFeatures {
+        export const parse = PgCatalog.Types.TextArray.parse;
+      }
+      export namespace Fulltext {
+        export const parse = PgCatalog.Types.Tsvector.parse;
+      }
+    }
+  }
+}
 export namespace InformationSchema {
   export namespace Tables {
     export namespace SqlFeatures {
@@ -18696,66 +20502,201 @@ export namespace InformationSchema {
     }
   }
 }
-export namespace Public {
-  export namespace Tables {
-    export namespace Checklist {
-      export namespace Id {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace Name {
-        export const parse = PgCatalog.Types.Text.parse;
-      }
-      export namespace CreatedAt {
-        export const parse = PgCatalog.Types.Timestamp.parse;
-      }
-    }
-    export namespace ChecklistItem {
-      export namespace Id {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace ChecklistId {
-        export const parse = PgCatalog.Types.Uuid.parse;
-      }
-      export namespace Title {
-        export const parse = PgCatalog.Types.Text.parse;
-      }
-      export namespace Checked {
-        export const parse = PgCatalog.Types.Bool.parse;
-      }
-      export namespace CreatedAt {
-        export const parse = PgCatalog.Types.Timestamp.parse;
-      }
-    }
-  }
-}
 
 // begin primary key pickers
 export namespace Public {
   export namespace Tables {
-    export namespace Checklist {
+    export namespace FilmActor {
       export function primaryKeyFrom(
-        value: Public.Tables.Checklist.Record,
+        value: Public.Tables.FilmActor.Record,
       ): string {
         return JSON.stringify({
-          id: value.id,
+          actorId: value.actorId,
+          filmId: value.filmId,
         });
       }
 
       export function includesPrimaryKey(value: Partial<Record>) {
-        return value.id !== undefined;
+        return value.actorId !== undefined && value.filmId !== undefined;
       }
     }
-    export namespace ChecklistItem {
+    export namespace Address {
       export function primaryKeyFrom(
-        value: Public.Tables.ChecklistItem.Record,
+        value: Public.Tables.Address.Record,
       ): string {
         return JSON.stringify({
-          id: value.id,
+          addressId: value.addressId,
         });
       }
 
       export function includesPrimaryKey(value: Partial<Record>) {
-        return value.id !== undefined;
+        return value.addressId !== undefined;
+      }
+    }
+    export namespace City {
+      export function primaryKeyFrom(value: Public.Tables.City.Record): string {
+        return JSON.stringify({
+          cityId: value.cityId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.cityId !== undefined;
+      }
+    }
+    export namespace Customer {
+      export function primaryKeyFrom(
+        value: Public.Tables.Customer.Record,
+      ): string {
+        return JSON.stringify({
+          customerId: value.customerId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.customerId !== undefined;
+      }
+    }
+    export namespace Actor {
+      export function primaryKeyFrom(
+        value: Public.Tables.Actor.Record,
+      ): string {
+        return JSON.stringify({
+          actorId: value.actorId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.actorId !== undefined;
+      }
+    }
+    export namespace FilmCategory {
+      export function primaryKeyFrom(
+        value: Public.Tables.FilmCategory.Record,
+      ): string {
+        return JSON.stringify({
+          filmId: value.filmId,
+          categoryId: value.categoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.filmId !== undefined && value.categoryId !== undefined;
+      }
+    }
+    export namespace Inventory {
+      export function primaryKeyFrom(
+        value: Public.Tables.Inventory.Record,
+      ): string {
+        return JSON.stringify({
+          inventoryId: value.inventoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.inventoryId !== undefined;
+      }
+    }
+    export namespace Category {
+      export function primaryKeyFrom(
+        value: Public.Tables.Category.Record,
+      ): string {
+        return JSON.stringify({
+          categoryId: value.categoryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.categoryId !== undefined;
+      }
+    }
+    export namespace Country {
+      export function primaryKeyFrom(
+        value: Public.Tables.Country.Record,
+      ): string {
+        return JSON.stringify({
+          countryId: value.countryId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.countryId !== undefined;
+      }
+    }
+    export namespace Language {
+      export function primaryKeyFrom(
+        value: Public.Tables.Language.Record,
+      ): string {
+        return JSON.stringify({
+          languageId: value.languageId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.languageId !== undefined;
+      }
+    }
+    export namespace Rental {
+      export function primaryKeyFrom(
+        value: Public.Tables.Rental.Record,
+      ): string {
+        return JSON.stringify({
+          rentalId: value.rentalId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.rentalId !== undefined;
+      }
+    }
+    export namespace Staff {
+      export function primaryKeyFrom(
+        value: Public.Tables.Staff.Record,
+      ): string {
+        return JSON.stringify({
+          staffId: value.staffId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.staffId !== undefined;
+      }
+    }
+    export namespace Store {
+      export function primaryKeyFrom(
+        value: Public.Tables.Store.Record,
+      ): string {
+        return JSON.stringify({
+          storeId: value.storeId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.storeId !== undefined;
+      }
+    }
+    export namespace Payment {
+      export function primaryKeyFrom(
+        value: Public.Tables.Payment.Record,
+      ): string {
+        return JSON.stringify({
+          paymentId: value.paymentId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.paymentId !== undefined;
+      }
+    }
+    export namespace Film {
+      export function primaryKeyFrom(value: Public.Tables.Film.Record): string {
+        return JSON.stringify({
+          filmId: value.filmId,
+        });
+      }
+
+      export function includesPrimaryKey(value: Partial<Record>) {
+        return value.filmId !== undefined;
       }
     }
   }
@@ -21403,6 +23344,414 @@ export namespace PgCatalog {
     export namespace PgLargeobject {}
   }
 }
+export namespace Public {
+  export namespace Types {
+    export namespace Actor {
+      export function is(value: any): value is Public.Types.Actor {
+        if (
+          value.actorId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace ActorInfo {
+      export function is(value: any): value is Public.Types.ActorInfo {
+        if (
+          value.actorId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.filmInfo !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Address {
+      export function is(value: any): value is Public.Types.Address {
+        if (
+          value.addressId !== undefined &&
+          value.address !== undefined &&
+          value.address2 !== undefined &&
+          value.district !== undefined &&
+          value.cityId !== undefined &&
+          value.postalCode !== undefined &&
+          value.phone !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Category {
+      export function is(value: any): value is Public.Types.Category {
+        if (
+          value.categoryId !== undefined &&
+          value.name !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace City {
+      export function is(value: any): value is Public.Types.City {
+        if (
+          value.cityId !== undefined &&
+          value.city !== undefined &&
+          value.countryId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Country {
+      export function is(value: any): value is Public.Types.Country {
+        if (
+          value.countryId !== undefined &&
+          value.country !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Customer {
+      export function is(value: any): value is Public.Types.Customer {
+        if (
+          value.customerId !== undefined &&
+          value.storeId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.email !== undefined &&
+          value.addressId !== undefined &&
+          value.activebool !== undefined &&
+          value.createDate !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.active !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace CustomerList {
+      export function is(value: any): value is Public.Types.CustomerList {
+        if (
+          value.id !== undefined &&
+          value.name !== undefined &&
+          value.address !== undefined &&
+          value.zipCode !== undefined &&
+          value.phone !== undefined &&
+          value.city !== undefined &&
+          value.country !== undefined &&
+          value.notes !== undefined &&
+          value.sid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Film {
+      export function is(value: any): value is Public.Types.Film {
+        if (
+          value.filmId !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.releaseYear !== undefined &&
+          value.languageId !== undefined &&
+          value.rentalDuration !== undefined &&
+          value.rentalRate !== undefined &&
+          value.length !== undefined &&
+          value.replacementCost !== undefined &&
+          value.rating !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.specialFeatures !== undefined &&
+          value.fulltext !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmActor {
+      export function is(value: any): value is Public.Types.FilmActor {
+        if (
+          value.actorId !== undefined &&
+          value.filmId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmCategory {
+      export function is(value: any): value is Public.Types.FilmCategory {
+        if (
+          value.filmId !== undefined &&
+          value.categoryId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace FilmList {
+      export function is(value: any): value is Public.Types.FilmList {
+        if (
+          value.fid !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.category !== undefined &&
+          value.price !== undefined &&
+          value.length !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Inventory {
+      export function is(value: any): value is Public.Types.Inventory {
+        if (
+          value.inventoryId !== undefined &&
+          value.filmId !== undefined &&
+          value.storeId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Language {
+      export function is(value: any): value is Public.Types.Language {
+        if (
+          value.languageId !== undefined &&
+          value.name !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace NicerButSlowerFilmList {
+      export function is(
+        value: any,
+      ): value is Public.Types.NicerButSlowerFilmList {
+        if (
+          value.fid !== undefined &&
+          value.title !== undefined &&
+          value.description !== undefined &&
+          value.category !== undefined &&
+          value.price !== undefined &&
+          value.length !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Payment {
+      export function is(value: any): value is Public.Types.Payment {
+        if (
+          value.paymentId !== undefined &&
+          value.customerId !== undefined &&
+          value.staffId !== undefined &&
+          value.rentalId !== undefined &&
+          value.amount !== undefined &&
+          value.paymentDate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Rental {
+      export function is(value: any): value is Public.Types.Rental {
+        if (
+          value.rentalId !== undefined &&
+          value.rentalDate !== undefined &&
+          value.inventoryId !== undefined &&
+          value.customerId !== undefined &&
+          value.returnDate !== undefined &&
+          value.staffId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace SalesByFilmCategory {
+      export function is(
+        value: any,
+      ): value is Public.Types.SalesByFilmCategory {
+        if (value.category !== undefined && value.totalSales !== undefined)
+          return true;
+        return false;
+      }
+    }
+    export namespace SalesByStore {
+      export function is(value: any): value is Public.Types.SalesByStore {
+        if (
+          value.store !== undefined &&
+          value.manager !== undefined &&
+          value.totalSales !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Staff {
+      export function is(value: any): value is Public.Types.Staff {
+        if (
+          value.staffId !== undefined &&
+          value.firstName !== undefined &&
+          value.lastName !== undefined &&
+          value.addressId !== undefined &&
+          value.email !== undefined &&
+          value.storeId !== undefined &&
+          value.active !== undefined &&
+          value.username !== undefined &&
+          value.password !== undefined &&
+          value.lastUpdate !== undefined &&
+          value.picture !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace StaffList {
+      export function is(value: any): value is Public.Types.StaffList {
+        if (
+          value.id !== undefined &&
+          value.name !== undefined &&
+          value.address !== undefined &&
+          value.zipCode !== undefined &&
+          value.phone !== undefined &&
+          value.city !== undefined &&
+          value.country !== undefined &&
+          value.sid !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+    export namespace Store {
+      export function is(value: any): value is Public.Types.Store {
+        if (
+          value.storeId !== undefined &&
+          value.managerStaffId !== undefined &&
+          value.addressId !== undefined &&
+          value.lastUpdate !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.FilmInStock.Parameters {
+          if (value.pFilmId !== undefined && value.pStoreId !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace FilmNotInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.FilmNotInStock.Parameters {
+          if (value.pFilmId !== undefined && value.pStoreId !== undefined)
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace GetCustomerBalance {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.GetCustomerBalance.Parameters {
+          if (
+            value.pCustomerId !== undefined &&
+            value.pEffectiveDate !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.InventoryHeldByCustomer.Parameters {
+          if (value.pInventoryId !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace InventoryInStock {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.InventoryInStock.Parameters {
+          if (value.pInventoryId !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace LastDay {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.LastDay.Parameters {
+          if (value.argument_0 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+    export namespace RewardsReport {
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Public.Procedures.RewardsReport.Parameters {
+          if (
+            value.minMonthlyPurchases !== undefined &&
+            value.minDollarAmountPurchased !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+    }
+  }
+  export namespace Tables {
+    export namespace FilmActor {}
+    export namespace Address {}
+    export namespace City {}
+    export namespace Customer {}
+    export namespace Actor {}
+    export namespace FilmCategory {}
+    export namespace Inventory {}
+    export namespace Category {}
+    export namespace Country {}
+    export namespace Language {}
+    export namespace Rental {}
+    export namespace Staff {}
+    export namespace Store {}
+    export namespace Payment {}
+    export namespace Film {}
+  }
+}
 export namespace InformationSchema {
   export namespace Types {
     export namespace PgForeignDataWrappers {
@@ -22787,646 +25136,7813 @@ export namespace InformationSchema {
     export namespace SqlSizing {}
   }
 }
-export namespace Public {
-  export namespace Types {
-    export namespace Checklist {
-      export function is(value: any): value is Public.Types.Checklist {
-        if (
-          value.id !== undefined &&
-          value.name !== undefined &&
-          value.createdAt !== undefined
-        )
-          return true;
-        return false;
-      }
-    }
-    export namespace ChecklistItem {
-      export function is(value: any): value is Public.Types.ChecklistItem {
-        if (
-          value.id !== undefined &&
-          value.checklistId !== undefined &&
-          value.title !== undefined &&
-          value.checked !== undefined &&
-          value.createdAt !== undefined
-        )
-          return true;
-        return false;
-      }
-    }
-  }
-  export namespace Procedures {}
-  export namespace Tables {
-    export namespace Checklist {}
-    export namespace ChecklistItem {}
-  }
-}
-// begin fetch client
+
 import {
-  EmbraceSQLClient as BaseClient,
-  EmbraceSQLClientProps,
-  HasClient,
-} from "@embracesql/client";
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
+import postgres from "postgres";
 
-export class EmbraceSQLClient extends BaseClient {
-  constructor(props: EmbraceSQLClientProps) {
-    super(props);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ArgumentToPostgres = any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ArgumentFromPostgres = any;
+type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+export interface PostgresTypecasts {
+  [1034]: Typecast;
+  ["PgCatalog.Types.AclitemArray"]: Typecast;
+  [1561]: Typecast;
+  ["PgCatalog.Types.BitArray"]: Typecast;
+  [1000]: Typecast;
+  ["PgCatalog.Types.BoolArray"]: Typecast;
+  [1020]: Typecast;
+  ["PgCatalog.Types.BoxArray"]: Typecast;
+  [1014]: Typecast;
+  ["PgCatalog.Types.BpcharArray"]: Typecast;
+  [1001]: Typecast;
+  ["PgCatalog.Types.ByteaArray"]: Typecast;
+  [1002]: Typecast;
+  ["PgCatalog.Types.CharArray"]: Typecast;
+  [1012]: Typecast;
+  ["PgCatalog.Types.CidArray"]: Typecast;
+  [651]: Typecast;
+  ["PgCatalog.Types.CidrArray"]: Typecast;
+  [719]: Typecast;
+  ["PgCatalog.Types.CircleArray"]: Typecast;
+  [1263]: Typecast;
+  ["PgCatalog.Types.CstringArray"]: Typecast;
+  [1182]: Typecast;
+  ["PgCatalog.Types.DateArray"]: Typecast;
+  [6155]: Typecast;
+  ["PgCatalog.Types.DatemultirangeArray"]: Typecast;
+  [3913]: Typecast;
+  ["PgCatalog.Types.DaterangeArray"]: Typecast;
+  [1021]: Typecast;
+  ["PgCatalog.Types.Float4Array"]: Typecast;
+  [1022]: Typecast;
+  ["PgCatalog.Types.Float8Array"]: Typecast;
+  [3644]: Typecast;
+  ["PgCatalog.Types.GtsvectorArray"]: Typecast;
+  [1041]: Typecast;
+  ["PgCatalog.Types.InetArray"]: Typecast;
+  [1005]: Typecast;
+  ["PgCatalog.Types.Int2Array"]: Typecast;
+  [1006]: Typecast;
+  ["PgCatalog.Types.Int2vectorArray"]: Typecast;
+  [1007]: Typecast;
+  ["PgCatalog.Types.Int4Array"]: Typecast;
+  [6150]: Typecast;
+  ["PgCatalog.Types.Int4multirangeArray"]: Typecast;
+  [3905]: Typecast;
+  ["PgCatalog.Types.Int4rangeArray"]: Typecast;
+  [1016]: Typecast;
+  ["PgCatalog.Types.Int8Array"]: Typecast;
+  [6157]: Typecast;
+  ["PgCatalog.Types.Int8multirangeArray"]: Typecast;
+  [3927]: Typecast;
+  ["PgCatalog.Types.Int8rangeArray"]: Typecast;
+  [1187]: Typecast;
+  ["PgCatalog.Types.IntervalArray"]: Typecast;
+  [199]: Typecast;
+  ["PgCatalog.Types.JsonArray"]: Typecast;
+  [3807]: Typecast;
+  ["PgCatalog.Types.JsonbArray"]: Typecast;
+  [4073]: Typecast;
+  ["PgCatalog.Types.JsonpathArray"]: Typecast;
+  [629]: Typecast;
+  ["PgCatalog.Types.LineArray"]: Typecast;
+  [1018]: Typecast;
+  ["PgCatalog.Types.LsegArray"]: Typecast;
+  [1040]: Typecast;
+  ["PgCatalog.Types.MacaddrArray"]: Typecast;
+  [775]: Typecast;
+  ["PgCatalog.Types.Macaddr8Array"]: Typecast;
+  [791]: Typecast;
+  ["PgCatalog.Types.MoneyArray"]: Typecast;
+  [1003]: Typecast;
+  ["PgCatalog.Types.NameArray"]: Typecast;
+  [1231]: Typecast;
+  ["PgCatalog.Types.NumericArray"]: Typecast;
+  [6151]: Typecast;
+  ["PgCatalog.Types.NummultirangeArray"]: Typecast;
+  [3907]: Typecast;
+  ["PgCatalog.Types.NumrangeArray"]: Typecast;
+  [1028]: Typecast;
+  ["PgCatalog.Types.OidArray"]: Typecast;
+  [1013]: Typecast;
+  ["PgCatalog.Types.OidvectorArray"]: Typecast;
+  [1019]: Typecast;
+  ["PgCatalog.Types.PathArray"]: Typecast;
+  [10026]: Typecast;
+  ["PgCatalog.Types.PgAggregateArray"]: Typecast;
+  [10014]: Typecast;
+  ["PgCatalog.Types.PgAmArray"]: Typecast;
+  [10016]: Typecast;
+  ["PgCatalog.Types.PgAmopArray"]: Typecast;
+  [10018]: Typecast;
+  ["PgCatalog.Types.PgAmprocArray"]: Typecast;
+  [10000]: Typecast;
+  ["PgCatalog.Types.PgAttrdefArray"]: Typecast;
+  [270]: Typecast;
+  ["PgCatalog.Types.PgAttributeArray"]: Typecast;
+  [10058]: Typecast;
+  ["PgCatalog.Types.PgAuthMembersArray"]: Typecast;
+  [10057]: Typecast;
+  ["PgCatalog.Types.PgAuthidArray"]: Typecast;
+  [12086]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast;
+  [12082]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast;
+  [12139]: Typecast;
+  ["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast;
+  [10042]: Typecast;
+  ["PgCatalog.Types.PgCastArray"]: Typecast;
+  [273]: Typecast;
+  ["PgCatalog.Types.PgClassArray"]: Typecast;
+  [10094]: Typecast;
+  ["PgCatalog.Types.PgCollationArray"]: Typecast;
+  [12131]: Typecast;
+  ["PgCatalog.Types.PgConfigArray"]: Typecast;
+  [10002]: Typecast;
+  ["PgCatalog.Types.PgConstraintArray"]: Typecast;
+  [10048]: Typecast;
+  ["PgCatalog.Types.PgConversionArray"]: Typecast;
+  [12078]: Typecast;
+  ["PgCatalog.Types.PgCursorsArray"]: Typecast;
+  [10052]: Typecast;
+  ["PgCatalog.Types.PgDatabaseArray"]: Typecast;
+  [10053]: Typecast;
+  ["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast;
+  [10087]: Typecast;
+  ["PgCatalog.Types.PgDefaultAclArray"]: Typecast;
+  [10050]: Typecast;
+  ["PgCatalog.Types.PgDependArray"]: Typecast;
+  [10040]: Typecast;
+  ["PgCatalog.Types.PgDescriptionArray"]: Typecast;
+  [10044]: Typecast;
+  ["PgCatalog.Types.PgEnumArray"]: Typecast;
+  [10038]: Typecast;
+  ["PgCatalog.Types.PgEventTriggerArray"]: Typecast;
+  [10073]: Typecast;
+  ["PgCatalog.Types.PgExtensionArray"]: Typecast;
+  [12111]: Typecast;
+  ["PgCatalog.Types.PgFileSettingsArray"]: Typecast;
+  [10075]: Typecast;
+  ["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast;
+  [10077]: Typecast;
+  ["PgCatalog.Types.PgForeignServerArray"]: Typecast;
+  [10081]: Typecast;
+  ["PgCatalog.Types.PgForeignTableArray"]: Typecast;
+  [12011]: Typecast;
+  ["PgCatalog.Types.PgGroupArray"]: Typecast;
+  [12115]: Typecast;
+  ["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast;
+  [12119]: Typecast;
+  ["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast;
+  [10006]: Typecast;
+  ["PgCatalog.Types.PgIndexArray"]: Typecast;
+  [12044]: Typecast;
+  ["PgCatalog.Types.PgIndexesArray"]: Typecast;
+  [10004]: Typecast;
+  ["PgCatalog.Types.PgInheritsArray"]: Typecast;
+  [10089]: Typecast;
+  ["PgCatalog.Types.PgInitPrivsArray"]: Typecast;
+  [10020]: Typecast;
+  ["PgCatalog.Types.PgLanguageArray"]: Typecast;
+  [10024]: Typecast;
+  ["PgCatalog.Types.PgLargeobjectArray"]: Typecast;
+  [10022]: Typecast;
+  ["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast;
+  [12074]: Typecast;
+  ["PgCatalog.Types.PgLocksArray"]: Typecast;
+  [3221]: Typecast;
+  ["PgCatalog.Types.PgLsnArray"]: Typecast;
+  [12039]: Typecast;
+  ["PgCatalog.Types.PgMatviewsArray"]: Typecast;
+  [10046]: Typecast;
+  ["PgCatalog.Types.PgNamespaceArray"]: Typecast;
+  [10012]: Typecast;
+  ["PgCatalog.Types.PgOpclassArray"]: Typecast;
+  [10008]: Typecast;
+  ["PgCatalog.Types.PgOperatorArray"]: Typecast;
+  [10010]: Typecast;
+  ["PgCatalog.Types.PgOpfamilyArray"]: Typecast;
+  [10096]: Typecast;
+  ["PgCatalog.Types.PgParameterAclArray"]: Typecast;
+  [10098]: Typecast;
+  ["PgCatalog.Types.PgPartitionedTableArray"]: Typecast;
+  [12019]: Typecast;
+  ["PgCatalog.Types.PgPoliciesArray"]: Typecast;
+  [10083]: Typecast;
+  ["PgCatalog.Types.PgPolicyArray"]: Typecast;
+  [12096]: Typecast;
+  ["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast;
+  [12091]: Typecast;
+  ["PgCatalog.Types.PgPreparedXactsArray"]: Typecast;
+  [272]: Typecast;
+  ["PgCatalog.Types.PgProcArray"]: Typecast;
+  [10106]: Typecast;
+  ["PgCatalog.Types.PgPublicationArray"]: Typecast;
+  [10108]: Typecast;
+  ["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast;
+  [10110]: Typecast;
+  ["PgCatalog.Types.PgPublicationRelArray"]: Typecast;
+  [12069]: Typecast;
+  ["PgCatalog.Types.PgPublicationTablesArray"]: Typecast;
+  [10100]: Typecast;
+  ["PgCatalog.Types.PgRangeArray"]: Typecast;
+  [10085]: Typecast;
+  ["PgCatalog.Types.PgReplicationOriginArray"]: Typecast;
+  [12337]: Typecast;
+  ["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast;
+  [12258]: Typecast;
+  ["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast;
+  [10034]: Typecast;
+  ["PgCatalog.Types.PgRewriteArray"]: Typecast;
+  [12001]: Typecast;
+  ["PgCatalog.Types.PgRolesArray"]: Typecast;
+  [12024]: Typecast;
+  ["PgCatalog.Types.PgRulesArray"]: Typecast;
+  [10091]: Typecast;
+  ["PgCatalog.Types.PgSeclabelArray"]: Typecast;
+  [12100]: Typecast;
+  ["PgCatalog.Types.PgSeclabelsArray"]: Typecast;
+  [10104]: Typecast;
+  ["PgCatalog.Types.PgSequenceArray"]: Typecast;
+  [12049]: Typecast;
+  ["PgCatalog.Types.PgSequencesArray"]: Typecast;
+  [12105]: Typecast;
+  ["PgCatalog.Types.PgSettingsArray"]: Typecast;
+  [12006]: Typecast;
+  ["PgCatalog.Types.PgShadowArray"]: Typecast;
+  [10059]: Typecast;
+  ["PgCatalog.Types.PgShdependArray"]: Typecast;
+  [10061]: Typecast;
+  ["PgCatalog.Types.PgShdescriptionArray"]: Typecast;
+  [12135]: Typecast;
+  ["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast;
+  [10093]: Typecast;
+  ["PgCatalog.Types.PgShseclabelArray"]: Typecast;
+  [5039]: Typecast;
+  ["PgCatalog.Types.PgSnapshotArray"]: Typecast;
+  [12223]: Typecast;
+  ["PgCatalog.Types.PgStatActivityArray"]: Typecast;
+  [12184]: Typecast;
+  ["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast;
+  [12143]: Typecast;
+  ["PgCatalog.Types.PgStatAllTablesArray"]: Typecast;
+  [12286]: Typecast;
+  ["PgCatalog.Types.PgStatArchiverArray"]: Typecast;
+  [12290]: Typecast;
+  ["PgCatalog.Types.PgStatBgwriterArray"]: Typecast;
+  [12267]: Typecast;
+  ["PgCatalog.Types.PgStatDatabaseArray"]: Typecast;
+  [12272]: Typecast;
+  ["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast;
+  [12254]: Typecast;
+  ["PgCatalog.Types.PgStatGssapiArray"]: Typecast;
+  [12294]: Typecast;
+  ["PgCatalog.Types.PgStatIoArray"]: Typecast;
+  [12302]: Typecast;
+  ["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast;
+  [12322]: Typecast;
+  ["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast;
+  [12312]: Typecast;
+  ["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast;
+  [12327]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast;
+  [12317]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast;
+  [12307]: Typecast;
+  ["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast;
+  [12241]: Typecast;
+  ["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast;
+  [12228]: Typecast;
+  ["PgCatalog.Types.PgStatReplicationArray"]: Typecast;
+  [12263]: Typecast;
+  ["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast;
+  [12233]: Typecast;
+  ["PgCatalog.Types.PgStatSlruArray"]: Typecast;
+  [12250]: Typecast;
+  ["PgCatalog.Types.PgStatSslArray"]: Typecast;
+  [12245]: Typecast;
+  ["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast;
+  [12341]: Typecast;
+  ["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast;
+  [12189]: Typecast;
+  ["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast;
+  [12153]: Typecast;
+  ["PgCatalog.Types.PgStatSysTablesArray"]: Typecast;
+  [12276]: Typecast;
+  ["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast;
+  [12193]: Typecast;
+  ["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast;
+  [12162]: Typecast;
+  ["PgCatalog.Types.PgStatUserTablesArray"]: Typecast;
+  [12298]: Typecast;
+  ["PgCatalog.Types.PgStatWalArray"]: Typecast;
+  [12237]: Typecast;
+  ["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast;
+  [12148]: Typecast;
+  ["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast;
+  [12158]: Typecast;
+  ["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast;
+  [12281]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast;
+  [12167]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast;
+  [12197]: Typecast;
+  ["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast;
+  [12210]: Typecast;
+  ["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast;
+  [12171]: Typecast;
+  ["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast;
+  [12202]: Typecast;
+  ["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast;
+  [12215]: Typecast;
+  ["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast;
+  [12176]: Typecast;
+  ["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast;
+  [12206]: Typecast;
+  ["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast;
+  [12219]: Typecast;
+  ["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast;
+  [12180]: Typecast;
+  ["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast;
+  [10028]: Typecast;
+  ["PgCatalog.Types.PgStatisticArray"]: Typecast;
+  [10030]: Typecast;
+  ["PgCatalog.Types.PgStatisticExtArray"]: Typecast;
+  [10032]: Typecast;
+  ["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast;
+  [12054]: Typecast;
+  ["PgCatalog.Types.PgStatsArray"]: Typecast;
+  [12059]: Typecast;
+  ["PgCatalog.Types.PgStatsExtArray"]: Typecast;
+  [12064]: Typecast;
+  ["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast;
+  [10112]: Typecast;
+  ["PgCatalog.Types.PgSubscriptionArray"]: Typecast;
+  [10113]: Typecast;
+  ["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast;
+  [12034]: Typecast;
+  ["PgCatalog.Types.PgTablesArray"]: Typecast;
+  [10055]: Typecast;
+  ["PgCatalog.Types.PgTablespaceArray"]: Typecast;
+  [12123]: Typecast;
+  ["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast;
+  [12127]: Typecast;
+  ["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast;
+  [10102]: Typecast;
+  ["PgCatalog.Types.PgTransformArray"]: Typecast;
+  [10036]: Typecast;
+  ["PgCatalog.Types.PgTriggerArray"]: Typecast;
+  [10063]: Typecast;
+  ["PgCatalog.Types.PgTsConfigArray"]: Typecast;
+  [10065]: Typecast;
+  ["PgCatalog.Types.PgTsConfigMapArray"]: Typecast;
+  [10067]: Typecast;
+  ["PgCatalog.Types.PgTsDictArray"]: Typecast;
+  [10069]: Typecast;
+  ["PgCatalog.Types.PgTsParserArray"]: Typecast;
+  [10071]: Typecast;
+  ["PgCatalog.Types.PgTsTemplateArray"]: Typecast;
+  [210]: Typecast;
+  ["PgCatalog.Types.PgTypeArray"]: Typecast;
+  [12015]: Typecast;
+  ["PgCatalog.Types.PgUserArray"]: Typecast;
+  [10079]: Typecast;
+  ["PgCatalog.Types.PgUserMappingArray"]: Typecast;
+  [12332]: Typecast;
+  ["PgCatalog.Types.PgUserMappingsArray"]: Typecast;
+  [12029]: Typecast;
+  ["PgCatalog.Types.PgViewsArray"]: Typecast;
+  [1017]: Typecast;
+  ["PgCatalog.Types.PointArray"]: Typecast;
+  [1027]: Typecast;
+  ["PgCatalog.Types.PolygonArray"]: Typecast;
+  [2287]: Typecast;
+  ["PgCatalog.Types.RecordArray"]: Typecast;
+  [2201]: Typecast;
+  ["PgCatalog.Types.RefcursorArray"]: Typecast;
+  [2210]: Typecast;
+  ["PgCatalog.Types.RegclassArray"]: Typecast;
+  [4192]: Typecast;
+  ["PgCatalog.Types.RegcollationArray"]: Typecast;
+  [3735]: Typecast;
+  ["PgCatalog.Types.RegconfigArray"]: Typecast;
+  [3770]: Typecast;
+  ["PgCatalog.Types.RegdictionaryArray"]: Typecast;
+  [4090]: Typecast;
+  ["PgCatalog.Types.RegnamespaceArray"]: Typecast;
+  [2208]: Typecast;
+  ["PgCatalog.Types.RegoperArray"]: Typecast;
+  [2209]: Typecast;
+  ["PgCatalog.Types.RegoperatorArray"]: Typecast;
+  [1008]: Typecast;
+  ["PgCatalog.Types.RegprocArray"]: Typecast;
+  [2207]: Typecast;
+  ["PgCatalog.Types.RegprocedureArray"]: Typecast;
+  [4097]: Typecast;
+  ["PgCatalog.Types.RegroleArray"]: Typecast;
+  [2211]: Typecast;
+  ["PgCatalog.Types.RegtypeArray"]: Typecast;
+  [1009]: Typecast;
+  ["PgCatalog.Types.TextArray"]: Typecast;
+  [1010]: Typecast;
+  ["PgCatalog.Types.TidArray"]: Typecast;
+  [1183]: Typecast;
+  ["PgCatalog.Types.TimeArray"]: Typecast;
+  [1115]: Typecast;
+  ["PgCatalog.Types.TimestampArray"]: Typecast;
+  [1185]: Typecast;
+  ["PgCatalog.Types.TimestamptzArray"]: Typecast;
+  [1270]: Typecast;
+  ["PgCatalog.Types.TimetzArray"]: Typecast;
+  [6152]: Typecast;
+  ["PgCatalog.Types.TsmultirangeArray"]: Typecast;
+  [3645]: Typecast;
+  ["PgCatalog.Types.TsqueryArray"]: Typecast;
+  [3909]: Typecast;
+  ["PgCatalog.Types.TsrangeArray"]: Typecast;
+  [6153]: Typecast;
+  ["PgCatalog.Types.TstzmultirangeArray"]: Typecast;
+  [3911]: Typecast;
+  ["PgCatalog.Types.TstzrangeArray"]: Typecast;
+  [3643]: Typecast;
+  ["PgCatalog.Types.TsvectorArray"]: Typecast;
+  [2949]: Typecast;
+  ["PgCatalog.Types.TxidSnapshotArray"]: Typecast;
+  [2951]: Typecast;
+  ["PgCatalog.Types.UuidArray"]: Typecast;
+  [1563]: Typecast;
+  ["PgCatalog.Types.VarbitArray"]: Typecast;
+  [1015]: Typecast;
+  ["PgCatalog.Types.VarcharArray"]: Typecast;
+  [1011]: Typecast;
+  ["PgCatalog.Types.XidArray"]: Typecast;
+  [271]: Typecast;
+  ["PgCatalog.Types.Xid8Array"]: Typecast;
+  [143]: Typecast;
+  ["PgCatalog.Types.XmlArray"]: Typecast;
+  [1033]: Typecast;
+  ["PgCatalog.Types.Aclitem"]: Typecast;
+  [2276]: Typecast;
+  ["PgCatalog.Types.Any"]: Typecast;
+  [2277]: Typecast;
+  ["PgCatalog.Types.Anyarray"]: Typecast;
+  [5077]: Typecast;
+  ["PgCatalog.Types.Anycompatible"]: Typecast;
+  [5078]: Typecast;
+  ["PgCatalog.Types.Anycompatiblearray"]: Typecast;
+  [4538]: Typecast;
+  ["PgCatalog.Types.Anycompatiblemultirange"]: Typecast;
+  [5079]: Typecast;
+  ["PgCatalog.Types.Anycompatiblenonarray"]: Typecast;
+  [5080]: Typecast;
+  ["PgCatalog.Types.Anycompatiblerange"]: Typecast;
+  [2283]: Typecast;
+  ["PgCatalog.Types.Anyelement"]: Typecast;
+  [3500]: Typecast;
+  ["PgCatalog.Types.Anyenum"]: Typecast;
+  [4537]: Typecast;
+  ["PgCatalog.Types.Anymultirange"]: Typecast;
+  [2776]: Typecast;
+  ["PgCatalog.Types.Anynonarray"]: Typecast;
+  [3831]: Typecast;
+  ["PgCatalog.Types.Anyrange"]: Typecast;
+  [1560]: Typecast;
+  ["PgCatalog.Types.Bit"]: Typecast;
+  [16]: Typecast;
+  ["PgCatalog.Types.Bool"]: Typecast;
+  [603]: Typecast;
+  ["PgCatalog.Types.Box"]: Typecast;
+  [1042]: Typecast;
+  ["PgCatalog.Types.Bpchar"]: Typecast;
+  [17]: Typecast;
+  ["PgCatalog.Types.Bytea"]: Typecast;
+  [18]: Typecast;
+  ["PgCatalog.Types.Char"]: Typecast;
+  [29]: Typecast;
+  ["PgCatalog.Types.Cid"]: Typecast;
+  [650]: Typecast;
+  ["PgCatalog.Types.Cidr"]: Typecast;
+  [718]: Typecast;
+  ["PgCatalog.Types.Circle"]: Typecast;
+  [2275]: Typecast;
+  ["PgCatalog.Types.Cstring"]: Typecast;
+  [1082]: Typecast;
+  ["PgCatalog.Types.Date"]: Typecast;
+  [4535]: Typecast;
+  ["PgCatalog.Types.Datemultirange"]: Typecast;
+  [3912]: Typecast;
+  ["PgCatalog.Types.Daterange"]: Typecast;
+  [3838]: Typecast;
+  ["PgCatalog.Types.EventTrigger"]: Typecast;
+  [3115]: Typecast;
+  ["PgCatalog.Types.FdwHandler"]: Typecast;
+  [700]: Typecast;
+  ["PgCatalog.Types.Float4"]: Typecast;
+  [701]: Typecast;
+  ["PgCatalog.Types.Float8"]: Typecast;
+  [3642]: Typecast;
+  ["PgCatalog.Types.Gtsvector"]: Typecast;
+  [325]: Typecast;
+  ["PgCatalog.Types.IndexAmHandler"]: Typecast;
+  [869]: Typecast;
+  ["PgCatalog.Types.Inet"]: Typecast;
+  [21]: Typecast;
+  ["PgCatalog.Types.Int2"]: Typecast;
+  [22]: Typecast;
+  ["PgCatalog.Types.Int2vector"]: Typecast;
+  [23]: Typecast;
+  ["PgCatalog.Types.Int4"]: Typecast;
+  [4451]: Typecast;
+  ["PgCatalog.Types.Int4multirange"]: Typecast;
+  [3904]: Typecast;
+  ["PgCatalog.Types.Int4range"]: Typecast;
+  [20]: Typecast;
+  ["PgCatalog.Types.Int8"]: Typecast;
+  [4536]: Typecast;
+  ["PgCatalog.Types.Int8multirange"]: Typecast;
+  [3926]: Typecast;
+  ["PgCatalog.Types.Int8range"]: Typecast;
+  [2281]: Typecast;
+  ["PgCatalog.Types.Internal"]: Typecast;
+  [1186]: Typecast;
+  ["PgCatalog.Types.Interval"]: Typecast;
+  [114]: Typecast;
+  ["PgCatalog.Types.Json"]: Typecast;
+  [3802]: Typecast;
+  ["PgCatalog.Types.Jsonb"]: Typecast;
+  [4072]: Typecast;
+  ["PgCatalog.Types.Jsonpath"]: Typecast;
+  [2280]: Typecast;
+  ["PgCatalog.Types.LanguageHandler"]: Typecast;
+  [628]: Typecast;
+  ["PgCatalog.Types.Line"]: Typecast;
+  [601]: Typecast;
+  ["PgCatalog.Types.Lseg"]: Typecast;
+  [829]: Typecast;
+  ["PgCatalog.Types.Macaddr"]: Typecast;
+  [774]: Typecast;
+  ["PgCatalog.Types.Macaddr8"]: Typecast;
+  [790]: Typecast;
+  ["PgCatalog.Types.Money"]: Typecast;
+  [19]: Typecast;
+  ["PgCatalog.Types.Name"]: Typecast;
+  [1700]: Typecast;
+  ["PgCatalog.Types.Numeric"]: Typecast;
+  [4532]: Typecast;
+  ["PgCatalog.Types.Nummultirange"]: Typecast;
+  [3906]: Typecast;
+  ["PgCatalog.Types.Numrange"]: Typecast;
+  [26]: Typecast;
+  ["PgCatalog.Types.Oid"]: Typecast;
+  [30]: Typecast;
+  ["PgCatalog.Types.Oidvector"]: Typecast;
+  [602]: Typecast;
+  ["PgCatalog.Types.Path"]: Typecast;
+  [10027]: Typecast;
+  ["PgCatalog.Types.PgAggregate"]: Typecast;
+  [10015]: Typecast;
+  ["PgCatalog.Types.PgAm"]: Typecast;
+  [10017]: Typecast;
+  ["PgCatalog.Types.PgAmop"]: Typecast;
+  [10019]: Typecast;
+  ["PgCatalog.Types.PgAmproc"]: Typecast;
+  [10001]: Typecast;
+  ["PgCatalog.Types.PgAttrdef"]: Typecast;
+  [75]: Typecast;
+  ["PgCatalog.Types.PgAttribute"]: Typecast;
+  [2843]: Typecast;
+  ["PgCatalog.Types.PgAuthMembers"]: Typecast;
+  [2842]: Typecast;
+  ["PgCatalog.Types.PgAuthid"]: Typecast;
+  [12087]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast;
+  [12083]: Typecast;
+  ["PgCatalog.Types.PgAvailableExtensions"]: Typecast;
+  [12140]: Typecast;
+  ["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast;
+  [4600]: Typecast;
+  ["PgCatalog.Types.PgBrinBloomSummary"]: Typecast;
+  [4601]: Typecast;
+  ["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast;
+  [10043]: Typecast;
+  ["PgCatalog.Types.PgCast"]: Typecast;
+  [83]: Typecast;
+  ["PgCatalog.Types.PgClass"]: Typecast;
+  [10095]: Typecast;
+  ["PgCatalog.Types.PgCollation"]: Typecast;
+  [12132]: Typecast;
+  ["PgCatalog.Types.PgConfig"]: Typecast;
+  [10003]: Typecast;
+  ["PgCatalog.Types.PgConstraint"]: Typecast;
+  [10049]: Typecast;
+  ["PgCatalog.Types.PgConversion"]: Typecast;
+  [12079]: Typecast;
+  ["PgCatalog.Types.PgCursors"]: Typecast;
+  [1248]: Typecast;
+  ["PgCatalog.Types.PgDatabase"]: Typecast;
+  [10054]: Typecast;
+  ["PgCatalog.Types.PgDbRoleSetting"]: Typecast;
+  [32]: Typecast;
+  ["PgCatalog.Types.PgDdlCommand"]: Typecast;
+  [10088]: Typecast;
+  ["PgCatalog.Types.PgDefaultAcl"]: Typecast;
+  [10051]: Typecast;
+  ["PgCatalog.Types.PgDepend"]: Typecast;
+  [3402]: Typecast;
+  ["PgCatalog.Types.PgDependencies"]: Typecast;
+  [10041]: Typecast;
+  ["PgCatalog.Types.PgDescription"]: Typecast;
+  [10045]: Typecast;
+  ["PgCatalog.Types.PgEnum"]: Typecast;
+  [10039]: Typecast;
+  ["PgCatalog.Types.PgEventTrigger"]: Typecast;
+  [10074]: Typecast;
+  ["PgCatalog.Types.PgExtension"]: Typecast;
+  [12112]: Typecast;
+  ["PgCatalog.Types.PgFileSettings"]: Typecast;
+  [10076]: Typecast;
+  ["PgCatalog.Types.PgForeignDataWrapper"]: Typecast;
+  [10078]: Typecast;
+  ["PgCatalog.Types.PgForeignServer"]: Typecast;
+  [10082]: Typecast;
+  ["PgCatalog.Types.PgForeignTable"]: Typecast;
+  [12012]: Typecast;
+  ["PgCatalog.Types.PgGroup"]: Typecast;
+  [12116]: Typecast;
+  ["PgCatalog.Types.PgHbaFileRules"]: Typecast;
+  [12120]: Typecast;
+  ["PgCatalog.Types.PgIdentFileMappings"]: Typecast;
+  [10007]: Typecast;
+  ["PgCatalog.Types.PgIndex"]: Typecast;
+  [12045]: Typecast;
+  ["PgCatalog.Types.PgIndexes"]: Typecast;
+  [10005]: Typecast;
+  ["PgCatalog.Types.PgInherits"]: Typecast;
+  [10090]: Typecast;
+  ["PgCatalog.Types.PgInitPrivs"]: Typecast;
+  [10021]: Typecast;
+  ["PgCatalog.Types.PgLanguage"]: Typecast;
+  [10025]: Typecast;
+  ["PgCatalog.Types.PgLargeobject"]: Typecast;
+  [10023]: Typecast;
+  ["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast;
+  [12075]: Typecast;
+  ["PgCatalog.Types.PgLocks"]: Typecast;
+  [3220]: Typecast;
+  ["PgCatalog.Types.PgLsn"]: Typecast;
+  [12040]: Typecast;
+  ["PgCatalog.Types.PgMatviews"]: Typecast;
+  [5017]: Typecast;
+  ["PgCatalog.Types.PgMcvList"]: Typecast;
+  [10047]: Typecast;
+  ["PgCatalog.Types.PgNamespace"]: Typecast;
+  [3361]: Typecast;
+  ["PgCatalog.Types.PgNdistinct"]: Typecast;
+  [194]: Typecast;
+  ["PgCatalog.Types.PgNodeTree"]: Typecast;
+  [10013]: Typecast;
+  ["PgCatalog.Types.PgOpclass"]: Typecast;
+  [10009]: Typecast;
+  ["PgCatalog.Types.PgOperator"]: Typecast;
+  [10011]: Typecast;
+  ["PgCatalog.Types.PgOpfamily"]: Typecast;
+  [10097]: Typecast;
+  ["PgCatalog.Types.PgParameterAcl"]: Typecast;
+  [10099]: Typecast;
+  ["PgCatalog.Types.PgPartitionedTable"]: Typecast;
+  [12020]: Typecast;
+  ["PgCatalog.Types.PgPolicies"]: Typecast;
+  [10084]: Typecast;
+  ["PgCatalog.Types.PgPolicy"]: Typecast;
+  [12097]: Typecast;
+  ["PgCatalog.Types.PgPreparedStatements"]: Typecast;
+  [12092]: Typecast;
+  ["PgCatalog.Types.PgPreparedXacts"]: Typecast;
+  [81]: Typecast;
+  ["PgCatalog.Types.PgProc"]: Typecast;
+  [10107]: Typecast;
+  ["PgCatalog.Types.PgPublication"]: Typecast;
+  [10109]: Typecast;
+  ["PgCatalog.Types.PgPublicationNamespace"]: Typecast;
+  [10111]: Typecast;
+  ["PgCatalog.Types.PgPublicationRel"]: Typecast;
+  [12070]: Typecast;
+  ["PgCatalog.Types.PgPublicationTables"]: Typecast;
+  [10101]: Typecast;
+  ["PgCatalog.Types.PgRange"]: Typecast;
+  [10086]: Typecast;
+  ["PgCatalog.Types.PgReplicationOrigin"]: Typecast;
+  [12338]: Typecast;
+  ["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast;
+  [12259]: Typecast;
+  ["PgCatalog.Types.PgReplicationSlots"]: Typecast;
+  [10035]: Typecast;
+  ["PgCatalog.Types.PgRewrite"]: Typecast;
+  [12002]: Typecast;
+  ["PgCatalog.Types.PgRoles"]: Typecast;
+  [12025]: Typecast;
+  ["PgCatalog.Types.PgRules"]: Typecast;
+  [10092]: Typecast;
+  ["PgCatalog.Types.PgSeclabel"]: Typecast;
+  [12101]: Typecast;
+  ["PgCatalog.Types.PgSeclabels"]: Typecast;
+  [10105]: Typecast;
+  ["PgCatalog.Types.PgSequence"]: Typecast;
+  [12050]: Typecast;
+  ["PgCatalog.Types.PgSequences"]: Typecast;
+  [12106]: Typecast;
+  ["PgCatalog.Types.PgSettings"]: Typecast;
+  [12007]: Typecast;
+  ["PgCatalog.Types.PgShadow"]: Typecast;
+  [10060]: Typecast;
+  ["PgCatalog.Types.PgShdepend"]: Typecast;
+  [10062]: Typecast;
+  ["PgCatalog.Types.PgShdescription"]: Typecast;
+  [12136]: Typecast;
+  ["PgCatalog.Types.PgShmemAllocations"]: Typecast;
+  [4066]: Typecast;
+  ["PgCatalog.Types.PgShseclabel"]: Typecast;
+  [5038]: Typecast;
+  ["PgCatalog.Types.PgSnapshot"]: Typecast;
+  [12224]: Typecast;
+  ["PgCatalog.Types.PgStatActivity"]: Typecast;
+  [12185]: Typecast;
+  ["PgCatalog.Types.PgStatAllIndexes"]: Typecast;
+  [12144]: Typecast;
+  ["PgCatalog.Types.PgStatAllTables"]: Typecast;
+  [12287]: Typecast;
+  ["PgCatalog.Types.PgStatArchiver"]: Typecast;
+  [12291]: Typecast;
+  ["PgCatalog.Types.PgStatBgwriter"]: Typecast;
+  [12268]: Typecast;
+  ["PgCatalog.Types.PgStatDatabase"]: Typecast;
+  [12273]: Typecast;
+  ["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast;
+  [12255]: Typecast;
+  ["PgCatalog.Types.PgStatGssapi"]: Typecast;
+  [12295]: Typecast;
+  ["PgCatalog.Types.PgStatIo"]: Typecast;
+  [12303]: Typecast;
+  ["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast;
+  [12323]: Typecast;
+  ["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast;
+  [12313]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCluster"]: Typecast;
+  [12328]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCopy"]: Typecast;
+  [12318]: Typecast;
+  ["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast;
+  [12308]: Typecast;
+  ["PgCatalog.Types.PgStatProgressVacuum"]: Typecast;
+  [12242]: Typecast;
+  ["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast;
+  [12229]: Typecast;
+  ["PgCatalog.Types.PgStatReplication"]: Typecast;
+  [12264]: Typecast;
+  ["PgCatalog.Types.PgStatReplicationSlots"]: Typecast;
+  [12234]: Typecast;
+  ["PgCatalog.Types.PgStatSlru"]: Typecast;
+  [12251]: Typecast;
+  ["PgCatalog.Types.PgStatSsl"]: Typecast;
+  [12246]: Typecast;
+  ["PgCatalog.Types.PgStatSubscription"]: Typecast;
+  [12342]: Typecast;
+  ["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast;
+  [12190]: Typecast;
+  ["PgCatalog.Types.PgStatSysIndexes"]: Typecast;
+  [12154]: Typecast;
+  ["PgCatalog.Types.PgStatSysTables"]: Typecast;
+  [12277]: Typecast;
+  ["PgCatalog.Types.PgStatUserFunctions"]: Typecast;
+  [12194]: Typecast;
+  ["PgCatalog.Types.PgStatUserIndexes"]: Typecast;
+  [12163]: Typecast;
+  ["PgCatalog.Types.PgStatUserTables"]: Typecast;
+  [12299]: Typecast;
+  ["PgCatalog.Types.PgStatWal"]: Typecast;
+  [12238]: Typecast;
+  ["PgCatalog.Types.PgStatWalReceiver"]: Typecast;
+  [12149]: Typecast;
+  ["PgCatalog.Types.PgStatXactAllTables"]: Typecast;
+  [12159]: Typecast;
+  ["PgCatalog.Types.PgStatXactSysTables"]: Typecast;
+  [12282]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast;
+  [12168]: Typecast;
+  ["PgCatalog.Types.PgStatXactUserTables"]: Typecast;
+  [12198]: Typecast;
+  ["PgCatalog.Types.PgStatioAllIndexes"]: Typecast;
+  [12211]: Typecast;
+  ["PgCatalog.Types.PgStatioAllSequences"]: Typecast;
+  [12172]: Typecast;
+  ["PgCatalog.Types.PgStatioAllTables"]: Typecast;
+  [12203]: Typecast;
+  ["PgCatalog.Types.PgStatioSysIndexes"]: Typecast;
+  [12216]: Typecast;
+  ["PgCatalog.Types.PgStatioSysSequences"]: Typecast;
+  [12177]: Typecast;
+  ["PgCatalog.Types.PgStatioSysTables"]: Typecast;
+  [12207]: Typecast;
+  ["PgCatalog.Types.PgStatioUserIndexes"]: Typecast;
+  [12220]: Typecast;
+  ["PgCatalog.Types.PgStatioUserSequences"]: Typecast;
+  [12181]: Typecast;
+  ["PgCatalog.Types.PgStatioUserTables"]: Typecast;
+  [10029]: Typecast;
+  ["PgCatalog.Types.PgStatistic"]: Typecast;
+  [10031]: Typecast;
+  ["PgCatalog.Types.PgStatisticExt"]: Typecast;
+  [10033]: Typecast;
+  ["PgCatalog.Types.PgStatisticExtData"]: Typecast;
+  [12055]: Typecast;
+  ["PgCatalog.Types.PgStats"]: Typecast;
+  [12060]: Typecast;
+  ["PgCatalog.Types.PgStatsExt"]: Typecast;
+  [12065]: Typecast;
+  ["PgCatalog.Types.PgStatsExtExprs"]: Typecast;
+  [6101]: Typecast;
+  ["PgCatalog.Types.PgSubscription"]: Typecast;
+  [10114]: Typecast;
+  ["PgCatalog.Types.PgSubscriptionRel"]: Typecast;
+  [12035]: Typecast;
+  ["PgCatalog.Types.PgTables"]: Typecast;
+  [10056]: Typecast;
+  ["PgCatalog.Types.PgTablespace"]: Typecast;
+  [12124]: Typecast;
+  ["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast;
+  [12128]: Typecast;
+  ["PgCatalog.Types.PgTimezoneNames"]: Typecast;
+  [10103]: Typecast;
+  ["PgCatalog.Types.PgTransform"]: Typecast;
+  [10037]: Typecast;
+  ["PgCatalog.Types.PgTrigger"]: Typecast;
+  [10064]: Typecast;
+  ["PgCatalog.Types.PgTsConfig"]: Typecast;
+  [10066]: Typecast;
+  ["PgCatalog.Types.PgTsConfigMap"]: Typecast;
+  [10068]: Typecast;
+  ["PgCatalog.Types.PgTsDict"]: Typecast;
+  [10070]: Typecast;
+  ["PgCatalog.Types.PgTsParser"]: Typecast;
+  [10072]: Typecast;
+  ["PgCatalog.Types.PgTsTemplate"]: Typecast;
+  [71]: Typecast;
+  ["PgCatalog.Types.PgType"]: Typecast;
+  [12016]: Typecast;
+  ["PgCatalog.Types.PgUser"]: Typecast;
+  [10080]: Typecast;
+  ["PgCatalog.Types.PgUserMapping"]: Typecast;
+  [12333]: Typecast;
+  ["PgCatalog.Types.PgUserMappings"]: Typecast;
+  [12030]: Typecast;
+  ["PgCatalog.Types.PgViews"]: Typecast;
+  [600]: Typecast;
+  ["PgCatalog.Types.Point"]: Typecast;
+  [604]: Typecast;
+  ["PgCatalog.Types.Polygon"]: Typecast;
+  [2249]: Typecast;
+  ["PgCatalog.Types.Record"]: Typecast;
+  [1790]: Typecast;
+  ["PgCatalog.Types.Refcursor"]: Typecast;
+  [2205]: Typecast;
+  ["PgCatalog.Types.Regclass"]: Typecast;
+  [4191]: Typecast;
+  ["PgCatalog.Types.Regcollation"]: Typecast;
+  [3734]: Typecast;
+  ["PgCatalog.Types.Regconfig"]: Typecast;
+  [3769]: Typecast;
+  ["PgCatalog.Types.Regdictionary"]: Typecast;
+  [4089]: Typecast;
+  ["PgCatalog.Types.Regnamespace"]: Typecast;
+  [2203]: Typecast;
+  ["PgCatalog.Types.Regoper"]: Typecast;
+  [2204]: Typecast;
+  ["PgCatalog.Types.Regoperator"]: Typecast;
+  [24]: Typecast;
+  ["PgCatalog.Types.Regproc"]: Typecast;
+  [2202]: Typecast;
+  ["PgCatalog.Types.Regprocedure"]: Typecast;
+  [4096]: Typecast;
+  ["PgCatalog.Types.Regrole"]: Typecast;
+  [2206]: Typecast;
+  ["PgCatalog.Types.Regtype"]: Typecast;
+  [269]: Typecast;
+  ["PgCatalog.Types.TableAmHandler"]: Typecast;
+  [25]: Typecast;
+  ["PgCatalog.Types.Text"]: Typecast;
+  [27]: Typecast;
+  ["PgCatalog.Types.Tid"]: Typecast;
+  [1083]: Typecast;
+  ["PgCatalog.Types.Time"]: Typecast;
+  [1114]: Typecast;
+  ["PgCatalog.Types.Timestamp"]: Typecast;
+  [1184]: Typecast;
+  ["PgCatalog.Types.Timestamptz"]: Typecast;
+  [1266]: Typecast;
+  ["PgCatalog.Types.Timetz"]: Typecast;
+  [2279]: Typecast;
+  ["PgCatalog.Types.Trigger"]: Typecast;
+  [3310]: Typecast;
+  ["PgCatalog.Types.TsmHandler"]: Typecast;
+  [4533]: Typecast;
+  ["PgCatalog.Types.Tsmultirange"]: Typecast;
+  [3615]: Typecast;
+  ["PgCatalog.Types.Tsquery"]: Typecast;
+  [3908]: Typecast;
+  ["PgCatalog.Types.Tsrange"]: Typecast;
+  [4534]: Typecast;
+  ["PgCatalog.Types.Tstzmultirange"]: Typecast;
+  [3910]: Typecast;
+  ["PgCatalog.Types.Tstzrange"]: Typecast;
+  [3614]: Typecast;
+  ["PgCatalog.Types.Tsvector"]: Typecast;
+  [2970]: Typecast;
+  ["PgCatalog.Types.TxidSnapshot"]: Typecast;
+  [705]: Typecast;
+  ["PgCatalog.Types.Unknown"]: Typecast;
+  [2950]: Typecast;
+  ["PgCatalog.Types.Uuid"]: Typecast;
+  [1562]: Typecast;
+  ["PgCatalog.Types.Varbit"]: Typecast;
+  [1043]: Typecast;
+  ["PgCatalog.Types.Varchar"]: Typecast;
+  [2278]: Typecast;
+  ["PgCatalog.Types.Void"]: Typecast;
+  [28]: Typecast;
+  ["PgCatalog.Types.Xid"]: Typecast;
+  [5069]: Typecast;
+  ["PgCatalog.Types.Xid8"]: Typecast;
+  [142]: Typecast;
+  ["PgCatalog.Types.Xml"]: Typecast;
+  [32294]: Typecast;
+  ["Public.Types.ActorArray"]: Typecast;
+  [32325]: Typecast;
+  ["Public.Types.ActorInfoArray"]: Typecast;
+  [32331]: Typecast;
+  ["Public.Types.AddressArray"]: Typecast;
+  [32300]: Typecast;
+  ["Public.Types.CategoryArray"]: Typecast;
+  [32337]: Typecast;
+  ["Public.Types.CityArray"]: Typecast;
+  [32343]: Typecast;
+  ["Public.Types.CountryArray"]: Typecast;
+  [32284]: Typecast;
+  ["Public.Types.CustomerArray"]: Typecast;
+  [32348]: Typecast;
+  ["Public.Types.CustomerListArray"]: Typecast;
+  [32306]: Typecast;
+  ["Public.Types.FilmArray"]: Typecast;
+  [32317]: Typecast;
+  ["Public.Types.FilmActorArray"]: Typecast;
+  [32321]: Typecast;
+  ["Public.Types.FilmCategoryArray"]: Typecast;
+  [32353]: Typecast;
+  ["Public.Types.FilmListArray"]: Typecast;
+  [32359]: Typecast;
+  ["Public.Types.InventoryArray"]: Typecast;
+  [32365]: Typecast;
+  ["Public.Types.LanguageArray"]: Typecast;
+  [32260]: Typecast;
+  ["Public.Types.MpaaRatingArray"]: Typecast;
+  [32370]: Typecast;
+  ["Public.Types.NicerButSlowerFilmListArray"]: Typecast;
+  [32376]: Typecast;
+  ["Public.Types.PaymentArray"]: Typecast;
+  [32381]: Typecast;
+  ["Public.Types.RentalArray"]: Typecast;
+  [32386]: Typecast;
+  ["Public.Types.SalesByFilmCategoryArray"]: Typecast;
+  [32406]: Typecast;
+  ["Public.Types.SalesByStoreArray"]: Typecast;
+  [32392]: Typecast;
+  ["Public.Types.StaffArray"]: Typecast;
+  [32411]: Typecast;
+  ["Public.Types.StaffListArray"]: Typecast;
+  [32401]: Typecast;
+  ["Public.Types.StoreArray"]: Typecast;
+  [32271]: Typecast;
+  ["Public.Types.YearArray"]: Typecast;
+  [32295]: Typecast;
+  ["Public.Types.Actor"]: Typecast;
+  [32326]: Typecast;
+  ["Public.Types.ActorInfo"]: Typecast;
+  [32332]: Typecast;
+  ["Public.Types.Address"]: Typecast;
+  [32301]: Typecast;
+  ["Public.Types.Category"]: Typecast;
+  [32338]: Typecast;
+  ["Public.Types.City"]: Typecast;
+  [32344]: Typecast;
+  ["Public.Types.Country"]: Typecast;
+  [32285]: Typecast;
+  ["Public.Types.Customer"]: Typecast;
+  [32349]: Typecast;
+  ["Public.Types.CustomerList"]: Typecast;
+  [32307]: Typecast;
+  ["Public.Types.Film"]: Typecast;
+  [32318]: Typecast;
+  ["Public.Types.FilmActor"]: Typecast;
+  [32322]: Typecast;
+  ["Public.Types.FilmCategory"]: Typecast;
+  [32354]: Typecast;
+  ["Public.Types.FilmList"]: Typecast;
+  [32360]: Typecast;
+  ["Public.Types.Inventory"]: Typecast;
+  [32366]: Typecast;
+  ["Public.Types.Language"]: Typecast;
+  [32261]: Typecast;
+  ["Public.Types.MpaaRating"]: Typecast;
+  [32371]: Typecast;
+  ["Public.Types.NicerButSlowerFilmList"]: Typecast;
+  [32377]: Typecast;
+  ["Public.Types.Payment"]: Typecast;
+  [32382]: Typecast;
+  ["Public.Types.Rental"]: Typecast;
+  [32387]: Typecast;
+  ["Public.Types.SalesByFilmCategory"]: Typecast;
+  [32407]: Typecast;
+  ["Public.Types.SalesByStore"]: Typecast;
+  [32393]: Typecast;
+  ["Public.Types.Staff"]: Typecast;
+  [32412]: Typecast;
+  ["Public.Types.StaffList"]: Typecast;
+  [32402]: Typecast;
+  ["Public.Types.Store"]: Typecast;
+  [32272]: Typecast;
+  ["Public.Types.Year"]: Typecast;
+
+  ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.FilmNotInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.GetCustomerBalance.Parameters"]: Typecast;
+
+  ["Public.Procedures.InventoryHeldByCustomer.Parameters"]: Typecast;
+
+  ["Public.Procedures.InventoryInStock.Parameters"]: Typecast;
+
+  ["Public.Procedures.LastDay.Parameters"]: Typecast;
+
+  ["Public.Procedures.RewardsReport.Parameters"]: Typecast;
+  [13509]: Typecast;
+  ["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast;
+  [13504]: Typecast;
+  ["InformationSchema.Types.ApplicableRolesArray"]: Typecast;
+  [13513]: Typecast;
+  ["InformationSchema.Types.AttributesArray"]: Typecast;
+  [13487]: Typecast;
+  ["InformationSchema.Types.CardinalNumberArray"]: Typecast;
+  [13490]: Typecast;
+  ["InformationSchema.Types.CharacterDataArray"]: Typecast;
+  [13518]: Typecast;
+  ["InformationSchema.Types.CharacterSetsArray"]: Typecast;
+  [13523]: Typecast;
+  ["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast;
+  [13528]: Typecast;
+  ["InformationSchema.Types.CheckConstraintsArray"]: Typecast;
+  [13538]: Typecast;
+  ["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast;
+  [13533]: Typecast;
+  ["InformationSchema.Types.CollationsArray"]: Typecast;
+  [13543]: Typecast;
+  ["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast;
+  [13548]: Typecast;
+  ["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast;
+  [13771]: Typecast;
+  ["InformationSchema.Types.ColumnOptionsArray"]: Typecast;
+  [13553]: Typecast;
+  ["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast;
+  [13558]: Typecast;
+  ["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast;
+  [13563]: Typecast;
+  ["InformationSchema.Types.ColumnsArray"]: Typecast;
+  [13568]: Typecast;
+  ["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast;
+  [13573]: Typecast;
+  ["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast;
+  [13756]: Typecast;
+  ["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast;
+  [13578]: Typecast;
+  ["InformationSchema.Types.DomainConstraintsArray"]: Typecast;
+  [13583]: Typecast;
+  ["InformationSchema.Types.DomainUdtUsageArray"]: Typecast;
+  [13588]: Typecast;
+  ["InformationSchema.Types.DomainsArray"]: Typecast;
+  [13761]: Typecast;
+  ["InformationSchema.Types.ElementTypesArray"]: Typecast;
+  [13593]: Typecast;
+  ["InformationSchema.Types.EnabledRolesArray"]: Typecast;
+  [13779]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast;
+  [13783]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast;
+  [13792]: Typecast;
+  ["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast;
+  [13796]: Typecast;
+  ["InformationSchema.Types.ForeignServersArray"]: Typecast;
+  [13805]: Typecast;
+  ["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast;
+  [13809]: Typecast;
+  ["InformationSchema.Types.ForeignTablesArray"]: Typecast;
+  [13495]: Typecast;
+  ["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast;
+  [13597]: Typecast;
+  ["InformationSchema.Types.KeyColumnUsageArray"]: Typecast;
+  [13602]: Typecast;
+  ["InformationSchema.Types.ParametersArray"]: Typecast;
+  [13776]: Typecast;
+  ["InformationSchema.Types.PgForeignDataWrappers"]: Typecast;
+  [13788]: Typecast;
+  ["InformationSchema.Types.PgForeignServers"]: Typecast;
+  [13767]: Typecast;
+  ["InformationSchema.Types.PgForeignTableColumns"]: Typecast;
+  [13801]: Typecast;
+  ["InformationSchema.Types.PgForeignTables"]: Typecast;
+  [13814]: Typecast;
+  ["InformationSchema.Types.PgUserMappings"]: Typecast;
+  [13607]: Typecast;
+  ["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast;
+  [13612]: Typecast;
+  ["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast;
+  [13626]: Typecast;
+  ["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast;
+  [13689]: Typecast;
+  ["InformationSchema.Types.RoleTableGrantsArray"]: Typecast;
+  [13718]: Typecast;
+  ["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast;
+  [13727]: Typecast;
+  ["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast;
+  [13616]: Typecast;
+  ["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast;
+  [13621]: Typecast;
+  ["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast;
+  [13630]: Typecast;
+  ["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast;
+  [13635]: Typecast;
+  ["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast;
+  [13640]: Typecast;
+  ["InformationSchema.Types.RoutineTableUsageArray"]: Typecast;
+  [13645]: Typecast;
+  ["InformationSchema.Types.RoutinesArray"]: Typecast;
+  [13650]: Typecast;
+  ["InformationSchema.Types.SchemataArray"]: Typecast;
+  [13654]: Typecast;
+  ["InformationSchema.Types.SequencesArray"]: Typecast;
+  [13659]: Typecast;
+  ["InformationSchema.Types.SqlFeaturesArray"]: Typecast;
+  [13492]: Typecast;
+  ["InformationSchema.Types.SqlIdentifierArray"]: Typecast;
+  [13664]: Typecast;
+  ["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast;
+  [13669]: Typecast;
+  ["InformationSchema.Types.SqlPartsArray"]: Typecast;
+  [13674]: Typecast;
+  ["InformationSchema.Types.SqlSizingArray"]: Typecast;
+  [13679]: Typecast;
+  ["InformationSchema.Types.TableConstraintsArray"]: Typecast;
+  [13684]: Typecast;
+  ["InformationSchema.Types.TablePrivilegesArray"]: Typecast;
+  [13693]: Typecast;
+  ["InformationSchema.Types.TablesArray"]: Typecast;
+  [13498]: Typecast;
+  ["InformationSchema.Types.TimeStampArray"]: Typecast;
+  [13698]: Typecast;
+  ["InformationSchema.Types.TransformsArray"]: Typecast;
+  [13703]: Typecast;
+  ["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast;
+  [13708]: Typecast;
+  ["InformationSchema.Types.TriggersArray"]: Typecast;
+  [13713]: Typecast;
+  ["InformationSchema.Types.UdtPrivilegesArray"]: Typecast;
+  [13722]: Typecast;
+  ["InformationSchema.Types.UsagePrivilegesArray"]: Typecast;
+  [13731]: Typecast;
+  ["InformationSchema.Types.UserDefinedTypesArray"]: Typecast;
+  [13818]: Typecast;
+  ["InformationSchema.Types.UserMappingOptionsArray"]: Typecast;
+  [13823]: Typecast;
+  ["InformationSchema.Types.UserMappingsArray"]: Typecast;
+  [13736]: Typecast;
+  ["InformationSchema.Types.ViewColumnUsageArray"]: Typecast;
+  [13741]: Typecast;
+  ["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast;
+  [13746]: Typecast;
+  ["InformationSchema.Types.ViewTableUsageArray"]: Typecast;
+  [13751]: Typecast;
+  ["InformationSchema.Types.ViewsArray"]: Typecast;
+  [13500]: Typecast;
+  ["InformationSchema.Types.YesOrNoArray"]: Typecast;
+  [13510]: Typecast;
+  ["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast;
+  [13505]: Typecast;
+  ["InformationSchema.Types.ApplicableRoles"]: Typecast;
+  [13514]: Typecast;
+  ["InformationSchema.Types.Attributes"]: Typecast;
+  [13488]: Typecast;
+  ["InformationSchema.Types.CardinalNumber"]: Typecast;
+  [13491]: Typecast;
+  ["InformationSchema.Types.CharacterData"]: Typecast;
+  [13519]: Typecast;
+  ["InformationSchema.Types.CharacterSets"]: Typecast;
+  [13524]: Typecast;
+  ["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast;
+  [13529]: Typecast;
+  ["InformationSchema.Types.CheckConstraints"]: Typecast;
+  [13539]: Typecast;
+  ["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast;
+  [13534]: Typecast;
+  ["InformationSchema.Types.Collations"]: Typecast;
+  [13544]: Typecast;
+  ["InformationSchema.Types.ColumnColumnUsage"]: Typecast;
+  [13549]: Typecast;
+  ["InformationSchema.Types.ColumnDomainUsage"]: Typecast;
+  [13772]: Typecast;
+  ["InformationSchema.Types.ColumnOptions"]: Typecast;
+  [13554]: Typecast;
+  ["InformationSchema.Types.ColumnPrivileges"]: Typecast;
+  [13559]: Typecast;
+  ["InformationSchema.Types.ColumnUdtUsage"]: Typecast;
+  [13564]: Typecast;
+  ["InformationSchema.Types.Columns"]: Typecast;
+  [13569]: Typecast;
+  ["InformationSchema.Types.ConstraintColumnUsage"]: Typecast;
+  [13574]: Typecast;
+  ["InformationSchema.Types.ConstraintTableUsage"]: Typecast;
+  [13757]: Typecast;
+  ["InformationSchema.Types.DataTypePrivileges"]: Typecast;
+  [13579]: Typecast;
+  ["InformationSchema.Types.DomainConstraints"]: Typecast;
+  [13584]: Typecast;
+  ["InformationSchema.Types.DomainUdtUsage"]: Typecast;
+  [13589]: Typecast;
+  ["InformationSchema.Types.Domains"]: Typecast;
+  [13762]: Typecast;
+  ["InformationSchema.Types.ElementTypes"]: Typecast;
+  [13594]: Typecast;
+  ["InformationSchema.Types.EnabledRoles"]: Typecast;
+  [13780]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast;
+  [13784]: Typecast;
+  ["InformationSchema.Types.ForeignDataWrappers"]: Typecast;
+  [13793]: Typecast;
+  ["InformationSchema.Types.ForeignServerOptions"]: Typecast;
+  [13797]: Typecast;
+  ["InformationSchema.Types.ForeignServers"]: Typecast;
+  [13806]: Typecast;
+  ["InformationSchema.Types.ForeignTableOptions"]: Typecast;
+  [13810]: Typecast;
+  ["InformationSchema.Types.ForeignTables"]: Typecast;
+  [13496]: Typecast;
+  ["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast;
+  [13598]: Typecast;
+  ["InformationSchema.Types.KeyColumnUsage"]: Typecast;
+  [13603]: Typecast;
+  ["InformationSchema.Types.Parameters"]: Typecast;
+  [13608]: Typecast;
+  ["InformationSchema.Types.ReferentialConstraints"]: Typecast;
+  [13613]: Typecast;
+  ["InformationSchema.Types.RoleColumnGrants"]: Typecast;
+  [13627]: Typecast;
+  ["InformationSchema.Types.RoleRoutineGrants"]: Typecast;
+  [13690]: Typecast;
+  ["InformationSchema.Types.RoleTableGrants"]: Typecast;
+  [13719]: Typecast;
+  ["InformationSchema.Types.RoleUdtGrants"]: Typecast;
+  [13728]: Typecast;
+  ["InformationSchema.Types.RoleUsageGrants"]: Typecast;
+  [13617]: Typecast;
+  ["InformationSchema.Types.RoutineColumnUsage"]: Typecast;
+  [13622]: Typecast;
+  ["InformationSchema.Types.RoutinePrivileges"]: Typecast;
+  [13631]: Typecast;
+  ["InformationSchema.Types.RoutineRoutineUsage"]: Typecast;
+  [13636]: Typecast;
+  ["InformationSchema.Types.RoutineSequenceUsage"]: Typecast;
+  [13641]: Typecast;
+  ["InformationSchema.Types.RoutineTableUsage"]: Typecast;
+  [13646]: Typecast;
+  ["InformationSchema.Types.Routines"]: Typecast;
+  [13651]: Typecast;
+  ["InformationSchema.Types.Schemata"]: Typecast;
+  [13655]: Typecast;
+  ["InformationSchema.Types.Sequences"]: Typecast;
+  [13660]: Typecast;
+  ["InformationSchema.Types.SqlFeatures"]: Typecast;
+  [13493]: Typecast;
+  ["InformationSchema.Types.SqlIdentifier"]: Typecast;
+  [13665]: Typecast;
+  ["InformationSchema.Types.SqlImplementationInfo"]: Typecast;
+  [13670]: Typecast;
+  ["InformationSchema.Types.SqlParts"]: Typecast;
+  [13675]: Typecast;
+  ["InformationSchema.Types.SqlSizing"]: Typecast;
+  [13680]: Typecast;
+  ["InformationSchema.Types.TableConstraints"]: Typecast;
+  [13685]: Typecast;
+  ["InformationSchema.Types.TablePrivileges"]: Typecast;
+  [13694]: Typecast;
+  ["InformationSchema.Types.Tables"]: Typecast;
+  [13499]: Typecast;
+  ["InformationSchema.Types.TimeStamp"]: Typecast;
+  [13699]: Typecast;
+  ["InformationSchema.Types.Transforms"]: Typecast;
+  [13704]: Typecast;
+  ["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast;
+  [13709]: Typecast;
+  ["InformationSchema.Types.Triggers"]: Typecast;
+  [13714]: Typecast;
+  ["InformationSchema.Types.UdtPrivileges"]: Typecast;
+  [13723]: Typecast;
+  ["InformationSchema.Types.UsagePrivileges"]: Typecast;
+  [13732]: Typecast;
+  ["InformationSchema.Types.UserDefinedTypes"]: Typecast;
+  [13819]: Typecast;
+  ["InformationSchema.Types.UserMappingOptions"]: Typecast;
+  [13824]: Typecast;
+  ["InformationSchema.Types.UserMappings"]: Typecast;
+  [13737]: Typecast;
+  ["InformationSchema.Types.ViewColumnUsage"]: Typecast;
+  [13742]: Typecast;
+  ["InformationSchema.Types.ViewRoutineUsage"]: Typecast;
+  [13747]: Typecast;
+  ["InformationSchema.Types.ViewTableUsage"]: Typecast;
+  [13752]: Typecast;
+  ["InformationSchema.Types.Views"]: Typecast;
+  [13501]: Typecast;
+  ["InformationSchema.Types.YesOrNo"]: Typecast;
+}
+
+interface HasDatabase {
+  database: Database;
+}
+
+export class Database extends PostgresDatabase implements HasDatabase {
+  get database() {
+    return this;
   }
 
-  public Public = new (class extends HasClient {
-    public Procedures = new (class extends HasClient {})(this);
+  /**
+   * Connect to your database server via URL, and return
+   * a fully typed database you can use to access it.
+   */
+  static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+    return new Database(await initializeContext(postgresUrl, props));
+  }
 
-    public Tables = new (class extends HasClient {
-      public Checklist = new (class extends HasClient {
-        public async create(
-          values: Public.Tables.Checklist.Values,
-        ): Promise<Public.Tables.Checklist.Record | undefined> {
-          const response = await this.client.invoke<
-            never,
-            Public.Tables.Checklist.Values,
-            Public.Tables.Checklist.Record
-          >({
-            operation: "Public.Tables.Checklist.create",
-            values: {
-              id: values.id,
-              name: values.name,
-              createdAt: values.createdAt,
-            },
-          });
-          return nullIsUndefined<Public.Tables.Checklist.Record>(
-            Public.Types.Checklist.parse(response.results),
+  public Public = new (class implements HasDatabase {
+    constructor(private hasDatabase: HasDatabase) {}
+
+    get database() {
+      return this.hasDatabase.database;
+    }
+
+    public Procedures = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async filmInStock(parameters: Public.Procedures.FilmInStock.Parameters) {
+        const parseResult = (
+          context: Context,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          result: any,
+        ) => {
+          return context.procTypes[32275].parseFromPostgresIfRecord(
+            context,
+            result,
+          ) as unknown as PgCatalog.Types.Int4;
+        };
+
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.film_in_stock(p_film_id => ${typed[23](
+                    undefinedIsNull(parameters.pFilmId),
+                  )},p_store_id => ${typed[23](
+                    undefinedIsNull(parameters.pStoreId),
+                  )})`;
+        const results = response;
+        const responseBody = results
+          .map((x) => parseResult(this.database.context, x.film_in_stock))
+          .filter<PgCatalog.Types.Int4>(
+            (r): r is PgCatalog.Types.Int4 => r !== null,
           );
+        return responseBody;
+      }
+      async filmNotInStock(
+        parameters: Public.Procedures.FilmNotInStock.Parameters,
+      ) {
+        const parseResult = (
+          context: Context,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          result: any,
+        ) => {
+          return context.procTypes[32276].parseFromPostgresIfRecord(
+            context,
+            result,
+          ) as unknown as PgCatalog.Types.Int4;
+        };
+
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.film_not_in_stock(p_film_id => ${typed[23](
+                    undefinedIsNull(parameters.pFilmId),
+                  )},p_store_id => ${typed[23](
+                    undefinedIsNull(parameters.pStoreId),
+                  )})`;
+        const results = response;
+        const responseBody = results
+          .map((x) => parseResult(this.database.context, x.film_not_in_stock))
+          .filter<PgCatalog.Types.Int4>(
+            (r): r is PgCatalog.Types.Int4 => r !== null,
+          );
+        return responseBody;
+      }
+      async getCustomerBalance(
+        parameters: Public.Procedures.GetCustomerBalance.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.get_customer_balance(p_customer_id => ${typed[23](
+                    undefinedIsNull(parameters.pCustomerId),
+                  )},p_effective_date => ${typed[1114](
+                    undefinedIsNull(parameters.pEffectiveDate),
+                  )})`;
+        const results = response;
+        const responseBody = PgCatalog.Types.Numeric.parse(
+          results?.[0].get_customer_balance,
+        );
+        return responseBody;
+      }
+      async inventoryHeldByCustomer(
+        parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.inventory_held_by_customer(p_inventory_id => ${typed[23](
+                    undefinedIsNull(parameters.pInventoryId),
+                  )})`;
+        const results = response;
+        const responseBody = PgCatalog.Types.Int4.parse(
+          results?.[0].inventory_held_by_customer,
+        );
+        return responseBody;
+      }
+      async inventoryInStock(
+        parameters: Public.Procedures.InventoryInStock.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.inventory_in_stock(p_inventory_id => ${typed[23](
+                    undefinedIsNull(parameters.pInventoryId),
+                  )})`;
+        const results = response;
+        const responseBody = PgCatalog.Types.Bool.parse(
+          results?.[0].inventory_in_stock,
+        );
+        return responseBody;
+      }
+      async lastDay(parameters: Public.Procedures.LastDay.Parameters) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.last_day( ${typed[1114](
+                    undefinedIsNull(parameters.argument_0),
+                  )})`;
+        const results = response;
+        const responseBody = PgCatalog.Types.Date.parse(results?.[0].last_day);
+        return responseBody;
+      }
+      async rewardsReport(
+        parameters: Public.Procedures.RewardsReport.Parameters,
+      ) {
+        console.assert(parameters);
+        const sql = this.database.context.sql;
+        const typed = sql.typed as unknown as PostgresTypecasts;
+        const response = await sql`
+                  SELECT
+                  public.rewards_report(min_monthly_purchases => ${typed[23](
+                    undefinedIsNull(parameters.minMonthlyPurchases),
+                  )},min_dollar_amount_purchased => ${typed[1700](
+                    undefinedIsNull(parameters.minDollarAmountPurchased),
+                  )})`;
+        const results = response;
+        const responseBody = results
+          .map((x) => Public.Types.Customer.parse(x.rewards_report))
+          .filter<Public.Types.Customer>(
+            (r): r is Public.Types.Customer => r !== null,
+          );
+        return responseBody;
+      }
+    })(this);
+
+    public Tables = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      public FilmActor = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
         }
 
-        public async all(): Promise<Public.Tables.Checklist.Record[]> {
-          const response = await this.client.invoke<
-            never,
-            never,
-            Public.Tables.Checklist.Record[]
-          >({
-            operation: "Public.Tables.Checklist.all",
-          });
-          return (
-            response.results
-              ?.map(Public.Types.Checklist.parse)
-              .map(nullIsUndefined<Public.Tables.Checklist.Record>)
-              .filter(
-                (x): x is Public.Tables.Checklist.Record => x !== undefined,
-              ) ?? []
-          );
+        async create(
+          values: Public.Tables.FilmActor.Values,
+        ): Promise<Public.Tables.FilmActor.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    INSERT INTO
+      public.film_actor (actor_id,film_id,last_update)
+    VALUES (${
+      values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId)
+    },${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (actor_id,film_id) DO UPDATE
+    SET
+      last_update = EXCLUDED.last_update
+    RETURNING
+      actor_id,film_id,last_update
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.FilmActor.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            filmId: undefinedIsNull(record.film_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
-        public ById = new (class extends HasClient {
-          public async read(parameters: Public.Tables.Checklist.ById) {
-            const response = await this.client.invoke<
-              Public.Tables.Checklist.ById,
-              never,
-              Public.Tables.Checklist.Record | undefined
-            >({
-              operation: "Public.Tables.Checklist.ById.read",
-              parameters: { id: parameters.id },
-            });
+        public ByActorIdFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
-              Public.Types.Checklist.parse(response.results),
-            );
+          get database() {
+            return this.hasDatabase.database;
           }
 
-          public async update(
-            parameters: Public.Tables.Checklist.ById,
-            values: Partial<Public.Types.Checklist>,
-          ) {
-            const response = await this.client.invoke<
-              Public.Tables.Checklist.ById,
-              Partial<Public.Types.Checklist>,
-              Public.Tables.Checklist.Record | undefined
-            >({
-              operation: "Public.Tables.Checklist.ById.update",
-              parameters: { id: parameters.id },
-              values: {
-                id: values.id,
-                name: values.name,
-                createdAt: values.createdAt,
-              },
-            });
+          async read(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+          ): Promise<Public.Tables.FilmActor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
-              Public.Types.Checklist.parse(response.results),
-            );
+            const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
           }
 
-          public async delete(parameters: Public.Tables.Checklist.ById) {
-            const response = await this.client.invoke<
-              Public.Tables.Checklist.ById,
-              never,
-              Public.Tables.Checklist.Record | undefined
-            >({
-              operation: "Public.Tables.Checklist.ById.delete",
-              parameters: { id: parameters.id },
-            });
+          async update(
+            parameters: Public.Tables.FilmActor.ByActorIdFilmId,
+            values: Partial<Public.Tables.FilmActor.Values>,
+          ): Promise<Public.Tables.FilmActor.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
-              Public.Types.Checklist.parse(response.results),
-            );
+            const response = await sql`
+    --
+    UPDATE 
+      public.film_actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.FilmActor.ByActorIdFilmId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film_actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.actorId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
           }
         })(this);
         public get ByPrimaryKey() {
-          return this.ById;
+          return this.ByActorIdFilmId;
+        }
+
+        public ByFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+          ): Promise<Public.Tables.FilmActor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      actor_id,film_id,last_update 
+    FROM
+      public.film_actor 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.FilmActor.ByFilmId,
+            values: Partial<Public.Tables.FilmActor.Values>,
+          ): Promise<Public.Tables.FilmActor.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film_actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.FilmActor.ByFilmId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film_actor 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING actor_id,film_id,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              filmId: undefinedIsNull(record.film_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Address = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Address.Values,
+        ): Promise<Public.Tables.Address.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Address.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.address (address,address2,district,city_id,postal_code,phone,last_update)
+      VALUES (${
+        values.address === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address)
+      },${
+        values.address2 === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.address2)
+      },${
+        values.district === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.district)
+      },${
+        values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+      },${
+        values.postalCode === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.postalCode)
+      },${
+        values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        address_id,address,address2,district,city_id,postal_code,phone,last_update
+    `;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
+    VALUES (${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.addressId)
+    },${
+      values.address === undefined ? sql`DEFAULT` : typed[1043](values.address)
+    },${
+      values.address2 === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.address2)
+    },${
+      values.district === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.district)
+    },${
+      values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId)
+    },${
+      values.postalCode === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.postalCode)
+    },${
+      values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (address_id) DO UPDATE
+    SET
+      address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
+    RETURNING
+      address_id,address,address2,district,city_id,postal_code,phone,last_update
+    `;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Address.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    `;
+          return response.map((record) => ({
+            addressId: undefinedIsNull(record.address_id),
+            address: undefinedIsNull(record.address),
+            address2: undefinedIsNull(record.address2),
+            district: undefinedIsNull(record.district),
+            cityId: undefinedIsNull(record.city_id),
+            postalCode: undefinedIsNull(record.postal_code),
+            phone: undefinedIsNull(record.phone),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByAddressId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Address.ByAddressId,
+          ): Promise<Public.Tables.Address.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    `;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Address.ByAddressId,
+            values: Partial<Public.Tables.Address.Values>,
+          ): Promise<Public.Tables.Address.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.address 
+    SET
+      address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[23](values.addressId)
+      } , address = ${
+        values.address === undefined
+          ? sql`address`
+          : typed[1043](values.address)
+      } , address2 = ${
+        values.address2 === undefined
+          ? sql`address2`
+          : typed[1043](values.address2)
+      } , district = ${
+        values.district === undefined
+          ? sql`district`
+          : typed[1043](values.district)
+      } , city_id = ${
+        values.cityId === undefined ? sql`city_id` : typed[21](values.cityId)
+      } , postal_code = ${
+        values.postalCode === undefined
+          ? sql`postal_code`
+          : typed[1043](values.postalCode)
+      } , phone = ${
+        values.phone === undefined ? sql`phone` : typed[1043](values.phone)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Address.ByAddressId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.address 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.addressId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByAddressId;
+        }
+
+        public ByCityId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Address.ByCityId,
+          ): Promise<Public.Tables.Address.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      address_id,address,address2,district,city_id,postal_code,phone,last_update 
+    FROM
+      public.address 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    `;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Address.ByCityId,
+            values: Partial<Public.Tables.Address.Values>,
+          ): Promise<Public.Tables.Address.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.address 
+    SET
+      address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[23](values.addressId)
+      } , address = ${
+        values.address === undefined
+          ? sql`address`
+          : typed[1043](values.address)
+      } , address2 = ${
+        values.address2 === undefined
+          ? sql`address2`
+          : typed[1043](values.address2)
+      } , district = ${
+        values.district === undefined
+          ? sql`district`
+          : typed[1043](values.district)
+      } , city_id = ${
+        values.cityId === undefined ? sql`city_id` : typed[21](values.cityId)
+      } , postal_code = ${
+        values.postalCode === undefined
+          ? sql`postal_code`
+          : typed[1043](values.postalCode)
+      } , phone = ${
+        values.phone === undefined ? sql`phone` : typed[1043](values.phone)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.Address.ByCityId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.address 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.cityId)
+      }
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
+            return response.map((record) => ({
+              addressId: undefinedIsNull(record.address_id),
+              address: undefinedIsNull(record.address),
+              address2: undefinedIsNull(record.address2),
+              district: undefinedIsNull(record.district),
+              cityId: undefinedIsNull(record.city_id),
+              postalCode: undefinedIsNull(record.postal_code),
+              phone: undefinedIsNull(record.phone),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public City = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.City.Values,
+        ): Promise<Public.Tables.City.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.City.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.city (city,country_id,last_update)
+      VALUES (${
+        values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)
+      },${
+        values.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.countryId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        city_id,city,country_id,last_update
+    `;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.city (city_id,city,country_id,last_update)
+    VALUES (${
+      values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId)
+    },${values.city === undefined ? sql`DEFAULT` : typed[1043](values.city)},${
+      values.countryId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.countryId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (city_id) DO UPDATE
+    SET
+      city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
+    RETURNING
+      city_id,city,country_id,last_update
+    `;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.City.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    `;
+          return response.map((record) => ({
+            cityId: undefinedIsNull(record.city_id),
+            city: undefinedIsNull(record.city),
+            countryId: undefinedIsNull(record.country_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByCityId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.City.ByCityId,
+          ): Promise<Public.Tables.City.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    `;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.City.ByCityId,
+            values: Partial<Public.Tables.City.Values>,
+          ): Promise<Public.Tables.City.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.city 
+    SET
+      city_id = ${
+        values.cityId === undefined ? sql`city_id` : typed[23](values.cityId)
+      } , city = ${
+        values.city === undefined ? sql`city` : typed[1043](values.city)
+      } , country_id = ${
+        values.countryId === undefined
+          ? sql`country_id`
+          : typed[21](values.countryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.City.ByCityId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.city 
+    WHERE
+      city_id = ${
+        parameters.cityId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.cityId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCityId;
+        }
+
+        public ByCountryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.City.ByCountryId,
+          ): Promise<Public.Tables.City.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      city_id,city,country_id,last_update 
+    FROM
+      public.city 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    `;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.City.ByCountryId,
+            values: Partial<Public.Tables.City.Values>,
+          ): Promise<Public.Tables.City.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.city 
+    SET
+      city_id = ${
+        values.cityId === undefined ? sql`city_id` : typed[23](values.cityId)
+      } , city = ${
+        values.city === undefined ? sql`city` : typed[1043](values.city)
+      } , country_id = ${
+        values.countryId === undefined
+          ? sql`country_id`
+          : typed[21](values.countryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.City.ByCountryId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.city 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.countryId)
+      }
+    RETURNING city_id,city,country_id,last_update`;
+            return response.map((record) => ({
+              cityId: undefinedIsNull(record.city_id),
+              city: undefinedIsNull(record.city),
+              countryId: undefinedIsNull(record.country_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Customer = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Customer.Values,
+        ): Promise<Public.Tables.Customer.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Customer.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.customer (store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+      VALUES (${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.activebool === undefined
+          ? sql`DEFAULT`
+          : typed[16](values.activebool)
+      },${
+        values.createDate === undefined
+          ? sql`DEFAULT`
+          : typed[1082](values.createDate)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.active === undefined ? sql`DEFAULT` : typed[23](values.active)
+      })
+      RETURNING
+        customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
+    VALUES (${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.customerId)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.activebool === undefined
+        ? sql`DEFAULT`
+        : typed[16](values.activebool)
+    },${
+      values.createDate === undefined
+        ? sql`DEFAULT`
+        : typed[1082](values.createDate)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${values.active === undefined ? sql`DEFAULT` : typed[23](values.active)})
+    ON CONFLICT (customer_id) DO UPDATE
+    SET
+      store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
+    RETURNING
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Customer.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    `;
+          return response.map((record) => ({
+            customerId: undefinedIsNull(record.customer_id),
+            storeId: undefinedIsNull(record.store_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            email: undefinedIsNull(record.email),
+            addressId: undefinedIsNull(record.address_id),
+            activebool: undefinedIsNull(record.activebool),
+            createDate: undefinedIsNull(record.create_date),
+            lastUpdate: undefinedIsNull(record.last_update),
+            active: undefinedIsNull(record.active),
+          }));
+        }
+
+        public ByAddressId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByAddressId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByAddressId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`email` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`activebool`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`create_date`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`active` : typed[23](values.active)
+      } 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+          async delete(parameters: Public.Tables.Customer.ByAddressId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      address_id = ${
+        parameters.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.addressId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
+
+        public ByCustomerId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByCustomerId,
+          ): Promise<Public.Tables.Customer.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByCustomerId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`email` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`activebool`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`create_date`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`active` : typed[23](values.active)
+      } 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Customer.ByCustomerId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.customerId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCustomerId;
+        }
+
+        public ByLastName = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByLastName,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByLastName,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`email` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`activebool`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`create_date`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`active` : typed[23](values.active)
+      } 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+          async delete(parameters: Public.Tables.Customer.ByLastName) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
+
+        public ByStoreId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Customer.ByStoreId,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
+    FROM
+      public.customer 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    `;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Customer.ByStoreId,
+            values: Partial<Public.Tables.Customer.Values>,
+          ): Promise<Public.Tables.Customer.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.customer 
+    SET
+      customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[23](values.customerId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , email = ${
+        values.email === undefined ? sql`email` : typed[1043](values.email)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , activebool = ${
+        values.activebool === undefined
+          ? sql`activebool`
+          : typed[16](values.activebool)
+      } , create_date = ${
+        values.createDate === undefined
+          ? sql`create_date`
+          : typed[1082](values.createDate)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , active = ${
+        values.active === undefined ? sql`active` : typed[23](values.active)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+          async delete(parameters: Public.Tables.Customer.ByStoreId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.customer 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      }
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
+            return response.map((record) => ({
+              customerId: undefinedIsNull(record.customer_id),
+              storeId: undefinedIsNull(record.store_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              email: undefinedIsNull(record.email),
+              addressId: undefinedIsNull(record.address_id),
+              activebool: undefinedIsNull(record.activebool),
+              createDate: undefinedIsNull(record.create_date),
+              lastUpdate: undefinedIsNull(record.last_update),
+              active: undefinedIsNull(record.active),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Actor = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Actor.Values,
+        ): Promise<Public.Tables.Actor.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Actor.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.actor (first_name,last_name,last_update)
+      VALUES (${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        actor_id,first_name,last_name,last_update
+    `;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.actor (actor_id,first_name,last_name,last_update)
+    VALUES (${
+      values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (actor_id) DO UPDATE
+    SET
+      first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
+    RETURNING
+      actor_id,first_name,last_name,last_update
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Actor.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    `;
+          return response.map((record) => ({
+            actorId: undefinedIsNull(record.actor_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByActorId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Actor.ByActorId,
+          ): Promise<Public.Tables.Actor.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    `;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Actor.ByActorId,
+            values: Partial<Public.Tables.Actor.Values>,
+          ): Promise<Public.Tables.Actor.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Actor.ByActorId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.actor 
+    WHERE
+      actor_id = ${
+        parameters.actorId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.actorId)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByActorId;
+        }
+
+        public ByLastName = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Actor.ByLastName,
+          ): Promise<Public.Tables.Actor.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      actor_id,first_name,last_name,last_update 
+    FROM
+      public.actor 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    `;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Actor.ByLastName,
+            values: Partial<Public.Tables.Actor.Values>,
+          ): Promise<Public.Tables.Actor.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.actor 
+    SET
+      actor_id = ${
+        values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.Actor.ByLastName) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.actor 
+    WHERE
+      last_name = ${
+        parameters.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.lastName)
+      }
+    RETURNING actor_id,first_name,last_name,last_update`;
+            return response.map((record) => ({
+              actorId: undefinedIsNull(record.actor_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public FilmCategory = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.FilmCategory.Values,
+        ): Promise<Public.Tables.FilmCategory.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    INSERT INTO
+      public.film_category (film_id,category_id,last_update)
+    VALUES (${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.categoryId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.categoryId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (film_id,category_id) DO UPDATE
+    SET
+      last_update = EXCLUDED.last_update
+    RETURNING
+      film_id,category_id,last_update
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.FilmCategory.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,category_id,last_update 
+    FROM
+      public.film_category 
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            categoryId: undefinedIsNull(record.category_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByFilmIdCategoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ): Promise<Public.Tables.FilmCategory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,category_id,last_update 
+    FROM
+      public.film_category 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+            values: Partial<Public.Tables.FilmCategory.Values>,
+          ): Promise<Public.Tables.FilmCategory.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film_category 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
+      } , category_id = ${
+        values.categoryId === undefined
+          ? sql`category_id`
+          : typed[21](values.categoryId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    RETURNING film_id,category_id,last_update`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(
+            parameters: Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          ) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film_category 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      } AND category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.categoryId)
+      }
+    RETURNING film_id,category_id,last_update`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              categoryId: undefinedIsNull(record.category_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmIdCategoryId;
         }
       })(this);
 
-      public ChecklistItem = new (class extends HasClient {
-        public async create(
-          values: Public.Tables.ChecklistItem.Values,
-        ): Promise<Public.Tables.ChecklistItem.Record | undefined> {
-          const response = await this.client.invoke<
-            never,
-            Public.Tables.ChecklistItem.Values,
-            Public.Tables.ChecklistItem.Record
-          >({
-            operation: "Public.Tables.ChecklistItem.create",
-            values: {
-              id: values.id,
-              checklistId: values.checklistId,
-              title: values.title,
-              checked: values.checked,
-              createdAt: values.createdAt,
-            },
-          });
-          return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
-            Public.Types.ChecklistItem.parse(response.results),
-          );
+      public Inventory = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
         }
 
-        public async all(): Promise<Public.Tables.ChecklistItem.Record[]> {
-          const response = await this.client.invoke<
-            never,
-            never,
-            Public.Tables.ChecklistItem.Record[]
-          >({
-            operation: "Public.Tables.ChecklistItem.all",
-          });
-          return (
-            response.results
-              ?.map(Public.Types.ChecklistItem.parse)
-              .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
-              .filter(
-                (x): x is Public.Tables.ChecklistItem.Record => x !== undefined,
-              ) ?? []
-          );
+        async create(
+          values: Public.Tables.Inventory.Values,
+        ): Promise<Public.Tables.Inventory.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Inventory.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.inventory (film_id,store_id,last_update)
+      VALUES (${
+        values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+      },${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        inventory_id,film_id,store_id,last_update
+    `;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.inventory (inventory_id,film_id,store_id,last_update)
+    VALUES (${
+      values.inventoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.inventoryId)
+    },${
+      values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (inventory_id) DO UPDATE
+    SET
+      film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
+    RETURNING
+      inventory_id,film_id,store_id,last_update
+    `;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Inventory.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    `;
+          return response.map((record) => ({
+            inventoryId: undefinedIsNull(record.inventory_id),
+            filmId: undefinedIsNull(record.film_id),
+            storeId: undefinedIsNull(record.store_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
         }
 
-        public ByChecklistId = new (class extends HasClient {
-          public async read(
-            parameters: Public.Tables.ChecklistItem.ByChecklistId,
-          ) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ByChecklistId,
-              never,
-              Public.Tables.ChecklistItem.Record[] | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ByChecklistId.read",
-              parameters: { checklistId: parameters.checklistId },
-            });
+        public ByInventoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
 
-            return (
-              response.results
-                ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
-                .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
-                ) ?? []
-            );
+          get database() {
+            return this.hasDatabase.database;
           }
 
-          public async update(
-            parameters: Public.Tables.ChecklistItem.ByChecklistId,
-            values: Partial<Public.Types.ChecklistItem>,
-          ) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ByChecklistId,
-              Partial<Public.Types.ChecklistItem>,
-              Public.Tables.ChecklistItem.Record[] | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ByChecklistId.update",
-              parameters: { checklistId: parameters.checklistId },
-              values: {
-                id: values.id,
-                checklistId: values.checklistId,
-                title: values.title,
-                checked: values.checked,
-                createdAt: values.createdAt,
-              },
-            });
+          async read(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+          ): Promise<Public.Tables.Inventory.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-            return (
-              response.results
-                ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
-                .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
-                ) ?? []
-            );
+            const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    `;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
           }
 
-          public async delete(
-            parameters: Public.Tables.ChecklistItem.ByChecklistId,
-          ) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ByChecklistId,
-              never,
-              Public.Tables.ChecklistItem.Record[] | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ByChecklistId.delete",
-              parameters: { checklistId: parameters.checklistId },
-            });
+          async update(
+            parameters: Public.Tables.Inventory.ByInventoryId,
+            values: Partial<Public.Tables.Inventory.Values>,
+          ): Promise<Public.Tables.Inventory.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
 
-            return (
-              response.results
-                ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
-                .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
-                ) ?? []
-            );
+            const response = await sql`
+    --
+    UPDATE 
+      public.inventory 
+    SET
+      inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`inventory_id`
+          : typed[23](values.inventoryId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
           }
-        })(this);
-
-        public ById = new (class extends HasClient {
-          public async read(parameters: Public.Tables.ChecklistItem.ById) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ById,
-              never,
-              Public.Tables.ChecklistItem.Record | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ById.read",
-              parameters: { id: parameters.id },
-            });
-
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
-              Public.Types.ChecklistItem.parse(response.results),
-            );
-          }
-
-          public async update(
-            parameters: Public.Tables.ChecklistItem.ById,
-            values: Partial<Public.Types.ChecklistItem>,
-          ) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ById,
-              Partial<Public.Types.ChecklistItem>,
-              Public.Tables.ChecklistItem.Record | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ById.update",
-              parameters: { id: parameters.id },
-              values: {
-                id: values.id,
-                checklistId: values.checklistId,
-                title: values.title,
-                checked: values.checked,
-                createdAt: values.createdAt,
-              },
-            });
-
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
-              Public.Types.ChecklistItem.parse(response.results),
-            );
-          }
-
-          public async delete(parameters: Public.Tables.ChecklistItem.ById) {
-            const response = await this.client.invoke<
-              Public.Tables.ChecklistItem.ById,
-              never,
-              Public.Tables.ChecklistItem.Record | undefined
-            >({
-              operation: "Public.Tables.ChecklistItem.ById.delete",
-              parameters: { id: parameters.id },
-            });
-
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
-              Public.Types.ChecklistItem.parse(response.results),
-            );
+          async delete(parameters: Public.Tables.Inventory.ByInventoryId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.inventory 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
           }
         })(this);
         public get ByPrimaryKey() {
-          return this.ById;
+          return this.ByInventoryId;
         }
+
+        public ByStoreIdFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+          ): Promise<Public.Tables.Inventory.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      inventory_id,film_id,store_id,last_update 
+    FROM
+      public.inventory 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    `;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Inventory.ByStoreIdFilmId,
+            values: Partial<Public.Tables.Inventory.Values>,
+          ): Promise<Public.Tables.Inventory.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.inventory 
+    SET
+      inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`inventory_id`
+          : typed[23](values.inventoryId)
+      } , film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[21](values.filmId)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.Inventory.ByStoreIdFilmId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.inventory 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.storeId)
+      } AND film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.filmId)
+      }
+    RETURNING inventory_id,film_id,store_id,last_update`;
+            return response.map((record) => ({
+              inventoryId: undefinedIsNull(record.inventory_id),
+              filmId: undefinedIsNull(record.film_id),
+              storeId: undefinedIsNull(record.store_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Category = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Category.Values,
+        ): Promise<Public.Tables.Category.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Category.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.category (name,last_update)
+      VALUES (${
+        values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        category_id,name,last_update
+    `;
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.category (category_id,name,last_update)
+    VALUES (${
+      values.categoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.categoryId)
+    },${values.name === undefined ? sql`DEFAULT` : typed[1043](values.name)},${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (category_id) DO UPDATE
+    SET
+      name = EXCLUDED.name,last_update = EXCLUDED.last_update
+    RETURNING
+      category_id,name,last_update
+    `;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Category.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      category_id,name,last_update 
+    FROM
+      public.category 
+    `;
+          return response.map((record) => ({
+            categoryId: undefinedIsNull(record.category_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByCategoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Category.ByCategoryId,
+          ): Promise<Public.Tables.Category.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      category_id,name,last_update 
+    FROM
+      public.category 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    `;
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Category.ByCategoryId,
+            values: Partial<Public.Tables.Category.Values>,
+          ): Promise<Public.Tables.Category.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.category 
+    SET
+      category_id = ${
+        values.categoryId === undefined
+          ? sql`category_id`
+          : typed[23](values.categoryId)
+      } , name = ${
+        values.name === undefined ? sql`name` : typed[1043](values.name)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    RETURNING category_id,name,last_update`;
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Category.ByCategoryId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.category 
+    WHERE
+      category_id = ${
+        parameters.categoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.categoryId)
+      }
+    RETURNING category_id,name,last_update`;
+            return response.map((record) => ({
+              categoryId: undefinedIsNull(record.category_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCategoryId;
+        }
+      })(this);
+
+      public Country = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Country.Values,
+        ): Promise<Public.Tables.Country.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Country.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.country (country,last_update)
+      VALUES (${
+        values.country === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.country)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        country_id,country,last_update
+    `;
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.country (country_id,country,last_update)
+    VALUES (${
+      values.countryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.countryId)
+    },${
+      values.country === undefined ? sql`DEFAULT` : typed[1043](values.country)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (country_id) DO UPDATE
+    SET
+      country = EXCLUDED.country,last_update = EXCLUDED.last_update
+    RETURNING
+      country_id,country,last_update
+    `;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Country.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      country_id,country,last_update 
+    FROM
+      public.country 
+    `;
+          return response.map((record) => ({
+            countryId: undefinedIsNull(record.country_id),
+            country: undefinedIsNull(record.country),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByCountryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Country.ByCountryId,
+          ): Promise<Public.Tables.Country.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      country_id,country,last_update 
+    FROM
+      public.country 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    `;
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Country.ByCountryId,
+            values: Partial<Public.Tables.Country.Values>,
+          ): Promise<Public.Tables.Country.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.country 
+    SET
+      country_id = ${
+        values.countryId === undefined
+          ? sql`country_id`
+          : typed[23](values.countryId)
+      } , country = ${
+        values.country === undefined
+          ? sql`country`
+          : typed[1043](values.country)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    RETURNING country_id,country,last_update`;
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Country.ByCountryId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.country 
+    WHERE
+      country_id = ${
+        parameters.countryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.countryId)
+      }
+    RETURNING country_id,country,last_update`;
+            return response.map((record) => ({
+              countryId: undefinedIsNull(record.country_id),
+              country: undefinedIsNull(record.country),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByCountryId;
+        }
+      })(this);
+
+      public Language = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Language.Values,
+        ): Promise<Public.Tables.Language.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Language.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.language (name,last_update)
+      VALUES (${
+        values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        language_id,name,last_update
+    `;
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.language (language_id,name,last_update)
+    VALUES (${
+      values.languageId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.languageId)
+    },${values.name === undefined ? sql`DEFAULT` : typed[1042](values.name)},${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (language_id) DO UPDATE
+    SET
+      name = EXCLUDED.name,last_update = EXCLUDED.last_update
+    RETURNING
+      language_id,name,last_update
+    `;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Language.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      language_id,name,last_update 
+    FROM
+      public.language 
+    `;
+          return response.map((record) => ({
+            languageId: undefinedIsNull(record.language_id),
+            name: undefinedIsNull(record.name),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByLanguageId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Language.ByLanguageId,
+          ): Promise<Public.Tables.Language.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      language_id,name,last_update 
+    FROM
+      public.language 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    `;
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Language.ByLanguageId,
+            values: Partial<Public.Tables.Language.Values>,
+          ): Promise<Public.Tables.Language.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.language 
+    SET
+      language_id = ${
+        values.languageId === undefined
+          ? sql`language_id`
+          : typed[23](values.languageId)
+      } , name = ${
+        values.name === undefined ? sql`name` : typed[1042](values.name)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    RETURNING language_id,name,last_update`;
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Language.ByLanguageId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.language 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.languageId)
+      }
+    RETURNING language_id,name,last_update`;
+            return response.map((record) => ({
+              languageId: undefinedIsNull(record.language_id),
+              name: undefinedIsNull(record.name),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByLanguageId;
+        }
+      })(this);
+
+      public Rental = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Rental.Values,
+        ): Promise<Public.Tables.Rental.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Rental.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.rental (rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+      VALUES (${
+        values.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.rentalDate)
+      },${
+        values.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.inventoryId)
+      },${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      },${
+        values.returnDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.returnDate)
+      },${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
+    `;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
+    VALUES (${
+      values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
+    },${
+      values.rentalDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.rentalDate)
+    },${
+      values.inventoryId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.inventoryId)
+    },${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.customerId)
+    },${
+      values.returnDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.returnDate)
+    },${
+      values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (rental_id) DO UPDATE
+    SET
+      rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
+    RETURNING
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Rental.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    `;
+          return response.map((record) => ({
+            rentalId: undefinedIsNull(record.rental_id),
+            rentalDate: undefinedIsNull(record.rental_date),
+            inventoryId: undefinedIsNull(record.inventory_id),
+            customerId: undefinedIsNull(record.customer_id),
+            returnDate: undefinedIsNull(record.return_date),
+            staffId: undefinedIsNull(record.staff_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByInventoryId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Rental.ByInventoryId,
+          ): Promise<Public.Tables.Rental.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    `;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Rental.ByInventoryId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`rental_date`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`inventory_id`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`return_date`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+          async delete(parameters: Public.Tables.Rental.ByInventoryId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }));
+          }
+        })(this);
+
+        public ByRentalDateInventoryIdCustomerId = new (class
+          implements HasDatabase
+        {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    `;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`rental_date`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`inventory_id`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`return_date`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(
+            parameters: Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          ) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      rental_date = ${
+        parameters.rentalDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](parameters.rentalDate)
+      } AND inventory_id = ${
+        parameters.inventoryId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.inventoryId)
+      } AND customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+
+        public ByRentalId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Rental.ByRentalId,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
+    FROM
+      public.rental 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    `;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Rental.ByRentalId,
+            values: Partial<Public.Tables.Rental.Values>,
+          ): Promise<Public.Tables.Rental.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.rental 
+    SET
+      rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , rental_date = ${
+        values.rentalDate === undefined
+          ? sql`rental_date`
+          : typed[1114](values.rentalDate)
+      } , inventory_id = ${
+        values.inventoryId === undefined
+          ? sql`inventory_id`
+          : typed[23](values.inventoryId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , return_date = ${
+        values.returnDate === undefined
+          ? sql`return_date`
+          : typed[1114](values.returnDate)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Rental.ByRentalId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.rental 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
+            return response.map((record) => ({
+              rentalId: undefinedIsNull(record.rental_id),
+              rentalDate: undefinedIsNull(record.rental_date),
+              inventoryId: undefinedIsNull(record.inventory_id),
+              customerId: undefinedIsNull(record.customer_id),
+              returnDate: undefinedIsNull(record.return_date),
+              staffId: undefinedIsNull(record.staff_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByRentalId;
+        }
+      })(this);
+
+      public Staff = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Staff.Values,
+        ): Promise<Public.Tables.Staff.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Staff.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.staff (first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+      VALUES (${
+        values.firstName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.firstName)
+      },${
+        values.lastName === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.lastName)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+      },${
+        values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+      },${
+        values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+      },${
+        values.username === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.username)
+      },${
+        values.password === undefined
+          ? sql`DEFAULT`
+          : typed[1043](values.password)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+      })
+      RETURNING
+        staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
+    `;
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
+    VALUES (${
+      values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId)
+    },${
+      values.firstName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.firstName)
+    },${
+      values.lastName === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.lastName)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.email === undefined ? sql`DEFAULT` : typed[1043](values.email)
+    },${
+      values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId)
+    },${
+      values.active === undefined ? sql`DEFAULT` : typed[16](values.active)
+    },${
+      values.username === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.username)
+    },${
+      values.password === undefined
+        ? sql`DEFAULT`
+        : typed[1043](values.password)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${
+      values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture)
+    })
+    ON CONFLICT (staff_id) DO UPDATE
+    SET
+      first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
+    RETURNING
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
+    `;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Staff.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
+    FROM
+      public.staff 
+    `;
+          return response.map((record) => ({
+            staffId: undefinedIsNull(record.staff_id),
+            firstName: undefinedIsNull(record.first_name),
+            lastName: undefinedIsNull(record.last_name),
+            addressId: undefinedIsNull(record.address_id),
+            email: undefinedIsNull(record.email),
+            storeId: undefinedIsNull(record.store_id),
+            active: undefinedIsNull(record.active),
+            username: undefinedIsNull(record.username),
+            password: undefinedIsNull(record.password),
+            lastUpdate: undefinedIsNull(record.last_update),
+            picture: undefinedIsNull(record.picture),
+          }));
+        }
+
+        public ByStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Staff.ByStaffId,
+          ): Promise<Public.Tables.Staff.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
+    FROM
+      public.staff 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    `;
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Staff.ByStaffId,
+            values: Partial<Public.Tables.Staff.Values>,
+          ): Promise<Public.Tables.Staff.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.staff 
+    SET
+      staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[23](values.staffId)
+      } , first_name = ${
+        values.firstName === undefined
+          ? sql`first_name`
+          : typed[1043](values.firstName)
+      } , last_name = ${
+        values.lastName === undefined
+          ? sql`last_name`
+          : typed[1043](values.lastName)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , email = ${
+        values.email === undefined ? sql`email` : typed[1043](values.email)
+      } , store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[21](values.storeId)
+      } , active = ${
+        values.active === undefined ? sql`active` : typed[16](values.active)
+      } , username = ${
+        values.username === undefined
+          ? sql`username`
+          : typed[1043](values.username)
+      } , password = ${
+        values.password === undefined
+          ? sql`password`
+          : typed[1043](values.password)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , picture = ${
+        values.picture === undefined ? sql`picture` : typed[17](values.picture)
+      } 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Staff.ByStaffId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.staff 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.staffId)
+      }
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
+            return response.map((record) => ({
+              staffId: undefinedIsNull(record.staff_id),
+              firstName: undefinedIsNull(record.first_name),
+              lastName: undefinedIsNull(record.last_name),
+              addressId: undefinedIsNull(record.address_id),
+              email: undefinedIsNull(record.email),
+              storeId: undefinedIsNull(record.store_id),
+              active: undefinedIsNull(record.active),
+              username: undefinedIsNull(record.username),
+              password: undefinedIsNull(record.password),
+              lastUpdate: undefinedIsNull(record.last_update),
+              picture: undefinedIsNull(record.picture),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByStaffId;
+        }
+      })(this);
+
+      public Store = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Store.Values,
+        ): Promise<Public.Tables.Store.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Store.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.store (manager_staff_id,address_id,last_update)
+      VALUES (${
+        values.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.managerStaffId)
+      },${
+        values.addressId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.addressId)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      })
+      RETURNING
+        store_id,manager_staff_id,address_id,last_update
+    `;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.store (store_id,manager_staff_id,address_id,last_update)
+    VALUES (${
+      values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId)
+    },${
+      values.managerStaffId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.managerStaffId)
+    },${
+      values.addressId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.addressId)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    })
+    ON CONFLICT (store_id) DO UPDATE
+    SET
+      manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
+    RETURNING
+      store_id,manager_staff_id,address_id,last_update
+    `;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Store.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    `;
+          return response.map((record) => ({
+            storeId: undefinedIsNull(record.store_id),
+            managerStaffId: undefinedIsNull(record.manager_staff_id),
+            addressId: undefinedIsNull(record.address_id),
+            lastUpdate: undefinedIsNull(record.last_update),
+          }));
+        }
+
+        public ByManagerStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    `;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Store.ByManagerStaffId,
+            values: Partial<Public.Tables.Store.Values>,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.store 
+    SET
+      store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[23](values.storeId)
+      } , manager_staff_id = ${
+        values.managerStaffId === undefined
+          ? sql`manager_staff_id`
+          : typed[21](values.managerStaffId)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Store.ByManagerStaffId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.store 
+    WHERE
+      manager_staff_id = ${
+        parameters.managerStaffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.managerStaffId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+
+        public ByStoreId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Store.ByStoreId,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      store_id,manager_staff_id,address_id,last_update 
+    FROM
+      public.store 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    `;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Store.ByStoreId,
+            values: Partial<Public.Tables.Store.Values>,
+          ): Promise<Public.Tables.Store.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.store 
+    SET
+      store_id = ${
+        values.storeId === undefined ? sql`store_id` : typed[23](values.storeId)
+      } , manager_staff_id = ${
+        values.managerStaffId === undefined
+          ? sql`manager_staff_id`
+          : typed[21](values.managerStaffId)
+      } , address_id = ${
+        values.addressId === undefined
+          ? sql`address_id`
+          : typed[21](values.addressId)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Store.ByStoreId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.store 
+    WHERE
+      store_id = ${
+        parameters.storeId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.storeId)
+      }
+    RETURNING store_id,manager_staff_id,address_id,last_update`;
+            return response.map((record) => ({
+              storeId: undefinedIsNull(record.store_id),
+              managerStaffId: undefinedIsNull(record.manager_staff_id),
+              addressId: undefinedIsNull(record.address_id),
+              lastUpdate: undefinedIsNull(record.last_update),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByStoreId;
+        }
+      })(this);
+
+      public Payment = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Payment.Values,
+        ): Promise<Public.Tables.Payment.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Payment.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.payment (customer_id,staff_id,rental_id,amount,payment_date)
+      VALUES (${
+        values.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.customerId)
+      },${
+        values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+      },${
+        values.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](values.rentalId)
+      },${
+        values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+      },${
+        values.paymentDate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.paymentDate)
+      })
+      RETURNING
+        payment_id,customer_id,staff_id,rental_id,amount,payment_date
+    `;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
+    VALUES (${
+      values.paymentId === undefined
+        ? sql`DEFAULT`
+        : typed[23](values.paymentId)
+    },${
+      values.customerId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.customerId)
+    },${
+      values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId)
+    },${
+      values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId)
+    },${
+      values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount)
+    },${
+      values.paymentDate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.paymentDate)
+    })
+    ON CONFLICT (payment_id) DO UPDATE
+    SET
+      customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
+    RETURNING
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Payment.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    `;
+          return response.map((record) => ({
+            paymentId: undefinedIsNull(record.payment_id),
+            customerId: undefinedIsNull(record.customer_id),
+            staffId: undefinedIsNull(record.staff_id),
+            rentalId: undefinedIsNull(record.rental_id),
+            amount: undefinedIsNull(record.amount),
+            paymentDate: undefinedIsNull(record.payment_date),
+          }));
+        }
+
+        public ByCustomerId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Payment.ByCustomerId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    `;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Payment.ByCustomerId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`payment_id`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`payment_date`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+          async delete(parameters: Public.Tables.Payment.ByCustomerId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      customer_id = ${
+        parameters.customerId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.customerId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
+
+        public ByPaymentId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Payment.ByPaymentId,
+          ): Promise<Public.Tables.Payment.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    `;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Payment.ByPaymentId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`payment_id`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`payment_date`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Payment.ByPaymentId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      payment_id = ${
+        parameters.paymentId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.paymentId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByPaymentId;
+        }
+
+        public ByRentalId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Payment.ByRentalId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    `;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Payment.ByRentalId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`payment_id`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`payment_date`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+          async delete(parameters: Public.Tables.Payment.ByRentalId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      rental_id = ${
+        parameters.rentalId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.rentalId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
+
+        public ByStaffId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Payment.ByStaffId,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      payment_id,customer_id,staff_id,rental_id,amount,payment_date 
+    FROM
+      public.payment 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    `;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Payment.ByStaffId,
+            values: Partial<Public.Tables.Payment.Values>,
+          ): Promise<Public.Tables.Payment.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.payment 
+    SET
+      payment_id = ${
+        values.paymentId === undefined
+          ? sql`payment_id`
+          : typed[23](values.paymentId)
+      } , customer_id = ${
+        values.customerId === undefined
+          ? sql`customer_id`
+          : typed[21](values.customerId)
+      } , staff_id = ${
+        values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId)
+      } , rental_id = ${
+        values.rentalId === undefined
+          ? sql`rental_id`
+          : typed[23](values.rentalId)
+      } , amount = ${
+        values.amount === undefined ? sql`amount` : typed[1700](values.amount)
+      } , payment_date = ${
+        values.paymentDate === undefined
+          ? sql`payment_date`
+          : typed[1114](values.paymentDate)
+      } 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+          async delete(parameters: Public.Tables.Payment.ByStaffId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.payment 
+    WHERE
+      staff_id = ${
+        parameters.staffId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.staffId)
+      }
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
+            return response.map((record) => ({
+              paymentId: undefinedIsNull(record.payment_id),
+              customerId: undefinedIsNull(record.customer_id),
+              staffId: undefinedIsNull(record.staff_id),
+              rentalId: undefinedIsNull(record.rental_id),
+              amount: undefinedIsNull(record.amount),
+              paymentDate: undefinedIsNull(record.payment_date),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Film = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async create(
+          values: Public.Tables.Film.Values,
+        ): Promise<Public.Tables.Film.Record> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          if (!Public.Tables.Film.includesPrimaryKey(values)) {
+            const response = await sql`
+      --
+      INSERT INTO
+        public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+      VALUES (${
+        values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+      },${
+        values.description === undefined
+          ? sql`DEFAULT`
+          : typed[25](values.description)
+      },${
+        values.releaseYear === undefined
+          ? sql`DEFAULT`
+          : typed[32272](values.releaseYear)
+      },${
+        values.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.languageId)
+      },${
+        values.rentalDuration === undefined
+          ? sql`DEFAULT`
+          : typed[21](values.rentalDuration)
+      },${
+        values.rentalRate === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.rentalRate)
+      },${
+        values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+      },${
+        values.replacementCost === undefined
+          ? sql`DEFAULT`
+          : typed[1700](values.replacementCost)
+      },${
+        values.rating === undefined ? sql`DEFAULT` : typed[32261](values.rating)
+      },${
+        values.lastUpdate === undefined
+          ? sql`DEFAULT`
+          : typed[1114](values.lastUpdate)
+      },${
+        values.specialFeatures === undefined
+          ? sql`DEFAULT`
+          : typed[1009](values.specialFeatures)
+      },${
+        values.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3614](values.fulltext)
+      })
+      RETURNING
+        film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+          const response = await sql`
+    INSERT INTO
+      public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
+    VALUES (${
+      values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId)
+    },${
+      values.title === undefined ? sql`DEFAULT` : typed[1043](values.title)
+    },${
+      values.description === undefined
+        ? sql`DEFAULT`
+        : typed[25](values.description)
+    },${
+      values.releaseYear === undefined
+        ? sql`DEFAULT`
+        : typed[32272](values.releaseYear)
+    },${
+      values.languageId === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.languageId)
+    },${
+      values.rentalDuration === undefined
+        ? sql`DEFAULT`
+        : typed[21](values.rentalDuration)
+    },${
+      values.rentalRate === undefined
+        ? sql`DEFAULT`
+        : typed[1700](values.rentalRate)
+    },${
+      values.length === undefined ? sql`DEFAULT` : typed[21](values.length)
+    },${
+      values.replacementCost === undefined
+        ? sql`DEFAULT`
+        : typed[1700](values.replacementCost)
+    },${
+      values.rating === undefined ? sql`DEFAULT` : typed[32261](values.rating)
+    },${
+      values.lastUpdate === undefined
+        ? sql`DEFAULT`
+        : typed[1114](values.lastUpdate)
+    },${
+      values.specialFeatures === undefined
+        ? sql`DEFAULT`
+        : typed[1009](values.specialFeatures)
+    },${
+      values.fulltext === undefined
+        ? sql`DEFAULT`
+        : typed[3614](values.fulltext)
+    })
+    ON CONFLICT (film_id) DO UPDATE
+    SET
+      title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
+    RETURNING
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }))[0];
+        }
+        async all(): Promise<Public.Tables.Film.Record[]> {
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+
+          const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    `;
+          return response.map((record) => ({
+            filmId: undefinedIsNull(record.film_id),
+            title: undefinedIsNull(record.title),
+            description: undefinedIsNull(record.description),
+            releaseYear: undefinedIsNull(record.release_year),
+            languageId: undefinedIsNull(record.language_id),
+            rentalDuration: undefinedIsNull(record.rental_duration),
+            rentalRate: undefinedIsNull(record.rental_rate),
+            length: undefinedIsNull(record.length),
+            replacementCost: undefinedIsNull(record.replacement_cost),
+            rating: undefinedIsNull(record.rating),
+            lastUpdate: undefinedIsNull(record.last_update),
+            specialFeatures: undefinedIsNull(record.special_features),
+            fulltext: undefinedIsNull(record.fulltext),
+          }));
+        }
+
+        public ByFilmId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Film.ByFilmId,
+          ): Promise<Public.Tables.Film.Record> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+
+          async update(
+            parameters: Public.Tables.Film.ByFilmId,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`description`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`release_year`
+          : typed[32272](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`language_id`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`rental_duration`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`rental_rate`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`length` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`replacement_cost`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`special_features`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`fulltext`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+          async delete(parameters: Public.Tables.Film.ByFilmId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      film_id = ${
+        parameters.filmId === undefined
+          ? sql`DEFAULT`
+          : typed[23](parameters.filmId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }))[0];
+          }
+        })(this);
+        public get ByPrimaryKey() {
+          return this.ByFilmId;
+        }
+
+        public ByFulltext = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Film.ByFulltext,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Film.ByFulltext,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`description`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`release_year`
+          : typed[32272](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`language_id`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`rental_duration`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`rental_rate`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`length` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`replacement_cost`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`special_features`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`fulltext`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+          async delete(parameters: Public.Tables.Film.ByFulltext) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      fulltext = ${
+        parameters.fulltext === undefined
+          ? sql`DEFAULT`
+          : typed[3642](parameters.fulltext)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
+
+        public ByLanguageId = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Film.ByLanguageId,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Film.ByLanguageId,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`description`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`release_year`
+          : typed[32272](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`language_id`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`rental_duration`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`rental_rate`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`length` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`replacement_cost`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`special_features`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`fulltext`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+          async delete(parameters: Public.Tables.Film.ByLanguageId) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      language_id = ${
+        parameters.languageId === undefined
+          ? sql`DEFAULT`
+          : typed[21](parameters.languageId)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
+
+        public ByTitle = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async read(
+            parameters: Public.Tables.Film.ByTitle,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    -- 
+    SELECT 
+      film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
+    FROM
+      public.film 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    `;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+
+          async update(
+            parameters: Public.Tables.Film.ByTitle,
+            values: Partial<Public.Tables.Film.Values>,
+          ): Promise<Public.Tables.Film.Record[]> {
+            console.assert(parameters);
+            console.assert(values);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+
+            const response = await sql`
+    --
+    UPDATE 
+      public.film 
+    SET
+      film_id = ${
+        values.filmId === undefined ? sql`film_id` : typed[23](values.filmId)
+      } , title = ${
+        values.title === undefined ? sql`title` : typed[1043](values.title)
+      } , description = ${
+        values.description === undefined
+          ? sql`description`
+          : typed[25](values.description)
+      } , release_year = ${
+        values.releaseYear === undefined
+          ? sql`release_year`
+          : typed[32272](values.releaseYear)
+      } , language_id = ${
+        values.languageId === undefined
+          ? sql`language_id`
+          : typed[21](values.languageId)
+      } , rental_duration = ${
+        values.rentalDuration === undefined
+          ? sql`rental_duration`
+          : typed[21](values.rentalDuration)
+      } , rental_rate = ${
+        values.rentalRate === undefined
+          ? sql`rental_rate`
+          : typed[1700](values.rentalRate)
+      } , length = ${
+        values.length === undefined ? sql`length` : typed[21](values.length)
+      } , replacement_cost = ${
+        values.replacementCost === undefined
+          ? sql`replacement_cost`
+          : typed[1700](values.replacementCost)
+      } , rating = ${
+        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+      } , last_update = ${
+        values.lastUpdate === undefined
+          ? sql`last_update`
+          : typed[1114](values.lastUpdate)
+      } , special_features = ${
+        values.specialFeatures === undefined
+          ? sql`special_features`
+          : typed[1009](values.specialFeatures)
+      } , fulltext = ${
+        values.fulltext === undefined
+          ? sql`fulltext`
+          : typed[3614](values.fulltext)
+      } 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+          async delete(parameters: Public.Tables.Film.ByTitle) {
+            console.assert(parameters);
+            const sql = this.database.context.sql;
+            const typed = sql.typed as unknown as PostgresTypecasts;
+            const response = await sql`
+    --
+    DELETE FROM 
+      public.film 
+    WHERE
+      title = ${
+        parameters.title === undefined
+          ? sql`DEFAULT`
+          : typed[1043](parameters.title)
+      }
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
+            return response.map((record) => ({
+              filmId: undefinedIsNull(record.film_id),
+              title: undefinedIsNull(record.title),
+              description: undefinedIsNull(record.description),
+              releaseYear: undefinedIsNull(record.release_year),
+              languageId: undefinedIsNull(record.language_id),
+              rentalDuration: undefinedIsNull(record.rental_duration),
+              rentalRate: undefinedIsNull(record.rental_rate),
+              length: undefinedIsNull(record.length),
+              replacementCost: undefinedIsNull(record.replacement_cost),
+              rating: undefinedIsNull(record.rating),
+              lastUpdate: undefinedIsNull(record.last_update),
+              specialFeatures: undefinedIsNull(record.special_features),
+              fulltext: undefinedIsNull(record.fulltext),
+            }));
+          }
+        })(this);
       })(this);
     })(this);
   })(this);
 }
-import React from "react";
-export { EmbraceSQLProvider } from "@embracesql/react";
-import {
-  useEmbraceSQLClient,
-  useEmbraceSQLRow,
-  useEmbraceSQLRows,
-  ChangeEvent,
-  Row as IsRow,
-  RowBase,
-  RecordCallback,
-  GeneratedRowProps,
-} from "@embracesql/react";
-export namespace Public {
-  export namespace Tables {
-    export namespace Checklist {
-      export type Row = IsRow<Public.Tables.Checklist.Record>;
-      export class RowImplementation
-        extends RowBase<Public.Tables.Checklist.Record>
-        implements Row
-      {
-        constructor(
-          record: Public.Tables.Checklist.Record,
-          changeCallback: RecordCallback<Public.Tables.Checklist.Record>,
-          rowNumberInResultset: number,
-        ) {
-          super(record, changeCallback, rowNumberInResultset);
-        }
-        get id() {
-          return this.record.id;
-        }
-        get changeId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.Id.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              id: parsedValue as Public.Tables.Checklist.Record["id"],
-            });
-          };
-        }
-        get name() {
-          return this.record.name;
-        }
-        get changeName() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.Name.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              name: parsedValue as Public.Tables.Checklist.Record["name"],
-            });
-          };
-        }
-        get createdAt() {
-          return this.record.createdAt;
-        }
-        get changeCreatedAt() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.CreatedAt.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              createdAt:
-                parsedValue as Public.Tables.Checklist.Record["createdAt"],
-            });
-          };
-        }
-      }
-    }
-    export namespace ChecklistItem {
-      export type Row = IsRow<Public.Tables.ChecklistItem.Record>;
-      export class RowImplementation
-        extends RowBase<Public.Tables.ChecklistItem.Record>
-        implements Row
-      {
-        constructor(
-          record: Public.Tables.ChecklistItem.Record,
-          changeCallback: RecordCallback<Public.Tables.ChecklistItem.Record>,
-          rowNumberInResultset: number,
-        ) {
-          super(record, changeCallback, rowNumberInResultset);
-        }
-        get id() {
-          return this.record.id;
-        }
-        get changeId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Id.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              id: parsedValue as Public.Tables.ChecklistItem.Record["id"],
-            });
-          };
-        }
-        get checklistId() {
-          return this.record.checklistId;
-        }
-        get changeChecklistId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.ChecklistId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              checklistId:
-                parsedValue as Public.Tables.ChecklistItem.Record["checklistId"],
-            });
-          };
-        }
-        get title() {
-          return this.record.title;
-        }
-        get changeTitle() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Title.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              title: parsedValue as Public.Tables.ChecklistItem.Record["title"],
-            });
-          };
-        }
-        get checked() {
-          return this.record.checked;
-        }
-        get changeChecked() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Checked.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              checked:
-                parsedValue as Public.Tables.ChecklistItem.Record["checked"],
-            });
-          };
-        }
-        get createdAt() {
-          return this.record.createdAt;
-        }
-        get changeCreatedAt() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.CreatedAt.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              createdAt:
-                parsedValue as Public.Tables.ChecklistItem.Record["createdAt"],
-            });
-          };
-        }
-      }
-    }
-  }
-}
 
-export namespace Public {
-  export namespace Tables {
-    export namespace Checklist {
-      export function useRow(
-        props: GeneratedRowProps<Public.Tables.Checklist.Values>,
-      ) {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByPrimaryKey,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
-        >({
-          parameters: props.values as unknown as ByPrimaryKey,
-          readOperation:
-            client.Public.Tables.Checklist.ByPrimaryKey.read.bind(client),
-          upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-          RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
-          createIfNotExists: props.createIfNotExists,
-        });
-      }
-      export function useRows() {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          never,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
-        >({
-          parameters: NEVER,
-          readOperation: client.Public.Tables.Checklist.all.bind(client),
-          upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-          RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
-        });
-      }
-      export namespace Id {}
-      export namespace Name {}
-      export namespace CreatedAt {}
-      export function useById(parameters: ById) {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ById,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
-        >({
-          readOperation: client.Public.Tables.Checklist.ById.read.bind(client),
-          parameters,
-          upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-          RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
-        });
-      }
+// begin - operation dispatch map
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+export class OperationDispatcher {
+  private dispatchMap: Record<string, OperationDispatchMethod>;
+  constructor(private database: Database) {
+    this.dispatchMap = {
+      "Public.Procedures.filmInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.filmInStock(
+          request.parameters as Public.Procedures.FilmInStock.Parameters,
+        ),
+      "Public.Procedures.filmNotInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.filmNotInStock(
+          request.parameters as Public.Procedures.FilmNotInStock.Parameters,
+        ),
+      "Public.Procedures.getCustomerBalance": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.getCustomerBalance(
+          request.parameters as Public.Procedures.GetCustomerBalance.Parameters,
+        ),
+      "Public.Procedures.inventoryHeldByCustomer": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.inventoryHeldByCustomer(
+          request.parameters as Public.Procedures.InventoryHeldByCustomer.Parameters,
+        ),
+      "Public.Procedures.inventoryInStock": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.inventoryInStock(
+          request.parameters as Public.Procedures.InventoryInStock.Parameters,
+        ),
+      "Public.Procedures.lastDay": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.lastDay(
+          request.parameters as Public.Procedures.LastDay.Parameters,
+        ),
+      "Public.Procedures.rewardsReport": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Procedures.rewardsReport(
+          request.parameters as Public.Procedures.RewardsReport.Parameters,
+        ),
+      "Public.Tables.FilmActor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.create(
+          request.values as Public.Tables.FilmActor.Values,
+        ),
+
+      "Public.Tables.FilmActor.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.FilmActor.all(),
+
+      "Public.Tables.FilmActor.ByActorIdFilmId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByActorIdFilmId.read(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.Tables.FilmActor.ByActorIdFilmId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByActorIdFilmId.update(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+          request.values as Partial<Public.Tables.FilmActor.Values>,
+        ),
+      "Public.Tables.FilmActor.ByActorIdFilmId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByActorIdFilmId.delete(
+          request.parameters as Public.Tables.FilmActor.ByActorIdFilmId,
+        ),
+      "Public.Tables.FilmActor.ByFilmId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByFilmId.read(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.Tables.FilmActor.ByFilmId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByFilmId.update(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+          request.values as Partial<Public.Tables.FilmActor.Values>,
+        ),
+      "Public.Tables.FilmActor.ByFilmId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmActor.ByFilmId.delete(
+          request.parameters as Public.Tables.FilmActor.ByFilmId,
+        ),
+      "Public.Tables.Address.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.create(
+          request.values as Public.Tables.Address.Values,
+        ),
+
+      "Public.Tables.Address.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Address.all(),
+
+      "Public.Tables.Address.ByAddressId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByAddressId.read(
+          request.parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Tables.Address.ByAddressId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByAddressId.update(
+          request.parameters as Public.Tables.Address.ByAddressId,
+          request.values as Partial<Public.Tables.Address.Values>,
+        ),
+      "Public.Tables.Address.ByAddressId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByAddressId.delete(
+          request.parameters as Public.Tables.Address.ByAddressId,
+        ),
+      "Public.Tables.Address.ByCityId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByCityId.read(
+          request.parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Tables.Address.ByCityId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByCityId.update(
+          request.parameters as Public.Tables.Address.ByCityId,
+          request.values as Partial<Public.Tables.Address.Values>,
+        ),
+      "Public.Tables.Address.ByCityId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Address.ByCityId.delete(
+          request.parameters as Public.Tables.Address.ByCityId,
+        ),
+      "Public.Tables.City.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.create(
+          request.values as Public.Tables.City.Values,
+        ),
+
+      "Public.Tables.City.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.City.all(),
+
+      "Public.Tables.City.ByCityId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCityId.read(
+          request.parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.Tables.City.ByCityId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCityId.update(
+          request.parameters as Public.Tables.City.ByCityId,
+          request.values as Partial<Public.Tables.City.Values>,
+        ),
+      "Public.Tables.City.ByCityId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCityId.delete(
+          request.parameters as Public.Tables.City.ByCityId,
+        ),
+      "Public.Tables.City.ByCountryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCountryId.read(
+          request.parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.Tables.City.ByCountryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCountryId.update(
+          request.parameters as Public.Tables.City.ByCountryId,
+          request.values as Partial<Public.Tables.City.Values>,
+        ),
+      "Public.Tables.City.ByCountryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.City.ByCountryId.delete(
+          request.parameters as Public.Tables.City.ByCountryId,
+        ),
+      "Public.Tables.Customer.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.create(
+          request.values as Public.Tables.Customer.Values,
+        ),
+
+      "Public.Tables.Customer.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Customer.all(),
+
+      "Public.Tables.Customer.ByAddressId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByAddressId.read(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Tables.Customer.ByAddressId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByAddressId.update(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+          request.values as Partial<Public.Tables.Customer.Values>,
+        ),
+      "Public.Tables.Customer.ByAddressId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByAddressId.delete(
+          request.parameters as Public.Tables.Customer.ByAddressId,
+        ),
+      "Public.Tables.Customer.ByCustomerId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByCustomerId.read(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Tables.Customer.ByCustomerId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByCustomerId.update(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+          request.values as Partial<Public.Tables.Customer.Values>,
+        ),
+      "Public.Tables.Customer.ByCustomerId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByCustomerId.delete(
+          request.parameters as Public.Tables.Customer.ByCustomerId,
+        ),
+      "Public.Tables.Customer.ByLastName.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByLastName.read(
+          request.parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Tables.Customer.ByLastName.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByLastName.update(
+          request.parameters as Public.Tables.Customer.ByLastName,
+          request.values as Partial<Public.Tables.Customer.Values>,
+        ),
+      "Public.Tables.Customer.ByLastName.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByLastName.delete(
+          request.parameters as Public.Tables.Customer.ByLastName,
+        ),
+      "Public.Tables.Customer.ByStoreId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByStoreId.read(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Tables.Customer.ByStoreId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByStoreId.update(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+          request.values as Partial<Public.Tables.Customer.Values>,
+        ),
+      "Public.Tables.Customer.ByStoreId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Customer.ByStoreId.delete(
+          request.parameters as Public.Tables.Customer.ByStoreId,
+        ),
+      "Public.Tables.Actor.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.create(
+          request.values as Public.Tables.Actor.Values,
+        ),
+
+      "Public.Tables.Actor.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Actor.all(),
+
+      "Public.Tables.Actor.ByActorId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByActorId.read(
+          request.parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Tables.Actor.ByActorId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByActorId.update(
+          request.parameters as Public.Tables.Actor.ByActorId,
+          request.values as Partial<Public.Tables.Actor.Values>,
+        ),
+      "Public.Tables.Actor.ByActorId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByActorId.delete(
+          request.parameters as Public.Tables.Actor.ByActorId,
+        ),
+      "Public.Tables.Actor.ByLastName.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByLastName.read(
+          request.parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Tables.Actor.ByLastName.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByLastName.update(
+          request.parameters as Public.Tables.Actor.ByLastName,
+          request.values as Partial<Public.Tables.Actor.Values>,
+        ),
+      "Public.Tables.Actor.ByLastName.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Actor.ByLastName.delete(
+          request.parameters as Public.Tables.Actor.ByLastName,
+        ),
+      "Public.Tables.FilmCategory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmCategory.create(
+          request.values as Public.Tables.FilmCategory.Values,
+        ),
+
+      "Public.Tables.FilmCategory.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.FilmCategory.all(),
+
+      "Public.Tables.FilmCategory.ByFilmIdCategoryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmCategory.ByFilmIdCategoryId.read(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.Tables.FilmCategory.ByFilmIdCategoryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmCategory.ByFilmIdCategoryId.update(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+          request.values as Partial<Public.Tables.FilmCategory.Values>,
+        ),
+      "Public.Tables.FilmCategory.ByFilmIdCategoryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.FilmCategory.ByFilmIdCategoryId.delete(
+          request.parameters as Public.Tables.FilmCategory.ByFilmIdCategoryId,
+        ),
+      "Public.Tables.Inventory.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.create(
+          request.values as Public.Tables.Inventory.Values,
+        ),
+
+      "Public.Tables.Inventory.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Inventory.all(),
+
+      "Public.Tables.Inventory.ByInventoryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByInventoryId.read(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Tables.Inventory.ByInventoryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByInventoryId.update(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+          request.values as Partial<Public.Tables.Inventory.Values>,
+        ),
+      "Public.Tables.Inventory.ByInventoryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByInventoryId.delete(
+          request.parameters as Public.Tables.Inventory.ByInventoryId,
+        ),
+      "Public.Tables.Inventory.ByStoreIdFilmId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByStoreIdFilmId.read(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Tables.Inventory.ByStoreIdFilmId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByStoreIdFilmId.update(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+          request.values as Partial<Public.Tables.Inventory.Values>,
+        ),
+      "Public.Tables.Inventory.ByStoreIdFilmId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Inventory.ByStoreIdFilmId.delete(
+          request.parameters as Public.Tables.Inventory.ByStoreIdFilmId,
+        ),
+      "Public.Tables.Category.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Category.create(
+          request.values as Public.Tables.Category.Values,
+        ),
+
+      "Public.Tables.Category.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Category.all(),
+
+      "Public.Tables.Category.ByCategoryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Category.ByCategoryId.read(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Tables.Category.ByCategoryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Category.ByCategoryId.update(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+          request.values as Partial<Public.Tables.Category.Values>,
+        ),
+      "Public.Tables.Category.ByCategoryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Category.ByCategoryId.delete(
+          request.parameters as Public.Tables.Category.ByCategoryId,
+        ),
+      "Public.Tables.Country.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Country.create(
+          request.values as Public.Tables.Country.Values,
+        ),
+
+      "Public.Tables.Country.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Country.all(),
+
+      "Public.Tables.Country.ByCountryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Country.ByCountryId.read(
+          request.parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Tables.Country.ByCountryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Country.ByCountryId.update(
+          request.parameters as Public.Tables.Country.ByCountryId,
+          request.values as Partial<Public.Tables.Country.Values>,
+        ),
+      "Public.Tables.Country.ByCountryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Country.ByCountryId.delete(
+          request.parameters as Public.Tables.Country.ByCountryId,
+        ),
+      "Public.Tables.Language.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Language.create(
+          request.values as Public.Tables.Language.Values,
+        ),
+
+      "Public.Tables.Language.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Language.all(),
+
+      "Public.Tables.Language.ByLanguageId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Language.ByLanguageId.read(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Tables.Language.ByLanguageId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Language.ByLanguageId.update(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+          request.values as Partial<Public.Tables.Language.Values>,
+        ),
+      "Public.Tables.Language.ByLanguageId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Language.ByLanguageId.delete(
+          request.parameters as Public.Tables.Language.ByLanguageId,
+        ),
+      "Public.Tables.Rental.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.create(
+          request.values as Public.Tables.Rental.Values,
+        ),
+
+      "Public.Tables.Rental.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Rental.all(),
+
+      "Public.Tables.Rental.ByInventoryId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByInventoryId.read(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Tables.Rental.ByInventoryId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByInventoryId.update(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+          request.values as Partial<Public.Tables.Rental.Values>,
+        ),
+      "Public.Tables.Rental.ByInventoryId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByInventoryId.delete(
+          request.parameters as Public.Tables.Rental.ByInventoryId,
+        ),
+      "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.update(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+          request.values as Partial<Public.Tables.Rental.Values>,
+        ),
+      "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.delete(
+          request.parameters as Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
+        ),
+      "Public.Tables.Rental.ByRentalId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalId.read(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Tables.Rental.ByRentalId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalId.update(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+          request.values as Partial<Public.Tables.Rental.Values>,
+        ),
+      "Public.Tables.Rental.ByRentalId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Rental.ByRentalId.delete(
+          request.parameters as Public.Tables.Rental.ByRentalId,
+        ),
+      "Public.Tables.Staff.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Staff.create(
+          request.values as Public.Tables.Staff.Values,
+        ),
+
+      "Public.Tables.Staff.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Staff.all(),
+
+      "Public.Tables.Staff.ByStaffId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Staff.ByStaffId.read(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Tables.Staff.ByStaffId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Staff.ByStaffId.update(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+          request.values as Partial<Public.Tables.Staff.Values>,
+        ),
+      "Public.Tables.Staff.ByStaffId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Staff.ByStaffId.delete(
+          request.parameters as Public.Tables.Staff.ByStaffId,
+        ),
+      "Public.Tables.Store.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.create(
+          request.values as Public.Tables.Store.Values,
+        ),
+
+      "Public.Tables.Store.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Store.all(),
+
+      "Public.Tables.Store.ByManagerStaffId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByManagerStaffId.read(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Tables.Store.ByManagerStaffId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByManagerStaffId.update(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+          request.values as Partial<Public.Tables.Store.Values>,
+        ),
+      "Public.Tables.Store.ByManagerStaffId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByManagerStaffId.delete(
+          request.parameters as Public.Tables.Store.ByManagerStaffId,
+        ),
+      "Public.Tables.Store.ByStoreId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByStoreId.read(
+          request.parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Tables.Store.ByStoreId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByStoreId.update(
+          request.parameters as Public.Tables.Store.ByStoreId,
+          request.values as Partial<Public.Tables.Store.Values>,
+        ),
+      "Public.Tables.Store.ByStoreId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Store.ByStoreId.delete(
+          request.parameters as Public.Tables.Store.ByStoreId,
+        ),
+      "Public.Tables.Payment.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.create(
+          request.values as Public.Tables.Payment.Values,
+        ),
+
+      "Public.Tables.Payment.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Payment.all(),
+
+      "Public.Tables.Payment.ByCustomerId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByCustomerId.read(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Tables.Payment.ByCustomerId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByCustomerId.update(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+          request.values as Partial<Public.Tables.Payment.Values>,
+        ),
+      "Public.Tables.Payment.ByCustomerId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByCustomerId.delete(
+          request.parameters as Public.Tables.Payment.ByCustomerId,
+        ),
+      "Public.Tables.Payment.ByPaymentId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByPaymentId.read(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Tables.Payment.ByPaymentId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByPaymentId.update(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+          request.values as Partial<Public.Tables.Payment.Values>,
+        ),
+      "Public.Tables.Payment.ByPaymentId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByPaymentId.delete(
+          request.parameters as Public.Tables.Payment.ByPaymentId,
+        ),
+      "Public.Tables.Payment.ByRentalId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByRentalId.read(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Tables.Payment.ByRentalId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByRentalId.update(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+          request.values as Partial<Public.Tables.Payment.Values>,
+        ),
+      "Public.Tables.Payment.ByRentalId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByRentalId.delete(
+          request.parameters as Public.Tables.Payment.ByRentalId,
+        ),
+      "Public.Tables.Payment.ByStaffId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByStaffId.read(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Tables.Payment.ByStaffId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByStaffId.update(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+          request.values as Partial<Public.Tables.Payment.Values>,
+        ),
+      "Public.Tables.Payment.ByStaffId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Payment.ByStaffId.delete(
+          request.parameters as Public.Tables.Payment.ByStaffId,
+        ),
+      "Public.Tables.Film.create": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.create(
+          request.values as Public.Tables.Film.Values,
+        ),
+
+      "Public.Tables.Film.all": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Public.Tables.Film.all(),
+
+      "Public.Tables.Film.ByFilmId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFilmId.read(
+          request.parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Tables.Film.ByFilmId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFilmId.update(
+          request.parameters as Public.Tables.Film.ByFilmId,
+          request.values as Partial<Public.Tables.Film.Values>,
+        ),
+      "Public.Tables.Film.ByFilmId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFilmId.delete(
+          request.parameters as Public.Tables.Film.ByFilmId,
+        ),
+      "Public.Tables.Film.ByFulltext.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFulltext.read(
+          request.parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Tables.Film.ByFulltext.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFulltext.update(
+          request.parameters as Public.Tables.Film.ByFulltext,
+          request.values as Partial<Public.Tables.Film.Values>,
+        ),
+      "Public.Tables.Film.ByFulltext.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByFulltext.delete(
+          request.parameters as Public.Tables.Film.ByFulltext,
+        ),
+      "Public.Tables.Film.ByLanguageId.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByLanguageId.read(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Tables.Film.ByLanguageId.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByLanguageId.update(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+          request.values as Partial<Public.Tables.Film.Values>,
+        ),
+      "Public.Tables.Film.ByLanguageId.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByLanguageId.delete(
+          request.parameters as Public.Tables.Film.ByLanguageId,
+        ),
+      "Public.Tables.Film.ByTitle.read": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByTitle.read(
+          request.parameters as Public.Tables.Film.ByTitle,
+        ),
+      "Public.Tables.Film.ByTitle.update": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByTitle.update(
+          request.parameters as Public.Tables.Film.ByTitle,
+          request.values as Partial<Public.Tables.Film.Values>,
+        ),
+      "Public.Tables.Film.ByTitle.delete": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Public.Tables.Film.ByTitle.delete(
+          request.parameters as Public.Tables.Film.ByTitle,
+        ),
+    };
+  }
+
+  async dispatch(request: EmbraceSQLRequest<object, object>) {
+    if (!this.dispatchMap[request.operation]) {
+      throw new Error(`${request.operation} not available`);
     }
-    export namespace ChecklistItem {
-      export function useRow(
-        props: GeneratedRowProps<Public.Tables.ChecklistItem.Values>,
-      ) {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ByPrimaryKey,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
-        >({
-          parameters: props.values as unknown as ByPrimaryKey,
-          readOperation:
-            client.Public.Tables.ChecklistItem.ByPrimaryKey.read.bind(client),
-          upsertOperation:
-            client.Public.Tables.ChecklistItem.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
-          createIfNotExists: props.createIfNotExists,
-        });
-      }
-      export function useRows() {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          never,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
-        >({
-          parameters: NEVER,
-          readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
-          upsertOperation:
-            client.Public.Tables.ChecklistItem.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
-        });
-      }
-      export namespace Id {}
-      export namespace ChecklistId {}
-      export namespace Title {}
-      export namespace Checked {}
-      export namespace CreatedAt {}
-      export function useByChecklistId(parameters: ByChecklistId) {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRows<
-          ByChecklistId,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
-        >({
-          readOperation:
-            client.Public.Tables.ChecklistItem.ByChecklistId.read.bind(client),
-          parameters,
-          upsertOperation:
-            client.Public.Tables.ChecklistItem.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
-        });
-      }
-      export function useById(parameters: ById) {
-        const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLRow<
-          ById,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
-        >({
-          readOperation:
-            client.Public.Tables.ChecklistItem.ById.read.bind(client),
-          parameters,
-          upsertOperation:
-            client.Public.Tables.ChecklistItem.create.bind(client),
-          deleteOperation:
-            client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-          primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-          RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
-        });
-      }
-    }
+    return this.dispatchMap[request.operation](request);
   }
 }
-// End React generated section

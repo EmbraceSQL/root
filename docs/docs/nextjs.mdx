@@ -1,0 +1,66 @@
+import HandlerSource from "!!raw-loader!../../samples/next/src/app/embracesql/route.ts";
+import CodeBlock from "@theme/CodeBlock";
+import Requirements from '../includes/sample_requirements.mdx';
+
+# NextJS
+
+EmbraceSQL connects into NextJS with a single `POST` app route handler.
+
+This provides full access to [AutoCRUD](./autocrud) and can be
+extended with your own [SQL](./sql).
+
+<Requirements/>
+
+
+## Steps
+
+
+### NextJS App
+
+If you have an NextJS app great! -- if not [Create One](https://nextjs.org/docs/getting-started/installation).
+
+Make sure to pick TypeScript!
+
+### Add EmbraceSQL
+
+`cd` into the root of your application.
+
+```shell
+npm install @embracesql/express
+mkdir -p ./src/server
+npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
+```
+
+### Code up a Route Handler
+
+
+<CodeBlock language="typescript" title="./src/embracesql/route.ts">
+  {HandlerSource}
+</CodeBlock>
+
+### Test your Express
+
+Start that server:
+
+```shell
+npm run dev
+```
+
+And curl for some data:
+
+```shell
+curl -X POST http://localhost:3000 \
+   -H 'Content-Type: application/json' \
+   -d '{"operation":"Public.Tables.Actor.ByActorId.read","parameters":{"actorId": 1}}'
+```
+
+### Generate a Client
+
+It's fun to `curl` and all, but TypeScript is about types and autocompletion.
+
+Generate a fully typed `fetch` wrapping client.
+
+```shell
+npm install @embracesql/react
+npx embracesqlcli generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts
+```
