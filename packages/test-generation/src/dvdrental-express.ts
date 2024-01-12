@@ -9544,8 +9544,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -9563,8 +9567,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -13512,8 +13520,12 @@ export namespace PgCatalog {
         // Type
         if (from === null || from === undefined) return null;
 
+        if (typeof from === "boolean") {
+          return from;
+        }
         if (typeof from === "string") {
-          if (["t", "T", "true", "True"].includes(from)) return true;
+          if (["t", "true", "on", "yes"].includes(from.toLowerCase()))
+            return true;
           try {
             if (Number.parseFloat(from) > 0) return true;
           } catch (e) {
@@ -26886,7 +26898,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         const typed = sql.typed as unknown as PostgresTypecasts;
         const response = await sql`
                   SELECT
-                  public.last_day( ${typed[1114](
+                  public.last_day(argument_0 => ${typed[1114](
                     undefinedIsNull(parameters.argument_0),
                   )})`;
         const results = response;

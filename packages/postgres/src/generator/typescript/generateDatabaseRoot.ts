@@ -150,7 +150,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           const parameterExpressions =
             node.parametersType?.attributes.map(
               (a) =>
-                (a.name ? `${a.name} =>` : ``) +
+                (a.named ? `${a.name} =>` : ``) +
                 ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
             ) ?? [];
           // if there is a composite -- pseudo -- return type, this will

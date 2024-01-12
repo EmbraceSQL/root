@@ -225,11 +225,11 @@ export abstract class NamedASTNode extends ASTNode {
     super(kind, parent);
   }
 
-  get typescriptName() {
+  public get typescriptName() {
     return `${pascalCase(this.name)}`;
   }
 
-  get typescriptNamespacedName(): string {
+  public get typescriptNamespacedName(): string {
     if (this.parent) {
       return `${this.parent.typescriptNamespacedName}.${this.typescriptName}`;
     } else {
@@ -237,11 +237,11 @@ export abstract class NamedASTNode extends ASTNode {
     }
   }
 
-  get typescriptPropertyName() {
+  public get typescriptPropertyName() {
     return camelCase(cleanIdentifierForTypescript(this.name));
   }
 
-  get typescriptNamespacedPropertyName(): string {
+  public get typescriptNamespacedPropertyName(): string {
     if (this.parent) {
       return `${this.parent.typescriptNamespacedName}.${this.typescriptPropertyName}`;
     } else {
@@ -979,17 +979,9 @@ export class AttributeNode extends ContainerNode implements NamedType {
     public type: AbstractTypeNode,
     public required: boolean,
     public nullable: boolean,
+    public named = true,
   ) {
     super(name, ASTKind.Attribute, parent);
-  }
-
-  /**
-   * Generate a synthetic name based on the index
-   * when no name is provided.
-   */
-  get typescriptPropertyName(): string {
-    if (this.name) return super.typescriptPropertyName;
-    else return `argument_${this.index}`;
   }
 }
 

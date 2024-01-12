@@ -108,11 +108,14 @@ export class PGProcs {
           const type = context.database.resolveType(oid)!;
           new AttributeNode(
             parametersNode,
-            proc.proc.proargnames[i] ?? "",
+            proc.proc.proargnames[i]
+              ? proc.proc.proargnames[i]
+              : `argument_${i}`,
             i,
             type,
             i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
             true,
+            proc.proc.proargnames[i] !== undefined,
           );
         });
       // outputs

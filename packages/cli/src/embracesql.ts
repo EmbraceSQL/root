@@ -79,6 +79,7 @@ addOptions(
   };
   generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
+  generationBuffer.push(await generateOperationDispatcher(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });

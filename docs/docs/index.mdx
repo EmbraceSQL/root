@@ -10,11 +10,10 @@ import CodeBlock from "@theme/CodeBlock";
 
 Love SQL? Love TypeScript? Hate ORMs. You're 🏡.
 
-Learn about the [Problems](./problems.md) with data access. 
 
-Then [Get Started](#getting-started).
+## Steps
 
-## Getting Started
+### Requirements
 
 You will need:
 
@@ -22,11 +21,15 @@ This example assumes a sample DVD rental database, source at [dvdrental.sql](/dv
 
 You can use this database for testing with a local postgres, such as [Postgres.app](https://postgresapp.com).
 
+### Create a Database
+
 Create a sample dvdrental database if you like with:
 
 ```shell
 curl "https://embracesql.github.io/dvdrental.sql" | psql
 ```
+
+### Generate Code with EmbraceSQL
 
 Going with this dvdrental example, assuming you are in the root directory
 of your typescript project.
@@ -39,11 +42,15 @@ npx embracesqlcli generate node --database postgres://postgres:postgres@localhos
 
 ```
 
+### Configure TypeScript
+
 Preconfigured ready to go TypeScript config.
 
 <CodeBlock language="json" title="tsconfig.json">
   {TsConfigSource}
 </CodeBlock>
+
+### Create a Node Program
 
 Now you can use your fully typed database from TypeScript in Node.
 
@@ -51,7 +58,10 @@ Now you can use your fully typed database from TypeScript in Node.
   {MainSource}
 </CodeBlock>
 
-And run it!
+### Test It!
+
+Time to run. Database access end to end with no mapping.
+
 
 ```shell
 npx tsx ./src/main.ts
