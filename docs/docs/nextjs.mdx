@@ -1,4 +1,6 @@
 import HandlerSource from "!!raw-loader!../../samples/next/src/app/embracesql/route.ts";
+import CssSource from "!!raw-loader!../../samples/next/src/app/sample.css";
+import ClientSource from "!!raw-loader!../../samples/next/src/app/actor/page.tsx";
 import CodeBlock from "@theme/CodeBlock";
 import Requirements from '../includes/sample_requirements.mdx';
 
@@ -26,7 +28,7 @@ Make sure to pick TypeScript!
 `cd` into the root of your application.
 
 ```shell
-npm install @embracesql/express
+npm install @embracesql/shared
 mkdir -p ./src/server
 npx embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental > ./src/server/dvdrental.ts
 ```
@@ -38,7 +40,7 @@ npx embracesqlcli generate express --database postgres://postgres:postgres@local
   {HandlerSource}
 </CodeBlock>
 
-### Test your Express
+### Test 
 
 Start that server:
 
@@ -64,3 +66,16 @@ Generate a fully typed `fetch` wrapping client.
 npm install @embracesql/react
 npx embracesqlcli generate react --database postgres://postgres:postgres@localhost/dvdrental > ./src/client/dvdrental-react.ts
 ```
+
+### Create a Page
+
+Create as shown. For fun, try typing it to get a sense of
+the autocomplete.
+
+<CodeBlock language="css" title="./src/app/sample.css">
+  {CssSource}
+</CodeBlock>
+
+<CodeBlock language="tsx" title="./src/app/actor/page.tsx">
+  {ClientSource}
+</CodeBlock>
