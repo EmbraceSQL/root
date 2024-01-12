@@ -7,11 +7,6 @@ import {
 } from "../../client/dvdrental-react";
 import "../sample.css";
 
-// connect to where we mounted EmbraceSQL in our server
-const client = new EmbraceSQLClient({
-  url: `${window.location.href}embracesql`,
-});
-
 const Actor = () => {
   // this is hooking to an AutoCRUD method to read an actor
   const { row: actor } = Public.Tables.Actor.useByActorId({ actorId: 100 });
@@ -31,6 +26,10 @@ const Actor = () => {
 };
 
 export default function Page() {
+  // connect to where we mounted EmbraceSQL in our server
+  const client = new EmbraceSQLClient({
+    url: `/embracesql`,
+  });
   return (
     <EmbraceSQLProvider client={client}>
       <Actor />

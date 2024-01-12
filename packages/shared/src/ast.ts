@@ -5,8 +5,6 @@ import {
 } from ".";
 import { DispatchOperation } from "./index";
 import { camelCase, pascalCase } from "change-case";
-import * as fs from "fs";
-import * as path from "path";
 
 /**
  * Common name for primary key operations.
@@ -753,25 +751,8 @@ export class UpdateOperationNode extends IndexOperationNode {
  */
 export class ScriptsNode extends ContainerNode {
   static SCRIPTS = "Scripts";
-  /**
-   * Loading up the scripts node by file system traversal.
-   *
-   * Once done, all scripts will be visited and loaded into the AST.
-   */
-  static async loadAST(context: GenerationContext) {
-    if (context.sqlScriptsFrom) {
-      const rootPath = path.parse(path.join(context.sqlScriptsFrom));
-      const scriptsNode = new ScriptsNode(context.database, rootPath);
-      await ScriptFolderNode.loadAST(context, rootPath, scriptsNode);
-      return scriptsNode;
-    } else {
-      return undefined;
-    }
-  }
-  constructor(
-    public database: DatabaseNode,
-    public path: path.ParsedPath,
-  ) {
+
+  constructor(public database: DatabaseNode) {
     super("Scripts", ASTKind.Scripts, database);
   }
 
@@ -785,43 +766,8 @@ export class ScriptsNode extends ContainerNode {
  * A single folder of scripts on disk.
  */
 export class ScriptFolderNode extends ContainerNode {
-  /**
-   * Asynchronous factory builds from a folder path on disk.
-   */
-  static async loadAST(
-    context: GenerationContext,
-    searchPath: path.ParsedPath,
-    addToNode: ContainerNode,
-  ) {
-    // reading the whole directory
-    const inPath = await fs.promises.readdir(
-      path.join(searchPath.dir, searchPath.base),
-      {
-        withFileTypes: true,
-      },
-    );
-    for (const entry of inPath) {
-      if (entry.isDirectory()) {
-        const folder = new ScriptFolderNode(
-          path.parse(path.join(entry.path, entry.name)),
-          addToNode,
-        );
-        await ScriptFolderNode.loadAST(context, folder.path, folder);
-      } else if (entry.name.endsWith(".sql")) {
-        await ScriptNode.loadAST(
-          context,
-          path.parse(path.join(entry.path, entry.name)),
-          addToNode,
-        );
-      }
-    }
-  }
-
-  constructor(
-    public path: path.ParsedPath,
-    parent: ContainerNode,
-  ) {
-    super(path.name, ASTKind.ScriptFolder, parent);
+  constructor(name: string, parent: ContainerNode) {
+    super(name, ASTKind.ScriptFolder, parent);
   }
 }
 
@@ -829,31 +775,14 @@ export class ScriptFolderNode extends ContainerNode {
  * A single script that is source from a .sql file on disk.
  */
 export class ScriptNode extends FunctionOperationNode {
-  /**
-   * Asynchronous factory builds from a sql file on disk.
-   */
-  static async loadAST(
-    context: GenerationContext,
-    scriptPath: path.ParsedPath,
-    addToNode: ContainerNode,
-  ) {
-    console.assert(context);
-    new ScriptNode(
-      scriptPath,
-      await fs.promises.readFile(path.join(scriptPath.dir, scriptPath.base), {
-        encoding: "utf8",
-      }),
-      addToNode,
-    );
-  }
-
   constructor(
-    public path: path.ParsedPath,
+    name: string,
+    public scriptPath: string,
     public script: string,
     parent: ContainerNode,
   ) {
     // always returnsMany
-    super(path.name, ASTKind.Script, parent, true);
+    super(name, ASTKind.Script, parent, true);
   }
 }
 

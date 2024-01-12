@@ -5,6 +5,7 @@ import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
+import { loadScriptsAST } from "./generator/scripts";
 import { oneBasedArgumentNamefromZeroBasedIndex } from "./util";
 import {
   PARAMETERS,
@@ -15,9 +16,7 @@ import {
   DatabaseNode,
   GenerationContextProps,
   RESULTS,
-  ScriptsNode,
 } from "@embracesql/shared";
-import path from "path";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
 
@@ -203,7 +202,7 @@ export const initializeContext = async (
   });
 
   // stored scripts -- load up the AST
-  await ScriptsNode.loadAST(generationContext);
+  await loadScriptsAST(generationContext);
   // visit all scripts and ask the database for metadata
   // we'll be discarding the string results
   await database.visit({
@@ -214,8 +213,7 @@ export const initializeContext = async (
           // these are not 'data base catalog types'
           // -- do not register them with the database
           // there is no actual database object or oid
-          const scriptPath = path.join(node.path.dir, node.path.base);
-          const metadata = await sql.file(scriptPath).describe();
+          const metadata = await sql.file(node.scriptPath).describe();
           const resultsNode = new CompositeTypeNode(RESULTS, node, "", "");
           metadata.columns.forEach(
             (a, i) =>
