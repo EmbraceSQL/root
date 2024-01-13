@@ -9,14 +9,12 @@ type ReadOperation<P, RR> = [P] extends [never]
   ? NoParameters<RR>
   : Parameters<P, RR>;
 
-type Props<R> = {
+type UpdateCallbackProps<R> = {
   deleteOperation: (values: R) => Promise<R | undefined>;
   upsertOperation: (values: R) => Promise<R | undefined>;
   primaryKeyPicker: (row: R) => string;
   RowImplementation: RowConstructor<R>;
 };
-
-type UpdateCallbackProps<R> = Props<R>;
 
 /**
  * Shared callback to update a single row in the database.
@@ -58,7 +56,7 @@ function useUpdateCallback<R>(props: UpdateCallbackProps<R>) {
   );
 }
 
-type RowProps<P, R> = Props<R> & {
+type RowProps<P, R> = UpdateCallbackProps<R> & {
   parameters: P;
   readOperation: ReadOperation<P, R | undefined>;
   emptyRecord: () => PartialRecursive<R>;
@@ -129,7 +127,7 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   };
 }
 
-type RowsProps<P, R> = Props<R> & {
+type RowsProps<P, R> = UpdateCallbackProps<R> & {
   emptyRecord: () => PartialRecursive<R>;
   parameters: P;
   readOperation: ReadOperation<P, R[]>;
@@ -233,5 +231,41 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
     updateRow,
     addRow,
     deleteRow,
+  };
+}
+
+type ImmutableRowsProps<P, R> = {
+  parameters: P;
+  readOperation: ReadOperation<P, R[]>;
+  RowImplementation: RowConstructor<R>;
+};
+
+/**
+ * Use rows immutably. This is useful for SQL script hook generation.
+ */
+export function useEmbraceSQLImmutableRows<P, R>(
+  props: ImmutableRowsProps<P, R>,
+) {
+  const [results, setResults] = React.useState<R[]>();
+
+  // load up the data
+  const readState = useNetwork(async () => {
+    const read = await props.readOperation(props.parameters);
+    setResults(read);
+  }, [JSON.stringify(props.parameters)]);
+
+  return {
+    loading: readState.loading,
+    error: readState.error,
+    rows:
+      results?.map(
+        (r, i) =>
+          new props.RowImplementation(
+            r,
+            // ummutable -- no change
+            async () => r,
+            i,
+          ),
+      ) ?? [],
   };
 }

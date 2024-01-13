@@ -158,8 +158,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           if (node.isPseudoType) {
             generationBuffer.push(`
             const parseResult = (context: Context,
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              result: any)  => {
+              result: unknown)  => {
               return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsResolvedType?.typescriptNamespacedName};
             } 
           `);
@@ -183,7 +182,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                 if (node.returnsMany) {
                   return `results.map(x => ${resultType}.parse(x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
                 }
-                // pick out the scalar case
+                // default to the scalar case
                 return `${resultType}.parse(results?.[0].${node.nameInDatabase})`;
               })()} );
               return responseBody;
