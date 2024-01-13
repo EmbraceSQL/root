@@ -14,19 +14,21 @@ describe("The database can run scripts", () => {
     await db.disconnect();
   });
   it("that just query", async () => {
-    const value = await db.Scripts.tally();
+    const value = await db.Scripts.Tally.call();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
   it("that have nested namespaces", async () => {
-    const value = await db.Scripts.Sample.Film.tally();
+    const value = await db.Scripts.Sample.Film.Tally.call();
     value.forEach((v) => expect(v.count).toBeGreaterThan(0));
   });
   it("that have positional parameters", async () => {
-    const value = await db.Scripts.Sample.pick({ argument_1: "Basic Easy" });
+    const value = await db.Scripts.Sample.Pick.call({
+      argument_1: "Basic Easy",
+    });
     expect(value.length).toEqual(1);
   });
   it("that has an enum parameter", async () => {
-    const ratedG = await db.Scripts.Sample.Film.rated({
+    const ratedG = await db.Scripts.Sample.Film.Rated.call({
       argument_1: Public.Types.MpaaRating.G,
     });
     expect(ratedG.length).toBeGreaterThan(1);

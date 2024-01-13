@@ -12,15 +12,15 @@ function returnParsedRows(table: TableNode): string {
   return `(
     response.results
       ?.map(${table.type.typescriptNamespacedName}.parse)
-      .map(nullIsUndefined<${table.typescriptNamespacedName}.Record>)
-      .filter((x): x is ${table.typescriptNamespacedName}.Record => x !== undefined) ?? []
+      .map(nullIsUndefined<${table.type.typescriptNamespacedName}>)
+      .filter((x): x is ${table.type.typescriptNamespacedName} => x !== undefined) ?? []
   )
   `;
 }
 
 function returnParsedRow(table: TableNode): string {
   return `(
-    nullIsUndefined<${table.typescriptNamespacedName}.Record>(${table.type.typescriptNamespacedName}.parse(response.results))
+    nullIsUndefined<${table.type.typescriptNamespacedName}>(${table.type.typescriptNamespacedName}.parse(response.results))
   )
   `;
 }
@@ -44,8 +44,8 @@ const IndexOperation = {
     // will return a single record on a unique index
     const parametersType = node.index.typescriptNamespacedName;
     const resultType = node.index.unique
-      ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
-      : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
+      ? `${node.index.table.type.typescriptNamespacedName} | undefined`
+      : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
     const parametersPick = node.index.columns
       .map(
         (c) =>
@@ -75,36 +75,41 @@ const IndexOperation = {
 
 const FunctionalOperation = {
   before: async (context: GenerationContext, node: FunctionOperationNode) => {
-    const returnType = `${node.resultsType?.typescriptNamespacedName}${
-      node.returnsMany ? "[]" : ""
-    }`;
+    const returnType = node.returnsMany
+      ? `${node.resultsType?.typescriptNamespacedName}[]`
+      : `${node.resultsType?.typescriptNamespacedName} | undefined`;
 
-    if (node.parametersType) {
-      const parametersType = `${node.parametersType.typescriptNamespacedName}`;
-      return `
-          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) : Promise<${returnType}|undefined> {
+    const callBody = () => {
+      if (node.parametersType) {
+        const parametersType = `${node.parametersType.typescriptNamespacedName}`;
+        return `
+          public async call(parameters: ${parametersType}) : Promise<${returnType}> {
             const response = await this.client.invoke<${parametersType}, never, ${returnType}>({
-              operation: "${node.typescriptNamespacedPropertyName}",
+              operation: "${node.typescriptNamespacedName}.call",
               parameters
             });
         `;
-    } else {
-      return `
-          public async ${node.typescriptPropertyName}() : Promise<${returnType}|undefined> {
+      } else {
+        return `
+          public async call() : Promise<${returnType}> {
             const response = await this.client.invoke<never, never, ${returnType}>({
-              operation: "${node.typescriptNamespacedPropertyName}",
+              operation: "${node.typescriptNamespacedName}.call",
             });
         `;
-    }
+      }
+    };
+    return [
+      await NestedNamedClassVisitor.before(context, node),
+      callBody(),
+    ].join("\n");
   },
   after: async (context: GenerationContext, node: FunctionOperationNode) => {
-    console.assert(context);
-    console.assert(node);
     return [
       node.returnsMany
         ? `return response.results?.map(r => ${node.resultsType?.typescriptNamespacedName}.parse(r)) as ${node.resultsType?.typescriptNamespacedName}[] ?? [];`
         : `return response.results ? nullIsUndefined(${node.resultsType?.typescriptNamespacedName}.parse(response.results)) : undefined;`,
       `}`,
+      await NestedNamedClassVisitor.after(context, node),
     ].join("\n");
   },
 };
@@ -161,8 +166,8 @@ export async function generateClient(context: GenerationContext) {
       before: async (_, node) => {
         // creating can be an upsert, so you can pass with and
         // without a primary key
-        const valuesType = `${node.table.typescriptNamespacedName}.Values`;
-        const returnType = `${node.table.typescriptNamespacedName}.Record`;
+        const valuesType = `Partial<${node.table.type.typescriptNamespacedName}>`;
+        const returnType = `${node.table.type.typescriptNamespacedName}`;
         const valuesPick = node.table.allColumns
           .map(
             (c) =>
@@ -185,11 +190,11 @@ export async function generateClient(context: GenerationContext) {
         // all those rows
         return `
           public async all() : Promise<${
-            node.table.typescriptNamespacedName
-          }.Record[]> {
+            node.table.type.typescriptNamespacedName
+          }[]> {
             const response = await this.client.invoke<never, never, ${
-              node.table.typescriptNamespacedName
-            }.Record[]>({
+              node.table.type.typescriptNamespacedName
+            }[]>({
               operation: "${node.typescriptNamespacedPropertyName}"
             });
             return ${returnParsedRows(node.table)};
@@ -207,8 +212,8 @@ export async function generateClient(context: GenerationContext) {
         const parametersType = node.index.typescriptNamespacedName;
         const valuesType = `Partial<${node.index.table.type.typescriptNamespacedName}>`;
         const resultType = node.index.unique
-          ? `${node.index.table.typescriptNamespacedName}.Record | undefined`
-          : `${node.index.table.typescriptNamespacedName}.Record[] | undefined`;
+          ? `${node.index.table.type.typescriptNamespacedName} | undefined`
+          : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
         const parametersPick = node.index.columns
           .map(
             (c) =>

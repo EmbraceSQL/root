@@ -1,11 +1,12 @@
 import { EmbraceSQLClient } from "@embracesql/client";
 import React, { createContext, useContext } from "react";
 
-const EmbraceSQLContext = createContext<EmbraceSQLClient | null>(null);
+const EmbraceSQLContext = createContext<EmbraceSQLClient | undefined>(
+  undefined,
+);
 
 type EmbraceSQLProviderProps = {
   client: EmbraceSQLClient;
-  children?: React.ReactNode;
 };
 
 /**
@@ -14,7 +15,7 @@ type EmbraceSQLProviderProps = {
 export const EmbraceSQLProvider = ({
   client,
   children,
-}: EmbraceSQLProviderProps) => {
+}: React.PropsWithChildren<EmbraceSQLProviderProps>) => {
   return (
     <EmbraceSQLContext.Provider value={client}>
       {children}

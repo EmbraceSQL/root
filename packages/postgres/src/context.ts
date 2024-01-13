@@ -16,6 +16,7 @@ import {
   DatabaseNode,
   GenerationContextProps,
   RESULTS,
+  ResultsNode,
 } from "@embracesql/shared";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
@@ -214,11 +215,11 @@ export const initializeContext = async (
           // -- do not register them with the database
           // there is no actual database object or oid
           const metadata = await sql.file(node.scriptPath).describe();
-          const resultsNode = new CompositeTypeNode(RESULTS, node, "", "");
+          const resultsType = new CompositeTypeNode(RESULTS, node, "", "");
           metadata.columns.forEach(
             (a, i) =>
               new AttributeNode(
-                resultsNode,
+                resultsType,
                 a.name,
                 i,
                 context.database.resolveType(a.type)!,
@@ -247,6 +248,8 @@ export const initializeContext = async (
                 ),
             );
           }
+          // attach a formal results node
+          new ResultsNode(node, resultsType);
           return "";
         },
       },

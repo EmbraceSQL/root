@@ -19,10 +19,10 @@ const FunctionOperationNodeVisitor = {
       );
     }
     return `"${
-      node.typescriptNamespacedPropertyName
-    }": async (request: EmbraceSQLRequest<object, object>) => database.${
-      node.typescriptNamespacedPropertyName
-    }(${callee.join(",")}),`;
+      node.typescriptNamespacedName
+    }.call": async (request: EmbraceSQLRequest<object, object>) => database.${
+      node.typescriptNamespacedName
+    }.call(${callee.join(",")}),`;
   },
 };
 

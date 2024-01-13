@@ -4,6 +4,7 @@ import { Express } from "express";
 import { Server } from "http";
 
 describe("EmbraceSQLExpress can", () => {
+  const PORT = "4444";
   let app: Express;
   let server: Server;
   let database: Database;
@@ -20,7 +21,7 @@ describe("EmbraceSQLExpress can", () => {
       databaseInTransaction.database,
     );
     return new Promise<void>((resolve) => {
-      server = app.listen(4444, () => {
+      server = app.listen(PORT, () => {
         resolve();
       });
     });
@@ -35,21 +36,21 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a raw invoke", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const response = await client.invoke({
-      operation: "Public.Procedures.lastDay",
+      operation: "Public.Procedures.LastDay.call",
       parameters: {
         argument_0: new Date("12/1/2023"),
       },
     });
     expect(response).toMatchObject({
-      operation: "Public.Procedures.lastDay",
+      operation: "Public.Procedures.LastDay.call",
       results: "2023-12-31T00:00:00.000Z",
     });
   });
 
   it("answer a typed create", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const sample = {
       firstName: "Smurf",
       lastName: "Powers",
@@ -59,7 +60,7 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a typed read", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const response = await client.Public.Tables.Actor.ByActorId.read({
       actorId: 1,
     });
@@ -71,7 +72,7 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a typed read all", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const response = await client.Public.Tables.Actor.all();
     expect(response.length).toBeGreaterThan(1);
     expect(
@@ -88,7 +89,7 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a typed update", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const response = await client.Public.Tables.Actor.ByActorId.update(
       { actorId: 2 },
       { firstName: "🐶" },
@@ -100,7 +101,7 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer an upsert", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const initial = await client.Public.Tables.Actor.ByActorId.read({
       actorId: 1,
     });
@@ -116,7 +117,7 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a typed delete", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     const response = await client.Public.Tables.Payment.ByPaymentId.delete({
       paymentId: 17503,
     });
@@ -126,51 +127,51 @@ describe("EmbraceSQLExpress can", () => {
   });
 
   it("answer a script with no parameters", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Scripts.tally();
-    expect(response![0].count).toBeGreaterThan(100);
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
+    const response = await client.Scripts.Tally.call();
+    expect(response[0].count).toBeGreaterThan(100);
   });
 
   it("answer a script with parameters", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Scripts.Sample.pick({
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
+    const response = await client.Scripts.Sample.Pick.call({
       argument_1: "Basic Easy",
     });
-    expect(response![0].title).toBe("Basic Easy");
+    expect(response[0].title).toBe("Basic Easy");
   });
 
   it("answer a procedure with a single result", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
-    const response = await client.Public.Procedures.lastDay({
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
+    const response = await client.Public.Procedures.LastDay.call({
       argument_0: new Date("1/1/2000"),
     });
     expect(response?.getDate()).toBe(30);
   });
 
   it("answer a procedure with a multiple results of a single attribute", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     // when we invoke the procedure returning SETOF into
-    const response = await client.Public.Procedures.filmInStock({
+    const response = await client.Public.Procedures.FilmInStock.call({
       pFilmId: 1,
       pStoreId: 1,
     });
     // then we get multiple results
     expect(response?.length).toBeGreaterThan(1);
     // and it is going to be a single number -- not a structure
-    expect(response![0]).toBeGreaterThan(0);
+    expect(response[0]).toBeGreaterThan(0);
   });
 
   it("answer a procedure with a multiple results a composite row type", async () => {
-    const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+    const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
     // when we invoke the procedure returning SETOF into
-    const response = await client.Public.Procedures.rewardsReport({
+    const response = await client.Public.Procedures.RewardsReport.call({
       minDollarAmountPurchased: 10,
       minMonthlyPurchases: 1,
     });
     // then we get multiple results
     expect(response?.length).toBeGreaterThan(1);
     // and it is going to be a single number -- not a structure
-    expect(response![0]?.customerId).toBeGreaterThan(0);
-    expect(response![0]?.lastUpdate).toBeInstanceOf(Date);
+    expect(response[0]?.customerId).toBeGreaterThan(0);
+    expect(response[0]?.lastUpdate).toBeInstanceOf(Date);
   });
 });

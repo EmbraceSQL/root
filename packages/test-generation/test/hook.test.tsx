@@ -6,6 +6,7 @@ import {
   EmbraceSQLClient,
   EmbraceSQLProvider,
   Public,
+  Scripts,
 } from "../src/dvdrental-react";
 import {
   fireEvent,
@@ -34,7 +35,8 @@ type WithChildren = {
 };
 
 describe("EmbraceSQL Hooks can", () => {
-  const client = new EmbraceSQLClient({ url: "http://localhost:4444" });
+  const PORT = 5555;
+  const client = new EmbraceSQLClient({ url: `http://localhost:${PORT}` });
   let app: Express;
   let server: Server;
   let database: Database;
@@ -51,7 +53,7 @@ describe("EmbraceSQL Hooks can", () => {
       databaseInTransaction.database,
     );
     return new Promise<void>((resolve) => {
-      server = app.listen(4444, () => {
+      server = app.listen(PORT, () => {
         resolve();
       });
     });
@@ -65,7 +67,6 @@ describe("EmbraceSQL Hooks can", () => {
     });
   });
 
-  // all requests are going to be mocked
   it("read a single row", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
@@ -274,4 +275,15 @@ describe("EmbraceSQL Hooks can", () => {
     // and this is a proper date last update stamp
     expect(shouldBeAdded).toBeDefined();
   });
+  it("read SQL script rows", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () => Scripts.MovieListing.useMovieListing(),
+      { wrapper },
+    );
+    await waitFor(() => expect(result.current?.rows.length).toBeGreaterThan(1));
+  });
+  // TODO: test a hooked proc
 });

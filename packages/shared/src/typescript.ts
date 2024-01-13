@@ -1,6 +1,23 @@
 import { GenerationContext, NamedASTNode } from ".";
 
 /**
+ * Simplest possible visitor just skips this level and make sure
+ * the children are visited.
+ */
+export const ChildrenVisitor = {
+  before: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return ``;
+  },
+  after: async (context: GenerationContext, node: NamedASTNode) => {
+    console.assert(context);
+    console.assert(node);
+    return ``;
+  },
+};
+
+/**
  * This is a really simple visitor that names the node into a namespace.
  */
 export const NamespaceVisitor = {

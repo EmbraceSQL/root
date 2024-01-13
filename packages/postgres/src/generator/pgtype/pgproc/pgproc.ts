@@ -3,14 +3,13 @@ import { PGCatalogType } from "../pgcatalogtype";
 import { PGTypes } from "../pgtype";
 import {
   PARAMETERS,
-  AliasTypeNode,
   AttributeNode,
   CompositeTypeNode,
   GenerationContext,
   ProcedureNode,
-  RESULTS,
   compositeAttribute,
   parseObjectWithAttributes,
+  ResultsNode,
 } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import hash from "object-hash";
@@ -119,7 +118,7 @@ export class PGProcs {
           );
         });
       // outputs
-      new AliasTypeNode(RESULTS, procReturnType, procNode);
+      new ResultsNode(procNode, procReturnType);
     }
   }
 }

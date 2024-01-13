@@ -105,7 +105,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
           // pick results fields and add in null handling
           // this will need to account for alias types
-          const resultsFinalType = node.resultsResolvedType;
+          const resultsFinalType = node.resultsType;
           // this is a bit over defensive programming -- scripts always
           // come back with composite types
           const recordPieceBuilders = (resultsFinalType as CompositeTypeNode)
@@ -120,8 +120,10 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           const parameters = node.parametersType
             ? `parameters: ${node.parametersType.typescriptNamespacedName}`
             : "";
-          return `
-         async ${node.typescriptPropertyName} (${parameters}) {
+          return [
+            await NestedNamedClassVisitor.before(context, node),
+            `
+          async call (${parameters}) {
             const sql = this.database.context.sql;
             const response = await sql.unsafe(\`
                 ${preparedSql}
@@ -130,49 +132,51 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             return response.map(record => ({ ${recordPieceBuilders.join(
               ",",
             )} }));
-        `;
+          }
+        `,
+          ].join("\n");
         },
-        after: async () => {
-          return `}`;
-        },
+        after: NestedNamedClassVisitor.after,
       },
       [ASTKind.Procedures]: NestedNamedClassVisitor,
       [ASTKind.Procedure]: {
         before: async (_, node) => {
-          const resultType = `${node.resultsResolvedType?.typescriptNamespacedName}`;
-          // function call start, passing in parameters
-          const generationBuffer = [
-            ` async ${node.typescriptPropertyName}(parameters : ${node.parametersType?.typescriptNamespacedName})`,
-            `{`,
-          ];
           // turn parameters into the postgres driver escape sequence
           // this is making a string interpolation with string interpoplation
           const parameterExpressions =
-            node.parametersType?.attributes.map(
-              (a) =>
-                (a.named ? `${a.name} =>` : ``) +
-                ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
-            ) ?? [];
+            node.parametersType?.attributes
+              .map(
+                (a) =>
+                  (a.named ? `${a.name} =>` : ``) +
+                  ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
+              )
+              .join(",") ?? "";
+          const resultType = `${node.resultsType?.typescriptNamespacedName}`;
           // if there is a composite -- pseudo -- return type, this will
           // need to call back into the sql driver to parse the results
-          if (node.isPseudoType) {
-            generationBuffer.push(`
-            const parseResult = (context: Context,
-              result: unknown)  => {
-              return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsResolvedType?.typescriptNamespacedName};
-            } 
-          `);
-          }
-          // and the call body
-          generationBuffer.push(`
-              console.assert(parameters);
-              const sql = this.database.context.sql;
-              const typed = sql.typed as unknown as PostgresTypecasts;
-              const response = 
-                  await sql\`
-                  SELECT
-                  ${node.databaseName}(${parameterExpressions.join(",")})\`;
-              const results = response;
+          const parseResult = node.isPseudoType
+            ? `
+            const parseResult = (context: Context, result: unknown) => {
+              return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsType?.typescriptNamespacedName};
+            };
+          `
+            : `
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return ${resultType}.parse(result);
+            };
+          `;
+          // function call start, passing in parameters
+          return [
+            await NestedNamedClassVisitor.before(context, node),
+            `async call(parameters : ${node.parametersType?.typescriptNamespacedName}) {`,
+            `  console.assert(parameters);`,
+            `  ${parseResult}`,
+            `  const sql = this.database.context.sql;`,
+            `  const typed = sql.typed as unknown as PostgresTypecasts;`,
+            `  const response = await sql\`SELECT ${node.databaseName}(${parameterExpressions})\``,
+            `  const results = response;`,
+            `
               const responseBody = ( ${(() => {
                 // pseudo record -- which is always a table type but needs more parsing
                 if (node.isPseudoType) {
@@ -180,18 +184,17 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                 }
                 // table cast of a defined type
                 if (node.returnsMany) {
-                  return `results.map(x => ${resultType}.parse(x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
+                  return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
                 }
                 // default to the scalar case
                 return `${resultType}.parse(results?.[0].${node.nameInDatabase})`;
               })()} );
               return responseBody;
-
-    `);
-          generationBuffer.push(`}`);
-
-          return generationBuffer.join("\n");
+           `,
+            `}`,
+          ].join("\n");
         },
+        after: NestedNamedClassVisitor.after,
       },
       // tables and indexes host AutoCRUD
       [ASTKind.Tables]: NestedNamedClassVisitor,

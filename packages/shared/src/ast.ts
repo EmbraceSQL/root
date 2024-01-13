@@ -63,10 +63,10 @@ export enum ASTKind {
   Type,
   Enum,
   CompositeType,
-  AliasType,
   Attribute,
   DomainType,
   ArrayType,
+  Results,
 }
 
 interface DatabaseNamed {
@@ -136,9 +136,9 @@ export type ASTKindMap = {
   [ASTKind.Enum]: EnumTypeNode;
   [ASTKind.CompositeType]: CompositeTypeNode;
   [ASTKind.Attribute]: AttributeNode;
-  [ASTKind.AliasType]: AliasTypeNode;
   [ASTKind.DomainType]: DomainTypeNode;
   [ASTKind.ArrayType]: ArrayTypeNode;
+  [ASTKind.Results]: ResultsNode;
 };
 
 /**
@@ -516,6 +516,7 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
     public type: CompositeTypeNode,
   ) {
     super(name, ASTKind.Table, tables);
+    new ResultsNode(this, type);
     new CreateOperationNode(this);
     new AllOperationNode(this);
   }
@@ -666,22 +667,9 @@ export abstract class FunctionOperationNode extends OperationNode {
    * An operation can return either a single value or arrary of this type.
    */
   get resultsType() {
-    return this.children
-      .filter<AbstractTypeNode>((c): c is AbstractTypeNode =>
-        [ASTKind.CompositeType, ASTKind.AliasType].includes(c.kind),
-      )
-      .find((c) => c.name === RESULTS);
-  }
-  /**
-   * The results type might be an alias -- resolve it to the target
-   * final type.
-   */
-  get resultsResolvedType() {
-    const typeNode = this.resultsType;
-    // resolve type alias to a composite
-    return typeNode?.kind === ASTKind.AliasType
-      ? (typeNode as AliasTypeNode).type
-      : typeNode;
+    return this.children.filter<ResultsNode>(
+      (c): c is ResultsNode => c.kind === ASTKind.Results,
+    )[0].type;
   }
 }
 
@@ -915,39 +903,6 @@ export class AttributeNode extends ContainerNode implements NamedType {
 }
 
 /**
- * Rename a type, useful in namespaces to allow consistent
- * code generation.
- */
-export class AliasTypeNode extends AbstractTypeNode {
-  constructor(
-    public name: string,
-    public type: TypeNode,
-    parent: ContainerNode,
-  ) {
-    super(name, ASTKind.AliasType, parent, type.id, "");
-  }
-
-  override typescriptTypeDefinition(
-    context: GenerationContext,
-  ): string | undefined {
-    console.assert(context);
-    if (this.name === RESULTS) {
-      if (this.type.kind === ASTKind.CompositeType) {
-        return `NullableMembers<${this.type.typescriptNamespacedName}>`;
-      }
-      return `Nullable<${this.type.typescriptNamespacedName}>`;
-    }
-    return `${this.type.typescriptNamespacedName}`;
-  }
-
-  override typescriptTypeParser(context: GenerationContext) {
-    console.assert(context);
-    // delegate to the actual type
-    return `return ${this.type.typescriptNamespacedName}.parse(from)`;
-  }
-}
-
-/**
  * A domain type is much like an alias, in that it gives a new name
  * to an existing type.
  *
@@ -990,5 +945,17 @@ export class DomainTypeNode extends AbstractTypeNode {
     console.assert(context);
     // base type type parser
     return `return ${this.baseType?.typescriptNamespacedName}.parse(from);`;
+  }
+}
+
+/**
+ * Results reference a type, but are not a type themselves.
+ */
+export class ResultsNode extends ASTNode {
+  constructor(
+    parent: ContainerNode,
+    public type: AbstractTypeNode,
+  ) {
+    super(ASTKind.Results, parent);
   }
 }

@@ -48,7 +48,6 @@ export async function generateTypeParsers(context: GenerationContext) {
         [ASTKind.CreateOperation]: NamespaceVisitor,
         [ASTKind.Type]: ParseVisitor,
         [ASTKind.CompositeType]: ParseVisitor,
-        [ASTKind.AliasType]: ParseVisitor,
         [ASTKind.Enum]: ParseVisitor,
         [ASTKind.DomainType]: ParseVisitor,
         [ASTKind.ArrayType]: ParseVisitor,

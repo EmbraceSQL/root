@@ -145,7 +145,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         [ASTKind.Procedure]: NamespaceVisitor,
         [ASTKind.CompositeType]: TypeDefiner,
         [ASTKind.DomainType]: TypeDefiner,
-        [ASTKind.AliasType]: TypeDefiner,
         [ASTKind.ArrayType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,

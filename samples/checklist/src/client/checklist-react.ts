@@ -22838,12 +22838,12 @@ export class EmbraceSQLClient extends BaseClient {
     public Tables = new (class extends HasClient {
       public Checklist = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Checklist.Values,
-        ): Promise<Public.Tables.Checklist.Record | undefined> {
+          values: Partial<Public.Types.Checklist>,
+        ): Promise<Public.Types.Checklist | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Checklist.Values,
-            Public.Tables.Checklist.Record
+            Partial<Public.Types.Checklist>,
+            Public.Types.Checklist
           >({
             operation: "Public.Tables.Checklist.create",
             values: {
@@ -22852,26 +22852,24 @@ export class EmbraceSQLClient extends BaseClient {
               createdAt: values.createdAt,
             },
           });
-          return nullIsUndefined<Public.Tables.Checklist.Record>(
+          return nullIsUndefined<Public.Types.Checklist>(
             Public.Types.Checklist.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Checklist.Record[]> {
+        public async all(): Promise<Public.Types.Checklist[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Checklist.Record[]
+            Public.Types.Checklist[]
           >({
             operation: "Public.Tables.Checklist.all",
           });
           return (
             response.results
               ?.map(Public.Types.Checklist.parse)
-              .map(nullIsUndefined<Public.Tables.Checklist.Record>)
-              .filter(
-                (x): x is Public.Tables.Checklist.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Checklist>)
+              .filter((x): x is Public.Types.Checklist => x !== undefined) ?? []
           );
         }
 
@@ -22880,13 +22878,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Checklist.ById,
               never,
-              Public.Tables.Checklist.Record | undefined
+              Public.Types.Checklist | undefined
             >({
               operation: "Public.Tables.Checklist.ById.read",
               parameters: { id: parameters.id },
             });
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
+            return nullIsUndefined<Public.Types.Checklist>(
               Public.Types.Checklist.parse(response.results),
             );
           }
@@ -22898,7 +22896,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Checklist.ById,
               Partial<Public.Types.Checklist>,
-              Public.Tables.Checklist.Record | undefined
+              Public.Types.Checklist | undefined
             >({
               operation: "Public.Tables.Checklist.ById.update",
               parameters: { id: parameters.id },
@@ -22909,7 +22907,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
+            return nullIsUndefined<Public.Types.Checklist>(
               Public.Types.Checklist.parse(response.results),
             );
           }
@@ -22918,13 +22916,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Checklist.ById,
               never,
-              Public.Tables.Checklist.Record | undefined
+              Public.Types.Checklist | undefined
             >({
               operation: "Public.Tables.Checklist.ById.delete",
               parameters: { id: parameters.id },
             });
 
-            return nullIsUndefined<Public.Tables.Checklist.Record>(
+            return nullIsUndefined<Public.Types.Checklist>(
               Public.Types.Checklist.parse(response.results),
             );
           }
@@ -22936,12 +22934,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public ChecklistItem = new (class extends HasClient {
         public async create(
-          values: Public.Tables.ChecklistItem.Values,
-        ): Promise<Public.Tables.ChecklistItem.Record | undefined> {
+          values: Partial<Public.Types.ChecklistItem>,
+        ): Promise<Public.Types.ChecklistItem | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.ChecklistItem.Values,
-            Public.Tables.ChecklistItem.Record
+            Partial<Public.Types.ChecklistItem>,
+            Public.Types.ChecklistItem
           >({
             operation: "Public.Tables.ChecklistItem.create",
             values: {
@@ -22952,25 +22950,25 @@ export class EmbraceSQLClient extends BaseClient {
               createdAt: values.createdAt,
             },
           });
-          return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
+          return nullIsUndefined<Public.Types.ChecklistItem>(
             Public.Types.ChecklistItem.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.ChecklistItem.Record[]> {
+        public async all(): Promise<Public.Types.ChecklistItem[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.ChecklistItem.Record[]
+            Public.Types.ChecklistItem[]
           >({
             operation: "Public.Tables.ChecklistItem.all",
           });
           return (
             response.results
               ?.map(Public.Types.ChecklistItem.parse)
-              .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
+              .map(nullIsUndefined<Public.Types.ChecklistItem>)
               .filter(
-                (x): x is Public.Tables.ChecklistItem.Record => x !== undefined,
+                (x): x is Public.Types.ChecklistItem => x !== undefined,
               ) ?? []
           );
         }
@@ -22982,7 +22980,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ByChecklistId,
               never,
-              Public.Tables.ChecklistItem.Record[] | undefined
+              Public.Types.ChecklistItem[] | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ByChecklistId.read",
               parameters: { checklistId: parameters.checklistId },
@@ -22991,10 +22989,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
+                .map(nullIsUndefined<Public.Types.ChecklistItem>)
                 .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
+                  (x): x is Public.Types.ChecklistItem => x !== undefined,
                 ) ?? []
             );
           }
@@ -23006,7 +23003,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ByChecklistId,
               Partial<Public.Types.ChecklistItem>,
-              Public.Tables.ChecklistItem.Record[] | undefined
+              Public.Types.ChecklistItem[] | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ByChecklistId.update",
               parameters: { checklistId: parameters.checklistId },
@@ -23022,10 +23019,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
+                .map(nullIsUndefined<Public.Types.ChecklistItem>)
                 .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
+                  (x): x is Public.Types.ChecklistItem => x !== undefined,
                 ) ?? []
             );
           }
@@ -23036,7 +23032,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ByChecklistId,
               never,
-              Public.Tables.ChecklistItem.Record[] | undefined
+              Public.Types.ChecklistItem[] | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ByChecklistId.delete",
               parameters: { checklistId: parameters.checklistId },
@@ -23045,10 +23041,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.ChecklistItem.parse)
-                .map(nullIsUndefined<Public.Tables.ChecklistItem.Record>)
+                .map(nullIsUndefined<Public.Types.ChecklistItem>)
                 .filter(
-                  (x): x is Public.Tables.ChecklistItem.Record =>
-                    x !== undefined,
+                  (x): x is Public.Types.ChecklistItem => x !== undefined,
                 ) ?? []
             );
           }
@@ -23059,13 +23054,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ById,
               never,
-              Public.Tables.ChecklistItem.Record | undefined
+              Public.Types.ChecklistItem | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ById.read",
               parameters: { id: parameters.id },
             });
 
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
+            return nullIsUndefined<Public.Types.ChecklistItem>(
               Public.Types.ChecklistItem.parse(response.results),
             );
           }
@@ -23077,7 +23072,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ById,
               Partial<Public.Types.ChecklistItem>,
-              Public.Tables.ChecklistItem.Record | undefined
+              Public.Types.ChecklistItem | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ById.update",
               parameters: { id: parameters.id },
@@ -23090,7 +23085,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
+            return nullIsUndefined<Public.Types.ChecklistItem>(
               Public.Types.ChecklistItem.parse(response.results),
             );
           }
@@ -23099,13 +23094,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.ChecklistItem.ById,
               never,
-              Public.Tables.ChecklistItem.Record | undefined
+              Public.Types.ChecklistItem | undefined
             >({
               operation: "Public.Tables.ChecklistItem.ById.delete",
               parameters: { id: parameters.id },
             });
 
-            return nullIsUndefined<Public.Tables.ChecklistItem.Record>(
+            return nullIsUndefined<Public.Types.ChecklistItem>(
               Public.Types.ChecklistItem.parse(response.results),
             );
           }
@@ -23123,6 +23118,7 @@ import {
   useEmbraceSQLClient,
   useEmbraceSQLRow,
   useEmbraceSQLRows,
+  useEmbraceSQLImmutableRows,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -23130,16 +23126,17 @@ import {
   GeneratedRowProps,
 } from "@embracesql/react";
 export namespace Public {
+  export namespace Procedures {}
   export namespace Tables {
     export namespace Checklist {
-      export type Row = IsRow<Public.Tables.Checklist.Record>;
+      export type Row = IsRow<Public.Types.Checklist>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Checklist.Record>
+        extends RowBase<Public.Types.Checklist>
         implements Row
       {
         constructor(
-          record: Public.Tables.Checklist.Record,
-          changeCallback: RecordCallback<Public.Tables.Checklist.Record>,
+          record: Public.Types.Checklist,
+          changeCallback: RecordCallback<Public.Types.Checklist>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -23149,12 +23146,10 @@ export namespace Public {
         }
         get changeId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.Id.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              id: parsedValue as Public.Tables.Checklist.Record["id"],
+              id: parsedValue as Public.Types.Checklist["id"],
             });
           };
         }
@@ -23163,12 +23158,10 @@ export namespace Public {
         }
         get changeName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.Name.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              name: parsedValue as Public.Tables.Checklist.Record["name"],
+              name: parsedValue as Public.Types.Checklist["name"],
             });
           };
         }
@@ -23177,27 +23170,26 @@ export namespace Public {
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Checklist.CreatedAt.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              createdAt:
-                parsedValue as Public.Tables.Checklist.Record["createdAt"],
+              createdAt: parsedValue as Public.Types.Checklist["createdAt"],
             });
           };
         }
       }
     }
     export namespace ChecklistItem {
-      export type Row = IsRow<Public.Tables.ChecklistItem.Record>;
+      export type Row = IsRow<Public.Types.ChecklistItem>;
       export class RowImplementation
-        extends RowBase<Public.Tables.ChecklistItem.Record>
+        extends RowBase<Public.Types.ChecklistItem>
         implements Row
       {
         constructor(
-          record: Public.Tables.ChecklistItem.Record,
-          changeCallback: RecordCallback<Public.Tables.ChecklistItem.Record>,
+          record: Public.Types.ChecklistItem,
+          changeCallback: RecordCallback<Public.Types.ChecklistItem>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -23207,12 +23199,10 @@ export namespace Public {
         }
         get changeId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Id.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              id: parsedValue as Public.Tables.ChecklistItem.Record["id"],
+              id: parsedValue as Public.Types.ChecklistItem["id"],
             });
           };
         }
@@ -23221,13 +23211,11 @@ export namespace Public {
         }
         get changeChecklistId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.ChecklistId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
               checklistId:
-                parsedValue as Public.Tables.ChecklistItem.Record["checklistId"],
+                parsedValue as Public.Types.ChecklistItem["checklistId"],
             });
           };
         }
@@ -23236,12 +23224,10 @@ export namespace Public {
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Title.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              title: parsedValue as Public.Tables.ChecklistItem.Record["title"],
+              title: parsedValue as Public.Types.ChecklistItem["title"],
             });
           };
         }
@@ -23250,13 +23236,10 @@ export namespace Public {
         }
         get changeChecked() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.Checked.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              checked:
-                parsedValue as Public.Tables.ChecklistItem.Record["checked"],
+              checked: parsedValue as Public.Types.ChecklistItem["checked"],
             });
           };
         }
@@ -23265,13 +23248,12 @@ export namespace Public {
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.ChecklistItem.CreatedAt.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              createdAt:
-                parsedValue as Public.Tables.ChecklistItem.Record["createdAt"],
+              createdAt: parsedValue as Public.Types.ChecklistItem["createdAt"],
             });
           };
         }
@@ -23289,8 +23271,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
+          Partial<Public.Types.Checklist>,
+          Public.Types.Checklist
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -23308,8 +23290,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
+          Partial<Public.Types.Checklist>,
+          Public.Types.Checklist
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Checklist.all.bind(client),
@@ -23328,8 +23310,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ById,
-          Partial<Public.Tables.Checklist.Values>,
-          Public.Tables.Checklist.Record
+          Partial<Public.Types.Checklist>,
+          Public.Types.Checklist
         >({
           readOperation: client.Public.Tables.Checklist.ById.read.bind(client),
           parameters,
@@ -23349,8 +23331,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
+          Partial<Public.Types.ChecklistItem>,
+          Public.Types.ChecklistItem
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -23369,8 +23351,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
+          Partial<Public.Types.ChecklistItem>,
+          Public.Types.ChecklistItem
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
@@ -23392,8 +23374,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByChecklistId,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
+          Partial<Public.Types.ChecklistItem>,
+          Public.Types.ChecklistItem
         >({
           readOperation:
             client.Public.Tables.ChecklistItem.ByChecklistId.read.bind(client),
@@ -23411,8 +23393,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ById,
-          Partial<Public.Tables.ChecklistItem.Values>,
-          Public.Tables.ChecklistItem.Record
+          Partial<Public.Types.ChecklistItem>,
+          Public.Types.ChecklistItem
         >({
           readOperation:
             client.Public.Tables.ChecklistItem.ById.read.bind(client),

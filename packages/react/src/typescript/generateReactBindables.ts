@@ -1,61 +1,93 @@
 import {
   ASTKind,
+  CompositeTypeNode,
   GenerationContext,
   NamespaceVisitor,
+  isNodeType,
 } from "@embracesql/shared";
-import { pascalCase, camelCase } from "change-case";
+
+/**
+ * Generate Row for CompositeType.
+ */
+async function generateRow(
+  context: GenerationContext,
+  type: CompositeTypeNode,
+) {
+  return await type.visit({
+    ...context,
+    handlers: {
+      // every composite type will get a `Row` binder generated
+      [ASTKind.CompositeType]: {
+        before: async (context, node) => {
+          return [
+            // we are not generating 'new' namespace for the composite type
+            // otherwise you get double-ups -- Table.Type for a table named Foo
+            // is gonna make namespace Foo { namespace Foo}
+            `export type Row = IsRow<${node.typescriptNamespacedName}>;`,
+            `export class RowImplementation`,
+            ` extends RowBase<${node.typescriptNamespacedName}>`,
+            ` implements Row {`,
+            `   constructor(record: ${node.typescriptNamespacedName}, `,
+            `     changeCallback: RecordCallback<${node.typescriptNamespacedName}>, `,
+            `     rowNumberInResultset: number) {`,
+            `     super(record, changeCallback, rowNumberInResultset);`,
+            `   }`,
+          ].join("\n");
+        },
+        after: async () => {
+          // close the class
+          return `}`;
+        },
+      },
+      // attributes on the Composite types help build the `Row` binder
+      [ASTKind.Attribute]: {
+        before: async (_, node) => {
+          return [
+            // the getter -- read only view of the values
+            `get ${node.typescriptPropertyName}() { return this.record.${node.typescriptPropertyName};}`,
+            // react change event handlers -- needs a bound this
+            // to be used as react event handler
+            `get change${node.typescriptName}() {`,
+            `  return (event: ChangeEvent) => {`,
+            `    const parsedValue = ${node.type.typescriptNamespacedName}.parse(event.target.value);`,
+            `    void this.changeCallback({`,
+            `      ...this.record,`,
+            `    ${node.typescriptPropertyName}: parsedValue as ${node.parent.typescriptNamespacedName}["${node.typescriptPropertyName}"],`,
+            `    });`,
+            `  };`,
+            `}`,
+          ].join("\n");
+        },
+      },
+    },
+  });
+}
 
 /**
  * Generate bindable objects designed to be used in state.
  */
-export const generateReactBindables = async (context: GenerationContext) => {
-  context.handlers = {
-    [ASTKind.Schema]: NamespaceVisitor,
-    [ASTKind.Tables]: NamespaceVisitor,
-    [ASTKind.Table]: {
-      before: async (context, node) => {
-        return [
-          await NamespaceVisitor.before(context, node),
-          `export type Row = IsRow<${node.typescriptNamespacedName}.Record>;`,
-          `export class RowImplementation`,
-          `extends RowBase<${node.typescriptNamespacedName}.Record>`,
-          `implements Row {`,
-          `constructor(record: ${node.typescriptNamespacedName}.Record, `,
-          ` changeCallback: RecordCallback<${node.typescriptNamespacedName}.Record>, `,
-          ` rowNumberInResultset: number) {`,
-          ` super(record, changeCallback, rowNumberInResultset);`,
-          `}`,
-        ].join("\n");
-      },
-      after: async (context, node) => {
-        return [
-          // close off the class
-          `}`,
-          await NamespaceVisitor.after(context, node),
-        ].join("\n");
+export async function generateReactBindables(context: GenerationContext) {
+  return await context.database.visit({
+    ...context,
+    handlers: {
+      [ASTKind.Scripts]: NamespaceVisitor,
+      [ASTKind.ScriptFolder]: NamespaceVisitor,
+      [ASTKind.Script]: NamespaceVisitor,
+      [ASTKind.Schema]: NamespaceVisitor,
+      [ASTKind.Tables]: NamespaceVisitor,
+      [ASTKind.Table]: NamespaceVisitor,
+      [ASTKind.Procedures]: NamespaceVisitor,
+      [ASTKind.Procedure]: NamespaceVisitor,
+      // results will have composite types to visit
+      [ASTKind.Results]: {
+        before: async (context, node) => {
+          if (isNodeType(node.type, ASTKind.CompositeType)) {
+            return await generateRow(context, node.type);
+          } else {
+            return "";
+          }
+        },
       },
     },
-    [ASTKind.Column]: {
-      before: async (_, node) => {
-        return [
-          // the getter -- read only view of the values
-          `get ${camelCase(node.name)}() { return this.record.${camelCase(
-            node.name,
-          )};}`,
-          // react change event handlers -- needs a bound this
-          // to be used as react event handler
-          `get change${pascalCase(node.name)}() {`,
-          `  return (event: ChangeEvent) => {`,
-          `    const parsedValue = ${node.typescriptNamespacedName}.parse(event.target.value);`,
-          `    void this.changeCallback({`,
-          `      ...this.record,`,
-          `    ${node.typescriptPropertyName} :parsedValue as ${node.table.typescriptNamespacedName}.Record["${node.typescriptPropertyName}"],`,
-          `    });`,
-          `  };`,
-          `}`,
-        ].join("\n");
-      },
-    },
-  };
-  return await context.database.visit(context);
-};
+  });
+}

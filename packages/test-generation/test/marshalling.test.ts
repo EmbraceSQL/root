@@ -20,48 +20,48 @@ describe("The database can marshall complex types", () => {
     await db.disconnect();
   });
   it("that are from an echo function", async () => {
-    const ret = await db.Api.Procedures.echo({ message: "Hi" });
+    const ret = await db.Api.Procedures.Echo.call({ message: "Hi" });
     expect(ret).toEqual("Hi");
   });
   it("that are from an set function", async () => {
-    const ret = await db.Api.Procedures.echoSet({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoSet.call({ message: "Hi" });
     expect(ret).toMatchObject(["Hi"]);
   });
   it("that are from an table function", async () => {
-    const ret = await db.Api.Procedures.echoTable({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoTable.call({ message: "Hi" });
     expect(ret).toMatchObject([{ echomessage: "Hi" }]);
   });
   it("that are from an typed function", async () => {
-    const ret = await db.Api.Procedures.echoType({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoType.call({ message: "Hi" });
     expect(ret!.echomessage).toEqual("Hi");
     expect(ret!.at).toBeTruthy();
   });
   it("that are from an array function", async () => {
-    const ret = await db.Api.Procedures.echoTypeArray({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoTypeArray.call({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0]!.echomessage).toEqual("Hi");
     expect(ret[0]!.at).toBeTruthy();
   });
   it("that are from an nested type function", async () => {
-    const ret = await db.Api.Procedures.echoTypeNested({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoTypeNested.call({ message: "Hi" });
     expect(ret!.echoes?.length).toEqual(1);
     expect(ret!.echoes[0]!.echomessage).toEqual("Hi");
     expect(ret!.echoes[0]!.at).toBeTruthy();
   });
   it("that are from an type set function", async () => {
-    const ret = await db.Api.Procedures.echoTypeSet({ message: "Hi" });
+    const ret = await db.Api.Procedures.EchoTypeSet.call({ message: "Hi" });
     expect(ret.length).toEqual(1);
     expect(ret[0].echomessage).toEqual("Hi");
     expect(ret[0].at).toBeTruthy();
   });
   it("that are from an enum function", async () => {
-    const ret = await db.Api.Procedures.echoAnswer({
+    const ret = await db.Api.Procedures.EchoAnswer.call({
       message: Api.Types.Answer.Maybe,
     });
     expect(ret).toEqual(Api.Types.Answer.Maybe);
   });
   it("that are from an enum null function", async () => {
-    const ret = await db.Api.Procedures.echoAnswer({
+    const ret = await db.Api.Procedures.EchoAnswer.call({
       message: null,
     });
     expect(ret).toBeNull();

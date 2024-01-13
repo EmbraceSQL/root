@@ -5250,49 +5250,35 @@ export namespace Public {
         pFilmId: Nullable<PgCatalog.Types.Int4>;
         pStoreId: Nullable<PgCatalog.Types.Int4>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace FilmNotInStock {
       export type Parameters = {
         pFilmId: Nullable<PgCatalog.Types.Int4>;
         pStoreId: Nullable<PgCatalog.Types.Int4>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace GetCustomerBalance {
       export type Parameters = {
         pCustomerId: Nullable<PgCatalog.Types.Int4>;
         pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Numeric>;
     }
     export namespace InventoryHeldByCustomer {
       export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace InventoryInStock {
       export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace LastDay {
       export type Parameters = {
         argument_0: Nullable<PgCatalog.Types.Timestamp>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Date>;
     }
     export namespace RewardsReport {
       export type Parameters = {
         minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
         minDollarAmountPurchased: Nullable<PgCatalog.Types.Numeric>;
       };
-
-      export type Results = NullableMembers<Public.Types.Customer>;
     }
   }
   export namespace Tables {
@@ -6979,6 +6965,15 @@ export namespace InformationSchema {
   }
 }
 export namespace Scripts {
+  export namespace MovieListing {
+    export type Results = {
+      filmId: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      releaseYear: Nullable<PgCatalog.Types.Int4>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: PgCatalog.Types.TextArray;
+    };
+  }
   export namespace Sample {
     export namespace Film {
       export namespace Rated {
@@ -14471,13 +14466,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
-        }
-      }
     }
     export namespace FilmNotInStock {
       export namespace Parameters {
@@ -14491,13 +14479,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -14517,13 +14498,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Numeric.parse(from);
-        }
-      }
     }
     export namespace InventoryHeldByCustomer {
       export namespace Parameters {
@@ -14536,13 +14510,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -14559,13 +14526,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
     }
     export namespace LastDay {
       export namespace Parameters {
@@ -14578,13 +14538,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Date.parse(from);
         }
       }
     }
@@ -14604,13 +14557,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Customer.parse(from);
         }
       }
     }
@@ -18265,6 +18211,24 @@ export namespace InformationSchema {
   }
 }
 export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Scripts.MovieListing.Results.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int4.parse(from.filmId),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.TextArray.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+  }
   export namespace Sample {
     export namespace Film {
       export namespace Rated {
@@ -25305,6 +25269,21 @@ export namespace InformationSchema {
   }
 }
 export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function is(value: any): value is Scripts.MovieListing.Results {
+        if (
+          value.filmId !== undefined &&
+          value.title !== undefined &&
+          value.releaseYear !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
   export namespace Sample {
     export namespace Film {
       export namespace Rated {
@@ -26336,101 +26315,101 @@ export interface PostgresTypecasts {
   ["PgCatalog.Types.Xid8"]: Typecast;
   [142]: Typecast;
   ["PgCatalog.Types.Xml"]: Typecast;
-  [32294]: Typecast;
+  [32954]: Typecast;
   ["Public.Types.ActorArray"]: Typecast;
-  [32325]: Typecast;
+  [32985]: Typecast;
   ["Public.Types.ActorInfoArray"]: Typecast;
-  [32331]: Typecast;
+  [32991]: Typecast;
   ["Public.Types.AddressArray"]: Typecast;
-  [32300]: Typecast;
+  [32960]: Typecast;
   ["Public.Types.CategoryArray"]: Typecast;
-  [32337]: Typecast;
+  [32997]: Typecast;
   ["Public.Types.CityArray"]: Typecast;
-  [32343]: Typecast;
+  [33003]: Typecast;
   ["Public.Types.CountryArray"]: Typecast;
-  [32284]: Typecast;
+  [32944]: Typecast;
   ["Public.Types.CustomerArray"]: Typecast;
-  [32348]: Typecast;
+  [33008]: Typecast;
   ["Public.Types.CustomerListArray"]: Typecast;
-  [32306]: Typecast;
+  [32966]: Typecast;
   ["Public.Types.FilmArray"]: Typecast;
-  [32317]: Typecast;
+  [32977]: Typecast;
   ["Public.Types.FilmActorArray"]: Typecast;
-  [32321]: Typecast;
+  [32981]: Typecast;
   ["Public.Types.FilmCategoryArray"]: Typecast;
-  [32353]: Typecast;
+  [33013]: Typecast;
   ["Public.Types.FilmListArray"]: Typecast;
-  [32359]: Typecast;
+  [33019]: Typecast;
   ["Public.Types.InventoryArray"]: Typecast;
-  [32365]: Typecast;
+  [33025]: Typecast;
   ["Public.Types.LanguageArray"]: Typecast;
-  [32260]: Typecast;
+  [32920]: Typecast;
   ["Public.Types.MpaaRatingArray"]: Typecast;
-  [32370]: Typecast;
+  [33030]: Typecast;
   ["Public.Types.NicerButSlowerFilmListArray"]: Typecast;
-  [32376]: Typecast;
+  [33036]: Typecast;
   ["Public.Types.PaymentArray"]: Typecast;
-  [32381]: Typecast;
+  [33041]: Typecast;
   ["Public.Types.RentalArray"]: Typecast;
-  [32386]: Typecast;
+  [33046]: Typecast;
   ["Public.Types.SalesByFilmCategoryArray"]: Typecast;
-  [32406]: Typecast;
+  [33066]: Typecast;
   ["Public.Types.SalesByStoreArray"]: Typecast;
-  [32392]: Typecast;
+  [33052]: Typecast;
   ["Public.Types.StaffArray"]: Typecast;
-  [32411]: Typecast;
+  [33071]: Typecast;
   ["Public.Types.StaffListArray"]: Typecast;
-  [32401]: Typecast;
+  [33061]: Typecast;
   ["Public.Types.StoreArray"]: Typecast;
-  [32271]: Typecast;
+  [32931]: Typecast;
   ["Public.Types.YearArray"]: Typecast;
-  [32295]: Typecast;
+  [32955]: Typecast;
   ["Public.Types.Actor"]: Typecast;
-  [32326]: Typecast;
+  [32986]: Typecast;
   ["Public.Types.ActorInfo"]: Typecast;
-  [32332]: Typecast;
+  [32992]: Typecast;
   ["Public.Types.Address"]: Typecast;
-  [32301]: Typecast;
+  [32961]: Typecast;
   ["Public.Types.Category"]: Typecast;
-  [32338]: Typecast;
+  [32998]: Typecast;
   ["Public.Types.City"]: Typecast;
-  [32344]: Typecast;
+  [33004]: Typecast;
   ["Public.Types.Country"]: Typecast;
-  [32285]: Typecast;
+  [32945]: Typecast;
   ["Public.Types.Customer"]: Typecast;
-  [32349]: Typecast;
+  [33009]: Typecast;
   ["Public.Types.CustomerList"]: Typecast;
-  [32307]: Typecast;
+  [32967]: Typecast;
   ["Public.Types.Film"]: Typecast;
-  [32318]: Typecast;
+  [32978]: Typecast;
   ["Public.Types.FilmActor"]: Typecast;
-  [32322]: Typecast;
+  [32982]: Typecast;
   ["Public.Types.FilmCategory"]: Typecast;
-  [32354]: Typecast;
+  [33014]: Typecast;
   ["Public.Types.FilmList"]: Typecast;
-  [32360]: Typecast;
+  [33020]: Typecast;
   ["Public.Types.Inventory"]: Typecast;
-  [32366]: Typecast;
+  [33026]: Typecast;
   ["Public.Types.Language"]: Typecast;
-  [32261]: Typecast;
+  [32921]: Typecast;
   ["Public.Types.MpaaRating"]: Typecast;
-  [32371]: Typecast;
+  [33031]: Typecast;
   ["Public.Types.NicerButSlowerFilmList"]: Typecast;
-  [32377]: Typecast;
+  [33037]: Typecast;
   ["Public.Types.Payment"]: Typecast;
-  [32382]: Typecast;
+  [33042]: Typecast;
   ["Public.Types.Rental"]: Typecast;
-  [32387]: Typecast;
+  [33047]: Typecast;
   ["Public.Types.SalesByFilmCategory"]: Typecast;
-  [32407]: Typecast;
+  [33067]: Typecast;
   ["Public.Types.SalesByStore"]: Typecast;
-  [32393]: Typecast;
+  [33053]: Typecast;
   ["Public.Types.Staff"]: Typecast;
-  [32412]: Typecast;
+  [33072]: Typecast;
   ["Public.Types.StaffList"]: Typecast;
-  [32402]: Typecast;
+  [33062]: Typecast;
   ["Public.Types.Store"]: Typecast;
-  [32272]: Typecast;
+  [32932]: Typecast;
   ["Public.Types.Year"]: Typecast;
 
   ["Public.Procedures.FilmInStock.Parameters"]: Typecast;
@@ -26733,6 +26712,8 @@ export interface PostgresTypecasts {
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
 
+  ["Scripts.MovieListing.Results"]: Typecast;
+
   ["Scripts.Sample.Film.Rated.Results"]: Typecast;
 
   ["Scripts.Sample.Film.Rated.Parameters"]: Typecast;
@@ -26777,147 +26758,236 @@ export class Database extends PostgresDatabase implements HasDatabase {
         return this.hasDatabase.database;
       }
 
-      async filmInStock(parameters: Public.Procedures.FilmInStock.Parameters) {
-        const parseResult = (context: Context, result: unknown) => {
-          return context.procTypes[32275].parseFromPostgresIfRecord(
-            context,
-            result,
-          ) as unknown as PgCatalog.Types.Int4;
-        };
+      public FilmInStock = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
 
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.film_in_stock(p_film_id => ${typed[23](
-                    undefinedIsNull(parameters.pFilmId),
-                  )},p_store_id => ${typed[23](
-                    undefinedIsNull(parameters.pStoreId),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => parseResult(this.database.context, x.film_in_stock))
-          .filter<PgCatalog.Types.Int4>(
-            (r): r is PgCatalog.Types.Int4 => r !== null,
-          );
-        return responseBody;
-      }
-      async filmNotInStock(
-        parameters: Public.Procedures.FilmNotInStock.Parameters,
-      ) {
-        const parseResult = (context: Context, result: unknown) => {
-          return context.procTypes[32276].parseFromPostgresIfRecord(
-            context,
-            result,
-          ) as unknown as PgCatalog.Types.Int4;
-        };
+        get database() {
+          return this.hasDatabase.database;
+        }
 
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.film_not_in_stock(p_film_id => ${typed[23](
-                    undefinedIsNull(parameters.pFilmId),
-                  )},p_store_id => ${typed[23](
-                    undefinedIsNull(parameters.pStoreId),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => parseResult(this.database.context, x.film_not_in_stock))
-          .filter<PgCatalog.Types.Int4>(
-            (r): r is PgCatalog.Types.Int4 => r !== null,
+        async call(parameters: Public.Procedures.FilmInStock.Parameters) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            return context.procTypes[32935].parseFromPostgresIfRecord(
+              context,
+              result,
+            ) as unknown as PgCatalog.Types.Int4;
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.film_in_stock(p_film_id => ${typed[23](
+              undefinedIsNull(parameters.pFilmId),
+            )},p_store_id => ${typed[23](
+              undefinedIsNull(parameters.pStoreId),
+            )})`;
+          const results = response;
+
+          const responseBody = results
+            .map((x) => parseResult(this.database.context, x.film_in_stock))
+            .filter<PgCatalog.Types.Int4>(
+              (r): r is PgCatalog.Types.Int4 => r !== null,
+            );
+          return responseBody;
+        }
+      })(this);
+
+      public FilmNotInStock = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Public.Procedures.FilmNotInStock.Parameters) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            return context.procTypes[32936].parseFromPostgresIfRecord(
+              context,
+              result,
+            ) as unknown as PgCatalog.Types.Int4;
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.film_not_in_stock(p_film_id => ${typed[23](
+              undefinedIsNull(parameters.pFilmId),
+            )},p_store_id => ${typed[23](
+              undefinedIsNull(parameters.pStoreId),
+            )})`;
+          const results = response;
+
+          const responseBody = results
+            .map((x) => parseResult(this.database.context, x.film_not_in_stock))
+            .filter<PgCatalog.Types.Int4>(
+              (r): r is PgCatalog.Types.Int4 => r !== null,
+            );
+          return responseBody;
+        }
+      })(this);
+
+      public GetCustomerBalance = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(
+          parameters: Public.Procedures.GetCustomerBalance.Parameters,
+        ) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            console.assert(context);
+            return PgCatalog.Types.Numeric.parse(result);
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.get_customer_balance(p_customer_id => ${typed[23](
+              undefinedIsNull(parameters.pCustomerId),
+            )},p_effective_date => ${typed[1114](
+              undefinedIsNull(parameters.pEffectiveDate),
+            )})`;
+          const results = response;
+
+          const responseBody = PgCatalog.Types.Numeric.parse(
+            results?.[0].get_customer_balance,
           );
-        return responseBody;
-      }
-      async getCustomerBalance(
-        parameters: Public.Procedures.GetCustomerBalance.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.get_customer_balance(p_customer_id => ${typed[23](
-                    undefinedIsNull(parameters.pCustomerId),
-                  )},p_effective_date => ${typed[1114](
-                    undefinedIsNull(parameters.pEffectiveDate),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Numeric.parse(
-          results?.[0].get_customer_balance,
-        );
-        return responseBody;
-      }
-      async inventoryHeldByCustomer(
-        parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.inventory_held_by_customer(p_inventory_id => ${typed[23](
-                    undefinedIsNull(parameters.pInventoryId),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Int4.parse(
-          results?.[0].inventory_held_by_customer,
-        );
-        return responseBody;
-      }
-      async inventoryInStock(
-        parameters: Public.Procedures.InventoryInStock.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.inventory_in_stock(p_inventory_id => ${typed[23](
-                    undefinedIsNull(parameters.pInventoryId),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Bool.parse(
-          results?.[0].inventory_in_stock,
-        );
-        return responseBody;
-      }
-      async lastDay(parameters: Public.Procedures.LastDay.Parameters) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.last_day( ${typed[1114](
-                    undefinedIsNull(parameters.argument_0),
-                  )})`;
-        const results = response;
-        const responseBody = PgCatalog.Types.Date.parse(results?.[0].last_day);
-        return responseBody;
-      }
-      async rewardsReport(
-        parameters: Public.Procedures.RewardsReport.Parameters,
-      ) {
-        console.assert(parameters);
-        const sql = this.database.context.sql;
-        const typed = sql.typed as unknown as PostgresTypecasts;
-        const response = await sql`
-                  SELECT
-                  public.rewards_report(min_monthly_purchases => ${typed[23](
-                    undefinedIsNull(parameters.minMonthlyPurchases),
-                  )},min_dollar_amount_purchased => ${typed[1700](
-                    undefinedIsNull(parameters.minDollarAmountPurchased),
-                  )})`;
-        const results = response;
-        const responseBody = results
-          .map((x) => Public.Types.Customer.parse(x.rewards_report))
-          .filter<Public.Types.Customer>(
-            (r): r is Public.Types.Customer => r !== null,
+          return responseBody;
+        }
+      })(this);
+
+      public InventoryHeldByCustomer = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(
+          parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
+        ) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            console.assert(context);
+            return PgCatalog.Types.Int4.parse(result);
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${typed[23](
+              undefinedIsNull(parameters.pInventoryId),
+            )})`;
+          const results = response;
+
+          const responseBody = PgCatalog.Types.Int4.parse(
+            results?.[0].inventory_held_by_customer,
           );
-        return responseBody;
-      }
+          return responseBody;
+        }
+      })(this);
+
+      public InventoryInStock = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Public.Procedures.InventoryInStock.Parameters) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            console.assert(context);
+            return PgCatalog.Types.Bool.parse(result);
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.inventory_in_stock(p_inventory_id => ${typed[23](
+              undefinedIsNull(parameters.pInventoryId),
+            )})`;
+          const results = response;
+
+          const responseBody = PgCatalog.Types.Bool.parse(
+            results?.[0].inventory_in_stock,
+          );
+          return responseBody;
+        }
+      })(this);
+
+      public LastDay = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Public.Procedures.LastDay.Parameters) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            console.assert(context);
+            return PgCatalog.Types.Date.parse(result);
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response = await sql`SELECT public.last_day( ${typed[1114](
+            undefinedIsNull(parameters.argument_0),
+          )})`;
+          const results = response;
+
+          const responseBody = PgCatalog.Types.Date.parse(
+            results?.[0].last_day,
+          );
+          return responseBody;
+        }
+      })(this);
+
+      public RewardsReport = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Public.Procedures.RewardsReport.Parameters) {
+          console.assert(parameters);
+
+          const parseResult = (context: Context, result: unknown) => {
+            console.assert(context);
+            return Public.Types.Customer.parse(result);
+          };
+
+          const sql = this.database.context.sql;
+          const typed = sql.typed as unknown as PostgresTypecasts;
+          const response =
+            await sql`SELECT public.rewards_report(min_monthly_purchases => ${typed[23](
+              undefinedIsNull(parameters.minMonthlyPurchases),
+            )},min_dollar_amount_purchased => ${typed[1700](
+              undefinedIsNull(parameters.minDollarAmountPurchased),
+            )})`;
+          const results = response;
+
+          const responseBody = results
+            .map((x) => parseResult(this.database.context, x.rewards_report))
+            .filter<Public.Types.Customer>(
+              (r): r is Public.Types.Customer => r !== null,
+            );
+          return responseBody;
+        }
+      })(this);
     })(this);
 
     public Tables = new (class implements HasDatabase {
@@ -31581,7 +31651,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       },${
         values.releaseYear === undefined
           ? sql`DEFAULT`
-          : typed[32272](values.releaseYear)
+          : typed[32932](values.releaseYear)
       },${
         values.languageId === undefined
           ? sql`DEFAULT`
@@ -31601,7 +31671,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`DEFAULT`
           : typed[1700](values.replacementCost)
       },${
-        values.rating === undefined ? sql`DEFAULT` : typed[32261](values.rating)
+        values.rating === undefined ? sql`DEFAULT` : typed[32921](values.rating)
       },${
         values.lastUpdate === undefined
           ? sql`DEFAULT`
@@ -31648,7 +31718,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     },${
       values.releaseYear === undefined
         ? sql`DEFAULT`
-        : typed[32272](values.releaseYear)
+        : typed[32932](values.releaseYear)
     },${
       values.languageId === undefined
         ? sql`DEFAULT`
@@ -31668,7 +31738,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
         ? sql`DEFAULT`
         : typed[1700](values.replacementCost)
     },${
-      values.rating === undefined ? sql`DEFAULT` : typed[32261](values.rating)
+      values.rating === undefined ? sql`DEFAULT` : typed[32921](values.rating)
     },${
       values.lastUpdate === undefined
         ? sql`DEFAULT`
@@ -31801,7 +31871,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[32272](values.releaseYear)
+          : typed[32932](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -31821,7 +31891,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+        values.rating === undefined ? sql`rating` : typed[32921](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -31963,7 +32033,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[32272](values.releaseYear)
+          : typed[32932](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -31983,7 +32053,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+        values.rating === undefined ? sql`rating` : typed[32921](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -32122,7 +32192,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[32272](values.releaseYear)
+          : typed[32932](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -32142,7 +32212,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+        values.rating === undefined ? sql`rating` : typed[32921](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -32281,7 +32351,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
       } , release_year = ${
         values.releaseYear === undefined
           ? sql`release_year`
-          : typed[32272](values.releaseYear)
+          : typed[32932](values.releaseYear)
       } , language_id = ${
         values.languageId === undefined
           ? sql`language_id`
@@ -32301,7 +32371,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           ? sql`replacement_cost`
           : typed[1700](values.replacementCost)
       } , rating = ${
-        values.rating === undefined ? sql`rating` : typed[32261](values.rating)
+        values.rating === undefined ? sql`rating` : typed[32921](values.rating)
       } , last_update = ${
         values.lastUpdate === undefined
           ? sql`last_update`
@@ -32381,6 +32451,52 @@ export class Database extends PostgresDatabase implements HasDatabase {
       return this.hasDatabase.database;
     }
 
+    public MovieListing = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async call() {
+        const sql = this.database.context.sql;
+        const response = await sql.unsafe(`
+                SELECT
+  film_id,
+  title,
+  release_year,
+  rating,
+  -- nested array so we don't need multiple trips to the database
+  -- this is a nice way to embrace SQL!
+  -- this is also a query that won't parse well with off the shelf
+  -- postgres client drivers, but we'll generate strong types automatically
+  ARRAY(
+	  SELECT
+	    first_name || ' ' || last_name
+	  FROM
+	    public.actor JOIN public.film_actor fa USING (actor_id)
+	  WHERE
+        fa.film_id = f.film_id
+  ) AS actors
+
+FROM 
+  public.film f
+                
+                `);
+        return response.map((record) => ({
+          filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.filmId)),
+          title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
+          releaseYear: undefinedIsNull(
+            PgCatalog.Types.Int4.parse(record.releaseYear),
+          ),
+          rating: undefinedIsNull(Public.Types.MpaaRating.parse(record.rating)),
+          actors: undefinedIsNull(
+            PgCatalog.Types.TextArray.parse(record.actors),
+          ),
+        }));
+      }
+    })(this);
+
     public Sample = new (class implements HasDatabase {
       constructor(private hasDatabase: HasDatabase) {}
 
@@ -32395,16 +32511,112 @@ export class Database extends PostgresDatabase implements HasDatabase {
           return this.hasDatabase.database;
         }
 
-        async rated(parameters: Scripts.Sample.Film.Rated.Parameters) {
-          const sql = this.database.context.sql;
-          const response = await sql.unsafe(
-            `
+        public Rated = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async call(parameters: Scripts.Sample.Film.Rated.Parameters) {
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(
+              `
                 SELECT
     *
 FROM 
     public.film
 WHERE
     rating = $1
+                
+                `,
+              [parameters.argument_1],
+            );
+            return response.map((record) => ({
+              filmId: undefinedIsNull(
+                PgCatalog.Types.Int4.parse(record.filmId),
+              ),
+              title: undefinedIsNull(
+                PgCatalog.Types.Varchar.parse(record.title),
+              ),
+              description: undefinedIsNull(
+                PgCatalog.Types.Text.parse(record.description),
+              ),
+              releaseYear: undefinedIsNull(
+                PgCatalog.Types.Int4.parse(record.releaseYear),
+              ),
+              languageId: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.languageId),
+              ),
+              rentalDuration: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.rentalDuration),
+              ),
+              rentalRate: undefinedIsNull(
+                PgCatalog.Types.Numeric.parse(record.rentalRate),
+              ),
+              length: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.length),
+              ),
+              replacementCost: undefinedIsNull(
+                PgCatalog.Types.Numeric.parse(record.replacementCost),
+              ),
+              rating: undefinedIsNull(
+                Public.Types.MpaaRating.parse(record.rating),
+              ),
+              lastUpdate: undefinedIsNull(
+                PgCatalog.Types.Timestamp.parse(record.lastUpdate),
+              ),
+              specialFeatures: undefinedIsNull(
+                PgCatalog.Types.TextArray.parse(record.specialFeatures),
+              ),
+              fulltext: undefinedIsNull(
+                PgCatalog.Types.Tsvector.parse(record.fulltext),
+              ),
+            }));
+          }
+        })(this);
+
+        public Tally = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async call() {
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.film
+
+                
+                `);
+            return response.map((record) => ({
+              count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Pick = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Scripts.Sample.Pick.Parameters) {
+          const sql = this.database.context.sql;
+          const response = await sql.unsafe(
+            `
+                SELECT
+    *
+FROM
+    public.film
+WHERE
+    title = $1
                 
                 `,
             [parameters.argument_1],
@@ -32445,76 +32657,19 @@ WHERE
             ),
           }));
         }
-
-        async tally() {
-          const sql = this.database.context.sql;
-          const response = await sql.unsafe(`
-                SELECT
-    COUNT(*)
-FROM
-    public.film
-
-                
-                `);
-          return response.map((record) => ({
-            count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
-          }));
-        }
       })(this);
-
-      async pick(parameters: Scripts.Sample.Pick.Parameters) {
-        const sql = this.database.context.sql;
-        const response = await sql.unsafe(
-          `
-                SELECT
-    *
-FROM
-    public.film
-WHERE
-    title = $1
-                
-                `,
-          [parameters.argument_1],
-        );
-        return response.map((record) => ({
-          filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.filmId)),
-          title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
-          description: undefinedIsNull(
-            PgCatalog.Types.Text.parse(record.description),
-          ),
-          releaseYear: undefinedIsNull(
-            PgCatalog.Types.Int4.parse(record.releaseYear),
-          ),
-          languageId: undefinedIsNull(
-            PgCatalog.Types.Int2.parse(record.languageId),
-          ),
-          rentalDuration: undefinedIsNull(
-            PgCatalog.Types.Int2.parse(record.rentalDuration),
-          ),
-          rentalRate: undefinedIsNull(
-            PgCatalog.Types.Numeric.parse(record.rentalRate),
-          ),
-          length: undefinedIsNull(PgCatalog.Types.Int2.parse(record.length)),
-          replacementCost: undefinedIsNull(
-            PgCatalog.Types.Numeric.parse(record.replacementCost),
-          ),
-          rating: undefinedIsNull(Public.Types.MpaaRating.parse(record.rating)),
-          lastUpdate: undefinedIsNull(
-            PgCatalog.Types.Timestamp.parse(record.lastUpdate),
-          ),
-          specialFeatures: undefinedIsNull(
-            PgCatalog.Types.TextArray.parse(record.specialFeatures),
-          ),
-          fulltext: undefinedIsNull(
-            PgCatalog.Types.Tsvector.parse(record.fulltext),
-          ),
-        }));
-      }
     })(this);
 
-    async tally() {
-      const sql = this.database.context.sql;
-      const response = await sql.unsafe(`
+    public Tally = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async call() {
+        const sql = this.database.context.sql;
+        const response = await sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
@@ -32522,10 +32677,11 @@ FROM
 
                 
                 `);
-      return response.map((record) => ({
-        count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
-      }));
-    }
+        return response.map((record) => ({
+          count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
+        }));
+      }
+    })(this);
   })(this);
 }
 
@@ -32535,46 +32691,46 @@ export class OperationDispatcher {
   private dispatchMap: Record<string, OperationDispatchMethod>;
   constructor(private database: Database) {
     this.dispatchMap = {
-      "Public.Procedures.filmInStock": async (
+      "Public.Procedures.FilmInStock.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.filmInStock(
+        database.Public.Procedures.FilmInStock.call(
           request.parameters as Public.Procedures.FilmInStock.Parameters,
         ),
-      "Public.Procedures.filmNotInStock": async (
+      "Public.Procedures.FilmNotInStock.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.filmNotInStock(
+        database.Public.Procedures.FilmNotInStock.call(
           request.parameters as Public.Procedures.FilmNotInStock.Parameters,
         ),
-      "Public.Procedures.getCustomerBalance": async (
+      "Public.Procedures.GetCustomerBalance.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.getCustomerBalance(
+        database.Public.Procedures.GetCustomerBalance.call(
           request.parameters as Public.Procedures.GetCustomerBalance.Parameters,
         ),
-      "Public.Procedures.inventoryHeldByCustomer": async (
+      "Public.Procedures.InventoryHeldByCustomer.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.inventoryHeldByCustomer(
+        database.Public.Procedures.InventoryHeldByCustomer.call(
           request.parameters as Public.Procedures.InventoryHeldByCustomer.Parameters,
         ),
-      "Public.Procedures.inventoryInStock": async (
+      "Public.Procedures.InventoryInStock.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.inventoryInStock(
+        database.Public.Procedures.InventoryInStock.call(
           request.parameters as Public.Procedures.InventoryInStock.Parameters,
         ),
-      "Public.Procedures.lastDay": async (
+      "Public.Procedures.LastDay.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.lastDay(
+        database.Public.Procedures.LastDay.call(
           request.parameters as Public.Procedures.LastDay.Parameters,
         ),
-      "Public.Procedures.rewardsReport": async (
+      "Public.Procedures.RewardsReport.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Public.Procedures.rewardsReport(
+        database.Public.Procedures.RewardsReport.call(
           request.parameters as Public.Procedures.RewardsReport.Parameters,
         ),
       "Public.Tables.FilmActor.create": async (
@@ -33350,23 +33506,27 @@ export class OperationDispatcher {
         database.Public.Tables.Film.ByTitle.delete(
           request.parameters as Public.Tables.Film.ByTitle,
         ),
-      "Scripts.Sample.Film.rated": async (
+      "Scripts.MovieListing.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Scripts.MovieListing.call(),
+      "Scripts.Sample.Film.Rated.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Scripts.Sample.Film.rated(
+        database.Scripts.Sample.Film.Rated.call(
           request.parameters as Scripts.Sample.Film.Rated.Parameters,
         ),
-      "Scripts.Sample.Film.tally": async (
+      "Scripts.Sample.Film.Tally.call": async (
         request: EmbraceSQLRequest<object, object>,
-      ) => database.Scripts.Sample.Film.tally(),
-      "Scripts.Sample.pick": async (
+      ) => database.Scripts.Sample.Film.Tally.call(),
+      "Scripts.Sample.Pick.call": async (
         request: EmbraceSQLRequest<object, object>,
       ) =>
-        database.Scripts.Sample.pick(
+        database.Scripts.Sample.Pick.call(
           request.parameters as Scripts.Sample.Pick.Parameters,
         ),
-      "Scripts.tally": async (request: EmbraceSQLRequest<object, object>) =>
-        database.Scripts.tally(),
+      "Scripts.Tally.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Scripts.Tally.call(),
     };
   }
 

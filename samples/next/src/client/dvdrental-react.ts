@@ -5250,49 +5250,35 @@ export namespace Public {
         pFilmId: Nullable<PgCatalog.Types.Int4>;
         pStoreId: Nullable<PgCatalog.Types.Int4>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace FilmNotInStock {
       export type Parameters = {
         pFilmId: Nullable<PgCatalog.Types.Int4>;
         pStoreId: Nullable<PgCatalog.Types.Int4>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace GetCustomerBalance {
       export type Parameters = {
         pCustomerId: Nullable<PgCatalog.Types.Int4>;
         pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Numeric>;
     }
     export namespace InventoryHeldByCustomer {
       export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
-
-      export type Results = Nullable<PgCatalog.Types.Int4>;
     }
     export namespace InventoryInStock {
       export type Parameters = { pInventoryId: Nullable<PgCatalog.Types.Int4> };
-
-      export type Results = Nullable<PgCatalog.Types.Bool>;
     }
     export namespace LastDay {
       export type Parameters = {
         argument_0: Nullable<PgCatalog.Types.Timestamp>;
       };
-
-      export type Results = Nullable<PgCatalog.Types.Date>;
     }
     export namespace RewardsReport {
       export type Parameters = {
         minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
         minDollarAmountPurchased: Nullable<PgCatalog.Types.Numeric>;
       };
-
-      export type Results = NullableMembers<Public.Types.Customer>;
     }
   }
   export namespace Tables {
@@ -14421,13 +14407,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
-        }
-      }
     }
     export namespace FilmNotInStock {
       export namespace Parameters {
@@ -14441,13 +14420,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -14467,13 +14439,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Numeric.parse(from);
-        }
-      }
     }
     export namespace InventoryHeldByCustomer {
       export namespace Parameters {
@@ -14486,13 +14451,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Int4.parse(from);
         }
       }
     }
@@ -14509,13 +14467,6 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Bool.parse(from);
-        }
-      }
     }
     export namespace LastDay {
       export namespace Parameters {
@@ -14528,13 +14479,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return PgCatalog.Types.Date.parse(from);
         }
       }
     }
@@ -14554,13 +14498,6 @@ export namespace Public {
             };
           }
           throw new Error(JSON.stringify(from));
-        }
-      }
-      export namespace Results {
-        export function parse(from: unknown) {
-          // AliasType
-          if (from === null || from === undefined) return null;
-          return Public.Types.Customer.parse(from);
         }
       }
     }
@@ -25150,157 +25087,155 @@ export class EmbraceSQLClient extends BaseClient {
 
   public Public = new (class extends HasClient {
     public Procedures = new (class extends HasClient {
-      public async filmInStock(
-        parameters: Public.Procedures.FilmInStock.Parameters,
-      ): Promise<Public.Procedures.FilmInStock.Results[] | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.FilmInStock.Parameters,
-          never,
-          Public.Procedures.FilmInStock.Results[]
-        >({
-          operation: "Public.Procedures.filmInStock",
-          parameters,
-        });
+      public FilmInStock = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.FilmInStock.Parameters,
+        ): Promise<PgCatalog.Types.Int4[]> {
+          const response = await this.client.invoke<
+            Public.Procedures.FilmInStock.Parameters,
+            never,
+            PgCatalog.Types.Int4[]
+          >({
+            operation: "Public.Procedures.FilmInStock.call",
+            parameters,
+          });
 
-        return (
-          (response.results?.map((r) =>
-            Public.Procedures.FilmInStock.Results.parse(r),
-          ) as Public.Procedures.FilmInStock.Results[]) ?? []
-        );
-      }
+          return (
+            (response.results?.map((r) =>
+              PgCatalog.Types.Int4.parse(r),
+            ) as PgCatalog.Types.Int4[]) ?? []
+          );
+        }
+      })(this);
 
-      public async filmNotInStock(
-        parameters: Public.Procedures.FilmNotInStock.Parameters,
-      ): Promise<Public.Procedures.FilmNotInStock.Results[] | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.FilmNotInStock.Parameters,
-          never,
-          Public.Procedures.FilmNotInStock.Results[]
-        >({
-          operation: "Public.Procedures.filmNotInStock",
-          parameters,
-        });
+      public FilmNotInStock = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.FilmNotInStock.Parameters,
+        ): Promise<PgCatalog.Types.Int4[]> {
+          const response = await this.client.invoke<
+            Public.Procedures.FilmNotInStock.Parameters,
+            never,
+            PgCatalog.Types.Int4[]
+          >({
+            operation: "Public.Procedures.FilmNotInStock.call",
+            parameters,
+          });
 
-        return (
-          (response.results?.map((r) =>
-            Public.Procedures.FilmNotInStock.Results.parse(r),
-          ) as Public.Procedures.FilmNotInStock.Results[]) ?? []
-        );
-      }
+          return (
+            (response.results?.map((r) =>
+              PgCatalog.Types.Int4.parse(r),
+            ) as PgCatalog.Types.Int4[]) ?? []
+          );
+        }
+      })(this);
 
-      public async getCustomerBalance(
-        parameters: Public.Procedures.GetCustomerBalance.Parameters,
-      ): Promise<Public.Procedures.GetCustomerBalance.Results | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.GetCustomerBalance.Parameters,
-          never,
-          Public.Procedures.GetCustomerBalance.Results
-        >({
-          operation: "Public.Procedures.getCustomerBalance",
-          parameters,
-        });
+      public GetCustomerBalance = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.GetCustomerBalance.Parameters,
+        ): Promise<PgCatalog.Types.Numeric | undefined> {
+          const response = await this.client.invoke<
+            Public.Procedures.GetCustomerBalance.Parameters,
+            never,
+            PgCatalog.Types.Numeric | undefined
+          >({
+            operation: "Public.Procedures.GetCustomerBalance.call",
+            parameters,
+          });
 
-        return response.results
-          ? nullIsUndefined(
-              Public.Procedures.GetCustomerBalance.Results.parse(
-                response.results,
-              ),
-            )
-          : undefined;
-      }
+          return response.results
+            ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results))
+            : undefined;
+        }
+      })(this);
 
-      public async inventoryHeldByCustomer(
-        parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
-      ): Promise<
-        Public.Procedures.InventoryHeldByCustomer.Results | undefined
-      > {
-        const response = await this.client.invoke<
-          Public.Procedures.InventoryHeldByCustomer.Parameters,
-          never,
-          Public.Procedures.InventoryHeldByCustomer.Results
-        >({
-          operation: "Public.Procedures.inventoryHeldByCustomer",
-          parameters,
-        });
+      public InventoryHeldByCustomer = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.InventoryHeldByCustomer.Parameters,
+        ): Promise<PgCatalog.Types.Int4 | undefined> {
+          const response = await this.client.invoke<
+            Public.Procedures.InventoryHeldByCustomer.Parameters,
+            never,
+            PgCatalog.Types.Int4 | undefined
+          >({
+            operation: "Public.Procedures.InventoryHeldByCustomer.call",
+            parameters,
+          });
 
-        return response.results
-          ? nullIsUndefined(
-              Public.Procedures.InventoryHeldByCustomer.Results.parse(
-                response.results,
-              ),
-            )
-          : undefined;
-      }
+          return response.results
+            ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results))
+            : undefined;
+        }
+      })(this);
 
-      public async inventoryInStock(
-        parameters: Public.Procedures.InventoryInStock.Parameters,
-      ): Promise<Public.Procedures.InventoryInStock.Results | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.InventoryInStock.Parameters,
-          never,
-          Public.Procedures.InventoryInStock.Results
-        >({
-          operation: "Public.Procedures.inventoryInStock",
-          parameters,
-        });
+      public InventoryInStock = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.InventoryInStock.Parameters,
+        ): Promise<PgCatalog.Types.Bool | undefined> {
+          const response = await this.client.invoke<
+            Public.Procedures.InventoryInStock.Parameters,
+            never,
+            PgCatalog.Types.Bool | undefined
+          >({
+            operation: "Public.Procedures.InventoryInStock.call",
+            parameters,
+          });
 
-        return response.results
-          ? nullIsUndefined(
-              Public.Procedures.InventoryInStock.Results.parse(
-                response.results,
-              ),
-            )
-          : undefined;
-      }
+          return response.results
+            ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results))
+            : undefined;
+        }
+      })(this);
 
-      public async lastDay(
-        parameters: Public.Procedures.LastDay.Parameters,
-      ): Promise<Public.Procedures.LastDay.Results | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.LastDay.Parameters,
-          never,
-          Public.Procedures.LastDay.Results
-        >({
-          operation: "Public.Procedures.lastDay",
-          parameters,
-        });
+      public LastDay = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.LastDay.Parameters,
+        ): Promise<PgCatalog.Types.Date | undefined> {
+          const response = await this.client.invoke<
+            Public.Procedures.LastDay.Parameters,
+            never,
+            PgCatalog.Types.Date | undefined
+          >({
+            operation: "Public.Procedures.LastDay.call",
+            parameters,
+          });
 
-        return response.results
-          ? nullIsUndefined(
-              Public.Procedures.LastDay.Results.parse(response.results),
-            )
-          : undefined;
-      }
+          return response.results
+            ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results))
+            : undefined;
+        }
+      })(this);
 
-      public async rewardsReport(
-        parameters: Public.Procedures.RewardsReport.Parameters,
-      ): Promise<Public.Procedures.RewardsReport.Results[] | undefined> {
-        const response = await this.client.invoke<
-          Public.Procedures.RewardsReport.Parameters,
-          never,
-          Public.Procedures.RewardsReport.Results[]
-        >({
-          operation: "Public.Procedures.rewardsReport",
-          parameters,
-        });
+      public RewardsReport = new (class extends HasClient {
+        public async call(
+          parameters: Public.Procedures.RewardsReport.Parameters,
+        ): Promise<Public.Types.Customer[]> {
+          const response = await this.client.invoke<
+            Public.Procedures.RewardsReport.Parameters,
+            never,
+            Public.Types.Customer[]
+          >({
+            operation: "Public.Procedures.RewardsReport.call",
+            parameters,
+          });
 
-        return (
-          (response.results?.map((r) =>
-            Public.Procedures.RewardsReport.Results.parse(r),
-          ) as Public.Procedures.RewardsReport.Results[]) ?? []
-        );
-      }
+          return (
+            (response.results?.map((r) =>
+              Public.Types.Customer.parse(r),
+            ) as Public.Types.Customer[]) ?? []
+          );
+        }
+      })(this);
     })(this);
 
     public Tables = new (class extends HasClient {
       public FilmActor = new (class extends HasClient {
         public async create(
-          values: Public.Tables.FilmActor.Values,
-        ): Promise<Public.Tables.FilmActor.Record | undefined> {
+          values: Partial<Public.Types.FilmActor>,
+        ): Promise<Public.Types.FilmActor | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.FilmActor.Values,
-            Public.Tables.FilmActor.Record
+            Partial<Public.Types.FilmActor>,
+            Public.Types.FilmActor
           >({
             operation: "Public.Tables.FilmActor.create",
             values: {
@@ -25309,26 +25244,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.FilmActor.Record>(
+          return nullIsUndefined<Public.Types.FilmActor>(
             Public.Types.FilmActor.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.FilmActor.Record[]> {
+        public async all(): Promise<Public.Types.FilmActor[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.FilmActor.Record[]
+            Public.Types.FilmActor[]
           >({
             operation: "Public.Tables.FilmActor.all",
           });
           return (
             response.results
               ?.map(Public.Types.FilmActor.parse)
-              .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
-              .filter(
-                (x): x is Public.Tables.FilmActor.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.FilmActor>)
+              .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
           );
         }
 
@@ -25339,7 +25272,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByActorIdFilmId,
               never,
-              Public.Tables.FilmActor.Record | undefined
+              Public.Types.FilmActor | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.read",
               parameters: {
@@ -25348,7 +25281,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+            return nullIsUndefined<Public.Types.FilmActor>(
               Public.Types.FilmActor.parse(response.results),
             );
           }
@@ -25360,7 +25293,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByActorIdFilmId,
               Partial<Public.Types.FilmActor>,
-              Public.Tables.FilmActor.Record | undefined
+              Public.Types.FilmActor | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.update",
               parameters: {
@@ -25374,7 +25307,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+            return nullIsUndefined<Public.Types.FilmActor>(
               Public.Types.FilmActor.parse(response.results),
             );
           }
@@ -25385,7 +25318,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByActorIdFilmId,
               never,
-              Public.Tables.FilmActor.Record | undefined
+              Public.Types.FilmActor | undefined
             >({
               operation: "Public.Tables.FilmActor.ByActorIdFilmId.delete",
               parameters: {
@@ -25394,7 +25327,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmActor.Record>(
+            return nullIsUndefined<Public.Types.FilmActor>(
               Public.Types.FilmActor.parse(response.results),
             );
           }
@@ -25408,7 +25341,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByFilmId,
               never,
-              Public.Tables.FilmActor.Record[] | undefined
+              Public.Types.FilmActor[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.read",
               parameters: { filmId: parameters.filmId },
@@ -25417,10 +25350,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.FilmActor.parse)
-                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
-                .filter(
-                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.FilmActor>)
+                .filter((x): x is Public.Types.FilmActor => x !== undefined) ??
+              []
             );
           }
 
@@ -25431,7 +25363,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByFilmId,
               Partial<Public.Types.FilmActor>,
-              Public.Tables.FilmActor.Record[] | undefined
+              Public.Types.FilmActor[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.update",
               parameters: { filmId: parameters.filmId },
@@ -25445,10 +25377,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.FilmActor.parse)
-                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
-                .filter(
-                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.FilmActor>)
+                .filter((x): x is Public.Types.FilmActor => x !== undefined) ??
+              []
             );
           }
 
@@ -25456,7 +25387,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmActor.ByFilmId,
               never,
-              Public.Tables.FilmActor.Record[] | undefined
+              Public.Types.FilmActor[] | undefined
             >({
               operation: "Public.Tables.FilmActor.ByFilmId.delete",
               parameters: { filmId: parameters.filmId },
@@ -25465,10 +25396,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.FilmActor.parse)
-                .map(nullIsUndefined<Public.Tables.FilmActor.Record>)
-                .filter(
-                  (x): x is Public.Tables.FilmActor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.FilmActor>)
+                .filter((x): x is Public.Types.FilmActor => x !== undefined) ??
+              []
             );
           }
         })(this);
@@ -25476,12 +25406,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Address = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Address.Values,
-        ): Promise<Public.Tables.Address.Record | undefined> {
+          values: Partial<Public.Types.Address>,
+        ): Promise<Public.Types.Address | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Address.Values,
-            Public.Tables.Address.Record
+            Partial<Public.Types.Address>,
+            Public.Types.Address
           >({
             operation: "Public.Tables.Address.create",
             values: {
@@ -25495,26 +25425,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Address.Record>(
+          return nullIsUndefined<Public.Types.Address>(
             Public.Types.Address.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Address.Record[]> {
+        public async all(): Promise<Public.Types.Address[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Address.Record[]
+            Public.Types.Address[]
           >({
             operation: "Public.Tables.Address.all",
           });
           return (
             response.results
               ?.map(Public.Types.Address.parse)
-              .map(nullIsUndefined<Public.Tables.Address.Record>)
-              .filter(
-                (x): x is Public.Tables.Address.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Address>)
+              .filter((x): x is Public.Types.Address => x !== undefined) ?? []
           );
         }
 
@@ -25523,13 +25451,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByAddressId,
               never,
-              Public.Tables.Address.Record | undefined
+              Public.Types.Address | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.read",
               parameters: { addressId: parameters.addressId },
             });
 
-            return nullIsUndefined<Public.Tables.Address.Record>(
+            return nullIsUndefined<Public.Types.Address>(
               Public.Types.Address.parse(response.results),
             );
           }
@@ -25541,7 +25469,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByAddressId,
               Partial<Public.Types.Address>,
-              Public.Tables.Address.Record | undefined
+              Public.Types.Address | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.update",
               parameters: { addressId: parameters.addressId },
@@ -25557,7 +25485,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Address.Record>(
+            return nullIsUndefined<Public.Types.Address>(
               Public.Types.Address.parse(response.results),
             );
           }
@@ -25566,13 +25494,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByAddressId,
               never,
-              Public.Tables.Address.Record | undefined
+              Public.Types.Address | undefined
             >({
               operation: "Public.Tables.Address.ByAddressId.delete",
               parameters: { addressId: parameters.addressId },
             });
 
-            return nullIsUndefined<Public.Tables.Address.Record>(
+            return nullIsUndefined<Public.Types.Address>(
               Public.Types.Address.parse(response.results),
             );
           }
@@ -25586,7 +25514,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByCityId,
               never,
-              Public.Tables.Address.Record[] | undefined
+              Public.Types.Address[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.read",
               parameters: { cityId: parameters.cityId },
@@ -25595,10 +25523,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Address.parse)
-                .map(nullIsUndefined<Public.Tables.Address.Record>)
-                .filter(
-                  (x): x is Public.Tables.Address.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Address>)
+                .filter((x): x is Public.Types.Address => x !== undefined) ?? []
             );
           }
 
@@ -25609,7 +25535,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByCityId,
               Partial<Public.Types.Address>,
-              Public.Tables.Address.Record[] | undefined
+              Public.Types.Address[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.update",
               parameters: { cityId: parameters.cityId },
@@ -25628,10 +25554,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Address.parse)
-                .map(nullIsUndefined<Public.Tables.Address.Record>)
-                .filter(
-                  (x): x is Public.Tables.Address.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Address>)
+                .filter((x): x is Public.Types.Address => x !== undefined) ?? []
             );
           }
 
@@ -25639,7 +25563,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Address.ByCityId,
               never,
-              Public.Tables.Address.Record[] | undefined
+              Public.Types.Address[] | undefined
             >({
               operation: "Public.Tables.Address.ByCityId.delete",
               parameters: { cityId: parameters.cityId },
@@ -25648,10 +25572,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Address.parse)
-                .map(nullIsUndefined<Public.Tables.Address.Record>)
-                .filter(
-                  (x): x is Public.Tables.Address.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Address>)
+                .filter((x): x is Public.Types.Address => x !== undefined) ?? []
             );
           }
         })(this);
@@ -25659,12 +25581,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public City = new (class extends HasClient {
         public async create(
-          values: Public.Tables.City.Values,
-        ): Promise<Public.Tables.City.Record | undefined> {
+          values: Partial<Public.Types.City>,
+        ): Promise<Public.Types.City | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.City.Values,
-            Public.Tables.City.Record
+            Partial<Public.Types.City>,
+            Public.Types.City
           >({
             operation: "Public.Tables.City.create",
             values: {
@@ -25674,25 +25596,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.City.Record>(
+          return nullIsUndefined<Public.Types.City>(
             Public.Types.City.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.City.Record[]> {
+        public async all(): Promise<Public.Types.City[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.City.Record[]
+            Public.Types.City[]
           >({
             operation: "Public.Tables.City.all",
           });
           return (
             response.results
               ?.map(Public.Types.City.parse)
-              .map(nullIsUndefined<Public.Tables.City.Record>)
-              .filter((x): x is Public.Tables.City.Record => x !== undefined) ??
-            []
+              .map(nullIsUndefined<Public.Types.City>)
+              .filter((x): x is Public.Types.City => x !== undefined) ?? []
           );
         }
 
@@ -25701,13 +25622,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCityId,
               never,
-              Public.Tables.City.Record | undefined
+              Public.Types.City | undefined
             >({
               operation: "Public.Tables.City.ByCityId.read",
               parameters: { cityId: parameters.cityId },
             });
 
-            return nullIsUndefined<Public.Tables.City.Record>(
+            return nullIsUndefined<Public.Types.City>(
               Public.Types.City.parse(response.results),
             );
           }
@@ -25719,7 +25640,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCityId,
               Partial<Public.Types.City>,
-              Public.Tables.City.Record | undefined
+              Public.Types.City | undefined
             >({
               operation: "Public.Tables.City.ByCityId.update",
               parameters: { cityId: parameters.cityId },
@@ -25731,7 +25652,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.City.Record>(
+            return nullIsUndefined<Public.Types.City>(
               Public.Types.City.parse(response.results),
             );
           }
@@ -25740,13 +25661,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCityId,
               never,
-              Public.Tables.City.Record | undefined
+              Public.Types.City | undefined
             >({
               operation: "Public.Tables.City.ByCityId.delete",
               parameters: { cityId: parameters.cityId },
             });
 
-            return nullIsUndefined<Public.Tables.City.Record>(
+            return nullIsUndefined<Public.Types.City>(
               Public.Types.City.parse(response.results),
             );
           }
@@ -25760,7 +25681,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCountryId,
               never,
-              Public.Tables.City.Record[] | undefined
+              Public.Types.City[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.read",
               parameters: { countryId: parameters.countryId },
@@ -25769,10 +25690,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.City.parse)
-                .map(nullIsUndefined<Public.Tables.City.Record>)
-                .filter(
-                  (x): x is Public.Tables.City.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.City>)
+                .filter((x): x is Public.Types.City => x !== undefined) ?? []
             );
           }
 
@@ -25783,7 +25702,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCountryId,
               Partial<Public.Types.City>,
-              Public.Tables.City.Record[] | undefined
+              Public.Types.City[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.update",
               parameters: { countryId: parameters.countryId },
@@ -25798,10 +25717,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.City.parse)
-                .map(nullIsUndefined<Public.Tables.City.Record>)
-                .filter(
-                  (x): x is Public.Tables.City.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.City>)
+                .filter((x): x is Public.Types.City => x !== undefined) ?? []
             );
           }
 
@@ -25809,7 +25726,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.City.ByCountryId,
               never,
-              Public.Tables.City.Record[] | undefined
+              Public.Types.City[] | undefined
             >({
               operation: "Public.Tables.City.ByCountryId.delete",
               parameters: { countryId: parameters.countryId },
@@ -25818,10 +25735,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.City.parse)
-                .map(nullIsUndefined<Public.Tables.City.Record>)
-                .filter(
-                  (x): x is Public.Tables.City.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.City>)
+                .filter((x): x is Public.Types.City => x !== undefined) ?? []
             );
           }
         })(this);
@@ -25829,12 +25744,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Customer = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Customer.Values,
-        ): Promise<Public.Tables.Customer.Record | undefined> {
+          values: Partial<Public.Types.Customer>,
+        ): Promise<Public.Types.Customer | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Customer.Values,
-            Public.Tables.Customer.Record
+            Partial<Public.Types.Customer>,
+            Public.Types.Customer
           >({
             operation: "Public.Tables.Customer.create",
             values: {
@@ -25850,26 +25765,24 @@ export class EmbraceSQLClient extends BaseClient {
               active: values.active,
             },
           });
-          return nullIsUndefined<Public.Tables.Customer.Record>(
+          return nullIsUndefined<Public.Types.Customer>(
             Public.Types.Customer.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Customer.Record[]> {
+        public async all(): Promise<Public.Types.Customer[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Customer.Record[]
+            Public.Types.Customer[]
           >({
             operation: "Public.Tables.Customer.all",
           });
           return (
             response.results
               ?.map(Public.Types.Customer.parse)
-              .map(nullIsUndefined<Public.Tables.Customer.Record>)
-              .filter(
-                (x): x is Public.Tables.Customer.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Customer>)
+              .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
           );
         }
 
@@ -25878,7 +25791,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByAddressId,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.read",
               parameters: { addressId: parameters.addressId },
@@ -25887,10 +25800,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -25901,7 +25813,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByAddressId,
               Partial<Public.Types.Customer>,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.update",
               parameters: { addressId: parameters.addressId },
@@ -25922,10 +25834,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -25933,7 +25844,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByAddressId,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByAddressId.delete",
               parameters: { addressId: parameters.addressId },
@@ -25942,10 +25853,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
         })(this);
@@ -25955,13 +25865,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByCustomerId,
               never,
-              Public.Tables.Customer.Record | undefined
+              Public.Types.Customer | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.read",
               parameters: { customerId: parameters.customerId },
             });
 
-            return nullIsUndefined<Public.Tables.Customer.Record>(
+            return nullIsUndefined<Public.Types.Customer>(
               Public.Types.Customer.parse(response.results),
             );
           }
@@ -25973,7 +25883,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByCustomerId,
               Partial<Public.Types.Customer>,
-              Public.Tables.Customer.Record | undefined
+              Public.Types.Customer | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.update",
               parameters: { customerId: parameters.customerId },
@@ -25991,7 +25901,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Customer.Record>(
+            return nullIsUndefined<Public.Types.Customer>(
               Public.Types.Customer.parse(response.results),
             );
           }
@@ -26000,13 +25910,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByCustomerId,
               never,
-              Public.Tables.Customer.Record | undefined
+              Public.Types.Customer | undefined
             >({
               operation: "Public.Tables.Customer.ByCustomerId.delete",
               parameters: { customerId: parameters.customerId },
             });
 
-            return nullIsUndefined<Public.Tables.Customer.Record>(
+            return nullIsUndefined<Public.Types.Customer>(
               Public.Types.Customer.parse(response.results),
             );
           }
@@ -26020,7 +25930,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByLastName,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.read",
               parameters: { lastName: parameters.lastName },
@@ -26029,10 +25939,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -26043,7 +25952,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByLastName,
               Partial<Public.Types.Customer>,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.update",
               parameters: { lastName: parameters.lastName },
@@ -26064,10 +25973,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -26075,7 +25983,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByLastName,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByLastName.delete",
               parameters: { lastName: parameters.lastName },
@@ -26084,10 +25992,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
         })(this);
@@ -26097,7 +26004,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByStoreId,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.read",
               parameters: { storeId: parameters.storeId },
@@ -26106,10 +26013,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -26120,7 +26026,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByStoreId,
               Partial<Public.Types.Customer>,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.update",
               parameters: { storeId: parameters.storeId },
@@ -26141,10 +26047,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
 
@@ -26152,7 +26057,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Customer.ByStoreId,
               never,
-              Public.Tables.Customer.Record[] | undefined
+              Public.Types.Customer[] | undefined
             >({
               operation: "Public.Tables.Customer.ByStoreId.delete",
               parameters: { storeId: parameters.storeId },
@@ -26161,10 +26066,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Customer.parse)
-                .map(nullIsUndefined<Public.Tables.Customer.Record>)
-                .filter(
-                  (x): x is Public.Tables.Customer.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Customer>)
+                .filter((x): x is Public.Types.Customer => x !== undefined) ??
+              []
             );
           }
         })(this);
@@ -26172,12 +26076,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Actor = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Actor.Values,
-        ): Promise<Public.Tables.Actor.Record | undefined> {
+          values: Partial<Public.Types.Actor>,
+        ): Promise<Public.Types.Actor | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Actor.Values,
-            Public.Tables.Actor.Record
+            Partial<Public.Types.Actor>,
+            Public.Types.Actor
           >({
             operation: "Public.Tables.Actor.create",
             values: {
@@ -26187,26 +26091,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Actor.Record>(
+          return nullIsUndefined<Public.Types.Actor>(
             Public.Types.Actor.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Actor.Record[]> {
+        public async all(): Promise<Public.Types.Actor[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Actor.Record[]
+            Public.Types.Actor[]
           >({
             operation: "Public.Tables.Actor.all",
           });
           return (
             response.results
               ?.map(Public.Types.Actor.parse)
-              .map(nullIsUndefined<Public.Tables.Actor.Record>)
-              .filter(
-                (x): x is Public.Tables.Actor.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Actor>)
+              .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
           );
         }
 
@@ -26215,13 +26117,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByActorId,
               never,
-              Public.Tables.Actor.Record | undefined
+              Public.Types.Actor | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.read",
               parameters: { actorId: parameters.actorId },
             });
 
-            return nullIsUndefined<Public.Tables.Actor.Record>(
+            return nullIsUndefined<Public.Types.Actor>(
               Public.Types.Actor.parse(response.results),
             );
           }
@@ -26233,7 +26135,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByActorId,
               Partial<Public.Types.Actor>,
-              Public.Tables.Actor.Record | undefined
+              Public.Types.Actor | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.update",
               parameters: { actorId: parameters.actorId },
@@ -26245,7 +26147,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Actor.Record>(
+            return nullIsUndefined<Public.Types.Actor>(
               Public.Types.Actor.parse(response.results),
             );
           }
@@ -26254,13 +26156,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByActorId,
               never,
-              Public.Tables.Actor.Record | undefined
+              Public.Types.Actor | undefined
             >({
               operation: "Public.Tables.Actor.ByActorId.delete",
               parameters: { actorId: parameters.actorId },
             });
 
-            return nullIsUndefined<Public.Tables.Actor.Record>(
+            return nullIsUndefined<Public.Types.Actor>(
               Public.Types.Actor.parse(response.results),
             );
           }
@@ -26274,7 +26176,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByLastName,
               never,
-              Public.Tables.Actor.Record[] | undefined
+              Public.Types.Actor[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.read",
               parameters: { lastName: parameters.lastName },
@@ -26283,10 +26185,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Actor.parse)
-                .map(nullIsUndefined<Public.Tables.Actor.Record>)
-                .filter(
-                  (x): x is Public.Tables.Actor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Actor>)
+                .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
             );
           }
 
@@ -26297,7 +26197,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByLastName,
               Partial<Public.Types.Actor>,
-              Public.Tables.Actor.Record[] | undefined
+              Public.Types.Actor[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.update",
               parameters: { lastName: parameters.lastName },
@@ -26312,10 +26212,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Actor.parse)
-                .map(nullIsUndefined<Public.Tables.Actor.Record>)
-                .filter(
-                  (x): x is Public.Tables.Actor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Actor>)
+                .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
             );
           }
 
@@ -26323,7 +26221,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Actor.ByLastName,
               never,
-              Public.Tables.Actor.Record[] | undefined
+              Public.Types.Actor[] | undefined
             >({
               operation: "Public.Tables.Actor.ByLastName.delete",
               parameters: { lastName: parameters.lastName },
@@ -26332,10 +26230,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Actor.parse)
-                .map(nullIsUndefined<Public.Tables.Actor.Record>)
-                .filter(
-                  (x): x is Public.Tables.Actor.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Actor>)
+                .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
             );
           }
         })(this);
@@ -26343,12 +26239,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public FilmCategory = new (class extends HasClient {
         public async create(
-          values: Public.Tables.FilmCategory.Values,
-        ): Promise<Public.Tables.FilmCategory.Record | undefined> {
+          values: Partial<Public.Types.FilmCategory>,
+        ): Promise<Public.Types.FilmCategory | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.FilmCategory.Values,
-            Public.Tables.FilmCategory.Record
+            Partial<Public.Types.FilmCategory>,
+            Public.Types.FilmCategory
           >({
             operation: "Public.Tables.FilmCategory.create",
             values: {
@@ -26357,26 +26253,25 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+          return nullIsUndefined<Public.Types.FilmCategory>(
             Public.Types.FilmCategory.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.FilmCategory.Record[]> {
+        public async all(): Promise<Public.Types.FilmCategory[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.FilmCategory.Record[]
+            Public.Types.FilmCategory[]
           >({
             operation: "Public.Tables.FilmCategory.all",
           });
           return (
             response.results
               ?.map(Public.Types.FilmCategory.parse)
-              .map(nullIsUndefined<Public.Tables.FilmCategory.Record>)
-              .filter(
-                (x): x is Public.Tables.FilmCategory.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.FilmCategory>)
+              .filter((x): x is Public.Types.FilmCategory => x !== undefined) ??
+            []
           );
         }
 
@@ -26387,7 +26282,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmCategory.ByFilmIdCategoryId,
               never,
-              Public.Tables.FilmCategory.Record | undefined
+              Public.Types.FilmCategory | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.read",
               parameters: {
@@ -26396,7 +26291,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+            return nullIsUndefined<Public.Types.FilmCategory>(
               Public.Types.FilmCategory.parse(response.results),
             );
           }
@@ -26408,7 +26303,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmCategory.ByFilmIdCategoryId,
               Partial<Public.Types.FilmCategory>,
-              Public.Tables.FilmCategory.Record | undefined
+              Public.Types.FilmCategory | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.update",
               parameters: {
@@ -26422,7 +26317,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+            return nullIsUndefined<Public.Types.FilmCategory>(
               Public.Types.FilmCategory.parse(response.results),
             );
           }
@@ -26433,7 +26328,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.FilmCategory.ByFilmIdCategoryId,
               never,
-              Public.Tables.FilmCategory.Record | undefined
+              Public.Types.FilmCategory | undefined
             >({
               operation: "Public.Tables.FilmCategory.ByFilmIdCategoryId.delete",
               parameters: {
@@ -26442,7 +26337,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.FilmCategory.Record>(
+            return nullIsUndefined<Public.Types.FilmCategory>(
               Public.Types.FilmCategory.parse(response.results),
             );
           }
@@ -26454,12 +26349,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Inventory = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Inventory.Values,
-        ): Promise<Public.Tables.Inventory.Record | undefined> {
+          values: Partial<Public.Types.Inventory>,
+        ): Promise<Public.Types.Inventory | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Inventory.Values,
-            Public.Tables.Inventory.Record
+            Partial<Public.Types.Inventory>,
+            Public.Types.Inventory
           >({
             operation: "Public.Tables.Inventory.create",
             values: {
@@ -26469,26 +26364,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Inventory.Record>(
+          return nullIsUndefined<Public.Types.Inventory>(
             Public.Types.Inventory.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Inventory.Record[]> {
+        public async all(): Promise<Public.Types.Inventory[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Inventory.Record[]
+            Public.Types.Inventory[]
           >({
             operation: "Public.Tables.Inventory.all",
           });
           return (
             response.results
               ?.map(Public.Types.Inventory.parse)
-              .map(nullIsUndefined<Public.Tables.Inventory.Record>)
-              .filter(
-                (x): x is Public.Tables.Inventory.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Inventory>)
+              .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
           );
         }
 
@@ -26497,13 +26390,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByInventoryId,
               never,
-              Public.Tables.Inventory.Record | undefined
+              Public.Types.Inventory | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.read",
               parameters: { inventoryId: parameters.inventoryId },
             });
 
-            return nullIsUndefined<Public.Tables.Inventory.Record>(
+            return nullIsUndefined<Public.Types.Inventory>(
               Public.Types.Inventory.parse(response.results),
             );
           }
@@ -26515,7 +26408,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByInventoryId,
               Partial<Public.Types.Inventory>,
-              Public.Tables.Inventory.Record | undefined
+              Public.Types.Inventory | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.update",
               parameters: { inventoryId: parameters.inventoryId },
@@ -26527,7 +26420,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Inventory.Record>(
+            return nullIsUndefined<Public.Types.Inventory>(
               Public.Types.Inventory.parse(response.results),
             );
           }
@@ -26538,13 +26431,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByInventoryId,
               never,
-              Public.Tables.Inventory.Record | undefined
+              Public.Types.Inventory | undefined
             >({
               operation: "Public.Tables.Inventory.ByInventoryId.delete",
               parameters: { inventoryId: parameters.inventoryId },
             });
 
-            return nullIsUndefined<Public.Tables.Inventory.Record>(
+            return nullIsUndefined<Public.Types.Inventory>(
               Public.Types.Inventory.parse(response.results),
             );
           }
@@ -26560,7 +26453,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByStoreIdFilmId,
               never,
-              Public.Tables.Inventory.Record[] | undefined
+              Public.Types.Inventory[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.read",
               parameters: {
@@ -26572,10 +26465,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Inventory.parse)
-                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
-                .filter(
-                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Inventory>)
+                .filter((x): x is Public.Types.Inventory => x !== undefined) ??
+              []
             );
           }
 
@@ -26586,7 +26478,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByStoreIdFilmId,
               Partial<Public.Types.Inventory>,
-              Public.Tables.Inventory.Record[] | undefined
+              Public.Types.Inventory[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.update",
               parameters: {
@@ -26604,10 +26496,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Inventory.parse)
-                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
-                .filter(
-                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Inventory>)
+                .filter((x): x is Public.Types.Inventory => x !== undefined) ??
+              []
             );
           }
 
@@ -26617,7 +26508,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Inventory.ByStoreIdFilmId,
               never,
-              Public.Tables.Inventory.Record[] | undefined
+              Public.Types.Inventory[] | undefined
             >({
               operation: "Public.Tables.Inventory.ByStoreIdFilmId.delete",
               parameters: {
@@ -26629,10 +26520,9 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Inventory.parse)
-                .map(nullIsUndefined<Public.Tables.Inventory.Record>)
-                .filter(
-                  (x): x is Public.Tables.Inventory.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Inventory>)
+                .filter((x): x is Public.Types.Inventory => x !== undefined) ??
+              []
             );
           }
         })(this);
@@ -26640,12 +26530,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Category = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Category.Values,
-        ): Promise<Public.Tables.Category.Record | undefined> {
+          values: Partial<Public.Types.Category>,
+        ): Promise<Public.Types.Category | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Category.Values,
-            Public.Tables.Category.Record
+            Partial<Public.Types.Category>,
+            Public.Types.Category
           >({
             operation: "Public.Tables.Category.create",
             values: {
@@ -26654,26 +26544,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Category.Record>(
+          return nullIsUndefined<Public.Types.Category>(
             Public.Types.Category.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Category.Record[]> {
+        public async all(): Promise<Public.Types.Category[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Category.Record[]
+            Public.Types.Category[]
           >({
             operation: "Public.Tables.Category.all",
           });
           return (
             response.results
               ?.map(Public.Types.Category.parse)
-              .map(nullIsUndefined<Public.Tables.Category.Record>)
-              .filter(
-                (x): x is Public.Tables.Category.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Category>)
+              .filter((x): x is Public.Types.Category => x !== undefined) ?? []
           );
         }
 
@@ -26682,13 +26570,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Category.ByCategoryId,
               never,
-              Public.Tables.Category.Record | undefined
+              Public.Types.Category | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.read",
               parameters: { categoryId: parameters.categoryId },
             });
 
-            return nullIsUndefined<Public.Tables.Category.Record>(
+            return nullIsUndefined<Public.Types.Category>(
               Public.Types.Category.parse(response.results),
             );
           }
@@ -26700,7 +26588,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Category.ByCategoryId,
               Partial<Public.Types.Category>,
-              Public.Tables.Category.Record | undefined
+              Public.Types.Category | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.update",
               parameters: { categoryId: parameters.categoryId },
@@ -26711,7 +26599,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Category.Record>(
+            return nullIsUndefined<Public.Types.Category>(
               Public.Types.Category.parse(response.results),
             );
           }
@@ -26720,13 +26608,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Category.ByCategoryId,
               never,
-              Public.Tables.Category.Record | undefined
+              Public.Types.Category | undefined
             >({
               operation: "Public.Tables.Category.ByCategoryId.delete",
               parameters: { categoryId: parameters.categoryId },
             });
 
-            return nullIsUndefined<Public.Tables.Category.Record>(
+            return nullIsUndefined<Public.Types.Category>(
               Public.Types.Category.parse(response.results),
             );
           }
@@ -26738,12 +26626,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Country = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Country.Values,
-        ): Promise<Public.Tables.Country.Record | undefined> {
+          values: Partial<Public.Types.Country>,
+        ): Promise<Public.Types.Country | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Country.Values,
-            Public.Tables.Country.Record
+            Partial<Public.Types.Country>,
+            Public.Types.Country
           >({
             operation: "Public.Tables.Country.create",
             values: {
@@ -26752,26 +26640,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Country.Record>(
+          return nullIsUndefined<Public.Types.Country>(
             Public.Types.Country.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Country.Record[]> {
+        public async all(): Promise<Public.Types.Country[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Country.Record[]
+            Public.Types.Country[]
           >({
             operation: "Public.Tables.Country.all",
           });
           return (
             response.results
               ?.map(Public.Types.Country.parse)
-              .map(nullIsUndefined<Public.Tables.Country.Record>)
-              .filter(
-                (x): x is Public.Tables.Country.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Country>)
+              .filter((x): x is Public.Types.Country => x !== undefined) ?? []
           );
         }
 
@@ -26780,13 +26666,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Country.ByCountryId,
               never,
-              Public.Tables.Country.Record | undefined
+              Public.Types.Country | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.read",
               parameters: { countryId: parameters.countryId },
             });
 
-            return nullIsUndefined<Public.Tables.Country.Record>(
+            return nullIsUndefined<Public.Types.Country>(
               Public.Types.Country.parse(response.results),
             );
           }
@@ -26798,7 +26684,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Country.ByCountryId,
               Partial<Public.Types.Country>,
-              Public.Tables.Country.Record | undefined
+              Public.Types.Country | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.update",
               parameters: { countryId: parameters.countryId },
@@ -26809,7 +26695,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Country.Record>(
+            return nullIsUndefined<Public.Types.Country>(
               Public.Types.Country.parse(response.results),
             );
           }
@@ -26818,13 +26704,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Country.ByCountryId,
               never,
-              Public.Tables.Country.Record | undefined
+              Public.Types.Country | undefined
             >({
               operation: "Public.Tables.Country.ByCountryId.delete",
               parameters: { countryId: parameters.countryId },
             });
 
-            return nullIsUndefined<Public.Tables.Country.Record>(
+            return nullIsUndefined<Public.Types.Country>(
               Public.Types.Country.parse(response.results),
             );
           }
@@ -26836,12 +26722,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Language = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Language.Values,
-        ): Promise<Public.Tables.Language.Record | undefined> {
+          values: Partial<Public.Types.Language>,
+        ): Promise<Public.Types.Language | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Language.Values,
-            Public.Tables.Language.Record
+            Partial<Public.Types.Language>,
+            Public.Types.Language
           >({
             operation: "Public.Tables.Language.create",
             values: {
@@ -26850,26 +26736,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Language.Record>(
+          return nullIsUndefined<Public.Types.Language>(
             Public.Types.Language.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Language.Record[]> {
+        public async all(): Promise<Public.Types.Language[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Language.Record[]
+            Public.Types.Language[]
           >({
             operation: "Public.Tables.Language.all",
           });
           return (
             response.results
               ?.map(Public.Types.Language.parse)
-              .map(nullIsUndefined<Public.Tables.Language.Record>)
-              .filter(
-                (x): x is Public.Tables.Language.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Language>)
+              .filter((x): x is Public.Types.Language => x !== undefined) ?? []
           );
         }
 
@@ -26878,13 +26762,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Language.ByLanguageId,
               never,
-              Public.Tables.Language.Record | undefined
+              Public.Types.Language | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.read",
               parameters: { languageId: parameters.languageId },
             });
 
-            return nullIsUndefined<Public.Tables.Language.Record>(
+            return nullIsUndefined<Public.Types.Language>(
               Public.Types.Language.parse(response.results),
             );
           }
@@ -26896,7 +26780,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Language.ByLanguageId,
               Partial<Public.Types.Language>,
-              Public.Tables.Language.Record | undefined
+              Public.Types.Language | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.update",
               parameters: { languageId: parameters.languageId },
@@ -26907,7 +26791,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Language.Record>(
+            return nullIsUndefined<Public.Types.Language>(
               Public.Types.Language.parse(response.results),
             );
           }
@@ -26916,13 +26800,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Language.ByLanguageId,
               never,
-              Public.Tables.Language.Record | undefined
+              Public.Types.Language | undefined
             >({
               operation: "Public.Tables.Language.ByLanguageId.delete",
               parameters: { languageId: parameters.languageId },
             });
 
-            return nullIsUndefined<Public.Tables.Language.Record>(
+            return nullIsUndefined<Public.Types.Language>(
               Public.Types.Language.parse(response.results),
             );
           }
@@ -26934,12 +26818,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Rental = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Rental.Values,
-        ): Promise<Public.Tables.Rental.Record | undefined> {
+          values: Partial<Public.Types.Rental>,
+        ): Promise<Public.Types.Rental | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Rental.Values,
-            Public.Tables.Rental.Record
+            Partial<Public.Types.Rental>,
+            Public.Types.Rental
           >({
             operation: "Public.Tables.Rental.create",
             values: {
@@ -26952,26 +26836,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Rental.Record>(
+          return nullIsUndefined<Public.Types.Rental>(
             Public.Types.Rental.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Rental.Record[]> {
+        public async all(): Promise<Public.Types.Rental[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Rental.Record[]
+            Public.Types.Rental[]
           >({
             operation: "Public.Tables.Rental.all",
           });
           return (
             response.results
               ?.map(Public.Types.Rental.parse)
-              .map(nullIsUndefined<Public.Tables.Rental.Record>)
-              .filter(
-                (x): x is Public.Tables.Rental.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Rental>)
+              .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
           );
         }
 
@@ -26980,7 +26862,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByInventoryId,
               never,
-              Public.Tables.Rental.Record[] | undefined
+              Public.Types.Rental[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.read",
               parameters: { inventoryId: parameters.inventoryId },
@@ -26989,10 +26871,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Rental.parse)
-                .map(nullIsUndefined<Public.Tables.Rental.Record>)
-                .filter(
-                  (x): x is Public.Tables.Rental.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Rental>)
+                .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
             );
           }
 
@@ -27003,7 +26883,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByInventoryId,
               Partial<Public.Types.Rental>,
-              Public.Tables.Rental.Record[] | undefined
+              Public.Types.Rental[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.update",
               parameters: { inventoryId: parameters.inventoryId },
@@ -27021,10 +26901,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Rental.parse)
-                .map(nullIsUndefined<Public.Tables.Rental.Record>)
-                .filter(
-                  (x): x is Public.Tables.Rental.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Rental>)
+                .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
             );
           }
 
@@ -27032,7 +26910,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByInventoryId,
               never,
-              Public.Tables.Rental.Record[] | undefined
+              Public.Types.Rental[] | undefined
             >({
               operation: "Public.Tables.Rental.ByInventoryId.delete",
               parameters: { inventoryId: parameters.inventoryId },
@@ -27041,10 +26919,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Rental.parse)
-                .map(nullIsUndefined<Public.Tables.Rental.Record>)
-                .filter(
-                  (x): x is Public.Tables.Rental.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Rental>)
+                .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
             );
           }
         })(this);
@@ -27057,7 +26933,7 @@ export class EmbraceSQLClient extends BaseClient {
               const response = await this.client.invoke<
                 Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
                 never,
-                Public.Tables.Rental.Record | undefined
+                Public.Types.Rental | undefined
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read",
@@ -27068,7 +26944,7 @@ export class EmbraceSQLClient extends BaseClient {
                 },
               });
 
-              return nullIsUndefined<Public.Tables.Rental.Record>(
+              return nullIsUndefined<Public.Types.Rental>(
                 Public.Types.Rental.parse(response.results),
               );
             }
@@ -27080,7 +26956,7 @@ export class EmbraceSQLClient extends BaseClient {
               const response = await this.client.invoke<
                 Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
                 Partial<Public.Types.Rental>,
-                Public.Tables.Rental.Record | undefined
+                Public.Types.Rental | undefined
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.update",
@@ -27100,7 +26976,7 @@ export class EmbraceSQLClient extends BaseClient {
                 },
               });
 
-              return nullIsUndefined<Public.Tables.Rental.Record>(
+              return nullIsUndefined<Public.Types.Rental>(
                 Public.Types.Rental.parse(response.results),
               );
             }
@@ -27111,7 +26987,7 @@ export class EmbraceSQLClient extends BaseClient {
               const response = await this.client.invoke<
                 Public.Tables.Rental.ByRentalDateInventoryIdCustomerId,
                 never,
-                Public.Tables.Rental.Record | undefined
+                Public.Types.Rental | undefined
               >({
                 operation:
                   "Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.delete",
@@ -27122,7 +26998,7 @@ export class EmbraceSQLClient extends BaseClient {
                 },
               });
 
-              return nullIsUndefined<Public.Tables.Rental.Record>(
+              return nullIsUndefined<Public.Types.Rental>(
                 Public.Types.Rental.parse(response.results),
               );
             }
@@ -27133,13 +27009,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByRentalId,
               never,
-              Public.Tables.Rental.Record | undefined
+              Public.Types.Rental | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.read",
               parameters: { rentalId: parameters.rentalId },
             });
 
-            return nullIsUndefined<Public.Tables.Rental.Record>(
+            return nullIsUndefined<Public.Types.Rental>(
               Public.Types.Rental.parse(response.results),
             );
           }
@@ -27151,7 +27027,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByRentalId,
               Partial<Public.Types.Rental>,
-              Public.Tables.Rental.Record | undefined
+              Public.Types.Rental | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.update",
               parameters: { rentalId: parameters.rentalId },
@@ -27166,7 +27042,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Rental.Record>(
+            return nullIsUndefined<Public.Types.Rental>(
               Public.Types.Rental.parse(response.results),
             );
           }
@@ -27175,13 +27051,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Rental.ByRentalId,
               never,
-              Public.Tables.Rental.Record | undefined
+              Public.Types.Rental | undefined
             >({
               operation: "Public.Tables.Rental.ByRentalId.delete",
               parameters: { rentalId: parameters.rentalId },
             });
 
-            return nullIsUndefined<Public.Tables.Rental.Record>(
+            return nullIsUndefined<Public.Types.Rental>(
               Public.Types.Rental.parse(response.results),
             );
           }
@@ -27193,12 +27069,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Staff = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Staff.Values,
-        ): Promise<Public.Tables.Staff.Record | undefined> {
+          values: Partial<Public.Types.Staff>,
+        ): Promise<Public.Types.Staff | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Staff.Values,
-            Public.Tables.Staff.Record
+            Partial<Public.Types.Staff>,
+            Public.Types.Staff
           >({
             operation: "Public.Tables.Staff.create",
             values: {
@@ -27215,26 +27091,24 @@ export class EmbraceSQLClient extends BaseClient {
               picture: values.picture,
             },
           });
-          return nullIsUndefined<Public.Tables.Staff.Record>(
+          return nullIsUndefined<Public.Types.Staff>(
             Public.Types.Staff.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Staff.Record[]> {
+        public async all(): Promise<Public.Types.Staff[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Staff.Record[]
+            Public.Types.Staff[]
           >({
             operation: "Public.Tables.Staff.all",
           });
           return (
             response.results
               ?.map(Public.Types.Staff.parse)
-              .map(nullIsUndefined<Public.Tables.Staff.Record>)
-              .filter(
-                (x): x is Public.Tables.Staff.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Staff>)
+              .filter((x): x is Public.Types.Staff => x !== undefined) ?? []
           );
         }
 
@@ -27243,13 +27117,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Staff.ByStaffId,
               never,
-              Public.Tables.Staff.Record | undefined
+              Public.Types.Staff | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.read",
               parameters: { staffId: parameters.staffId },
             });
 
-            return nullIsUndefined<Public.Tables.Staff.Record>(
+            return nullIsUndefined<Public.Types.Staff>(
               Public.Types.Staff.parse(response.results),
             );
           }
@@ -27261,7 +27135,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Staff.ByStaffId,
               Partial<Public.Types.Staff>,
-              Public.Tables.Staff.Record | undefined
+              Public.Types.Staff | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.update",
               parameters: { staffId: parameters.staffId },
@@ -27280,7 +27154,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Staff.Record>(
+            return nullIsUndefined<Public.Types.Staff>(
               Public.Types.Staff.parse(response.results),
             );
           }
@@ -27289,13 +27163,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Staff.ByStaffId,
               never,
-              Public.Tables.Staff.Record | undefined
+              Public.Types.Staff | undefined
             >({
               operation: "Public.Tables.Staff.ByStaffId.delete",
               parameters: { staffId: parameters.staffId },
             });
 
-            return nullIsUndefined<Public.Tables.Staff.Record>(
+            return nullIsUndefined<Public.Types.Staff>(
               Public.Types.Staff.parse(response.results),
             );
           }
@@ -27307,12 +27181,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Store = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Store.Values,
-        ): Promise<Public.Tables.Store.Record | undefined> {
+          values: Partial<Public.Types.Store>,
+        ): Promise<Public.Types.Store | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Store.Values,
-            Public.Tables.Store.Record
+            Partial<Public.Types.Store>,
+            Public.Types.Store
           >({
             operation: "Public.Tables.Store.create",
             values: {
@@ -27322,26 +27196,24 @@ export class EmbraceSQLClient extends BaseClient {
               lastUpdate: values.lastUpdate,
             },
           });
-          return nullIsUndefined<Public.Tables.Store.Record>(
+          return nullIsUndefined<Public.Types.Store>(
             Public.Types.Store.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Store.Record[]> {
+        public async all(): Promise<Public.Types.Store[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Store.Record[]
+            Public.Types.Store[]
           >({
             operation: "Public.Tables.Store.all",
           });
           return (
             response.results
               ?.map(Public.Types.Store.parse)
-              .map(nullIsUndefined<Public.Tables.Store.Record>)
-              .filter(
-                (x): x is Public.Tables.Store.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Store>)
+              .filter((x): x is Public.Types.Store => x !== undefined) ?? []
           );
         }
 
@@ -27350,13 +27222,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByManagerStaffId,
               never,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.read",
               parameters: { managerStaffId: parameters.managerStaffId },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27368,7 +27240,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByManagerStaffId,
               Partial<Public.Types.Store>,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.update",
               parameters: { managerStaffId: parameters.managerStaffId },
@@ -27380,7 +27252,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27391,13 +27263,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByManagerStaffId,
               never,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByManagerStaffId.delete",
               parameters: { managerStaffId: parameters.managerStaffId },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27408,13 +27280,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByStoreId,
               never,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.read",
               parameters: { storeId: parameters.storeId },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27426,7 +27298,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByStoreId,
               Partial<Public.Types.Store>,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.update",
               parameters: { storeId: parameters.storeId },
@@ -27438,7 +27310,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27447,13 +27319,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Store.ByStoreId,
               never,
-              Public.Tables.Store.Record | undefined
+              Public.Types.Store | undefined
             >({
               operation: "Public.Tables.Store.ByStoreId.delete",
               parameters: { storeId: parameters.storeId },
             });
 
-            return nullIsUndefined<Public.Tables.Store.Record>(
+            return nullIsUndefined<Public.Types.Store>(
               Public.Types.Store.parse(response.results),
             );
           }
@@ -27465,12 +27337,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Payment = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Payment.Values,
-        ): Promise<Public.Tables.Payment.Record | undefined> {
+          values: Partial<Public.Types.Payment>,
+        ): Promise<Public.Types.Payment | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Payment.Values,
-            Public.Tables.Payment.Record
+            Partial<Public.Types.Payment>,
+            Public.Types.Payment
           >({
             operation: "Public.Tables.Payment.create",
             values: {
@@ -27482,26 +27354,24 @@ export class EmbraceSQLClient extends BaseClient {
               paymentDate: values.paymentDate,
             },
           });
-          return nullIsUndefined<Public.Tables.Payment.Record>(
+          return nullIsUndefined<Public.Types.Payment>(
             Public.Types.Payment.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Payment.Record[]> {
+        public async all(): Promise<Public.Types.Payment[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Payment.Record[]
+            Public.Types.Payment[]
           >({
             operation: "Public.Tables.Payment.all",
           });
           return (
             response.results
               ?.map(Public.Types.Payment.parse)
-              .map(nullIsUndefined<Public.Tables.Payment.Record>)
-              .filter(
-                (x): x is Public.Tables.Payment.Record => x !== undefined,
-              ) ?? []
+              .map(nullIsUndefined<Public.Types.Payment>)
+              .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
           );
         }
 
@@ -27510,7 +27380,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByCustomerId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.read",
               parameters: { customerId: parameters.customerId },
@@ -27519,10 +27389,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27533,7 +27401,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByCustomerId,
               Partial<Public.Types.Payment>,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.update",
               parameters: { customerId: parameters.customerId },
@@ -27550,10 +27418,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27561,7 +27427,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByCustomerId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByCustomerId.delete",
               parameters: { customerId: parameters.customerId },
@@ -27570,10 +27436,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
         })(this);
@@ -27583,13 +27447,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByPaymentId,
               never,
-              Public.Tables.Payment.Record | undefined
+              Public.Types.Payment | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.read",
               parameters: { paymentId: parameters.paymentId },
             });
 
-            return nullIsUndefined<Public.Tables.Payment.Record>(
+            return nullIsUndefined<Public.Types.Payment>(
               Public.Types.Payment.parse(response.results),
             );
           }
@@ -27601,7 +27465,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByPaymentId,
               Partial<Public.Types.Payment>,
-              Public.Tables.Payment.Record | undefined
+              Public.Types.Payment | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.update",
               parameters: { paymentId: parameters.paymentId },
@@ -27615,7 +27479,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Payment.Record>(
+            return nullIsUndefined<Public.Types.Payment>(
               Public.Types.Payment.parse(response.results),
             );
           }
@@ -27624,13 +27488,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByPaymentId,
               never,
-              Public.Tables.Payment.Record | undefined
+              Public.Types.Payment | undefined
             >({
               operation: "Public.Tables.Payment.ByPaymentId.delete",
               parameters: { paymentId: parameters.paymentId },
             });
 
-            return nullIsUndefined<Public.Tables.Payment.Record>(
+            return nullIsUndefined<Public.Types.Payment>(
               Public.Types.Payment.parse(response.results),
             );
           }
@@ -27644,7 +27508,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByRentalId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.read",
               parameters: { rentalId: parameters.rentalId },
@@ -27653,10 +27517,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27667,7 +27529,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByRentalId,
               Partial<Public.Types.Payment>,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.update",
               parameters: { rentalId: parameters.rentalId },
@@ -27684,10 +27546,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27695,7 +27555,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByRentalId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByRentalId.delete",
               parameters: { rentalId: parameters.rentalId },
@@ -27704,10 +27564,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
         })(this);
@@ -27717,7 +27575,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByStaffId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.read",
               parameters: { staffId: parameters.staffId },
@@ -27726,10 +27584,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27740,7 +27596,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByStaffId,
               Partial<Public.Types.Payment>,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.update",
               parameters: { staffId: parameters.staffId },
@@ -27757,10 +27613,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
 
@@ -27768,7 +27622,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Payment.ByStaffId,
               never,
-              Public.Tables.Payment.Record[] | undefined
+              Public.Types.Payment[] | undefined
             >({
               operation: "Public.Tables.Payment.ByStaffId.delete",
               parameters: { staffId: parameters.staffId },
@@ -27777,10 +27631,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Payment.parse)
-                .map(nullIsUndefined<Public.Tables.Payment.Record>)
-                .filter(
-                  (x): x is Public.Tables.Payment.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Payment>)
+                .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
             );
           }
         })(this);
@@ -27788,12 +27640,12 @@ export class EmbraceSQLClient extends BaseClient {
 
       public Film = new (class extends HasClient {
         public async create(
-          values: Public.Tables.Film.Values,
-        ): Promise<Public.Tables.Film.Record | undefined> {
+          values: Partial<Public.Types.Film>,
+        ): Promise<Public.Types.Film | undefined> {
           const response = await this.client.invoke<
             never,
-            Public.Tables.Film.Values,
-            Public.Tables.Film.Record
+            Partial<Public.Types.Film>,
+            Public.Types.Film
           >({
             operation: "Public.Tables.Film.create",
             values: {
@@ -27812,25 +27664,24 @@ export class EmbraceSQLClient extends BaseClient {
               fulltext: values.fulltext,
             },
           });
-          return nullIsUndefined<Public.Tables.Film.Record>(
+          return nullIsUndefined<Public.Types.Film>(
             Public.Types.Film.parse(response.results),
           );
         }
 
-        public async all(): Promise<Public.Tables.Film.Record[]> {
+        public async all(): Promise<Public.Types.Film[]> {
           const response = await this.client.invoke<
             never,
             never,
-            Public.Tables.Film.Record[]
+            Public.Types.Film[]
           >({
             operation: "Public.Tables.Film.all",
           });
           return (
             response.results
               ?.map(Public.Types.Film.parse)
-              .map(nullIsUndefined<Public.Tables.Film.Record>)
-              .filter((x): x is Public.Tables.Film.Record => x !== undefined) ??
-            []
+              .map(nullIsUndefined<Public.Types.Film>)
+              .filter((x): x is Public.Types.Film => x !== undefined) ?? []
           );
         }
 
@@ -27839,13 +27690,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFilmId,
               never,
-              Public.Tables.Film.Record | undefined
+              Public.Types.Film | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.read",
               parameters: { filmId: parameters.filmId },
             });
 
-            return nullIsUndefined<Public.Tables.Film.Record>(
+            return nullIsUndefined<Public.Types.Film>(
               Public.Types.Film.parse(response.results),
             );
           }
@@ -27857,7 +27708,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFilmId,
               Partial<Public.Types.Film>,
-              Public.Tables.Film.Record | undefined
+              Public.Types.Film | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.update",
               parameters: { filmId: parameters.filmId },
@@ -27878,7 +27729,7 @@ export class EmbraceSQLClient extends BaseClient {
               },
             });
 
-            return nullIsUndefined<Public.Tables.Film.Record>(
+            return nullIsUndefined<Public.Types.Film>(
               Public.Types.Film.parse(response.results),
             );
           }
@@ -27887,13 +27738,13 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFilmId,
               never,
-              Public.Tables.Film.Record | undefined
+              Public.Types.Film | undefined
             >({
               operation: "Public.Tables.Film.ByFilmId.delete",
               parameters: { filmId: parameters.filmId },
             });
 
-            return nullIsUndefined<Public.Tables.Film.Record>(
+            return nullIsUndefined<Public.Types.Film>(
               Public.Types.Film.parse(response.results),
             );
           }
@@ -27907,7 +27758,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFulltext,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.read",
               parameters: { fulltext: parameters.fulltext },
@@ -27916,10 +27767,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -27930,7 +27779,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFulltext,
               Partial<Public.Types.Film>,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.update",
               parameters: { fulltext: parameters.fulltext },
@@ -27954,10 +27803,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -27965,7 +27812,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByFulltext,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByFulltext.delete",
               parameters: { fulltext: parameters.fulltext },
@@ -27974,10 +27821,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
         })(this);
@@ -27987,7 +27832,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByLanguageId,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.read",
               parameters: { languageId: parameters.languageId },
@@ -27996,10 +27841,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -28010,7 +27853,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByLanguageId,
               Partial<Public.Types.Film>,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.update",
               parameters: { languageId: parameters.languageId },
@@ -28034,10 +27877,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -28045,7 +27886,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByLanguageId,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByLanguageId.delete",
               parameters: { languageId: parameters.languageId },
@@ -28054,10 +27895,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
         })(this);
@@ -28067,7 +27906,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByTitle,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.read",
               parameters: { title: parameters.title },
@@ -28076,10 +27915,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -28090,7 +27927,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByTitle,
               Partial<Public.Types.Film>,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.update",
               parameters: { title: parameters.title },
@@ -28114,10 +27951,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
 
@@ -28125,7 +27960,7 @@ export class EmbraceSQLClient extends BaseClient {
             const response = await this.client.invoke<
               Public.Tables.Film.ByTitle,
               never,
-              Public.Tables.Film.Record[] | undefined
+              Public.Types.Film[] | undefined
             >({
               operation: "Public.Tables.Film.ByTitle.delete",
               parameters: { title: parameters.title },
@@ -28134,10 +27969,8 @@ export class EmbraceSQLClient extends BaseClient {
             return (
               response.results
                 ?.map(Public.Types.Film.parse)
-                .map(nullIsUndefined<Public.Tables.Film.Record>)
-                .filter(
-                  (x): x is Public.Tables.Film.Record => x !== undefined,
-                ) ?? []
+                .map(nullIsUndefined<Public.Types.Film>)
+                .filter((x): x is Public.Types.Film => x !== undefined) ?? []
             );
           }
         })(this);
@@ -28151,6 +27984,7 @@ import {
   useEmbraceSQLClient,
   useEmbraceSQLRow,
   useEmbraceSQLRows,
+  useEmbraceSQLImmutableRows,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -28158,276 +27992,22 @@ import {
   GeneratedRowProps,
 } from "@embracesql/react";
 export namespace Public {
-  export namespace Tables {
-    export namespace FilmActor {
-      export type Row = IsRow<Public.Tables.FilmActor.Record>;
+  export namespace Procedures {
+    export namespace FilmInStock {}
+    export namespace FilmNotInStock {}
+    export namespace GetCustomerBalance {}
+    export namespace InventoryHeldByCustomer {}
+    export namespace InventoryInStock {}
+    export namespace LastDay {}
+    export namespace RewardsReport {
+      export type Row = IsRow<Public.Types.Customer>;
       export class RowImplementation
-        extends RowBase<Public.Tables.FilmActor.Record>
+        extends RowBase<Public.Types.Customer>
         implements Row
       {
         constructor(
-          record: Public.Tables.FilmActor.Record,
-          changeCallback: RecordCallback<Public.Tables.FilmActor.Record>,
-          rowNumberInResultset: number,
-        ) {
-          super(record, changeCallback, rowNumberInResultset);
-        }
-        get actorId() {
-          return this.record.actorId;
-        }
-        get changeActorId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmActor.ActorId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              actorId: parsedValue as Public.Tables.FilmActor.Record["actorId"],
-            });
-          };
-        }
-        get filmId() {
-          return this.record.filmId;
-        }
-        get changeFilmId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmActor.FilmId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              filmId: parsedValue as Public.Tables.FilmActor.Record["filmId"],
-            });
-          };
-        }
-        get lastUpdate() {
-          return this.record.lastUpdate;
-        }
-        get changeLastUpdate() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmActor.LastUpdate.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.FilmActor.Record["lastUpdate"],
-            });
-          };
-        }
-      }
-    }
-    export namespace Address {
-      export type Row = IsRow<Public.Tables.Address.Record>;
-      export class RowImplementation
-        extends RowBase<Public.Tables.Address.Record>
-        implements Row
-      {
-        constructor(
-          record: Public.Tables.Address.Record,
-          changeCallback: RecordCallback<Public.Tables.Address.Record>,
-          rowNumberInResultset: number,
-        ) {
-          super(record, changeCallback, rowNumberInResultset);
-        }
-        get addressId() {
-          return this.record.addressId;
-        }
-        get changeAddressId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.AddressId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              addressId:
-                parsedValue as Public.Tables.Address.Record["addressId"],
-            });
-          };
-        }
-        get address() {
-          return this.record.address;
-        }
-        get changeAddress() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.Address.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              address: parsedValue as Public.Tables.Address.Record["address"],
-            });
-          };
-        }
-        get address2() {
-          return this.record.address2;
-        }
-        get changeAddress2() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.Address2.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              address2: parsedValue as Public.Tables.Address.Record["address2"],
-            });
-          };
-        }
-        get district() {
-          return this.record.district;
-        }
-        get changeDistrict() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.District.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              district: parsedValue as Public.Tables.Address.Record["district"],
-            });
-          };
-        }
-        get cityId() {
-          return this.record.cityId;
-        }
-        get changeCityId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.CityId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              cityId: parsedValue as Public.Tables.Address.Record["cityId"],
-            });
-          };
-        }
-        get postalCode() {
-          return this.record.postalCode;
-        }
-        get changePostalCode() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.PostalCode.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              postalCode:
-                parsedValue as Public.Tables.Address.Record["postalCode"],
-            });
-          };
-        }
-        get phone() {
-          return this.record.phone;
-        }
-        get changePhone() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.Phone.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              phone: parsedValue as Public.Tables.Address.Record["phone"],
-            });
-          };
-        }
-        get lastUpdate() {
-          return this.record.lastUpdate;
-        }
-        get changeLastUpdate() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Address.LastUpdate.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Address.Record["lastUpdate"],
-            });
-          };
-        }
-      }
-    }
-    export namespace City {
-      export type Row = IsRow<Public.Tables.City.Record>;
-      export class RowImplementation
-        extends RowBase<Public.Tables.City.Record>
-        implements Row
-      {
-        constructor(
-          record: Public.Tables.City.Record,
-          changeCallback: RecordCallback<Public.Tables.City.Record>,
-          rowNumberInResultset: number,
-        ) {
-          super(record, changeCallback, rowNumberInResultset);
-        }
-        get cityId() {
-          return this.record.cityId;
-        }
-        get changeCityId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.City.CityId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              cityId: parsedValue as Public.Tables.City.Record["cityId"],
-            });
-          };
-        }
-        get city() {
-          return this.record.city;
-        }
-        get changeCity() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.City.City.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              city: parsedValue as Public.Tables.City.Record["city"],
-            });
-          };
-        }
-        get countryId() {
-          return this.record.countryId;
-        }
-        get changeCountryId() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.City.CountryId.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              countryId: parsedValue as Public.Tables.City.Record["countryId"],
-            });
-          };
-        }
-        get lastUpdate() {
-          return this.record.lastUpdate;
-        }
-        get changeLastUpdate() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.City.LastUpdate.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.City.Record["lastUpdate"],
-            });
-          };
-        }
-      }
-    }
-    export namespace Customer {
-      export type Row = IsRow<Public.Tables.Customer.Record>;
-      export class RowImplementation
-        extends RowBase<Public.Tables.Customer.Record>
-        implements Row
-      {
-        constructor(
-          record: Public.Tables.Customer.Record,
-          changeCallback: RecordCallback<Public.Tables.Customer.Record>,
+          record: Public.Types.Customer,
+          changeCallback: RecordCallback<Public.Types.Customer>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28437,13 +28017,10 @@ export namespace Public {
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.CustomerId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              customerId:
-                parsedValue as Public.Tables.Customer.Record["customerId"],
+              customerId: parsedValue as Public.Types.Customer["customerId"],
             });
           };
         }
@@ -28452,12 +28029,10 @@ export namespace Public {
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.StoreId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              storeId: parsedValue as Public.Tables.Customer.Record["storeId"],
+              storeId: parsedValue as Public.Types.Customer["storeId"],
             });
           };
         }
@@ -28466,13 +28041,12 @@ export namespace Public {
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.FirstName.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              firstName:
-                parsedValue as Public.Tables.Customer.Record["firstName"],
+              firstName: parsedValue as Public.Types.Customer["firstName"],
             });
           };
         }
@@ -28481,13 +28055,12 @@ export namespace Public {
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.LastName.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastName:
-                parsedValue as Public.Tables.Customer.Record["lastName"],
+              lastName: parsedValue as Public.Types.Customer["lastName"],
             });
           };
         }
@@ -28496,12 +28069,12 @@ export namespace Public {
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.Email.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              email: parsedValue as Public.Tables.Customer.Record["email"],
+              email: parsedValue as Public.Types.Customer["email"],
             });
           };
         }
@@ -28510,13 +28083,10 @@ export namespace Public {
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.AddressId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              addressId:
-                parsedValue as Public.Tables.Customer.Record["addressId"],
+              addressId: parsedValue as Public.Types.Customer["addressId"],
             });
           };
         }
@@ -28525,13 +28095,10 @@ export namespace Public {
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.Activebool.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              activebool:
-                parsedValue as Public.Tables.Customer.Record["activebool"],
+              activebool: parsedValue as Public.Types.Customer["activebool"],
             });
           };
         }
@@ -28540,13 +28107,10 @@ export namespace Public {
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.CreateDate.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              createDate:
-                parsedValue as Public.Tables.Customer.Record["createDate"],
+              createDate: parsedValue as Public.Types.Customer["createDate"],
             });
           };
         }
@@ -28555,13 +28119,12 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Customer.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
             });
           };
         }
@@ -28570,26 +28133,26 @@ export namespace Public {
         }
         get changeActive() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Customer.Active.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              active: parsedValue as Public.Tables.Customer.Record["active"],
+              active: parsedValue as Public.Types.Customer["active"],
             });
           };
         }
       }
     }
-    export namespace Actor {
-      export type Row = IsRow<Public.Tables.Actor.Record>;
+  }
+  export namespace Tables {
+    export namespace FilmActor {
+      export type Row = IsRow<Public.Types.FilmActor>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Actor.Record>
+        extends RowBase<Public.Types.FilmActor>
         implements Row
       {
         constructor(
-          record: Public.Tables.Actor.Record,
-          changeCallback: RecordCallback<Public.Tables.Actor.Record>,
+          record: Public.Types.FilmActor,
+          changeCallback: RecordCallback<Public.Types.FilmActor>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28599,40 +28162,22 @@ export namespace Public {
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Actor.ActorId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              actorId: parsedValue as Public.Tables.Actor.Record["actorId"],
+              actorId: parsedValue as Public.Types.FilmActor["actorId"],
             });
           };
         }
-        get firstName() {
-          return this.record.firstName;
+        get filmId() {
+          return this.record.filmId;
         }
-        get changeFirstName() {
+        get changeFilmId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Actor.FirstName.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              firstName: parsedValue as Public.Tables.Actor.Record["firstName"],
-            });
-          };
-        }
-        get lastName() {
-          return this.record.lastName;
-        }
-        get changeLastName() {
-          return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Actor.LastName.parse(
-              event.target.value,
-            );
-            void this.changeCallback({
-              ...this.record,
-              lastName: parsedValue as Public.Tables.Actor.Record["lastName"],
+              filmId: parsedValue as Public.Types.FilmActor["filmId"],
             });
           };
         }
@@ -28641,27 +28186,428 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Actor.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Actor.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.FilmActor["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Address {
+      export type Row = IsRow<Public.Types.Address>;
+      export class RowImplementation
+        extends RowBase<Public.Types.Address>
+        implements Row
+      {
+        constructor(
+          record: Public.Types.Address,
+          changeCallback: RecordCallback<Public.Types.Address>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              addressId: parsedValue as Public.Types.Address["addressId"],
+            });
+          };
+        }
+        get address() {
+          return this.record.address;
+        }
+        get changeAddress() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              address: parsedValue as Public.Types.Address["address"],
+            });
+          };
+        }
+        get address2() {
+          return this.record.address2;
+        }
+        get changeAddress2() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              address2: parsedValue as Public.Types.Address["address2"],
+            });
+          };
+        }
+        get district() {
+          return this.record.district;
+        }
+        get changeDistrict() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              district: parsedValue as Public.Types.Address["district"],
+            });
+          };
+        }
+        get cityId() {
+          return this.record.cityId;
+        }
+        get changeCityId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              cityId: parsedValue as Public.Types.Address["cityId"],
+            });
+          };
+        }
+        get postalCode() {
+          return this.record.postalCode;
+        }
+        get changePostalCode() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              postalCode: parsedValue as Public.Types.Address["postalCode"],
+            });
+          };
+        }
+        get phone() {
+          return this.record.phone;
+        }
+        get changePhone() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              phone: parsedValue as Public.Types.Address["phone"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate: parsedValue as Public.Types.Address["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace City {
+      export type Row = IsRow<Public.Types.City>;
+      export class RowImplementation
+        extends RowBase<Public.Types.City>
+        implements Row
+      {
+        constructor(
+          record: Public.Types.City,
+          changeCallback: RecordCallback<Public.Types.City>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get cityId() {
+          return this.record.cityId;
+        }
+        get changeCityId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              cityId: parsedValue as Public.Types.City["cityId"],
+            });
+          };
+        }
+        get city() {
+          return this.record.city;
+        }
+        get changeCity() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              city: parsedValue as Public.Types.City["city"],
+            });
+          };
+        }
+        get countryId() {
+          return this.record.countryId;
+        }
+        get changeCountryId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              countryId: parsedValue as Public.Types.City["countryId"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate: parsedValue as Public.Types.City["lastUpdate"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Customer {
+      export type Row = IsRow<Public.Types.Customer>;
+      export class RowImplementation
+        extends RowBase<Public.Types.Customer>
+        implements Row
+      {
+        constructor(
+          record: Public.Types.Customer,
+          changeCallback: RecordCallback<Public.Types.Customer>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get customerId() {
+          return this.record.customerId;
+        }
+        get changeCustomerId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              customerId: parsedValue as Public.Types.Customer["customerId"],
+            });
+          };
+        }
+        get storeId() {
+          return this.record.storeId;
+        }
+        get changeStoreId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              storeId: parsedValue as Public.Types.Customer["storeId"],
+            });
+          };
+        }
+        get firstName() {
+          return this.record.firstName;
+        }
+        get changeFirstName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              firstName: parsedValue as Public.Types.Customer["firstName"],
+            });
+          };
+        }
+        get lastName() {
+          return this.record.lastName;
+        }
+        get changeLastName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastName: parsedValue as Public.Types.Customer["lastName"],
+            });
+          };
+        }
+        get email() {
+          return this.record.email;
+        }
+        get changeEmail() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              email: parsedValue as Public.Types.Customer["email"],
+            });
+          };
+        }
+        get addressId() {
+          return this.record.addressId;
+        }
+        get changeAddressId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              addressId: parsedValue as Public.Types.Customer["addressId"],
+            });
+          };
+        }
+        get activebool() {
+          return this.record.activebool;
+        }
+        get changeActivebool() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              activebool: parsedValue as Public.Types.Customer["activebool"],
+            });
+          };
+        }
+        get createDate() {
+          return this.record.createDate;
+        }
+        get changeCreateDate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              createDate: parsedValue as Public.Types.Customer["createDate"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
+            });
+          };
+        }
+        get active() {
+          return this.record.active;
+        }
+        get changeActive() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              active: parsedValue as Public.Types.Customer["active"],
+            });
+          };
+        }
+      }
+    }
+    export namespace Actor {
+      export type Row = IsRow<Public.Types.Actor>;
+      export class RowImplementation
+        extends RowBase<Public.Types.Actor>
+        implements Row
+      {
+        constructor(
+          record: Public.Types.Actor,
+          changeCallback: RecordCallback<Public.Types.Actor>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get actorId() {
+          return this.record.actorId;
+        }
+        get changeActorId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              actorId: parsedValue as Public.Types.Actor["actorId"],
+            });
+          };
+        }
+        get firstName() {
+          return this.record.firstName;
+        }
+        get changeFirstName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              firstName: parsedValue as Public.Types.Actor["firstName"],
+            });
+          };
+        }
+        get lastName() {
+          return this.record.lastName;
+        }
+        get changeLastName() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastName: parsedValue as Public.Types.Actor["lastName"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate: parsedValue as Public.Types.Actor["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace FilmCategory {
-      export type Row = IsRow<Public.Tables.FilmCategory.Record>;
+      export type Row = IsRow<Public.Types.FilmCategory>;
       export class RowImplementation
-        extends RowBase<Public.Tables.FilmCategory.Record>
+        extends RowBase<Public.Types.FilmCategory>
         implements Row
       {
         constructor(
-          record: Public.Tables.FilmCategory.Record,
-          changeCallback: RecordCallback<Public.Tables.FilmCategory.Record>,
+          record: Public.Types.FilmCategory,
+          changeCallback: RecordCallback<Public.Types.FilmCategory>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28671,13 +28617,10 @@ export namespace Public {
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmCategory.FilmId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              filmId:
-                parsedValue as Public.Tables.FilmCategory.Record["filmId"],
+              filmId: parsedValue as Public.Types.FilmCategory["filmId"],
             });
           };
         }
@@ -28686,13 +28629,11 @@ export namespace Public {
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmCategory.CategoryId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
               categoryId:
-                parsedValue as Public.Tables.FilmCategory.Record["categoryId"],
+                parsedValue as Public.Types.FilmCategory["categoryId"],
             });
           };
         }
@@ -28701,27 +28642,27 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.FilmCategory.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
               lastUpdate:
-                parsedValue as Public.Tables.FilmCategory.Record["lastUpdate"],
+                parsedValue as Public.Types.FilmCategory["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Inventory {
-      export type Row = IsRow<Public.Tables.Inventory.Record>;
+      export type Row = IsRow<Public.Types.Inventory>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Inventory.Record>
+        extends RowBase<Public.Types.Inventory>
         implements Row
       {
         constructor(
-          record: Public.Tables.Inventory.Record,
-          changeCallback: RecordCallback<Public.Tables.Inventory.Record>,
+          record: Public.Types.Inventory,
+          changeCallback: RecordCallback<Public.Types.Inventory>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28731,13 +28672,10 @@ export namespace Public {
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Inventory.InventoryId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              inventoryId:
-                parsedValue as Public.Tables.Inventory.Record["inventoryId"],
+              inventoryId: parsedValue as Public.Types.Inventory["inventoryId"],
             });
           };
         }
@@ -28746,12 +28684,10 @@ export namespace Public {
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Inventory.FilmId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              filmId: parsedValue as Public.Tables.Inventory.Record["filmId"],
+              filmId: parsedValue as Public.Types.Inventory["filmId"],
             });
           };
         }
@@ -28760,12 +28696,10 @@ export namespace Public {
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Inventory.StoreId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              storeId: parsedValue as Public.Tables.Inventory.Record["storeId"],
+              storeId: parsedValue as Public.Types.Inventory["storeId"],
             });
           };
         }
@@ -28774,27 +28708,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Inventory.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Inventory.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Inventory["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Category {
-      export type Row = IsRow<Public.Tables.Category.Record>;
+      export type Row = IsRow<Public.Types.Category>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Category.Record>
+        extends RowBase<Public.Types.Category>
         implements Row
       {
         constructor(
-          record: Public.Tables.Category.Record,
-          changeCallback: RecordCallback<Public.Tables.Category.Record>,
+          record: Public.Types.Category,
+          changeCallback: RecordCallback<Public.Types.Category>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28804,13 +28737,10 @@ export namespace Public {
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Category.CategoryId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              categoryId:
-                parsedValue as Public.Tables.Category.Record["categoryId"],
+              categoryId: parsedValue as Public.Types.Category["categoryId"],
             });
           };
         }
@@ -28819,12 +28749,12 @@ export namespace Public {
         }
         get changeName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Category.Name.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              name: parsedValue as Public.Tables.Category.Record["name"],
+              name: parsedValue as Public.Types.Category["name"],
             });
           };
         }
@@ -28833,27 +28763,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Category.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Category.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Category["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Country {
-      export type Row = IsRow<Public.Tables.Country.Record>;
+      export type Row = IsRow<Public.Types.Country>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Country.Record>
+        extends RowBase<Public.Types.Country>
         implements Row
       {
         constructor(
-          record: Public.Tables.Country.Record,
-          changeCallback: RecordCallback<Public.Tables.Country.Record>,
+          record: Public.Types.Country,
+          changeCallback: RecordCallback<Public.Types.Country>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28863,13 +28792,10 @@ export namespace Public {
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Country.CountryId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              countryId:
-                parsedValue as Public.Tables.Country.Record["countryId"],
+              countryId: parsedValue as Public.Types.Country["countryId"],
             });
           };
         }
@@ -28878,12 +28804,12 @@ export namespace Public {
         }
         get changeCountry() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Country.Country.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              country: parsedValue as Public.Tables.Country.Record["country"],
+              country: parsedValue as Public.Types.Country["country"],
             });
           };
         }
@@ -28892,27 +28818,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Country.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Country.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Country["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Language {
-      export type Row = IsRow<Public.Tables.Language.Record>;
+      export type Row = IsRow<Public.Types.Language>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Language.Record>
+        extends RowBase<Public.Types.Language>
         implements Row
       {
         constructor(
-          record: Public.Tables.Language.Record,
-          changeCallback: RecordCallback<Public.Tables.Language.Record>,
+          record: Public.Types.Language,
+          changeCallback: RecordCallback<Public.Types.Language>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28922,13 +28847,10 @@ export namespace Public {
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Language.LanguageId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              languageId:
-                parsedValue as Public.Tables.Language.Record["languageId"],
+              languageId: parsedValue as Public.Types.Language["languageId"],
             });
           };
         }
@@ -28937,12 +28859,12 @@ export namespace Public {
         }
         get changeName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Language.Name.parse(
+            const parsedValue = PgCatalog.Types.Bpchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              name: parsedValue as Public.Tables.Language.Record["name"],
+              name: parsedValue as Public.Types.Language["name"],
             });
           };
         }
@@ -28951,27 +28873,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Language.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Language.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Language["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Rental {
-      export type Row = IsRow<Public.Tables.Rental.Record>;
+      export type Row = IsRow<Public.Types.Rental>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Rental.Record>
+        extends RowBase<Public.Types.Rental>
         implements Row
       {
         constructor(
-          record: Public.Tables.Rental.Record,
-          changeCallback: RecordCallback<Public.Tables.Rental.Record>,
+          record: Public.Types.Rental,
+          changeCallback: RecordCallback<Public.Types.Rental>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -28981,12 +28902,10 @@ export namespace Public {
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.RentalId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              rentalId: parsedValue as Public.Tables.Rental.Record["rentalId"],
+              rentalId: parsedValue as Public.Types.Rental["rentalId"],
             });
           };
         }
@@ -28995,13 +28914,12 @@ export namespace Public {
         }
         get changeRentalDate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.RentalDate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              rentalDate:
-                parsedValue as Public.Tables.Rental.Record["rentalDate"],
+              rentalDate: parsedValue as Public.Types.Rental["rentalDate"],
             });
           };
         }
@@ -29010,13 +28928,10 @@ export namespace Public {
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.InventoryId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              inventoryId:
-                parsedValue as Public.Tables.Rental.Record["inventoryId"],
+              inventoryId: parsedValue as Public.Types.Rental["inventoryId"],
             });
           };
         }
@@ -29025,13 +28940,10 @@ export namespace Public {
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.CustomerId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              customerId:
-                parsedValue as Public.Tables.Rental.Record["customerId"],
+              customerId: parsedValue as Public.Types.Rental["customerId"],
             });
           };
         }
@@ -29040,13 +28952,12 @@ export namespace Public {
         }
         get changeReturnDate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.ReturnDate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              returnDate:
-                parsedValue as Public.Tables.Rental.Record["returnDate"],
+              returnDate: parsedValue as Public.Types.Rental["returnDate"],
             });
           };
         }
@@ -29055,12 +28966,10 @@ export namespace Public {
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.StaffId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              staffId: parsedValue as Public.Tables.Rental.Record["staffId"],
+              staffId: parsedValue as Public.Types.Rental["staffId"],
             });
           };
         }
@@ -29069,27 +28978,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Rental.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Rental.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Rental["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Staff {
-      export type Row = IsRow<Public.Tables.Staff.Record>;
+      export type Row = IsRow<Public.Types.Staff>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Staff.Record>
+        extends RowBase<Public.Types.Staff>
         implements Row
       {
         constructor(
-          record: Public.Tables.Staff.Record,
-          changeCallback: RecordCallback<Public.Tables.Staff.Record>,
+          record: Public.Types.Staff,
+          changeCallback: RecordCallback<Public.Types.Staff>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -29099,12 +29007,10 @@ export namespace Public {
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.StaffId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              staffId: parsedValue as Public.Tables.Staff.Record["staffId"],
+              staffId: parsedValue as Public.Types.Staff["staffId"],
             });
           };
         }
@@ -29113,12 +29019,12 @@ export namespace Public {
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.FirstName.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              firstName: parsedValue as Public.Tables.Staff.Record["firstName"],
+              firstName: parsedValue as Public.Types.Staff["firstName"],
             });
           };
         }
@@ -29127,12 +29033,12 @@ export namespace Public {
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.LastName.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastName: parsedValue as Public.Tables.Staff.Record["lastName"],
+              lastName: parsedValue as Public.Types.Staff["lastName"],
             });
           };
         }
@@ -29141,12 +29047,10 @@ export namespace Public {
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.AddressId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              addressId: parsedValue as Public.Tables.Staff.Record["addressId"],
+              addressId: parsedValue as Public.Types.Staff["addressId"],
             });
           };
         }
@@ -29155,12 +29059,12 @@ export namespace Public {
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.Email.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              email: parsedValue as Public.Tables.Staff.Record["email"],
+              email: parsedValue as Public.Types.Staff["email"],
             });
           };
         }
@@ -29169,12 +29073,10 @@ export namespace Public {
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.StoreId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              storeId: parsedValue as Public.Tables.Staff.Record["storeId"],
+              storeId: parsedValue as Public.Types.Staff["storeId"],
             });
           };
         }
@@ -29183,12 +29085,10 @@ export namespace Public {
         }
         get changeActive() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.Active.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              active: parsedValue as Public.Tables.Staff.Record["active"],
+              active: parsedValue as Public.Types.Staff["active"],
             });
           };
         }
@@ -29197,12 +29097,12 @@ export namespace Public {
         }
         get changeUsername() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.Username.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              username: parsedValue as Public.Tables.Staff.Record["username"],
+              username: parsedValue as Public.Types.Staff["username"],
             });
           };
         }
@@ -29211,12 +29111,12 @@ export namespace Public {
         }
         get changePassword() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.Password.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              password: parsedValue as Public.Tables.Staff.Record["password"],
+              password: parsedValue as Public.Types.Staff["password"],
             });
           };
         }
@@ -29225,13 +29125,12 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Staff.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Staff["lastUpdate"],
             });
           };
         }
@@ -29240,26 +29139,24 @@ export namespace Public {
         }
         get changePicture() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Staff.Picture.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Bytea.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              picture: parsedValue as Public.Tables.Staff.Record["picture"],
+              picture: parsedValue as Public.Types.Staff["picture"],
             });
           };
         }
       }
     }
     export namespace Store {
-      export type Row = IsRow<Public.Tables.Store.Record>;
+      export type Row = IsRow<Public.Types.Store>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Store.Record>
+        extends RowBase<Public.Types.Store>
         implements Row
       {
         constructor(
-          record: Public.Tables.Store.Record,
-          changeCallback: RecordCallback<Public.Tables.Store.Record>,
+          record: Public.Types.Store,
+          changeCallback: RecordCallback<Public.Types.Store>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -29269,12 +29166,10 @@ export namespace Public {
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Store.StoreId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              storeId: parsedValue as Public.Tables.Store.Record["storeId"],
+              storeId: parsedValue as Public.Types.Store["storeId"],
             });
           };
         }
@@ -29283,13 +29178,11 @@ export namespace Public {
         }
         get changeManagerStaffId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Store.ManagerStaffId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
               managerStaffId:
-                parsedValue as Public.Tables.Store.Record["managerStaffId"],
+                parsedValue as Public.Types.Store["managerStaffId"],
             });
           };
         }
@@ -29298,12 +29191,10 @@ export namespace Public {
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Store.AddressId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              addressId: parsedValue as Public.Tables.Store.Record["addressId"],
+              addressId: parsedValue as Public.Types.Store["addressId"],
             });
           };
         }
@@ -29312,27 +29203,26 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Store.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Store.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Store["lastUpdate"],
             });
           };
         }
       }
     }
     export namespace Payment {
-      export type Row = IsRow<Public.Tables.Payment.Record>;
+      export type Row = IsRow<Public.Types.Payment>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Payment.Record>
+        extends RowBase<Public.Types.Payment>
         implements Row
       {
         constructor(
-          record: Public.Tables.Payment.Record,
-          changeCallback: RecordCallback<Public.Tables.Payment.Record>,
+          record: Public.Types.Payment,
+          changeCallback: RecordCallback<Public.Types.Payment>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -29342,13 +29232,10 @@ export namespace Public {
         }
         get changePaymentId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.PaymentId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              paymentId:
-                parsedValue as Public.Tables.Payment.Record["paymentId"],
+              paymentId: parsedValue as Public.Types.Payment["paymentId"],
             });
           };
         }
@@ -29357,13 +29244,10 @@ export namespace Public {
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.CustomerId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              customerId:
-                parsedValue as Public.Tables.Payment.Record["customerId"],
+              customerId: parsedValue as Public.Types.Payment["customerId"],
             });
           };
         }
@@ -29372,12 +29256,10 @@ export namespace Public {
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.StaffId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              staffId: parsedValue as Public.Tables.Payment.Record["staffId"],
+              staffId: parsedValue as Public.Types.Payment["staffId"],
             });
           };
         }
@@ -29386,12 +29268,10 @@ export namespace Public {
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.RentalId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              rentalId: parsedValue as Public.Tables.Payment.Record["rentalId"],
+              rentalId: parsedValue as Public.Types.Payment["rentalId"],
             });
           };
         }
@@ -29400,12 +29280,12 @@ export namespace Public {
         }
         get changeAmount() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.Amount.parse(
+            const parsedValue = PgCatalog.Types.Numeric.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              amount: parsedValue as Public.Tables.Payment.Record["amount"],
+              amount: parsedValue as Public.Types.Payment["amount"],
             });
           };
         }
@@ -29414,27 +29294,26 @@ export namespace Public {
         }
         get changePaymentDate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Payment.PaymentDate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              paymentDate:
-                parsedValue as Public.Tables.Payment.Record["paymentDate"],
+              paymentDate: parsedValue as Public.Types.Payment["paymentDate"],
             });
           };
         }
       }
     }
     export namespace Film {
-      export type Row = IsRow<Public.Tables.Film.Record>;
+      export type Row = IsRow<Public.Types.Film>;
       export class RowImplementation
-        extends RowBase<Public.Tables.Film.Record>
+        extends RowBase<Public.Types.Film>
         implements Row
       {
         constructor(
-          record: Public.Tables.Film.Record,
-          changeCallback: RecordCallback<Public.Tables.Film.Record>,
+          record: Public.Types.Film,
+          changeCallback: RecordCallback<Public.Types.Film>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -29444,12 +29323,10 @@ export namespace Public {
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.FilmId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              filmId: parsedValue as Public.Tables.Film.Record["filmId"],
+              filmId: parsedValue as Public.Types.Film["filmId"],
             });
           };
         }
@@ -29458,12 +29335,12 @@ export namespace Public {
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.Title.parse(
+            const parsedValue = PgCatalog.Types.Varchar.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              title: parsedValue as Public.Tables.Film.Record["title"],
+              title: parsedValue as Public.Types.Film["title"],
             });
           };
         }
@@ -29472,13 +29349,10 @@ export namespace Public {
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.Description.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              description:
-                parsedValue as Public.Tables.Film.Record["description"],
+              description: parsedValue as Public.Types.Film["description"],
             });
           };
         }
@@ -29487,13 +29361,10 @@ export namespace Public {
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.ReleaseYear.parse(
-              event.target.value,
-            );
+            const parsedValue = Public.Types.Year.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              releaseYear:
-                parsedValue as Public.Tables.Film.Record["releaseYear"],
+              releaseYear: parsedValue as Public.Types.Film["releaseYear"],
             });
           };
         }
@@ -29502,13 +29373,10 @@ export namespace Public {
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.LanguageId.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              languageId:
-                parsedValue as Public.Tables.Film.Record["languageId"],
+              languageId: parsedValue as Public.Types.Film["languageId"],
             });
           };
         }
@@ -29517,13 +29385,11 @@ export namespace Public {
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.RentalDuration.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
               rentalDuration:
-                parsedValue as Public.Tables.Film.Record["rentalDuration"],
+                parsedValue as Public.Types.Film["rentalDuration"],
             });
           };
         }
@@ -29532,13 +29398,12 @@ export namespace Public {
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.RentalRate.parse(
+            const parsedValue = PgCatalog.Types.Numeric.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              rentalRate:
-                parsedValue as Public.Tables.Film.Record["rentalRate"],
+              rentalRate: parsedValue as Public.Types.Film["rentalRate"],
             });
           };
         }
@@ -29547,12 +29412,10 @@ export namespace Public {
         }
         get changeLength() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.Length.parse(
-              event.target.value,
-            );
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
               ...this.record,
-              length: parsedValue as Public.Tables.Film.Record["length"],
+              length: parsedValue as Public.Types.Film["length"],
             });
           };
         }
@@ -29561,13 +29424,13 @@ export namespace Public {
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.ReplacementCost.parse(
+            const parsedValue = PgCatalog.Types.Numeric.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
               replacementCost:
-                parsedValue as Public.Tables.Film.Record["replacementCost"],
+                parsedValue as Public.Types.Film["replacementCost"],
             });
           };
         }
@@ -29576,12 +29439,12 @@ export namespace Public {
         }
         get changeRating() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.Rating.parse(
+            const parsedValue = Public.Types.MpaaRating.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              rating: parsedValue as Public.Tables.Film.Record["rating"],
+              rating: parsedValue as Public.Types.Film["rating"],
             });
           };
         }
@@ -29590,13 +29453,12 @@ export namespace Public {
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.LastUpdate.parse(
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              lastUpdate:
-                parsedValue as Public.Tables.Film.Record["lastUpdate"],
+              lastUpdate: parsedValue as Public.Types.Film["lastUpdate"],
             });
           };
         }
@@ -29605,13 +29467,13 @@ export namespace Public {
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.SpecialFeatures.parse(
+            const parsedValue = PgCatalog.Types.TextArray.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
               specialFeatures:
-                parsedValue as Public.Tables.Film.Record["specialFeatures"],
+                parsedValue as Public.Types.Film["specialFeatures"],
             });
           };
         }
@@ -29620,12 +29482,12 @@ export namespace Public {
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
-            const parsedValue = Public.Tables.Film.Fulltext.parse(
+            const parsedValue = PgCatalog.Types.Tsvector.parse(
               event.target.value,
             );
             void this.changeCallback({
               ...this.record,
-              fulltext: parsedValue as Public.Tables.Film.Record["fulltext"],
+              fulltext: parsedValue as Public.Types.Film["fulltext"],
             });
           };
         }
@@ -29643,8 +29505,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.FilmActor.Values>,
-          Public.Tables.FilmActor.Record
+          Partial<Public.Types.FilmActor>,
+          Public.Types.FilmActor
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -29662,8 +29524,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.FilmActor.Values>,
-          Public.Tables.FilmActor.Record
+          Partial<Public.Types.FilmActor>,
+          Public.Types.FilmActor
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.FilmActor.all.bind(client),
@@ -29682,8 +29544,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByActorIdFilmId,
-          Partial<Public.Tables.FilmActor.Values>,
-          Public.Tables.FilmActor.Record
+          Partial<Public.Types.FilmActor>,
+          Public.Types.FilmActor
         >({
           readOperation:
             client.Public.Tables.FilmActor.ByActorIdFilmId.read.bind(client),
@@ -29700,8 +29562,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByFilmId,
-          Partial<Public.Tables.FilmActor.Values>,
-          Public.Tables.FilmActor.Record
+          Partial<Public.Types.FilmActor>,
+          Public.Types.FilmActor
         >({
           readOperation:
             client.Public.Tables.FilmActor.ByFilmId.read.bind(client),
@@ -29722,8 +29584,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Address.Values>,
-          Public.Tables.Address.Record
+          Partial<Public.Types.Address>,
+          Public.Types.Address
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -29741,8 +29603,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Address.Values>,
-          Public.Tables.Address.Record
+          Partial<Public.Types.Address>,
+          Public.Types.Address
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Address.all.bind(client),
@@ -29766,8 +29628,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByAddressId,
-          Partial<Public.Tables.Address.Values>,
-          Public.Tables.Address.Record
+          Partial<Public.Types.Address>,
+          Public.Types.Address
         >({
           readOperation:
             client.Public.Tables.Address.ByAddressId.read.bind(client),
@@ -29784,8 +29646,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByCityId,
-          Partial<Public.Tables.Address.Values>,
-          Public.Tables.Address.Record
+          Partial<Public.Types.Address>,
+          Public.Types.Address
         >({
           readOperation:
             client.Public.Tables.Address.ByCityId.read.bind(client),
@@ -29806,8 +29668,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.City.Values>,
-          Public.Tables.City.Record
+          Partial<Public.Types.City>,
+          Public.Types.City
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -29825,8 +29687,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.City.Values>,
-          Public.Tables.City.Record
+          Partial<Public.Types.City>,
+          Public.Types.City
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.City.all.bind(client),
@@ -29846,8 +29708,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByCityId,
-          Partial<Public.Tables.City.Values>,
-          Public.Tables.City.Record
+          Partial<Public.Types.City>,
+          Public.Types.City
         >({
           readOperation: client.Public.Tables.City.ByCityId.read.bind(client),
           parameters,
@@ -29863,8 +29725,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByCountryId,
-          Partial<Public.Tables.City.Values>,
-          Public.Tables.City.Record
+          Partial<Public.Types.City>,
+          Public.Types.City
         >({
           readOperation:
             client.Public.Tables.City.ByCountryId.read.bind(client),
@@ -29885,8 +29747,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -29904,8 +29766,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Customer.all.bind(client),
@@ -29931,8 +29793,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByAddressId,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           readOperation:
             client.Public.Tables.Customer.ByAddressId.read.bind(client),
@@ -29949,8 +29811,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByCustomerId,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           readOperation:
             client.Public.Tables.Customer.ByCustomerId.read.bind(client),
@@ -29967,8 +29829,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByLastName,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           readOperation:
             client.Public.Tables.Customer.ByLastName.read.bind(client),
@@ -29985,8 +29847,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByStoreId,
-          Partial<Public.Tables.Customer.Values>,
-          Public.Tables.Customer.Record
+          Partial<Public.Types.Customer>,
+          Public.Types.Customer
         >({
           readOperation:
             client.Public.Tables.Customer.ByStoreId.read.bind(client),
@@ -30007,8 +29869,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Actor.Values>,
-          Public.Tables.Actor.Record
+          Partial<Public.Types.Actor>,
+          Public.Types.Actor
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30026,8 +29888,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Actor.Values>,
-          Public.Tables.Actor.Record
+          Partial<Public.Types.Actor>,
+          Public.Types.Actor
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Actor.all.bind(client),
@@ -30047,8 +29909,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByActorId,
-          Partial<Public.Tables.Actor.Values>,
-          Public.Tables.Actor.Record
+          Partial<Public.Types.Actor>,
+          Public.Types.Actor
         >({
           readOperation: client.Public.Tables.Actor.ByActorId.read.bind(client),
           parameters,
@@ -30064,8 +29926,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByLastName,
-          Partial<Public.Tables.Actor.Values>,
-          Public.Tables.Actor.Record
+          Partial<Public.Types.Actor>,
+          Public.Types.Actor
         >({
           readOperation:
             client.Public.Tables.Actor.ByLastName.read.bind(client),
@@ -30086,8 +29948,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.FilmCategory.Values>,
-          Public.Tables.FilmCategory.Record
+          Partial<Public.Types.FilmCategory>,
+          Public.Types.FilmCategory
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30106,8 +29968,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.FilmCategory.Values>,
-          Public.Tables.FilmCategory.Record
+          Partial<Public.Types.FilmCategory>,
+          Public.Types.FilmCategory
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.FilmCategory.all.bind(client),
@@ -30127,8 +29989,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByFilmIdCategoryId,
-          Partial<Public.Tables.FilmCategory.Values>,
-          Public.Tables.FilmCategory.Record
+          Partial<Public.Types.FilmCategory>,
+          Public.Types.FilmCategory
         >({
           readOperation:
             client.Public.Tables.FilmCategory.ByFilmIdCategoryId.read.bind(
@@ -30152,8 +30014,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Inventory.Values>,
-          Public.Tables.Inventory.Record
+          Partial<Public.Types.Inventory>,
+          Public.Types.Inventory
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30171,8 +30033,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Inventory.Values>,
-          Public.Tables.Inventory.Record
+          Partial<Public.Types.Inventory>,
+          Public.Types.Inventory
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Inventory.all.bind(client),
@@ -30192,8 +30054,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByInventoryId,
-          Partial<Public.Tables.Inventory.Values>,
-          Public.Tables.Inventory.Record
+          Partial<Public.Types.Inventory>,
+          Public.Types.Inventory
         >({
           readOperation:
             client.Public.Tables.Inventory.ByInventoryId.read.bind(client),
@@ -30210,8 +30072,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByStoreIdFilmId,
-          Partial<Public.Tables.Inventory.Values>,
-          Public.Tables.Inventory.Record
+          Partial<Public.Types.Inventory>,
+          Public.Types.Inventory
         >({
           readOperation:
             client.Public.Tables.Inventory.ByStoreIdFilmId.read.bind(client),
@@ -30232,8 +30094,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Category.Values>,
-          Public.Tables.Category.Record
+          Partial<Public.Types.Category>,
+          Public.Types.Category
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30251,8 +30113,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Category.Values>,
-          Public.Tables.Category.Record
+          Partial<Public.Types.Category>,
+          Public.Types.Category
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Category.all.bind(client),
@@ -30271,8 +30133,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByCategoryId,
-          Partial<Public.Tables.Category.Values>,
-          Public.Tables.Category.Record
+          Partial<Public.Types.Category>,
+          Public.Types.Category
         >({
           readOperation:
             client.Public.Tables.Category.ByCategoryId.read.bind(client),
@@ -30293,8 +30155,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Country.Values>,
-          Public.Tables.Country.Record
+          Partial<Public.Types.Country>,
+          Public.Types.Country
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30312,8 +30174,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Country.Values>,
-          Public.Tables.Country.Record
+          Partial<Public.Types.Country>,
+          Public.Types.Country
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Country.all.bind(client),
@@ -30332,8 +30194,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByCountryId,
-          Partial<Public.Tables.Country.Values>,
-          Public.Tables.Country.Record
+          Partial<Public.Types.Country>,
+          Public.Types.Country
         >({
           readOperation:
             client.Public.Tables.Country.ByCountryId.read.bind(client),
@@ -30354,8 +30216,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Language.Values>,
-          Public.Tables.Language.Record
+          Partial<Public.Types.Language>,
+          Public.Types.Language
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30373,8 +30235,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Language.Values>,
-          Public.Tables.Language.Record
+          Partial<Public.Types.Language>,
+          Public.Types.Language
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Language.all.bind(client),
@@ -30393,8 +30255,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByLanguageId,
-          Partial<Public.Tables.Language.Values>,
-          Public.Tables.Language.Record
+          Partial<Public.Types.Language>,
+          Public.Types.Language
         >({
           readOperation:
             client.Public.Tables.Language.ByLanguageId.read.bind(client),
@@ -30415,8 +30277,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Rental.Values>,
-          Public.Tables.Rental.Record
+          Partial<Public.Types.Rental>,
+          Public.Types.Rental
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30434,8 +30296,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Rental.Values>,
-          Public.Tables.Rental.Record
+          Partial<Public.Types.Rental>,
+          Public.Types.Rental
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Rental.all.bind(client),
@@ -30458,8 +30320,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByInventoryId,
-          Partial<Public.Tables.Rental.Values>,
-          Public.Tables.Rental.Record
+          Partial<Public.Types.Rental>,
+          Public.Types.Rental
         >({
           readOperation:
             client.Public.Tables.Rental.ByInventoryId.read.bind(client),
@@ -30478,8 +30340,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByRentalDateInventoryIdCustomerId,
-          Partial<Public.Tables.Rental.Values>,
-          Public.Tables.Rental.Record
+          Partial<Public.Types.Rental>,
+          Public.Types.Rental
         >({
           readOperation:
             client.Public.Tables.Rental.ByRentalDateInventoryIdCustomerId.read.bind(
@@ -30498,8 +30360,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByRentalId,
-          Partial<Public.Tables.Rental.Values>,
-          Public.Tables.Rental.Record
+          Partial<Public.Types.Rental>,
+          Public.Types.Rental
         >({
           readOperation:
             client.Public.Tables.Rental.ByRentalId.read.bind(client),
@@ -30520,8 +30382,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Staff.Values>,
-          Public.Tables.Staff.Record
+          Partial<Public.Types.Staff>,
+          Public.Types.Staff
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30539,8 +30401,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Staff.Values>,
-          Public.Tables.Staff.Record
+          Partial<Public.Types.Staff>,
+          Public.Types.Staff
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Staff.all.bind(client),
@@ -30567,8 +30429,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByStaffId,
-          Partial<Public.Tables.Staff.Values>,
-          Public.Tables.Staff.Record
+          Partial<Public.Types.Staff>,
+          Public.Types.Staff
         >({
           readOperation: client.Public.Tables.Staff.ByStaffId.read.bind(client),
           parameters,
@@ -30588,8 +30450,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Store.Values>,
-          Public.Tables.Store.Record
+          Partial<Public.Types.Store>,
+          Public.Types.Store
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30607,8 +30469,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Store.Values>,
-          Public.Tables.Store.Record
+          Partial<Public.Types.Store>,
+          Public.Types.Store
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Store.all.bind(client),
@@ -30628,8 +30490,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByManagerStaffId,
-          Partial<Public.Tables.Store.Values>,
-          Public.Tables.Store.Record
+          Partial<Public.Types.Store>,
+          Public.Types.Store
         >({
           readOperation:
             client.Public.Tables.Store.ByManagerStaffId.read.bind(client),
@@ -30646,8 +30508,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByStoreId,
-          Partial<Public.Tables.Store.Values>,
-          Public.Tables.Store.Record
+          Partial<Public.Types.Store>,
+          Public.Types.Store
         >({
           readOperation: client.Public.Tables.Store.ByStoreId.read.bind(client),
           parameters,
@@ -30667,8 +30529,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30686,8 +30548,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Payment.all.bind(client),
@@ -30709,8 +30571,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByCustomerId,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           readOperation:
             client.Public.Tables.Payment.ByCustomerId.read.bind(client),
@@ -30727,8 +30589,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPaymentId,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           readOperation:
             client.Public.Tables.Payment.ByPaymentId.read.bind(client),
@@ -30745,8 +30607,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByRentalId,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           readOperation:
             client.Public.Tables.Payment.ByRentalId.read.bind(client),
@@ -30763,8 +30625,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByStaffId,
-          Partial<Public.Tables.Payment.Values>,
-          Public.Tables.Payment.Record
+          Partial<Public.Types.Payment>,
+          Public.Types.Payment
         >({
           readOperation:
             client.Public.Tables.Payment.ByStaffId.read.bind(client),
@@ -30785,8 +30647,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByPrimaryKey,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           parameters: props.values as unknown as ByPrimaryKey,
           readOperation:
@@ -30804,8 +30666,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           never,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           parameters: NEVER,
           readOperation: client.Public.Tables.Film.all.bind(client),
@@ -30834,8 +30696,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRow<
           ByFilmId,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           readOperation: client.Public.Tables.Film.ByFilmId.read.bind(client),
           parameters,
@@ -30851,8 +30713,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByFulltext,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           readOperation: client.Public.Tables.Film.ByFulltext.read.bind(client),
           parameters,
@@ -30868,8 +30730,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByLanguageId,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           readOperation:
             client.Public.Tables.Film.ByLanguageId.read.bind(client),
@@ -30886,8 +30748,8 @@ export namespace Public {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
         return useEmbraceSQLRows<
           ByTitle,
-          Partial<Public.Tables.Film.Values>,
-          Public.Tables.Film.Record
+          Partial<Public.Types.Film>,
+          Public.Types.Film
         >({
           readOperation: client.Public.Tables.Film.ByTitle.read.bind(client),
           parameters,

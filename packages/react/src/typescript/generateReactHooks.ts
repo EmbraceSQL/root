@@ -4,7 +4,6 @@ import {
   GenerationContext,
   NamespaceVisitor,
 } from "@embracesql/shared";
-import { pascalCase } from "change-case";
 
 /**
  * Generate hooks, these read data and return wrapped bindable objects.
@@ -12,6 +11,36 @@ import { pascalCase } from "change-case";
 export const generateReactHooks = async (context: GenerationContext) => {
   const generationBuffer = [""];
   context.handlers = {
+    [ASTKind.Scripts]: NamespaceVisitor,
+    [ASTKind.ScriptFolder]: NamespaceVisitor,
+    [ASTKind.Script]: {
+      before: async (context, node) => {
+        const parametersCall = node.parametersType
+          ? `parameters: ${node.parametersType?.typescriptName}`
+          : "";
+        const parametersType = node.parametersType
+          ? `${node.parametersType?.typescriptName}`
+          : "never";
+        const parametersPass = node.parametersType
+          ? "parameters"
+          : "parameters: NEVER";
+
+        return [
+          await NamespaceVisitor.before(context, node),
+          `export function use${node.typescriptName}(${parametersCall}) {`,
+          `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
+          `  return useEmbraceSQLImmutableRows<${parametersType}, ${node.resultsType?.typescriptName}>(
+               {
+                 readOperation: client.${node.typescriptNamespacedName}.call.bind(client),
+                 ${parametersPass},
+                 RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
+               }
+             )`,
+          `}`,
+        ].join("\n");
+      },
+      after: NamespaceVisitor.after,
+    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
@@ -21,8 +50,8 @@ export const generateReactHooks = async (context: GenerationContext) => {
           `export function useRow(props: GeneratedRowProps<${node.typescriptNamespacedName}.Values>) {`,
           `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
           `  return useEmbraceSQLRow<${BY_PRIMARY_KEY},`,
-          `  Partial<${node.typescriptNamespacedName}.Values>, `,
-          `  ${node.typescriptNamespacedName}.Record> (`,
+          `  Partial<${node.type.typescriptNamespacedName}>, `,
+          `  ${node.type.typescriptNamespacedName}> (`,
           `
                {
                  parameters: props.values as unknown as ${BY_PRIMARY_KEY},
@@ -40,8 +69,8 @@ export const generateReactHooks = async (context: GenerationContext) => {
           `export function useRows() {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
           `return useEmbraceSQLRows<never,`,
-          `  Partial<${node.typescriptNamespacedName}.Values>, `,
-          `  ${node.typescriptNamespacedName}.Record> (`,
+          `  Partial<${node.type.typescriptNamespacedName}>, `,
+          `  ${node.type.typescriptNamespacedName}> (`,
           `
                {
                  parameters: NEVER,
@@ -62,14 +91,12 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Column]: NamespaceVisitor,
     [ASTKind.Index]: {
       before: async (_, node) => {
-        const rowTypeName = `${node.table.typescriptNamespacedName}.Record`;
+        const rowTypeName = `${node.table.type.typescriptNamespacedName}`;
         const hookName = node.unique ? `useEmbraceSQLRow` : `useEmbraceSQLRows`;
         return [
-          `export function use${pascalCase(node.name)}(parameters: ${
-            node.typescriptName
-          }) {`,
+          `export function use${node.typescriptName}(parameters: ${node.typescriptName}) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return ${hookName}<${node.typescriptName}, Partial<${node.table.typescriptNamespacedName}.Values>,  ${rowTypeName}>(
+          `return ${hookName}<${node.typescriptName}, Partial<${node.table.type.typescriptNamespacedName}>,  ${rowTypeName}>(
                {
                  readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,
