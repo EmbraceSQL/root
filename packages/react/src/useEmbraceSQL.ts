@@ -59,7 +59,7 @@ function useUpdateCallback<R>(props: UpdateCallbackProps<R>) {
 type RowProps<P, R> = UpdateCallbackProps<R> & {
   parameters: P;
   readOperation: ReadOperation<P, R | undefined>;
-  emptyRecord: () => PartialRecursive<R>;
+  emptyRow: () => PartialRecursive<R>;
   createIfNotExists?: boolean;
 };
 
@@ -93,7 +93,7 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
       ? await props.readOperation(props.parameters)
       : undefined;
     const record =
-      read ?? (props.createIfNotExists ? props.emptyRecord() : undefined);
+      read ?? (props.createIfNotExists ? props.emptyRow() : undefined);
     setResults(record as R);
   }, [JSON.stringify(props.parameters)]);
 
@@ -128,7 +128,7 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
 }
 
 type RowsProps<P, R> = UpdateCallbackProps<R> & {
-  emptyRecord: () => PartialRecursive<R>;
+  emptyRow: () => PartialRecursive<R>;
   parameters: P;
   readOperation: ReadOperation<P, R[]>;
 };
@@ -186,14 +186,14 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
     // it *isn't* from the database, just to be clear -- it's an in memory buffer
     // to support automatic parent-child the parameters used to read the rows
     // need to be on the new rows so when put to the database -- they tie up
-    const newRecord = { ...props.emptyRecord(), ...props.parameters };
+    const newRecord = { ...props.emptyRow(), ...props.parameters };
     const newResults = [...(results ?? []), newRecord as R];
     setResults(newResults);
     // and the index of this new row
     return newResults.length - 1;
   }, [
     props.RowImplementation,
-    props.emptyRecord,
+    props.emptyRow,
     props.parameters,
     results,
     responseCallback,

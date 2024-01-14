@@ -2595,7 +2595,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByStarelidStaattnumStainherit;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatistic, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatistic,
         Optional & ByPrimaryKey
@@ -2647,7 +2647,7 @@ export namespace PgCatalog {
         typnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgType, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgType,
         Optional & ByPrimaryKey
@@ -2666,7 +2666,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByFtrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignTable, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignTable,
         Optional & ByPrimaryKey
@@ -2697,7 +2697,7 @@ export namespace PgCatalog {
         rolname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAuthid, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAuthid,
         Optional & ByPrimaryKey
@@ -2720,7 +2720,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByStxoidStxdinherit;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatisticExtData, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatisticExtData,
         Optional & ByPrimaryKey
@@ -2744,7 +2744,7 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgUserMapping, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgUserMapping,
         Optional & ByPrimaryKey
@@ -2781,7 +2781,7 @@ export namespace PgCatalog {
         subname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSubscription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSubscription,
         Optional & ByPrimaryKey
@@ -2829,7 +2829,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByAttrelidAttnum;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAttribute, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAttribute,
         Optional & ByPrimaryKey
@@ -2880,7 +2880,7 @@ export namespace PgCatalog {
         pronamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgProc, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgProc,
         Optional & ByPrimaryKey
@@ -2938,7 +2938,7 @@ export namespace PgCatalog {
         relfilenode: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgClass, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgClass,
         Optional & ByPrimaryKey
@@ -2963,7 +2963,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAttrdef, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAttrdef,
         Optional & ByPrimaryKey
@@ -3024,7 +3024,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgConstraint, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgConstraint,
         Optional & ByPrimaryKey
@@ -3049,7 +3049,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByInhrelidInhseqno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgInherits, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgInherits,
         Optional & ByPrimaryKey
@@ -3089,7 +3089,7 @@ export namespace PgCatalog {
         indrelid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgIndex, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgIndex,
         Optional & ByPrimaryKey
@@ -3126,7 +3126,7 @@ export namespace PgCatalog {
         oprnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOperator, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOperator,
         Optional & ByPrimaryKey
@@ -3152,7 +3152,7 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOpfamily, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOpfamily,
         Optional & ByPrimaryKey
@@ -3182,7 +3182,7 @@ export namespace PgCatalog {
         opcnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOpclass, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOpclass,
         Optional & ByPrimaryKey
@@ -3206,7 +3206,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAm, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAm,
         Optional & ByPrimaryKey
@@ -3244,7 +3244,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAmop, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAmop,
         Optional & ByPrimaryKey
@@ -3273,7 +3273,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAmproc, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAmproc,
         Optional & ByPrimaryKey
@@ -3302,7 +3302,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLanguage, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLanguage,
         Optional & ByPrimaryKey
@@ -3317,7 +3317,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLargeobjectMetadata,
         Optional & ByPrimaryKey
@@ -3355,7 +3355,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByAggfnoid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAggregate, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAggregate,
         Optional & ByPrimaryKey
@@ -3388,7 +3388,7 @@ export namespace PgCatalog {
         stxrelid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatisticExt, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatisticExt,
         Optional & ByPrimaryKey
@@ -3417,7 +3417,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgRewrite, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgRewrite,
         Optional & ByPrimaryKey
@@ -3460,7 +3460,7 @@ export namespace PgCatalog {
         tgname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTrigger, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTrigger,
         Optional & ByPrimaryKey
@@ -3487,7 +3487,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgEventTrigger, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgEventTrigger,
         Optional & ByPrimaryKey
@@ -3509,7 +3509,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDescription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDescription,
         Optional & ByPrimaryKey
@@ -3536,7 +3536,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgCast, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgCast,
         Optional & ByPrimaryKey
@@ -3566,7 +3566,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgEnum, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgEnum,
         Optional & ByPrimaryKey
@@ -3590,7 +3590,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgNamespace, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgNamespace,
         Optional & ByPrimaryKey
@@ -3626,7 +3626,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgConversion, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgConversion,
         Optional & ByPrimaryKey
@@ -3657,7 +3657,7 @@ export namespace PgCatalog {
       };
 
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDepend, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDepend,
         Optional & ByPrimaryKey
@@ -3694,7 +3694,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDatabase, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDatabase,
         Optional & ByPrimaryKey
@@ -3714,7 +3714,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySetdatabaseSetrole;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDbRoleSetting,
         Optional & ByPrimaryKey
@@ -3738,7 +3738,7 @@ export namespace PgCatalog {
         spcname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTablespace, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTablespace,
         Optional & ByPrimaryKey
@@ -3776,7 +3776,7 @@ export namespace PgCatalog {
         grantor: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAuthMembers, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAuthMembers,
         Optional & ByPrimaryKey
@@ -3807,7 +3807,7 @@ export namespace PgCatalog {
       };
 
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShdepend, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShdepend,
         Optional & ByPrimaryKey
@@ -3827,7 +3827,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShdescription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShdescription,
         Optional & ByPrimaryKey
@@ -3853,7 +3853,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsConfig, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsConfig,
         Optional & ByPrimaryKey
@@ -3875,7 +3875,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsConfigMap, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsConfigMap,
         Optional & ByPrimaryKey
@@ -3902,7 +3902,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsDict, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsDict,
         Optional & ByPrimaryKey
@@ -3930,7 +3930,7 @@ export namespace PgCatalog {
         prsnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsParser, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsParser,
         Optional & ByPrimaryKey
@@ -3955,7 +3955,7 @@ export namespace PgCatalog {
         tmplnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsTemplate, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsTemplate,
         Optional & ByPrimaryKey
@@ -3983,7 +3983,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgExtension, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgExtension,
         Optional & ByPrimaryKey
@@ -4010,7 +4010,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignDataWrapper,
         Optional & ByPrimaryKey
@@ -4037,7 +4037,7 @@ export namespace PgCatalog {
         srvname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignServer, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignServer,
         Optional & ByPrimaryKey
@@ -4065,7 +4065,7 @@ export namespace PgCatalog {
         polname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPolicy, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPolicy,
         Optional & ByPrimaryKey
@@ -4083,7 +4083,7 @@ export namespace PgCatalog {
         roname: PgCatalog.Types.Text;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgReplicationOrigin,
         Optional & ByPrimaryKey
@@ -4110,7 +4110,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDefaultAcl, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDefaultAcl,
         Optional & ByPrimaryKey
@@ -4133,7 +4133,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgInitPrivs, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgInitPrivs,
         Optional & ByPrimaryKey
@@ -4157,7 +4157,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubidProvider;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSeclabel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSeclabel,
         Optional & ByPrimaryKey
@@ -4179,7 +4179,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidProvider;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShseclabel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShseclabel,
         Optional & ByPrimaryKey
@@ -4213,7 +4213,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgCollation, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgCollation,
         Optional & ByPrimaryKey
@@ -4231,7 +4231,7 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.Text;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgParameterAcl, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgParameterAcl,
         Optional & ByPrimaryKey
@@ -4255,7 +4255,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByPartrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPartitionedTable, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPartitionedTable,
         Optional & ByPrimaryKey
@@ -4282,7 +4282,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByRngtypid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgRange, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgRange,
         Optional & ByPrimaryKey
@@ -4307,7 +4307,7 @@ export namespace PgCatalog {
         trflang: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTransform, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTransform,
         Optional & ByPrimaryKey
@@ -4331,7 +4331,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySeqrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSequence, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSequence,
         Optional & ByPrimaryKey
@@ -4359,7 +4359,7 @@ export namespace PgCatalog {
         pubname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPublication, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublication,
         Optional & ByPrimaryKey
@@ -4378,7 +4378,10 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<
+        PgCatalog.Types.PgPublicationNamespace,
+        never
+      >;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublicationNamespace,
         Optional & ByPrimaryKey
@@ -4407,7 +4410,7 @@ export namespace PgCatalog {
         prpubid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPublicationRel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublicationRel,
         Optional & ByPrimaryKey
@@ -4428,7 +4431,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySrrelidSrsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSubscriptionRel,
         Optional & ByPrimaryKey
@@ -4444,7 +4447,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByLoidPageno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLargeobject, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLargeobject,
         Optional & ByPrimaryKey
@@ -4759,7 +4762,7 @@ export namespace Public {
         filmId: PgCatalog.Types.Int2;
       };
 
-      export type Optional = Pick<Record, "lastUpdate">;
+      export type Optional = Pick<Public.Types.FilmActor, "lastUpdate">;
       export type Values = PartiallyOptional<
         Public.Types.FilmActor,
         Optional & ByPrimaryKey
@@ -4786,7 +4789,10 @@ export namespace Public {
         cityId: PgCatalog.Types.Int2;
       };
 
-      export type Optional = Pick<Record, "addressId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Address,
+        "addressId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Address,
         Optional & ByPrimaryKey
@@ -4809,7 +4815,7 @@ export namespace Public {
         countryId: PgCatalog.Types.Int2;
       };
 
-      export type Optional = Pick<Record, "cityId" | "lastUpdate">;
+      export type Optional = Pick<Public.Types.City, "cityId" | "lastUpdate">;
       export type Values = PartiallyOptional<
         Public.Types.City,
         Optional & ByPrimaryKey
@@ -4847,7 +4853,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<
-        Record,
+        Public.Types.Customer,
         "customerId" | "activebool" | "createDate" | "lastUpdate"
       >;
       export type Values = PartiallyOptional<
@@ -4872,7 +4878,7 @@ export namespace Public {
         lastName: PgCatalog.Types.Varchar;
       };
 
-      export type Optional = Pick<Record, "actorId" | "lastUpdate">;
+      export type Optional = Pick<Public.Types.Actor, "actorId" | "lastUpdate">;
       export type Values = PartiallyOptional<
         Public.Types.Actor,
         Optional & ByPrimaryKey
@@ -4892,7 +4898,7 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByFilmIdCategoryId;
 
-      export type Optional = Pick<Record, "lastUpdate">;
+      export type Optional = Pick<Public.Types.FilmCategory, "lastUpdate">;
       export type Values = PartiallyOptional<
         Public.Types.FilmCategory,
         Optional & ByPrimaryKey
@@ -4916,7 +4922,10 @@ export namespace Public {
         filmId: PgCatalog.Types.Int2;
       };
 
-      export type Optional = Pick<Record, "inventoryId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Inventory,
+        "inventoryId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Inventory,
         Optional & ByPrimaryKey
@@ -4935,7 +4944,10 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByCategoryId;
 
-      export type Optional = Pick<Record, "categoryId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Category,
+        "categoryId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Category,
         Optional & ByPrimaryKey
@@ -4954,7 +4966,10 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByCountryId;
 
-      export type Optional = Pick<Record, "countryId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Country,
+        "countryId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Country,
         Optional & ByPrimaryKey
@@ -4973,7 +4988,10 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByLanguageId;
 
-      export type Optional = Pick<Record, "languageId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Language,
+        "languageId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Language,
         Optional & ByPrimaryKey
@@ -5006,7 +5024,10 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByRentalId;
 
-      export type Optional = Pick<Record, "rentalId" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Rental,
+        "rentalId" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Rental,
         Optional & ByPrimaryKey
@@ -5033,7 +5054,10 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByStaffId;
 
-      export type Optional = Pick<Record, "staffId" | "active" | "lastUpdate">;
+      export type Optional = Pick<
+        Public.Types.Staff,
+        "staffId" | "active" | "lastUpdate"
+      >;
       export type Values = PartiallyOptional<
         Public.Types.Staff,
         Optional & ByPrimaryKey
@@ -5057,7 +5081,7 @@ export namespace Public {
       };
       export type ByPrimaryKey = ByStoreId;
 
-      export type Optional = Pick<Record, "storeId" | "lastUpdate">;
+      export type Optional = Pick<Public.Types.Store, "storeId" | "lastUpdate">;
       export type Values = PartiallyOptional<
         Public.Types.Store,
         Optional & ByPrimaryKey
@@ -5090,7 +5114,7 @@ export namespace Public {
         staffId: PgCatalog.Types.Int2;
       };
 
-      export type Optional = Pick<Record, "paymentId">;
+      export type Optional = Pick<Public.Types.Payment, "paymentId">;
       export type Values = PartiallyOptional<
         Public.Types.Payment,
         Optional & ByPrimaryKey
@@ -5131,7 +5155,7 @@ export namespace Public {
       };
 
       export type Optional = Pick<
-        Record,
+        Public.Types.Film,
         | "filmId"
         | "rentalDuration"
         | "rentalRate"
@@ -6264,7 +6288,7 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlFeatures, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlFeatures,
         Optional & ByPrimaryKey
@@ -6281,7 +6305,10 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<
+        InformationSchema.Types.SqlImplementationInfo,
+        never
+      >;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlImplementationInfo,
         Optional & ByPrimaryKey
@@ -6298,7 +6325,7 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlParts, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlParts,
         Optional & ByPrimaryKey
@@ -6314,7 +6341,7 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlSizing, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlSizing,
         Optional & ByPrimaryKey

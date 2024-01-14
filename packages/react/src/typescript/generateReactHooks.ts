@@ -87,7 +87,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
                  RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
-                 emptyRecord: ${node.typescriptNamespacedName}.emptyRecord,
+                 emptyRow: ${node.typescriptNamespacedName}.emptyRow,
                  createIfNotExists: props.createIfNotExists,
                }
              )`,
@@ -106,7 +106,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.typescriptNamespacedName}.primaryKeyFrom,
                  RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
-                 emptyRecord: ${node.typescriptNamespacedName}.emptyRecord
+                 emptyRow: ${node.typescriptNamespacedName}.emptyRow
                }
              )`,
           `}`,
@@ -131,7 +131,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                  deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
                  RowImplementation: ${node.table.typescriptNamespacedName}.RowImplementation,
-                 emptyRecord: ${node.table.typescriptNamespacedName}.emptyRecord
+                 emptyRow: ${node.table.typescriptNamespacedName}.emptyRow
                }
              )`,
           `}`,

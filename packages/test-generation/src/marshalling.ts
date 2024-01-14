@@ -4,13 +4,25 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 /* eslint-disable @typescript-eslint/no-empty-interface */
+
 /* eslint-disable @typescript-eslint/no-namespace */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+
 /* @typescript-eslint/no-redundant-type-constituents */
+import {
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
 import {
   UUID,
   JsDate,
@@ -24,6 +36,9 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
+// begin - operation dispatch map
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+import postgres from "postgres";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -2553,7 +2568,7 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           starelid: undefined,
           staattnum: undefined,
@@ -2595,14 +2610,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByStarelidStaattnumStainherit;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatistic, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatistic,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgType {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           typname: undefined,
@@ -2647,14 +2662,14 @@ export namespace PgCatalog {
         typnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgType, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgType,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgForeignTable {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           ftrelid: undefined,
           ftserver: undefined,
@@ -2666,14 +2681,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByFtrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignTable, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignTable,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAuthid {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           rolname: undefined,
@@ -2697,14 +2712,14 @@ export namespace PgCatalog {
         rolname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAuthid, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAuthid,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgStatisticExtData {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           stxoid: undefined,
           stxdinherit: undefined,
@@ -2720,14 +2735,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByStxoidStxdinherit;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatisticExtData, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatisticExtData,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgUserMapping {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           umuser: undefined,
@@ -2744,14 +2759,14 @@ export namespace PgCatalog {
         umserver: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgUserMapping, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgUserMapping,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgSubscription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           subdbid: undefined,
@@ -2781,14 +2796,14 @@ export namespace PgCatalog {
         subname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSubscription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSubscription,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAttribute {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           attrelid: undefined,
           attname: undefined,
@@ -2829,14 +2844,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByAttrelidAttnum;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAttribute, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAttribute,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgProc {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           proname: undefined,
@@ -2880,14 +2895,14 @@ export namespace PgCatalog {
         pronamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgProc, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgProc,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgClass {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           relname: undefined,
@@ -2938,14 +2953,14 @@ export namespace PgCatalog {
         relfilenode: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgClass, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgClass,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAttrdef {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           adrelid: undefined,
@@ -2963,14 +2978,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAttrdef, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAttrdef,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgConstraint {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3024,14 +3039,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgConstraint, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgConstraint,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgInherits {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           inhrelid: undefined,
           inhparent: undefined,
@@ -3049,14 +3064,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByInhrelidInhseqno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgInherits, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgInherits,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgIndex {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           indexrelid: undefined,
           indrelid: undefined,
@@ -3089,14 +3104,14 @@ export namespace PgCatalog {
         indrelid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgIndex, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgIndex,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgOperator {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           oprname: undefined,
@@ -3126,14 +3141,14 @@ export namespace PgCatalog {
         oprnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOperator, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOperator,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgOpfamily {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           opfmethod: undefined,
@@ -3152,14 +3167,14 @@ export namespace PgCatalog {
         opfnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOpfamily, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOpfamily,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgOpclass {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           opcmethod: undefined,
@@ -3182,14 +3197,14 @@ export namespace PgCatalog {
         opcnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgOpclass, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgOpclass,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAm {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amname: undefined,
@@ -3206,14 +3221,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAm, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAm,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAmop {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amopfamily: undefined,
@@ -3244,14 +3259,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAmop, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAmop,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAmproc {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amprocfamily: undefined,
@@ -3273,14 +3288,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAmproc, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAmproc,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgLanguage {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           lanname: undefined,
@@ -3302,14 +3317,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLanguage, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLanguage,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgLargeobjectMetadata {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, lomowner: undefined, lomacl: undefined };
       }
       export type ByOid = {
@@ -3317,14 +3332,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLargeobjectMetadata,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAggregate {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           aggfnoid: undefined,
           aggkind: undefined,
@@ -3355,14 +3370,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByAggfnoid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAggregate, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAggregate,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgStatisticExt {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           stxrelid: undefined,
@@ -3388,14 +3403,14 @@ export namespace PgCatalog {
         stxrelid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgStatisticExt, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgStatisticExt,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgRewrite {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           rulename: undefined,
@@ -3417,14 +3432,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgRewrite, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgRewrite,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTrigger {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           tgrelid: undefined,
@@ -3460,14 +3475,14 @@ export namespace PgCatalog {
         tgname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTrigger, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTrigger,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgEventTrigger {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           evtname: undefined,
@@ -3487,14 +3502,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgEventTrigger, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgEventTrigger,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgDescription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3509,14 +3524,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDescription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDescription,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgCast {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           castsource: undefined,
@@ -3536,14 +3551,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgCast, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgCast,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgEnum {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           enumtypid: undefined,
@@ -3566,14 +3581,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgEnum, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgEnum,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgNamespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           nspname: undefined,
@@ -3590,14 +3605,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgNamespace, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgNamespace,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgConversion {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3626,14 +3641,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgConversion, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgConversion,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgDepend {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           classid: undefined,
           objid: undefined,
@@ -3657,14 +3672,14 @@ export namespace PgCatalog {
       };
 
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDepend, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDepend,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgDatabase {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           datname: undefined,
@@ -3694,14 +3709,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDatabase, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDatabase,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgDbRoleSetting {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           setdatabase: undefined,
           setrole: undefined,
@@ -3714,14 +3729,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySetdatabaseSetrole;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDbRoleSetting,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTablespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           spcname: undefined,
@@ -3738,14 +3753,14 @@ export namespace PgCatalog {
         spcname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTablespace, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTablespace,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgAuthMembers {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           roleid: undefined,
@@ -3776,14 +3791,14 @@ export namespace PgCatalog {
         grantor: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgAuthMembers, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgAuthMembers,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgShdepend {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           dbid: undefined,
           classid: undefined,
@@ -3807,14 +3822,14 @@ export namespace PgCatalog {
       };
 
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShdepend, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShdepend,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgShdescription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3827,14 +3842,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShdescription, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShdescription,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTsConfig {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           cfgname: undefined,
@@ -3853,14 +3868,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsConfig, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsConfig,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTsConfigMap {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           mapcfg: undefined,
           maptokentype: undefined,
@@ -3875,14 +3890,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByMapcfgMaptokentypeMapseqno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsConfigMap, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsConfigMap,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTsDict {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           dictname: undefined,
@@ -3902,14 +3917,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsDict, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsDict,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTsParser {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           prsname: undefined,
@@ -3930,14 +3945,14 @@ export namespace PgCatalog {
         prsnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsParser, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsParser,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTsTemplate {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           tmplname: undefined,
@@ -3955,14 +3970,14 @@ export namespace PgCatalog {
         tmplnamespace: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTsTemplate, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTsTemplate,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgExtension {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           extname: undefined,
@@ -3983,14 +3998,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgExtension, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgExtension,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgForeignDataWrapper {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           fdwname: undefined,
@@ -4010,14 +4025,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignDataWrapper,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgForeignServer {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           srvname: undefined,
@@ -4037,14 +4052,14 @@ export namespace PgCatalog {
         srvname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgForeignServer, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgForeignServer,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgPolicy {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           polname: undefined,
@@ -4065,14 +4080,14 @@ export namespace PgCatalog {
         polname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPolicy, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPolicy,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgReplicationOrigin {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { roident: undefined, roname: undefined };
       }
       export type ByRoident = {
@@ -4083,14 +4098,14 @@ export namespace PgCatalog {
         roname: PgCatalog.Types.Text;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgReplicationOrigin,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgDefaultAcl {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           defaclrole: undefined,
@@ -4110,14 +4125,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgDefaultAcl, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgDefaultAcl,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgInitPrivs {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4133,14 +4148,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgInitPrivs, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgInitPrivs,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgSeclabel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4157,14 +4172,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidObjsubidProvider;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSeclabel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSeclabel,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgShseclabel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4179,14 +4194,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByObjoidClassoidProvider;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgShseclabel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgShseclabel,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgCollation {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           collname: undefined,
@@ -4213,14 +4228,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByOid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgCollation, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgCollation,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgParameterAcl {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, parname: undefined, paracl: undefined };
       }
       export type ByOid = {
@@ -4231,14 +4246,14 @@ export namespace PgCatalog {
         parname: PgCatalog.Types.Text;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgParameterAcl, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgParameterAcl,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgPartitionedTable {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           partrelid: undefined,
           partstrat: undefined,
@@ -4255,14 +4270,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByPartrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPartitionedTable, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPartitionedTable,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgRange {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           rngtypid: undefined,
           rngsubtype: undefined,
@@ -4282,14 +4297,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByRngtypid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgRange, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgRange,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgTransform {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           trftype: undefined,
@@ -4307,14 +4322,14 @@ export namespace PgCatalog {
         trflang: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgTransform, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgTransform,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgSequence {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           seqrelid: undefined,
           seqtypid: undefined,
@@ -4331,14 +4346,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySeqrelid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSequence, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSequence,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgPublication {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           pubname: undefined,
@@ -4359,14 +4374,14 @@ export namespace PgCatalog {
         pubname: PgCatalog.Types.Cstring;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPublication, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublication,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgPublicationNamespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, pnpubid: undefined, pnnspid: undefined };
       }
       export type ByOid = {
@@ -4378,14 +4393,17 @@ export namespace PgCatalog {
         pnpubid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<
+        PgCatalog.Types.PgPublicationNamespace,
+        never
+      >;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublicationNamespace,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgPublicationRel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           prpubid: undefined,
@@ -4407,14 +4425,14 @@ export namespace PgCatalog {
         prpubid: PgCatalog.Types.Oid;
       };
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgPublicationRel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgPublicationRel,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgSubscriptionRel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           srsubid: undefined,
           srrelid: undefined,
@@ -4428,14 +4446,14 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = BySrrelidSrsubid;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgSubscriptionRel,
         Optional & ByPrimaryKey
       >;
     }
     export namespace PgLargeobject {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { loid: undefined, pageno: undefined, data: undefined };
       }
       export type ByLoidPageno = {
@@ -4444,7 +4462,7 @@ export namespace PgCatalog {
       };
       export type ByPrimaryKey = ByLoidPageno;
 
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<PgCatalog.Types.PgLargeobject, never>;
       export type Values = PartiallyOptional<
         PgCatalog.Types.PgLargeobject,
         Optional & ByPrimaryKey
@@ -5558,7 +5576,7 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -5570,14 +5588,14 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlFeatures, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlFeatures,
         Optional & ByPrimaryKey
       >;
     }
     export namespace SqlImplementationInfo {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           implementationInfoId: undefined,
           implementationInfoName: undefined,
@@ -5587,14 +5605,17 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<
+        InformationSchema.Types.SqlImplementationInfo,
+        never
+      >;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlImplementationInfo,
         Optional & ByPrimaryKey
       >;
     }
     export namespace SqlParts {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -5604,14 +5625,14 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlParts, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlParts,
         Optional & ByPrimaryKey
       >;
     }
     export namespace SqlSizing {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           sizingId: undefined,
           sizingName: undefined,
@@ -5620,7 +5641,7 @@ export namespace InformationSchema {
         };
       }
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<InformationSchema.Types.SqlSizing, never>;
       export type Values = PartiallyOptional<
         InformationSchema.Types.SqlSizing,
         Optional & ByPrimaryKey
@@ -5689,7 +5710,7 @@ export namespace Api {
   }
   export namespace Tables {
     export namespace QAndA {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { question: undefined, answer: undefined };
       }
       export type ByAnswer = {
@@ -5697,7 +5718,7 @@ export namespace Api {
       };
 
       export type ByPrimaryKey = never;
-      export type Optional = Pick<Record, never>;
+      export type Optional = Pick<Api.Types.QAndA, never>;
       export type Values = PartiallyOptional<
         Api.Types.QAndA,
         Optional & ByPrimaryKey
@@ -5946,7 +5967,7 @@ export namespace Public {
   }
   export namespace Tables {
     export namespace Slug {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { slugId: undefined };
       }
       export type BySlugId = {
@@ -5954,7 +5975,7 @@ export namespace Public {
       };
       export type ByPrimaryKey = BySlugId;
 
-      export type Optional = Pick<Record, "slugId">;
+      export type Optional = Pick<Public.Types.Slug, "slugId">;
       export type Values = PartiallyOptional<
         Public.Types.Slug,
         Optional & ByPrimaryKey
@@ -23883,13 +23904,6 @@ export namespace Public {
   }
 }
 
-import {
-  Context,
-  initializeContext,
-  PostgresDatabase,
-} from "@embracesql/postgres";
-import postgres from "postgres";
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -26984,8 +26998,6 @@ export class Database extends PostgresDatabase implements HasDatabase {
   })(this);
 }
 
-// begin - operation dispatch map
-import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 export class OperationDispatcher {
   private dispatchMap: Record<string, OperationDispatchMethod>;
   constructor(private database: Database) {
