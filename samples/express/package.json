@@ -1,7 +1,7 @@
 {
   "name": "@embracesql/express-project",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "scripts": {
     "generate": "./bin/generate",
@@ -12,7 +12,7 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/client": "^0.0.12",
-    "@embracesql/express": "^0.0.12"
+    "@embracesql/client": "^0.0.13",
+    "@embracesql/express": "^0.0.13"
   }
 }

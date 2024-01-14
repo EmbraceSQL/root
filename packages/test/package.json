@@ -1,7 +1,7 @@
 {
   "name": "@embracesql/test",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "",
   "scripts": {
@@ -11,10 +11,10 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/client": "^0.0.12",
-    "@embracesql/express": "^0.0.12",
-    "@embracesql/postgres": "^0.0.12",
-    "@embracesql/react": "^0.0.12",
+    "@embracesql/client": "^0.0.13",
+    "@embracesql/express": "^0.0.13",
+    "@embracesql/postgres": "^0.0.13",
+    "@embracesql/react": "^0.0.13",
     "jest-fetch-mock": "^3.0.3"
   }
 }

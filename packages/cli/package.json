@@ -1,6 +1,6 @@
 {
   "name": "embracesqlcli",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "type": "module",
   "bin": "./src/embracesql.ts",
@@ -12,10 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@commander-js/extra-typings": "^11.1.0",
-    "@embracesql/client": "^0.0.12",
-    "@embracesql/express": "^0.0.12",
-    "@embracesql/postgres": "^0.0.12",
-    "@embracesql/react": "^0.0.12",
+    "@embracesql/client": "^0.0.13",
+    "@embracesql/express": "^0.0.13",
+    "@embracesql/postgres": "^0.0.13",
+    "@embracesql/react": "^0.0.13",
     "chalk": "5.3.0",
     "commander": "^11.1.0",
     "figlet": "1.7.0",
