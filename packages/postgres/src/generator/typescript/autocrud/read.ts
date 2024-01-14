@@ -1,4 +1,4 @@
-import { postgresResultRecordToTypescript, sqlPredicate } from "./shared";
+import { postgresToTypescript, sqlPredicate } from "./shared";
 import {
   PARAMETERS,
   GenerationContext,
@@ -42,10 +42,9 @@ export const ReadOperation = {
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(
-      `return ${postgresResultRecordToTypescript(
-        context,
-        node.index.table.type,
-      )}${node.index.unique ? "[0]" : ""}`,
+      `return ${postgresToTypescript(context, node.index.table.type)}${
+        node.index.unique ? "[0]" : ""
+      }`,
     );
 
     generationBuffer.push(`}`);

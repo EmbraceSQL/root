@@ -19,7 +19,7 @@ import { camelCase } from "change-case";
 /**
  * Generate code to map a postgres row object names to typescript style names.
  */
-export function postgresResultRecordToTypescript(
+export function postgresToTypescript(
   context: GenerationContext,
   node: AbstractTypeNode,
 ) {
@@ -41,7 +41,7 @@ export function postgresResultRecordToTypescript(
 /**
  * Generate code for an empty typescript row object constant.
  */
-export function emptyTypescriptRecord(
+export function emptyTypescriptRow(
   context: GenerationContext,
   node: AbstractTypeNode,
 ): string {
@@ -52,10 +52,7 @@ export function emptyTypescriptRecord(
     // snippet will pick resultset fields to type map
     const attributes = node.attributes.map(
       (c) =>
-        `${c.typescriptPropertyName}: ${emptyTypescriptRecord(
-          context,
-          c.type,
-        )}`,
+        `${c.typescriptPropertyName}: ${emptyTypescriptRow(context, c.type)}`,
     );
     // all the fields in the resultset mapped out to an inferred type array
     return `{ ${attributes.join(",")} }`;

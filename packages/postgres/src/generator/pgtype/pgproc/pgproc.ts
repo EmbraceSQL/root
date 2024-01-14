@@ -81,7 +81,7 @@ export class PGProcs {
           // resolve the pseudo type composite for the proc to
           // contain multiple attributes -- table like results
           return context.database.resolveType(
-            proc.returnsPseudoTypeRecord ? proc.proc.oid : proc.proc.prorettype,
+            proc.returnsPseudoType ? proc.proc.oid : proc.proc.prorettype,
           )!;
         }
       })();
@@ -90,9 +90,9 @@ export class PGProcs {
         procsNode,
         proc.proc.oid,
         proc.proc.proname,
-        proc.returnsPseudoTypeRecord || proc.returnsSet,
+        proc.returnsPseudoType || proc.returnsSet,
         procReturnType.kind === ASTKind.CompositeType,
-        proc.returnsPseudoTypeRecord,
+        proc.returnsPseudoType,
       );
 
       // inputs
@@ -156,7 +156,7 @@ export class PGProc implements PostgresProcTypecast {
     return this.proc.proretset;
   }
 
-  get returnsPseudoTypeRecord() {
+  get returnsPseudoType() {
     return (
       this.proc.proallargtypes.flatMap((x) => x).length >
       this.proc.proargtypes.flatMap((x) => x).length
@@ -171,7 +171,7 @@ export class PGProc implements PostgresProcTypecast {
    * we plenty well can and should parse and return a full structured type.
    *
    */
-  parseFromPostgresIfRecord(context: Context, x: unknown) {
+  parseFromPostgresIfPseudoType(context: Context, x: unknown) {
     const attributes = new PGProcPseudoType(this).pseudoTypeAttributes(context);
     // only one attribute, then there is no record type - just a setof a single type
     if (attributes.length === 1) {

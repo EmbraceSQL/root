@@ -40,7 +40,7 @@ export class PGNamespace {
         [
           ...typesByNamespace[namespace],
           ...(procsByNamespace[namespace] ?? [])
-            .filter((p) => p.returnsPseudoTypeRecord)
+            .filter((p) => p.returnsPseudoType)
             .map((p) => new PGProcPseudoType(p)),
         ] ?? [],
         tablesByNamespace[namespace] ?? [],

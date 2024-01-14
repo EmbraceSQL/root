@@ -157,7 +157,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           const parseResult = node.isPseudoType
             ? `
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[${node.id}].parseFromPostgresIfRecord(context, result) as unknown as ${node.resultsType?.typescriptNamespacedName};
+              return context.procTypes[${node.id}].parseFromPostgresIfPseudoType(context, result) as unknown as ${node.resultsType?.typescriptNamespacedName};
             };
           `
             : `

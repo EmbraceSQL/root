@@ -1,7 +1,4 @@
-import {
-  postgresResultRecordToTypescript,
-  postgresValueExpression,
-} from "./shared";
+import { postgresToTypescript, postgresValueExpression } from "./shared";
 import {
   CreateOperationNode,
   GenerationContext,
@@ -58,10 +55,7 @@ export const CreateOperation = {
       generationBuffer.push(`const response = await sql\`${sql}\``);
 
       generationBuffer.push(
-        `return ${postgresResultRecordToTypescript(
-          context,
-          node.table.type,
-        )}[0]`,
+        `return ${postgresToTypescript(context, node.table.type)}[0]`,
       );
 
       // close out the primary key case
@@ -89,7 +83,7 @@ export const CreateOperation = {
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(
-      `return ${postgresResultRecordToTypescript(context, node.table.type)}[0]`,
+      `return ${postgresToTypescript(context, node.table.type)}[0]`,
     );
 
     // close out the create function

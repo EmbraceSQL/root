@@ -30,7 +30,7 @@ async function generateRow(
             ` extends RowBase<${node.typescriptNamespacedName}>`,
             ` implements Row {`,
             `   constructor(record: ${node.typescriptNamespacedName}, `,
-            `     changeCallback: RecordCallback<${node.typescriptNamespacedName}>, `,
+            `     changeCallback: RowCallback<${node.typescriptNamespacedName}>, `,
             `     rowNumberInResultset: number) {`,
             `     super(record, changeCallback, rowNumberInResultset);`,
             `   }`,

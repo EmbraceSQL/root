@@ -25350,7 +25350,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           console.assert(parameters);
 
           const parseResult = (context: Context, result: unknown) => {
-            return context.procTypes[33327].parseFromPostgresIfRecord(
+            return context.procTypes[33327].parseFromPostgresIfPseudoType(
               context,
               result,
             ) as unknown as Api.Types.EchoTable;

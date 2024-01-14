@@ -4,13 +4,38 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 /* eslint-disable @typescript-eslint/no-empty-interface */
+
 /* eslint-disable @typescript-eslint/no-namespace */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+
 /* @typescript-eslint/no-redundant-type-constituents */
+// begin fetch client
+import {
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
+import {
+  useEmbraceSQLClient,
+  useEmbraceSQLRow,
+  useEmbraceSQLRows,
+  useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
+  ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RowCallback,
+  GeneratedRowProps,
+} from "@embracesql/react";
 import {
   UUID,
   JsDate,
@@ -24,6 +49,7 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
+import React from "react";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -2553,7 +2579,7 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           starelid: undefined,
           staattnum: undefined,
@@ -2602,7 +2628,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgType {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           typname: undefined,
@@ -2654,7 +2680,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgForeignTable {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           ftrelid: undefined,
           ftserver: undefined,
@@ -2673,7 +2699,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAuthid {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           rolname: undefined,
@@ -2704,7 +2730,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgStatisticExtData {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           stxoid: undefined,
           stxdinherit: undefined,
@@ -2727,7 +2753,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgUserMapping {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           umuser: undefined,
@@ -2751,7 +2777,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgSubscription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           subdbid: undefined,
@@ -2788,7 +2814,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAttribute {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           attrelid: undefined,
           attname: undefined,
@@ -2836,7 +2862,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgProc {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           proname: undefined,
@@ -2887,7 +2913,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgClass {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           relname: undefined,
@@ -2945,7 +2971,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAttrdef {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           adrelid: undefined,
@@ -2970,7 +2996,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgConstraint {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3031,7 +3057,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgInherits {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           inhrelid: undefined,
           inhparent: undefined,
@@ -3056,7 +3082,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgIndex {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           indexrelid: undefined,
           indrelid: undefined,
@@ -3096,7 +3122,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgOperator {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           oprname: undefined,
@@ -3133,7 +3159,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgOpfamily {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           opfmethod: undefined,
@@ -3159,7 +3185,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgOpclass {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           opcmethod: undefined,
@@ -3189,7 +3215,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAm {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amname: undefined,
@@ -3213,7 +3239,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAmop {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amopfamily: undefined,
@@ -3251,7 +3277,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAmproc {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           amprocfamily: undefined,
@@ -3280,7 +3306,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgLanguage {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           lanname: undefined,
@@ -3309,7 +3335,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgLargeobjectMetadata {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, lomowner: undefined, lomacl: undefined };
       }
       export type ByOid = {
@@ -3324,7 +3350,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAggregate {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           aggfnoid: undefined,
           aggkind: undefined,
@@ -3362,7 +3388,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgStatisticExt {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           stxrelid: undefined,
@@ -3395,7 +3421,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgRewrite {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           rulename: undefined,
@@ -3424,7 +3450,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTrigger {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           tgrelid: undefined,
@@ -3467,7 +3493,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgEventTrigger {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           evtname: undefined,
@@ -3494,7 +3520,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgDescription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3516,7 +3542,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgCast {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           castsource: undefined,
@@ -3543,7 +3569,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgEnum {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           enumtypid: undefined,
@@ -3573,7 +3599,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgNamespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           nspname: undefined,
@@ -3597,7 +3623,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgConversion {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           conname: undefined,
@@ -3633,7 +3659,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgDepend {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           classid: undefined,
           objid: undefined,
@@ -3664,7 +3690,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgDatabase {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           datname: undefined,
@@ -3701,7 +3727,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgDbRoleSetting {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           setdatabase: undefined,
           setrole: undefined,
@@ -3721,7 +3747,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTablespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           spcname: undefined,
@@ -3745,7 +3771,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgAuthMembers {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           roleid: undefined,
@@ -3783,7 +3809,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgShdepend {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           dbid: undefined,
           classid: undefined,
@@ -3814,7 +3840,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgShdescription {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -3834,7 +3860,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTsConfig {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           cfgname: undefined,
@@ -3860,7 +3886,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTsConfigMap {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           mapcfg: undefined,
           maptokentype: undefined,
@@ -3882,7 +3908,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTsDict {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           dictname: undefined,
@@ -3909,7 +3935,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTsParser {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           prsname: undefined,
@@ -3937,7 +3963,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTsTemplate {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           tmplname: undefined,
@@ -3962,7 +3988,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgExtension {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           extname: undefined,
@@ -3990,7 +4016,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgForeignDataWrapper {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           fdwname: undefined,
@@ -4017,7 +4043,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgForeignServer {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           srvname: undefined,
@@ -4044,7 +4070,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgPolicy {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           polname: undefined,
@@ -4072,7 +4098,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgReplicationOrigin {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { roident: undefined, roname: undefined };
       }
       export type ByRoident = {
@@ -4090,7 +4116,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgDefaultAcl {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           defaclrole: undefined,
@@ -4117,7 +4143,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgInitPrivs {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4140,7 +4166,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgSeclabel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4164,7 +4190,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgShseclabel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           objoid: undefined,
           classoid: undefined,
@@ -4186,7 +4212,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgCollation {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           collname: undefined,
@@ -4220,7 +4246,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgParameterAcl {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, parname: undefined, paracl: undefined };
       }
       export type ByOid = {
@@ -4238,7 +4264,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgPartitionedTable {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           partrelid: undefined,
           partstrat: undefined,
@@ -4262,7 +4288,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgRange {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           rngtypid: undefined,
           rngsubtype: undefined,
@@ -4289,7 +4315,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgTransform {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           trftype: undefined,
@@ -4314,7 +4340,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgSequence {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           seqrelid: undefined,
           seqtypid: undefined,
@@ -4338,7 +4364,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgPublication {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           pubname: undefined,
@@ -4366,7 +4392,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgPublicationNamespace {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { oid: undefined, pnpubid: undefined, pnnspid: undefined };
       }
       export type ByOid = {
@@ -4388,7 +4414,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgPublicationRel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           oid: undefined,
           prpubid: undefined,
@@ -4417,7 +4443,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgSubscriptionRel {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           srsubid: undefined,
           srrelid: undefined,
@@ -4438,7 +4464,7 @@ export namespace PgCatalog {
       >;
     }
     export namespace PgLargeobject {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { loid: undefined, pageno: undefined, data: undefined };
       }
       export type ByLoidPageno = {
@@ -5561,7 +5587,7 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -5580,7 +5606,7 @@ export namespace InformationSchema {
       >;
     }
     export namespace SqlImplementationInfo {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           implementationInfoId: undefined,
           implementationInfoName: undefined,
@@ -5600,7 +5626,7 @@ export namespace InformationSchema {
       >;
     }
     export namespace SqlParts {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           featureId: undefined,
           featureName: undefined,
@@ -5617,7 +5643,7 @@ export namespace InformationSchema {
       >;
     }
     export namespace SqlSizing {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           sizingId: undefined,
           sizingName: undefined,
@@ -5657,7 +5683,7 @@ export namespace Public {
   export namespace Procedures {}
   export namespace Tables {
     export namespace Checklist {
-      export function emptyRecord() {
+      export function emptyRow() {
         return { id: undefined, name: undefined, createdAt: undefined };
       }
       export type ById = {
@@ -5672,7 +5698,7 @@ export namespace Public {
       >;
     }
     export namespace ChecklistItem {
-      export function emptyRecord() {
+      export function emptyRow() {
         return {
           id: undefined,
           checklistId: undefined,
@@ -22254,12 +22280,6 @@ export namespace Public {
     export namespace ChecklistItem {}
   }
 }
-// begin fetch client
-import {
-  EmbraceSQLClient as BaseClient,
-  EmbraceSQLClientProps,
-  HasClient,
-} from "@embracesql/client";
 
 export class EmbraceSQLClient extends BaseClient {
   constructor(props: EmbraceSQLClientProps) {
@@ -22546,20 +22566,9 @@ export class EmbraceSQLClient extends BaseClient {
     })(this);
   })(this);
 }
-import React from "react";
+
 export { EmbraceSQLProvider } from "@embracesql/react";
-import {
-  useEmbraceSQLClient,
-  useEmbraceSQLRow,
-  useEmbraceSQLRows,
-  useEmbraceSQLImmutableRows,
-  useEmbraceSQLImmutable,
-  ChangeEvent,
-  Row as IsRow,
-  RowBase,
-  RecordCallback,
-  GeneratedRowProps,
-} from "@embracesql/react";
+
 export namespace Public {
   export namespace Procedures {}
   export namespace Tables {
@@ -22571,7 +22580,7 @@ export namespace Public {
       {
         constructor(
           record: Public.Types.Checklist,
-          changeCallback: RecordCallback<Public.Types.Checklist>,
+          changeCallback: RowCallback<Public.Types.Checklist>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -22624,7 +22633,7 @@ export namespace Public {
       {
         constructor(
           record: Public.Types.ChecklistItem,
-          changeCallback: RecordCallback<Public.Types.ChecklistItem>,
+          changeCallback: RowCallback<Public.Types.ChecklistItem>,
           rowNumberInResultset: number,
         ) {
           super(record, changeCallback, rowNumberInResultset);
@@ -22718,7 +22727,7 @@ export namespace Public {
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
           RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
+          emptyRow: Public.Tables.Checklist.emptyRow,
           createIfNotExists: props.createIfNotExists,
         });
       }
@@ -22736,7 +22745,7 @@ export namespace Public {
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
           RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
+          emptyRow: Public.Tables.Checklist.emptyRow,
         });
       }
       export namespace Id {}
@@ -22756,7 +22765,7 @@ export namespace Public {
             client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
           RowImplementation: Public.Tables.Checklist.RowImplementation,
-          emptyRecord: Public.Tables.Checklist.emptyRecord,
+          emptyRow: Public.Tables.Checklist.emptyRow,
         });
       }
     }
@@ -22779,7 +22788,7 @@ export namespace Public {
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
           RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
+          emptyRow: Public.Tables.ChecklistItem.emptyRow,
           createIfNotExists: props.createIfNotExists,
         });
       }
@@ -22798,7 +22807,7 @@ export namespace Public {
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
           RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
+          emptyRow: Public.Tables.ChecklistItem.emptyRow,
         });
       }
       export namespace Id {}
@@ -22822,7 +22831,7 @@ export namespace Public {
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
           RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
+          emptyRow: Public.Tables.ChecklistItem.emptyRow,
         });
       }
       export function useById(parameters: ById) {
@@ -22841,7 +22850,7 @@ export namespace Public {
             client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
           primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
           RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-          emptyRecord: Public.Tables.ChecklistItem.emptyRecord,
+          emptyRow: Public.Tables.ChecklistItem.emptyRow,
         });
       }
     }

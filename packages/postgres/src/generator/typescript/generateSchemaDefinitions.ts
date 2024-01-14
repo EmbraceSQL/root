@@ -1,6 +1,6 @@
 import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
-import { emptyTypescriptRecord } from "./autocrud/shared";
+import { emptyTypescriptRow } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
@@ -90,8 +90,8 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
             return [
               await NamespaceVisitor.before(context, node),
               // empty placeholder row record used in UI adding
-              `export function emptyRecord() {`,
-              ` return ${emptyTypescriptRecord(context, node.type)};`,
+              `export function emptyRow() {`,
+              ` return ${emptyTypescriptRow(context, node.type)};`,
               `}`,
             ].join("\n");
           },

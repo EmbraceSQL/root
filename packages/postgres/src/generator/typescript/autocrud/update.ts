@@ -1,5 +1,5 @@
 import {
-  postgresResultRecordToTypescript,
+  postgresToTypescript,
   sqlPredicate,
   sqlSetExpressions,
 } from "./shared";
@@ -54,10 +54,9 @@ export const UpdateOperation = {
     generationBuffer.push(`const response = await sql\`${sql}\``);
 
     generationBuffer.push(
-      `return ${postgresResultRecordToTypescript(
-        context,
-        node.index.table.type,
-      )}${node.index.unique ? "[0]" : ""}`,
+      `return ${postgresToTypescript(context, node.index.table.type)}${
+        node.index.unique ? "[0]" : ""
+      }`,
     );
 
     generationBuffer.push(`}`);

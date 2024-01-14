@@ -4,26 +4,13 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-
 /* @typescript-eslint/no-redundant-type-constituents */
-// begin fetch client
-import {
-  EmbraceSQLClient as BaseClient,
-  EmbraceSQLClientProps,
-  HasClient,
-} from "@embracesql/client";
 import {
   UUID,
   JsDate,
@@ -24755,6 +24742,12 @@ export namespace Scripts {
     }
   }
 }
+// begin fetch client
+import {
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
 
 export class EmbraceSQLClient extends BaseClient {
   constructor(props: EmbraceSQLClientProps) {

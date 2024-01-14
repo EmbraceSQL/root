@@ -1,4 +1,4 @@
-import { postgresResultRecordToTypescript } from "./shared";
+import { postgresToTypescript } from "./shared";
 import { GenerationContext, AllOperationNode } from "@embracesql/shared";
 
 /**
@@ -25,7 +25,7 @@ export const AllOperation = {
       `,
       `const response = await sql\`${sql}\``,
 
-      `return ${postgresResultRecordToTypescript(context, node.table.type)}`,
+      `return ${postgresToTypescript(context, node.table.type)}`,
 
       `}`,
     ].join("\n");

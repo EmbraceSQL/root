@@ -33,7 +33,7 @@ function useUpdateCallback<R>(props: UpdateCallbackProps<R>) {
   const debounceMap = React.useRef(new DebounceMap());
   // in memory updates trigger database updates
   return React.useCallback(
-    (responseCallback: (record: R | undefined) => void) => {
+    (responseCallback: (row: R | undefined) => void) => {
       return async (updated: R) => {
         const debounceKey = props.primaryKeyPicker(updated);
         // always update with the user supplied values in state
@@ -75,12 +75,12 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   // store raw result records back from the REST API
   const [results, setResults] = React.useState<R>();
   const responseCallback = React.useCallback(
-    (record: R | undefined) => {
+    (row: R | undefined) => {
       // TODO -- need to generate equals methods
-      if (JSON.stringify(results) === JSON.stringify(record)) {
+      if (JSON.stringify(results) === JSON.stringify(row)) {
         return;
       } else {
-        setResults(record);
+        setResults(row);
       }
     },
     [results],
@@ -142,12 +142,12 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
   // record is changed -- it goes into the results list at a particular index
   const responseCallback = React.useCallback(
     (index: number) => {
-      return (record: R | undefined) => {
+      return (row: R | undefined) => {
         // TODO -- need to generate equals methods
-        if (JSON.stringify(results) === JSON.stringify(record)) {
+        if (JSON.stringify(results) === JSON.stringify(row)) {
           return;
-        } else if (record) {
-          setResults(results?.toSpliced(index, 1, record));
+        } else if (row) {
+          setResults(results?.toSpliced(index, 1, row));
         }
       };
     },
@@ -186,8 +186,8 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
     // it *isn't* from the database, just to be clear -- it's an in memory buffer
     // to support automatic parent-child the parameters used to read the rows
     // need to be on the new rows so when put to the database -- they tie up
-    const newRecord = { ...props.emptyRow(), ...props.parameters };
-    const newResults = [...(results ?? []), newRecord as R];
+    const newRow = { ...props.emptyRow(), ...props.parameters };
+    const newResults = [...(results ?? []), newRow as R];
     setResults(newResults);
     // and the index of this new row
     return newResults.length - 1;

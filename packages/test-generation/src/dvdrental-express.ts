@@ -26150,7 +26150,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           console.assert(parameters);
 
           const parseResult = (context: Context, result: unknown) => {
-            return context.procTypes[32935].parseFromPostgresIfRecord(
+            return context.procTypes[32935].parseFromPostgresIfPseudoType(
               context,
               result,
             ) as unknown as PgCatalog.Types.Int4;
@@ -26186,7 +26186,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
           console.assert(parameters);
 
           const parseResult = (context: Context, result: unknown) => {
-            return context.procTypes[32936].parseFromPostgresIfRecord(
+            return context.procTypes[32936].parseFromPostgresIfPseudoType(
               context,
               result,
             ) as unknown as PgCatalog.Types.Int4;

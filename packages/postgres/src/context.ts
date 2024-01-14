@@ -59,12 +59,14 @@ export interface PostgresTypecastMap {
 }
 
 /**
- * Procs with RETURNS TABLE have a pseudo type without an OID.
- * So, this is a different parsing path to turn said procs into objects.
+ * Procs with RETURNS TABLE have a pseudo type without an OID, as the result
+ * type is defined by the proc, not by an actual table.
+ *
+ * It's a bit confusing - proc RETURNS TABLE means 'returns a dynamically
+ * created table from this proc, not 'returns an existing table from the schema'
  */
 export interface PostgresProcTypecast {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  parseFromPostgresIfRecord: (context: Context, x: any) => any;
+  parseFromPostgresIfPseudoType: (context: Context, x: unknown) => unknown;
 }
 
 /**
@@ -298,7 +300,7 @@ export const initializeContext = async (
   // and resolvers for procs, which have their own pseudo types as return types
   namespaces
     .flatMap((n) => n.procs)
-    .filter((p) => p.returnsPseudoTypeRecord)
+    .filter((p) => p.returnsPseudoType)
     .forEach((p) => {
       // by oid -- postgres style
       procTypes[p.proc.oid] = p;

@@ -1,4 +1,4 @@
-import { postgresResultRecordToTypescript, sqlPredicate } from "./shared";
+import { postgresToTypescript, sqlPredicate } from "./shared";
 import {
   PARAMETERS,
   DeleteOperationNode,
@@ -34,10 +34,9 @@ export const DeleteOperation = {
       ` const sql = this.database.context.sql;`,
       ` const typed = sql.typed as unknown as PostgresTypecasts;`,
       ` const response = await sql\`${sql}\``,
-      ` return ${postgresResultRecordToTypescript(
-        context,
-        node.index.table.type,
-      )}${node.index.unique ? "[0]" : ""}`,
+      ` return ${postgresToTypescript(context, node.index.table.type)}${
+        node.index.unique ? "[0]" : ""
+      }`,
       `}`,
     ].join("\n");
   },
