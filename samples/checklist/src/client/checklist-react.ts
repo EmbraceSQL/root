@@ -23119,6 +23119,7 @@ import {
   useEmbraceSQLRow,
   useEmbraceSQLRows,
   useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -23263,6 +23264,7 @@ export namespace Public {
 }
 
 export namespace Public {
+  export namespace Procedures {}
   export namespace Tables {
     export namespace Checklist {
       export function useRow(

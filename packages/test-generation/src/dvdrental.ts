@@ -32484,10 +32484,10 @@ FROM
                 
                 `);
         return response.map((record) => ({
-          filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.filmId)),
+          filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.film_id)),
           title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
           releaseYear: undefinedIsNull(
-            PgCatalog.Types.Int4.parse(record.releaseYear),
+            PgCatalog.Types.Int4.parse(record.release_year),
           ),
           rating: undefinedIsNull(Public.Types.MpaaRating.parse(record.rating)),
           actors: undefinedIsNull(
@@ -32534,7 +32534,7 @@ WHERE
             );
             return response.map((record) => ({
               filmId: undefinedIsNull(
-                PgCatalog.Types.Int4.parse(record.filmId),
+                PgCatalog.Types.Int4.parse(record.film_id),
               ),
               title: undefinedIsNull(
                 PgCatalog.Types.Varchar.parse(record.title),
@@ -32543,31 +32543,31 @@ WHERE
                 PgCatalog.Types.Text.parse(record.description),
               ),
               releaseYear: undefinedIsNull(
-                PgCatalog.Types.Int4.parse(record.releaseYear),
+                PgCatalog.Types.Int4.parse(record.release_year),
               ),
               languageId: undefinedIsNull(
-                PgCatalog.Types.Int2.parse(record.languageId),
+                PgCatalog.Types.Int2.parse(record.language_id),
               ),
               rentalDuration: undefinedIsNull(
-                PgCatalog.Types.Int2.parse(record.rentalDuration),
+                PgCatalog.Types.Int2.parse(record.rental_duration),
               ),
               rentalRate: undefinedIsNull(
-                PgCatalog.Types.Numeric.parse(record.rentalRate),
+                PgCatalog.Types.Numeric.parse(record.rental_rate),
               ),
               length: undefinedIsNull(
                 PgCatalog.Types.Int2.parse(record.length),
               ),
               replacementCost: undefinedIsNull(
-                PgCatalog.Types.Numeric.parse(record.replacementCost),
+                PgCatalog.Types.Numeric.parse(record.replacement_cost),
               ),
               rating: undefinedIsNull(
                 Public.Types.MpaaRating.parse(record.rating),
               ),
               lastUpdate: undefinedIsNull(
-                PgCatalog.Types.Timestamp.parse(record.lastUpdate),
+                PgCatalog.Types.Timestamp.parse(record.last_update),
               ),
               specialFeatures: undefinedIsNull(
-                PgCatalog.Types.TextArray.parse(record.specialFeatures),
+                PgCatalog.Types.TextArray.parse(record.special_features),
               ),
               fulltext: undefinedIsNull(
                 PgCatalog.Types.Tsvector.parse(record.fulltext),
@@ -32622,35 +32622,35 @@ WHERE
             [parameters.argument_1],
           );
           return response.map((record) => ({
-            filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.filmId)),
+            filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.film_id)),
             title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
             description: undefinedIsNull(
               PgCatalog.Types.Text.parse(record.description),
             ),
             releaseYear: undefinedIsNull(
-              PgCatalog.Types.Int4.parse(record.releaseYear),
+              PgCatalog.Types.Int4.parse(record.release_year),
             ),
             languageId: undefinedIsNull(
-              PgCatalog.Types.Int2.parse(record.languageId),
+              PgCatalog.Types.Int2.parse(record.language_id),
             ),
             rentalDuration: undefinedIsNull(
-              PgCatalog.Types.Int2.parse(record.rentalDuration),
+              PgCatalog.Types.Int2.parse(record.rental_duration),
             ),
             rentalRate: undefinedIsNull(
-              PgCatalog.Types.Numeric.parse(record.rentalRate),
+              PgCatalog.Types.Numeric.parse(record.rental_rate),
             ),
             length: undefinedIsNull(PgCatalog.Types.Int2.parse(record.length)),
             replacementCost: undefinedIsNull(
-              PgCatalog.Types.Numeric.parse(record.replacementCost),
+              PgCatalog.Types.Numeric.parse(record.replacement_cost),
             ),
             rating: undefinedIsNull(
               Public.Types.MpaaRating.parse(record.rating),
             ),
             lastUpdate: undefinedIsNull(
-              PgCatalog.Types.Timestamp.parse(record.lastUpdate),
+              PgCatalog.Types.Timestamp.parse(record.last_update),
             ),
             specialFeatures: undefinedIsNull(
-              PgCatalog.Types.TextArray.parse(record.specialFeatures),
+              PgCatalog.Types.TextArray.parse(record.special_features),
             ),
             fulltext: undefinedIsNull(
               PgCatalog.Types.Tsvector.parse(record.fulltext),

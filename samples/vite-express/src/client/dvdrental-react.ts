@@ -27985,6 +27985,7 @@ import {
   useEmbraceSQLRow,
   useEmbraceSQLRows,
   useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -29497,6 +29498,89 @@ export namespace Public {
 }
 
 export namespace Public {
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export function useFilmInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation: client.Public.Procedures.FilmInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace FilmNotInStock {
+      export function useFilmNotInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation:
+            client.Public.Procedures.FilmNotInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace GetCustomerBalance {
+      export function useGetCustomerBalance(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Numeric | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.GetCustomerBalance.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export function useInventoryHeldByCustomer(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Int4 | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryHeldByCustomer.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryInStock {
+      export function useInventoryInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Bool | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace LastDay {
+      export function useLastDay(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Date | undefined
+        >({
+          readOperation: client.Public.Procedures.LastDay.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace RewardsReport {
+      export function useRewardsReport(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutableRows<Parameters, Public.Types.Customer>({
+          readOperation:
+            client.Public.Procedures.RewardsReport.call.bind(client),
+          parameters,
+          RowImplementation: Public.Procedures.RewardsReport.RowImplementation,
+        });
+      }
+    }
+  }
   export namespace Tables {
     export namespace FilmActor {
       export function useRow(

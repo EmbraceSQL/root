@@ -6964,6 +6964,65 @@ export namespace InformationSchema {
     }
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export type Results = {
+      filmId: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      releaseYear: Nullable<PgCatalog.Types.Int4>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: PgCatalog.Types.TextArray;
+    };
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export type Results = {
+          filmId: Nullable<PgCatalog.Types.Int4>;
+          title: Nullable<PgCatalog.Types.Varchar>;
+          description: Nullable<PgCatalog.Types.Text>;
+          releaseYear: Nullable<PgCatalog.Types.Int4>;
+          languageId: Nullable<PgCatalog.Types.Int2>;
+          rentalDuration: Nullable<PgCatalog.Types.Int2>;
+          rentalRate: Nullable<PgCatalog.Types.Numeric>;
+          length: Nullable<PgCatalog.Types.Int2>;
+          replacementCost: Nullable<PgCatalog.Types.Numeric>;
+          rating: Nullable<Public.Types.MpaaRating>;
+          lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+          specialFeatures: PgCatalog.Types.TextArray;
+          fulltext: Nullable<PgCatalog.Types.Tsvector>;
+        };
+
+        export type Parameters = { argument_1: Public.Types.MpaaRating };
+      }
+      export namespace Tally {
+        export type Results = { count: Nullable<PgCatalog.Types.Int8> };
+      }
+    }
+    export namespace Pick {
+      export type Results = {
+        filmId: Nullable<PgCatalog.Types.Int4>;
+        title: Nullable<PgCatalog.Types.Varchar>;
+        description: Nullable<PgCatalog.Types.Text>;
+        releaseYear: Nullable<PgCatalog.Types.Int4>;
+        languageId: Nullable<PgCatalog.Types.Int2>;
+        rentalDuration: Nullable<PgCatalog.Types.Int2>;
+        rentalRate: Nullable<PgCatalog.Types.Numeric>;
+        length: Nullable<PgCatalog.Types.Int2>;
+        replacementCost: Nullable<PgCatalog.Types.Numeric>;
+        rating: Nullable<Public.Types.MpaaRating>;
+        lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+        specialFeatures: PgCatalog.Types.TextArray;
+        fulltext: Nullable<PgCatalog.Types.Tsvector>;
+      };
+
+      export type Parameters = { argument_1: PgCatalog.Types.Text };
+    }
+  }
+  export namespace Tally {
+    export type Results = { count: Nullable<PgCatalog.Types.Int8> };
+  }
+}
 
 // begin string parsers
 export namespace PgCatalog {
@@ -18151,6 +18210,142 @@ export namespace InformationSchema {
     }
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Scripts.MovieListing.Results.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int4.parse(from.filmId),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.TextArray.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Rated.Results.is(from)) {
+              return {
+                filmId: PgCatalog.Types.Int4.parse(from.filmId),
+                title: PgCatalog.Types.Varchar.parse(from.title),
+                description: PgCatalog.Types.Text.parse(from.description),
+                releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+                languageId: PgCatalog.Types.Int2.parse(from.languageId),
+                rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+                rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+                length: PgCatalog.Types.Int2.parse(from.length),
+                replacementCost: PgCatalog.Types.Numeric.parse(
+                  from.replacementCost,
+                ),
+                rating: Public.Types.MpaaRating.parse(from.rating),
+                lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+                specialFeatures: PgCatalog.Types.TextArray.parse(
+                  from.specialFeatures,
+                ),
+                fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+        export namespace Parameters {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Rated.Parameters.is(from)) {
+              return {
+                argument_1: Public.Types.MpaaRating.parse(from.argument_1),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+      }
+      export namespace Tally {
+        export namespace Results {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Tally.Results.is(from)) {
+              return {
+                count: PgCatalog.Types.Int8.parse(from.count),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export namespace Results {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Scripts.Sample.Pick.Results.is(from)) {
+            return {
+              filmId: PgCatalog.Types.Int4.parse(from.filmId),
+              title: PgCatalog.Types.Varchar.parse(from.title),
+              description: PgCatalog.Types.Text.parse(from.description),
+              releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+              languageId: PgCatalog.Types.Int2.parse(from.languageId),
+              rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+              rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+              length: PgCatalog.Types.Int2.parse(from.length),
+              replacementCost: PgCatalog.Types.Numeric.parse(
+                from.replacementCost,
+              ),
+              rating: Public.Types.MpaaRating.parse(from.rating),
+              lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+              specialFeatures: PgCatalog.Types.TextArray.parse(
+                from.specialFeatures,
+              ),
+              fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Scripts.Sample.Pick.Parameters.is(from)) {
+            return {
+              argument_1: PgCatalog.Types.Text.parse(from.argument_1),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export namespace Results {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Scripts.Tally.Results.is(from)) {
+          return {
+            count: PgCatalog.Types.Int8.parse(from.count),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+  }
+}
 // begin table column parser mapping
 export namespace PgCatalog {
   export namespace Tables {
@@ -25073,6 +25268,109 @@ export namespace InformationSchema {
     export namespace SqlSizing {}
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function is(value: any): value is Scripts.MovieListing.Results {
+        if (
+          value.filmId !== undefined &&
+          value.title !== undefined &&
+          value.releaseYear !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Results {
+            if (
+              value.filmId !== undefined &&
+              value.title !== undefined &&
+              value.description !== undefined &&
+              value.releaseYear !== undefined &&
+              value.languageId !== undefined &&
+              value.rentalDuration !== undefined &&
+              value.rentalRate !== undefined &&
+              value.length !== undefined &&
+              value.replacementCost !== undefined &&
+              value.rating !== undefined &&
+              value.lastUpdate !== undefined &&
+              value.specialFeatures !== undefined &&
+              value.fulltext !== undefined
+            )
+              return true;
+            return false;
+          }
+        }
+        export namespace Parameters {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Parameters {
+            if (value.argument_1 !== undefined) return true;
+            return false;
+          }
+        }
+      }
+      export namespace Tally {
+        export namespace Results {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Tally.Results {
+            if (value.count !== undefined) return true;
+            return false;
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export namespace Results {
+        export function is(value: any): value is Scripts.Sample.Pick.Results {
+          if (
+            value.filmId !== undefined &&
+            value.title !== undefined &&
+            value.description !== undefined &&
+            value.releaseYear !== undefined &&
+            value.languageId !== undefined &&
+            value.rentalDuration !== undefined &&
+            value.rentalRate !== undefined &&
+            value.length !== undefined &&
+            value.replacementCost !== undefined &&
+            value.rating !== undefined &&
+            value.lastUpdate !== undefined &&
+            value.specialFeatures !== undefined &&
+            value.fulltext !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Scripts.Sample.Pick.Parameters {
+          if (value.argument_1 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export namespace Results {
+      export function is(value: any): value is Scripts.Tally.Results {
+        if (value.count !== undefined) return true;
+        return false;
+      }
+    }
+  }
+}
 
 import {
   Context,
@@ -26413,6 +26711,20 @@ export interface PostgresTypecasts {
   ["InformationSchema.Types.Views"]: Typecast;
   [13501]: Typecast;
   ["InformationSchema.Types.YesOrNo"]: Typecast;
+
+  ["Scripts.MovieListing.Results"]: Typecast;
+
+  ["Scripts.Sample.Film.Rated.Results"]: Typecast;
+
+  ["Scripts.Sample.Film.Rated.Parameters"]: Typecast;
+
+  ["Scripts.Sample.Film.Tally.Results"]: Typecast;
+
+  ["Scripts.Sample.Pick.Results"]: Typecast;
+
+  ["Scripts.Sample.Pick.Parameters"]: Typecast;
+
+  ["Scripts.Tally.Results"]: Typecast;
 }
 
 interface HasDatabase {
@@ -32131,6 +32443,246 @@ export class Database extends PostgresDatabase implements HasDatabase {
       })(this);
     })(this);
   })(this);
+
+  public Scripts = new (class implements HasDatabase {
+    constructor(private hasDatabase: HasDatabase) {}
+
+    get database() {
+      return this.hasDatabase.database;
+    }
+
+    public MovieListing = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async call() {
+        const sql = this.database.context.sql;
+        const response = await sql.unsafe(`
+                SELECT
+  film_id,
+  title,
+  release_year,
+  rating,
+  -- nested array so we don't need multiple trips to the database
+  -- this is a nice way to embrace SQL!
+  -- this is also a query that won't parse well with off the shelf
+  -- postgres client drivers, but we'll generate strong types automatically
+  ARRAY(
+	  SELECT
+	    first_name || ' ' || last_name
+	  FROM
+	    public.actor JOIN public.film_actor fa USING (actor_id)
+	  WHERE
+        fa.film_id = f.film_id
+  ) AS actors
+
+FROM 
+  public.film f
+                
+                `);
+        return response.map((record) => ({
+          filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.film_id)),
+          title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
+          releaseYear: undefinedIsNull(
+            PgCatalog.Types.Int4.parse(record.release_year),
+          ),
+          rating: undefinedIsNull(Public.Types.MpaaRating.parse(record.rating)),
+          actors: undefinedIsNull(
+            PgCatalog.Types.TextArray.parse(record.actors),
+          ),
+        }));
+      }
+    })(this);
+
+    public Sample = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      public Film = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        public Rated = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async call(parameters: Scripts.Sample.Film.Rated.Parameters) {
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(
+              `
+                SELECT
+    *
+FROM 
+    public.film
+WHERE
+    rating = $1
+                
+                `,
+              [parameters.argument_1],
+            );
+            return response.map((record) => ({
+              filmId: undefinedIsNull(
+                PgCatalog.Types.Int4.parse(record.film_id),
+              ),
+              title: undefinedIsNull(
+                PgCatalog.Types.Varchar.parse(record.title),
+              ),
+              description: undefinedIsNull(
+                PgCatalog.Types.Text.parse(record.description),
+              ),
+              releaseYear: undefinedIsNull(
+                PgCatalog.Types.Int4.parse(record.release_year),
+              ),
+              languageId: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.language_id),
+              ),
+              rentalDuration: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.rental_duration),
+              ),
+              rentalRate: undefinedIsNull(
+                PgCatalog.Types.Numeric.parse(record.rental_rate),
+              ),
+              length: undefinedIsNull(
+                PgCatalog.Types.Int2.parse(record.length),
+              ),
+              replacementCost: undefinedIsNull(
+                PgCatalog.Types.Numeric.parse(record.replacement_cost),
+              ),
+              rating: undefinedIsNull(
+                Public.Types.MpaaRating.parse(record.rating),
+              ),
+              lastUpdate: undefinedIsNull(
+                PgCatalog.Types.Timestamp.parse(record.last_update),
+              ),
+              specialFeatures: undefinedIsNull(
+                PgCatalog.Types.TextArray.parse(record.special_features),
+              ),
+              fulltext: undefinedIsNull(
+                PgCatalog.Types.Tsvector.parse(record.fulltext),
+              ),
+            }));
+          }
+        })(this);
+
+        public Tally = new (class implements HasDatabase {
+          constructor(private hasDatabase: HasDatabase) {}
+
+          get database() {
+            return this.hasDatabase.database;
+          }
+
+          async call() {
+            const sql = this.database.context.sql;
+            const response = await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.film
+
+                
+                `);
+            return response.map((record) => ({
+              count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
+            }));
+          }
+        })(this);
+      })(this);
+
+      public Pick = new (class implements HasDatabase {
+        constructor(private hasDatabase: HasDatabase) {}
+
+        get database() {
+          return this.hasDatabase.database;
+        }
+
+        async call(parameters: Scripts.Sample.Pick.Parameters) {
+          const sql = this.database.context.sql;
+          const response = await sql.unsafe(
+            `
+                SELECT
+    *
+FROM
+    public.film
+WHERE
+    title = $1
+                
+                `,
+            [parameters.argument_1],
+          );
+          return response.map((record) => ({
+            filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(record.film_id)),
+            title: undefinedIsNull(PgCatalog.Types.Varchar.parse(record.title)),
+            description: undefinedIsNull(
+              PgCatalog.Types.Text.parse(record.description),
+            ),
+            releaseYear: undefinedIsNull(
+              PgCatalog.Types.Int4.parse(record.release_year),
+            ),
+            languageId: undefinedIsNull(
+              PgCatalog.Types.Int2.parse(record.language_id),
+            ),
+            rentalDuration: undefinedIsNull(
+              PgCatalog.Types.Int2.parse(record.rental_duration),
+            ),
+            rentalRate: undefinedIsNull(
+              PgCatalog.Types.Numeric.parse(record.rental_rate),
+            ),
+            length: undefinedIsNull(PgCatalog.Types.Int2.parse(record.length)),
+            replacementCost: undefinedIsNull(
+              PgCatalog.Types.Numeric.parse(record.replacement_cost),
+            ),
+            rating: undefinedIsNull(
+              Public.Types.MpaaRating.parse(record.rating),
+            ),
+            lastUpdate: undefinedIsNull(
+              PgCatalog.Types.Timestamp.parse(record.last_update),
+            ),
+            specialFeatures: undefinedIsNull(
+              PgCatalog.Types.TextArray.parse(record.special_features),
+            ),
+            fulltext: undefinedIsNull(
+              PgCatalog.Types.Tsvector.parse(record.fulltext),
+            ),
+          }));
+        }
+      })(this);
+    })(this);
+
+    public Tally = new (class implements HasDatabase {
+      constructor(private hasDatabase: HasDatabase) {}
+
+      get database() {
+        return this.hasDatabase.database;
+      }
+
+      async call() {
+        const sql = this.database.context.sql;
+        const response = await sql.unsafe(`
+                SELECT
+    COUNT(*)
+FROM
+    public.actor
+
+                
+                `);
+        return response.map((record) => ({
+          count: undefinedIsNull(PgCatalog.Types.Int8.parse(record.count)),
+        }));
+      }
+    })(this);
+  })(this);
 }
 
 // begin - operation dispatch map
@@ -32954,6 +33506,27 @@ export class OperationDispatcher {
         database.Public.Tables.Film.ByTitle.delete(
           request.parameters as Public.Tables.Film.ByTitle,
         ),
+      "Scripts.MovieListing.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Scripts.MovieListing.call(),
+      "Scripts.Sample.Film.Rated.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Scripts.Sample.Film.Rated.call(
+          request.parameters as Scripts.Sample.Film.Rated.Parameters,
+        ),
+      "Scripts.Sample.Film.Tally.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Scripts.Sample.Film.Tally.call(),
+      "Scripts.Sample.Pick.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) =>
+        database.Scripts.Sample.Pick.call(
+          request.parameters as Scripts.Sample.Pick.Parameters,
+        ),
+      "Scripts.Tally.call": async (
+        request: EmbraceSQLRequest<object, object>,
+      ) => database.Scripts.Tally.call(),
     };
   }
 

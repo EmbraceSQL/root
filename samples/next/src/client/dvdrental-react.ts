@@ -6964,6 +6964,65 @@ export namespace InformationSchema {
     }
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export type Results = {
+      filmId: Nullable<PgCatalog.Types.Int4>;
+      title: Nullable<PgCatalog.Types.Varchar>;
+      releaseYear: Nullable<PgCatalog.Types.Int4>;
+      rating: Nullable<Public.Types.MpaaRating>;
+      actors: PgCatalog.Types.TextArray;
+    };
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export type Results = {
+          filmId: Nullable<PgCatalog.Types.Int4>;
+          title: Nullable<PgCatalog.Types.Varchar>;
+          description: Nullable<PgCatalog.Types.Text>;
+          releaseYear: Nullable<PgCatalog.Types.Int4>;
+          languageId: Nullable<PgCatalog.Types.Int2>;
+          rentalDuration: Nullable<PgCatalog.Types.Int2>;
+          rentalRate: Nullable<PgCatalog.Types.Numeric>;
+          length: Nullable<PgCatalog.Types.Int2>;
+          replacementCost: Nullable<PgCatalog.Types.Numeric>;
+          rating: Nullable<Public.Types.MpaaRating>;
+          lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+          specialFeatures: PgCatalog.Types.TextArray;
+          fulltext: Nullable<PgCatalog.Types.Tsvector>;
+        };
+
+        export type Parameters = { argument_1: Public.Types.MpaaRating };
+      }
+      export namespace Tally {
+        export type Results = { count: Nullable<PgCatalog.Types.Int8> };
+      }
+    }
+    export namespace Pick {
+      export type Results = {
+        filmId: Nullable<PgCatalog.Types.Int4>;
+        title: Nullable<PgCatalog.Types.Varchar>;
+        description: Nullable<PgCatalog.Types.Text>;
+        releaseYear: Nullable<PgCatalog.Types.Int4>;
+        languageId: Nullable<PgCatalog.Types.Int2>;
+        rentalDuration: Nullable<PgCatalog.Types.Int2>;
+        rentalRate: Nullable<PgCatalog.Types.Numeric>;
+        length: Nullable<PgCatalog.Types.Int2>;
+        replacementCost: Nullable<PgCatalog.Types.Numeric>;
+        rating: Nullable<Public.Types.MpaaRating>;
+        lastUpdate: Nullable<PgCatalog.Types.Timestamp>;
+        specialFeatures: PgCatalog.Types.TextArray;
+        fulltext: Nullable<PgCatalog.Types.Tsvector>;
+      };
+
+      export type Parameters = { argument_1: PgCatalog.Types.Text };
+    }
+  }
+  export namespace Tally {
+    export type Results = { count: Nullable<PgCatalog.Types.Int8> };
+  }
+}
 
 // begin string parsers
 export namespace PgCatalog {
@@ -18151,6 +18210,142 @@ export namespace InformationSchema {
     }
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Scripts.MovieListing.Results.is(from)) {
+          return {
+            filmId: PgCatalog.Types.Int4.parse(from.filmId),
+            title: PgCatalog.Types.Varchar.parse(from.title),
+            releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+            rating: Public.Types.MpaaRating.parse(from.rating),
+            actors: PgCatalog.Types.TextArray.parse(from.actors),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Rated.Results.is(from)) {
+              return {
+                filmId: PgCatalog.Types.Int4.parse(from.filmId),
+                title: PgCatalog.Types.Varchar.parse(from.title),
+                description: PgCatalog.Types.Text.parse(from.description),
+                releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+                languageId: PgCatalog.Types.Int2.parse(from.languageId),
+                rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+                rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+                length: PgCatalog.Types.Int2.parse(from.length),
+                replacementCost: PgCatalog.Types.Numeric.parse(
+                  from.replacementCost,
+                ),
+                rating: Public.Types.MpaaRating.parse(from.rating),
+                lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+                specialFeatures: PgCatalog.Types.TextArray.parse(
+                  from.specialFeatures,
+                ),
+                fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+        export namespace Parameters {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Rated.Parameters.is(from)) {
+              return {
+                argument_1: Public.Types.MpaaRating.parse(from.argument_1),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+      }
+      export namespace Tally {
+        export namespace Results {
+          export function parse(from: unknown) {
+            // CompositeType
+            if (from === null || from === undefined) return null;
+            if (Scripts.Sample.Film.Tally.Results.is(from)) {
+              return {
+                count: PgCatalog.Types.Int8.parse(from.count),
+              };
+            }
+            throw new Error(JSON.stringify(from));
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export namespace Results {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Scripts.Sample.Pick.Results.is(from)) {
+            return {
+              filmId: PgCatalog.Types.Int4.parse(from.filmId),
+              title: PgCatalog.Types.Varchar.parse(from.title),
+              description: PgCatalog.Types.Text.parse(from.description),
+              releaseYear: PgCatalog.Types.Int4.parse(from.releaseYear),
+              languageId: PgCatalog.Types.Int2.parse(from.languageId),
+              rentalDuration: PgCatalog.Types.Int2.parse(from.rentalDuration),
+              rentalRate: PgCatalog.Types.Numeric.parse(from.rentalRate),
+              length: PgCatalog.Types.Int2.parse(from.length),
+              replacementCost: PgCatalog.Types.Numeric.parse(
+                from.replacementCost,
+              ),
+              rating: Public.Types.MpaaRating.parse(from.rating),
+              lastUpdate: PgCatalog.Types.Timestamp.parse(from.lastUpdate),
+              specialFeatures: PgCatalog.Types.TextArray.parse(
+                from.specialFeatures,
+              ),
+              fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+      export namespace Parameters {
+        export function parse(from: unknown) {
+          // CompositeType
+          if (from === null || from === undefined) return null;
+          if (Scripts.Sample.Pick.Parameters.is(from)) {
+            return {
+              argument_1: PgCatalog.Types.Text.parse(from.argument_1),
+            };
+          }
+          throw new Error(JSON.stringify(from));
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export namespace Results {
+      export function parse(from: unknown) {
+        // CompositeType
+        if (from === null || from === undefined) return null;
+        if (Scripts.Tally.Results.is(from)) {
+          return {
+            count: PgCatalog.Types.Int8.parse(from.count),
+          };
+        }
+        throw new Error(JSON.stringify(from));
+      }
+    }
+  }
+}
 // begin table column parser mapping
 export namespace PgCatalog {
   export namespace Tables {
@@ -25073,6 +25268,109 @@ export namespace InformationSchema {
     export namespace SqlSizing {}
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export namespace Results {
+      export function is(value: any): value is Scripts.MovieListing.Results {
+        if (
+          value.filmId !== undefined &&
+          value.title !== undefined &&
+          value.releaseYear !== undefined &&
+          value.rating !== undefined &&
+          value.actors !== undefined
+        )
+          return true;
+        return false;
+      }
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export namespace Results {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Results {
+            if (
+              value.filmId !== undefined &&
+              value.title !== undefined &&
+              value.description !== undefined &&
+              value.releaseYear !== undefined &&
+              value.languageId !== undefined &&
+              value.rentalDuration !== undefined &&
+              value.rentalRate !== undefined &&
+              value.length !== undefined &&
+              value.replacementCost !== undefined &&
+              value.rating !== undefined &&
+              value.lastUpdate !== undefined &&
+              value.specialFeatures !== undefined &&
+              value.fulltext !== undefined
+            )
+              return true;
+            return false;
+          }
+        }
+        export namespace Parameters {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Rated.Parameters {
+            if (value.argument_1 !== undefined) return true;
+            return false;
+          }
+        }
+      }
+      export namespace Tally {
+        export namespace Results {
+          export function is(
+            value: any,
+          ): value is Scripts.Sample.Film.Tally.Results {
+            if (value.count !== undefined) return true;
+            return false;
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export namespace Results {
+        export function is(value: any): value is Scripts.Sample.Pick.Results {
+          if (
+            value.filmId !== undefined &&
+            value.title !== undefined &&
+            value.description !== undefined &&
+            value.releaseYear !== undefined &&
+            value.languageId !== undefined &&
+            value.rentalDuration !== undefined &&
+            value.rentalRate !== undefined &&
+            value.length !== undefined &&
+            value.replacementCost !== undefined &&
+            value.rating !== undefined &&
+            value.lastUpdate !== undefined &&
+            value.specialFeatures !== undefined &&
+            value.fulltext !== undefined
+          )
+            return true;
+          return false;
+        }
+      }
+      export namespace Parameters {
+        export function is(
+          value: any,
+        ): value is Scripts.Sample.Pick.Parameters {
+          if (value.argument_1 !== undefined) return true;
+          return false;
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export namespace Results {
+      export function is(value: any): value is Scripts.Tally.Results {
+        if (value.count !== undefined) return true;
+        return false;
+      }
+    }
+  }
+}
 // begin fetch client
 import {
   EmbraceSQLClient as BaseClient,
@@ -27977,6 +28275,108 @@ export class EmbraceSQLClient extends BaseClient {
       })(this);
     })(this);
   })(this);
+
+  public Scripts = new (class extends HasClient {
+    public MovieListing = new (class extends HasClient {
+      public async call(): Promise<Scripts.MovieListing.Results[]> {
+        const response = await this.client.invoke<
+          never,
+          never,
+          Scripts.MovieListing.Results[]
+        >({
+          operation: "Scripts.MovieListing.call",
+        });
+
+        return (
+          (response.results?.map((r) =>
+            Scripts.MovieListing.Results.parse(r),
+          ) as Scripts.MovieListing.Results[]) ?? []
+        );
+      }
+    })(this);
+
+    public Sample = new (class extends HasClient {
+      public Film = new (class extends HasClient {
+        public Rated = new (class extends HasClient {
+          public async call(
+            parameters: Scripts.Sample.Film.Rated.Parameters,
+          ): Promise<Scripts.Sample.Film.Rated.Results[]> {
+            const response = await this.client.invoke<
+              Scripts.Sample.Film.Rated.Parameters,
+              never,
+              Scripts.Sample.Film.Rated.Results[]
+            >({
+              operation: "Scripts.Sample.Film.Rated.call",
+              parameters,
+            });
+
+            return (
+              (response.results?.map((r) =>
+                Scripts.Sample.Film.Rated.Results.parse(r),
+              ) as Scripts.Sample.Film.Rated.Results[]) ?? []
+            );
+          }
+        })(this);
+
+        public Tally = new (class extends HasClient {
+          public async call(): Promise<Scripts.Sample.Film.Tally.Results[]> {
+            const response = await this.client.invoke<
+              never,
+              never,
+              Scripts.Sample.Film.Tally.Results[]
+            >({
+              operation: "Scripts.Sample.Film.Tally.call",
+            });
+
+            return (
+              (response.results?.map((r) =>
+                Scripts.Sample.Film.Tally.Results.parse(r),
+              ) as Scripts.Sample.Film.Tally.Results[]) ?? []
+            );
+          }
+        })(this);
+      })(this);
+
+      public Pick = new (class extends HasClient {
+        public async call(
+          parameters: Scripts.Sample.Pick.Parameters,
+        ): Promise<Scripts.Sample.Pick.Results[]> {
+          const response = await this.client.invoke<
+            Scripts.Sample.Pick.Parameters,
+            never,
+            Scripts.Sample.Pick.Results[]
+          >({
+            operation: "Scripts.Sample.Pick.call",
+            parameters,
+          });
+
+          return (
+            (response.results?.map((r) =>
+              Scripts.Sample.Pick.Results.parse(r),
+            ) as Scripts.Sample.Pick.Results[]) ?? []
+          );
+        }
+      })(this);
+    })(this);
+
+    public Tally = new (class extends HasClient {
+      public async call(): Promise<Scripts.Tally.Results[]> {
+        const response = await this.client.invoke<
+          never,
+          never,
+          Scripts.Tally.Results[]
+        >({
+          operation: "Scripts.Tally.call",
+        });
+
+        return (
+          (response.results?.map((r) =>
+            Scripts.Tally.Results.parse(r),
+          ) as Scripts.Tally.Results[]) ?? []
+        );
+      }
+    })(this);
+  })(this);
 }
 import React from "react";
 export { EmbraceSQLProvider } from "@embracesql/react";
@@ -27985,6 +28385,7 @@ import {
   useEmbraceSQLRow,
   useEmbraceSQLRows,
   useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -29495,8 +29896,635 @@ export namespace Public {
     }
   }
 }
+export namespace Scripts {
+  export namespace MovieListing {
+    export type Row = IsRow<Scripts.MovieListing.Results>;
+    export class RowImplementation
+      extends RowBase<Scripts.MovieListing.Results>
+      implements Row
+    {
+      constructor(
+        record: Scripts.MovieListing.Results,
+        changeCallback: RecordCallback<Scripts.MovieListing.Results>,
+        rowNumberInResultset: number,
+      ) {
+        super(record, changeCallback, rowNumberInResultset);
+      }
+      get filmId() {
+        return this.record.filmId;
+      }
+      get changeFilmId() {
+        return (event: ChangeEvent) => {
+          const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+          void this.changeCallback({
+            ...this.record,
+            filmId: parsedValue as Scripts.MovieListing.Results["filmId"],
+          });
+        };
+      }
+      get title() {
+        return this.record.title;
+      }
+      get changeTitle() {
+        return (event: ChangeEvent) => {
+          const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+          void this.changeCallback({
+            ...this.record,
+            title: parsedValue as Scripts.MovieListing.Results["title"],
+          });
+        };
+      }
+      get releaseYear() {
+        return this.record.releaseYear;
+      }
+      get changeReleaseYear() {
+        return (event: ChangeEvent) => {
+          const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+          void this.changeCallback({
+            ...this.record,
+            releaseYear:
+              parsedValue as Scripts.MovieListing.Results["releaseYear"],
+          });
+        };
+      }
+      get rating() {
+        return this.record.rating;
+      }
+      get changeRating() {
+        return (event: ChangeEvent) => {
+          const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
+          void this.changeCallback({
+            ...this.record,
+            rating: parsedValue as Scripts.MovieListing.Results["rating"],
+          });
+        };
+      }
+      get actors() {
+        return this.record.actors;
+      }
+      get changeActors() {
+        return (event: ChangeEvent) => {
+          const parsedValue = PgCatalog.Types.TextArray.parse(
+            event.target.value,
+          );
+          void this.changeCallback({
+            ...this.record,
+            actors: parsedValue as Scripts.MovieListing.Results["actors"],
+          });
+        };
+      }
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export type Row = IsRow<Scripts.Sample.Film.Rated.Results>;
+        export class RowImplementation
+          extends RowBase<Scripts.Sample.Film.Rated.Results>
+          implements Row
+        {
+          constructor(
+            record: Scripts.Sample.Film.Rated.Results,
+            changeCallback: RecordCallback<Scripts.Sample.Film.Rated.Results>,
+            rowNumberInResultset: number,
+          ) {
+            super(record, changeCallback, rowNumberInResultset);
+          }
+          get filmId() {
+            return this.record.filmId;
+          }
+          get changeFilmId() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int4.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                filmId:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["filmId"],
+              });
+            };
+          }
+          get title() {
+            return this.record.title;
+          }
+          get changeTitle() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Varchar.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                title:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["title"],
+              });
+            };
+          }
+          get description() {
+            return this.record.description;
+          }
+          get changeDescription() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Text.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                description:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["description"],
+              });
+            };
+          }
+          get releaseYear() {
+            return this.record.releaseYear;
+          }
+          get changeReleaseYear() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int4.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                releaseYear:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["releaseYear"],
+              });
+            };
+          }
+          get languageId() {
+            return this.record.languageId;
+          }
+          get changeLanguageId() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int2.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                languageId:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["languageId"],
+              });
+            };
+          }
+          get rentalDuration() {
+            return this.record.rentalDuration;
+          }
+          get changeRentalDuration() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int2.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                rentalDuration:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["rentalDuration"],
+              });
+            };
+          }
+          get rentalRate() {
+            return this.record.rentalRate;
+          }
+          get changeRentalRate() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Numeric.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                rentalRate:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["rentalRate"],
+              });
+            };
+          }
+          get length() {
+            return this.record.length;
+          }
+          get changeLength() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int2.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                length:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["length"],
+              });
+            };
+          }
+          get replacementCost() {
+            return this.record.replacementCost;
+          }
+          get changeReplacementCost() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Numeric.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                replacementCost:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["replacementCost"],
+              });
+            };
+          }
+          get rating() {
+            return this.record.rating;
+          }
+          get changeRating() {
+            return (event: ChangeEvent) => {
+              const parsedValue = Public.Types.MpaaRating.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                rating:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["rating"],
+              });
+            };
+          }
+          get lastUpdate() {
+            return this.record.lastUpdate;
+          }
+          get changeLastUpdate() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Timestamp.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                lastUpdate:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["lastUpdate"],
+              });
+            };
+          }
+          get specialFeatures() {
+            return this.record.specialFeatures;
+          }
+          get changeSpecialFeatures() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.TextArray.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                specialFeatures:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["specialFeatures"],
+              });
+            };
+          }
+          get fulltext() {
+            return this.record.fulltext;
+          }
+          get changeFulltext() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Tsvector.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                fulltext:
+                  parsedValue as Scripts.Sample.Film.Rated.Results["fulltext"],
+              });
+            };
+          }
+        }
+      }
+      export namespace Tally {
+        export type Row = IsRow<Scripts.Sample.Film.Tally.Results>;
+        export class RowImplementation
+          extends RowBase<Scripts.Sample.Film.Tally.Results>
+          implements Row
+        {
+          constructor(
+            record: Scripts.Sample.Film.Tally.Results,
+            changeCallback: RecordCallback<Scripts.Sample.Film.Tally.Results>,
+            rowNumberInResultset: number,
+          ) {
+            super(record, changeCallback, rowNumberInResultset);
+          }
+          get count() {
+            return this.record.count;
+          }
+          get changeCount() {
+            return (event: ChangeEvent) => {
+              const parsedValue = PgCatalog.Types.Int8.parse(
+                event.target.value,
+              );
+              void this.changeCallback({
+                ...this.record,
+                count:
+                  parsedValue as Scripts.Sample.Film.Tally.Results["count"],
+              });
+            };
+          }
+        }
+      }
+    }
+    export namespace Pick {
+      export type Row = IsRow<Scripts.Sample.Pick.Results>;
+      export class RowImplementation
+        extends RowBase<Scripts.Sample.Pick.Results>
+        implements Row
+      {
+        constructor(
+          record: Scripts.Sample.Pick.Results,
+          changeCallback: RecordCallback<Scripts.Sample.Pick.Results>,
+          rowNumberInResultset: number,
+        ) {
+          super(record, changeCallback, rowNumberInResultset);
+        }
+        get filmId() {
+          return this.record.filmId;
+        }
+        get changeFilmId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              filmId: parsedValue as Scripts.Sample.Pick.Results["filmId"],
+            });
+          };
+        }
+        get title() {
+          return this.record.title;
+        }
+        get changeTitle() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Varchar.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              title: parsedValue as Scripts.Sample.Pick.Results["title"],
+            });
+          };
+        }
+        get description() {
+          return this.record.description;
+        }
+        get changeDescription() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              description:
+                parsedValue as Scripts.Sample.Pick.Results["description"],
+            });
+          };
+        }
+        get releaseYear() {
+          return this.record.releaseYear;
+        }
+        get changeReleaseYear() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              releaseYear:
+                parsedValue as Scripts.Sample.Pick.Results["releaseYear"],
+            });
+          };
+        }
+        get languageId() {
+          return this.record.languageId;
+        }
+        get changeLanguageId() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              languageId:
+                parsedValue as Scripts.Sample.Pick.Results["languageId"],
+            });
+          };
+        }
+        get rentalDuration() {
+          return this.record.rentalDuration;
+        }
+        get changeRentalDuration() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              rentalDuration:
+                parsedValue as Scripts.Sample.Pick.Results["rentalDuration"],
+            });
+          };
+        }
+        get rentalRate() {
+          return this.record.rentalRate;
+        }
+        get changeRentalRate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Numeric.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rentalRate:
+                parsedValue as Scripts.Sample.Pick.Results["rentalRate"],
+            });
+          };
+        }
+        get length() {
+          return this.record.length;
+        }
+        get changeLength() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+            void this.changeCallback({
+              ...this.record,
+              length: parsedValue as Scripts.Sample.Pick.Results["length"],
+            });
+          };
+        }
+        get replacementCost() {
+          return this.record.replacementCost;
+        }
+        get changeReplacementCost() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Numeric.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              replacementCost:
+                parsedValue as Scripts.Sample.Pick.Results["replacementCost"],
+            });
+          };
+        }
+        get rating() {
+          return this.record.rating;
+        }
+        get changeRating() {
+          return (event: ChangeEvent) => {
+            const parsedValue = Public.Types.MpaaRating.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              rating: parsedValue as Scripts.Sample.Pick.Results["rating"],
+            });
+          };
+        }
+        get lastUpdate() {
+          return this.record.lastUpdate;
+        }
+        get changeLastUpdate() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Timestamp.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              lastUpdate:
+                parsedValue as Scripts.Sample.Pick.Results["lastUpdate"],
+            });
+          };
+        }
+        get specialFeatures() {
+          return this.record.specialFeatures;
+        }
+        get changeSpecialFeatures() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.TextArray.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              specialFeatures:
+                parsedValue as Scripts.Sample.Pick.Results["specialFeatures"],
+            });
+          };
+        }
+        get fulltext() {
+          return this.record.fulltext;
+        }
+        get changeFulltext() {
+          return (event: ChangeEvent) => {
+            const parsedValue = PgCatalog.Types.Tsvector.parse(
+              event.target.value,
+            );
+            void this.changeCallback({
+              ...this.record,
+              fulltext: parsedValue as Scripts.Sample.Pick.Results["fulltext"],
+            });
+          };
+        }
+      }
+    }
+  }
+  export namespace Tally {
+    export type Row = IsRow<Scripts.Tally.Results>;
+    export class RowImplementation
+      extends RowBase<Scripts.Tally.Results>
+      implements Row
+    {
+      constructor(
+        record: Scripts.Tally.Results,
+        changeCallback: RecordCallback<Scripts.Tally.Results>,
+        rowNumberInResultset: number,
+      ) {
+        super(record, changeCallback, rowNumberInResultset);
+      }
+      get count() {
+        return this.record.count;
+      }
+      get changeCount() {
+        return (event: ChangeEvent) => {
+          const parsedValue = PgCatalog.Types.Int8.parse(event.target.value);
+          void this.changeCallback({
+            ...this.record,
+            count: parsedValue as Scripts.Tally.Results["count"],
+          });
+        };
+      }
+    }
+  }
+}
 
 export namespace Public {
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export function useFilmInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation: client.Public.Procedures.FilmInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace FilmNotInStock {
+      export function useFilmNotInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation:
+            client.Public.Procedures.FilmNotInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace GetCustomerBalance {
+      export function useGetCustomerBalance(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Numeric | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.GetCustomerBalance.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export function useInventoryHeldByCustomer(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Int4 | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryHeldByCustomer.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryInStock {
+      export function useInventoryInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Bool | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace LastDay {
+      export function useLastDay(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Date | undefined
+        >({
+          readOperation: client.Public.Procedures.LastDay.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace RewardsReport {
+      export function useRewardsReport(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutableRows<Parameters, Public.Types.Customer>({
+          readOperation:
+            client.Public.Procedures.RewardsReport.call.bind(client),
+          parameters,
+          RowImplementation: Public.Procedures.RewardsReport.RowImplementation,
+        });
+      }
+    }
+  }
   export namespace Tables {
     export namespace FilmActor {
       export function useRow(
@@ -30761,6 +31789,71 @@ export namespace Public {
           emptyRecord: Public.Tables.Film.emptyRecord,
         });
       }
+    }
+  }
+}
+export namespace Scripts {
+  export namespace MovieListing {
+    export function useMovieListing() {
+      const client = useEmbraceSQLClient<EmbraceSQLClient>();
+      return useEmbraceSQLImmutableRows<never, Scripts.MovieListing.Results>({
+        readOperation: client.Scripts.MovieListing.call.bind(client),
+        parameters: NEVER,
+        RowImplementation: Scripts.MovieListing.RowImplementation,
+      });
+    }
+  }
+  export namespace Sample {
+    export namespace Film {
+      export namespace Rated {
+        export function useRated(parameters: Parameters) {
+          const client = useEmbraceSQLClient<EmbraceSQLClient>();
+          return useEmbraceSQLImmutableRows<
+            Parameters,
+            Scripts.Sample.Film.Rated.Results
+          >({
+            readOperation: client.Scripts.Sample.Film.Rated.call.bind(client),
+            parameters,
+            RowImplementation: Scripts.Sample.Film.Rated.RowImplementation,
+          });
+        }
+      }
+      export namespace Tally {
+        export function useTally() {
+          const client = useEmbraceSQLClient<EmbraceSQLClient>();
+          return useEmbraceSQLImmutableRows<
+            never,
+            Scripts.Sample.Film.Tally.Results
+          >({
+            readOperation: client.Scripts.Sample.Film.Tally.call.bind(client),
+            parameters: NEVER,
+            RowImplementation: Scripts.Sample.Film.Tally.RowImplementation,
+          });
+        }
+      }
+    }
+    export namespace Pick {
+      export function usePick(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutableRows<
+          Parameters,
+          Scripts.Sample.Pick.Results
+        >({
+          readOperation: client.Scripts.Sample.Pick.call.bind(client),
+          parameters,
+          RowImplementation: Scripts.Sample.Pick.RowImplementation,
+        });
+      }
+    }
+  }
+  export namespace Tally {
+    export function useTally() {
+      const client = useEmbraceSQLClient<EmbraceSQLClient>();
+      return useEmbraceSQLImmutableRows<never, Scripts.Tally.Results>({
+        readOperation: client.Scripts.Tally.call.bind(client),
+        parameters: NEVER,
+        RowImplementation: Scripts.Tally.RowImplementation,
+      });
     }
   }
 }

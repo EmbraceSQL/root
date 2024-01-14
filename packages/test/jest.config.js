@@ -15,6 +15,9 @@ const jestConfig = {
       {
         tsconfig: "tsconfig.json",
         useESM: true,
+        diagnostics: {
+          exclude: ["!**/*.(spec|test).ts?(x)"],
+        },
       },
     ],
   },

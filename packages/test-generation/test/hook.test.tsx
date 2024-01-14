@@ -284,6 +284,7 @@ describe("EmbraceSQL Hooks can", () => {
       { wrapper },
     );
     await waitFor(() => expect(result.current?.rows.length).toBeGreaterThan(1));
+    expect(result.current.rows[0].releaseYear).toBeGreaterThan(0);
   });
   it("read scalar procs", async () => {
     const wrapper = ({ children }: WithChildren) => (

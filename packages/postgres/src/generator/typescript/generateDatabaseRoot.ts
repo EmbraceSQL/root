@@ -112,7 +112,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             .attributes
             ? (resultsFinalType as CompositeTypeNode).attributes.map(
                 (c) =>
-                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(record.${c.typescriptPropertyName}))`,
+                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(record.${c.name}))`,
               )
             : [];
           // and here is the really defensive part...

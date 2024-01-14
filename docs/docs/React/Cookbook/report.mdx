@@ -1,0 +1,52 @@
+import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/report/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# SQL Script Report
+
+
+How often do you need to write a report? Like -- all the time. Query the database
+and get it on the page.
+
+This example even shows a 'trick' for using PostgreSQL arrays to get a report
+in one trip to the database.
+
+
+EmbraceSQL lets you ... write SQL ... in a plain SQL file, which lets your 
+editor help you out.
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+### Write an SQL Script
+
+Here is our SQL, we're going to make a report of all the movies in the sample
+database, along with their actors. Using an ARRAY, which you might have avoided
+in the past becuase it is a pain to deal with using off the shelf PostgreSQL drivers.
+
+<CodeBlock language="sql" title="./sql/movie_listing.sql">
+  {SQLScript}
+</CodeBlock>
+
+### Generate Code
+
+Now that there is a SQL Script - regenerate from the database. If you are already
+running NextJS, it'll hot reload.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Code React
+
+Hook generated, you just need to import the generated code away you go!
+
+No mapping code written by you. ⏰ saved.
+
+<CodeBlock language="tsx" title="src/app/report/page.tsx" >
+  {ReactSource}
+</CodeBlock>

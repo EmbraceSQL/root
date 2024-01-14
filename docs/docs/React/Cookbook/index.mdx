@@ -1,0 +1,53 @@
+import Requirements from '../../../includes/sample_requirements.mdx';
+import RouteSource from "!!raw-loader!../../../../samples/next/src/app/embracesql/route.ts";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+import CodeBlock from "@theme/CodeBlock";
+
+
+# Cookbook 🧑‍🍳
+
+What's an API guide without a cookbook? In here you will find recipes for
+common database use cases.
+
+The examples are coded up as stand alone NextJS pages. Client only examples
+will convert well to ViteJS.
+
+<Requirements/>
+
+## NextJS
+
+You are going to need:
+
+* NextJS >= 14
+* An AppRouter application
+
+## Steps
+
+This will set up your NextJS to be able to use EmbraceSQL.
+
+### Add EmbraceSQL
+
+Package ahoy! 🚢
+
+```shell
+npm install @embracesql/shared
+npm install @embracesql/react
+```
+
+### Generate Code
+
+Generate code, note that we have a command line switch to look for SQL
+scripts in a designated folder.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Create a Server
+
+Here is a route handler that will connect the server-side part of your NextJS
+application directly to your PostgreSQL, and expose it to the client-side part.
+
+<CodeBlock language="typescript" title="./src/app/embracesql/route.ts">
+  {RouteSource}
+</CodeBlock>
