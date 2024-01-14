@@ -29,7 +29,7 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
           ];
           // extract primary key
           generationBuffer.push(
-            `export function primaryKeyFrom(value: ${node.typescriptNamespacedName}.Record) : string {`,
+            `export function primaryKeyFrom(value: ${node.type.typescriptNamespacedName}) : string {`,
           );
           generationBuffer.push(`return JSON.stringify({`);
           primaryKey.columns.forEach((c) =>
@@ -45,7 +45,9 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
               (a) => `value.${camelCase(a.typescriptName)} !== undefined`,
             ) || [];
           generationBuffer.push(`
-      export function includesPrimaryKey(value: Partial<Record>){
+      export function includesPrimaryKey(value: Partial<${
+        node.type.typescriptNamespacedName
+      }>){
         return ${primaryKeyNames.join(" && ")}
       }
       `);
@@ -53,10 +55,10 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
         } else {
           return [
             await NamespaceVisitor.before(context, node),
-            `export function primaryKeyFrom(value: ${node.typescriptNamespacedName}.Record) {`,
+            `export function primaryKeyFrom(value: ${node.type.typescriptNamespacedName}) {`,
             `  return "";`,
             `}`,
-            `export function includesPrimaryKey(value: ${node.typescriptNamespacedName}.Record) {`,
+            `export function includesPrimaryKey(value: ${node.type.typescriptNamespacedName}) {`,
             `  return false;`,
             `}`,
           ].join("\n");

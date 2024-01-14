@@ -16,8 +16,8 @@ export const ReadOperation = {
     const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}`;
     const returns = node.index.unique
-      ? `Promise<${node.index.table.typescriptNamespacedName}.Record>`
-      : `Promise<${node.index.table.typescriptNamespacedName}.Record[]>`;
+      ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
+      : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
 
     generationBuffer.push(
       `async ${node.typescriptPropertyName}(${parameters}) : ${returns}{`,

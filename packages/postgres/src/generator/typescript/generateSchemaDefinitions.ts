@@ -89,19 +89,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           before: async (context, node) => {
             return [
               await NamespaceVisitor.before(context, node),
-              `export type Record = {`,
-              node.allColumns
-                .map(
-                  (c) =>
-                    `${c.typescriptPropertyName}: ${
-                      node.type.typescriptNamespacedName
-                    }["${c.typescriptPropertyName}"] ${
-                      c.allowsNull ? " | null" : ""
-                    }`,
-                )
-                .join(";"),
-              `};`,
-              // empty placeholder rows used in UI adding
+              // empty placeholder row record used in UI adding
               `export function emptyRecord() {`,
               ` return ${emptyTypescriptRecord(context, node.type)};`,
               `}`,
@@ -113,15 +101,17 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               node.primaryKey ? "" : `export type ByPrimaryKey = never;`,
               // optional columns -- won't always need to pass these
               // ex: database has a default
-              `export type Optional = Pick<Record,${
+              `export type Optional = Pick<${
+                node.type.typescriptNamespacedName
+              },${
                 node.optionalColumns
                   .map((c) => `"${c.typescriptPropertyName}"`)
                   .join("|") || "never"
               }>`,
               // values type -- used in create and update
-              `export type ${pascalCase(
-                VALUES,
-              )} = PartiallyOptional<Record, Optional & ByPrimaryKey>`,
+              `export type ${pascalCase(VALUES)} = PartiallyOptional<${
+                node.type.typescriptNamespacedName
+              }, Optional & ByPrimaryKey>`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");
           },

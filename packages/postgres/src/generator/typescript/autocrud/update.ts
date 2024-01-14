@@ -23,8 +23,8 @@ export const UpdateOperation = {
     const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
     const returns = node.index.unique
-      ? `Promise<${node.index.table.typescriptNamespacedName}.Record>`
-      : `Promise<${node.index.table.typescriptNamespacedName}.Record[]>`;
+      ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
+      : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");

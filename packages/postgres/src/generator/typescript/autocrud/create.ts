@@ -19,7 +19,7 @@ export const CreateOperation = {
     generationBuffer.push(
       `async create(${camelCase(VALUES)}: ${
         node.table.typescriptNamespacedName
-      }.Values): Promise<${node.table.typescriptNamespacedName}.Record>{`,
+      }.Values): Promise<${node.table.type.typescriptNamespacedName}>{`,
     );
     generationBuffer.push(
       `
