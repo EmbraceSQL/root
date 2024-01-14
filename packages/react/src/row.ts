@@ -36,12 +36,12 @@ export interface RowConstructor<R> {
 }
 
 /**
- * Rows wrap raw record values from the database to make them usable
+ * Rows wrap raw value from the database to make them usable
  * hooked rows in the UI.
  */
 export abstract class RowBase<R> {
   constructor(
-    protected record: R,
+    protected _value: R,
     protected changeCallback: RowCallback<R>,
     public rowNumberInResultset = 0,
   ) {}
@@ -50,6 +50,6 @@ export abstract class RowBase<R> {
    * Get a current value snapshot.
    */
   get value() {
-    return { ...this.record };
+    return { ...this._value };
   }
 }

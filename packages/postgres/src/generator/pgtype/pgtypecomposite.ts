@@ -129,10 +129,10 @@ export class PGTypeComposite extends PGCatalogType {
   get postgresToTypescript() {
     // snippet will pick resultset fields to type map
     const attributes = this.attributes.map(
-      (c) => `${camelCase(c.name)}: undefinedIsNull(record.${c.name})`,
+      (c) => `${camelCase(c.name)}: undefinedIsNull(r.${c.name})`,
     );
     // all the fields in the resultset mapped out to an inferred type array
-    return `response.map(record => ({ ${attributes.join(",")} }))`;
+    return `response.map(r => ({ ${attributes.join(",")} }))`;
   }
 
   serializeToPostgres(context: Context, x: unknown) {

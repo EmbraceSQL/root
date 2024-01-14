@@ -46,14 +46,14 @@ async function generateRow(
         before: async (_, node) => {
           return [
             // the getter -- read only view of the values
-            `get ${node.typescriptPropertyName}() { return this.record.${node.typescriptPropertyName};}`,
+            `get ${node.typescriptPropertyName}() { return this._value.${node.typescriptPropertyName};}`,
             // react change event handlers -- needs a bound this
             // to be used as react event handler
             `get change${node.typescriptName}() {`,
             `  return (event: ChangeEvent) => {`,
             `    const parsedValue = ${node.type.typescriptNamespacedName}.parse(event.target.value);`,
             `    void this.changeCallback({`,
-            `      ...this.record,`,
+            `      ...this.value,`,
             `    ${node.typescriptPropertyName}: parsedValue as ${node.parent.typescriptNamespacedName}["${node.typescriptPropertyName}"],`,
             `    });`,
             `  };`,

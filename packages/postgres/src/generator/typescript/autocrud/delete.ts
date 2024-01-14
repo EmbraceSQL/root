@@ -8,7 +8,7 @@ import {
 /**
  * AutoCRUD deletes records by index.
  *
- * Unique indexes delete single records, returning the deleted record.
+ * Unique indexes delete single records, returning the deleted row.
  *
  * Non unique indexes delete multiple records, returning an array of the
  * deleted records.

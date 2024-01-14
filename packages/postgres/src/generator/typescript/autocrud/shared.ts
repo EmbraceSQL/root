@@ -29,10 +29,10 @@ export function postgresToTypescript(
   if (isNodeType(node, ASTKind.CompositeType)) {
     // snippet will pick resultset fields to type map
     const attributes = node.attributes.map(
-      (c) => `${c.typescriptPropertyName}: undefinedIsNull(record.${c.name})`,
+      (c) => `${c.typescriptPropertyName}: undefinedIsNull(r.${c.name})`,
     );
     // all the fields in the resultset mapped out to an inferred type array
-    return `response.map(record => ({ ${attributes.join(",")} }))`;
+    return `response.map(r => ({ ${attributes.join(",")} }))`;
   }
 
   throw new Error(`unexpected result type ${node.id}:${ASTKind[node.kind]}`);

@@ -13,7 +13,7 @@ import {
 /**
  * AutoCRUD updates field values by index. Partial updates are allowed.
  *
- * Unique indexes update single records, returning the modified record.
+ * Unique indexes update single records, returning the modified row.
  *
  * Non unique indexes update multiple records, returning an array of the
  * modified records.

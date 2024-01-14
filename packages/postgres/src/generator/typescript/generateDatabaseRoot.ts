@@ -108,15 +108,14 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           const resultsFinalType = node.resultsType;
           // this is a bit over defensive programming -- scripts always
           // come back with composite types
-          const recordPieceBuilders = (resultsFinalType as CompositeTypeNode)
-            .attributes
+          const attributes = (resultsFinalType as CompositeTypeNode).attributes
             ? (resultsFinalType as CompositeTypeNode).attributes.map(
                 (c) =>
-                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(record.${c.name}))`,
+                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(r.${c.name}))`,
               )
             : [];
           // and here is the really defensive part...
-          console.assert(recordPieceBuilders.length);
+          console.assert(attributes.length);
           const parameters = node.parametersType
             ? `parameters: ${node.parametersType.typescriptNamespacedName}`
             : "";
@@ -129,9 +128,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                 ${preparedSql}
                 
                 \`${parameterPasses});
-            return response.map(record => ({ ${recordPieceBuilders.join(
-              ",",
-            )} }));
+            return response.map(r => ({ ${attributes.join(",")} }));
           }
         `,
           ].join("\n");

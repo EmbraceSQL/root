@@ -4,25 +4,13 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-
 /* @typescript-eslint/no-redundant-type-constituents */
-import {
-  Context,
-  initializeContext,
-  PostgresDatabase,
-} from "@embracesql/postgres";
 import {
   UUID,
   JsDate,
@@ -36,9 +24,6 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
-// begin - operation dispatch map
-import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-import postgres from "postgres";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -23904,6 +23889,13 @@ export namespace Public {
   }
 }
 
+import {
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
+import postgres from "postgres";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25556,9 +25548,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       question,answer
     `;
-          return response.map((record) => ({
-            question: undefinedIsNull(record.question),
-            answer: undefinedIsNull(record.answer),
+          return response.map((r) => ({
+            question: undefinedIsNull(r.question),
+            answer: undefinedIsNull(r.answer),
           }))[0];
         }
         async all(): Promise<Api.Types.QAndA[]> {
@@ -25572,9 +25564,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       api.q_and_a 
     `;
-          return response.map((record) => ({
-            question: undefinedIsNull(record.question),
-            answer: undefinedIsNull(record.answer),
+          return response.map((r) => ({
+            question: undefinedIsNull(r.question),
+            answer: undefinedIsNull(r.answer),
           }));
         }
 
@@ -25605,9 +25597,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[33339](parameters.answer)
       }
     `;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
+            return response.map((r) => ({
+              question: undefinedIsNull(r.question),
+              answer: undefinedIsNull(r.answer),
             }));
           }
 
@@ -25639,9 +25631,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[33339](parameters.answer)
       }
     RETURNING question,answer`;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
+            return response.map((r) => ({
+              question: undefinedIsNull(r.question),
+              answer: undefinedIsNull(r.answer),
             }));
           }
           async delete(parameters: Api.Tables.QAndA.ByAnswer) {
@@ -25659,9 +25651,9 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[33339](parameters.answer)
       }
     RETURNING question,answer`;
-            return response.map((record) => ({
-              question: undefinedIsNull(record.question),
-              answer: undefinedIsNull(record.answer),
+            return response.map((r) => ({
+              question: undefinedIsNull(r.question),
+              answer: undefinedIsNull(r.answer),
             }));
           }
         })(this);
@@ -26874,8 +26866,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         slug_id
     `;
-            return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+            return response.map((r) => ({
+              slugId: undefinedIsNull(r.slug_id),
             }))[0];
           }
           const response = await sql`
@@ -26890,8 +26882,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       slug_id
     `;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
+          return response.map((r) => ({
+            slugId: undefinedIsNull(r.slug_id),
           }))[0];
         }
         async all(): Promise<Public.Types.Slug[]> {
@@ -26905,9 +26897,7 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.slug 
     `;
-          return response.map((record) => ({
-            slugId: undefinedIsNull(record.slug_id),
-          }));
+          return response.map((r) => ({ slugId: undefinedIsNull(r.slug_id) }));
         }
 
         public BySlugId = new (class implements HasDatabase {
@@ -26937,8 +26927,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     `;
-            return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+            return response.map((r) => ({
+              slugId: undefinedIsNull(r.slug_id),
             }))[0];
           }
 
@@ -26966,8 +26956,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     RETURNING slug_id`;
-            return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+            return response.map((r) => ({
+              slugId: undefinedIsNull(r.slug_id),
             }))[0];
           }
           async delete(parameters: Public.Tables.Slug.BySlugId) {
@@ -26985,8 +26975,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.slugId)
       }
     RETURNING slug_id`;
-            return response.map((record) => ({
-              slugId: undefinedIsNull(record.slug_id),
+            return response.map((r) => ({
+              slugId: undefinedIsNull(r.slug_id),
             }))[0];
           }
         })(this);
@@ -26998,6 +26988,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
   })(this);
 }
 
+// begin - operation dispatch map
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 export class OperationDispatcher {
   private dispatchMap: Record<string, OperationDispatchMethod>;
   constructor(private database: Database) {

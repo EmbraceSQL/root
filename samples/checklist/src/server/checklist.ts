@@ -23561,10 +23561,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         id,name,created_at
     `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              name: undefinedIsNull(r.name),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
           const response = await sql`
@@ -23583,10 +23583,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       id,name,created_at
     `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            name: undefinedIsNull(record.name),
-            createdAt: undefinedIsNull(record.created_at),
+          return response.map((r) => ({
+            id: undefinedIsNull(r.id),
+            name: undefinedIsNull(r.name),
+            createdAt: undefinedIsNull(r.created_at),
           }))[0];
         }
         async all(): Promise<Public.Types.Checklist[]> {
@@ -23600,10 +23600,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.checklist 
     `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            name: undefinedIsNull(record.name),
-            createdAt: undefinedIsNull(record.created_at),
+          return response.map((r) => ({
+            id: undefinedIsNull(r.id),
+            name: undefinedIsNull(r.name),
+            createdAt: undefinedIsNull(r.created_at),
           }));
         }
 
@@ -23632,10 +23632,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              name: undefinedIsNull(r.name),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
 
@@ -23667,10 +23667,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     RETURNING id,name,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              name: undefinedIsNull(r.name),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
           async delete(parameters: Public.Tables.Checklist.ById) {
@@ -23686,10 +23686,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     RETURNING id,name,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              name: undefinedIsNull(record.name),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              name: undefinedIsNull(r.name),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
         })(this);
@@ -23732,12 +23732,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         id,checklist_id,title,checked,created_at
     `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
           const response = await sql`
@@ -23762,12 +23762,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       id,checklist_id,title,checked,created_at
     `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            checklistId: undefinedIsNull(record.checklist_id),
-            title: undefinedIsNull(record.title),
-            checked: undefinedIsNull(record.checked),
-            createdAt: undefinedIsNull(record.created_at),
+          return response.map((r) => ({
+            id: undefinedIsNull(r.id),
+            checklistId: undefinedIsNull(r.checklist_id),
+            title: undefinedIsNull(r.title),
+            checked: undefinedIsNull(r.checked),
+            createdAt: undefinedIsNull(r.created_at),
           }))[0];
         }
         async all(): Promise<Public.Types.ChecklistItem[]> {
@@ -23781,12 +23781,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.checklist_item 
     `;
-          return response.map((record) => ({
-            id: undefinedIsNull(record.id),
-            checklistId: undefinedIsNull(record.checklist_id),
-            title: undefinedIsNull(record.title),
-            checked: undefinedIsNull(record.checked),
-            createdAt: undefinedIsNull(record.created_at),
+          return response.map((r) => ({
+            id: undefinedIsNull(r.id),
+            checklistId: undefinedIsNull(r.checklist_id),
+            title: undefinedIsNull(r.title),
+            checked: undefinedIsNull(r.checked),
+            createdAt: undefinedIsNull(r.created_at),
           }));
         }
 
@@ -23817,12 +23817,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[2950](parameters.checklistId)
       }
     `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }));
           }
 
@@ -23862,12 +23862,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[2950](parameters.checklistId)
       }
     RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }));
           }
           async delete(parameters: Public.Tables.ChecklistItem.ByChecklistId) {
@@ -23885,12 +23885,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[2950](parameters.checklistId)
       }
     RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }));
           }
         })(this);
@@ -23920,12 +23920,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     `;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
 
@@ -23963,12 +23963,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
           async delete(parameters: Public.Tables.ChecklistItem.ById) {
@@ -23984,12 +23984,12 @@ export class Database extends PostgresDatabase implements HasDatabase {
         parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id)
       }
     RETURNING id,checklist_id,title,checked,created_at`;
-            return response.map((record) => ({
-              id: undefinedIsNull(record.id),
-              checklistId: undefinedIsNull(record.checklist_id),
-              title: undefinedIsNull(record.title),
-              checked: undefinedIsNull(record.checked),
-              createdAt: undefinedIsNull(record.created_at),
+            return response.map((r) => ({
+              id: undefinedIsNull(r.id),
+              checklistId: undefinedIsNull(r.checklist_id),
+              title: undefinedIsNull(r.title),
+              checked: undefinedIsNull(r.checked),
+              createdAt: undefinedIsNull(r.created_at),
             }))[0];
           }
         })(this);

@@ -4,38 +4,13 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-
 /* @typescript-eslint/no-redundant-type-constituents */
-// begin fetch client
-import {
-  EmbraceSQLClient as BaseClient,
-  EmbraceSQLClientProps,
-  HasClient,
-} from "@embracesql/client";
-import {
-  useEmbraceSQLClient,
-  useEmbraceSQLRow,
-  useEmbraceSQLRows,
-  useEmbraceSQLImmutableRows,
-  useEmbraceSQLImmutable,
-  ChangeEvent,
-  Row as IsRow,
-  RowBase,
-  RowCallback,
-  GeneratedRowProps,
-} from "@embracesql/react";
 import {
   UUID,
   JsDate,
@@ -49,7 +24,6 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
-import React from "react";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -24768,6 +24742,12 @@ export namespace Scripts {
     }
   }
 }
+// begin fetch client
+import {
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
 
 export class EmbraceSQLClient extends BaseClient {
   constructor(props: EmbraceSQLClientProps) {
@@ -27769,9 +27749,20 @@ export class EmbraceSQLClient extends BaseClient {
     })(this);
   })(this);
 }
-
+import React from "react";
 export { EmbraceSQLProvider } from "@embracesql/react";
-
+import {
+  useEmbraceSQLClient,
+  useEmbraceSQLRow,
+  useEmbraceSQLRows,
+  useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
+  ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RowCallback,
+  GeneratedRowProps,
+} from "@embracesql/react";
 export namespace Public {
   export namespace Procedures {
     export namespace FilmInStock {}
@@ -27794,7 +27785,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get customerId() {
-          return this.record.customerId;
+          return this._value.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -27806,7 +27797,7 @@ export namespace Public {
           };
         }
         get storeId() {
-          return this.record.storeId;
+          return this._value.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -27818,7 +27809,7 @@ export namespace Public {
           };
         }
         get firstName() {
-          return this.record.firstName;
+          return this._value.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -27832,7 +27823,7 @@ export namespace Public {
           };
         }
         get lastName() {
-          return this.record.lastName;
+          return this._value.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -27846,7 +27837,7 @@ export namespace Public {
           };
         }
         get email() {
-          return this.record.email;
+          return this._value.email;
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
@@ -27860,7 +27851,7 @@ export namespace Public {
           };
         }
         get addressId() {
-          return this.record.addressId;
+          return this._value.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -27872,7 +27863,7 @@ export namespace Public {
           };
         }
         get activebool() {
-          return this.record.activebool;
+          return this._value.activebool;
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
@@ -27884,7 +27875,7 @@ export namespace Public {
           };
         }
         get createDate() {
-          return this.record.createDate;
+          return this._value.createDate;
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
@@ -27896,7 +27887,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -27910,7 +27901,7 @@ export namespace Public {
           };
         }
         get active() {
-          return this.record.active;
+          return this._value.active;
         }
         get changeActive() {
           return (event: ChangeEvent) => {
@@ -27939,7 +27930,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get actorId() {
-          return this.record.actorId;
+          return this._value.actorId;
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
@@ -27951,7 +27942,7 @@ export namespace Public {
           };
         }
         get filmId() {
-          return this.record.filmId;
+          return this._value.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -27963,7 +27954,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -27992,7 +27983,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get addressId() {
-          return this.record.addressId;
+          return this._value.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -28004,7 +27995,7 @@ export namespace Public {
           };
         }
         get address() {
-          return this.record.address;
+          return this._value.address;
         }
         get changeAddress() {
           return (event: ChangeEvent) => {
@@ -28018,7 +28009,7 @@ export namespace Public {
           };
         }
         get address2() {
-          return this.record.address2;
+          return this._value.address2;
         }
         get changeAddress2() {
           return (event: ChangeEvent) => {
@@ -28032,7 +28023,7 @@ export namespace Public {
           };
         }
         get district() {
-          return this.record.district;
+          return this._value.district;
         }
         get changeDistrict() {
           return (event: ChangeEvent) => {
@@ -28046,7 +28037,7 @@ export namespace Public {
           };
         }
         get cityId() {
-          return this.record.cityId;
+          return this._value.cityId;
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
@@ -28058,7 +28049,7 @@ export namespace Public {
           };
         }
         get postalCode() {
-          return this.record.postalCode;
+          return this._value.postalCode;
         }
         get changePostalCode() {
           return (event: ChangeEvent) => {
@@ -28072,7 +28063,7 @@ export namespace Public {
           };
         }
         get phone() {
-          return this.record.phone;
+          return this._value.phone;
         }
         get changePhone() {
           return (event: ChangeEvent) => {
@@ -28086,7 +28077,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28115,7 +28106,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get cityId() {
-          return this.record.cityId;
+          return this._value.cityId;
         }
         get changeCityId() {
           return (event: ChangeEvent) => {
@@ -28127,7 +28118,7 @@ export namespace Public {
           };
         }
         get city() {
-          return this.record.city;
+          return this._value.city;
         }
         get changeCity() {
           return (event: ChangeEvent) => {
@@ -28141,7 +28132,7 @@ export namespace Public {
           };
         }
         get countryId() {
-          return this.record.countryId;
+          return this._value.countryId;
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
@@ -28153,7 +28144,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28182,7 +28173,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get customerId() {
-          return this.record.customerId;
+          return this._value.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -28194,7 +28185,7 @@ export namespace Public {
           };
         }
         get storeId() {
-          return this.record.storeId;
+          return this._value.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -28206,7 +28197,7 @@ export namespace Public {
           };
         }
         get firstName() {
-          return this.record.firstName;
+          return this._value.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -28220,7 +28211,7 @@ export namespace Public {
           };
         }
         get lastName() {
-          return this.record.lastName;
+          return this._value.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -28234,7 +28225,7 @@ export namespace Public {
           };
         }
         get email() {
-          return this.record.email;
+          return this._value.email;
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
@@ -28248,7 +28239,7 @@ export namespace Public {
           };
         }
         get addressId() {
-          return this.record.addressId;
+          return this._value.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -28260,7 +28251,7 @@ export namespace Public {
           };
         }
         get activebool() {
-          return this.record.activebool;
+          return this._value.activebool;
         }
         get changeActivebool() {
           return (event: ChangeEvent) => {
@@ -28272,7 +28263,7 @@ export namespace Public {
           };
         }
         get createDate() {
-          return this.record.createDate;
+          return this._value.createDate;
         }
         get changeCreateDate() {
           return (event: ChangeEvent) => {
@@ -28284,7 +28275,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28298,7 +28289,7 @@ export namespace Public {
           };
         }
         get active() {
-          return this.record.active;
+          return this._value.active;
         }
         get changeActive() {
           return (event: ChangeEvent) => {
@@ -28325,7 +28316,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get actorId() {
-          return this.record.actorId;
+          return this._value.actorId;
         }
         get changeActorId() {
           return (event: ChangeEvent) => {
@@ -28337,7 +28328,7 @@ export namespace Public {
           };
         }
         get firstName() {
-          return this.record.firstName;
+          return this._value.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -28351,7 +28342,7 @@ export namespace Public {
           };
         }
         get lastName() {
-          return this.record.lastName;
+          return this._value.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -28365,7 +28356,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28394,7 +28385,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get filmId() {
-          return this.record.filmId;
+          return this._value.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -28406,7 +28397,7 @@ export namespace Public {
           };
         }
         get categoryId() {
-          return this.record.categoryId;
+          return this._value.categoryId;
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
@@ -28419,7 +28410,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28449,7 +28440,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get inventoryId() {
-          return this.record.inventoryId;
+          return this._value.inventoryId;
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
@@ -28461,7 +28452,7 @@ export namespace Public {
           };
         }
         get filmId() {
-          return this.record.filmId;
+          return this._value.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -28473,7 +28464,7 @@ export namespace Public {
           };
         }
         get storeId() {
-          return this.record.storeId;
+          return this._value.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -28485,7 +28476,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28514,7 +28505,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get categoryId() {
-          return this.record.categoryId;
+          return this._value.categoryId;
         }
         get changeCategoryId() {
           return (event: ChangeEvent) => {
@@ -28526,7 +28517,7 @@ export namespace Public {
           };
         }
         get name() {
-          return this.record.name;
+          return this._value.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
@@ -28540,7 +28531,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28569,7 +28560,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get countryId() {
-          return this.record.countryId;
+          return this._value.countryId;
         }
         get changeCountryId() {
           return (event: ChangeEvent) => {
@@ -28581,7 +28572,7 @@ export namespace Public {
           };
         }
         get country() {
-          return this.record.country;
+          return this._value.country;
         }
         get changeCountry() {
           return (event: ChangeEvent) => {
@@ -28595,7 +28586,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28624,7 +28615,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get languageId() {
-          return this.record.languageId;
+          return this._value.languageId;
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
@@ -28636,7 +28627,7 @@ export namespace Public {
           };
         }
         get name() {
-          return this.record.name;
+          return this._value.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
@@ -28650,7 +28641,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28679,7 +28670,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get rentalId() {
-          return this.record.rentalId;
+          return this._value.rentalId;
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
@@ -28691,7 +28682,7 @@ export namespace Public {
           };
         }
         get rentalDate() {
-          return this.record.rentalDate;
+          return this._value.rentalDate;
         }
         get changeRentalDate() {
           return (event: ChangeEvent) => {
@@ -28705,7 +28696,7 @@ export namespace Public {
           };
         }
         get inventoryId() {
-          return this.record.inventoryId;
+          return this._value.inventoryId;
         }
         get changeInventoryId() {
           return (event: ChangeEvent) => {
@@ -28717,7 +28708,7 @@ export namespace Public {
           };
         }
         get customerId() {
-          return this.record.customerId;
+          return this._value.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -28729,7 +28720,7 @@ export namespace Public {
           };
         }
         get returnDate() {
-          return this.record.returnDate;
+          return this._value.returnDate;
         }
         get changeReturnDate() {
           return (event: ChangeEvent) => {
@@ -28743,7 +28734,7 @@ export namespace Public {
           };
         }
         get staffId() {
-          return this.record.staffId;
+          return this._value.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -28755,7 +28746,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28784,7 +28775,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get staffId() {
-          return this.record.staffId;
+          return this._value.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -28796,7 +28787,7 @@ export namespace Public {
           };
         }
         get firstName() {
-          return this.record.firstName;
+          return this._value.firstName;
         }
         get changeFirstName() {
           return (event: ChangeEvent) => {
@@ -28810,7 +28801,7 @@ export namespace Public {
           };
         }
         get lastName() {
-          return this.record.lastName;
+          return this._value.lastName;
         }
         get changeLastName() {
           return (event: ChangeEvent) => {
@@ -28824,7 +28815,7 @@ export namespace Public {
           };
         }
         get addressId() {
-          return this.record.addressId;
+          return this._value.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -28836,7 +28827,7 @@ export namespace Public {
           };
         }
         get email() {
-          return this.record.email;
+          return this._value.email;
         }
         get changeEmail() {
           return (event: ChangeEvent) => {
@@ -28850,7 +28841,7 @@ export namespace Public {
           };
         }
         get storeId() {
-          return this.record.storeId;
+          return this._value.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -28862,7 +28853,7 @@ export namespace Public {
           };
         }
         get active() {
-          return this.record.active;
+          return this._value.active;
         }
         get changeActive() {
           return (event: ChangeEvent) => {
@@ -28874,7 +28865,7 @@ export namespace Public {
           };
         }
         get username() {
-          return this.record.username;
+          return this._value.username;
         }
         get changeUsername() {
           return (event: ChangeEvent) => {
@@ -28888,7 +28879,7 @@ export namespace Public {
           };
         }
         get password() {
-          return this.record.password;
+          return this._value.password;
         }
         get changePassword() {
           return (event: ChangeEvent) => {
@@ -28902,7 +28893,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -28916,7 +28907,7 @@ export namespace Public {
           };
         }
         get picture() {
-          return this.record.picture;
+          return this._value.picture;
         }
         get changePicture() {
           return (event: ChangeEvent) => {
@@ -28943,7 +28934,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get storeId() {
-          return this.record.storeId;
+          return this._value.storeId;
         }
         get changeStoreId() {
           return (event: ChangeEvent) => {
@@ -28955,7 +28946,7 @@ export namespace Public {
           };
         }
         get managerStaffId() {
-          return this.record.managerStaffId;
+          return this._value.managerStaffId;
         }
         get changeManagerStaffId() {
           return (event: ChangeEvent) => {
@@ -28968,7 +28959,7 @@ export namespace Public {
           };
         }
         get addressId() {
-          return this.record.addressId;
+          return this._value.addressId;
         }
         get changeAddressId() {
           return (event: ChangeEvent) => {
@@ -28980,7 +28971,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -29009,7 +29000,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get paymentId() {
-          return this.record.paymentId;
+          return this._value.paymentId;
         }
         get changePaymentId() {
           return (event: ChangeEvent) => {
@@ -29021,7 +29012,7 @@ export namespace Public {
           };
         }
         get customerId() {
-          return this.record.customerId;
+          return this._value.customerId;
         }
         get changeCustomerId() {
           return (event: ChangeEvent) => {
@@ -29033,7 +29024,7 @@ export namespace Public {
           };
         }
         get staffId() {
-          return this.record.staffId;
+          return this._value.staffId;
         }
         get changeStaffId() {
           return (event: ChangeEvent) => {
@@ -29045,7 +29036,7 @@ export namespace Public {
           };
         }
         get rentalId() {
-          return this.record.rentalId;
+          return this._value.rentalId;
         }
         get changeRentalId() {
           return (event: ChangeEvent) => {
@@ -29057,7 +29048,7 @@ export namespace Public {
           };
         }
         get amount() {
-          return this.record.amount;
+          return this._value.amount;
         }
         get changeAmount() {
           return (event: ChangeEvent) => {
@@ -29071,7 +29062,7 @@ export namespace Public {
           };
         }
         get paymentDate() {
-          return this.record.paymentDate;
+          return this._value.paymentDate;
         }
         get changePaymentDate() {
           return (event: ChangeEvent) => {
@@ -29100,7 +29091,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get filmId() {
-          return this.record.filmId;
+          return this._value.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -29112,7 +29103,7 @@ export namespace Public {
           };
         }
         get title() {
-          return this.record.title;
+          return this._value.title;
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
@@ -29126,7 +29117,7 @@ export namespace Public {
           };
         }
         get description() {
-          return this.record.description;
+          return this._value.description;
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
@@ -29138,7 +29129,7 @@ export namespace Public {
           };
         }
         get releaseYear() {
-          return this.record.releaseYear;
+          return this._value.releaseYear;
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
@@ -29150,7 +29141,7 @@ export namespace Public {
           };
         }
         get languageId() {
-          return this.record.languageId;
+          return this._value.languageId;
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
@@ -29162,7 +29153,7 @@ export namespace Public {
           };
         }
         get rentalDuration() {
-          return this.record.rentalDuration;
+          return this._value.rentalDuration;
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
@@ -29175,7 +29166,7 @@ export namespace Public {
           };
         }
         get rentalRate() {
-          return this.record.rentalRate;
+          return this._value.rentalRate;
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
@@ -29189,7 +29180,7 @@ export namespace Public {
           };
         }
         get length() {
-          return this.record.length;
+          return this._value.length;
         }
         get changeLength() {
           return (event: ChangeEvent) => {
@@ -29201,7 +29192,7 @@ export namespace Public {
           };
         }
         get replacementCost() {
-          return this.record.replacementCost;
+          return this._value.replacementCost;
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
@@ -29216,7 +29207,7 @@ export namespace Public {
           };
         }
         get rating() {
-          return this.record.rating;
+          return this._value.rating;
         }
         get changeRating() {
           return (event: ChangeEvent) => {
@@ -29230,7 +29221,7 @@ export namespace Public {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -29244,7 +29235,7 @@ export namespace Public {
           };
         }
         get specialFeatures() {
-          return this.record.specialFeatures;
+          return this._value.specialFeatures;
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
@@ -29259,7 +29250,7 @@ export namespace Public {
           };
         }
         get fulltext() {
-          return this.record.fulltext;
+          return this._value.fulltext;
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
@@ -29291,7 +29282,7 @@ export namespace Scripts {
         super(record, changeCallback, rowNumberInResultset);
       }
       get filmId() {
-        return this.record.filmId;
+        return this._value.filmId;
       }
       get changeFilmId() {
         return (event: ChangeEvent) => {
@@ -29303,7 +29294,7 @@ export namespace Scripts {
         };
       }
       get title() {
-        return this.record.title;
+        return this._value.title;
       }
       get changeTitle() {
         return (event: ChangeEvent) => {
@@ -29315,7 +29306,7 @@ export namespace Scripts {
         };
       }
       get releaseYear() {
-        return this.record.releaseYear;
+        return this._value.releaseYear;
       }
       get changeReleaseYear() {
         return (event: ChangeEvent) => {
@@ -29328,7 +29319,7 @@ export namespace Scripts {
         };
       }
       get rating() {
-        return this.record.rating;
+        return this._value.rating;
       }
       get changeRating() {
         return (event: ChangeEvent) => {
@@ -29340,7 +29331,7 @@ export namespace Scripts {
         };
       }
       get actors() {
-        return this.record.actors;
+        return this._value.actors;
       }
       get changeActors() {
         return (event: ChangeEvent) => {
@@ -29371,7 +29362,7 @@ export namespace Scripts {
             super(record, changeCallback, rowNumberInResultset);
           }
           get filmId() {
-            return this.record.filmId;
+            return this._value.filmId;
           }
           get changeFilmId() {
             return (event: ChangeEvent) => {
@@ -29386,7 +29377,7 @@ export namespace Scripts {
             };
           }
           get title() {
-            return this.record.title;
+            return this._value.title;
           }
           get changeTitle() {
             return (event: ChangeEvent) => {
@@ -29401,7 +29392,7 @@ export namespace Scripts {
             };
           }
           get description() {
-            return this.record.description;
+            return this._value.description;
           }
           get changeDescription() {
             return (event: ChangeEvent) => {
@@ -29416,7 +29407,7 @@ export namespace Scripts {
             };
           }
           get releaseYear() {
-            return this.record.releaseYear;
+            return this._value.releaseYear;
           }
           get changeReleaseYear() {
             return (event: ChangeEvent) => {
@@ -29431,7 +29422,7 @@ export namespace Scripts {
             };
           }
           get languageId() {
-            return this.record.languageId;
+            return this._value.languageId;
           }
           get changeLanguageId() {
             return (event: ChangeEvent) => {
@@ -29446,7 +29437,7 @@ export namespace Scripts {
             };
           }
           get rentalDuration() {
-            return this.record.rentalDuration;
+            return this._value.rentalDuration;
           }
           get changeRentalDuration() {
             return (event: ChangeEvent) => {
@@ -29461,7 +29452,7 @@ export namespace Scripts {
             };
           }
           get rentalRate() {
-            return this.record.rentalRate;
+            return this._value.rentalRate;
           }
           get changeRentalRate() {
             return (event: ChangeEvent) => {
@@ -29476,7 +29467,7 @@ export namespace Scripts {
             };
           }
           get length() {
-            return this.record.length;
+            return this._value.length;
           }
           get changeLength() {
             return (event: ChangeEvent) => {
@@ -29491,7 +29482,7 @@ export namespace Scripts {
             };
           }
           get replacementCost() {
-            return this.record.replacementCost;
+            return this._value.replacementCost;
           }
           get changeReplacementCost() {
             return (event: ChangeEvent) => {
@@ -29506,7 +29497,7 @@ export namespace Scripts {
             };
           }
           get rating() {
-            return this.record.rating;
+            return this._value.rating;
           }
           get changeRating() {
             return (event: ChangeEvent) => {
@@ -29521,7 +29512,7 @@ export namespace Scripts {
             };
           }
           get lastUpdate() {
-            return this.record.lastUpdate;
+            return this._value.lastUpdate;
           }
           get changeLastUpdate() {
             return (event: ChangeEvent) => {
@@ -29536,7 +29527,7 @@ export namespace Scripts {
             };
           }
           get specialFeatures() {
-            return this.record.specialFeatures;
+            return this._value.specialFeatures;
           }
           get changeSpecialFeatures() {
             return (event: ChangeEvent) => {
@@ -29551,7 +29542,7 @@ export namespace Scripts {
             };
           }
           get fulltext() {
-            return this.record.fulltext;
+            return this._value.fulltext;
           }
           get changeFulltext() {
             return (event: ChangeEvent) => {
@@ -29581,7 +29572,7 @@ export namespace Scripts {
             super(record, changeCallback, rowNumberInResultset);
           }
           get count() {
-            return this.record.count;
+            return this._value.count;
           }
           get changeCount() {
             return (event: ChangeEvent) => {
@@ -29612,7 +29603,7 @@ export namespace Scripts {
           super(record, changeCallback, rowNumberInResultset);
         }
         get filmId() {
-          return this.record.filmId;
+          return this._value.filmId;
         }
         get changeFilmId() {
           return (event: ChangeEvent) => {
@@ -29624,7 +29615,7 @@ export namespace Scripts {
           };
         }
         get title() {
-          return this.record.title;
+          return this._value.title;
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
@@ -29638,7 +29629,7 @@ export namespace Scripts {
           };
         }
         get description() {
-          return this.record.description;
+          return this._value.description;
         }
         get changeDescription() {
           return (event: ChangeEvent) => {
@@ -29651,7 +29642,7 @@ export namespace Scripts {
           };
         }
         get releaseYear() {
-          return this.record.releaseYear;
+          return this._value.releaseYear;
         }
         get changeReleaseYear() {
           return (event: ChangeEvent) => {
@@ -29664,7 +29655,7 @@ export namespace Scripts {
           };
         }
         get languageId() {
-          return this.record.languageId;
+          return this._value.languageId;
         }
         get changeLanguageId() {
           return (event: ChangeEvent) => {
@@ -29677,7 +29668,7 @@ export namespace Scripts {
           };
         }
         get rentalDuration() {
-          return this.record.rentalDuration;
+          return this._value.rentalDuration;
         }
         get changeRentalDuration() {
           return (event: ChangeEvent) => {
@@ -29690,7 +29681,7 @@ export namespace Scripts {
           };
         }
         get rentalRate() {
-          return this.record.rentalRate;
+          return this._value.rentalRate;
         }
         get changeRentalRate() {
           return (event: ChangeEvent) => {
@@ -29705,7 +29696,7 @@ export namespace Scripts {
           };
         }
         get length() {
-          return this.record.length;
+          return this._value.length;
         }
         get changeLength() {
           return (event: ChangeEvent) => {
@@ -29717,7 +29708,7 @@ export namespace Scripts {
           };
         }
         get replacementCost() {
-          return this.record.replacementCost;
+          return this._value.replacementCost;
         }
         get changeReplacementCost() {
           return (event: ChangeEvent) => {
@@ -29732,7 +29723,7 @@ export namespace Scripts {
           };
         }
         get rating() {
-          return this.record.rating;
+          return this._value.rating;
         }
         get changeRating() {
           return (event: ChangeEvent) => {
@@ -29746,7 +29737,7 @@ export namespace Scripts {
           };
         }
         get lastUpdate() {
-          return this.record.lastUpdate;
+          return this._value.lastUpdate;
         }
         get changeLastUpdate() {
           return (event: ChangeEvent) => {
@@ -29761,7 +29752,7 @@ export namespace Scripts {
           };
         }
         get specialFeatures() {
-          return this.record.specialFeatures;
+          return this._value.specialFeatures;
         }
         get changeSpecialFeatures() {
           return (event: ChangeEvent) => {
@@ -29776,7 +29767,7 @@ export namespace Scripts {
           };
         }
         get fulltext() {
-          return this.record.fulltext;
+          return this._value.fulltext;
         }
         get changeFulltext() {
           return (event: ChangeEvent) => {
@@ -29806,7 +29797,7 @@ export namespace Scripts {
         super(record, changeCallback, rowNumberInResultset);
       }
       get count() {
-        return this.record.count;
+        return this._value.count;
       }
       get changeCount() {
         return (event: ChangeEvent) => {

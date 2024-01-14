@@ -4,25 +4,13 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-
 /* @typescript-eslint/no-redundant-type-constituents */
-import {
-  Context,
-  initializeContext,
-  PostgresDatabase,
-} from "@embracesql/postgres";
 import {
   UUID,
   JsDate,
@@ -36,9 +24,6 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
-// begin - operation dispatch map
-import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-import postgres from "postgres";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -24460,6 +24445,13 @@ export namespace InformationSchema {
   }
 }
 
+import {
+  Context,
+  initializeContext,
+  PostgresDatabase,
+} from "@embracesql/postgres";
+import postgres from "postgres";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ArgumentToPostgres = any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -26095,10 +26087,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       actor_id,film_id,last_update
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            actorId: undefinedIsNull(r.actor_id),
+            filmId: undefinedIsNull(r.film_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.FilmActor[]> {
@@ -26112,10 +26104,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.film_actor 
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            filmId: undefinedIsNull(record.film_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            actorId: undefinedIsNull(r.actor_id),
+            filmId: undefinedIsNull(r.film_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -26150,10 +26142,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -26191,10 +26183,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.FilmActor.ByActorIdFilmId) {
@@ -26216,10 +26208,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -26254,10 +26246,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -26291,10 +26283,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.FilmActor.ByFilmId) {
@@ -26312,10 +26304,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING actor_id,film_id,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              filmId: undefinedIsNull(record.film_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              filmId: undefinedIsNull(r.film_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -26367,15 +26359,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -26414,15 +26406,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       address_id,address,address2,district,city_id,postal_code,phone,last_update
     `;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            addressId: undefinedIsNull(r.address_id),
+            address: undefinedIsNull(r.address),
+            address2: undefinedIsNull(r.address2),
+            district: undefinedIsNull(r.district),
+            cityId: undefinedIsNull(r.city_id),
+            postalCode: undefinedIsNull(r.postal_code),
+            phone: undefinedIsNull(r.phone),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Address[]> {
@@ -26436,15 +26428,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.address 
     `;
-          return response.map((record) => ({
-            addressId: undefinedIsNull(record.address_id),
-            address: undefinedIsNull(record.address),
-            address2: undefinedIsNull(record.address2),
-            district: undefinedIsNull(record.district),
-            cityId: undefinedIsNull(record.city_id),
-            postalCode: undefinedIsNull(record.postal_code),
-            phone: undefinedIsNull(record.phone),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            addressId: undefinedIsNull(r.address_id),
+            address: undefinedIsNull(r.address),
+            address2: undefinedIsNull(r.address2),
+            district: undefinedIsNull(r.district),
+            cityId: undefinedIsNull(r.city_id),
+            postalCode: undefinedIsNull(r.postal_code),
+            phone: undefinedIsNull(r.phone),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -26475,15 +26467,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.addressId)
       }
     `;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -26537,15 +26529,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.addressId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Address.ByAddressId) {
@@ -26563,15 +26555,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.addressId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -26606,15 +26598,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     `;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -26668,15 +26660,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.Address.ByCityId) {
@@ -26694,15 +26686,15 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.cityId)
       }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`;
-            return response.map((record) => ({
-              addressId: undefinedIsNull(record.address_id),
-              address: undefinedIsNull(record.address),
-              address2: undefinedIsNull(record.address2),
-              district: undefinedIsNull(record.district),
-              cityId: undefinedIsNull(record.city_id),
-              postalCode: undefinedIsNull(record.postal_code),
-              phone: undefinedIsNull(record.phone),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              addressId: undefinedIsNull(r.address_id),
+              address: undefinedIsNull(r.address),
+              address2: undefinedIsNull(r.address2),
+              district: undefinedIsNull(r.district),
+              cityId: undefinedIsNull(r.city_id),
+              postalCode: undefinedIsNull(r.postal_code),
+              phone: undefinedIsNull(r.phone),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -26740,11 +26732,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         city_id,city,country_id,last_update
     `;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -26767,11 +26759,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       city_id,city,country_id,last_update
     `;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            cityId: undefinedIsNull(r.city_id),
+            city: undefinedIsNull(r.city),
+            countryId: undefinedIsNull(r.country_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.City[]> {
@@ -26785,11 +26777,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.city 
     `;
-          return response.map((record) => ({
-            cityId: undefinedIsNull(record.city_id),
-            city: undefinedIsNull(record.city),
-            countryId: undefinedIsNull(record.country_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            cityId: undefinedIsNull(r.city_id),
+            city: undefinedIsNull(r.city),
+            countryId: undefinedIsNull(r.country_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -26820,11 +26812,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     `;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -26862,11 +26854,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     RETURNING city_id,city,country_id,last_update`;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.City.ByCityId) {
@@ -26884,11 +26876,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.cityId)
       }
     RETURNING city_id,city,country_id,last_update`;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -26923,11 +26915,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     `;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -26965,11 +26957,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     RETURNING city_id,city,country_id,last_update`;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.City.ByCountryId) {
@@ -26987,11 +26979,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.countryId)
       }
     RETURNING city_id,city,country_id,last_update`;
-            return response.map((record) => ({
-              cityId: undefinedIsNull(record.city_id),
-              city: undefinedIsNull(record.city),
-              countryId: undefinedIsNull(record.country_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              cityId: undefinedIsNull(r.city_id),
+              city: undefinedIsNull(r.city),
+              countryId: undefinedIsNull(r.country_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -27049,17 +27041,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }))[0];
           }
           const response = await sql`
@@ -27104,17 +27096,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
+          return response.map((r) => ({
+            customerId: undefinedIsNull(r.customer_id),
+            storeId: undefinedIsNull(r.store_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            email: undefinedIsNull(r.email),
+            addressId: undefinedIsNull(r.address_id),
+            activebool: undefinedIsNull(r.activebool),
+            createDate: undefinedIsNull(r.create_date),
+            lastUpdate: undefinedIsNull(r.last_update),
+            active: undefinedIsNull(r.active),
           }))[0];
         }
         async all(): Promise<Public.Types.Customer[]> {
@@ -27128,17 +27120,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.customer 
     `;
-          return response.map((record) => ({
-            customerId: undefinedIsNull(record.customer_id),
-            storeId: undefinedIsNull(record.store_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            email: undefinedIsNull(record.email),
-            addressId: undefinedIsNull(record.address_id),
-            activebool: undefinedIsNull(record.activebool),
-            createDate: undefinedIsNull(record.create_date),
-            lastUpdate: undefinedIsNull(record.last_update),
-            active: undefinedIsNull(record.active),
+          return response.map((r) => ({
+            customerId: undefinedIsNull(r.customer_id),
+            storeId: undefinedIsNull(r.store_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            email: undefinedIsNull(r.email),
+            addressId: undefinedIsNull(r.address_id),
+            activebool: undefinedIsNull(r.activebool),
+            createDate: undefinedIsNull(r.create_date),
+            lastUpdate: undefinedIsNull(r.last_update),
+            active: undefinedIsNull(r.active),
           }));
         }
 
@@ -27169,17 +27161,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.addressId)
       }
     `;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
 
@@ -27239,17 +27231,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.addressId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
           async delete(parameters: Public.Tables.Customer.ByAddressId) {
@@ -27267,17 +27259,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.addressId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
         })(this);
@@ -27309,17 +27301,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.customerId)
       }
     `;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }))[0];
           }
 
@@ -27379,17 +27371,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.customerId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }))[0];
           }
           async delete(parameters: Public.Tables.Customer.ByCustomerId) {
@@ -27407,17 +27399,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.customerId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }))[0];
           }
         })(this);
@@ -27452,17 +27444,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     `;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
 
@@ -27522,17 +27514,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
           async delete(parameters: Public.Tables.Customer.ByLastName) {
@@ -27550,17 +27542,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
         })(this);
@@ -27592,17 +27584,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     `;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
 
@@ -27662,17 +27654,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
           async delete(parameters: Public.Tables.Customer.ByStoreId) {
@@ -27690,17 +27682,17 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.storeId)
       }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`;
-            return response.map((record) => ({
-              customerId: undefinedIsNull(record.customer_id),
-              storeId: undefinedIsNull(record.store_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              email: undefinedIsNull(record.email),
-              addressId: undefinedIsNull(record.address_id),
-              activebool: undefinedIsNull(record.activebool),
-              createDate: undefinedIsNull(record.create_date),
-              lastUpdate: undefinedIsNull(record.last_update),
-              active: undefinedIsNull(record.active),
+            return response.map((r) => ({
+              customerId: undefinedIsNull(r.customer_id),
+              storeId: undefinedIsNull(r.store_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              email: undefinedIsNull(r.email),
+              addressId: undefinedIsNull(r.address_id),
+              activebool: undefinedIsNull(r.activebool),
+              createDate: undefinedIsNull(r.create_date),
+              lastUpdate: undefinedIsNull(r.last_update),
+              active: undefinedIsNull(r.active),
             }));
           }
         })(this);
@@ -27740,11 +27732,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         actor_id,first_name,last_name,last_update
     `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -27771,11 +27763,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       actor_id,first_name,last_name,last_update
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            actorId: undefinedIsNull(r.actor_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Actor[]> {
@@ -27789,11 +27781,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.actor 
     `;
-          return response.map((record) => ({
-            actorId: undefinedIsNull(record.actor_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            actorId: undefinedIsNull(r.actor_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -27824,11 +27816,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -27868,11 +27860,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Actor.ByActorId) {
@@ -27890,11 +27882,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.actorId)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -27929,11 +27921,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     `;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -27973,11 +27965,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.Actor.ByLastName) {
@@ -27995,11 +27987,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.lastName)
       }
     RETURNING actor_id,first_name,last_name,last_update`;
-            return response.map((record) => ({
-              actorId: undefinedIsNull(record.actor_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              actorId: undefinedIsNull(r.actor_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -28038,10 +28030,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       film_id,category_id,last_update
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            filmId: undefinedIsNull(r.film_id),
+            categoryId: undefinedIsNull(r.category_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.FilmCategory[]> {
@@ -28055,10 +28047,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.film_category 
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            categoryId: undefinedIsNull(record.category_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            filmId: undefinedIsNull(r.film_id),
+            categoryId: undefinedIsNull(r.category_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -28093,10 +28085,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              categoryId: undefinedIsNull(record.category_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              categoryId: undefinedIsNull(r.category_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -28136,10 +28128,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     RETURNING film_id,category_id,last_update`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              categoryId: undefinedIsNull(record.category_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              categoryId: undefinedIsNull(r.category_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(
@@ -28163,10 +28155,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.categoryId)
       }
     RETURNING film_id,category_id,last_update`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              categoryId: undefinedIsNull(record.category_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              categoryId: undefinedIsNull(r.category_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -28205,11 +28197,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         inventory_id,film_id,store_id,last_update
     `;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -28234,11 +28226,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       inventory_id,film_id,store_id,last_update
     `;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            inventoryId: undefinedIsNull(r.inventory_id),
+            filmId: undefinedIsNull(r.film_id),
+            storeId: undefinedIsNull(r.store_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Inventory[]> {
@@ -28252,11 +28244,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.inventory 
     `;
-          return response.map((record) => ({
-            inventoryId: undefinedIsNull(record.inventory_id),
-            filmId: undefinedIsNull(record.film_id),
-            storeId: undefinedIsNull(record.store_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            inventoryId: undefinedIsNull(r.inventory_id),
+            filmId: undefinedIsNull(r.film_id),
+            storeId: undefinedIsNull(r.store_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -28287,11 +28279,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     `;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -28329,11 +28321,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Inventory.ByInventoryId) {
@@ -28351,11 +28343,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -28394,11 +28386,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     `;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -28440,11 +28432,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.Inventory.ByStoreIdFilmId) {
@@ -28466,11 +28458,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.filmId)
       }
     RETURNING inventory_id,film_id,store_id,last_update`;
-            return response.map((record) => ({
-              inventoryId: undefinedIsNull(record.inventory_id),
-              filmId: undefinedIsNull(record.film_id),
-              storeId: undefinedIsNull(record.store_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              inventoryId: undefinedIsNull(r.inventory_id),
+              filmId: undefinedIsNull(r.film_id),
+              storeId: undefinedIsNull(r.store_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -28504,10 +28496,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         category_id,name,last_update
     `;
-            return response.map((record) => ({
-              categoryId: undefinedIsNull(record.category_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              categoryId: undefinedIsNull(r.category_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -28528,10 +28520,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       category_id,name,last_update
     `;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            categoryId: undefinedIsNull(r.category_id),
+            name: undefinedIsNull(r.name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Category[]> {
@@ -28545,10 +28537,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.category 
     `;
-          return response.map((record) => ({
-            categoryId: undefinedIsNull(record.category_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            categoryId: undefinedIsNull(r.category_id),
+            name: undefinedIsNull(r.name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -28579,10 +28571,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     `;
-            return response.map((record) => ({
-              categoryId: undefinedIsNull(record.category_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              categoryId: undefinedIsNull(r.category_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -28618,10 +28610,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     RETURNING category_id,name,last_update`;
-            return response.map((record) => ({
-              categoryId: undefinedIsNull(record.category_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              categoryId: undefinedIsNull(r.category_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Category.ByCategoryId) {
@@ -28639,10 +28631,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.categoryId)
       }
     RETURNING category_id,name,last_update`;
-            return response.map((record) => ({
-              categoryId: undefinedIsNull(record.category_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              categoryId: undefinedIsNull(r.category_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -28681,10 +28673,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         country_id,country,last_update
     `;
-            return response.map((record) => ({
-              countryId: undefinedIsNull(record.country_id),
-              country: undefinedIsNull(record.country),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              countryId: undefinedIsNull(r.country_id),
+              country: undefinedIsNull(r.country),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -28707,10 +28699,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       country_id,country,last_update
     `;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            countryId: undefinedIsNull(r.country_id),
+            country: undefinedIsNull(r.country),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Country[]> {
@@ -28724,10 +28716,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.country 
     `;
-          return response.map((record) => ({
-            countryId: undefinedIsNull(record.country_id),
-            country: undefinedIsNull(record.country),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            countryId: undefinedIsNull(r.country_id),
+            country: undefinedIsNull(r.country),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -28758,10 +28750,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     `;
-            return response.map((record) => ({
-              countryId: undefinedIsNull(record.country_id),
-              country: undefinedIsNull(record.country),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              countryId: undefinedIsNull(r.country_id),
+              country: undefinedIsNull(r.country),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -28799,10 +28791,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     RETURNING country_id,country,last_update`;
-            return response.map((record) => ({
-              countryId: undefinedIsNull(record.country_id),
-              country: undefinedIsNull(record.country),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              countryId: undefinedIsNull(r.country_id),
+              country: undefinedIsNull(r.country),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Country.ByCountryId) {
@@ -28820,10 +28812,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.countryId)
       }
     RETURNING country_id,country,last_update`;
-            return response.map((record) => ({
-              countryId: undefinedIsNull(record.country_id),
-              country: undefinedIsNull(record.country),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              countryId: undefinedIsNull(r.country_id),
+              country: undefinedIsNull(r.country),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -28860,10 +28852,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         language_id,name,last_update
     `;
-            return response.map((record) => ({
-              languageId: undefinedIsNull(record.language_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              languageId: undefinedIsNull(r.language_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -28884,10 +28876,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       language_id,name,last_update
     `;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            languageId: undefinedIsNull(r.language_id),
+            name: undefinedIsNull(r.name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Language[]> {
@@ -28901,10 +28893,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.language 
     `;
-          return response.map((record) => ({
-            languageId: undefinedIsNull(record.language_id),
-            name: undefinedIsNull(record.name),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            languageId: undefinedIsNull(r.language_id),
+            name: undefinedIsNull(r.name),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -28935,10 +28927,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     `;
-            return response.map((record) => ({
-              languageId: undefinedIsNull(record.language_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              languageId: undefinedIsNull(r.language_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -28974,10 +28966,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     RETURNING language_id,name,last_update`;
-            return response.map((record) => ({
-              languageId: undefinedIsNull(record.language_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              languageId: undefinedIsNull(r.language_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Language.ByLanguageId) {
@@ -28995,10 +28987,10 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.languageId)
       }
     RETURNING language_id,name,last_update`;
-            return response.map((record) => ({
-              languageId: undefinedIsNull(record.language_id),
-              name: undefinedIsNull(record.name),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              languageId: undefinedIsNull(r.language_id),
+              name: undefinedIsNull(r.name),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -29051,14 +29043,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -29095,14 +29087,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            rentalId: undefinedIsNull(r.rental_id),
+            rentalDate: undefinedIsNull(r.rental_date),
+            inventoryId: undefinedIsNull(r.inventory_id),
+            customerId: undefinedIsNull(r.customer_id),
+            returnDate: undefinedIsNull(r.return_date),
+            staffId: undefinedIsNull(r.staff_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Rental[]> {
@@ -29116,14 +29108,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.rental 
     `;
-          return response.map((record) => ({
-            rentalId: undefinedIsNull(record.rental_id),
-            rentalDate: undefinedIsNull(record.rental_date),
-            inventoryId: undefinedIsNull(record.inventory_id),
-            customerId: undefinedIsNull(record.customer_id),
-            returnDate: undefinedIsNull(record.return_date),
-            staffId: undefinedIsNull(record.staff_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            rentalId: undefinedIsNull(r.rental_id),
+            rentalDate: undefinedIsNull(r.rental_date),
+            inventoryId: undefinedIsNull(r.inventory_id),
+            customerId: undefinedIsNull(r.customer_id),
+            returnDate: undefinedIsNull(r.return_date),
+            staffId: undefinedIsNull(r.staff_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -29154,14 +29146,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     `;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
 
@@ -29213,14 +29205,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
           async delete(parameters: Public.Tables.Rental.ByInventoryId) {
@@ -29238,14 +29230,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.inventoryId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }));
           }
         })(this);
@@ -29287,14 +29279,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     `;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -29354,14 +29346,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(
@@ -29389,14 +29381,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -29428,14 +29420,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     `;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -29487,14 +29479,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Rental.ByRentalId) {
@@ -29512,14 +29504,14 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`;
-            return response.map((record) => ({
-              rentalId: undefinedIsNull(record.rental_id),
-              rentalDate: undefinedIsNull(record.rental_date),
-              inventoryId: undefinedIsNull(record.inventory_id),
-              customerId: undefinedIsNull(record.customer_id),
-              returnDate: undefinedIsNull(record.return_date),
-              staffId: undefinedIsNull(record.staff_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              rentalId: undefinedIsNull(r.rental_id),
+              rentalDate: undefinedIsNull(r.rental_date),
+              inventoryId: undefinedIsNull(r.inventory_id),
+              customerId: undefinedIsNull(r.customer_id),
+              returnDate: undefinedIsNull(r.return_date),
+              staffId: undefinedIsNull(r.staff_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -29582,18 +29574,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
-            return response.map((record) => ({
-              staffId: undefinedIsNull(record.staff_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              addressId: undefinedIsNull(record.address_id),
-              email: undefinedIsNull(record.email),
-              storeId: undefinedIsNull(record.store_id),
-              active: undefinedIsNull(record.active),
-              username: undefinedIsNull(record.username),
-              password: undefinedIsNull(record.password),
-              lastUpdate: undefinedIsNull(record.last_update),
-              picture: undefinedIsNull(record.picture),
+            return response.map((r) => ({
+              staffId: undefinedIsNull(r.staff_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              addressId: undefinedIsNull(r.address_id),
+              email: undefinedIsNull(r.email),
+              storeId: undefinedIsNull(r.store_id),
+              active: undefinedIsNull(r.active),
+              username: undefinedIsNull(r.username),
+              password: undefinedIsNull(r.password),
+              lastUpdate: undefinedIsNull(r.last_update),
+              picture: undefinedIsNull(r.picture),
             }))[0];
           }
           const response = await sql`
@@ -29640,18 +29632,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `;
-          return response.map((record) => ({
-            staffId: undefinedIsNull(record.staff_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            addressId: undefinedIsNull(record.address_id),
-            email: undefinedIsNull(record.email),
-            storeId: undefinedIsNull(record.store_id),
-            active: undefinedIsNull(record.active),
-            username: undefinedIsNull(record.username),
-            password: undefinedIsNull(record.password),
-            lastUpdate: undefinedIsNull(record.last_update),
-            picture: undefinedIsNull(record.picture),
+          return response.map((r) => ({
+            staffId: undefinedIsNull(r.staff_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            addressId: undefinedIsNull(r.address_id),
+            email: undefinedIsNull(r.email),
+            storeId: undefinedIsNull(r.store_id),
+            active: undefinedIsNull(r.active),
+            username: undefinedIsNull(r.username),
+            password: undefinedIsNull(r.password),
+            lastUpdate: undefinedIsNull(r.last_update),
+            picture: undefinedIsNull(r.picture),
           }))[0];
         }
         async all(): Promise<Public.Types.Staff[]> {
@@ -29665,18 +29657,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.staff 
     `;
-          return response.map((record) => ({
-            staffId: undefinedIsNull(record.staff_id),
-            firstName: undefinedIsNull(record.first_name),
-            lastName: undefinedIsNull(record.last_name),
-            addressId: undefinedIsNull(record.address_id),
-            email: undefinedIsNull(record.email),
-            storeId: undefinedIsNull(record.store_id),
-            active: undefinedIsNull(record.active),
-            username: undefinedIsNull(record.username),
-            password: undefinedIsNull(record.password),
-            lastUpdate: undefinedIsNull(record.last_update),
-            picture: undefinedIsNull(record.picture),
+          return response.map((r) => ({
+            staffId: undefinedIsNull(r.staff_id),
+            firstName: undefinedIsNull(r.first_name),
+            lastName: undefinedIsNull(r.last_name),
+            addressId: undefinedIsNull(r.address_id),
+            email: undefinedIsNull(r.email),
+            storeId: undefinedIsNull(r.store_id),
+            active: undefinedIsNull(r.active),
+            username: undefinedIsNull(r.username),
+            password: undefinedIsNull(r.password),
+            lastUpdate: undefinedIsNull(r.last_update),
+            picture: undefinedIsNull(r.picture),
           }));
         }
 
@@ -29707,18 +29699,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.staffId)
       }
     `;
-            return response.map((record) => ({
-              staffId: undefinedIsNull(record.staff_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              addressId: undefinedIsNull(record.address_id),
-              email: undefinedIsNull(record.email),
-              storeId: undefinedIsNull(record.store_id),
-              active: undefinedIsNull(record.active),
-              username: undefinedIsNull(record.username),
-              password: undefinedIsNull(record.password),
-              lastUpdate: undefinedIsNull(record.last_update),
-              picture: undefinedIsNull(record.picture),
+            return response.map((r) => ({
+              staffId: undefinedIsNull(r.staff_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              addressId: undefinedIsNull(r.address_id),
+              email: undefinedIsNull(r.email),
+              storeId: undefinedIsNull(r.store_id),
+              active: undefinedIsNull(r.active),
+              username: undefinedIsNull(r.username),
+              password: undefinedIsNull(r.password),
+              lastUpdate: undefinedIsNull(r.last_update),
+              picture: undefinedIsNull(r.picture),
             }))[0];
           }
 
@@ -29778,18 +29770,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.staffId)
       }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
-            return response.map((record) => ({
-              staffId: undefinedIsNull(record.staff_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              addressId: undefinedIsNull(record.address_id),
-              email: undefinedIsNull(record.email),
-              storeId: undefinedIsNull(record.store_id),
-              active: undefinedIsNull(record.active),
-              username: undefinedIsNull(record.username),
-              password: undefinedIsNull(record.password),
-              lastUpdate: undefinedIsNull(record.last_update),
-              picture: undefinedIsNull(record.picture),
+            return response.map((r) => ({
+              staffId: undefinedIsNull(r.staff_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              addressId: undefinedIsNull(r.address_id),
+              email: undefinedIsNull(r.email),
+              storeId: undefinedIsNull(r.store_id),
+              active: undefinedIsNull(r.active),
+              username: undefinedIsNull(r.username),
+              password: undefinedIsNull(r.password),
+              lastUpdate: undefinedIsNull(r.last_update),
+              picture: undefinedIsNull(r.picture),
             }))[0];
           }
           async delete(parameters: Public.Tables.Staff.ByStaffId) {
@@ -29807,18 +29799,18 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.staffId)
       }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`;
-            return response.map((record) => ({
-              staffId: undefinedIsNull(record.staff_id),
-              firstName: undefinedIsNull(record.first_name),
-              lastName: undefinedIsNull(record.last_name),
-              addressId: undefinedIsNull(record.address_id),
-              email: undefinedIsNull(record.email),
-              storeId: undefinedIsNull(record.store_id),
-              active: undefinedIsNull(record.active),
-              username: undefinedIsNull(record.username),
-              password: undefinedIsNull(record.password),
-              lastUpdate: undefinedIsNull(record.last_update),
-              picture: undefinedIsNull(record.picture),
+            return response.map((r) => ({
+              staffId: undefinedIsNull(r.staff_id),
+              firstName: undefinedIsNull(r.first_name),
+              lastName: undefinedIsNull(r.last_name),
+              addressId: undefinedIsNull(r.address_id),
+              email: undefinedIsNull(r.email),
+              storeId: undefinedIsNull(r.store_id),
+              active: undefinedIsNull(r.active),
+              username: undefinedIsNull(r.username),
+              password: undefinedIsNull(r.password),
+              lastUpdate: undefinedIsNull(r.last_update),
+              picture: undefinedIsNull(r.picture),
             }))[0];
           }
         })(this);
@@ -29861,11 +29853,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         store_id,manager_staff_id,address_id,last_update
     `;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           const response = await sql`
@@ -29892,11 +29884,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       store_id,manager_staff_id,address_id,last_update
     `;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            storeId: undefinedIsNull(r.store_id),
+            managerStaffId: undefinedIsNull(r.manager_staff_id),
+            addressId: undefinedIsNull(r.address_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }))[0];
         }
         async all(): Promise<Public.Types.Store[]> {
@@ -29910,11 +29902,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.store 
     `;
-          return response.map((record) => ({
-            storeId: undefinedIsNull(record.store_id),
-            managerStaffId: undefinedIsNull(record.manager_staff_id),
-            addressId: undefinedIsNull(record.address_id),
-            lastUpdate: undefinedIsNull(record.last_update),
+          return response.map((r) => ({
+            storeId: undefinedIsNull(r.store_id),
+            managerStaffId: undefinedIsNull(r.manager_staff_id),
+            addressId: undefinedIsNull(r.address_id),
+            lastUpdate: undefinedIsNull(r.last_update),
           }));
         }
 
@@ -29945,11 +29937,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     `;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -29989,11 +29981,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Store.ByManagerStaffId) {
@@ -30011,11 +30003,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.managerStaffId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -30047,11 +30039,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     `;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
 
@@ -30091,11 +30083,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
           async delete(parameters: Public.Tables.Store.ByStoreId) {
@@ -30113,11 +30105,11 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.storeId)
       }
     RETURNING store_id,manager_staff_id,address_id,last_update`;
-            return response.map((record) => ({
-              storeId: undefinedIsNull(record.store_id),
-              managerStaffId: undefinedIsNull(record.manager_staff_id),
-              addressId: undefinedIsNull(record.address_id),
-              lastUpdate: undefinedIsNull(record.last_update),
+            return response.map((r) => ({
+              storeId: undefinedIsNull(r.store_id),
+              managerStaffId: undefinedIsNull(r.manager_staff_id),
+              addressId: undefinedIsNull(r.address_id),
+              lastUpdate: undefinedIsNull(r.last_update),
             }))[0];
           }
         })(this);
@@ -30164,13 +30156,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }))[0];
           }
           const response = await sql`
@@ -30201,13 +30193,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
+          return response.map((r) => ({
+            paymentId: undefinedIsNull(r.payment_id),
+            customerId: undefinedIsNull(r.customer_id),
+            staffId: undefinedIsNull(r.staff_id),
+            rentalId: undefinedIsNull(r.rental_id),
+            amount: undefinedIsNull(r.amount),
+            paymentDate: undefinedIsNull(r.payment_date),
           }))[0];
         }
         async all(): Promise<Public.Types.Payment[]> {
@@ -30221,13 +30213,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.payment 
     `;
-          return response.map((record) => ({
-            paymentId: undefinedIsNull(record.payment_id),
-            customerId: undefinedIsNull(record.customer_id),
-            staffId: undefinedIsNull(record.staff_id),
-            rentalId: undefinedIsNull(record.rental_id),
-            amount: undefinedIsNull(record.amount),
-            paymentDate: undefinedIsNull(record.payment_date),
+          return response.map((r) => ({
+            paymentId: undefinedIsNull(r.payment_id),
+            customerId: undefinedIsNull(r.customer_id),
+            staffId: undefinedIsNull(r.staff_id),
+            rentalId: undefinedIsNull(r.rental_id),
+            amount: undefinedIsNull(r.amount),
+            paymentDate: undefinedIsNull(r.payment_date),
           }));
         }
 
@@ -30258,13 +30250,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     `;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
 
@@ -30310,13 +30302,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
           async delete(parameters: Public.Tables.Payment.ByCustomerId) {
@@ -30334,13 +30326,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.customerId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
         })(this);
@@ -30372,13 +30364,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     `;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }))[0];
           }
 
@@ -30424,13 +30416,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }))[0];
           }
           async delete(parameters: Public.Tables.Payment.ByPaymentId) {
@@ -30448,13 +30440,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.paymentId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }))[0];
           }
         })(this);
@@ -30489,13 +30481,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     `;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
 
@@ -30541,13 +30533,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
           async delete(parameters: Public.Tables.Payment.ByRentalId) {
@@ -30565,13 +30557,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.rentalId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
         })(this);
@@ -30603,13 +30595,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     `;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
 
@@ -30655,13 +30647,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
           async delete(parameters: Public.Tables.Payment.ByStaffId) {
@@ -30679,13 +30671,13 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.staffId)
       }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`;
-            return response.map((record) => ({
-              paymentId: undefinedIsNull(record.payment_id),
-              customerId: undefinedIsNull(record.customer_id),
-              staffId: undefinedIsNull(record.staff_id),
-              rentalId: undefinedIsNull(record.rental_id),
-              amount: undefinedIsNull(record.amount),
-              paymentDate: undefinedIsNull(record.payment_date),
+            return response.map((r) => ({
+              paymentId: undefinedIsNull(r.payment_id),
+              customerId: undefinedIsNull(r.customer_id),
+              staffId: undefinedIsNull(r.staff_id),
+              rentalId: undefinedIsNull(r.rental_id),
+              amount: undefinedIsNull(r.amount),
+              paymentDate: undefinedIsNull(r.payment_date),
             }));
           }
         })(this);
@@ -30755,20 +30747,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }))[0];
           }
           const response = await sql`
@@ -30825,20 +30817,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
     RETURNING
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
+          return response.map((r) => ({
+            filmId: undefinedIsNull(r.film_id),
+            title: undefinedIsNull(r.title),
+            description: undefinedIsNull(r.description),
+            releaseYear: undefinedIsNull(r.release_year),
+            languageId: undefinedIsNull(r.language_id),
+            rentalDuration: undefinedIsNull(r.rental_duration),
+            rentalRate: undefinedIsNull(r.rental_rate),
+            length: undefinedIsNull(r.length),
+            replacementCost: undefinedIsNull(r.replacement_cost),
+            rating: undefinedIsNull(r.rating),
+            lastUpdate: undefinedIsNull(r.last_update),
+            specialFeatures: undefinedIsNull(r.special_features),
+            fulltext: undefinedIsNull(r.fulltext),
           }))[0];
         }
         async all(): Promise<Public.Types.Film[]> {
@@ -30852,20 +30844,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
     FROM
       public.film 
     `;
-          return response.map((record) => ({
-            filmId: undefinedIsNull(record.film_id),
-            title: undefinedIsNull(record.title),
-            description: undefinedIsNull(record.description),
-            releaseYear: undefinedIsNull(record.release_year),
-            languageId: undefinedIsNull(record.language_id),
-            rentalDuration: undefinedIsNull(record.rental_duration),
-            rentalRate: undefinedIsNull(record.rental_rate),
-            length: undefinedIsNull(record.length),
-            replacementCost: undefinedIsNull(record.replacement_cost),
-            rating: undefinedIsNull(record.rating),
-            lastUpdate: undefinedIsNull(record.last_update),
-            specialFeatures: undefinedIsNull(record.special_features),
-            fulltext: undefinedIsNull(record.fulltext),
+          return response.map((r) => ({
+            filmId: undefinedIsNull(r.film_id),
+            title: undefinedIsNull(r.title),
+            description: undefinedIsNull(r.description),
+            releaseYear: undefinedIsNull(r.release_year),
+            languageId: undefinedIsNull(r.language_id),
+            rentalDuration: undefinedIsNull(r.rental_duration),
+            rentalRate: undefinedIsNull(r.rental_rate),
+            length: undefinedIsNull(r.length),
+            replacementCost: undefinedIsNull(r.replacement_cost),
+            rating: undefinedIsNull(r.rating),
+            lastUpdate: undefinedIsNull(r.last_update),
+            specialFeatures: undefinedIsNull(r.special_features),
+            fulltext: undefinedIsNull(r.fulltext),
           }));
         }
 
@@ -30896,20 +30888,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.filmId)
       }
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }))[0];
           }
 
@@ -30979,20 +30971,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.filmId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }))[0];
           }
           async delete(parameters: Public.Tables.Film.ByFilmId) {
@@ -31010,20 +31002,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[23](parameters.filmId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }))[0];
           }
         })(this);
@@ -31058,20 +31050,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
 
@@ -31141,20 +31133,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
           async delete(parameters: Public.Tables.Film.ByFulltext) {
@@ -31172,20 +31164,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[3642](parameters.fulltext)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
         })(this);
@@ -31217,20 +31209,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
 
@@ -31300,20 +31292,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
           async delete(parameters: Public.Tables.Film.ByLanguageId) {
@@ -31331,20 +31323,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[21](parameters.languageId)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
         })(this);
@@ -31376,20 +31368,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     `;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
 
@@ -31459,20 +31451,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
           async delete(parameters: Public.Tables.Film.ByTitle) {
@@ -31490,20 +31482,20 @@ export class Database extends PostgresDatabase implements HasDatabase {
           : typed[1043](parameters.title)
       }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`;
-            return response.map((record) => ({
-              filmId: undefinedIsNull(record.film_id),
-              title: undefinedIsNull(record.title),
-              description: undefinedIsNull(record.description),
-              releaseYear: undefinedIsNull(record.release_year),
-              languageId: undefinedIsNull(record.language_id),
-              rentalDuration: undefinedIsNull(record.rental_duration),
-              rentalRate: undefinedIsNull(record.rental_rate),
-              length: undefinedIsNull(record.length),
-              replacementCost: undefinedIsNull(record.replacement_cost),
-              rating: undefinedIsNull(record.rating),
-              lastUpdate: undefinedIsNull(record.last_update),
-              specialFeatures: undefinedIsNull(record.special_features),
-              fulltext: undefinedIsNull(record.fulltext),
+            return response.map((r) => ({
+              filmId: undefinedIsNull(r.film_id),
+              title: undefinedIsNull(r.title),
+              description: undefinedIsNull(r.description),
+              releaseYear: undefinedIsNull(r.release_year),
+              languageId: undefinedIsNull(r.language_id),
+              rentalDuration: undefinedIsNull(r.rental_duration),
+              rentalRate: undefinedIsNull(r.rental_rate),
+              length: undefinedIsNull(r.length),
+              replacementCost: undefinedIsNull(r.replacement_cost),
+              rating: undefinedIsNull(r.rating),
+              lastUpdate: undefinedIsNull(r.last_update),
+              specialFeatures: undefinedIsNull(r.special_features),
+              fulltext: undefinedIsNull(r.fulltext),
             }));
           }
         })(this);
@@ -31512,6 +31504,8 @@ export class Database extends PostgresDatabase implements HasDatabase {
   })(this);
 }
 
+// begin - operation dispatch map
+import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
 export class OperationDispatcher {
   private dispatchMap: Record<string, OperationDispatchMethod>;
   constructor(private database: Database) {

@@ -4,38 +4,13 @@
  * These types are node/browser isomorphic and are used by all other
  * EmbraceSQL generated code.
  */
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 /* eslint-disable @typescript-eslint/no-namespace */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-
 /* @typescript-eslint/no-redundant-type-constituents */
-// begin fetch client
-import {
-  EmbraceSQLClient as BaseClient,
-  EmbraceSQLClientProps,
-  HasClient,
-} from "@embracesql/client";
-import {
-  useEmbraceSQLClient,
-  useEmbraceSQLRow,
-  useEmbraceSQLRows,
-  useEmbraceSQLImmutableRows,
-  useEmbraceSQLImmutable,
-  ChangeEvent,
-  Row as IsRow,
-  RowBase,
-  RowCallback,
-  GeneratedRowProps,
-} from "@embracesql/react";
 import {
   UUID,
   JsDate,
@@ -49,7 +24,6 @@ import {
   NEVER,
 } from "@embracesql/shared";
 import type { PartiallyOptional } from "@embracesql/shared";
-import React from "react";
 
 // begin type definitions
 export namespace PgCatalog {
@@ -22280,6 +22254,12 @@ export namespace Public {
     export namespace ChecklistItem {}
   }
 }
+// begin fetch client
+import {
+  EmbraceSQLClient as BaseClient,
+  EmbraceSQLClientProps,
+  HasClient,
+} from "@embracesql/client";
 
 export class EmbraceSQLClient extends BaseClient {
   constructor(props: EmbraceSQLClientProps) {
@@ -22566,9 +22546,20 @@ export class EmbraceSQLClient extends BaseClient {
     })(this);
   })(this);
 }
-
+import React from "react";
 export { EmbraceSQLProvider } from "@embracesql/react";
-
+import {
+  useEmbraceSQLClient,
+  useEmbraceSQLRow,
+  useEmbraceSQLRows,
+  useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
+  ChangeEvent,
+  Row as IsRow,
+  RowBase,
+  RowCallback,
+  GeneratedRowProps,
+} from "@embracesql/react";
 export namespace Public {
   export namespace Procedures {}
   export namespace Tables {
@@ -22586,7 +22577,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get id() {
-          return this.record.id;
+          return this._value.id;
         }
         get changeId() {
           return (event: ChangeEvent) => {
@@ -22598,7 +22589,7 @@ export namespace Public {
           };
         }
         get name() {
-          return this.record.name;
+          return this._value.name;
         }
         get changeName() {
           return (event: ChangeEvent) => {
@@ -22610,7 +22601,7 @@ export namespace Public {
           };
         }
         get createdAt() {
-          return this.record.createdAt;
+          return this._value.createdAt;
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
@@ -22639,7 +22630,7 @@ export namespace Public {
           super(record, changeCallback, rowNumberInResultset);
         }
         get id() {
-          return this.record.id;
+          return this._value.id;
         }
         get changeId() {
           return (event: ChangeEvent) => {
@@ -22651,7 +22642,7 @@ export namespace Public {
           };
         }
         get checklistId() {
-          return this.record.checklistId;
+          return this._value.checklistId;
         }
         get changeChecklistId() {
           return (event: ChangeEvent) => {
@@ -22664,7 +22655,7 @@ export namespace Public {
           };
         }
         get title() {
-          return this.record.title;
+          return this._value.title;
         }
         get changeTitle() {
           return (event: ChangeEvent) => {
@@ -22676,7 +22667,7 @@ export namespace Public {
           };
         }
         get checked() {
-          return this.record.checked;
+          return this._value.checked;
         }
         get changeChecked() {
           return (event: ChangeEvent) => {
@@ -22688,7 +22679,7 @@ export namespace Public {
           };
         }
         get createdAt() {
-          return this.record.createdAt;
+          return this._value.createdAt;
         }
         get changeCreatedAt() {
           return (event: ChangeEvent) => {
