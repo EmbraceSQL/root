@@ -6,12 +6,12 @@ import {
 } from "@embracesql/shared";
 
 /**
- * AutoCRUD deletes records by index.
+ * AutoCRUD deletes rows by index.
  *
- * Unique indexes delete single records, returning the deleted row.
+ * Unique indexes delete single rows, returning the deleted row.
  *
- * Non unique indexes delete multiple records, returning an array of the
- * deleted records.
+ * Non unique indexes delete multiple rows, returning an array of the
+ * deleted rows.
  */
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {

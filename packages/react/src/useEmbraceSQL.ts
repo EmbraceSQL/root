@@ -72,7 +72,7 @@ export type GeneratedRowProps<V> = {
  * Use a single row.
  */
 export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
-  // store raw result records back from the REST API
+  // store raw results back from the REST API
   const [results, setResults] = React.useState<R>();
   const responseCallback = React.useCallback(
     (row: R | undefined) => {
@@ -92,9 +92,9 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
     const read = props.parameters
       ? await props.readOperation(props.parameters)
       : undefined;
-    const record =
+    const row =
       read ?? (props.createIfNotExists ? props.emptyRow() : undefined);
-    setResults(record as R);
+    setResults(row as R);
   }, [JSON.stringify(props.parameters)]);
 
   /**
@@ -139,7 +139,7 @@ type RowsProps<P, R> = UpdateCallbackProps<R> & {
 export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
   const [results, setResults] = React.useState<R[]>();
 
-  // record is changed -- it goes into the results list at a particular index
+  // row is changed -- it goes into the results list at a particular index
   const responseCallback = React.useCallback(
     (index: number) => {
       return (row: R | undefined) => {
@@ -182,7 +182,7 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
    * saving is 'automatic' once any edit is made to the row
    */
   const addRow = React.useCallback(async () => {
-    // new empty base record 'as if' it was returned from the database
+    // new empty base row 'as if' it was returned from the database
     // it *isn't* from the database, just to be clear -- it's an in memory buffer
     // to support automatic parent-child the parameters used to read the rows
     // need to be on the new rows so when put to the database -- they tie up
@@ -209,7 +209,7 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
         const row = results[index];
         // the database delete
         await props.deleteOperation(row);
-        // and the in memory record needs to go as well
+        // and the in memory row needs to go as well
         setResults(results?.toSpliced(index, 1) ?? []);
       }
     },

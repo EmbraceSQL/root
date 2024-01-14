@@ -89,7 +89,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           before: async (context, node) => {
             return [
               await NamespaceVisitor.before(context, node),
-              // empty placeholder row record used in UI adding
+              // empty placeholder row used in UI adding
               `export function emptyRow() {`,
               ` return ${emptyTypescriptRow(context, node.type)};`,
               `}`,

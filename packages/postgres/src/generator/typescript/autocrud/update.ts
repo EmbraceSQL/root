@@ -13,10 +13,10 @@ import {
 /**
  * AutoCRUD updates field values by index. Partial updates are allowed.
  *
- * Unique indexes update single records, returning the modified row.
+ * Unique indexes update single rows, returning the modified row.
  *
- * Non unique indexes update multiple records, returning an array of the
- * modified records.
+ * Non unique indexes update multiple rows, returning an array of the
+ * modified rows.
  */
 export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {

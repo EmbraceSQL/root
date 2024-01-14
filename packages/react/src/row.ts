@@ -13,7 +13,7 @@ export interface HasRowNumber {
 }
 
 /**
- * A database raw data record in the UI is referred to as a Row.
+ * A database table row in the UI is referred to as a Row.
  * Easier to avoid passing the wrong thing...
  */
 export type Row<T> = WithChangeHandlers<T, ChangeEvent> & HasRowNumber;

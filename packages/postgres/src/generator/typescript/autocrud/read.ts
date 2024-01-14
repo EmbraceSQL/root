@@ -6,10 +6,10 @@ import {
 } from "@embracesql/shared";
 
 /**
- * AutoCRUD reads record(s) by index.
+ * AutoCRUD reads row(s) by index.
  *
- * Unique indexes return single records, non unique indexes returns arrays
- * of records.
+ * Unique indexes return single rows, non unique indexes returns arrays
+ * of rows, which is the in memory equivalent of a table.
  */
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {

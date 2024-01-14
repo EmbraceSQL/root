@@ -27391,7 +27391,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               customerId: parsedValue as Public.Types.Customer["customerId"],
             });
           };
@@ -27403,7 +27403,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               storeId: parsedValue as Public.Types.Customer["storeId"],
             });
           };
@@ -27417,7 +27417,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               firstName: parsedValue as Public.Types.Customer["firstName"],
             });
           };
@@ -27431,7 +27431,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastName: parsedValue as Public.Types.Customer["lastName"],
             });
           };
@@ -27445,7 +27445,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               email: parsedValue as Public.Types.Customer["email"],
             });
           };
@@ -27457,7 +27457,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               addressId: parsedValue as Public.Types.Customer["addressId"],
             });
           };
@@ -27469,7 +27469,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               activebool: parsedValue as Public.Types.Customer["activebool"],
             });
           };
@@ -27481,7 +27481,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               createDate: parsedValue as Public.Types.Customer["createDate"],
             });
           };
@@ -27495,7 +27495,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
             });
           };
@@ -27507,7 +27507,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               active: parsedValue as Public.Types.Customer["active"],
             });
           };
@@ -27536,7 +27536,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               actorId: parsedValue as Public.Types.FilmActor["actorId"],
             });
           };
@@ -27548,7 +27548,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               filmId: parsedValue as Public.Types.FilmActor["filmId"],
             });
           };
@@ -27562,7 +27562,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.FilmActor["lastUpdate"],
             });
           };
@@ -27589,7 +27589,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               addressId: parsedValue as Public.Types.Address["addressId"],
             });
           };
@@ -27603,7 +27603,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               address: parsedValue as Public.Types.Address["address"],
             });
           };
@@ -27617,7 +27617,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               address2: parsedValue as Public.Types.Address["address2"],
             });
           };
@@ -27631,7 +27631,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               district: parsedValue as Public.Types.Address["district"],
             });
           };
@@ -27643,7 +27643,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               cityId: parsedValue as Public.Types.Address["cityId"],
             });
           };
@@ -27657,7 +27657,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               postalCode: parsedValue as Public.Types.Address["postalCode"],
             });
           };
@@ -27671,7 +27671,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               phone: parsedValue as Public.Types.Address["phone"],
             });
           };
@@ -27685,7 +27685,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Address["lastUpdate"],
             });
           };
@@ -27712,7 +27712,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               cityId: parsedValue as Public.Types.City["cityId"],
             });
           };
@@ -27726,7 +27726,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               city: parsedValue as Public.Types.City["city"],
             });
           };
@@ -27738,7 +27738,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               countryId: parsedValue as Public.Types.City["countryId"],
             });
           };
@@ -27752,7 +27752,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.City["lastUpdate"],
             });
           };
@@ -27779,7 +27779,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               customerId: parsedValue as Public.Types.Customer["customerId"],
             });
           };
@@ -27791,7 +27791,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               storeId: parsedValue as Public.Types.Customer["storeId"],
             });
           };
@@ -27805,7 +27805,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               firstName: parsedValue as Public.Types.Customer["firstName"],
             });
           };
@@ -27819,7 +27819,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastName: parsedValue as Public.Types.Customer["lastName"],
             });
           };
@@ -27833,7 +27833,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               email: parsedValue as Public.Types.Customer["email"],
             });
           };
@@ -27845,7 +27845,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               addressId: parsedValue as Public.Types.Customer["addressId"],
             });
           };
@@ -27857,7 +27857,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               activebool: parsedValue as Public.Types.Customer["activebool"],
             });
           };
@@ -27869,7 +27869,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               createDate: parsedValue as Public.Types.Customer["createDate"],
             });
           };
@@ -27883,7 +27883,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
             });
           };
@@ -27895,7 +27895,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               active: parsedValue as Public.Types.Customer["active"],
             });
           };
@@ -27922,7 +27922,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               actorId: parsedValue as Public.Types.Actor["actorId"],
             });
           };
@@ -27936,7 +27936,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               firstName: parsedValue as Public.Types.Actor["firstName"],
             });
           };
@@ -27950,7 +27950,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastName: parsedValue as Public.Types.Actor["lastName"],
             });
           };
@@ -27964,7 +27964,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Actor["lastUpdate"],
             });
           };
@@ -27991,7 +27991,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               filmId: parsedValue as Public.Types.FilmCategory["filmId"],
             });
           };
@@ -28003,7 +28003,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               categoryId:
                 parsedValue as Public.Types.FilmCategory["categoryId"],
             });
@@ -28018,7 +28018,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate:
                 parsedValue as Public.Types.FilmCategory["lastUpdate"],
             });
@@ -28046,7 +28046,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               inventoryId: parsedValue as Public.Types.Inventory["inventoryId"],
             });
           };
@@ -28058,7 +28058,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               filmId: parsedValue as Public.Types.Inventory["filmId"],
             });
           };
@@ -28070,7 +28070,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               storeId: parsedValue as Public.Types.Inventory["storeId"],
             });
           };
@@ -28084,7 +28084,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Inventory["lastUpdate"],
             });
           };
@@ -28111,7 +28111,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               categoryId: parsedValue as Public.Types.Category["categoryId"],
             });
           };
@@ -28125,7 +28125,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               name: parsedValue as Public.Types.Category["name"],
             });
           };
@@ -28139,7 +28139,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Category["lastUpdate"],
             });
           };
@@ -28166,7 +28166,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               countryId: parsedValue as Public.Types.Country["countryId"],
             });
           };
@@ -28180,7 +28180,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               country: parsedValue as Public.Types.Country["country"],
             });
           };
@@ -28194,7 +28194,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Country["lastUpdate"],
             });
           };
@@ -28221,7 +28221,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               languageId: parsedValue as Public.Types.Language["languageId"],
             });
           };
@@ -28235,7 +28235,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               name: parsedValue as Public.Types.Language["name"],
             });
           };
@@ -28249,7 +28249,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Language["lastUpdate"],
             });
           };
@@ -28276,7 +28276,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rentalId: parsedValue as Public.Types.Rental["rentalId"],
             });
           };
@@ -28290,7 +28290,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rentalDate: parsedValue as Public.Types.Rental["rentalDate"],
             });
           };
@@ -28302,7 +28302,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               inventoryId: parsedValue as Public.Types.Rental["inventoryId"],
             });
           };
@@ -28314,7 +28314,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               customerId: parsedValue as Public.Types.Rental["customerId"],
             });
           };
@@ -28328,7 +28328,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               returnDate: parsedValue as Public.Types.Rental["returnDate"],
             });
           };
@@ -28340,7 +28340,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               staffId: parsedValue as Public.Types.Rental["staffId"],
             });
           };
@@ -28354,7 +28354,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Rental["lastUpdate"],
             });
           };
@@ -28381,7 +28381,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               staffId: parsedValue as Public.Types.Staff["staffId"],
             });
           };
@@ -28395,7 +28395,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               firstName: parsedValue as Public.Types.Staff["firstName"],
             });
           };
@@ -28409,7 +28409,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastName: parsedValue as Public.Types.Staff["lastName"],
             });
           };
@@ -28421,7 +28421,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               addressId: parsedValue as Public.Types.Staff["addressId"],
             });
           };
@@ -28435,7 +28435,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               email: parsedValue as Public.Types.Staff["email"],
             });
           };
@@ -28447,7 +28447,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               storeId: parsedValue as Public.Types.Staff["storeId"],
             });
           };
@@ -28459,7 +28459,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               active: parsedValue as Public.Types.Staff["active"],
             });
           };
@@ -28473,7 +28473,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               username: parsedValue as Public.Types.Staff["username"],
             });
           };
@@ -28487,7 +28487,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               password: parsedValue as Public.Types.Staff["password"],
             });
           };
@@ -28501,7 +28501,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Staff["lastUpdate"],
             });
           };
@@ -28513,7 +28513,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Bytea.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               picture: parsedValue as Public.Types.Staff["picture"],
             });
           };
@@ -28540,7 +28540,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               storeId: parsedValue as Public.Types.Store["storeId"],
             });
           };
@@ -28552,7 +28552,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               managerStaffId:
                 parsedValue as Public.Types.Store["managerStaffId"],
             });
@@ -28565,7 +28565,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               addressId: parsedValue as Public.Types.Store["addressId"],
             });
           };
@@ -28579,7 +28579,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Store["lastUpdate"],
             });
           };
@@ -28606,7 +28606,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               paymentId: parsedValue as Public.Types.Payment["paymentId"],
             });
           };
@@ -28618,7 +28618,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               customerId: parsedValue as Public.Types.Payment["customerId"],
             });
           };
@@ -28630,7 +28630,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               staffId: parsedValue as Public.Types.Payment["staffId"],
             });
           };
@@ -28642,7 +28642,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rentalId: parsedValue as Public.Types.Payment["rentalId"],
             });
           };
@@ -28656,7 +28656,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               amount: parsedValue as Public.Types.Payment["amount"],
             });
           };
@@ -28670,7 +28670,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               paymentDate: parsedValue as Public.Types.Payment["paymentDate"],
             });
           };
@@ -28697,7 +28697,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               filmId: parsedValue as Public.Types.Film["filmId"],
             });
           };
@@ -28711,7 +28711,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               title: parsedValue as Public.Types.Film["title"],
             });
           };
@@ -28723,7 +28723,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               description: parsedValue as Public.Types.Film["description"],
             });
           };
@@ -28735,7 +28735,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = Public.Types.Year.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               releaseYear: parsedValue as Public.Types.Film["releaseYear"],
             });
           };
@@ -28747,7 +28747,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               languageId: parsedValue as Public.Types.Film["languageId"],
             });
           };
@@ -28759,7 +28759,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rentalDuration:
                 parsedValue as Public.Types.Film["rentalDuration"],
             });
@@ -28774,7 +28774,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rentalRate: parsedValue as Public.Types.Film["rentalRate"],
             });
           };
@@ -28786,7 +28786,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               length: parsedValue as Public.Types.Film["length"],
             });
           };
@@ -28800,7 +28800,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               replacementCost:
                 parsedValue as Public.Types.Film["replacementCost"],
             });
@@ -28815,7 +28815,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               rating: parsedValue as Public.Types.Film["rating"],
             });
           };
@@ -28829,7 +28829,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               lastUpdate: parsedValue as Public.Types.Film["lastUpdate"],
             });
           };
@@ -28843,7 +28843,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               specialFeatures:
                 parsedValue as Public.Types.Film["specialFeatures"],
             });
@@ -28858,7 +28858,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               fulltext: parsedValue as Public.Types.Film["fulltext"],
             });
           };

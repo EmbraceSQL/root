@@ -173,7 +173,9 @@ export class PGProc implements PostgresProcTypecast {
    */
   parseFromPostgresIfPseudoType(context: Context, x: unknown) {
     const attributes = new PGProcPseudoType(this).pseudoTypeAttributes(context);
-    // only one attribute, then there is no record type - just a setof a single type
+    // only one attribute, then there is no composite type - just a setof a single type
+    // this is a peculiarity in the postgres type system in my opinion -- why have
+    // a composite of one attribute instead of just the attribute as the type?
     if (attributes.length === 1) {
       return x;
     }

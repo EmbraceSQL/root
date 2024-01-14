@@ -7,7 +7,7 @@ import {
 import { camelCase } from "change-case";
 
 /**
- * AutoCRUD creates or upserts a record by table.
+ * AutoCRUD creates or upserts a row by table.
  */
 export const CreateOperation = {
   async before(context: GenerationContext, node: CreateOperationNode) {

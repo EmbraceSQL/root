@@ -29,10 +29,10 @@ async function generateRow(
             `export class RowImplementation`,
             ` extends RowBase<${node.typescriptNamespacedName}>`,
             ` implements Row {`,
-            `   constructor(record: ${node.typescriptNamespacedName}, `,
+            `   constructor(row: ${node.typescriptNamespacedName}, `,
             `     changeCallback: RowCallback<${node.typescriptNamespacedName}>, `,
             `     rowNumberInResultset: number) {`,
-            `     super(record, changeCallback, rowNumberInResultset);`,
+            `     super(row, changeCallback, rowNumberInResultset);`,
             `   }`,
           ].join("\n");
         },

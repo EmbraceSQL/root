@@ -2,7 +2,7 @@ import { postgresToTypescript } from "./shared";
 import { GenerationContext, AllOperationNode } from "@embracesql/shared";
 
 /**
- * AutoCRUD read all the records.
+ * AutoCRUD read all the rows in the table. All of them. No fooling.
  *
  */
 export const AllOperation = {

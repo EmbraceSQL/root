@@ -22583,7 +22583,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               id: parsedValue as Public.Types.Checklist["id"],
             });
           };
@@ -22595,7 +22595,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               name: parsedValue as Public.Types.Checklist["name"],
             });
           };
@@ -22609,7 +22609,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               createdAt: parsedValue as Public.Types.Checklist["createdAt"],
             });
           };
@@ -22636,7 +22636,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               id: parsedValue as Public.Types.ChecklistItem["id"],
             });
           };
@@ -22648,7 +22648,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               checklistId:
                 parsedValue as Public.Types.ChecklistItem["checklistId"],
             });
@@ -22661,7 +22661,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               title: parsedValue as Public.Types.ChecklistItem["title"],
             });
           };
@@ -22673,7 +22673,7 @@ export namespace Public {
           return (event: ChangeEvent) => {
             const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               checked: parsedValue as Public.Types.ChecklistItem["checked"],
             });
           };
@@ -22687,7 +22687,7 @@ export namespace Public {
               event.target.value,
             );
             void this.changeCallback({
-              ...this.record,
+              ...this.value,
               createdAt: parsedValue as Public.Types.ChecklistItem["createdAt"],
             });
           };

@@ -41,7 +41,7 @@ export const NestedNamedClassVisitor = {
 
 const IndexOperation = {
   before: async (_: GenerationContext, node: IndexOperationNode) => {
-    // will return a single record on a unique index
+    // will return a single row on a unique index
     const parametersType = node.index.typescriptNamespacedName;
     const resultType = node.index.unique
       ? `${node.index.table.type.typescriptNamespacedName} | undefined`
@@ -208,7 +208,7 @@ export async function generateClient(context: GenerationContext) {
     [ASTKind.DeleteOperation]: IndexOperation,
     [ASTKind.UpdateOperation]: {
       before: async (_: GenerationContext, node) => {
-        // will return a single record on a unique index
+        // will return a single row on a unique index
         const parametersType = node.index.typescriptNamespacedName;
         const valuesType = `Partial<${node.index.table.type.typescriptNamespacedName}>`;
         const resultType = node.index.unique
