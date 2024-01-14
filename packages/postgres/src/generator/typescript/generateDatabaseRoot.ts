@@ -178,10 +178,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             `  const results = response;`,
             `
               const responseBody = ( ${(() => {
-                // pseudo record -- which is always a table type but needs more parsing
-                if (node.isPseudoType) {
-                  return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
-                }
                 // table cast of a defined type
                 if (node.returnsMany) {
                   return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;

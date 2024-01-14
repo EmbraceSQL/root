@@ -285,5 +285,51 @@ describe("EmbraceSQL Hooks can", () => {
     );
     await waitFor(() => expect(result.current?.rows.length).toBeGreaterThan(1));
   });
-  // TODO: test a hooked proc
+  it("read scalar procs", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () =>
+        Public.Procedures.LastDay.useLastDay({
+          argument_0: new Date("1/1/2000"),
+        }),
+      { wrapper },
+    );
+    await waitFor(() =>
+      expect(result.current?.results).toMatchObject(
+        new Date("2000-01-31T00:00:00.000Z"),
+      ),
+    );
+  });
+  it("read array valued procs", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () =>
+        Public.Procedures.FilmInStock.useFilmInStock({
+          pFilmId: 1,
+          pStoreId: 1,
+        }),
+      { wrapper },
+    );
+    await waitFor(() =>
+      expect(result.current?.results?.length).toBeGreaterThan(0),
+    );
+  });
+  it("read array valued procs", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () =>
+        Public.Procedures.RewardsReport.useRewardsReport({
+          minDollarAmountPurchased: 10000,
+          minMonthlyPurchases: 100,
+        }),
+      { wrapper },
+    );
+    await waitFor(() => expect(result.current?.rows).toHaveLength(0));
+  });
 });

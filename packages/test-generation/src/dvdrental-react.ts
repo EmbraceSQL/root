@@ -28385,6 +28385,7 @@ import {
   useEmbraceSQLRow,
   useEmbraceSQLRows,
   useEmbraceSQLImmutableRows,
+  useEmbraceSQLImmutable,
   ChangeEvent,
   Row as IsRow,
   RowBase,
@@ -30441,6 +30442,89 @@ export namespace Scripts {
 }
 
 export namespace Public {
+  export namespace Procedures {
+    export namespace FilmInStock {
+      export function useFilmInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation: client.Public.Procedures.FilmInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace FilmNotInStock {
+      export function useFilmNotInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>({
+          readOperation:
+            client.Public.Procedures.FilmNotInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace GetCustomerBalance {
+      export function useGetCustomerBalance(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Numeric | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.GetCustomerBalance.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryHeldByCustomer {
+      export function useInventoryHeldByCustomer(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Int4 | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryHeldByCustomer.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace InventoryInStock {
+      export function useInventoryInStock(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Bool | undefined
+        >({
+          readOperation:
+            client.Public.Procedures.InventoryInStock.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace LastDay {
+      export function useLastDay(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutable<
+          Parameters,
+          PgCatalog.Types.Date | undefined
+        >({
+          readOperation: client.Public.Procedures.LastDay.call.bind(client),
+          parameters,
+        });
+      }
+    }
+    export namespace RewardsReport {
+      export function useRewardsReport(parameters: Parameters) {
+        const client = useEmbraceSQLClient<EmbraceSQLClient>();
+        return useEmbraceSQLImmutableRows<Parameters, Public.Types.Customer>({
+          readOperation:
+            client.Public.Procedures.RewardsReport.call.bind(client),
+          parameters,
+          RowImplementation: Public.Procedures.RewardsReport.RowImplementation,
+        });
+      }
+    }
+  }
   export namespace Tables {
     export namespace FilmActor {
       export function useRow(
@@ -31712,7 +31796,7 @@ export namespace Scripts {
   export namespace MovieListing {
     export function useMovieListing() {
       const client = useEmbraceSQLClient<EmbraceSQLClient>();
-      return useEmbraceSQLImmutableRows<never, Results>({
+      return useEmbraceSQLImmutableRows<never, Scripts.MovieListing.Results>({
         readOperation: client.Scripts.MovieListing.call.bind(client),
         parameters: NEVER,
         RowImplementation: Scripts.MovieListing.RowImplementation,
@@ -31724,7 +31808,10 @@ export namespace Scripts {
       export namespace Rated {
         export function useRated(parameters: Parameters) {
           const client = useEmbraceSQLClient<EmbraceSQLClient>();
-          return useEmbraceSQLImmutableRows<Parameters, Results>({
+          return useEmbraceSQLImmutableRows<
+            Parameters,
+            Scripts.Sample.Film.Rated.Results
+          >({
             readOperation: client.Scripts.Sample.Film.Rated.call.bind(client),
             parameters,
             RowImplementation: Scripts.Sample.Film.Rated.RowImplementation,
@@ -31734,7 +31821,10 @@ export namespace Scripts {
       export namespace Tally {
         export function useTally() {
           const client = useEmbraceSQLClient<EmbraceSQLClient>();
-          return useEmbraceSQLImmutableRows<never, Results>({
+          return useEmbraceSQLImmutableRows<
+            never,
+            Scripts.Sample.Film.Tally.Results
+          >({
             readOperation: client.Scripts.Sample.Film.Tally.call.bind(client),
             parameters: NEVER,
             RowImplementation: Scripts.Sample.Film.Tally.RowImplementation,
@@ -31745,7 +31835,10 @@ export namespace Scripts {
     export namespace Pick {
       export function usePick(parameters: Parameters) {
         const client = useEmbraceSQLClient<EmbraceSQLClient>();
-        return useEmbraceSQLImmutableRows<Parameters, Results>({
+        return useEmbraceSQLImmutableRows<
+          Parameters,
+          Scripts.Sample.Pick.Results
+        >({
           readOperation: client.Scripts.Sample.Pick.call.bind(client),
           parameters,
           RowImplementation: Scripts.Sample.Pick.RowImplementation,
@@ -31756,7 +31849,7 @@ export namespace Scripts {
   export namespace Tally {
     export function useTally() {
       const client = useEmbraceSQLClient<EmbraceSQLClient>();
-      return useEmbraceSQLImmutableRows<never, Results>({
+      return useEmbraceSQLImmutableRows<never, Scripts.Tally.Results>({
         readOperation: client.Scripts.Tally.call.bind(client),
         parameters: NEVER,
         RowImplementation: Scripts.Tally.RowImplementation,

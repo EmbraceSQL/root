@@ -10,6 +10,7 @@ import {
   compositeAttribute,
   parseObjectWithAttributes,
   ResultsNode,
+  ASTKind,
 } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import hash from "object-hash";
@@ -90,6 +91,7 @@ export class PGProcs {
         proc.proc.oid,
         proc.proc.proname,
         proc.returnsPseudoTypeRecord || proc.returnsSet,
+        procReturnType.kind === ASTKind.CompositeType,
         proc.returnsPseudoTypeRecord,
       );
 

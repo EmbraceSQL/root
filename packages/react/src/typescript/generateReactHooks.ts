@@ -1,9 +1,61 @@
 import {
   ASTKind,
   BY_PRIMARY_KEY,
+  FunctionOperationNode,
   GenerationContext,
   NamespaceVisitor,
 } from "@embracesql/shared";
+
+/**
+ * Procedures and Scripts have a common implementation.
+ */
+const FunctionOperation = {
+  before: async (context: GenerationContext, node: FunctionOperationNode) => {
+    const parametersCall = node.parametersType
+      ? `parameters: ${node.parametersType?.typescriptName}`
+      : "";
+    const parametersType = node.parametersType
+      ? `${node.parametersType?.typescriptName}`
+      : "never";
+    const parametersPass = node.parametersType
+      ? "parameters"
+      : "parameters: NEVER";
+
+    if (node.returnsMany && node.returnsComposite) {
+      return [
+        await NamespaceVisitor.before(context, node),
+        `export function use${node.typescriptName}(${parametersCall}) {`,
+        `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
+        `  return useEmbraceSQLImmutableRows<${parametersType}, ${node.resultsType?.typescriptNamespacedName}>(
+               {
+                 readOperation: client.${node.typescriptNamespacedName}.call.bind(client),
+                 ${parametersPass},
+                 RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
+               }
+             )`,
+        `}`,
+      ].join("\n");
+    } else {
+      // scalar results can be undefined, multiple results are just empty arrays
+      const resultType = `${node.resultsType?.typescriptNamespacedName}${
+        node.returnsMany ? "[]" : "|undefined"
+      }`;
+      return [
+        await NamespaceVisitor.before(context, node),
+        `export function use${node.typescriptName}(${parametersCall}) {`,
+        `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
+        `  return useEmbraceSQLImmutable<${parametersType}, ${resultType}>(
+               {
+                 readOperation: client.${node.typescriptNamespacedName}.call.bind(client),
+                 ${parametersPass},
+               }
+             )`,
+        `}`,
+      ].join("\n");
+    }
+  },
+  after: NamespaceVisitor.after,
+};
 
 /**
  * Generate hooks, these read data and return wrapped bindable objects.
@@ -13,34 +65,9 @@ export const generateReactHooks = async (context: GenerationContext) => {
   context.handlers = {
     [ASTKind.Scripts]: NamespaceVisitor,
     [ASTKind.ScriptFolder]: NamespaceVisitor,
-    [ASTKind.Script]: {
-      before: async (context, node) => {
-        const parametersCall = node.parametersType
-          ? `parameters: ${node.parametersType?.typescriptName}`
-          : "";
-        const parametersType = node.parametersType
-          ? `${node.parametersType?.typescriptName}`
-          : "never";
-        const parametersPass = node.parametersType
-          ? "parameters"
-          : "parameters: NEVER";
-
-        return [
-          await NamespaceVisitor.before(context, node),
-          `export function use${node.typescriptName}(${parametersCall}) {`,
-          `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `  return useEmbraceSQLImmutableRows<${parametersType}, ${node.resultsType?.typescriptName}>(
-               {
-                 readOperation: client.${node.typescriptNamespacedName}.call.bind(client),
-                 ${parametersPass},
-                 RowImplementation: ${node.typescriptNamespacedName}.RowImplementation,
-               }
-             )`,
-          `}`,
-        ].join("\n");
-      },
-      after: NamespaceVisitor.after,
-    },
+    [ASTKind.Script]: FunctionOperation,
+    [ASTKind.Procedures]: NamespaceVisitor,
+    [ASTKind.Procedure]: FunctionOperation,
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {

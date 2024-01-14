@@ -656,6 +656,7 @@ export abstract class FunctionOperationNode extends OperationNode {
     kind: ASTKind,
     parent: ContainerNode,
     public returnsMany: boolean,
+    public returnsComposite: boolean,
   ) {
     // always returnsMany
     super(name, kind, parent);
@@ -770,7 +771,7 @@ export class ScriptNode extends FunctionOperationNode {
     parent: ContainerNode,
   ) {
     // always returnsMany
-    super(name, ASTKind.Script, parent, true);
+    super(name, ASTKind.Script, parent, true, true);
   }
 }
 
@@ -796,9 +797,10 @@ export class ProcedureNode
     public id: string | number,
     public nameInDatabase: string,
     returnsMany: boolean,
+    returnsComposite: boolean,
     public isPseudoType: boolean,
   ) {
-    super(name, ASTKind.Procedure, procedures, returnsMany);
+    super(name, ASTKind.Procedure, procedures, returnsMany, returnsComposite);
   }
 
   get databaseName() {

@@ -269,3 +269,28 @@ export function useEmbraceSQLImmutableRows<P, R>(
       ) ?? [],
   };
 }
+
+type ImmutableProps<P, R> = {
+  parameters: P;
+  readOperation: ReadOperation<P, R>;
+};
+
+/**
+ * Use a result immutably. This hooks stored functions that return a single
+ * value of a type, not a resultset.
+ */
+export function useEmbraceSQLImmutable<P, R>(props: ImmutableProps<P, R>) {
+  const [results, setResults] = React.useState<R>();
+
+  // load up the data
+  const readState = useNetwork(async () => {
+    const read = await props.readOperation(props.parameters);
+    setResults(read);
+  }, [JSON.stringify(props.parameters)]);
+
+  return {
+    loading: readState.loading,
+    error: readState.error,
+    results,
+  };
+}

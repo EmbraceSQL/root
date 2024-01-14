@@ -17,6 +17,8 @@ async function generateRow(
     ...context,
     handlers: {
       // every composite type will get a `Row` binder generated
+      // resultests of rows are always composite types with 'named columns'
+      // i.e. plain old what you are used to sql results
       [ASTKind.CompositeType]: {
         before: async (context, node) => {
           return [
