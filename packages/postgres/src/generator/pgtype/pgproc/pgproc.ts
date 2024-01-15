@@ -11,6 +11,7 @@ import {
   parseObjectWithAttributes,
   ResultsNode,
   ASTKind,
+  ParametersNode,
 } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import hash from "object-hash";
@@ -71,7 +72,7 @@ export class PGProcs {
       // by the time we are generating procedures, we have already made
       // a first pass over types, so the result type should be available
       // hence the !
-      const procReturnType = (() => {
+      const resultsType = (() => {
         if (returnsAttributes.length === 1) {
           // just need the single type as is
           // single attribute, table of one column which is
@@ -85,22 +86,26 @@ export class PGProcs {
           )!;
         }
       })();
-      const procNode = new ProcedureNode(
+      const node = new ProcedureNode(
         proc.name,
         procsNode,
         proc.proc.oid,
         proc.proc.proname,
         proc.returnsPseudoType || proc.returnsSet,
-        procReturnType.kind === ASTKind.CompositeType,
+        resultsType.kind === ASTKind.CompositeType,
         proc.returnsPseudoType,
       );
+      // outputs
+      new ResultsNode(node, resultsType);
 
-      // inputs
-      const parametersNode = new CompositeTypeNode(
+      // inputs -- which may have no attributes
+      // this type won't exist in the database catalog - we're treating
+      // all the parameters which are in a flat argument list style
+      // as a structured object single 'parameter'
+      const parametersType = new CompositeTypeNode(
         PARAMETERS,
-        procNode,
-        "",
-        proc.comment,
+        node,
+        "", // no identifier, this is not a type in the database
       );
 
       proc.proc.proargtypes
@@ -108,7 +113,7 @@ export class PGProcs {
         .forEach((oid, i) => {
           const type = context.database.resolveType(oid)!;
           new AttributeNode(
-            parametersNode,
+            parametersType,
             proc.proc.proargnames[i]
               ? proc.proc.proargnames[i]
               : `argument_${i}`,
@@ -119,8 +124,8 @@ export class PGProcs {
             proc.proc.proargnames[i] !== undefined,
           );
         });
-      // outputs
-      new ResultsNode(procNode, procReturnType);
+      // inputs
+      new ParametersNode(node, parametersType);
     }
   }
 }

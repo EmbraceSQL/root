@@ -17,6 +17,7 @@ import {
   GenerationContextProps,
   RESULTS,
   ResultsNode,
+  ParametersNode,
 } from "@embracesql/shared";
 import pgconnectionstring from "pg-connection-string";
 import postgres from "postgres";
@@ -229,8 +230,12 @@ export const initializeContext = async (
                 true,
               ),
           );
+          // outputs
+          new ResultsNode(node, resultsType);
+
+          // inputs, which are optional as you have have a query with no $ variables
           if (metadata.types.length) {
-            const PARAMETERSNode = new CompositeTypeNode(
+            const parametersType = new CompositeTypeNode(
               PARAMETERS,
               node,
               "",
@@ -239,7 +244,7 @@ export const initializeContext = async (
             metadata.types.forEach(
               (a, i) =>
                 new AttributeNode(
-                  PARAMETERSNode,
+                  parametersType,
                   // these don't have natural names, just positions
                   // so manufacture names
                   oneBasedArgumentNamefromZeroBasedIndex(i),
@@ -249,9 +254,9 @@ export const initializeContext = async (
                   false,
                 ),
             );
+            // inputs
+            new ParametersNode(node, parametersType);
           }
-          // attach a formal results node
-          new ResultsNode(node, resultsType);
           return "";
         },
       },

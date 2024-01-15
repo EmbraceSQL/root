@@ -67,6 +67,7 @@ export enum ASTKind {
   DomainType,
   ArrayType,
   Results,
+  Parameters,
 }
 
 interface DatabaseNamed {
@@ -139,6 +140,7 @@ export type ASTKindMap = {
   [ASTKind.DomainType]: DomainTypeNode;
   [ASTKind.ArrayType]: ArrayTypeNode;
   [ASTKind.Results]: ResultsNode;
+  [ASTKind.Parameters]: ParametersNode;
 };
 
 /**
@@ -830,7 +832,7 @@ export class CompositeTypeNode extends AbstractTypeNode {
     name: string,
     parent: ContainerNode,
     id: string | number,
-    comment: string,
+    comment = "",
   ) {
     super(name, ASTKind.CompositeType, parent, id, comment);
   }
@@ -849,13 +851,15 @@ export class CompositeTypeNode extends AbstractTypeNode {
         (c): c is AttributeNode => c.kind === ASTKind.Attribute,
       )
       .map((a) => {
+        // arrays are not nullable, they are empty arrays []
         if (a.type.kind === ASTKind.ArrayType) {
           return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
         }
         if (a.nullable) {
           return `${a.typescriptPropertyName}: Nullable<${a.type.typescriptNamespacedName}>;`;
+        } else {
+          return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
         }
-        return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
       });
     return ` { ${attributes.join("\n")} } `;
   }
@@ -959,5 +963,17 @@ export class ResultsNode extends NamedASTNode {
     public type: AbstractTypeNode,
   ) {
     super(RESULTS, ASTKind.Results, parent);
+  }
+}
+
+/**
+ * Parameters reference a type, but are not a type themselves.
+ */
+export class ParametersNode extends NamedASTNode {
+  constructor(
+    parent: ContainerNode,
+    public type: AbstractTypeNode,
+  ) {
+    super(PARAMETERS, ASTKind.Parameters, parent);
   }
 }
