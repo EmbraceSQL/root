@@ -723,9 +723,9 @@ export namespace PgCatalog {
       attinhcount: PgCatalog.Types.Int2;
       attstattarget: PgCatalog.Types.Int2;
       attcollation: PgCatalog.Types.Oid;
-      attacl: Nullable<PgCatalog.Types.AclitemArray>;
-      attoptions: Nullable<PgCatalog.Types.TextArray>;
-      attfdwoptions: Nullable<PgCatalog.Types.TextArray>;
+      attacl: PgCatalog.Types.AclitemArray;
+      attoptions: PgCatalog.Types.TextArray;
+      attfdwoptions: PgCatalog.Types.TextArray;
       attmissingval: Nullable<PgCatalog.Types.Anyarray>;
     };
 
@@ -762,7 +762,7 @@ export namespace PgCatalog {
       trusted: Nullable<PgCatalog.Types.Bool>;
       relocatable: Nullable<PgCatalog.Types.Bool>;
       schema: Nullable<PgCatalog.Types.Name>;
-      requires: Nullable<PgCatalog.Types.NameArray>;
+      requires: PgCatalog.Types.NameArray;
       comment: Nullable<PgCatalog.Types.Text>;
     };
 
@@ -835,8 +835,8 @@ export namespace PgCatalog {
       relrewrite: PgCatalog.Types.Oid;
       relfrozenxid: PgCatalog.Types.Xid;
       relminmxid: PgCatalog.Types.Xid;
-      relacl: Nullable<PgCatalog.Types.AclitemArray>;
-      reloptions: Nullable<PgCatalog.Types.TextArray>;
+      relacl: PgCatalog.Types.AclitemArray;
+      reloptions: PgCatalog.Types.TextArray;
       relpartbound: Nullable<PgCatalog.Types.PgNodeTree>;
     };
 
@@ -879,13 +879,13 @@ export namespace PgCatalog {
       conislocal: PgCatalog.Types.Bool;
       coninhcount: PgCatalog.Types.Int2;
       connoinherit: PgCatalog.Types.Bool;
-      conkey: Nullable<PgCatalog.Types.Int2Array>;
-      confkey: Nullable<PgCatalog.Types.Int2Array>;
-      conpfeqop: Nullable<PgCatalog.Types.OidArray>;
-      conppeqop: Nullable<PgCatalog.Types.OidArray>;
-      conffeqop: Nullable<PgCatalog.Types.OidArray>;
-      confdelsetcols: Nullable<PgCatalog.Types.Int2Array>;
-      conexclop: Nullable<PgCatalog.Types.OidArray>;
+      conkey: PgCatalog.Types.Int2Array;
+      confkey: PgCatalog.Types.Int2Array;
+      conpfeqop: PgCatalog.Types.OidArray;
+      conppeqop: PgCatalog.Types.OidArray;
+      conffeqop: PgCatalog.Types.OidArray;
+      confdelsetcols: PgCatalog.Types.Int2Array;
+      conexclop: PgCatalog.Types.OidArray;
       conbin: Nullable<PgCatalog.Types.PgNodeTree>;
     };
 
@@ -926,13 +926,13 @@ export namespace PgCatalog {
       daticulocale: Nullable<PgCatalog.Types.Text>;
       daticurules: Nullable<PgCatalog.Types.Text>;
       datcollversion: Nullable<PgCatalog.Types.Text>;
-      datacl: Nullable<PgCatalog.Types.AclitemArray>;
+      datacl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgDbRoleSetting = {
       setdatabase: PgCatalog.Types.Oid;
       setrole: PgCatalog.Types.Oid;
-      setconfig: Nullable<PgCatalog.Types.TextArray>;
+      setconfig: PgCatalog.Types.TextArray;
     };
 
     export type PgDdlCommand = unknown;
@@ -981,7 +981,7 @@ export namespace PgCatalog {
       evtowner: PgCatalog.Types.Oid;
       evtfoid: PgCatalog.Types.Oid;
       evtenabled: PgCatalog.Types.Char;
-      evttags: Nullable<PgCatalog.Types.TextArray>;
+      evttags: PgCatalog.Types.TextArray;
     };
 
     export type PgExtension = {
@@ -991,8 +991,8 @@ export namespace PgCatalog {
       extnamespace: PgCatalog.Types.Oid;
       extrelocatable: PgCatalog.Types.Bool;
       extversion: PgCatalog.Types.Text;
-      extconfig: Nullable<PgCatalog.Types.OidArray>;
-      extcondition: Nullable<PgCatalog.Types.TextArray>;
+      extconfig: PgCatalog.Types.OidArray;
+      extcondition: PgCatalog.Types.TextArray;
     };
 
     export type PgFileSettings = {
@@ -1011,8 +1011,8 @@ export namespace PgCatalog {
       fdwowner: PgCatalog.Types.Oid;
       fdwhandler: PgCatalog.Types.Oid;
       fdwvalidator: PgCatalog.Types.Oid;
-      fdwacl: Nullable<PgCatalog.Types.AclitemArray>;
-      fdwoptions: Nullable<PgCatalog.Types.TextArray>;
+      fdwacl: PgCatalog.Types.AclitemArray;
+      fdwoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgForeignServer = {
@@ -1022,20 +1022,20 @@ export namespace PgCatalog {
       srvfdw: PgCatalog.Types.Oid;
       srvtype: Nullable<PgCatalog.Types.Text>;
       srvversion: Nullable<PgCatalog.Types.Text>;
-      srvacl: Nullable<PgCatalog.Types.AclitemArray>;
-      srvoptions: Nullable<PgCatalog.Types.TextArray>;
+      srvacl: PgCatalog.Types.AclitemArray;
+      srvoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgForeignTable = {
       ftrelid: PgCatalog.Types.Oid;
       ftserver: PgCatalog.Types.Oid;
-      ftoptions: Nullable<PgCatalog.Types.TextArray>;
+      ftoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgGroup = {
       groname: Nullable<PgCatalog.Types.Name>;
       grosysid: Nullable<PgCatalog.Types.Oid>;
-      grolist: Nullable<PgCatalog.Types.OidArray>;
+      grolist: PgCatalog.Types.OidArray;
     };
 
     export type PgHbaFileRules = {
@@ -1043,12 +1043,12 @@ export namespace PgCatalog {
       fileName: Nullable<PgCatalog.Types.Text>;
       lineNumber: Nullable<PgCatalog.Types.Int4>;
       type: Nullable<PgCatalog.Types.Text>;
-      database: Nullable<PgCatalog.Types.TextArray>;
-      userName: Nullable<PgCatalog.Types.TextArray>;
+      database: PgCatalog.Types.TextArray;
+      userName: PgCatalog.Types.TextArray;
       address: Nullable<PgCatalog.Types.Text>;
       netmask: Nullable<PgCatalog.Types.Text>;
       authMethod: Nullable<PgCatalog.Types.Text>;
-      options: Nullable<PgCatalog.Types.TextArray>;
+      options: PgCatalog.Types.TextArray;
       error: Nullable<PgCatalog.Types.Text>;
     };
 
@@ -1118,7 +1118,7 @@ export namespace PgCatalog {
       lanplcallfoid: PgCatalog.Types.Oid;
       laninline: PgCatalog.Types.Oid;
       lanvalidator: PgCatalog.Types.Oid;
-      lanacl: Nullable<PgCatalog.Types.AclitemArray>;
+      lanacl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgLargeobject = {
@@ -1130,7 +1130,7 @@ export namespace PgCatalog {
     export type PgLargeobjectMetadata = {
       oid: PgCatalog.Types.Oid;
       lomowner: PgCatalog.Types.Oid;
-      lomacl: Nullable<PgCatalog.Types.AclitemArray>;
+      lomacl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgLocks = {
@@ -1173,7 +1173,7 @@ export namespace PgCatalog {
       oid: PgCatalog.Types.Oid;
       nspname: PgCatalog.Types.Name;
       nspowner: PgCatalog.Types.Oid;
-      nspacl: Nullable<PgCatalog.Types.AclitemArray>;
+      nspacl: PgCatalog.Types.AclitemArray;
     };
 
     /**
@@ -1227,7 +1227,7 @@ export namespace PgCatalog {
     export type PgParameterAcl = {
       oid: PgCatalog.Types.Oid;
       parname: PgCatalog.Types.Text;
-      paracl: Nullable<PgCatalog.Types.AclitemArray>;
+      paracl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgPartitionedTable = {
@@ -1246,7 +1246,7 @@ export namespace PgCatalog {
       tablename: Nullable<PgCatalog.Types.Name>;
       policyname: Nullable<PgCatalog.Types.Name>;
       permissive: Nullable<PgCatalog.Types.Text>;
-      roles: Nullable<PgCatalog.Types.NameArray>;
+      roles: PgCatalog.Types.NameArray;
       cmd: Nullable<PgCatalog.Types.Text>;
       qual: Nullable<PgCatalog.Types.Text>;
       withCheck: Nullable<PgCatalog.Types.Text>;
@@ -1267,8 +1267,8 @@ export namespace PgCatalog {
       name: Nullable<PgCatalog.Types.Text>;
       statement: Nullable<PgCatalog.Types.Text>;
       prepareTime: Nullable<PgCatalog.Types.Timestamptz>;
-      parameterTypes: Nullable<PgCatalog.Types.RegtypeArray>;
-      resultTypes: Nullable<PgCatalog.Types.RegtypeArray>;
+      parameterTypes: PgCatalog.Types.RegtypeArray;
+      resultTypes: PgCatalog.Types.RegtypeArray;
       fromSql: Nullable<PgCatalog.Types.Bool>;
       genericPlans: Nullable<PgCatalog.Types.Int8>;
       customPlans: Nullable<PgCatalog.Types.Int8>;
@@ -1303,16 +1303,16 @@ export namespace PgCatalog {
       pronargdefaults: PgCatalog.Types.Int2;
       prorettype: PgCatalog.Types.Oid;
       proargtypes: PgCatalog.Types.Oidvector;
-      proallargtypes: Nullable<PgCatalog.Types.OidArray>;
-      proargmodes: Nullable<PgCatalog.Types.CharArray>;
-      proargnames: Nullable<PgCatalog.Types.TextArray>;
+      proallargtypes: PgCatalog.Types.OidArray;
+      proargmodes: PgCatalog.Types.CharArray;
+      proargnames: PgCatalog.Types.TextArray;
       proargdefaults: Nullable<PgCatalog.Types.PgNodeTree>;
-      protrftypes: Nullable<PgCatalog.Types.OidArray>;
+      protrftypes: PgCatalog.Types.OidArray;
       prosrc: PgCatalog.Types.Text;
       probin: Nullable<PgCatalog.Types.Text>;
       prosqlbody: Nullable<PgCatalog.Types.PgNodeTree>;
-      proconfig: Nullable<PgCatalog.Types.TextArray>;
-      proacl: Nullable<PgCatalog.Types.AclitemArray>;
+      proconfig: PgCatalog.Types.TextArray;
+      proacl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgPublication = {
@@ -1345,7 +1345,7 @@ export namespace PgCatalog {
       pubname: Nullable<PgCatalog.Types.Name>;
       schemaname: Nullable<PgCatalog.Types.Name>;
       tablename: Nullable<PgCatalog.Types.Name>;
-      attnames: Nullable<PgCatalog.Types.NameArray>;
+      attnames: PgCatalog.Types.NameArray;
       rowfilter: Nullable<PgCatalog.Types.Text>;
     };
 
@@ -1413,7 +1413,7 @@ export namespace PgCatalog {
       rolpassword: Nullable<PgCatalog.Types.Text>;
       rolvaliduntil: Nullable<PgCatalog.Types.Timestamptz>;
       rolbypassrls: Nullable<PgCatalog.Types.Bool>;
-      rolconfig: Nullable<PgCatalog.Types.TextArray>;
+      rolconfig: PgCatalog.Types.TextArray;
       oid: Nullable<PgCatalog.Types.Oid>;
     };
 
@@ -1480,7 +1480,7 @@ export namespace PgCatalog {
       source: Nullable<PgCatalog.Types.Text>;
       minVal: Nullable<PgCatalog.Types.Text>;
       maxVal: Nullable<PgCatalog.Types.Text>;
-      enumvals: Nullable<PgCatalog.Types.TextArray>;
+      enumvals: PgCatalog.Types.TextArray;
       bootVal: Nullable<PgCatalog.Types.Text>;
       resetVal: Nullable<PgCatalog.Types.Text>;
       sourcefile: Nullable<PgCatalog.Types.Text>;
@@ -1497,7 +1497,7 @@ export namespace PgCatalog {
       usebypassrls: Nullable<PgCatalog.Types.Bool>;
       passwd: Nullable<PgCatalog.Types.Text>;
       valuntil: Nullable<PgCatalog.Types.Timestamptz>;
-      useconfig: Nullable<PgCatalog.Types.TextArray>;
+      useconfig: PgCatalog.Types.TextArray;
     };
 
     export type PgShdepend = {
@@ -2167,11 +2167,11 @@ export namespace PgCatalog {
       stacoll3: PgCatalog.Types.Oid;
       stacoll4: PgCatalog.Types.Oid;
       stacoll5: PgCatalog.Types.Oid;
-      stanumbers1: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers2: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers3: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers4: Nullable<PgCatalog.Types.Float4Array>;
-      stanumbers5: Nullable<PgCatalog.Types.Float4Array>;
+      stanumbers1: PgCatalog.Types.Float4Array;
+      stanumbers2: PgCatalog.Types.Float4Array;
+      stanumbers3: PgCatalog.Types.Float4Array;
+      stanumbers4: PgCatalog.Types.Float4Array;
+      stanumbers5: PgCatalog.Types.Float4Array;
       stavalues1: Nullable<PgCatalog.Types.Anyarray>;
       stavalues2: Nullable<PgCatalog.Types.Anyarray>;
       stavalues3: Nullable<PgCatalog.Types.Anyarray>;
@@ -2197,7 +2197,7 @@ export namespace PgCatalog {
       stxdndistinct: Nullable<PgCatalog.Types.PgNdistinct>;
       stxddependencies: Nullable<PgCatalog.Types.PgDependencies>;
       stxdmcv: Nullable<PgCatalog.Types.PgMcvList>;
-      stxdexpr: Nullable<PgCatalog.Types.PgStatisticArray>;
+      stxdexpr: PgCatalog.Types.PgStatisticArray;
     };
 
     export type PgStats = {
@@ -2209,12 +2209,12 @@ export namespace PgCatalog {
       avgWidth: Nullable<PgCatalog.Types.Int4>;
       nDistinct: Nullable<PgCatalog.Types.Float4>;
       mostCommonVals: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonFreqs: Nullable<PgCatalog.Types.Float4Array>;
+      mostCommonFreqs: PgCatalog.Types.Float4Array;
       histogramBounds: Nullable<PgCatalog.Types.Anyarray>;
       correlation: Nullable<PgCatalog.Types.Float4>;
       mostCommonElems: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonElemFreqs: Nullable<PgCatalog.Types.Float4Array>;
-      elemCountHistogram: Nullable<PgCatalog.Types.Float4Array>;
+      mostCommonElemFreqs: PgCatalog.Types.Float4Array;
+      elemCountHistogram: PgCatalog.Types.Float4Array;
     };
 
     export type PgStatsExt = {
@@ -2223,16 +2223,16 @@ export namespace PgCatalog {
       statisticsSchemaname: Nullable<PgCatalog.Types.Name>;
       statisticsName: Nullable<PgCatalog.Types.Name>;
       statisticsOwner: Nullable<PgCatalog.Types.Name>;
-      attnames: Nullable<PgCatalog.Types.NameArray>;
-      exprs: Nullable<PgCatalog.Types.TextArray>;
-      kinds: Nullable<PgCatalog.Types.CharArray>;
+      attnames: PgCatalog.Types.NameArray;
+      exprs: PgCatalog.Types.TextArray;
+      kinds: PgCatalog.Types.CharArray;
       inherited: Nullable<PgCatalog.Types.Bool>;
       nDistinct: Nullable<PgCatalog.Types.PgNdistinct>;
       dependencies: Nullable<PgCatalog.Types.PgDependencies>;
-      mostCommonVals: Nullable<PgCatalog.Types.TextArray>;
-      mostCommonValNulls: Nullable<PgCatalog.Types.BoolArray>;
-      mostCommonFreqs: Nullable<PgCatalog.Types.Float8Array>;
-      mostCommonBaseFreqs: Nullable<PgCatalog.Types.Float8Array>;
+      mostCommonVals: PgCatalog.Types.TextArray;
+      mostCommonValNulls: PgCatalog.Types.BoolArray;
+      mostCommonFreqs: PgCatalog.Types.Float8Array;
+      mostCommonBaseFreqs: PgCatalog.Types.Float8Array;
     };
 
     export type PgStatsExtExprs = {
@@ -2247,12 +2247,12 @@ export namespace PgCatalog {
       avgWidth: Nullable<PgCatalog.Types.Int4>;
       nDistinct: Nullable<PgCatalog.Types.Float4>;
       mostCommonVals: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonFreqs: Nullable<PgCatalog.Types.Float4Array>;
+      mostCommonFreqs: PgCatalog.Types.Float4Array;
       histogramBounds: Nullable<PgCatalog.Types.Anyarray>;
       correlation: Nullable<PgCatalog.Types.Float4>;
       mostCommonElems: Nullable<PgCatalog.Types.Anyarray>;
-      mostCommonElemFreqs: Nullable<PgCatalog.Types.Float4Array>;
-      elemCountHistogram: Nullable<PgCatalog.Types.Float4Array>;
+      mostCommonElemFreqs: PgCatalog.Types.Float4Array;
+      elemCountHistogram: PgCatalog.Types.Float4Array;
     };
 
     export type PgSubscription = {
@@ -2297,8 +2297,8 @@ export namespace PgCatalog {
       oid: PgCatalog.Types.Oid;
       spcname: PgCatalog.Types.Name;
       spcowner: PgCatalog.Types.Oid;
-      spcacl: Nullable<PgCatalog.Types.AclitemArray>;
-      spcoptions: Nullable<PgCatalog.Types.TextArray>;
+      spcacl: PgCatalog.Types.AclitemArray;
+      spcoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgTimezoneAbbrevs = {
@@ -2419,7 +2419,7 @@ export namespace PgCatalog {
       typcollation: PgCatalog.Types.Oid;
       typdefaultbin: Nullable<PgCatalog.Types.PgNodeTree>;
       typdefault: Nullable<PgCatalog.Types.Text>;
-      typacl: Nullable<PgCatalog.Types.AclitemArray>;
+      typacl: PgCatalog.Types.AclitemArray;
     };
 
     export type PgUser = {
@@ -2431,14 +2431,14 @@ export namespace PgCatalog {
       usebypassrls: Nullable<PgCatalog.Types.Bool>;
       passwd: Nullable<PgCatalog.Types.Text>;
       valuntil: Nullable<PgCatalog.Types.Timestamptz>;
-      useconfig: Nullable<PgCatalog.Types.TextArray>;
+      useconfig: PgCatalog.Types.TextArray;
     };
 
     export type PgUserMapping = {
       oid: PgCatalog.Types.Oid;
       umuser: PgCatalog.Types.Oid;
       umserver: PgCatalog.Types.Oid;
-      umoptions: Nullable<PgCatalog.Types.TextArray>;
+      umoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgUserMappings = {
@@ -2447,7 +2447,7 @@ export namespace PgCatalog {
       srvname: Nullable<PgCatalog.Types.Name>;
       umuser: Nullable<PgCatalog.Types.Oid>;
       usename: Nullable<PgCatalog.Types.Name>;
-      umoptions: Nullable<PgCatalog.Types.TextArray>;
+      umoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgViews = {
@@ -4588,7 +4588,7 @@ export namespace Public {
       replacementCost: PgCatalog.Types.Numeric;
       rating: Nullable<Public.Types.MpaaRating>;
       lastUpdate: PgCatalog.Types.Timestamp;
-      specialFeatures: Nullable<PgCatalog.Types.TextArray>;
+      specialFeatures: PgCatalog.Types.TextArray;
       fulltext: PgCatalog.Types.Tsvector;
     };
 
@@ -5267,7 +5267,7 @@ export namespace InformationSchema {
     export type PgForeignDataWrappers = {
       oid: Nullable<PgCatalog.Types.Oid>;
       fdwowner: Nullable<PgCatalog.Types.Oid>;
-      fdwoptions: Nullable<PgCatalog.Types.TextArray>;
+      fdwoptions: PgCatalog.Types.TextArray;
       foreignDataWrapperCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperName: Nullable<InformationSchema.Types.SqlIdentifier>;
       authorizationIdentifier: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -5276,7 +5276,7 @@ export namespace InformationSchema {
 
     export type PgForeignServers = {
       oid: Nullable<PgCatalog.Types.Oid>;
-      srvoptions: Nullable<PgCatalog.Types.TextArray>;
+      srvoptions: PgCatalog.Types.TextArray;
       foreignServerCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignDataWrapperCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -5290,14 +5290,14 @@ export namespace InformationSchema {
       nspname: Nullable<PgCatalog.Types.Name>;
       relname: Nullable<PgCatalog.Types.Name>;
       attname: Nullable<PgCatalog.Types.Name>;
-      attfdwoptions: Nullable<PgCatalog.Types.TextArray>;
+      attfdwoptions: PgCatalog.Types.TextArray;
     };
 
     export type PgForeignTables = {
       foreignTableCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableSchema: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignTableName: Nullable<InformationSchema.Types.SqlIdentifier>;
-      ftoptions: Nullable<PgCatalog.Types.TextArray>;
+      ftoptions: PgCatalog.Types.TextArray;
       foreignServerCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerName: Nullable<InformationSchema.Types.SqlIdentifier>;
       authorizationIdentifier: Nullable<InformationSchema.Types.SqlIdentifier>;
@@ -5305,7 +5305,7 @@ export namespace InformationSchema {
 
     export type PgUserMappings = {
       oid: Nullable<PgCatalog.Types.Oid>;
-      umoptions: Nullable<PgCatalog.Types.TextArray>;
+      umoptions: PgCatalog.Types.TextArray;
       umuser: Nullable<PgCatalog.Types.Oid>;
       authorizationIdentifier: Nullable<InformationSchema.Types.SqlIdentifier>;
       foreignServerCatalog: Nullable<InformationSchema.Types.SqlIdentifier>;

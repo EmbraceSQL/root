@@ -640,12 +640,13 @@ export class IndexColumnNode extends ContainerNode implements NamedType {
 // operations
 
 export abstract class OperationNode extends ContainerNode {
+  /**
+   * Operations have parameters, inputs with a type.
+   */
   get parametersType() {
-    return this.children
-      .filter<CompositeTypeNode>(
-        (c): c is CompositeTypeNode => c.kind === ASTKind.CompositeType,
-      )
-      .find((c) => c.name === PARAMETERS);
+    return this.children.find<ParametersNode>(
+      (c): c is ParametersNode => c.kind === ASTKind.Parameters,
+    )?.type;
   }
 }
 
@@ -670,9 +671,9 @@ export abstract class FunctionOperationNode extends OperationNode {
    * An operation can return either a single value or arrary of this type.
    */
   get resultsType() {
-    return this.children.filter<ResultsNode>(
+    return this.children.find<ResultsNode>(
       (c): c is ResultsNode => c.kind === ASTKind.Results,
-    )[0].type;
+    )?.type;
   }
 }
 
@@ -972,7 +973,7 @@ export class ResultsNode extends NamedASTNode {
 export class ParametersNode extends NamedASTNode {
   constructor(
     parent: ContainerNode,
-    public type: AbstractTypeNode,
+    public type: CompositeTypeNode,
   ) {
     super(PARAMETERS, ASTKind.Parameters, parent);
   }
