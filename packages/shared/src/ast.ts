@@ -953,11 +953,11 @@ export class DomainTypeNode extends AbstractTypeNode {
 /**
  * Results reference a type, but are not a type themselves.
  */
-export class ResultsNode extends ASTNode {
+export class ResultsNode extends NamedASTNode {
   constructor(
     parent: ContainerNode,
     public type: AbstractTypeNode,
   ) {
-    super(ASTKind.Results, parent);
+    super(RESULTS, ASTKind.Results, parent);
   }
 }

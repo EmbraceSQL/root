@@ -1,0 +1,65 @@
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/procedure/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# Stored Procedure
+
+You can use stored procedures in your database as *the database API*. This is
+a strange concept for folks that grew up with the database as a place where
+objects go to rest when not in memory -- mere storage. But to folks that embrace
+SQL, the database is a valid active player in your architecture.
+
+EmbraceSQL generates code to call all stored procedures in the database, along
+with React hooks to call stored procedures from the UI, through an EmbraceSQL
+generated REST server, to the database, and back again. And you don't have to 
+code any of it.
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+### Write a Stored Procedure
+
+Here is a stored procedure example from the [dvdrental](../../dvdrental.sql) 
+database. Pure API, it's even stateless in that it doesn't store data.
+
+```sql
+CREATE FUNCTION public.last_day(timestamp without time zone) RETURNS date
+    LANGUAGE sql IMMUTABLE STRICT
+    AS $_$
+    SELECT
+        CASE WHEN EXTRACT(MONTH FROM $1) = 12 THEN
+(((EXTRACT(YEAR FROM $1) + 1)
+                    OPERATOR(pg_catalog. ||) '-01-01')::date - INTERVAL '1 day')::date
+        ELSE
+((EXTRACT(YEAR FROM $1)
+                    OPERATOR(pg_catalog. ||) '-' OPERATOR(pg_catalog. ||)(EXTRACT(MONTH FROM $1) + 1)
+                    OPERATOR(pg_catalog. ||) '-01')::date - INTERVAL '1 day')::date
+        END
+$_$;
+
+
+ALTER FUNCTION public.last_day(timestamp without time zone) OWNER TO postgres;
+```
+
+### Generate Code
+
+Regenerate from the database. If you are already running NextJS, it'll hot reload.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Code React
+
+Import the generated hook. 
+
+EmbraceSQL includes database friendly utilities including type parsers and
+react utility hooks to capture UI changes.
+
+
+<CodeBlock language="tsx" title="src/app/procedure/page.tsx" >
+  {ReactSource}
+</CodeBlock>

@@ -5969,7 +5969,6 @@ export namespace Public {
   }
 }
 
-// begin string parsers
 export namespace PgCatalog {
   export namespace Types {
     export namespace AclitemArray {
@@ -12540,195 +12539,387 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatistic.parse;
+      }
       export namespace Create {}
     }
     export namespace PgType {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgType.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignTable {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignTable.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAuthid {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAuthid.parse;
+      }
       export namespace Create {}
     }
     export namespace PgStatisticExtData {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatisticExtData.parse;
+      }
       export namespace Create {}
     }
     export namespace PgUserMapping {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgUserMapping.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSubscription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSubscription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAttribute {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAttribute.parse;
+      }
       export namespace Create {}
     }
     export namespace PgProc {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgProc.parse;
+      }
       export namespace Create {}
     }
     export namespace PgClass {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgClass.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAttrdef {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAttrdef.parse;
+      }
       export namespace Create {}
     }
     export namespace PgConstraint {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgConstraint.parse;
+      }
       export namespace Create {}
     }
     export namespace PgInherits {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgInherits.parse;
+      }
       export namespace Create {}
     }
     export namespace PgIndex {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgIndex.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOperator {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOperator.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOpfamily {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOpfamily.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOpclass {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOpclass.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAm {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAm.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAmop {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAmop.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAmproc {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAmproc.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLanguage {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLanguage.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLargeobjectMetadata {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLargeobjectMetadata.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAggregate {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAggregate.parse;
+      }
       export namespace Create {}
     }
     export namespace PgStatisticExt {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatisticExt.parse;
+      }
       export namespace Create {}
     }
     export namespace PgRewrite {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgRewrite.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTrigger {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTrigger.parse;
+      }
       export namespace Create {}
     }
     export namespace PgEventTrigger {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgEventTrigger.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDescription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDescription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgCast {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgCast.parse;
+      }
       export namespace Create {}
     }
     export namespace PgEnum {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgEnum.parse;
+      }
       export namespace Create {}
     }
     export namespace PgNamespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgNamespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgConversion {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgConversion.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDepend {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDepend.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDatabase {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDatabase.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDbRoleSetting {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDbRoleSetting.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTablespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTablespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAuthMembers {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAuthMembers.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShdepend {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShdepend.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShdescription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShdescription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsConfig {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsConfig.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsConfigMap {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsConfigMap.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsDict {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsDict.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsParser {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsParser.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsTemplate {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsTemplate.parse;
+      }
       export namespace Create {}
     }
     export namespace PgExtension {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgExtension.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignDataWrapper {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignDataWrapper.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignServer {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignServer.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPolicy {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPolicy.parse;
+      }
       export namespace Create {}
     }
     export namespace PgReplicationOrigin {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgReplicationOrigin.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDefaultAcl {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDefaultAcl.parse;
+      }
       export namespace Create {}
     }
     export namespace PgInitPrivs {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgInitPrivs.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSeclabel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSeclabel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShseclabel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShseclabel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgCollation {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgCollation.parse;
+      }
       export namespace Create {}
     }
     export namespace PgParameterAcl {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgParameterAcl.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPartitionedTable {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPartitionedTable.parse;
+      }
       export namespace Create {}
     }
     export namespace PgRange {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgRange.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTransform {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTransform.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSequence {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSequence.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublication {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublication.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublicationNamespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublicationNamespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublicationRel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublicationRel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSubscriptionRel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSubscriptionRel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLargeobject {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLargeobject.parse;
+      }
       export namespace Create {}
     }
   }
@@ -16321,15 +16512,28 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlFeatures.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlImplementationInfo {
+      export namespace Results {
+        export const parse =
+          InformationSchema.Types.SqlImplementationInfo.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlParts {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlParts.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlSizing {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlSizing.parse;
+      }
       export namespace Create {}
     }
   }
@@ -16459,6 +16663,9 @@ export namespace Api {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Text.parse;
+      }
     }
     export namespace EchoSet {
       export namespace Parameters {
@@ -16472,6 +16679,9 @@ export namespace Api {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Text.parse;
       }
     }
     export namespace EchoTable {
@@ -16487,6 +16697,9 @@ export namespace Api {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Api.Types.EchoTable.parse;
+      }
     }
     export namespace EchoType {
       export namespace Parameters {
@@ -16500,6 +16713,9 @@ export namespace Api {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Api.Types.EchoType.parse;
       }
     }
     export namespace EchoTypeArray {
@@ -16515,6 +16731,9 @@ export namespace Api {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Api.Types.EchoTypeArray.parse;
+      }
     }
     export namespace EchoTypeNested {
       export namespace Parameters {
@@ -16528,6 +16747,9 @@ export namespace Api {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Api.Types.EchoTypeNested.parse;
       }
     }
     export namespace EchoTypeSet {
@@ -16543,6 +16765,9 @@ export namespace Api {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Api.Types.EchoType.parse;
+      }
     }
     export namespace EchoAnswer {
       export namespace Parameters {
@@ -16557,10 +16782,16 @@ export namespace Api {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Api.Types.Answer.parse;
+      }
     }
   }
   export namespace Tables {
     export namespace QAndA {
+      export namespace Results {
+        export const parse = Api.Types.QAndA.parse;
+      }
       export namespace Create {}
     }
   }
@@ -16630,6 +16861,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace Cube_9c45 {
       export namespace Parameters {
@@ -16645,6 +16879,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace Cube_2e6d {
       export namespace Parameters {
@@ -16659,6 +16896,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeOut {
       export namespace Parameters {
@@ -16672,6 +16912,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Cstring.parse;
       }
     }
     export namespace CubeEq {
@@ -16688,6 +16931,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace CubeNe {
       export namespace Parameters {
@@ -16702,6 +16948,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeLt {
@@ -16718,6 +16967,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace CubeGt {
       export namespace Parameters {
@@ -16732,6 +16984,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeLe {
@@ -16748,6 +17003,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace CubeGe {
       export namespace Parameters {
@@ -16762,6 +17020,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeCmp {
@@ -16778,6 +17039,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
     }
     export namespace CubeContains {
       export namespace Parameters {
@@ -16792,6 +17056,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeContained {
@@ -16808,6 +17075,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace CubeOverlap {
       export namespace Parameters {
@@ -16822,6 +17092,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeUnion {
@@ -16838,6 +17111,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeInter {
       export namespace Parameters {
@@ -16853,6 +17129,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeSize {
       export namespace Parameters {
@@ -16866,6 +17145,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
       }
     }
     export namespace CubeSubset {
@@ -16882,6 +17164,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeDistance {
       export namespace Parameters {
@@ -16896,6 +17181,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
       }
     }
     export namespace DistanceChebyshev {
@@ -16912,6 +17200,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace DistanceTaxicab {
       export namespace Parameters {
@@ -16927,6 +17218,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace CubeDim {
       export namespace Parameters {
@@ -16940,6 +17234,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Int4.parse;
       }
     }
     export namespace CubeLlCoord {
@@ -16956,6 +17253,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace CubeUrCoord {
       export namespace Parameters {
@@ -16970,6 +17270,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
       }
     }
     export namespace CubeCoord {
@@ -16986,6 +17289,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace CubeCoordLlur {
       export namespace Parameters {
@@ -17001,6 +17307,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace CubeA5b3 {
       export namespace Parameters {
@@ -17014,6 +17323,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
       }
     }
     export namespace Cube_0aec {
@@ -17030,6 +17342,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeAfb8 {
       export namespace Parameters {
@@ -17044,6 +17359,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
       }
     }
     export namespace Cube_5d05 {
@@ -17061,6 +17379,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace CubeIsPoint {
       export namespace Parameters {
@@ -17074,6 +17395,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
       }
     }
     export namespace CubeEnlarge {
@@ -17090,6 +17414,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
       }
     }
     export namespace GCubeConsistent {
@@ -17109,6 +17436,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace GCubePenalty {
       export namespace Parameters {
@@ -17125,6 +17455,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Internal.parse;
+      }
     }
     export namespace GCubePicksplit {
       export namespace Parameters {
@@ -17139,6 +17472,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Internal.parse;
       }
     }
     export namespace GCubeUnion {
@@ -17155,6 +17491,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
+      }
     }
     export namespace GCubeSame {
       export namespace Parameters {
@@ -17170,6 +17509,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Internal.parse;
       }
     }
     export namespace GCubeDistance {
@@ -17189,6 +17531,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Float8.parse;
+      }
     }
     export namespace CubeRecv {
       export namespace Parameters {
@@ -17202,6 +17547,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = Public.Types.Cube.parse;
       }
     }
     export namespace CubeSend {
@@ -17217,10 +17565,16 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bytea.parse;
+      }
     }
   }
   export namespace Tables {
     export namespace Slug {
+      export namespace Results {
+        export const parse = Public.Types.Slug.parse;
+      }
       export namespace Create {}
     }
   }

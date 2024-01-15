@@ -31,15 +31,11 @@ export async function generateTypeParsers(context: GenerationContext) {
       // no skipping schemas for parsing, folks can and will reference across schemas
       skipSchemas: [],
       handlers: {
-        [ASTKind.Database]: {
-          before: async () => {
-            return `// begin string parsers`;
-          },
-        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
         [ASTKind.Procedures]: NamespaceVisitor,
         [ASTKind.Procedure]: NamespaceVisitor,
+        [ASTKind.Results]: NamespaceVisitor,
         [ASTKind.Tables]: NamespaceVisitor,
         [ASTKind.Table]: NamespaceVisitor,
         [ASTKind.Scripts]: NamespaceVisitor,

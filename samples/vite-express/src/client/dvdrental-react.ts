@@ -6350,7 +6350,6 @@ export namespace InformationSchema {
   }
 }
 
-// begin string parsers
 export namespace PgCatalog {
   export namespace Types {
     export namespace AclitemArray {
@@ -12921,195 +12920,387 @@ export namespace PgCatalog {
   export namespace Procedures {}
   export namespace Tables {
     export namespace PgStatistic {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatistic.parse;
+      }
       export namespace Create {}
     }
     export namespace PgType {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgType.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignTable {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignTable.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAuthid {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAuthid.parse;
+      }
       export namespace Create {}
     }
     export namespace PgStatisticExtData {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatisticExtData.parse;
+      }
       export namespace Create {}
     }
     export namespace PgUserMapping {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgUserMapping.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSubscription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSubscription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAttribute {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAttribute.parse;
+      }
       export namespace Create {}
     }
     export namespace PgProc {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgProc.parse;
+      }
       export namespace Create {}
     }
     export namespace PgClass {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgClass.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAttrdef {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAttrdef.parse;
+      }
       export namespace Create {}
     }
     export namespace PgConstraint {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgConstraint.parse;
+      }
       export namespace Create {}
     }
     export namespace PgInherits {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgInherits.parse;
+      }
       export namespace Create {}
     }
     export namespace PgIndex {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgIndex.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOperator {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOperator.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOpfamily {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOpfamily.parse;
+      }
       export namespace Create {}
     }
     export namespace PgOpclass {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgOpclass.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAm {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAm.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAmop {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAmop.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAmproc {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAmproc.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLanguage {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLanguage.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLargeobjectMetadata {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLargeobjectMetadata.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAggregate {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAggregate.parse;
+      }
       export namespace Create {}
     }
     export namespace PgStatisticExt {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgStatisticExt.parse;
+      }
       export namespace Create {}
     }
     export namespace PgRewrite {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgRewrite.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTrigger {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTrigger.parse;
+      }
       export namespace Create {}
     }
     export namespace PgEventTrigger {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgEventTrigger.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDescription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDescription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgCast {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgCast.parse;
+      }
       export namespace Create {}
     }
     export namespace PgEnum {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgEnum.parse;
+      }
       export namespace Create {}
     }
     export namespace PgNamespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgNamespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgConversion {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgConversion.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDepend {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDepend.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDatabase {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDatabase.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDbRoleSetting {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDbRoleSetting.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTablespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTablespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgAuthMembers {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgAuthMembers.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShdepend {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShdepend.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShdescription {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShdescription.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsConfig {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsConfig.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsConfigMap {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsConfigMap.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsDict {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsDict.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsParser {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsParser.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTsTemplate {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTsTemplate.parse;
+      }
       export namespace Create {}
     }
     export namespace PgExtension {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgExtension.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignDataWrapper {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignDataWrapper.parse;
+      }
       export namespace Create {}
     }
     export namespace PgForeignServer {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgForeignServer.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPolicy {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPolicy.parse;
+      }
       export namespace Create {}
     }
     export namespace PgReplicationOrigin {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgReplicationOrigin.parse;
+      }
       export namespace Create {}
     }
     export namespace PgDefaultAcl {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgDefaultAcl.parse;
+      }
       export namespace Create {}
     }
     export namespace PgInitPrivs {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgInitPrivs.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSeclabel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSeclabel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgShseclabel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgShseclabel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgCollation {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgCollation.parse;
+      }
       export namespace Create {}
     }
     export namespace PgParameterAcl {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgParameterAcl.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPartitionedTable {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPartitionedTable.parse;
+      }
       export namespace Create {}
     }
     export namespace PgRange {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgRange.parse;
+      }
       export namespace Create {}
     }
     export namespace PgTransform {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgTransform.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSequence {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSequence.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublication {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublication.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublicationNamespace {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublicationNamespace.parse;
+      }
       export namespace Create {}
     }
     export namespace PgPublicationRel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgPublicationRel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgSubscriptionRel {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgSubscriptionRel.parse;
+      }
       export namespace Create {}
     }
     export namespace PgLargeobject {
+      export namespace Results {
+        export const parse = PgCatalog.Types.PgLargeobject.parse;
+      }
       export namespace Create {}
     }
   }
@@ -13792,6 +13983,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Int4.parse;
+      }
     }
     export namespace FilmNotInStock {
       export namespace Parameters {
@@ -13806,6 +14000,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Int4.parse;
       }
     }
     export namespace GetCustomerBalance {
@@ -13824,6 +14021,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Numeric.parse;
+      }
     }
     export namespace InventoryHeldByCustomer {
       export namespace Parameters {
@@ -13837,6 +14037,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Int4.parse;
       }
     }
     export namespace InventoryInStock {
@@ -13852,6 +14055,9 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Bool.parse;
+      }
     }
     export namespace LastDay {
       export namespace Parameters {
@@ -13865,6 +14071,9 @@ export namespace Public {
           }
           throw new Error(JSON.stringify(from));
         }
+      }
+      export namespace Results {
+        export const parse = PgCatalog.Types.Date.parse;
       }
     }
     export namespace RewardsReport {
@@ -13885,52 +14094,100 @@ export namespace Public {
           throw new Error(JSON.stringify(from));
         }
       }
+      export namespace Results {
+        export const parse = Public.Types.Customer.parse;
+      }
     }
   }
   export namespace Tables {
     export namespace FilmActor {
+      export namespace Results {
+        export const parse = Public.Types.FilmActor.parse;
+      }
       export namespace Create {}
     }
     export namespace Address {
+      export namespace Results {
+        export const parse = Public.Types.Address.parse;
+      }
       export namespace Create {}
     }
     export namespace City {
+      export namespace Results {
+        export const parse = Public.Types.City.parse;
+      }
       export namespace Create {}
     }
     export namespace Customer {
+      export namespace Results {
+        export const parse = Public.Types.Customer.parse;
+      }
       export namespace Create {}
     }
     export namespace Actor {
+      export namespace Results {
+        export const parse = Public.Types.Actor.parse;
+      }
       export namespace Create {}
     }
     export namespace FilmCategory {
+      export namespace Results {
+        export const parse = Public.Types.FilmCategory.parse;
+      }
       export namespace Create {}
     }
     export namespace Inventory {
+      export namespace Results {
+        export const parse = Public.Types.Inventory.parse;
+      }
       export namespace Create {}
     }
     export namespace Category {
+      export namespace Results {
+        export const parse = Public.Types.Category.parse;
+      }
       export namespace Create {}
     }
     export namespace Country {
+      export namespace Results {
+        export const parse = Public.Types.Country.parse;
+      }
       export namespace Create {}
     }
     export namespace Language {
+      export namespace Results {
+        export const parse = Public.Types.Language.parse;
+      }
       export namespace Create {}
     }
     export namespace Rental {
+      export namespace Results {
+        export const parse = Public.Types.Rental.parse;
+      }
       export namespace Create {}
     }
     export namespace Staff {
+      export namespace Results {
+        export const parse = Public.Types.Staff.parse;
+      }
       export namespace Create {}
     }
     export namespace Store {
+      export namespace Results {
+        export const parse = Public.Types.Store.parse;
+      }
       export namespace Create {}
     }
     export namespace Payment {
+      export namespace Results {
+        export const parse = Public.Types.Payment.parse;
+      }
       export namespace Create {}
     }
     export namespace Film {
+      export namespace Results {
+        export const parse = Public.Types.Film.parse;
+      }
       export namespace Create {}
     }
   }
@@ -17523,15 +17780,28 @@ export namespace InformationSchema {
   export namespace Procedures {}
   export namespace Tables {
     export namespace SqlFeatures {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlFeatures.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlImplementationInfo {
+      export namespace Results {
+        export const parse =
+          InformationSchema.Types.SqlImplementationInfo.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlParts {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlParts.parse;
+      }
       export namespace Create {}
     }
     export namespace SqlSizing {
+      export namespace Results {
+        export const parse = InformationSchema.Types.SqlSizing.parse;
+      }
       export namespace Create {}
     }
   }
@@ -27378,11 +27648,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Customer,
+          row: Public.Types.Customer,
           changeCallback: RowCallback<Public.Types.Customer>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get customerId() {
           return this._value.customerId;
@@ -27523,11 +27793,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.FilmActor,
+          row: Public.Types.FilmActor,
           changeCallback: RowCallback<Public.Types.FilmActor>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get actorId() {
           return this._value.actorId;
@@ -27576,11 +27846,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Address,
+          row: Public.Types.Address,
           changeCallback: RowCallback<Public.Types.Address>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get addressId() {
           return this._value.addressId;
@@ -27699,11 +27969,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.City,
+          row: Public.Types.City,
           changeCallback: RowCallback<Public.Types.City>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get cityId() {
           return this._value.cityId;
@@ -27766,11 +28036,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Customer,
+          row: Public.Types.Customer,
           changeCallback: RowCallback<Public.Types.Customer>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get customerId() {
           return this._value.customerId;
@@ -27909,11 +28179,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Actor,
+          row: Public.Types.Actor,
           changeCallback: RowCallback<Public.Types.Actor>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get actorId() {
           return this._value.actorId;
@@ -27978,11 +28248,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.FilmCategory,
+          row: Public.Types.FilmCategory,
           changeCallback: RowCallback<Public.Types.FilmCategory>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get filmId() {
           return this._value.filmId;
@@ -28033,11 +28303,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Inventory,
+          row: Public.Types.Inventory,
           changeCallback: RowCallback<Public.Types.Inventory>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get inventoryId() {
           return this._value.inventoryId;
@@ -28098,11 +28368,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Category,
+          row: Public.Types.Category,
           changeCallback: RowCallback<Public.Types.Category>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get categoryId() {
           return this._value.categoryId;
@@ -28153,11 +28423,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Country,
+          row: Public.Types.Country,
           changeCallback: RowCallback<Public.Types.Country>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get countryId() {
           return this._value.countryId;
@@ -28208,11 +28478,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Language,
+          row: Public.Types.Language,
           changeCallback: RowCallback<Public.Types.Language>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get languageId() {
           return this._value.languageId;
@@ -28263,11 +28533,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Rental,
+          row: Public.Types.Rental,
           changeCallback: RowCallback<Public.Types.Rental>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get rentalId() {
           return this._value.rentalId;
@@ -28368,11 +28638,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Staff,
+          row: Public.Types.Staff,
           changeCallback: RowCallback<Public.Types.Staff>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get staffId() {
           return this._value.staffId;
@@ -28527,11 +28797,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Store,
+          row: Public.Types.Store,
           changeCallback: RowCallback<Public.Types.Store>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get storeId() {
           return this._value.storeId;
@@ -28593,11 +28863,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Payment,
+          row: Public.Types.Payment,
           changeCallback: RowCallback<Public.Types.Payment>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get paymentId() {
           return this._value.paymentId;
@@ -28684,11 +28954,11 @@ export namespace Public {
         implements Row
       {
         constructor(
-          record: Public.Types.Film,
+          row: Public.Types.Film,
           changeCallback: RowCallback<Public.Types.Film>,
           rowNumberInResultset: number,
         ) {
-          super(record, changeCallback, rowNumberInResultset);
+          super(row, changeCallback, rowNumberInResultset);
         }
         get filmId() {
           return this._value.filmId;

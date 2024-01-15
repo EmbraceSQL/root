@@ -4,6 +4,8 @@ export * from "@embracesql/client";
 export * from "./provider";
 export * from "./useEmbraceSQL";
 export * from "./row";
+export * from "./hooks/useDebouncedValue";
+export * from "./hooks/useOnChange";
 
 type Setter<T> = (newValue: T) => void;
 
