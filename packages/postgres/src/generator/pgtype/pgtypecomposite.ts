@@ -1,8 +1,7 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { Context } from "../../context";
 import { PGAttribute } from "./pgattribute";
 import { PGCatalogType } from "./pgcatalogtype";
-import { PGIndex } from "./pgindex";
-import { CatalogRow } from "./pgtype";
+import { TypeFactoryContext } from "./pgtype";
 import {
   AttributeNode,
   CompositeTypeNode,
@@ -21,25 +20,25 @@ import { camelCase } from "change-case";
  */
 export class PGTypeComposite extends PGCatalogType {
   attributes: PGAttribute[];
-  indexes: PGIndex[];
-  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
-    super(catalog);
+  constructor(
+    context: TypeFactoryContext,
+    oid: number,
+    nspname: string,
+    typname: string,
+    comment: string,
+    public typrelid: number,
+  ) {
+    super(oid, nspname, typname, comment);
 
-    this.attributes = context.attributes.attributesForType(this);
-    // translate the attributes on the index into attributes on the type
-    // this is needed to properly pick up constraints which are on the type
-    // for the base table but are not on the type for the index
-    this.indexes = context.indexes
-      .indexesForType(this)
-      .map((i) => i.translateAttributes(context, this));
+    this.attributes = context.attributes.attributesForType(typrelid);
   }
 
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
 
     // there is no guarantee that the types of the attributes are loaded yet
     const type = new CompositeTypeNode(
-      this.catalog.typname,
+      this.typname,
       schema.types,
       this.oid,
       this.comment,
@@ -53,7 +52,7 @@ export class PGTypeComposite extends PGCatalogType {
       const attributeType = context.database.resolveType(a.attribute.atttypid);
       if (!attributeType) {
         throw new Error(
-          `${this.catalog.typname} cannot find type for ${a.attribute.attname} ${a.attribute.atttypid}`,
+          `${this.typname} cannot find type for ${a.attribute.attname} ${a.attribute.atttypid}`,
         );
       }
       new AttributeNode(
@@ -65,38 +64,6 @@ export class PGTypeComposite extends PGCatalogType {
         !a.notNull,
       );
     });
-  }
-
-  get hasPrimaryKey() {
-    return this.primaryKey !== undefined;
-  }
-
-  get hasPrimaryKeyDefault() {
-    const primaryKey = this.indexes.find((i) => i.primaryKey);
-    if (primaryKey !== undefined) {
-      // check all the primary key attributes
-      return (
-        primaryKey.attributes.filter((a) => a.hasDefault).length ===
-        primaryKey.attributes.length
-      );
-    }
-    //fallthrough
-    return false;
-  }
-
-  get primaryKey() {
-    return this.indexes.find((i) => i.primaryKey);
-  }
-
-  get primaryKeyAttributes() {
-    const primaryKey = this.indexes.find((i) => i.primaryKey);
-    return primaryKey?.attributes ?? [];
-  }
-
-  get notPrimaryKeyAttributes() {
-    const primaryKey = this.indexes.find((i) => i.primaryKey);
-    const notIt = primaryKey?.attributes.map((a) => a.name) ?? [];
-    return this.attributes.filter((a) => !notIt.includes(a.name));
   }
 
   attributeByAttnum(attnum: number) {

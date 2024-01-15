@@ -1,6 +1,6 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { Context } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
-import { CatalogRow } from "./pgtype";
+import { TypeFactoryContext } from "./pgtype";
 import { DomainTypeNode, GenerationContext } from "@embracesql/shared";
 
 /**
@@ -9,16 +9,24 @@ import { DomainTypeNode, GenerationContext } from "@embracesql/shared";
  * In the database these may have different constraints
  */
 export class PGTypeDomain extends PGCatalogType {
-  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
-    super(catalog);
+  constructor(
+    context: TypeFactoryContext,
+    oid: number,
+    nspname: string,
+    typname: string,
+    comment: string,
+    public typbasetype: number,
+  ) {
+    console.assert(context);
+    super(oid, nspname, typname, comment);
   }
 
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
 
     // there is no guarantee that the types of the attributes are loaded yet
     const type = new DomainTypeNode(
-      this.catalog.typname,
+      this.typname,
       schema.types,
       this.oid,
       this.comment,
@@ -28,12 +36,12 @@ export class PGTypeDomain extends PGCatalogType {
 
   finalizeAST(context: GenerationContext) {
     const typeNode = context.database.resolveType<DomainTypeNode>(this.oid);
-    typeNode.baseType = context.database.resolveType(this.catalog.typbasetype);
+    typeNode.baseType = context.database.resolveType(this.typbasetype);
   }
 
   typescriptTypeDefinition(context: GenerationContext) {
     return `${
-      context.database.resolveType(this.catalog.typbasetype)
+      context.database.resolveType(this.typbasetype)
         ?.typescriptNamespacedName ?? "void"
     }`;
   }
@@ -42,16 +50,14 @@ export class PGTypeDomain extends PGCatalogType {
   parseFromPostgres(context: Context, x: any) {
     // delegate to the bast type
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return context
-      .resolveType(this.catalog.typbasetype)
-      .parseFromPostgres(context, x);
+    return context.resolveType(this.typbasetype).parseFromPostgres(context, x);
   }
 
   serializeToPostgres(context: Context, x: unknown) {
     // delegate to the base type
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return context
-      .resolveType(this.catalog.typbasetype)
+      .resolveType(this.typbasetype)
       .serializeToPostgres(context, x);
   }
 }

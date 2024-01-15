@@ -4,6 +4,7 @@ import {
   FunctionOperationNode,
   GenerationContext,
   NamespaceVisitor,
+  PRIMARY_KEY,
 } from "@embracesql/shared";
 
 /**
@@ -76,12 +77,12 @@ export const generateReactHooks = async (context: GenerationContext) => {
           // the 'just one row' hook
           `export function useRow(props: GeneratedRowProps<${node.typescriptNamespacedName}.Values>) {`,
           `  const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `  return useEmbraceSQLRow<${BY_PRIMARY_KEY},`,
+          `  return useEmbraceSQLRow<${PRIMARY_KEY},`,
           `  Partial<${node.type.typescriptNamespacedName}>, `,
           `  ${node.type.typescriptNamespacedName}> (`,
           `
                {
-                 parameters: props.values as unknown as ${BY_PRIMARY_KEY},
+                 parameters: props.values as unknown as ${PRIMARY_KEY},
                  readOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.read.bind(client),
                  upsertOperation: client.${node.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
@@ -121,9 +122,9 @@ export const generateReactHooks = async (context: GenerationContext) => {
         const rowTypeName = `${node.table.type.typescriptNamespacedName}`;
         const hookName = node.unique ? `useEmbraceSQLRow` : `useEmbraceSQLRows`;
         return [
-          `export function use${node.typescriptName}(parameters: ${node.typescriptName}) {`,
+          `export function use${node.typescriptName}(parameters: ${node.type.typescriptNamespacedName}) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return ${hookName}<${node.typescriptName}, Partial<${node.table.type.typescriptNamespacedName}>,  ${rowTypeName}>(
+          `return ${hookName}<${node.type.typescriptNamespacedName}, Partial<${node.table.type.typescriptNamespacedName}>,  ${rowTypeName}>(
                {
                  readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,

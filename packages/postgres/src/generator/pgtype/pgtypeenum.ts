@@ -1,7 +1,6 @@
-import { TypeFactoryContext } from "../../context";
 import { groupBy } from "../../util";
 import { PGCatalogType } from "./pgcatalogtype";
-import { CatalogRow } from "./pgtype";
+import { TypeFactoryContext } from "./pgtype";
 import { EnumTypeNode, GenerationContext } from "@embracesql/shared";
 import path from "path";
 import { Sql } from "postgres";
@@ -39,17 +38,24 @@ export class PGTypeEnumValues {
 export class PGTypeEnum extends PGCatalogType {
   values: EnumRow[];
 
-  constructor(context: TypeFactoryContext, catalog: CatalogRow) {
-    super(catalog);
-    this.values = context.enumValues.enumValuesByTypeId[catalog.oid];
+  constructor(
+    context: TypeFactoryContext,
+    oid: number,
+    nspname: string,
+    typname: string,
+    comment: string,
+  ) {
+    console.assert(context);
+    super(oid, nspname, typname, comment);
+    this.values = context.enumValues.enumValuesByTypeId[oid];
     this.values.toSorted((l, r) => l.enumsortorder - r.enumsortorder);
   }
 
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
 
     const type = new EnumTypeNode(
-      this.catalog.typname,
+      this.typname,
       this.values.map((v) => v.enumlabel),
       schema.types,
       this.oid,

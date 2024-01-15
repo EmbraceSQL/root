@@ -11,7 +11,7 @@ const theBob = await database.Public.Tables.Actor.create({
 });
 console.log(theBob);
 // (R) read by primary key
-const theBobAgain = await database.Public.Tables.Actor.ByActorId.read({
+const theBobAgain = await database.Public.Tables.Actor.ActorPkey.read({
   actorId: theBob.actorId,
 });
 console.log(theBobAgain);
@@ -22,14 +22,14 @@ const theRobert = await database.Public.Tables.Actor.create(theBob);
 console.log(theRobert);
 
 // (U) or good old fashioned update by key
-const theRoberto = await database.Public.Tables.Actor.ByActorId.update(
+const theRoberto = await database.Public.Tables.Actor.ActorPkey.update(
   { actorId: theRobert.actorId },
   { firstName: "Roberto" },
 );
 console.log(theRoberto);
 
 // (D) finally delete
-const deleted = await database.Public.Tables.Actor.ByActorId.delete({
+const deleted = await database.Public.Tables.Actor.ActorPkey.delete({
   actorId: theRoberto.actorId,
 });
 // the modified row is always returned -- which is very convenient

@@ -8,6 +8,8 @@ SELECT
             oid = indrelid) tabletypeoid,
     indexrelid,
     indisunique,
-    indisprimary
+    indisprimary,
+    relname name
 FROM
-    pg_index
+    pg_index i
+    JOIN pg_class c ON i.indexrelid = c.oid

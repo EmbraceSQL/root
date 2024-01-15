@@ -19,7 +19,7 @@ describe("The database can AutoCRUD", () => {
   });
   it("in a nested transaction", async () => {
     const updatedCustomer = await database.withTransaction(async (db) => {
-      return await db.Public.Tables.Customer.ByCustomerId.update(
+      return await db.Public.Tables.Customer.CustomerPkey.update(
         {
           customerId: 1,
         },
@@ -35,13 +35,13 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("in a nested transaction that rolls back", async () => {
-    await database.Public.Tables.Customer.ByCustomerId.update(
+    await database.Public.Tables.Customer.CustomerPkey.update(
       { customerId: 1 },
       { activebool: true },
     );
     try {
       await database.withTransaction(async (db) => {
-        await db.Public.Tables.Customer.ByCustomerId.update(
+        await db.Public.Tables.Customer.CustomerPkey.update(
           {
             customerId: 1,
           },
@@ -52,7 +52,7 @@ describe("The database can AutoCRUD", () => {
     } catch (e) {
       expect((e as Error).message).toBe("aha");
     }
-    const customer = await database.Public.Tables.Customer.ByCustomerId.read({
+    const customer = await database.Public.Tables.Customer.CustomerPkey.read({
       customerId: 1,
     });
 
@@ -64,7 +64,7 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("a unique index read", async () => {
-    const value = await database.Public.Tables.Actor.ByActorId.read({
+    const value = await database.Public.Tables.Actor.ActorPkey.read({
       actorId: 1,
     });
     expect(value).toMatchObject({
@@ -74,7 +74,7 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("a non unique index read", async () => {
-    const values = await database.Public.Tables.Actor.ByLastName.read({
+    const values = await database.Public.Tables.Actor.IdxActorLastName.read({
       lastName: "Akroyd",
     });
     expect(values.length).toBeGreaterThan(1);
@@ -84,39 +84,41 @@ describe("The database can AutoCRUD", () => {
     expect(values.length).toBeGreaterThan(1);
   });
   it("a unique index delete", async () => {
-    const before = await database.Public.Tables.Payment.ByPaymentId.read({
+    const before = await database.Public.Tables.Payment.PaymentPkey.read({
       paymentId: 17503,
     });
     expect(before).toBeTruthy();
-    const deleted = await database.Public.Tables.Payment.ByPaymentId.delete({
+    const deleted = await database.Public.Tables.Payment.PaymentPkey.delete({
       paymentId: 17503,
     });
     expect(deleted).toMatchObject(before);
-    const after = await database.Public.Tables.Payment.ByPaymentId.read({
+    const after = await database.Public.Tables.Payment.PaymentPkey.read({
       paymentId: 17503,
     });
     expect(after).toBeUndefined();
   });
   it("a non-unique index delete", async () => {
-    const before = await database.Public.Tables.Payment.ByCustomerId.read({
+    const before = await database.Public.Tables.Payment.IdxFkCustomerId.read({
       customerId: 341,
     });
     expect(before.length).toBeGreaterThan(0);
-    const deleted = await database.Public.Tables.Payment.ByCustomerId.delete({
-      customerId: 341,
-    });
+    const deleted = await database.Public.Tables.Payment.IdxFkCustomerId.delete(
+      {
+        customerId: 341,
+      },
+    );
     expect(deleted).toMatchObject(before);
-    const after = await database.Public.Tables.Payment.ByCustomerId.read({
+    const after = await database.Public.Tables.Payment.IdxFkCustomerId.read({
       customerId: 341,
     });
     expect(after.length).toBe(0);
   });
   it("a unique index update", async () => {
-    const before = await database.Public.Tables.Customer.ByCustomerId.read({
+    const before = await database.Public.Tables.Customer.CustomerPkey.read({
       customerId: 1,
     });
     expect(before).toBeTruthy();
-    const updated = await database.Public.Tables.Customer.ByCustomerId.update(
+    const updated = await database.Public.Tables.Customer.CustomerPkey.update(
       {
         customerId: 1,
       },
@@ -131,11 +133,11 @@ describe("The database can AutoCRUD", () => {
     expect(before).not.toMatchObject(updated);
   });
   it("a non-unique index update", async () => {
-    const before = await database.Public.Tables.Customer.ByStoreId.read({
+    const before = await database.Public.Tables.Customer.IdxFkStoreId.read({
       storeId: 1,
     });
     expect(before.filter((c) => c.activebool).length).toBeGreaterThan(300);
-    const updated = await database.Public.Tables.Customer.ByStoreId.update(
+    const updated = await database.Public.Tables.Customer.IdxFkStoreId.update(
       {
         storeId: 1,
       },
@@ -186,16 +188,16 @@ describe("The database can AutoCRUD", () => {
     });
   });
   it("null values", async () => {
-    const anAddress = await database.Public.Tables.Address.ByAddressId.read({
+    const anAddress = await database.Public.Tables.Address.AddressPkey.read({
       addressId: 1,
     });
     expect(anAddress.address2).toBeNull();
-    const nowNotNull = await database.Public.Tables.Address.ByAddressId.update(
+    const nowNotNull = await database.Public.Tables.Address.AddressPkey.update(
       { addressId: 1 },
       { address2: "hi" },
     );
     expect(nowNotNull.address2).toBe("hi");
-    const nullAgain = await database.Public.Tables.Address.ByAddressId.update(
+    const nullAgain = await database.Public.Tables.Address.AddressPkey.update(
       { addressId: 1 },
       { address2: null },
     );

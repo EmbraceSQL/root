@@ -21,7 +21,7 @@ import {
 export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
     const generationBuffer = [""];
-    const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
+    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;

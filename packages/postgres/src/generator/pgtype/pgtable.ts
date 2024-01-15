@@ -1,5 +1,5 @@
-import { TypeFactoryContext } from "../../context";
-import { PGIndex } from "./pgindex";
+import { groupBy } from "../../util";
+import { PGIndex, PGIndexes } from "./pgindex";
 import { PGTypes } from "./pgtype";
 import { PGTypeComposite } from "./pgtypecomposite";
 import {
@@ -20,7 +20,7 @@ type TableRow = {
   tabletypeoid: number;
 };
 
-type PGTablesContext = TypeFactoryContext & { typeCatalog: PGTypes };
+type PGTablesContext = { typeCatalog: PGTypes };
 
 /**
  * Actual stored tables, each with a type defined in the postgres catalog.
@@ -39,8 +39,10 @@ export class PGTables {
   }
 
   tables: PGTable[];
+  tablesByNamespace: Record<string, PGTable[]>;
   private constructor(context: PGTablesContext, tableRows: TableRow[]) {
     this.tables = tableRows.map((r) => new PGTable(context, r));
+    this.tablesByNamespace = groupBy(this.tables, (t) => t.table.nspname);
   }
 }
 
@@ -48,17 +50,23 @@ export class PGTables {
  * Metadata for a single table stored in the database.
  */
 export class PGTable {
-  indexes: PGIndex[];
+  _indexes: PGIndex[] = [];
   tableType: PGTypeComposite;
   constructor(
     context: PGTablesContext,
     public table: TableRow,
   ) {
-    this.indexes =
-      context.indexes.indexesByTableTypeOid[table.tabletypeoid] ?? [];
     this.tableType = context.typeCatalog.typesByOid[
       table.tabletypeoid
     ] as PGTypeComposite;
+  }
+
+  get indexes() {
+    return this._indexes;
+  }
+
+  pickIndexes(indexes: PGIndexes) {
+    this._indexes = indexes.indexesByTableTypeOid[this.tableType.oid] ?? [];
   }
 
   loadAST(context: GenerationContext, tables: TablesNode) {

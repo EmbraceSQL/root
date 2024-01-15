@@ -61,11 +61,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       ...context,
       skipSchemas: [],
       handlers: {
-        [ASTKind.Database]: {
-          before: async () => {
-            return `// begin type definitions`;
-          },
-        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
         [ASTKind.Type]: TypeDefiner,
@@ -98,7 +93,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           after: async (context, node) => {
             return [
               // exhaustive -- if there is no primary key, say so explicitly
-              node.primaryKey ? "" : `export type ByPrimaryKey = never;`,
+              node.primaryKey ? "" : `export type PrimaryKey = never;`,
               // optional columns -- won't always need to pass these
               // ex: database has a default
               `export type Optional = Pick<${
@@ -111,34 +106,51 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               // values type -- used in create and update
               `export type ${pascalCase(VALUES)} = PartiallyOptional<${
                 node.type.typescriptNamespacedName
-              }, Optional & ByPrimaryKey>`,
+              }, Optional & PrimaryKey>`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");
           },
         },
         [ASTKind.Index]: {
-          before: async (_, node) => `export type ${node.typescriptName} = {`,
-          after: async (_, node) =>
+          before: async (_, node) =>
             [
-              `}`,
               // alias primary key to the correct index
               node.primaryKey
-                ? `export type ByPrimaryKey = ${node.typescriptName};`
+                ? `export type PrimaryKey = ${node.type.typescriptNamespacedName};`
                 : "",
             ].join("\n"),
         },
-        [ASTKind.IndexColumn]: {
-          before: async (_, node) =>
-            `${node.typescriptPropertyName}: ${node.type.typescriptNamespacedName} ;`,
-        },
         [ASTKind.Procedures]: NamespaceVisitor,
         [ASTKind.Procedure]: NamespaceVisitor,
-        [ASTKind.CompositeType]: TypeDefiner,
+        [ASTKind.CompositeType]: {
+          // composite types are a name and AttributeNode(s) will fill the body
+          before: async (_, node) => {
+            return [
+              node.comment ? asDocComment(node.comment) : "",
+              `export type ${node.typescriptName} = {`,
+            ].join("\n");
+          },
+          after: async () => `}`,
+        },
         [ASTKind.DomainType]: TypeDefiner,
         [ASTKind.ArrayType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
         [ASTKind.Script]: NamespaceVisitor,
+        [ASTKind.Attribute]: {
+          before: async (_, node) => {
+            // arrays are not nullable, they are empty arrays []
+            if (node.type.kind === ASTKind.ArrayType) {
+              return `${node.typescriptPropertyName}: ${node.type.typescriptNamespacedName};`;
+            }
+            // nullable is of course nullable
+            if (node.nullable) {
+              return `${node.typescriptPropertyName}: Nullable<${node.type.typescriptNamespacedName}>;`;
+            } else {
+              return `${node.typescriptPropertyName}: ${node.type.typescriptNamespacedName};`;
+            }
+          },
+        },
       },
     }),
   );

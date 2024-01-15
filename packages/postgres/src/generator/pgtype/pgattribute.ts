@@ -1,6 +1,5 @@
 import { Context } from "../../context";
 import { groupBy } from "../../util";
-import { PGTypeComposite } from "./pgtypecomposite";
 import { cleanIdentifierForTypescript } from "@embracesql/shared";
 import { camelCase } from "change-case";
 import path from "path";
@@ -38,9 +37,9 @@ export class PGAttributes {
     );
   }
 
-  attributesForType(catalogType: PGTypeComposite) {
+  attributesForType(typrelid: number) {
     return (
-      this.attributesByRelid[catalogType.catalog.typrelid]?.sort(
+      this.attributesByRelid[typrelid]?.sort(
         (l, r) => l.attribute.attnum - r.attribute.attnum,
       ) ?? []
     );

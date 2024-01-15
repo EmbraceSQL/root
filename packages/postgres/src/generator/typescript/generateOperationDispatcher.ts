@@ -93,7 +93,7 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: ReadOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.typescriptNamespacedName}`,
+            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
           );
           return `"${
             node.typescriptNamespacedPropertyName
@@ -106,7 +106,7 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: UpdateOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.typescriptNamespacedName}`,
+            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
           );
           callee.push(
             `request.values as Partial<${node.index.table.typescriptNamespacedName}.Values>`,
@@ -122,7 +122,7 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: DeleteOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.typescriptNamespacedName}`,
+            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
           );
           return `"${
             node.typescriptNamespacedPropertyName

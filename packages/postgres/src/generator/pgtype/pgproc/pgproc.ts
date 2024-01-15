@@ -1,4 +1,5 @@
 import { Context, PostgresProcTypecast } from "../../../context";
+import { groupBy } from "../../../util";
 import { PGCatalogType } from "../pgcatalogtype";
 import { PGTypes } from "../pgtype";
 import {
@@ -54,36 +55,37 @@ export class PGProcs {
   }
 
   procs: PGProc[];
+  procsByNamespace: Record<string, PGProc[]>;
   pseudoTypesByOid: Record<number, PGProcPseudoType>;
   private constructor(context: PGProcsContext, procRows: ProcRow[]) {
     this.procs = procRows.map((r) => new PGProc(context, r, ""));
     this.pseudoTypesByOid = Object.fromEntries(
       this.procs.map((t) => [t.proc.oid, new PGProcPseudoType(t)]),
     );
+    this.procsByNamespace = groupBy(this.procs, (p) => p.nspname);
   }
 
   async loadAST(context: GenerationContext) {
     for (const proc of this.procs) {
       const schemaNode = context.database.resolveSchema(proc.nspname);
       const procsNode = schemaNode.procedures;
-      const returnsAttributes = new PGProcPseudoType(proc).pseudoTypeAttributes(
-        context,
-      );
+      const procPseudoType = this.pseudoTypesByOid[proc.proc.oid];
+      const returnsAttributes = procPseudoType.pseudoTypeAttributes(context);
       // by the time we are generating procedures, we have already made
       // a first pass over types, so the result type should be available
       // hence the !
       const resultsType = (() => {
-        if (returnsAttributes.length === 1) {
+        if (returnsAttributes.length === 0) {
+          // this has a plain single type return type
+          return context.database.resolveType(proc.proc.prorettype);
+        } else if (returnsAttributes.length === 1) {
           // just need the single type as is
           // single attribute, table of one column which is
           // array like results
           return returnsAttributes[0].type;
         } else {
-          // resolve the pseudo type composite for the proc to
-          // contain multiple attributes -- table like results
-          return context.database.resolveType(
-            proc.returnsPseudoType ? proc.proc.oid : proc.proc.prorettype,
-          )!;
+          // really using this pseudo type, so register it with the AST
+          return procPseudoType.loadAST(context);
         }
       })();
       const node = new ProcedureNode(
@@ -208,39 +210,24 @@ export class PGProc implements PostgresProcTypecast {
  */
 export class PGProcPseudoType extends PGCatalogType {
   constructor(public proc: PGProc) {
-    super({
-      oid: proc.proc.oid,
-      nspname: proc.proc.nspname,
-      typname: `${proc.proc.proname}_results`,
-      typbasetype: 0,
-      typelem: 0,
-      rngsubtype: 0,
-      typcategory: "",
-      typoutput: "",
-      typrelid: 0,
-      typtype: "",
-    });
+    super(proc.proc.oid, proc.proc.nspname, `${proc.proc.proname}_results`);
   }
 
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
     const returnsAttributes = this.pseudoTypeAttributes(context);
-    if (returnsAttributes.length === 1) {
-      // single attribute will already have a type available
-      // no need to register
-    } else {
-      // multiple attributes creates a composite
-      const type = new CompositeTypeNode(
-        this.proc.name,
-        schema.types,
-        this.oid,
-        this.comment,
-      );
-      returnsAttributes.forEach(
-        (a, i) => new AttributeNode(type, a.name, i, a.type, true, true),
-      );
-      context.database.registerType(type.id, type);
-    }
+    // multiple attributes creates a composite
+    const type = new CompositeTypeNode(
+      this.proc.name,
+      schema.types,
+      this.oid,
+      this.comment,
+    );
+    returnsAttributes.forEach(
+      (a, i) => new AttributeNode(type, a.name, i, a.type, true, true),
+    );
+    context.database.registerType(type.id, type);
+    return type;
   }
 
   pseudoTypeAttributes(context: GenerationContext) {

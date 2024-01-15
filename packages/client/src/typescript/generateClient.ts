@@ -42,11 +42,11 @@ export const NestedNamedClassVisitor = {
 const IndexOperation = {
   before: async (_: GenerationContext, node: IndexOperationNode) => {
     // will return a single row on a unique index
-    const parametersType = node.index.typescriptNamespacedName;
+    const parametersType = node.index.type.typescriptNamespacedName;
     const resultType = node.index.unique
       ? `${node.index.table.type.typescriptNamespacedName} | undefined`
       : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
-    const parametersPick = node.index.columns
+    const parametersPick = node.index.type.attributes
       .map(
         (c) =>
           `${c.typescriptPropertyName}: parameters.${c.typescriptPropertyName}`,
@@ -209,12 +209,12 @@ export async function generateClient(context: GenerationContext) {
     [ASTKind.UpdateOperation]: {
       before: async (_: GenerationContext, node) => {
         // will return a single row on a unique index
-        const parametersType = node.index.typescriptNamespacedName;
+        const parametersType = node.index.type.typescriptNamespacedName;
         const valuesType = `Partial<${node.index.table.type.typescriptNamespacedName}>`;
         const resultType = node.index.unique
           ? `${node.index.table.type.typescriptNamespacedName} | undefined`
           : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
-        const parametersPick = node.index.columns
+        const parametersPick = node.index.type.attributes
           .map(
             (c) =>
               `${c.typescriptPropertyName}: parameters.${c.typescriptPropertyName}`,

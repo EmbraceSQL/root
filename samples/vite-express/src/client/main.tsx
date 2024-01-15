@@ -17,7 +17,7 @@ const App = () => {
     loading,
     row: actor,
     error,
-  } = Public.Tables.Actor.useByActorId({ actorId: 100 });
+  } = Public.Tables.Actor.useActorPkey({ actorId: 100 });
   // 🪄 - automatic onChange saving though the hook, with debounce to not smoke your DB!
   // notice there is no <form> to post back or additional hooks
   if (loading) {

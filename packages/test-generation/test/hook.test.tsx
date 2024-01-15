@@ -72,7 +72,7 @@ describe("EmbraceSQL Hooks can", () => {
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
     const { result } = renderHook(
-      () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
+      () => Public.Tables.Actor.useActorPkey({ actorId: 1 }),
       { wrapper },
     );
     await waitFor(() =>
@@ -87,7 +87,7 @@ describe("EmbraceSQL Hooks can", () => {
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
     const { result } = renderHook(
-      () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
+      () => Public.Tables.Actor.useActorPkey({ actorId: 1 }),
       { wrapper },
     );
     await waitFor(() => expect(result.current?.loading).toBe(false));
@@ -134,7 +134,7 @@ describe("EmbraceSQL Hooks can", () => {
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
     const { result } = renderHook(
-      () => Public.Tables.Actor.useByActorId({ actorId: 1 }),
+      () => Public.Tables.Actor.useActorPkey({ actorId: 1 }),
       { wrapper },
     );
     await waitFor(() => expect(result.current?.loading).toBe(false));
@@ -242,7 +242,7 @@ describe("EmbraceSQL Hooks can", () => {
     );
     // given a parent child table with an index on the parent
     const { result } = renderHook(
-      () => Public.Tables.FilmActor.useByFilmId({ filmId: 1 }),
+      () => Public.Tables.FilmActor.useIdxFkFilmId({ filmId: 1 }),
       {
         wrapper,
       },
@@ -268,7 +268,7 @@ describe("EmbraceSQL Hooks can", () => {
     );
     // and the database should know this record by parent
     const shouldBeAdded =
-      await client.Public.Tables.FilmActor.ByActorIdFilmId.read({
+      await client.Public.Tables.FilmActor.FilmActorPkey.read({
         filmId: 1,
         actorId: 2,
       });

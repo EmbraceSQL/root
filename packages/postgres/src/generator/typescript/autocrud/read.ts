@@ -14,7 +14,7 @@ import {
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
     const generationBuffer = [""];
-    const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}`;
+    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;

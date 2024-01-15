@@ -6,7 +6,7 @@
  * @param key
  * @returns
  */
-export const groupBy = <T, TT, K extends string | number>(
+export const groupBy = <K extends string | number, T, TT = T>(
   list: T[],
   key: (i: T) => K,
   map = (i: T) => i as unknown as TT,

@@ -1,10 +1,8 @@
-import { PGAttributes } from "./generator/pgtype/pgattribute";
 import { PGIndexes } from "./generator/pgtype/pgindex";
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
 import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
-import { PGTypeEnumValues } from "./generator/pgtype/pgtypeenum";
 import { loadScriptsAST } from "./generator/scripts";
 import { oneBasedArgumentNamefromZeroBasedIndex } from "./util";
 import {
@@ -77,17 +75,6 @@ export interface PostgresProcTypecastMap {
   [name: string]: PostgresProcTypecast;
 }
 
-/**
- * Type factories need metadata from the 'leaf' level ahead of time
- * to join up. This allows one query per catalog table instead of
- * ORM style chitter chatter.
- */
-export type TypeFactoryContext = {
-  attributes: PGAttributes;
-  indexes: PGIndexes;
-  enumValues: PGTypeEnumValues;
-};
-
 const DEFAULT_POSTGRES_URL =
   "postgres://postgres:postgres@localhost:5432/postgres";
 
@@ -145,47 +132,18 @@ export const initializeContext = async (
 
   const databaseName = (await sql` SELECT current_database();`)[0]
     .current_database;
-
-  // Attributes on the composite type that represent each relation (table, view, index).
-  const attributes = await PGAttributes.factory(sql);
-
-  // indexes a bit more obvious in the catalog, but they need attributes ahead of time
-  // to join up
-  const indexes = await PGIndexes.factory(sql, attributes);
-
-  // enum values -- these are the individual bits of the enum like attributes
-  // but not the postgres type that is the enum itself
-  const enumValues = await PGTypeEnumValues.factory(sql);
-
-  // and now we have enough data to really make types
-  const typeCatalog = await PGTypes.factory(
-    { attributes, indexes, enumValues },
-    sql,
-  );
-
-  // procs rely on types so we can create them now
-  const procCatalog = await PGProcs.factory({ typeCatalog }, sql);
-
-  // Tables - meaning plain old tables. The definition of tables comes from types.
-  // Tables are interesting because they have columns (attributes) and indexes.
-  const tableCatalog = await PGTables.factory(
-    { attributes, indexes, enumValues, typeCatalog },
-    sql,
-  );
-
-  // and group up all the database by namespaces
-  const namespaces = PGNamespace.factory(
-    typeCatalog,
-    tableCatalog,
-    procCatalog,
-  );
-
-  // abstract database representation
+  // we're generating a database -- so this is the root object
   const database = new DatabaseNode(databaseName);
   const generationContext = {
     ...props,
     database,
   };
+
+  // start off with the types grouped into namespaces, types will be
+  // referenced by other objects -- tables, indexes, procs, views...
+  const typeCatalog = await PGTypes.factory(sql);
+  // and group up all the database by namespaces
+  const namespaces = PGNamespace.factory(typeCatalog);
   // ok, this is a bit tricky since - tables and types can cross namespaces
   // so the first pass will set up all the schemas from catalog namespaces
   // along with their types
@@ -193,17 +151,31 @@ export const initializeContext = async (
     // all types in the namespace
     n.types.forEach((t) => t.loadAST(generationContext));
   });
-  // now we have an initial generation context that can resolve types
-
-  // we now know all types -- now we have enough information to load the
-  // AST with database schema objects - tables, columns, indexes
-  namespaces.forEach((n) => n.loadAST(generationContext));
-
-  // second pass now that all types are registered
+  // we know all types! -- now we need to cross link the type graph
+  // as types can be defined by other types, reference other types
+  // and be composed of other types
   namespaces.forEach((n) => {
     // all types in the namespace
     n.types.forEach((t) => t.finalizeAST(generationContext));
   });
+  // now we have an initial generation context that can resolve types
+  // time to use those types for database objects
+
+  // procs rely on types so we can create them now
+  const procCatalog = await PGProcs.factory({ typeCatalog }, sql);
+  namespaces.forEach((n) => n.pickProcs(procCatalog));
+
+  // Tables - meaning plain old tables. The definition of tables comes from types.
+  const tableCatalog = await PGTables.factory({ typeCatalog }, sql);
+  // indexes are rather table-like and come from types
+  const indexes = await PGIndexes.factory({ typeCatalog }, sql);
+  tableCatalog.tables.forEach((t) => t.pickIndexes(indexes));
+  namespaces.forEach((n) => n.pickTables(tableCatalog));
+
+  // AST with database schema objects - tables, columns, indexes
+  namespaces.forEach((n) => n.loadAST(generationContext));
+
+  // second pass now that all types are associated with all objects
 
   // stored scripts -- load up the AST
   await loadScriptsAST(generationContext);
@@ -275,9 +247,7 @@ export const initializeContext = async (
   const types: PostgresTypecastMap = {};
   const procTypes: PostgresProcTypecastMap = {};
 
-  // ok a little odd loading this up here -- we're going to modify it later before
-  // we return which will allow the context being created to be passed to
-  // type resolvers that can parse composite and RETURNS TABLE types at runtime
+  // we resolve 'natural' and pseudo types for marshalling
   const resolveType = (oid: number) => {
     return typeCatalog.typesByOid[oid] ?? procCatalog.pseudoTypesByOid[oid];
   };

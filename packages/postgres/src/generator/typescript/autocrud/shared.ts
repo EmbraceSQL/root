@@ -96,7 +96,7 @@ export function sqlPredicate(
   node: IndexNode,
   holder: typeof PARAMETERS | typeof VALUES,
 ) {
-  return node.columns
+  return node.type.attributes
     .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
     .join(" AND ");
 }

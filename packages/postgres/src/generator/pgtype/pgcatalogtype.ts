@@ -1,5 +1,4 @@
 import { Context, PostgresTypecast } from "../../context";
-import { CatalogRow } from "./pgtype";
 import {
   GeneratesTypeScript,
   GenerationContext,
@@ -14,7 +13,9 @@ export class PGCatalogType implements GeneratesTypeScript {
    * Base constructions picks out the name.
    */
   constructor(
-    public catalog: CatalogRow,
+    public oid: number,
+    public nspname: string,
+    public typname: string,
     public comment = "",
   ) {}
 
@@ -22,10 +23,10 @@ export class PGCatalogType implements GeneratesTypeScript {
    * First pass load this type into the AST within the passed `context`.
    */
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
 
     const type = new TypeNode(
-      this.catalog.typname,
+      this.typname,
       schema.types,
       this.oid,
       this.comment,
@@ -41,13 +42,6 @@ export class PGCatalogType implements GeneratesTypeScript {
   finalizeAST(context: GenerationContext) {
     console.assert(context);
     // default is no operation
-  }
-
-  /**
-   * The all powerful oid.
-   */
-  get oid() {
-    return this.catalog.oid;
   }
 
   /**
@@ -101,8 +95,8 @@ export class PGCatalogType implements GeneratesTypeScript {
    */
   postgresTypecast(context: Context): PostgresTypecast {
     return {
-      to: this.catalog.oid,
-      from: [this.catalog.oid],
+      to: this.oid,
+      from: [this.oid],
       serialize: (x) => this.serializeToPostgres(context, x),
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       parse: (x) => this.parseFromPostgres(context, x),

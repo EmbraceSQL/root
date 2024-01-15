@@ -32,7 +32,7 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
             `export function primaryKeyFrom(value: ${node.type.typescriptNamespacedName}) : string {`,
           );
           generationBuffer.push(`return JSON.stringify({`);
-          primaryKey.columns.forEach((c) =>
+          primaryKey.type.attributes.forEach((c) =>
             generationBuffer.push(
               `${camelCase(c.name)}: value.${camelCase(c.name)},`,
             ),
@@ -41,7 +41,7 @@ export async function generatePrimaryKeyPickers(context: GenerationContext) {
           generationBuffer.push(`}`);
           // boolean guard on primary key
           const primaryKeyNames =
-            primaryKey.columns.map(
+            primaryKey.type.attributes.map(
               (a) => `value.${camelCase(a.typescriptName)} !== undefined`,
             ) || [];
           generationBuffer.push(`

@@ -16,7 +16,7 @@ type Props = {
 export function ChecklistItems({ checklistId }: Props) {
   // data hooked to the checklist id
   const { rows, addRow, deleteRow } =
-    Public.Tables.ChecklistItem.useByChecklistId({ checklistId });
+    Public.Tables.ChecklistItem.useChecklistItemParent({ checklistId });
 
   return (
     // just a single editable text field -- EmbraceSQL has automatic saving

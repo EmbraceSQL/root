@@ -14,47 +14,50 @@ export class PGNamespace {
   /**
    * Build all namespaces to be found in the passed catalogs.
    */
-  static factory(
-    typeCatalog: PGTypes,
-    tableCatalog: PGTables,
-    procCatalog: PGProcs,
-  ) {
+  static factory(typeCatalog: PGTypes) {
     const typesByNamespace = groupBy(
       typeCatalog.types,
-      (r) => r.catalog.nspname,
-      (r) => r,
-    );
-    const tablesByNamespace = groupBy(
-      tableCatalog.tables,
-      (r) => r.table.nspname,
-      (r) => r,
-    );
-    const procsByNamespace = groupBy(
-      procCatalog.procs,
-      (r) => r.proc.nspname,
+      (r) => r.nspname,
       (r) => r,
     );
     return Object.keys(typesByNamespace).map((namespace): PGNamespace => {
-      return new PGNamespace(
-        namespace,
-        [
-          ...typesByNamespace[namespace],
-          ...(procsByNamespace[namespace] ?? [])
-            .filter((p) => p.returnsPseudoType)
-            .map((p) => new PGProcPseudoType(p)),
-        ] ?? [],
-        tablesByNamespace[namespace] ?? [],
-        procsByNamespace[namespace] ?? [],
-      );
+      return new PGNamespace(namespace, typesByNamespace[namespace]);
     });
   }
 
+  _procs: PGProc[] = [];
+  _tables: PGTable[] = [];
+  _types: PGCatalogType[];
+  _pseudoTypes: PGCatalogType[] = [];
   constructor(
     public namespace: string,
-    public types: PGCatalogType[],
-    public tables: PGTable[],
-    public procs: PGProc[],
-  ) {}
+    types: PGCatalogType[],
+  ) {
+    this._types = types;
+  }
+
+  get procs() {
+    return this._procs;
+  }
+
+  pickProcs(procs: PGProcs) {
+    this._procs = procs.procsByNamespace[this.namespace] ?? [];
+    this._pseudoTypes = this._procs
+      .filter((p) => p.returnsPseudoType)
+      .map((p) => new PGProcPseudoType(p));
+  }
+
+  get tables() {
+    return this._tables;
+  }
+
+  pickTables(tables: PGTables) {
+    this._tables = tables.tablesByNamespace[this.namespace] ?? [];
+  }
+
+  get types() {
+    return [...this._types, ...this._pseudoTypes];
+  }
 
   loadAST(context: GenerationContext) {
     const schema = context.database.resolveSchema(this.nspname);

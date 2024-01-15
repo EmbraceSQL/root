@@ -1,6 +1,6 @@
-import { Context, TypeFactoryContext } from "../../context";
+import { Context } from "../../context";
 import { PGCatalogType } from "./pgcatalogtype";
-import { CatalogRow } from "./pgtype";
+import { TypeFactoryContext } from "./pgtype";
 import {
   ArrayTypeNode,
   DELIMITER,
@@ -19,17 +19,22 @@ type Props = {
 export class PGTypeArray extends PGCatalogType {
   constructor(
     context: TypeFactoryContext,
-    catalog: CatalogRow,
+    oid: number,
+    nspname: string,
+    typname: string,
+    comment: string,
+    private typelem: number,
     private props: Props = { arraySuffix: true },
   ) {
-    super(catalog);
+    console.assert(context);
+    super(oid, nspname, typname, comment);
   }
 
   loadAST(context: GenerationContext) {
-    const schema = context.database.resolveSchema(this.catalog.nspname);
+    const schema = context.database.resolveSchema(this.nspname);
 
     const type = new ArrayTypeNode(
-      `${this.catalog.typname}${this.props.arraySuffix ? "_array" : ""}`,
+      `${this.typname}${this.props.arraySuffix ? "_array" : ""}`,
       schema.types,
       this.oid,
       this.comment,
@@ -41,8 +46,8 @@ export class PGTypeArray extends PGCatalogType {
     // this needs to be done 'later' to make sure the member type
     // has had a chance to be created -- two passes since types form a
     // graph, not a strict tree
-    const memberType = context.database.resolveType(this.catalog.typelem);
-    context.database.resolveType<ArrayTypeNode>(this.catalog.oid).memberType =
+    const memberType = context.database.resolveType(this.typelem);
+    context.database.resolveType<ArrayTypeNode>(this.oid).memberType =
       memberType;
   }
 
@@ -52,7 +57,7 @@ export class PGTypeArray extends PGCatalogType {
       // make an array type -- the passed x is gonna be elements
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const elements = x as any[];
-      const elementType = context.resolveType(this.catalog.typelem);
+      const elementType = context.resolveType(this.typelem);
       const attributes = elements.map((e) => {
         // hand off the the serializer
         const value = elementType.serializeToPostgres(context, e);
@@ -71,7 +76,7 @@ export class PGTypeArray extends PGCatalogType {
   parseFromPostgres(context: Context, x: string) {
     if (x) {
       const elements = arrayAttribute.tryParse(x);
-      const elementType = context.resolveType(this.catalog.typelem);
+      const elementType = context.resolveType(this.typelem);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return elements.map((e) =>
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return

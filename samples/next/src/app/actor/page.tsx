@@ -9,7 +9,7 @@ import "../sample.css";
 
 const Actor = () => {
   // this is hooking to an AutoCRUD method to read an actor
-  const { row: actor } = Public.Tables.Actor.useByActorId({ actorId: 100 });
+  const { row: actor } = Public.Tables.Actor.useActorPkey({ actorId: 100 });
   // 🪄 - automatic onChange saving though the hook, with debounce to not smoke your DB!
   // notice there is no <form> to post back or additional hooks
 

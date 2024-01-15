@@ -12,6 +12,11 @@ import { camelCase, pascalCase } from "change-case";
 export const BY_PRIMARY_KEY = "ByPrimaryKey";
 
 /**
+ * Common name for pimary key.
+ */
+export const PRIMARY_KEY = "PrimaryKey";
+
+/**
  * Common name for return results.
  *
  * When you are looking for results... look here 🤪.
@@ -47,7 +52,6 @@ export enum ASTKind {
   Table,
   Column,
   Index,
-  IndexColumn,
   Types,
   CreateOperation,
   AllOperation,
@@ -120,7 +124,6 @@ export type ASTKindMap = {
   [ASTKind.Tables]: TableNode;
   [ASTKind.Column]: ColumnNode;
   [ASTKind.Index]: IndexNode;
-  [ASTKind.IndexColumn]: IndexColumnNode;
   [ASTKind.Types]: TypesNode;
   [ASTKind.CreateOperation]: CreateOperationNode;
   [ASTKind.AllOperation]: AllOperationNode;
@@ -539,14 +542,14 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
 
   get columnsInPrimaryKey(): ColumnNode[] {
     const primaryKeyNames = this.primaryKey
-      ? this.primaryKey.columns.map((c) => c.name)
+      ? this.primaryKey.type.attributes.map((c) => c.name)
       : [];
     return this.allColumns.filter((a) => primaryKeyNames.includes(a.name));
   }
 
   get columnsNotInPrimaryKey(): ColumnNode[] {
     const primaryKeyNames = this.primaryKey
-      ? this.primaryKey.columns.map((c) => c.name)
+      ? this.primaryKey.type.attributes.map((c) => c.name)
       : [];
     return this.allColumns.filter((a) => !primaryKeyNames.includes(a.name));
   }
@@ -596,44 +599,16 @@ export class ColumnNode extends ContainerNode {
  */
 export class IndexNode extends ContainerNode {
   constructor(
-    public table: TableNode,
     public name: string,
+    public table: TableNode,
     public unique: boolean,
     public primaryKey: boolean,
-    attributes: NamedType[],
+    public type: CompositeTypeNode,
   ) {
     super(name, ASTKind.Index, table);
-    attributes.forEach((a) => new IndexColumnNode(this, a.name, a.type));
-    // important that the operations go after the attributes
-    // so that we can have a well defined `typescriptName`
     new ReadOperationNode(this);
     new UpdateOperationNode(this);
     new DeleteOperationNode(this);
-  }
-
-  get typescriptName() {
-    return `By${pascalCase(
-      this.columns.map((c) => c.typescriptName).join("_"),
-    )}`;
-  }
-
-  get columns(): IndexColumnNode[] {
-    return this.children.filter(
-      (n) => n.kind === ASTKind.IndexColumn,
-    ) as IndexColumnNode[];
-  }
-}
-
-/**
- * A single column on a single index in a schema in a database.
- */
-export class IndexColumnNode extends ContainerNode implements NamedType {
-  constructor(
-    public index: IndexNode,
-    public name: string,
-    public type: TypeNode,
-  ) {
-    super(name, ASTKind.IndexColumn, index);
   }
 }
 
@@ -842,27 +817,6 @@ export class CompositeTypeNode extends AbstractTypeNode {
     return this.children.filter<AttributeNode>(
       (c): c is AttributeNode => c.kind === ASTKind.Attribute,
     );
-  }
-  override typescriptTypeDefinition(
-    context: GenerationContext,
-  ): string | undefined {
-    console.assert(context);
-    const attributes = this.children
-      .filter<AttributeNode>(
-        (c): c is AttributeNode => c.kind === ASTKind.Attribute,
-      )
-      .map((a) => {
-        // arrays are not nullable, they are empty arrays []
-        if (a.type.kind === ASTKind.ArrayType) {
-          return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
-        }
-        if (a.nullable) {
-          return `${a.typescriptPropertyName}: Nullable<${a.type.typescriptNamespacedName}>;`;
-        } else {
-          return `${a.typescriptPropertyName}: ${a.type.typescriptNamespacedName};`;
-        }
-      });
-    return ` { ${attributes.join("\n")} } `;
   }
 
   override typescriptTypeParser(context: GenerationContext) {

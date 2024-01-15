@@ -15,7 +15,7 @@ import {
  */
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
-    const parameters = `${PARAMETERS}: ${node.index.typescriptNamespacedName}`;
+    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");
