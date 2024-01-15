@@ -11,18 +11,9 @@ import {
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import chalk from "chalk";
 import figlet from "figlet";
-import * as prettier from "prettier";
 
-/**
- * Make that generated source 💄.
- */
-export const formatSource = async (source: string) => {
-  try {
-    return await prettier.format(source, { parser: "typescript" });
-  } catch {
-    // no format -- we'll need it to debug then
-    return source;
-  }
+const formatSource = async (source: string) => {
+  return source;
 };
 
 const program = new Command();
