@@ -29211,7 +29211,7 @@ const response = await sql`
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.FilmActor[]>{
+async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -29235,7 +29235,7 @@ return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefin
             }
         
 
-async read(parameters: Public.Types.FilmActorPkey) : Promise<Public.Types.FilmActor>{
+async read(parameters: Public.Types.FilmActorPkey, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29296,7 +29296,7 @@ public get ByPrimaryKey(){ return this.FilmActorPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkFilmId) : Promise<Public.Types.FilmActor[]>{
+async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29388,7 +29388,7 @@ const response = await sql`
     `
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Address[]>{
+async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -29412,7 +29412,7 @@ return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: un
             }
         
 
-async read(parameters: Public.Types.AddressPkey) : Promise<Public.Types.Address>{
+async read(parameters: Public.Types.AddressPkey, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29473,7 +29473,7 @@ public get ByPrimaryKey(){ return this.AddressPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkCityId) : Promise<Public.Types.Address[]>{
+async read(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29565,7 +29565,7 @@ const response = await sql`
     `
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.City[]>{
+async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -29589,7 +29589,7 @@ return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIs
             }
         
 
-async read(parameters: Public.Types.CityPkey) : Promise<Public.Types.City>{
+async read(parameters: Public.Types.CityPkey, options?: Public.Tables.City.Options) : Promise<Public.Types.City>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29650,7 +29650,7 @@ public get ByPrimaryKey(){ return this.CityPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkCountryId) : Promise<Public.Types.City[]>{
+async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29742,7 +29742,7 @@ const response = await sql`
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
-async all() : Promise<Public.Types.Customer[]>{
+async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -29766,7 +29766,7 @@ return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: 
             }
         
 
-async read(parameters: Public.Types.CustomerPkey) : Promise<Public.Types.Customer>{
+async read(parameters: Public.Types.CustomerPkey, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29827,7 +29827,7 @@ public get ByPrimaryKey(){ return this.CustomerPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkAddressId) : Promise<Public.Types.Customer[]>{
+async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29888,7 +29888,7 @@ async delete(parameters: Public.Types.IdxFkAddressId) {
             }
         
 
-async read(parameters: Public.Types.IdxFkStoreId) : Promise<Public.Types.Customer[]>{
+async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -29949,7 +29949,7 @@ async delete(parameters: Public.Types.IdxFkStoreId) {
             }
         
 
-async read(parameters: Public.Types.IdxLastName) : Promise<Public.Types.Customer[]>{
+async read(parameters: Public.Types.IdxLastName, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30041,7 +30041,7 @@ const response = await sql`
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Actor[]>{
+async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30065,7 +30065,7 @@ return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: unde
             }
         
 
-async read(parameters: Public.Types.ActorPkey) : Promise<Public.Types.Actor>{
+async read(parameters: Public.Types.ActorPkey, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30126,7 +30126,7 @@ public get ByPrimaryKey(){ return this.ActorPkey };
             }
         
 
-async read(parameters: Public.Types.IdxActorLastName) : Promise<Public.Types.Actor[]>{
+async read(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30205,7 +30205,7 @@ const response = await sql`
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.FilmCategory[]>{
+async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30229,7 +30229,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undef
             }
         
 
-async read(parameters: Public.Types.FilmCategoryPkey) : Promise<Public.Types.FilmCategory>{
+async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30321,7 +30321,7 @@ const response = await sql`
     `
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Inventory[]>{
+async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30345,7 +30345,7 @@ return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId:
             }
         
 
-async read(parameters: Public.Types.InventoryPkey) : Promise<Public.Types.Inventory>{
+async read(parameters: Public.Types.InventoryPkey, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30406,7 +30406,7 @@ public get ByPrimaryKey(){ return this.InventoryPkey };
             }
         
 
-async read(parameters: Public.Types.IdxStoreIdFilmId) : Promise<Public.Types.Inventory[]>{
+async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30498,7 +30498,7 @@ const response = await sql`
     `
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Category[]>{
+async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30522,7 +30522,7 @@ return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: und
             }
         
 
-async read(parameters: Public.Types.CategoryPkey) : Promise<Public.Types.Category>{
+async read(parameters: Public.Types.CategoryPkey, options?: Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30614,7 +30614,7 @@ const response = await sql`
     `
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Country[]>{
+async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30638,7 +30638,7 @@ return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: un
             }
         
 
-async read(parameters: Public.Types.CountryPkey) : Promise<Public.Types.Country>{
+async read(parameters: Public.Types.CountryPkey, options?: Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30730,7 +30730,7 @@ const response = await sql`
     `
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Language[]>{
+async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30754,7 +30754,7 @@ return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: und
             }
         
 
-async read(parameters: Public.Types.LanguagePkey) : Promise<Public.Types.Language>{
+async read(parameters: Public.Types.LanguagePkey, options?: Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30846,7 +30846,7 @@ const response = await sql`
     `
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Rental[]>{
+async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -30870,7 +30870,7 @@ return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: u
             }
         
 
-async read(parameters: Public.Types.RentalPkey) : Promise<Public.Types.Rental>{
+async read(parameters: Public.Types.RentalPkey, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30931,7 +30931,7 @@ public get ByPrimaryKey(){ return this.RentalPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkInventoryId) : Promise<Public.Types.Rental[]>{
+async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -30992,7 +30992,7 @@ async delete(parameters: Public.Types.IdxFkInventoryId) {
             }
         
 
-async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId) : Promise<Public.Types.Rental>{
+async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31084,7 +31084,7 @@ const response = await sql`
     `
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
-async all() : Promise<Public.Types.Staff[]>{
+async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -31108,7 +31108,7 @@ return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: unde
             }
         
 
-async read(parameters: Public.Types.StaffPkey) : Promise<Public.Types.Staff>{
+async read(parameters: Public.Types.StaffPkey, options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31200,7 +31200,7 @@ const response = await sql`
     `
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async all() : Promise<Public.Types.Store[]>{
+async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -31224,7 +31224,7 @@ return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId:
             }
         
 
-async read(parameters: Public.Types.StorePkey) : Promise<Public.Types.Store>{
+async read(parameters: Public.Types.StorePkey, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31285,7 +31285,7 @@ public get ByPrimaryKey(){ return this.StorePkey };
             }
         
 
-async read(parameters: Public.Types.IdxUnqManagerStaffId) : Promise<Public.Types.Store>{
+async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31377,7 +31377,7 @@ const response = await sql`
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
-async all() : Promise<Public.Types.Payment[]>{
+async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -31401,7 +31401,7 @@ return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId:
             }
         
 
-async read(parameters: Public.Types.PaymentPkey) : Promise<Public.Types.Payment>{
+async read(parameters: Public.Types.PaymentPkey, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31462,7 +31462,7 @@ public get ByPrimaryKey(){ return this.PaymentPkey };
             }
         
 
-async read(parameters: Public.Types.IdxFkCustomerId) : Promise<Public.Types.Payment[]>{
+async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31523,7 +31523,7 @@ async delete(parameters: Public.Types.IdxFkCustomerId) {
             }
         
 
-async read(parameters: Public.Types.IdxFkRentalId) : Promise<Public.Types.Payment[]>{
+async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31584,7 +31584,7 @@ async delete(parameters: Public.Types.IdxFkRentalId) {
             }
         
 
-async read(parameters: Public.Types.IdxFkStaffId) : Promise<Public.Types.Payment[]>{
+async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31676,7 +31676,7 @@ const response = await sql`
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
-async all() : Promise<Public.Types.Film[]>{
+async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -31700,7 +31700,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
             }
         
 
-async read(parameters: Public.Types.FilmPkey) : Promise<Public.Types.Film>{
+async read(parameters: Public.Types.FilmPkey, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31761,7 +31761,7 @@ public get ByPrimaryKey(){ return this.FilmPkey };
             }
         
 
-async read(parameters: Public.Types.FilmFulltextIdx) : Promise<Public.Types.Film[]>{
+async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31822,7 +31822,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx) {
             }
         
 
-async read(parameters: Public.Types.IdxFkLanguageId) : Promise<Public.Types.Film[]>{
+async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31883,7 +31883,7 @@ async delete(parameters: Public.Types.IdxFkLanguageId) {
             }
         
 
-async read(parameters: Public.Types.IdxTitle) : Promise<Public.Types.Film[]>{
+async read(parameters: Public.Types.IdxTitle, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -31984,181 +31984,181 @@ async delete(parameters: Public.Types.IdxTitle) {
 "Public.Procedures.InventoryInStock.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.InventoryInStock.call(request.parameters as Public.Procedures.InventoryInStock.Parameters),
 "Public.Procedures.LastDay.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.LastDay.call(request.parameters as Public.Procedures.LastDay.Parameters),
 "Public.Procedures.RewardsReport.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.RewardsReport.call(request.parameters as Public.Procedures.RewardsReport.Parameters),
-"Public.Tables.FilmActor.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.create(request.values as Public.Tables.FilmActor.Values),
+"Public.Tables.FilmActor.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.create(request.values as Public.Tables.FilmActor.Values),
 
-             "Public.Tables.FilmActor.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.FilmActor.all(),
+             "Public.Tables.FilmActor.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.FilmActor.all(request.options as Public.Tables.FilmActor.Options),
             
-"Public.Tables.FilmActor.FilmActorPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.read(request.parameters as Public.Types.FilmActorPkey),
-"Public.Tables.FilmActor.FilmActorPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.update(request.parameters as Public.Types.FilmActorPkey,request.values as Partial<Public.Tables.FilmActor.Values>),
-"Public.Tables.FilmActor.FilmActorPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.delete(request.parameters as Public.Types.FilmActorPkey),
-"Public.Tables.FilmActor.IdxFkFilmId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.read(request.parameters as Public.Types.IdxFkFilmId),
-"Public.Tables.FilmActor.IdxFkFilmId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.update(request.parameters as Public.Types.IdxFkFilmId,request.values as Partial<Public.Tables.FilmActor.Values>),
-"Public.Tables.FilmActor.IdxFkFilmId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.delete(request.parameters as Public.Types.IdxFkFilmId),
-"Public.Tables.Address.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.create(request.values as Public.Tables.Address.Values),
+"Public.Tables.FilmActor.FilmActorPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.read(request.parameters as Public.Types.FilmActorPkey,request.options as Public.Tables.FilmActor.Options),
+"Public.Tables.FilmActor.FilmActorPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.update(request.parameters as Public.Types.FilmActorPkey,request.values as Partial<Public.Tables.FilmActor.Values>),
+"Public.Tables.FilmActor.FilmActorPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.FilmActorPkey.delete(request.parameters as Public.Types.FilmActorPkey),
+"Public.Tables.FilmActor.IdxFkFilmId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.read(request.parameters as Public.Types.IdxFkFilmId,request.options as Public.Tables.FilmActor.Options),
+"Public.Tables.FilmActor.IdxFkFilmId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.update(request.parameters as Public.Types.IdxFkFilmId,request.values as Partial<Public.Tables.FilmActor.Values>),
+"Public.Tables.FilmActor.IdxFkFilmId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmActor.IdxFkFilmId.delete(request.parameters as Public.Types.IdxFkFilmId),
+"Public.Tables.Address.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.create(request.values as Public.Tables.Address.Values),
 
-             "Public.Tables.Address.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Address.all(),
+             "Public.Tables.Address.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Address.all(request.options as Public.Tables.Address.Options),
             
-"Public.Tables.Address.AddressPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.AddressPkey.read(request.parameters as Public.Types.AddressPkey),
-"Public.Tables.Address.AddressPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.AddressPkey.update(request.parameters as Public.Types.AddressPkey,request.values as Partial<Public.Tables.Address.Values>),
-"Public.Tables.Address.AddressPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.AddressPkey.delete(request.parameters as Public.Types.AddressPkey),
-"Public.Tables.Address.IdxFkCityId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.IdxFkCityId.read(request.parameters as Public.Types.IdxFkCityId),
-"Public.Tables.Address.IdxFkCityId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.IdxFkCityId.update(request.parameters as Public.Types.IdxFkCityId,request.values as Partial<Public.Tables.Address.Values>),
-"Public.Tables.Address.IdxFkCityId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Address.IdxFkCityId.delete(request.parameters as Public.Types.IdxFkCityId),
-"Public.Tables.City.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.create(request.values as Public.Tables.City.Values),
+"Public.Tables.Address.AddressPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.AddressPkey.read(request.parameters as Public.Types.AddressPkey,request.options as Public.Tables.Address.Options),
+"Public.Tables.Address.AddressPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.AddressPkey.update(request.parameters as Public.Types.AddressPkey,request.values as Partial<Public.Tables.Address.Values>),
+"Public.Tables.Address.AddressPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.AddressPkey.delete(request.parameters as Public.Types.AddressPkey),
+"Public.Tables.Address.IdxFkCityId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.IdxFkCityId.read(request.parameters as Public.Types.IdxFkCityId,request.options as Public.Tables.Address.Options),
+"Public.Tables.Address.IdxFkCityId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.IdxFkCityId.update(request.parameters as Public.Types.IdxFkCityId,request.values as Partial<Public.Tables.Address.Values>),
+"Public.Tables.Address.IdxFkCityId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Address.IdxFkCityId.delete(request.parameters as Public.Types.IdxFkCityId),
+"Public.Tables.City.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.create(request.values as Public.Tables.City.Values),
 
-             "Public.Tables.City.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.City.all(),
+             "Public.Tables.City.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.City.all(request.options as Public.Tables.City.Options),
             
-"Public.Tables.City.CityPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.CityPkey.read(request.parameters as Public.Types.CityPkey),
-"Public.Tables.City.CityPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.CityPkey.update(request.parameters as Public.Types.CityPkey,request.values as Partial<Public.Tables.City.Values>),
-"Public.Tables.City.CityPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.CityPkey.delete(request.parameters as Public.Types.CityPkey),
-"Public.Tables.City.IdxFkCountryId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.IdxFkCountryId.read(request.parameters as Public.Types.IdxFkCountryId),
-"Public.Tables.City.IdxFkCountryId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.IdxFkCountryId.update(request.parameters as Public.Types.IdxFkCountryId,request.values as Partial<Public.Tables.City.Values>),
-"Public.Tables.City.IdxFkCountryId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.City.IdxFkCountryId.delete(request.parameters as Public.Types.IdxFkCountryId),
-"Public.Tables.Customer.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.create(request.values as Public.Tables.Customer.Values),
+"Public.Tables.City.CityPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.CityPkey.read(request.parameters as Public.Types.CityPkey,request.options as Public.Tables.City.Options),
+"Public.Tables.City.CityPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.CityPkey.update(request.parameters as Public.Types.CityPkey,request.values as Partial<Public.Tables.City.Values>),
+"Public.Tables.City.CityPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.CityPkey.delete(request.parameters as Public.Types.CityPkey),
+"Public.Tables.City.IdxFkCountryId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.IdxFkCountryId.read(request.parameters as Public.Types.IdxFkCountryId,request.options as Public.Tables.City.Options),
+"Public.Tables.City.IdxFkCountryId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.IdxFkCountryId.update(request.parameters as Public.Types.IdxFkCountryId,request.values as Partial<Public.Tables.City.Values>),
+"Public.Tables.City.IdxFkCountryId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.City.IdxFkCountryId.delete(request.parameters as Public.Types.IdxFkCountryId),
+"Public.Tables.Customer.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.create(request.values as Public.Tables.Customer.Values),
 
-             "Public.Tables.Customer.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Customer.all(),
+             "Public.Tables.Customer.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Customer.all(request.options as Public.Tables.Customer.Options),
             
-"Public.Tables.Customer.CustomerPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.CustomerPkey.read(request.parameters as Public.Types.CustomerPkey),
-"Public.Tables.Customer.CustomerPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.CustomerPkey.update(request.parameters as Public.Types.CustomerPkey,request.values as Partial<Public.Tables.Customer.Values>),
-"Public.Tables.Customer.CustomerPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.CustomerPkey.delete(request.parameters as Public.Types.CustomerPkey),
-"Public.Tables.Customer.IdxFkAddressId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkAddressId.read(request.parameters as Public.Types.IdxFkAddressId),
-"Public.Tables.Customer.IdxFkAddressId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkAddressId.update(request.parameters as Public.Types.IdxFkAddressId,request.values as Partial<Public.Tables.Customer.Values>),
-"Public.Tables.Customer.IdxFkAddressId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkAddressId.delete(request.parameters as Public.Types.IdxFkAddressId),
-"Public.Tables.Customer.IdxFkStoreId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkStoreId.read(request.parameters as Public.Types.IdxFkStoreId),
-"Public.Tables.Customer.IdxFkStoreId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkStoreId.update(request.parameters as Public.Types.IdxFkStoreId,request.values as Partial<Public.Tables.Customer.Values>),
-"Public.Tables.Customer.IdxFkStoreId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxFkStoreId.delete(request.parameters as Public.Types.IdxFkStoreId),
-"Public.Tables.Customer.IdxLastName.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxLastName.read(request.parameters as Public.Types.IdxLastName),
-"Public.Tables.Customer.IdxLastName.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxLastName.update(request.parameters as Public.Types.IdxLastName,request.values as Partial<Public.Tables.Customer.Values>),
-"Public.Tables.Customer.IdxLastName.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Customer.IdxLastName.delete(request.parameters as Public.Types.IdxLastName),
-"Public.Tables.Actor.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.create(request.values as Public.Tables.Actor.Values),
+"Public.Tables.Customer.CustomerPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.CustomerPkey.read(request.parameters as Public.Types.CustomerPkey,request.options as Public.Tables.Customer.Options),
+"Public.Tables.Customer.CustomerPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.CustomerPkey.update(request.parameters as Public.Types.CustomerPkey,request.values as Partial<Public.Tables.Customer.Values>),
+"Public.Tables.Customer.CustomerPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.CustomerPkey.delete(request.parameters as Public.Types.CustomerPkey),
+"Public.Tables.Customer.IdxFkAddressId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkAddressId.read(request.parameters as Public.Types.IdxFkAddressId,request.options as Public.Tables.Customer.Options),
+"Public.Tables.Customer.IdxFkAddressId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkAddressId.update(request.parameters as Public.Types.IdxFkAddressId,request.values as Partial<Public.Tables.Customer.Values>),
+"Public.Tables.Customer.IdxFkAddressId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkAddressId.delete(request.parameters as Public.Types.IdxFkAddressId),
+"Public.Tables.Customer.IdxFkStoreId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkStoreId.read(request.parameters as Public.Types.IdxFkStoreId,request.options as Public.Tables.Customer.Options),
+"Public.Tables.Customer.IdxFkStoreId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkStoreId.update(request.parameters as Public.Types.IdxFkStoreId,request.values as Partial<Public.Tables.Customer.Values>),
+"Public.Tables.Customer.IdxFkStoreId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxFkStoreId.delete(request.parameters as Public.Types.IdxFkStoreId),
+"Public.Tables.Customer.IdxLastName.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxLastName.read(request.parameters as Public.Types.IdxLastName,request.options as Public.Tables.Customer.Options),
+"Public.Tables.Customer.IdxLastName.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxLastName.update(request.parameters as Public.Types.IdxLastName,request.values as Partial<Public.Tables.Customer.Values>),
+"Public.Tables.Customer.IdxLastName.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Customer.IdxLastName.delete(request.parameters as Public.Types.IdxLastName),
+"Public.Tables.Actor.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.create(request.values as Public.Tables.Actor.Values),
 
-             "Public.Tables.Actor.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Actor.all(),
+             "Public.Tables.Actor.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Actor.all(request.options as Public.Tables.Actor.Options),
             
-"Public.Tables.Actor.ActorPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.ActorPkey.read(request.parameters as Public.Types.ActorPkey),
-"Public.Tables.Actor.ActorPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.ActorPkey.update(request.parameters as Public.Types.ActorPkey,request.values as Partial<Public.Tables.Actor.Values>),
-"Public.Tables.Actor.ActorPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.ActorPkey.delete(request.parameters as Public.Types.ActorPkey),
-"Public.Tables.Actor.IdxActorLastName.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.IdxActorLastName.read(request.parameters as Public.Types.IdxActorLastName),
-"Public.Tables.Actor.IdxActorLastName.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.IdxActorLastName.update(request.parameters as Public.Types.IdxActorLastName,request.values as Partial<Public.Tables.Actor.Values>),
-"Public.Tables.Actor.IdxActorLastName.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Actor.IdxActorLastName.delete(request.parameters as Public.Types.IdxActorLastName),
-"Public.Tables.FilmCategory.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmCategory.create(request.values as Public.Tables.FilmCategory.Values),
+"Public.Tables.Actor.ActorPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.ActorPkey.read(request.parameters as Public.Types.ActorPkey,request.options as Public.Tables.Actor.Options),
+"Public.Tables.Actor.ActorPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.ActorPkey.update(request.parameters as Public.Types.ActorPkey,request.values as Partial<Public.Tables.Actor.Values>),
+"Public.Tables.Actor.ActorPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.ActorPkey.delete(request.parameters as Public.Types.ActorPkey),
+"Public.Tables.Actor.IdxActorLastName.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.IdxActorLastName.read(request.parameters as Public.Types.IdxActorLastName,request.options as Public.Tables.Actor.Options),
+"Public.Tables.Actor.IdxActorLastName.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.IdxActorLastName.update(request.parameters as Public.Types.IdxActorLastName,request.values as Partial<Public.Tables.Actor.Values>),
+"Public.Tables.Actor.IdxActorLastName.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Actor.IdxActorLastName.delete(request.parameters as Public.Types.IdxActorLastName),
+"Public.Tables.FilmCategory.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmCategory.create(request.values as Public.Tables.FilmCategory.Values),
 
-             "Public.Tables.FilmCategory.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.FilmCategory.all(),
+             "Public.Tables.FilmCategory.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.FilmCategory.all(request.options as Public.Tables.FilmCategory.Options),
             
-"Public.Tables.FilmCategory.FilmCategoryPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.read(request.parameters as Public.Types.FilmCategoryPkey),
-"Public.Tables.FilmCategory.FilmCategoryPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.update(request.parameters as Public.Types.FilmCategoryPkey,request.values as Partial<Public.Tables.FilmCategory.Values>),
-"Public.Tables.FilmCategory.FilmCategoryPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.delete(request.parameters as Public.Types.FilmCategoryPkey),
-"Public.Tables.Inventory.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.create(request.values as Public.Tables.Inventory.Values),
+"Public.Tables.FilmCategory.FilmCategoryPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.read(request.parameters as Public.Types.FilmCategoryPkey,request.options as Public.Tables.FilmCategory.Options),
+"Public.Tables.FilmCategory.FilmCategoryPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.update(request.parameters as Public.Types.FilmCategoryPkey,request.values as Partial<Public.Tables.FilmCategory.Values>),
+"Public.Tables.FilmCategory.FilmCategoryPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FilmCategory.FilmCategoryPkey.delete(request.parameters as Public.Types.FilmCategoryPkey),
+"Public.Tables.Inventory.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.create(request.values as Public.Tables.Inventory.Values),
 
-             "Public.Tables.Inventory.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Inventory.all(),
+             "Public.Tables.Inventory.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Inventory.all(request.options as Public.Tables.Inventory.Options),
             
-"Public.Tables.Inventory.InventoryPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.InventoryPkey.read(request.parameters as Public.Types.InventoryPkey),
-"Public.Tables.Inventory.InventoryPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.InventoryPkey.update(request.parameters as Public.Types.InventoryPkey,request.values as Partial<Public.Tables.Inventory.Values>),
-"Public.Tables.Inventory.InventoryPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.InventoryPkey.delete(request.parameters as Public.Types.InventoryPkey),
-"Public.Tables.Inventory.IdxStoreIdFilmId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.read(request.parameters as Public.Types.IdxStoreIdFilmId),
-"Public.Tables.Inventory.IdxStoreIdFilmId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.update(request.parameters as Public.Types.IdxStoreIdFilmId,request.values as Partial<Public.Tables.Inventory.Values>),
-"Public.Tables.Inventory.IdxStoreIdFilmId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.delete(request.parameters as Public.Types.IdxStoreIdFilmId),
-"Public.Tables.Category.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Category.create(request.values as Public.Tables.Category.Values),
+"Public.Tables.Inventory.InventoryPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.InventoryPkey.read(request.parameters as Public.Types.InventoryPkey,request.options as Public.Tables.Inventory.Options),
+"Public.Tables.Inventory.InventoryPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.InventoryPkey.update(request.parameters as Public.Types.InventoryPkey,request.values as Partial<Public.Tables.Inventory.Values>),
+"Public.Tables.Inventory.InventoryPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.InventoryPkey.delete(request.parameters as Public.Types.InventoryPkey),
+"Public.Tables.Inventory.IdxStoreIdFilmId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.read(request.parameters as Public.Types.IdxStoreIdFilmId,request.options as Public.Tables.Inventory.Options),
+"Public.Tables.Inventory.IdxStoreIdFilmId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.update(request.parameters as Public.Types.IdxStoreIdFilmId,request.values as Partial<Public.Tables.Inventory.Values>),
+"Public.Tables.Inventory.IdxStoreIdFilmId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Inventory.IdxStoreIdFilmId.delete(request.parameters as Public.Types.IdxStoreIdFilmId),
+"Public.Tables.Category.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Category.create(request.values as Public.Tables.Category.Values),
 
-             "Public.Tables.Category.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Category.all(),
+             "Public.Tables.Category.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Category.all(request.options as Public.Tables.Category.Options),
             
-"Public.Tables.Category.CategoryPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Category.CategoryPkey.read(request.parameters as Public.Types.CategoryPkey),
-"Public.Tables.Category.CategoryPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Category.CategoryPkey.update(request.parameters as Public.Types.CategoryPkey,request.values as Partial<Public.Tables.Category.Values>),
-"Public.Tables.Category.CategoryPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Category.CategoryPkey.delete(request.parameters as Public.Types.CategoryPkey),
-"Public.Tables.Country.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Country.create(request.values as Public.Tables.Country.Values),
+"Public.Tables.Category.CategoryPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Category.CategoryPkey.read(request.parameters as Public.Types.CategoryPkey,request.options as Public.Tables.Category.Options),
+"Public.Tables.Category.CategoryPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Category.CategoryPkey.update(request.parameters as Public.Types.CategoryPkey,request.values as Partial<Public.Tables.Category.Values>),
+"Public.Tables.Category.CategoryPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Category.CategoryPkey.delete(request.parameters as Public.Types.CategoryPkey),
+"Public.Tables.Country.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Country.create(request.values as Public.Tables.Country.Values),
 
-             "Public.Tables.Country.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Country.all(),
+             "Public.Tables.Country.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Country.all(request.options as Public.Tables.Country.Options),
             
-"Public.Tables.Country.CountryPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Country.CountryPkey.read(request.parameters as Public.Types.CountryPkey),
-"Public.Tables.Country.CountryPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Country.CountryPkey.update(request.parameters as Public.Types.CountryPkey,request.values as Partial<Public.Tables.Country.Values>),
-"Public.Tables.Country.CountryPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Country.CountryPkey.delete(request.parameters as Public.Types.CountryPkey),
-"Public.Tables.Language.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Language.create(request.values as Public.Tables.Language.Values),
+"Public.Tables.Country.CountryPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Country.CountryPkey.read(request.parameters as Public.Types.CountryPkey,request.options as Public.Tables.Country.Options),
+"Public.Tables.Country.CountryPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Country.CountryPkey.update(request.parameters as Public.Types.CountryPkey,request.values as Partial<Public.Tables.Country.Values>),
+"Public.Tables.Country.CountryPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Country.CountryPkey.delete(request.parameters as Public.Types.CountryPkey),
+"Public.Tables.Language.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Language.create(request.values as Public.Tables.Language.Values),
 
-             "Public.Tables.Language.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Language.all(),
+             "Public.Tables.Language.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Language.all(request.options as Public.Tables.Language.Options),
             
-"Public.Tables.Language.LanguagePkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Language.LanguagePkey.read(request.parameters as Public.Types.LanguagePkey),
-"Public.Tables.Language.LanguagePkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Language.LanguagePkey.update(request.parameters as Public.Types.LanguagePkey,request.values as Partial<Public.Tables.Language.Values>),
-"Public.Tables.Language.LanguagePkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Language.LanguagePkey.delete(request.parameters as Public.Types.LanguagePkey),
-"Public.Tables.Rental.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.create(request.values as Public.Tables.Rental.Values),
+"Public.Tables.Language.LanguagePkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Language.LanguagePkey.read(request.parameters as Public.Types.LanguagePkey,request.options as Public.Tables.Language.Options),
+"Public.Tables.Language.LanguagePkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Language.LanguagePkey.update(request.parameters as Public.Types.LanguagePkey,request.values as Partial<Public.Tables.Language.Values>),
+"Public.Tables.Language.LanguagePkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Language.LanguagePkey.delete(request.parameters as Public.Types.LanguagePkey),
+"Public.Tables.Rental.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.create(request.values as Public.Tables.Rental.Values),
 
-             "Public.Tables.Rental.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Rental.all(),
+             "Public.Tables.Rental.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Rental.all(request.options as Public.Tables.Rental.Options),
             
-"Public.Tables.Rental.RentalPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.RentalPkey.read(request.parameters as Public.Types.RentalPkey),
-"Public.Tables.Rental.RentalPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.RentalPkey.update(request.parameters as Public.Types.RentalPkey,request.values as Partial<Public.Tables.Rental.Values>),
-"Public.Tables.Rental.RentalPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.RentalPkey.delete(request.parameters as Public.Types.RentalPkey),
-"Public.Tables.Rental.IdxFkInventoryId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.read(request.parameters as Public.Types.IdxFkInventoryId),
-"Public.Tables.Rental.IdxFkInventoryId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.update(request.parameters as Public.Types.IdxFkInventoryId,request.values as Partial<Public.Tables.Rental.Values>),
-"Public.Tables.Rental.IdxFkInventoryId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.delete(request.parameters as Public.Types.IdxFkInventoryId),
-"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId),
-"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId,request.values as Partial<Public.Tables.Rental.Values>),
-"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId),
-"Public.Tables.Staff.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Staff.create(request.values as Public.Tables.Staff.Values),
+"Public.Tables.Rental.RentalPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.RentalPkey.read(request.parameters as Public.Types.RentalPkey,request.options as Public.Tables.Rental.Options),
+"Public.Tables.Rental.RentalPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.RentalPkey.update(request.parameters as Public.Types.RentalPkey,request.values as Partial<Public.Tables.Rental.Values>),
+"Public.Tables.Rental.RentalPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.RentalPkey.delete(request.parameters as Public.Types.RentalPkey),
+"Public.Tables.Rental.IdxFkInventoryId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.read(request.parameters as Public.Types.IdxFkInventoryId,request.options as Public.Tables.Rental.Options),
+"Public.Tables.Rental.IdxFkInventoryId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.update(request.parameters as Public.Types.IdxFkInventoryId,request.values as Partial<Public.Tables.Rental.Values>),
+"Public.Tables.Rental.IdxFkInventoryId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxFkInventoryId.delete(request.parameters as Public.Types.IdxFkInventoryId),
+"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId,request.options as Public.Tables.Rental.Options),
+"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId,request.values as Partial<Public.Tables.Rental.Values>),
+"Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete(request.parameters as Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId),
+"Public.Tables.Staff.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Staff.create(request.values as Public.Tables.Staff.Values),
 
-             "Public.Tables.Staff.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Staff.all(),
+             "Public.Tables.Staff.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Staff.all(request.options as Public.Tables.Staff.Options),
             
-"Public.Tables.Staff.StaffPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Staff.StaffPkey.read(request.parameters as Public.Types.StaffPkey),
-"Public.Tables.Staff.StaffPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Staff.StaffPkey.update(request.parameters as Public.Types.StaffPkey,request.values as Partial<Public.Tables.Staff.Values>),
-"Public.Tables.Staff.StaffPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Staff.StaffPkey.delete(request.parameters as Public.Types.StaffPkey),
-"Public.Tables.Store.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.create(request.values as Public.Tables.Store.Values),
+"Public.Tables.Staff.StaffPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Staff.StaffPkey.read(request.parameters as Public.Types.StaffPkey,request.options as Public.Tables.Staff.Options),
+"Public.Tables.Staff.StaffPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Staff.StaffPkey.update(request.parameters as Public.Types.StaffPkey,request.values as Partial<Public.Tables.Staff.Values>),
+"Public.Tables.Staff.StaffPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Staff.StaffPkey.delete(request.parameters as Public.Types.StaffPkey),
+"Public.Tables.Store.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.create(request.values as Public.Tables.Store.Values),
 
-             "Public.Tables.Store.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Store.all(),
+             "Public.Tables.Store.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Store.all(request.options as Public.Tables.Store.Options),
             
-"Public.Tables.Store.StorePkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.StorePkey.read(request.parameters as Public.Types.StorePkey),
-"Public.Tables.Store.StorePkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.StorePkey.update(request.parameters as Public.Types.StorePkey,request.values as Partial<Public.Tables.Store.Values>),
-"Public.Tables.Store.StorePkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.StorePkey.delete(request.parameters as Public.Types.StorePkey),
-"Public.Tables.Store.IdxUnqManagerStaffId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.read(request.parameters as Public.Types.IdxUnqManagerStaffId),
-"Public.Tables.Store.IdxUnqManagerStaffId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.update(request.parameters as Public.Types.IdxUnqManagerStaffId,request.values as Partial<Public.Tables.Store.Values>),
-"Public.Tables.Store.IdxUnqManagerStaffId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.delete(request.parameters as Public.Types.IdxUnqManagerStaffId),
-"Public.Tables.Payment.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.create(request.values as Public.Tables.Payment.Values),
+"Public.Tables.Store.StorePkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.StorePkey.read(request.parameters as Public.Types.StorePkey,request.options as Public.Tables.Store.Options),
+"Public.Tables.Store.StorePkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.StorePkey.update(request.parameters as Public.Types.StorePkey,request.values as Partial<Public.Tables.Store.Values>),
+"Public.Tables.Store.StorePkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.StorePkey.delete(request.parameters as Public.Types.StorePkey),
+"Public.Tables.Store.IdxUnqManagerStaffId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.read(request.parameters as Public.Types.IdxUnqManagerStaffId,request.options as Public.Tables.Store.Options),
+"Public.Tables.Store.IdxUnqManagerStaffId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.update(request.parameters as Public.Types.IdxUnqManagerStaffId,request.values as Partial<Public.Tables.Store.Values>),
+"Public.Tables.Store.IdxUnqManagerStaffId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Store.IdxUnqManagerStaffId.delete(request.parameters as Public.Types.IdxUnqManagerStaffId),
+"Public.Tables.Payment.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.create(request.values as Public.Tables.Payment.Values),
 
-             "Public.Tables.Payment.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Payment.all(),
+             "Public.Tables.Payment.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Payment.all(request.options as Public.Tables.Payment.Options),
             
-"Public.Tables.Payment.PaymentPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.PaymentPkey.read(request.parameters as Public.Types.PaymentPkey),
-"Public.Tables.Payment.PaymentPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.PaymentPkey.update(request.parameters as Public.Types.PaymentPkey,request.values as Partial<Public.Tables.Payment.Values>),
-"Public.Tables.Payment.PaymentPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.PaymentPkey.delete(request.parameters as Public.Types.PaymentPkey),
-"Public.Tables.Payment.IdxFkCustomerId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.read(request.parameters as Public.Types.IdxFkCustomerId),
-"Public.Tables.Payment.IdxFkCustomerId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.update(request.parameters as Public.Types.IdxFkCustomerId,request.values as Partial<Public.Tables.Payment.Values>),
-"Public.Tables.Payment.IdxFkCustomerId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.delete(request.parameters as Public.Types.IdxFkCustomerId),
-"Public.Tables.Payment.IdxFkRentalId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkRentalId.read(request.parameters as Public.Types.IdxFkRentalId),
-"Public.Tables.Payment.IdxFkRentalId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkRentalId.update(request.parameters as Public.Types.IdxFkRentalId,request.values as Partial<Public.Tables.Payment.Values>),
-"Public.Tables.Payment.IdxFkRentalId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkRentalId.delete(request.parameters as Public.Types.IdxFkRentalId),
-"Public.Tables.Payment.IdxFkStaffId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkStaffId.read(request.parameters as Public.Types.IdxFkStaffId),
-"Public.Tables.Payment.IdxFkStaffId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkStaffId.update(request.parameters as Public.Types.IdxFkStaffId,request.values as Partial<Public.Tables.Payment.Values>),
-"Public.Tables.Payment.IdxFkStaffId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Payment.IdxFkStaffId.delete(request.parameters as Public.Types.IdxFkStaffId),
-"Public.Tables.Film.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.create(request.values as Public.Tables.Film.Values),
+"Public.Tables.Payment.PaymentPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.PaymentPkey.read(request.parameters as Public.Types.PaymentPkey,request.options as Public.Tables.Payment.Options),
+"Public.Tables.Payment.PaymentPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.PaymentPkey.update(request.parameters as Public.Types.PaymentPkey,request.values as Partial<Public.Tables.Payment.Values>),
+"Public.Tables.Payment.PaymentPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.PaymentPkey.delete(request.parameters as Public.Types.PaymentPkey),
+"Public.Tables.Payment.IdxFkCustomerId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.read(request.parameters as Public.Types.IdxFkCustomerId,request.options as Public.Tables.Payment.Options),
+"Public.Tables.Payment.IdxFkCustomerId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.update(request.parameters as Public.Types.IdxFkCustomerId,request.values as Partial<Public.Tables.Payment.Values>),
+"Public.Tables.Payment.IdxFkCustomerId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkCustomerId.delete(request.parameters as Public.Types.IdxFkCustomerId),
+"Public.Tables.Payment.IdxFkRentalId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkRentalId.read(request.parameters as Public.Types.IdxFkRentalId,request.options as Public.Tables.Payment.Options),
+"Public.Tables.Payment.IdxFkRentalId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkRentalId.update(request.parameters as Public.Types.IdxFkRentalId,request.values as Partial<Public.Tables.Payment.Values>),
+"Public.Tables.Payment.IdxFkRentalId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkRentalId.delete(request.parameters as Public.Types.IdxFkRentalId),
+"Public.Tables.Payment.IdxFkStaffId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkStaffId.read(request.parameters as Public.Types.IdxFkStaffId,request.options as Public.Tables.Payment.Options),
+"Public.Tables.Payment.IdxFkStaffId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkStaffId.update(request.parameters as Public.Types.IdxFkStaffId,request.values as Partial<Public.Tables.Payment.Values>),
+"Public.Tables.Payment.IdxFkStaffId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Payment.IdxFkStaffId.delete(request.parameters as Public.Types.IdxFkStaffId),
+"Public.Tables.Film.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.create(request.values as Public.Tables.Film.Values),
 
-             "Public.Tables.Film.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Film.all(),
+             "Public.Tables.Film.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Film.all(request.options as Public.Tables.Film.Options),
             
-"Public.Tables.Film.FilmPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmPkey.read(request.parameters as Public.Types.FilmPkey),
-"Public.Tables.Film.FilmPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmPkey.update(request.parameters as Public.Types.FilmPkey,request.values as Partial<Public.Tables.Film.Values>),
-"Public.Tables.Film.FilmPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmPkey.delete(request.parameters as Public.Types.FilmPkey),
-"Public.Tables.Film.FilmFulltextIdx.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmFulltextIdx.read(request.parameters as Public.Types.FilmFulltextIdx),
-"Public.Tables.Film.FilmFulltextIdx.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmFulltextIdx.update(request.parameters as Public.Types.FilmFulltextIdx,request.values as Partial<Public.Tables.Film.Values>),
-"Public.Tables.Film.FilmFulltextIdx.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.FilmFulltextIdx.delete(request.parameters as Public.Types.FilmFulltextIdx),
-"Public.Tables.Film.IdxFkLanguageId.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxFkLanguageId.read(request.parameters as Public.Types.IdxFkLanguageId),
-"Public.Tables.Film.IdxFkLanguageId.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxFkLanguageId.update(request.parameters as Public.Types.IdxFkLanguageId,request.values as Partial<Public.Tables.Film.Values>),
-"Public.Tables.Film.IdxFkLanguageId.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxFkLanguageId.delete(request.parameters as Public.Types.IdxFkLanguageId),
-"Public.Tables.Film.IdxTitle.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxTitle.read(request.parameters as Public.Types.IdxTitle),
-"Public.Tables.Film.IdxTitle.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxTitle.update(request.parameters as Public.Types.IdxTitle,request.values as Partial<Public.Tables.Film.Values>),
-"Public.Tables.Film.IdxTitle.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Film.IdxTitle.delete(request.parameters as Public.Types.IdxTitle),
+"Public.Tables.Film.FilmPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmPkey.read(request.parameters as Public.Types.FilmPkey,request.options as Public.Tables.Film.Options),
+"Public.Tables.Film.FilmPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmPkey.update(request.parameters as Public.Types.FilmPkey,request.values as Partial<Public.Tables.Film.Values>),
+"Public.Tables.Film.FilmPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmPkey.delete(request.parameters as Public.Types.FilmPkey),
+"Public.Tables.Film.FilmFulltextIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmFulltextIdx.read(request.parameters as Public.Types.FilmFulltextIdx,request.options as Public.Tables.Film.Options),
+"Public.Tables.Film.FilmFulltextIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmFulltextIdx.update(request.parameters as Public.Types.FilmFulltextIdx,request.values as Partial<Public.Tables.Film.Values>),
+"Public.Tables.Film.FilmFulltextIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.FilmFulltextIdx.delete(request.parameters as Public.Types.FilmFulltextIdx),
+"Public.Tables.Film.IdxFkLanguageId.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxFkLanguageId.read(request.parameters as Public.Types.IdxFkLanguageId,request.options as Public.Tables.Film.Options),
+"Public.Tables.Film.IdxFkLanguageId.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxFkLanguageId.update(request.parameters as Public.Types.IdxFkLanguageId,request.values as Partial<Public.Tables.Film.Values>),
+"Public.Tables.Film.IdxFkLanguageId.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxFkLanguageId.delete(request.parameters as Public.Types.IdxFkLanguageId),
+"Public.Tables.Film.IdxTitle.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxTitle.read(request.parameters as Public.Types.IdxTitle,request.options as Public.Tables.Film.Options),
+"Public.Tables.Film.IdxTitle.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxTitle.update(request.parameters as Public.Types.IdxTitle,request.values as Partial<Public.Tables.Film.Values>),
+"Public.Tables.Film.IdxTitle.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Film.IdxTitle.delete(request.parameters as Public.Types.IdxTitle),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }

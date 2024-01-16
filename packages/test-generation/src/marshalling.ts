@@ -31925,14 +31925,14 @@ async delete(parameters: Api.Types.TrgmIdxGin) {
 "Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters),
 "Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters),
 "Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters),
-"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
+"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
 
-             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Slug.all(),
+             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Slug.all(request.options as Public.Tables.Slug.Options),
             
-"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey),
-"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
-"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
+"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options as Public.Tables.Slug.Options),
+"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
+"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
 "Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters),
 "Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters),
 "Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters),
@@ -31941,29 +31941,29 @@ async delete(parameters: Api.Types.TrgmIdxGin) {
 "Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters),
 "Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters),
 "Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters),
-"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
+"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
 
-             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Api.Tables.QAndA.all(),
+             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.QAndA.all(request.options as Api.Tables.QAndA.Options),
             
-"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer),
-"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
-"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
-"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
+"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options as Api.Tables.QAndA.Options),
+"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
+"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
+"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
 
-             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Api.Tables.Timezones.all(),
+             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Timezones.all(request.options as Api.Tables.Timezones.Options),
             
-"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist),
-"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
-"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin),
-"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
+"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
+"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }

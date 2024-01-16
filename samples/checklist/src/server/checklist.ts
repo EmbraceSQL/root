@@ -26030,7 +26030,7 @@ const response = await sql`
     `
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-async all() : Promise<Public.Types.Checklist[]>{
+async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -26054,7 +26054,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.na
             }
         
 
-async read(parameters: Public.Types.ChecklistPkey) : Promise<Public.Types.Checklist>{
+async read(parameters: Public.Types.ChecklistPkey, options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -26146,7 +26146,7 @@ const response = await sql`
     `
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-async all() : Promise<Public.Types.ChecklistItem[]>{
+async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -26170,7 +26170,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
             }
         
 
-async read(parameters: Public.Types.ChecklistItemPkey) : Promise<Public.Types.ChecklistItem>{
+async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -26231,7 +26231,7 @@ public get ByPrimaryKey(){ return this.ChecklistItemPkey };
             }
         
 
-async read(parameters: Public.Types.ChecklistItemParent) : Promise<Public.Types.ChecklistItem[]>{
+async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
       console.assert(parameters);
       const sql = this.database.context.sql;
@@ -26325,29 +26325,29 @@ async delete(parameters: Public.Types.ChecklistItemParent) {
               this.dispatchMap = {
 
           
-"Public.Tables.Checklist.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Checklist.create(request.values as Public.Tables.Checklist.Values),
+"Public.Tables.Checklist.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.create(request.values as Public.Tables.Checklist.Values),
 
-             "Public.Tables.Checklist.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.Checklist.all(),
+             "Public.Tables.Checklist.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Checklist.all(request.options as Public.Tables.Checklist.Options),
             
-"Public.Tables.Checklist.ChecklistPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Checklist.ChecklistPkey.read(request.parameters as Public.Types.ChecklistPkey),
-"Public.Tables.Checklist.ChecklistPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Checklist.ChecklistPkey.update(request.parameters as Public.Types.ChecklistPkey,request.values as Partial<Public.Tables.Checklist.Values>),
-"Public.Tables.Checklist.ChecklistPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.Checklist.ChecklistPkey.delete(request.parameters as Public.Types.ChecklistPkey),
-"Public.Tables.ChecklistItem.create": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.create(request.values as Public.Tables.ChecklistItem.Values),
+"Public.Tables.Checklist.ChecklistPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.read(request.parameters as Public.Types.ChecklistPkey,request.options as Public.Tables.Checklist.Options),
+"Public.Tables.Checklist.ChecklistPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.update(request.parameters as Public.Types.ChecklistPkey,request.values as Partial<Public.Tables.Checklist.Values>),
+"Public.Tables.Checklist.ChecklistPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.delete(request.parameters as Public.Types.ChecklistPkey),
+"Public.Tables.ChecklistItem.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.create(request.values as Public.Tables.ChecklistItem.Values),
 
-             "Public.Tables.ChecklistItem.all": async (request: EmbraceSQLRequest<object, object>) =>
-              database.Public.Tables.ChecklistItem.all(),
+             "Public.Tables.ChecklistItem.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.ChecklistItem.all(request.options as Public.Tables.ChecklistItem.Options),
             
-"Public.Tables.ChecklistItem.ChecklistItemPkey.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.read(request.parameters as Public.Types.ChecklistItemPkey),
-"Public.Tables.ChecklistItem.ChecklistItemPkey.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.update(request.parameters as Public.Types.ChecklistItemPkey,request.values as Partial<Public.Tables.ChecklistItem.Values>),
-"Public.Tables.ChecklistItem.ChecklistItemPkey.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.delete(request.parameters as Public.Types.ChecklistItemPkey),
-"Public.Tables.ChecklistItem.ChecklistItemParent.read": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.read(request.parameters as Public.Types.ChecklistItemParent),
-"Public.Tables.ChecklistItem.ChecklistItemParent.update": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.update(request.parameters as Public.Types.ChecklistItemParent,request.values as Partial<Public.Tables.ChecklistItem.Values>),
-"Public.Tables.ChecklistItem.ChecklistItemParent.delete": async (request: EmbraceSQLRequest<object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.delete(request.parameters as Public.Types.ChecklistItemParent),
+"Public.Tables.ChecklistItem.ChecklistItemPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.read(request.parameters as Public.Types.ChecklistItemPkey,request.options as Public.Tables.ChecklistItem.Options),
+"Public.Tables.ChecklistItem.ChecklistItemPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.update(request.parameters as Public.Types.ChecklistItemPkey,request.values as Partial<Public.Tables.ChecklistItem.Values>),
+"Public.Tables.ChecklistItem.ChecklistItemPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.delete(request.parameters as Public.Types.ChecklistItemPkey),
+"Public.Tables.ChecklistItem.ChecklistItemParent.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.read(request.parameters as Public.Types.ChecklistItemParent,request.options as Public.Tables.ChecklistItem.Options),
+"Public.Tables.ChecklistItem.ChecklistItemParent.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.update(request.parameters as Public.Types.ChecklistItemParent,request.values as Partial<Public.Tables.ChecklistItem.Values>),
+"Public.Tables.ChecklistItem.ChecklistItemParent.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.delete(request.parameters as Public.Types.ChecklistItemParent),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }

@@ -13,11 +13,12 @@ export let NEVER: never;
  * The notion of headers is inspired by HTTP and allows you to specify
  * additional metadata.
  */
-export type EmbraceSQLRequest<P, V = never> = {
+export type EmbraceSQLRequest<P, V = never, O = never> = {
   operation: string;
   headers?: Record<string, string>;
   parameters?: P;
   values?: V;
+  options?: O;
 };
 
 /**
@@ -34,7 +35,7 @@ export type EmbraceSQLResponse<R> = {
  * selecting the proper operation via HTTP/S + JSON.
  */
 export type OperationDispatchMethod = (
-  request: EmbraceSQLRequest<object, object>,
+  request: EmbraceSQLRequest<object, object, object>,
 ) => Promise<unknown>;
 
 export type GenerationContextProps = {
