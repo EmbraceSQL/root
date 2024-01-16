@@ -26036,11 +26036,12 @@ async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Chec
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       id,name,created_at 
     FROM
       public.checklist 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))
 }
@@ -26152,11 +26153,12 @@ async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       id,checklist_id,title,checked,created_at 
     FROM
       public.checklist_item 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }

@@ -31271,6 +31271,8 @@ const response = await sql`
       public.slug 
     WHERE
       slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
@@ -31612,6 +31614,8 @@ const response = await sql`
       api.q_and_a 
     WHERE
       answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[36536](parameters.answer) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -31716,6 +31720,8 @@ const response = await sql`
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
@@ -31777,6 +31783,8 @@ const response = await sql`
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }

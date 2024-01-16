@@ -29560,6 +29560,8 @@ const response = await sql`
       public.film_actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -29621,6 +29623,8 @@ const response = await sql`
       public.film_actor 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -29738,6 +29742,8 @@ const response = await sql`
       public.address 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -29799,6 +29805,8 @@ const response = await sql`
       public.address 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -29916,6 +29924,8 @@ const response = await sql`
       public.city 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -29977,6 +29987,8 @@ const response = await sql`
       public.city 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30094,6 +30106,8 @@ const response = await sql`
       public.customer 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
@@ -30155,6 +30169,8 @@ const response = await sql`
       public.customer 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -30216,6 +30232,8 @@ const response = await sql`
       public.customer 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -30277,6 +30295,8 @@ const response = await sql`
       public.customer 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -30394,6 +30414,8 @@ const response = await sql`
       public.actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -30455,6 +30477,8 @@ const response = await sql`
       public.actor 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30559,6 +30583,8 @@ const response = await sql`
       public.film_category 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -30676,6 +30702,8 @@ const response = await sql`
       public.inventory 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -30737,6 +30765,8 @@ const response = await sql`
       public.inventory 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30854,6 +30884,8 @@ const response = await sql`
       public.category 
     WHERE
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -30971,6 +31003,8 @@ const response = await sql`
       public.country 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31088,6 +31122,8 @@ const response = await sql`
       public.language 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31205,6 +31241,8 @@ const response = await sql`
       public.rental 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31266,6 +31304,8 @@ const response = await sql`
       public.rental 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -31327,6 +31367,8 @@ const response = await sql`
       public.rental 
     WHERE
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31444,6 +31486,8 @@ const response = await sql`
       public.staff 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
@@ -31561,6 +31605,8 @@ const response = await sql`
       public.store 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31622,6 +31668,8 @@ const response = await sql`
       public.store 
     WHERE
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -31739,6 +31787,8 @@ const response = await sql`
       public.payment 
     WHERE
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
@@ -31800,6 +31850,8 @@ const response = await sql`
       public.payment 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -31861,6 +31913,8 @@ const response = await sql`
       public.payment 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -31922,6 +31976,8 @@ const response = await sql`
       public.payment 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -32039,6 +32095,8 @@ const response = await sql`
       public.film 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
@@ -32100,6 +32158,8 @@ const response = await sql`
       public.film 
     WHERE
       fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -32161,6 +32221,8 @@ const response = await sql`
       public.film 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -32222,6 +32284,8 @@ const response = await sql`
       public.film 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }

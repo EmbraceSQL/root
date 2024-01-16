@@ -39,6 +39,8 @@ export const ReadOperation = {
       ${node.index.table.databaseName} 
     WHERE
       ${sqlPredicate(context, node.index, PARAMETERS)}
+    LIMIT \${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET \${options?.offsetNumberOfRows ?? 0} 
     `;
     generationBuffer.push(`const response = await sql\`${sql}\``);
 

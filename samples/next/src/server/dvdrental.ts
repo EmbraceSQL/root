@@ -29527,11 +29527,12 @@ async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.Film
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       actor_id,film_id,last_update 
     FROM
       public.film_actor 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -29704,11 +29705,12 @@ async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Addres
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
     FROM
       public.address 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -29881,11 +29883,12 @@ async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       city_id,city,country_id,last_update 
     FROM
       public.city 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30058,11 +30061,12 @@ async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Custo
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
       public.customer 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -30357,11 +30361,12 @@ async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
     FROM
       public.actor 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30521,11 +30526,12 @@ async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.F
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       film_id,category_id,last_update 
     FROM
       public.film_category 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30637,11 +30643,12 @@ async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inve
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
     FROM
       public.inventory 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30814,11 +30821,12 @@ async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Categ
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       category_id,name,last_update 
     FROM
       public.category 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -30930,11 +30938,12 @@ async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Countr
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       country_id,country,last_update 
     FROM
       public.country 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -31046,11 +31055,12 @@ async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Langu
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       language_id,name,last_update 
     FROM
       public.language 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -31162,11 +31172,12 @@ async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
       public.rental 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -31400,11 +31411,12 @@ async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]>
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
     FROM
       public.staff 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))
 }
@@ -31516,11 +31528,12 @@ async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]>
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
     FROM
       public.store 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -31693,11 +31706,12 @@ async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Paymen
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
       public.payment 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -31992,11 +32006,12 @@ async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
       public.film 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }

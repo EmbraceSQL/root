@@ -73,11 +73,51 @@ describe("The database can AutoCRUD", () => {
       lastName: "Guiness",
     });
   });
-  it("a non unique index read", async () => {
-    const values = await database.Public.Tables.Actor.IdxActorLastName.read({
-      lastName: "Akroyd",
+  describe("a non unique index read", () => {
+    it("at all", async () => {
+      const values = await database.Public.Tables.Actor.IdxActorLastName.read({
+        lastName: "Akroyd",
+      });
+      expect(values.length).toBeGreaterThan(1);
     });
-    expect(values.length).toBeGreaterThan(1);
+    it("with pagination", async () => {
+      const values = await database.Public.Tables.Actor.IdxActorLastName.read(
+        {
+          lastName: "Akroyd",
+        },
+        {
+          limitNumberOfRows: 1,
+          offsetNumberOfRows: 0,
+        },
+      );
+      expect(values.length).toBe(1);
+    });
+    it("with pagination offset", async () => {
+      const values = await database.Public.Tables.Actor.IdxActorLastName.read(
+        {
+          lastName: "Akroyd",
+        },
+        {
+          limitNumberOfRows: 2,
+          offsetNumberOfRows: 0,
+        },
+      );
+      // staggered overlapping pages to test equality
+      const nextValues =
+        await database.Public.Tables.Actor.IdxActorLastName.read(
+          {
+            lastName: "Akroyd",
+          },
+          {
+            limitNumberOfRows: 2,
+            offsetNumberOfRows: 1,
+          },
+        );
+      expect(values[0]).not.toMatchObject(nextValues[0]);
+      expect(values[1]).not.toMatchObject(nextValues[1]);
+      // overlap in the middle
+      expect(values[1]).toMatchObject(nextValues[0]);
+    });
   });
   describe("read all rows", () => {
     it("at all", async () => {
@@ -96,7 +136,7 @@ describe("The database can AutoCRUD", () => {
         limitNumberOfRows: 2,
         offsetNumberOfRows: 0,
       });
-      // offset by one so we get an overlap
+      // staggered overlapping pages to test equality
       const nextValues = await database.Public.Tables.Actor.all({
         limitNumberOfRows: 2,
         offsetNumberOfRows: 1,
